@@ -16,7 +16,9 @@ package com.amazonaws.services.elastictranscoder.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * The <code>CreateJobOutput</code> structure.
+ * </p>
  */
 public class CreateJobOutput  implements Serializable  {
 
@@ -100,6 +102,14 @@ public class CreateJobOutput  implements Serializable  {
      * <b>Pattern: </b>^\d{1,5}([.]\d{0,5})?$<br/>
      */
     private String segmentDuration;
+
+    /**
+     * Information about the watermarks that you want Elastic Transcoder to
+     * add to the video during transcoding. You can specify up to four
+     * watermarks for each output. Settings for each watermark must be
+     * defined in the preset for the current output.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<JobWatermark> watermarks;
 
     /**
      * The name to assign to the transcoded file. Elastic Transcoder saves
@@ -563,6 +573,99 @@ public class CreateJobOutput  implements Serializable  {
     
     
     /**
+     * Information about the watermarks that you want Elastic Transcoder to
+     * add to the video during transcoding. You can specify up to four
+     * watermarks for each output. Settings for each watermark must be
+     * defined in the preset for the current output.
+     *
+     * @return Information about the watermarks that you want Elastic Transcoder to
+     *         add to the video during transcoding. You can specify up to four
+     *         watermarks for each output. Settings for each watermark must be
+     *         defined in the preset for the current output.
+     */
+    public java.util.List<JobWatermark> getWatermarks() {
+        
+        if (watermarks == null) {
+              watermarks = new com.amazonaws.internal.ListWithAutoConstructFlag<JobWatermark>();
+              watermarks.setAutoConstruct(true);
+        }
+        return watermarks;
+    }
+    
+    /**
+     * Information about the watermarks that you want Elastic Transcoder to
+     * add to the video during transcoding. You can specify up to four
+     * watermarks for each output. Settings for each watermark must be
+     * defined in the preset for the current output.
+     *
+     * @param watermarks Information about the watermarks that you want Elastic Transcoder to
+     *         add to the video during transcoding. You can specify up to four
+     *         watermarks for each output. Settings for each watermark must be
+     *         defined in the preset for the current output.
+     */
+    public void setWatermarks(java.util.Collection<JobWatermark> watermarks) {
+        if (watermarks == null) {
+            this.watermarks = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<JobWatermark> watermarksCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<JobWatermark>(watermarks.size());
+        watermarksCopy.addAll(watermarks);
+        this.watermarks = watermarksCopy;
+    }
+    
+    /**
+     * Information about the watermarks that you want Elastic Transcoder to
+     * add to the video during transcoding. You can specify up to four
+     * watermarks for each output. Settings for each watermark must be
+     * defined in the preset for the current output.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param watermarks Information about the watermarks that you want Elastic Transcoder to
+     *         add to the video during transcoding. You can specify up to four
+     *         watermarks for each output. Settings for each watermark must be
+     *         defined in the preset for the current output.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateJobOutput withWatermarks(JobWatermark... watermarks) {
+        if (getWatermarks() == null) setWatermarks(new java.util.ArrayList<JobWatermark>(watermarks.length));
+        for (JobWatermark value : watermarks) {
+            getWatermarks().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Information about the watermarks that you want Elastic Transcoder to
+     * add to the video during transcoding. You can specify up to four
+     * watermarks for each output. Settings for each watermark must be
+     * defined in the preset for the current output.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param watermarks Information about the watermarks that you want Elastic Transcoder to
+     *         add to the video during transcoding. You can specify up to four
+     *         watermarks for each output. Settings for each watermark must be
+     *         defined in the preset for the current output.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateJobOutput withWatermarks(java.util.Collection<JobWatermark> watermarks) {
+        if (watermarks == null) {
+            this.watermarks = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<JobWatermark> watermarksCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<JobWatermark>(watermarks.size());
+            watermarksCopy.addAll(watermarks);
+            this.watermarks = watermarksCopy;
+        }
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -578,7 +681,8 @@ public class CreateJobOutput  implements Serializable  {
         if (getThumbnailPattern() != null) sb.append("ThumbnailPattern: " + getThumbnailPattern() + ",");
         if (getRotate() != null) sb.append("Rotate: " + getRotate() + ",");
         if (getPresetId() != null) sb.append("PresetId: " + getPresetId() + ",");
-        if (getSegmentDuration() != null) sb.append("SegmentDuration: " + getSegmentDuration() );
+        if (getSegmentDuration() != null) sb.append("SegmentDuration: " + getSegmentDuration() + ",");
+        if (getWatermarks() != null) sb.append("Watermarks: " + getWatermarks() );
         sb.append("}");
         return sb.toString();
     }
@@ -593,6 +697,7 @@ public class CreateJobOutput  implements Serializable  {
         hashCode = prime * hashCode + ((getRotate() == null) ? 0 : getRotate().hashCode()); 
         hashCode = prime * hashCode + ((getPresetId() == null) ? 0 : getPresetId().hashCode()); 
         hashCode = prime * hashCode + ((getSegmentDuration() == null) ? 0 : getSegmentDuration().hashCode()); 
+        hashCode = prime * hashCode + ((getWatermarks() == null) ? 0 : getWatermarks().hashCode()); 
         return hashCode;
     }
     
@@ -614,6 +719,8 @@ public class CreateJobOutput  implements Serializable  {
         if (other.getPresetId() != null && other.getPresetId().equals(this.getPresetId()) == false) return false; 
         if (other.getSegmentDuration() == null ^ this.getSegmentDuration() == null) return false;
         if (other.getSegmentDuration() != null && other.getSegmentDuration().equals(this.getSegmentDuration()) == false) return false; 
+        if (other.getWatermarks() == null ^ this.getWatermarks() == null) return false;
+        if (other.getWatermarks() != null && other.getWatermarks().equals(this.getWatermarks()) == false) return false; 
         return true;
     }
     

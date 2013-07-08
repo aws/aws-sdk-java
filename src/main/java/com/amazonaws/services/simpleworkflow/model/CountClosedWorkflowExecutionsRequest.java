@@ -511,13 +511,13 @@ public class CountClosedWorkflowExecutionsRequest extends AmazonWebServiceReques
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");    	
-        if (getStartTimeFilter() != null) sb.append("StartTimeFilter: " + getStartTimeFilter() + ",");    	
-        if (getCloseTimeFilter() != null) sb.append("CloseTimeFilter: " + getCloseTimeFilter() + ",");    	
-        if (getExecutionFilter() != null) sb.append("ExecutionFilter: " + getExecutionFilter() + ",");    	
-        if (getTypeFilter() != null) sb.append("TypeFilter: " + getTypeFilter() + ",");    	
-        if (getTagFilter() != null) sb.append("TagFilter: " + getTagFilter() + ",");    	
+        sb.append("{");
+        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");
+        if (getStartTimeFilter() != null) sb.append("StartTimeFilter: " + getStartTimeFilter() + ",");
+        if (getCloseTimeFilter() != null) sb.append("CloseTimeFilter: " + getCloseTimeFilter() + ",");
+        if (getExecutionFilter() != null) sb.append("ExecutionFilter: " + getExecutionFilter() + ",");
+        if (getTypeFilter() != null) sb.append("TypeFilter: " + getTypeFilter() + ",");
+        if (getTagFilter() != null) sb.append("TagFilter: " + getTagFilter() + ",");
         if (getCloseStatusFilter() != null) sb.append("CloseStatusFilter: " + getCloseStatusFilter() );
         sb.append("}");
         return sb.toString();

@@ -246,8 +246,8 @@ public class FailWorkflowExecutionFailedEventAttributes  implements Serializable
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCause() != null) sb.append("Cause: " + getCause() + ",");    	
+        sb.append("{");
+        if (getCause() != null) sb.append("Cause: " + getCause() + ",");
         if (getDecisionTaskCompletedEventId() != null) sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() );
         sb.append("}");
         return sb.toString();

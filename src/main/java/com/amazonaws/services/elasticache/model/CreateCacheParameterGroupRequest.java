@@ -49,6 +49,8 @@ public class CreateCacheParameterGroupRequest extends AmazonWebServiceRequest  i
      */
     public CreateCacheParameterGroupRequest() {}
     
+
+
     /**
      * Constructs a new CreateCacheParameterGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -62,9 +64,9 @@ public class CreateCacheParameterGroupRequest extends AmazonWebServiceRequest  i
      * @param description The description for the Cache Parameter Group.
      */
     public CreateCacheParameterGroupRequest(String cacheParameterGroupName, String cacheParameterGroupFamily, String description) {
-        this.cacheParameterGroupName = cacheParameterGroupName;
-        this.cacheParameterGroupFamily = cacheParameterGroupFamily;
-        this.description = description;
+        setCacheParameterGroupName(cacheParameterGroupName);
+        setCacheParameterGroupFamily(cacheParameterGroupFamily);
+        setDescription(description);
     }
 
     
@@ -194,9 +196,9 @@ public class CreateCacheParameterGroupRequest extends AmazonWebServiceRequest  i
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCacheParameterGroupName() != null) sb.append("CacheParameterGroupName: " + getCacheParameterGroupName() + ",");    	
-        if (getCacheParameterGroupFamily() != null) sb.append("CacheParameterGroupFamily: " + getCacheParameterGroupFamily() + ",");    	
+        sb.append("{");
+        if (getCacheParameterGroupName() != null) sb.append("CacheParameterGroupName: " + getCacheParameterGroupName() + ",");
+        if (getCacheParameterGroupFamily() != null) sb.append("CacheParameterGroupFamily: " + getCacheParameterGroupFamily() + ",");
         if (getDescription() != null) sb.append("Description: " + getDescription() );
         sb.append("}");
         return sb.toString();

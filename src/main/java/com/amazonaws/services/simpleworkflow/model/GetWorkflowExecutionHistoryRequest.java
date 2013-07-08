@@ -380,11 +380,11 @@ public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");    	
-        if (getExecution() != null) sb.append("Execution: " + getExecution() + ",");    	
-        if (getNextPageToken() != null) sb.append("NextPageToken: " + getNextPageToken() + ",");    	
-        if (getMaximumPageSize() != null) sb.append("MaximumPageSize: " + getMaximumPageSize() + ",");    	
+        sb.append("{");
+        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");
+        if (getExecution() != null) sb.append("Execution: " + getExecution() + ",");
+        if (getNextPageToken() != null) sb.append("NextPageToken: " + getNextPageToken() + ",");
+        if (getMaximumPageSize() != null) sb.append("MaximumPageSize: " + getMaximumPageSize() + ",");
         if (isReverseOrder() != null) sb.append("ReverseOrder: " + isReverseOrder() );
         sb.append("}");
         return sb.toString();

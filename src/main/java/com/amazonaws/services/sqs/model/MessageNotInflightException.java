@@ -17,9 +17,7 @@ package com.amazonaws.services.sqs.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * <p>
- * The message referred to is not in flight.
- * </p>
+ * AmazonSQS exception
  */        
 public class MessageNotInflightException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

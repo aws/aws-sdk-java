@@ -58,7 +58,7 @@ public class RespondDecisionTaskCompletedRequest extends AmazonWebServiceRequest
      * processing this decision task. See the docs for the <a>Decision</a>
      * structure for details.
      */
-    private java.util.List<Decision> decisions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Decision> decisions;
 
     /**
      * User defined context to add to workflow execution.
@@ -147,7 +147,8 @@ public class RespondDecisionTaskCompletedRequest extends AmazonWebServiceRequest
     public java.util.List<Decision> getDecisions() {
         
         if (decisions == null) {
-            decisions = new java.util.ArrayList<Decision>();
+              decisions = new com.amazonaws.internal.ListWithAutoConstructFlag<Decision>();
+              decisions.setAutoConstruct(true);
         }
         return decisions;
     }
@@ -166,8 +167,7 @@ public class RespondDecisionTaskCompletedRequest extends AmazonWebServiceRequest
             this.decisions = null;
             return;
         }
-
-        java.util.List<Decision> decisionsCopy = new java.util.ArrayList<Decision>(decisions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Decision> decisionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Decision>(decisions.size());
         decisionsCopy.addAll(decisions);
         this.decisions = decisionsCopy;
     }
@@ -212,7 +212,7 @@ public class RespondDecisionTaskCompletedRequest extends AmazonWebServiceRequest
         if (decisions == null) {
             this.decisions = null;
         } else {
-            java.util.List<Decision> decisionsCopy = new java.util.ArrayList<Decision>(decisions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Decision> decisionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Decision>(decisions.size());
             decisionsCopy.addAll(decisions);
             this.decisions = decisionsCopy;
         }
@@ -274,9 +274,9 @@ public class RespondDecisionTaskCompletedRequest extends AmazonWebServiceRequest
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getTaskToken() != null) sb.append("TaskToken: " + getTaskToken() + ",");    	
-        if (getDecisions() != null) sb.append("Decisions: " + getDecisions() + ",");    	
+        sb.append("{");
+        if (getTaskToken() != null) sb.append("TaskToken: " + getTaskToken() + ",");
+        if (getDecisions() != null) sb.append("Decisions: " + getDecisions() + ",");
         if (getExecutionContext() != null) sb.append("ExecutionContext: " + getExecutionContext() );
         sb.append("}");
         return sb.toString();

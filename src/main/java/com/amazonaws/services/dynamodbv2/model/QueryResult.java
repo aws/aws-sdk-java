@@ -49,7 +49,7 @@ public class QueryResult  implements Serializable  {
      * returned if it was asked for in the request. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * Throughput</a> in the Amazon DynamoDB Developer Guide.
      */
     private ConsumedCapacity consumedCapacity;
 
@@ -96,9 +96,6 @@ public class QueryResult  implements Serializable  {
      * @param items An array of item attributes that match the query criteria. Each
      *         element in this array consists of an attribute name and the value for
      *         that attribute.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public QueryResult withItems(java.util.Map<String,AttributeValue>... items) {
         if (getItems() == null) setItems(new java.util.ArrayList<java.util.Map<String,AttributeValue>>(items.length));
@@ -118,9 +115,6 @@ public class QueryResult  implements Serializable  {
      * @param items An array of item attributes that match the query criteria. Each
      *         element in this array consists of an attribute name and the value for
      *         that attribute.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public QueryResult withItems(java.util.Collection<java.util.Map<String,AttributeValue>> items) {
         if (items == null) {
@@ -158,9 +152,6 @@ public class QueryResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param count The number of items in the response.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public QueryResult withCount(Integer count) {
         this.count = count;
@@ -184,7 +175,6 @@ public class QueryResult  implements Serializable  {
     public java.util.Map<String,AttributeValue> getLastEvaluatedKey() {
         
         return lastEvaluatedKey;
-
     }
     
     /**
@@ -218,29 +208,61 @@ public class QueryResult  implements Serializable  {
      *         excluding this value in the new request. <p><i>LastEvaluatedKey</i> is
      *         null when the entire result set is complete (in other words, when the
      *         operation processed the "last page" of results).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public QueryResult withLastEvaluatedKey(java.util.Map<String,AttributeValue> lastEvaluatedKey) {
         setLastEvaluatedKey(lastEvaluatedKey);
         return this;
     }
     
+   	
+    /**
+     * The primary key of the item where the operation stopped, inclusive of
+     * the previous result set. Use this value to start a new operation,
+     * excluding this value in the new request. <p><i>LastEvaluatedKey</i> is
+     * null when the entire result set is complete (in other words, when the
+     * operation processed the "last page" of results).
+     * <p>
+     * The method adds a new key-value pair into LastEvaluatedKey parameter,
+     * and returns a reference to this object so that method calls can be
+     * chained together.
+     *
+     * @param key The key of the entry to be added into LastEvaluatedKey.
+     * @param value The corresponding value of the entry to be added into LastEvaluatedKey.
+     */
+	public QueryResult addLastEvaluatedKeyEntry(String key, AttributeValue value) {
+		if (null == this.lastEvaluatedKey) {
+			this.lastEvaluatedKey = new java.util.HashMap<String,AttributeValue>();
+		}
+		if (this.lastEvaluatedKey.containsKey(key))
+			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+		this.lastEvaluatedKey.put(key, value);
+		return this;
+	}
+	
+	/**
+	 * Removes all the entries added into LastEvaluatedKey.
+	 * <p>
+	 * Returns a reference to this object so that method calls can be chained together.
+	 */
+	public QueryResult clearLastEvaluatedKeyEntries() {
+		this.lastEvaluatedKey = null;
+		return this;
+	}
+	
     /**
      * The table name that consumed provisioned throughput, and the number of
      * capacity units consumed by it. <i>ConsumedCapacity</i> is only
      * returned if it was asked for in the request. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * Throughput</a> in the Amazon DynamoDB Developer Guide.
      *
      * @return The table name that consumed provisioned throughput, and the number of
      *         capacity units consumed by it. <i>ConsumedCapacity</i> is only
      *         returned if it was asked for in the request. For more information, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     *         Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         Throughput</a> in the Amazon DynamoDB Developer Guide.
      */
     public ConsumedCapacity getConsumedCapacity() {
         return consumedCapacity;
@@ -252,14 +274,14 @@ public class QueryResult  implements Serializable  {
      * returned if it was asked for in the request. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * Throughput</a> in the Amazon DynamoDB Developer Guide.
      *
      * @param consumedCapacity The table name that consumed provisioned throughput, and the number of
      *         capacity units consumed by it. <i>ConsumedCapacity</i> is only
      *         returned if it was asked for in the request. For more information, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     *         Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         Throughput</a> in the Amazon DynamoDB Developer Guide.
      */
     public void setConsumedCapacity(ConsumedCapacity consumedCapacity) {
         this.consumedCapacity = consumedCapacity;
@@ -271,7 +293,7 @@ public class QueryResult  implements Serializable  {
      * returned if it was asked for in the request. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * Throughput</a> in the Amazon DynamoDB Developer Guide.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -280,10 +302,7 @@ public class QueryResult  implements Serializable  {
      *         returned if it was asked for in the request. For more information, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     *         Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         Throughput</a> in the Amazon DynamoDB Developer Guide.
      */
     public QueryResult withConsumedCapacity(ConsumedCapacity consumedCapacity) {
         this.consumedCapacity = consumedCapacity;

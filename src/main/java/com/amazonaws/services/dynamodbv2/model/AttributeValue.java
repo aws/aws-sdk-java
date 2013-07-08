@@ -112,9 +112,6 @@ public class AttributeValue  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param s Represents a String data type
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AttributeValue withS(String s) {
         this.s = s;
@@ -146,9 +143,6 @@ public class AttributeValue  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param n Represents a Number data type
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AttributeValue withN(String n) {
         this.n = n;
@@ -180,9 +174,6 @@ public class AttributeValue  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param b Represents a Binary data type
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AttributeValue withB(java.nio.ByteBuffer b) {
         this.b = b;
@@ -221,9 +212,6 @@ public class AttributeValue  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sS Represents a String set data type
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AttributeValue withSS(String... sS) {
         if (getSS() == null) setSS(new java.util.ArrayList<String>(sS.length));
@@ -239,9 +227,6 @@ public class AttributeValue  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sS Represents a String set data type
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AttributeValue withSS(java.util.Collection<String> sS) {
         if (sS == null) {
@@ -286,9 +271,6 @@ public class AttributeValue  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nS Represents a Number set data type
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AttributeValue withNS(String... nS) {
         if (getNS() == null) setNS(new java.util.ArrayList<String>(nS.length));
@@ -304,9 +286,6 @@ public class AttributeValue  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nS Represents a Number set data type
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AttributeValue withNS(java.util.Collection<String> nS) {
         if (nS == null) {
@@ -351,9 +330,6 @@ public class AttributeValue  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param bS Represents a Binary set data type
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AttributeValue withBS(java.nio.ByteBuffer... bS) {
         if (getBS() == null) setBS(new java.util.ArrayList<java.nio.ByteBuffer>(bS.length));
@@ -369,9 +345,6 @@ public class AttributeValue  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param bS Represents a Binary set data type
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AttributeValue withBS(java.util.Collection<java.nio.ByteBuffer> bS) {
         if (bS == null) {

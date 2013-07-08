@@ -26,7 +26,7 @@ public class ListResourceRecordSetsResult  implements Serializable  {
      * A complex type that contains information about the resource record
      * sets that are returned by the request.
      */
-    private java.util.List<ResourceRecordSet> resourceRecordSets;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ResourceRecordSet> resourceRecordSets;
 
     /**
      * A flag that indicates whether there are more resource record sets to
@@ -84,7 +84,8 @@ public class ListResourceRecordSetsResult  implements Serializable  {
     public java.util.List<ResourceRecordSet> getResourceRecordSets() {
         
         if (resourceRecordSets == null) {
-            resourceRecordSets = new java.util.ArrayList<ResourceRecordSet>();
+              resourceRecordSets = new com.amazonaws.internal.ListWithAutoConstructFlag<ResourceRecordSet>();
+              resourceRecordSets.setAutoConstruct(true);
         }
         return resourceRecordSets;
     }
@@ -101,8 +102,7 @@ public class ListResourceRecordSetsResult  implements Serializable  {
             this.resourceRecordSets = null;
             return;
         }
-
-        java.util.List<ResourceRecordSet> resourceRecordSetsCopy = new java.util.ArrayList<ResourceRecordSet>(resourceRecordSets.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ResourceRecordSet> resourceRecordSetsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ResourceRecordSet>(resourceRecordSets.size());
         resourceRecordSetsCopy.addAll(resourceRecordSets);
         this.resourceRecordSets = resourceRecordSetsCopy;
     }
@@ -143,7 +143,7 @@ public class ListResourceRecordSetsResult  implements Serializable  {
         if (resourceRecordSets == null) {
             this.resourceRecordSets = null;
         } else {
-            java.util.List<ResourceRecordSet> resourceRecordSetsCopy = new java.util.ArrayList<ResourceRecordSet>(resourceRecordSets.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ResourceRecordSet> resourceRecordSetsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ResourceRecordSet>(resourceRecordSets.size());
             resourceRecordSetsCopy.addAll(resourceRecordSets);
             this.resourceRecordSets = resourceRecordSetsCopy;
         }
@@ -496,12 +496,12 @@ public class ListResourceRecordSetsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getResourceRecordSets() != null) sb.append("ResourceRecordSets: " + getResourceRecordSets() + ",");    	
-        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");    	
-        if (getNextRecordName() != null) sb.append("NextRecordName: " + getNextRecordName() + ",");    	
-        if (getNextRecordType() != null) sb.append("NextRecordType: " + getNextRecordType() + ",");    	
-        if (getNextRecordIdentifier() != null) sb.append("NextRecordIdentifier: " + getNextRecordIdentifier() + ",");    	
+        sb.append("{");
+        if (getResourceRecordSets() != null) sb.append("ResourceRecordSets: " + getResourceRecordSets() + ",");
+        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");
+        if (getNextRecordName() != null) sb.append("NextRecordName: " + getNextRecordName() + ",");
+        if (getNextRecordType() != null) sb.append("NextRecordType: " + getNextRecordType() + ",");
+        if (getNextRecordIdentifier() != null) sb.append("NextRecordIdentifier: " + getNextRecordIdentifier() + ",");
         if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() );
         sb.append("}");
         return sb.toString();

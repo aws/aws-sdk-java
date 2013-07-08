@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#readPreset(ReadPresetRequest) ReadPreset operation}.
  * <p>
- * To get detailed information about a preset, send a GET request to the <code>/2012-09-25/presets/[presetId] </code> resource.
+ * The ReadPreset operation gets detailed information about a preset.
  * </p>
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#readPreset(ReadPresetRequest)

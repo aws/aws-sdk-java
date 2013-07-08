@@ -19,7 +19,8 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#getTopicAttributes(GetTopicAttributesRequest) GetTopicAttributes operation}.
  * <p>
- * The GetTopicAttributes action returns all of the properties of a topic. Topic properties returned might differ based on the authorization of the user.
+ * The <code>GetTopicAttributes</code> action returns all of the properties of a topic. Topic properties returned might differ based on the authorization
+ * of the user.
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#getTopicAttributes(GetTopicAttributesRequest)

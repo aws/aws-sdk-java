@@ -132,7 +132,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
      * the operation. For more information see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * and Scan</a> in the Amazon DynamoDB Developer Guide.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
@@ -147,7 +147,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
 
     /**
      * The selection criteria for the query. <p>For a query on a table, you
-     * can only have conditions on the table primary key attributes. you must
+     * can only have conditions on the table primary key attributes. You must
      * specify the hash key attribute name and value as an <code>EQ</code>
      * condition. You can optionally specify a second condition, referring to
      * the range key attribute. <p>For a query on a secondary index, you can
@@ -176,7 +176,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> <p>For
      * information on specifying data types in JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>The
+     * Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
      * following are descriptions of each comparison operator. <ul> <li>
      * <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
      * only one <i>AttributeValue</i> of type String, Number, or Binary (not
@@ -297,9 +297,6 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
      * @param tableName The name of the table containing the requested items.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public QueryRequest withTableName(String tableName) {
         this.tableName = tableName;
@@ -343,9 +340,6 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
      * @param indexName The name of an index on the table to query.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public QueryRequest withIndexName(String indexName) {
         this.indexName = indexName;
@@ -583,9 +577,6 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         specifying <i>AttributesToGet</i> without any value for
      *         <i>Select</i>.)
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see Select
      */
     public QueryRequest withSelect(String select) {
@@ -746,9 +737,6 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         specifying <i>AttributesToGet</i> without any value for
      *         <i>Select</i>.)
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see Select
      */
     public QueryRequest withSelect(Select select) {
@@ -874,9 +862,6 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
      *         specifying <i>AttributesToGet</i> without any value for
      *         <i>Select</i>.)
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public QueryRequest withAttributesToGet(String... attributesToGet) {
         if (getAttributesToGet() == null) setAttributesToGet(new java.util.ArrayList<String>(attributesToGet.length));
@@ -921,9 +906,6 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
      *         specifying <i>AttributesToGet</i> without any value for
      *         <i>Select</i>.)
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public QueryRequest withAttributesToGet(java.util.Collection<String> attributesToGet) {
         if (attributesToGet == null) {
@@ -949,7 +931,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
      * the operation. For more information see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * and Scan</a> in the Amazon DynamoDB Developer Guide.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
@@ -965,7 +947,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
      *         the operation. For more information see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     *         and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         and Scan</a> in the Amazon DynamoDB Developer Guide.
      */
     public Integer getLimit() {
         return limit;
@@ -983,7 +965,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
      * the operation. For more information see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * and Scan</a> in the Amazon DynamoDB Developer Guide.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
@@ -999,7 +981,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
      *         the operation. For more information see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     *         and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         and Scan</a> in the Amazon DynamoDB Developer Guide.
      */
     public void setLimit(Integer limit) {
         this.limit = limit;
@@ -1017,7 +999,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
      * the operation. For more information see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * and Scan</a> in the Amazon DynamoDB Developer Guide.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -1035,10 +1017,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
      *         the operation. For more information see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     *         and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         and Scan</a> in the Amazon DynamoDB Developer Guide.
      */
     public QueryRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -1076,9 +1055,6 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *
      * @param consistentRead If set to <code>true</code>, then the operation uses strongly
      *         consistent reads; otherwise, eventually consistent reads are used.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public QueryRequest withConsistentRead(Boolean consistentRead) {
         this.consistentRead = consistentRead;
@@ -1099,7 +1075,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
     
     /**
      * The selection criteria for the query. <p>For a query on a table, you
-     * can only have conditions on the table primary key attributes. you must
+     * can only have conditions on the table primary key attributes. You must
      * specify the hash key attribute name and value as an <code>EQ</code>
      * condition. You can optionally specify a second condition, referring to
      * the range key attribute. <p>For a query on a secondary index, you can
@@ -1128,7 +1104,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> <p>For
      * information on specifying data types in JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>The
+     * Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
      * following are descriptions of each comparison operator. <ul> <li>
      * <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
      * only one <i>AttributeValue</i> of type String, Number, or Binary (not
@@ -1182,7 +1158,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * "2", "1"]}</code> </li> </ul></li> </ul>
      *
      * @return The selection criteria for the query. <p>For a query on a table, you
-     *         can only have conditions on the table primary key attributes. you must
+     *         can only have conditions on the table primary key attributes. You must
      *         specify the hash key attribute name and value as an <code>EQ</code>
      *         condition. You can optionally specify a second condition, referring to
      *         the range key attribute. <p>For a query on a secondary index, you can
@@ -1211,7 +1187,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> <p>For
      *         information on specifying data types in JSON, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     *         Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>The
+     *         Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
      *         following are descriptions of each comparison operator. <ul> <li>
      *         <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
      *         only one <i>AttributeValue</i> of type String, Number, or Binary (not
@@ -1267,12 +1243,11 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
     public java.util.Map<String,Condition> getKeyConditions() {
         
         return keyConditions;
-
     }
     
     /**
      * The selection criteria for the query. <p>For a query on a table, you
-     * can only have conditions on the table primary key attributes. you must
+     * can only have conditions on the table primary key attributes. You must
      * specify the hash key attribute name and value as an <code>EQ</code>
      * condition. You can optionally specify a second condition, referring to
      * the range key attribute. <p>For a query on a secondary index, you can
@@ -1301,7 +1276,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> <p>For
      * information on specifying data types in JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>The
+     * Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
      * following are descriptions of each comparison operator. <ul> <li>
      * <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
      * only one <i>AttributeValue</i> of type String, Number, or Binary (not
@@ -1355,7 +1330,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * "2", "1"]}</code> </li> </ul></li> </ul>
      *
      * @param keyConditions The selection criteria for the query. <p>For a query on a table, you
-     *         can only have conditions on the table primary key attributes. you must
+     *         can only have conditions on the table primary key attributes. You must
      *         specify the hash key attribute name and value as an <code>EQ</code>
      *         condition. You can optionally specify a second condition, referring to
      *         the range key attribute. <p>For a query on a secondary index, you can
@@ -1384,7 +1359,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> <p>For
      *         information on specifying data types in JSON, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     *         Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>The
+     *         Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
      *         following are descriptions of each comparison operator. <ul> <li>
      *         <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
      *         only one <i>AttributeValue</i> of type String, Number, or Binary (not
@@ -1443,7 +1418,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
     
     /**
      * The selection criteria for the query. <p>For a query on a table, you
-     * can only have conditions on the table primary key attributes. you must
+     * can only have conditions on the table primary key attributes. You must
      * specify the hash key attribute name and value as an <code>EQ</code>
      * condition. You can optionally specify a second condition, referring to
      * the range key attribute. <p>For a query on a secondary index, you can
@@ -1472,7 +1447,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> <p>For
      * information on specifying data types in JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>The
+     * Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
      * following are descriptions of each comparison operator. <ul> <li>
      * <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
      * only one <i>AttributeValue</i> of type String, Number, or Binary (not
@@ -1528,7 +1503,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param keyConditions The selection criteria for the query. <p>For a query on a table, you
-     *         can only have conditions on the table primary key attributes. you must
+     *         can only have conditions on the table primary key attributes. You must
      *         specify the hash key attribute name and value as an <code>EQ</code>
      *         condition. You can optionally specify a second condition, referring to
      *         the range key attribute. <p>For a query on a secondary index, you can
@@ -1557,7 +1532,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> <p>For
      *         information on specifying data types in JSON, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     *         Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>The
+     *         Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
      *         following are descriptions of each comparison operator. <ul> <li>
      *         <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
      *         only one <i>AttributeValue</i> of type String, Number, or Binary (not
@@ -1609,15 +1584,124 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>.
      *         Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
      *         "2", "1"]}</code> </li> </ul></li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public QueryRequest withKeyConditions(java.util.Map<String,Condition> keyConditions) {
         setKeyConditions(keyConditions);
         return this;
     }
     
+   	
+    /**
+     * The selection criteria for the query. <p>For a query on a table, you
+     * can only have conditions on the table primary key attributes. You must
+     * specify the hash key attribute name and value as an <code>EQ</code>
+     * condition. You can optionally specify a second condition, referring to
+     * the range key attribute. <p>For a query on a secondary index, you can
+     * only have conditions on the index key attributes. You must specify the
+     * index hash attribute name and value as an EQ condition. You can
+     * optionally specify a second condition, referring to the index key
+     * range attribute. <p>Multiple conditions are evaluated using "AND"; in
+     * other words, all of the conditions must be met in order for an item to
+     * appear in the results results. <p>Each <i>KeyConditions</i> element
+     * consists of an attribute name to compare, along with the following:
+     * <ul> <li><p><i>AttributeValueList</i> - One or more values to evaluate
+     * against the supplied attribute. This list contains exactly one value,
+     * except for a <code>BETWEEN</code> or <code>IN</code> comparison, in
+     * which case the list contains two values. <note> <p>For type Number,
+     * value comparisons are numeric. <p>String value comparisons for greater
+     * than, equals, or less than are based on ASCII character code values.
+     * For example, <code>a</code> is greater than <code>A</code>, and
+     * <code>aa</code> is greater than <code>B</code>. For a list of code
+     * values, see <a
+     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     * <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
+     * unsigned when it compares binary values, for example when evaluating
+     * query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
+     * comparator for evaluating attributes. For example, equals, greater
+     * than, less than, etc. <p>Valid comparison operators for Query:
+     * <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> <p>For
+     * information on specifying data types in JSON, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
+     * Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
+     * following are descriptions of each comparison operator. <ul> <li>
+     * <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
+     * only one <i>AttributeValue</i> of type String, Number, or Binary (not
+     * a set). If an item contains an <i>AttributeValue</i> of a different
+     * type than the one specified in the request, the value does not match.
+     * For example, <code>{"S":"6"}</code> does not equal
+     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
+     * <code>{"NS":["6", "2", "1"]}</code>. <p> </li> <li> <p><code>LE</code>
+     * : Less than or equal. <p><i>AttributeValueList</i> can contain only
+     * one <i>AttributeValue</i> of type String, Number, or Binary (not a
+     * set). If an item contains an <i>AttributeValue</i> of a different type
+     * than the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p> </li> <li> <p><code>LT</code> : Less than.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p> </li> <li> <p><code>GE</code> : Greater than or
+     * equal. <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p> </li> <li> <p><code>GT</code> : Greater than.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p> </li> <li> <p><code>BEGINS_WITH</code> : checks
+     * for a prefix. <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String or Binary (not a Number or a
+     * set). The target attribute of the comparison must be a String or
+     * Binary (not a Number or a set). <p> </li> <li> <p><code>BETWEEN</code>
+     * : Greater than or equal to the first value, and less than or equal to
+     * the second value. <p><i>AttributeValueList</i> must contain two
+     * <i>AttributeValue</i> elements of the same type, either String,
+     * Number, or Binary (not a set). A target attribute matches if the
+     * target value is greater than, or equal to, the first element and less
+     * than, or equal to, the second element. If an item contains an
+     * <i>AttributeValue</i> of a different type than the one specified in
+     * the request, the value does not match. For example,
+     * <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code> </li> </ul></li> </ul>
+     * <p>
+     * The method adds a new key-value pair into KeyConditions parameter, and
+     * returns a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param key The key of the entry to be added into KeyConditions.
+     * @param value The corresponding value of the entry to be added into KeyConditions.
+     */
+	public QueryRequest addKeyConditionsEntry(String key, Condition value) {
+		if (null == this.keyConditions) {
+			this.keyConditions = new java.util.HashMap<String,Condition>();
+		}
+		if (this.keyConditions.containsKey(key))
+			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+		this.keyConditions.put(key, value);
+		return this;
+	}
+	
+	/**
+	 * Removes all the entries added into KeyConditions.
+	 * <p>
+	 * Returns a reference to this object so that method calls can be chained together.
+	 */
+	public QueryRequest clearKeyConditionsEntries() {
+		this.keyConditions = null;
+		return this;
+	}
+	
     /**
      * Specifies ascending (true) or descending (false) traversal of the
      * index. Amazon DynamoDB returns results reflecting the requested order
@@ -1684,9 +1768,6 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         treats each byte of the binary data as unsigned when it compares
      *         binary values. <p>If <i>ScanIndexForward</i> is not specified, the
      *         results are returned in ascending order.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public QueryRequest withScanIndexForward(Boolean scanIndexForward) {
         this.scanIndexForward = scanIndexForward;
@@ -1731,7 +1812,6 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
     public java.util.Map<String,AttributeValue> getExclusiveStartKey() {
         
         return exclusiveStartKey;
-
     }
     
     /**
@@ -1761,15 +1841,90 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         Use the value that was returned for <i>LastEvaluatedKey</i> in the
      *         previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      *         be String, Number or Binary. No set data types are allowed.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public QueryRequest withExclusiveStartKey(java.util.Map<String,AttributeValue> exclusiveStartKey) {
         setExclusiveStartKey(exclusiveStartKey);
         return this;
     }
     
+   	
+    /**
+     * The primary key of the first item that this operation will evaluate.
+     * Use the value that was returned for <i>LastEvaluatedKey</i> in the
+     * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
+     * be String, Number or Binary. No set data types are allowed.
+     * <p>
+     * This method accepts the hashKey, rangeKey of ExclusiveStartKey as
+     * java.util.Map.Entry<String, AttributeValue> objects.
+     *
+     * @param hashKey Primary hash key.
+     * @param rangeKey Primary range key. (null if it a hash-only table)
+     */
+    public void setExclusiveStartKey(java.util.Map.Entry<String, AttributeValue> hashKey, java.util.Map.Entry<String, AttributeValue> rangeKey) throws IllegalArgumentException {
+        java.util.HashMap<String,AttributeValue> exclusiveStartKey = new java.util.HashMap<String,AttributeValue>();
+    	
+    	if (hashKey != null) {
+    	    exclusiveStartKey.put(hashKey.getKey(), hashKey.getValue());
+    	} else
+            throw new IllegalArgumentException("hashKey must be non-null object.");
+    	if (rangeKey != null) {
+    	    exclusiveStartKey.put(rangeKey.getKey(), rangeKey.getValue());
+    	} 
+        setExclusiveStartKey(exclusiveStartKey);
+    }
+    
+    /**
+     * The primary key of the first item that this operation will evaluate.
+     * Use the value that was returned for <i>LastEvaluatedKey</i> in the
+     * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
+     * be String, Number or Binary. No set data types are allowed.
+     * <p>
+     * This method accepts the hashKey, rangeKey of ExclusiveStartKey as
+     * java.util.Map.Entry<String, AttributeValue> objects.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param hashKey Primary hash key.
+     * @param rangeKey Primary range key. (null if it a hash-only table)
+     */    
+    public QueryRequest withExclusiveStartKey(java.util.Map.Entry<String, AttributeValue> hashKey, java.util.Map.Entry<String, AttributeValue> rangeKey) throws IllegalArgumentException {
+    	setExclusiveStartKey(hashKey, rangeKey);
+    	return this;
+    }
+	
+    /**
+     * The primary key of the first item that this operation will evaluate.
+     * Use the value that was returned for <i>LastEvaluatedKey</i> in the
+     * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
+     * be String, Number or Binary. No set data types are allowed.
+     * <p>
+     * The method adds a new key-value pair into ExclusiveStartKey parameter,
+     * and returns a reference to this object so that method calls can be
+     * chained together.
+     *
+     * @param key The key of the entry to be added into ExclusiveStartKey.
+     * @param value The corresponding value of the entry to be added into ExclusiveStartKey.
+     */
+	public QueryRequest addExclusiveStartKeyEntry(String key, AttributeValue value) {
+		if (null == this.exclusiveStartKey) {
+			this.exclusiveStartKey = new java.util.HashMap<String,AttributeValue>();
+		}
+		if (this.exclusiveStartKey.containsKey(key))
+			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+		this.exclusiveStartKey.put(key, value);
+		return this;
+	}
+	
+	/**
+	 * Removes all the entries added into ExclusiveStartKey.
+	 * <p>
+	 * Returns a reference to this object so that method calls can be chained together.
+	 */
+	public QueryRequest clearExclusiveStartKeyEntries() {
+		this.exclusiveStartKey = null;
+		return this;
+	}
+	
     /**
      * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
      * the response; if set to <code>NONE</code> (the default),
@@ -1820,9 +1975,6 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         the response; if set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ReturnConsumedCapacity
      */
     public QueryRequest withReturnConsumedCapacity(String returnConsumedCapacity) {
@@ -1862,9 +2014,6 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
      *         the response; if set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see ReturnConsumedCapacity
      */

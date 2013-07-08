@@ -123,8 +123,8 @@ public class StartWorkflowExecutionRequestMarshaller implements Marshaller<Reque
                 jsonWriter.key("executionStartToCloseTimeout").value(startWorkflowExecutionRequest.getExecutionStartToCloseTimeout());
             }
 
-            java.util.List<String> tagListList = startWorkflowExecutionRequest.getTagList();
-            if (tagListList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> tagListList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(startWorkflowExecutionRequest.getTagList());
+            if (tagListList != null && !(tagListList.isAutoConstruct() && tagListList.isEmpty())) {
 
                 jsonWriter.key("tagList");
                 jsonWriter.array();

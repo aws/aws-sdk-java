@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#listPipelines(ListPipelinesRequest) ListPipelines operation}.
  * <p>
- * To get a list of the pipelines associated with the current AWS account, send a GET request to the <code>/2012-09-25/pipelines</code> resource.
+ * The ListPipelines operation gets a list of the pipelines associated with the current AWS account.
  * </p>
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#listPipelines(ListPipelinesRequest)

@@ -71,9 +71,6 @@ public class AttributeDefinition  implements Serializable  {
      * <b>Length: </b>1 - 255<br/>
      *
      * @param attributeName A name for the attribute.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AttributeDefinition withAttributeName(String attributeName) {
         this.attributeName = attributeName;
@@ -119,9 +116,6 @@ public class AttributeDefinition  implements Serializable  {
      *
      * @param attributeType The data type for the attribute.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ScalarAttributeType
      */
     public AttributeDefinition withAttributeType(String attributeType) {
@@ -153,9 +147,6 @@ public class AttributeDefinition  implements Serializable  {
      * <b>Allowed Values: </b>S, N, B
      *
      * @param attributeType The data type for the attribute.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see ScalarAttributeType
      */

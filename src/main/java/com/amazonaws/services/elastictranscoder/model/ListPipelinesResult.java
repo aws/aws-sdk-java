@@ -16,7 +16,9 @@ package com.amazonaws.services.elastictranscoder.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * A list of the pipelines associated with the current AWS account.
+ * </p>
  */
 public class ListPipelinesResult  implements Serializable  {
 

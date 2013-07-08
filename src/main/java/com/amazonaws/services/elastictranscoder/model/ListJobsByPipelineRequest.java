@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#listJobsByPipeline(ListJobsByPipelineRequest) ListJobsByPipeline operation}.
  * <p>
- * To get a list of the jobs currently in a pipeline, send a GET request to the <code>/2012-09-25/jobsByPipeline/[pipelineId] </code> resource.
+ * The ListJobsByPipeline operation gets a list of the jobs currently in a pipeline.
  * </p>
  * <p>
  * Elastic Transcoder returns all of the jobs currently in the specified pipeline. The response body contains one element for each job that satisfies the

@@ -39,7 +39,7 @@ public class RebootCacheClusterRequest extends AmazonWebServiceRequest  implemen
      * A list of Cache Cluster Node Ids to reboot. To reboot an entire cache
      * cluster, specify all cache cluster node Ids.
      */
-    private java.util.List<String> cacheNodeIdsToReboot;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> cacheNodeIdsToReboot;
 
     /**
      * Default constructor for a new RebootCacheClusterRequest object.  Callers should use the
@@ -47,6 +47,8 @@ public class RebootCacheClusterRequest extends AmazonWebServiceRequest  implemen
      */
     public RebootCacheClusterRequest() {}
     
+
+
     /**
      * Constructs a new RebootCacheClusterRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -59,8 +61,8 @@ public class RebootCacheClusterRequest extends AmazonWebServiceRequest  implemen
      * node Ids.
      */
     public RebootCacheClusterRequest(String cacheClusterId, java.util.List<String> cacheNodeIdsToReboot) {
-        this.cacheClusterId = cacheClusterId;
-        this.cacheNodeIdsToReboot = cacheNodeIdsToReboot;
+        setCacheClusterId(cacheClusterId);
+        setCacheNodeIdsToReboot(cacheNodeIdsToReboot);
     }
 
     
@@ -115,7 +117,8 @@ public class RebootCacheClusterRequest extends AmazonWebServiceRequest  implemen
     public java.util.List<String> getCacheNodeIdsToReboot() {
         
         if (cacheNodeIdsToReboot == null) {
-            cacheNodeIdsToReboot = new java.util.ArrayList<String>();
+              cacheNodeIdsToReboot = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              cacheNodeIdsToReboot.setAutoConstruct(true);
         }
         return cacheNodeIdsToReboot;
     }
@@ -132,8 +135,7 @@ public class RebootCacheClusterRequest extends AmazonWebServiceRequest  implemen
             this.cacheNodeIdsToReboot = null;
             return;
         }
-
-        java.util.List<String> cacheNodeIdsToRebootCopy = new java.util.ArrayList<String>(cacheNodeIdsToReboot.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> cacheNodeIdsToRebootCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(cacheNodeIdsToReboot.size());
         cacheNodeIdsToRebootCopy.addAll(cacheNodeIdsToReboot);
         this.cacheNodeIdsToReboot = cacheNodeIdsToRebootCopy;
     }
@@ -174,7 +176,7 @@ public class RebootCacheClusterRequest extends AmazonWebServiceRequest  implemen
         if (cacheNodeIdsToReboot == null) {
             this.cacheNodeIdsToReboot = null;
         } else {
-            java.util.List<String> cacheNodeIdsToRebootCopy = new java.util.ArrayList<String>(cacheNodeIdsToReboot.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> cacheNodeIdsToRebootCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(cacheNodeIdsToReboot.size());
             cacheNodeIdsToRebootCopy.addAll(cacheNodeIdsToReboot);
             this.cacheNodeIdsToReboot = cacheNodeIdsToRebootCopy;
         }
@@ -193,8 +195,8 @@ public class RebootCacheClusterRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCacheClusterId() != null) sb.append("CacheClusterId: " + getCacheClusterId() + ",");    	
+        sb.append("{");
+        if (getCacheClusterId() != null) sb.append("CacheClusterId: " + getCacheClusterId() + ",");
         if (getCacheNodeIdsToReboot() != null) sb.append("CacheNodeIdsToReboot: " + getCacheNodeIdsToReboot() );
         sb.append("}");
         return sb.toString();

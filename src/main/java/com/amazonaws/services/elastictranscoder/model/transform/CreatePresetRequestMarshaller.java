@@ -127,6 +127,9 @@ public class CreatePresetRequestMarshaller implements Marshaller<Request<CreateP
                 if (video.getFrameRate() != null) {
                     jsonWriter.key("FrameRate").value(video.getFrameRate());
                 }
+                if (video.getMaxFrameRate() != null) {
+                    jsonWriter.key("MaxFrameRate").value(video.getMaxFrameRate());
+                }
                 if (video.getResolution() != null) {
                     jsonWriter.key("Resolution").value(video.getResolution());
                 }
@@ -147,6 +150,51 @@ public class CreatePresetRequestMarshaller implements Marshaller<Request<CreateP
                 }
                 if (video.getPaddingPolicy() != null) {
                     jsonWriter.key("PaddingPolicy").value(video.getPaddingPolicy());
+                }
+
+                com.amazonaws.internal.ListWithAutoConstructFlag<PresetWatermark> watermarksList = (com.amazonaws.internal.ListWithAutoConstructFlag<PresetWatermark>)(video.getWatermarks());
+                if (watermarksList != null && !(watermarksList.isAutoConstruct() && watermarksList.isEmpty())) {
+
+                    jsonWriter.key("Watermarks");
+                    jsonWriter.array();
+
+                    for (PresetWatermark watermarksListValue : watermarksList) {
+                        if (watermarksListValue != null) {
+                            jsonWriter.object();
+                            if (watermarksListValue.getId() != null) {
+                                jsonWriter.key("Id").value(watermarksListValue.getId());
+                            }
+                            if (watermarksListValue.getMaxWidth() != null) {
+                                jsonWriter.key("MaxWidth").value(watermarksListValue.getMaxWidth());
+                            }
+                            if (watermarksListValue.getMaxHeight() != null) {
+                                jsonWriter.key("MaxHeight").value(watermarksListValue.getMaxHeight());
+                            }
+                            if (watermarksListValue.getSizingPolicy() != null) {
+                                jsonWriter.key("SizingPolicy").value(watermarksListValue.getSizingPolicy());
+                            }
+                            if (watermarksListValue.getHorizontalAlign() != null) {
+                                jsonWriter.key("HorizontalAlign").value(watermarksListValue.getHorizontalAlign());
+                            }
+                            if (watermarksListValue.getHorizontalOffset() != null) {
+                                jsonWriter.key("HorizontalOffset").value(watermarksListValue.getHorizontalOffset());
+                            }
+                            if (watermarksListValue.getVerticalAlign() != null) {
+                                jsonWriter.key("VerticalAlign").value(watermarksListValue.getVerticalAlign());
+                            }
+                            if (watermarksListValue.getVerticalOffset() != null) {
+                                jsonWriter.key("VerticalOffset").value(watermarksListValue.getVerticalOffset());
+                            }
+                            if (watermarksListValue.getOpacity() != null) {
+                                jsonWriter.key("Opacity").value(watermarksListValue.getOpacity());
+                            }
+                            if (watermarksListValue.getTarget() != null) {
+                                jsonWriter.key("Target").value(watermarksListValue.getTarget());
+                            }
+                            jsonWriter.endObject();
+                        }
+                    }
+                    jsonWriter.endArray();
                 }
                 jsonWriter.endObject();
             }

@@ -30,7 +30,7 @@ public class DescribeCacheSecurityGroupsResult  implements Serializable  {
     /**
      * A list of <a>CacheSecurityGroup</a> instances.
      */
-    private java.util.List<CacheSecurityGroup> cacheSecurityGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<CacheSecurityGroup> cacheSecurityGroups;
 
     /**
      * The marker obtained from a previous operation response.
@@ -74,7 +74,8 @@ public class DescribeCacheSecurityGroupsResult  implements Serializable  {
     public java.util.List<CacheSecurityGroup> getCacheSecurityGroups() {
         
         if (cacheSecurityGroups == null) {
-            cacheSecurityGroups = new java.util.ArrayList<CacheSecurityGroup>();
+              cacheSecurityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheSecurityGroup>();
+              cacheSecurityGroups.setAutoConstruct(true);
         }
         return cacheSecurityGroups;
     }
@@ -89,8 +90,7 @@ public class DescribeCacheSecurityGroupsResult  implements Serializable  {
             this.cacheSecurityGroups = null;
             return;
         }
-
-        java.util.List<CacheSecurityGroup> cacheSecurityGroupsCopy = new java.util.ArrayList<CacheSecurityGroup>(cacheSecurityGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<CacheSecurityGroup> cacheSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheSecurityGroup>(cacheSecurityGroups.size());
         cacheSecurityGroupsCopy.addAll(cacheSecurityGroups);
         this.cacheSecurityGroups = cacheSecurityGroupsCopy;
     }
@@ -127,7 +127,7 @@ public class DescribeCacheSecurityGroupsResult  implements Serializable  {
         if (cacheSecurityGroups == null) {
             this.cacheSecurityGroups = null;
         } else {
-            java.util.List<CacheSecurityGroup> cacheSecurityGroupsCopy = new java.util.ArrayList<CacheSecurityGroup>(cacheSecurityGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<CacheSecurityGroup> cacheSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheSecurityGroup>(cacheSecurityGroups.size());
             cacheSecurityGroupsCopy.addAll(cacheSecurityGroups);
             this.cacheSecurityGroups = cacheSecurityGroupsCopy;
         }
@@ -146,8 +146,8 @@ public class DescribeCacheSecurityGroupsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getCacheSecurityGroups() != null) sb.append("CacheSecurityGroups: " + getCacheSecurityGroups() );
         sb.append("}");
         return sb.toString();

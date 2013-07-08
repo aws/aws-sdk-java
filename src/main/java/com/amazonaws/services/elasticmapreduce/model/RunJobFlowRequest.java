@@ -105,13 +105,13 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
     /**
      * A list of steps to be executed by the job flow.
      */
-    private java.util.List<StepConfig> steps;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<StepConfig> steps;
 
     /**
      * A list of bootstrap actions that will be run before Hadoop is started
      * on the cluster nodes.
      */
-    private java.util.List<BootstrapActionConfig> bootstrapActions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<BootstrapActionConfig> bootstrapActions;
 
     /**
      * A list of strings that indicates third-party software to use with the
@@ -124,7 +124,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      * <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
      * <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li> </ul>
      */
-    private java.util.List<String> supportedProducts;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> supportedProducts;
 
     /**
      * Whether the job flow is visible to all IAM users of the AWS account
@@ -154,6 +154,8 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      */
     public RunJobFlowRequest() {}
     
+
+
     /**
      * Constructs a new RunJobFlowRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -164,8 +166,8 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      * instances on which to run the job flow.
      */
     public RunJobFlowRequest(String name, JobFlowInstancesConfig instances) {
-        this.name = name;
-        this.instances = instances;
+        setName(name);
+        setInstances(instances);
     }
 
     
@@ -486,7 +488,8 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
     public java.util.List<StepConfig> getSteps() {
         
         if (steps == null) {
-            steps = new java.util.ArrayList<StepConfig>();
+              steps = new com.amazonaws.internal.ListWithAutoConstructFlag<StepConfig>();
+              steps.setAutoConstruct(true);
         }
         return steps;
     }
@@ -501,8 +504,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
             this.steps = null;
             return;
         }
-
-        java.util.List<StepConfig> stepsCopy = new java.util.ArrayList<StepConfig>(steps.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<StepConfig> stepsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<StepConfig>(steps.size());
         stepsCopy.addAll(steps);
         this.steps = stepsCopy;
     }
@@ -539,7 +541,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
         if (steps == null) {
             this.steps = null;
         } else {
-            java.util.List<StepConfig> stepsCopy = new java.util.ArrayList<StepConfig>(steps.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<StepConfig> stepsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<StepConfig>(steps.size());
             stepsCopy.addAll(steps);
             this.steps = stepsCopy;
         }
@@ -557,7 +559,8 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
     public java.util.List<BootstrapActionConfig> getBootstrapActions() {
         
         if (bootstrapActions == null) {
-            bootstrapActions = new java.util.ArrayList<BootstrapActionConfig>();
+              bootstrapActions = new com.amazonaws.internal.ListWithAutoConstructFlag<BootstrapActionConfig>();
+              bootstrapActions.setAutoConstruct(true);
         }
         return bootstrapActions;
     }
@@ -574,8 +577,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
             this.bootstrapActions = null;
             return;
         }
-
-        java.util.List<BootstrapActionConfig> bootstrapActionsCopy = new java.util.ArrayList<BootstrapActionConfig>(bootstrapActions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<BootstrapActionConfig> bootstrapActionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BootstrapActionConfig>(bootstrapActions.size());
         bootstrapActionsCopy.addAll(bootstrapActions);
         this.bootstrapActions = bootstrapActionsCopy;
     }
@@ -616,7 +618,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
         if (bootstrapActions == null) {
             this.bootstrapActions = null;
         } else {
-            java.util.List<BootstrapActionConfig> bootstrapActionsCopy = new java.util.ArrayList<BootstrapActionConfig>(bootstrapActions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<BootstrapActionConfig> bootstrapActionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BootstrapActionConfig>(bootstrapActions.size());
             bootstrapActionsCopy.addAll(bootstrapActions);
             this.bootstrapActions = bootstrapActionsCopy;
         }
@@ -648,7 +650,8 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
     public java.util.List<String> getSupportedProducts() {
         
         if (supportedProducts == null) {
-            supportedProducts = new java.util.ArrayList<String>();
+              supportedProducts = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              supportedProducts.setAutoConstruct(true);
         }
         return supportedProducts;
     }
@@ -679,8 +682,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
             this.supportedProducts = null;
             return;
         }
-
-        java.util.List<String> supportedProductsCopy = new java.util.ArrayList<String>(supportedProducts.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> supportedProductsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(supportedProducts.size());
         supportedProductsCopy.addAll(supportedProducts);
         this.supportedProducts = supportedProductsCopy;
     }
@@ -749,7 +751,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
         if (supportedProducts == null) {
             this.supportedProducts = null;
         } else {
-            java.util.List<String> supportedProductsCopy = new java.util.ArrayList<String>(supportedProducts.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> supportedProductsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(supportedProducts.size());
             supportedProductsCopy.addAll(supportedProducts);
             this.supportedProducts = supportedProductsCopy;
         }
@@ -915,16 +917,16 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getLogUri() != null) sb.append("LogUri: " + getLogUri() + ",");    	
-        if (getAdditionalInfo() != null) sb.append("AdditionalInfo: " + getAdditionalInfo() + ",");    	
-        if (getAmiVersion() != null) sb.append("AmiVersion: " + getAmiVersion() + ",");    	
-        if (getInstances() != null) sb.append("Instances: " + getInstances() + ",");    	
-        if (getSteps() != null) sb.append("Steps: " + getSteps() + ",");    	
-        if (getBootstrapActions() != null) sb.append("BootstrapActions: " + getBootstrapActions() + ",");    	
-        if (getSupportedProducts() != null) sb.append("SupportedProducts: " + getSupportedProducts() + ",");    	
-        if (isVisibleToAllUsers() != null) sb.append("VisibleToAllUsers: " + isVisibleToAllUsers() + ",");    	
+        sb.append("{");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getLogUri() != null) sb.append("LogUri: " + getLogUri() + ",");
+        if (getAdditionalInfo() != null) sb.append("AdditionalInfo: " + getAdditionalInfo() + ",");
+        if (getAmiVersion() != null) sb.append("AmiVersion: " + getAmiVersion() + ",");
+        if (getInstances() != null) sb.append("Instances: " + getInstances() + ",");
+        if (getSteps() != null) sb.append("Steps: " + getSteps() + ",");
+        if (getBootstrapActions() != null) sb.append("BootstrapActions: " + getBootstrapActions() + ",");
+        if (getSupportedProducts() != null) sb.append("SupportedProducts: " + getSupportedProducts() + ",");
+        if (isVisibleToAllUsers() != null) sb.append("VisibleToAllUsers: " + isVisibleToAllUsers() + ",");
         if (getJobFlowRole() != null) sb.append("JobFlowRole: " + getJobFlowRole() );
         sb.append("}");
         return sb.toString();

@@ -178,9 +178,9 @@ public class ChildWorkflowExecutionStartedEventAttributes  implements Serializab
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getWorkflowExecution() != null) sb.append("WorkflowExecution: " + getWorkflowExecution() + ",");    	
-        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ",");    	
+        sb.append("{");
+        if (getWorkflowExecution() != null) sb.append("WorkflowExecution: " + getWorkflowExecution() + ",");
+        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ",");
         if (getInitiatedEventId() != null) sb.append("InitiatedEventId: " + getInitiatedEventId() );
         sb.append("}");
         return sb.toString();

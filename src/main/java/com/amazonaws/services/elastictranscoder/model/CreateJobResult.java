@@ -16,7 +16,9 @@ package com.amazonaws.services.elastictranscoder.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * The CreateJobResponse structure.
+ * </p>
  */
 public class CreateJobResult  implements Serializable  {
 

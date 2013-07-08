@@ -248,11 +248,11 @@ public class CacheNode  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCacheNodeId() != null) sb.append("CacheNodeId: " + getCacheNodeId() + ",");    	
-        if (getCacheNodeStatus() != null) sb.append("CacheNodeStatus: " + getCacheNodeStatus() + ",");    	
-        if (getCacheNodeCreateTime() != null) sb.append("CacheNodeCreateTime: " + getCacheNodeCreateTime() + ",");    	
-        if (getEndpoint() != null) sb.append("Endpoint: " + getEndpoint() + ",");    	
+        sb.append("{");
+        if (getCacheNodeId() != null) sb.append("CacheNodeId: " + getCacheNodeId() + ",");
+        if (getCacheNodeStatus() != null) sb.append("CacheNodeStatus: " + getCacheNodeStatus() + ",");
+        if (getCacheNodeCreateTime() != null) sb.append("CacheNodeCreateTime: " + getCacheNodeCreateTime() + ",");
+        if (getEndpoint() != null) sb.append("Endpoint: " + getEndpoint() + ",");
         if (getParameterGroupStatus() != null) sb.append("ParameterGroupStatus: " + getParameterGroupStatus() );
         sb.append("}");
         return sb.toString();

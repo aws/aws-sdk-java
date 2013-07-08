@@ -42,6 +42,8 @@ public class GetHostedZoneRequest extends AmazonWebServiceRequest  implements Se
      */
     public GetHostedZoneRequest() {}
     
+
+
     /**
      * Constructs a new GetHostedZoneRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -51,7 +53,7 @@ public class GetHostedZoneRequest extends AmazonWebServiceRequest  implements Se
      * of the name servers in the delegation set.
      */
     public GetHostedZoneRequest(String id) {
-        this.id = id;
+        setId(id);
     }
 
     
@@ -116,7 +118,7 @@ public class GetHostedZoneRequest extends AmazonWebServiceRequest  implements Se
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getId() != null) sb.append("Id: " + getId() );
         sb.append("}");
         return sb.toString();

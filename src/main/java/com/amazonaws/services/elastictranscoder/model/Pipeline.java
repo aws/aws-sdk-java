@@ -32,6 +32,9 @@ public class Pipeline  implements Serializable  {
      */
     private String id;
 
+    /**
+     * The Amazon Resource Name (ARN) for the pipeline.
+     */
     private String arn;
 
     /**
@@ -56,7 +59,8 @@ public class Pipeline  implements Serializable  {
 
     /**
      * The Amazon S3 bucket from which Elastic Transcoder gets media files
-     * for transcoding.
+     * for transcoding and the graphics files, if any, that you want to use
+     * for watermarks.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>^(\w|\.|-){1,255}$<br/>
@@ -231,29 +235,29 @@ public class Pipeline  implements Serializable  {
     
     
     /**
-     * Returns the value of the Arn property for this object.
+     * The Amazon Resource Name (ARN) for the pipeline.
      *
-     * @return The value of the Arn property for this object.
+     * @return The Amazon Resource Name (ARN) for the pipeline.
      */
     public String getArn() {
         return arn;
     }
     
     /**
-     * Sets the value of the Arn property for this object.
+     * The Amazon Resource Name (ARN) for the pipeline.
      *
-     * @param arn The new value for the Arn property for this object.
+     * @param arn The Amazon Resource Name (ARN) for the pipeline.
      */
     public void setArn(String arn) {
         this.arn = arn;
     }
     
     /**
-     * Sets the value of the Arn property for this object.
+     * The Amazon Resource Name (ARN) for the pipeline.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param arn The new value for the Arn property for this object.
+     * @param arn The Amazon Resource Name (ARN) for the pipeline.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -376,13 +380,15 @@ public class Pipeline  implements Serializable  {
     
     /**
      * The Amazon S3 bucket from which Elastic Transcoder gets media files
-     * for transcoding.
+     * for transcoding and the graphics files, if any, that you want to use
+     * for watermarks.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>^(\w|\.|-){1,255}$<br/>
      *
      * @return The Amazon S3 bucket from which Elastic Transcoder gets media files
-     *         for transcoding.
+     *         for transcoding and the graphics files, if any, that you want to use
+     *         for watermarks.
      */
     public String getInputBucket() {
         return inputBucket;
@@ -390,13 +396,15 @@ public class Pipeline  implements Serializable  {
     
     /**
      * The Amazon S3 bucket from which Elastic Transcoder gets media files
-     * for transcoding.
+     * for transcoding and the graphics files, if any, that you want to use
+     * for watermarks.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>^(\w|\.|-){1,255}$<br/>
      *
      * @param inputBucket The Amazon S3 bucket from which Elastic Transcoder gets media files
-     *         for transcoding.
+     *         for transcoding and the graphics files, if any, that you want to use
+     *         for watermarks.
      */
     public void setInputBucket(String inputBucket) {
         this.inputBucket = inputBucket;
@@ -404,7 +412,8 @@ public class Pipeline  implements Serializable  {
     
     /**
      * The Amazon S3 bucket from which Elastic Transcoder gets media files
-     * for transcoding.
+     * for transcoding and the graphics files, if any, that you want to use
+     * for watermarks.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -412,7 +421,8 @@ public class Pipeline  implements Serializable  {
      * <b>Pattern: </b>^(\w|\.|-){1,255}$<br/>
      *
      * @param inputBucket The Amazon S3 bucket from which Elastic Transcoder gets media files
-     *         for transcoding.
+     *         for transcoding and the graphics files, if any, that you want to use
+     *         for watermarks.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

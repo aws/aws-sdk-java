@@ -89,8 +89,8 @@ public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller
                 jsonWriter.key("taskToken").value(respondDecisionTaskCompletedRequest.getTaskToken());
             }
 
-            java.util.List<Decision> decisionsList = respondDecisionTaskCompletedRequest.getDecisions();
-            if (decisionsList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Decision> decisionsList = (com.amazonaws.internal.ListWithAutoConstructFlag<Decision>)(respondDecisionTaskCompletedRequest.getDecisions());
+            if (decisionsList != null && !(decisionsList.isAutoConstruct() && decisionsList.isEmpty())) {
 
                 jsonWriter.key("decisions");
                 jsonWriter.array();
@@ -232,8 +232,8 @@ public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller
                                 jsonWriter.key("childPolicy").value(continueAsNewWorkflowExecutionDecisionAttributes.getChildPolicy());
                             }
 
-                            java.util.List<String> tagListList = continueAsNewWorkflowExecutionDecisionAttributes.getTagList();
-                            if (tagListList != null) {
+                            com.amazonaws.internal.ListWithAutoConstructFlag<String> tagListList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(continueAsNewWorkflowExecutionDecisionAttributes.getTagList());
+                            if (tagListList != null && !(tagListList.isAutoConstruct() && tagListList.isEmpty())) {
 
                                 jsonWriter.key("tagList");
                                 jsonWriter.array();
@@ -382,8 +382,8 @@ public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller
                                 jsonWriter.key("childPolicy").value(startChildWorkflowExecutionDecisionAttributes.getChildPolicy());
                             }
 
-                            java.util.List<String> tagListList = startChildWorkflowExecutionDecisionAttributes.getTagList();
-                            if (tagListList != null) {
+                            com.amazonaws.internal.ListWithAutoConstructFlag<String> tagListList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(startChildWorkflowExecutionDecisionAttributes.getTagList());
+                            if (tagListList != null && !(tagListList.isAutoConstruct() && tagListList.isEmpty())) {
 
                                 jsonWriter.key("tagList");
                                 jsonWriter.array();

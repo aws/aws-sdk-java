@@ -29,7 +29,7 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest  implement
     /**
      * Instance Groups to add.
      */
-    private java.util.List<InstanceGroupConfig> instanceGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupConfig> instanceGroups;
 
     /**
      * Job flow in which to add the instance groups.
@@ -46,6 +46,8 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest  implement
      */
     public AddInstanceGroupsRequest() {}
     
+
+
     /**
      * Constructs a new AddInstanceGroupsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -55,8 +57,8 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest  implement
      * @param jobFlowId Job flow in which to add the instance groups.
      */
     public AddInstanceGroupsRequest(java.util.List<InstanceGroupConfig> instanceGroups, String jobFlowId) {
-        this.instanceGroups = instanceGroups;
-        this.jobFlowId = jobFlowId;
+        setInstanceGroups(instanceGroups);
+        setJobFlowId(jobFlowId);
     }
 
     
@@ -69,7 +71,8 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest  implement
     public java.util.List<InstanceGroupConfig> getInstanceGroups() {
         
         if (instanceGroups == null) {
-            instanceGroups = new java.util.ArrayList<InstanceGroupConfig>();
+              instanceGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupConfig>();
+              instanceGroups.setAutoConstruct(true);
         }
         return instanceGroups;
     }
@@ -84,8 +87,7 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest  implement
             this.instanceGroups = null;
             return;
         }
-
-        java.util.List<InstanceGroupConfig> instanceGroupsCopy = new java.util.ArrayList<InstanceGroupConfig>(instanceGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupConfig> instanceGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupConfig>(instanceGroups.size());
         instanceGroupsCopy.addAll(instanceGroups);
         this.instanceGroups = instanceGroupsCopy;
     }
@@ -122,7 +124,7 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest  implement
         if (instanceGroups == null) {
             this.instanceGroups = null;
         } else {
-            java.util.List<InstanceGroupConfig> instanceGroupsCopy = new java.util.ArrayList<InstanceGroupConfig>(instanceGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupConfig> instanceGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupConfig>(instanceGroups.size());
             instanceGroupsCopy.addAll(instanceGroups);
             this.instanceGroups = instanceGroupsCopy;
         }
@@ -187,8 +189,8 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInstanceGroups() != null) sb.append("InstanceGroups: " + getInstanceGroups() + ",");    	
+        sb.append("{");
+        if (getInstanceGroups() != null) sb.append("InstanceGroups: " + getInstanceGroups() + ",");
         if (getJobFlowId() != null) sb.append("JobFlowId: " + getJobFlowId() );
         sb.append("}");
         return sb.toString();

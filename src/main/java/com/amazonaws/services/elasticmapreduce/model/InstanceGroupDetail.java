@@ -129,6 +129,8 @@ public class InstanceGroupDetail  implements Serializable  {
      */
     public InstanceGroupDetail() {}
     
+
+
     /**
      * Constructs a new InstanceGroupDetail object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -144,12 +146,12 @@ public class InstanceGroupDetail  implements Serializable  {
      * @param creationDateTime The date/time the instance group was created.
      */
     public InstanceGroupDetail(String instanceRole, String instanceType, Integer instanceRequestCount, Integer instanceRunningCount, String state, java.util.Date creationDateTime) {
-        this.instanceRole = instanceRole;
-        this.instanceType = instanceType;
-        this.instanceRequestCount = instanceRequestCount;
-        this.instanceRunningCount = instanceRunningCount;
-        this.state = state;
-        this.creationDateTime = creationDateTime;
+        setInstanceRole(instanceRole);
+        setInstanceType(instanceType);
+        setInstanceRequestCount(instanceRequestCount);
+        setInstanceRunningCount(instanceRunningCount);
+        setState(state);
+        setCreationDateTime(creationDateTime);
     }
 
     
@@ -887,20 +889,20 @@ public class InstanceGroupDetail  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInstanceGroupId() != null) sb.append("InstanceGroupId: " + getInstanceGroupId() + ",");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getMarket() != null) sb.append("Market: " + getMarket() + ",");    	
-        if (getInstanceRole() != null) sb.append("InstanceRole: " + getInstanceRole() + ",");    	
-        if (getBidPrice() != null) sb.append("BidPrice: " + getBidPrice() + ",");    	
-        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");    	
-        if (getInstanceRequestCount() != null) sb.append("InstanceRequestCount: " + getInstanceRequestCount() + ",");    	
-        if (getInstanceRunningCount() != null) sb.append("InstanceRunningCount: " + getInstanceRunningCount() + ",");    	
-        if (getState() != null) sb.append("State: " + getState() + ",");    	
-        if (getLastStateChangeReason() != null) sb.append("LastStateChangeReason: " + getLastStateChangeReason() + ",");    	
-        if (getCreationDateTime() != null) sb.append("CreationDateTime: " + getCreationDateTime() + ",");    	
-        if (getStartDateTime() != null) sb.append("StartDateTime: " + getStartDateTime() + ",");    	
-        if (getReadyDateTime() != null) sb.append("ReadyDateTime: " + getReadyDateTime() + ",");    	
+        sb.append("{");
+        if (getInstanceGroupId() != null) sb.append("InstanceGroupId: " + getInstanceGroupId() + ",");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getMarket() != null) sb.append("Market: " + getMarket() + ",");
+        if (getInstanceRole() != null) sb.append("InstanceRole: " + getInstanceRole() + ",");
+        if (getBidPrice() != null) sb.append("BidPrice: " + getBidPrice() + ",");
+        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");
+        if (getInstanceRequestCount() != null) sb.append("InstanceRequestCount: " + getInstanceRequestCount() + ",");
+        if (getInstanceRunningCount() != null) sb.append("InstanceRunningCount: " + getInstanceRunningCount() + ",");
+        if (getState() != null) sb.append("State: " + getState() + ",");
+        if (getLastStateChangeReason() != null) sb.append("LastStateChangeReason: " + getLastStateChangeReason() + ",");
+        if (getCreationDateTime() != null) sb.append("CreationDateTime: " + getCreationDateTime() + ",");
+        if (getStartDateTime() != null) sb.append("StartDateTime: " + getStartDateTime() + ",");
+        if (getReadyDateTime() != null) sb.append("ReadyDateTime: " + getReadyDateTime() + ",");
         if (getEndDateTime() != null) sb.append("EndDateTime: " + getEndDateTime() );
         sb.append("}");
         return sb.toString();

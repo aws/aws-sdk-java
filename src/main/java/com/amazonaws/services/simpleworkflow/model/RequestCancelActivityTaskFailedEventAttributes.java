@@ -315,9 +315,9 @@ public class RequestCancelActivityTaskFailedEventAttributes  implements Serializ
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getActivityId() != null) sb.append("ActivityId: " + getActivityId() + ",");    	
-        if (getCause() != null) sb.append("Cause: " + getCause() + ",");    	
+        sb.append("{");
+        if (getActivityId() != null) sb.append("ActivityId: " + getActivityId() + ",");
+        if (getCause() != null) sb.append("Cause: " + getCause() + ",");
         if (getDecisionTaskCompletedEventId() != null) sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() );
         sb.append("}");
         return sb.toString();

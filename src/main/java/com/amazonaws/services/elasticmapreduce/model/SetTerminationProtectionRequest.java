@@ -45,7 +45,7 @@ public class SetTerminationProtectionRequest extends AmazonWebServiceRequest  im
      * This identifier is returned by <a>RunJobFlow</a> and can also be
      * obtained from <a>DescribeJobFlows</a> .
      */
-    private java.util.List<String> jobFlowIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> jobFlowIds;
 
     /**
      * A Boolean that indicates whether to protect the job flow and prevent
@@ -66,7 +66,8 @@ public class SetTerminationProtectionRequest extends AmazonWebServiceRequest  im
     public java.util.List<String> getJobFlowIds() {
         
         if (jobFlowIds == null) {
-            jobFlowIds = new java.util.ArrayList<String>();
+              jobFlowIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              jobFlowIds.setAutoConstruct(true);
         }
         return jobFlowIds;
     }
@@ -85,8 +86,7 @@ public class SetTerminationProtectionRequest extends AmazonWebServiceRequest  im
             this.jobFlowIds = null;
             return;
         }
-
-        java.util.List<String> jobFlowIdsCopy = new java.util.ArrayList<String>(jobFlowIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> jobFlowIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(jobFlowIds.size());
         jobFlowIdsCopy.addAll(jobFlowIds);
         this.jobFlowIds = jobFlowIdsCopy;
     }
@@ -131,7 +131,7 @@ public class SetTerminationProtectionRequest extends AmazonWebServiceRequest  im
         if (jobFlowIds == null) {
             this.jobFlowIds = null;
         } else {
-            java.util.List<String> jobFlowIdsCopy = new java.util.ArrayList<String>(jobFlowIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> jobFlowIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(jobFlowIds.size());
             jobFlowIdsCopy.addAll(jobFlowIds);
             this.jobFlowIds = jobFlowIdsCopy;
         }
@@ -209,8 +209,8 @@ public class SetTerminationProtectionRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getJobFlowIds() != null) sb.append("JobFlowIds: " + getJobFlowIds() + ",");    	
+        sb.append("{");
+        if (getJobFlowIds() != null) sb.append("JobFlowIds: " + getJobFlowIds() + ",");
         if (isTerminationProtected() != null) sb.append("TerminationProtected: " + isTerminationProtected() );
         sb.append("}");
         return sb.toString();

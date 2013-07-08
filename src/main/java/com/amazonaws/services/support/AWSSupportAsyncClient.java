@@ -37,8 +37,7 @@ import com.amazonaws.services.support.model.*;
  * when making the call, or use the returned Future object to check the result of the call in the calling thread.
  * AWS Support <p>
  * The AWS Support API reference is intended for programmers who need detailed information about the AWS Support actions and data types. This service
- * enables you to manage with your AWS Support cases programmatically. It is built on the AWS Query API programming model and provides HTTP methods that
- * take parameters and return results in JSON format.
+ * enables you to manage your AWS Support cases programmatically. It uses HTTP methods that return results in JSON format.
  * </p>
  * <p>
  * The AWS Support service also exposes a set of <a href="https://aws.amazon.com/support/trustedadvisor"> Trusted Advisor </a> features. You can
@@ -49,13 +48,19 @@ import com.amazonaws.services.support.model.*;
  * </p>
  * 
  * <ul>
- * <li> <b>Service names, issue categories, and available severity levels. </b> The actions DescribeServices and DescribeSeverityLevels enable you to
- * obtain AWS service names, service codes, service categories, and problem severity levels. You use these values when you call the CreateCase action.
- * </li>
- * <li> <b>Case Creation, case details, and case resolution</b> . The actions CreateCase, DescribeCases, and ResolveCase enable you to create AWS
- * Support cases, retrieve them, and resolve them.</li>
- * <li> <b>Case communication</b> . The actions DescribeCaseCommunications and AddCommunicationToCase enable you to retrieve and add communication to
- * AWS Support cases. </li>
+ * <li> <b>Service names, issue categories, and available severity levels. </b> The actions <a
+ * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"> DescribeServices </a> and <a
+ * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeSeverityLevels.html"> DescribeSeverityLevels </a> enable you to obtain
+ * AWS service names, service codes, service categories, and problem severity levels. You use these values when you call the <a
+ * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"> CreateCase </a> action. </li>
+ * <li> <b>Case Creation, case details, and case resolution</b> . The actions <a
+ * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"> CreateCase </a> , <a
+ * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeCases.html"> DescribeCases </a> , and <a
+ * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_ResolveCase.html"> ResolveCase </a> enable you to create AWS Support cases,
+ * retrieve them, and resolve them.</li>
+ * <li> <b>Case communication</b> . The actions <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeCommunications.html">
+ * DescribeCommunications </a> and <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_AddCommunicationToCase.html">
+ * AddCommunicationToCase </a> enable you to retrieve and add communication to AWS Support cases. </li>
  * 
  * </ul>
  * <p>
@@ -63,13 +68,18 @@ import com.amazonaws.services.support.model.*;
  * </p>
  * 
  * <ul>
- * <li> DescribeTrustedAdviserChecks </li>
- * returns the list of checks that you can run against your AWS resources. <li>Using the CheckId for a specific check returned by
- * DescribeTrustedAdviserChecks, you can call DescribeTrustedAdvisorCheckResult </li>
- * and obtain a new result for the check you specified. <li> Using DescribeTrustedAdvisorCheckSummaries, you can get summaries for a set of Trusted
- * Advisor checks.</li>
- * <li> RefreshTrustedAdvisorCheck enables you to request that Trusted Advisor run the check again. </li>
- * <li> gets statuses on the checks you are running. </li>
+ * <li> <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"> DescribeTrustedAdvisorChecks </a>
+ * returns the list of checks that you can run against your AWS resources.</li>
+ * <li>Using the CheckId for a specific check returned by DescribeTrustedAdvisorChecks, you can call <a
+ * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckResult.html"> DescribeTrustedAdvisorCheckResult </a>
+ * </li>
+ * and obtain a new result for the check you specified. <li> Using <a
+ * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"> DescribeTrustedAdvisorCheckSummaries
+ * </a> , you can get summaries for a set of Trusted Advisor checks.</li>
+ * <li> <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html"> RefreshTrustedAdvisorCheck </a>
+ * enables you to request that Trusted Advisor run the check again. </li>
+ * <li> <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckRefreshStatuses.html">
+ * DescribeTrustedAdvisorCheckRefreshStatuses </a> gets statuses on the checks you are running. </li>
  * 
  * </ul>
  * <p>
@@ -321,7 +331,9 @@ public class AWSSupportAsyncClient extends AWSSupportClient
      * <p>
      * The response returns the following in JSON format:
      * </p>
-     * <ol> <li>One or more CaseDetails data types. </li>
+     * <ol> <li>One or more <a
+     * s.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html">
+     * CaseDetails </a> data types. </li>
      * <li>One or more <i>NextToken</i> objects, strings that specifies
      * where to paginate the returned records represented by
      * <i>CaseDetails</i> .</li>
@@ -360,7 +372,9 @@ public class AWSSupportAsyncClient extends AWSSupportClient
      * <p>
      * The response returns the following in JSON format:
      * </p>
-     * <ol> <li>One or more CaseDetails data types. </li>
+     * <ol> <li>One or more <a
+     * s.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html">
+     * CaseDetails </a> data types. </li>
      * <li>One or more <i>NextToken</i> objects, strings that specifies
      * where to paginate the returned records represented by
      * <i>CaseDetails</i> .</li>
@@ -406,7 +420,9 @@ public class AWSSupportAsyncClient extends AWSSupportClient
     /**
      * <p>
      * Returns the status of all refresh requests Trusted Advisor checks
-     * called using RefreshTrustedAdvisorCheck.
+     * called using <a
+     * m/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html">
+     * RefreshTrustedAdvisorCheck </a> .
      * </p>
      *
      * @param describeTrustedAdvisorCheckRefreshStatusesRequest Container for
@@ -438,7 +454,9 @@ public class AWSSupportAsyncClient extends AWSSupportClient
     /**
      * <p>
      * Returns the status of all refresh requests Trusted Advisor checks
-     * called using RefreshTrustedAdvisorCheck.
+     * called using <a
+     * m/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html">
+     * RefreshTrustedAdvisorCheck </a> .
      * </p>
      *
      * @param describeTrustedAdvisorCheckRefreshStatusesRequest Container for
@@ -484,7 +502,11 @@ public class AWSSupportAsyncClient extends AWSSupportClient
      * <p>
      * This action returns the list of severity levels that you can assign to
      * an AWS Support case. The severity level for a case is also a field in
-     * the CaseDetails data type included in any CreateCase request.
+     * the <a
+     * s.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html">
+     * CaseDetails </a> data type included in any <a
+     * cs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html">
+     * CreateCase </a> request.
      * </p>
      *
      * @param describeSeverityLevelsRequest Container for the necessary
@@ -516,7 +538,11 @@ public class AWSSupportAsyncClient extends AWSSupportClient
      * <p>
      * This action returns the list of severity levels that you can assign to
      * an AWS Support case. The severity level for a case is also a field in
-     * the CaseDetails data type included in any CreateCase request.
+     * the <a
+     * s.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html">
+     * CaseDetails </a> data type included in any <a
+     * cs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html">
+     * CreateCase </a> request.
      * </p>
      *
      * @param describeSeverityLevelsRequest Container for the necessary
@@ -758,15 +784,21 @@ public class AWSSupportAsyncClient extends AWSSupportClient
      * information:
      * </p>
      * <ol> <li> <b>ServiceCode.</b> Represents a code for an AWS service.
-     * You obtain the <i>ServiceCode</i> by calling DescribeServices. </li>
+     * You obtain the <i>ServiceCode</i> by calling <a
+     * .amazon.com/awssupport/latest/APIReference/API_DescribeServices.html">
+     * DescribeServices </a> . </li>
      * <li> <b>CategoryCode</b> . Represents a category for the service
      * defined for the ServiceCode value. You also obtain the cateogory code
-     * for a service by calling DescribeServices. Each AWS service defines
-     * its own set of category codes. </li>
+     * for a service by calling <a
+     * .amazon.com/awssupport/latest/APIReference/API_DescribeServices.html">
+     * DescribeServices </a> . Each AWS service defines its own set of
+     * category codes. </li>
      * <li> <b>SeverityCode</b> . Represents a value that specifies the
      * urgency of the case, and the time interval in which your service level
      * agreement specifies a response from AWS Support. You obtain the
-     * SeverityCode by calling DescribeSeverityLevels.</li>
+     * SeverityCode by calling <a
+     * n.com/awssupport/latest/APIReference/API_DescribeSeverityLevels.html">
+     * DescribeSeverityLevels </a> .</li>
      * <li> <b>Subject</b> . Represents the <b>Subject</b> field on the AWS
      * Support Center <a href="https://aws.amazon.com/support/createCase">
      * Open a new case </a> page.</li>
@@ -785,15 +817,22 @@ public class AWSSupportAsyncClient extends AWSSupportClient
      * by passing the AWS Credentials in the HTTP POST method or in a method
      * or function call from one of the programming languages supported by an
      * <a href="http://aws.amazon.com/tools/"> AWS SDK </a> . </li>
+     * <li> <b>IssueType</b> . Indicates the type of issue for the case. You
+     * can specify either "customer-service" or "technical." If you do not
+     * indicate a value, this parameter defaults to "technical." </li>
      * </ol> <p>
      * <b>NOTE:</b>The AWS Support API does not currently support the ability
      * to add attachments to cases. You can, however, call
      * AddCommunicationToCase to add information to an open case.
      * </p>
      * <p>
-     * A successful CreateCase request returns an AWS Support case number.
-     * Case numbers are used by DescribeCases request to retrieve existing
-     * AWS Support support cases.
+     * A successful <a
+     * cs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html">
+     * CreateCase </a> request returns an AWS Support case number. Case
+     * numbers are used by <a
+     * aws.amazon.com/awssupport/latest/APIReference/API_DescribeCases.html">
+     * DescribeCases </a> request to retrieve existing AWS Support support
+     * cases.
      * </p>
      *
      * @param createCaseRequest Container for the necessary parameters to
@@ -829,15 +868,21 @@ public class AWSSupportAsyncClient extends AWSSupportClient
      * information:
      * </p>
      * <ol> <li> <b>ServiceCode.</b> Represents a code for an AWS service.
-     * You obtain the <i>ServiceCode</i> by calling DescribeServices. </li>
+     * You obtain the <i>ServiceCode</i> by calling <a
+     * .amazon.com/awssupport/latest/APIReference/API_DescribeServices.html">
+     * DescribeServices </a> . </li>
      * <li> <b>CategoryCode</b> . Represents a category for the service
      * defined for the ServiceCode value. You also obtain the cateogory code
-     * for a service by calling DescribeServices. Each AWS service defines
-     * its own set of category codes. </li>
+     * for a service by calling <a
+     * .amazon.com/awssupport/latest/APIReference/API_DescribeServices.html">
+     * DescribeServices </a> . Each AWS service defines its own set of
+     * category codes. </li>
      * <li> <b>SeverityCode</b> . Represents a value that specifies the
      * urgency of the case, and the time interval in which your service level
      * agreement specifies a response from AWS Support. You obtain the
-     * SeverityCode by calling DescribeSeverityLevels.</li>
+     * SeverityCode by calling <a
+     * n.com/awssupport/latest/APIReference/API_DescribeSeverityLevels.html">
+     * DescribeSeverityLevels </a> .</li>
      * <li> <b>Subject</b> . Represents the <b>Subject</b> field on the AWS
      * Support Center <a href="https://aws.amazon.com/support/createCase">
      * Open a new case </a> page.</li>
@@ -856,15 +901,22 @@ public class AWSSupportAsyncClient extends AWSSupportClient
      * by passing the AWS Credentials in the HTTP POST method or in a method
      * or function call from one of the programming languages supported by an
      * <a href="http://aws.amazon.com/tools/"> AWS SDK </a> . </li>
+     * <li> <b>IssueType</b> . Indicates the type of issue for the case. You
+     * can specify either "customer-service" or "technical." If you do not
+     * indicate a value, this parameter defaults to "technical." </li>
      * </ol> <p>
      * <b>NOTE:</b>The AWS Support API does not currently support the ability
      * to add attachments to cases. You can, however, call
      * AddCommunicationToCase to add information to an open case.
      * </p>
      * <p>
-     * A successful CreateCase request returns an AWS Support case number.
-     * Case numbers are used by DescribeCases request to retrieve existing
-     * AWS Support support cases.
+     * A successful <a
+     * cs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html">
+     * CreateCase </a> request returns an AWS Support case number. Case
+     * numbers are used by <a
+     * aws.amazon.com/awssupport/latest/APIReference/API_DescribeCases.html">
+     * DescribeCases </a> request to retrieve existing AWS Support support
+     * cases.
      * </p>
      *
      * @param createCaseRequest Container for the necessary parameters to
@@ -908,8 +960,9 @@ public class AWSSupportAsyncClient extends AWSSupportClient
      * <p>
      * This action enables you to get a list of the available Trusted Advisor
      * checks. You must specify a language code. English ("en") and Japanese
-     * ("jp") are currently supported. The response contains a list of
-     * TrustedAdvisorCheckDescription objects.
+     * ("jp") are currently supported. The response contains a list of <a
+     * ssupport/latest/APIReference/API_TrustedAdvisorCheckDescription.html">
+     * TrustedAdvisorCheckDescription </a> objects.
      * </p>
      *
      * @param describeTrustedAdvisorChecksRequest Container for the necessary
@@ -942,8 +995,9 @@ public class AWSSupportAsyncClient extends AWSSupportClient
      * <p>
      * This action enables you to get a list of the available Trusted Advisor
      * checks. You must specify a language code. English ("en") and Japanese
-     * ("jp") are currently supported. The response contains a list of
-     * TrustedAdvisorCheckDescription objects.
+     * ("jp") are currently supported. The response contains a list of <a
+     * ssupport/latest/APIReference/API_TrustedAdvisorCheckDescription.html">
+     * TrustedAdvisorCheckDescription </a> objects.
      * </p>
      *
      * @param describeTrustedAdvisorChecksRequest Container for the necessary
@@ -989,21 +1043,30 @@ public class AWSSupportAsyncClient extends AWSSupportClient
      * <p>
      * This action responds with the results of a Trusted Advisor check. Once
      * you have obtained the list of available Trusted Advisor checks by
-     * calling DescribeTrustedAdvisorChecks, you specify the <i>CheckId</i>
-     * for the check you want to retrieve from AWS Support.
+     * calling <a
+     * awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html">
+     * DescribeTrustedAdvisorChecks </a> , you specify the <i>CheckId</i> for
+     * the check you want to retrieve from AWS Support.
      * </p>
      * <p>
-     * The response for this action contains a JSON-formatted
-     * TrustedAdvisorCheckResult object
+     * The response for this action contains a JSON-formatted <a
+     * latest/APIReference/API_DescribeTrustedAdvisorCheckResultResult.html">
+     * TrustedAdvisorCheckResult </a> object
      * </p>
      * <p>
      * , which is a container for the following three objects:
      * </p>
      * <p>
      * </p>
-     * <ol> <li> TrustedAdvisorCategorySpecificSummary </li>
-     * <li> TrustedAdvisorResourceDetail </li>
-     * <li> TrustedAdvisorResourcesSummary </li>
+     * <ol> <li> <a
+     * t/latest/APIReference/API_TrustedAdvisorCategorySpecificSummary.html">
+     * TrustedAdvisorCategorySpecificSummary </a> </li>
+     * <li> <a
+     * awssupport/latest/APIReference/API_TrustedAdvisorResourceDetail.html">
+     * TrustedAdvisorResourceDetail </a> </li>
+     * <li> <a
+     * ssupport/latest/APIReference/API_TrustedAdvisorResourcesSummary.html">
+     * TrustedAdvisorResourcesSummary </a> </li>
      * </ol> <p>
      * In addition, the response contains the following fields:
      * </p>
@@ -1044,21 +1107,30 @@ public class AWSSupportAsyncClient extends AWSSupportClient
      * <p>
      * This action responds with the results of a Trusted Advisor check. Once
      * you have obtained the list of available Trusted Advisor checks by
-     * calling DescribeTrustedAdvisorChecks, you specify the <i>CheckId</i>
-     * for the check you want to retrieve from AWS Support.
+     * calling <a
+     * awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html">
+     * DescribeTrustedAdvisorChecks </a> , you specify the <i>CheckId</i> for
+     * the check you want to retrieve from AWS Support.
      * </p>
      * <p>
-     * The response for this action contains a JSON-formatted
-     * TrustedAdvisorCheckResult object
+     * The response for this action contains a JSON-formatted <a
+     * latest/APIReference/API_DescribeTrustedAdvisorCheckResultResult.html">
+     * TrustedAdvisorCheckResult </a> object
      * </p>
      * <p>
      * , which is a container for the following three objects:
      * </p>
      * <p>
      * </p>
-     * <ol> <li> TrustedAdvisorCategorySpecificSummary </li>
-     * <li> TrustedAdvisorResourceDetail </li>
-     * <li> TrustedAdvisorResourcesSummary </li>
+     * <ol> <li> <a
+     * t/latest/APIReference/API_TrustedAdvisorCategorySpecificSummary.html">
+     * TrustedAdvisorCategorySpecificSummary </a> </li>
+     * <li> <a
+     * awssupport/latest/APIReference/API_TrustedAdvisorResourceDetail.html">
+     * TrustedAdvisorResourceDetail </a> </li>
+     * <li> <a
+     * ssupport/latest/APIReference/API_TrustedAdvisorResourcesSummary.html">
+     * TrustedAdvisorResourcesSummary </a> </li>
      * </ol> <p>
      * In addition, the response contains the following fields:
      * </p>
@@ -1111,7 +1183,9 @@ public class AWSSupportAsyncClient extends AWSSupportClient
     /**
      * <p>
      * Takes a <i>CaseId</i> and returns the initial state of the case along
-     * with the state of the case after the call to ResolveCase completed.
+     * with the state of the case after the call to <a
+     * s.aws.amazon.com/awssupport/latest/APIReference/API_ResolveCase.html">
+     * ResolveCase </a> completed.
      * </p>
      *
      * @param resolveCaseRequest Container for the necessary parameters to
@@ -1141,7 +1215,9 @@ public class AWSSupportAsyncClient extends AWSSupportClient
     /**
      * <p>
      * Takes a <i>CaseId</i> and returns the initial state of the case along
-     * with the state of the case after the call to ResolveCase completed.
+     * with the state of the case after the call to <a
+     * s.aws.amazon.com/awssupport/latest/APIReference/API_ResolveCase.html">
+     * ResolveCase </a> completed.
      * </p>
      *
      * @param resolveCaseRequest Container for the necessary parameters to
@@ -1186,8 +1262,10 @@ public class AWSSupportAsyncClient extends AWSSupportClient
      * This action enables you to query the service to request a refresh for
      * a specific Trusted Advisor check. Your request body contains a
      * <i>CheckId</i> for which you are querying. The response body contains
-     * a RefreshTrustedAdvisorCheckResult object containing <i>Status</i> and
-     * <i>TimeUntilNextRefresh</i> fields.
+     * a <a
+     * upport/latest/APIReference/API_RefreshTrustedAdvisorCheckResult.html">
+     * RefreshTrustedAdvisorCheckResult </a> object containing <i>Status</i>
+     * and <i>TimeUntilNextRefresh</i> fields.
      * </p>
      *
      * @param refreshTrustedAdvisorCheckRequest Container for the necessary
@@ -1220,8 +1298,10 @@ public class AWSSupportAsyncClient extends AWSSupportClient
      * This action enables you to query the service to request a refresh for
      * a specific Trusted Advisor check. Your request body contains a
      * <i>CheckId</i> for which you are querying. The response body contains
-     * a RefreshTrustedAdvisorCheckResult object containing <i>Status</i> and
-     * <i>TimeUntilNextRefresh</i> fields.
+     * a <a
+     * upport/latest/APIReference/API_RefreshTrustedAdvisorCheckResult.html">
+     * RefreshTrustedAdvisorCheckResult </a> object containing <i>Status</i>
+     * and <i>TimeUntilNextRefresh</i> fields.
      * </p>
      *
      * @param refreshTrustedAdvisorCheckRequest Container for the necessary
@@ -1266,8 +1346,10 @@ public class AWSSupportAsyncClient extends AWSSupportClient
      * <p>
      * Returns the current list of AWS services and a list of service
      * categories that applies to each one. You then use service names and
-     * categories in your CreateCase requests. Each AWS service has its own
-     * set of categories.
+     * categories in your <a
+     * cs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html">
+     * CreateCase </a> requests. Each AWS service has its own set of
+     * categories.
      * </p>
      * <p>
      * The service codes and category codes correspond to the values that are
@@ -1309,8 +1391,10 @@ public class AWSSupportAsyncClient extends AWSSupportClient
      * <p>
      * Returns the current list of AWS services and a list of service
      * categories that applies to each one. You then use service names and
-     * categories in your CreateCase requests. Each AWS service has its own
-     * set of categories.
+     * categories in your <a
+     * cs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html">
+     * CreateCase </a> requests. Each AWS service has its own set of
+     * categories.
      * </p>
      * <p>
      * The service codes and category codes correspond to the values that are
@@ -1366,12 +1450,14 @@ public class AWSSupportAsyncClient extends AWSSupportClient
      * This action enables you to get the latest summaries for Trusted
      * Advisor checks that you specify in your request. You submit the list
      * of Trusted Advisor checks for which you want summaries. You obtain
-     * these <i>CheckIds</i> by submitting a DescribeTrustedAdvisorChecks
-     * request.
+     * these <i>CheckIds</i> by submitting a <a
+     * awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html">
+     * DescribeTrustedAdvisorChecks </a> request.
      * </p>
      * <p>
-     * The response body contains an array of TrustedAdvisorCheckSummary
-     * objects.
+     * The response body contains an array of <a
+     * m/awssupport/latest/APIReference/API_TrustedAdvisorCheckSummary.html">
+     * TrustedAdvisorCheckSummary </a> objects.
      * </p>
      *
      * @param describeTrustedAdvisorCheckSummariesRequest Container for the
@@ -1405,12 +1491,14 @@ public class AWSSupportAsyncClient extends AWSSupportClient
      * This action enables you to get the latest summaries for Trusted
      * Advisor checks that you specify in your request. You submit the list
      * of Trusted Advisor checks for which you want summaries. You obtain
-     * these <i>CheckIds</i> by submitting a DescribeTrustedAdvisorChecks
-     * request.
+     * these <i>CheckIds</i> by submitting a <a
+     * awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html">
+     * DescribeTrustedAdvisorChecks </a> request.
      * </p>
      * <p>
-     * The response body contains an array of TrustedAdvisorCheckSummary
-     * objects.
+     * The response body contains an array of <a
+     * m/awssupport/latest/APIReference/API_TrustedAdvisorCheckSummary.html">
+     * TrustedAdvisorCheckSummary </a> objects.
      * </p>
      *
      * @param describeTrustedAdvisorCheckSummariesRequest Container for the

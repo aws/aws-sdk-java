@@ -19,8 +19,7 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#testRole(TestRoleRequest) TestRole operation}.
  * <p>
- * To test the IAM role that's used by Elastic Transcoder to create the pipeline, send a POST request to the <code>/2012-09-25/roleTests</code>
- * resource.
+ * The TestRole operation tests the IAM role used to create the pipeline.
  * </p>
  * <p>
  * The <code>TestRole</code> action lets you determine whether the IAM role you are using has sufficient permissions to let Elastic Transcoder perform

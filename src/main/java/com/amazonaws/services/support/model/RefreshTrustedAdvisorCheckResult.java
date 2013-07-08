@@ -22,7 +22,7 @@ public class RefreshTrustedAdvisorCheckResult  implements Serializable  {
 
     /**
      * Returns the overall status of the <a
-     * href="API_RefreshTrustedAdvisorCheck.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html"
      * title="RefreshTrustedAdvisorCheck">RefreshTrustedAdvisorCheck</a>
      * call.
      */
@@ -30,12 +30,12 @@ public class RefreshTrustedAdvisorCheckResult  implements Serializable  {
 
     /**
      * Returns the overall status of the <a
-     * href="API_RefreshTrustedAdvisorCheck.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html"
      * title="RefreshTrustedAdvisorCheck">RefreshTrustedAdvisorCheck</a>
      * call.
      *
      * @return Returns the overall status of the <a
-     *         href="API_RefreshTrustedAdvisorCheck.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html"
      *         title="RefreshTrustedAdvisorCheck">RefreshTrustedAdvisorCheck</a>
      *         call.
      */
@@ -45,12 +45,12 @@ public class RefreshTrustedAdvisorCheckResult  implements Serializable  {
     
     /**
      * Returns the overall status of the <a
-     * href="API_RefreshTrustedAdvisorCheck.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html"
      * title="RefreshTrustedAdvisorCheck">RefreshTrustedAdvisorCheck</a>
      * call.
      *
      * @param status Returns the overall status of the <a
-     *         href="API_RefreshTrustedAdvisorCheck.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html"
      *         title="RefreshTrustedAdvisorCheck">RefreshTrustedAdvisorCheck</a>
      *         call.
      */
@@ -60,14 +60,14 @@ public class RefreshTrustedAdvisorCheckResult  implements Serializable  {
     
     /**
      * Returns the overall status of the <a
-     * href="API_RefreshTrustedAdvisorCheck.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html"
      * title="RefreshTrustedAdvisorCheck">RefreshTrustedAdvisorCheck</a>
      * call.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param status Returns the overall status of the <a
-     *         href="API_RefreshTrustedAdvisorCheck.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html"
      *         title="RefreshTrustedAdvisorCheck">RefreshTrustedAdvisorCheck</a>
      *         call.
      *

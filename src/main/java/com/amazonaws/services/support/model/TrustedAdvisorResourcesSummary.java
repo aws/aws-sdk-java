@@ -17,7 +17,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * JSON-formatted object that lists details about AWS resources that were analyzed in a call to Trusted Advisor DescribeTrustedAdvisorCheckSummaries.
+ * JSON-formatted object that lists details about AWS resources that were analyzed in a call to Trusted Advisor <a
+ * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"> DescribeTrustedAdvisorCheckSummaries
+ * </a> .
  * </p>
  */
 public class TrustedAdvisorResourcesSummary  implements Serializable  {

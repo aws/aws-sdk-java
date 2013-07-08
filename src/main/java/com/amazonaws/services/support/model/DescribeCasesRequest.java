@@ -25,7 +25,7 @@ import java.io.Serializable;
  * <p>
  * The response returns the following in JSON format:
  * </p>
- * <ol> <li>One or more CaseDetails data types. </li>
+ * <ol> <li>One or more <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html"> CaseDetails </a> data types. </li>
  * <li>One or more <i>NextToken</i> objects, strings that specifies where to paginate the returned records represented by <i>CaseDetails</i> .</li>
  * </ol>
  *
@@ -60,7 +60,8 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest  implements Se
 
     /**
      * Boolean that indicates whether or not resolved support cases should be
-     * listed in the <a href="API_DescribeCases.html"
+     * listed in the <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeCases.html"
      * title="DescribeCases">DescribeCases</a> search.
      */
     private Boolean includeResolvedCases;
@@ -286,11 +287,13 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest  implements Se
     
     /**
      * Boolean that indicates whether or not resolved support cases should be
-     * listed in the <a href="API_DescribeCases.html"
+     * listed in the <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeCases.html"
      * title="DescribeCases">DescribeCases</a> search.
      *
      * @return Boolean that indicates whether or not resolved support cases should be
-     *         listed in the <a href="API_DescribeCases.html"
+     *         listed in the <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeCases.html"
      *         title="DescribeCases">DescribeCases</a> search.
      */
     public Boolean isIncludeResolvedCases() {
@@ -299,11 +302,13 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest  implements Se
     
     /**
      * Boolean that indicates whether or not resolved support cases should be
-     * listed in the <a href="API_DescribeCases.html"
+     * listed in the <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeCases.html"
      * title="DescribeCases">DescribeCases</a> search.
      *
      * @param includeResolvedCases Boolean that indicates whether or not resolved support cases should be
-     *         listed in the <a href="API_DescribeCases.html"
+     *         listed in the <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeCases.html"
      *         title="DescribeCases">DescribeCases</a> search.
      */
     public void setIncludeResolvedCases(Boolean includeResolvedCases) {
@@ -312,13 +317,15 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest  implements Se
     
     /**
      * Boolean that indicates whether or not resolved support cases should be
-     * listed in the <a href="API_DescribeCases.html"
+     * listed in the <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeCases.html"
      * title="DescribeCases">DescribeCases</a> search.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param includeResolvedCases Boolean that indicates whether or not resolved support cases should be
-     *         listed in the <a href="API_DescribeCases.html"
+     *         listed in the <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeCases.html"
      *         title="DescribeCases">DescribeCases</a> search.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -332,11 +339,13 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest  implements Se
     
     /**
      * Boolean that indicates whether or not resolved support cases should be
-     * listed in the <a href="API_DescribeCases.html"
+     * listed in the <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeCases.html"
      * title="DescribeCases">DescribeCases</a> search.
      *
      * @return Boolean that indicates whether or not resolved support cases should be
-     *         listed in the <a href="API_DescribeCases.html"
+     *         listed in the <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeCases.html"
      *         title="DescribeCases">DescribeCases</a> search.
      */
     public Boolean getIncludeResolvedCases() {

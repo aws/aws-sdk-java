@@ -40,7 +40,7 @@ public class CacheSecurityGroup  implements Serializable  {
     /**
      * Contains a list of <a>EC2SecurityGroup</a> elements.
      */
-    private java.util.List<EC2SecurityGroup> eC2SecurityGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<EC2SecurityGroup> eC2SecurityGroups;
 
     /**
      * Provides the AWS ID of the owner of a specific Cache Security Group.
@@ -152,7 +152,8 @@ public class CacheSecurityGroup  implements Serializable  {
     public java.util.List<EC2SecurityGroup> getEC2SecurityGroups() {
         
         if (eC2SecurityGroups == null) {
-            eC2SecurityGroups = new java.util.ArrayList<EC2SecurityGroup>();
+              eC2SecurityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<EC2SecurityGroup>();
+              eC2SecurityGroups.setAutoConstruct(true);
         }
         return eC2SecurityGroups;
     }
@@ -167,8 +168,7 @@ public class CacheSecurityGroup  implements Serializable  {
             this.eC2SecurityGroups = null;
             return;
         }
-
-        java.util.List<EC2SecurityGroup> eC2SecurityGroupsCopy = new java.util.ArrayList<EC2SecurityGroup>(eC2SecurityGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<EC2SecurityGroup> eC2SecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<EC2SecurityGroup>(eC2SecurityGroups.size());
         eC2SecurityGroupsCopy.addAll(eC2SecurityGroups);
         this.eC2SecurityGroups = eC2SecurityGroupsCopy;
     }
@@ -205,7 +205,7 @@ public class CacheSecurityGroup  implements Serializable  {
         if (eC2SecurityGroups == null) {
             this.eC2SecurityGroups = null;
         } else {
-            java.util.List<EC2SecurityGroup> eC2SecurityGroupsCopy = new java.util.ArrayList<EC2SecurityGroup>(eC2SecurityGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<EC2SecurityGroup> eC2SecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<EC2SecurityGroup>(eC2SecurityGroups.size());
             eC2SecurityGroupsCopy.addAll(eC2SecurityGroups);
             this.eC2SecurityGroups = eC2SecurityGroupsCopy;
         }
@@ -224,10 +224,10 @@ public class CacheSecurityGroup  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ",");    	
-        if (getCacheSecurityGroupName() != null) sb.append("CacheSecurityGroupName: " + getCacheSecurityGroupName() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        sb.append("{");
+        if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ",");
+        if (getCacheSecurityGroupName() != null) sb.append("CacheSecurityGroupName: " + getCacheSecurityGroupName() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
         if (getEC2SecurityGroups() != null) sb.append("EC2SecurityGroups: " + getEC2SecurityGroups() );
         sb.append("}");
         return sb.toString();

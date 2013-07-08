@@ -80,7 +80,7 @@ public class BatchPutAttributesRequest extends AmazonWebServiceRequest  implemen
     /**
      * A list of items on which to perform the operation.
      */
-    private java.util.List<ReplaceableItem> items;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ReplaceableItem> items;
 
     /**
      * Default constructor for a new BatchPutAttributesRequest object.  Callers should use the
@@ -88,6 +88,8 @@ public class BatchPutAttributesRequest extends AmazonWebServiceRequest  implemen
      */
     public BatchPutAttributesRequest() {}
     
+
+
     /**
      * Constructs a new BatchPutAttributesRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -98,8 +100,8 @@ public class BatchPutAttributesRequest extends AmazonWebServiceRequest  implemen
      * @param items A list of items on which to perform the operation.
      */
     public BatchPutAttributesRequest(String domainName, java.util.List<ReplaceableItem> items) {
-        this.domainName = domainName;
-        this.items = items;
+        setDomainName(domainName);
+        setItems(items);
     }
 
     
@@ -146,7 +148,8 @@ public class BatchPutAttributesRequest extends AmazonWebServiceRequest  implemen
     public java.util.List<ReplaceableItem> getItems() {
         
         if (items == null) {
-            items = new java.util.ArrayList<ReplaceableItem>();
+              items = new com.amazonaws.internal.ListWithAutoConstructFlag<ReplaceableItem>();
+              items.setAutoConstruct(true);
         }
         return items;
     }
@@ -161,8 +164,7 @@ public class BatchPutAttributesRequest extends AmazonWebServiceRequest  implemen
             this.items = null;
             return;
         }
-
-        java.util.List<ReplaceableItem> itemsCopy = new java.util.ArrayList<ReplaceableItem>(items.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ReplaceableItem> itemsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ReplaceableItem>(items.size());
         itemsCopy.addAll(items);
         this.items = itemsCopy;
     }
@@ -199,7 +201,7 @@ public class BatchPutAttributesRequest extends AmazonWebServiceRequest  implemen
         if (items == null) {
             this.items = null;
         } else {
-            java.util.List<ReplaceableItem> itemsCopy = new java.util.ArrayList<ReplaceableItem>(items.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ReplaceableItem> itemsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ReplaceableItem>(items.size());
             itemsCopy.addAll(items);
             this.items = itemsCopy;
         }
@@ -218,8 +220,8 @@ public class BatchPutAttributesRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");    	
+        sb.append("{");
+        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");
         if (getItems() != null) sb.append("Items: " + getItems() );
         sb.append("}");
         return sb.toString();

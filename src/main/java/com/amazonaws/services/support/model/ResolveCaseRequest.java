@@ -19,7 +19,8 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.support.AWSSupport#resolveCase(ResolveCaseRequest) ResolveCase operation}.
  * <p>
- * Takes a <i>CaseId</i> and returns the initial state of the case along with the state of the case after the call to ResolveCase completed.
+ * Takes a <i>CaseId</i> and returns the initial state of the case along with the state of the case after the call to <a
+ * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_ResolveCase.html"> ResolveCase </a> completed.
  * </p>
  *
  * @see com.amazonaws.services.support.AWSSupport#resolveCase(ResolveCaseRequest)

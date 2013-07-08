@@ -61,6 +61,8 @@ public class SelectRequest extends AmazonWebServiceRequest  implements Serializa
      */
     public SelectRequest() {}
     
+
+
     /**
      * Constructs a new SelectRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -69,11 +71,13 @@ public class SelectRequest extends AmazonWebServiceRequest  implements Serializa
      * @param selectExpression The expression used to query the domain.
      */
     public SelectRequest(String selectExpression) {
-        this.selectExpression = selectExpression;
+        setSelectExpression(selectExpression);
     }
 
     
     
+
+
     /**
      * Constructs a new SelectRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -87,8 +91,8 @@ public class SelectRequest extends AmazonWebServiceRequest  implements Serializa
      * client may not see data that was written immediately before your read.
      */
     public SelectRequest(String selectExpression, Boolean consistentRead) {
-        this.selectExpression = selectExpression;
-        this.consistentRead = consistentRead;
+        setSelectExpression(selectExpression);
+        setConsistentRead(consistentRead);
     }
 
     
@@ -253,9 +257,9 @@ public class SelectRequest extends AmazonWebServiceRequest  implements Serializa
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSelectExpression() != null) sb.append("SelectExpression: " + getSelectExpression() + ",");    	
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");    	
+        sb.append("{");
+        if (getSelectExpression() != null) sb.append("SelectExpression: " + getSelectExpression() + ",");
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");
         if (isConsistentRead() != null) sb.append("ConsistentRead: " + isConsistentRead() );
         sb.append("}");
         return sb.toString();

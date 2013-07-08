@@ -23,7 +23,8 @@ import java.io.Serializable;
 public class DescribeCommunicationsResult  implements Serializable  {
 
     /**
-     * Contains a list of <a href="API_Communication.html"
+     * Contains a list of <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
      * title="Communication">Communications</a> objects.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Communication> communications;
@@ -34,10 +35,12 @@ public class DescribeCommunicationsResult  implements Serializable  {
     private String nextToken;
 
     /**
-     * Contains a list of <a href="API_Communication.html"
+     * Contains a list of <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
      * title="Communication">Communications</a> objects.
      *
-     * @return Contains a list of <a href="API_Communication.html"
+     * @return Contains a list of <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
      *         title="Communication">Communications</a> objects.
      */
     public java.util.List<Communication> getCommunications() {
@@ -50,10 +53,12 @@ public class DescribeCommunicationsResult  implements Serializable  {
     }
     
     /**
-     * Contains a list of <a href="API_Communication.html"
+     * Contains a list of <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
      * title="Communication">Communications</a> objects.
      *
-     * @param communications Contains a list of <a href="API_Communication.html"
+     * @param communications Contains a list of <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
      *         title="Communication">Communications</a> objects.
      */
     public void setCommunications(java.util.Collection<Communication> communications) {
@@ -67,12 +72,14 @@ public class DescribeCommunicationsResult  implements Serializable  {
     }
     
     /**
-     * Contains a list of <a href="API_Communication.html"
+     * Contains a list of <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
      * title="Communication">Communications</a> objects.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param communications Contains a list of <a href="API_Communication.html"
+     * @param communications Contains a list of <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
      *         title="Communication">Communications</a> objects.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -87,12 +94,14 @@ public class DescribeCommunicationsResult  implements Serializable  {
     }
     
     /**
-     * Contains a list of <a href="API_Communication.html"
+     * Contains a list of <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
      * title="Communication">Communications</a> objects.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param communications Contains a list of <a href="API_Communication.html"
+     * @param communications Contains a list of <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
      *         title="Communication">Communications</a> objects.
      *
      * @return A reference to this updated object so that method calls can be chained 

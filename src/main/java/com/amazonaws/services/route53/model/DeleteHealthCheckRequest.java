@@ -95,7 +95,7 @@ public class DeleteHealthCheckRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getHealthCheckId() != null) sb.append("HealthCheckId: " + getHealthCheckId() );
         sb.append("}");
         return sb.toString();

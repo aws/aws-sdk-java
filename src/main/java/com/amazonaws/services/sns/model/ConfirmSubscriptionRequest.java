@@ -19,9 +19,9 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#confirmSubscription(ConfirmSubscriptionRequest) ConfirmSubscription operation}.
  * <p>
- * The ConfirmSubscription action verifies an endpoint owner's intent to receive messages by validating the token sent to the endpoint by an earlier
- * Subscribe action. If the token is valid, the action creates a new subscription and returns its Amazon Resource Name (ARN). This call requires an AWS
- * signature only when the AuthenticateOnUnsubscribe flag is set to "true".
+ * The <code>ConfirmSubscription</code> action verifies an endpoint owner's intent to receive messages by validating the token sent to the endpoint by an
+ * earlier <code>Subscribe</code> action. If the token is valid, the action creates a new subscription and returns its Amazon Resource Name (ARN). This
+ * call requires an AWS signature only when the <code>AuthenticateOnUnsubscribe</code> flag is set to "true".
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#confirmSubscription(ConfirmSubscriptionRequest)
@@ -34,7 +34,8 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest  impleme
     private String topicArn;
 
     /**
-     * Short-lived token sent to an endpoint during the Subscribe action.
+     * Short-lived token sent to an endpoint during the
+     * <code>Subscribe</code> action.
      */
     private String token;
 
@@ -63,7 +64,7 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest  impleme
      * @param topicArn The ARN of the topic for which you wish to confirm a
      * subscription.
      * @param token Short-lived token sent to an endpoint during the
-     * Subscribe action.
+     * <code>Subscribe</code> action.
      */
     public ConfirmSubscriptionRequest(String topicArn, String token) {
         setTopicArn(topicArn);
@@ -82,7 +83,7 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest  impleme
      * @param topicArn The ARN of the topic for which you wish to confirm a
      * subscription.
      * @param token Short-lived token sent to an endpoint during the
-     * Subscribe action.
+     * <code>Subscribe</code> action.
      * @param authenticateOnUnsubscribe Disallows unauthenticated
      * unsubscribes of the subscription. If the value of this parameter is
      * <code>true</code> and the request has an AWS signature, then only the
@@ -132,29 +133,35 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest  impleme
     
     
     /**
-     * Short-lived token sent to an endpoint during the Subscribe action.
+     * Short-lived token sent to an endpoint during the
+     * <code>Subscribe</code> action.
      *
-     * @return Short-lived token sent to an endpoint during the Subscribe action.
+     * @return Short-lived token sent to an endpoint during the
+     *         <code>Subscribe</code> action.
      */
     public String getToken() {
         return token;
     }
     
     /**
-     * Short-lived token sent to an endpoint during the Subscribe action.
+     * Short-lived token sent to an endpoint during the
+     * <code>Subscribe</code> action.
      *
-     * @param token Short-lived token sent to an endpoint during the Subscribe action.
+     * @param token Short-lived token sent to an endpoint during the
+     *         <code>Subscribe</code> action.
      */
     public void setToken(String token) {
         this.token = token;
     }
     
     /**
-     * Short-lived token sent to an endpoint during the Subscribe action.
+     * Short-lived token sent to an endpoint during the
+     * <code>Subscribe</code> action.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param token Short-lived token sent to an endpoint during the Subscribe action.
+     * @param token Short-lived token sent to an endpoint during the
+     *         <code>Subscribe</code> action.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

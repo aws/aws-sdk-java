@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#cancelJob(CancelJobRequest) CancelJob operation}.
  * <p>
- * To cancel a job, send a DELETE request to the <code>/2012-09-25/jobs/[jobId] </code> resource.
+ * The CancelJob operation cancels an unfinished job.
  * </p>
  * <p>
  * <b>NOTE:</b>You can only cancel a job that has a status of Submitted. To prevent a pipeline from starting to process a job while you're getting the
@@ -31,7 +31,7 @@ import java.io.Serializable;
 public class CancelJobRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
-     * The identifier of the job that you want to delete. <p>To get a list of
+     * The identifier of the job that you want to cancel. <p>To get a list of
      * the jobs (including their <code>jobId</code>) that have a status of
      * <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.
      * <p>
@@ -41,14 +41,14 @@ public class CancelJobRequest extends AmazonWebServiceRequest  implements Serial
     private String id;
 
     /**
-     * The identifier of the job that you want to delete. <p>To get a list of
+     * The identifier of the job that you want to cancel. <p>To get a list of
      * the jobs (including their <code>jobId</code>) that have a status of
      * <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>^\d{13}-\w{6}$<br/>
      *
-     * @return The identifier of the job that you want to delete. <p>To get a list of
+     * @return The identifier of the job that you want to cancel. <p>To get a list of
      *         the jobs (including their <code>jobId</code>) that have a status of
      *         <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.
      */
@@ -57,14 +57,14 @@ public class CancelJobRequest extends AmazonWebServiceRequest  implements Serial
     }
     
     /**
-     * The identifier of the job that you want to delete. <p>To get a list of
+     * The identifier of the job that you want to cancel. <p>To get a list of
      * the jobs (including their <code>jobId</code>) that have a status of
      * <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>^\d{13}-\w{6}$<br/>
      *
-     * @param id The identifier of the job that you want to delete. <p>To get a list of
+     * @param id The identifier of the job that you want to cancel. <p>To get a list of
      *         the jobs (including their <code>jobId</code>) that have a status of
      *         <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.
      */
@@ -73,7 +73,7 @@ public class CancelJobRequest extends AmazonWebServiceRequest  implements Serial
     }
     
     /**
-     * The identifier of the job that you want to delete. <p>To get a list of
+     * The identifier of the job that you want to cancel. <p>To get a list of
      * the jobs (including their <code>jobId</code>) that have a status of
      * <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.
      * <p>
@@ -82,7 +82,7 @@ public class CancelJobRequest extends AmazonWebServiceRequest  implements Serial
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>^\d{13}-\w{6}$<br/>
      *
-     * @param id The identifier of the job that you want to delete. <p>To get a list of
+     * @param id The identifier of the job that you want to cancel. <p>To get a list of
      *         the jobs (including their <code>jobId</code>) that have a status of
      *         <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.
      *

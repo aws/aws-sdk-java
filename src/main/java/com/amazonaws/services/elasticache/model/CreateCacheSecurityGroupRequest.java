@@ -49,6 +49,8 @@ public class CreateCacheSecurityGroupRequest extends AmazonWebServiceRequest  im
      */
     public CreateCacheSecurityGroupRequest() {}
     
+
+
     /**
      * Constructs a new CreateCacheSecurityGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -61,8 +63,8 @@ public class CreateCacheSecurityGroupRequest extends AmazonWebServiceRequest  im
      * @param description The description for the Cache Security Group.
      */
     public CreateCacheSecurityGroupRequest(String cacheSecurityGroupName, String description) {
-        this.cacheSecurityGroupName = cacheSecurityGroupName;
-        this.description = description;
+        setCacheSecurityGroupName(cacheSecurityGroupName);
+        setDescription(description);
     }
 
     
@@ -164,8 +166,8 @@ public class CreateCacheSecurityGroupRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCacheSecurityGroupName() != null) sb.append("CacheSecurityGroupName: " + getCacheSecurityGroupName() + ",");    	
+        sb.append("{");
+        if (getCacheSecurityGroupName() != null) sb.append("CacheSecurityGroupName: " + getCacheSecurityGroupName() + ",");
         if (getDescription() != null) sb.append("Description: " + getDescription() );
         sb.append("}");
         return sb.toString();

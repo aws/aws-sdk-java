@@ -47,7 +47,7 @@ public class TableDescription  implements Serializable  {
      * attribute. Can be either <code>HASH</code> or <code>RANGE</code>.
      * </li> </ul> <p>For more information about primary keys, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * Key</a> in the Amazon DynamoDB Developer Guide.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2<br/>
@@ -194,9 +194,6 @@ public class TableDescription  implements Serializable  {
      *         <i>AttributeDefinition</i> object in this array is composed of: <ul>
      *         <li> <p><i>AttributeName</i> - The name of the attribute. </li> <li>
      *         <p><i>AttributeType</i> - The data type for the attribute. </li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TableDescription withAttributeDefinitions(AttributeDefinition... attributeDefinitions) {
         if (getAttributeDefinitions() == null) setAttributeDefinitions(new java.util.ArrayList<AttributeDefinition>(attributeDefinitions.length));
@@ -220,9 +217,6 @@ public class TableDescription  implements Serializable  {
      *         <i>AttributeDefinition</i> object in this array is composed of: <ul>
      *         <li> <p><i>AttributeName</i> - The name of the attribute. </li> <li>
      *         <p><i>AttributeType</i> - The data type for the attribute. </li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TableDescription withAttributeDefinitions(java.util.Collection<AttributeDefinition> attributeDefinitions) {
         if (attributeDefinitions == null) {
@@ -272,9 +266,6 @@ public class TableDescription  implements Serializable  {
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
      * @param tableName The name of the table.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TableDescription withTableName(String tableName) {
         this.tableName = tableName;
@@ -289,7 +280,7 @@ public class TableDescription  implements Serializable  {
      * attribute. Can be either <code>HASH</code> or <code>RANGE</code>.
      * </li> </ul> <p>For more information about primary keys, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * Key</a> in the Amazon DynamoDB Developer Guide.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2<br/>
@@ -300,7 +291,7 @@ public class TableDescription  implements Serializable  {
      *         attribute. Can be either <code>HASH</code> or <code>RANGE</code>.
      *         </li> </ul> <p>For more information about primary keys, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     *         Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         Key</a> in the Amazon DynamoDB Developer Guide.
      */
     public java.util.List<KeySchemaElement> getKeySchema() {
         
@@ -314,7 +305,7 @@ public class TableDescription  implements Serializable  {
      * attribute. Can be either <code>HASH</code> or <code>RANGE</code>.
      * </li> </ul> <p>For more information about primary keys, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * Key</a> in the Amazon DynamoDB Developer Guide.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2<br/>
@@ -325,7 +316,7 @@ public class TableDescription  implements Serializable  {
      *         attribute. Can be either <code>HASH</code> or <code>RANGE</code>.
      *         </li> </ul> <p>For more information about primary keys, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     *         Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         Key</a> in the Amazon DynamoDB Developer Guide.
      */
     public void setKeySchema(java.util.Collection<KeySchemaElement> keySchema) {
         if (keySchema == null) {
@@ -344,7 +335,7 @@ public class TableDescription  implements Serializable  {
      * attribute. Can be either <code>HASH</code> or <code>RANGE</code>.
      * </li> </ul> <p>For more information about primary keys, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * Key</a> in the Amazon DynamoDB Developer Guide.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -357,10 +348,7 @@ public class TableDescription  implements Serializable  {
      *         attribute. Can be either <code>HASH</code> or <code>RANGE</code>.
      *         </li> </ul> <p>For more information about primary keys, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     *         Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         Key</a> in the Amazon DynamoDB Developer Guide.
      */
     public TableDescription withKeySchema(KeySchemaElement... keySchema) {
         if (getKeySchema() == null) setKeySchema(new java.util.ArrayList<KeySchemaElement>(keySchema.length));
@@ -377,7 +365,7 @@ public class TableDescription  implements Serializable  {
      * attribute. Can be either <code>HASH</code> or <code>RANGE</code>.
      * </li> </ul> <p>For more information about primary keys, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * Key</a> in the Amazon DynamoDB Developer Guide.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -390,10 +378,7 @@ public class TableDescription  implements Serializable  {
      *         attribute. Can be either <code>HASH</code> or <code>RANGE</code>.
      *         </li> </ul> <p>For more information about primary keys, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     *         Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         Key</a> in the Amazon DynamoDB Developer Guide.
      */
     public TableDescription withKeySchema(java.util.Collection<KeySchemaElement> keySchema) {
         if (keySchema == null) {
@@ -481,9 +466,6 @@ public class TableDescription  implements Serializable  {
      *         as the result of a <i>DeleteTable</i> operation. </li> <li>
      *         <p><i>ACTIVE</i> - The table is ready for use. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see TableStatus
      */
     public TableDescription withTableStatus(String tableStatus) {
@@ -540,9 +522,6 @@ public class TableDescription  implements Serializable  {
      *         as the result of a <i>DeleteTable</i> operation. </li> <li>
      *         <p><i>ACTIVE</i> - The table is ready for use. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see TableStatus
      */
     public TableDescription withTableStatus(TableStatus tableStatus) {
@@ -580,9 +559,6 @@ public class TableDescription  implements Serializable  {
      *
      * @param creationDateTime Represents the date and time when the table was created, in <a
      *         href="http://www.epochconverter.com/">UNIX epoch time</a> format.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TableDescription withCreationDateTime(java.util.Date creationDateTime) {
         this.creationDateTime = creationDateTime;
@@ -626,9 +602,6 @@ public class TableDescription  implements Serializable  {
      * @param provisionedThroughput Represents the provisioned throughput settings for the table,
      *         consisting of read and write capacity units, along with data about
      *         increases and decreases.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TableDescription withProvisionedThroughput(ProvisionedThroughputDescription provisionedThroughput) {
         this.provisionedThroughput = provisionedThroughput;
@@ -672,9 +645,6 @@ public class TableDescription  implements Serializable  {
      * @param tableSizeBytes Represents the total size of the specified table, in bytes. Amazon
      *         DynamoDB updates this value approximately every six hours. Recent
      *         changes might not be reflected in this value.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TableDescription withTableSizeBytes(Long tableSizeBytes) {
         this.tableSizeBytes = tableSizeBytes;
@@ -718,9 +688,6 @@ public class TableDescription  implements Serializable  {
      * @param itemCount Represents the number of items in the specified table. Amazon DynamoDB
      *         updates this value approximately every six hours. Recent changes might
      *         not be reflected in this value.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TableDescription withItemCount(Long itemCount) {
         this.itemCount = itemCount;
@@ -957,9 +924,6 @@ public class TableDescription  implements Serializable  {
      *         reflected in this value. </li> </ul> <p>If the table is in the
      *         <code>DELETING</code> state, no information about indexes will be
      *         returned.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TableDescription withLocalSecondaryIndexes(LocalSecondaryIndexDescription... localSecondaryIndexes) {
         if (getLocalSecondaryIndexes() == null) setLocalSecondaryIndexes(new java.util.ArrayList<LocalSecondaryIndexDescription>(localSecondaryIndexes.length));
@@ -1041,9 +1005,6 @@ public class TableDescription  implements Serializable  {
      *         reflected in this value. </li> </ul> <p>If the table is in the
      *         <code>DELETING</code> state, no information about indexes will be
      *         returned.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TableDescription withLocalSecondaryIndexes(java.util.Collection<LocalSecondaryIndexDescription> localSecondaryIndexes) {
         if (localSecondaryIndexes == null) {

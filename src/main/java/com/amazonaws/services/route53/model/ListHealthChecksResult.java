@@ -26,7 +26,7 @@ public class ListHealthChecksResult  implements Serializable  {
      * A complex type that contains information about the health checks
      * associated with the current AWS account.
      */
-    private java.util.List<HealthCheck> healthChecks;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<HealthCheck> healthChecks;
 
     /**
      * If the request returned more than one page of results, submit another
@@ -81,7 +81,8 @@ public class ListHealthChecksResult  implements Serializable  {
     public java.util.List<HealthCheck> getHealthChecks() {
         
         if (healthChecks == null) {
-            healthChecks = new java.util.ArrayList<HealthCheck>();
+              healthChecks = new com.amazonaws.internal.ListWithAutoConstructFlag<HealthCheck>();
+              healthChecks.setAutoConstruct(true);
         }
         return healthChecks;
     }
@@ -98,8 +99,7 @@ public class ListHealthChecksResult  implements Serializable  {
             this.healthChecks = null;
             return;
         }
-
-        java.util.List<HealthCheck> healthChecksCopy = new java.util.ArrayList<HealthCheck>(healthChecks.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<HealthCheck> healthChecksCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<HealthCheck>(healthChecks.size());
         healthChecksCopy.addAll(healthChecks);
         this.healthChecks = healthChecksCopy;
     }
@@ -140,7 +140,7 @@ public class ListHealthChecksResult  implements Serializable  {
         if (healthChecks == null) {
             this.healthChecks = null;
         } else {
-            java.util.List<HealthCheck> healthChecksCopy = new java.util.ArrayList<HealthCheck>(healthChecks.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<HealthCheck> healthChecksCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<HealthCheck>(healthChecks.size());
             healthChecksCopy.addAll(healthChecks);
             this.healthChecks = healthChecksCopy;
         }
@@ -430,11 +430,11 @@ public class ListHealthChecksResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getHealthChecks() != null) sb.append("HealthChecks: " + getHealthChecks() + ",");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
-        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");    	
-        if (getNextMarker() != null) sb.append("NextMarker: " + getNextMarker() + ",");    	
+        sb.append("{");
+        if (getHealthChecks() != null) sb.append("HealthChecks: " + getHealthChecks() + ",");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
+        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");
+        if (getNextMarker() != null) sb.append("NextMarker: " + getNextMarker() + ",");
         if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() );
         sb.append("}");
         return sb.toString();

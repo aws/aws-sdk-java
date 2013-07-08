@@ -24,42 +24,39 @@ import java.io.Serializable;
 public class WriteRequest  implements Serializable  {
 
     /**
-     * Represents a request to perform a <i>DeleteItem</i> operation.
+     * Represents a request to perform a <i>PutItem</i> operation.
      */
     private PutRequest putRequest;
 
     /**
-     * Represents a request to perform a <i>PutItem</i> operation.
+     * Represents a request to perform a <i>DeleteItem</i> operation.
      */
     private DeleteRequest deleteRequest;
 
     /**
-     * Represents a request to perform a <i>DeleteItem</i> operation.
+     * Represents a request to perform a <i>PutItem</i> operation.
      *
-     * @return Represents a request to perform a <i>DeleteItem</i> operation.
+     * @return Represents a request to perform a <i>PutItem</i> operation.
      */
     public PutRequest getPutRequest() {
         return putRequest;
     }
     
     /**
-     * Represents a request to perform a <i>DeleteItem</i> operation.
+     * Represents a request to perform a <i>PutItem</i> operation.
      *
-     * @param putRequest Represents a request to perform a <i>DeleteItem</i> operation.
+     * @param putRequest Represents a request to perform a <i>PutItem</i> operation.
      */
     public void setPutRequest(PutRequest putRequest) {
         this.putRequest = putRequest;
     }
     
     /**
-     * Represents a request to perform a <i>DeleteItem</i> operation.
+     * Represents a request to perform a <i>PutItem</i> operation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param putRequest Represents a request to perform a <i>DeleteItem</i> operation.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     * @param putRequest Represents a request to perform a <i>PutItem</i> operation.
      */
     public WriteRequest withPutRequest(PutRequest putRequest) {
         this.putRequest = putRequest;
@@ -68,32 +65,29 @@ public class WriteRequest  implements Serializable  {
     
     
     /**
-     * Represents a request to perform a <i>PutItem</i> operation.
+     * Represents a request to perform a <i>DeleteItem</i> operation.
      *
-     * @return Represents a request to perform a <i>PutItem</i> operation.
+     * @return Represents a request to perform a <i>DeleteItem</i> operation.
      */
     public DeleteRequest getDeleteRequest() {
         return deleteRequest;
     }
     
     /**
-     * Represents a request to perform a <i>PutItem</i> operation.
+     * Represents a request to perform a <i>DeleteItem</i> operation.
      *
-     * @param deleteRequest Represents a request to perform a <i>PutItem</i> operation.
+     * @param deleteRequest Represents a request to perform a <i>DeleteItem</i> operation.
      */
     public void setDeleteRequest(DeleteRequest deleteRequest) {
         this.deleteRequest = deleteRequest;
     }
     
     /**
-     * Represents a request to perform a <i>PutItem</i> operation.
+     * Represents a request to perform a <i>DeleteItem</i> operation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param deleteRequest Represents a request to perform a <i>PutItem</i> operation.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     * @param deleteRequest Represents a request to perform a <i>DeleteItem</i> operation.
      */
     public WriteRequest withDeleteRequest(DeleteRequest deleteRequest) {
         this.deleteRequest = deleteRequest;

@@ -24,18 +24,18 @@ public class DescribeTrustedAdvisorChecksResult  implements Serializable  {
 
     /**
      * List of the checks returned by calling <a
-     * href="API_DescribeTrustedAdvisorChecks.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
      * title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorCheckDescription> checks;
 
     /**
      * List of the checks returned by calling <a
-     * href="API_DescribeTrustedAdvisorChecks.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
      * title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>
      *
      * @return List of the checks returned by calling <a
-     *         href="API_DescribeTrustedAdvisorChecks.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
      *         title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>
      */
     public java.util.List<TrustedAdvisorCheckDescription> getChecks() {
@@ -49,11 +49,11 @@ public class DescribeTrustedAdvisorChecksResult  implements Serializable  {
     
     /**
      * List of the checks returned by calling <a
-     * href="API_DescribeTrustedAdvisorChecks.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
      * title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>
      *
      * @param checks List of the checks returned by calling <a
-     *         href="API_DescribeTrustedAdvisorChecks.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
      *         title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>
      */
     public void setChecks(java.util.Collection<TrustedAdvisorCheckDescription> checks) {
@@ -68,13 +68,13 @@ public class DescribeTrustedAdvisorChecksResult  implements Serializable  {
     
     /**
      * List of the checks returned by calling <a
-     * href="API_DescribeTrustedAdvisorChecks.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
      * title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param checks List of the checks returned by calling <a
-     *         href="API_DescribeTrustedAdvisorChecks.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
      *         title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -90,13 +90,13 @@ public class DescribeTrustedAdvisorChecksResult  implements Serializable  {
     
     /**
      * List of the checks returned by calling <a
-     * href="API_DescribeTrustedAdvisorChecks.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
      * title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param checks List of the checks returned by calling <a
-     *         href="API_DescribeTrustedAdvisorChecks.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
      *         title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>
      *
      * @return A reference to this updated object so that method calls can be chained 

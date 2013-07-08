@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#readJob(ReadJobRequest) ReadJob operation}.
  * <p>
- * To get detailed information about a job, send a GET request to the <code>/2012-09-25/jobs/[jobId] </code> resource.
+ * The ReadJob operation returns detailed information about a job.
  * </p>
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#readJob(ReadJobRequest)

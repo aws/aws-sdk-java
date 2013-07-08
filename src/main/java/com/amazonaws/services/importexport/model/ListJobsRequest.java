@@ -151,8 +151,8 @@ public class ListJobsRequest extends AmazonWebServiceRequest  implements Seriali
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMaxJobs() != null) sb.append("MaxJobs: " + getMaxJobs() + ",");    	
+        sb.append("{");
+        if (getMaxJobs() != null) sb.append("MaxJobs: " + getMaxJobs() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

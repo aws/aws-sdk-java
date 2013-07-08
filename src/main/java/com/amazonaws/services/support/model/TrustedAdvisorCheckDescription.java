@@ -17,7 +17,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Description of each check returned by DescribeTrustedAdvisorChecks.
+ * Description of each check returned by <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html">
+ * DescribeTrustedAdvisorChecks </a> .
  * </p>
  */
 public class TrustedAdvisorCheckDescription  implements Serializable  {
@@ -45,7 +46,7 @@ public class TrustedAdvisorCheckDescription  implements Serializable  {
 
     /**
      * List of metadata returned in <a
-     * href="API_TrustedAdvisorResourceDetail.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorResourceDetail.html"
      * title="TrustedAdvisorResourceDetail">TrustedAdvisorResourceDetail</a>
      * objects for a Trusted Advisor check.
      */
@@ -195,12 +196,12 @@ public class TrustedAdvisorCheckDescription  implements Serializable  {
     
     /**
      * List of metadata returned in <a
-     * href="API_TrustedAdvisorResourceDetail.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorResourceDetail.html"
      * title="TrustedAdvisorResourceDetail">TrustedAdvisorResourceDetail</a>
      * objects for a Trusted Advisor check.
      *
      * @return List of metadata returned in <a
-     *         href="API_TrustedAdvisorResourceDetail.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorResourceDetail.html"
      *         title="TrustedAdvisorResourceDetail">TrustedAdvisorResourceDetail</a>
      *         objects for a Trusted Advisor check.
      */
@@ -215,12 +216,12 @@ public class TrustedAdvisorCheckDescription  implements Serializable  {
     
     /**
      * List of metadata returned in <a
-     * href="API_TrustedAdvisorResourceDetail.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorResourceDetail.html"
      * title="TrustedAdvisorResourceDetail">TrustedAdvisorResourceDetail</a>
      * objects for a Trusted Advisor check.
      *
      * @param metadata List of metadata returned in <a
-     *         href="API_TrustedAdvisorResourceDetail.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorResourceDetail.html"
      *         title="TrustedAdvisorResourceDetail">TrustedAdvisorResourceDetail</a>
      *         objects for a Trusted Advisor check.
      */
@@ -236,14 +237,14 @@ public class TrustedAdvisorCheckDescription  implements Serializable  {
     
     /**
      * List of metadata returned in <a
-     * href="API_TrustedAdvisorResourceDetail.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorResourceDetail.html"
      * title="TrustedAdvisorResourceDetail">TrustedAdvisorResourceDetail</a>
      * objects for a Trusted Advisor check.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param metadata List of metadata returned in <a
-     *         href="API_TrustedAdvisorResourceDetail.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorResourceDetail.html"
      *         title="TrustedAdvisorResourceDetail">TrustedAdvisorResourceDetail</a>
      *         objects for a Trusted Advisor check.
      *
@@ -260,14 +261,14 @@ public class TrustedAdvisorCheckDescription  implements Serializable  {
     
     /**
      * List of metadata returned in <a
-     * href="API_TrustedAdvisorResourceDetail.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorResourceDetail.html"
      * title="TrustedAdvisorResourceDetail">TrustedAdvisorResourceDetail</a>
      * objects for a Trusted Advisor check.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param metadata List of metadata returned in <a
-     *         href="API_TrustedAdvisorResourceDetail.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorResourceDetail.html"
      *         title="TrustedAdvisorResourceDetail">TrustedAdvisorResourceDetail</a>
      *         objects for a Trusted Advisor check.
      *

@@ -17,13 +17,15 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Returns an array of CaseDetails objects and a <i>NextToken</i> that defines a point for pagination in the result set.
+ * Returns an array of <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html"> CaseDetails </a> objects and a
+ * <i>NextToken</i> that defines a point for pagination in the result set.
  * </p>
  */
 public class DescribeCasesResult  implements Serializable  {
 
     /**
-     * Array of <a href="API_CaseDetails.html"
+     * Array of <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html"
      * title="CaseDetails">CaseDetails</a> objects.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<CaseDetails> cases;
@@ -34,10 +36,12 @@ public class DescribeCasesResult  implements Serializable  {
     private String nextToken;
 
     /**
-     * Array of <a href="API_CaseDetails.html"
+     * Array of <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html"
      * title="CaseDetails">CaseDetails</a> objects.
      *
-     * @return Array of <a href="API_CaseDetails.html"
+     * @return Array of <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html"
      *         title="CaseDetails">CaseDetails</a> objects.
      */
     public java.util.List<CaseDetails> getCases() {
@@ -50,10 +54,12 @@ public class DescribeCasesResult  implements Serializable  {
     }
     
     /**
-     * Array of <a href="API_CaseDetails.html"
+     * Array of <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html"
      * title="CaseDetails">CaseDetails</a> objects.
      *
-     * @param cases Array of <a href="API_CaseDetails.html"
+     * @param cases Array of <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html"
      *         title="CaseDetails">CaseDetails</a> objects.
      */
     public void setCases(java.util.Collection<CaseDetails> cases) {
@@ -67,12 +73,14 @@ public class DescribeCasesResult  implements Serializable  {
     }
     
     /**
-     * Array of <a href="API_CaseDetails.html"
+     * Array of <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html"
      * title="CaseDetails">CaseDetails</a> objects.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cases Array of <a href="API_CaseDetails.html"
+     * @param cases Array of <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html"
      *         title="CaseDetails">CaseDetails</a> objects.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -87,12 +95,14 @@ public class DescribeCasesResult  implements Serializable  {
     }
     
     /**
-     * Array of <a href="API_CaseDetails.html"
+     * Array of <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html"
      * title="CaseDetails">CaseDetails</a> objects.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cases Array of <a href="API_CaseDetails.html"
+     * @param cases Array of <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html"
      *         title="CaseDetails">CaseDetails</a> objects.
      *
      * @return A reference to this updated object so that method calls can be chained 

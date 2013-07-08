@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#listPresets(ListPresetsRequest) ListPresets operation}.
  * <p>
- * To get a list of all presets associated with the current AWS account, send a GET request to the <code>/2012-09-25/presets</code> resource.
+ * The ListPresets operation gets a list of the default presets included with Elastic Transcoder and the presets that you've added in an AWS region.
  * </p>
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#listPresets(ListPresetsRequest)

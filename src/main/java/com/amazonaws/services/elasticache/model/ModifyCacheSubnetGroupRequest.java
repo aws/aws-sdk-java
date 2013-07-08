@@ -42,7 +42,7 @@ public class ModifyCacheSubnetGroupRequest extends AmazonWebServiceRequest  impl
     /**
      * The EC2 Subnet IDs for the Cache Subnet Group.
      */
-    private java.util.List<String> subnetIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> subnetIds;
 
     /**
      * The name for the Cache Subnet Group. This value is stored as a
@@ -138,7 +138,8 @@ public class ModifyCacheSubnetGroupRequest extends AmazonWebServiceRequest  impl
     public java.util.List<String> getSubnetIds() {
         
         if (subnetIds == null) {
-            subnetIds = new java.util.ArrayList<String>();
+              subnetIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              subnetIds.setAutoConstruct(true);
         }
         return subnetIds;
     }
@@ -153,8 +154,7 @@ public class ModifyCacheSubnetGroupRequest extends AmazonWebServiceRequest  impl
             this.subnetIds = null;
             return;
         }
-
-        java.util.List<String> subnetIdsCopy = new java.util.ArrayList<String>(subnetIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> subnetIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(subnetIds.size());
         subnetIdsCopy.addAll(subnetIds);
         this.subnetIds = subnetIdsCopy;
     }
@@ -191,7 +191,7 @@ public class ModifyCacheSubnetGroupRequest extends AmazonWebServiceRequest  impl
         if (subnetIds == null) {
             this.subnetIds = null;
         } else {
-            java.util.List<String> subnetIdsCopy = new java.util.ArrayList<String>(subnetIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> subnetIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(subnetIds.size());
             subnetIdsCopy.addAll(subnetIds);
             this.subnetIds = subnetIdsCopy;
         }
@@ -210,9 +210,9 @@ public class ModifyCacheSubnetGroupRequest extends AmazonWebServiceRequest  impl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCacheSubnetGroupName() != null) sb.append("CacheSubnetGroupName: " + getCacheSubnetGroupName() + ",");    	
-        if (getCacheSubnetGroupDescription() != null) sb.append("CacheSubnetGroupDescription: " + getCacheSubnetGroupDescription() + ",");    	
+        sb.append("{");
+        if (getCacheSubnetGroupName() != null) sb.append("CacheSubnetGroupName: " + getCacheSubnetGroupName() + ",");
+        if (getCacheSubnetGroupDescription() != null) sb.append("CacheSubnetGroupDescription: " + getCacheSubnetGroupDescription() + ",");
         if (getSubnetIds() != null) sb.append("SubnetIds: " + getSubnetIds() );
         sb.append("}");
         return sb.toString();

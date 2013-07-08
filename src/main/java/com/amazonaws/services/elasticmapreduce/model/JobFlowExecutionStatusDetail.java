@@ -66,6 +66,8 @@ public class JobFlowExecutionStatusDetail  implements Serializable  {
      */
     public JobFlowExecutionStatusDetail() {}
     
+
+
     /**
      * Constructs a new JobFlowExecutionStatusDetail object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -75,8 +77,8 @@ public class JobFlowExecutionStatusDetail  implements Serializable  {
      * @param creationDateTime The creation date and time of the job flow.
      */
     public JobFlowExecutionStatusDetail(String state, java.util.Date creationDateTime) {
-        this.state = state;
-        this.creationDateTime = creationDateTime;
+        setState(state);
+        setCreationDateTime(creationDateTime);
     }
 
     
@@ -376,12 +378,12 @@ public class JobFlowExecutionStatusDetail  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getState() != null) sb.append("State: " + getState() + ",");    	
-        if (getCreationDateTime() != null) sb.append("CreationDateTime: " + getCreationDateTime() + ",");    	
-        if (getStartDateTime() != null) sb.append("StartDateTime: " + getStartDateTime() + ",");    	
-        if (getReadyDateTime() != null) sb.append("ReadyDateTime: " + getReadyDateTime() + ",");    	
-        if (getEndDateTime() != null) sb.append("EndDateTime: " + getEndDateTime() + ",");    	
+        sb.append("{");
+        if (getState() != null) sb.append("State: " + getState() + ",");
+        if (getCreationDateTime() != null) sb.append("CreationDateTime: " + getCreationDateTime() + ",");
+        if (getStartDateTime() != null) sb.append("StartDateTime: " + getStartDateTime() + ",");
+        if (getReadyDateTime() != null) sb.append("ReadyDateTime: " + getReadyDateTime() + ",");
+        if (getEndDateTime() != null) sb.append("EndDateTime: " + getEndDateTime() + ",");
         if (getLastStateChangeReason() != null) sb.append("LastStateChangeReason: " + getLastStateChangeReason() );
         sb.append("}");
         return sb.toString();

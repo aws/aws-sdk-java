@@ -19,9 +19,9 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#publish(PublishRequest) Publish operation}.
  * <p>
- * The Publish action sends a message to all of a topic's subscribed endpoints. When a messageId is returned, the message has been saved and Amazon SNS
- * will attempt to deliver it to the topic's subscribers shortly. The format of the outgoing message to each subscribed endpoint depends on the
- * notification protocol selected.
+ * The <code>Publish</code> action sends a message to all of a topic's subscribed endpoints. When a <code>messageId</code> is returned, the message has
+ * been saved and Amazon SNS will attempt to deliver it to the topic's subscribers shortly. The format of the outgoing message to each subscribed
+ * endpoint depends on the notification protocol selected.
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#publish(PublishRequest)
@@ -41,8 +41,8 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      * <code>MessageStructure</code> parameter to <code>json</code> and use a
      * JSON object for the <code>Message</code> parameter. See the Examples
      * section for the format of the JSON object. <p>Constraints: Messages
-     * must be UTF-8 encoded strings at most 32 KB in size (32768 bytes, not
-     * 32768 characters). <p>JSON-specific constraints: <ul> <li>Keys in the
+     * must be UTF-8 encoded strings at most 64 KB in size (65536 bytes, not
+     * 65536 characters). <p>JSON-specific constraints: <ul> <li>Keys in the
      * JSON object that correspond to supported transport protocols must have
      * simple JSON string values. </li> <li>The values will be parsed
      * (unescaped) before they are used in outgoing messages.</li>
@@ -52,16 +52,17 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      * <li>Values have a maximum length bounded by the overall message size
      * (so, including multiple protocols may limit message sizes).</li>
      * <li>Non-string values will cause the key to be ignored.</li> <li>Keys
-     * that do not correspond to supported transport protocols will be
+     * that do not correspond to supported transport protocols are
      * ignored.</li> <li>Duplicate keys are not allowed.</li> <li>Failure to
      * parse or validate any key or value in the message will cause the
-     * Publish call to return an error (no partial delivery).</li> </ul>
+     * <code>Publish</code> call to return an error (no partial
+     * delivery).</li> </ul>
      */
     private String message;
 
     /**
      * Optional parameter to be used as the "Subject" line of when the
-     * message is delivered to e-mail endpoints. This field will also be
+     * message is delivered to email endpoints. This field will also be
      * included, if present, in the standard JSON messages delivered to other
      * endpoints. <p>Constraints: Subjects must be ASCII text that begins
      * with a letter, number or punctuation mark; must not include line
@@ -80,10 +81,10 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      * JSON object; and</li> <li>contain at least a top-level JSON key of
      * "default" with a value that is a string.</li> </ul> <p> You can define
      * other top-level keys that define the message you want to send to a
-     * specific transport protocol (e.g. "http"). <p>For information about
+     * specific transport protocol (e.g., "http"). <p>For information about
      * sending different messages for each protocol using the AWS Management
      * Console, go to <a
-     * href="http://docs.amazonwebservices.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
+     * href="http://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
      * Different Messages for Each Protocol</a> in the <i>Amazon Simple
      * Notification Service Getting Started Guide</i>. <p>Valid value:
      * <code>json</code>
@@ -111,8 +112,8 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      * <code>MessageStructure</code> parameter to <code>json</code> and use a
      * JSON object for the <code>Message</code> parameter. See the Examples
      * section for the format of the JSON object. <p>Constraints: Messages
-     * must be UTF-8 encoded strings at most 32 KB in size (32768 bytes, not
-     * 32768 characters). <p>JSON-specific constraints: <ul> <li>Keys in the
+     * must be UTF-8 encoded strings at most 64 KB in size (65536 bytes, not
+     * 65536 characters). <p>JSON-specific constraints: <ul> <li>Keys in the
      * JSON object that correspond to supported transport protocols must have
      * simple JSON string values. </li> <li>The values will be parsed
      * (unescaped) before they are used in outgoing messages.</li>
@@ -122,10 +123,11 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      * <li>Values have a maximum length bounded by the overall message size
      * (so, including multiple protocols may limit message sizes).</li>
      * <li>Non-string values will cause the key to be ignored.</li> <li>Keys
-     * that do not correspond to supported transport protocols will be
+     * that do not correspond to supported transport protocols are
      * ignored.</li> <li>Duplicate keys are not allowed.</li> <li>Failure to
      * parse or validate any key or value in the message will cause the
-     * Publish call to return an error (no partial delivery).</li> </ul>
+     * <code>Publish</code> call to return an error (no partial
+     * delivery).</li> </ul>
      */
     public PublishRequest(String topicArn, String message) {
         setTopicArn(topicArn);
@@ -149,8 +151,8 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      * <code>MessageStructure</code> parameter to <code>json</code> and use a
      * JSON object for the <code>Message</code> parameter. See the Examples
      * section for the format of the JSON object. <p>Constraints: Messages
-     * must be UTF-8 encoded strings at most 32 KB in size (32768 bytes, not
-     * 32768 characters). <p>JSON-specific constraints: <ul> <li>Keys in the
+     * must be UTF-8 encoded strings at most 64 KB in size (65536 bytes, not
+     * 65536 characters). <p>JSON-specific constraints: <ul> <li>Keys in the
      * JSON object that correspond to supported transport protocols must have
      * simple JSON string values. </li> <li>The values will be parsed
      * (unescaped) before they are used in outgoing messages.</li>
@@ -160,14 +162,15 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      * <li>Values have a maximum length bounded by the overall message size
      * (so, including multiple protocols may limit message sizes).</li>
      * <li>Non-string values will cause the key to be ignored.</li> <li>Keys
-     * that do not correspond to supported transport protocols will be
+     * that do not correspond to supported transport protocols are
      * ignored.</li> <li>Duplicate keys are not allowed.</li> <li>Failure to
      * parse or validate any key or value in the message will cause the
-     * Publish call to return an error (no partial delivery).</li> </ul>
+     * <code>Publish</code> call to return an error (no partial
+     * delivery).</li> </ul>
      * @param subject Optional parameter to be used as the "Subject" line of
-     * when the message is delivered to e-mail endpoints. This field will
-     * also be included, if present, in the standard JSON messages delivered
-     * to other endpoints. <p>Constraints: Subjects must be ASCII text that
+     * when the message is delivered to email endpoints. This field will also
+     * be included, if present, in the standard JSON messages delivered to
+     * other endpoints. <p>Constraints: Subjects must be ASCII text that
      * begins with a letter, number or punctuation mark; must not include
      * line breaks or control characters; and must be less than 100
      * characters long.
@@ -222,8 +225,8 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      * <code>MessageStructure</code> parameter to <code>json</code> and use a
      * JSON object for the <code>Message</code> parameter. See the Examples
      * section for the format of the JSON object. <p>Constraints: Messages
-     * must be UTF-8 encoded strings at most 32 KB in size (32768 bytes, not
-     * 32768 characters). <p>JSON-specific constraints: <ul> <li>Keys in the
+     * must be UTF-8 encoded strings at most 64 KB in size (65536 bytes, not
+     * 65536 characters). <p>JSON-specific constraints: <ul> <li>Keys in the
      * JSON object that correspond to supported transport protocols must have
      * simple JSON string values. </li> <li>The values will be parsed
      * (unescaped) before they are used in outgoing messages.</li>
@@ -233,10 +236,11 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      * <li>Values have a maximum length bounded by the overall message size
      * (so, including multiple protocols may limit message sizes).</li>
      * <li>Non-string values will cause the key to be ignored.</li> <li>Keys
-     * that do not correspond to supported transport protocols will be
+     * that do not correspond to supported transport protocols are
      * ignored.</li> <li>Duplicate keys are not allowed.</li> <li>Failure to
      * parse or validate any key or value in the message will cause the
-     * Publish call to return an error (no partial delivery).</li> </ul>
+     * <code>Publish</code> call to return an error (no partial
+     * delivery).</li> </ul>
      *
      * @return The message you want to send to the topic. <p>If you want to send the
      *         same message to all transport protocols, include the text of the
@@ -245,8 +249,8 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      *         <code>MessageStructure</code> parameter to <code>json</code> and use a
      *         JSON object for the <code>Message</code> parameter. See the Examples
      *         section for the format of the JSON object. <p>Constraints: Messages
-     *         must be UTF-8 encoded strings at most 32 KB in size (32768 bytes, not
-     *         32768 characters). <p>JSON-specific constraints: <ul> <li>Keys in the
+     *         must be UTF-8 encoded strings at most 64 KB in size (65536 bytes, not
+     *         65536 characters). <p>JSON-specific constraints: <ul> <li>Keys in the
      *         JSON object that correspond to supported transport protocols must have
      *         simple JSON string values. </li> <li>The values will be parsed
      *         (unescaped) before they are used in outgoing messages.</li>
@@ -256,10 +260,11 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      *         <li>Values have a maximum length bounded by the overall message size
      *         (so, including multiple protocols may limit message sizes).</li>
      *         <li>Non-string values will cause the key to be ignored.</li> <li>Keys
-     *         that do not correspond to supported transport protocols will be
+     *         that do not correspond to supported transport protocols are
      *         ignored.</li> <li>Duplicate keys are not allowed.</li> <li>Failure to
      *         parse or validate any key or value in the message will cause the
-     *         Publish call to return an error (no partial delivery).</li> </ul>
+     *         <code>Publish</code> call to return an error (no partial
+     *         delivery).</li> </ul>
      */
     public String getMessage() {
         return message;
@@ -273,8 +278,8 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      * <code>MessageStructure</code> parameter to <code>json</code> and use a
      * JSON object for the <code>Message</code> parameter. See the Examples
      * section for the format of the JSON object. <p>Constraints: Messages
-     * must be UTF-8 encoded strings at most 32 KB in size (32768 bytes, not
-     * 32768 characters). <p>JSON-specific constraints: <ul> <li>Keys in the
+     * must be UTF-8 encoded strings at most 64 KB in size (65536 bytes, not
+     * 65536 characters). <p>JSON-specific constraints: <ul> <li>Keys in the
      * JSON object that correspond to supported transport protocols must have
      * simple JSON string values. </li> <li>The values will be parsed
      * (unescaped) before they are used in outgoing messages.</li>
@@ -284,10 +289,11 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      * <li>Values have a maximum length bounded by the overall message size
      * (so, including multiple protocols may limit message sizes).</li>
      * <li>Non-string values will cause the key to be ignored.</li> <li>Keys
-     * that do not correspond to supported transport protocols will be
+     * that do not correspond to supported transport protocols are
      * ignored.</li> <li>Duplicate keys are not allowed.</li> <li>Failure to
      * parse or validate any key or value in the message will cause the
-     * Publish call to return an error (no partial delivery).</li> </ul>
+     * <code>Publish</code> call to return an error (no partial
+     * delivery).</li> </ul>
      *
      * @param message The message you want to send to the topic. <p>If you want to send the
      *         same message to all transport protocols, include the text of the
@@ -296,8 +302,8 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      *         <code>MessageStructure</code> parameter to <code>json</code> and use a
      *         JSON object for the <code>Message</code> parameter. See the Examples
      *         section for the format of the JSON object. <p>Constraints: Messages
-     *         must be UTF-8 encoded strings at most 32 KB in size (32768 bytes, not
-     *         32768 characters). <p>JSON-specific constraints: <ul> <li>Keys in the
+     *         must be UTF-8 encoded strings at most 64 KB in size (65536 bytes, not
+     *         65536 characters). <p>JSON-specific constraints: <ul> <li>Keys in the
      *         JSON object that correspond to supported transport protocols must have
      *         simple JSON string values. </li> <li>The values will be parsed
      *         (unescaped) before they are used in outgoing messages.</li>
@@ -307,10 +313,11 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      *         <li>Values have a maximum length bounded by the overall message size
      *         (so, including multiple protocols may limit message sizes).</li>
      *         <li>Non-string values will cause the key to be ignored.</li> <li>Keys
-     *         that do not correspond to supported transport protocols will be
+     *         that do not correspond to supported transport protocols are
      *         ignored.</li> <li>Duplicate keys are not allowed.</li> <li>Failure to
      *         parse or validate any key or value in the message will cause the
-     *         Publish call to return an error (no partial delivery).</li> </ul>
+     *         <code>Publish</code> call to return an error (no partial
+     *         delivery).</li> </ul>
      */
     public void setMessage(String message) {
         this.message = message;
@@ -324,8 +331,8 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      * <code>MessageStructure</code> parameter to <code>json</code> and use a
      * JSON object for the <code>Message</code> parameter. See the Examples
      * section for the format of the JSON object. <p>Constraints: Messages
-     * must be UTF-8 encoded strings at most 32 KB in size (32768 bytes, not
-     * 32768 characters). <p>JSON-specific constraints: <ul> <li>Keys in the
+     * must be UTF-8 encoded strings at most 64 KB in size (65536 bytes, not
+     * 65536 characters). <p>JSON-specific constraints: <ul> <li>Keys in the
      * JSON object that correspond to supported transport protocols must have
      * simple JSON string values. </li> <li>The values will be parsed
      * (unescaped) before they are used in outgoing messages.</li>
@@ -335,10 +342,11 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      * <li>Values have a maximum length bounded by the overall message size
      * (so, including multiple protocols may limit message sizes).</li>
      * <li>Non-string values will cause the key to be ignored.</li> <li>Keys
-     * that do not correspond to supported transport protocols will be
+     * that do not correspond to supported transport protocols are
      * ignored.</li> <li>Duplicate keys are not allowed.</li> <li>Failure to
      * parse or validate any key or value in the message will cause the
-     * Publish call to return an error (no partial delivery).</li> </ul>
+     * <code>Publish</code> call to return an error (no partial
+     * delivery).</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -349,8 +357,8 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      *         <code>MessageStructure</code> parameter to <code>json</code> and use a
      *         JSON object for the <code>Message</code> parameter. See the Examples
      *         section for the format of the JSON object. <p>Constraints: Messages
-     *         must be UTF-8 encoded strings at most 32 KB in size (32768 bytes, not
-     *         32768 characters). <p>JSON-specific constraints: <ul> <li>Keys in the
+     *         must be UTF-8 encoded strings at most 64 KB in size (65536 bytes, not
+     *         65536 characters). <p>JSON-specific constraints: <ul> <li>Keys in the
      *         JSON object that correspond to supported transport protocols must have
      *         simple JSON string values. </li> <li>The values will be parsed
      *         (unescaped) before they are used in outgoing messages.</li>
@@ -360,10 +368,11 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      *         <li>Values have a maximum length bounded by the overall message size
      *         (so, including multiple protocols may limit message sizes).</li>
      *         <li>Non-string values will cause the key to be ignored.</li> <li>Keys
-     *         that do not correspond to supported transport protocols will be
+     *         that do not correspond to supported transport protocols are
      *         ignored.</li> <li>Duplicate keys are not allowed.</li> <li>Failure to
      *         parse or validate any key or value in the message will cause the
-     *         Publish call to return an error (no partial delivery).</li> </ul>
+     *         <code>Publish</code> call to return an error (no partial
+     *         delivery).</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -376,7 +385,7 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
     
     /**
      * Optional parameter to be used as the "Subject" line of when the
-     * message is delivered to e-mail endpoints. This field will also be
+     * message is delivered to email endpoints. This field will also be
      * included, if present, in the standard JSON messages delivered to other
      * endpoints. <p>Constraints: Subjects must be ASCII text that begins
      * with a letter, number or punctuation mark; must not include line
@@ -384,7 +393,7 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      * long.
      *
      * @return Optional parameter to be used as the "Subject" line of when the
-     *         message is delivered to e-mail endpoints. This field will also be
+     *         message is delivered to email endpoints. This field will also be
      *         included, if present, in the standard JSON messages delivered to other
      *         endpoints. <p>Constraints: Subjects must be ASCII text that begins
      *         with a letter, number or punctuation mark; must not include line
@@ -397,7 +406,7 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
     
     /**
      * Optional parameter to be used as the "Subject" line of when the
-     * message is delivered to e-mail endpoints. This field will also be
+     * message is delivered to email endpoints. This field will also be
      * included, if present, in the standard JSON messages delivered to other
      * endpoints. <p>Constraints: Subjects must be ASCII text that begins
      * with a letter, number or punctuation mark; must not include line
@@ -405,7 +414,7 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      * long.
      *
      * @param subject Optional parameter to be used as the "Subject" line of when the
-     *         message is delivered to e-mail endpoints. This field will also be
+     *         message is delivered to email endpoints. This field will also be
      *         included, if present, in the standard JSON messages delivered to other
      *         endpoints. <p>Constraints: Subjects must be ASCII text that begins
      *         with a letter, number or punctuation mark; must not include line
@@ -418,7 +427,7 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
     
     /**
      * Optional parameter to be used as the "Subject" line of when the
-     * message is delivered to e-mail endpoints. This field will also be
+     * message is delivered to email endpoints. This field will also be
      * included, if present, in the standard JSON messages delivered to other
      * endpoints. <p>Constraints: Subjects must be ASCII text that begins
      * with a letter, number or punctuation mark; must not include line
@@ -428,7 +437,7 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subject Optional parameter to be used as the "Subject" line of when the
-     *         message is delivered to e-mail endpoints. This field will also be
+     *         message is delivered to email endpoints. This field will also be
      *         included, if present, in the standard JSON messages delivered to other
      *         endpoints. <p>Constraints: Subjects must be ASCII text that begins
      *         with a letter, number or punctuation mark; must not include line
@@ -454,10 +463,10 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      * JSON object; and</li> <li>contain at least a top-level JSON key of
      * "default" with a value that is a string.</li> </ul> <p> You can define
      * other top-level keys that define the message you want to send to a
-     * specific transport protocol (e.g. "http"). <p>For information about
+     * specific transport protocol (e.g., "http"). <p>For information about
      * sending different messages for each protocol using the AWS Management
      * Console, go to <a
-     * href="http://docs.amazonwebservices.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
+     * href="http://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
      * Different Messages for Each Protocol</a> in the <i>Amazon Simple
      * Notification Service Getting Started Guide</i>. <p>Valid value:
      * <code>json</code>
@@ -471,10 +480,10 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      *         JSON object; and</li> <li>contain at least a top-level JSON key of
      *         "default" with a value that is a string.</li> </ul> <p> You can define
      *         other top-level keys that define the message you want to send to a
-     *         specific transport protocol (e.g. "http"). <p>For information about
+     *         specific transport protocol (e.g., "http"). <p>For information about
      *         sending different messages for each protocol using the AWS Management
      *         Console, go to <a
-     *         href="http://docs.amazonwebservices.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
+     *         href="http://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
      *         Different Messages for Each Protocol</a> in the <i>Amazon Simple
      *         Notification Service Getting Started Guide</i>. <p>Valid value:
      *         <code>json</code>
@@ -493,10 +502,10 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      * JSON object; and</li> <li>contain at least a top-level JSON key of
      * "default" with a value that is a string.</li> </ul> <p> You can define
      * other top-level keys that define the message you want to send to a
-     * specific transport protocol (e.g. "http"). <p>For information about
+     * specific transport protocol (e.g., "http"). <p>For information about
      * sending different messages for each protocol using the AWS Management
      * Console, go to <a
-     * href="http://docs.amazonwebservices.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
+     * href="http://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
      * Different Messages for Each Protocol</a> in the <i>Amazon Simple
      * Notification Service Getting Started Guide</i>. <p>Valid value:
      * <code>json</code>
@@ -510,10 +519,10 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      *         JSON object; and</li> <li>contain at least a top-level JSON key of
      *         "default" with a value that is a string.</li> </ul> <p> You can define
      *         other top-level keys that define the message you want to send to a
-     *         specific transport protocol (e.g. "http"). <p>For information about
+     *         specific transport protocol (e.g., "http"). <p>For information about
      *         sending different messages for each protocol using the AWS Management
      *         Console, go to <a
-     *         href="http://docs.amazonwebservices.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
+     *         href="http://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
      *         Different Messages for Each Protocol</a> in the <i>Amazon Simple
      *         Notification Service Getting Started Guide</i>. <p>Valid value:
      *         <code>json</code>
@@ -532,10 +541,10 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      * JSON object; and</li> <li>contain at least a top-level JSON key of
      * "default" with a value that is a string.</li> </ul> <p> You can define
      * other top-level keys that define the message you want to send to a
-     * specific transport protocol (e.g. "http"). <p>For information about
+     * specific transport protocol (e.g., "http"). <p>For information about
      * sending different messages for each protocol using the AWS Management
      * Console, go to <a
-     * href="http://docs.amazonwebservices.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
+     * href="http://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
      * Different Messages for Each Protocol</a> in the <i>Amazon Simple
      * Notification Service Getting Started Guide</i>. <p>Valid value:
      * <code>json</code>
@@ -551,10 +560,10 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      *         JSON object; and</li> <li>contain at least a top-level JSON key of
      *         "default" with a value that is a string.</li> </ul> <p> You can define
      *         other top-level keys that define the message you want to send to a
-     *         specific transport protocol (e.g. "http"). <p>For information about
+     *         specific transport protocol (e.g., "http"). <p>For information about
      *         sending different messages for each protocol using the AWS Management
      *         Console, go to <a
-     *         href="http://docs.amazonwebservices.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
+     *         href="http://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
      *         Different Messages for Each Protocol</a> in the <i>Amazon Simple
      *         Notification Service Getting Started Guide</i>. <p>Valid value:
      *         <code>json</code>

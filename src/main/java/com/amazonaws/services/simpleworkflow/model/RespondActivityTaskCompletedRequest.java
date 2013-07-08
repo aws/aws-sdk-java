@@ -203,8 +203,8 @@ public class RespondActivityTaskCompletedRequest extends AmazonWebServiceRequest
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getTaskToken() != null) sb.append("TaskToken: " + getTaskToken() + ",");    	
+        sb.append("{");
+        if (getTaskToken() != null) sb.append("TaskToken: " + getTaskToken() + ",");
         if (getResult() != null) sb.append("Result: " + getResult() );
         sb.append("}");
         return sb.toString();

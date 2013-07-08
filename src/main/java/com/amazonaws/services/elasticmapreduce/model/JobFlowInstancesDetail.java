@@ -69,7 +69,7 @@ public class JobFlowInstancesDetail  implements Serializable  {
     /**
      * Details about the job flow's instance groups.
      */
-    private java.util.List<InstanceGroupDetail> instanceGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupDetail> instanceGroups;
 
     /**
      * An approximation of the cost of the job flow, represented in
@@ -135,6 +135,8 @@ public class JobFlowInstancesDetail  implements Serializable  {
      */
     public JobFlowInstancesDetail() {}
     
+
+
     /**
      * Constructs a new JobFlowInstancesDetail object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -148,9 +150,9 @@ public class JobFlowInstancesDetail  implements Serializable  {
      * the master node and all others are slave nodes.
      */
     public JobFlowInstancesDetail(String masterInstanceType, String slaveInstanceType, Integer instanceCount) {
-        this.masterInstanceType = masterInstanceType;
-        this.slaveInstanceType = slaveInstanceType;
-        this.instanceCount = instanceCount;
+        setMasterInstanceType(masterInstanceType);
+        setSlaveInstanceType(slaveInstanceType);
+        setInstanceCount(instanceCount);
     }
 
     
@@ -399,7 +401,8 @@ public class JobFlowInstancesDetail  implements Serializable  {
     public java.util.List<InstanceGroupDetail> getInstanceGroups() {
         
         if (instanceGroups == null) {
-            instanceGroups = new java.util.ArrayList<InstanceGroupDetail>();
+              instanceGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupDetail>();
+              instanceGroups.setAutoConstruct(true);
         }
         return instanceGroups;
     }
@@ -414,8 +417,7 @@ public class JobFlowInstancesDetail  implements Serializable  {
             this.instanceGroups = null;
             return;
         }
-
-        java.util.List<InstanceGroupDetail> instanceGroupsCopy = new java.util.ArrayList<InstanceGroupDetail>(instanceGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupDetail> instanceGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupDetail>(instanceGroups.size());
         instanceGroupsCopy.addAll(instanceGroups);
         this.instanceGroups = instanceGroupsCopy;
     }
@@ -452,7 +454,7 @@ public class JobFlowInstancesDetail  implements Serializable  {
         if (instanceGroups == null) {
             this.instanceGroups = null;
         } else {
-            java.util.List<InstanceGroupDetail> instanceGroupsCopy = new java.util.ArrayList<InstanceGroupDetail>(instanceGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupDetail> instanceGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupDetail>(instanceGroups.size());
             instanceGroupsCopy.addAll(instanceGroups);
             this.instanceGroups = instanceGroupsCopy;
         }
@@ -835,19 +837,19 @@ public class JobFlowInstancesDetail  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMasterInstanceType() != null) sb.append("MasterInstanceType: " + getMasterInstanceType() + ",");    	
-        if (getMasterPublicDnsName() != null) sb.append("MasterPublicDnsName: " + getMasterPublicDnsName() + ",");    	
-        if (getMasterInstanceId() != null) sb.append("MasterInstanceId: " + getMasterInstanceId() + ",");    	
-        if (getSlaveInstanceType() != null) sb.append("SlaveInstanceType: " + getSlaveInstanceType() + ",");    	
-        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ",");    	
-        if (getInstanceGroups() != null) sb.append("InstanceGroups: " + getInstanceGroups() + ",");    	
-        if (getNormalizedInstanceHours() != null) sb.append("NormalizedInstanceHours: " + getNormalizedInstanceHours() + ",");    	
-        if (getEc2KeyName() != null) sb.append("Ec2KeyName: " + getEc2KeyName() + ",");    	
-        if (getEc2SubnetId() != null) sb.append("Ec2SubnetId: " + getEc2SubnetId() + ",");    	
-        if (getPlacement() != null) sb.append("Placement: " + getPlacement() + ",");    	
-        if (isKeepJobFlowAliveWhenNoSteps() != null) sb.append("KeepJobFlowAliveWhenNoSteps: " + isKeepJobFlowAliveWhenNoSteps() + ",");    	
-        if (isTerminationProtected() != null) sb.append("TerminationProtected: " + isTerminationProtected() + ",");    	
+        sb.append("{");
+        if (getMasterInstanceType() != null) sb.append("MasterInstanceType: " + getMasterInstanceType() + ",");
+        if (getMasterPublicDnsName() != null) sb.append("MasterPublicDnsName: " + getMasterPublicDnsName() + ",");
+        if (getMasterInstanceId() != null) sb.append("MasterInstanceId: " + getMasterInstanceId() + ",");
+        if (getSlaveInstanceType() != null) sb.append("SlaveInstanceType: " + getSlaveInstanceType() + ",");
+        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ",");
+        if (getInstanceGroups() != null) sb.append("InstanceGroups: " + getInstanceGroups() + ",");
+        if (getNormalizedInstanceHours() != null) sb.append("NormalizedInstanceHours: " + getNormalizedInstanceHours() + ",");
+        if (getEc2KeyName() != null) sb.append("Ec2KeyName: " + getEc2KeyName() + ",");
+        if (getEc2SubnetId() != null) sb.append("Ec2SubnetId: " + getEc2SubnetId() + ",");
+        if (getPlacement() != null) sb.append("Placement: " + getPlacement() + ",");
+        if (isKeepJobFlowAliveWhenNoSteps() != null) sb.append("KeepJobFlowAliveWhenNoSteps: " + isKeepJobFlowAliveWhenNoSteps() + ",");
+        if (isTerminationProtected() != null) sb.append("TerminationProtected: " + isTerminationProtected() + ",");
         if (getHadoopVersion() != null) sb.append("HadoopVersion: " + getHadoopVersion() );
         sb.append("}");
         return sb.toString();

@@ -16,56 +16,42 @@ package com.amazonaws.services.sqs.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * This is used in the responses of batch API to give a detailed description of the result of an operation on each entry in the request.
- * </p>
+ * Batch Result Error Entry
  */
 public class BatchResultErrorEntry  implements Serializable  {
 
-    /**
-     * The id of an entry in a batch request.
-     */
     private String id;
 
-    /**
-     * Whether the error happened due to the sender's fault.
-     */
     private Boolean senderFault;
 
-    /**
-     * An error code representing why the operation failed on this entry.
-     */
     private String code;
 
-    /**
-     * A message explaining why the operation failed on this entry.
-     */
     private String message;
 
     /**
-     * The id of an entry in a batch request.
+     * Returns the value of the Id property for this object.
      *
-     * @return The id of an entry in a batch request.
+     * @return The value of the Id property for this object.
      */
     public String getId() {
         return id;
     }
     
     /**
-     * The id of an entry in a batch request.
+     * Sets the value of the Id property for this object.
      *
-     * @param id The id of an entry in a batch request.
+     * @param id The new value for the Id property for this object.
      */
     public void setId(String id) {
         this.id = id;
     }
     
     /**
-     * The id of an entry in a batch request.
+     * Sets the value of the Id property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param id The id of an entry in a batch request.
+     * @param id The new value for the Id property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -77,29 +63,29 @@ public class BatchResultErrorEntry  implements Serializable  {
     
     
     /**
-     * Whether the error happened due to the sender's fault.
+     * Returns the value of the SenderFault property for this object.
      *
-     * @return Whether the error happened due to the sender's fault.
+     * @return The value of the SenderFault property for this object.
      */
     public Boolean isSenderFault() {
         return senderFault;
     }
     
     /**
-     * Whether the error happened due to the sender's fault.
+     * Sets the value of the SenderFault property for this object.
      *
-     * @param senderFault Whether the error happened due to the sender's fault.
+     * @param senderFault The new value for the SenderFault property for this object.
      */
     public void setSenderFault(Boolean senderFault) {
         this.senderFault = senderFault;
     }
     
     /**
-     * Whether the error happened due to the sender's fault.
+     * Sets the value of the SenderFault property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param senderFault Whether the error happened due to the sender's fault.
+     * @param senderFault The new value for the SenderFault property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -111,38 +97,38 @@ public class BatchResultErrorEntry  implements Serializable  {
     
     
     /**
-     * Whether the error happened due to the sender's fault.
+     * Returns the value of the SenderFault property for this object.
      *
-     * @return Whether the error happened due to the sender's fault.
+     * @return The value of the SenderFault property for this object.
      */
     public Boolean getSenderFault() {
         return senderFault;
     }
     
     /**
-     * An error code representing why the operation failed on this entry.
+     * Returns the value of the Code property for this object.
      *
-     * @return An error code representing why the operation failed on this entry.
+     * @return The value of the Code property for this object.
      */
     public String getCode() {
         return code;
     }
     
     /**
-     * An error code representing why the operation failed on this entry.
+     * Sets the value of the Code property for this object.
      *
-     * @param code An error code representing why the operation failed on this entry.
+     * @param code The new value for the Code property for this object.
      */
     public void setCode(String code) {
         this.code = code;
     }
     
     /**
-     * An error code representing why the operation failed on this entry.
+     * Sets the value of the Code property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param code An error code representing why the operation failed on this entry.
+     * @param code The new value for the Code property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -154,29 +140,29 @@ public class BatchResultErrorEntry  implements Serializable  {
     
     
     /**
-     * A message explaining why the operation failed on this entry.
+     * Returns the value of the Message property for this object.
      *
-     * @return A message explaining why the operation failed on this entry.
+     * @return The value of the Message property for this object.
      */
     public String getMessage() {
         return message;
     }
     
     /**
-     * A message explaining why the operation failed on this entry.
+     * Sets the value of the Message property for this object.
      *
-     * @param message A message explaining why the operation failed on this entry.
+     * @param message The new value for the Message property for this object.
      */
     public void setMessage(String message) {
         this.message = message;
     }
     
     /**
-     * A message explaining why the operation failed on this entry.
+     * Sets the value of the Message property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param message A message explaining why the operation failed on this entry.
+     * @param message The new value for the Message property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

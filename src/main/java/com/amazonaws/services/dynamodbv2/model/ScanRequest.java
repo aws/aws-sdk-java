@@ -33,8 +33,8 @@ import java.io.Serializable;
  * <p>
  * By default, <i>Scan</i> operations proceed sequentially; however, for faster performance on large tables, applications can request a parallel
  * <i>Scan</i> by specifying the <i>Segment</i> and <i>TotalSegments</i> parameters. For more information, see <a
- * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan"> Parallel Scan </a> in the
- * <i>Amazon DynamoDB Developer Guide</i> .
+ * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan"> Parallel Scan </a> in the Amazon
+ * DynamoDB Developer Guide.
  * </p>
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#scan(ScanRequest)
@@ -73,7 +73,7 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
      * <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
      * the operation. For more information see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * and Scan</a> in the Amazon DynamoDB Developer Guide.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
@@ -144,7 +144,7 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
      * NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>For information on
      * specifying data types in JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>The
+     * Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
      * following are descriptions of each comparison operator. <ul> <li>
      * <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
      * only one <i>AttributeValue</i> of type String, Number, or Binary (not
@@ -346,9 +346,6 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
      * @param tableName The name of the table containing the requested items.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ScanRequest withTableName(String tableName) {
         this.tableName = tableName;
@@ -414,9 +411,6 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
      *         are specified, then all attributes will be returned. If any of the
      *         requested attributes are not found, they will not appear in the
      *         result.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ScanRequest withAttributesToGet(String... attributesToGet) {
         if (getAttributesToGet() == null) setAttributesToGet(new java.util.ArrayList<String>(attributesToGet.length));
@@ -441,9 +435,6 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
      *         are specified, then all attributes will be returned. If any of the
      *         requested attributes are not found, they will not appear in the
      *         result.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ScanRequest withAttributesToGet(java.util.Collection<String> attributesToGet) {
         if (attributesToGet == null) {
@@ -469,7 +460,7 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
      * <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
      * the operation. For more information see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * and Scan</a> in the Amazon DynamoDB Developer Guide.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
@@ -485,7 +476,7 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
      *         <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
      *         the operation. For more information see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     *         and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         and Scan</a> in the Amazon DynamoDB Developer Guide.
      */
     public Integer getLimit() {
         return limit;
@@ -503,7 +494,7 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
      * <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
      * the operation. For more information see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * and Scan</a> in the Amazon DynamoDB Developer Guide.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
@@ -519,7 +510,7 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
      *         <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
      *         the operation. For more information see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     *         and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         and Scan</a> in the Amazon DynamoDB Developer Guide.
      */
     public void setLimit(Integer limit) {
         this.limit = limit;
@@ -537,7 +528,7 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
      * <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
      * the operation. For more information see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * and Scan</a> in the Amazon DynamoDB Developer Guide.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -555,10 +546,7 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
      *         <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
      *         the operation. For more information see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     *         and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         and Scan</a> in the Amazon DynamoDB Developer Guide.
      */
     public ScanRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -790,9 +778,6 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
      *         equivalent to specifying <i>AttributesToGet</i> without any value for
      *         <i>Select</i>.)
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see Select
      */
     public ScanRequest withSelect(String select) {
@@ -949,9 +934,6 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
      *         equivalent to specifying <i>AttributesToGet</i> without any value for
      *         <i>Select</i>.)
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see Select
      */
     public ScanRequest withSelect(Select select) {
@@ -984,7 +966,7 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
      * NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>For information on
      * specifying data types in JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>The
+     * Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
      * following are descriptions of each comparison operator. <ul> <li>
      * <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
      * only one <i>AttributeValue</i> of type String, Number, or Binary (not
@@ -1093,7 +1075,7 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
      *         NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>For information on
      *         specifying data types in JSON, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     *         Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>The
+     *         Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
      *         following are descriptions of each comparison operator. <ul> <li>
      *         <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
      *         only one <i>AttributeValue</i> of type String, Number, or Binary (not
@@ -1181,7 +1163,6 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
     public java.util.Map<String,Condition> getScanFilter() {
         
         return scanFilter;
-
     }
     
     /**
@@ -1209,7 +1190,7 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
      * NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>For information on
      * specifying data types in JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>The
+     * Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
      * following are descriptions of each comparison operator. <ul> <li>
      * <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
      * only one <i>AttributeValue</i> of type String, Number, or Binary (not
@@ -1318,7 +1299,7 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
      *         NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>For information on
      *         specifying data types in JSON, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     *         Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>The
+     *         Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
      *         following are descriptions of each comparison operator. <ul> <li>
      *         <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
      *         only one <i>AttributeValue</i> of type String, Number, or Binary (not
@@ -1432,7 +1413,7 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
      * NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>For information on
      * specifying data types in JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>The
+     * Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
      * following are descriptions of each comparison operator. <ul> <li>
      * <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
      * only one <i>AttributeValue</i> of type String, Number, or Binary (not
@@ -1543,7 +1524,7 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
      *         NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>For information on
      *         specifying data types in JSON, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     *         Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>The
+     *         Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
      *         following are descriptions of each comparison operator. <ul> <li>
      *         <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
      *         only one <i>AttributeValue</i> of type String, Number, or Binary (not
@@ -1627,15 +1608,150 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
      *         For example, <code>{"S":"6"}</code> does not compare to
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ScanRequest withScanFilter(java.util.Map<String,Condition> scanFilter) {
         setScanFilter(scanFilter);
         return this;
     }
     
+   	
+    /**
+     * Evaluates the scan results and returns only the desired values.
+     * Multiple conditions are treated as "AND" operations: all conditions
+     * must be met to be included in the results. <p>Each
+     * <i>ScanConditions</i> element consists of an attribute name to
+     * compare, along with the following: <ul>
+     * <li><p><i>AttributeValueList</i> - One or more values to evaluate
+     * against the supplied attribute. This list contains exactly one value,
+     * except for a <code>BETWEEN</code> or <code>IN</code> comparison, in
+     * which case the list contains two values. <note> <p>For type Number,
+     * value comparisons are numeric. <p>String value comparisons for greater
+     * than, equals, or less than are based on ASCII character code values.
+     * For example, <code>a</code> is greater than <code>A</code>, and
+     * <code>aa</code> is greater than <code>B</code>. For a list of code
+     * values, see <a
+     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     * <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
+     * unsigned when it compares binary values, for example when evaluating
+     * query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
+     * comparator for evaluating attributes. For example, equals, greater
+     * than, less than, etc. <p>Valid comparison operators for Scan:
+     * <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS |
+     * NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> <p>For information on
+     * specifying data types in JSON, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
+     * Data Format</a> in the Amazon DynamoDB Developer Guide. <p>The
+     * following are descriptions of each comparison operator. <ul> <li>
+     * <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
+     * only one <i>AttributeValue</i> of type String, Number, or Binary (not
+     * a set). If an item contains an <i>AttributeValue</i> of a different
+     * type than the one specified in the request, the value does not match.
+     * For example, <code>{"S":"6"}</code> does not equal
+     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
+     * <code>{"NS":["6", "2", "1"]}</code>. <p> </li> <li> <p><code>NE</code>
+     * : Not equal. <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6", "2",
+     * "1"]}</code>. <p> </li> <li> <p><code>LE</code> : Less than or equal.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p> </li> <li> <p><code>LT</code> : Less than.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p> </li> <li> <p><code>GE</code> : Greater than or
+     * equal. <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p> </li> <li> <p><code>GT</code> : Greater than.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If an item contains an <i>AttributeValue</i> of a different type than
+     * the one specified in the request, the value does not match. For
+     * example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
+     * Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
+     * "2", "1"]}</code>. <p> </li> <li> <p><code>NOT_NULL</code> : The
+     * attribute exists. </li> <li> <p><code>NULL</code> : The attribute does
+     * not exist. </li> <li> <p><code>CONTAINS</code> : checks for a
+     * subsequence, or value in a set. <p><i>AttributeValueList</i> can
+     * contain only one <i>AttributeValue</i> of type String, Number, or
+     * Binary (not a set). If the target attribute of the comparison is a
+     * String, then the operation checks for a substring match. If the target
+     * attribute of the comparison is Binary, then the operation looks for a
+     * subsequence of the target that matches the input. If the target
+     * attribute of the comparison is a set ("SS", "NS", or "BS"), then the
+     * operation checks for a member of the set (not as a substring). </li>
+     * <li> <p><code>NOT_CONTAINS</code> : checks for absence of a
+     * subsequence, or absence of a value in a set.
+     * <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+     * If the target attribute of the comparison is a String, then the
+     * operation checks for the absence of a substring match. If the target
+     * attribute of the comparison is Binary, then the operation checks for
+     * the absence of a subsequence of the target that matches the input. If
+     * the target attribute of the comparison is a set ("SS", "NS", or "BS"),
+     * then the operation checks for the absence of a member of the set (not
+     * as a substring). </li> <li> <p><code>BEGINS_WITH</code> : checks for a
+     * prefix. <p><i>AttributeValueList</i> can contain only one
+     * <i>AttributeValue</i> of type String or Binary (not a Number or a
+     * set). The target attribute of the comparison must be a String or
+     * Binary (not a Number or a set). <p> </li> <li> <p><code>IN</code> :
+     * checks for exact matches. <p><i>AttributeValueList</i> can contain
+     * more than one <i>AttributeValue</i> of type String, Number, or Binary
+     * (not a set). The target attribute of the comparison must be of the
+     * same type and exact value to match. A String never matches a String
+     * set. </li> <li> <p><code>BETWEEN</code> : Greater than or equal to the
+     * first value, and less than or equal to the second value.
+     * <p><i>AttributeValueList</i> must contain two <i>AttributeValue</i>
+     * elements of the same type, either String, Number, or Binary (not a
+     * set). A target attribute matches if the target value is greater than,
+     * or equal to, the first element and less than, or equal to, the second
+     * element. If an item contains an <i>AttributeValue</i> of a different
+     * type than the one specified in the request, the value does not match.
+     * For example, <code>{"S":"6"}</code> does not compare to
+     * <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
+     * to <code>{"NS":["6", "2", "1"]}</code> </li> </ul> </li> </ul>
+     * <p>
+     * The method adds a new key-value pair into ScanFilter parameter, and
+     * returns a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param key The key of the entry to be added into ScanFilter.
+     * @param value The corresponding value of the entry to be added into ScanFilter.
+     */
+	public ScanRequest addScanFilterEntry(String key, Condition value) {
+		if (null == this.scanFilter) {
+			this.scanFilter = new java.util.HashMap<String,Condition>();
+		}
+		if (this.scanFilter.containsKey(key))
+			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+		this.scanFilter.put(key, value);
+		return this;
+	}
+	
+	/**
+	 * Removes all the entries added into ScanFilter.
+	 * <p>
+	 * Returns a reference to this object so that method calls can be chained together.
+	 */
+	public ScanRequest clearScanFilterEntries() {
+		this.scanFilter = null;
+		return this;
+	}
+	
     /**
      * The primary key of the first item that this operation will evaluate.
      * Use the value that was returned for <i>LastEvaluatedKey</i> in the
@@ -1658,7 +1774,6 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
     public java.util.Map<String,AttributeValue> getExclusiveStartKey() {
         
         return exclusiveStartKey;
-
     }
     
     /**
@@ -1704,15 +1819,102 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
      *         <i>ExclusiveStartKey</i> must specify the same segment whose previous
      *         <i>Scan</i> returned the corresponding value of
      *         <i>LastEvaluatedKey</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ScanRequest withExclusiveStartKey(java.util.Map<String,AttributeValue> exclusiveStartKey) {
         setExclusiveStartKey(exclusiveStartKey);
         return this;
     }
     
+   	
+    /**
+     * The primary key of the first item that this operation will evaluate.
+     * Use the value that was returned for <i>LastEvaluatedKey</i> in the
+     * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
+     * be String, Number or Binary. No set data types are allowed. <p>In a
+     * parallel scan, a <i>Scan</i> request that includes
+     * <i>ExclusiveStartKey</i> must specify the same segment whose previous
+     * <i>Scan</i> returned the corresponding value of
+     * <i>LastEvaluatedKey</i>.
+     * <p>
+     * This method accepts the hashKey, rangeKey of ExclusiveStartKey as
+     * java.util.Map.Entry<String, AttributeValue> objects.
+     *
+     * @param hashKey Primary hash key.
+     * @param rangeKey Primary range key. (null if it a hash-only table)
+     */
+    public void setExclusiveStartKey(java.util.Map.Entry<String, AttributeValue> hashKey, java.util.Map.Entry<String, AttributeValue> rangeKey) throws IllegalArgumentException {
+        java.util.HashMap<String,AttributeValue> exclusiveStartKey = new java.util.HashMap<String,AttributeValue>();
+    	
+    	if (hashKey != null) {
+    	    exclusiveStartKey.put(hashKey.getKey(), hashKey.getValue());
+    	} else
+            throw new IllegalArgumentException("hashKey must be non-null object.");
+    	if (rangeKey != null) {
+    	    exclusiveStartKey.put(rangeKey.getKey(), rangeKey.getValue());
+    	} 
+        setExclusiveStartKey(exclusiveStartKey);
+    }
+    
+    /**
+     * The primary key of the first item that this operation will evaluate.
+     * Use the value that was returned for <i>LastEvaluatedKey</i> in the
+     * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
+     * be String, Number or Binary. No set data types are allowed. <p>In a
+     * parallel scan, a <i>Scan</i> request that includes
+     * <i>ExclusiveStartKey</i> must specify the same segment whose previous
+     * <i>Scan</i> returned the corresponding value of
+     * <i>LastEvaluatedKey</i>.
+     * <p>
+     * This method accepts the hashKey, rangeKey of ExclusiveStartKey as
+     * java.util.Map.Entry<String, AttributeValue> objects.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param hashKey Primary hash key.
+     * @param rangeKey Primary range key. (null if it a hash-only table)
+     */    
+    public ScanRequest withExclusiveStartKey(java.util.Map.Entry<String, AttributeValue> hashKey, java.util.Map.Entry<String, AttributeValue> rangeKey) throws IllegalArgumentException {
+    	setExclusiveStartKey(hashKey, rangeKey);
+    	return this;
+    }
+	
+    /**
+     * The primary key of the first item that this operation will evaluate.
+     * Use the value that was returned for <i>LastEvaluatedKey</i> in the
+     * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
+     * be String, Number or Binary. No set data types are allowed. <p>In a
+     * parallel scan, a <i>Scan</i> request that includes
+     * <i>ExclusiveStartKey</i> must specify the same segment whose previous
+     * <i>Scan</i> returned the corresponding value of
+     * <i>LastEvaluatedKey</i>.
+     * <p>
+     * The method adds a new key-value pair into ExclusiveStartKey parameter,
+     * and returns a reference to this object so that method calls can be
+     * chained together.
+     *
+     * @param key The key of the entry to be added into ExclusiveStartKey.
+     * @param value The corresponding value of the entry to be added into ExclusiveStartKey.
+     */
+	public ScanRequest addExclusiveStartKeyEntry(String key, AttributeValue value) {
+		if (null == this.exclusiveStartKey) {
+			this.exclusiveStartKey = new java.util.HashMap<String,AttributeValue>();
+		}
+		if (this.exclusiveStartKey.containsKey(key))
+			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+		this.exclusiveStartKey.put(key, value);
+		return this;
+	}
+	
+	/**
+	 * Removes all the entries added into ExclusiveStartKey.
+	 * <p>
+	 * Returns a reference to this object so that method calls can be chained together.
+	 */
+	public ScanRequest clearExclusiveStartKeyEntries() {
+		this.exclusiveStartKey = null;
+		return this;
+	}
+	
     /**
      * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
      * the response; if set to <code>NONE</code> (the default),
@@ -1763,9 +1965,6 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
      *         the response; if set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ReturnConsumedCapacity
      */
     public ScanRequest withReturnConsumedCapacity(String returnConsumedCapacity) {
@@ -1805,9 +2004,6 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
      * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
      *         the response; if set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see ReturnConsumedCapacity
      */
@@ -1903,9 +2099,6 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
      *         or equal to 4096. If you specify a <i>TotalSegments</i> value of 1,
      *         the <i>Scan</i> will be sequential rather than parallel. <p>If you
      *         specify <i>TotalSegments</i>, you must also specify <i>Segment</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ScanRequest withTotalSegments(Integer totalSegments) {
         this.totalSegments = totalSegments;
@@ -2012,9 +2205,6 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
      *         than or equal to 0, and less than the value provided for
      *         <i>TotalSegments</i>. <p>If you specify <i>Segment</i>, you must also
      *         specify <i>TotalSegments</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ScanRequest withSegment(Integer segment) {
         this.segment = segment;

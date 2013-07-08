@@ -130,7 +130,7 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes  implements Serial
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 5<br/>
      */
-    private java.util.List<String> tagList;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> tagList;
 
     private String workflowTypeVersion;
 
@@ -683,7 +683,8 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes  implements Serial
     public java.util.List<String> getTagList() {
         
         if (tagList == null) {
-            tagList = new java.util.ArrayList<String>();
+              tagList = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              tagList.setAutoConstruct(true);
         }
         return tagList;
     }
@@ -707,8 +708,7 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes  implements Serial
             this.tagList = null;
             return;
         }
-
-        java.util.List<String> tagListCopy = new java.util.ArrayList<String>(tagList.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> tagListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(tagList.size());
         tagListCopy.addAll(tagList);
         this.tagList = tagListCopy;
     }
@@ -763,7 +763,7 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes  implements Serial
         if (tagList == null) {
             this.tagList = null;
         } else {
-            java.util.List<String> tagListCopy = new java.util.ArrayList<String>(tagList.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> tagListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(tagList.size());
             tagListCopy.addAll(tagList);
             this.tagList = tagListCopy;
         }
@@ -825,13 +825,13 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes  implements Serial
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInput() != null) sb.append("Input: " + getInput() + ",");    	
-        if (getExecutionStartToCloseTimeout() != null) sb.append("ExecutionStartToCloseTimeout: " + getExecutionStartToCloseTimeout() + ",");    	
-        if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ",");    	
-        if (getTaskStartToCloseTimeout() != null) sb.append("TaskStartToCloseTimeout: " + getTaskStartToCloseTimeout() + ",");    	
-        if (getChildPolicy() != null) sb.append("ChildPolicy: " + getChildPolicy() + ",");    	
-        if (getTagList() != null) sb.append("TagList: " + getTagList() + ",");    	
+        sb.append("{");
+        if (getInput() != null) sb.append("Input: " + getInput() + ",");
+        if (getExecutionStartToCloseTimeout() != null) sb.append("ExecutionStartToCloseTimeout: " + getExecutionStartToCloseTimeout() + ",");
+        if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ",");
+        if (getTaskStartToCloseTimeout() != null) sb.append("TaskStartToCloseTimeout: " + getTaskStartToCloseTimeout() + ",");
+        if (getChildPolicy() != null) sb.append("ChildPolicy: " + getChildPolicy() + ",");
+        if (getTagList() != null) sb.append("TagList: " + getTagList() + ",");
         if (getWorkflowTypeVersion() != null) sb.append("WorkflowTypeVersion: " + getWorkflowTypeVersion() );
         sb.append("}");
         return sb.toString();

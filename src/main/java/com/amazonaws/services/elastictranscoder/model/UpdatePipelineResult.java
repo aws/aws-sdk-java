@@ -16,7 +16,9 @@ package com.amazonaws.services.elastictranscoder.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * When you update a pipeline, Elastic Transcoder returns the values that you specified in the request.
+ * </p>
  */
 public class UpdatePipelineResult  implements Serializable  {
 

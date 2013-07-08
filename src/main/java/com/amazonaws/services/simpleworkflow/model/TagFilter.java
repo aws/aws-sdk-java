@@ -91,7 +91,7 @@ public class TagFilter  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getTag() != null) sb.append("Tag: " + getTag() );
         sb.append("}");
         return sb.toString();

@@ -21,12 +21,6 @@ import java.io.Serializable;
  * <p>
  * Returns an array of all the tables associated with the current account and endpoint.
  * </p>
- * <p>
- * Each Amazon DynamoDB endpoint is entirely independent. For example, if you have two tables called "MyTable," one in
- * <i>dynamodb.us-east-1.amazonaws.com</i> and one in <i>dynamodb.us-west-1.amazonaws.com</i> , they are completely independent and do not share any
- * data. The <i>ListTables</i> operation returns all of the table names associated with the account making the request, for the endpoint that receives
- * the request.
- * </p>
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#listTables(ListTablesRequest)
  */
@@ -106,9 +100,6 @@ public class ListTablesRequest extends AmazonWebServiceRequest  implements Seria
      *         <i>ListTables</i> operation and received a
      *         <i>LastEvaluatedTableName</i> value in the response, use that value
      *         here to continue the list.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListTablesRequest withExclusiveStartTableName(String exclusiveStartTableName) {
         this.exclusiveStartTableName = exclusiveStartTableName;
@@ -149,9 +140,6 @@ public class ListTablesRequest extends AmazonWebServiceRequest  implements Seria
      * <b>Range: </b>1 - 100<br/>
      *
      * @param limit A maximum number of table names to return.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListTablesRequest withLimit(Integer limit) {
         this.limit = limit;

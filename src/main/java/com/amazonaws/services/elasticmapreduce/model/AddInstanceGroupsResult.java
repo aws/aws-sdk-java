@@ -34,7 +34,7 @@ public class AddInstanceGroupsResult  implements Serializable  {
     /**
      * Instance group IDs of the newly created instance groups.
      */
-    private java.util.List<String> instanceGroupIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceGroupIds;
 
     /**
      * The job flow ID in which the instance groups are added.
@@ -90,7 +90,8 @@ public class AddInstanceGroupsResult  implements Serializable  {
     public java.util.List<String> getInstanceGroupIds() {
         
         if (instanceGroupIds == null) {
-            instanceGroupIds = new java.util.ArrayList<String>();
+              instanceGroupIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              instanceGroupIds.setAutoConstruct(true);
         }
         return instanceGroupIds;
     }
@@ -105,8 +106,7 @@ public class AddInstanceGroupsResult  implements Serializable  {
             this.instanceGroupIds = null;
             return;
         }
-
-        java.util.List<String> instanceGroupIdsCopy = new java.util.ArrayList<String>(instanceGroupIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceGroupIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(instanceGroupIds.size());
         instanceGroupIdsCopy.addAll(instanceGroupIds);
         this.instanceGroupIds = instanceGroupIdsCopy;
     }
@@ -143,7 +143,7 @@ public class AddInstanceGroupsResult  implements Serializable  {
         if (instanceGroupIds == null) {
             this.instanceGroupIds = null;
         } else {
-            java.util.List<String> instanceGroupIdsCopy = new java.util.ArrayList<String>(instanceGroupIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceGroupIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(instanceGroupIds.size());
             instanceGroupIdsCopy.addAll(instanceGroupIds);
             this.instanceGroupIds = instanceGroupIdsCopy;
         }
@@ -162,8 +162,8 @@ public class AddInstanceGroupsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getJobFlowId() != null) sb.append("JobFlowId: " + getJobFlowId() + ",");    	
+        sb.append("{");
+        if (getJobFlowId() != null) sb.append("JobFlowId: " + getJobFlowId() + ",");
         if (getInstanceGroupIds() != null) sb.append("InstanceGroupIds: " + getInstanceGroupIds() );
         sb.append("}");
         return sb.toString();

@@ -111,8 +111,8 @@ public class DomainDetail  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDomainInfo() != null) sb.append("DomainInfo: " + getDomainInfo() + ",");    	
+        sb.append("{");
+        if (getDomainInfo() != null) sb.append("DomainInfo: " + getDomainInfo() + ",");
         if (getConfiguration() != null) sb.append("Configuration: " + getConfiguration() );
         sb.append("}");
         return sb.toString();

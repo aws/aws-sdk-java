@@ -95,8 +95,8 @@ public class Job  implements Serializable  {
 
     /**
      * The status of the job: <code>Submitted</code>,
-     * <code>Progressing</code>, <code>l</code>, <code>Canceled</code>, or
-     * <code>Error</code>.
+     * <code>Progressing</code>, <code>Complete</code>,
+     * <code>Canceled</code>, or <code>Error</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^Submitted$)|(^Progressing$)|(^Complete$)|(^Canceled$)|(^Error$)<br/>
@@ -626,15 +626,15 @@ public class Job  implements Serializable  {
     
     /**
      * The status of the job: <code>Submitted</code>,
-     * <code>Progressing</code>, <code>l</code>, <code>Canceled</code>, or
-     * <code>Error</code>.
+     * <code>Progressing</code>, <code>Complete</code>,
+     * <code>Canceled</code>, or <code>Error</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^Submitted$)|(^Progressing$)|(^Complete$)|(^Canceled$)|(^Error$)<br/>
      *
      * @return The status of the job: <code>Submitted</code>,
-     *         <code>Progressing</code>, <code>l</code>, <code>Canceled</code>, or
-     *         <code>Error</code>.
+     *         <code>Progressing</code>, <code>Complete</code>,
+     *         <code>Canceled</code>, or <code>Error</code>.
      */
     public String getStatus() {
         return status;
@@ -642,15 +642,15 @@ public class Job  implements Serializable  {
     
     /**
      * The status of the job: <code>Submitted</code>,
-     * <code>Progressing</code>, <code>l</code>, <code>Canceled</code>, or
-     * <code>Error</code>.
+     * <code>Progressing</code>, <code>Complete</code>,
+     * <code>Canceled</code>, or <code>Error</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^Submitted$)|(^Progressing$)|(^Complete$)|(^Canceled$)|(^Error$)<br/>
      *
      * @param status The status of the job: <code>Submitted</code>,
-     *         <code>Progressing</code>, <code>l</code>, <code>Canceled</code>, or
-     *         <code>Error</code>.
+     *         <code>Progressing</code>, <code>Complete</code>,
+     *         <code>Canceled</code>, or <code>Error</code>.
      */
     public void setStatus(String status) {
         this.status = status;
@@ -658,8 +658,8 @@ public class Job  implements Serializable  {
     
     /**
      * The status of the job: <code>Submitted</code>,
-     * <code>Progressing</code>, <code>l</code>, <code>Canceled</code>, or
-     * <code>Error</code>.
+     * <code>Progressing</code>, <code>Complete</code>,
+     * <code>Canceled</code>, or <code>Error</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -667,8 +667,8 @@ public class Job  implements Serializable  {
      * <b>Pattern: </b>(^Submitted$)|(^Progressing$)|(^Complete$)|(^Canceled$)|(^Error$)<br/>
      *
      * @param status The status of the job: <code>Submitted</code>,
-     *         <code>Progressing</code>, <code>l</code>, <code>Canceled</code>, or
-     *         <code>Error</code>.
+     *         <code>Progressing</code>, <code>Complete</code>,
+     *         <code>Canceled</code>, or <code>Error</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

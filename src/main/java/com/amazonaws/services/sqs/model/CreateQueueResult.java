@@ -16,39 +16,36 @@ package com.amazonaws.services.sqs.model;
 import java.io.Serializable;
 
 /**
- * 
+ * Create Queue Result
  */
 public class CreateQueueResult  implements Serializable  {
 
-    /**
-     * The URL for the created SQS queue.
-     */
     private String queueUrl;
 
     /**
-     * The URL for the created SQS queue.
+     * Returns the value of the QueueUrl property for this object.
      *
-     * @return The URL for the created SQS queue.
+     * @return The value of the QueueUrl property for this object.
      */
     public String getQueueUrl() {
         return queueUrl;
     }
     
     /**
-     * The URL for the created SQS queue.
+     * Sets the value of the QueueUrl property for this object.
      *
-     * @param queueUrl The URL for the created SQS queue.
+     * @param queueUrl The new value for the QueueUrl property for this object.
      */
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
     
     /**
-     * The URL for the created SQS queue.
+     * Sets the value of the QueueUrl property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queueUrl The URL for the created SQS queue.
+     * @param queueUrl The new value for the QueueUrl property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

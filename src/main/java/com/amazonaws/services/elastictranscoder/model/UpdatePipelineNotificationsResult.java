@@ -16,7 +16,9 @@ package com.amazonaws.services.elastictranscoder.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * The <code>UpdatePipelineNotificationsResponse</code> structure.
+ * </p>
  */
 public class UpdatePipelineNotificationsResult  implements Serializable  {
 

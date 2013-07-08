@@ -38,7 +38,7 @@ public class ChangeBatch  implements Serializable  {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      */
-    private java.util.List<Change> changes;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Change> changes;
 
     /**
      * Default constructor for a new ChangeBatch object.  Callers should use the
@@ -46,6 +46,8 @@ public class ChangeBatch  implements Serializable  {
      */
     public ChangeBatch() {}
     
+
+
     /**
      * Constructs a new ChangeBatch object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -56,7 +58,7 @@ public class ChangeBatch  implements Serializable  {
      * delete.
      */
     public ChangeBatch(java.util.List<Change> changes) {
-        this.changes = changes;
+        setChanges(changes);
     }
 
     
@@ -123,7 +125,8 @@ public class ChangeBatch  implements Serializable  {
     public java.util.List<Change> getChanges() {
         
         if (changes == null) {
-            changes = new java.util.ArrayList<Change>();
+              changes = new com.amazonaws.internal.ListWithAutoConstructFlag<Change>();
+              changes.setAutoConstruct(true);
         }
         return changes;
     }
@@ -143,8 +146,7 @@ public class ChangeBatch  implements Serializable  {
             this.changes = null;
             return;
         }
-
-        java.util.List<Change> changesCopy = new java.util.ArrayList<Change>(changes.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Change> changesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Change>(changes.size());
         changesCopy.addAll(changes);
         this.changes = changesCopy;
     }
@@ -191,7 +193,7 @@ public class ChangeBatch  implements Serializable  {
         if (changes == null) {
             this.changes = null;
         } else {
-            java.util.List<Change> changesCopy = new java.util.ArrayList<Change>(changes.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Change> changesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Change>(changes.size());
             changesCopy.addAll(changes);
             this.changes = changesCopy;
         }
@@ -210,8 +212,8 @@ public class ChangeBatch  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getComment() != null) sb.append("Comment: " + getComment() + ",");    	
+        sb.append("{");
+        if (getComment() != null) sb.append("Comment: " + getComment() + ",");
         if (getChanges() != null) sb.append("Changes: " + getChanges() );
         sb.append("}");
         return sb.toString();

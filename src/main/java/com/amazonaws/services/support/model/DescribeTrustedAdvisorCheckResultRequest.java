@@ -19,20 +19,26 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.support.AWSSupport#describeTrustedAdvisorCheckResult(DescribeTrustedAdvisorCheckResultRequest) DescribeTrustedAdvisorCheckResult operation}.
  * <p>
- * This action responds with the results of a Trusted Advisor check. Once you have obtained the list of available Trusted Advisor checks by calling
- * DescribeTrustedAdvisorChecks, you specify the <i>CheckId</i> for the check you want to retrieve from AWS Support.
+ * This action responds with the results of a Trusted Advisor check. Once you have obtained the list of available Trusted Advisor checks by calling <a
+ * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"> DescribeTrustedAdvisorChecks </a> , you
+ * specify the <i>CheckId</i> for the check you want to retrieve from AWS Support.
  * </p>
  * <p>
- * The response for this action contains a JSON-formatted TrustedAdvisorCheckResult object
+ * The response for this action contains a JSON-formatted <a
+ * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckResultResult.html"> TrustedAdvisorCheckResult </a>
+ * object
  * </p>
  * <p>
  * , which is a container for the following three objects:
  * </p>
  * <p>
  * </p>
- * <ol> <li> TrustedAdvisorCategorySpecificSummary </li>
- * <li> TrustedAdvisorResourceDetail </li>
- * <li> TrustedAdvisorResourcesSummary </li>
+ * <ol> <li> <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCategorySpecificSummary.html">
+ * TrustedAdvisorCategorySpecificSummary </a> </li>
+ * <li> <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorResourceDetail.html"> TrustedAdvisorResourceDetail </a>
+ * </li>
+ * <li> <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorResourcesSummary.html"> TrustedAdvisorResourcesSummary </a>
+ * </li>
  * </ol> <p>
  * In addition, the response contains the following fields:
  * </p>

@@ -59,7 +59,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest  implements 
     /**
      * A list of <a>StepConfig</a> to be executed by the job flow.
      */
-    private java.util.List<StepConfig> steps;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<StepConfig> steps;
 
     /**
      * Default constructor for a new AddJobFlowStepsRequest object.  Callers should use the
@@ -67,6 +67,8 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest  implements 
      */
     public AddJobFlowStepsRequest() {}
     
+
+
     /**
      * Constructs a new AddJobFlowStepsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -77,11 +79,13 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest  implements 
      * from <a>DescribeJobFlows</a>.
      */
     public AddJobFlowStepsRequest(String jobFlowId) {
-        this.jobFlowId = jobFlowId;
+        setJobFlowId(jobFlowId);
     }
 
     
     
+
+
     /**
      * Constructs a new AddJobFlowStepsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -94,8 +98,8 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest  implements 
      * flow.
      */
     public AddJobFlowStepsRequest(String jobFlowId, java.util.List<StepConfig> steps) {
-        this.jobFlowId = jobFlowId;
-        this.steps = steps;
+        setJobFlowId(jobFlowId);
+        setSteps(steps);
     }
 
     
@@ -166,7 +170,8 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest  implements 
     public java.util.List<StepConfig> getSteps() {
         
         if (steps == null) {
-            steps = new java.util.ArrayList<StepConfig>();
+              steps = new com.amazonaws.internal.ListWithAutoConstructFlag<StepConfig>();
+              steps.setAutoConstruct(true);
         }
         return steps;
     }
@@ -181,8 +186,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest  implements 
             this.steps = null;
             return;
         }
-
-        java.util.List<StepConfig> stepsCopy = new java.util.ArrayList<StepConfig>(steps.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<StepConfig> stepsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<StepConfig>(steps.size());
         stepsCopy.addAll(steps);
         this.steps = stepsCopy;
     }
@@ -219,7 +223,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest  implements 
         if (steps == null) {
             this.steps = null;
         } else {
-            java.util.List<StepConfig> stepsCopy = new java.util.ArrayList<StepConfig>(steps.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<StepConfig> stepsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<StepConfig>(steps.size());
             stepsCopy.addAll(steps);
             this.steps = stepsCopy;
         }
@@ -238,8 +242,8 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest  implements 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getJobFlowId() != null) sb.append("JobFlowId: " + getJobFlowId() + ",");    	
+        sb.append("{");
+        if (getJobFlowId() != null) sb.append("JobFlowId: " + getJobFlowId() + ",");
         if (getSteps() != null) sb.append("Steps: " + getSteps() );
         sb.append("}");
         return sb.toString();

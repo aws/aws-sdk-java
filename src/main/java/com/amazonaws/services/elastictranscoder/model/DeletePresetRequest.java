@@ -19,10 +19,10 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#deletePreset(DeletePresetRequest) DeletePreset operation}.
  * <p>
- * To delete a preset, send a DELETE request to the <code>/2012-09-25/presets/[presetId] </code> resource.
+ * The DeletePreset operation removes a preset that you've added in an AWS region.
  * </p>
  * <p>
- * <b>NOTE:</b> If the preset has been used, you cannot delete it.
+ * <b>NOTE:</b> You can't delete the default presets that are included with Elastic Transcoder.
  * </p>
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#deletePreset(DeletePresetRequest)

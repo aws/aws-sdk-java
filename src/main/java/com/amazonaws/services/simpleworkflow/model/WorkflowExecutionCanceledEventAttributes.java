@@ -151,8 +151,8 @@ public class WorkflowExecutionCanceledEventAttributes  implements Serializable  
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDetails() != null) sb.append("Details: " + getDetails() + ",");    	
+        sb.append("{");
+        if (getDetails() != null) sb.append("Details: " + getDetails() + ",");
         if (getDecisionTaskCompletedEventId() != null) sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() );
         sb.append("}");
         return sb.toString();

@@ -22,11 +22,14 @@ import java.io.Serializable;
  * Creates a new case in the AWS Support Center. This action is modeled on the behavior of the AWS Support Center <a
  * href="https://aws.amazon.com/support/createCase"> Open a new case </a> page. Its parameters require you to specify the following information:
  * </p>
- * <ol> <li> <b>ServiceCode.</b> Represents a code for an AWS service. You obtain the <i>ServiceCode</i> by calling DescribeServices. </li>
+ * <ol> <li> <b>ServiceCode.</b> Represents a code for an AWS service. You obtain the <i>ServiceCode</i> by calling <a
+ * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"> DescribeServices </a> . </li>
  * <li> <b>CategoryCode</b> . Represents a category for the service defined for the ServiceCode value. You also obtain the cateogory code for a service
- * by calling DescribeServices. Each AWS service defines its own set of category codes. </li>
+ * by calling <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"> DescribeServices </a> . Each AWS service
+ * defines its own set of category codes. </li>
  * <li> <b>SeverityCode</b> . Represents a value that specifies the urgency of the case, and the time interval in which your service level agreement
- * specifies a response from AWS Support. You obtain the SeverityCode by calling DescribeSeverityLevels.</li>
+ * specifies a response from AWS Support. You obtain the SeverityCode by calling <a
+ * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeSeverityLevels.html"> DescribeSeverityLevels </a> .</li>
  * <li> <b>Subject</b> . Represents the <b>Subject</b> field on the AWS Support Center <a href="https://aws.amazon.com/support/createCase"> Open a new
  * case </a> page.</li>
  * <li> <b>CommunicationBody</b> . Represents the <b>Description</b> field on the AWS Support Center <a
@@ -36,13 +39,16 @@ import java.io.Serializable;
  * new case </a> page. You can list email addresses to be copied on any correspondence about the case. The account that opens the case is already
  * identified by passing the AWS Credentials in the HTTP POST method or in a method or function call from one of the programming languages supported by
  * an <a href="http://aws.amazon.com/tools/"> AWS SDK </a> . </li>
+ * <li> <b>IssueType</b> . Indicates the type of issue for the case. You can specify either "customer-service" or "technical." If you do not indicate a
+ * value, this parameter defaults to "technical." </li>
  * </ol> <p>
  * <b>NOTE:</b>The AWS Support API does not currently support the ability to add attachments to cases. You can, however, call AddCommunicationToCase to
  * add information to an open case.
  * </p>
  * <p>
- * A successful CreateCase request returns an AWS Support case number. Case numbers are used by DescribeCases request to retrieve existing AWS Support
- * support cases.
+ * A successful <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"> CreateCase </a> request returns an AWS Support
+ * case number. Case numbers are used by <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeCases.html"> DescribeCases </a>
+ * request to retrieve existing AWS Support support cases.
  * </p>
  *
  * @see com.amazonaws.services.support.AWSSupport#createCase(CreateCaseRequest)
@@ -56,7 +62,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
 
     /**
      * Code for the AWS service returned by the call to <a
-     * href="API_DescribeServices.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"
      * title="DescribeServices">DescribeServices</a>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -66,7 +72,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
 
     /**
      * Code for the severity level returned by the call to <a
-     * href="API_DescribeSeverityLevels.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeSeverityLevels.html"
      * title="DescribeSeverityLevels">DescribeSeverityLevels</a>. <note>The
      * availability of severity levels depends on each customer's support
      * subscription. In other words, your subscription may not necessarily
@@ -81,7 +87,8 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
 
     /**
      * Parameter that represents the communication body text when you create
-     * an AWS Support case by calling <a href="API_CreateCase.html"
+     * an AWS Support case by calling <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"
      * title="CreateCase">CreateCase</a>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -107,7 +114,8 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
     private String language;
 
     /**
-     * Field passed as a parameter in a <a href="API_CreateCase.html"
+     * Field passed as a parameter in a <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"
      * title="CreateCase">CreateCase</a> call.
      */
     private String issueType;
@@ -148,14 +156,14 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
     
     /**
      * Code for the AWS service returned by the call to <a
-     * href="API_DescribeServices.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"
      * title="DescribeServices">DescribeServices</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[0-9a-z\-_]+<br/>
      *
      * @return Code for the AWS service returned by the call to <a
-     *         href="API_DescribeServices.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"
      *         title="DescribeServices">DescribeServices</a>.
      */
     public String getServiceCode() {
@@ -164,14 +172,14 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
     
     /**
      * Code for the AWS service returned by the call to <a
-     * href="API_DescribeServices.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"
      * title="DescribeServices">DescribeServices</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[0-9a-z\-_]+<br/>
      *
      * @param serviceCode Code for the AWS service returned by the call to <a
-     *         href="API_DescribeServices.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"
      *         title="DescribeServices">DescribeServices</a>.
      */
     public void setServiceCode(String serviceCode) {
@@ -180,7 +188,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
     
     /**
      * Code for the AWS service returned by the call to <a
-     * href="API_DescribeServices.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"
      * title="DescribeServices">DescribeServices</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -189,7 +197,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
      * <b>Pattern: </b>[0-9a-z\-_]+<br/>
      *
      * @param serviceCode Code for the AWS service returned by the call to <a
-     *         href="API_DescribeServices.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"
      *         title="DescribeServices">DescribeServices</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -203,14 +211,14 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
     
     /**
      * Code for the severity level returned by the call to <a
-     * href="API_DescribeSeverityLevels.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeSeverityLevels.html"
      * title="DescribeSeverityLevels">DescribeSeverityLevels</a>. <note>The
      * availability of severity levels depends on each customer's support
      * subscription. In other words, your subscription may not necessarily
      * require the urgent level of response time.</note>
      *
      * @return Code for the severity level returned by the call to <a
-     *         href="API_DescribeSeverityLevels.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeSeverityLevels.html"
      *         title="DescribeSeverityLevels">DescribeSeverityLevels</a>. <note>The
      *         availability of severity levels depends on each customer's support
      *         subscription. In other words, your subscription may not necessarily
@@ -222,14 +230,14 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
     
     /**
      * Code for the severity level returned by the call to <a
-     * href="API_DescribeSeverityLevels.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeSeverityLevels.html"
      * title="DescribeSeverityLevels">DescribeSeverityLevels</a>. <note>The
      * availability of severity levels depends on each customer's support
      * subscription. In other words, your subscription may not necessarily
      * require the urgent level of response time.</note>
      *
      * @param severityCode Code for the severity level returned by the call to <a
-     *         href="API_DescribeSeverityLevels.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeSeverityLevels.html"
      *         title="DescribeSeverityLevels">DescribeSeverityLevels</a>. <note>The
      *         availability of severity levels depends on each customer's support
      *         subscription. In other words, your subscription may not necessarily
@@ -241,7 +249,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
     
     /**
      * Code for the severity level returned by the call to <a
-     * href="API_DescribeSeverityLevels.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeSeverityLevels.html"
      * title="DescribeSeverityLevels">DescribeSeverityLevels</a>. <note>The
      * availability of severity levels depends on each customer's support
      * subscription. In other words, your subscription may not necessarily
@@ -250,7 +258,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param severityCode Code for the severity level returned by the call to <a
-     *         href="API_DescribeSeverityLevels.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeSeverityLevels.html"
      *         title="DescribeSeverityLevels">DescribeSeverityLevels</a>. <note>The
      *         availability of severity levels depends on each customer's support
      *         subscription. In other words, your subscription may not necessarily
@@ -301,14 +309,16 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
     
     /**
      * Parameter that represents the communication body text when you create
-     * an AWS Support case by calling <a href="API_CreateCase.html"
+     * an AWS Support case by calling <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"
      * title="CreateCase">CreateCase</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 8000<br/>
      *
      * @return Parameter that represents the communication body text when you create
-     *         an AWS Support case by calling <a href="API_CreateCase.html"
+     *         an AWS Support case by calling <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"
      *         title="CreateCase">CreateCase</a>.
      */
     public String getCommunicationBody() {
@@ -317,14 +327,16 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
     
     /**
      * Parameter that represents the communication body text when you create
-     * an AWS Support case by calling <a href="API_CreateCase.html"
+     * an AWS Support case by calling <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"
      * title="CreateCase">CreateCase</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 8000<br/>
      *
      * @param communicationBody Parameter that represents the communication body text when you create
-     *         an AWS Support case by calling <a href="API_CreateCase.html"
+     *         an AWS Support case by calling <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"
      *         title="CreateCase">CreateCase</a>.
      */
     public void setCommunicationBody(String communicationBody) {
@@ -333,7 +345,8 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
     
     /**
      * Parameter that represents the communication body text when you create
-     * an AWS Support case by calling <a href="API_CreateCase.html"
+     * an AWS Support case by calling <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"
      * title="CreateCase">CreateCase</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -342,7 +355,8 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
      * <b>Length: </b>1 - 8000<br/>
      *
      * @param communicationBody Parameter that represents the communication body text when you create
-     *         an AWS Support case by calling <a href="API_CreateCase.html"
+     *         an AWS Support case by calling <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"
      *         title="CreateCase">CreateCase</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -496,10 +510,12 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
     
     
     /**
-     * Field passed as a parameter in a <a href="API_CreateCase.html"
+     * Field passed as a parameter in a <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"
      * title="CreateCase">CreateCase</a> call.
      *
-     * @return Field passed as a parameter in a <a href="API_CreateCase.html"
+     * @return Field passed as a parameter in a <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"
      *         title="CreateCase">CreateCase</a> call.
      */
     public String getIssueType() {
@@ -507,10 +523,12 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
     }
     
     /**
-     * Field passed as a parameter in a <a href="API_CreateCase.html"
+     * Field passed as a parameter in a <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"
      * title="CreateCase">CreateCase</a> call.
      *
-     * @param issueType Field passed as a parameter in a <a href="API_CreateCase.html"
+     * @param issueType Field passed as a parameter in a <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"
      *         title="CreateCase">CreateCase</a> call.
      */
     public void setIssueType(String issueType) {
@@ -518,12 +536,14 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
     }
     
     /**
-     * Field passed as a parameter in a <a href="API_CreateCase.html"
+     * Field passed as a parameter in a <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"
      * title="CreateCase">CreateCase</a> call.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param issueType Field passed as a parameter in a <a href="API_CreateCase.html"
+     * @param issueType Field passed as a parameter in a <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"
      *         title="CreateCase">CreateCase</a> call.
      *
      * @return A reference to this updated object so that method calls can be chained 

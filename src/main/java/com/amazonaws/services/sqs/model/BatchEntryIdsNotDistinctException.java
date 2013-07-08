@@ -17,9 +17,7 @@ package com.amazonaws.services.sqs.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * <p>
- * Two or more batch entries have the same <code>Id</code> in the request.
- * </p>
+ * AmazonSQS exception
  */        
 public class BatchEntryIdsNotDistinctException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

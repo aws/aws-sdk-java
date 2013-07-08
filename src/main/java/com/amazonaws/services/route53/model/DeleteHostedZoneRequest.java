@@ -52,6 +52,8 @@ public class DeleteHostedZoneRequest extends AmazonWebServiceRequest  implements
      */
     public DeleteHostedZoneRequest() {}
     
+
+
     /**
      * Constructs a new DeleteHostedZoneRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -62,7 +64,7 @@ public class DeleteHostedZoneRequest extends AmazonWebServiceRequest  implements
      * 53 DNS servers.
      */
     public DeleteHostedZoneRequest(String id) {
-        this.id = id;
+        setId(id);
     }
 
     
@@ -127,7 +129,7 @@ public class DeleteHostedZoneRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getId() != null) sb.append("Id: " + getId() );
         sb.append("}");
         return sb.toString();

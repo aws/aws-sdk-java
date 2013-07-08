@@ -46,6 +46,8 @@ public class KeyValue  implements Serializable  {
      */
     public KeyValue() {}
     
+
+
     /**
      * Constructs a new KeyValue object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -55,8 +57,8 @@ public class KeyValue  implements Serializable  {
      * @param value The value part of the identified key.
      */
     public KeyValue(String key, String value) {
-        this.key = key;
-        this.value = value;
+        setKey(key);
+        setValue(value);
     }
 
     
@@ -164,8 +166,8 @@ public class KeyValue  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getKey() != null) sb.append("Key: " + getKey() + ",");    	
+        sb.append("{");
+        if (getKey() != null) sb.append("Key: " + getKey() + ",");
         if (getValue() != null) sb.append("Value: " + getValue() );
         sb.append("}");
         return sb.toString();

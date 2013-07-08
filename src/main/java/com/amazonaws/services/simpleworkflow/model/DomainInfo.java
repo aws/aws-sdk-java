@@ -281,9 +281,9 @@ public class DomainInfo  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
+        sb.append("{");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
         if (getDescription() != null) sb.append("Description: " + getDescription() );
         sb.append("}");
         return sb.toString();

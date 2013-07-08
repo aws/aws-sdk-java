@@ -76,19 +76,19 @@ public class JobFlowDetail  implements Serializable  {
     /**
      * A list of steps run by the job flow.
      */
-    private java.util.List<StepDetail> steps;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<StepDetail> steps;
 
     /**
      * A list of the bootstrap actions run by the job flow.
      */
-    private java.util.List<BootstrapActionDetail> bootstrapActions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<BootstrapActionDetail> bootstrapActions;
 
     /**
      * A list of strings set by third party software when the job flow is
      * launched. If you are not using third party software to manage the job
      * flow this value is empty.
      */
-    private java.util.List<String> supportedProducts;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> supportedProducts;
 
     /**
      * Specifies whether the job flow is visible to all IAM users of the AWS
@@ -117,6 +117,8 @@ public class JobFlowDetail  implements Serializable  {
      */
     public JobFlowDetail() {}
     
+
+
     /**
      * Constructs a new JobFlowDetail object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -129,10 +131,10 @@ public class JobFlowDetail  implements Serializable  {
      * @param instances Describes the Amazon EC2 instances of the job flow.
      */
     public JobFlowDetail(String jobFlowId, String name, JobFlowExecutionStatusDetail executionStatusDetail, JobFlowInstancesDetail instances) {
-        this.jobFlowId = jobFlowId;
-        this.name = name;
-        this.executionStatusDetail = executionStatusDetail;
-        this.instances = instances;
+        setJobFlowId(jobFlowId);
+        setName(name);
+        setExecutionStatusDetail(executionStatusDetail);
+        setInstances(instances);
     }
 
     
@@ -427,7 +429,8 @@ public class JobFlowDetail  implements Serializable  {
     public java.util.List<StepDetail> getSteps() {
         
         if (steps == null) {
-            steps = new java.util.ArrayList<StepDetail>();
+              steps = new com.amazonaws.internal.ListWithAutoConstructFlag<StepDetail>();
+              steps.setAutoConstruct(true);
         }
         return steps;
     }
@@ -442,8 +445,7 @@ public class JobFlowDetail  implements Serializable  {
             this.steps = null;
             return;
         }
-
-        java.util.List<StepDetail> stepsCopy = new java.util.ArrayList<StepDetail>(steps.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<StepDetail> stepsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<StepDetail>(steps.size());
         stepsCopy.addAll(steps);
         this.steps = stepsCopy;
     }
@@ -480,7 +482,7 @@ public class JobFlowDetail  implements Serializable  {
         if (steps == null) {
             this.steps = null;
         } else {
-            java.util.List<StepDetail> stepsCopy = new java.util.ArrayList<StepDetail>(steps.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<StepDetail> stepsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<StepDetail>(steps.size());
             stepsCopy.addAll(steps);
             this.steps = stepsCopy;
         }
@@ -496,7 +498,8 @@ public class JobFlowDetail  implements Serializable  {
     public java.util.List<BootstrapActionDetail> getBootstrapActions() {
         
         if (bootstrapActions == null) {
-            bootstrapActions = new java.util.ArrayList<BootstrapActionDetail>();
+              bootstrapActions = new com.amazonaws.internal.ListWithAutoConstructFlag<BootstrapActionDetail>();
+              bootstrapActions.setAutoConstruct(true);
         }
         return bootstrapActions;
     }
@@ -511,8 +514,7 @@ public class JobFlowDetail  implements Serializable  {
             this.bootstrapActions = null;
             return;
         }
-
-        java.util.List<BootstrapActionDetail> bootstrapActionsCopy = new java.util.ArrayList<BootstrapActionDetail>(bootstrapActions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<BootstrapActionDetail> bootstrapActionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BootstrapActionDetail>(bootstrapActions.size());
         bootstrapActionsCopy.addAll(bootstrapActions);
         this.bootstrapActions = bootstrapActionsCopy;
     }
@@ -549,7 +551,7 @@ public class JobFlowDetail  implements Serializable  {
         if (bootstrapActions == null) {
             this.bootstrapActions = null;
         } else {
-            java.util.List<BootstrapActionDetail> bootstrapActionsCopy = new java.util.ArrayList<BootstrapActionDetail>(bootstrapActions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<BootstrapActionDetail> bootstrapActionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BootstrapActionDetail>(bootstrapActions.size());
             bootstrapActionsCopy.addAll(bootstrapActions);
             this.bootstrapActions = bootstrapActionsCopy;
         }
@@ -569,7 +571,8 @@ public class JobFlowDetail  implements Serializable  {
     public java.util.List<String> getSupportedProducts() {
         
         if (supportedProducts == null) {
-            supportedProducts = new java.util.ArrayList<String>();
+              supportedProducts = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              supportedProducts.setAutoConstruct(true);
         }
         return supportedProducts;
     }
@@ -588,8 +591,7 @@ public class JobFlowDetail  implements Serializable  {
             this.supportedProducts = null;
             return;
         }
-
-        java.util.List<String> supportedProductsCopy = new java.util.ArrayList<String>(supportedProducts.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> supportedProductsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(supportedProducts.size());
         supportedProductsCopy.addAll(supportedProducts);
         this.supportedProducts = supportedProductsCopy;
     }
@@ -634,7 +636,7 @@ public class JobFlowDetail  implements Serializable  {
         if (supportedProducts == null) {
             this.supportedProducts = null;
         } else {
-            java.util.List<String> supportedProductsCopy = new java.util.ArrayList<String>(supportedProducts.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> supportedProductsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(supportedProducts.size());
             supportedProductsCopy.addAll(supportedProducts);
             this.supportedProducts = supportedProductsCopy;
         }
@@ -796,17 +798,17 @@ public class JobFlowDetail  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getJobFlowId() != null) sb.append("JobFlowId: " + getJobFlowId() + ",");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getLogUri() != null) sb.append("LogUri: " + getLogUri() + ",");    	
-        if (getAmiVersion() != null) sb.append("AmiVersion: " + getAmiVersion() + ",");    	
-        if (getExecutionStatusDetail() != null) sb.append("ExecutionStatusDetail: " + getExecutionStatusDetail() + ",");    	
-        if (getInstances() != null) sb.append("Instances: " + getInstances() + ",");    	
-        if (getSteps() != null) sb.append("Steps: " + getSteps() + ",");    	
-        if (getBootstrapActions() != null) sb.append("BootstrapActions: " + getBootstrapActions() + ",");    	
-        if (getSupportedProducts() != null) sb.append("SupportedProducts: " + getSupportedProducts() + ",");    	
-        if (isVisibleToAllUsers() != null) sb.append("VisibleToAllUsers: " + isVisibleToAllUsers() + ",");    	
+        sb.append("{");
+        if (getJobFlowId() != null) sb.append("JobFlowId: " + getJobFlowId() + ",");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getLogUri() != null) sb.append("LogUri: " + getLogUri() + ",");
+        if (getAmiVersion() != null) sb.append("AmiVersion: " + getAmiVersion() + ",");
+        if (getExecutionStatusDetail() != null) sb.append("ExecutionStatusDetail: " + getExecutionStatusDetail() + ",");
+        if (getInstances() != null) sb.append("Instances: " + getInstances() + ",");
+        if (getSteps() != null) sb.append("Steps: " + getSteps() + ",");
+        if (getBootstrapActions() != null) sb.append("BootstrapActions: " + getBootstrapActions() + ",");
+        if (getSupportedProducts() != null) sb.append("SupportedProducts: " + getSupportedProducts() + ",");
+        if (isVisibleToAllUsers() != null) sb.append("VisibleToAllUsers: " + isVisibleToAllUsers() + ",");
         if (getJobFlowRole() != null) sb.append("JobFlowRole: " + getJobFlowRole() );
         sb.append("}");
         return sb.toString();

@@ -76,7 +76,7 @@ public class CancelJobRequest extends AmazonWebServiceRequest  implements Serial
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getJobId() != null) sb.append("JobId: " + getJobId() );
         sb.append("}");
         return sb.toString();

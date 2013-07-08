@@ -22,8 +22,10 @@ import java.io.Serializable;
  * </p>
  * 
  * <ul>
- * <li> TrustedAdvisorCategorySpecificSummary </li>
- * <li> TrustedAdvisorResourcesSummary </li>
+ * <li> <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCategorySpecificSummary.html">
+ * TrustedAdvisorCategorySpecificSummary </a> </li>
+ * <li> <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorResourcesSummary.html"> TrustedAdvisorResourcesSummary </a>
+ * </li>
  * 
  * </ul>
  */
@@ -52,7 +54,7 @@ public class TrustedAdvisorCheckSummary  implements Serializable  {
     /**
      * JSON-formatted object that lists details about AWS resources that were
      * analyzed in a call to Trusted Advisor <a
-     * href="API_DescribeTrustedAdvisorCheckSummaries.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
      * title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>.
      */
     private TrustedAdvisorResourcesSummary resourcesSummary;
@@ -211,12 +213,12 @@ public class TrustedAdvisorCheckSummary  implements Serializable  {
     /**
      * JSON-formatted object that lists details about AWS resources that were
      * analyzed in a call to Trusted Advisor <a
-     * href="API_DescribeTrustedAdvisorCheckSummaries.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
      * title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>.
      *
      * @return JSON-formatted object that lists details about AWS resources that were
      *         analyzed in a call to Trusted Advisor <a
-     *         href="API_DescribeTrustedAdvisorCheckSummaries.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
      *         title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>.
      */
     public TrustedAdvisorResourcesSummary getResourcesSummary() {
@@ -226,12 +228,12 @@ public class TrustedAdvisorCheckSummary  implements Serializable  {
     /**
      * JSON-formatted object that lists details about AWS resources that were
      * analyzed in a call to Trusted Advisor <a
-     * href="API_DescribeTrustedAdvisorCheckSummaries.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
      * title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>.
      *
      * @param resourcesSummary JSON-formatted object that lists details about AWS resources that were
      *         analyzed in a call to Trusted Advisor <a
-     *         href="API_DescribeTrustedAdvisorCheckSummaries.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
      *         title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>.
      */
     public void setResourcesSummary(TrustedAdvisorResourcesSummary resourcesSummary) {
@@ -241,14 +243,14 @@ public class TrustedAdvisorCheckSummary  implements Serializable  {
     /**
      * JSON-formatted object that lists details about AWS resources that were
      * analyzed in a call to Trusted Advisor <a
-     * href="API_DescribeTrustedAdvisorCheckSummaries.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
      * title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param resourcesSummary JSON-formatted object that lists details about AWS resources that were
      *         analyzed in a call to Trusted Advisor <a
-     *         href="API_DescribeTrustedAdvisorCheckSummaries.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
      *         title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 

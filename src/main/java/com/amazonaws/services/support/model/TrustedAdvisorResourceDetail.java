@@ -46,10 +46,10 @@ public class TrustedAdvisorResourceDetail  implements Serializable  {
     /**
      * Additional information about the identified resource. The exact
      * metadata and its order can be obtained by inspecting the <a
-     * href="API_TrustedAdvisorCheckDescription.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckDescription.html"
      * title="TrustedAdvisorCheckDescription">TrustedAdvisorCheckDescription</a>
      * object returned by the call to <a
-     * href="API_DescribeTrustedAdvisorChecks.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
      * title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> metadata;
@@ -210,18 +210,18 @@ public class TrustedAdvisorResourceDetail  implements Serializable  {
     /**
      * Additional information about the identified resource. The exact
      * metadata and its order can be obtained by inspecting the <a
-     * href="API_TrustedAdvisorCheckDescription.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckDescription.html"
      * title="TrustedAdvisorCheckDescription">TrustedAdvisorCheckDescription</a>
      * object returned by the call to <a
-     * href="API_DescribeTrustedAdvisorChecks.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
      * title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>.
      *
      * @return Additional information about the identified resource. The exact
      *         metadata and its order can be obtained by inspecting the <a
-     *         href="API_TrustedAdvisorCheckDescription.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckDescription.html"
      *         title="TrustedAdvisorCheckDescription">TrustedAdvisorCheckDescription</a>
      *         object returned by the call to <a
-     *         href="API_DescribeTrustedAdvisorChecks.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
      *         title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>.
      */
     public java.util.List<String> getMetadata() {
@@ -236,18 +236,18 @@ public class TrustedAdvisorResourceDetail  implements Serializable  {
     /**
      * Additional information about the identified resource. The exact
      * metadata and its order can be obtained by inspecting the <a
-     * href="API_TrustedAdvisorCheckDescription.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckDescription.html"
      * title="TrustedAdvisorCheckDescription">TrustedAdvisorCheckDescription</a>
      * object returned by the call to <a
-     * href="API_DescribeTrustedAdvisorChecks.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
      * title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>.
      *
      * @param metadata Additional information about the identified resource. The exact
      *         metadata and its order can be obtained by inspecting the <a
-     *         href="API_TrustedAdvisorCheckDescription.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckDescription.html"
      *         title="TrustedAdvisorCheckDescription">TrustedAdvisorCheckDescription</a>
      *         object returned by the call to <a
-     *         href="API_DescribeTrustedAdvisorChecks.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
      *         title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>.
      */
     public void setMetadata(java.util.Collection<String> metadata) {
@@ -263,20 +263,20 @@ public class TrustedAdvisorResourceDetail  implements Serializable  {
     /**
      * Additional information about the identified resource. The exact
      * metadata and its order can be obtained by inspecting the <a
-     * href="API_TrustedAdvisorCheckDescription.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckDescription.html"
      * title="TrustedAdvisorCheckDescription">TrustedAdvisorCheckDescription</a>
      * object returned by the call to <a
-     * href="API_DescribeTrustedAdvisorChecks.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
      * title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param metadata Additional information about the identified resource. The exact
      *         metadata and its order can be obtained by inspecting the <a
-     *         href="API_TrustedAdvisorCheckDescription.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckDescription.html"
      *         title="TrustedAdvisorCheckDescription">TrustedAdvisorCheckDescription</a>
      *         object returned by the call to <a
-     *         href="API_DescribeTrustedAdvisorChecks.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
      *         title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -293,20 +293,20 @@ public class TrustedAdvisorResourceDetail  implements Serializable  {
     /**
      * Additional information about the identified resource. The exact
      * metadata and its order can be obtained by inspecting the <a
-     * href="API_TrustedAdvisorCheckDescription.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckDescription.html"
      * title="TrustedAdvisorCheckDescription">TrustedAdvisorCheckDescription</a>
      * object returned by the call to <a
-     * href="API_DescribeTrustedAdvisorChecks.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
      * title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param metadata Additional information about the identified resource. The exact
      *         metadata and its order can be obtained by inspecting the <a
-     *         href="API_TrustedAdvisorCheckDescription.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckDescription.html"
      *         title="TrustedAdvisorCheckDescription">TrustedAdvisorCheckDescription</a>
      *         object returned by the call to <a
-     *         href="API_DescribeTrustedAdvisorChecks.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
      *         title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 

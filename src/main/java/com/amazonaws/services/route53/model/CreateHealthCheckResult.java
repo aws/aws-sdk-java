@@ -130,8 +130,8 @@ public class CreateHealthCheckResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getHealthCheck() != null) sb.append("HealthCheck: " + getHealthCheck() + ",");    	
+        sb.append("{");
+        if (getHealthCheck() != null) sb.append("HealthCheck: " + getHealthCheck() + ",");
         if (getLocation() != null) sb.append("Location: " + getLocation() );
         sb.append("}");
         return sb.toString();

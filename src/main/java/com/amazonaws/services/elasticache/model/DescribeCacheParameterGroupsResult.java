@@ -30,7 +30,7 @@ public class DescribeCacheParameterGroupsResult  implements Serializable  {
     /**
      * A list of <a>CacheParameterGroup</a> instances.
      */
-    private java.util.List<CacheParameterGroup> cacheParameterGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<CacheParameterGroup> cacheParameterGroups;
 
     /**
      * The marker obtained from a previous operation response.
@@ -74,7 +74,8 @@ public class DescribeCacheParameterGroupsResult  implements Serializable  {
     public java.util.List<CacheParameterGroup> getCacheParameterGroups() {
         
         if (cacheParameterGroups == null) {
-            cacheParameterGroups = new java.util.ArrayList<CacheParameterGroup>();
+              cacheParameterGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheParameterGroup>();
+              cacheParameterGroups.setAutoConstruct(true);
         }
         return cacheParameterGroups;
     }
@@ -89,8 +90,7 @@ public class DescribeCacheParameterGroupsResult  implements Serializable  {
             this.cacheParameterGroups = null;
             return;
         }
-
-        java.util.List<CacheParameterGroup> cacheParameterGroupsCopy = new java.util.ArrayList<CacheParameterGroup>(cacheParameterGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<CacheParameterGroup> cacheParameterGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheParameterGroup>(cacheParameterGroups.size());
         cacheParameterGroupsCopy.addAll(cacheParameterGroups);
         this.cacheParameterGroups = cacheParameterGroupsCopy;
     }
@@ -127,7 +127,7 @@ public class DescribeCacheParameterGroupsResult  implements Serializable  {
         if (cacheParameterGroups == null) {
             this.cacheParameterGroups = null;
         } else {
-            java.util.List<CacheParameterGroup> cacheParameterGroupsCopy = new java.util.ArrayList<CacheParameterGroup>(cacheParameterGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<CacheParameterGroup> cacheParameterGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheParameterGroup>(cacheParameterGroups.size());
             cacheParameterGroupsCopy.addAll(cacheParameterGroups);
             this.cacheParameterGroups = cacheParameterGroupsCopy;
         }
@@ -146,8 +146,8 @@ public class DescribeCacheParameterGroupsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getCacheParameterGroups() != null) sb.append("CacheParameterGroups: " + getCacheParameterGroups() );
         sb.append("}");
         return sb.toString();

@@ -195,9 +195,9 @@ public class MarkerRecordedEventAttributes  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMarkerName() != null) sb.append("MarkerName: " + getMarkerName() + ",");    	
-        if (getDetails() != null) sb.append("Details: " + getDetails() + ",");    	
+        sb.append("{");
+        if (getMarkerName() != null) sb.append("MarkerName: " + getMarkerName() + ",");
+        if (getDetails() != null) sb.append("Details: " + getDetails() + ",");
         if (getDecisionTaskCompletedEventId() != null) sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() );
         sb.append("}");
         return sb.toString();

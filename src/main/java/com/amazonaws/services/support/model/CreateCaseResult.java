@@ -17,7 +17,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the AWSSupport <i>caseId</i> returned by a successful completion of the CreateCase action.
+ * Contains the AWSSupport <i>caseId</i> returned by a successful completion of the <a
+ * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"> CreateCase </a> action.
  * </p>
  */
 public class CreateCaseResult  implements Serializable  {

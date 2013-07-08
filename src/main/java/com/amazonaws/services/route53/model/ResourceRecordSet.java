@@ -108,7 +108,7 @@ public class ResourceRecordSet  implements Serializable  {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      */
-    private java.util.List<ResourceRecord> resourceRecords;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ResourceRecord> resourceRecords;
 
     /**
      * <i>Alias resource record sets only:</i> Information about the AWS
@@ -132,6 +132,8 @@ public class ResourceRecordSet  implements Serializable  {
      */
     public ResourceRecordSet() {}
     
+
+
     /**
      * Constructs a new ResourceRecordSet object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -141,8 +143,8 @@ public class ResourceRecordSet  implements Serializable  {
      * @param type The type of the current resource record set.
      */
     public ResourceRecordSet(String name, String type) {
-        this.name = name;
-        this.type = type;
+        setName(name);
+        setType(type);
     }
 
     
@@ -799,7 +801,8 @@ public class ResourceRecordSet  implements Serializable  {
     public java.util.List<ResourceRecord> getResourceRecords() {
         
         if (resourceRecords == null) {
-            resourceRecords = new java.util.ArrayList<ResourceRecord>();
+              resourceRecords = new com.amazonaws.internal.ListWithAutoConstructFlag<ResourceRecord>();
+              resourceRecords.setAutoConstruct(true);
         }
         return resourceRecords;
     }
@@ -819,8 +822,7 @@ public class ResourceRecordSet  implements Serializable  {
             this.resourceRecords = null;
             return;
         }
-
-        java.util.List<ResourceRecord> resourceRecordsCopy = new java.util.ArrayList<ResourceRecord>(resourceRecords.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ResourceRecord> resourceRecordsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ResourceRecord>(resourceRecords.size());
         resourceRecordsCopy.addAll(resourceRecords);
         this.resourceRecords = resourceRecordsCopy;
     }
@@ -867,7 +869,7 @@ public class ResourceRecordSet  implements Serializable  {
         if (resourceRecords == null) {
             this.resourceRecords = null;
         } else {
-            java.util.List<ResourceRecord> resourceRecordsCopy = new java.util.ArrayList<ResourceRecord>(resourceRecords.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ResourceRecord> resourceRecordsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ResourceRecord>(resourceRecords.size());
             resourceRecordsCopy.addAll(resourceRecords);
             this.resourceRecords = resourceRecordsCopy;
         }
@@ -981,16 +983,16 @@ public class ResourceRecordSet  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getType() != null) sb.append("Type: " + getType() + ",");    	
-        if (getSetIdentifier() != null) sb.append("SetIdentifier: " + getSetIdentifier() + ",");    	
-        if (getWeight() != null) sb.append("Weight: " + getWeight() + ",");    	
-        if (getRegion() != null) sb.append("Region: " + getRegion() + ",");    	
-        if (getFailover() != null) sb.append("Failover: " + getFailover() + ",");    	
-        if (getTTL() != null) sb.append("TTL: " + getTTL() + ",");    	
-        if (getResourceRecords() != null) sb.append("ResourceRecords: " + getResourceRecords() + ",");    	
-        if (getAliasTarget() != null) sb.append("AliasTarget: " + getAliasTarget() + ",");    	
+        sb.append("{");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getType() != null) sb.append("Type: " + getType() + ",");
+        if (getSetIdentifier() != null) sb.append("SetIdentifier: " + getSetIdentifier() + ",");
+        if (getWeight() != null) sb.append("Weight: " + getWeight() + ",");
+        if (getRegion() != null) sb.append("Region: " + getRegion() + ",");
+        if (getFailover() != null) sb.append("Failover: " + getFailover() + ",");
+        if (getTTL() != null) sb.append("TTL: " + getTTL() + ",");
+        if (getResourceRecords() != null) sb.append("ResourceRecords: " + getResourceRecords() + ",");
+        if (getAliasTarget() != null) sb.append("AliasTarget: " + getAliasTarget() + ",");
         if (getHealthCheckId() != null) sb.append("HealthCheckId: " + getHealthCheckId() );
         sb.append("}");
         return sb.toString();

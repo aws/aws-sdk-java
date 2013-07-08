@@ -155,8 +155,8 @@ public class DeprecateWorkflowTypeRequest extends AmazonWebServiceRequest  imple
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");    	
+        sb.append("{");
+        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");
         if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() );
         sb.append("}");
         return sb.toString();

@@ -16,7 +16,9 @@ package com.amazonaws.services.elastictranscoder.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * The <code>VideoParameters</code> structure.
+ * </p>
  */
 public class VideoParameters  implements Serializable  {
 
@@ -38,30 +40,39 @@ public class VideoParameters  implements Serializable  {
      * <li><code>main</code>: The profile used for standard-definition
      * digital TV broadcasts.</li> <li><code>high</code>: The profile used
      * for high-definition digital TV broadcasts and for Blu-ray discs.</li>
-     * </ul> <p> <b>Level</b> <p>The H.264 level that you want to use for the
-     * output file. Elastic Transcoder supports the following levels:
-     * <p><code>1</code>, <code>1b</code>, <code>1.1</code>,
+     * </ul> <p> <b>Level (H.264 Only)</b> <p>The H.264 level that you want
+     * to use for the output file. Elastic Transcoder supports the following
+     * levels: <p><code>1</code>, <code>1b</code>, <code>1.1</code>,
      * <code>1.2</code>, <code>1.3</code>, <code>2</code>, <code>2.1</code>,
      * <code>2.2</code>, <code>3</code>, <code>3.1</code>, <code>3.2</code>,
-     * <code>4</code>, <code>4.1</code> <p> <b>MaxReferenceFrames</b> <p>The
-     * maximum number of previously decoded frames to use as a reference for
-     * decoding future frames. Valid values are integers 0 through 16, but we
-     * recommend that you not use a value greater than the following: <p>
-     * <code>Min(Floor(Maximum decoded picture buffer in macroblocks * 256 /
-     * (Width in pixels * Height in pixels)), 16)</code> <p>where <i>Width in
-     * pixels</i> and <i>Height in pixels</i> represent the resolution of the
-     * output video and <i>Maximum decoded picture buffer in macroblocks</i>
-     * depends on the value of the <code>Level</code> object. (A macroblock
-     * is a block of pixels measuring 16x16.) <p> Note that the calculation
-     * for maximum decoded picture buffer, which is similar to the
-     * calculation for maximum reference frames, uses macroblocks instead of
-     * pixels for the width and height of the video. <p> To determine the
-     * value of maximum decoded picture buffer in macroblocks, see the
-     * following list (<i>Level</i> - <i>Maximum decoded picture buffer</i>):
-     * <ul> <li>1 - 396</li> <li>1b - 396</li> <li>1.1 - 900</li> <li>1.2 -
-     * 2376</li> <li>1.3 - 2376</li> <li>2 - 2376</li> <li>2.1 - 4752</li>
-     * <li>2.2 - 8100</li> <li>3 - 8100</li> <li>3.1 - 18000</li> <li>3.2 -
-     * 20480</li> <li>4 - 32768</li> <li>4.1 - 32768</li> </ul>
+     * <code>4</code>, <code>4.1</code> <p> <b>MaxReferenceFrames (H.264
+     * Only)</b> <p>Applicable only when the value of Video:Codec is H.264.
+     * The maximum number of previously decoded frames to use as a reference
+     * for decoding future frames. Valid values are integers 0 through 16,
+     * but we recommend that you not use a value greater than the following:
+     * <p> <code>Min(Floor(Maximum decoded picture buffer in macroblocks *
+     * 256 / (Width in pixels * Height in pixels)), 16)</code> <p>where
+     * <i>Width in pixels</i> and <i>Height in pixels</i> represent either
+     * MaxWidth and MaxHeight, or Resolution. <i>Maximum decoded picture
+     * buffer in macroblocks</i> depends on the value of the
+     * <code>Level</code> object. See the list below. (A macroblock is a
+     * block of pixels measuring 16x16.) <ul> <li>1 - 396</li> <li>1b -
+     * 396</li> <li>1.1 - 900</li> <li>1.2 - 2376</li> <li>1.3 - 2376</li>
+     * <li>2 - 2376</li> <li>2.1 - 4752</li> <li>2.2 - 8100</li> <li>3 -
+     * 8100</li> <li>3.1 - 18000</li> <li>3.2 - 20480</li> <li>4 - 32768</li>
+     * <li>4.1 - 32768</li> </ul> <p> <b>MaxBitRate</b> <p>The maximum number
+     * of bits per second in a video buffer; the size of the buffer is
+     * specified by <code>BufferSize</code>. Specify a value between 16 and
+     * 62,500. You can reduce the bandwidth required to stream a video by
+     * reducing the maximum bit rate, but this also reduces the quality of
+     * the video. <p> <b>BufferSize</b> <p>The maximum number of bits in any
+     * x seconds of the output video. This window is commonly 10 seconds, the
+     * standard segment duration when you���re using MPEG-TS for the
+     * container type of the output video. Specify an integer greater than 0.
+     * If you specify <code>MaxBitRate</code> and omit
+     * <code>BufferSize</code>, Elastic Transcoder sets
+     * <code>BufferSize</code> to 10 times the value of
+     * <code>MaxBitRate</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 30<br/>
@@ -72,9 +83,9 @@ public class VideoParameters  implements Serializable  {
      * The maximum number of frames between key frames. Key frames are fully
      * encoded frames; the frames between key frames are encoded based, in
      * part, on the content of the key frames. The value is an integer
-     * formatted as a string; valid values are between 1 and 100000,
-     * inclusive. A higher value results in higher compression but may also
-     * discernibly decrease video quality.
+     * formatted as a string; valid values are between 1 (every frame is a
+     * key frame) and 100000, inclusive. A higher value results in higher
+     * compression but may also discernibly decrease video quality.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>^\d{1,6}$<br/>
@@ -142,6 +153,21 @@ public class VideoParameters  implements Serializable  {
      * <b>Pattern: </b>(^auto$)|(^10$)|(^15$)|(^23.97$)|(^24$)|(^25$)|(^29.97$)|(^30$)|(^60$)<br/>
      */
     private String frameRate;
+
+    /**
+     * If you specify <code>auto</code> for <code>FrameRate</code>, Elastic
+     * Transcoder uses the frame rate of the input video for the frame rate
+     * of the output video. Specify the maximum frame rate that you want
+     * Elastic Transcoder to use when the frame rate of the input video is
+     * greater than the desired maximum frame rate of the output video. Valid
+     * values include: <code>10</code>, <code>15</code>, <code>23.97</code>,
+     * <code>24</code>, <code>25</code>, <code>29.97</code>, <code>30</code>,
+     * <code>60</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>(^10$)|(^15$)|(^23.97$)|(^24$)|(^25$)|(^29.97$)|(^30$)|(^60$)<br/>
+     */
+    private String maxFrameRate;
 
     /**
      * <important> <p>To better control resolution and aspect ratio of output
@@ -280,6 +306,23 @@ public class VideoParameters  implements Serializable  {
     private String paddingPolicy;
 
     /**
+     * Settings for the size, location, and opacity of graphics that you want
+     * Elastic Transcoder to overlay over videos that are transcoded using
+     * this preset. You can specify settings for up to four watermarks.
+     * Watermarks appear in the specified size and location, and with the
+     * specified opacity for the duration of the transcoded video.
+     * <p>Watermarks can be in .png or .jpg format. If you want to display a
+     * watermark that is not rectangular, use the .png format, which supports
+     * transparency. <p>When you create a job that uses this preset, you
+     * specify the .png or .jpg graphics that you want Elastic Transcoder to
+     * include in the transcoded videos. You can specify fewer graphics in
+     * the job than you specify watermark settings in the preset, which
+     * allows you to use the same preset for up to four watermarks that have
+     * different dimensions.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<PresetWatermark> watermarks;
+
+    /**
      * The video codec for the output file. Valid values include
      * <code>H.264</code> and <code>vp8</code>. You can only specify
      * <code>vp8</code> when the container type is <code>webm</code>.
@@ -342,30 +385,39 @@ public class VideoParameters  implements Serializable  {
      * <li><code>main</code>: The profile used for standard-definition
      * digital TV broadcasts.</li> <li><code>high</code>: The profile used
      * for high-definition digital TV broadcasts and for Blu-ray discs.</li>
-     * </ul> <p> <b>Level</b> <p>The H.264 level that you want to use for the
-     * output file. Elastic Transcoder supports the following levels:
-     * <p><code>1</code>, <code>1b</code>, <code>1.1</code>,
+     * </ul> <p> <b>Level (H.264 Only)</b> <p>The H.264 level that you want
+     * to use for the output file. Elastic Transcoder supports the following
+     * levels: <p><code>1</code>, <code>1b</code>, <code>1.1</code>,
      * <code>1.2</code>, <code>1.3</code>, <code>2</code>, <code>2.1</code>,
      * <code>2.2</code>, <code>3</code>, <code>3.1</code>, <code>3.2</code>,
-     * <code>4</code>, <code>4.1</code> <p> <b>MaxReferenceFrames</b> <p>The
-     * maximum number of previously decoded frames to use as a reference for
-     * decoding future frames. Valid values are integers 0 through 16, but we
-     * recommend that you not use a value greater than the following: <p>
-     * <code>Min(Floor(Maximum decoded picture buffer in macroblocks * 256 /
-     * (Width in pixels * Height in pixels)), 16)</code> <p>where <i>Width in
-     * pixels</i> and <i>Height in pixels</i> represent the resolution of the
-     * output video and <i>Maximum decoded picture buffer in macroblocks</i>
-     * depends on the value of the <code>Level</code> object. (A macroblock
-     * is a block of pixels measuring 16x16.) <p> Note that the calculation
-     * for maximum decoded picture buffer, which is similar to the
-     * calculation for maximum reference frames, uses macroblocks instead of
-     * pixels for the width and height of the video. <p> To determine the
-     * value of maximum decoded picture buffer in macroblocks, see the
-     * following list (<i>Level</i> - <i>Maximum decoded picture buffer</i>):
-     * <ul> <li>1 - 396</li> <li>1b - 396</li> <li>1.1 - 900</li> <li>1.2 -
-     * 2376</li> <li>1.3 - 2376</li> <li>2 - 2376</li> <li>2.1 - 4752</li>
-     * <li>2.2 - 8100</li> <li>3 - 8100</li> <li>3.1 - 18000</li> <li>3.2 -
-     * 20480</li> <li>4 - 32768</li> <li>4.1 - 32768</li> </ul>
+     * <code>4</code>, <code>4.1</code> <p> <b>MaxReferenceFrames (H.264
+     * Only)</b> <p>Applicable only when the value of Video:Codec is H.264.
+     * The maximum number of previously decoded frames to use as a reference
+     * for decoding future frames. Valid values are integers 0 through 16,
+     * but we recommend that you not use a value greater than the following:
+     * <p> <code>Min(Floor(Maximum decoded picture buffer in macroblocks *
+     * 256 / (Width in pixels * Height in pixels)), 16)</code> <p>where
+     * <i>Width in pixels</i> and <i>Height in pixels</i> represent either
+     * MaxWidth and MaxHeight, or Resolution. <i>Maximum decoded picture
+     * buffer in macroblocks</i> depends on the value of the
+     * <code>Level</code> object. See the list below. (A macroblock is a
+     * block of pixels measuring 16x16.) <ul> <li>1 - 396</li> <li>1b -
+     * 396</li> <li>1.1 - 900</li> <li>1.2 - 2376</li> <li>1.3 - 2376</li>
+     * <li>2 - 2376</li> <li>2.1 - 4752</li> <li>2.2 - 8100</li> <li>3 -
+     * 8100</li> <li>3.1 - 18000</li> <li>3.2 - 20480</li> <li>4 - 32768</li>
+     * <li>4.1 - 32768</li> </ul> <p> <b>MaxBitRate</b> <p>The maximum number
+     * of bits per second in a video buffer; the size of the buffer is
+     * specified by <code>BufferSize</code>. Specify a value between 16 and
+     * 62,500. You can reduce the bandwidth required to stream a video by
+     * reducing the maximum bit rate, but this also reduces the quality of
+     * the video. <p> <b>BufferSize</b> <p>The maximum number of bits in any
+     * x seconds of the output video. This window is commonly 10 seconds, the
+     * standard segment duration when you���re using MPEG-TS for the
+     * container type of the output video. Specify an integer greater than 0.
+     * If you specify <code>MaxBitRate</code> and omit
+     * <code>BufferSize</code>, Elastic Transcoder sets
+     * <code>BufferSize</code> to 10 times the value of
+     * <code>MaxBitRate</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 30<br/>
@@ -377,30 +429,39 @@ public class VideoParameters  implements Serializable  {
      *         <li><code>main</code>: The profile used for standard-definition
      *         digital TV broadcasts.</li> <li><code>high</code>: The profile used
      *         for high-definition digital TV broadcasts and for Blu-ray discs.</li>
-     *         </ul> <p> <b>Level</b> <p>The H.264 level that you want to use for the
-     *         output file. Elastic Transcoder supports the following levels:
-     *         <p><code>1</code>, <code>1b</code>, <code>1.1</code>,
+     *         </ul> <p> <b>Level (H.264 Only)</b> <p>The H.264 level that you want
+     *         to use for the output file. Elastic Transcoder supports the following
+     *         levels: <p><code>1</code>, <code>1b</code>, <code>1.1</code>,
      *         <code>1.2</code>, <code>1.3</code>, <code>2</code>, <code>2.1</code>,
      *         <code>2.2</code>, <code>3</code>, <code>3.1</code>, <code>3.2</code>,
-     *         <code>4</code>, <code>4.1</code> <p> <b>MaxReferenceFrames</b> <p>The
-     *         maximum number of previously decoded frames to use as a reference for
-     *         decoding future frames. Valid values are integers 0 through 16, but we
-     *         recommend that you not use a value greater than the following: <p>
-     *         <code>Min(Floor(Maximum decoded picture buffer in macroblocks * 256 /
-     *         (Width in pixels * Height in pixels)), 16)</code> <p>where <i>Width in
-     *         pixels</i> and <i>Height in pixels</i> represent the resolution of the
-     *         output video and <i>Maximum decoded picture buffer in macroblocks</i>
-     *         depends on the value of the <code>Level</code> object. (A macroblock
-     *         is a block of pixels measuring 16x16.) <p> Note that the calculation
-     *         for maximum decoded picture buffer, which is similar to the
-     *         calculation for maximum reference frames, uses macroblocks instead of
-     *         pixels for the width and height of the video. <p> To determine the
-     *         value of maximum decoded picture buffer in macroblocks, see the
-     *         following list (<i>Level</i> - <i>Maximum decoded picture buffer</i>):
-     *         <ul> <li>1 - 396</li> <li>1b - 396</li> <li>1.1 - 900</li> <li>1.2 -
-     *         2376</li> <li>1.3 - 2376</li> <li>2 - 2376</li> <li>2.1 - 4752</li>
-     *         <li>2.2 - 8100</li> <li>3 - 8100</li> <li>3.1 - 18000</li> <li>3.2 -
-     *         20480</li> <li>4 - 32768</li> <li>4.1 - 32768</li> </ul>
+     *         <code>4</code>, <code>4.1</code> <p> <b>MaxReferenceFrames (H.264
+     *         Only)</b> <p>Applicable only when the value of Video:Codec is H.264.
+     *         The maximum number of previously decoded frames to use as a reference
+     *         for decoding future frames. Valid values are integers 0 through 16,
+     *         but we recommend that you not use a value greater than the following:
+     *         <p> <code>Min(Floor(Maximum decoded picture buffer in macroblocks *
+     *         256 / (Width in pixels * Height in pixels)), 16)</code> <p>where
+     *         <i>Width in pixels</i> and <i>Height in pixels</i> represent either
+     *         MaxWidth and MaxHeight, or Resolution. <i>Maximum decoded picture
+     *         buffer in macroblocks</i> depends on the value of the
+     *         <code>Level</code> object. See the list below. (A macroblock is a
+     *         block of pixels measuring 16x16.) <ul> <li>1 - 396</li> <li>1b -
+     *         396</li> <li>1.1 - 900</li> <li>1.2 - 2376</li> <li>1.3 - 2376</li>
+     *         <li>2 - 2376</li> <li>2.1 - 4752</li> <li>2.2 - 8100</li> <li>3 -
+     *         8100</li> <li>3.1 - 18000</li> <li>3.2 - 20480</li> <li>4 - 32768</li>
+     *         <li>4.1 - 32768</li> </ul> <p> <b>MaxBitRate</b> <p>The maximum number
+     *         of bits per second in a video buffer; the size of the buffer is
+     *         specified by <code>BufferSize</code>. Specify a value between 16 and
+     *         62,500. You can reduce the bandwidth required to stream a video by
+     *         reducing the maximum bit rate, but this also reduces the quality of
+     *         the video. <p> <b>BufferSize</b> <p>The maximum number of bits in any
+     *         x seconds of the output video. This window is commonly 10 seconds, the
+     *         standard segment duration when you���re using MPEG-TS for the
+     *         container type of the output video. Specify an integer greater than 0.
+     *         If you specify <code>MaxBitRate</code> and omit
+     *         <code>BufferSize</code>, Elastic Transcoder sets
+     *         <code>BufferSize</code> to 10 times the value of
+     *         <code>MaxBitRate</code>.
      */
     public java.util.Map<String,String> getCodecOptions() {
         
@@ -419,30 +480,39 @@ public class VideoParameters  implements Serializable  {
      * <li><code>main</code>: The profile used for standard-definition
      * digital TV broadcasts.</li> <li><code>high</code>: The profile used
      * for high-definition digital TV broadcasts and for Blu-ray discs.</li>
-     * </ul> <p> <b>Level</b> <p>The H.264 level that you want to use for the
-     * output file. Elastic Transcoder supports the following levels:
-     * <p><code>1</code>, <code>1b</code>, <code>1.1</code>,
+     * </ul> <p> <b>Level (H.264 Only)</b> <p>The H.264 level that you want
+     * to use for the output file. Elastic Transcoder supports the following
+     * levels: <p><code>1</code>, <code>1b</code>, <code>1.1</code>,
      * <code>1.2</code>, <code>1.3</code>, <code>2</code>, <code>2.1</code>,
      * <code>2.2</code>, <code>3</code>, <code>3.1</code>, <code>3.2</code>,
-     * <code>4</code>, <code>4.1</code> <p> <b>MaxReferenceFrames</b> <p>The
-     * maximum number of previously decoded frames to use as a reference for
-     * decoding future frames. Valid values are integers 0 through 16, but we
-     * recommend that you not use a value greater than the following: <p>
-     * <code>Min(Floor(Maximum decoded picture buffer in macroblocks * 256 /
-     * (Width in pixels * Height in pixels)), 16)</code> <p>where <i>Width in
-     * pixels</i> and <i>Height in pixels</i> represent the resolution of the
-     * output video and <i>Maximum decoded picture buffer in macroblocks</i>
-     * depends on the value of the <code>Level</code> object. (A macroblock
-     * is a block of pixels measuring 16x16.) <p> Note that the calculation
-     * for maximum decoded picture buffer, which is similar to the
-     * calculation for maximum reference frames, uses macroblocks instead of
-     * pixels for the width and height of the video. <p> To determine the
-     * value of maximum decoded picture buffer in macroblocks, see the
-     * following list (<i>Level</i> - <i>Maximum decoded picture buffer</i>):
-     * <ul> <li>1 - 396</li> <li>1b - 396</li> <li>1.1 - 900</li> <li>1.2 -
-     * 2376</li> <li>1.3 - 2376</li> <li>2 - 2376</li> <li>2.1 - 4752</li>
-     * <li>2.2 - 8100</li> <li>3 - 8100</li> <li>3.1 - 18000</li> <li>3.2 -
-     * 20480</li> <li>4 - 32768</li> <li>4.1 - 32768</li> </ul>
+     * <code>4</code>, <code>4.1</code> <p> <b>MaxReferenceFrames (H.264
+     * Only)</b> <p>Applicable only when the value of Video:Codec is H.264.
+     * The maximum number of previously decoded frames to use as a reference
+     * for decoding future frames. Valid values are integers 0 through 16,
+     * but we recommend that you not use a value greater than the following:
+     * <p> <code>Min(Floor(Maximum decoded picture buffer in macroblocks *
+     * 256 / (Width in pixels * Height in pixels)), 16)</code> <p>where
+     * <i>Width in pixels</i> and <i>Height in pixels</i> represent either
+     * MaxWidth and MaxHeight, or Resolution. <i>Maximum decoded picture
+     * buffer in macroblocks</i> depends on the value of the
+     * <code>Level</code> object. See the list below. (A macroblock is a
+     * block of pixels measuring 16x16.) <ul> <li>1 - 396</li> <li>1b -
+     * 396</li> <li>1.1 - 900</li> <li>1.2 - 2376</li> <li>1.3 - 2376</li>
+     * <li>2 - 2376</li> <li>2.1 - 4752</li> <li>2.2 - 8100</li> <li>3 -
+     * 8100</li> <li>3.1 - 18000</li> <li>3.2 - 20480</li> <li>4 - 32768</li>
+     * <li>4.1 - 32768</li> </ul> <p> <b>MaxBitRate</b> <p>The maximum number
+     * of bits per second in a video buffer; the size of the buffer is
+     * specified by <code>BufferSize</code>. Specify a value between 16 and
+     * 62,500. You can reduce the bandwidth required to stream a video by
+     * reducing the maximum bit rate, but this also reduces the quality of
+     * the video. <p> <b>BufferSize</b> <p>The maximum number of bits in any
+     * x seconds of the output video. This window is commonly 10 seconds, the
+     * standard segment duration when you���re using MPEG-TS for the
+     * container type of the output video. Specify an integer greater than 0.
+     * If you specify <code>MaxBitRate</code> and omit
+     * <code>BufferSize</code>, Elastic Transcoder sets
+     * <code>BufferSize</code> to 10 times the value of
+     * <code>MaxBitRate</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 30<br/>
@@ -454,30 +524,39 @@ public class VideoParameters  implements Serializable  {
      *         <li><code>main</code>: The profile used for standard-definition
      *         digital TV broadcasts.</li> <li><code>high</code>: The profile used
      *         for high-definition digital TV broadcasts and for Blu-ray discs.</li>
-     *         </ul> <p> <b>Level</b> <p>The H.264 level that you want to use for the
-     *         output file. Elastic Transcoder supports the following levels:
-     *         <p><code>1</code>, <code>1b</code>, <code>1.1</code>,
+     *         </ul> <p> <b>Level (H.264 Only)</b> <p>The H.264 level that you want
+     *         to use for the output file. Elastic Transcoder supports the following
+     *         levels: <p><code>1</code>, <code>1b</code>, <code>1.1</code>,
      *         <code>1.2</code>, <code>1.3</code>, <code>2</code>, <code>2.1</code>,
      *         <code>2.2</code>, <code>3</code>, <code>3.1</code>, <code>3.2</code>,
-     *         <code>4</code>, <code>4.1</code> <p> <b>MaxReferenceFrames</b> <p>The
-     *         maximum number of previously decoded frames to use as a reference for
-     *         decoding future frames. Valid values are integers 0 through 16, but we
-     *         recommend that you not use a value greater than the following: <p>
-     *         <code>Min(Floor(Maximum decoded picture buffer in macroblocks * 256 /
-     *         (Width in pixels * Height in pixels)), 16)</code> <p>where <i>Width in
-     *         pixels</i> and <i>Height in pixels</i> represent the resolution of the
-     *         output video and <i>Maximum decoded picture buffer in macroblocks</i>
-     *         depends on the value of the <code>Level</code> object. (A macroblock
-     *         is a block of pixels measuring 16x16.) <p> Note that the calculation
-     *         for maximum decoded picture buffer, which is similar to the
-     *         calculation for maximum reference frames, uses macroblocks instead of
-     *         pixels for the width and height of the video. <p> To determine the
-     *         value of maximum decoded picture buffer in macroblocks, see the
-     *         following list (<i>Level</i> - <i>Maximum decoded picture buffer</i>):
-     *         <ul> <li>1 - 396</li> <li>1b - 396</li> <li>1.1 - 900</li> <li>1.2 -
-     *         2376</li> <li>1.3 - 2376</li> <li>2 - 2376</li> <li>2.1 - 4752</li>
-     *         <li>2.2 - 8100</li> <li>3 - 8100</li> <li>3.1 - 18000</li> <li>3.2 -
-     *         20480</li> <li>4 - 32768</li> <li>4.1 - 32768</li> </ul>
+     *         <code>4</code>, <code>4.1</code> <p> <b>MaxReferenceFrames (H.264
+     *         Only)</b> <p>Applicable only when the value of Video:Codec is H.264.
+     *         The maximum number of previously decoded frames to use as a reference
+     *         for decoding future frames. Valid values are integers 0 through 16,
+     *         but we recommend that you not use a value greater than the following:
+     *         <p> <code>Min(Floor(Maximum decoded picture buffer in macroblocks *
+     *         256 / (Width in pixels * Height in pixels)), 16)</code> <p>where
+     *         <i>Width in pixels</i> and <i>Height in pixels</i> represent either
+     *         MaxWidth and MaxHeight, or Resolution. <i>Maximum decoded picture
+     *         buffer in macroblocks</i> depends on the value of the
+     *         <code>Level</code> object. See the list below. (A macroblock is a
+     *         block of pixels measuring 16x16.) <ul> <li>1 - 396</li> <li>1b -
+     *         396</li> <li>1.1 - 900</li> <li>1.2 - 2376</li> <li>1.3 - 2376</li>
+     *         <li>2 - 2376</li> <li>2.1 - 4752</li> <li>2.2 - 8100</li> <li>3 -
+     *         8100</li> <li>3.1 - 18000</li> <li>3.2 - 20480</li> <li>4 - 32768</li>
+     *         <li>4.1 - 32768</li> </ul> <p> <b>MaxBitRate</b> <p>The maximum number
+     *         of bits per second in a video buffer; the size of the buffer is
+     *         specified by <code>BufferSize</code>. Specify a value between 16 and
+     *         62,500. You can reduce the bandwidth required to stream a video by
+     *         reducing the maximum bit rate, but this also reduces the quality of
+     *         the video. <p> <b>BufferSize</b> <p>The maximum number of bits in any
+     *         x seconds of the output video. This window is commonly 10 seconds, the
+     *         standard segment duration when you���re using MPEG-TS for the
+     *         container type of the output video. Specify an integer greater than 0.
+     *         If you specify <code>MaxBitRate</code> and omit
+     *         <code>BufferSize</code>, Elastic Transcoder sets
+     *         <code>BufferSize</code> to 10 times the value of
+     *         <code>MaxBitRate</code>.
      */
     public void setCodecOptions(java.util.Map<String,String> codecOptions) {
         this.codecOptions = codecOptions;
@@ -491,30 +570,39 @@ public class VideoParameters  implements Serializable  {
      * <li><code>main</code>: The profile used for standard-definition
      * digital TV broadcasts.</li> <li><code>high</code>: The profile used
      * for high-definition digital TV broadcasts and for Blu-ray discs.</li>
-     * </ul> <p> <b>Level</b> <p>The H.264 level that you want to use for the
-     * output file. Elastic Transcoder supports the following levels:
-     * <p><code>1</code>, <code>1b</code>, <code>1.1</code>,
+     * </ul> <p> <b>Level (H.264 Only)</b> <p>The H.264 level that you want
+     * to use for the output file. Elastic Transcoder supports the following
+     * levels: <p><code>1</code>, <code>1b</code>, <code>1.1</code>,
      * <code>1.2</code>, <code>1.3</code>, <code>2</code>, <code>2.1</code>,
      * <code>2.2</code>, <code>3</code>, <code>3.1</code>, <code>3.2</code>,
-     * <code>4</code>, <code>4.1</code> <p> <b>MaxReferenceFrames</b> <p>The
-     * maximum number of previously decoded frames to use as a reference for
-     * decoding future frames. Valid values are integers 0 through 16, but we
-     * recommend that you not use a value greater than the following: <p>
-     * <code>Min(Floor(Maximum decoded picture buffer in macroblocks * 256 /
-     * (Width in pixels * Height in pixels)), 16)</code> <p>where <i>Width in
-     * pixels</i> and <i>Height in pixels</i> represent the resolution of the
-     * output video and <i>Maximum decoded picture buffer in macroblocks</i>
-     * depends on the value of the <code>Level</code> object. (A macroblock
-     * is a block of pixels measuring 16x16.) <p> Note that the calculation
-     * for maximum decoded picture buffer, which is similar to the
-     * calculation for maximum reference frames, uses macroblocks instead of
-     * pixels for the width and height of the video. <p> To determine the
-     * value of maximum decoded picture buffer in macroblocks, see the
-     * following list (<i>Level</i> - <i>Maximum decoded picture buffer</i>):
-     * <ul> <li>1 - 396</li> <li>1b - 396</li> <li>1.1 - 900</li> <li>1.2 -
-     * 2376</li> <li>1.3 - 2376</li> <li>2 - 2376</li> <li>2.1 - 4752</li>
-     * <li>2.2 - 8100</li> <li>3 - 8100</li> <li>3.1 - 18000</li> <li>3.2 -
-     * 20480</li> <li>4 - 32768</li> <li>4.1 - 32768</li> </ul>
+     * <code>4</code>, <code>4.1</code> <p> <b>MaxReferenceFrames (H.264
+     * Only)</b> <p>Applicable only when the value of Video:Codec is H.264.
+     * The maximum number of previously decoded frames to use as a reference
+     * for decoding future frames. Valid values are integers 0 through 16,
+     * but we recommend that you not use a value greater than the following:
+     * <p> <code>Min(Floor(Maximum decoded picture buffer in macroblocks *
+     * 256 / (Width in pixels * Height in pixels)), 16)</code> <p>where
+     * <i>Width in pixels</i> and <i>Height in pixels</i> represent either
+     * MaxWidth and MaxHeight, or Resolution. <i>Maximum decoded picture
+     * buffer in macroblocks</i> depends on the value of the
+     * <code>Level</code> object. See the list below. (A macroblock is a
+     * block of pixels measuring 16x16.) <ul> <li>1 - 396</li> <li>1b -
+     * 396</li> <li>1.1 - 900</li> <li>1.2 - 2376</li> <li>1.3 - 2376</li>
+     * <li>2 - 2376</li> <li>2.1 - 4752</li> <li>2.2 - 8100</li> <li>3 -
+     * 8100</li> <li>3.1 - 18000</li> <li>3.2 - 20480</li> <li>4 - 32768</li>
+     * <li>4.1 - 32768</li> </ul> <p> <b>MaxBitRate</b> <p>The maximum number
+     * of bits per second in a video buffer; the size of the buffer is
+     * specified by <code>BufferSize</code>. Specify a value between 16 and
+     * 62,500. You can reduce the bandwidth required to stream a video by
+     * reducing the maximum bit rate, but this also reduces the quality of
+     * the video. <p> <b>BufferSize</b> <p>The maximum number of bits in any
+     * x seconds of the output video. This window is commonly 10 seconds, the
+     * standard segment duration when you���re using MPEG-TS for the
+     * container type of the output video. Specify an integer greater than 0.
+     * If you specify <code>MaxBitRate</code> and omit
+     * <code>BufferSize</code>, Elastic Transcoder sets
+     * <code>BufferSize</code> to 10 times the value of
+     * <code>MaxBitRate</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -528,30 +616,39 @@ public class VideoParameters  implements Serializable  {
      *         <li><code>main</code>: The profile used for standard-definition
      *         digital TV broadcasts.</li> <li><code>high</code>: The profile used
      *         for high-definition digital TV broadcasts and for Blu-ray discs.</li>
-     *         </ul> <p> <b>Level</b> <p>The H.264 level that you want to use for the
-     *         output file. Elastic Transcoder supports the following levels:
-     *         <p><code>1</code>, <code>1b</code>, <code>1.1</code>,
+     *         </ul> <p> <b>Level (H.264 Only)</b> <p>The H.264 level that you want
+     *         to use for the output file. Elastic Transcoder supports the following
+     *         levels: <p><code>1</code>, <code>1b</code>, <code>1.1</code>,
      *         <code>1.2</code>, <code>1.3</code>, <code>2</code>, <code>2.1</code>,
      *         <code>2.2</code>, <code>3</code>, <code>3.1</code>, <code>3.2</code>,
-     *         <code>4</code>, <code>4.1</code> <p> <b>MaxReferenceFrames</b> <p>The
-     *         maximum number of previously decoded frames to use as a reference for
-     *         decoding future frames. Valid values are integers 0 through 16, but we
-     *         recommend that you not use a value greater than the following: <p>
-     *         <code>Min(Floor(Maximum decoded picture buffer in macroblocks * 256 /
-     *         (Width in pixels * Height in pixels)), 16)</code> <p>where <i>Width in
-     *         pixels</i> and <i>Height in pixels</i> represent the resolution of the
-     *         output video and <i>Maximum decoded picture buffer in macroblocks</i>
-     *         depends on the value of the <code>Level</code> object. (A macroblock
-     *         is a block of pixels measuring 16x16.) <p> Note that the calculation
-     *         for maximum decoded picture buffer, which is similar to the
-     *         calculation for maximum reference frames, uses macroblocks instead of
-     *         pixels for the width and height of the video. <p> To determine the
-     *         value of maximum decoded picture buffer in macroblocks, see the
-     *         following list (<i>Level</i> - <i>Maximum decoded picture buffer</i>):
-     *         <ul> <li>1 - 396</li> <li>1b - 396</li> <li>1.1 - 900</li> <li>1.2 -
-     *         2376</li> <li>1.3 - 2376</li> <li>2 - 2376</li> <li>2.1 - 4752</li>
-     *         <li>2.2 - 8100</li> <li>3 - 8100</li> <li>3.1 - 18000</li> <li>3.2 -
-     *         20480</li> <li>4 - 32768</li> <li>4.1 - 32768</li> </ul>
+     *         <code>4</code>, <code>4.1</code> <p> <b>MaxReferenceFrames (H.264
+     *         Only)</b> <p>Applicable only when the value of Video:Codec is H.264.
+     *         The maximum number of previously decoded frames to use as a reference
+     *         for decoding future frames. Valid values are integers 0 through 16,
+     *         but we recommend that you not use a value greater than the following:
+     *         <p> <code>Min(Floor(Maximum decoded picture buffer in macroblocks *
+     *         256 / (Width in pixels * Height in pixels)), 16)</code> <p>where
+     *         <i>Width in pixels</i> and <i>Height in pixels</i> represent either
+     *         MaxWidth and MaxHeight, or Resolution. <i>Maximum decoded picture
+     *         buffer in macroblocks</i> depends on the value of the
+     *         <code>Level</code> object. See the list below. (A macroblock is a
+     *         block of pixels measuring 16x16.) <ul> <li>1 - 396</li> <li>1b -
+     *         396</li> <li>1.1 - 900</li> <li>1.2 - 2376</li> <li>1.3 - 2376</li>
+     *         <li>2 - 2376</li> <li>2.1 - 4752</li> <li>2.2 - 8100</li> <li>3 -
+     *         8100</li> <li>3.1 - 18000</li> <li>3.2 - 20480</li> <li>4 - 32768</li>
+     *         <li>4.1 - 32768</li> </ul> <p> <b>MaxBitRate</b> <p>The maximum number
+     *         of bits per second in a video buffer; the size of the buffer is
+     *         specified by <code>BufferSize</code>. Specify a value between 16 and
+     *         62,500. You can reduce the bandwidth required to stream a video by
+     *         reducing the maximum bit rate, but this also reduces the quality of
+     *         the video. <p> <b>BufferSize</b> <p>The maximum number of bits in any
+     *         x seconds of the output video. This window is commonly 10 seconds, the
+     *         standard segment duration when you���re using MPEG-TS for the
+     *         container type of the output video. Specify an integer greater than 0.
+     *         If you specify <code>MaxBitRate</code> and omit
+     *         <code>BufferSize</code>, Elastic Transcoder sets
+     *         <code>BufferSize</code> to 10 times the value of
+     *         <code>MaxBitRate</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -565,9 +662,9 @@ public class VideoParameters  implements Serializable  {
      * The maximum number of frames between key frames. Key frames are fully
      * encoded frames; the frames between key frames are encoded based, in
      * part, on the content of the key frames. The value is an integer
-     * formatted as a string; valid values are between 1 and 100000,
-     * inclusive. A higher value results in higher compression but may also
-     * discernibly decrease video quality.
+     * formatted as a string; valid values are between 1 (every frame is a
+     * key frame) and 100000, inclusive. A higher value results in higher
+     * compression but may also discernibly decrease video quality.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>^\d{1,6}$<br/>
@@ -575,9 +672,9 @@ public class VideoParameters  implements Serializable  {
      * @return The maximum number of frames between key frames. Key frames are fully
      *         encoded frames; the frames between key frames are encoded based, in
      *         part, on the content of the key frames. The value is an integer
-     *         formatted as a string; valid values are between 1 and 100000,
-     *         inclusive. A higher value results in higher compression but may also
-     *         discernibly decrease video quality.
+     *         formatted as a string; valid values are between 1 (every frame is a
+     *         key frame) and 100000, inclusive. A higher value results in higher
+     *         compression but may also discernibly decrease video quality.
      */
     public String getKeyframesMaxDist() {
         return keyframesMaxDist;
@@ -587,9 +684,9 @@ public class VideoParameters  implements Serializable  {
      * The maximum number of frames between key frames. Key frames are fully
      * encoded frames; the frames between key frames are encoded based, in
      * part, on the content of the key frames. The value is an integer
-     * formatted as a string; valid values are between 1 and 100000,
-     * inclusive. A higher value results in higher compression but may also
-     * discernibly decrease video quality.
+     * formatted as a string; valid values are between 1 (every frame is a
+     * key frame) and 100000, inclusive. A higher value results in higher
+     * compression but may also discernibly decrease video quality.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>^\d{1,6}$<br/>
@@ -597,9 +694,9 @@ public class VideoParameters  implements Serializable  {
      * @param keyframesMaxDist The maximum number of frames between key frames. Key frames are fully
      *         encoded frames; the frames between key frames are encoded based, in
      *         part, on the content of the key frames. The value is an integer
-     *         formatted as a string; valid values are between 1 and 100000,
-     *         inclusive. A higher value results in higher compression but may also
-     *         discernibly decrease video quality.
+     *         formatted as a string; valid values are between 1 (every frame is a
+     *         key frame) and 100000, inclusive. A higher value results in higher
+     *         compression but may also discernibly decrease video quality.
      */
     public void setKeyframesMaxDist(String keyframesMaxDist) {
         this.keyframesMaxDist = keyframesMaxDist;
@@ -609,9 +706,9 @@ public class VideoParameters  implements Serializable  {
      * The maximum number of frames between key frames. Key frames are fully
      * encoded frames; the frames between key frames are encoded based, in
      * part, on the content of the key frames. The value is an integer
-     * formatted as a string; valid values are between 1 and 100000,
-     * inclusive. A higher value results in higher compression but may also
-     * discernibly decrease video quality.
+     * formatted as a string; valid values are between 1 (every frame is a
+     * key frame) and 100000, inclusive. A higher value results in higher
+     * compression but may also discernibly decrease video quality.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -621,9 +718,9 @@ public class VideoParameters  implements Serializable  {
      * @param keyframesMaxDist The maximum number of frames between key frames. Key frames are fully
      *         encoded frames; the frames between key frames are encoded based, in
      *         part, on the content of the key frames. The value is an integer
-     *         formatted as a string; valid values are between 1 and 100000,
-     *         inclusive. A higher value results in higher compression but may also
-     *         discernibly decrease video quality.
+     *         formatted as a string; valid values are between 1 (every frame is a
+     *         key frame) and 100000, inclusive. A higher value results in higher
+     *         compression but may also discernibly decrease video quality.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -987,6 +1084,91 @@ public class VideoParameters  implements Serializable  {
      */
     public VideoParameters withFrameRate(String frameRate) {
         this.frameRate = frameRate;
+        return this;
+    }
+    
+    
+    /**
+     * If you specify <code>auto</code> for <code>FrameRate</code>, Elastic
+     * Transcoder uses the frame rate of the input video for the frame rate
+     * of the output video. Specify the maximum frame rate that you want
+     * Elastic Transcoder to use when the frame rate of the input video is
+     * greater than the desired maximum frame rate of the output video. Valid
+     * values include: <code>10</code>, <code>15</code>, <code>23.97</code>,
+     * <code>24</code>, <code>25</code>, <code>29.97</code>, <code>30</code>,
+     * <code>60</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>(^10$)|(^15$)|(^23.97$)|(^24$)|(^25$)|(^29.97$)|(^30$)|(^60$)<br/>
+     *
+     * @return If you specify <code>auto</code> for <code>FrameRate</code>, Elastic
+     *         Transcoder uses the frame rate of the input video for the frame rate
+     *         of the output video. Specify the maximum frame rate that you want
+     *         Elastic Transcoder to use when the frame rate of the input video is
+     *         greater than the desired maximum frame rate of the output video. Valid
+     *         values include: <code>10</code>, <code>15</code>, <code>23.97</code>,
+     *         <code>24</code>, <code>25</code>, <code>29.97</code>, <code>30</code>,
+     *         <code>60</code>.
+     */
+    public String getMaxFrameRate() {
+        return maxFrameRate;
+    }
+    
+    /**
+     * If you specify <code>auto</code> for <code>FrameRate</code>, Elastic
+     * Transcoder uses the frame rate of the input video for the frame rate
+     * of the output video. Specify the maximum frame rate that you want
+     * Elastic Transcoder to use when the frame rate of the input video is
+     * greater than the desired maximum frame rate of the output video. Valid
+     * values include: <code>10</code>, <code>15</code>, <code>23.97</code>,
+     * <code>24</code>, <code>25</code>, <code>29.97</code>, <code>30</code>,
+     * <code>60</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>(^10$)|(^15$)|(^23.97$)|(^24$)|(^25$)|(^29.97$)|(^30$)|(^60$)<br/>
+     *
+     * @param maxFrameRate If you specify <code>auto</code> for <code>FrameRate</code>, Elastic
+     *         Transcoder uses the frame rate of the input video for the frame rate
+     *         of the output video. Specify the maximum frame rate that you want
+     *         Elastic Transcoder to use when the frame rate of the input video is
+     *         greater than the desired maximum frame rate of the output video. Valid
+     *         values include: <code>10</code>, <code>15</code>, <code>23.97</code>,
+     *         <code>24</code>, <code>25</code>, <code>29.97</code>, <code>30</code>,
+     *         <code>60</code>.
+     */
+    public void setMaxFrameRate(String maxFrameRate) {
+        this.maxFrameRate = maxFrameRate;
+    }
+    
+    /**
+     * If you specify <code>auto</code> for <code>FrameRate</code>, Elastic
+     * Transcoder uses the frame rate of the input video for the frame rate
+     * of the output video. Specify the maximum frame rate that you want
+     * Elastic Transcoder to use when the frame rate of the input video is
+     * greater than the desired maximum frame rate of the output video. Valid
+     * values include: <code>10</code>, <code>15</code>, <code>23.97</code>,
+     * <code>24</code>, <code>25</code>, <code>29.97</code>, <code>30</code>,
+     * <code>60</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>(^10$)|(^15$)|(^23.97$)|(^24$)|(^25$)|(^29.97$)|(^30$)|(^60$)<br/>
+     *
+     * @param maxFrameRate If you specify <code>auto</code> for <code>FrameRate</code>, Elastic
+     *         Transcoder uses the frame rate of the input video for the frame rate
+     *         of the output video. Specify the maximum frame rate that you want
+     *         Elastic Transcoder to use when the frame rate of the input video is
+     *         greater than the desired maximum frame rate of the output video. Valid
+     *         values include: <code>10</code>, <code>15</code>, <code>23.97</code>,
+     *         <code>24</code>, <code>25</code>, <code>29.97</code>, <code>30</code>,
+     *         <code>60</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public VideoParameters withMaxFrameRate(String maxFrameRate) {
+        this.maxFrameRate = maxFrameRate;
         return this;
     }
     
@@ -1773,6 +1955,171 @@ public class VideoParameters  implements Serializable  {
     
     
     /**
+     * Settings for the size, location, and opacity of graphics that you want
+     * Elastic Transcoder to overlay over videos that are transcoded using
+     * this preset. You can specify settings for up to four watermarks.
+     * Watermarks appear in the specified size and location, and with the
+     * specified opacity for the duration of the transcoded video.
+     * <p>Watermarks can be in .png or .jpg format. If you want to display a
+     * watermark that is not rectangular, use the .png format, which supports
+     * transparency. <p>When you create a job that uses this preset, you
+     * specify the .png or .jpg graphics that you want Elastic Transcoder to
+     * include in the transcoded videos. You can specify fewer graphics in
+     * the job than you specify watermark settings in the preset, which
+     * allows you to use the same preset for up to four watermarks that have
+     * different dimensions.
+     *
+     * @return Settings for the size, location, and opacity of graphics that you want
+     *         Elastic Transcoder to overlay over videos that are transcoded using
+     *         this preset. You can specify settings for up to four watermarks.
+     *         Watermarks appear in the specified size and location, and with the
+     *         specified opacity for the duration of the transcoded video.
+     *         <p>Watermarks can be in .png or .jpg format. If you want to display a
+     *         watermark that is not rectangular, use the .png format, which supports
+     *         transparency. <p>When you create a job that uses this preset, you
+     *         specify the .png or .jpg graphics that you want Elastic Transcoder to
+     *         include in the transcoded videos. You can specify fewer graphics in
+     *         the job than you specify watermark settings in the preset, which
+     *         allows you to use the same preset for up to four watermarks that have
+     *         different dimensions.
+     */
+    public java.util.List<PresetWatermark> getWatermarks() {
+        
+        if (watermarks == null) {
+              watermarks = new com.amazonaws.internal.ListWithAutoConstructFlag<PresetWatermark>();
+              watermarks.setAutoConstruct(true);
+        }
+        return watermarks;
+    }
+    
+    /**
+     * Settings for the size, location, and opacity of graphics that you want
+     * Elastic Transcoder to overlay over videos that are transcoded using
+     * this preset. You can specify settings for up to four watermarks.
+     * Watermarks appear in the specified size and location, and with the
+     * specified opacity for the duration of the transcoded video.
+     * <p>Watermarks can be in .png or .jpg format. If you want to display a
+     * watermark that is not rectangular, use the .png format, which supports
+     * transparency. <p>When you create a job that uses this preset, you
+     * specify the .png or .jpg graphics that you want Elastic Transcoder to
+     * include in the transcoded videos. You can specify fewer graphics in
+     * the job than you specify watermark settings in the preset, which
+     * allows you to use the same preset for up to four watermarks that have
+     * different dimensions.
+     *
+     * @param watermarks Settings for the size, location, and opacity of graphics that you want
+     *         Elastic Transcoder to overlay over videos that are transcoded using
+     *         this preset. You can specify settings for up to four watermarks.
+     *         Watermarks appear in the specified size and location, and with the
+     *         specified opacity for the duration of the transcoded video.
+     *         <p>Watermarks can be in .png or .jpg format. If you want to display a
+     *         watermark that is not rectangular, use the .png format, which supports
+     *         transparency. <p>When you create a job that uses this preset, you
+     *         specify the .png or .jpg graphics that you want Elastic Transcoder to
+     *         include in the transcoded videos. You can specify fewer graphics in
+     *         the job than you specify watermark settings in the preset, which
+     *         allows you to use the same preset for up to four watermarks that have
+     *         different dimensions.
+     */
+    public void setWatermarks(java.util.Collection<PresetWatermark> watermarks) {
+        if (watermarks == null) {
+            this.watermarks = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<PresetWatermark> watermarksCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PresetWatermark>(watermarks.size());
+        watermarksCopy.addAll(watermarks);
+        this.watermarks = watermarksCopy;
+    }
+    
+    /**
+     * Settings for the size, location, and opacity of graphics that you want
+     * Elastic Transcoder to overlay over videos that are transcoded using
+     * this preset. You can specify settings for up to four watermarks.
+     * Watermarks appear in the specified size and location, and with the
+     * specified opacity for the duration of the transcoded video.
+     * <p>Watermarks can be in .png or .jpg format. If you want to display a
+     * watermark that is not rectangular, use the .png format, which supports
+     * transparency. <p>When you create a job that uses this preset, you
+     * specify the .png or .jpg graphics that you want Elastic Transcoder to
+     * include in the transcoded videos. You can specify fewer graphics in
+     * the job than you specify watermark settings in the preset, which
+     * allows you to use the same preset for up to four watermarks that have
+     * different dimensions.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param watermarks Settings for the size, location, and opacity of graphics that you want
+     *         Elastic Transcoder to overlay over videos that are transcoded using
+     *         this preset. You can specify settings for up to four watermarks.
+     *         Watermarks appear in the specified size and location, and with the
+     *         specified opacity for the duration of the transcoded video.
+     *         <p>Watermarks can be in .png or .jpg format. If you want to display a
+     *         watermark that is not rectangular, use the .png format, which supports
+     *         transparency. <p>When you create a job that uses this preset, you
+     *         specify the .png or .jpg graphics that you want Elastic Transcoder to
+     *         include in the transcoded videos. You can specify fewer graphics in
+     *         the job than you specify watermark settings in the preset, which
+     *         allows you to use the same preset for up to four watermarks that have
+     *         different dimensions.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public VideoParameters withWatermarks(PresetWatermark... watermarks) {
+        if (getWatermarks() == null) setWatermarks(new java.util.ArrayList<PresetWatermark>(watermarks.length));
+        for (PresetWatermark value : watermarks) {
+            getWatermarks().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Settings for the size, location, and opacity of graphics that you want
+     * Elastic Transcoder to overlay over videos that are transcoded using
+     * this preset. You can specify settings for up to four watermarks.
+     * Watermarks appear in the specified size and location, and with the
+     * specified opacity for the duration of the transcoded video.
+     * <p>Watermarks can be in .png or .jpg format. If you want to display a
+     * watermark that is not rectangular, use the .png format, which supports
+     * transparency. <p>When you create a job that uses this preset, you
+     * specify the .png or .jpg graphics that you want Elastic Transcoder to
+     * include in the transcoded videos. You can specify fewer graphics in
+     * the job than you specify watermark settings in the preset, which
+     * allows you to use the same preset for up to four watermarks that have
+     * different dimensions.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param watermarks Settings for the size, location, and opacity of graphics that you want
+     *         Elastic Transcoder to overlay over videos that are transcoded using
+     *         this preset. You can specify settings for up to four watermarks.
+     *         Watermarks appear in the specified size and location, and with the
+     *         specified opacity for the duration of the transcoded video.
+     *         <p>Watermarks can be in .png or .jpg format. If you want to display a
+     *         watermark that is not rectangular, use the .png format, which supports
+     *         transparency. <p>When you create a job that uses this preset, you
+     *         specify the .png or .jpg graphics that you want Elastic Transcoder to
+     *         include in the transcoded videos. You can specify fewer graphics in
+     *         the job than you specify watermark settings in the preset, which
+     *         allows you to use the same preset for up to four watermarks that have
+     *         different dimensions.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public VideoParameters withWatermarks(java.util.Collection<PresetWatermark> watermarks) {
+        if (watermarks == null) {
+            this.watermarks = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<PresetWatermark> watermarksCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PresetWatermark>(watermarks.size());
+            watermarksCopy.addAll(watermarks);
+            this.watermarks = watermarksCopy;
+        }
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1790,13 +2137,15 @@ public class VideoParameters  implements Serializable  {
         if (getFixedGOP() != null) sb.append("FixedGOP: " + getFixedGOP() + ",");
         if (getBitRate() != null) sb.append("BitRate: " + getBitRate() + ",");
         if (getFrameRate() != null) sb.append("FrameRate: " + getFrameRate() + ",");
+        if (getMaxFrameRate() != null) sb.append("MaxFrameRate: " + getMaxFrameRate() + ",");
         if (getResolution() != null) sb.append("Resolution: " + getResolution() + ",");
         if (getAspectRatio() != null) sb.append("AspectRatio: " + getAspectRatio() + ",");
         if (getMaxWidth() != null) sb.append("MaxWidth: " + getMaxWidth() + ",");
         if (getMaxHeight() != null) sb.append("MaxHeight: " + getMaxHeight() + ",");
         if (getDisplayAspectRatio() != null) sb.append("DisplayAspectRatio: " + getDisplayAspectRatio() + ",");
         if (getSizingPolicy() != null) sb.append("SizingPolicy: " + getSizingPolicy() + ",");
-        if (getPaddingPolicy() != null) sb.append("PaddingPolicy: " + getPaddingPolicy() );
+        if (getPaddingPolicy() != null) sb.append("PaddingPolicy: " + getPaddingPolicy() + ",");
+        if (getWatermarks() != null) sb.append("Watermarks: " + getWatermarks() );
         sb.append("}");
         return sb.toString();
     }
@@ -1812,6 +2161,7 @@ public class VideoParameters  implements Serializable  {
         hashCode = prime * hashCode + ((getFixedGOP() == null) ? 0 : getFixedGOP().hashCode()); 
         hashCode = prime * hashCode + ((getBitRate() == null) ? 0 : getBitRate().hashCode()); 
         hashCode = prime * hashCode + ((getFrameRate() == null) ? 0 : getFrameRate().hashCode()); 
+        hashCode = prime * hashCode + ((getMaxFrameRate() == null) ? 0 : getMaxFrameRate().hashCode()); 
         hashCode = prime * hashCode + ((getResolution() == null) ? 0 : getResolution().hashCode()); 
         hashCode = prime * hashCode + ((getAspectRatio() == null) ? 0 : getAspectRatio().hashCode()); 
         hashCode = prime * hashCode + ((getMaxWidth() == null) ? 0 : getMaxWidth().hashCode()); 
@@ -1819,6 +2169,7 @@ public class VideoParameters  implements Serializable  {
         hashCode = prime * hashCode + ((getDisplayAspectRatio() == null) ? 0 : getDisplayAspectRatio().hashCode()); 
         hashCode = prime * hashCode + ((getSizingPolicy() == null) ? 0 : getSizingPolicy().hashCode()); 
         hashCode = prime * hashCode + ((getPaddingPolicy() == null) ? 0 : getPaddingPolicy().hashCode()); 
+        hashCode = prime * hashCode + ((getWatermarks() == null) ? 0 : getWatermarks().hashCode()); 
         return hashCode;
     }
     
@@ -1842,6 +2193,8 @@ public class VideoParameters  implements Serializable  {
         if (other.getBitRate() != null && other.getBitRate().equals(this.getBitRate()) == false) return false; 
         if (other.getFrameRate() == null ^ this.getFrameRate() == null) return false;
         if (other.getFrameRate() != null && other.getFrameRate().equals(this.getFrameRate()) == false) return false; 
+        if (other.getMaxFrameRate() == null ^ this.getMaxFrameRate() == null) return false;
+        if (other.getMaxFrameRate() != null && other.getMaxFrameRate().equals(this.getMaxFrameRate()) == false) return false; 
         if (other.getResolution() == null ^ this.getResolution() == null) return false;
         if (other.getResolution() != null && other.getResolution().equals(this.getResolution()) == false) return false; 
         if (other.getAspectRatio() == null ^ this.getAspectRatio() == null) return false;
@@ -1856,6 +2209,8 @@ public class VideoParameters  implements Serializable  {
         if (other.getSizingPolicy() != null && other.getSizingPolicy().equals(this.getSizingPolicy()) == false) return false; 
         if (other.getPaddingPolicy() == null ^ this.getPaddingPolicy() == null) return false;
         if (other.getPaddingPolicy() != null && other.getPaddingPolicy().equals(this.getPaddingPolicy()) == false) return false; 
+        if (other.getWatermarks() == null ^ this.getWatermarks() == null) return false;
+        if (other.getWatermarks() != null && other.getWatermarks().equals(this.getWatermarks()) == false) return false; 
         return true;
     }
     

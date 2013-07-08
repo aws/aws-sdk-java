@@ -332,11 +332,11 @@ public class SignalWorkflowExecutionRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");    	
-        if (getWorkflowId() != null) sb.append("WorkflowId: " + getWorkflowId() + ",");    	
-        if (getRunId() != null) sb.append("RunId: " + getRunId() + ",");    	
-        if (getSignalName() != null) sb.append("SignalName: " + getSignalName() + ",");    	
+        sb.append("{");
+        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");
+        if (getWorkflowId() != null) sb.append("WorkflowId: " + getWorkflowId() + ",");
+        if (getRunId() != null) sb.append("RunId: " + getRunId() + ",");
+        if (getSignalName() != null) sb.append("SignalName: " + getSignalName() + ",");
         if (getInput() != null) sb.append("Input: " + getInput() );
         sb.append("}");
         return sb.toString();

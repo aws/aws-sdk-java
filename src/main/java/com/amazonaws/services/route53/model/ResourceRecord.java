@@ -37,6 +37,8 @@ public class ResourceRecord  implements Serializable  {
      */
     public ResourceRecord() {}
     
+
+
     /**
      * Constructs a new ResourceRecord object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -46,7 +48,7 @@ public class ResourceRecord  implements Serializable  {
      * current resource record set.
      */
     public ResourceRecord(String value) {
-        this.value = value;
+        setValue(value);
     }
 
     
@@ -111,7 +113,7 @@ public class ResourceRecord  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getValue() != null) sb.append("Value: " + getValue() );
         sb.append("}");
         return sb.toString();

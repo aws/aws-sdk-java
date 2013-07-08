@@ -30,7 +30,7 @@ public class DescribeReservedCacheNodesResult  implements Serializable  {
     /**
      * A list of of reserved Cache Nodes.
      */
-    private java.util.List<ReservedCacheNode> reservedCacheNodes;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ReservedCacheNode> reservedCacheNodes;
 
     /**
      * The marker provided for paginated results.
@@ -74,7 +74,8 @@ public class DescribeReservedCacheNodesResult  implements Serializable  {
     public java.util.List<ReservedCacheNode> getReservedCacheNodes() {
         
         if (reservedCacheNodes == null) {
-            reservedCacheNodes = new java.util.ArrayList<ReservedCacheNode>();
+              reservedCacheNodes = new com.amazonaws.internal.ListWithAutoConstructFlag<ReservedCacheNode>();
+              reservedCacheNodes.setAutoConstruct(true);
         }
         return reservedCacheNodes;
     }
@@ -89,8 +90,7 @@ public class DescribeReservedCacheNodesResult  implements Serializable  {
             this.reservedCacheNodes = null;
             return;
         }
-
-        java.util.List<ReservedCacheNode> reservedCacheNodesCopy = new java.util.ArrayList<ReservedCacheNode>(reservedCacheNodes.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ReservedCacheNode> reservedCacheNodesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ReservedCacheNode>(reservedCacheNodes.size());
         reservedCacheNodesCopy.addAll(reservedCacheNodes);
         this.reservedCacheNodes = reservedCacheNodesCopy;
     }
@@ -127,7 +127,7 @@ public class DescribeReservedCacheNodesResult  implements Serializable  {
         if (reservedCacheNodes == null) {
             this.reservedCacheNodes = null;
         } else {
-            java.util.List<ReservedCacheNode> reservedCacheNodesCopy = new java.util.ArrayList<ReservedCacheNode>(reservedCacheNodes.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ReservedCacheNode> reservedCacheNodesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ReservedCacheNode>(reservedCacheNodes.size());
             reservedCacheNodesCopy.addAll(reservedCacheNodes);
             this.reservedCacheNodes = reservedCacheNodesCopy;
         }
@@ -146,8 +146,8 @@ public class DescribeReservedCacheNodesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getReservedCacheNodes() != null) sb.append("ReservedCacheNodes: " + getReservedCacheNodes() );
         sb.append("}");
         return sb.toString();

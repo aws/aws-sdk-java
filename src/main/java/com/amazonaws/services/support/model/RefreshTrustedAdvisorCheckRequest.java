@@ -20,8 +20,9 @@ import java.io.Serializable;
  * Container for the parameters to the {@link com.amazonaws.services.support.AWSSupport#refreshTrustedAdvisorCheck(RefreshTrustedAdvisorCheckRequest) RefreshTrustedAdvisorCheck operation}.
  * <p>
  * This action enables you to query the service to request a refresh for a specific Trusted Advisor check. Your request body contains a <i>CheckId</i>
- * for which you are querying. The response body contains a RefreshTrustedAdvisorCheckResult object containing <i>Status</i> and
- * <i>TimeUntilNextRefresh</i> fields.
+ * for which you are querying. The response body contains a <a
+ * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheckResult.html"> RefreshTrustedAdvisorCheckResult </a>
+ * object containing <i>Status</i> and <i>TimeUntilNextRefresh</i> fields.
  * </p>
  *
  * @see com.amazonaws.services.support.AWSSupport#refreshTrustedAdvisorCheck(RefreshTrustedAdvisorCheckRequest)

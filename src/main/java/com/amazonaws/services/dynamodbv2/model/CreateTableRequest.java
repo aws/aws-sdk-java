@@ -59,7 +59,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      * The attributes in <i>KeySchema</i> must also be defined in the
      * <i>AttributeDefinitions</i> array. For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
-     * Model</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>Each
+     * Model</a> in the Amazon DynamoDB Developer Guide. <p>Each
      * <i>KeySchemaElement</i> in the array is composed of: <ul> <li>
      * <p><i>AttributeName</i> - The name of this key attribute. </li> <li>
      * <p><i>KeyType</i> - Determines whether the key attribute is
@@ -72,7 +72,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      * a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#WorkingWithDDTables.primary.key">Specifying
-     * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * the Primary Key</a> in the Amazon DynamoDB Developer Guide.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2<br/>
@@ -114,7 +114,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      * <p>For current minimum and maximum provisioned throughput values, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     * in the <i>Amazon DynamoDB Developer Guide</i>.
+     * in the Amazon DynamoDB Developer Guide.
      */
     private ProvisionedThroughput provisionedThroughput;
 
@@ -136,7 +136,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      * for the table. The attributes in <i>KeySchema</i> must also be defined
      * in the <i>AttributeDefinitions</i> array. For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
-     * Model</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>Each
+     * Model</a> in the Amazon DynamoDB Developer Guide. <p>Each
      * <i>KeySchemaElement</i> in the array is composed of: <ul> <li>
      * <p><i>AttributeName</i> - The name of this key attribute. </li> <li>
      * <p><i>KeyType</i> - Determines whether the key attribute is
@@ -149,7 +149,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      * a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#WorkingWithDDTables.primary.key">Specifying
-     * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * the Primary Key</a> in the Amazon DynamoDB Developer Guide.
      */
     public CreateTableRequest(String tableName, java.util.List<KeySchemaElement> keySchema) {
         setTableName(tableName);
@@ -195,9 +195,6 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param attributeDefinitions An array of attributes that describe the key schema for the table and
      *         indexes.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateTableRequest withAttributeDefinitions(AttributeDefinition... attributeDefinitions) {
         if (getAttributeDefinitions() == null) setAttributeDefinitions(new java.util.ArrayList<AttributeDefinition>(attributeDefinitions.length));
@@ -215,9 +212,6 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param attributeDefinitions An array of attributes that describe the key schema for the table and
      *         indexes.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateTableRequest withAttributeDefinitions(java.util.Collection<AttributeDefinition> attributeDefinitions) {
         if (attributeDefinitions == null) {
@@ -267,9 +261,6 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
      * @param tableName The name of the table to create.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateTableRequest withTableName(String tableName) {
         this.tableName = tableName;
@@ -282,7 +273,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      * The attributes in <i>KeySchema</i> must also be defined in the
      * <i>AttributeDefinitions</i> array. For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
-     * Model</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>Each
+     * Model</a> in the Amazon DynamoDB Developer Guide. <p>Each
      * <i>KeySchemaElement</i> in the array is composed of: <ul> <li>
      * <p><i>AttributeName</i> - The name of this key attribute. </li> <li>
      * <p><i>KeyType</i> - Determines whether the key attribute is
@@ -295,7 +286,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      * a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#WorkingWithDDTables.primary.key">Specifying
-     * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * the Primary Key</a> in the Amazon DynamoDB Developer Guide.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2<br/>
@@ -304,7 +295,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      *         The attributes in <i>KeySchema</i> must also be defined in the
      *         <i>AttributeDefinitions</i> array. For more information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
-     *         Model</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>Each
+     *         Model</a> in the Amazon DynamoDB Developer Guide. <p>Each
      *         <i>KeySchemaElement</i> in the array is composed of: <ul> <li>
      *         <p><i>AttributeName</i> - The name of this key attribute. </li> <li>
      *         <p><i>KeyType</i> - Determines whether the key attribute is
@@ -317,7 +308,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      *         a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#WorkingWithDDTables.primary.key">Specifying
-     *         the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         the Primary Key</a> in the Amazon DynamoDB Developer Guide.
      */
     public java.util.List<KeySchemaElement> getKeySchema() {
         
@@ -329,7 +320,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      * The attributes in <i>KeySchema</i> must also be defined in the
      * <i>AttributeDefinitions</i> array. For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
-     * Model</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>Each
+     * Model</a> in the Amazon DynamoDB Developer Guide. <p>Each
      * <i>KeySchemaElement</i> in the array is composed of: <ul> <li>
      * <p><i>AttributeName</i> - The name of this key attribute. </li> <li>
      * <p><i>KeyType</i> - Determines whether the key attribute is
@@ -342,7 +333,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      * a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#WorkingWithDDTables.primary.key">Specifying
-     * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * the Primary Key</a> in the Amazon DynamoDB Developer Guide.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2<br/>
@@ -351,7 +342,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      *         The attributes in <i>KeySchema</i> must also be defined in the
      *         <i>AttributeDefinitions</i> array. For more information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
-     *         Model</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>Each
+     *         Model</a> in the Amazon DynamoDB Developer Guide. <p>Each
      *         <i>KeySchemaElement</i> in the array is composed of: <ul> <li>
      *         <p><i>AttributeName</i> - The name of this key attribute. </li> <li>
      *         <p><i>KeyType</i> - Determines whether the key attribute is
@@ -364,7 +355,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      *         a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#WorkingWithDDTables.primary.key">Specifying
-     *         the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         the Primary Key</a> in the Amazon DynamoDB Developer Guide.
      */
     public void setKeySchema(java.util.Collection<KeySchemaElement> keySchema) {
         if (keySchema == null) {
@@ -381,7 +372,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      * The attributes in <i>KeySchema</i> must also be defined in the
      * <i>AttributeDefinitions</i> array. For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
-     * Model</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>Each
+     * Model</a> in the Amazon DynamoDB Developer Guide. <p>Each
      * <i>KeySchemaElement</i> in the array is composed of: <ul> <li>
      * <p><i>AttributeName</i> - The name of this key attribute. </li> <li>
      * <p><i>KeyType</i> - Determines whether the key attribute is
@@ -394,7 +385,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      * a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#WorkingWithDDTables.primary.key">Specifying
-     * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * the Primary Key</a> in the Amazon DynamoDB Developer Guide.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -405,7 +396,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      *         The attributes in <i>KeySchema</i> must also be defined in the
      *         <i>AttributeDefinitions</i> array. For more information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
-     *         Model</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>Each
+     *         Model</a> in the Amazon DynamoDB Developer Guide. <p>Each
      *         <i>KeySchemaElement</i> in the array is composed of: <ul> <li>
      *         <p><i>AttributeName</i> - The name of this key attribute. </li> <li>
      *         <p><i>KeyType</i> - Determines whether the key attribute is
@@ -418,10 +409,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      *         a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#WorkingWithDDTables.primary.key">Specifying
-     *         the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         the Primary Key</a> in the Amazon DynamoDB Developer Guide.
      */
     public CreateTableRequest withKeySchema(KeySchemaElement... keySchema) {
         if (getKeySchema() == null) setKeySchema(new java.util.ArrayList<KeySchemaElement>(keySchema.length));
@@ -436,7 +424,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      * The attributes in <i>KeySchema</i> must also be defined in the
      * <i>AttributeDefinitions</i> array. For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
-     * Model</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>Each
+     * Model</a> in the Amazon DynamoDB Developer Guide. <p>Each
      * <i>KeySchemaElement</i> in the array is composed of: <ul> <li>
      * <p><i>AttributeName</i> - The name of this key attribute. </li> <li>
      * <p><i>KeyType</i> - Determines whether the key attribute is
@@ -449,7 +437,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      * a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#WorkingWithDDTables.primary.key">Specifying
-     * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * the Primary Key</a> in the Amazon DynamoDB Developer Guide.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -460,7 +448,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      *         The attributes in <i>KeySchema</i> must also be defined in the
      *         <i>AttributeDefinitions</i> array. For more information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
-     *         Model</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>Each
+     *         Model</a> in the Amazon DynamoDB Developer Guide. <p>Each
      *         <i>KeySchemaElement</i> in the array is composed of: <ul> <li>
      *         <p><i>AttributeName</i> - The name of this key attribute. </li> <li>
      *         <p><i>KeyType</i> - Determines whether the key attribute is
@@ -473,10 +461,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      *         a <i>KeyType</i> of <code>RANGE</code>. <p>For more information, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#WorkingWithDDTables.primary.key">Specifying
-     *         the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         the Primary Key</a> in the Amazon DynamoDB Developer Guide.
      */
     public CreateTableRequest withKeySchema(java.util.Collection<KeySchemaElement> keySchema) {
         if (keySchema == null) {
@@ -665,9 +650,6 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      *         indexes, must not exceed 20. If you project the same attribute into
      *         two different indexes, this counts as two distinct attributes when
      *         determining the total. </li> </ul> </li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateTableRequest withLocalSecondaryIndexes(LocalSecondaryIndex... localSecondaryIndexes) {
         if (getLocalSecondaryIndexes() == null) setLocalSecondaryIndexes(new java.util.ArrayList<LocalSecondaryIndex>(localSecondaryIndexes.length));
@@ -731,9 +713,6 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      *         indexes, must not exceed 20. If you project the same attribute into
      *         two different indexes, this counts as two distinct attributes when
      *         determining the total. </li> </ul> </li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateTableRequest withLocalSecondaryIndexes(java.util.Collection<LocalSecondaryIndex> localSecondaryIndexes) {
         if (localSecondaryIndexes == null) {
@@ -753,14 +732,14 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      * <p>For current minimum and maximum provisioned throughput values, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     * in the <i>Amazon DynamoDB Developer Guide</i>.
+     * in the Amazon DynamoDB Developer Guide.
      *
      * @return The provisioned throughput settings for the specified table. The
      *         settings can be modified using the <i>UpdateTable</i> operation.
      *         <p>For current minimum and maximum provisioned throughput values, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     *         in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         in the Amazon DynamoDB Developer Guide.
      */
     public ProvisionedThroughput getProvisionedThroughput() {
         return provisionedThroughput;
@@ -772,14 +751,14 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      * <p>For current minimum and maximum provisioned throughput values, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     * in the <i>Amazon DynamoDB Developer Guide</i>.
+     * in the Amazon DynamoDB Developer Guide.
      *
      * @param provisionedThroughput The provisioned throughput settings for the specified table. The
      *         settings can be modified using the <i>UpdateTable</i> operation.
      *         <p>For current minimum and maximum provisioned throughput values, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     *         in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         in the Amazon DynamoDB Developer Guide.
      */
     public void setProvisionedThroughput(ProvisionedThroughput provisionedThroughput) {
         this.provisionedThroughput = provisionedThroughput;
@@ -791,7 +770,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      * <p>For current minimum and maximum provisioned throughput values, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     * in the <i>Amazon DynamoDB Developer Guide</i>.
+     * in the Amazon DynamoDB Developer Guide.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -800,10 +779,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      *         <p>For current minimum and maximum provisioned throughput values, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     *         in the <i>Amazon DynamoDB Developer Guide</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         in the Amazon DynamoDB Developer Guide.
      */
     public CreateTableRequest withProvisionedThroughput(ProvisionedThroughput provisionedThroughput) {
         this.provisionedThroughput = provisionedThroughput;

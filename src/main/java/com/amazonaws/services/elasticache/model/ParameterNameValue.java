@@ -38,6 +38,8 @@ public class ParameterNameValue  implements Serializable  {
      */
     public ParameterNameValue() {}
     
+
+
     /**
      * Constructs a new ParameterNameValue object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -46,11 +48,13 @@ public class ParameterNameValue  implements Serializable  {
      * @param parameterName Specifies the name of the parameter.
      */
     public ParameterNameValue(String parameterName) {
-        this.parameterName = parameterName;
+        setParameterName(parameterName);
     }
 
     
     
+
+
     /**
      * Constructs a new ParameterNameValue object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -60,8 +64,8 @@ public class ParameterNameValue  implements Serializable  {
      * @param parameterValue Specifies the value of the parameter.
      */
     public ParameterNameValue(String parameterName, String parameterValue) {
-        this.parameterName = parameterName;
-        this.parameterValue = parameterValue;
+        setParameterName(parameterName);
+        setParameterValue(parameterValue);
     }
 
     
@@ -145,8 +149,8 @@ public class ParameterNameValue  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getParameterName() != null) sb.append("ParameterName: " + getParameterName() + ",");    	
+        sb.append("{");
+        if (getParameterName() != null) sb.append("ParameterName: " + getParameterName() + ",");
         if (getParameterValue() != null) sb.append("ParameterValue: " + getParameterValue() );
         sb.append("}");
         return sb.toString();

@@ -30,7 +30,7 @@ public class ModifyInstanceGroupsRequest extends AmazonWebServiceRequest  implem
     /**
      * Instance groups to change.
      */
-    private java.util.List<InstanceGroupModifyConfig> instanceGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupModifyConfig> instanceGroups;
 
     /**
      * Default constructor for a new ModifyInstanceGroupsRequest object.  Callers should use the
@@ -38,6 +38,8 @@ public class ModifyInstanceGroupsRequest extends AmazonWebServiceRequest  implem
      */
     public ModifyInstanceGroupsRequest() {}
     
+
+
     /**
      * Constructs a new ModifyInstanceGroupsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -46,7 +48,7 @@ public class ModifyInstanceGroupsRequest extends AmazonWebServiceRequest  implem
      * @param instanceGroups Instance groups to change.
      */
     public ModifyInstanceGroupsRequest(java.util.List<InstanceGroupModifyConfig> instanceGroups) {
-        this.instanceGroups = instanceGroups;
+        setInstanceGroups(instanceGroups);
     }
 
     
@@ -59,7 +61,8 @@ public class ModifyInstanceGroupsRequest extends AmazonWebServiceRequest  implem
     public java.util.List<InstanceGroupModifyConfig> getInstanceGroups() {
         
         if (instanceGroups == null) {
-            instanceGroups = new java.util.ArrayList<InstanceGroupModifyConfig>();
+              instanceGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupModifyConfig>();
+              instanceGroups.setAutoConstruct(true);
         }
         return instanceGroups;
     }
@@ -74,8 +77,7 @@ public class ModifyInstanceGroupsRequest extends AmazonWebServiceRequest  implem
             this.instanceGroups = null;
             return;
         }
-
-        java.util.List<InstanceGroupModifyConfig> instanceGroupsCopy = new java.util.ArrayList<InstanceGroupModifyConfig>(instanceGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupModifyConfig> instanceGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupModifyConfig>(instanceGroups.size());
         instanceGroupsCopy.addAll(instanceGroups);
         this.instanceGroups = instanceGroupsCopy;
     }
@@ -112,7 +114,7 @@ public class ModifyInstanceGroupsRequest extends AmazonWebServiceRequest  implem
         if (instanceGroups == null) {
             this.instanceGroups = null;
         } else {
-            java.util.List<InstanceGroupModifyConfig> instanceGroupsCopy = new java.util.ArrayList<InstanceGroupModifyConfig>(instanceGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupModifyConfig> instanceGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupModifyConfig>(instanceGroups.size());
             instanceGroupsCopy.addAll(instanceGroups);
             this.instanceGroups = instanceGroupsCopy;
         }
@@ -131,7 +133,7 @@ public class ModifyInstanceGroupsRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getInstanceGroups() != null) sb.append("InstanceGroups: " + getInstanceGroups() );
         sb.append("}");
         return sb.toString();

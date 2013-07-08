@@ -19,9 +19,6 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#createJob(CreateJobRequest) CreateJob operation}.
  * <p>
- * To create a job, send a POST request to the <code>/2012-09-25/jobs</code> resource.
- * </p>
- * <p>
  * When you create a job, Elastic Transcoder returns JSON data that includes the values that you specified plus information about the job that is
  * created.
  * </p>
@@ -53,7 +50,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest  implements Serial
     private JobInput input;
 
     /**
-     * 
+     * The <code>CreateJobOutput</code> structure.
      */
     private CreateJobOutput output;
 
@@ -197,29 +194,29 @@ public class CreateJobRequest extends AmazonWebServiceRequest  implements Serial
     
     
     /**
-     * 
+     * The <code>CreateJobOutput</code> structure.
      *
-     * @return 
+     * @return The <code>CreateJobOutput</code> structure.
      */
     public CreateJobOutput getOutput() {
         return output;
     }
     
     /**
-     * 
+     * The <code>CreateJobOutput</code> structure.
      *
-     * @param output 
+     * @param output The <code>CreateJobOutput</code> structure.
      */
     public void setOutput(CreateJobOutput output) {
         this.output = output;
     }
     
     /**
-     * 
+     * The <code>CreateJobOutput</code> structure.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param output 
+     * @param output The <code>CreateJobOutput</code> structure.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

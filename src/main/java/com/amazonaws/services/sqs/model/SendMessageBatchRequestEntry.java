@@ -16,27 +16,14 @@ package com.amazonaws.services.sqs.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * Contains the details of a single SQS message along with a <code>Id</code> .
- * </p>
+ * Send Message Batch Request Entry
  */
 public class SendMessageBatchRequestEntry  implements Serializable  {
 
-    /**
-     * An identifier for the message in this batch. This is used to
-     * communicate the result. Note that the the <code>Id</code>s of a batch
-     * request need to be unique within the request.
-     */
     private String id;
 
-    /**
-     * Body of the message.
-     */
     private String messageBody;
 
-    /**
-     * The number of seconds for which the message has to be delayed.
-     */
     private Integer delaySeconds;
 
     /**
@@ -52,10 +39,8 @@ public class SendMessageBatchRequestEntry  implements Serializable  {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param id An identifier for the message in this batch. This is used to
-     * communicate the result. Note that the the <code>Id</code>s of a batch
-     * request need to be unique within the request.
-     * @param messageBody Body of the message.
+     * @param id
+     * @param messageBody
      */
     public SendMessageBatchRequestEntry(String id, String messageBody) {
         setId(id);
@@ -65,41 +50,29 @@ public class SendMessageBatchRequestEntry  implements Serializable  {
     
     
     /**
-     * An identifier for the message in this batch. This is used to
-     * communicate the result. Note that the the <code>Id</code>s of a batch
-     * request need to be unique within the request.
+     * Returns the value of the Id property for this object.
      *
-     * @return An identifier for the message in this batch. This is used to
-     *         communicate the result. Note that the the <code>Id</code>s of a batch
-     *         request need to be unique within the request.
+     * @return The value of the Id property for this object.
      */
     public String getId() {
         return id;
     }
     
     /**
-     * An identifier for the message in this batch. This is used to
-     * communicate the result. Note that the the <code>Id</code>s of a batch
-     * request need to be unique within the request.
+     * Sets the value of the Id property for this object.
      *
-     * @param id An identifier for the message in this batch. This is used to
-     *         communicate the result. Note that the the <code>Id</code>s of a batch
-     *         request need to be unique within the request.
+     * @param id The new value for the Id property for this object.
      */
     public void setId(String id) {
         this.id = id;
     }
     
     /**
-     * An identifier for the message in this batch. This is used to
-     * communicate the result. Note that the the <code>Id</code>s of a batch
-     * request need to be unique within the request.
+     * Sets the value of the Id property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param id An identifier for the message in this batch. This is used to
-     *         communicate the result. Note that the the <code>Id</code>s of a batch
-     *         request need to be unique within the request.
+     * @param id The new value for the Id property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -111,29 +84,29 @@ public class SendMessageBatchRequestEntry  implements Serializable  {
     
     
     /**
-     * Body of the message.
+     * Returns the value of the MessageBody property for this object.
      *
-     * @return Body of the message.
+     * @return The value of the MessageBody property for this object.
      */
     public String getMessageBody() {
         return messageBody;
     }
     
     /**
-     * Body of the message.
+     * Sets the value of the MessageBody property for this object.
      *
-     * @param messageBody Body of the message.
+     * @param messageBody The new value for the MessageBody property for this object.
      */
     public void setMessageBody(String messageBody) {
         this.messageBody = messageBody;
     }
     
     /**
-     * Body of the message.
+     * Sets the value of the MessageBody property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param messageBody Body of the message.
+     * @param messageBody The new value for the MessageBody property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -145,29 +118,29 @@ public class SendMessageBatchRequestEntry  implements Serializable  {
     
     
     /**
-     * The number of seconds for which the message has to be delayed.
+     * Returns the value of the DelaySeconds property for this object.
      *
-     * @return The number of seconds for which the message has to be delayed.
+     * @return The value of the DelaySeconds property for this object.
      */
     public Integer getDelaySeconds() {
         return delaySeconds;
     }
     
     /**
-     * The number of seconds for which the message has to be delayed.
+     * Sets the value of the DelaySeconds property for this object.
      *
-     * @param delaySeconds The number of seconds for which the message has to be delayed.
+     * @param delaySeconds The new value for the DelaySeconds property for this object.
      */
     public void setDelaySeconds(Integer delaySeconds) {
         this.delaySeconds = delaySeconds;
     }
     
     /**
-     * The number of seconds for which the message has to be delayed.
+     * Sets the value of the DelaySeconds property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param delaySeconds The number of seconds for which the message has to be delayed.
+     * @param delaySeconds The new value for the DelaySeconds property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

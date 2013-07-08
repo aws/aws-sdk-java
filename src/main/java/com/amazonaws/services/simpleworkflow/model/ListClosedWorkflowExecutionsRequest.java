@@ -771,16 +771,16 @@ public class ListClosedWorkflowExecutionsRequest extends AmazonWebServiceRequest
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");    	
-        if (getStartTimeFilter() != null) sb.append("StartTimeFilter: " + getStartTimeFilter() + ",");    	
-        if (getCloseTimeFilter() != null) sb.append("CloseTimeFilter: " + getCloseTimeFilter() + ",");    	
-        if (getExecutionFilter() != null) sb.append("ExecutionFilter: " + getExecutionFilter() + ",");    	
-        if (getCloseStatusFilter() != null) sb.append("CloseStatusFilter: " + getCloseStatusFilter() + ",");    	
-        if (getTypeFilter() != null) sb.append("TypeFilter: " + getTypeFilter() + ",");    	
-        if (getTagFilter() != null) sb.append("TagFilter: " + getTagFilter() + ",");    	
-        if (getNextPageToken() != null) sb.append("NextPageToken: " + getNextPageToken() + ",");    	
-        if (getMaximumPageSize() != null) sb.append("MaximumPageSize: " + getMaximumPageSize() + ",");    	
+        sb.append("{");
+        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");
+        if (getStartTimeFilter() != null) sb.append("StartTimeFilter: " + getStartTimeFilter() + ",");
+        if (getCloseTimeFilter() != null) sb.append("CloseTimeFilter: " + getCloseTimeFilter() + ",");
+        if (getExecutionFilter() != null) sb.append("ExecutionFilter: " + getExecutionFilter() + ",");
+        if (getCloseStatusFilter() != null) sb.append("CloseStatusFilter: " + getCloseStatusFilter() + ",");
+        if (getTypeFilter() != null) sb.append("TypeFilter: " + getTypeFilter() + ",");
+        if (getTagFilter() != null) sb.append("TagFilter: " + getTagFilter() + ",");
+        if (getNextPageToken() != null) sb.append("NextPageToken: " + getNextPageToken() + ",");
+        if (getMaximumPageSize() != null) sb.append("MaximumPageSize: " + getMaximumPageSize() + ",");
         if (isReverseOrder() != null) sb.append("ReverseOrder: " + isReverseOrder() );
         sb.append("}");
         return sb.toString();

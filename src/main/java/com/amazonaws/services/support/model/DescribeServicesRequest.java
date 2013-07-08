@@ -20,7 +20,8 @@ import java.io.Serializable;
  * Container for the parameters to the {@link com.amazonaws.services.support.AWSSupport#describeServices(DescribeServicesRequest) DescribeServices operation}.
  * <p>
  * Returns the current list of AWS services and a list of service categories that applies to each one. You then use service names and categories in your
- * CreateCase requests. Each AWS service has its own set of categories.
+ * <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"> CreateCase </a> requests. Each AWS service has its own set
+ * of categories.
  * </p>
  * <p>
  * The service codes and category codes correspond to the values that are displayed in the <b>Service</b> and <b>Category</b> drop-down lists on the AWS

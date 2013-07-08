@@ -37,6 +37,8 @@ public class PlacementType  implements Serializable  {
      */
     public PlacementType() {}
     
+
+
     /**
      * Constructs a new PlacementType object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -46,7 +48,7 @@ public class PlacementType  implements Serializable  {
      * flow.
      */
     public PlacementType(String availabilityZone) {
-        this.availabilityZone = availabilityZone;
+        setAvailabilityZone(availabilityZone);
     }
 
     
@@ -108,7 +110,7 @@ public class PlacementType  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() );
         sb.append("}");
         return sb.toString();

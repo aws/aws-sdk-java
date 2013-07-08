@@ -185,8 +185,6 @@ public class UploadCallable implements Callable<UploadResult> {
                 .completeMultipartUpload(new CompleteMultipartUploadRequest(putObjectRequest.getBucketName(),
                         putObjectRequest.getKey(), multipartUploadId, partETags));
 
-        fireProgressEvent(ProgressEvent.COMPLETED_EVENT_CODE);
-
         UploadResult uploadResult = new UploadResult();
         uploadResult.setBucketName(completeMultipartUploadResult.getBucketName());
         uploadResult.setKey(completeMultipartUploadResult.getKey());

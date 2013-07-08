@@ -72,7 +72,7 @@ public class ModifyCacheParameterGroupResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getCacheParameterGroupName() != null) sb.append("CacheParameterGroupName: " + getCacheParameterGroupName() );
         sb.append("}");
         return sb.toString();

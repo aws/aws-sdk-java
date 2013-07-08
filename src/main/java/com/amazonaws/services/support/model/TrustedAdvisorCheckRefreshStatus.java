@@ -36,7 +36,7 @@ public class TrustedAdvisorCheckRefreshStatus  implements Serializable  {
 
     /**
      * Indicates the time in milliseconds until a call to <a
-     * href="API_RefreshTrustedAdvisorCheck.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html"
      * title="RefreshTrustedAdvisorCheck">RefreshTrustedAdvisorCheck</a> can
      * trigger a refresh.
      */
@@ -124,12 +124,12 @@ public class TrustedAdvisorCheckRefreshStatus  implements Serializable  {
     
     /**
      * Indicates the time in milliseconds until a call to <a
-     * href="API_RefreshTrustedAdvisorCheck.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html"
      * title="RefreshTrustedAdvisorCheck">RefreshTrustedAdvisorCheck</a> can
      * trigger a refresh.
      *
      * @return Indicates the time in milliseconds until a call to <a
-     *         href="API_RefreshTrustedAdvisorCheck.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html"
      *         title="RefreshTrustedAdvisorCheck">RefreshTrustedAdvisorCheck</a> can
      *         trigger a refresh.
      */
@@ -139,12 +139,12 @@ public class TrustedAdvisorCheckRefreshStatus  implements Serializable  {
     
     /**
      * Indicates the time in milliseconds until a call to <a
-     * href="API_RefreshTrustedAdvisorCheck.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html"
      * title="RefreshTrustedAdvisorCheck">RefreshTrustedAdvisorCheck</a> can
      * trigger a refresh.
      *
      * @param millisUntilNextRefreshable Indicates the time in milliseconds until a call to <a
-     *         href="API_RefreshTrustedAdvisorCheck.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html"
      *         title="RefreshTrustedAdvisorCheck">RefreshTrustedAdvisorCheck</a> can
      *         trigger a refresh.
      */
@@ -154,14 +154,14 @@ public class TrustedAdvisorCheckRefreshStatus  implements Serializable  {
     
     /**
      * Indicates the time in milliseconds until a call to <a
-     * href="API_RefreshTrustedAdvisorCheck.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html"
      * title="RefreshTrustedAdvisorCheck">RefreshTrustedAdvisorCheck</a> can
      * trigger a refresh.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param millisUntilNextRefreshable Indicates the time in milliseconds until a call to <a
-     *         href="API_RefreshTrustedAdvisorCheck.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html"
      *         title="RefreshTrustedAdvisorCheck">RefreshTrustedAdvisorCheck</a> can
      *         trigger a refresh.
      *

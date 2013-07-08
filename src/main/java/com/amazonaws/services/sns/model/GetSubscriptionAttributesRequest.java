@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#getSubscriptionAttributes(GetSubscriptionAttributesRequest) GetSubscriptionAttributes operation}.
  * <p>
- * The GetSubscriptionAttribtues action returns all of the properties of a subscription.
+ * The <code>GetSubscriptionAttribtues</code> action returns all of the properties of a subscription.
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#getSubscriptionAttributes(GetSubscriptionAttributesRequest)

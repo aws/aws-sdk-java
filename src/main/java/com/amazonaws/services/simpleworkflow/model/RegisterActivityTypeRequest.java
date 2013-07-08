@@ -821,15 +821,15 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getVersion() != null) sb.append("Version: " + getVersion() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
-        if (getDefaultTaskStartToCloseTimeout() != null) sb.append("DefaultTaskStartToCloseTimeout: " + getDefaultTaskStartToCloseTimeout() + ",");    	
-        if (getDefaultTaskHeartbeatTimeout() != null) sb.append("DefaultTaskHeartbeatTimeout: " + getDefaultTaskHeartbeatTimeout() + ",");    	
-        if (getDefaultTaskList() != null) sb.append("DefaultTaskList: " + getDefaultTaskList() + ",");    	
-        if (getDefaultTaskScheduleToStartTimeout() != null) sb.append("DefaultTaskScheduleToStartTimeout: " + getDefaultTaskScheduleToStartTimeout() + ",");    	
+        sb.append("{");
+        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getVersion() != null) sb.append("Version: " + getVersion() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getDefaultTaskStartToCloseTimeout() != null) sb.append("DefaultTaskStartToCloseTimeout: " + getDefaultTaskStartToCloseTimeout() + ",");
+        if (getDefaultTaskHeartbeatTimeout() != null) sb.append("DefaultTaskHeartbeatTimeout: " + getDefaultTaskHeartbeatTimeout() + ",");
+        if (getDefaultTaskList() != null) sb.append("DefaultTaskList: " + getDefaultTaskList() + ",");
+        if (getDefaultTaskScheduleToStartTimeout() != null) sb.append("DefaultTaskScheduleToStartTimeout: " + getDefaultTaskScheduleToStartTimeout() + ",");
         if (getDefaultTaskScheduleToCloseTimeout() != null) sb.append("DefaultTaskScheduleToCloseTimeout: " + getDefaultTaskScheduleToCloseTimeout() );
         sb.append("}");
         return sb.toString();

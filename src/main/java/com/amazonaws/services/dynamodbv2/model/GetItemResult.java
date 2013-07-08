@@ -34,7 +34,7 @@ public class GetItemResult  implements Serializable  {
      * returned if it was asked for in the request. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * Throughput</a> in the Amazon DynamoDB Developer Guide.
      */
     private ConsumedCapacity consumedCapacity;
 
@@ -48,7 +48,6 @@ public class GetItemResult  implements Serializable  {
     public java.util.Map<String,AttributeValue> getItem() {
         
         return item;
-
     }
     
     /**
@@ -70,29 +69,58 @@ public class GetItemResult  implements Serializable  {
      *
      * @param item A map of attribute names to <i>AttributeValue</i> objects, as
      *         specified by <i>AttributesToGet</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetItemResult withItem(java.util.Map<String,AttributeValue> item) {
         setItem(item);
         return this;
     }
     
+   	
+    /**
+     * A map of attribute names to <i>AttributeValue</i> objects, as
+     * specified by <i>AttributesToGet</i>.
+     * <p>
+     * The method adds a new key-value pair into Item parameter, and returns
+     * a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param key The key of the entry to be added into Item.
+     * @param value The corresponding value of the entry to be added into Item.
+     */
+	public GetItemResult addItemEntry(String key, AttributeValue value) {
+		if (null == this.item) {
+			this.item = new java.util.HashMap<String,AttributeValue>();
+		}
+		if (this.item.containsKey(key))
+			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+		this.item.put(key, value);
+		return this;
+	}
+	
+	/**
+	 * Removes all the entries added into Item.
+	 * <p>
+	 * Returns a reference to this object so that method calls can be chained together.
+	 */
+	public GetItemResult clearItemEntries() {
+		this.item = null;
+		return this;
+	}
+	
     /**
      * The table name that consumed provisioned throughput, and the number of
      * capacity units consumed by it. <i>ConsumedCapacity</i> is only
      * returned if it was asked for in the request. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * Throughput</a> in the Amazon DynamoDB Developer Guide.
      *
      * @return The table name that consumed provisioned throughput, and the number of
      *         capacity units consumed by it. <i>ConsumedCapacity</i> is only
      *         returned if it was asked for in the request. For more information, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     *         Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         Throughput</a> in the Amazon DynamoDB Developer Guide.
      */
     public ConsumedCapacity getConsumedCapacity() {
         return consumedCapacity;
@@ -104,14 +132,14 @@ public class GetItemResult  implements Serializable  {
      * returned if it was asked for in the request. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * Throughput</a> in the Amazon DynamoDB Developer Guide.
      *
      * @param consumedCapacity The table name that consumed provisioned throughput, and the number of
      *         capacity units consumed by it. <i>ConsumedCapacity</i> is only
      *         returned if it was asked for in the request. For more information, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     *         Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         Throughput</a> in the Amazon DynamoDB Developer Guide.
      */
     public void setConsumedCapacity(ConsumedCapacity consumedCapacity) {
         this.consumedCapacity = consumedCapacity;
@@ -123,7 +151,7 @@ public class GetItemResult  implements Serializable  {
      * returned if it was asked for in the request. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * Throughput</a> in the Amazon DynamoDB Developer Guide.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -132,10 +160,7 @@ public class GetItemResult  implements Serializable  {
      *         returned if it was asked for in the request. For more information, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     *         Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         Throughput</a> in the Amazon DynamoDB Developer Guide.
      */
     public GetItemResult withConsumedCapacity(ConsumedCapacity consumedCapacity) {
         this.consumedCapacity = consumedCapacity;

@@ -352,12 +352,12 @@ public class DescribeCacheEngineVersionsRequest extends AmazonWebServiceRequest 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getEngine() != null) sb.append("Engine: " + getEngine() + ",");    	
-        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");    	
-        if (getCacheParameterGroupFamily() != null) sb.append("CacheParameterGroupFamily: " + getCacheParameterGroupFamily() + ",");    	
-        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getEngine() != null) sb.append("Engine: " + getEngine() + ",");
+        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");
+        if (getCacheParameterGroupFamily() != null) sb.append("CacheParameterGroupFamily: " + getCacheParameterGroupFamily() + ",");
+        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (isDefaultOnly() != null) sb.append("DefaultOnly: " + isDefaultOnly() );
         sb.append("}");
         return sb.toString();

@@ -23,18 +23,21 @@ import java.io.Serializable;
 public class DescribeTrustedAdvisorCheckResultResult  implements Serializable  {
 
     /**
-     * Returns a <a href="API_TrustedAdvisorCheckResult.html"
+     * Returns a <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckResult.html"
      * title="TrustedAdvisorCheckResult">TrustedAdvisorCheckResult</a>
      * object.
      */
     private TrustedAdvisorCheckResult result;
 
     /**
-     * Returns a <a href="API_TrustedAdvisorCheckResult.html"
+     * Returns a <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckResult.html"
      * title="TrustedAdvisorCheckResult">TrustedAdvisorCheckResult</a>
      * object.
      *
-     * @return Returns a <a href="API_TrustedAdvisorCheckResult.html"
+     * @return Returns a <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckResult.html"
      *         title="TrustedAdvisorCheckResult">TrustedAdvisorCheckResult</a>
      *         object.
      */
@@ -43,11 +46,13 @@ public class DescribeTrustedAdvisorCheckResultResult  implements Serializable  {
     }
     
     /**
-     * Returns a <a href="API_TrustedAdvisorCheckResult.html"
+     * Returns a <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckResult.html"
      * title="TrustedAdvisorCheckResult">TrustedAdvisorCheckResult</a>
      * object.
      *
-     * @param result Returns a <a href="API_TrustedAdvisorCheckResult.html"
+     * @param result Returns a <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckResult.html"
      *         title="TrustedAdvisorCheckResult">TrustedAdvisorCheckResult</a>
      *         object.
      */
@@ -56,13 +61,15 @@ public class DescribeTrustedAdvisorCheckResultResult  implements Serializable  {
     }
     
     /**
-     * Returns a <a href="API_TrustedAdvisorCheckResult.html"
+     * Returns a <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckResult.html"
      * title="TrustedAdvisorCheckResult">TrustedAdvisorCheckResult</a>
      * object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param result Returns a <a href="API_TrustedAdvisorCheckResult.html"
+     * @param result Returns a <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckResult.html"
      *         title="TrustedAdvisorCheckResult">TrustedAdvisorCheckResult</a>
      *         object.
      *

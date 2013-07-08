@@ -53,6 +53,8 @@ public class AuthorizeCacheSecurityGroupIngressRequest extends AmazonWebServiceR
      */
     public AuthorizeCacheSecurityGroupIngressRequest() {}
     
+
+
     /**
      * Constructs a new AuthorizeCacheSecurityGroupIngressRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -67,9 +69,9 @@ public class AuthorizeCacheSecurityGroupIngressRequest extends AmazonWebServiceR
      * AWS Access Key ID is not an acceptable value.
      */
     public AuthorizeCacheSecurityGroupIngressRequest(String cacheSecurityGroupName, String eC2SecurityGroupName, String eC2SecurityGroupOwnerId) {
-        this.cacheSecurityGroupName = cacheSecurityGroupName;
-        this.eC2SecurityGroupName = eC2SecurityGroupName;
-        this.eC2SecurityGroupOwnerId = eC2SecurityGroupOwnerId;
+        setCacheSecurityGroupName(cacheSecurityGroupName);
+        setEC2SecurityGroupName(eC2SecurityGroupName);
+        setEC2SecurityGroupOwnerId(eC2SecurityGroupOwnerId);
     }
 
     
@@ -199,9 +201,9 @@ public class AuthorizeCacheSecurityGroupIngressRequest extends AmazonWebServiceR
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCacheSecurityGroupName() != null) sb.append("CacheSecurityGroupName: " + getCacheSecurityGroupName() + ",");    	
-        if (getEC2SecurityGroupName() != null) sb.append("EC2SecurityGroupName: " + getEC2SecurityGroupName() + ",");    	
+        sb.append("{");
+        if (getCacheSecurityGroupName() != null) sb.append("CacheSecurityGroupName: " + getCacheSecurityGroupName() + ",");
+        if (getEC2SecurityGroupName() != null) sb.append("EC2SecurityGroupName: " + getEC2SecurityGroupName() + ",");
         if (getEC2SecurityGroupOwnerId() != null) sb.append("EC2SecurityGroupOwnerId: " + getEC2SecurityGroupOwnerId() );
         sb.append("}");
         return sb.toString();

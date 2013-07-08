@@ -19,8 +19,7 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#updatePipelineNotifications(UpdatePipelineNotificationsRequest) UpdatePipelineNotifications operation}.
  * <p>
- * To update Amazon Simple Notification Service (Amazon SNS) notifications for a pipeline, send a POST request to the
- * <code>/2012-09-25/pipelines/[pipelineId]/notifications</code> resource.
+ * With the UpdatePipelineNotifications operation, you can update Amazon Simple Notification Service (Amazon SNS) notifications for a pipeline.
  * </p>
  * <p>
  * When you update notifications for a pipeline, Elastic Transcoder returns the values that you specified in the request.

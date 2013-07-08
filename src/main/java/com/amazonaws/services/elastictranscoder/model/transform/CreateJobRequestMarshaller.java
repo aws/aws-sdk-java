@@ -135,6 +135,27 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                 if (output.getSegmentDuration() != null) {
                     jsonWriter.key("SegmentDuration").value(output.getSegmentDuration());
                 }
+
+                com.amazonaws.internal.ListWithAutoConstructFlag<JobWatermark> watermarksList = (com.amazonaws.internal.ListWithAutoConstructFlag<JobWatermark>)(output.getWatermarks());
+                if (watermarksList != null && !(watermarksList.isAutoConstruct() && watermarksList.isEmpty())) {
+
+                    jsonWriter.key("Watermarks");
+                    jsonWriter.array();
+
+                    for (JobWatermark watermarksListValue : watermarksList) {
+                        if (watermarksListValue != null) {
+                            jsonWriter.object();
+                            if (watermarksListValue.getPresetWatermarkId() != null) {
+                                jsonWriter.key("PresetWatermarkId").value(watermarksListValue.getPresetWatermarkId());
+                            }
+                            if (watermarksListValue.getInputKey() != null) {
+                                jsonWriter.key("InputKey").value(watermarksListValue.getInputKey());
+                            }
+                            jsonWriter.endObject();
+                        }
+                    }
+                    jsonWriter.endArray();
+                }
                 jsonWriter.endObject();
             }
 
@@ -161,6 +182,27 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                         }
                         if (outputsListValue.getSegmentDuration() != null) {
                             jsonWriter.key("SegmentDuration").value(outputsListValue.getSegmentDuration());
+                        }
+
+                        com.amazonaws.internal.ListWithAutoConstructFlag<JobWatermark> watermarksList = (com.amazonaws.internal.ListWithAutoConstructFlag<JobWatermark>)(outputsListValue.getWatermarks());
+                        if (watermarksList != null && !(watermarksList.isAutoConstruct() && watermarksList.isEmpty())) {
+
+                            jsonWriter.key("Watermarks");
+                            jsonWriter.array();
+
+                            for (JobWatermark watermarksListValue : watermarksList) {
+                                if (watermarksListValue != null) {
+                                    jsonWriter.object();
+                                    if (watermarksListValue.getPresetWatermarkId() != null) {
+                                        jsonWriter.key("PresetWatermarkId").value(watermarksListValue.getPresetWatermarkId());
+                                    }
+                                    if (watermarksListValue.getInputKey() != null) {
+                                        jsonWriter.key("InputKey").value(watermarksListValue.getInputKey());
+                                    }
+                                    jsonWriter.endObject();
+                                }
+                            }
+                            jsonWriter.endArray();
                         }
                         jsonWriter.endObject();
                     }

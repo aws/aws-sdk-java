@@ -14,7 +14,7 @@
  */
 package com.amazonaws.http;
 
-import org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager;
+import org.apache.http.impl.conn.PoolingClientConnectionManager;
 import org.apache.http.params.HttpParams;
 
 import com.amazonaws.ClientConfiguration;
@@ -22,8 +22,8 @@ import com.amazonaws.ClientConfiguration;
 /** Responsible for creating and configuring instances of Apache HttpClient4's Connection Manager. */
 class ConnectionManagerFactory {
 
-    public static ThreadSafeClientConnManager createThreadSafeClientConnManager( ClientConfiguration config, HttpParams httpClientParams ) {
-        ThreadSafeClientConnManager connectionManager = new ThreadSafeClientConnManager();
+    public static PoolingClientConnectionManager createPoolingClientConnManager( ClientConfiguration config, HttpParams httpClientParams ) {
+        PoolingClientConnectionManager connectionManager = new PoolingClientConnectionManager();
         connectionManager.setDefaultMaxPerRoute(config.getMaxConnections());
         connectionManager.setMaxTotal(config.getMaxConnections());
 

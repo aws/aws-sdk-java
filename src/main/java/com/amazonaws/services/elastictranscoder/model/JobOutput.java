@@ -175,6 +175,22 @@ public class JobOutput  implements Serializable  {
     private Integer height;
 
     /**
+     * Information about the watermarks that you want Elastic Transcoder to
+     * add to the video during transcoding. You can specify up to four
+     * watermarks for each output. Settings for each watermark must be
+     * defined in the preset that you specify in <code>Preset</code> for the
+     * current output. <p>Watermarks are added to the output video in the
+     * sequence in which you list them in the job output���the first
+     * watermark in the list is added to the output video first, the second
+     * watermark in the list is added next, and so on. As a result, if the
+     * settings in a preset cause Elastic Transcoder to place all watermarks
+     * in the same location, the second watermark that you add will cover the
+     * first one, the third one will cover the second, and the fourth one
+     * will cover the third.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<JobWatermark> watermarks;
+
+    /**
      * A sequential counter, starting with 1, that identifies an output among
      * the outputs from the current job. In the Output syntax, this value is
      * always 1.
@@ -1044,6 +1060,163 @@ public class JobOutput  implements Serializable  {
     
     
     /**
+     * Information about the watermarks that you want Elastic Transcoder to
+     * add to the video during transcoding. You can specify up to four
+     * watermarks for each output. Settings for each watermark must be
+     * defined in the preset that you specify in <code>Preset</code> for the
+     * current output. <p>Watermarks are added to the output video in the
+     * sequence in which you list them in the job output���the first
+     * watermark in the list is added to the output video first, the second
+     * watermark in the list is added next, and so on. As a result, if the
+     * settings in a preset cause Elastic Transcoder to place all watermarks
+     * in the same location, the second watermark that you add will cover the
+     * first one, the third one will cover the second, and the fourth one
+     * will cover the third.
+     *
+     * @return Information about the watermarks that you want Elastic Transcoder to
+     *         add to the video during transcoding. You can specify up to four
+     *         watermarks for each output. Settings for each watermark must be
+     *         defined in the preset that you specify in <code>Preset</code> for the
+     *         current output. <p>Watermarks are added to the output video in the
+     *         sequence in which you list them in the job output���the first
+     *         watermark in the list is added to the output video first, the second
+     *         watermark in the list is added next, and so on. As a result, if the
+     *         settings in a preset cause Elastic Transcoder to place all watermarks
+     *         in the same location, the second watermark that you add will cover the
+     *         first one, the third one will cover the second, and the fourth one
+     *         will cover the third.
+     */
+    public java.util.List<JobWatermark> getWatermarks() {
+        
+        if (watermarks == null) {
+              watermarks = new com.amazonaws.internal.ListWithAutoConstructFlag<JobWatermark>();
+              watermarks.setAutoConstruct(true);
+        }
+        return watermarks;
+    }
+    
+    /**
+     * Information about the watermarks that you want Elastic Transcoder to
+     * add to the video during transcoding. You can specify up to four
+     * watermarks for each output. Settings for each watermark must be
+     * defined in the preset that you specify in <code>Preset</code> for the
+     * current output. <p>Watermarks are added to the output video in the
+     * sequence in which you list them in the job output���the first
+     * watermark in the list is added to the output video first, the second
+     * watermark in the list is added next, and so on. As a result, if the
+     * settings in a preset cause Elastic Transcoder to place all watermarks
+     * in the same location, the second watermark that you add will cover the
+     * first one, the third one will cover the second, and the fourth one
+     * will cover the third.
+     *
+     * @param watermarks Information about the watermarks that you want Elastic Transcoder to
+     *         add to the video during transcoding. You can specify up to four
+     *         watermarks for each output. Settings for each watermark must be
+     *         defined in the preset that you specify in <code>Preset</code> for the
+     *         current output. <p>Watermarks are added to the output video in the
+     *         sequence in which you list them in the job output���the first
+     *         watermark in the list is added to the output video first, the second
+     *         watermark in the list is added next, and so on. As a result, if the
+     *         settings in a preset cause Elastic Transcoder to place all watermarks
+     *         in the same location, the second watermark that you add will cover the
+     *         first one, the third one will cover the second, and the fourth one
+     *         will cover the third.
+     */
+    public void setWatermarks(java.util.Collection<JobWatermark> watermarks) {
+        if (watermarks == null) {
+            this.watermarks = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<JobWatermark> watermarksCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<JobWatermark>(watermarks.size());
+        watermarksCopy.addAll(watermarks);
+        this.watermarks = watermarksCopy;
+    }
+    
+    /**
+     * Information about the watermarks that you want Elastic Transcoder to
+     * add to the video during transcoding. You can specify up to four
+     * watermarks for each output. Settings for each watermark must be
+     * defined in the preset that you specify in <code>Preset</code> for the
+     * current output. <p>Watermarks are added to the output video in the
+     * sequence in which you list them in the job output���the first
+     * watermark in the list is added to the output video first, the second
+     * watermark in the list is added next, and so on. As a result, if the
+     * settings in a preset cause Elastic Transcoder to place all watermarks
+     * in the same location, the second watermark that you add will cover the
+     * first one, the third one will cover the second, and the fourth one
+     * will cover the third.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param watermarks Information about the watermarks that you want Elastic Transcoder to
+     *         add to the video during transcoding. You can specify up to four
+     *         watermarks for each output. Settings for each watermark must be
+     *         defined in the preset that you specify in <code>Preset</code> for the
+     *         current output. <p>Watermarks are added to the output video in the
+     *         sequence in which you list them in the job output���the first
+     *         watermark in the list is added to the output video first, the second
+     *         watermark in the list is added next, and so on. As a result, if the
+     *         settings in a preset cause Elastic Transcoder to place all watermarks
+     *         in the same location, the second watermark that you add will cover the
+     *         first one, the third one will cover the second, and the fourth one
+     *         will cover the third.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public JobOutput withWatermarks(JobWatermark... watermarks) {
+        if (getWatermarks() == null) setWatermarks(new java.util.ArrayList<JobWatermark>(watermarks.length));
+        for (JobWatermark value : watermarks) {
+            getWatermarks().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Information about the watermarks that you want Elastic Transcoder to
+     * add to the video during transcoding. You can specify up to four
+     * watermarks for each output. Settings for each watermark must be
+     * defined in the preset that you specify in <code>Preset</code> for the
+     * current output. <p>Watermarks are added to the output video in the
+     * sequence in which you list them in the job output���the first
+     * watermark in the list is added to the output video first, the second
+     * watermark in the list is added next, and so on. As a result, if the
+     * settings in a preset cause Elastic Transcoder to place all watermarks
+     * in the same location, the second watermark that you add will cover the
+     * first one, the third one will cover the second, and the fourth one
+     * will cover the third.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param watermarks Information about the watermarks that you want Elastic Transcoder to
+     *         add to the video during transcoding. You can specify up to four
+     *         watermarks for each output. Settings for each watermark must be
+     *         defined in the preset that you specify in <code>Preset</code> for the
+     *         current output. <p>Watermarks are added to the output video in the
+     *         sequence in which you list them in the job output���the first
+     *         watermark in the list is added to the output video first, the second
+     *         watermark in the list is added next, and so on. As a result, if the
+     *         settings in a preset cause Elastic Transcoder to place all watermarks
+     *         in the same location, the second watermark that you add will cover the
+     *         first one, the third one will cover the second, and the fourth one
+     *         will cover the third.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public JobOutput withWatermarks(java.util.Collection<JobWatermark> watermarks) {
+        if (watermarks == null) {
+            this.watermarks = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<JobWatermark> watermarksCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<JobWatermark>(watermarks.size());
+            watermarksCopy.addAll(watermarks);
+            this.watermarks = watermarksCopy;
+        }
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1065,7 +1238,8 @@ public class JobOutput  implements Serializable  {
         if (getStatusDetail() != null) sb.append("StatusDetail: " + getStatusDetail() + ",");
         if (getDuration() != null) sb.append("Duration: " + getDuration() + ",");
         if (getWidth() != null) sb.append("Width: " + getWidth() + ",");
-        if (getHeight() != null) sb.append("Height: " + getHeight() );
+        if (getHeight() != null) sb.append("Height: " + getHeight() + ",");
+        if (getWatermarks() != null) sb.append("Watermarks: " + getWatermarks() );
         sb.append("}");
         return sb.toString();
     }
@@ -1086,6 +1260,7 @@ public class JobOutput  implements Serializable  {
         hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode()); 
         hashCode = prime * hashCode + ((getWidth() == null) ? 0 : getWidth().hashCode()); 
         hashCode = prime * hashCode + ((getHeight() == null) ? 0 : getHeight().hashCode()); 
+        hashCode = prime * hashCode + ((getWatermarks() == null) ? 0 : getWatermarks().hashCode()); 
         return hashCode;
     }
     
@@ -1119,6 +1294,8 @@ public class JobOutput  implements Serializable  {
         if (other.getWidth() != null && other.getWidth().equals(this.getWidth()) == false) return false; 
         if (other.getHeight() == null ^ this.getHeight() == null) return false;
         if (other.getHeight() != null && other.getHeight().equals(this.getHeight()) == false) return false; 
+        if (other.getWatermarks() == null ^ this.getWatermarks() == null) return false;
+        if (other.getWatermarks() != null && other.getWatermarks().equals(this.getWatermarks()) == false) return false; 
         return true;
     }
     

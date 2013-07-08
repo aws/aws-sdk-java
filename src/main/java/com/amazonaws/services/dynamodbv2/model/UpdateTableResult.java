@@ -51,9 +51,6 @@ public class UpdateTableResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tableDescription Contains the properties of a table.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateTableResult withTableDescription(TableDescription tableDescription) {
         this.tableDescription = tableDescription;

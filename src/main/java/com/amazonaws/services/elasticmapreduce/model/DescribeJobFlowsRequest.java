@@ -59,12 +59,12 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest  implements
     /**
      * Return only job flows whose job flow ID is contained in this list.
      */
-    private java.util.List<String> jobFlowIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> jobFlowIds;
 
     /**
      * Return only job flows whose state is contained in this list.
      */
-    private java.util.List<String> jobFlowStates;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> jobFlowStates;
 
     /**
      * Default constructor for a new DescribeJobFlowsRequest object.  Callers should use the
@@ -72,6 +72,8 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest  implements
      */
     public DescribeJobFlowsRequest() {}
     
+
+
     /**
      * Constructs a new DescribeJobFlowsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -81,7 +83,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest  implements
      * in this list.
      */
     public DescribeJobFlowsRequest(java.util.List<String> jobFlowIds) {
-        this.jobFlowIds = jobFlowIds;
+        setJobFlowIds(jobFlowIds);
     }
 
     
@@ -162,7 +164,8 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest  implements
     public java.util.List<String> getJobFlowIds() {
         
         if (jobFlowIds == null) {
-            jobFlowIds = new java.util.ArrayList<String>();
+              jobFlowIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              jobFlowIds.setAutoConstruct(true);
         }
         return jobFlowIds;
     }
@@ -177,8 +180,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest  implements
             this.jobFlowIds = null;
             return;
         }
-
-        java.util.List<String> jobFlowIdsCopy = new java.util.ArrayList<String>(jobFlowIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> jobFlowIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(jobFlowIds.size());
         jobFlowIdsCopy.addAll(jobFlowIds);
         this.jobFlowIds = jobFlowIdsCopy;
     }
@@ -215,7 +217,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest  implements
         if (jobFlowIds == null) {
             this.jobFlowIds = null;
         } else {
-            java.util.List<String> jobFlowIdsCopy = new java.util.ArrayList<String>(jobFlowIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> jobFlowIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(jobFlowIds.size());
             jobFlowIdsCopy.addAll(jobFlowIds);
             this.jobFlowIds = jobFlowIdsCopy;
         }
@@ -231,7 +233,8 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest  implements
     public java.util.List<String> getJobFlowStates() {
         
         if (jobFlowStates == null) {
-            jobFlowStates = new java.util.ArrayList<String>();
+              jobFlowStates = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              jobFlowStates.setAutoConstruct(true);
         }
         return jobFlowStates;
     }
@@ -246,8 +249,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest  implements
             this.jobFlowStates = null;
             return;
         }
-
-        java.util.List<String> jobFlowStatesCopy = new java.util.ArrayList<String>(jobFlowStates.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> jobFlowStatesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(jobFlowStates.size());
         jobFlowStatesCopy.addAll(jobFlowStates);
         this.jobFlowStates = jobFlowStatesCopy;
     }
@@ -284,7 +286,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest  implements
         if (jobFlowStates == null) {
             this.jobFlowStates = null;
         } else {
-            java.util.List<String> jobFlowStatesCopy = new java.util.ArrayList<String>(jobFlowStates.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> jobFlowStatesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(jobFlowStates.size());
             jobFlowStatesCopy.addAll(jobFlowStates);
             this.jobFlowStates = jobFlowStatesCopy;
         }
@@ -303,10 +305,10 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCreatedAfter() != null) sb.append("CreatedAfter: " + getCreatedAfter() + ",");    	
-        if (getCreatedBefore() != null) sb.append("CreatedBefore: " + getCreatedBefore() + ",");    	
-        if (getJobFlowIds() != null) sb.append("JobFlowIds: " + getJobFlowIds() + ",");    	
+        sb.append("{");
+        if (getCreatedAfter() != null) sb.append("CreatedAfter: " + getCreatedAfter() + ",");
+        if (getCreatedBefore() != null) sb.append("CreatedBefore: " + getCreatedBefore() + ",");
+        if (getJobFlowIds() != null) sb.append("JobFlowIds: " + getJobFlowIds() + ",");
         if (getJobFlowStates() != null) sb.append("JobFlowStates: " + getJobFlowStates() );
         sb.append("}");
         return sb.toString();

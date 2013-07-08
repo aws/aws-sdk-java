@@ -55,6 +55,8 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
      */
     public DescribeEngineDefaultParametersRequest() {}
     
+
+
     /**
      * Constructs a new DescribeEngineDefaultParametersRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -65,7 +67,7 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
      * parameter group family supported by the service.</note>
      */
     public DescribeEngineDefaultParametersRequest(String cacheParameterGroupFamily) {
-        this.cacheParameterGroupFamily = cacheParameterGroupFamily;
+        setCacheParameterGroupFamily(cacheParameterGroupFamily);
     }
 
     
@@ -231,9 +233,9 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCacheParameterGroupFamily() != null) sb.append("CacheParameterGroupFamily: " + getCacheParameterGroupFamily() + ",");    	
-        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");    	
+        sb.append("{");
+        if (getCacheParameterGroupFamily() != null) sb.append("CacheParameterGroupFamily: " + getCacheParameterGroupFamily() + ",");
+        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

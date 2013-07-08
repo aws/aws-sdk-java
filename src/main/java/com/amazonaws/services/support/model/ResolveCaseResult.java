@@ -23,22 +23,26 @@ import java.io.Serializable;
 public class ResolveCaseResult  implements Serializable  {
 
     /**
-     * Status of the case when the <a href="API_ResolveCase.html"
+     * Status of the case when the <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_ResolveCase.html"
      * title="ResolveCase">ResolveCase</a> request was sent.
      */
     private String initialCaseStatus;
 
     /**
-     * Status of the case after the <a href="API_ResolveCase.html"
+     * Status of the case after the <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_ResolveCase.html"
      * title="ResolveCase">ResolveCase</a> request was processed.
      */
     private String finalCaseStatus;
 
     /**
-     * Status of the case when the <a href="API_ResolveCase.html"
+     * Status of the case when the <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_ResolveCase.html"
      * title="ResolveCase">ResolveCase</a> request was sent.
      *
-     * @return Status of the case when the <a href="API_ResolveCase.html"
+     * @return Status of the case when the <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_ResolveCase.html"
      *         title="ResolveCase">ResolveCase</a> request was sent.
      */
     public String getInitialCaseStatus() {
@@ -46,10 +50,12 @@ public class ResolveCaseResult  implements Serializable  {
     }
     
     /**
-     * Status of the case when the <a href="API_ResolveCase.html"
+     * Status of the case when the <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_ResolveCase.html"
      * title="ResolveCase">ResolveCase</a> request was sent.
      *
-     * @param initialCaseStatus Status of the case when the <a href="API_ResolveCase.html"
+     * @param initialCaseStatus Status of the case when the <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_ResolveCase.html"
      *         title="ResolveCase">ResolveCase</a> request was sent.
      */
     public void setInitialCaseStatus(String initialCaseStatus) {
@@ -57,12 +63,14 @@ public class ResolveCaseResult  implements Serializable  {
     }
     
     /**
-     * Status of the case when the <a href="API_ResolveCase.html"
+     * Status of the case when the <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_ResolveCase.html"
      * title="ResolveCase">ResolveCase</a> request was sent.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param initialCaseStatus Status of the case when the <a href="API_ResolveCase.html"
+     * @param initialCaseStatus Status of the case when the <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_ResolveCase.html"
      *         title="ResolveCase">ResolveCase</a> request was sent.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -75,10 +83,12 @@ public class ResolveCaseResult  implements Serializable  {
     
     
     /**
-     * Status of the case after the <a href="API_ResolveCase.html"
+     * Status of the case after the <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_ResolveCase.html"
      * title="ResolveCase">ResolveCase</a> request was processed.
      *
-     * @return Status of the case after the <a href="API_ResolveCase.html"
+     * @return Status of the case after the <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_ResolveCase.html"
      *         title="ResolveCase">ResolveCase</a> request was processed.
      */
     public String getFinalCaseStatus() {
@@ -86,10 +96,12 @@ public class ResolveCaseResult  implements Serializable  {
     }
     
     /**
-     * Status of the case after the <a href="API_ResolveCase.html"
+     * Status of the case after the <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_ResolveCase.html"
      * title="ResolveCase">ResolveCase</a> request was processed.
      *
-     * @param finalCaseStatus Status of the case after the <a href="API_ResolveCase.html"
+     * @param finalCaseStatus Status of the case after the <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_ResolveCase.html"
      *         title="ResolveCase">ResolveCase</a> request was processed.
      */
     public void setFinalCaseStatus(String finalCaseStatus) {
@@ -97,12 +109,14 @@ public class ResolveCaseResult  implements Serializable  {
     }
     
     /**
-     * Status of the case after the <a href="API_ResolveCase.html"
+     * Status of the case after the <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_ResolveCase.html"
      * title="ResolveCase">ResolveCase</a> request was processed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param finalCaseStatus Status of the case after the <a href="API_ResolveCase.html"
+     * @param finalCaseStatus Status of the case after the <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_ResolveCase.html"
      *         title="ResolveCase">ResolveCase</a> request was processed.
      *
      * @return A reference to this updated object so that method calls can be chained 

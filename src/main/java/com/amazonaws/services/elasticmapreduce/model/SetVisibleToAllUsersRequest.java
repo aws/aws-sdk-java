@@ -31,7 +31,7 @@ public class SetVisibleToAllUsersRequest extends AmazonWebServiceRequest  implem
     /**
      * Identifiers of the job flows to receive the new visibility setting.
      */
-    private java.util.List<String> jobFlowIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> jobFlowIds;
 
     /**
      * Whether the specified job flows are visible to all IAM users of the
@@ -51,7 +51,8 @@ public class SetVisibleToAllUsersRequest extends AmazonWebServiceRequest  implem
     public java.util.List<String> getJobFlowIds() {
         
         if (jobFlowIds == null) {
-            jobFlowIds = new java.util.ArrayList<String>();
+              jobFlowIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              jobFlowIds.setAutoConstruct(true);
         }
         return jobFlowIds;
     }
@@ -66,8 +67,7 @@ public class SetVisibleToAllUsersRequest extends AmazonWebServiceRequest  implem
             this.jobFlowIds = null;
             return;
         }
-
-        java.util.List<String> jobFlowIdsCopy = new java.util.ArrayList<String>(jobFlowIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> jobFlowIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(jobFlowIds.size());
         jobFlowIdsCopy.addAll(jobFlowIds);
         this.jobFlowIds = jobFlowIdsCopy;
     }
@@ -104,7 +104,7 @@ public class SetVisibleToAllUsersRequest extends AmazonWebServiceRequest  implem
         if (jobFlowIds == null) {
             this.jobFlowIds = null;
         } else {
-            java.util.List<String> jobFlowIdsCopy = new java.util.ArrayList<String>(jobFlowIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> jobFlowIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(jobFlowIds.size());
             jobFlowIdsCopy.addAll(jobFlowIds);
             this.jobFlowIds = jobFlowIdsCopy;
         }
@@ -206,8 +206,8 @@ public class SetVisibleToAllUsersRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getJobFlowIds() != null) sb.append("JobFlowIds: " + getJobFlowIds() + ",");    	
+        sb.append("{");
+        if (getJobFlowIds() != null) sb.append("JobFlowIds: " + getJobFlowIds() + ",");
         if (isVisibleToAllUsers() != null) sb.append("VisibleToAllUsers: " + isVisibleToAllUsers() );
         sb.append("}");
         return sb.toString();

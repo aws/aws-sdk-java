@@ -17,9 +17,7 @@ package com.amazonaws.services.sqs.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * <p>
- * The queue referred to does not exist.
- * </p>
+ * AmazonSQS exception
  */        
 public class QueueDoesNotExistException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

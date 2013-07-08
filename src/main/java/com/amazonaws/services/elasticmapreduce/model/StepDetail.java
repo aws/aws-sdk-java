@@ -38,6 +38,8 @@ public class StepDetail  implements Serializable  {
      */
     public StepDetail() {}
     
+
+
     /**
      * Constructs a new StepDetail object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -47,8 +49,8 @@ public class StepDetail  implements Serializable  {
      * @param executionStatusDetail The description of the step status.
      */
     public StepDetail(StepConfig stepConfig, StepExecutionStatusDetail executionStatusDetail) {
-        this.stepConfig = stepConfig;
-        this.executionStatusDetail = executionStatusDetail;
+        setStepConfig(stepConfig);
+        setExecutionStatusDetail(executionStatusDetail);
     }
 
     
@@ -132,8 +134,8 @@ public class StepDetail  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getStepConfig() != null) sb.append("StepConfig: " + getStepConfig() + ",");    	
+        sb.append("{");
+        if (getStepConfig() != null) sb.append("StepConfig: " + getStepConfig() + ",");
         if (getExecutionStatusDetail() != null) sb.append("ExecutionStatusDetail: " + getExecutionStatusDetail() );
         sb.append("}");
         return sb.toString();

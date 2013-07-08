@@ -19,8 +19,7 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#updatePipelineStatus(UpdatePipelineStatusRequest) UpdatePipelineStatus operation}.
  * <p>
- * To pause or reactivate a pipeline, so the pipeline stops or restarts processing jobs, update the status for the pipeline. Send a POST request to the
- * <code>/2012-09-25/pipelines/[pipelineId]/status</code> resource.
+ * The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that the pipeline stops or restarts the processing of jobs.
  * </p>
  * <p>
  * Changing the pipeline status is useful if you want to cancel one or more jobs. You can't cancel jobs after Elastic Transcoder has started processing

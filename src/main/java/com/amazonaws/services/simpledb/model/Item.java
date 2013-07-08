@@ -34,7 +34,7 @@ public class Item  implements Serializable  {
     /**
      * A list of attributes.
      */
-    private java.util.List<Attribute> attributes;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Attribute> attributes;
 
     /**
      * Default constructor for a new Item object.  Callers should use the
@@ -42,6 +42,8 @@ public class Item  implements Serializable  {
      */
     public Item() {}
     
+
+
     /**
      * Constructs a new Item object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -51,8 +53,8 @@ public class Item  implements Serializable  {
      * @param attributes A list of attributes.
      */
     public Item(String name, java.util.List<Attribute> attributes) {
-        this.name = name;
-        this.attributes = attributes;
+        setName(name);
+        setAttributes(attributes);
     }
 
     
@@ -133,7 +135,8 @@ public class Item  implements Serializable  {
     public java.util.List<Attribute> getAttributes() {
         
         if (attributes == null) {
-            attributes = new java.util.ArrayList<Attribute>();
+              attributes = new com.amazonaws.internal.ListWithAutoConstructFlag<Attribute>();
+              attributes.setAutoConstruct(true);
         }
         return attributes;
     }
@@ -148,8 +151,7 @@ public class Item  implements Serializable  {
             this.attributes = null;
             return;
         }
-
-        java.util.List<Attribute> attributesCopy = new java.util.ArrayList<Attribute>(attributes.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Attribute> attributesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Attribute>(attributes.size());
         attributesCopy.addAll(attributes);
         this.attributes = attributesCopy;
     }
@@ -186,7 +188,7 @@ public class Item  implements Serializable  {
         if (attributes == null) {
             this.attributes = null;
         } else {
-            java.util.List<Attribute> attributesCopy = new java.util.ArrayList<Attribute>(attributes.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Attribute> attributesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Attribute>(attributes.size());
             attributesCopy.addAll(attributes);
             this.attributes = attributesCopy;
         }
@@ -205,9 +207,9 @@ public class Item  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getAlternateNameEncoding() != null) sb.append("AlternateNameEncoding: " + getAlternateNameEncoding() + ",");    	
+        sb.append("{");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getAlternateNameEncoding() != null) sb.append("AlternateNameEncoding: " + getAlternateNameEncoding() + ",");
         if (getAttributes() != null) sb.append("Attributes: " + getAttributes() );
         sb.append("}");
         return sb.toString();

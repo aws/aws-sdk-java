@@ -50,6 +50,8 @@ public class CreateDomainRequest extends AmazonWebServiceRequest  implements Ser
      */
     public CreateDomainRequest() {}
     
+
+
     /**
      * Constructs a new CreateDomainRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -60,7 +62,7 @@ public class CreateDomainRequest extends AmazonWebServiceRequest  implements Ser
      * a-z, A-Z, 0-9, '_', '-', and '.'.
      */
     public CreateDomainRequest(String domainName) {
-        this.domainName = domainName;
+        setDomainName(domainName);
     }
 
     
@@ -122,7 +124,7 @@ public class CreateDomainRequest extends AmazonWebServiceRequest  implements Ser
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getDomainName() != null) sb.append("DomainName: " + getDomainName() );
         sb.append("}");
         return sb.toString();

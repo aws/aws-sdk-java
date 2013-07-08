@@ -72,6 +72,10 @@ public class VideoParametersJsonUnmarshaller implements Unmarshaller<VideoParame
                     context.nextToken();
                     videoParameters.setFrameRate(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("MaxFrameRate", targetDepth)) {
+                    context.nextToken();
+                    videoParameters.setMaxFrameRate(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Resolution", targetDepth)) {
                     context.nextToken();
                     videoParameters.setResolution(StringJsonUnmarshaller.getInstance().unmarshall(context));
@@ -99,6 +103,9 @@ public class VideoParametersJsonUnmarshaller implements Unmarshaller<VideoParame
                 if (context.testExpression("PaddingPolicy", targetDepth)) {
                     context.nextToken();
                     videoParameters.setPaddingPolicy(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Watermarks", targetDepth)) {
+                    videoParameters.setWatermarks(new ListUnmarshaller<PresetWatermark>(PresetWatermarkJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

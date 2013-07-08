@@ -88,7 +88,7 @@ public class WorkflowExecutionStartedEventAttributes  implements Serializable  {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 5<br/>
      */
-    private java.util.List<String> tagList;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> tagList;
 
     /**
      * If this workflow execution was started due to a
@@ -553,7 +553,8 @@ public class WorkflowExecutionStartedEventAttributes  implements Serializable  {
     public java.util.List<String> getTagList() {
         
         if (tagList == null) {
-            tagList = new java.util.ArrayList<String>();
+              tagList = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              tagList.setAutoConstruct(true);
         }
         return tagList;
     }
@@ -573,8 +574,7 @@ public class WorkflowExecutionStartedEventAttributes  implements Serializable  {
             this.tagList = null;
             return;
         }
-
-        java.util.List<String> tagListCopy = new java.util.ArrayList<String>(tagList.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> tagListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(tagList.size());
         tagListCopy.addAll(tagList);
         this.tagList = tagListCopy;
     }
@@ -621,7 +621,7 @@ public class WorkflowExecutionStartedEventAttributes  implements Serializable  {
         if (tagList == null) {
             this.tagList = null;
         } else {
-            java.util.List<String> tagListCopy = new java.util.ArrayList<String>(tagList.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> tagListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(tagList.size());
             tagListCopy.addAll(tagList);
             this.tagList = tagListCopy;
         }
@@ -811,16 +811,16 @@ public class WorkflowExecutionStartedEventAttributes  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInput() != null) sb.append("Input: " + getInput() + ",");    	
-        if (getExecutionStartToCloseTimeout() != null) sb.append("ExecutionStartToCloseTimeout: " + getExecutionStartToCloseTimeout() + ",");    	
-        if (getTaskStartToCloseTimeout() != null) sb.append("TaskStartToCloseTimeout: " + getTaskStartToCloseTimeout() + ",");    	
-        if (getChildPolicy() != null) sb.append("ChildPolicy: " + getChildPolicy() + ",");    	
-        if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ",");    	
-        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ",");    	
-        if (getTagList() != null) sb.append("TagList: " + getTagList() + ",");    	
-        if (getContinuedExecutionRunId() != null) sb.append("ContinuedExecutionRunId: " + getContinuedExecutionRunId() + ",");    	
-        if (getParentWorkflowExecution() != null) sb.append("ParentWorkflowExecution: " + getParentWorkflowExecution() + ",");    	
+        sb.append("{");
+        if (getInput() != null) sb.append("Input: " + getInput() + ",");
+        if (getExecutionStartToCloseTimeout() != null) sb.append("ExecutionStartToCloseTimeout: " + getExecutionStartToCloseTimeout() + ",");
+        if (getTaskStartToCloseTimeout() != null) sb.append("TaskStartToCloseTimeout: " + getTaskStartToCloseTimeout() + ",");
+        if (getChildPolicy() != null) sb.append("ChildPolicy: " + getChildPolicy() + ",");
+        if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ",");
+        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ",");
+        if (getTagList() != null) sb.append("TagList: " + getTagList() + ",");
+        if (getContinuedExecutionRunId() != null) sb.append("ContinuedExecutionRunId: " + getContinuedExecutionRunId() + ",");
+        if (getParentWorkflowExecution() != null) sb.append("ParentWorkflowExecution: " + getParentWorkflowExecution() + ",");
         if (getParentInitiatedEventId() != null) sb.append("ParentInitiatedEventId: " + getParentInitiatedEventId() );
         sb.append("}");
         return sb.toString();

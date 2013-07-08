@@ -43,7 +43,7 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest  im
      * the entire CacheParameterGroup, at least one parameter name must be
      * supplied.
      */
-    private java.util.List<ParameterNameValue> parameterNameValues;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ParameterNameValue> parameterNameValues;
 
     /**
      * Default constructor for a new ResetCacheParameterGroupRequest object.  Callers should use the
@@ -51,6 +51,8 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest  im
      */
     public ResetCacheParameterGroupRequest() {}
     
+
+
     /**
      * Constructs a new ResetCacheParameterGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -62,8 +64,8 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest  im
      * parameter name must be supplied.
      */
     public ResetCacheParameterGroupRequest(String cacheParameterGroupName, java.util.List<ParameterNameValue> parameterNameValues) {
-        this.cacheParameterGroupName = cacheParameterGroupName;
-        this.parameterNameValues = parameterNameValues;
+        setCacheParameterGroupName(cacheParameterGroupName);
+        setParameterNameValues(parameterNameValues);
     }
 
     
@@ -165,7 +167,8 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest  im
     public java.util.List<ParameterNameValue> getParameterNameValues() {
         
         if (parameterNameValues == null) {
-            parameterNameValues = new java.util.ArrayList<ParameterNameValue>();
+              parameterNameValues = new com.amazonaws.internal.ListWithAutoConstructFlag<ParameterNameValue>();
+              parameterNameValues.setAutoConstruct(true);
         }
         return parameterNameValues;
     }
@@ -184,8 +187,7 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest  im
             this.parameterNameValues = null;
             return;
         }
-
-        java.util.List<ParameterNameValue> parameterNameValuesCopy = new java.util.ArrayList<ParameterNameValue>(parameterNameValues.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ParameterNameValue> parameterNameValuesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ParameterNameValue>(parameterNameValues.size());
         parameterNameValuesCopy.addAll(parameterNameValues);
         this.parameterNameValues = parameterNameValuesCopy;
     }
@@ -230,7 +232,7 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest  im
         if (parameterNameValues == null) {
             this.parameterNameValues = null;
         } else {
-            java.util.List<ParameterNameValue> parameterNameValuesCopy = new java.util.ArrayList<ParameterNameValue>(parameterNameValues.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ParameterNameValue> parameterNameValuesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ParameterNameValue>(parameterNameValues.size());
             parameterNameValuesCopy.addAll(parameterNameValues);
             this.parameterNameValues = parameterNameValuesCopy;
         }
@@ -249,9 +251,9 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCacheParameterGroupName() != null) sb.append("CacheParameterGroupName: " + getCacheParameterGroupName() + ",");    	
-        if (isResetAllParameters() != null) sb.append("ResetAllParameters: " + isResetAllParameters() + ",");    	
+        sb.append("{");
+        if (getCacheParameterGroupName() != null) sb.append("CacheParameterGroupName: " + getCacheParameterGroupName() + ",");
+        if (isResetAllParameters() != null) sb.append("ResetAllParameters: " + isResetAllParameters() + ",");
         if (getParameterNameValues() != null) sb.append("ParameterNameValues: " + getParameterNameValues() );
         sb.append("}");
         return sb.toString();

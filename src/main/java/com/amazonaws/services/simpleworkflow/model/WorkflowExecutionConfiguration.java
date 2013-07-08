@@ -432,10 +432,10 @@ public class WorkflowExecutionConfiguration  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getTaskStartToCloseTimeout() != null) sb.append("TaskStartToCloseTimeout: " + getTaskStartToCloseTimeout() + ",");    	
-        if (getExecutionStartToCloseTimeout() != null) sb.append("ExecutionStartToCloseTimeout: " + getExecutionStartToCloseTimeout() + ",");    	
-        if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ",");    	
+        sb.append("{");
+        if (getTaskStartToCloseTimeout() != null) sb.append("TaskStartToCloseTimeout: " + getTaskStartToCloseTimeout() + ",");
+        if (getExecutionStartToCloseTimeout() != null) sb.append("ExecutionStartToCloseTimeout: " + getExecutionStartToCloseTimeout() + ",");
+        if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ",");
         if (getChildPolicy() != null) sb.append("ChildPolicy: " + getChildPolicy() );
         sb.append("}");
         return sb.toString();

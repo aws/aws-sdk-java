@@ -71,6 +71,8 @@ public class ChangeInfo  implements Serializable  {
      */
     public ChangeInfo() {}
     
+
+
     /**
      * Constructs a new ChangeInfo object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -90,9 +92,9 @@ public class ChangeInfo  implements Serializable  {
      * context.
      */
     public ChangeInfo(String id, String status, java.util.Date submittedAt) {
-        this.id = id;
-        this.status = status;
-        this.submittedAt = submittedAt;
+        setId(id);
+        setStatus(status);
+        setSubmittedAt(submittedAt);
     }
 
     
@@ -409,10 +411,10 @@ public class ChangeInfo  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getId() != null) sb.append("Id: " + getId() + ",");    	
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
-        if (getSubmittedAt() != null) sb.append("SubmittedAt: " + getSubmittedAt() + ",");    	
+        sb.append("{");
+        if (getId() != null) sb.append("Id: " + getId() + ",");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
+        if (getSubmittedAt() != null) sb.append("SubmittedAt: " + getSubmittedAt() + ",");
         if (getComment() != null) sb.append("Comment: " + getComment() );
         sb.append("}");
         return sb.toString();

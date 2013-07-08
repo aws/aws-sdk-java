@@ -30,7 +30,7 @@ public class DescribeEventsResult  implements Serializable  {
     /**
      * A list of <a>Event</a> instances.
      */
-    private java.util.List<Event> events;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Event> events;
 
     /**
      * The marker obtained from a previous operation response.
@@ -74,7 +74,8 @@ public class DescribeEventsResult  implements Serializable  {
     public java.util.List<Event> getEvents() {
         
         if (events == null) {
-            events = new java.util.ArrayList<Event>();
+              events = new com.amazonaws.internal.ListWithAutoConstructFlag<Event>();
+              events.setAutoConstruct(true);
         }
         return events;
     }
@@ -89,8 +90,7 @@ public class DescribeEventsResult  implements Serializable  {
             this.events = null;
             return;
         }
-
-        java.util.List<Event> eventsCopy = new java.util.ArrayList<Event>(events.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Event> eventsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Event>(events.size());
         eventsCopy.addAll(events);
         this.events = eventsCopy;
     }
@@ -127,7 +127,7 @@ public class DescribeEventsResult  implements Serializable  {
         if (events == null) {
             this.events = null;
         } else {
-            java.util.List<Event> eventsCopy = new java.util.ArrayList<Event>(events.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Event> eventsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Event>(events.size());
             eventsCopy.addAll(events);
             this.events = eventsCopy;
         }
@@ -146,8 +146,8 @@ public class DescribeEventsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getEvents() != null) sb.append("Events: " + getEvents() );
         sb.append("}");
         return sb.toString();

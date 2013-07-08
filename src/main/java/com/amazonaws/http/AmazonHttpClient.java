@@ -517,7 +517,7 @@ public class AmazonHttpClient {
         return false;
     }
 
-    private boolean isTemporaryRedirect(org.apache.http.HttpResponse response) {
+    private static boolean isTemporaryRedirect(org.apache.http.HttpResponse response) {
         int status = response.getStatusLine().getStatusCode();
         return status == HttpStatus.SC_TEMPORARY_REDIRECT &&
                          response.getHeaders("Location") != null &&
@@ -736,12 +736,28 @@ public class AmazonHttpClient {
      * @return True if the exception resulted from a throttling error message
      *         from a service, otherwise false.
      */
-    private boolean isThrottlingException(AmazonServiceException ase) {
+    public static boolean isThrottlingException(AmazonServiceException ase) {
         if (ase == null) return false;
         return "Throttling".equals(ase.getErrorCode())
             || "ThrottlingException".equals(ase.getErrorCode())
             || "ProvisionedThroughputExceededException".equals(ase.getErrorCode());
     }
+
+    /**
+     * Returns true if the specified exception is a request entity too large
+     * error.
+     *
+     * @param ase
+     *            The exception to test.
+     *
+     * @return True if the exception resulted from a request entity too large
+     *         error message from a service, otherwise false.
+     */
+    public static boolean isRequestEntityTooLargeException(AmazonServiceException ase) {
+        if (ase == null) return false;
+        return "Request entity too large".equals(ase.getErrorCode());
+    }
+
 
     @Override
     protected void finalize() throws Throwable {

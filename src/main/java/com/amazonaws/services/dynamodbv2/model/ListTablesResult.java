@@ -78,9 +78,6 @@ public class ListTablesResult  implements Serializable  {
      *
      * @param tableNames The names of the tables associated with the current account at the
      *         current endpoint.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListTablesResult withTableNames(String... tableNames) {
         if (getTableNames() == null) setTableNames(new java.util.ArrayList<String>(tableNames.length));
@@ -98,9 +95,6 @@ public class ListTablesResult  implements Serializable  {
      *
      * @param tableNames The names of the tables associated with the current account at the
      *         current endpoint.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListTablesResult withTableNames(java.util.Collection<String> tableNames) {
         if (tableNames == null) {
@@ -174,9 +168,6 @@ public class ListTablesResult  implements Serializable  {
      *         not exist in a response if all table names are already returned. Use
      *         this value as the <i>ExclusiveStartTableName</i> in a new request to
      *         continue the list until all the table names are returned.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListTablesResult withLastEvaluatedTableName(String lastEvaluatedTableName) {
         this.lastEvaluatedTableName = lastEvaluatedTableName;

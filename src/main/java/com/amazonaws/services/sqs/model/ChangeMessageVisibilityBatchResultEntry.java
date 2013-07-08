@@ -16,48 +16,36 @@ package com.amazonaws.services.sqs.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * Encloses the id of an entry in ChangeMessageVisibilityBatchRequest.
- * </p>
+ * Change Message Visibility Batch Result Entry
  */
 public class ChangeMessageVisibilityBatchResultEntry  implements Serializable  {
 
-    /**
-     * Represents a message whose visibility timeout has been changed
-     * successfully.
-     */
     private String id;
 
     /**
-     * Represents a message whose visibility timeout has been changed
-     * successfully.
+     * Returns the value of the Id property for this object.
      *
-     * @return Represents a message whose visibility timeout has been changed
-     *         successfully.
+     * @return The value of the Id property for this object.
      */
     public String getId() {
         return id;
     }
     
     /**
-     * Represents a message whose visibility timeout has been changed
-     * successfully.
+     * Sets the value of the Id property for this object.
      *
-     * @param id Represents a message whose visibility timeout has been changed
-     *         successfully.
+     * @param id The new value for the Id property for this object.
      */
     public void setId(String id) {
         this.id = id;
     }
     
     /**
-     * Represents a message whose visibility timeout has been changed
-     * successfully.
+     * Sets the value of the Id property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param id Represents a message whose visibility timeout has been changed
-     *         successfully.
+     * @param id The new value for the Id property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

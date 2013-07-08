@@ -44,6 +44,7 @@ import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.DateUtils;
+import com.amazonaws.util.HttpUtils;
 import com.amazonaws.util.Md5Utils;
 
 /**
@@ -127,34 +128,6 @@ public class ServiceUtils {
     }
 
     /**
-     * URL encodes the specified string and returns it.  All keys specified by
-     * users need to URL encoded.  The URL encoded key needs to be used in the
-     * string to sign (canonical resource path).
-     *
-     * @param s
-     *            The string to URL encode.
-     *
-     * @return The new, URL encoded, string.
-     */
-    public static String urlEncode(String s) {
-        if (s == null) return null;
-
-        try {
-            String encodedString = URLEncoder.encode(s, Constants.DEFAULT_ENCODING);
-            // Web browsers do not always handle '+' characters well, use the
-            // well-supported '%20' instead.
-            encodedString =  encodedString.replaceAll("\\+", "%20");
-            // Change all "%2F" back to "/", so that when users download a file in a virtual folder by the presigned URL,
-            // the web browsers won't mess up the filename. (e.g. 'folder1_folder2_filename' instead of 'filename')
-            encodedString = encodedString.replace("%2F", "/");
-            encodedString = encodedString.replace("%7E", "~");
-            return encodedString;
-        } catch (UnsupportedEncodingException e) {
-            throw new AmazonClientException("Unable to encode path: " + s, e);
-        }
-    }
-
-    /**
      * Converts the specified request object into a URL, containing all the
      * specified parameters, the specified request endpoint, etc.
      *
@@ -167,7 +140,7 @@ public class ServiceUtils {
      */
     public static URL convertRequestToUrl(Request<?> request) {
         String urlString =  request.getEndpoint()
-            + "/" + ServiceUtils.urlEncode(request.getResourcePath());
+            + "/" + HttpUtils.urlEncode(request.getResourcePath(), true);
 
         boolean firstParam = true;
         for (String param : request.getParameters().keySet()) {
@@ -179,7 +152,7 @@ public class ServiceUtils {
             }
 
             String value = request.getParameters().get(param);
-            urlString += param + "=" + ServiceUtils.urlEncode(value);
+            urlString += param + "=" + HttpUtils.urlEncode(value, true);
         }
 
         try {

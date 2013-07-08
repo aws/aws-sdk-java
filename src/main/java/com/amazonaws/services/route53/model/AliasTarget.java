@@ -72,6 +72,8 @@ public class AliasTarget  implements Serializable  {
      */
     public AliasTarget() {}
     
+
+
     /**
      * Constructs a new AliasTarget object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -91,8 +93,8 @@ public class AliasTarget  implements Serializable  {
      * Guide</i>.
      */
     public AliasTarget(String hostedZoneId, String dNSName) {
-        this.hostedZoneId = hostedZoneId;
-        this.dNSName = dNSName;
+        setHostedZoneId(hostedZoneId);
+        setDNSName(dNSName);
     }
 
     
@@ -345,9 +347,9 @@ public class AliasTarget  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getHostedZoneId() != null) sb.append("HostedZoneId: " + getHostedZoneId() + ",");    	
-        if (getDNSName() != null) sb.append("DNSName: " + getDNSName() + ",");    	
+        sb.append("{");
+        if (getHostedZoneId() != null) sb.append("HostedZoneId: " + getHostedZoneId() + ",");
+        if (getDNSName() != null) sb.append("DNSName: " + getDNSName() + ",");
         if (isEvaluateTargetHealth() != null) sb.append("EvaluateTargetHealth: " + isEvaluateTargetHealth() );
         sb.append("}");
         return sb.toString();

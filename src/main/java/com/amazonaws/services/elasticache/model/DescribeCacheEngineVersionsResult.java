@@ -30,7 +30,7 @@ public class DescribeCacheEngineVersionsResult  implements Serializable  {
     /**
      * A list of <code>CacheEngineVersion</code> elements.
      */
-    private java.util.List<CacheEngineVersion> cacheEngineVersions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<CacheEngineVersion> cacheEngineVersions;
 
     /**
      * The identifier returned to allow retrieval of paginated results.
@@ -74,7 +74,8 @@ public class DescribeCacheEngineVersionsResult  implements Serializable  {
     public java.util.List<CacheEngineVersion> getCacheEngineVersions() {
         
         if (cacheEngineVersions == null) {
-            cacheEngineVersions = new java.util.ArrayList<CacheEngineVersion>();
+              cacheEngineVersions = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheEngineVersion>();
+              cacheEngineVersions.setAutoConstruct(true);
         }
         return cacheEngineVersions;
     }
@@ -89,8 +90,7 @@ public class DescribeCacheEngineVersionsResult  implements Serializable  {
             this.cacheEngineVersions = null;
             return;
         }
-
-        java.util.List<CacheEngineVersion> cacheEngineVersionsCopy = new java.util.ArrayList<CacheEngineVersion>(cacheEngineVersions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<CacheEngineVersion> cacheEngineVersionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheEngineVersion>(cacheEngineVersions.size());
         cacheEngineVersionsCopy.addAll(cacheEngineVersions);
         this.cacheEngineVersions = cacheEngineVersionsCopy;
     }
@@ -127,7 +127,7 @@ public class DescribeCacheEngineVersionsResult  implements Serializable  {
         if (cacheEngineVersions == null) {
             this.cacheEngineVersions = null;
         } else {
-            java.util.List<CacheEngineVersion> cacheEngineVersionsCopy = new java.util.ArrayList<CacheEngineVersion>(cacheEngineVersions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<CacheEngineVersion> cacheEngineVersionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheEngineVersion>(cacheEngineVersions.size());
             cacheEngineVersionsCopy.addAll(cacheEngineVersions);
             this.cacheEngineVersions = cacheEngineVersionsCopy;
         }
@@ -146,8 +146,8 @@ public class DescribeCacheEngineVersionsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getCacheEngineVersions() != null) sb.append("CacheEngineVersions: " + getCacheEngineVersions() );
         sb.append("}");
         return sb.toString();

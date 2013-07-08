@@ -18,23 +18,14 @@ import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#setQueueAttributes(SetQueueAttributesRequest) SetQueueAttributes operation}.
- * <p>
- * Sets the value of one or more queue attributes. Valid attributes that can be set are [VisibilityTimeout, Policy, MaximumMessageSize,
- * MessageRetentionPeriod, ReceiveMessageWaitTimeSeconds].
- * </p>
+ * 
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#setQueueAttributes(SetQueueAttributesRequest)
  */
 public class SetQueueAttributesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
-    /**
-     * The URL of the SQS queue to take action on.
-     */
     private String queueUrl;
 
-    /**
-     * A map of attributes to set.
-     */
     private java.util.Map<String,String> attributes;
 
     /**
@@ -50,8 +41,8 @@ public class SetQueueAttributesRequest extends AmazonWebServiceRequest  implemen
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param queueUrl The URL of the SQS queue to take action on.
-     * @param attributes A map of attributes to set.
+     * @param queueUrl
+     * @param attributes
      */
     public SetQueueAttributesRequest(String queueUrl, java.util.Map<String,String> attributes) {
         setQueueUrl(queueUrl);
@@ -61,29 +52,29 @@ public class SetQueueAttributesRequest extends AmazonWebServiceRequest  implemen
     
     
     /**
-     * The URL of the SQS queue to take action on.
+     * Returns the value of the QueueUrl property for this object.
      *
-     * @return The URL of the SQS queue to take action on.
+     * @return The value of the QueueUrl property for this object.
      */
     public String getQueueUrl() {
         return queueUrl;
     }
     
     /**
-     * The URL of the SQS queue to take action on.
+     * Sets the value of the QueueUrl property for this object.
      *
-     * @param queueUrl The URL of the SQS queue to take action on.
+     * @param queueUrl The new value for the QueueUrl property for this object.
      */
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
     
     /**
-     * The URL of the SQS queue to take action on.
+     * Sets the value of the QueueUrl property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queueUrl The URL of the SQS queue to take action on.
+     * @param queueUrl The new value for the QueueUrl property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -95,9 +86,9 @@ public class SetQueueAttributesRequest extends AmazonWebServiceRequest  implemen
     
     
     /**
-     * A map of attributes to set.
+     * Returns the value of the Attributes property for this object.
      *
-     * @return A map of attributes to set.
+     * @return The value of the Attributes property for this object.
      */
     public java.util.Map<String,String> getAttributes() {
         
@@ -109,20 +100,20 @@ public class SetQueueAttributesRequest extends AmazonWebServiceRequest  implemen
     }
     
     /**
-     * A map of attributes to set.
+     * Sets the value of the Attributes property for this object.
      *
-     * @param attributes A map of attributes to set.
+     * @param attributes The new value for the Attributes property for this object.
      */
     public void setAttributes(java.util.Map<String,String> attributes) {
         this.attributes = attributes;
     }
     
     /**
-     * A map of attributes to set.
+     * Sets the value of the Attributes property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributes A map of attributes to set.
+     * @param attributes The new value for the Attributes property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

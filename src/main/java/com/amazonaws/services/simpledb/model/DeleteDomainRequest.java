@@ -42,6 +42,8 @@ public class DeleteDomainRequest extends AmazonWebServiceRequest  implements Ser
      */
     public DeleteDomainRequest() {}
     
+
+
     /**
      * Constructs a new DeleteDomainRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -50,7 +52,7 @@ public class DeleteDomainRequest extends AmazonWebServiceRequest  implements Ser
      * @param domainName The name of the domain to delete.
      */
     public DeleteDomainRequest(String domainName) {
-        this.domainName = domainName;
+        setDomainName(domainName);
     }
 
     
@@ -100,7 +102,7 @@ public class DeleteDomainRequest extends AmazonWebServiceRequest  implements Ser
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getDomainName() != null) sb.append("DomainName: " + getDomainName() );
         sb.append("}");
         return sb.toString();

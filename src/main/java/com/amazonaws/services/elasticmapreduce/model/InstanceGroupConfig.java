@@ -77,6 +77,8 @@ public class InstanceGroupConfig  implements Serializable  {
      */
     public InstanceGroupConfig() {}
     
+
+
     /**
      * Constructs a new InstanceGroupConfig object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -89,9 +91,9 @@ public class InstanceGroupConfig  implements Serializable  {
      * group.
      */
     public InstanceGroupConfig(String instanceRole, String instanceType, Integer instanceCount) {
-        this.instanceRole = instanceRole;
-        this.instanceType = instanceType;
-        this.instanceCount = instanceCount;
+        setInstanceRole(instanceRole);
+        setInstanceType(instanceType);
+        setInstanceCount(instanceCount);
     }
 
     
@@ -468,12 +470,12 @@ public class InstanceGroupConfig  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getMarket() != null) sb.append("Market: " + getMarket() + ",");    	
-        if (getInstanceRole() != null) sb.append("InstanceRole: " + getInstanceRole() + ",");    	
-        if (getBidPrice() != null) sb.append("BidPrice: " + getBidPrice() + ",");    	
-        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");    	
+        sb.append("{");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getMarket() != null) sb.append("Market: " + getMarket() + ",");
+        if (getInstanceRole() != null) sb.append("InstanceRole: " + getInstanceRole() + ",");
+        if (getBidPrice() != null) sb.append("BidPrice: " + getBidPrice() + ",");
+        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");
         if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() );
         sb.append("}");
         return sb.toString();

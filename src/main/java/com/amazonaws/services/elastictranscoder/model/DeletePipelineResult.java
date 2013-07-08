@@ -16,7 +16,9 @@ package com.amazonaws.services.elastictranscoder.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * The <code>DeletePipelineResponse</code> structure.
+ * </p>
  */
 public class DeletePipelineResult  implements Serializable  {
 

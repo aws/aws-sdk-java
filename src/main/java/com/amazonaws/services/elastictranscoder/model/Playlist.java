@@ -16,12 +16,22 @@ package com.amazonaws.services.elastictranscoder.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Use Only for MPEG-TS Outputs. If you specify a preset for which the value of Container is <code>ts</code> (MPEG-TS), Playlists contains information
+ * about the master playlists that you want Elastic Transcoder to create. We recommend that you create only one master playlist. The maximum number of
+ * master playlists in a job is 30.
+ * </p>
  */
 public class Playlist  implements Serializable  {
 
     /**
-     * 
+     * The name that you want Elastic Transcoder to assign to the master
+     * playlist, for example, nyc-vacation.m3u8. The name cannot include a /
+     * character. If you create more than one master playlist (not
+     * recommended), the values of all <code>Name</code> objects must be
+     * unique. <b>Note</b>: Elastic Transcoder automatically appends .m3u8 to
+     * the file name. If you include .m3u8 in <code>Name</code>, it will
+     * appear twice in the file name.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -29,7 +39,7 @@ public class Playlist  implements Serializable  {
     private String name;
 
     /**
-     * 
+     * This value must currently be <code>HLSv3</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^HLSv3$)<br/>
@@ -37,7 +47,10 @@ public class Playlist  implements Serializable  {
     private String format;
 
     /**
-     * 
+     * For each output in this job that you want to include in a master
+     * playlist, the value of the Outputs:Key object. If you include more
+     * than one output in a playlist, the value of
+     * <code>SegmentDuration</code> for all of the outputs must be the same.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 30<br/>
@@ -45,7 +58,7 @@ public class Playlist  implements Serializable  {
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> outputKeys;
 
     /**
-     * 
+     * The status of the job with which the playlist is associated.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^Submitted$)|(^Progressing$)|(^Complete$)|(^Canceled$)|(^Error$)<br/>
@@ -53,7 +66,7 @@ public class Playlist  implements Serializable  {
     private String status;
 
     /**
-     * 
+     * Information that further explains the status.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 255<br/>
@@ -61,38 +74,74 @@ public class Playlist  implements Serializable  {
     private String statusDetail;
 
     /**
-     * 
+     * The name that you want Elastic Transcoder to assign to the master
+     * playlist, for example, nyc-vacation.m3u8. The name cannot include a /
+     * character. If you create more than one master playlist (not
+     * recommended), the values of all <code>Name</code> objects must be
+     * unique. <b>Note</b>: Elastic Transcoder automatically appends .m3u8 to
+     * the file name. If you include .m3u8 in <code>Name</code>, it will
+     * appear twice in the file name.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      *
-     * @return 
+     * @return The name that you want Elastic Transcoder to assign to the master
+     *         playlist, for example, nyc-vacation.m3u8. The name cannot include a /
+     *         character. If you create more than one master playlist (not
+     *         recommended), the values of all <code>Name</code> objects must be
+     *         unique. <b>Note</b>: Elastic Transcoder automatically appends .m3u8 to
+     *         the file name. If you include .m3u8 in <code>Name</code>, it will
+     *         appear twice in the file name.
      */
     public String getName() {
         return name;
     }
     
     /**
-     * 
+     * The name that you want Elastic Transcoder to assign to the master
+     * playlist, for example, nyc-vacation.m3u8. The name cannot include a /
+     * character. If you create more than one master playlist (not
+     * recommended), the values of all <code>Name</code> objects must be
+     * unique. <b>Note</b>: Elastic Transcoder automatically appends .m3u8 to
+     * the file name. If you include .m3u8 in <code>Name</code>, it will
+     * appear twice in the file name.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      *
-     * @param name 
+     * @param name The name that you want Elastic Transcoder to assign to the master
+     *         playlist, for example, nyc-vacation.m3u8. The name cannot include a /
+     *         character. If you create more than one master playlist (not
+     *         recommended), the values of all <code>Name</code> objects must be
+     *         unique. <b>Note</b>: Elastic Transcoder automatically appends .m3u8 to
+     *         the file name. If you include .m3u8 in <code>Name</code>, it will
+     *         appear twice in the file name.
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * 
+     * The name that you want Elastic Transcoder to assign to the master
+     * playlist, for example, nyc-vacation.m3u8. The name cannot include a /
+     * character. If you create more than one master playlist (not
+     * recommended), the values of all <code>Name</code> objects must be
+     * unique. <b>Note</b>: Elastic Transcoder automatically appends .m3u8 to
+     * the file name. If you include .m3u8 in <code>Name</code>, it will
+     * appear twice in the file name.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      *
-     * @param name 
+     * @param name The name that you want Elastic Transcoder to assign to the master
+     *         playlist, for example, nyc-vacation.m3u8. The name cannot include a /
+     *         character. If you create more than one master playlist (not
+     *         recommended), the values of all <code>Name</code> objects must be
+     *         unique. <b>Note</b>: Elastic Transcoder automatically appends .m3u8 to
+     *         the file name. If you include .m3u8 in <code>Name</code>, it will
+     *         appear twice in the file name.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -104,38 +153,38 @@ public class Playlist  implements Serializable  {
     
     
     /**
-     * 
+     * This value must currently be <code>HLSv3</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^HLSv3$)<br/>
      *
-     * @return 
+     * @return This value must currently be <code>HLSv3</code>.
      */
     public String getFormat() {
         return format;
     }
     
     /**
-     * 
+     * This value must currently be <code>HLSv3</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^HLSv3$)<br/>
      *
-     * @param format 
+     * @param format This value must currently be <code>HLSv3</code>.
      */
     public void setFormat(String format) {
         this.format = format;
     }
     
     /**
-     * 
+     * This value must currently be <code>HLSv3</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^HLSv3$)<br/>
      *
-     * @param format 
+     * @param format This value must currently be <code>HLSv3</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -147,12 +196,18 @@ public class Playlist  implements Serializable  {
     
     
     /**
-     * 
+     * For each output in this job that you want to include in a master
+     * playlist, the value of the Outputs:Key object. If you include more
+     * than one output in a playlist, the value of
+     * <code>SegmentDuration</code> for all of the outputs must be the same.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 30<br/>
      *
-     * @return 
+     * @return For each output in this job that you want to include in a master
+     *         playlist, the value of the Outputs:Key object. If you include more
+     *         than one output in a playlist, the value of
+     *         <code>SegmentDuration</code> for all of the outputs must be the same.
      */
     public java.util.List<String> getOutputKeys() {
         
@@ -164,12 +219,18 @@ public class Playlist  implements Serializable  {
     }
     
     /**
-     * 
+     * For each output in this job that you want to include in a master
+     * playlist, the value of the Outputs:Key object. If you include more
+     * than one output in a playlist, the value of
+     * <code>SegmentDuration</code> for all of the outputs must be the same.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 30<br/>
      *
-     * @param outputKeys 
+     * @param outputKeys For each output in this job that you want to include in a master
+     *         playlist, the value of the Outputs:Key object. If you include more
+     *         than one output in a playlist, the value of
+     *         <code>SegmentDuration</code> for all of the outputs must be the same.
      */
     public void setOutputKeys(java.util.Collection<String> outputKeys) {
         if (outputKeys == null) {
@@ -182,14 +243,20 @@ public class Playlist  implements Serializable  {
     }
     
     /**
-     * 
+     * For each output in this job that you want to include in a master
+     * playlist, the value of the Outputs:Key object. If you include more
+     * than one output in a playlist, the value of
+     * <code>SegmentDuration</code> for all of the outputs must be the same.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 30<br/>
      *
-     * @param outputKeys 
+     * @param outputKeys For each output in this job that you want to include in a master
+     *         playlist, the value of the Outputs:Key object. If you include more
+     *         than one output in a playlist, the value of
+     *         <code>SegmentDuration</code> for all of the outputs must be the same.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -203,14 +270,20 @@ public class Playlist  implements Serializable  {
     }
     
     /**
-     * 
+     * For each output in this job that you want to include in a master
+     * playlist, the value of the Outputs:Key object. If you include more
+     * than one output in a playlist, the value of
+     * <code>SegmentDuration</code> for all of the outputs must be the same.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 30<br/>
      *
-     * @param outputKeys 
+     * @param outputKeys For each output in this job that you want to include in a master
+     *         playlist, the value of the Outputs:Key object. If you include more
+     *         than one output in a playlist, the value of
+     *         <code>SegmentDuration</code> for all of the outputs must be the same.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -228,38 +301,38 @@ public class Playlist  implements Serializable  {
     }
     
     /**
-     * 
+     * The status of the job with which the playlist is associated.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^Submitted$)|(^Progressing$)|(^Complete$)|(^Canceled$)|(^Error$)<br/>
      *
-     * @return 
+     * @return The status of the job with which the playlist is associated.
      */
     public String getStatus() {
         return status;
     }
     
     /**
-     * 
+     * The status of the job with which the playlist is associated.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^Submitted$)|(^Progressing$)|(^Complete$)|(^Canceled$)|(^Error$)<br/>
      *
-     * @param status 
+     * @param status The status of the job with which the playlist is associated.
      */
     public void setStatus(String status) {
         this.status = status;
     }
     
     /**
-     * 
+     * The status of the job with which the playlist is associated.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^Submitted$)|(^Progressing$)|(^Complete$)|(^Canceled$)|(^Error$)<br/>
      *
-     * @param status 
+     * @param status The status of the job with which the playlist is associated.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -271,38 +344,38 @@ public class Playlist  implements Serializable  {
     
     
     /**
-     * 
+     * Information that further explains the status.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 255<br/>
      *
-     * @return 
+     * @return Information that further explains the status.
      */
     public String getStatusDetail() {
         return statusDetail;
     }
     
     /**
-     * 
+     * Information that further explains the status.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 255<br/>
      *
-     * @param statusDetail 
+     * @param statusDetail Information that further explains the status.
      */
     public void setStatusDetail(String statusDetail) {
         this.statusDetail = statusDetail;
     }
     
     /**
-     * 
+     * Information that further explains the status.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 255<br/>
      *
-     * @param statusDetail 
+     * @param statusDetail Information that further explains the status.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

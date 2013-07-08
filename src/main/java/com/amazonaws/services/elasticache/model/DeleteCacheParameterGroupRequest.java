@@ -39,6 +39,8 @@ public class DeleteCacheParameterGroupRequest extends AmazonWebServiceRequest  i
      */
     public DeleteCacheParameterGroupRequest() {}
     
+
+
     /**
      * Constructs a new DeleteCacheParameterGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -49,7 +51,7 @@ public class DeleteCacheParameterGroupRequest extends AmazonWebServiceRequest  i
      * associated with any Cache clusters. </note>
      */
     public DeleteCacheParameterGroupRequest(String cacheParameterGroupName) {
-        this.cacheParameterGroupName = cacheParameterGroupName;
+        setCacheParameterGroupName(cacheParameterGroupName);
     }
 
     
@@ -111,7 +113,7 @@ public class DeleteCacheParameterGroupRequest extends AmazonWebServiceRequest  i
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getCacheParameterGroupName() != null) sb.append("CacheParameterGroupName: " + getCacheParameterGroupName() );
         sb.append("}");
         return sb.toString();

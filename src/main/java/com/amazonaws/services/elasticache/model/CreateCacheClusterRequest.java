@@ -82,14 +82,14 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest  implemen
      * Cluster. <p> Use this parameter only when you are creating a cluster
      * outside of an Amazon Virtual Private Cloud (VPC).
      */
-    private java.util.List<String> cacheSecurityGroupNames;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> cacheSecurityGroupNames;
 
     /**
      * Specifies the VPC Security Groups associated with the Cache Cluster.
      * <p>Use this parameter only when you are creating a cluster in an
      * Amazon Virtual Private Cloud (VPC).
      */
-    private java.util.List<String> securityGroupIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupIds;
 
     /**
      * The EC2 Availability Zone that the Cache Cluster will be created in.
@@ -132,6 +132,8 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest  implemen
      */
     public CreateCacheClusterRequest() {}
     
+
+
     /**
      * Constructs a new CreateCacheClusterRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -161,11 +163,11 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest  implemen
      * (VPC).
      */
     public CreateCacheClusterRequest(String cacheClusterId, Integer numCacheNodes, String cacheNodeType, String engine, java.util.List<String> cacheSecurityGroupNames) {
-        this.cacheClusterId = cacheClusterId;
-        this.numCacheNodes = numCacheNodes;
-        this.cacheNodeType = cacheNodeType;
-        this.engine = engine;
-        this.cacheSecurityGroupNames = cacheSecurityGroupNames;
+        setCacheClusterId(cacheClusterId);
+        setNumCacheNodes(numCacheNodes);
+        setCacheNodeType(cacheNodeType);
+        setEngine(engine);
+        setCacheSecurityGroupNames(cacheSecurityGroupNames);
     }
 
     
@@ -516,7 +518,8 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest  implemen
     public java.util.List<String> getCacheSecurityGroupNames() {
         
         if (cacheSecurityGroupNames == null) {
-            cacheSecurityGroupNames = new java.util.ArrayList<String>();
+              cacheSecurityGroupNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              cacheSecurityGroupNames.setAutoConstruct(true);
         }
         return cacheSecurityGroupNames;
     }
@@ -535,8 +538,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest  implemen
             this.cacheSecurityGroupNames = null;
             return;
         }
-
-        java.util.List<String> cacheSecurityGroupNamesCopy = new java.util.ArrayList<String>(cacheSecurityGroupNames.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> cacheSecurityGroupNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(cacheSecurityGroupNames.size());
         cacheSecurityGroupNamesCopy.addAll(cacheSecurityGroupNames);
         this.cacheSecurityGroupNames = cacheSecurityGroupNamesCopy;
     }
@@ -581,7 +583,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest  implemen
         if (cacheSecurityGroupNames == null) {
             this.cacheSecurityGroupNames = null;
         } else {
-            java.util.List<String> cacheSecurityGroupNamesCopy = new java.util.ArrayList<String>(cacheSecurityGroupNames.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> cacheSecurityGroupNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(cacheSecurityGroupNames.size());
             cacheSecurityGroupNamesCopy.addAll(cacheSecurityGroupNames);
             this.cacheSecurityGroupNames = cacheSecurityGroupNamesCopy;
         }
@@ -601,7 +603,8 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest  implemen
     public java.util.List<String> getSecurityGroupIds() {
         
         if (securityGroupIds == null) {
-            securityGroupIds = new java.util.ArrayList<String>();
+              securityGroupIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              securityGroupIds.setAutoConstruct(true);
         }
         return securityGroupIds;
     }
@@ -620,8 +623,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest  implemen
             this.securityGroupIds = null;
             return;
         }
-
-        java.util.List<String> securityGroupIdsCopy = new java.util.ArrayList<String>(securityGroupIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(securityGroupIds.size());
         securityGroupIdsCopy.addAll(securityGroupIds);
         this.securityGroupIds = securityGroupIdsCopy;
     }
@@ -666,7 +668,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest  implemen
         if (securityGroupIds == null) {
             this.securityGroupIds = null;
         } else {
-            java.util.List<String> securityGroupIdsCopy = new java.util.ArrayList<String>(securityGroupIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(securityGroupIds.size());
             securityGroupIdsCopy.addAll(securityGroupIds);
             this.securityGroupIds = securityGroupIdsCopy;
         }
@@ -928,20 +930,20 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCacheClusterId() != null) sb.append("CacheClusterId: " + getCacheClusterId() + ",");    	
-        if (getNumCacheNodes() != null) sb.append("NumCacheNodes: " + getNumCacheNodes() + ",");    	
-        if (getCacheNodeType() != null) sb.append("CacheNodeType: " + getCacheNodeType() + ",");    	
-        if (getEngine() != null) sb.append("Engine: " + getEngine() + ",");    	
-        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");    	
-        if (getCacheParameterGroupName() != null) sb.append("CacheParameterGroupName: " + getCacheParameterGroupName() + ",");    	
-        if (getCacheSubnetGroupName() != null) sb.append("CacheSubnetGroupName: " + getCacheSubnetGroupName() + ",");    	
-        if (getCacheSecurityGroupNames() != null) sb.append("CacheSecurityGroupNames: " + getCacheSecurityGroupNames() + ",");    	
-        if (getSecurityGroupIds() != null) sb.append("SecurityGroupIds: " + getSecurityGroupIds() + ",");    	
-        if (getPreferredAvailabilityZone() != null) sb.append("PreferredAvailabilityZone: " + getPreferredAvailabilityZone() + ",");    	
-        if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");    	
-        if (getPort() != null) sb.append("Port: " + getPort() + ",");    	
-        if (getNotificationTopicArn() != null) sb.append("NotificationTopicArn: " + getNotificationTopicArn() + ",");    	
+        sb.append("{");
+        if (getCacheClusterId() != null) sb.append("CacheClusterId: " + getCacheClusterId() + ",");
+        if (getNumCacheNodes() != null) sb.append("NumCacheNodes: " + getNumCacheNodes() + ",");
+        if (getCacheNodeType() != null) sb.append("CacheNodeType: " + getCacheNodeType() + ",");
+        if (getEngine() != null) sb.append("Engine: " + getEngine() + ",");
+        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");
+        if (getCacheParameterGroupName() != null) sb.append("CacheParameterGroupName: " + getCacheParameterGroupName() + ",");
+        if (getCacheSubnetGroupName() != null) sb.append("CacheSubnetGroupName: " + getCacheSubnetGroupName() + ",");
+        if (getCacheSecurityGroupNames() != null) sb.append("CacheSecurityGroupNames: " + getCacheSecurityGroupNames() + ",");
+        if (getSecurityGroupIds() != null) sb.append("SecurityGroupIds: " + getSecurityGroupIds() + ",");
+        if (getPreferredAvailabilityZone() != null) sb.append("PreferredAvailabilityZone: " + getPreferredAvailabilityZone() + ",");
+        if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");
+        if (getPort() != null) sb.append("Port: " + getPort() + ",");
+        if (getNotificationTopicArn() != null) sb.append("NotificationTopicArn: " + getNotificationTopicArn() + ",");
         if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() );
         sb.append("}");
         return sb.toString();

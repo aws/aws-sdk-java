@@ -81,7 +81,7 @@ public class ActivityTaskStatus  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (isCancelRequested() != null) sb.append("CancelRequested: " + isCancelRequested() );
         sb.append("}");
         return sb.toString();

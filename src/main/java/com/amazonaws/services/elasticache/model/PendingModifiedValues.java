@@ -32,7 +32,7 @@ public class PendingModifiedValues  implements Serializable  {
      * Contains the list of node Ids to remove from the Cache Cluster that
      * will be applied or is in progress.
      */
-    private java.util.List<String> cacheNodeIdsToRemove;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> cacheNodeIdsToRemove;
 
     /**
      * Contains the new version of the Cache Engine the Cache Cluster will be
@@ -96,7 +96,8 @@ public class PendingModifiedValues  implements Serializable  {
     public java.util.List<String> getCacheNodeIdsToRemove() {
         
         if (cacheNodeIdsToRemove == null) {
-            cacheNodeIdsToRemove = new java.util.ArrayList<String>();
+              cacheNodeIdsToRemove = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              cacheNodeIdsToRemove.setAutoConstruct(true);
         }
         return cacheNodeIdsToRemove;
     }
@@ -113,8 +114,7 @@ public class PendingModifiedValues  implements Serializable  {
             this.cacheNodeIdsToRemove = null;
             return;
         }
-
-        java.util.List<String> cacheNodeIdsToRemoveCopy = new java.util.ArrayList<String>(cacheNodeIdsToRemove.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> cacheNodeIdsToRemoveCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(cacheNodeIdsToRemove.size());
         cacheNodeIdsToRemoveCopy.addAll(cacheNodeIdsToRemove);
         this.cacheNodeIdsToRemove = cacheNodeIdsToRemoveCopy;
     }
@@ -155,7 +155,7 @@ public class PendingModifiedValues  implements Serializable  {
         if (cacheNodeIdsToRemove == null) {
             this.cacheNodeIdsToRemove = null;
         } else {
-            java.util.List<String> cacheNodeIdsToRemoveCopy = new java.util.ArrayList<String>(cacheNodeIdsToRemove.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> cacheNodeIdsToRemoveCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(cacheNodeIdsToRemove.size());
             cacheNodeIdsToRemoveCopy.addAll(cacheNodeIdsToRemove);
             this.cacheNodeIdsToRemove = cacheNodeIdsToRemoveCopy;
         }
@@ -214,9 +214,9 @@ public class PendingModifiedValues  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getNumCacheNodes() != null) sb.append("NumCacheNodes: " + getNumCacheNodes() + ",");    	
-        if (getCacheNodeIdsToRemove() != null) sb.append("CacheNodeIdsToRemove: " + getCacheNodeIdsToRemove() + ",");    	
+        sb.append("{");
+        if (getNumCacheNodes() != null) sb.append("NumCacheNodes: " + getNumCacheNodes() + ",");
+        if (getCacheNodeIdsToRemove() != null) sb.append("CacheNodeIdsToRemove: " + getCacheNodeIdsToRemove() + ",");
         if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() );
         sb.append("}");
         return sb.toString();

@@ -23,18 +23,21 @@ import java.io.Serializable;
 public class AddCommunicationToCaseResult  implements Serializable  {
 
     /**
-     * Returns true if the <a href="API_AddCommunicationToCase.html"
+     * Returns true if the <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_AddCommunicationToCase.html"
      * title="AddCommunicationToCase">AddCommunicationToCase</a> succeeds.
      * Returns an error otherwise.
      */
     private Boolean result;
 
     /**
-     * Returns true if the <a href="API_AddCommunicationToCase.html"
+     * Returns true if the <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_AddCommunicationToCase.html"
      * title="AddCommunicationToCase">AddCommunicationToCase</a> succeeds.
      * Returns an error otherwise.
      *
-     * @return Returns true if the <a href="API_AddCommunicationToCase.html"
+     * @return Returns true if the <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_AddCommunicationToCase.html"
      *         title="AddCommunicationToCase">AddCommunicationToCase</a> succeeds.
      *         Returns an error otherwise.
      */
@@ -43,11 +46,13 @@ public class AddCommunicationToCaseResult  implements Serializable  {
     }
     
     /**
-     * Returns true if the <a href="API_AddCommunicationToCase.html"
+     * Returns true if the <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_AddCommunicationToCase.html"
      * title="AddCommunicationToCase">AddCommunicationToCase</a> succeeds.
      * Returns an error otherwise.
      *
-     * @param result Returns true if the <a href="API_AddCommunicationToCase.html"
+     * @param result Returns true if the <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_AddCommunicationToCase.html"
      *         title="AddCommunicationToCase">AddCommunicationToCase</a> succeeds.
      *         Returns an error otherwise.
      */
@@ -56,13 +61,15 @@ public class AddCommunicationToCaseResult  implements Serializable  {
     }
     
     /**
-     * Returns true if the <a href="API_AddCommunicationToCase.html"
+     * Returns true if the <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_AddCommunicationToCase.html"
      * title="AddCommunicationToCase">AddCommunicationToCase</a> succeeds.
      * Returns an error otherwise.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param result Returns true if the <a href="API_AddCommunicationToCase.html"
+     * @param result Returns true if the <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_AddCommunicationToCase.html"
      *         title="AddCommunicationToCase">AddCommunicationToCase</a> succeeds.
      *         Returns an error otherwise.
      *
@@ -76,11 +83,13 @@ public class AddCommunicationToCaseResult  implements Serializable  {
     
     
     /**
-     * Returns true if the <a href="API_AddCommunicationToCase.html"
+     * Returns true if the <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_AddCommunicationToCase.html"
      * title="AddCommunicationToCase">AddCommunicationToCase</a> succeeds.
      * Returns an error otherwise.
      *
-     * @return Returns true if the <a href="API_AddCommunicationToCase.html"
+     * @return Returns true if the <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_AddCommunicationToCase.html"
      *         title="AddCommunicationToCase">AddCommunicationToCase</a> succeeds.
      *         Returns an error otherwise.
      */

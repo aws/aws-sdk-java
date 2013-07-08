@@ -18,22 +18,14 @@ import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#getQueueUrl(GetQueueUrlRequest) GetQueueUrl operation}.
- * <p>
- * The <code>GetQueueUrl</code> action returns the URL of an existing queue.
- * </p>
+ * 
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#getQueueUrl(GetQueueUrlRequest)
  */
 public class GetQueueUrlRequest extends AmazonWebServiceRequest  implements Serializable  {
 
-    /**
-     * The name of the queue whose URL must be fetched.
-     */
     private String queueName;
 
-    /**
-     * The AWS account number of the queue's owner.
-     */
     private String queueOwnerAWSAccountId;
 
     /**
@@ -49,7 +41,7 @@ public class GetQueueUrlRequest extends AmazonWebServiceRequest  implements Seri
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param queueName The name of the queue whose URL must be fetched.
+     * @param queueName
      */
     public GetQueueUrlRequest(String queueName) {
         setQueueName(queueName);
@@ -58,29 +50,29 @@ public class GetQueueUrlRequest extends AmazonWebServiceRequest  implements Seri
     
     
     /**
-     * The name of the queue whose URL must be fetched.
+     * Returns the value of the QueueName property for this object.
      *
-     * @return The name of the queue whose URL must be fetched.
+     * @return The value of the QueueName property for this object.
      */
     public String getQueueName() {
         return queueName;
     }
     
     /**
-     * The name of the queue whose URL must be fetched.
+     * Sets the value of the QueueName property for this object.
      *
-     * @param queueName The name of the queue whose URL must be fetched.
+     * @param queueName The new value for the QueueName property for this object.
      */
     public void setQueueName(String queueName) {
         this.queueName = queueName;
     }
     
     /**
-     * The name of the queue whose URL must be fetched.
+     * Sets the value of the QueueName property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queueName The name of the queue whose URL must be fetched.
+     * @param queueName The new value for the QueueName property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -92,29 +84,30 @@ public class GetQueueUrlRequest extends AmazonWebServiceRequest  implements Seri
     
     
     /**
-     * The AWS account number of the queue's owner.
+     * Returns the value of the QueueOwnerAWSAccountId property for this
+     * object.
      *
-     * @return The AWS account number of the queue's owner.
+     * @return The value of the QueueOwnerAWSAccountId property for this object.
      */
     public String getQueueOwnerAWSAccountId() {
         return queueOwnerAWSAccountId;
     }
     
     /**
-     * The AWS account number of the queue's owner.
+     * Sets the value of the QueueOwnerAWSAccountId property for this object.
      *
-     * @param queueOwnerAWSAccountId The AWS account number of the queue's owner.
+     * @param queueOwnerAWSAccountId The new value for the QueueOwnerAWSAccountId property for this object.
      */
     public void setQueueOwnerAWSAccountId(String queueOwnerAWSAccountId) {
         this.queueOwnerAWSAccountId = queueOwnerAWSAccountId;
     }
     
     /**
-     * The AWS account number of the queue's owner.
+     * Sets the value of the QueueOwnerAWSAccountId property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queueOwnerAWSAccountId The AWS account number of the queue's owner.
+     * @param queueOwnerAWSAccountId The new value for the QueueOwnerAWSAccountId property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

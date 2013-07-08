@@ -33,6 +33,8 @@ public class BootstrapActionDetail  implements Serializable  {
      */
     public BootstrapActionDetail() {}
     
+
+
     /**
      * Constructs a new BootstrapActionDetail object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -41,7 +43,7 @@ public class BootstrapActionDetail  implements Serializable  {
      * @param bootstrapActionConfig A description of the bootstrap action.
      */
     public BootstrapActionDetail(BootstrapActionConfig bootstrapActionConfig) {
-        this.bootstrapActionConfig = bootstrapActionConfig;
+        setBootstrapActionConfig(bootstrapActionConfig);
     }
 
     
@@ -91,7 +93,7 @@ public class BootstrapActionDetail  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getBootstrapActionConfig() != null) sb.append("BootstrapActionConfig: " + getBootstrapActionConfig() );
         sb.append("}");
         return sb.toString();

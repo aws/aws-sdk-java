@@ -17,11 +17,15 @@ import java.io.Serializable;
 
 /**
  * <p>
- * JSON-formatted object contained in the DescribeTrustedAdvisorCheckResult response. This object has three child objects:
+ * JSON-formatted object contained in the <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckResult.html">
+ * DescribeTrustedAdvisorCheckResult </a> response. This object has three child objects:
  * </p>
- * <ol> <li> TrustedAdvisorCategorySpecificSummary </li>
- * <li> TrustedAdvisorResourceDetail </li>
- * <li> TrustedAdvisorResourcesSummary </li>
+ * <ol> <li> <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCategorySpecificSummary.html">
+ * TrustedAdvisorCategorySpecificSummary </a> </li>
+ * <li> <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorResourceDetail.html"> TrustedAdvisorResourceDetail </a>
+ * </li>
+ * <li> <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorResourcesSummary.html"> TrustedAdvisorResourcesSummary </a>
+ * </li>
  * </ol>
  */
 public class TrustedAdvisorCheckResult  implements Serializable  {
@@ -45,7 +49,7 @@ public class TrustedAdvisorCheckResult  implements Serializable  {
     /**
      * JSON-formatted object that lists details about AWS resources that were
      * analyzed in a call to Trusted Advisor <a
-     * href="API_DescribeTrustedAdvisorCheckSummaries.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
      * title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>.
      */
     private TrustedAdvisorResourcesSummary resourcesSummary;
@@ -173,12 +177,12 @@ public class TrustedAdvisorCheckResult  implements Serializable  {
     /**
      * JSON-formatted object that lists details about AWS resources that were
      * analyzed in a call to Trusted Advisor <a
-     * href="API_DescribeTrustedAdvisorCheckSummaries.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
      * title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>.
      *
      * @return JSON-formatted object that lists details about AWS resources that were
      *         analyzed in a call to Trusted Advisor <a
-     *         href="API_DescribeTrustedAdvisorCheckSummaries.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
      *         title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>.
      */
     public TrustedAdvisorResourcesSummary getResourcesSummary() {
@@ -188,12 +192,12 @@ public class TrustedAdvisorCheckResult  implements Serializable  {
     /**
      * JSON-formatted object that lists details about AWS resources that were
      * analyzed in a call to Trusted Advisor <a
-     * href="API_DescribeTrustedAdvisorCheckSummaries.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
      * title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>.
      *
      * @param resourcesSummary JSON-formatted object that lists details about AWS resources that were
      *         analyzed in a call to Trusted Advisor <a
-     *         href="API_DescribeTrustedAdvisorCheckSummaries.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
      *         title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>.
      */
     public void setResourcesSummary(TrustedAdvisorResourcesSummary resourcesSummary) {
@@ -203,14 +207,14 @@ public class TrustedAdvisorCheckResult  implements Serializable  {
     /**
      * JSON-formatted object that lists details about AWS resources that were
      * analyzed in a call to Trusted Advisor <a
-     * href="API_DescribeTrustedAdvisorCheckSummaries.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
      * title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param resourcesSummary JSON-formatted object that lists details about AWS resources that were
      *         analyzed in a call to Trusted Advisor <a
-     *         href="API_DescribeTrustedAdvisorCheckSummaries.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
      *         title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 

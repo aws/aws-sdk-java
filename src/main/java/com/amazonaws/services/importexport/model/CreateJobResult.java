@@ -347,12 +347,12 @@ public class CreateJobResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getJobId() != null) sb.append("JobId: " + getJobId() + ",");    	
-        if (getJobType() != null) sb.append("JobType: " + getJobType() + ",");    	
-        if (getAwsShippingAddress() != null) sb.append("AwsShippingAddress: " + getAwsShippingAddress() + ",");    	
-        if (getSignature() != null) sb.append("Signature: " + getSignature() + ",");    	
-        if (getSignatureFileContents() != null) sb.append("SignatureFileContents: " + getSignatureFileContents() + ",");    	
+        sb.append("{");
+        if (getJobId() != null) sb.append("JobId: " + getJobId() + ",");
+        if (getJobType() != null) sb.append("JobType: " + getJobType() + ",");
+        if (getAwsShippingAddress() != null) sb.append("AwsShippingAddress: " + getAwsShippingAddress() + ",");
+        if (getSignature() != null) sb.append("Signature: " + getSignature() + ",");
+        if (getSignatureFileContents() != null) sb.append("SignatureFileContents: " + getSignatureFileContents() + ",");
         if (getWarningMessage() != null) sb.append("WarningMessage: " + getWarningMessage() );
         sb.append("}");
         return sb.toString();

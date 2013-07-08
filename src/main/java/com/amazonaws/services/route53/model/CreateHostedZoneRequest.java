@@ -85,6 +85,8 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest  implements
      */
     public CreateHostedZoneRequest() {}
     
+
+
     /**
      * Constructs a new CreateHostedZoneRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -110,8 +112,8 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest  implements
      * the value must be less than 128 bytes.
      */
     public CreateHostedZoneRequest(String name, String callerReference) {
-        this.name = name;
-        this.callerReference = callerReference;
+        setName(name);
+        setCallerReference(callerReference);
     }
 
     
@@ -349,9 +351,9 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() + ",");    	
+        sb.append("{");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() + ",");
         if (getHostedZoneConfig() != null) sb.append("HostedZoneConfig: " + getHostedZoneConfig() );
         sb.append("}");
         return sb.toString();

@@ -60,6 +60,8 @@ public class StepExecutionStatusDetail  implements Serializable  {
      */
     public StepExecutionStatusDetail() {}
     
+
+
     /**
      * Constructs a new StepExecutionStatusDetail object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -69,8 +71,8 @@ public class StepExecutionStatusDetail  implements Serializable  {
      * @param creationDateTime The creation date and time of the step.
      */
     public StepExecutionStatusDetail(String state, java.util.Date creationDateTime) {
-        this.state = state;
-        this.creationDateTime = creationDateTime;
+        setState(state);
+        setCreationDateTime(creationDateTime);
     }
 
     
@@ -330,11 +332,11 @@ public class StepExecutionStatusDetail  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getState() != null) sb.append("State: " + getState() + ",");    	
-        if (getCreationDateTime() != null) sb.append("CreationDateTime: " + getCreationDateTime() + ",");    	
-        if (getStartDateTime() != null) sb.append("StartDateTime: " + getStartDateTime() + ",");    	
-        if (getEndDateTime() != null) sb.append("EndDateTime: " + getEndDateTime() + ",");    	
+        sb.append("{");
+        if (getState() != null) sb.append("State: " + getState() + ",");
+        if (getCreationDateTime() != null) sb.append("CreationDateTime: " + getCreationDateTime() + ",");
+        if (getStartDateTime() != null) sb.append("StartDateTime: " + getStartDateTime() + ",");
+        if (getEndDateTime() != null) sb.append("EndDateTime: " + getEndDateTime() + ",");
         if (getLastStateChangeReason() != null) sb.append("LastStateChangeReason: " + getLastStateChangeReason() );
         sb.append("}");
         return sb.toString();

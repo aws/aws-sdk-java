@@ -20,10 +20,12 @@ import java.io.Serializable;
  * Container for the parameters to the {@link com.amazonaws.services.support.AWSSupport#describeTrustedAdvisorCheckSummaries(DescribeTrustedAdvisorCheckSummariesRequest) DescribeTrustedAdvisorCheckSummaries operation}.
  * <p>
  * This action enables you to get the latest summaries for Trusted Advisor checks that you specify in your request. You submit the list of Trusted
- * Advisor checks for which you want summaries. You obtain these <i>CheckIds</i> by submitting a DescribeTrustedAdvisorChecks request.
+ * Advisor checks for which you want summaries. You obtain these <i>CheckIds</i> by submitting a <a
+ * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"> DescribeTrustedAdvisorChecks </a> request.
  * </p>
  * <p>
- * The response body contains an array of TrustedAdvisorCheckSummary objects.
+ * The response body contains an array of <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckSummary.html">
+ * TrustedAdvisorCheckSummary </a> objects.
  * </p>
  *
  * @see com.amazonaws.services.support.AWSSupport#describeTrustedAdvisorCheckSummaries(DescribeTrustedAdvisorCheckSummariesRequest)

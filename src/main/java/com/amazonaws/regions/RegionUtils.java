@@ -20,7 +20,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -104,25 +105,23 @@ public class RegionUtils {
      *             If the given URL is malformed, or if the one of the service
      *             URLs on record is malformed.
      */
-    public static Region getRegionByEndpoint(String endpoint) throws MalformedURLException {
-        URL targetEndpointUrl = null;
-        try {
-            targetEndpointUrl = new URL(endpoint);
-        } catch ( MalformedURLException e ) {
-            throw new RuntimeException("Unable to parse service endpoint: " + e.getMessage());
-        }
-
-        String targetHost = targetEndpointUrl.getHost();
+    public static Region getRegionByEndpoint(String endpoint) {
+    	URI targetEndpointUri = getUriByEndpoint(endpoint);
+    	String targetHost = targetEndpointUri.getHost();
+    	
         for ( Region region : getRegions() ) {
             for ( String serviceEndpoint : region.getServiceEndpoints().values() ) {
-                URL serviceEndpointUrl = new URL(serviceEndpoint);
-                if ( serviceEndpointUrl.getHost().equals(targetHost) )
+                URI serviceEndpointUrl = getUriByEndpoint(serviceEndpoint);
+                
+				if ( serviceEndpointUrl.getHost().equals(targetHost) )
                     return region;
             }
         }
 
         throw new RuntimeException("No region found with any service for endpoint " + endpoint);
     }
+    
+    
 
     /**
      * Fetches the most recent version of the regions file from the remote
@@ -204,5 +203,22 @@ public class RegionUtils {
             return entity.getContent();
         }
         return null;
+    }
+    
+    /**
+     * Get the URI object for the given endpoint. URI class cannot correctly parse the endpoint
+     * if it doesn't include protocol. This method will add the protocol if this happens.
+     */
+    private static URI getUriByEndpoint(String endpoint) {
+    	URI targetEndpointUri= null;
+        try {
+        	targetEndpointUri = new URI(endpoint);
+        	if (targetEndpointUri.getHost() == null) {
+        		targetEndpointUri = new URI("http://" + endpoint);
+        	}
+        } catch (URISyntaxException e) {
+        	throw new RuntimeException("Unable to parse service endpoint: " + e.getMessage());
+		}
+        return targetEndpointUri;
     }
 }

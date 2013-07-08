@@ -25,7 +25,7 @@ public class DomainInfos  implements Serializable  {
     /**
      * A list of DomainInfo structures.
      */
-    private java.util.List<DomainInfo> domainInfos;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<DomainInfo> domainInfos;
 
     /**
      * Returns a value if the results are paginated. To get the next page of
@@ -45,7 +45,8 @@ public class DomainInfos  implements Serializable  {
     public java.util.List<DomainInfo> getDomainInfos() {
         
         if (domainInfos == null) {
-            domainInfos = new java.util.ArrayList<DomainInfo>();
+              domainInfos = new com.amazonaws.internal.ListWithAutoConstructFlag<DomainInfo>();
+              domainInfos.setAutoConstruct(true);
         }
         return domainInfos;
     }
@@ -60,8 +61,7 @@ public class DomainInfos  implements Serializable  {
             this.domainInfos = null;
             return;
         }
-
-        java.util.List<DomainInfo> domainInfosCopy = new java.util.ArrayList<DomainInfo>(domainInfos.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<DomainInfo> domainInfosCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DomainInfo>(domainInfos.size());
         domainInfosCopy.addAll(domainInfos);
         this.domainInfos = domainInfosCopy;
     }
@@ -98,7 +98,7 @@ public class DomainInfos  implements Serializable  {
         if (domainInfos == null) {
             this.domainInfos = null;
         } else {
-            java.util.List<DomainInfo> domainInfosCopy = new java.util.ArrayList<DomainInfo>(domainInfos.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<DomainInfo> domainInfosCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DomainInfo>(domainInfos.size());
             domainInfosCopy.addAll(domainInfos);
             this.domainInfos = domainInfosCopy;
         }
@@ -172,8 +172,8 @@ public class DomainInfos  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDomainInfos() != null) sb.append("DomainInfos: " + getDomainInfos() + ",");    	
+        sb.append("{");
+        if (getDomainInfos() != null) sb.append("DomainInfos: " + getDomainInfos() + ",");
         if (getNextPageToken() != null) sb.append("NextPageToken: " + getNextPageToken() );
         sb.append("}");
         return sb.toString();

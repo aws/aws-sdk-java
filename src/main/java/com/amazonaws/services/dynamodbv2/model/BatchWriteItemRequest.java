@@ -181,7 +181,6 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest  implements S
     public java.util.Map<String,java.util.List<WriteRequest>> getRequestItems() {
         
         return requestItems;
-
     }
     
     /**
@@ -277,15 +276,64 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest  implements S
      *         you specify any attributes that are part of an index key, then the
      *         data types for those attributes must match those of the schema in the
      *         table's attribute definition.</li> </ul> </li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public BatchWriteItemRequest withRequestItems(java.util.Map<String,java.util.List<WriteRequest>> requestItems) {
         setRequestItems(requestItems);
         return this;
     }
     
+   	
+    /**
+     * A map of one or more table names and, for each table, a list of
+     * operations to be performed (<i>DeleteRequest</i> or
+     * <i>PutRequest</i>). Each element in the map consists of the following:
+     * <ul> <li> <p><i>DeleteRequest</i> - Perform a <i>DeleteItem</i>
+     * operation on the specified item. The item to be deleted is identified
+     * by a <i>Key</i> subelement: <ul> <li> <p><i>Key</i> - A map of primary
+     * key attribute values that uniquely identify the item. Each entry in
+     * this map consists of an attribute name and an attribute value. </li>
+     * </ul> </li> <li> <p><i>PutRequest</i> - Perform a <i>PutItem</i>
+     * operation on the specified item. The item to be put is identified by
+     * an <i>Item</i> subelement: <ul> <li> <p><i>Item</i> - A map of
+     * attributes and their values. Each entry in this map consists of an
+     * attribute name and an attribute value. Attribute values must not be
+     * null; string and binary type attributes must have lengths greater than
+     * zero; and set type attributes must not be empty. Requests that contain
+     * empty values will be rejected with a <i>ValidationException</i>. <p>If
+     * you specify any attributes that are part of an index key, then the
+     * data types for those attributes must match those of the schema in the
+     * table's attribute definition.</li> </ul> </li> </ul>
+     * <p>
+     * The method adds a new key-value pair into RequestItems parameter, and
+     * returns a reference to this object so that method calls can be chained
+     * together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 25<br/>
+     *
+     * @param key The key of the entry to be added into RequestItems.
+     * @param value The corresponding value of the entry to be added into RequestItems.
+     */
+	public BatchWriteItemRequest addRequestItemsEntry(String key, java.util.List<WriteRequest> value) {
+		if (null == this.requestItems) {
+			this.requestItems = new java.util.HashMap<String,java.util.List<WriteRequest>>();
+		}
+		if (this.requestItems.containsKey(key))
+			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+		this.requestItems.put(key, value);
+		return this;
+	}
+	
+	/**
+	 * Removes all the entries added into RequestItems.
+	 * <p>
+	 * Returns a reference to this object so that method calls can be chained together.
+	 */
+	public BatchWriteItemRequest clearRequestItemsEntries() {
+		this.requestItems = null;
+		return this;
+	}
+	
     /**
      * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
      * the response; if set to <code>NONE</code> (the default),
@@ -336,9 +384,6 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest  implements S
      *         the response; if set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ReturnConsumedCapacity
      */
     public BatchWriteItemRequest withReturnConsumedCapacity(String returnConsumedCapacity) {
@@ -378,9 +423,6 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest  implements S
      * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
      *         the response; if set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see ReturnConsumedCapacity
      */
@@ -445,9 +487,6 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest  implements S
      *         response. If set to <code>NONE</code> (the default), no statistics are
      *         returned..
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ReturnItemCollectionMetrics
      */
     public BatchWriteItemRequest withReturnItemCollectionMetrics(String returnItemCollectionMetrics) {
@@ -491,9 +530,6 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest  implements S
      *         any, that were modified during the operation are returned in the
      *         response. If set to <code>NONE</code> (the default), no statistics are
      *         returned..
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see ReturnItemCollectionMetrics
      */

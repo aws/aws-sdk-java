@@ -143,7 +143,7 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest  impl
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 5<br/>
      */
-    private java.util.List<String> tagList;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> tagList;
 
     /**
      * Specifies the maximum duration of decision tasks for this workflow
@@ -643,7 +643,8 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest  impl
     public java.util.List<String> getTagList() {
         
         if (tagList == null) {
-            tagList = new java.util.ArrayList<String>();
+              tagList = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              tagList.setAutoConstruct(true);
         }
         return tagList;
     }
@@ -667,8 +668,7 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest  impl
             this.tagList = null;
             return;
         }
-
-        java.util.List<String> tagListCopy = new java.util.ArrayList<String>(tagList.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> tagListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(tagList.size());
         tagListCopy.addAll(tagList);
         this.tagList = tagListCopy;
     }
@@ -723,7 +723,7 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest  impl
         if (tagList == null) {
             this.tagList = null;
         } else {
-            java.util.List<String> tagListCopy = new java.util.ArrayList<String>(tagList.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> tagListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(tagList.size());
             tagListCopy.addAll(tagList);
             this.tagList = tagListCopy;
         }
@@ -1094,15 +1094,15 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest  impl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");    	
-        if (getWorkflowId() != null) sb.append("WorkflowId: " + getWorkflowId() + ",");    	
-        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ",");    	
-        if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ",");    	
-        if (getInput() != null) sb.append("Input: " + getInput() + ",");    	
-        if (getExecutionStartToCloseTimeout() != null) sb.append("ExecutionStartToCloseTimeout: " + getExecutionStartToCloseTimeout() + ",");    	
-        if (getTagList() != null) sb.append("TagList: " + getTagList() + ",");    	
-        if (getTaskStartToCloseTimeout() != null) sb.append("TaskStartToCloseTimeout: " + getTaskStartToCloseTimeout() + ",");    	
+        sb.append("{");
+        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");
+        if (getWorkflowId() != null) sb.append("WorkflowId: " + getWorkflowId() + ",");
+        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ",");
+        if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ",");
+        if (getInput() != null) sb.append("Input: " + getInput() + ",");
+        if (getExecutionStartToCloseTimeout() != null) sb.append("ExecutionStartToCloseTimeout: " + getExecutionStartToCloseTimeout() + ",");
+        if (getTagList() != null) sb.append("TagList: " + getTagList() + ",");
+        if (getTaskStartToCloseTimeout() != null) sb.append("TaskStartToCloseTimeout: " + getTaskStartToCloseTimeout() + ",");
         if (getChildPolicy() != null) sb.append("ChildPolicy: " + getChildPolicy() );
         sb.append("}");
         return sb.toString();

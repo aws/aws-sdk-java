@@ -79,6 +79,8 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest  im
      */
     public ChangeResourceRecordSetsRequest() {}
     
+
+
     /**
      * Constructs a new ChangeResourceRecordSetsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -95,8 +97,8 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest  im
      * and the <code>Changes</code> element.
      */
     public ChangeResourceRecordSetsRequest(String hostedZoneId, ChangeBatch changeBatch) {
-        this.hostedZoneId = hostedZoneId;
-        this.changeBatch = changeBatch;
+        setHostedZoneId(hostedZoneId);
+        setChangeBatch(changeBatch);
     }
 
     
@@ -225,8 +227,8 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getHostedZoneId() != null) sb.append("HostedZoneId: " + getHostedZoneId() + ",");    	
+        sb.append("{");
+        if (getHostedZoneId() != null) sb.append("HostedZoneId: " + getHostedZoneId() + ",");
         if (getChangeBatch() != null) sb.append("ChangeBatch: " + getChangeBatch() );
         sb.append("}");
         return sb.toString();

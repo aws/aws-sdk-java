@@ -16,41 +16,36 @@ package com.amazonaws.services.sqs.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * Encloses the id an entry in DeleteMessageBatchRequest.
- * </p>
+ * Delete Message Batch Result Entry
  */
 public class DeleteMessageBatchResultEntry  implements Serializable  {
 
-    /**
-     * Represents a successfully deleted message.
-     */
     private String id;
 
     /**
-     * Represents a successfully deleted message.
+     * Returns the value of the Id property for this object.
      *
-     * @return Represents a successfully deleted message.
+     * @return The value of the Id property for this object.
      */
     public String getId() {
         return id;
     }
     
     /**
-     * Represents a successfully deleted message.
+     * Sets the value of the Id property for this object.
      *
-     * @param id Represents a successfully deleted message.
+     * @param id The new value for the Id property for this object.
      */
     public void setId(String id) {
         this.id = id;
     }
     
     /**
-     * Represents a successfully deleted message.
+     * Sets the value of the Id property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param id Represents a successfully deleted message.
+     * @param id The new value for the Id property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

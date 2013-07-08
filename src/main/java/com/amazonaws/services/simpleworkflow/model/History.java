@@ -26,7 +26,7 @@ public class History  implements Serializable  {
     /**
      * The list of history events.
      */
-    private java.util.List<HistoryEvent> events;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<HistoryEvent> events;
 
     /**
      * The token for the next page. If set, the history consists of more than
@@ -46,7 +46,8 @@ public class History  implements Serializable  {
     public java.util.List<HistoryEvent> getEvents() {
         
         if (events == null) {
-            events = new java.util.ArrayList<HistoryEvent>();
+              events = new com.amazonaws.internal.ListWithAutoConstructFlag<HistoryEvent>();
+              events.setAutoConstruct(true);
         }
         return events;
     }
@@ -61,8 +62,7 @@ public class History  implements Serializable  {
             this.events = null;
             return;
         }
-
-        java.util.List<HistoryEvent> eventsCopy = new java.util.ArrayList<HistoryEvent>(events.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<HistoryEvent> eventsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<HistoryEvent>(events.size());
         eventsCopy.addAll(events);
         this.events = eventsCopy;
     }
@@ -99,7 +99,7 @@ public class History  implements Serializable  {
         if (events == null) {
             this.events = null;
         } else {
-            java.util.List<HistoryEvent> eventsCopy = new java.util.ArrayList<HistoryEvent>(events.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<HistoryEvent> eventsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<HistoryEvent>(events.size());
             eventsCopy.addAll(events);
             this.events = eventsCopy;
         }
@@ -173,8 +173,8 @@ public class History  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getEvents() != null) sb.append("Events: " + getEvents() + ",");    	
+        sb.append("{");
+        if (getEvents() != null) sb.append("Events: " + getEvents() + ",");
         if (getNextPageToken() != null) sb.append("NextPageToken: " + getNextPageToken() );
         sb.append("}");
         return sb.toString();

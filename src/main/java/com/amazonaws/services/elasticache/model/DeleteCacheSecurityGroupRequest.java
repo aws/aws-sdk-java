@@ -41,6 +41,8 @@ public class DeleteCacheSecurityGroupRequest extends AmazonWebServiceRequest  im
      */
     public DeleteCacheSecurityGroupRequest() {}
     
+
+
     /**
      * Constructs a new DeleteCacheSecurityGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -50,7 +52,7 @@ public class DeleteCacheSecurityGroupRequest extends AmazonWebServiceRequest  im
      * delete. <note>You cannot delete the default security group.</note>
      */
     public DeleteCacheSecurityGroupRequest(String cacheSecurityGroupName) {
-        this.cacheSecurityGroupName = cacheSecurityGroupName;
+        setCacheSecurityGroupName(cacheSecurityGroupName);
     }
 
     
@@ -106,7 +108,7 @@ public class DeleteCacheSecurityGroupRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getCacheSecurityGroupName() != null) sb.append("CacheSecurityGroupName: " + getCacheSecurityGroupName() );
         sb.append("}");
         return sb.toString();

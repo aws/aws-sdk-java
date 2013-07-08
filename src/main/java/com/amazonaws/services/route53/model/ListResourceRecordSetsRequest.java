@@ -120,6 +120,8 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest  impl
      */
     public ListResourceRecordSetsRequest() {}
     
+
+
     /**
      * Constructs a new ListResourceRecordSetsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -129,7 +131,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest  impl
      * resource record sets that you want to get.
      */
     public ListResourceRecordSetsRequest(String hostedZoneId) {
-        this.hostedZoneId = hostedZoneId;
+        setHostedZoneId(hostedZoneId);
     }
 
     
@@ -537,11 +539,11 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest  impl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getHostedZoneId() != null) sb.append("HostedZoneId: " + getHostedZoneId() + ",");    	
-        if (getStartRecordName() != null) sb.append("StartRecordName: " + getStartRecordName() + ",");    	
-        if (getStartRecordType() != null) sb.append("StartRecordType: " + getStartRecordType() + ",");    	
-        if (getStartRecordIdentifier() != null) sb.append("StartRecordIdentifier: " + getStartRecordIdentifier() + ",");    	
+        sb.append("{");
+        if (getHostedZoneId() != null) sb.append("HostedZoneId: " + getHostedZoneId() + ",");
+        if (getStartRecordName() != null) sb.append("StartRecordName: " + getStartRecordName() + ",");
+        if (getStartRecordType() != null) sb.append("StartRecordType: " + getStartRecordType() + ",");
+        if (getStartRecordIdentifier() != null) sb.append("StartRecordIdentifier: " + getStartRecordIdentifier() + ",");
         if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() );
         sb.append("}");
         return sb.toString();

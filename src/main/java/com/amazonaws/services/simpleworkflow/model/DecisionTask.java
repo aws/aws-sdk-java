@@ -53,7 +53,7 @@ public class DecisionTask  implements Serializable  {
      * A paginated list of history events of the workflow execution. The
      * decider uses this during the processing of the decision task.
      */
-    private java.util.List<HistoryEvent> events;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<HistoryEvent> events;
 
     /**
      * Returns a value if the results are paginated. To get the next page of
@@ -252,7 +252,8 @@ public class DecisionTask  implements Serializable  {
     public java.util.List<HistoryEvent> getEvents() {
         
         if (events == null) {
-            events = new java.util.ArrayList<HistoryEvent>();
+              events = new com.amazonaws.internal.ListWithAutoConstructFlag<HistoryEvent>();
+              events.setAutoConstruct(true);
         }
         return events;
     }
@@ -269,8 +270,7 @@ public class DecisionTask  implements Serializable  {
             this.events = null;
             return;
         }
-
-        java.util.List<HistoryEvent> eventsCopy = new java.util.ArrayList<HistoryEvent>(events.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<HistoryEvent> eventsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<HistoryEvent>(events.size());
         eventsCopy.addAll(events);
         this.events = eventsCopy;
     }
@@ -311,7 +311,7 @@ public class DecisionTask  implements Serializable  {
         if (events == null) {
             this.events = null;
         } else {
-            java.util.List<HistoryEvent> eventsCopy = new java.util.ArrayList<HistoryEvent>(events.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<HistoryEvent> eventsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<HistoryEvent>(events.size());
             eventsCopy.addAll(events);
             this.events = eventsCopy;
         }
@@ -437,13 +437,13 @@ public class DecisionTask  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getTaskToken() != null) sb.append("TaskToken: " + getTaskToken() + ",");    	
-        if (getStartedEventId() != null) sb.append("StartedEventId: " + getStartedEventId() + ",");    	
-        if (getWorkflowExecution() != null) sb.append("WorkflowExecution: " + getWorkflowExecution() + ",");    	
-        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ",");    	
-        if (getEvents() != null) sb.append("Events: " + getEvents() + ",");    	
-        if (getNextPageToken() != null) sb.append("NextPageToken: " + getNextPageToken() + ",");    	
+        sb.append("{");
+        if (getTaskToken() != null) sb.append("TaskToken: " + getTaskToken() + ",");
+        if (getStartedEventId() != null) sb.append("StartedEventId: " + getStartedEventId() + ",");
+        if (getWorkflowExecution() != null) sb.append("WorkflowExecution: " + getWorkflowExecution() + ",");
+        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ",");
+        if (getEvents() != null) sb.append("Events: " + getEvents() + ",");
+        if (getNextPageToken() != null) sb.append("NextPageToken: " + getNextPageToken() + ",");
         if (getPreviousStartedEventId() != null) sb.append("PreviousStartedEventId: " + getPreviousStartedEventId() );
         sb.append("}");
         return sb.toString();

@@ -39,6 +39,8 @@ public class DeleteCacheClusterRequest extends AmazonWebServiceRequest  implemen
      */
     public DeleteCacheClusterRequest() {}
     
+
+
     /**
      * Constructs a new DeleteCacheClusterRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -48,7 +50,7 @@ public class DeleteCacheClusterRequest extends AmazonWebServiceRequest  implemen
      * Cluster to be deleted. This parameter isn't case sensitive.
      */
     public DeleteCacheClusterRequest(String cacheClusterId) {
-        this.cacheClusterId = cacheClusterId;
+        setCacheClusterId(cacheClusterId);
     }
 
     
@@ -104,7 +106,7 @@ public class DeleteCacheClusterRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getCacheClusterId() != null) sb.append("CacheClusterId: " + getCacheClusterId() );
         sb.append("}");
         return sb.toString();

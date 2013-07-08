@@ -93,6 +93,9 @@ public class JobOutputJsonUnmarshaller implements Unmarshaller<JobOutput, JsonUn
                     context.nextToken();
                     jobOutput.setHeight(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Watermarks", targetDepth)) {
+                    jobOutput.setWatermarks(new ListUnmarshaller<JobWatermark>(JobWatermarkJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

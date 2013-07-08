@@ -83,7 +83,7 @@ public class WorkflowExecutionInfo  implements Serializable  {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 5<br/>
      */
-    private java.util.List<String> tagList;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> tagList;
 
     /**
      * Set to true if a cancellation is requested for this workflow
@@ -554,7 +554,8 @@ public class WorkflowExecutionInfo  implements Serializable  {
     public java.util.List<String> getTagList() {
         
         if (tagList == null) {
-            tagList = new java.util.ArrayList<String>();
+              tagList = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              tagList.setAutoConstruct(true);
         }
         return tagList;
     }
@@ -576,8 +577,7 @@ public class WorkflowExecutionInfo  implements Serializable  {
             this.tagList = null;
             return;
         }
-
-        java.util.List<String> tagListCopy = new java.util.ArrayList<String>(tagList.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> tagListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(tagList.size());
         tagListCopy.addAll(tagList);
         this.tagList = tagListCopy;
     }
@@ -628,7 +628,7 @@ public class WorkflowExecutionInfo  implements Serializable  {
         if (tagList == null) {
             this.tagList = null;
         } else {
-            java.util.List<String> tagListCopy = new java.util.ArrayList<String>(tagList.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> tagListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(tagList.size());
             tagListCopy.addAll(tagList);
             this.tagList = tagListCopy;
         }
@@ -698,15 +698,15 @@ public class WorkflowExecutionInfo  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getExecution() != null) sb.append("Execution: " + getExecution() + ",");    	
-        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ",");    	
-        if (getStartTimestamp() != null) sb.append("StartTimestamp: " + getStartTimestamp() + ",");    	
-        if (getCloseTimestamp() != null) sb.append("CloseTimestamp: " + getCloseTimestamp() + ",");    	
-        if (getExecutionStatus() != null) sb.append("ExecutionStatus: " + getExecutionStatus() + ",");    	
-        if (getCloseStatus() != null) sb.append("CloseStatus: " + getCloseStatus() + ",");    	
-        if (getParent() != null) sb.append("Parent: " + getParent() + ",");    	
-        if (getTagList() != null) sb.append("TagList: " + getTagList() + ",");    	
+        sb.append("{");
+        if (getExecution() != null) sb.append("Execution: " + getExecution() + ",");
+        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ",");
+        if (getStartTimestamp() != null) sb.append("StartTimestamp: " + getStartTimestamp() + ",");
+        if (getCloseTimestamp() != null) sb.append("CloseTimestamp: " + getCloseTimestamp() + ",");
+        if (getExecutionStatus() != null) sb.append("ExecutionStatus: " + getExecutionStatus() + ",");
+        if (getCloseStatus() != null) sb.append("CloseStatus: " + getCloseStatus() + ",");
+        if (getParent() != null) sb.append("Parent: " + getParent() + ",");
+        if (getTagList() != null) sb.append("TagList: " + getTagList() + ",");
         if (isCancelRequested() != null) sb.append("CancelRequested: " + isCancelRequested() );
         sb.append("}");
         return sb.toString();

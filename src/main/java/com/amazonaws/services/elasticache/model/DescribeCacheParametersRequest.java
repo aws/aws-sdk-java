@@ -59,6 +59,8 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest  imp
      */
     public DescribeCacheParametersRequest() {}
     
+
+
     /**
      * Constructs a new DescribeCacheParametersRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -68,7 +70,7 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest  imp
      * group to return details for.
      */
     public DescribeCacheParametersRequest(String cacheParameterGroupName) {
-        this.cacheParameterGroupName = cacheParameterGroupName;
+        setCacheParameterGroupName(cacheParameterGroupName);
     }
 
     
@@ -262,10 +264,10 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCacheParameterGroupName() != null) sb.append("CacheParameterGroupName: " + getCacheParameterGroupName() + ",");    	
-        if (getSource() != null) sb.append("Source: " + getSource() + ",");    	
-        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");    	
+        sb.append("{");
+        if (getCacheParameterGroupName() != null) sb.append("CacheParameterGroupName: " + getCacheParameterGroupName() + ",");
+        if (getSource() != null) sb.append("Source: " + getSource() + ",");
+        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

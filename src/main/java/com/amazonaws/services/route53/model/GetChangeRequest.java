@@ -49,6 +49,8 @@ public class GetChangeRequest extends AmazonWebServiceRequest  implements Serial
      */
     public GetChangeRequest() {}
     
+
+
     /**
      * Constructs a new GetChangeRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -59,7 +61,7 @@ public class GetChangeRequest extends AmazonWebServiceRequest  implements Serial
      * returned in the Id element when you submitted the request.
      */
     public GetChangeRequest(String id) {
-        this.id = id;
+        setId(id);
     }
 
     
@@ -130,7 +132,7 @@ public class GetChangeRequest extends AmazonWebServiceRequest  implements Serial
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getId() != null) sb.append("Id: " + getId() );
         sb.append("}");
         return sb.toString();

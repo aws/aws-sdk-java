@@ -23,7 +23,7 @@ public class GetAttributesResult  implements Serializable  {
     /**
      * The list of attributes returned by the operation.
      */
-    private java.util.List<Attribute> attributes;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Attribute> attributes;
 
     /**
      * The list of attributes returned by the operation.
@@ -33,7 +33,8 @@ public class GetAttributesResult  implements Serializable  {
     public java.util.List<Attribute> getAttributes() {
         
         if (attributes == null) {
-            attributes = new java.util.ArrayList<Attribute>();
+              attributes = new com.amazonaws.internal.ListWithAutoConstructFlag<Attribute>();
+              attributes.setAutoConstruct(true);
         }
         return attributes;
     }
@@ -48,8 +49,7 @@ public class GetAttributesResult  implements Serializable  {
             this.attributes = null;
             return;
         }
-
-        java.util.List<Attribute> attributesCopy = new java.util.ArrayList<Attribute>(attributes.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Attribute> attributesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Attribute>(attributes.size());
         attributesCopy.addAll(attributes);
         this.attributes = attributesCopy;
     }
@@ -86,7 +86,7 @@ public class GetAttributesResult  implements Serializable  {
         if (attributes == null) {
             this.attributes = null;
         } else {
-            java.util.List<Attribute> attributesCopy = new java.util.ArrayList<Attribute>(attributes.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Attribute> attributesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Attribute>(attributes.size());
             attributesCopy.addAll(attributes);
             this.attributes = attributesCopy;
         }
@@ -105,7 +105,7 @@ public class GetAttributesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getAttributes() != null) sb.append("Attributes: " + getAttributes() );
         sb.append("}");
         return sb.toString();

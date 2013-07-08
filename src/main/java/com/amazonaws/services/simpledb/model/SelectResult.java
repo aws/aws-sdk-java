@@ -23,7 +23,7 @@ public class SelectResult  implements Serializable  {
     /**
      * A list of items that match the select expression.
      */
-    private java.util.List<Item> items;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Item> items;
 
     /**
      * An opaque token indicating that more items than
@@ -40,7 +40,8 @@ public class SelectResult  implements Serializable  {
     public java.util.List<Item> getItems() {
         
         if (items == null) {
-            items = new java.util.ArrayList<Item>();
+              items = new com.amazonaws.internal.ListWithAutoConstructFlag<Item>();
+              items.setAutoConstruct(true);
         }
         return items;
     }
@@ -55,8 +56,7 @@ public class SelectResult  implements Serializable  {
             this.items = null;
             return;
         }
-
-        java.util.List<Item> itemsCopy = new java.util.ArrayList<Item>(items.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Item> itemsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Item>(items.size());
         itemsCopy.addAll(items);
         this.items = itemsCopy;
     }
@@ -93,7 +93,7 @@ public class SelectResult  implements Serializable  {
         if (items == null) {
             this.items = null;
         } else {
-            java.util.List<Item> itemsCopy = new java.util.ArrayList<Item>(items.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Item> itemsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Item>(items.size());
             itemsCopy.addAll(items);
             this.items = itemsCopy;
         }
@@ -158,8 +158,8 @@ public class SelectResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getItems() != null) sb.append("Items: " + getItems() + ",");    	
+        sb.append("{");
+        if (getItems() != null) sb.append("Items: " + getItems() + ",");
         if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();

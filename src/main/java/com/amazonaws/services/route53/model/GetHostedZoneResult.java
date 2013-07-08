@@ -125,8 +125,8 @@ public class GetHostedZoneResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getHostedZone() != null) sb.append("HostedZone: " + getHostedZone() + ",");    	
+        sb.append("{");
+        if (getHostedZone() != null) sb.append("HostedZone: " + getHostedZone() + ",");
         if (getDelegationSet() != null) sb.append("DelegationSet: " + getDelegationSet() );
         sb.append("}");
         return sb.toString();

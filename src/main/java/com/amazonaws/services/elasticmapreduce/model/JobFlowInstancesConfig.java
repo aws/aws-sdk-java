@@ -48,7 +48,7 @@ public class JobFlowInstancesConfig  implements Serializable  {
     /**
      * Configuration for the job flow's instance groups.
      */
-    private java.util.List<InstanceGroupConfig> instanceGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupConfig> instanceGroups;
 
     /**
      * Specifies the name of the Amazon EC2 key pair that can be used to ssh
@@ -247,7 +247,8 @@ public class JobFlowInstancesConfig  implements Serializable  {
     public java.util.List<InstanceGroupConfig> getInstanceGroups() {
         
         if (instanceGroups == null) {
-            instanceGroups = new java.util.ArrayList<InstanceGroupConfig>();
+              instanceGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupConfig>();
+              instanceGroups.setAutoConstruct(true);
         }
         return instanceGroups;
     }
@@ -262,8 +263,7 @@ public class JobFlowInstancesConfig  implements Serializable  {
             this.instanceGroups = null;
             return;
         }
-
-        java.util.List<InstanceGroupConfig> instanceGroupsCopy = new java.util.ArrayList<InstanceGroupConfig>(instanceGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupConfig> instanceGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupConfig>(instanceGroups.size());
         instanceGroupsCopy.addAll(instanceGroups);
         this.instanceGroups = instanceGroupsCopy;
     }
@@ -300,7 +300,7 @@ public class JobFlowInstancesConfig  implements Serializable  {
         if (instanceGroups == null) {
             this.instanceGroups = null;
         } else {
-            java.util.List<InstanceGroupConfig> instanceGroupsCopy = new java.util.ArrayList<InstanceGroupConfig>(instanceGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupConfig> instanceGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupConfig>(instanceGroups.size());
             instanceGroupsCopy.addAll(instanceGroups);
             this.instanceGroups = instanceGroupsCopy;
         }
@@ -673,16 +673,16 @@ public class JobFlowInstancesConfig  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMasterInstanceType() != null) sb.append("MasterInstanceType: " + getMasterInstanceType() + ",");    	
-        if (getSlaveInstanceType() != null) sb.append("SlaveInstanceType: " + getSlaveInstanceType() + ",");    	
-        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ",");    	
-        if (getInstanceGroups() != null) sb.append("InstanceGroups: " + getInstanceGroups() + ",");    	
-        if (getEc2KeyName() != null) sb.append("Ec2KeyName: " + getEc2KeyName() + ",");    	
-        if (getPlacement() != null) sb.append("Placement: " + getPlacement() + ",");    	
-        if (isKeepJobFlowAliveWhenNoSteps() != null) sb.append("KeepJobFlowAliveWhenNoSteps: " + isKeepJobFlowAliveWhenNoSteps() + ",");    	
-        if (isTerminationProtected() != null) sb.append("TerminationProtected: " + isTerminationProtected() + ",");    	
-        if (getHadoopVersion() != null) sb.append("HadoopVersion: " + getHadoopVersion() + ",");    	
+        sb.append("{");
+        if (getMasterInstanceType() != null) sb.append("MasterInstanceType: " + getMasterInstanceType() + ",");
+        if (getSlaveInstanceType() != null) sb.append("SlaveInstanceType: " + getSlaveInstanceType() + ",");
+        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ",");
+        if (getInstanceGroups() != null) sb.append("InstanceGroups: " + getInstanceGroups() + ",");
+        if (getEc2KeyName() != null) sb.append("Ec2KeyName: " + getEc2KeyName() + ",");
+        if (getPlacement() != null) sb.append("Placement: " + getPlacement() + ",");
+        if (isKeepJobFlowAliveWhenNoSteps() != null) sb.append("KeepJobFlowAliveWhenNoSteps: " + isKeepJobFlowAliveWhenNoSteps() + ",");
+        if (isTerminationProtected() != null) sb.append("TerminationProtected: " + isTerminationProtected() + ",");
+        if (getHadoopVersion() != null) sb.append("HadoopVersion: " + getHadoopVersion() + ",");
         if (getEc2SubnetId() != null) sb.append("Ec2SubnetId: " + getEc2SubnetId() );
         sb.append("}");
         return sb.toString();

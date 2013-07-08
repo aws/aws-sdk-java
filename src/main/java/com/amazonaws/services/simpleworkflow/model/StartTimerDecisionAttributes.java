@@ -253,9 +253,9 @@ public class StartTimerDecisionAttributes  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getTimerId() != null) sb.append("TimerId: " + getTimerId() + ",");    	
-        if (getControl() != null) sb.append("Control: " + getControl() + ",");    	
+        sb.append("{");
+        if (getTimerId() != null) sb.append("TimerId: " + getTimerId() + ",");
+        if (getControl() != null) sb.append("Control: " + getControl() + ",");
         if (getStartToFireTimeout() != null) sb.append("StartToFireTimeout: " + getStartToFireTimeout() );
         sb.append("}");
         return sb.toString();

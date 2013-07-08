@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#deletePipeline(DeletePipelineRequest) DeletePipeline operation}.
  * <p>
- * To delete a pipeline, send a DELETE request to the <code>/2012-09-25/pipelines/[pipelineId] </code> resource.
+ * The DeletePipeline operation removes a pipeline.
  * </p>
  * <p>
  * You can only delete a pipeline that has never been used or that is not currently in use (doesn't contain any active jobs). If the pipeline is

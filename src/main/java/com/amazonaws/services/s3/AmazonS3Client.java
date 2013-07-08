@@ -629,8 +629,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             }else if ( endpoint.contains(Region.AP_Tokyo.toString()) ) {
                 region = Region.AP_Tokyo.toString();
             } else if ( endpoint.contains(Region.SA_SaoPaulo.toString()) ) {
-                region = Region.SA_SaoPaulo.toString();                
-            } 
+                region = Region.SA_SaoPaulo.toString();
+            }
         }
 
         /*
@@ -2588,7 +2588,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         String resourcePath = "/" +
             ((bucketName != null) ? bucketName + "/" : "") +
-            ((key != null) ? ServiceUtils.urlEncode(key) : "") +
+            ((key != null) ? HttpUtils.urlEncode(key, true) : "") +
             ((subResource != null) ? "?" + subResource : "");
 
         AWSCredentials credentials = awsCredentialsProvider.getCredentials();
@@ -2710,8 +2710,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      */
     private static void populateRequestWithCopyObjectParameters(Request<? extends AmazonWebServiceRequest> request, CopyObjectRequest copyObjectRequest) {
         String copySourceHeader =
-             "/" + ServiceUtils.urlEncode(copyObjectRequest.getSourceBucketName())
-           + "/" + ServiceUtils.urlEncode(copyObjectRequest.getSourceKey());
+             "/" + HttpUtils.urlEncode(copyObjectRequest.getSourceBucketName(), true)
+           + "/" + HttpUtils.urlEncode(copyObjectRequest.getSourceKey(), true);
         if (copyObjectRequest.getSourceVersionId() != null) {
             copySourceHeader += "?versionId=" + copyObjectRequest.getSourceVersionId();
         }
@@ -2764,8 +2764,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      */
     private static void populateRequestWithCopyPartParameters(Request<?> request, CopyPartRequest copyPartRequest) {
         String copySourceHeader =
-             "/" + ServiceUtils.urlEncode(copyPartRequest.getSourceBucketName())
-           + "/" + ServiceUtils.urlEncode(copyPartRequest.getSourceKey());
+             "/" + HttpUtils.urlEncode(copyPartRequest.getSourceBucketName(), true)
+           + "/" + HttpUtils.urlEncode(copyPartRequest.getSourceKey(), true);
         if (copyPartRequest.getSourceVersionId() != null) {
             copySourceHeader += "?versionId=" + copyPartRequest.getSourceVersionId();
         }

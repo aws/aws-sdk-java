@@ -135,8 +135,8 @@ public class WorkflowExecution  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getWorkflowId() != null) sb.append("WorkflowId: " + getWorkflowId() + ",");    	
+        sb.append("{");
+        if (getWorkflowId() != null) sb.append("WorkflowId: " + getWorkflowId() + ",");
         if (getRunId() != null) sb.append("RunId: " + getRunId() );
         sb.append("}");
         return sb.toString();

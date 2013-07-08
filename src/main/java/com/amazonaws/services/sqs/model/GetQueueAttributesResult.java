@@ -16,19 +16,16 @@ package com.amazonaws.services.sqs.model;
 import java.io.Serializable;
 
 /**
- * 
+ * Get Queue Attributes Result
  */
 public class GetQueueAttributesResult  implements Serializable  {
 
-    /**
-     * A map of attributes to the respective values.
-     */
     private java.util.Map<String,String> attributes;
 
     /**
-     * A map of attributes to the respective values.
+     * Returns the value of the Attributes property for this object.
      *
-     * @return A map of attributes to the respective values.
+     * @return The value of the Attributes property for this object.
      */
     public java.util.Map<String,String> getAttributes() {
         
@@ -40,20 +37,20 @@ public class GetQueueAttributesResult  implements Serializable  {
     }
     
     /**
-     * A map of attributes to the respective values.
+     * Sets the value of the Attributes property for this object.
      *
-     * @param attributes A map of attributes to the respective values.
+     * @param attributes The new value for the Attributes property for this object.
      */
     public void setAttributes(java.util.Map<String,String> attributes) {
         this.attributes = attributes;
     }
     
     /**
-     * A map of attributes to the respective values.
+     * Sets the value of the Attributes property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributes A map of attributes to the respective values.
+     * @param attributes The new value for the Attributes property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

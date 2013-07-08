@@ -151,8 +151,8 @@ public class ActivityTaskCancelRequestedEventAttributes  implements Serializable
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDecisionTaskCompletedEventId() != null) sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() + ",");    	
+        sb.append("{");
+        if (getDecisionTaskCompletedEventId() != null) sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() + ",");
         if (getActivityId() != null) sb.append("ActivityId: " + getActivityId() );
         sb.append("}");
         return sb.toString();

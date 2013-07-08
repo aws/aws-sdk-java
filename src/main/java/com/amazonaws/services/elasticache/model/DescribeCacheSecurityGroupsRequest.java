@@ -54,6 +54,8 @@ public class DescribeCacheSecurityGroupsRequest extends AmazonWebServiceRequest 
      */
     public DescribeCacheSecurityGroupsRequest() {}
     
+
+
     /**
      * Constructs a new DescribeCacheSecurityGroupsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -63,7 +65,7 @@ public class DescribeCacheSecurityGroupsRequest extends AmazonWebServiceRequest 
      * return details for.
      */
     public DescribeCacheSecurityGroupsRequest(String cacheSecurityGroupName) {
-        this.cacheSecurityGroupName = cacheSecurityGroupName;
+        setCacheSecurityGroupName(cacheSecurityGroupName);
     }
 
     
@@ -217,9 +219,9 @@ public class DescribeCacheSecurityGroupsRequest extends AmazonWebServiceRequest 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCacheSecurityGroupName() != null) sb.append("CacheSecurityGroupName: " + getCacheSecurityGroupName() + ",");    	
-        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");    	
+        sb.append("{");
+        if (getCacheSecurityGroupName() != null) sb.append("CacheSecurityGroupName: " + getCacheSecurityGroupName() + ",");
+        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

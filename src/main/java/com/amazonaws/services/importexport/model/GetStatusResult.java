@@ -800,22 +800,22 @@ public class GetStatusResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getJobId() != null) sb.append("JobId: " + getJobId() + ",");    	
-        if (getJobType() != null) sb.append("JobType: " + getJobType() + ",");    	
-        if (getAwsShippingAddress() != null) sb.append("AwsShippingAddress: " + getAwsShippingAddress() + ",");    	
-        if (getLocationCode() != null) sb.append("LocationCode: " + getLocationCode() + ",");    	
-        if (getLocationMessage() != null) sb.append("LocationMessage: " + getLocationMessage() + ",");    	
-        if (getProgressCode() != null) sb.append("ProgressCode: " + getProgressCode() + ",");    	
-        if (getProgressMessage() != null) sb.append("ProgressMessage: " + getProgressMessage() + ",");    	
-        if (getCarrier() != null) sb.append("Carrier: " + getCarrier() + ",");    	
-        if (getTrackingNumber() != null) sb.append("TrackingNumber: " + getTrackingNumber() + ",");    	
-        if (getLogBucket() != null) sb.append("LogBucket: " + getLogBucket() + ",");    	
-        if (getLogKey() != null) sb.append("LogKey: " + getLogKey() + ",");    	
-        if (getErrorCount() != null) sb.append("ErrorCount: " + getErrorCount() + ",");    	
-        if (getSignature() != null) sb.append("Signature: " + getSignature() + ",");    	
-        if (getSignatureFileContents() != null) sb.append("SignatureFileContents: " + getSignatureFileContents() + ",");    	
-        if (getCurrentManifest() != null) sb.append("CurrentManifest: " + getCurrentManifest() + ",");    	
+        sb.append("{");
+        if (getJobId() != null) sb.append("JobId: " + getJobId() + ",");
+        if (getJobType() != null) sb.append("JobType: " + getJobType() + ",");
+        if (getAwsShippingAddress() != null) sb.append("AwsShippingAddress: " + getAwsShippingAddress() + ",");
+        if (getLocationCode() != null) sb.append("LocationCode: " + getLocationCode() + ",");
+        if (getLocationMessage() != null) sb.append("LocationMessage: " + getLocationMessage() + ",");
+        if (getProgressCode() != null) sb.append("ProgressCode: " + getProgressCode() + ",");
+        if (getProgressMessage() != null) sb.append("ProgressMessage: " + getProgressMessage() + ",");
+        if (getCarrier() != null) sb.append("Carrier: " + getCarrier() + ",");
+        if (getTrackingNumber() != null) sb.append("TrackingNumber: " + getTrackingNumber() + ",");
+        if (getLogBucket() != null) sb.append("LogBucket: " + getLogBucket() + ",");
+        if (getLogKey() != null) sb.append("LogKey: " + getLogKey() + ",");
+        if (getErrorCount() != null) sb.append("ErrorCount: " + getErrorCount() + ",");
+        if (getSignature() != null) sb.append("Signature: " + getSignature() + ",");
+        if (getSignatureFileContents() != null) sb.append("SignatureFileContents: " + getSignatureFileContents() + ",");
+        if (getCurrentManifest() != null) sb.append("CurrentManifest: " + getCurrentManifest() + ",");
         if (getCreationDate() != null) sb.append("CreationDate: " + getCreationDate() );
         sb.append("}");
         return sb.toString();

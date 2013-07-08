@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#readPipeline(ReadPipelineRequest) ReadPipeline operation}.
  * <p>
- * To get detailed information about a pipeline, send a GET request to the <code>/2012-09-25/pipelines/[pipelineId] </code> resource.
+ * The ReadPipeline operation gets detailed information about a pipeline.
  * </p>
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#readPipeline(ReadPipelineRequest)

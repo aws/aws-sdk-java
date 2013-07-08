@@ -253,9 +253,9 @@ public class PollForActivityTaskRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");    	
-        if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ",");    	
+        sb.append("{");
+        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");
+        if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ",");
         if (getIdentity() != null) sb.append("Identity: " + getIdentity() );
         sb.append("}");
         return sb.toString();

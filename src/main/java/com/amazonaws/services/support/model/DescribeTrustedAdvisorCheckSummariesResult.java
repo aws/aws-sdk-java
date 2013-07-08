@@ -23,27 +23,30 @@ import java.io.Serializable;
 public class DescribeTrustedAdvisorCheckSummariesResult  implements Serializable  {
 
     /**
-     * List of <a href="API_TrustedAdvisorCheckSummary.html"
+     * List of <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckSummary.html"
      * title="TrustedAdvisorCheckSummary">TrustedAdvisorCheckSummary</a>
      * objects returned by the <a
-     * href="API_DescribeTrustedAdvisorCheckSummaries.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
      * title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>
      * request.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorCheckSummary> summaries;
 
     /**
-     * List of <a href="API_TrustedAdvisorCheckSummary.html"
+     * List of <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckSummary.html"
      * title="TrustedAdvisorCheckSummary">TrustedAdvisorCheckSummary</a>
      * objects returned by the <a
-     * href="API_DescribeTrustedAdvisorCheckSummaries.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
      * title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>
      * request.
      *
-     * @return List of <a href="API_TrustedAdvisorCheckSummary.html"
+     * @return List of <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckSummary.html"
      *         title="TrustedAdvisorCheckSummary">TrustedAdvisorCheckSummary</a>
      *         objects returned by the <a
-     *         href="API_DescribeTrustedAdvisorCheckSummaries.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
      *         title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>
      *         request.
      */
@@ -57,17 +60,19 @@ public class DescribeTrustedAdvisorCheckSummariesResult  implements Serializable
     }
     
     /**
-     * List of <a href="API_TrustedAdvisorCheckSummary.html"
+     * List of <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckSummary.html"
      * title="TrustedAdvisorCheckSummary">TrustedAdvisorCheckSummary</a>
      * objects returned by the <a
-     * href="API_DescribeTrustedAdvisorCheckSummaries.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
      * title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>
      * request.
      *
-     * @param summaries List of <a href="API_TrustedAdvisorCheckSummary.html"
+     * @param summaries List of <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckSummary.html"
      *         title="TrustedAdvisorCheckSummary">TrustedAdvisorCheckSummary</a>
      *         objects returned by the <a
-     *         href="API_DescribeTrustedAdvisorCheckSummaries.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
      *         title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>
      *         request.
      */
@@ -82,19 +87,21 @@ public class DescribeTrustedAdvisorCheckSummariesResult  implements Serializable
     }
     
     /**
-     * List of <a href="API_TrustedAdvisorCheckSummary.html"
+     * List of <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckSummary.html"
      * title="TrustedAdvisorCheckSummary">TrustedAdvisorCheckSummary</a>
      * objects returned by the <a
-     * href="API_DescribeTrustedAdvisorCheckSummaries.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
      * title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>
      * request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param summaries List of <a href="API_TrustedAdvisorCheckSummary.html"
+     * @param summaries List of <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckSummary.html"
      *         title="TrustedAdvisorCheckSummary">TrustedAdvisorCheckSummary</a>
      *         objects returned by the <a
-     *         href="API_DescribeTrustedAdvisorCheckSummaries.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
      *         title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>
      *         request.
      *
@@ -110,19 +117,21 @@ public class DescribeTrustedAdvisorCheckSummariesResult  implements Serializable
     }
     
     /**
-     * List of <a href="API_TrustedAdvisorCheckSummary.html"
+     * List of <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckSummary.html"
      * title="TrustedAdvisorCheckSummary">TrustedAdvisorCheckSummary</a>
      * objects returned by the <a
-     * href="API_DescribeTrustedAdvisorCheckSummaries.html"
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
      * title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>
      * request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param summaries List of <a href="API_TrustedAdvisorCheckSummary.html"
+     * @param summaries List of <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckSummary.html"
      *         title="TrustedAdvisorCheckSummary">TrustedAdvisorCheckSummary</a>
      *         objects returned by the <a
-     *         href="API_DescribeTrustedAdvisorCheckSummaries.html"
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
      *         title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>
      *         request.
      *

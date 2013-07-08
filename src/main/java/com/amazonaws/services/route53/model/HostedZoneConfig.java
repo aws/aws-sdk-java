@@ -105,7 +105,7 @@ public class HostedZoneConfig  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getComment() != null) sb.append("Comment: " + getComment() );
         sb.append("}");
         return sb.toString();

@@ -30,7 +30,7 @@ public class DescribeCacheSubnetGroupsResult  implements Serializable  {
     /**
      * One or more Cache Subnet Groups.
      */
-    private java.util.List<CacheSubnetGroup> cacheSubnetGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<CacheSubnetGroup> cacheSubnetGroups;
 
     /**
      * The marker obtained from a previous operation response.
@@ -74,7 +74,8 @@ public class DescribeCacheSubnetGroupsResult  implements Serializable  {
     public java.util.List<CacheSubnetGroup> getCacheSubnetGroups() {
         
         if (cacheSubnetGroups == null) {
-            cacheSubnetGroups = new java.util.ArrayList<CacheSubnetGroup>();
+              cacheSubnetGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheSubnetGroup>();
+              cacheSubnetGroups.setAutoConstruct(true);
         }
         return cacheSubnetGroups;
     }
@@ -89,8 +90,7 @@ public class DescribeCacheSubnetGroupsResult  implements Serializable  {
             this.cacheSubnetGroups = null;
             return;
         }
-
-        java.util.List<CacheSubnetGroup> cacheSubnetGroupsCopy = new java.util.ArrayList<CacheSubnetGroup>(cacheSubnetGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<CacheSubnetGroup> cacheSubnetGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheSubnetGroup>(cacheSubnetGroups.size());
         cacheSubnetGroupsCopy.addAll(cacheSubnetGroups);
         this.cacheSubnetGroups = cacheSubnetGroupsCopy;
     }
@@ -127,7 +127,7 @@ public class DescribeCacheSubnetGroupsResult  implements Serializable  {
         if (cacheSubnetGroups == null) {
             this.cacheSubnetGroups = null;
         } else {
-            java.util.List<CacheSubnetGroup> cacheSubnetGroupsCopy = new java.util.ArrayList<CacheSubnetGroup>(cacheSubnetGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<CacheSubnetGroup> cacheSubnetGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheSubnetGroup>(cacheSubnetGroups.size());
             cacheSubnetGroupsCopy.addAll(cacheSubnetGroups);
             this.cacheSubnetGroups = cacheSubnetGroupsCopy;
         }
@@ -146,8 +146,8 @@ public class DescribeCacheSubnetGroupsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getCacheSubnetGroups() != null) sb.append("CacheSubnetGroups: " + getCacheSubnetGroups() );
         sb.append("}");
         return sb.toString();

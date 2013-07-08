@@ -26,8 +26,8 @@ public class ListTopicsResult  implements Serializable  {
     private com.amazonaws.internal.ListWithAutoConstructFlag<Topic> topics;
 
     /**
-     * Token to pass along to the next ListTopics request. This element is
-     * returned if there are additional topics to retrieve.
+     * Token to pass along to the next <code>ListTopics</code> request. This
+     * element is returned if there are additional topics to retrieve.
      */
     private String nextToken;
 
@@ -101,35 +101,35 @@ public class ListTopicsResult  implements Serializable  {
     }
     
     /**
-     * Token to pass along to the next ListTopics request. This element is
-     * returned if there are additional topics to retrieve.
+     * Token to pass along to the next <code>ListTopics</code> request. This
+     * element is returned if there are additional topics to retrieve.
      *
-     * @return Token to pass along to the next ListTopics request. This element is
-     *         returned if there are additional topics to retrieve.
+     * @return Token to pass along to the next <code>ListTopics</code> request. This
+     *         element is returned if there are additional topics to retrieve.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * Token to pass along to the next ListTopics request. This element is
-     * returned if there are additional topics to retrieve.
+     * Token to pass along to the next <code>ListTopics</code> request. This
+     * element is returned if there are additional topics to retrieve.
      *
-     * @param nextToken Token to pass along to the next ListTopics request. This element is
-     *         returned if there are additional topics to retrieve.
+     * @param nextToken Token to pass along to the next <code>ListTopics</code> request. This
+     *         element is returned if there are additional topics to retrieve.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * Token to pass along to the next ListTopics request. This element is
-     * returned if there are additional topics to retrieve.
+     * Token to pass along to the next <code>ListTopics</code> request. This
+     * element is returned if there are additional topics to retrieve.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextToken Token to pass along to the next ListTopics request. This element is
-     *         returned if there are additional topics to retrieve.
+     * @param nextToken Token to pass along to the next <code>ListTopics</code> request. This
+     *         element is returned if there are additional topics to retrieve.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

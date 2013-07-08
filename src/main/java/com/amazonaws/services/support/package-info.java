@@ -4,8 +4,7 @@
  *
  * AWS Support <p>
  * The AWS Support API reference is intended for programmers who need detailed information about the AWS Support actions and data types. This service
- * enables you to manage with your AWS Support cases programmatically. It is built on the AWS Query API programming model and provides HTTP methods that
- * take parameters and return results in JSON format.
+ * enables you to manage your AWS Support cases programmatically. It uses HTTP methods that return results in JSON format.
  * </p>
  * <p>
  * The AWS Support service also exposes a set of <a href="https://aws.amazon.com/support/trustedadvisor"> Trusted Advisor </a> features. You can
@@ -16,13 +15,19 @@
  * </p>
  * 
  * <ul>
- * <li> <b>Service names, issue categories, and available severity levels. </b> The actions DescribeServices and DescribeSeverityLevels enable you to
- * obtain AWS service names, service codes, service categories, and problem severity levels. You use these values when you call the CreateCase action.
- * </li>
- * <li> <b>Case Creation, case details, and case resolution</b> . The actions CreateCase, DescribeCases, and ResolveCase enable you to create AWS
- * Support cases, retrieve them, and resolve them.</li>
- * <li> <b>Case communication</b> . The actions DescribeCaseCommunications and AddCommunicationToCase enable you to retrieve and add communication to
- * AWS Support cases. </li>
+ * <li> <b>Service names, issue categories, and available severity levels. </b> The actions <a
+ * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"> DescribeServices </a> and <a
+ * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeSeverityLevels.html"> DescribeSeverityLevels </a> enable you to obtain
+ * AWS service names, service codes, service categories, and problem severity levels. You use these values when you call the <a
+ * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"> CreateCase </a> action. </li>
+ * <li> <b>Case Creation, case details, and case resolution</b> . The actions <a
+ * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"> CreateCase </a> , <a
+ * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeCases.html"> DescribeCases </a> , and <a
+ * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_ResolveCase.html"> ResolveCase </a> enable you to create AWS Support cases,
+ * retrieve them, and resolve them.</li>
+ * <li> <b>Case communication</b> . The actions <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeCommunications.html">
+ * DescribeCommunications </a> and <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_AddCommunicationToCase.html">
+ * AddCommunicationToCase </a> enable you to retrieve and add communication to AWS Support cases. </li>
  * 
  * </ul>
  * <p>
@@ -30,13 +35,18 @@
  * </p>
  * 
  * <ul>
- * <li> DescribeTrustedAdviserChecks </li>
- * returns the list of checks that you can run against your AWS resources. <li>Using the CheckId for a specific check returned by
- * DescribeTrustedAdviserChecks, you can call DescribeTrustedAdvisorCheckResult </li>
- * and obtain a new result for the check you specified. <li> Using DescribeTrustedAdvisorCheckSummaries, you can get summaries for a set of Trusted
- * Advisor checks.</li>
- * <li> RefreshTrustedAdvisorCheck enables you to request that Trusted Advisor run the check again. </li>
- * <li> gets statuses on the checks you are running. </li>
+ * <li> <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"> DescribeTrustedAdvisorChecks </a>
+ * returns the list of checks that you can run against your AWS resources.</li>
+ * <li>Using the CheckId for a specific check returned by DescribeTrustedAdvisorChecks, you can call <a
+ * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckResult.html"> DescribeTrustedAdvisorCheckResult </a>
+ * </li>
+ * and obtain a new result for the check you specified. <li> Using <a
+ * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"> DescribeTrustedAdvisorCheckSummaries
+ * </a> , you can get summaries for a set of Trusted Advisor checks.</li>
+ * <li> <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html"> RefreshTrustedAdvisorCheck </a>
+ * enables you to request that Trusted Advisor run the check again. </li>
+ * <li> <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckRefreshStatuses.html">
+ * DescribeTrustedAdvisorCheckRefreshStatuses </a> gets statuses on the checks you are running. </li>
  * 
  * </ul>
  * <p>

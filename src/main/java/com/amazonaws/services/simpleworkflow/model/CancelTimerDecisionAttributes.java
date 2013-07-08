@@ -102,7 +102,7 @@ public class CancelTimerDecisionAttributes  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getTimerId() != null) sb.append("TimerId: " + getTimerId() );
         sb.append("}");
         return sb.toString();

@@ -181,9 +181,9 @@ public class HealthCheck  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getId() != null) sb.append("Id: " + getId() + ",");    	
-        if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() + ",");    	
+        sb.append("{");
+        if (getId() != null) sb.append("Id: " + getId() + ",");
+        if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() + ",");
         if (getHealthCheckConfig() != null) sb.append("HealthCheckConfig: " + getHealthCheckConfig() );
         sb.append("}");
         return sb.toString();

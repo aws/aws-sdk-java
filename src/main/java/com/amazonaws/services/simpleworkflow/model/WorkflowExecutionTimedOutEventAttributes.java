@@ -303,8 +303,8 @@ public class WorkflowExecutionTimedOutEventAttributes  implements Serializable  
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getTimeoutType() != null) sb.append("TimeoutType: " + getTimeoutType() + ",");    	
+        sb.append("{");
+        if (getTimeoutType() != null) sb.append("TimeoutType: " + getTimeoutType() + ",");
         if (getChildPolicy() != null) sb.append("ChildPolicy: " + getChildPolicy() );
         sb.append("}");
         return sb.toString();

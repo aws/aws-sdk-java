@@ -25,7 +25,7 @@ public class DescribeJobFlowsResult  implements Serializable  {
     /**
      * A list of job flows matching the parameters supplied.
      */
-    private java.util.List<JobFlowDetail> jobFlows;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<JobFlowDetail> jobFlows;
 
     /**
      * A list of job flows matching the parameters supplied.
@@ -35,7 +35,8 @@ public class DescribeJobFlowsResult  implements Serializable  {
     public java.util.List<JobFlowDetail> getJobFlows() {
         
         if (jobFlows == null) {
-            jobFlows = new java.util.ArrayList<JobFlowDetail>();
+              jobFlows = new com.amazonaws.internal.ListWithAutoConstructFlag<JobFlowDetail>();
+              jobFlows.setAutoConstruct(true);
         }
         return jobFlows;
     }
@@ -50,8 +51,7 @@ public class DescribeJobFlowsResult  implements Serializable  {
             this.jobFlows = null;
             return;
         }
-
-        java.util.List<JobFlowDetail> jobFlowsCopy = new java.util.ArrayList<JobFlowDetail>(jobFlows.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<JobFlowDetail> jobFlowsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<JobFlowDetail>(jobFlows.size());
         jobFlowsCopy.addAll(jobFlows);
         this.jobFlows = jobFlowsCopy;
     }
@@ -88,7 +88,7 @@ public class DescribeJobFlowsResult  implements Serializable  {
         if (jobFlows == null) {
             this.jobFlows = null;
         } else {
-            java.util.List<JobFlowDetail> jobFlowsCopy = new java.util.ArrayList<JobFlowDetail>(jobFlows.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<JobFlowDetail> jobFlowsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<JobFlowDetail>(jobFlows.size());
             jobFlowsCopy.addAll(jobFlows);
             this.jobFlows = jobFlowsCopy;
         }
@@ -107,7 +107,7 @@ public class DescribeJobFlowsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getJobFlows() != null) sb.append("JobFlows: " + getJobFlows() );
         sb.append("}");
         return sb.toString();

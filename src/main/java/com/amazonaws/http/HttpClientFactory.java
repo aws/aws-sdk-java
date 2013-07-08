@@ -38,19 +38,18 @@ import org.apache.http.auth.NTCredentials;
 import org.apache.http.client.HttpClient;
 import org.apache.http.conn.ConnectTimeoutException;
 import org.apache.http.conn.params.ConnRoutePNames;
-import org.apache.http.conn.scheme.LayeredSchemeSocketFactory;
 import org.apache.http.conn.scheme.PlainSocketFactory;
 import org.apache.http.conn.scheme.Scheme;
+import org.apache.http.conn.scheme.SchemeLayeredSocketFactory;
 import org.apache.http.conn.scheme.SchemeRegistry;
 import org.apache.http.conn.scheme.SchemeSocketFactory;
 import org.apache.http.conn.ssl.SSLSocketFactory;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.DefaultRedirectStrategy;
-import org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager;
+import org.apache.http.impl.conn.PoolingClientConnectionManager;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
-import org.apache.http.params.HttpProtocolParams;
 import org.apache.http.protocol.HttpContext;
 
 import com.amazonaws.AmazonClientException;
@@ -85,7 +84,7 @@ class HttpClientFactory {
         }
 
         /* Set connection manager */
-        ThreadSafeClientConnManager connectionManager = ConnectionManagerFactory.createThreadSafeClientConnManager(config, httpClientParams);
+        PoolingClientConnectionManager connectionManager = ConnectionManagerFactory.createPoolingClientConnManager(config, httpClientParams);
         DefaultHttpClient httpClient = new DefaultHttpClient(connectionManager, httpClientParams);
         httpClient.setRedirectStrategy(new LocationHeaderNotRequiredRedirectStrategy());
 
@@ -163,7 +162,7 @@ class HttpClientFactory {
      * LayeredSchemeSocketFactory) that bypasses SSL certificate checks. This
      * class is only intended to be used for testing purposes.
      */
-    private static class TrustingSocketFactory implements SchemeSocketFactory, LayeredSchemeSocketFactory {
+    private static class TrustingSocketFactory implements SchemeSocketFactory, SchemeLayeredSocketFactory {
 
         private SSLContext sslcontext = null;
 
@@ -206,7 +205,7 @@ class HttpClientFactory {
             return true;
         }
 
-        public Socket createLayeredSocket(Socket arg0, String arg1, int arg2, boolean arg3)
+        public Socket createLayeredSocket(Socket arg0, String arg1, int arg2, HttpParams arg3)
                 throws IOException, UnknownHostException {
             return getSSLContext().getSocketFactory().createSocket();
         }

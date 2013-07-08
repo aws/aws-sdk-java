@@ -17,10 +17,7 @@ package com.amazonaws.services.sqs.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * <p>
- * A queue already exists with this name. SQS returns this error only if the request includes attributes whose values differ from those of the existing
- * queue.
- * </p>
+ * AmazonSQS exception
  */        
 public class QueueNameExistsException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

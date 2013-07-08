@@ -31,7 +31,8 @@ import java.io.Serializable;
 public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
-     * The optional list of Amazon EC2 security groups to describe.
+     * An optional list of group names that specify the Amazon EC2 security
+     * groups to describe.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> groupNames;
 
@@ -47,9 +48,11 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest  impl
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
-     * The optional list of Amazon EC2 security groups to describe.
+     * An optional list of group names that specify the Amazon EC2 security
+     * groups to describe.
      *
-     * @return The optional list of Amazon EC2 security groups to describe.
+     * @return An optional list of group names that specify the Amazon EC2 security
+     *         groups to describe.
      */
     public java.util.List<String> getGroupNames() {
         
@@ -61,9 +64,11 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest  impl
     }
     
     /**
-     * The optional list of Amazon EC2 security groups to describe.
+     * An optional list of group names that specify the Amazon EC2 security
+     * groups to describe.
      *
-     * @param groupNames The optional list of Amazon EC2 security groups to describe.
+     * @param groupNames An optional list of group names that specify the Amazon EC2 security
+     *         groups to describe.
      */
     public void setGroupNames(java.util.Collection<String> groupNames) {
         if (groupNames == null) {
@@ -76,11 +81,13 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest  impl
     }
     
     /**
-     * The optional list of Amazon EC2 security groups to describe.
+     * An optional list of group names that specify the Amazon EC2 security
+     * groups to describe.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupNames The optional list of Amazon EC2 security groups to describe.
+     * @param groupNames An optional list of group names that specify the Amazon EC2 security
+     *         groups to describe.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -94,11 +101,13 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest  impl
     }
     
     /**
-     * The optional list of Amazon EC2 security groups to describe.
+     * An optional list of group names that specify the Amazon EC2 security
+     * groups to describe.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupNames The optional list of Amazon EC2 security groups to describe.
+     * @param groupNames An optional list of group names that specify the Amazon EC2 security
+     *         groups to describe.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

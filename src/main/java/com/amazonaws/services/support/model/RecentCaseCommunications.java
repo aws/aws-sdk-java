@@ -17,13 +17,14 @@ import java.io.Serializable;
 
 /**
  * <p>
- * List of Commmunication objects.
+ * List of <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"> Commmunication </a> objects.
  * </p>
  */
 public class RecentCaseCommunications  implements Serializable  {
 
     /**
-     * List of <a href="API_Communication.html"
+     * List of <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
      * title="Communication">Commmunication</a> objects.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Communication> communications;
@@ -34,10 +35,12 @@ public class RecentCaseCommunications  implements Serializable  {
     private String nextToken;
 
     /**
-     * List of <a href="API_Communication.html"
+     * List of <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
      * title="Communication">Commmunication</a> objects.
      *
-     * @return List of <a href="API_Communication.html"
+     * @return List of <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
      *         title="Communication">Commmunication</a> objects.
      */
     public java.util.List<Communication> getCommunications() {
@@ -50,10 +53,12 @@ public class RecentCaseCommunications  implements Serializable  {
     }
     
     /**
-     * List of <a href="API_Communication.html"
+     * List of <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
      * title="Communication">Commmunication</a> objects.
      *
-     * @param communications List of <a href="API_Communication.html"
+     * @param communications List of <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
      *         title="Communication">Commmunication</a> objects.
      */
     public void setCommunications(java.util.Collection<Communication> communications) {
@@ -67,12 +72,14 @@ public class RecentCaseCommunications  implements Serializable  {
     }
     
     /**
-     * List of <a href="API_Communication.html"
+     * List of <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
      * title="Communication">Commmunication</a> objects.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param communications List of <a href="API_Communication.html"
+     * @param communications List of <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
      *         title="Communication">Commmunication</a> objects.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -87,12 +94,14 @@ public class RecentCaseCommunications  implements Serializable  {
     }
     
     /**
-     * List of <a href="API_Communication.html"
+     * List of <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
      * title="Communication">Commmunication</a> objects.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param communications List of <a href="API_Communication.html"
+     * @param communications List of <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
      *         title="Communication">Commmunication</a> objects.
      *
      * @return A reference to this updated object so that method calls can be chained 

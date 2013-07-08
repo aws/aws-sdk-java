@@ -102,7 +102,7 @@ public class CacheCluster  implements Serializable  {
      * <i>CacheSecurityGroup.Name</i> and <i>CacheSecurityGroup.Status</i>
      * sub-elements.
      */
-    private java.util.List<CacheSecurityGroupMembership> cacheSecurityGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<CacheSecurityGroupMembership> cacheSecurityGroups;
 
     /**
      * Provides the status of the Cache Parameter Group assigned to the Cache
@@ -119,7 +119,7 @@ public class CacheCluster  implements Serializable  {
     /**
      * Specifies the list of Cache Nodes the Cache Cluster contains.
      */
-    private java.util.List<CacheNode> cacheNodes;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<CacheNode> cacheNodes;
 
     /**
      * Indicates that minor version patches are applied automatically.
@@ -129,7 +129,7 @@ public class CacheCluster  implements Serializable  {
     /**
      * Specifies the VPC Security Groups associated with the Cache Cluster.
      */
-    private java.util.List<SecurityGroupMembership> securityGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<SecurityGroupMembership> securityGroups;
 
     /**
      * Specifies a user-supplied identifier. This is the unique key that
@@ -645,7 +645,8 @@ public class CacheCluster  implements Serializable  {
     public java.util.List<CacheSecurityGroupMembership> getCacheSecurityGroups() {
         
         if (cacheSecurityGroups == null) {
-            cacheSecurityGroups = new java.util.ArrayList<CacheSecurityGroupMembership>();
+              cacheSecurityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheSecurityGroupMembership>();
+              cacheSecurityGroups.setAutoConstruct(true);
         }
         return cacheSecurityGroups;
     }
@@ -664,8 +665,7 @@ public class CacheCluster  implements Serializable  {
             this.cacheSecurityGroups = null;
             return;
         }
-
-        java.util.List<CacheSecurityGroupMembership> cacheSecurityGroupsCopy = new java.util.ArrayList<CacheSecurityGroupMembership>(cacheSecurityGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<CacheSecurityGroupMembership> cacheSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheSecurityGroupMembership>(cacheSecurityGroups.size());
         cacheSecurityGroupsCopy.addAll(cacheSecurityGroups);
         this.cacheSecurityGroups = cacheSecurityGroupsCopy;
     }
@@ -710,7 +710,7 @@ public class CacheCluster  implements Serializable  {
         if (cacheSecurityGroups == null) {
             this.cacheSecurityGroups = null;
         } else {
-            java.util.List<CacheSecurityGroupMembership> cacheSecurityGroupsCopy = new java.util.ArrayList<CacheSecurityGroupMembership>(cacheSecurityGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<CacheSecurityGroupMembership> cacheSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheSecurityGroupMembership>(cacheSecurityGroups.size());
             cacheSecurityGroupsCopy.addAll(cacheSecurityGroups);
             this.cacheSecurityGroups = cacheSecurityGroupsCopy;
         }
@@ -806,7 +806,8 @@ public class CacheCluster  implements Serializable  {
     public java.util.List<CacheNode> getCacheNodes() {
         
         if (cacheNodes == null) {
-            cacheNodes = new java.util.ArrayList<CacheNode>();
+              cacheNodes = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheNode>();
+              cacheNodes.setAutoConstruct(true);
         }
         return cacheNodes;
     }
@@ -821,8 +822,7 @@ public class CacheCluster  implements Serializable  {
             this.cacheNodes = null;
             return;
         }
-
-        java.util.List<CacheNode> cacheNodesCopy = new java.util.ArrayList<CacheNode>(cacheNodes.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<CacheNode> cacheNodesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheNode>(cacheNodes.size());
         cacheNodesCopy.addAll(cacheNodes);
         this.cacheNodes = cacheNodesCopy;
     }
@@ -859,7 +859,7 @@ public class CacheCluster  implements Serializable  {
         if (cacheNodes == null) {
             this.cacheNodes = null;
         } else {
-            java.util.List<CacheNode> cacheNodesCopy = new java.util.ArrayList<CacheNode>(cacheNodes.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<CacheNode> cacheNodesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheNode>(cacheNodes.size());
             cacheNodesCopy.addAll(cacheNodes);
             this.cacheNodes = cacheNodesCopy;
         }
@@ -918,7 +918,8 @@ public class CacheCluster  implements Serializable  {
     public java.util.List<SecurityGroupMembership> getSecurityGroups() {
         
         if (securityGroups == null) {
-            securityGroups = new java.util.ArrayList<SecurityGroupMembership>();
+              securityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<SecurityGroupMembership>();
+              securityGroups.setAutoConstruct(true);
         }
         return securityGroups;
     }
@@ -933,8 +934,7 @@ public class CacheCluster  implements Serializable  {
             this.securityGroups = null;
             return;
         }
-
-        java.util.List<SecurityGroupMembership> securityGroupsCopy = new java.util.ArrayList<SecurityGroupMembership>(securityGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<SecurityGroupMembership> securityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<SecurityGroupMembership>(securityGroups.size());
         securityGroupsCopy.addAll(securityGroups);
         this.securityGroups = securityGroupsCopy;
     }
@@ -971,7 +971,7 @@ public class CacheCluster  implements Serializable  {
         if (securityGroups == null) {
             this.securityGroups = null;
         } else {
-            java.util.List<SecurityGroupMembership> securityGroupsCopy = new java.util.ArrayList<SecurityGroupMembership>(securityGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<SecurityGroupMembership> securityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<SecurityGroupMembership>(securityGroups.size());
             securityGroupsCopy.addAll(securityGroups);
             this.securityGroups = securityGroupsCopy;
         }
@@ -990,25 +990,25 @@ public class CacheCluster  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCacheClusterId() != null) sb.append("CacheClusterId: " + getCacheClusterId() + ",");    	
-        if (getConfigurationEndpoint() != null) sb.append("ConfigurationEndpoint: " + getConfigurationEndpoint() + ",");    	
-        if (getClientDownloadLandingPage() != null) sb.append("ClientDownloadLandingPage: " + getClientDownloadLandingPage() + ",");    	
-        if (getCacheNodeType() != null) sb.append("CacheNodeType: " + getCacheNodeType() + ",");    	
-        if (getEngine() != null) sb.append("Engine: " + getEngine() + ",");    	
-        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");    	
-        if (getCacheClusterStatus() != null) sb.append("CacheClusterStatus: " + getCacheClusterStatus() + ",");    	
-        if (getNumCacheNodes() != null) sb.append("NumCacheNodes: " + getNumCacheNodes() + ",");    	
-        if (getPreferredAvailabilityZone() != null) sb.append("PreferredAvailabilityZone: " + getPreferredAvailabilityZone() + ",");    	
-        if (getCacheClusterCreateTime() != null) sb.append("CacheClusterCreateTime: " + getCacheClusterCreateTime() + ",");    	
-        if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");    	
-        if (getPendingModifiedValues() != null) sb.append("PendingModifiedValues: " + getPendingModifiedValues() + ",");    	
-        if (getNotificationConfiguration() != null) sb.append("NotificationConfiguration: " + getNotificationConfiguration() + ",");    	
-        if (getCacheSecurityGroups() != null) sb.append("CacheSecurityGroups: " + getCacheSecurityGroups() + ",");    	
-        if (getCacheParameterGroup() != null) sb.append("CacheParameterGroup: " + getCacheParameterGroup() + ",");    	
-        if (getCacheSubnetGroupName() != null) sb.append("CacheSubnetGroupName: " + getCacheSubnetGroupName() + ",");    	
-        if (getCacheNodes() != null) sb.append("CacheNodes: " + getCacheNodes() + ",");    	
-        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ",");    	
+        sb.append("{");
+        if (getCacheClusterId() != null) sb.append("CacheClusterId: " + getCacheClusterId() + ",");
+        if (getConfigurationEndpoint() != null) sb.append("ConfigurationEndpoint: " + getConfigurationEndpoint() + ",");
+        if (getClientDownloadLandingPage() != null) sb.append("ClientDownloadLandingPage: " + getClientDownloadLandingPage() + ",");
+        if (getCacheNodeType() != null) sb.append("CacheNodeType: " + getCacheNodeType() + ",");
+        if (getEngine() != null) sb.append("Engine: " + getEngine() + ",");
+        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");
+        if (getCacheClusterStatus() != null) sb.append("CacheClusterStatus: " + getCacheClusterStatus() + ",");
+        if (getNumCacheNodes() != null) sb.append("NumCacheNodes: " + getNumCacheNodes() + ",");
+        if (getPreferredAvailabilityZone() != null) sb.append("PreferredAvailabilityZone: " + getPreferredAvailabilityZone() + ",");
+        if (getCacheClusterCreateTime() != null) sb.append("CacheClusterCreateTime: " + getCacheClusterCreateTime() + ",");
+        if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");
+        if (getPendingModifiedValues() != null) sb.append("PendingModifiedValues: " + getPendingModifiedValues() + ",");
+        if (getNotificationConfiguration() != null) sb.append("NotificationConfiguration: " + getNotificationConfiguration() + ",");
+        if (getCacheSecurityGroups() != null) sb.append("CacheSecurityGroups: " + getCacheSecurityGroups() + ",");
+        if (getCacheParameterGroup() != null) sb.append("CacheParameterGroup: " + getCacheParameterGroup() + ",");
+        if (getCacheSubnetGroupName() != null) sb.append("CacheSubnetGroupName: " + getCacheSubnetGroupName() + ",");
+        if (getCacheNodes() != null) sb.append("CacheNodes: " + getCacheNodes() + ",");
+        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ",");
         if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() );
         sb.append("}");
         return sb.toString();

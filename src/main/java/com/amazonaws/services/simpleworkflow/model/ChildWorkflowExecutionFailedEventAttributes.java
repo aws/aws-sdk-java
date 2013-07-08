@@ -340,12 +340,12 @@ public class ChildWorkflowExecutionFailedEventAttributes  implements Serializabl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getWorkflowExecution() != null) sb.append("WorkflowExecution: " + getWorkflowExecution() + ",");    	
-        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ",");    	
-        if (getReason() != null) sb.append("Reason: " + getReason() + ",");    	
-        if (getDetails() != null) sb.append("Details: " + getDetails() + ",");    	
-        if (getInitiatedEventId() != null) sb.append("InitiatedEventId: " + getInitiatedEventId() + ",");    	
+        sb.append("{");
+        if (getWorkflowExecution() != null) sb.append("WorkflowExecution: " + getWorkflowExecution() + ",");
+        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ",");
+        if (getReason() != null) sb.append("Reason: " + getReason() + ",");
+        if (getDetails() != null) sb.append("Details: " + getDetails() + ",");
+        if (getInitiatedEventId() != null) sb.append("InitiatedEventId: " + getInitiatedEventId() + ",");
         if (getStartedEventId() != null) sb.append("StartedEventId: " + getStartedEventId() );
         sb.append("}");
         return sb.toString();

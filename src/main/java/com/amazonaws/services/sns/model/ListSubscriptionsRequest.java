@@ -19,8 +19,9 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#listSubscriptions(ListSubscriptionsRequest) ListSubscriptions operation}.
  * <p>
- * The ListSubscriptions action returns a list of the requester's subscriptions. Each call returns a limited list of subscriptions, up to 100. If there
- * are more subscriptions, a NextToken is also returned. Use the NextToken parameter in a new ListSubscriptions call to get further results.
+ * The <code>ListSubscriptions</code> action returns a list of the requester's subscriptions. Each call returns a limited list of subscriptions, up to
+ * 100. If there are more subscriptions, a <code>NextToken</code> is also returned. Use the <code>NextToken</code> parameter in a new ListSubscriptions
+ * call to get further results.
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#listSubscriptions(ListSubscriptionsRequest)
@@ -28,7 +29,7 @@ import java.io.Serializable;
 public class ListSubscriptionsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
-     * Token returned by the previous ListSubscriptions request.
+     * Token returned by the previous <code>ListSubscriptions</code> request.
      */
     private String nextToken;
 
@@ -45,8 +46,8 @@ public class ListSubscriptionsRequest extends AmazonWebServiceRequest  implement
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param nextToken Token returned by the previous ListSubscriptions
-     * request.
+     * @param nextToken Token returned by the previous
+     * <code>ListSubscriptions</code> request.
      */
     public ListSubscriptionsRequest(String nextToken) {
         setNextToken(nextToken);
@@ -55,29 +56,29 @@ public class ListSubscriptionsRequest extends AmazonWebServiceRequest  implement
     
     
     /**
-     * Token returned by the previous ListSubscriptions request.
+     * Token returned by the previous <code>ListSubscriptions</code> request.
      *
-     * @return Token returned by the previous ListSubscriptions request.
+     * @return Token returned by the previous <code>ListSubscriptions</code> request.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * Token returned by the previous ListSubscriptions request.
+     * Token returned by the previous <code>ListSubscriptions</code> request.
      *
-     * @param nextToken Token returned by the previous ListSubscriptions request.
+     * @param nextToken Token returned by the previous <code>ListSubscriptions</code> request.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * Token returned by the previous ListSubscriptions request.
+     * Token returned by the previous <code>ListSubscriptions</code> request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextToken Token returned by the previous ListSubscriptions request.
+     * @param nextToken Token returned by the previous <code>ListSubscriptions</code> request.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

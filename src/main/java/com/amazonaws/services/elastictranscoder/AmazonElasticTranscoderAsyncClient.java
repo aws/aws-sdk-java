@@ -272,10 +272,8 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
             
     /**
      * <p>
-     * To pause or reactivate a pipeline, so the pipeline stops or restarts
-     * processing jobs, update the status for the pipeline. Send a POST
-     * request to the <code>/2012-09-25/pipelines/[pipelineId]/status</code>
-     * resource.
+     * The UpdatePipelineStatus operation pauses or reactivates a pipeline,
+     * so that the pipeline stops or restarts the processing of jobs.
      * </p>
      * <p>
      * Changing the pipeline status is useful if you want to cancel one or
@@ -313,10 +311,8 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     
     /**
      * <p>
-     * To pause or reactivate a pipeline, so the pipeline stops or restarts
-     * processing jobs, update the status for the pipeline. Send a POST
-     * request to the <code>/2012-09-25/pipelines/[pipelineId]/status</code>
-     * resource.
+     * The UpdatePipelineStatus operation pauses or reactivates a pipeline,
+     * so that the pipeline stops or restarts the processing of jobs.
      * </p>
      * <p>
      * Changing the pipeline status is useful if you want to cancel one or
@@ -367,10 +363,8 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     
     /**
      * <p>
-     * To update Amazon Simple Notification Service (Amazon SNS)
-     * notifications for a pipeline, send a POST request to the
-     * <code>/2012-09-25/pipelines/[pipelineId]/notifications</code>
-     * resource.
+     * With the UpdatePipelineNotifications operation, you can update Amazon
+     * Simple Notification Service (Amazon SNS) notifications for a pipeline.
      * </p>
      * <p>
      * When you update notifications for a pipeline, Elastic Transcoder
@@ -405,10 +399,8 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     
     /**
      * <p>
-     * To update Amazon Simple Notification Service (Amazon SNS)
-     * notifications for a pipeline, send a POST request to the
-     * <code>/2012-09-25/pipelines/[pipelineId]/notifications</code>
-     * resource.
+     * With the UpdatePipelineNotifications operation, you can update Amazon
+     * Simple Notification Service (Amazon SNS) notifications for a pipeline.
      * </p>
      * <p>
      * When you update notifications for a pipeline, Elastic Transcoder
@@ -456,8 +448,7 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     
     /**
      * <p>
-     * To get detailed information about a job, send a GET request to the
-     * <code>/2012-09-25/jobs/[jobId] </code> resource.
+     * The ReadJob operation returns detailed information about a job.
      * </p>
      *
      * @param readJobRequest Container for the necessary parameters to
@@ -486,8 +477,7 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     
     /**
      * <p>
-     * To get detailed information about a job, send a GET request to the
-     * <code>/2012-09-25/jobs/[jobId] </code> resource.
+     * The ReadJob operation returns detailed information about a job.
      * </p>
      *
      * @param readJobRequest Container for the necessary parameters to
@@ -529,14 +519,9 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     
     /**
      * <p>
-     * To get a list of the jobs that have a specified status, send a GET
-     * request to the <code>/2012-09-25/jobsByStatus/[status] </code>
-     * resource.
-     * </p>
-     * <p>
-     * Elastic Transcoder returns all of the jobs that have the specified
-     * status. The response body contains one element for each job that
-     * satisfies the search criteria.
+     * The ListJobsByStatus operation gets a list of jobs that have a
+     * specified status. The response body contains one element for each job
+     * that satisfies the search criteria.
      * </p>
      *
      * @param listJobsByStatusRequest Container for the necessary parameters
@@ -566,14 +551,9 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     
     /**
      * <p>
-     * To get a list of the jobs that have a specified status, send a GET
-     * request to the <code>/2012-09-25/jobsByStatus/[status] </code>
-     * resource.
-     * </p>
-     * <p>
-     * Elastic Transcoder returns all of the jobs that have the specified
-     * status. The response body contains one element for each job that
-     * satisfies the search criteria.
+     * The ListJobsByStatus operation gets a list of jobs that have a
+     * specified status. The response body contains one element for each job
+     * that satisfies the search criteria.
      * </p>
      *
      * @param listJobsByStatusRequest Container for the necessary parameters
@@ -616,8 +596,7 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     
     /**
      * <p>
-     * To get detailed information about a preset, send a GET request to the
-     * <code>/2012-09-25/presets/[presetId] </code> resource.
+     * The ReadPreset operation gets detailed information about a preset.
      * </p>
      *
      * @param readPresetRequest Container for the necessary parameters to
@@ -646,8 +625,7 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     
     /**
      * <p>
-     * To get detailed information about a preset, send a GET request to the
-     * <code>/2012-09-25/presets/[presetId] </code> resource.
+     * The ReadPreset operation gets detailed information about a preset.
      * </p>
      *
      * @param readPresetRequest Container for the necessary parameters to
@@ -689,8 +667,8 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     
     /**
      * <p>
-     * To create a pipeline, send a POST request to the
-     * <code>2012-09-25/pipelines</code> resource.
+     * The CreatePipeline operation creates a pipeline with settings that you
+     * specify.
      * </p>
      *
      * @param createPipelineRequest Container for the necessary parameters to
@@ -719,8 +697,8 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     
     /**
      * <p>
-     * To create a pipeline, send a POST request to the
-     * <code>2012-09-25/pipelines</code> resource.
+     * The CreatePipeline operation creates a pipeline with settings that you
+     * specify.
      * </p>
      *
      * @param createPipelineRequest Container for the necessary parameters to
@@ -762,8 +740,7 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     
     /**
      * <p>
-     * To cancel a job, send a DELETE request to the
-     * <code>/2012-09-25/jobs/[jobId] </code> resource.
+     * The CancelJob operation cancels an unfinished job.
      * </p>
      * <p>
      * <b>NOTE:</b>You can only cancel a job that has a status of Submitted.
@@ -798,8 +775,7 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     
     /**
      * <p>
-     * To cancel a job, send a DELETE request to the
-     * <code>/2012-09-25/jobs/[jobId] </code> resource.
+     * The CancelJob operation cancels an unfinished job.
      * </p>
      * <p>
      * <b>NOTE:</b>You can only cancel a job that has a status of Submitted.
@@ -846,6 +822,16 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     }
     
     /**
+     * <p>
+     * Use the <code>UpdatePipeline</code> operation to update settings for
+     * a pipeline. <p>
+     * <b>IMPORTANT:</b>When you change pipeline settings, your changes take
+     * effect immediately. Jobs that you have already submitted and that
+     * Elastic Transcoder has not started to process are affected in addition
+     * to jobs that you submit after you change settings.
+     * </p>
+     * 
+     * </p>
      *
      * @param updatePipelineRequest Container for the necessary parameters to
      *           execute the UpdatePipeline operation on AmazonElasticTranscoder.
@@ -872,6 +858,16 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
 
     
     /**
+     * <p>
+     * Use the <code>UpdatePipeline</code> operation to update settings for
+     * a pipeline. <p>
+     * <b>IMPORTANT:</b>When you change pipeline settings, your changes take
+     * effect immediately. Jobs that you have already submitted and that
+     * Elastic Transcoder has not started to process are affected in addition
+     * to jobs that you submit after you change settings.
+     * </p>
+     * 
+     * </p>
      *
      * @param updatePipelineRequest Container for the necessary parameters to
      *           execute the UpdatePipeline operation on AmazonElasticTranscoder.
@@ -912,8 +908,9 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     
     /**
      * <p>
-     * To get a list of all presets associated with the current AWS account,
-     * send a GET request to the <code>/2012-09-25/presets</code> resource.
+     * The ListPresets operation gets a list of the default presets included
+     * with Elastic Transcoder and the presets that you've added in an AWS
+     * region.
      * </p>
      *
      * @param listPresetsRequest Container for the necessary parameters to
@@ -942,8 +939,9 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     
     /**
      * <p>
-     * To get a list of all presets associated with the current AWS account,
-     * send a GET request to the <code>/2012-09-25/presets</code> resource.
+     * The ListPresets operation gets a list of the default presets included
+     * with Elastic Transcoder and the presets that you've added in an AWS
+     * region.
      * </p>
      *
      * @param listPresetsRequest Container for the necessary parameters to
@@ -985,8 +983,7 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     
     /**
      * <p>
-     * To delete a pipeline, send a DELETE request to the
-     * <code>/2012-09-25/pipelines/[pipelineId] </code> resource.
+     * The DeletePipeline operation removes a pipeline.
      * </p>
      * <p>
      * You can only delete a pipeline that has never been used or that is
@@ -1021,8 +1018,7 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     
     /**
      * <p>
-     * To delete a pipeline, send a DELETE request to the
-     * <code>/2012-09-25/pipelines/[pipelineId] </code> resource.
+     * The DeletePipeline operation removes a pipeline.
      * </p>
      * <p>
      * You can only delete a pipeline that has never been used or that is
@@ -1070,9 +1066,7 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     
     /**
      * <p>
-     * To test the IAM role that's used by Elastic Transcoder to create the
-     * pipeline, send a POST request to the
-     * <code>/2012-09-25/roleTests</code> resource.
+     * The TestRole operation tests the IAM role used to create the pipeline.
      * </p>
      * <p>
      * The <code>TestRole</code> action lets you determine whether the IAM
@@ -1109,9 +1103,7 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     
     /**
      * <p>
-     * To test the IAM role that's used by Elastic Transcoder to create the
-     * pipeline, send a POST request to the
-     * <code>/2012-09-25/roleTests</code> resource.
+     * The TestRole operation tests the IAM role used to create the pipeline.
      * </p>
      * <p>
      * The <code>TestRole</code> action lets you determine whether the IAM
@@ -1161,9 +1153,8 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     
     /**
      * <p>
-     * To get a list of the pipelines associated with the current AWS
-     * account, send a GET request to the <code>/2012-09-25/pipelines</code>
-     * resource.
+     * The ListPipelines operation gets a list of the pipelines associated
+     * with the current AWS account.
      * </p>
      *
      * @param listPipelinesRequest Container for the necessary parameters to
@@ -1192,9 +1183,8 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     
     /**
      * <p>
-     * To get a list of the pipelines associated with the current AWS
-     * account, send a GET request to the <code>/2012-09-25/pipelines</code>
-     * resource.
+     * The ListPipelines operation gets a list of the pipelines associated
+     * with the current AWS account.
      * </p>
      *
      * @param listPipelinesRequest Container for the necessary parameters to
@@ -1236,8 +1226,7 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     
     /**
      * <p>
-     * To get detailed information about a pipeline, send a GET request to
-     * the <code>/2012-09-25/pipelines/[pipelineId] </code> resource.
+     * The ReadPipeline operation gets detailed information about a pipeline.
      * </p>
      *
      * @param readPipelineRequest Container for the necessary parameters to
@@ -1266,8 +1255,7 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     
     /**
      * <p>
-     * To get detailed information about a pipeline, send a GET request to
-     * the <code>/2012-09-25/pipelines/[pipelineId] </code> resource.
+     * The ReadPipeline operation gets detailed information about a pipeline.
      * </p>
      *
      * @param readPipelineRequest Container for the necessary parameters to
@@ -1309,21 +1297,21 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     
     /**
      * <p>
-     * To create a preset, send a POST request to the
-     * <code>/2012-09-25/presets</code> resource.
+     * The CreatePreset operation creates a preset with settings that you
+     * specify.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b>Elastic Transcoder checks the settings that you
-     * specify to ensure that they meet Elastic Transcoder requirements and
-     * to determine whether they comply with H.264 standards. If your
-     * settings are not valid for Elastic Transcoder, Elastic Transcoder
-     * returns an HTTP 400 response (ValidationException) and does not create
-     * the preset. If the settings are valid for Elastic Transcoder but
-     * aren't strictly compliant with the H.264 standard, Elastic Transcoder
-     * creates the preset and returns a warning message in the response. This
-     * helps you determine whether your settings comply with the H.264
-     * standard while giving you greater flexibility with respect to the
-     * video that Elastic Transcoder produces.
+     * <b>IMPORTANT:</b>Elastic Transcoder checks the CreatePreset settings
+     * to ensure that they meet Elastic Transcoder requirements and to
+     * determine whether they comply with H.264 standards. If your settings
+     * are not valid for Elastic Transcoder, Elastic Transcoder returns an
+     * HTTP 400 response (ValidationException) and does not create the
+     * preset. If the settings are valid for Elastic Transcoder but aren't
+     * strictly compliant with the H.264 standard, Elastic Transcoder creates
+     * the preset and returns a warning message in the response. This helps
+     * you determine whether your settings comply with the H.264 standard
+     * while giving you greater flexibility with respect to the video that
+     * Elastic Transcoder produces.
      * </p>
      * <p>
      * Elastic Transcoder uses the H.264 video-compression format. For more
@@ -1358,21 +1346,21 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     
     /**
      * <p>
-     * To create a preset, send a POST request to the
-     * <code>/2012-09-25/presets</code> resource.
+     * The CreatePreset operation creates a preset with settings that you
+     * specify.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b>Elastic Transcoder checks the settings that you
-     * specify to ensure that they meet Elastic Transcoder requirements and
-     * to determine whether they comply with H.264 standards. If your
-     * settings are not valid for Elastic Transcoder, Elastic Transcoder
-     * returns an HTTP 400 response (ValidationException) and does not create
-     * the preset. If the settings are valid for Elastic Transcoder but
-     * aren't strictly compliant with the H.264 standard, Elastic Transcoder
-     * creates the preset and returns a warning message in the response. This
-     * helps you determine whether your settings comply with the H.264
-     * standard while giving you greater flexibility with respect to the
-     * video that Elastic Transcoder produces.
+     * <b>IMPORTANT:</b>Elastic Transcoder checks the CreatePreset settings
+     * to ensure that they meet Elastic Transcoder requirements and to
+     * determine whether they comply with H.264 standards. If your settings
+     * are not valid for Elastic Transcoder, Elastic Transcoder returns an
+     * HTTP 400 response (ValidationException) and does not create the
+     * preset. If the settings are valid for Elastic Transcoder but aren't
+     * strictly compliant with the H.264 standard, Elastic Transcoder creates
+     * the preset and returns a warning message in the response. This helps
+     * you determine whether your settings comply with the H.264 standard
+     * while giving you greater flexibility with respect to the video that
+     * Elastic Transcoder produces.
      * </p>
      * <p>
      * Elastic Transcoder uses the H.264 video-compression format. For more
@@ -1420,11 +1408,12 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     
     /**
      * <p>
-     * To delete a preset, send a DELETE request to the
-     * <code>/2012-09-25/presets/[presetId] </code> resource.
+     * The DeletePreset operation removes a preset that you've added in an
+     * AWS region.
      * </p>
      * <p>
-     * <b>NOTE:</b> If the preset has been used, you cannot delete it.
+     * <b>NOTE:</b> You can't delete the default presets that are included
+     * with Elastic Transcoder.
      * </p>
      *
      * @param deletePresetRequest Container for the necessary parameters to
@@ -1453,11 +1442,12 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     
     /**
      * <p>
-     * To delete a preset, send a DELETE request to the
-     * <code>/2012-09-25/presets/[presetId] </code> resource.
+     * The DeletePreset operation removes a preset that you've added in an
+     * AWS region.
      * </p>
      * <p>
-     * <b>NOTE:</b> If the preset has been used, you cannot delete it.
+     * <b>NOTE:</b> You can't delete the default presets that are included
+     * with Elastic Transcoder.
      * </p>
      *
      * @param deletePresetRequest Container for the necessary parameters to
@@ -1499,10 +1489,6 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     
     /**
      * <p>
-     * To create a job, send a POST request to the
-     * <code>/2012-09-25/jobs</code> resource.
-     * </p>
-     * <p>
      * When you create a job, Elastic Transcoder returns JSON data that
      * includes the values that you specified plus information about the job
      * that is created.
@@ -1539,10 +1525,6 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
 
     
     /**
-     * <p>
-     * To create a job, send a POST request to the
-     * <code>/2012-09-25/jobs</code> resource.
-     * </p>
      * <p>
      * When you create a job, Elastic Transcoder returns JSON data that
      * includes the values that you specified plus information about the job
@@ -1594,8 +1576,8 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     
     /**
      * <p>
-     * To get a list of the jobs currently in a pipeline, send a GET request
-     * to the <code>/2012-09-25/jobsByPipeline/[pipelineId] </code> resource.
+     * The ListJobsByPipeline operation gets a list of the jobs currently in
+     * a pipeline.
      * </p>
      * <p>
      * Elastic Transcoder returns all of the jobs currently in the specified
@@ -1631,8 +1613,8 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
     
     /**
      * <p>
-     * To get a list of the jobs currently in a pipeline, send a GET request
-     * to the <code>/2012-09-25/jobsByPipeline/[pipelineId] </code> resource.
+     * The ListJobsByPipeline operation gets a list of the jobs currently in
+     * a pipeline.
      * </p>
      * <p>
      * Elastic Transcoder returns all of the jobs currently in the specified

@@ -308,9 +308,9 @@ public class StartTimerFailedEventAttributes  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getTimerId() != null) sb.append("TimerId: " + getTimerId() + ",");    	
-        if (getCause() != null) sb.append("Cause: " + getCause() + ",");    	
+        sb.append("{");
+        if (getTimerId() != null) sb.append("TimerId: " + getTimerId() + ",");
+        if (getCause() != null) sb.append("Cause: " + getCause() + ",");
         if (getDecisionTaskCompletedEventId() != null) sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() );
         sb.append("}");
         return sb.toString();

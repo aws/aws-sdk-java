@@ -25,7 +25,7 @@ public class WorkflowTypeInfos  implements Serializable  {
     /**
      * The list of workflow type information.
      */
-    private java.util.List<WorkflowTypeInfo> typeInfos;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<WorkflowTypeInfo> typeInfos;
 
     /**
      * The token for the next page of type information. If set then the list
@@ -46,7 +46,8 @@ public class WorkflowTypeInfos  implements Serializable  {
     public java.util.List<WorkflowTypeInfo> getTypeInfos() {
         
         if (typeInfos == null) {
-            typeInfos = new java.util.ArrayList<WorkflowTypeInfo>();
+              typeInfos = new com.amazonaws.internal.ListWithAutoConstructFlag<WorkflowTypeInfo>();
+              typeInfos.setAutoConstruct(true);
         }
         return typeInfos;
     }
@@ -61,8 +62,7 @@ public class WorkflowTypeInfos  implements Serializable  {
             this.typeInfos = null;
             return;
         }
-
-        java.util.List<WorkflowTypeInfo> typeInfosCopy = new java.util.ArrayList<WorkflowTypeInfo>(typeInfos.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<WorkflowTypeInfo> typeInfosCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<WorkflowTypeInfo>(typeInfos.size());
         typeInfosCopy.addAll(typeInfos);
         this.typeInfos = typeInfosCopy;
     }
@@ -99,7 +99,7 @@ public class WorkflowTypeInfos  implements Serializable  {
         if (typeInfos == null) {
             this.typeInfos = null;
         } else {
-            java.util.List<WorkflowTypeInfo> typeInfosCopy = new java.util.ArrayList<WorkflowTypeInfo>(typeInfos.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<WorkflowTypeInfo> typeInfosCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<WorkflowTypeInfo>(typeInfos.size());
             typeInfosCopy.addAll(typeInfos);
             this.typeInfos = typeInfosCopy;
         }
@@ -179,8 +179,8 @@ public class WorkflowTypeInfos  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getTypeInfos() != null) sb.append("TypeInfos: " + getTypeInfos() + ",");    	
+        sb.append("{");
+        if (getTypeInfos() != null) sb.append("TypeInfos: " + getTypeInfos() + ",");
         if (getNextPageToken() != null) sb.append("NextPageToken: " + getNextPageToken() );
         sb.append("}");
         return sb.toString();

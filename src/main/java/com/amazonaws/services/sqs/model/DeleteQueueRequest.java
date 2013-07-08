@@ -18,20 +18,12 @@ import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#deleteQueue(DeleteQueueRequest) DeleteQueue operation}.
- * <p>
- * This action unconditionally deletes the queue specified by the queue URL. Use this operation WITH CARE! The queue is deleted even if it is NOT empty.
- * </p>
- * <p>
- * Once a queue has been deleted, the queue name is unavailable for use with new queues for 60 seconds.
- * </p>
+ * 
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#deleteQueue(DeleteQueueRequest)
  */
 public class DeleteQueueRequest extends AmazonWebServiceRequest  implements Serializable  {
 
-    /**
-     * The URL of the SQS queue to take action on.
-     */
     private String queueUrl;
 
     /**
@@ -47,7 +39,7 @@ public class DeleteQueueRequest extends AmazonWebServiceRequest  implements Seri
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param queueUrl The URL of the SQS queue to take action on.
+     * @param queueUrl
      */
     public DeleteQueueRequest(String queueUrl) {
         setQueueUrl(queueUrl);
@@ -56,29 +48,29 @@ public class DeleteQueueRequest extends AmazonWebServiceRequest  implements Seri
     
     
     /**
-     * The URL of the SQS queue to take action on.
+     * Returns the value of the QueueUrl property for this object.
      *
-     * @return The URL of the SQS queue to take action on.
+     * @return The value of the QueueUrl property for this object.
      */
     public String getQueueUrl() {
         return queueUrl;
     }
     
     /**
-     * The URL of the SQS queue to take action on.
+     * Sets the value of the QueueUrl property for this object.
      *
-     * @param queueUrl The URL of the SQS queue to take action on.
+     * @param queueUrl The new value for the QueueUrl property for this object.
      */
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
     
     /**
-     * The URL of the SQS queue to take action on.
+     * Sets the value of the QueueUrl property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queueUrl The URL of the SQS queue to take action on.
+     * @param queueUrl The new value for the QueueUrl property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

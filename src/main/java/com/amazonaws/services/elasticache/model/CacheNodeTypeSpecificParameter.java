@@ -63,7 +63,7 @@ public class CacheNodeTypeSpecificParameter  implements Serializable  {
      * A list of Cache Node types and their corresponding values for this
      * parameter.
      */
-    private java.util.List<CacheNodeTypeSpecificValue> cacheNodeTypeSpecificValues;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<CacheNodeTypeSpecificValue> cacheNodeTypeSpecificValues;
 
     /**
      * Default constructor for a new CacheNodeTypeSpecificParameter object.  Callers should use the
@@ -344,7 +344,8 @@ public class CacheNodeTypeSpecificParameter  implements Serializable  {
     public java.util.List<CacheNodeTypeSpecificValue> getCacheNodeTypeSpecificValues() {
         
         if (cacheNodeTypeSpecificValues == null) {
-            cacheNodeTypeSpecificValues = new java.util.ArrayList<CacheNodeTypeSpecificValue>();
+              cacheNodeTypeSpecificValues = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheNodeTypeSpecificValue>();
+              cacheNodeTypeSpecificValues.setAutoConstruct(true);
         }
         return cacheNodeTypeSpecificValues;
     }
@@ -361,8 +362,7 @@ public class CacheNodeTypeSpecificParameter  implements Serializable  {
             this.cacheNodeTypeSpecificValues = null;
             return;
         }
-
-        java.util.List<CacheNodeTypeSpecificValue> cacheNodeTypeSpecificValuesCopy = new java.util.ArrayList<CacheNodeTypeSpecificValue>(cacheNodeTypeSpecificValues.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<CacheNodeTypeSpecificValue> cacheNodeTypeSpecificValuesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheNodeTypeSpecificValue>(cacheNodeTypeSpecificValues.size());
         cacheNodeTypeSpecificValuesCopy.addAll(cacheNodeTypeSpecificValues);
         this.cacheNodeTypeSpecificValues = cacheNodeTypeSpecificValuesCopy;
     }
@@ -403,7 +403,7 @@ public class CacheNodeTypeSpecificParameter  implements Serializable  {
         if (cacheNodeTypeSpecificValues == null) {
             this.cacheNodeTypeSpecificValues = null;
         } else {
-            java.util.List<CacheNodeTypeSpecificValue> cacheNodeTypeSpecificValuesCopy = new java.util.ArrayList<CacheNodeTypeSpecificValue>(cacheNodeTypeSpecificValues.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<CacheNodeTypeSpecificValue> cacheNodeTypeSpecificValuesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheNodeTypeSpecificValue>(cacheNodeTypeSpecificValues.size());
             cacheNodeTypeSpecificValuesCopy.addAll(cacheNodeTypeSpecificValues);
             this.cacheNodeTypeSpecificValues = cacheNodeTypeSpecificValuesCopy;
         }
@@ -422,14 +422,14 @@ public class CacheNodeTypeSpecificParameter  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getParameterName() != null) sb.append("ParameterName: " + getParameterName() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
-        if (getSource() != null) sb.append("Source: " + getSource() + ",");    	
-        if (getDataType() != null) sb.append("DataType: " + getDataType() + ",");    	
-        if (getAllowedValues() != null) sb.append("AllowedValues: " + getAllowedValues() + ",");    	
-        if (isModifiable() != null) sb.append("IsModifiable: " + isModifiable() + ",");    	
-        if (getMinimumEngineVersion() != null) sb.append("MinimumEngineVersion: " + getMinimumEngineVersion() + ",");    	
+        sb.append("{");
+        if (getParameterName() != null) sb.append("ParameterName: " + getParameterName() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getSource() != null) sb.append("Source: " + getSource() + ",");
+        if (getDataType() != null) sb.append("DataType: " + getDataType() + ",");
+        if (getAllowedValues() != null) sb.append("AllowedValues: " + getAllowedValues() + ",");
+        if (isModifiable() != null) sb.append("IsModifiable: " + isModifiable() + ",");
+        if (getMinimumEngineVersion() != null) sb.append("MinimumEngineVersion: " + getMinimumEngineVersion() + ",");
         if (getCacheNodeTypeSpecificValues() != null) sb.append("CacheNodeTypeSpecificValues: " + getCacheNodeTypeSpecificValues() );
         sb.append("}");
         return sb.toString();

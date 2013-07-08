@@ -72,9 +72,6 @@ public class DescribeTableRequest extends AmazonWebServiceRequest  implements Se
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
      * @param tableName The name of the table to describe.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeTableRequest withTableName(String tableName) {
         this.tableName = tableName;

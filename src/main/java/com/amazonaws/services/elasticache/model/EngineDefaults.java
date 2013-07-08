@@ -36,12 +36,12 @@ public class EngineDefaults  implements Serializable  {
     /**
      * Contains a list of engine default parameters.
      */
-    private java.util.List<Parameter> parameters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parameters;
 
     /**
      * A list of <a>CacheNodeTypeSpecificParameter</a> instances.
      */
-    private java.util.List<CacheNodeTypeSpecificParameter> cacheNodeTypeSpecificParameters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<CacheNodeTypeSpecificParameter> cacheNodeTypeSpecificParameters;
 
     /**
      * Specifies the name of the Cache Parameter Group Family which the
@@ -125,7 +125,8 @@ public class EngineDefaults  implements Serializable  {
     public java.util.List<Parameter> getParameters() {
         
         if (parameters == null) {
-            parameters = new java.util.ArrayList<Parameter>();
+              parameters = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>();
+              parameters.setAutoConstruct(true);
         }
         return parameters;
     }
@@ -140,8 +141,7 @@ public class EngineDefaults  implements Serializable  {
             this.parameters = null;
             return;
         }
-
-        java.util.List<Parameter> parametersCopy = new java.util.ArrayList<Parameter>(parameters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parametersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>(parameters.size());
         parametersCopy.addAll(parameters);
         this.parameters = parametersCopy;
     }
@@ -178,7 +178,7 @@ public class EngineDefaults  implements Serializable  {
         if (parameters == null) {
             this.parameters = null;
         } else {
-            java.util.List<Parameter> parametersCopy = new java.util.ArrayList<Parameter>(parameters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parametersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>(parameters.size());
             parametersCopy.addAll(parameters);
             this.parameters = parametersCopy;
         }
@@ -194,7 +194,8 @@ public class EngineDefaults  implements Serializable  {
     public java.util.List<CacheNodeTypeSpecificParameter> getCacheNodeTypeSpecificParameters() {
         
         if (cacheNodeTypeSpecificParameters == null) {
-            cacheNodeTypeSpecificParameters = new java.util.ArrayList<CacheNodeTypeSpecificParameter>();
+              cacheNodeTypeSpecificParameters = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheNodeTypeSpecificParameter>();
+              cacheNodeTypeSpecificParameters.setAutoConstruct(true);
         }
         return cacheNodeTypeSpecificParameters;
     }
@@ -209,8 +210,7 @@ public class EngineDefaults  implements Serializable  {
             this.cacheNodeTypeSpecificParameters = null;
             return;
         }
-
-        java.util.List<CacheNodeTypeSpecificParameter> cacheNodeTypeSpecificParametersCopy = new java.util.ArrayList<CacheNodeTypeSpecificParameter>(cacheNodeTypeSpecificParameters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<CacheNodeTypeSpecificParameter> cacheNodeTypeSpecificParametersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheNodeTypeSpecificParameter>(cacheNodeTypeSpecificParameters.size());
         cacheNodeTypeSpecificParametersCopy.addAll(cacheNodeTypeSpecificParameters);
         this.cacheNodeTypeSpecificParameters = cacheNodeTypeSpecificParametersCopy;
     }
@@ -247,7 +247,7 @@ public class EngineDefaults  implements Serializable  {
         if (cacheNodeTypeSpecificParameters == null) {
             this.cacheNodeTypeSpecificParameters = null;
         } else {
-            java.util.List<CacheNodeTypeSpecificParameter> cacheNodeTypeSpecificParametersCopy = new java.util.ArrayList<CacheNodeTypeSpecificParameter>(cacheNodeTypeSpecificParameters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<CacheNodeTypeSpecificParameter> cacheNodeTypeSpecificParametersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheNodeTypeSpecificParameter>(cacheNodeTypeSpecificParameters.size());
             cacheNodeTypeSpecificParametersCopy.addAll(cacheNodeTypeSpecificParameters);
             this.cacheNodeTypeSpecificParameters = cacheNodeTypeSpecificParametersCopy;
         }
@@ -266,10 +266,10 @@ public class EngineDefaults  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCacheParameterGroupFamily() != null) sb.append("CacheParameterGroupFamily: " + getCacheParameterGroupFamily() + ",");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
-        if (getParameters() != null) sb.append("Parameters: " + getParameters() + ",");    	
+        sb.append("{");
+        if (getCacheParameterGroupFamily() != null) sb.append("CacheParameterGroupFamily: " + getCacheParameterGroupFamily() + ",");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
+        if (getParameters() != null) sb.append("Parameters: " + getParameters() + ",");
         if (getCacheNodeTypeSpecificParameters() != null) sb.append("CacheNodeTypeSpecificParameters: " + getCacheNodeTypeSpecificParameters() );
         sb.append("}");
         return sb.toString();

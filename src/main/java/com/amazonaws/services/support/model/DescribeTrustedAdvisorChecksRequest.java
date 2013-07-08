@@ -20,7 +20,9 @@ import java.io.Serializable;
  * Container for the parameters to the {@link com.amazonaws.services.support.AWSSupport#describeTrustedAdvisorChecks(DescribeTrustedAdvisorChecksRequest) DescribeTrustedAdvisorChecks operation}.
  * <p>
  * This action enables you to get a list of the available Trusted Advisor checks. You must specify a language code. English ("en") and Japanese ("jp")
- * are currently supported. The response contains a list of TrustedAdvisorCheckDescription objects.
+ * are currently supported. The response contains a list of <a
+ * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckDescription.html"> TrustedAdvisorCheckDescription </a>
+ * objects.
  * </p>
  *
  * @see com.amazonaws.services.support.AWSSupport#describeTrustedAdvisorChecks(DescribeTrustedAdvisorChecksRequest)

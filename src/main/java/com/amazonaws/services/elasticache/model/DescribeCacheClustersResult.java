@@ -30,7 +30,7 @@ public class DescribeCacheClustersResult  implements Serializable  {
     /**
      * A list of CacheClusters.
      */
-    private java.util.List<CacheCluster> cacheClusters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<CacheCluster> cacheClusters;
 
     /**
      * The marker obtained from a previous operation response.
@@ -74,7 +74,8 @@ public class DescribeCacheClustersResult  implements Serializable  {
     public java.util.List<CacheCluster> getCacheClusters() {
         
         if (cacheClusters == null) {
-            cacheClusters = new java.util.ArrayList<CacheCluster>();
+              cacheClusters = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheCluster>();
+              cacheClusters.setAutoConstruct(true);
         }
         return cacheClusters;
     }
@@ -89,8 +90,7 @@ public class DescribeCacheClustersResult  implements Serializable  {
             this.cacheClusters = null;
             return;
         }
-
-        java.util.List<CacheCluster> cacheClustersCopy = new java.util.ArrayList<CacheCluster>(cacheClusters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<CacheCluster> cacheClustersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheCluster>(cacheClusters.size());
         cacheClustersCopy.addAll(cacheClusters);
         this.cacheClusters = cacheClustersCopy;
     }
@@ -127,7 +127,7 @@ public class DescribeCacheClustersResult  implements Serializable  {
         if (cacheClusters == null) {
             this.cacheClusters = null;
         } else {
-            java.util.List<CacheCluster> cacheClustersCopy = new java.util.ArrayList<CacheCluster>(cacheClusters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<CacheCluster> cacheClustersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheCluster>(cacheClusters.size());
             cacheClustersCopy.addAll(cacheClusters);
             this.cacheClusters = cacheClustersCopy;
         }
@@ -146,8 +146,8 @@ public class DescribeCacheClustersResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getCacheClusters() != null) sb.append("CacheClusters: " + getCacheClusters() );
         sb.append("}");
         return sb.toString();

@@ -116,7 +116,7 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes  implements Ser
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 5<br/>
      */
-    private java.util.List<String> tagList;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> tagList;
 
     /**
      * The <code>workflowId</code> of the child workflow execution.
@@ -719,7 +719,8 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes  implements Ser
     public java.util.List<String> getTagList() {
         
         if (tagList == null) {
-            tagList = new java.util.ArrayList<String>();
+              tagList = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              tagList.setAutoConstruct(true);
         }
         return tagList;
     }
@@ -737,8 +738,7 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes  implements Ser
             this.tagList = null;
             return;
         }
-
-        java.util.List<String> tagListCopy = new java.util.ArrayList<String>(tagList.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> tagListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(tagList.size());
         tagListCopy.addAll(tagList);
         this.tagList = tagListCopy;
     }
@@ -781,7 +781,7 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes  implements Ser
         if (tagList == null) {
             this.tagList = null;
         } else {
-            java.util.List<String> tagListCopy = new java.util.ArrayList<String>(tagList.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> tagListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(tagList.size());
             tagListCopy.addAll(tagList);
             this.tagList = tagListCopy;
         }
@@ -800,16 +800,16 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes  implements Ser
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getWorkflowId() != null) sb.append("WorkflowId: " + getWorkflowId() + ",");    	
-        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ",");    	
-        if (getControl() != null) sb.append("Control: " + getControl() + ",");    	
-        if (getInput() != null) sb.append("Input: " + getInput() + ",");    	
-        if (getExecutionStartToCloseTimeout() != null) sb.append("ExecutionStartToCloseTimeout: " + getExecutionStartToCloseTimeout() + ",");    	
-        if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ",");    	
-        if (getDecisionTaskCompletedEventId() != null) sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() + ",");    	
-        if (getChildPolicy() != null) sb.append("ChildPolicy: " + getChildPolicy() + ",");    	
-        if (getTaskStartToCloseTimeout() != null) sb.append("TaskStartToCloseTimeout: " + getTaskStartToCloseTimeout() + ",");    	
+        sb.append("{");
+        if (getWorkflowId() != null) sb.append("WorkflowId: " + getWorkflowId() + ",");
+        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ",");
+        if (getControl() != null) sb.append("Control: " + getControl() + ",");
+        if (getInput() != null) sb.append("Input: " + getInput() + ",");
+        if (getExecutionStartToCloseTimeout() != null) sb.append("ExecutionStartToCloseTimeout: " + getExecutionStartToCloseTimeout() + ",");
+        if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ",");
+        if (getDecisionTaskCompletedEventId() != null) sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() + ",");
+        if (getChildPolicy() != null) sb.append("ChildPolicy: " + getChildPolicy() + ",");
+        if (getTaskStartToCloseTimeout() != null) sb.append("TaskStartToCloseTimeout: " + getTaskStartToCloseTimeout() + ",");
         if (getTagList() != null) sb.append("TagList: " + getTagList() );
         sb.append("}");
         return sb.toString();

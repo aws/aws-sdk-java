@@ -35,7 +35,7 @@ public class TerminateJobFlowsRequest extends AmazonWebServiceRequest  implement
     /**
      * A list of job flows to be shutdown.
      */
-    private java.util.List<String> jobFlowIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> jobFlowIds;
 
     /**
      * Default constructor for a new TerminateJobFlowsRequest object.  Callers should use the
@@ -43,6 +43,8 @@ public class TerminateJobFlowsRequest extends AmazonWebServiceRequest  implement
      */
     public TerminateJobFlowsRequest() {}
     
+
+
     /**
      * Constructs a new TerminateJobFlowsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -51,7 +53,7 @@ public class TerminateJobFlowsRequest extends AmazonWebServiceRequest  implement
      * @param jobFlowIds A list of job flows to be shutdown.
      */
     public TerminateJobFlowsRequest(java.util.List<String> jobFlowIds) {
-        this.jobFlowIds = jobFlowIds;
+        setJobFlowIds(jobFlowIds);
     }
 
     
@@ -64,7 +66,8 @@ public class TerminateJobFlowsRequest extends AmazonWebServiceRequest  implement
     public java.util.List<String> getJobFlowIds() {
         
         if (jobFlowIds == null) {
-            jobFlowIds = new java.util.ArrayList<String>();
+              jobFlowIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              jobFlowIds.setAutoConstruct(true);
         }
         return jobFlowIds;
     }
@@ -79,8 +82,7 @@ public class TerminateJobFlowsRequest extends AmazonWebServiceRequest  implement
             this.jobFlowIds = null;
             return;
         }
-
-        java.util.List<String> jobFlowIdsCopy = new java.util.ArrayList<String>(jobFlowIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> jobFlowIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(jobFlowIds.size());
         jobFlowIdsCopy.addAll(jobFlowIds);
         this.jobFlowIds = jobFlowIdsCopy;
     }
@@ -117,7 +119,7 @@ public class TerminateJobFlowsRequest extends AmazonWebServiceRequest  implement
         if (jobFlowIds == null) {
             this.jobFlowIds = null;
         } else {
-            java.util.List<String> jobFlowIdsCopy = new java.util.ArrayList<String>(jobFlowIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> jobFlowIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(jobFlowIds.size());
             jobFlowIdsCopy.addAll(jobFlowIds);
             this.jobFlowIds = jobFlowIdsCopy;
         }
@@ -136,7 +138,7 @@ public class TerminateJobFlowsRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getJobFlowIds() != null) sb.append("JobFlowIds: " + getJobFlowIds() );
         sb.append("}");
         return sb.toString();

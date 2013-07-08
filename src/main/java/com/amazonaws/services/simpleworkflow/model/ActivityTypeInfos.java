@@ -25,7 +25,7 @@ public class ActivityTypeInfos  implements Serializable  {
     /**
      * List of activity type information.
      */
-    private java.util.List<ActivityTypeInfo> typeInfos;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ActivityTypeInfo> typeInfos;
 
     /**
      * Returns a value if the results are paginated. To get the next page of
@@ -45,7 +45,8 @@ public class ActivityTypeInfos  implements Serializable  {
     public java.util.List<ActivityTypeInfo> getTypeInfos() {
         
         if (typeInfos == null) {
-            typeInfos = new java.util.ArrayList<ActivityTypeInfo>();
+              typeInfos = new com.amazonaws.internal.ListWithAutoConstructFlag<ActivityTypeInfo>();
+              typeInfos.setAutoConstruct(true);
         }
         return typeInfos;
     }
@@ -60,8 +61,7 @@ public class ActivityTypeInfos  implements Serializable  {
             this.typeInfos = null;
             return;
         }
-
-        java.util.List<ActivityTypeInfo> typeInfosCopy = new java.util.ArrayList<ActivityTypeInfo>(typeInfos.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ActivityTypeInfo> typeInfosCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ActivityTypeInfo>(typeInfos.size());
         typeInfosCopy.addAll(typeInfos);
         this.typeInfos = typeInfosCopy;
     }
@@ -98,7 +98,7 @@ public class ActivityTypeInfos  implements Serializable  {
         if (typeInfos == null) {
             this.typeInfos = null;
         } else {
-            java.util.List<ActivityTypeInfo> typeInfosCopy = new java.util.ArrayList<ActivityTypeInfo>(typeInfos.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ActivityTypeInfo> typeInfosCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ActivityTypeInfo>(typeInfos.size());
             typeInfosCopy.addAll(typeInfos);
             this.typeInfos = typeInfosCopy;
         }
@@ -172,8 +172,8 @@ public class ActivityTypeInfos  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getTypeInfos() != null) sb.append("TypeInfos: " + getTypeInfos() + ",");    	
+        sb.append("{");
+        if (getTypeInfos() != null) sb.append("TypeInfos: " + getTypeInfos() + ",");
         if (getNextPageToken() != null) sb.append("NextPageToken: " + getNextPageToken() );
         sb.append("}");
         return sb.toString();

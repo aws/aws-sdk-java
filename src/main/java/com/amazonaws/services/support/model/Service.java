@@ -17,14 +17,16 @@ import java.io.Serializable;
 
 /**
  * <p>
- * JSON-formatted object that represents an AWS Service returned by the DescribeServices action.
+ * JSON-formatted object that represents an AWS Service returned by the <a
+ * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"> DescribeServices </a> action.
  * </p>
  */
 public class Service  implements Serializable  {
 
     /**
      * JSON-formatted string that represents a code for an AWS service
-     * returned by <a href="API_DescribeServices.html"
+     * returned by <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"
      * title="DescribeServices">DescribeServices</a> response. Has a
      * corrsponding name represented by a service.name string.
      */
@@ -40,19 +42,22 @@ public class Service  implements Serializable  {
      * JSON-formatted list of categories that describe the type of support
      * issue a case describes. Categories are strings that represent a
      * category name and a category code. Category names and codes are passed
-     * to AWS Support when you call <a href="API_CreateCase.html"
+     * to AWS Support when you call <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"
      * title="CreateCase">CreateCase</a>.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Category> categories;
 
     /**
      * JSON-formatted string that represents a code for an AWS service
-     * returned by <a href="API_DescribeServices.html"
+     * returned by <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"
      * title="DescribeServices">DescribeServices</a> response. Has a
      * corrsponding name represented by a service.name string.
      *
      * @return JSON-formatted string that represents a code for an AWS service
-     *         returned by <a href="API_DescribeServices.html"
+     *         returned by <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"
      *         title="DescribeServices">DescribeServices</a> response. Has a
      *         corrsponding name represented by a service.name string.
      */
@@ -62,12 +67,14 @@ public class Service  implements Serializable  {
     
     /**
      * JSON-formatted string that represents a code for an AWS service
-     * returned by <a href="API_DescribeServices.html"
+     * returned by <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"
      * title="DescribeServices">DescribeServices</a> response. Has a
      * corrsponding name represented by a service.name string.
      *
      * @param code JSON-formatted string that represents a code for an AWS service
-     *         returned by <a href="API_DescribeServices.html"
+     *         returned by <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"
      *         title="DescribeServices">DescribeServices</a> response. Has a
      *         corrsponding name represented by a service.name string.
      */
@@ -77,14 +84,16 @@ public class Service  implements Serializable  {
     
     /**
      * JSON-formatted string that represents a code for an AWS service
-     * returned by <a href="API_DescribeServices.html"
+     * returned by <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"
      * title="DescribeServices">DescribeServices</a> response. Has a
      * corrsponding name represented by a service.name string.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param code JSON-formatted string that represents a code for an AWS service
-     *         returned by <a href="API_DescribeServices.html"
+     *         returned by <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"
      *         title="DescribeServices">DescribeServices</a> response. Has a
      *         corrsponding name represented by a service.name string.
      *
@@ -141,13 +150,15 @@ public class Service  implements Serializable  {
      * JSON-formatted list of categories that describe the type of support
      * issue a case describes. Categories are strings that represent a
      * category name and a category code. Category names and codes are passed
-     * to AWS Support when you call <a href="API_CreateCase.html"
+     * to AWS Support when you call <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"
      * title="CreateCase">CreateCase</a>.
      *
      * @return JSON-formatted list of categories that describe the type of support
      *         issue a case describes. Categories are strings that represent a
      *         category name and a category code. Category names and codes are passed
-     *         to AWS Support when you call <a href="API_CreateCase.html"
+     *         to AWS Support when you call <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"
      *         title="CreateCase">CreateCase</a>.
      */
     public java.util.List<Category> getCategories() {
@@ -163,13 +174,15 @@ public class Service  implements Serializable  {
      * JSON-formatted list of categories that describe the type of support
      * issue a case describes. Categories are strings that represent a
      * category name and a category code. Category names and codes are passed
-     * to AWS Support when you call <a href="API_CreateCase.html"
+     * to AWS Support when you call <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"
      * title="CreateCase">CreateCase</a>.
      *
      * @param categories JSON-formatted list of categories that describe the type of support
      *         issue a case describes. Categories are strings that represent a
      *         category name and a category code. Category names and codes are passed
-     *         to AWS Support when you call <a href="API_CreateCase.html"
+     *         to AWS Support when you call <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"
      *         title="CreateCase">CreateCase</a>.
      */
     public void setCategories(java.util.Collection<Category> categories) {
@@ -186,7 +199,8 @@ public class Service  implements Serializable  {
      * JSON-formatted list of categories that describe the type of support
      * issue a case describes. Categories are strings that represent a
      * category name and a category code. Category names and codes are passed
-     * to AWS Support when you call <a href="API_CreateCase.html"
+     * to AWS Support when you call <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"
      * title="CreateCase">CreateCase</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -194,7 +208,8 @@ public class Service  implements Serializable  {
      * @param categories JSON-formatted list of categories that describe the type of support
      *         issue a case describes. Categories are strings that represent a
      *         category name and a category code. Category names and codes are passed
-     *         to AWS Support when you call <a href="API_CreateCase.html"
+     *         to AWS Support when you call <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"
      *         title="CreateCase">CreateCase</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -212,7 +227,8 @@ public class Service  implements Serializable  {
      * JSON-formatted list of categories that describe the type of support
      * issue a case describes. Categories are strings that represent a
      * category name and a category code. Category names and codes are passed
-     * to AWS Support when you call <a href="API_CreateCase.html"
+     * to AWS Support when you call <a
+     * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"
      * title="CreateCase">CreateCase</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -220,7 +236,8 @@ public class Service  implements Serializable  {
      * @param categories JSON-formatted list of categories that describe the type of support
      *         issue a case describes. Categories are strings that represent a
      *         category name and a category code. Category names and codes are passed
-     *         to AWS Support when you call <a href="API_CreateCase.html"
+     *         to AWS Support when you call <a
+     *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"
      *         title="CreateCase">CreateCase</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 

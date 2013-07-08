@@ -25,7 +25,7 @@ public class WorkflowExecutionInfos  implements Serializable  {
     /**
      * The list of workflow information structures.
      */
-    private java.util.List<WorkflowExecutionInfo> executionInfos;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<WorkflowExecutionInfo> executionInfos;
 
     /**
      * The token of the next page in the result. If set, the results have
@@ -45,7 +45,8 @@ public class WorkflowExecutionInfos  implements Serializable  {
     public java.util.List<WorkflowExecutionInfo> getExecutionInfos() {
         
         if (executionInfos == null) {
-            executionInfos = new java.util.ArrayList<WorkflowExecutionInfo>();
+              executionInfos = new com.amazonaws.internal.ListWithAutoConstructFlag<WorkflowExecutionInfo>();
+              executionInfos.setAutoConstruct(true);
         }
         return executionInfos;
     }
@@ -60,8 +61,7 @@ public class WorkflowExecutionInfos  implements Serializable  {
             this.executionInfos = null;
             return;
         }
-
-        java.util.List<WorkflowExecutionInfo> executionInfosCopy = new java.util.ArrayList<WorkflowExecutionInfo>(executionInfos.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<WorkflowExecutionInfo> executionInfosCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<WorkflowExecutionInfo>(executionInfos.size());
         executionInfosCopy.addAll(executionInfos);
         this.executionInfos = executionInfosCopy;
     }
@@ -98,7 +98,7 @@ public class WorkflowExecutionInfos  implements Serializable  {
         if (executionInfos == null) {
             this.executionInfos = null;
         } else {
-            java.util.List<WorkflowExecutionInfo> executionInfosCopy = new java.util.ArrayList<WorkflowExecutionInfo>(executionInfos.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<WorkflowExecutionInfo> executionInfosCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<WorkflowExecutionInfo>(executionInfos.size());
             executionInfosCopy.addAll(executionInfos);
             this.executionInfos = executionInfosCopy;
         }
@@ -172,8 +172,8 @@ public class WorkflowExecutionInfos  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getExecutionInfos() != null) sb.append("ExecutionInfos: " + getExecutionInfos() + ",");    	
+        sb.append("{");
+        if (getExecutionInfos() != null) sb.append("ExecutionInfos: " + getExecutionInfos() + ",");
         if (getNextPageToken() != null) sb.append("NextPageToken: " + getNextPageToken() );
         sb.append("}");
         return sb.toString();

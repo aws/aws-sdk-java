@@ -51,9 +51,6 @@ public class DescribeTableResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param table Contains the properties of a table.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeTableResult withTable(TableDescription table) {
         this.table = table;

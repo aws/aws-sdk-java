@@ -22,7 +22,7 @@ import com.amazonaws.AmazonServiceException;
  * receive this exception; therefore, your request will eventually succeed, unless the request is too large or your retry queue is too large to finish.
  * Reduce the frequency of requests by using the strategies listed in <a
  * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries"> Error Retries and Exponential Backoff </a> in
- * the <i>Amazon DynamoDB Developer Guide</i> .
+ * the Amazon DynamoDB Developer Guide.
  * </p>
  */        
 public class ProvisionedThroughputExceededException extends AmazonServiceException {

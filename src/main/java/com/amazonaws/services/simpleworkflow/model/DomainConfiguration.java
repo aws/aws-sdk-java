@@ -84,7 +84,7 @@ public class DomainConfiguration  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getWorkflowExecutionRetentionPeriodInDays() != null) sb.append("WorkflowExecutionRetentionPeriodInDays: " + getWorkflowExecutionRetentionPeriodInDays() );
         sb.append("}");
         return sb.toString();

@@ -16,19 +16,16 @@ package com.amazonaws.services.sqs.model;
 import java.io.Serializable;
 
 /**
- * 
+ * List Queues Result
  */
 public class ListQueuesResult  implements Serializable  {
 
-    /**
-     * A list of queue URLs, up to 1000 entries.
-     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> queueUrls;
 
     /**
-     * A list of queue URLs, up to 1000 entries.
+     * Returns the value of the QueueUrls property for this object.
      *
-     * @return A list of queue URLs, up to 1000 entries.
+     * @return The value of the QueueUrls property for this object.
      */
     public java.util.List<String> getQueueUrls() {
         
@@ -40,9 +37,9 @@ public class ListQueuesResult  implements Serializable  {
     }
     
     /**
-     * A list of queue URLs, up to 1000 entries.
+     * Sets the value of the QueueUrls property for this object.
      *
-     * @param queueUrls A list of queue URLs, up to 1000 entries.
+     * @param queueUrls The new value for the QueueUrls property for this object.
      */
     public void setQueueUrls(java.util.Collection<String> queueUrls) {
         if (queueUrls == null) {
@@ -55,11 +52,11 @@ public class ListQueuesResult  implements Serializable  {
     }
     
     /**
-     * A list of queue URLs, up to 1000 entries.
+     * Sets the value of the QueueUrls property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queueUrls A list of queue URLs, up to 1000 entries.
+     * @param queueUrls The new value for the QueueUrls property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -73,11 +70,11 @@ public class ListQueuesResult  implements Serializable  {
     }
     
     /**
-     * A list of queue URLs, up to 1000 entries.
+     * Sets the value of the QueueUrls property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queueUrls A list of queue URLs, up to 1000 entries.
+     * @param queueUrls The new value for the QueueUrls property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

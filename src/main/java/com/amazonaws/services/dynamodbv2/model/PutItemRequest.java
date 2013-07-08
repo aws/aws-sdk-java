@@ -41,7 +41,7 @@ import java.io.Serializable;
  * </p>
  * <p>
  * For more information about using this API, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDItems.html">
- * Working with Items </a> in the <i>Amazon DynamoDB Developer Guide</i> .
+ * Working with Items </a> in the Amazon DynamoDB Developer Guide.
  * </p>
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#putItem(PutItemRequest)
@@ -66,8 +66,8 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      * attribute definition. <p>For more information about primary keys, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>Each element
-     * in the <i>Item</i> map is an <i>AttributeValue</i> object.
+     * Key</a> in the Amazon DynamoDB Developer Guide. <p>Each element in the
+     * <i>Item</i> map is an <i>AttributeValue</i> object.
      */
     private java.util.Map<String,AttributeValue> item;
 
@@ -166,8 +166,8 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      * the table's attribute definition. <p>For more information about
      * primary keys, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>Each element
-     * in the <i>Item</i> map is an <i>AttributeValue</i> object.
+     * Key</a> in the Amazon DynamoDB Developer Guide. <p>Each element in the
+     * <i>Item</i> map is an <i>AttributeValue</i> object.
      */
     public PutItemRequest(String tableName, java.util.Map<String,AttributeValue> item) {
         setTableName(tableName);
@@ -212,9 +212,6 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
      * @param tableName The name of the table to contain the item.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PutItemRequest withTableName(String tableName) {
         this.tableName = tableName;
@@ -231,8 +228,8 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      * attribute definition. <p>For more information about primary keys, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>Each element
-     * in the <i>Item</i> map is an <i>AttributeValue</i> object.
+     * Key</a> in the Amazon DynamoDB Developer Guide. <p>Each element in the
+     * <i>Item</i> map is an <i>AttributeValue</i> object.
      *
      * @return A map of attribute name/value pairs, one for each attribute. Only the
      *         primary key attributes are required; you can optionally provide other
@@ -242,13 +239,12 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      *         attribute definition. <p>For more information about primary keys, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     *         Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>Each element
-     *         in the <i>Item</i> map is an <i>AttributeValue</i> object.
+     *         Key</a> in the Amazon DynamoDB Developer Guide. <p>Each element in the
+     *         <i>Item</i> map is an <i>AttributeValue</i> object.
      */
     public java.util.Map<String,AttributeValue> getItem() {
         
         return item;
-
     }
     
     /**
@@ -260,8 +256,8 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      * attribute definition. <p>For more information about primary keys, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>Each element
-     * in the <i>Item</i> map is an <i>AttributeValue</i> object.
+     * Key</a> in the Amazon DynamoDB Developer Guide. <p>Each element in the
+     * <i>Item</i> map is an <i>AttributeValue</i> object.
      *
      * @param item A map of attribute name/value pairs, one for each attribute. Only the
      *         primary key attributes are required; you can optionally provide other
@@ -271,8 +267,8 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      *         attribute definition. <p>For more information about primary keys, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     *         Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>Each element
-     *         in the <i>Item</i> map is an <i>AttributeValue</i> object.
+     *         Key</a> in the Amazon DynamoDB Developer Guide. <p>Each element in the
+     *         <i>Item</i> map is an <i>AttributeValue</i> object.
      */
     public void setItem(java.util.Map<String,AttributeValue> item) {
         this.item = item;
@@ -287,8 +283,8 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      * attribute definition. <p>For more information about primary keys, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>Each element
-     * in the <i>Item</i> map is an <i>AttributeValue</i> object.
+     * Key</a> in the Amazon DynamoDB Developer Guide. <p>Each element in the
+     * <i>Item</i> map is an <i>AttributeValue</i> object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -300,17 +296,54 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      *         attribute definition. <p>For more information about primary keys, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     *         Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>Each element
-     *         in the <i>Item</i> map is an <i>AttributeValue</i> object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         Key</a> in the Amazon DynamoDB Developer Guide. <p>Each element in the
+     *         <i>Item</i> map is an <i>AttributeValue</i> object.
      */
     public PutItemRequest withItem(java.util.Map<String,AttributeValue> item) {
         setItem(item);
         return this;
     }
     
+   	
+    /**
+     * A map of attribute name/value pairs, one for each attribute. Only the
+     * primary key attributes are required; you can optionally provide other
+     * attribute name-value pairs for the item. <p>If you specify any
+     * attributes that are part of an index key, then the data types for
+     * those attributes must match those of the schema in the table's
+     * attribute definition. <p>For more information about primary keys, see
+     * <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
+     * Key</a> in the Amazon DynamoDB Developer Guide. <p>Each element in the
+     * <i>Item</i> map is an <i>AttributeValue</i> object.
+     * <p>
+     * The method adds a new key-value pair into Item parameter, and returns
+     * a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param key The key of the entry to be added into Item.
+     * @param value The corresponding value of the entry to be added into Item.
+     */
+	public PutItemRequest addItemEntry(String key, AttributeValue value) {
+		if (null == this.item) {
+			this.item = new java.util.HashMap<String,AttributeValue>();
+		}
+		if (this.item.containsKey(key))
+			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+		this.item.put(key, value);
+		return this;
+	}
+	
+	/**
+	 * Removes all the entries added into Item.
+	 * <p>
+	 * Returns a reference to this object so that method calls can be chained together.
+	 */
+	public PutItemRequest clearItemEntries() {
+		this.item = null;
+		return this;
+	}
+	
     /**
      * A map of attribute/condition pairs. This is the conditional block for
      * the <i>PutItem</i> operation. All the conditions must be met for the
@@ -383,7 +416,6 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
     public java.util.Map<String,ExpectedAttributeValue> getExpected() {
         
         return expected;
-
     }
     
     /**
@@ -529,15 +561,75 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      *         specify more than one condition for <i>Exists</i>, then all of the
      *         conditions must evaluate to true. (In other words, the conditions are
      *         ANDed together.) Otherwise, the conditional operation will fail.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PutItemRequest withExpected(java.util.Map<String,ExpectedAttributeValue> expected) {
         setExpected(expected);
         return this;
     }
     
+   	
+    /**
+     * A map of attribute/condition pairs. This is the conditional block for
+     * the <i>PutItem</i> operation. All the conditions must be met for the
+     * operation to succeed. <p><i>Expected</i> allows you to provide an
+     * attribute name, and whether or not Amazon DynamoDB should check to see
+     * if the attribute value already exists; or if the attribute value
+     * exists and has a particular value before changing it. <p>Each item in
+     * <i>Expected</i> represents an attribute name for Amazon DynamoDB to
+     * check, along with the following: <ul> <li> <p><i>Value</i> - The
+     * attribute value for Amazon DynamoDB to check. </li> <li>
+     * <p><i>Exists</i> - Causes Amazon DynamoDB to evaluate the value before
+     * attempting a conditional operation: <ul> <li> <p>If <i>Exists</i> is
+     * <code>true</code>, Amazon DynamoDB will check to see if that attribute
+     * value already exists in the table. If it is found, then the operation
+     * succeeds. If it is not found, the operation fails with a
+     * <i>ConditionalCheckFailedException</i>. </li> <li> <p>If <i>Exists</i>
+     * is <code>false</code>, Amazon DynamoDB assumes that the attribute
+     * value does <i>not</i> exist in the table. If in fact the value does
+     * not exist, then the assumption is valid and the operation succeeds. If
+     * the value is found, despite the assumption that it does not exist, the
+     * operation fails with a <i>ConditionalCheckFailedException</i>. </li>
+     * </ul> <p>The default setting for <i>Exists</i> is <code>true</code>.
+     * If you supply a <i>Value</i> all by itself, Amazon DynamoDB assumes
+     * the attribute exists: You don't have to set <i>Exists</i> to
+     * <code>true</code>, because it is implied. <p>Amazon DynamoDB returns a
+     * <i>ValidationException</i> if: <ul> <li> <p><i>Exists</i> is
+     * <code>true</code> but there is no <i>Value</i> to check. (You expect a
+     * value to exist, but don't specify what that value is.) </li> <li>
+     * <p><i>Exists</i> is <code>false</code> but you also specify a
+     * <i>Value</i>. (You cannot expect an attribute to have a value, while
+     * also expecting it not to exist.) </li> </ul> </li> </ul> <p>If you
+     * specify more than one condition for <i>Exists</i>, then all of the
+     * conditions must evaluate to true. (In other words, the conditions are
+     * ANDed together.) Otherwise, the conditional operation will fail.
+     * <p>
+     * The method adds a new key-value pair into Expected parameter, and
+     * returns a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param key The key of the entry to be added into Expected.
+     * @param value The corresponding value of the entry to be added into Expected.
+     */
+	public PutItemRequest addExpectedEntry(String key, ExpectedAttributeValue value) {
+		if (null == this.expected) {
+			this.expected = new java.util.HashMap<String,ExpectedAttributeValue>();
+		}
+		if (this.expected.containsKey(key))
+			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+		this.expected.put(key, value);
+		return this;
+	}
+	
+	/**
+	 * Removes all the entries added into Expected.
+	 * <p>
+	 * Returns a reference to this object so that method calls can be chained together.
+	 */
+	public PutItemRequest clearExpectedEntries() {
+		this.expected = null;
+		return this;
+	}
+	
     /**
      * Use <i>ReturnValues</i> if you want to get the item attributes as they
      * appeared before they were updated with the <i>PutItem</i> request. For
@@ -618,9 +710,6 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      *         <i>PutItem</i> overwrote an attribute name-value pair, then the
      *         content of the old item is returned. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ReturnValue
      */
     public PutItemRequest withReturnValues(String returnValues) {
@@ -681,9 +770,6 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      *         <i>PutItem</i> overwrote an attribute name-value pair, then the
      *         content of the old item is returned. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ReturnValue
      */
     public PutItemRequest withReturnValues(ReturnValue returnValues) {
@@ -741,9 +827,6 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      *         the response; if set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ReturnConsumedCapacity
      */
     public PutItemRequest withReturnConsumedCapacity(String returnConsumedCapacity) {
@@ -783,9 +866,6 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
      *         the response; if set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see ReturnConsumedCapacity
      */
@@ -850,9 +930,6 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      *         response. If set to <code>NONE</code> (the default), no statistics are
      *         returned..
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ReturnItemCollectionMetrics
      */
     public PutItemRequest withReturnItemCollectionMetrics(String returnItemCollectionMetrics) {
@@ -896,9 +973,6 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      *         any, that were modified during the operation are returned in the
      *         response. If set to <code>NONE</code> (the default), no statistics are
      *         returned..
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see ReturnItemCollectionMetrics
      */

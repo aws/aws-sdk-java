@@ -36,7 +36,7 @@ public class CacheParameterGroupStatus  implements Serializable  {
      * A list of the Cache Node Ids which need to be rebooted for parameter
      * changes to be applied.
      */
-    private java.util.List<String> cacheNodeIdsToReboot;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> cacheNodeIdsToReboot;
 
     /**
      * Default constructor for a new CacheParameterGroupStatus object.  Callers should use the
@@ -122,7 +122,8 @@ public class CacheParameterGroupStatus  implements Serializable  {
     public java.util.List<String> getCacheNodeIdsToReboot() {
         
         if (cacheNodeIdsToReboot == null) {
-            cacheNodeIdsToReboot = new java.util.ArrayList<String>();
+              cacheNodeIdsToReboot = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              cacheNodeIdsToReboot.setAutoConstruct(true);
         }
         return cacheNodeIdsToReboot;
     }
@@ -139,8 +140,7 @@ public class CacheParameterGroupStatus  implements Serializable  {
             this.cacheNodeIdsToReboot = null;
             return;
         }
-
-        java.util.List<String> cacheNodeIdsToRebootCopy = new java.util.ArrayList<String>(cacheNodeIdsToReboot.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> cacheNodeIdsToRebootCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(cacheNodeIdsToReboot.size());
         cacheNodeIdsToRebootCopy.addAll(cacheNodeIdsToReboot);
         this.cacheNodeIdsToReboot = cacheNodeIdsToRebootCopy;
     }
@@ -181,7 +181,7 @@ public class CacheParameterGroupStatus  implements Serializable  {
         if (cacheNodeIdsToReboot == null) {
             this.cacheNodeIdsToReboot = null;
         } else {
-            java.util.List<String> cacheNodeIdsToRebootCopy = new java.util.ArrayList<String>(cacheNodeIdsToReboot.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> cacheNodeIdsToRebootCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(cacheNodeIdsToReboot.size());
             cacheNodeIdsToRebootCopy.addAll(cacheNodeIdsToReboot);
             this.cacheNodeIdsToReboot = cacheNodeIdsToRebootCopy;
         }
@@ -200,9 +200,9 @@ public class CacheParameterGroupStatus  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCacheParameterGroupName() != null) sb.append("CacheParameterGroupName: " + getCacheParameterGroupName() + ",");    	
-        if (getParameterApplyStatus() != null) sb.append("ParameterApplyStatus: " + getParameterApplyStatus() + ",");    	
+        sb.append("{");
+        if (getCacheParameterGroupName() != null) sb.append("CacheParameterGroupName: " + getCacheParameterGroupName() + ",");
+        if (getParameterApplyStatus() != null) sb.append("ParameterApplyStatus: " + getParameterApplyStatus() + ",");
         if (getCacheNodeIdsToReboot() != null) sb.append("CacheNodeIdsToReboot: " + getCacheNodeIdsToReboot() );
         sb.append("}");
         return sb.toString();

@@ -492,12 +492,12 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getWorkflowId() != null) sb.append("WorkflowId: " + getWorkflowId() + ",");    	
-        if (getRunId() != null) sb.append("RunId: " + getRunId() + ",");    	
-        if (getCause() != null) sb.append("Cause: " + getCause() + ",");    	
-        if (getInitiatedEventId() != null) sb.append("InitiatedEventId: " + getInitiatedEventId() + ",");    	
-        if (getDecisionTaskCompletedEventId() != null) sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() + ",");    	
+        sb.append("{");
+        if (getWorkflowId() != null) sb.append("WorkflowId: " + getWorkflowId() + ",");
+        if (getRunId() != null) sb.append("RunId: " + getRunId() + ",");
+        if (getCause() != null) sb.append("Cause: " + getCause() + ",");
+        if (getInitiatedEventId() != null) sb.append("InitiatedEventId: " + getInitiatedEventId() + ",");
+        if (getDecisionTaskCompletedEventId() != null) sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() + ",");
         if (getControl() != null) sb.append("Control: " + getControl() );
         sb.append("}");
         return sb.toString();

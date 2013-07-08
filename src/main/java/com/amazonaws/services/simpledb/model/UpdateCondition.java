@@ -50,6 +50,8 @@ public class UpdateCondition  implements Serializable  {
      */
     public UpdateCondition() {}
     
+
+
     /**
      * Constructs a new UpdateCondition object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -67,9 +69,9 @@ public class UpdateCondition  implements Serializable  {
      * update condition to be satisfied.
      */
     public UpdateCondition(String name, String value, Boolean exists) {
-        this.name = name;
-        this.value = value;
-        this.exists = exists;
+        setName(name);
+        setValue(value);
+        setExists(exists);
     }
 
     
@@ -242,9 +244,9 @@ public class UpdateCondition  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getValue() != null) sb.append("Value: " + getValue() + ",");    	
+        sb.append("{");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getValue() != null) sb.append("Value: " + getValue() + ",");
         if (isExists() != null) sb.append("Exists: " + isExists() );
         sb.append("}");
         return sb.toString();

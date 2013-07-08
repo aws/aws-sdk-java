@@ -79,7 +79,7 @@ public class DeleteHostedZoneResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getChangeInfo() != null) sb.append("ChangeInfo: " + getChangeInfo() );
         sb.append("}");
         return sb.toString();

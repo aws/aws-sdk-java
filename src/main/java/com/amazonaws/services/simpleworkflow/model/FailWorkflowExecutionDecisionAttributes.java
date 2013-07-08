@@ -153,8 +153,8 @@ public class FailWorkflowExecutionDecisionAttributes  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getReason() != null) sb.append("Reason: " + getReason() + ",");    	
+        sb.append("{");
+        if (getReason() != null) sb.append("Reason: " + getReason() + ",");
         if (getDetails() != null) sb.append("Details: " + getDetails() );
         sb.append("}");
         return sb.toString();

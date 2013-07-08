@@ -51,7 +51,7 @@ public class CacheSubnetGroup  implements Serializable  {
     /**
      * Contains a list of subnets for this group.
      */
-    private java.util.List<Subnet> subnets;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Subnet> subnets;
 
     /**
      * Specifies the name of the Cache Subnet Group.
@@ -163,7 +163,8 @@ public class CacheSubnetGroup  implements Serializable  {
     public java.util.List<Subnet> getSubnets() {
         
         if (subnets == null) {
-            subnets = new java.util.ArrayList<Subnet>();
+              subnets = new com.amazonaws.internal.ListWithAutoConstructFlag<Subnet>();
+              subnets.setAutoConstruct(true);
         }
         return subnets;
     }
@@ -178,8 +179,7 @@ public class CacheSubnetGroup  implements Serializable  {
             this.subnets = null;
             return;
         }
-
-        java.util.List<Subnet> subnetsCopy = new java.util.ArrayList<Subnet>(subnets.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Subnet> subnetsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Subnet>(subnets.size());
         subnetsCopy.addAll(subnets);
         this.subnets = subnetsCopy;
     }
@@ -216,7 +216,7 @@ public class CacheSubnetGroup  implements Serializable  {
         if (subnets == null) {
             this.subnets = null;
         } else {
-            java.util.List<Subnet> subnetsCopy = new java.util.ArrayList<Subnet>(subnets.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Subnet> subnetsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Subnet>(subnets.size());
             subnetsCopy.addAll(subnets);
             this.subnets = subnetsCopy;
         }
@@ -235,10 +235,10 @@ public class CacheSubnetGroup  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCacheSubnetGroupName() != null) sb.append("CacheSubnetGroupName: " + getCacheSubnetGroupName() + ",");    	
-        if (getCacheSubnetGroupDescription() != null) sb.append("CacheSubnetGroupDescription: " + getCacheSubnetGroupDescription() + ",");    	
-        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");    	
+        sb.append("{");
+        if (getCacheSubnetGroupName() != null) sb.append("CacheSubnetGroupName: " + getCacheSubnetGroupName() + ",");
+        if (getCacheSubnetGroupDescription() != null) sb.append("CacheSubnetGroupDescription: " + getCacheSubnetGroupDescription() + ",");
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");
         if (getSubnets() != null) sb.append("Subnets: " + getSubnets() );
         sb.append("}");
         return sb.toString();

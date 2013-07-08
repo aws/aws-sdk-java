@@ -42,6 +42,8 @@ public class BootstrapActionConfig  implements Serializable  {
      */
     public BootstrapActionConfig() {}
     
+
+
     /**
      * Constructs a new BootstrapActionConfig object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -51,8 +53,8 @@ public class BootstrapActionConfig  implements Serializable  {
      * @param scriptBootstrapAction The script run by the bootstrap action.
      */
     public BootstrapActionConfig(String name, ScriptBootstrapActionConfig scriptBootstrapAction) {
-        this.name = name;
-        this.scriptBootstrapAction = scriptBootstrapAction;
+        setName(name);
+        setScriptBootstrapAction(scriptBootstrapAction);
     }
 
     
@@ -148,8 +150,8 @@ public class BootstrapActionConfig  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        sb.append("{");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
         if (getScriptBootstrapAction() != null) sb.append("ScriptBootstrapAction: " + getScriptBootstrapAction() );
         sb.append("}");
         return sb.toString();

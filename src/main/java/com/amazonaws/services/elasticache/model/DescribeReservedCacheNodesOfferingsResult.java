@@ -30,7 +30,7 @@ public class DescribeReservedCacheNodesOfferingsResult  implements Serializable 
     /**
      * A list of reserved Cache Node offerings.
      */
-    private java.util.List<ReservedCacheNodesOffering> reservedCacheNodesOfferings;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ReservedCacheNodesOffering> reservedCacheNodesOfferings;
 
     /**
      * A marker provided for paginated results.
@@ -74,7 +74,8 @@ public class DescribeReservedCacheNodesOfferingsResult  implements Serializable 
     public java.util.List<ReservedCacheNodesOffering> getReservedCacheNodesOfferings() {
         
         if (reservedCacheNodesOfferings == null) {
-            reservedCacheNodesOfferings = new java.util.ArrayList<ReservedCacheNodesOffering>();
+              reservedCacheNodesOfferings = new com.amazonaws.internal.ListWithAutoConstructFlag<ReservedCacheNodesOffering>();
+              reservedCacheNodesOfferings.setAutoConstruct(true);
         }
         return reservedCacheNodesOfferings;
     }
@@ -89,8 +90,7 @@ public class DescribeReservedCacheNodesOfferingsResult  implements Serializable 
             this.reservedCacheNodesOfferings = null;
             return;
         }
-
-        java.util.List<ReservedCacheNodesOffering> reservedCacheNodesOfferingsCopy = new java.util.ArrayList<ReservedCacheNodesOffering>(reservedCacheNodesOfferings.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ReservedCacheNodesOffering> reservedCacheNodesOfferingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ReservedCacheNodesOffering>(reservedCacheNodesOfferings.size());
         reservedCacheNodesOfferingsCopy.addAll(reservedCacheNodesOfferings);
         this.reservedCacheNodesOfferings = reservedCacheNodesOfferingsCopy;
     }
@@ -127,7 +127,7 @@ public class DescribeReservedCacheNodesOfferingsResult  implements Serializable 
         if (reservedCacheNodesOfferings == null) {
             this.reservedCacheNodesOfferings = null;
         } else {
-            java.util.List<ReservedCacheNodesOffering> reservedCacheNodesOfferingsCopy = new java.util.ArrayList<ReservedCacheNodesOffering>(reservedCacheNodesOfferings.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ReservedCacheNodesOffering> reservedCacheNodesOfferingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ReservedCacheNodesOffering>(reservedCacheNodesOfferings.size());
             reservedCacheNodesOfferingsCopy.addAll(reservedCacheNodesOfferings);
             this.reservedCacheNodesOfferings = reservedCacheNodesOfferingsCopy;
         }
@@ -146,8 +146,8 @@ public class DescribeReservedCacheNodesOfferingsResult  implements Serializable 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getReservedCacheNodesOfferings() != null) sb.append("ReservedCacheNodesOfferings: " + getReservedCacheNodesOfferings() );
         sb.append("}");
         return sb.toString();

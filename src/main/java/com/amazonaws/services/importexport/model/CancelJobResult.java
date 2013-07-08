@@ -90,7 +90,7 @@ public class CancelJobResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (isSuccess() != null) sb.append("Success: " + isSuccess() );
         sb.append("}");
         return sb.toString();

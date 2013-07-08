@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#createPipeline(CreatePipelineRequest) CreatePipeline operation}.
  * <p>
- * To create a pipeline, send a POST request to the <code>2012-09-25/pipelines</code> resource.
+ * The CreatePipeline operation creates a pipeline with settings that you specify.
  * </p>
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#createPipeline(CreatePipelineRequest)
@@ -208,8 +208,8 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest  implements S
      * Amazon S3 bucket. </li> </ul> </li> <li> <b>StorageClass</b>: The
      * Amazon S3 storage class, <code>Standard</code> or
      * <code>ReducedRedundancy</code>, that you want Elastic Transcoder to
-     * assign to the thumbnails that it stores in your Amazon S3 bucket.
-     * </li> </ul>
+     * assign to the thumbnails that it stores in your Amazon S3 bucket.</li>
+     * </ul>
      */
     private PipelineOutputConfig thumbnailConfig;
 
@@ -1058,8 +1058,8 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest  implements S
      * Amazon S3 bucket. </li> </ul> </li> <li> <b>StorageClass</b>: The
      * Amazon S3 storage class, <code>Standard</code> or
      * <code>ReducedRedundancy</code>, that you want Elastic Transcoder to
-     * assign to the thumbnails that it stores in your Amazon S3 bucket.
-     * </li> </ul>
+     * assign to the thumbnails that it stores in your Amazon S3 bucket.</li>
+     * </ul>
      *
      * @return The <code>ThumbnailConfig</code> object specifies several values,
      *         including the Amazon S3 bucket in which you want Elastic Transcoder to
@@ -1107,8 +1107,8 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest  implements S
      *         Amazon S3 bucket. </li> </ul> </li> <li> <b>StorageClass</b>: The
      *         Amazon S3 storage class, <code>Standard</code> or
      *         <code>ReducedRedundancy</code>, that you want Elastic Transcoder to
-     *         assign to the thumbnails that it stores in your Amazon S3 bucket.
-     *         </li> </ul>
+     *         assign to the thumbnails that it stores in your Amazon S3 bucket.</li>
+     *         </ul>
      */
     public PipelineOutputConfig getThumbnailConfig() {
         return thumbnailConfig;
@@ -1161,8 +1161,8 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest  implements S
      * Amazon S3 bucket. </li> </ul> </li> <li> <b>StorageClass</b>: The
      * Amazon S3 storage class, <code>Standard</code> or
      * <code>ReducedRedundancy</code>, that you want Elastic Transcoder to
-     * assign to the thumbnails that it stores in your Amazon S3 bucket.
-     * </li> </ul>
+     * assign to the thumbnails that it stores in your Amazon S3 bucket.</li>
+     * </ul>
      *
      * @param thumbnailConfig The <code>ThumbnailConfig</code> object specifies several values,
      *         including the Amazon S3 bucket in which you want Elastic Transcoder to
@@ -1210,8 +1210,8 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest  implements S
      *         Amazon S3 bucket. </li> </ul> </li> <li> <b>StorageClass</b>: The
      *         Amazon S3 storage class, <code>Standard</code> or
      *         <code>ReducedRedundancy</code>, that you want Elastic Transcoder to
-     *         assign to the thumbnails that it stores in your Amazon S3 bucket.
-     *         </li> </ul>
+     *         assign to the thumbnails that it stores in your Amazon S3 bucket.</li>
+     *         </ul>
      */
     public void setThumbnailConfig(PipelineOutputConfig thumbnailConfig) {
         this.thumbnailConfig = thumbnailConfig;
@@ -1264,8 +1264,8 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest  implements S
      * Amazon S3 bucket. </li> </ul> </li> <li> <b>StorageClass</b>: The
      * Amazon S3 storage class, <code>Standard</code> or
      * <code>ReducedRedundancy</code>, that you want Elastic Transcoder to
-     * assign to the thumbnails that it stores in your Amazon S3 bucket.
-     * </li> </ul>
+     * assign to the thumbnails that it stores in your Amazon S3 bucket.</li>
+     * </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1315,8 +1315,8 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest  implements S
      *         Amazon S3 bucket. </li> </ul> </li> <li> <b>StorageClass</b>: The
      *         Amazon S3 storage class, <code>Standard</code> or
      *         <code>ReducedRedundancy</code>, that you want Elastic Transcoder to
-     *         assign to the thumbnails that it stores in your Amazon S3 bucket.
-     *         </li> </ul>
+     *         assign to the thumbnails that it stores in your Amazon S3 bucket.</li>
+     *         </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

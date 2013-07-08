@@ -349,11 +349,11 @@ public class CountOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");    	
-        if (getStartTimeFilter() != null) sb.append("StartTimeFilter: " + getStartTimeFilter() + ",");    	
-        if (getTypeFilter() != null) sb.append("TypeFilter: " + getTypeFilter() + ",");    	
-        if (getTagFilter() != null) sb.append("TagFilter: " + getTagFilter() + ",");    	
+        sb.append("{");
+        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");
+        if (getStartTimeFilter() != null) sb.append("StartTimeFilter: " + getStartTimeFilter() + ",");
+        if (getTypeFilter() != null) sb.append("TypeFilter: " + getTypeFilter() + ",");
+        if (getTagFilter() != null) sb.append("TagFilter: " + getTagFilter() + ",");
         if (getExecutionFilter() != null) sb.append("ExecutionFilter: " + getExecutionFilter() );
         sb.append("}");
         return sb.toString();

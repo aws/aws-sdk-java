@@ -19,11 +19,8 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#listJobsByStatus(ListJobsByStatusRequest) ListJobsByStatus operation}.
  * <p>
- * To get a list of the jobs that have a specified status, send a GET request to the <code>/2012-09-25/jobsByStatus/[status] </code> resource.
- * </p>
- * <p>
- * Elastic Transcoder returns all of the jobs that have the specified status. The response body contains one element for each job that satisfies the
- * search criteria.
+ * The ListJobsByStatus operation gets a list of jobs that have a specified status. The response body contains one element for each job that satisfies
+ * the search criteria.
  * </p>
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#listJobsByStatus(ListJobsByStatusRequest)

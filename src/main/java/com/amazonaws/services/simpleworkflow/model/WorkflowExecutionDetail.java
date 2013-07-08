@@ -296,11 +296,11 @@ public class WorkflowExecutionDetail  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getExecutionInfo() != null) sb.append("ExecutionInfo: " + getExecutionInfo() + ",");    	
-        if (getExecutionConfiguration() != null) sb.append("ExecutionConfiguration: " + getExecutionConfiguration() + ",");    	
-        if (getOpenCounts() != null) sb.append("OpenCounts: " + getOpenCounts() + ",");    	
-        if (getLatestActivityTaskTimestamp() != null) sb.append("LatestActivityTaskTimestamp: " + getLatestActivityTaskTimestamp() + ",");    	
+        sb.append("{");
+        if (getExecutionInfo() != null) sb.append("ExecutionInfo: " + getExecutionInfo() + ",");
+        if (getExecutionConfiguration() != null) sb.append("ExecutionConfiguration: " + getExecutionConfiguration() + ",");
+        if (getOpenCounts() != null) sb.append("OpenCounts: " + getOpenCounts() + ",");
+        if (getLatestActivityTaskTimestamp() != null) sb.append("LatestActivityTaskTimestamp: " + getLatestActivityTaskTimestamp() + ",");
         if (getLatestExecutionContext() != null) sb.append("LatestExecutionContext: " + getLatestExecutionContext() );
         sb.append("}");
         return sb.toString();

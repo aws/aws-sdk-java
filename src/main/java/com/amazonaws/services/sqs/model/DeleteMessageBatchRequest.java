@@ -18,23 +18,14 @@ import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#deleteMessageBatch(DeleteMessageBatchRequest) DeleteMessageBatch operation}.
- * <p>
- * This is a batch version of DeleteMessage. It takes multiple receipt handles and deletes each one of the messages. The result of the delete operation
- * on each message is reported individually in the response.
- * </p>
+ * 
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#deleteMessageBatch(DeleteMessageBatchRequest)
  */
 public class DeleteMessageBatchRequest extends AmazonWebServiceRequest  implements Serializable  {
 
-    /**
-     * The URL of the SQS queue to take action on.
-     */
     private String queueUrl;
 
-    /**
-     * A list of receipt handles for the messages to be deleted.
-     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<DeleteMessageBatchRequestEntry> entries;
 
     /**
@@ -50,7 +41,7 @@ public class DeleteMessageBatchRequest extends AmazonWebServiceRequest  implemen
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param queueUrl The URL of the SQS queue to take action on.
+     * @param queueUrl
      */
     public DeleteMessageBatchRequest(String queueUrl) {
         setQueueUrl(queueUrl);
@@ -65,9 +56,8 @@ public class DeleteMessageBatchRequest extends AmazonWebServiceRequest  implemen
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param queueUrl The URL of the SQS queue to take action on.
-     * @param entries A list of receipt handles for the messages to be
-     * deleted.
+     * @param queueUrl
+     * @param entries
      */
     public DeleteMessageBatchRequest(String queueUrl, java.util.List<DeleteMessageBatchRequestEntry> entries) {
         setQueueUrl(queueUrl);
@@ -77,29 +67,29 @@ public class DeleteMessageBatchRequest extends AmazonWebServiceRequest  implemen
     
     
     /**
-     * The URL of the SQS queue to take action on.
+     * Returns the value of the QueueUrl property for this object.
      *
-     * @return The URL of the SQS queue to take action on.
+     * @return The value of the QueueUrl property for this object.
      */
     public String getQueueUrl() {
         return queueUrl;
     }
     
     /**
-     * The URL of the SQS queue to take action on.
+     * Sets the value of the QueueUrl property for this object.
      *
-     * @param queueUrl The URL of the SQS queue to take action on.
+     * @param queueUrl The new value for the QueueUrl property for this object.
      */
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
     
     /**
-     * The URL of the SQS queue to take action on.
+     * Sets the value of the QueueUrl property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queueUrl The URL of the SQS queue to take action on.
+     * @param queueUrl The new value for the QueueUrl property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -111,9 +101,9 @@ public class DeleteMessageBatchRequest extends AmazonWebServiceRequest  implemen
     
     
     /**
-     * A list of receipt handles for the messages to be deleted.
+     * Returns the value of the Entries property for this object.
      *
-     * @return A list of receipt handles for the messages to be deleted.
+     * @return The value of the Entries property for this object.
      */
     public java.util.List<DeleteMessageBatchRequestEntry> getEntries() {
         
@@ -125,9 +115,9 @@ public class DeleteMessageBatchRequest extends AmazonWebServiceRequest  implemen
     }
     
     /**
-     * A list of receipt handles for the messages to be deleted.
+     * Sets the value of the Entries property for this object.
      *
-     * @param entries A list of receipt handles for the messages to be deleted.
+     * @param entries The new value for the Entries property for this object.
      */
     public void setEntries(java.util.Collection<DeleteMessageBatchRequestEntry> entries) {
         if (entries == null) {
@@ -140,11 +130,11 @@ public class DeleteMessageBatchRequest extends AmazonWebServiceRequest  implemen
     }
     
     /**
-     * A list of receipt handles for the messages to be deleted.
+     * Sets the value of the Entries property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param entries A list of receipt handles for the messages to be deleted.
+     * @param entries The new value for the Entries property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -158,11 +148,11 @@ public class DeleteMessageBatchRequest extends AmazonWebServiceRequest  implemen
     }
     
     /**
-     * A list of receipt handles for the messages to be deleted.
+     * Sets the value of the Entries property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param entries A list of receipt handles for the messages to be deleted.
+     * @param entries The new value for the Entries property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

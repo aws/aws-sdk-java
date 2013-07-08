@@ -18,24 +18,14 @@ import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#removePermission(RemovePermissionRequest) RemovePermission operation}.
- * <p>
- * The <code>RemovePermission</code> action revokes any permissions in the queue policy that matches the specified <code>Label</code> parameter. Only the
- * owner of the queue can remove permissions.
- * </p>
+ * 
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#removePermission(RemovePermissionRequest)
  */
 public class RemovePermissionRequest extends AmazonWebServiceRequest  implements Serializable  {
 
-    /**
-     * The URL of the SQS queue to take action on.
-     */
     private String queueUrl;
 
-    /**
-     * The identification of the permission to remove. This is the label
-     * added with the <a>AddPermission</a> operation.
-     */
     private String label;
 
     /**
@@ -51,9 +41,8 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest  implements
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param queueUrl The URL of the SQS queue to take action on.
-     * @param label The identification of the permission to remove. This is
-     * the label added with the <a>AddPermission</a> operation.
+     * @param queueUrl
+     * @param label
      */
     public RemovePermissionRequest(String queueUrl, String label) {
         setQueueUrl(queueUrl);
@@ -63,29 +52,29 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest  implements
     
     
     /**
-     * The URL of the SQS queue to take action on.
+     * Returns the value of the QueueUrl property for this object.
      *
-     * @return The URL of the SQS queue to take action on.
+     * @return The value of the QueueUrl property for this object.
      */
     public String getQueueUrl() {
         return queueUrl;
     }
     
     /**
-     * The URL of the SQS queue to take action on.
+     * Sets the value of the QueueUrl property for this object.
      *
-     * @param queueUrl The URL of the SQS queue to take action on.
+     * @param queueUrl The new value for the QueueUrl property for this object.
      */
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
     
     /**
-     * The URL of the SQS queue to take action on.
+     * Sets the value of the QueueUrl property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queueUrl The URL of the SQS queue to take action on.
+     * @param queueUrl The new value for the QueueUrl property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -97,35 +86,29 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest  implements
     
     
     /**
-     * The identification of the permission to remove. This is the label
-     * added with the <a>AddPermission</a> operation.
+     * Returns the value of the Label property for this object.
      *
-     * @return The identification of the permission to remove. This is the label
-     *         added with the <a>AddPermission</a> operation.
+     * @return The value of the Label property for this object.
      */
     public String getLabel() {
         return label;
     }
     
     /**
-     * The identification of the permission to remove. This is the label
-     * added with the <a>AddPermission</a> operation.
+     * Sets the value of the Label property for this object.
      *
-     * @param label The identification of the permission to remove. This is the label
-     *         added with the <a>AddPermission</a> operation.
+     * @param label The new value for the Label property for this object.
      */
     public void setLabel(String label) {
         this.label = label;
     }
     
     /**
-     * The identification of the permission to remove. This is the label
-     * added with the <a>AddPermission</a> operation.
+     * Sets the value of the Label property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param label The identification of the permission to remove. This is the label
-     *         added with the <a>AddPermission</a> operation.
+     * @param label The new value for the Label property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -102,7 +102,7 @@ public class RequestCancelActivityTaskDecisionAttributes  implements Serializabl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getActivityId() != null) sb.append("ActivityId: " + getActivityId() );
         sb.append("}");
         return sb.toString();

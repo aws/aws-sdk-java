@@ -30,12 +30,6 @@ import java.io.Serializable;
  * until the table deletion is complete.
  * </p>
  * <p>
- * Tables are unique among those associated with the AWS Account issuing the request, and the AWS region that receives the request (such as
- * dynamodb.us-east-1.amazonaws.com). Each Amazon DynamoDB endpoint is entirely independent. For example, if you have two tables called "MyTable," one in
- * dynamodb.us-east-1.amazonaws.com and one in dynamodb.us-west-1.amazonaws.com, they are completely independent and do not share any data; deleting one
- * does not delete the other.
- * </p>
- * <p>
  * When you delete a table, any local secondary indexes on that table are also deleted.
  * </p>
  * <p>
@@ -112,9 +106,6 @@ public class DeleteTableRequest extends AmazonWebServiceRequest  implements Seri
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
      * @param tableName The name of the table to delete.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteTableRequest withTableName(String tableName) {
         this.tableName = tableName;

@@ -70,6 +70,8 @@ public class HostedZone  implements Serializable  {
      */
     public HostedZone() {}
     
+
+
     /**
      * Constructs a new HostedZone object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -89,9 +91,9 @@ public class HostedZone  implements Serializable  {
      * create the hosted zone.
      */
     public HostedZone(String id, String name, String callerReference) {
-        this.id = id;
-        this.name = name;
-        this.callerReference = callerReference;
+        setId(id);
+        setName(name);
+        setCallerReference(callerReference);
     }
 
     
@@ -352,11 +354,11 @@ public class HostedZone  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getId() != null) sb.append("Id: " + getId() + ",");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() + ",");    	
-        if (getConfig() != null) sb.append("Config: " + getConfig() + ",");    	
+        sb.append("{");
+        if (getId() != null) sb.append("Id: " + getId() + ",");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() + ",");
+        if (getConfig() != null) sb.append("Config: " + getConfig() + ",");
         if (getResourceRecordSetCount() != null) sb.append("ResourceRecordSetCount: " + getResourceRecordSetCount() );
         sb.append("}");
         return sb.toString();

@@ -36,7 +36,7 @@ public class ScriptBootstrapActionConfig  implements Serializable  {
      * A list of command line arguments to pass to the bootstrap action
      * script.
      */
-    private java.util.List<String> args;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> args;
 
     /**
      * Default constructor for a new ScriptBootstrapActionConfig object.  Callers should use the
@@ -44,6 +44,8 @@ public class ScriptBootstrapActionConfig  implements Serializable  {
      */
     public ScriptBootstrapActionConfig() {}
     
+
+
     /**
      * Constructs a new ScriptBootstrapActionConfig object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -55,8 +57,8 @@ public class ScriptBootstrapActionConfig  implements Serializable  {
      * action script.
      */
     public ScriptBootstrapActionConfig(String path, java.util.List<String> args) {
-        this.path = path;
-        this.args = args;
+        setPath(path);
+        setArgs(args);
     }
 
     
@@ -123,7 +125,8 @@ public class ScriptBootstrapActionConfig  implements Serializable  {
     public java.util.List<String> getArgs() {
         
         if (args == null) {
-            args = new java.util.ArrayList<String>();
+              args = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              args.setAutoConstruct(true);
         }
         return args;
     }
@@ -140,8 +143,7 @@ public class ScriptBootstrapActionConfig  implements Serializable  {
             this.args = null;
             return;
         }
-
-        java.util.List<String> argsCopy = new java.util.ArrayList<String>(args.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> argsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(args.size());
         argsCopy.addAll(args);
         this.args = argsCopy;
     }
@@ -182,7 +184,7 @@ public class ScriptBootstrapActionConfig  implements Serializable  {
         if (args == null) {
             this.args = null;
         } else {
-            java.util.List<String> argsCopy = new java.util.ArrayList<String>(args.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> argsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(args.size());
             argsCopy.addAll(args);
             this.args = argsCopy;
         }
@@ -201,8 +203,8 @@ public class ScriptBootstrapActionConfig  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPath() != null) sb.append("Path: " + getPath() + ",");    	
+        sb.append("{");
+        if (getPath() != null) sb.append("Path: " + getPath() + ",");
         if (getArgs() != null) sb.append("Args: " + getArgs() );
         sb.append("}");
         return sb.toString();

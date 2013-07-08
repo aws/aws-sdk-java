@@ -17,7 +17,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * JSON-formatted child object of TrustedAdvisorCheckResult objects.
+ * JSON-formatted child object of <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckResult.html">
+ * TrustedAdvisorCheckResult </a> objects.
  * </p>
  */
 public class TrustedAdvisorCategorySpecificSummary  implements Serializable  {

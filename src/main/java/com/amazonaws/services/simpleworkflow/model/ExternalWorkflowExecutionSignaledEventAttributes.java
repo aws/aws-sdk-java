@@ -139,8 +139,8 @@ public class ExternalWorkflowExecutionSignaledEventAttributes  implements Serial
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getWorkflowExecution() != null) sb.append("WorkflowExecution: " + getWorkflowExecution() + ",");    	
+        sb.append("{");
+        if (getWorkflowExecution() != null) sb.append("WorkflowExecution: " + getWorkflowExecution() + ",");
         if (getInitiatedEventId() != null) sb.append("InitiatedEventId: " + getInitiatedEventId() );
         sb.append("}");
         return sb.toString();

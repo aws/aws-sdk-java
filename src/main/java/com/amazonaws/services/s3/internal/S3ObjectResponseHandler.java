@@ -43,21 +43,14 @@ public class S3ObjectResponseHandler extends AbstractS3ResponseHandler<S3Object>
         if (response.getHeaders().get(Headers.REDIRECT_LOCATION) != null) {
             object.setRedirectLocation(response.getHeaders().get(Headers.REDIRECT_LOCATION));
         }
-        ObjectMetadata metadata = object.getObjectMetadata();
-        populateObjectMetadata(response, metadata);
-        boolean hasServerSideCalculatedChecksum = !ServiceUtils.isMultipartUploadETag(metadata.getETag());
-        boolean responseContainsEntireObject = response.getHeaders().get("Content-Range") == null;
+		ObjectMetadata metadata = object.getObjectMetadata();
+		populateObjectMetadata(response, metadata);
 
-        if (hasServerSideCalculatedChecksum && responseContainsEntireObject) {
-            byte[] expectedChecksum = BinaryUtils.fromHex(metadata.getETag());
-            object.setObjectContent(new S3ObjectInputStream(new ChecksumValidatingInputStream(response.getContent(), expectedChecksum, object.getBucketName() + "/" + object.getKey()), response
-                    .getHttpRequest()));
-        } else {
-            object.setObjectContent(new S3ObjectInputStream(response.getContent(), response.getHttpRequest()));
-        }
+		object.setObjectContent(new S3ObjectInputStream(response.getContent(),
+				response.getHttpRequest()));
 
-        awsResponse.setResult(object);
-        return awsResponse;
+		awsResponse.setResult(object);
+		return awsResponse;
     }
 
     /**

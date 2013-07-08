@@ -124,9 +124,6 @@ public class Projection  implements Serializable  {
      *         <li> <p><code>ALL</code> - All of the table attributes are projected
      *         into the index. </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ProjectionType
      */
     public Projection withProjectionType(String projectionType) {
@@ -182,9 +179,6 @@ public class Projection  implements Serializable  {
      *         list of projected attributes are in <i>NonKeyAttributes</i>. </li>
      *         <li> <p><code>ALL</code> - All of the table attributes are projected
      *         into the index. </li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see ProjectionType
      */
@@ -263,9 +257,6 @@ public class Projection  implements Serializable  {
      *         indexes, must not exceed 20. If you project the same attribute into
      *         two different indexes, this counts as two distinct attributes when
      *         determining the total.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Projection withNonKeyAttributes(String... nonKeyAttributes) {
         if (getNonKeyAttributes() == null) setNonKeyAttributes(new java.util.ArrayList<String>(nonKeyAttributes.length));
@@ -294,9 +285,6 @@ public class Projection  implements Serializable  {
      *         indexes, must not exceed 20. If you project the same attribute into
      *         two different indexes, this counts as two distinct attributes when
      *         determining the total.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Projection withNonKeyAttributes(java.util.Collection<String> nonKeyAttributes) {
         if (nonKeyAttributes == null) {

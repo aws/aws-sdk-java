@@ -31,7 +31,7 @@ public class DelegationSet  implements Serializable  {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      */
-    private java.util.List<String> nameServers;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> nameServers;
 
     /**
      * Default constructor for a new DelegationSet object.  Callers should use the
@@ -39,6 +39,8 @@ public class DelegationSet  implements Serializable  {
      */
     public DelegationSet() {}
     
+
+
     /**
      * Constructs a new DelegationSet object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -50,7 +52,7 @@ public class DelegationSet  implements Serializable  {
      * <code>NameServer</code> that is assigned to your hosted zone.
      */
     public DelegationSet(java.util.List<String> nameServers) {
-        this.nameServers = nameServers;
+        setNameServers(nameServers);
     }
 
     
@@ -72,7 +74,8 @@ public class DelegationSet  implements Serializable  {
     public java.util.List<String> getNameServers() {
         
         if (nameServers == null) {
-            nameServers = new java.util.ArrayList<String>();
+              nameServers = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              nameServers.setAutoConstruct(true);
         }
         return nameServers;
     }
@@ -96,8 +99,7 @@ public class DelegationSet  implements Serializable  {
             this.nameServers = null;
             return;
         }
-
-        java.util.List<String> nameServersCopy = new java.util.ArrayList<String>(nameServers.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> nameServersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(nameServers.size());
         nameServersCopy.addAll(nameServers);
         this.nameServers = nameServersCopy;
     }
@@ -152,7 +154,7 @@ public class DelegationSet  implements Serializable  {
         if (nameServers == null) {
             this.nameServers = null;
         } else {
-            java.util.List<String> nameServersCopy = new java.util.ArrayList<String>(nameServers.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> nameServersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(nameServers.size());
             nameServersCopy.addAll(nameServers);
             this.nameServers = nameServersCopy;
         }
@@ -171,7 +173,7 @@ public class DelegationSet  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getNameServers() != null) sb.append("NameServers: " + getNameServers() );
         sb.append("}");
         return sb.toString();

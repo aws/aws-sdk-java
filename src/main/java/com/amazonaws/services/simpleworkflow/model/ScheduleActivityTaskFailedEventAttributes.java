@@ -354,10 +354,10 @@ public class ScheduleActivityTaskFailedEventAttributes  implements Serializable 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getActivityType() != null) sb.append("ActivityType: " + getActivityType() + ",");    	
-        if (getActivityId() != null) sb.append("ActivityId: " + getActivityId() + ",");    	
-        if (getCause() != null) sb.append("Cause: " + getCause() + ",");    	
+        sb.append("{");
+        if (getActivityType() != null) sb.append("ActivityType: " + getActivityType() + ",");
+        if (getActivityId() != null) sb.append("ActivityId: " + getActivityId() + ",");
+        if (getCause() != null) sb.append("Cause: " + getCause() + ",");
         if (getDecisionTaskCompletedEventId() != null) sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() );
         sb.append("}");
         return sb.toString();

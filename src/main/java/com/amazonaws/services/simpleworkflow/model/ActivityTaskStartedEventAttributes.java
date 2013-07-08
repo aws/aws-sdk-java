@@ -158,8 +158,8 @@ public class ActivityTaskStartedEventAttributes  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getIdentity() != null) sb.append("Identity: " + getIdentity() + ",");    	
+        sb.append("{");
+        if (getIdentity() != null) sb.append("Identity: " + getIdentity() + ",");
         if (getScheduledEventId() != null) sb.append("ScheduledEventId: " + getScheduledEventId() );
         sb.append("}");
         return sb.toString();

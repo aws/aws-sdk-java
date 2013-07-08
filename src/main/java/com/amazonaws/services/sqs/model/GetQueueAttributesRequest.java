@@ -18,42 +18,14 @@ import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#getQueueAttributes(GetQueueAttributesRequest) GetQueueAttributes operation}.
- * <p>
- * Gets attributes for the specified queue. The following attributes are supported:
- * <ul>
- * <li> <code>All</code> - returns all values.</li>
- * <li> <code>ApproximateNumberOfMessages</code> - returns the approximate number of visible messages in a queue. For more information, see Resources
- * Required to Process Messages in the Amazon SQS Developer Guide.</li>
- * <li> <code>ApproximateNumberOfMessagesNotVisible</code> - returns the approximate number of messages that are not timed-out and not deleted. For more
- * information, see Resources Required to Process Messages in the Amazon SQS Developer Guide.</li>
- * <li> <code>VisibilityTimeout</code> - returns the visibility timeout for the queue. For more information about visibility timeout, see Visibility
- * Timeout in the Amazon SQS Developer Guide.</li>
- * <li> <code>CreatedTimestamp</code> - returns the time when the queue was created (epoch time in seconds).</li>
- * <li> <code>LastModifiedTimestamp</code> - returns the time when the queue was last changed (epoch time in seconds).</li>
- * <li> <code>Policy</code> - returns the queue's policy.</li>
- * <li> <code>MaximumMessageSize</code> - returns the limit of how many bytes a message can contain before Amazon SQS rejects it.</li>
- * <li> <code>MessageRetentionPeriod</code> - returns the number of seconds Amazon SQS retains a message.</li>
- * <li> <code>QueueArn</code> - returns the queue's Amazon resource name (ARN).</li>
- * <li> <code>ApproximateNumberOfMessagesDelayed</code> - returns the approximate number of messages that are pending to be added to the queue.</li>
- * <li> <code>DelaySeconds</code> - returns the default delay on the queue in seconds.</li>
- * <li> <code>ReceiveMessageWaitTimeSeconds</code> - returns the time for which a ReceiveMessage call will wait for a message to arrive.</li>
  * 
- * </ul>
- * 
- * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#getQueueAttributes(GetQueueAttributesRequest)
  */
 public class GetQueueAttributesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
-    /**
-     * The URL of the SQS queue to take action on.
-     */
     private String queueUrl;
 
-    /**
-     * A list of attributes to retrieve information for.
-     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> attributeNames;
 
     /**
@@ -69,7 +41,7 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest  implemen
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param queueUrl The URL of the SQS queue to take action on.
+     * @param queueUrl
      */
     public GetQueueAttributesRequest(String queueUrl) {
         setQueueUrl(queueUrl);
@@ -78,29 +50,29 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest  implemen
     
     
     /**
-     * The URL of the SQS queue to take action on.
+     * Returns the value of the QueueUrl property for this object.
      *
-     * @return The URL of the SQS queue to take action on.
+     * @return The value of the QueueUrl property for this object.
      */
     public String getQueueUrl() {
         return queueUrl;
     }
     
     /**
-     * The URL of the SQS queue to take action on.
+     * Sets the value of the QueueUrl property for this object.
      *
-     * @param queueUrl The URL of the SQS queue to take action on.
+     * @param queueUrl The new value for the QueueUrl property for this object.
      */
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
     
     /**
-     * The URL of the SQS queue to take action on.
+     * Sets the value of the QueueUrl property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queueUrl The URL of the SQS queue to take action on.
+     * @param queueUrl The new value for the QueueUrl property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -112,9 +84,9 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest  implemen
     
     
     /**
-     * A list of attributes to retrieve information for.
+     * Returns the value of the AttributeNames property for this object.
      *
-     * @return A list of attributes to retrieve information for.
+     * @return The value of the AttributeNames property for this object.
      */
     public java.util.List<String> getAttributeNames() {
         
@@ -126,9 +98,9 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest  implemen
     }
     
     /**
-     * A list of attributes to retrieve information for.
+     * Sets the value of the AttributeNames property for this object.
      *
-     * @param attributeNames A list of attributes to retrieve information for.
+     * @param attributeNames The new value for the AttributeNames property for this object.
      */
     public void setAttributeNames(java.util.Collection<String> attributeNames) {
         if (attributeNames == null) {
@@ -141,11 +113,11 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest  implemen
     }
     
     /**
-     * A list of attributes to retrieve information for.
+     * Sets the value of the AttributeNames property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributeNames A list of attributes to retrieve information for.
+     * @param attributeNames The new value for the AttributeNames property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -159,11 +131,11 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest  implemen
     }
     
     /**
-     * A list of attributes to retrieve information for.
+     * Sets the value of the AttributeNames property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributeNames A list of attributes to retrieve information for.
+     * @param attributeNames The new value for the AttributeNames property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

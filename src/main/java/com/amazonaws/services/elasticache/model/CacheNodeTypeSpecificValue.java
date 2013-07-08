@@ -117,8 +117,8 @@ public class CacheNodeTypeSpecificValue  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCacheNodeType() != null) sb.append("CacheNodeType: " + getCacheNodeType() + ",");    	
+        sb.append("{");
+        if (getCacheNodeType() != null) sb.append("CacheNodeType: " + getCacheNodeType() + ",");
         if (getValue() != null) sb.append("Value: " + getValue() );
         sb.append("}");
         return sb.toString();

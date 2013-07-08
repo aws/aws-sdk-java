@@ -294,10 +294,10 @@ public class DescribeCacheClustersRequest extends AmazonWebServiceRequest  imple
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCacheClusterId() != null) sb.append("CacheClusterId: " + getCacheClusterId() + ",");    	
-        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getCacheClusterId() != null) sb.append("CacheClusterId: " + getCacheClusterId() + ",");
+        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (isShowCacheNodeInfo() != null) sb.append("ShowCacheNodeInfo: " + isShowCacheNodeInfo() );
         sb.append("}");
         return sb.toString();

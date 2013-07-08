@@ -134,9 +134,6 @@ public class GetItemRequest extends AmazonWebServiceRequest  implements Serializ
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
      * @param tableName The name of the table containing the requested item.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetItemRequest withTableName(String tableName) {
         this.tableName = tableName;
@@ -154,7 +151,6 @@ public class GetItemRequest extends AmazonWebServiceRequest  implements Serializ
     public java.util.Map<String,AttributeValue> getKey() {
         
         return key;
-
     }
     
     /**
@@ -176,15 +172,83 @@ public class GetItemRequest extends AmazonWebServiceRequest  implements Serializ
      *
      * @param key A map of attribute names to <i>AttributeValue</i> objects,
      *         representing the primary key of the item to retrieve.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetItemRequest withKey(java.util.Map<String,AttributeValue> key) {
         setKey(key);
         return this;
     }
     
+   	
+    /**
+     * A map of attribute names to <i>AttributeValue</i> objects,
+     * representing the primary key of the item to retrieve.
+     * <p>
+     * This method accepts the hashKey, rangeKey of Key as
+     * java.util.Map.Entry<String, AttributeValue> objects.
+     *
+     * @param hashKey Primary hash key.
+     * @param rangeKey Primary range key. (null if it a hash-only table)
+     */
+    public void setKey(java.util.Map.Entry<String, AttributeValue> hashKey, java.util.Map.Entry<String, AttributeValue> rangeKey) throws IllegalArgumentException {
+        java.util.HashMap<String,AttributeValue> key = new java.util.HashMap<String,AttributeValue>();
+    	
+    	if (hashKey != null) {
+    	    key.put(hashKey.getKey(), hashKey.getValue());
+    	} else
+            throw new IllegalArgumentException("hashKey must be non-null object.");
+    	if (rangeKey != null) {
+    	    key.put(rangeKey.getKey(), rangeKey.getValue());
+    	} 
+        setKey(key);
+    }
+    
+    /**
+     * A map of attribute names to <i>AttributeValue</i> objects,
+     * representing the primary key of the item to retrieve.
+     * <p>
+     * This method accepts the hashKey, rangeKey of Key as
+     * java.util.Map.Entry<String, AttributeValue> objects.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param hashKey Primary hash key.
+     * @param rangeKey Primary range key. (null if it a hash-only table)
+     */    
+    public GetItemRequest withKey(java.util.Map.Entry<String, AttributeValue> hashKey, java.util.Map.Entry<String, AttributeValue> rangeKey) throws IllegalArgumentException {
+    	setKey(hashKey, rangeKey);
+    	return this;
+    }
+	
+    /**
+     * A map of attribute names to <i>AttributeValue</i> objects,
+     * representing the primary key of the item to retrieve.
+     * <p>
+     * The method adds a new key-value pair into Key parameter, and returns a
+     * reference to this object so that method calls can be chained together.
+     *
+     * @param key The key of the entry to be added into Key.
+     * @param value The corresponding value of the entry to be added into Key.
+     */
+	public GetItemRequest addKeyEntry(String key, AttributeValue value) {
+		if (null == this.key) {
+			this.key = new java.util.HashMap<String,AttributeValue>();
+		}
+		if (this.key.containsKey(key))
+			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+		this.key.put(key, value);
+		return this;
+	}
+	
+	/**
+	 * Removes all the entries added into Key.
+	 * <p>
+	 * Returns a reference to this object so that method calls can be chained together.
+	 */
+	public GetItemRequest clearKeyEntries() {
+		this.key = null;
+		return this;
+	}
+	
     /**
      * The names of one or more attributes to retrieve. If no attribute names
      * are specified, then all attributes will be returned. If any of the
@@ -243,9 +307,6 @@ public class GetItemRequest extends AmazonWebServiceRequest  implements Serializ
      *         are specified, then all attributes will be returned. If any of the
      *         requested attributes are not found, they will not appear in the
      *         result.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetItemRequest withAttributesToGet(String... attributesToGet) {
         if (getAttributesToGet() == null) setAttributesToGet(new java.util.ArrayList<String>(attributesToGet.length));
@@ -270,9 +331,6 @@ public class GetItemRequest extends AmazonWebServiceRequest  implements Serializ
      *         are specified, then all attributes will be returned. If any of the
      *         requested attributes are not found, they will not appear in the
      *         result.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetItemRequest withAttributesToGet(java.util.Collection<String> attributesToGet) {
         if (attributesToGet == null) {
@@ -316,9 +374,6 @@ public class GetItemRequest extends AmazonWebServiceRequest  implements Serializ
      *
      * @param consistentRead If set to <code>true</code>, then the operation uses strongly
      *         consistent reads; otherwise, eventually consistent reads are used.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetItemRequest withConsistentRead(Boolean consistentRead) {
         this.consistentRead = consistentRead;
@@ -387,9 +442,6 @@ public class GetItemRequest extends AmazonWebServiceRequest  implements Serializ
      *         the response; if set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ReturnConsumedCapacity
      */
     public GetItemRequest withReturnConsumedCapacity(String returnConsumedCapacity) {
@@ -429,9 +481,6 @@ public class GetItemRequest extends AmazonWebServiceRequest  implements Serializ
      * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
      *         the response; if set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see ReturnConsumedCapacity
      */

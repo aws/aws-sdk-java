@@ -85,7 +85,7 @@ public class AmazonDynamoDBSample {
             CreateTableRequest createTableRequest = new CreateTableRequest().withTableName(tableName)
                 .withKeySchema(new KeySchemaElement().withAttributeName("name").withKeyType(KeyType.HASH))
                 .withAttributeDefinitions(new AttributeDefinition().withAttributeName("name").withAttributeType(ScalarAttributeType.S))
-                .withProvisionedThroughput(new ProvisionedThroughput().withReadCapacityUnits(10L).withWriteCapacityUnits(10L));
+                .withProvisionedThroughput(new ProvisionedThroughput().withReadCapacityUnits(1L).withWriteCapacityUnits(1L));
             TableDescription createdTableDescription = dynamoDB.createTable(createTableRequest).getTableDescription();
             System.out.println("Created Table: " + createdTableDescription);
 

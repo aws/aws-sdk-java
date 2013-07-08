@@ -281,9 +281,9 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        sb.append("{");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
         if (getWorkflowExecutionRetentionPeriodInDays() != null) sb.append("WorkflowExecutionRetentionPeriodInDays: " + getWorkflowExecutionRetentionPeriodInDays() );
         sb.append("}");
         return sb.toString();

@@ -38,7 +38,7 @@ public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest  i
      * arguments are optional. A maximum of 20 parameters may be modified in
      * a single request.
      */
-    private java.util.List<ParameterNameValue> parameterNameValues;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ParameterNameValue> parameterNameValues;
 
     /**
      * Default constructor for a new ModifyCacheParameterGroupRequest object.  Callers should use the
@@ -46,6 +46,8 @@ public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest  i
      */
     public ModifyCacheParameterGroupRequest() {}
     
+
+
     /**
      * Constructs a new ModifyCacheParameterGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -59,8 +61,8 @@ public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest  i
      * parameters may be modified in a single request.
      */
     public ModifyCacheParameterGroupRequest(String cacheParameterGroupName, java.util.List<ParameterNameValue> parameterNameValues) {
-        this.cacheParameterGroupName = cacheParameterGroupName;
-        this.parameterNameValues = parameterNameValues;
+        setCacheParameterGroupName(cacheParameterGroupName);
+        setParameterNameValues(parameterNameValues);
     }
 
     
@@ -113,7 +115,8 @@ public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest  i
     public java.util.List<ParameterNameValue> getParameterNameValues() {
         
         if (parameterNameValues == null) {
-            parameterNameValues = new java.util.ArrayList<ParameterNameValue>();
+              parameterNameValues = new com.amazonaws.internal.ListWithAutoConstructFlag<ParameterNameValue>();
+              parameterNameValues.setAutoConstruct(true);
         }
         return parameterNameValues;
     }
@@ -134,8 +137,7 @@ public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest  i
             this.parameterNameValues = null;
             return;
         }
-
-        java.util.List<ParameterNameValue> parameterNameValuesCopy = new java.util.ArrayList<ParameterNameValue>(parameterNameValues.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ParameterNameValue> parameterNameValuesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ParameterNameValue>(parameterNameValues.size());
         parameterNameValuesCopy.addAll(parameterNameValues);
         this.parameterNameValues = parameterNameValuesCopy;
     }
@@ -184,7 +186,7 @@ public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest  i
         if (parameterNameValues == null) {
             this.parameterNameValues = null;
         } else {
-            java.util.List<ParameterNameValue> parameterNameValuesCopy = new java.util.ArrayList<ParameterNameValue>(parameterNameValues.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ParameterNameValue> parameterNameValuesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ParameterNameValue>(parameterNameValues.size());
             parameterNameValuesCopy.addAll(parameterNameValues);
             this.parameterNameValues = parameterNameValuesCopy;
         }
@@ -203,8 +205,8 @@ public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest  i
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCacheParameterGroupName() != null) sb.append("CacheParameterGroupName: " + getCacheParameterGroupName() + ",");    	
+        sb.append("{");
+        if (getCacheParameterGroupName() != null) sb.append("CacheParameterGroupName: " + getCacheParameterGroupName() + ",");
         if (getParameterNameValues() != null) sb.append("ParameterNameValues: " + getParameterNameValues() );
         sb.append("}");
         return sb.toString();

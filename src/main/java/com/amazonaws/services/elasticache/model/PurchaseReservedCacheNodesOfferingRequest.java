@@ -168,9 +168,9 @@ public class PurchaseReservedCacheNodesOfferingRequest extends AmazonWebServiceR
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getReservedCacheNodesOfferingId() != null) sb.append("ReservedCacheNodesOfferingId: " + getReservedCacheNodesOfferingId() + ",");    	
-        if (getReservedCacheNodeId() != null) sb.append("ReservedCacheNodeId: " + getReservedCacheNodeId() + ",");    	
+        sb.append("{");
+        if (getReservedCacheNodesOfferingId() != null) sb.append("ReservedCacheNodesOfferingId: " + getReservedCacheNodesOfferingId() + ",");
+        if (getReservedCacheNodeId() != null) sb.append("ReservedCacheNodeId: " + getReservedCacheNodeId() + ",");
         if (getCacheNodeCount() != null) sb.append("CacheNodeCount: " + getCacheNodeCount() );
         sb.append("}");
         return sb.toString();

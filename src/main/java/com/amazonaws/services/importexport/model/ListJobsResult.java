@@ -25,7 +25,7 @@ public class ListJobsResult  implements Serializable  {
     /**
      * A list container for Jobs returned by the ListJobs operation.
      */
-    private java.util.List<Job> jobs;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Job> jobs;
 
     /**
      * Indicates whether the list of jobs was truncated. If true, then call
@@ -41,7 +41,8 @@ public class ListJobsResult  implements Serializable  {
     public java.util.List<Job> getJobs() {
         
         if (jobs == null) {
-            jobs = new java.util.ArrayList<Job>();
+              jobs = new com.amazonaws.internal.ListWithAutoConstructFlag<Job>();
+              jobs.setAutoConstruct(true);
         }
         return jobs;
     }
@@ -56,8 +57,7 @@ public class ListJobsResult  implements Serializable  {
             this.jobs = null;
             return;
         }
-
-        java.util.List<Job> jobsCopy = new java.util.ArrayList<Job>(jobs.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Job> jobsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Job>(jobs.size());
         jobsCopy.addAll(jobs);
         this.jobs = jobsCopy;
     }
@@ -94,7 +94,7 @@ public class ListJobsResult  implements Serializable  {
         if (jobs == null) {
             this.jobs = null;
         } else {
-            java.util.List<Job> jobsCopy = new java.util.ArrayList<Job>(jobs.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Job> jobsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Job>(jobs.size());
             jobsCopy.addAll(jobs);
             this.jobs = jobsCopy;
         }
@@ -164,8 +164,8 @@ public class ListJobsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getJobs() != null) sb.append("Jobs: " + getJobs() + ",");    	
+        sb.append("{");
+        if (getJobs() != null) sb.append("Jobs: " + getJobs() + ",");
         if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() );
         sb.append("}");
         return sb.toString();

@@ -17,7 +17,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * JSON-formatted name/value pair that represents the name and category of problem selected from the DescribeServices response for each AWS service.
+ * JSON-formatted name/value pair that represents the name and category of problem selected from the <a
+ * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"> DescribeServices </a> response for each AWS service.
  * </p>
  */
 public class Category  implements Serializable  {

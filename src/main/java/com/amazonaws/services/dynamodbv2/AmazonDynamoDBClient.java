@@ -246,7 +246,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * parallel <i>Scan</i> by specifying the <i>Segment</i> and
      * <i>TotalSegments</i> parameters. For more information, see <a
      * odb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan">
-     * Parallel Scan </a> in the <i>Amazon DynamoDB Developer Guide</i> .
+     * Parallel Scan </a> in the Amazon DynamoDB Developer Guide.
      * </p>
      *
      * @param scanRequest Container for the necessary parameters to execute
@@ -297,7 +297,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * The provisioned throughput values can be upgraded or downgraded based
      * on the maximums and minimums listed in the <a
      * docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">
-     * Limits </a> section in the <i>Amazon DynamoDB Developer Guide</i> .
+     * Limits </a> section in the Amazon DynamoDB Developer Guide.
      * </p>
      * <p>
      * The table must be in the <code>ACTIVE</code> state for this operation
@@ -371,15 +371,6 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * <b>NOTE:</b> Amazon DynamoDB might continue to accept data read and
      * write operations, such as GetItem and PutItem, on a table in the
      * DELETING state until the table deletion is complete.
-     * </p>
-     * <p>
-     * Tables are unique among those associated with the AWS Account issuing
-     * the request, and the AWS region that receives the request (such as
-     * dynamodb.us-east-1.amazonaws.com). Each Amazon DynamoDB endpoint is
-     * entirely independent. For example, if you have two tables called
-     * "MyTable," one in dynamodb.us-east-1.amazonaws.com and one in
-     * dynamodb.us-west-1.amazonaws.com, they are completely independent and
-     * do not share any data; deleting one does not delete the other.
      * </p>
      * <p>
      * When you delete a table, any local secondary indexes on that table are
@@ -877,8 +868,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * <p>
      * For more information about using this API, see <a
      * zon.com/amazondynamodb/latest/developerguide/WorkingWithDDItems.html">
-     * Working with Items </a> in the <i>Amazon DynamoDB Developer
-     * Guide</i> .
+     * Working with Items </a> in the Amazon DynamoDB Developer Guide.
      * </p>
      *
      * @param putItemRequest Container for the necessary parameters to
@@ -925,15 +915,6 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * <p>
      * Returns an array of all the tables associated with the current account
      * and endpoint.
-     * </p>
-     * <p>
-     * Each Amazon DynamoDB endpoint is entirely independent. For example, if
-     * you have two tables called "MyTable," one in
-     * <i>dynamodb.us-east-1.amazonaws.com</i> and one in
-     * <i>dynamodb.us-west-1.amazonaws.com</i> , they are completely
-     * independent and do not share any data. The <i>ListTables</i> operation
-     * returns all of the table names associated with the account making the
-     * request, for the endpoint that receives the request.
      * </p>
      *
      * @param listTablesRequest Container for the necessary parameters to
@@ -1075,8 +1056,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * Requests for nonexistent items consume the minimum read capacity units
      * according to the type of read. For more information, see <a
      * est/developerguide/WorkingWithDDTables.html#CapacityUnitCalculations">
-     * Capacity Units Calculations </a> in the <i>Amazon DynamoDB Developer
-     * Guide</i> .
+     * Capacity Units Calculations </a> in the Amazon DynamoDB Developer
+     * Guide.
      * </p>
      *
      * @param batchGetItemRequest Container for the necessary parameters to
@@ -1121,15 +1102,6 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * <p>
      * Returns an array of all the tables associated with the current account
      * and endpoint.
-     * </p>
-     * <p>
-     * Each Amazon DynamoDB endpoint is entirely independent. For example, if
-     * you have two tables called "MyTable," one in
-     * <i>dynamodb.us-east-1.amazonaws.com</i> and one in
-     * <i>dynamodb.us-west-1.amazonaws.com</i> , they are completely
-     * independent and do not share any data. The <i>ListTables</i> operation
-     * returns all of the table names associated with the account making the
-     * request, for the endpoint that receives the request.
      * </p>
      * 
      * @return The response from the ListTables service method, as returned

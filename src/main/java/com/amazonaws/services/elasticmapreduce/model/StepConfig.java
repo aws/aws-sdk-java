@@ -50,6 +50,8 @@ public class StepConfig  implements Serializable  {
      */
     public StepConfig() {}
     
+
+
     /**
      * Constructs a new StepConfig object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -60,8 +62,8 @@ public class StepConfig  implements Serializable  {
      * step.
      */
     public StepConfig(String name, HadoopJarStepConfig hadoopJarStep) {
-        this.name = name;
-        this.hadoopJarStep = hadoopJarStep;
+        setName(name);
+        setHadoopJarStep(hadoopJarStep);
     }
 
     
@@ -240,9 +242,9 @@ public class StepConfig  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getActionOnFailure() != null) sb.append("ActionOnFailure: " + getActionOnFailure() + ",");    	
+        sb.append("{");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getActionOnFailure() != null) sb.append("ActionOnFailure: " + getActionOnFailure() + ",");
         if (getHadoopJarStep() != null) sb.append("HadoopJarStep: " + getHadoopJarStep() );
         sb.append("}");
         return sb.toString();

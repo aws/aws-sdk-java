@@ -53,7 +53,7 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest  implements
      * A list of Attributes. Similar to columns on a spreadsheet, attributes
      * represent categories of data that can be assigned to items.
      */
-    private java.util.List<Attribute> attributes;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Attribute> attributes;
 
     /**
      * The update condition which, if specified, determines whether the
@@ -69,6 +69,8 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest  implements
      */
     public DeleteAttributesRequest() {}
     
+
+
     /**
      * Constructs a new DeleteAttributesRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -81,12 +83,14 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest  implements
      * more value-attribute pairs.
      */
     public DeleteAttributesRequest(String domainName, String itemName) {
-        this.domainName = domainName;
-        this.itemName = itemName;
+        setDomainName(domainName);
+        setItemName(itemName);
     }
 
     
     
+
+
     /**
      * Constructs a new DeleteAttributesRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -102,13 +106,15 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest  implements
      * assigned to items.
      */
     public DeleteAttributesRequest(String domainName, String itemName, java.util.List<Attribute> attributes) {
-        this.domainName = domainName;
-        this.itemName = itemName;
-        this.attributes = attributes;
+        setDomainName(domainName);
+        setItemName(itemName);
+        setAttributes(attributes);
     }
 
     
     
+
+
     /**
      * Constructs a new DeleteAttributesRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -128,10 +134,10 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest  implements
      * and the attributes to be deleted.
      */
     public DeleteAttributesRequest(String domainName, String itemName, java.util.List<Attribute> attributes, UpdateCondition expected) {
-        this.domainName = domainName;
-        this.itemName = itemName;
-        this.attributes = attributes;
-        this.expected = expected;
+        setDomainName(domainName);
+        setItemName(itemName);
+        setAttributes(attributes);
+        setExpected(expected);
     }
 
     
@@ -226,7 +232,8 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest  implements
     public java.util.List<Attribute> getAttributes() {
         
         if (attributes == null) {
-            attributes = new java.util.ArrayList<Attribute>();
+              attributes = new com.amazonaws.internal.ListWithAutoConstructFlag<Attribute>();
+              attributes.setAutoConstruct(true);
         }
         return attributes;
     }
@@ -243,8 +250,7 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest  implements
             this.attributes = null;
             return;
         }
-
-        java.util.List<Attribute> attributesCopy = new java.util.ArrayList<Attribute>(attributes.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Attribute> attributesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Attribute>(attributes.size());
         attributesCopy.addAll(attributes);
         this.attributes = attributesCopy;
     }
@@ -285,7 +291,7 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest  implements
         if (attributes == null) {
             this.attributes = null;
         } else {
-            java.util.List<Attribute> attributesCopy = new java.util.ArrayList<Attribute>(attributes.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Attribute> attributesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Attribute>(attributes.size());
             attributesCopy.addAll(attributes);
             this.attributes = attributesCopy;
         }
@@ -356,10 +362,10 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");    	
-        if (getItemName() != null) sb.append("ItemName: " + getItemName() + ",");    	
-        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ",");    	
+        sb.append("{");
+        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");
+        if (getItemName() != null) sb.append("ItemName: " + getItemName() + ",");
+        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ",");
         if (getExpected() != null) sb.append("Expected: " + getExpected() );
         sb.append("}");
         return sb.toString();

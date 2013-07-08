@@ -42,6 +42,8 @@ public class Change  implements Serializable  {
      */
     public Change() {}
     
+
+
     /**
      * Constructs a new Change object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -53,8 +55,8 @@ public class Change  implements Serializable  {
      * create or delete.
      */
     public Change(String action, ResourceRecordSet resourceRecordSet) {
-        this.action = action;
-        this.resourceRecordSet = resourceRecordSet;
+        setAction(action);
+        setResourceRecordSet(resourceRecordSet);
     }
 
     
@@ -212,8 +214,8 @@ public class Change  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAction() != null) sb.append("Action: " + getAction() + ",");    	
+        sb.append("{");
+        if (getAction() != null) sb.append("Action: " + getAction() + ",");
         if (getResourceRecordSet() != null) sb.append("ResourceRecordSet: " + getResourceRecordSet() );
         sb.append("}");
         return sb.toString();

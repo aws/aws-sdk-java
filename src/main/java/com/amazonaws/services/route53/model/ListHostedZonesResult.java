@@ -26,7 +26,7 @@ public class ListHostedZonesResult  implements Serializable  {
      * A complex type that contains information about the hosted zones
      * associated with the current AWS account.
      */
-    private java.util.List<HostedZone> hostedZones;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<HostedZone> hostedZones;
 
     /**
      * If the request returned more than one page of results, submit another
@@ -81,7 +81,8 @@ public class ListHostedZonesResult  implements Serializable  {
     public java.util.List<HostedZone> getHostedZones() {
         
         if (hostedZones == null) {
-            hostedZones = new java.util.ArrayList<HostedZone>();
+              hostedZones = new com.amazonaws.internal.ListWithAutoConstructFlag<HostedZone>();
+              hostedZones.setAutoConstruct(true);
         }
         return hostedZones;
     }
@@ -98,8 +99,7 @@ public class ListHostedZonesResult  implements Serializable  {
             this.hostedZones = null;
             return;
         }
-
-        java.util.List<HostedZone> hostedZonesCopy = new java.util.ArrayList<HostedZone>(hostedZones.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<HostedZone> hostedZonesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<HostedZone>(hostedZones.size());
         hostedZonesCopy.addAll(hostedZones);
         this.hostedZones = hostedZonesCopy;
     }
@@ -140,7 +140,7 @@ public class ListHostedZonesResult  implements Serializable  {
         if (hostedZones == null) {
             this.hostedZones = null;
         } else {
-            java.util.List<HostedZone> hostedZonesCopy = new java.util.ArrayList<HostedZone>(hostedZones.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<HostedZone> hostedZonesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<HostedZone>(hostedZones.size());
             hostedZonesCopy.addAll(hostedZones);
             this.hostedZones = hostedZonesCopy;
         }
@@ -430,11 +430,11 @@ public class ListHostedZonesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getHostedZones() != null) sb.append("HostedZones: " + getHostedZones() + ",");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
-        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");    	
-        if (getNextMarker() != null) sb.append("NextMarker: " + getNextMarker() + ",");    	
+        sb.append("{");
+        if (getHostedZones() != null) sb.append("HostedZones: " + getHostedZones() + ",");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
+        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");
+        if (getNextMarker() != null) sb.append("NextMarker: " + getNextMarker() + ",");
         if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() );
         sb.append("}");
         return sb.toString();

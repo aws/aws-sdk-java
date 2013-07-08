@@ -18,51 +18,18 @@ import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#addPermission(AddPermissionRequest) AddPermission operation}.
- * <p>
- * The AddPermission action adds a permission to a queue for a specific <a
- * href="http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/APIReference/Glossary.html#d0e3892"> principal </a> . This allows for sharing
- * access to the queue.
- * </p>
- * <p>
- * When you create a queue, you have full control access rights for the queue. Only you (as owner of the queue) can grant or deny permissions to the
- * queue. For more information about these permissions, see <a
- * href="http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/?acp-overview.html"> Shared Queues </a> in the Amazon SQS
- * Developer Guide.
- * </p>
- * <p>
- * <code>AddPermission</code> writes an SQS-generated policy. If you want to write your own policy, use SetQueueAttributes to upload your policy. For
- * more information about writing your own policy, see <a
- * href="http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/?AccessPolicyLanguage.html"> Appendix: The Access Policy
- * Language </a> in the Amazon SQS Developer Guide.
- * </p>
+ * 
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#addPermission(AddPermissionRequest)
  */
 public class AddPermissionRequest extends AmazonWebServiceRequest  implements Serializable  {
 
-    /**
-     * The URL of the SQS queue to take action on.
-     */
     private String queueUrl;
 
-    /**
-     * The unique identification of the permission you're setting (e.g.,
-     * <code>AliceSendMessage</code>). Constraints: Maximum 80 characters;
-     * alphanumeric characters, hyphens (-), and underscores (_) are allowed.
-     */
     private String label;
 
-    /**
-     * The AWS account number of the <a
-     * href="http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a>
-     * who will be given permission. The principal must have an AWS account,
-     * but does not need to be signed up for Amazon SQS.
-     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> aWSAccountIds;
 
-    /**
-     * The action the client wants to allow for the specified principal.
-     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> actions;
 
     /**
@@ -78,17 +45,10 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param queueUrl The URL of the SQS queue to take action on.
-     * @param label The unique identification of the permission you're
-     * setting (e.g., <code>AliceSendMessage</code>). Constraints: Maximum 80
-     * characters; alphanumeric characters, hyphens (-), and underscores (_)
-     * are allowed.
-     * @param aWSAccountIds The AWS account number of the <a
-     * href="http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a>
-     * who will be given permission. The principal must have an AWS account,
-     * but does not need to be signed up for Amazon SQS.
-     * @param actions The action the client wants to allow for the specified
-     * principal.
+     * @param queueUrl
+     * @param label
+     * @param aWSAccountIds
+     * @param actions
      */
     public AddPermissionRequest(String queueUrl, String label, java.util.List<String> aWSAccountIds, java.util.List<String> actions) {
         setQueueUrl(queueUrl);
@@ -100,29 +60,29 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
     
     
     /**
-     * The URL of the SQS queue to take action on.
+     * Returns the value of the QueueUrl property for this object.
      *
-     * @return The URL of the SQS queue to take action on.
+     * @return The value of the QueueUrl property for this object.
      */
     public String getQueueUrl() {
         return queueUrl;
     }
     
     /**
-     * The URL of the SQS queue to take action on.
+     * Sets the value of the QueueUrl property for this object.
      *
-     * @param queueUrl The URL of the SQS queue to take action on.
+     * @param queueUrl The new value for the QueueUrl property for this object.
      */
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
     
     /**
-     * The URL of the SQS queue to take action on.
+     * Sets the value of the QueueUrl property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queueUrl The URL of the SQS queue to take action on.
+     * @param queueUrl The new value for the QueueUrl property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -134,41 +94,29 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
     
     
     /**
-     * The unique identification of the permission you're setting (e.g.,
-     * <code>AliceSendMessage</code>). Constraints: Maximum 80 characters;
-     * alphanumeric characters, hyphens (-), and underscores (_) are allowed.
+     * Returns the value of the Label property for this object.
      *
-     * @return The unique identification of the permission you're setting (e.g.,
-     *         <code>AliceSendMessage</code>). Constraints: Maximum 80 characters;
-     *         alphanumeric characters, hyphens (-), and underscores (_) are allowed.
+     * @return The value of the Label property for this object.
      */
     public String getLabel() {
         return label;
     }
     
     /**
-     * The unique identification of the permission you're setting (e.g.,
-     * <code>AliceSendMessage</code>). Constraints: Maximum 80 characters;
-     * alphanumeric characters, hyphens (-), and underscores (_) are allowed.
+     * Sets the value of the Label property for this object.
      *
-     * @param label The unique identification of the permission you're setting (e.g.,
-     *         <code>AliceSendMessage</code>). Constraints: Maximum 80 characters;
-     *         alphanumeric characters, hyphens (-), and underscores (_) are allowed.
+     * @param label The new value for the Label property for this object.
      */
     public void setLabel(String label) {
         this.label = label;
     }
     
     /**
-     * The unique identification of the permission you're setting (e.g.,
-     * <code>AliceSendMessage</code>). Constraints: Maximum 80 characters;
-     * alphanumeric characters, hyphens (-), and underscores (_) are allowed.
+     * Sets the value of the Label property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param label The unique identification of the permission you're setting (e.g.,
-     *         <code>AliceSendMessage</code>). Constraints: Maximum 80 characters;
-     *         alphanumeric characters, hyphens (-), and underscores (_) are allowed.
+     * @param label The new value for the Label property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -180,15 +128,9 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
     
     
     /**
-     * The AWS account number of the <a
-     * href="http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a>
-     * who will be given permission. The principal must have an AWS account,
-     * but does not need to be signed up for Amazon SQS.
+     * Returns the value of the AWSAccountIds property for this object.
      *
-     * @return The AWS account number of the <a
-     *         href="http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a>
-     *         who will be given permission. The principal must have an AWS account,
-     *         but does not need to be signed up for Amazon SQS.
+     * @return The value of the AWSAccountIds property for this object.
      */
     public java.util.List<String> getAWSAccountIds() {
         
@@ -200,15 +142,9 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
     }
     
     /**
-     * The AWS account number of the <a
-     * href="http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a>
-     * who will be given permission. The principal must have an AWS account,
-     * but does not need to be signed up for Amazon SQS.
+     * Sets the value of the AWSAccountIds property for this object.
      *
-     * @param aWSAccountIds The AWS account number of the <a
-     *         href="http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a>
-     *         who will be given permission. The principal must have an AWS account,
-     *         but does not need to be signed up for Amazon SQS.
+     * @param aWSAccountIds The new value for the AWSAccountIds property for this object.
      */
     public void setAWSAccountIds(java.util.Collection<String> aWSAccountIds) {
         if (aWSAccountIds == null) {
@@ -221,17 +157,11 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
     }
     
     /**
-     * The AWS account number of the <a
-     * href="http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a>
-     * who will be given permission. The principal must have an AWS account,
-     * but does not need to be signed up for Amazon SQS.
+     * Sets the value of the AWSAccountIds property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param aWSAccountIds The AWS account number of the <a
-     *         href="http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a>
-     *         who will be given permission. The principal must have an AWS account,
-     *         but does not need to be signed up for Amazon SQS.
+     * @param aWSAccountIds The new value for the AWSAccountIds property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -245,17 +175,11 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
     }
     
     /**
-     * The AWS account number of the <a
-     * href="http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a>
-     * who will be given permission. The principal must have an AWS account,
-     * but does not need to be signed up for Amazon SQS.
+     * Sets the value of the AWSAccountIds property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param aWSAccountIds The AWS account number of the <a
-     *         href="http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a>
-     *         who will be given permission. The principal must have an AWS account,
-     *         but does not need to be signed up for Amazon SQS.
+     * @param aWSAccountIds The new value for the AWSAccountIds property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -273,9 +197,9 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
     }
     
     /**
-     * The action the client wants to allow for the specified principal.
+     * Returns the value of the Actions property for this object.
      *
-     * @return The action the client wants to allow for the specified principal.
+     * @return The value of the Actions property for this object.
      */
     public java.util.List<String> getActions() {
         
@@ -287,9 +211,9 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
     }
     
     /**
-     * The action the client wants to allow for the specified principal.
+     * Sets the value of the Actions property for this object.
      *
-     * @param actions The action the client wants to allow for the specified principal.
+     * @param actions The new value for the Actions property for this object.
      */
     public void setActions(java.util.Collection<String> actions) {
         if (actions == null) {
@@ -302,11 +226,11 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
     }
     
     /**
-     * The action the client wants to allow for the specified principal.
+     * Sets the value of the Actions property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param actions The action the client wants to allow for the specified principal.
+     * @param actions The new value for the Actions property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -320,11 +244,11 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
     }
     
     /**
-     * The action the client wants to allow for the specified principal.
+     * Sets the value of the Actions property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param actions The action the client wants to allow for the specified principal.
+     * @param actions The new value for the Actions property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

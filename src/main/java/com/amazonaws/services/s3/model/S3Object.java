@@ -17,6 +17,8 @@
  */
 package com.amazonaws.services.s3.model;
 
+import java.io.Closeable;
+import java.io.IOException;
 import java.io.InputStream;
 
 import com.amazonaws.services.s3.AmazonS3;
@@ -29,7 +31,7 @@ import com.amazonaws.services.s3.AmazonS3;
  *
  * @see ObjectMetadata
  */
-public class S3Object {
+public class S3Object implements Closeable {
     private static final long serialVersionUID = -2883501141593631181L;
 
     /** The key under which this object is stored */
@@ -188,4 +190,17 @@ public class S3Object {
             + ",bucket=" + (bucketName == null ? "<Unknown>" : bucketName)
             + "]";
     }
+
+    /**
+     * Releases any underlying system resources. If the resources
+     * are already released then invoking this method has no effect.
+     *
+     * @throws IOException if an I/O error occurs
+     */
+	@Override
+	public void close() throws IOException {
+		if(getObjectContent() != null){			
+			getObjectContent().close();			
+		}
+	}
 }

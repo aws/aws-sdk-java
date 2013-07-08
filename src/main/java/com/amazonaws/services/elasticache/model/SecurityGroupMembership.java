@@ -125,8 +125,8 @@ public class SecurityGroupMembership  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSecurityGroupId() != null) sb.append("SecurityGroupId: " + getSecurityGroupId() + ",");    	
+        sb.append("{");
+        if (getSecurityGroupId() != null) sb.append("SecurityGroupId: " + getSecurityGroupId() + ",");
         if (getStatus() != null) sb.append("Status: " + getStatus() );
         sb.append("}");
         return sb.toString();
