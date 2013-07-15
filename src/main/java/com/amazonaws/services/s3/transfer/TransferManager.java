@@ -26,6 +26,8 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -124,7 +126,7 @@ public class TransferManager {
     private ThreadPoolExecutor threadPool;
 
     /** Thread used for periodicially checking transfers and updating thier state. */
-    private ScheduledExecutorService timedThreadPool = new ScheduledThreadPoolExecutor(1);
+    private ScheduledExecutorService timedThreadPool = new ScheduledThreadPoolExecutor(1, daemonThreadFactory);
 
     private static final Log log = LogFactory.getLog(TransferManager.class);
 
@@ -964,4 +966,19 @@ public class TransferManager {
     private static final String USER_AGENT = TransferManager.class.getName() + "/" + VersionInfoUtils.getVersion();
 
     private static final String DEFAULT_DELIMITER = "/";
+
+    /**
+     * There is no need for threads from timedThreadPool if there is no more running threads in current process,
+     * so we need a daemon thread factory for it.
+     */
+    private static final ThreadFactory daemonThreadFactory = new ThreadFactory() {
+        final AtomicInteger threadCount = new AtomicInteger( 0 );
+        public Thread newThread(Runnable r) {
+            int threadNumber = threadCount.incrementAndGet();
+            Thread thread = new Thread(r);
+            thread.setDaemon(true);
+            thread.setName("S3TransferManagerTimedThread-" + threadNumber);
+            return thread;
+        }
+    };
 }
