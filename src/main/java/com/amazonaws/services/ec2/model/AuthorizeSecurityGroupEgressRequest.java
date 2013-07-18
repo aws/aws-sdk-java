@@ -108,9 +108,6 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groupId ID of the VPC security group to modify.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AuthorizeSecurityGroupEgressRequest withGroupId(String groupId) {
         this.groupId = groupId;
@@ -142,9 +139,6 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceSecurityGroupName Deprecated.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AuthorizeSecurityGroupEgressRequest withSourceSecurityGroupName(String sourceSecurityGroupName) {
         this.sourceSecurityGroupName = sourceSecurityGroupName;
@@ -176,9 +170,6 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceSecurityGroupOwnerId Deprecated.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AuthorizeSecurityGroupEgressRequest withSourceSecurityGroupOwnerId(String sourceSecurityGroupOwnerId) {
         this.sourceSecurityGroupOwnerId = sourceSecurityGroupOwnerId;
@@ -210,9 +201,6 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ipProtocol Deprecated.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AuthorizeSecurityGroupEgressRequest withIpProtocol(String ipProtocol) {
         this.ipProtocol = ipProtocol;
@@ -244,9 +232,6 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param fromPort Deprecated.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AuthorizeSecurityGroupEgressRequest withFromPort(Integer fromPort) {
         this.fromPort = fromPort;
@@ -278,9 +263,6 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param toPort Deprecated.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AuthorizeSecurityGroupEgressRequest withToPort(Integer toPort) {
         this.toPort = toPort;
@@ -312,9 +294,6 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cidrIp Deprecated.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AuthorizeSecurityGroupEgressRequest withCidrIp(String cidrIp) {
         this.cidrIp = cidrIp;
@@ -369,9 +348,6 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
      * @param ipPermissions List of IP permissions to authorize on the specified security group.
      *         Specifying permissions through IP permissions is the preferred way of
      *         authorizing permissions since it offers more flexibility and control.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AuthorizeSecurityGroupEgressRequest withIpPermissions(IpPermission... ipPermissions) {
         if (getIpPermissions() == null) setIpPermissions(new java.util.ArrayList<IpPermission>(ipPermissions.length));
@@ -391,9 +367,6 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
      * @param ipPermissions List of IP permissions to authorize on the specified security group.
      *         Specifying permissions through IP permissions is the preferred way of
      *         authorizing permissions since it offers more flexibility and control.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AuthorizeSecurityGroupEgressRequest withIpPermissions(java.util.Collection<IpPermission> ipPermissions) {
         if (ipPermissions == null) {

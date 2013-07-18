@@ -126,9 +126,6 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param imageId The ID of the AMI whose attribute you want to modify.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyImageAttributeRequest withImageId(String imageId) {
         this.imageId = imageId;
@@ -166,9 +163,6 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest  implem
      *
      * @param attribute The name of the AMI attribute you want to modify. <p> Available
      *         attributes: <code>launchPermission</code>, <code>productCodes</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyImageAttributeRequest withAttribute(String attribute) {
         this.attribute = attribute;
@@ -206,9 +200,6 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest  implem
      *
      * @param operationType The type of operation being requested. <p> Available operation types:
      *         <code>add</code>, <code>remove</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyImageAttributeRequest withOperationType(String operationType) {
         this.operationType = operationType;
@@ -263,9 +254,6 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest  implem
      * @param userIds The AWS user ID being added to or removed from the list of users with
      *         launch permissions for this AMI. Only valid when the launchPermission
      *         attribute is being modified.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyImageAttributeRequest withUserIds(String... userIds) {
         if (getUserIds() == null) setUserIds(new java.util.ArrayList<String>(userIds.length));
@@ -285,9 +273,6 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest  implem
      * @param userIds The AWS user ID being added to or removed from the list of users with
      *         launch permissions for this AMI. Only valid when the launchPermission
      *         attribute is being modified.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyImageAttributeRequest withUserIds(java.util.Collection<String> userIds) {
         if (userIds == null) {
@@ -354,9 +339,6 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest  implem
      *         with launch permissions for this AMI. Only valid when the
      *         launchPermission attribute is being modified. <p> Available user
      *         groups: <code>all</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyImageAttributeRequest withUserGroups(String... userGroups) {
         if (getUserGroups() == null) setUserGroups(new java.util.ArrayList<String>(userGroups.length));
@@ -378,9 +360,6 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest  implem
      *         with launch permissions for this AMI. Only valid when the
      *         launchPermission attribute is being modified. <p> Available user
      *         groups: <code>all</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyImageAttributeRequest withUserGroups(java.util.Collection<String> userGroups) {
         if (userGroups == null) {
@@ -435,9 +414,6 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest  implem
      *
      * @param productCodes The list of product codes being added to or removed from the specified
      *         AMI. Only valid when the productCodes attribute is being modified.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyImageAttributeRequest withProductCodes(String... productCodes) {
         if (getProductCodes() == null) setProductCodes(new java.util.ArrayList<String>(productCodes.length));
@@ -455,9 +431,6 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest  implem
      *
      * @param productCodes The list of product codes being added to or removed from the specified
      *         AMI. Only valid when the productCodes attribute is being modified.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyImageAttributeRequest withProductCodes(java.util.Collection<String> productCodes) {
         if (productCodes == null) {
@@ -501,9 +474,6 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest  implem
      *
      * @param value The value of the attribute being modified. Only valid when the
      *         description attribute is being modified.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyImageAttributeRequest withValue(String value) {
         this.value = value;
@@ -535,9 +505,6 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param launchPermission The new value for the LaunchPermission property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyImageAttributeRequest withLaunchPermission(LaunchPermissionModifications launchPermission) {
         this.launchPermission = launchPermission;
@@ -569,9 +536,6 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description String value
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyImageAttributeRequest withDescription(String description) {
         this.description = description;

@@ -139,9 +139,6 @@ public class CreateLayerRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackId The layer stack ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLayerRequest withStackId(String stackId) {
         this.stackId = stackId;
@@ -229,9 +226,6 @@ public class CreateLayerRequest extends AmazonWebServiceRequest  implements Seri
      *         layer</li> <li>monitoring-master: A Ganglia layer</li> <li>custom: A
      *         custom layer</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see LayerType
      */
     public CreateLayerRequest withType(String type) {
@@ -292,9 +286,6 @@ public class CreateLayerRequest extends AmazonWebServiceRequest  implements Seri
      *         layer</li> <li>monitoring-master: A Ganglia layer</li> <li>custom: A
      *         custom layer</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see LayerType
      */
     public CreateLayerRequest withType(LayerType type) {
@@ -326,9 +317,6 @@ public class CreateLayerRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The layer name, which is used by the console.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLayerRequest withName(String name) {
         this.name = name;
@@ -384,9 +372,6 @@ public class CreateLayerRequest extends AmazonWebServiceRequest  implements Seri
      *         where your app files are installed. It can have a maximum of 200
      *         characters, which are limited to the alphanumeric characters, '-',
      *         '_', and '.'.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLayerRequest withShortname(String shortname) {
         this.shortname = shortname;
@@ -407,7 +392,6 @@ public class CreateLayerRequest extends AmazonWebServiceRequest  implements Seri
             attributes = new java.util.HashMap<String,String>();
         }
         return attributes;
-
     }
     
     /**
@@ -429,15 +413,44 @@ public class CreateLayerRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param attributes One or more user-defined key/value pairs to be added to the stack
      *         attributes bag.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLayerRequest withAttributes(java.util.Map<String,String> attributes) {
         setAttributes(attributes);
         return this;
     }
     
+   	
+    /**
+     * One or more user-defined key/value pairs to be added to the stack
+     * attributes bag.
+     * <p>
+     * The method adds a new key-value pair into Attributes parameter, and
+     * returns a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param key The key of the entry to be added into Attributes.
+     * @param value The corresponding value of the entry to be added into Attributes.
+     */
+	public CreateLayerRequest addAttributesEntry(String key, String value) {
+		if (null == this.attributes) {
+			this.attributes = new java.util.HashMap<String,String>();
+		}
+		if (this.attributes.containsKey(key))
+			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+		this.attributes.put(key, value);
+		return this;
+	}
+	
+	/**
+	 * Removes all the entries added into Attributes.
+	 * <p>
+	 * Returns a reference to this object so that method calls can be chained together.
+	 */
+	public CreateLayerRequest clearAttributesEntries() {
+		this.attributes = null;
+		return this;
+	}
+	
     /**
      * The ARN of an IAM profile that to be used for the layer's EC2
      * instances. For more information about IAM ARNs, see <a
@@ -480,9 +493,6 @@ public class CreateLayerRequest extends AmazonWebServiceRequest  implements Seri
      *         instances. For more information about IAM ARNs, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLayerRequest withCustomInstanceProfileArn(String customInstanceProfileArn) {
         this.customInstanceProfileArn = customInstanceProfileArn;
@@ -525,9 +535,6 @@ public class CreateLayerRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param customSecurityGroupIds An array containing the layer custom security group IDs.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLayerRequest withCustomSecurityGroupIds(String... customSecurityGroupIds) {
         if (getCustomSecurityGroupIds() == null) setCustomSecurityGroupIds(new java.util.ArrayList<String>(customSecurityGroupIds.length));
@@ -543,9 +550,6 @@ public class CreateLayerRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param customSecurityGroupIds An array containing the layer custom security group IDs.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLayerRequest withCustomSecurityGroupIds(java.util.Collection<String> customSecurityGroupIds) {
         if (customSecurityGroupIds == null) {
@@ -600,9 +604,6 @@ public class CreateLayerRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param packages An array of <code>Package</code> objects that describe the layer
      *         packages.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLayerRequest withPackages(String... packages) {
         if (getPackages() == null) setPackages(new java.util.ArrayList<String>(packages.length));
@@ -620,9 +621,6 @@ public class CreateLayerRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param packages An array of <code>Package</code> objects that describe the layer
      *         packages.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLayerRequest withPackages(java.util.Collection<String> packages) {
         if (packages == null) {
@@ -677,9 +675,6 @@ public class CreateLayerRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param volumeConfigurations A <code>VolumeConfigurations</code> object that describes the layer
      *         Amazon EBS volumes.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLayerRequest withVolumeConfigurations(VolumeConfiguration... volumeConfigurations) {
         if (getVolumeConfigurations() == null) setVolumeConfigurations(new java.util.ArrayList<VolumeConfiguration>(volumeConfigurations.length));
@@ -697,9 +692,6 @@ public class CreateLayerRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param volumeConfigurations A <code>VolumeConfigurations</code> object that describes the layer
      *         Amazon EBS volumes.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLayerRequest withVolumeConfigurations(java.util.Collection<VolumeConfiguration> volumeConfigurations) {
         if (volumeConfigurations == null) {
@@ -737,9 +729,6 @@ public class CreateLayerRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param enableAutoHealing Whether to disable auto healing for the layer.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLayerRequest withEnableAutoHealing(Boolean enableAutoHealing) {
         this.enableAutoHealing = enableAutoHealing;
@@ -792,9 +781,6 @@ public class CreateLayerRequest extends AmazonWebServiceRequest  implements Seri
      * @param autoAssignElasticIps Whether to automatically assign an <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      *         IP address</a> to the layer.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLayerRequest withAutoAssignElasticIps(Boolean autoAssignElasticIps) {
         this.autoAssignElasticIps = autoAssignElasticIps;
@@ -845,9 +831,6 @@ public class CreateLayerRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param customRecipes A <code>LayerCustomRecipes</code> object that specifies the layer
      *         custom recipes.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLayerRequest withCustomRecipes(Recipes customRecipes) {
         this.customRecipes = customRecipes;

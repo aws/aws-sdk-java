@@ -69,9 +69,6 @@ public class Permission  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackId A stack ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Permission withStackId(String stackId) {
         this.stackId = stackId;
@@ -121,9 +118,6 @@ public class Permission  implements Serializable  {
      *         Management (IAM) role. For more information about IAM ARNs, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Permission withIamUserArn(String iamUserArn) {
         this.iamUserArn = iamUserArn;
@@ -155,9 +149,6 @@ public class Permission  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param allowSsh Whether the user can use SSH.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Permission withAllowSsh(Boolean allowSsh) {
         this.allowSsh = allowSsh;
@@ -198,9 +189,6 @@ public class Permission  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param allowSudo Whether the user can use <b>sudo</b>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Permission withAllowSudo(Boolean allowSudo) {
         this.allowSudo = allowSudo;

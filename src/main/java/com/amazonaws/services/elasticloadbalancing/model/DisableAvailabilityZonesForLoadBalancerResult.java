@@ -62,9 +62,6 @@ public class DisableAvailabilityZonesForLoadBalancerResult  implements Serializa
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZones A list of updated Availability Zones for the LoadBalancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DisableAvailabilityZonesForLoadBalancerResult withAvailabilityZones(String... availabilityZones) {
         if (getAvailabilityZones() == null) setAvailabilityZones(new java.util.ArrayList<String>(availabilityZones.length));
@@ -80,9 +77,6 @@ public class DisableAvailabilityZonesForLoadBalancerResult  implements Serializa
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZones A list of updated Availability Zones for the LoadBalancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DisableAvailabilityZonesForLoadBalancerResult withAvailabilityZones(java.util.Collection<String> availabilityZones) {
         if (availabilityZones == null) {

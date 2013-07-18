@@ -81,9 +81,6 @@ public class PolicyAttribute  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributeName The name of the attribute associated with the policy.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PolicyAttribute withAttributeName(String attributeName) {
         this.attributeName = attributeName;
@@ -115,9 +112,6 @@ public class PolicyAttribute  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributeValue The value of the attribute associated with the policy.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PolicyAttribute withAttributeValue(String attributeValue) {
         this.attributeValue = attributeValue;

@@ -63,9 +63,6 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest  i
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkInterfaceIds The new value for the NetworkInterfaceIds property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeNetworkInterfacesRequest withNetworkInterfaceIds(String... networkInterfaceIds) {
         if (getNetworkInterfaceIds() == null) setNetworkInterfaceIds(new java.util.ArrayList<String>(networkInterfaceIds.length));
@@ -81,9 +78,6 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest  i
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkInterfaceIds The new value for the NetworkInterfaceIds property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeNetworkInterfacesRequest withNetworkInterfaceIds(java.util.Collection<String> networkInterfaceIds) {
         if (networkInterfaceIds == null) {
@@ -132,9 +126,6 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest  i
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param filters The new value for the Filters property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeNetworkInterfacesRequest withFilters(Filter... filters) {
         if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
@@ -150,9 +141,6 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest  i
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param filters The new value for the Filters property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeNetworkInterfacesRequest withFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {

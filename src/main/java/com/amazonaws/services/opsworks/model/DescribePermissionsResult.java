@@ -118,9 +118,6 @@ public class DescribePermissionsResult  implements Serializable  {
      *         the request contains a stack ID and an IAM ARN, the array contains a
      *         single <code>Permission</code> object with permissions for the
      *         specified stack and IAM ARN.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribePermissionsResult withPermissions(Permission... permissions) {
         if (getPermissions() == null) setPermissions(new java.util.ArrayList<Permission>(permissions.length));
@@ -152,9 +149,6 @@ public class DescribePermissionsResult  implements Serializable  {
      *         the request contains a stack ID and an IAM ARN, the array contains a
      *         single <code>Permission</code> object with permissions for the
      *         specified stack and IAM ARN.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribePermissionsResult withPermissions(java.util.Collection<Permission> permissions) {
         if (permissions == null) {

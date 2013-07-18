@@ -77,9 +77,6 @@ public class DescribeDefaultClusterParametersRequest extends AmazonWebServiceReq
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameterGroupFamily The name of the cluster parameter group family.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDefaultClusterParametersRequest withParameterGroupFamily(String parameterGroupFamily) {
         this.parameterGroupFamily = parameterGroupFamily;
@@ -135,9 +132,6 @@ public class DescribeDefaultClusterParametersRequest extends AmazonWebServiceReq
      *         marker is included in the response so that the remaining results may
      *         be retrieved. <p>Default: <code>100</code> <p>Constraints: Value must
      *         be at least 20 and no more than 100.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDefaultClusterParametersRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -187,9 +181,6 @@ public class DescribeDefaultClusterParametersRequest extends AmazonWebServiceReq
      *         <b>DescribeDefaultClusterParameters</b> request. If this parameter is
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <code>MaxRecords</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDefaultClusterParametersRequest withMarker(String marker) {
         this.marker = marker;

@@ -59,9 +59,6 @@ public class KeyPairInfo  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param keyName The name of the key pair.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public KeyPairInfo withKeyName(String keyName) {
         this.keyName = keyName;
@@ -93,9 +90,6 @@ public class KeyPairInfo  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param keyFingerprint The SHA-1 digest of the DER encoded private key.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public KeyPairInfo withKeyFingerprint(String keyFingerprint) {
         this.keyFingerprint = keyFingerprint;

@@ -48,9 +48,6 @@ public class PricingDetail  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param price The new value for the Price property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PricingDetail withPrice(Double price) {
         this.price = price;
@@ -82,9 +79,6 @@ public class PricingDetail  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param count The new value for the Count property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PricingDetail withCount(Integer count) {
         this.count = count;

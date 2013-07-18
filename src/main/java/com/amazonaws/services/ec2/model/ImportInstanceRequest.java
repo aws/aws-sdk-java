@@ -56,9 +56,6 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description The new value for the Description property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ImportInstanceRequest withDescription(String description) {
         this.description = description;
@@ -90,9 +87,6 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param launchSpecification The new value for the LaunchSpecification property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ImportInstanceRequest withLaunchSpecification(ImportInstanceLaunchSpecification launchSpecification) {
         this.launchSpecification = launchSpecification;
@@ -135,9 +129,6 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param diskImages The new value for the DiskImages property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ImportInstanceRequest withDiskImages(DiskImage... diskImages) {
         if (getDiskImages() == null) setDiskImages(new java.util.ArrayList<DiskImage>(diskImages.length));
@@ -153,9 +144,6 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param diskImages The new value for the DiskImages property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ImportInstanceRequest withDiskImages(java.util.Collection<DiskImage> diskImages) {
         if (diskImages == null) {
@@ -193,9 +181,6 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param platform The new value for the Platform property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ImportInstanceRequest withPlatform(String platform) {
         this.platform = platform;

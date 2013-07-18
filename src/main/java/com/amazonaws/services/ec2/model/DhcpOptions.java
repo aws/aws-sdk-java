@@ -61,9 +61,6 @@ public class DhcpOptions  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dhcpOptionsId Specifies the ID of the set of DHCP options.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DhcpOptions withDhcpOptionsId(String dhcpOptionsId) {
         this.dhcpOptionsId = dhcpOptionsId;
@@ -106,9 +103,6 @@ public class DhcpOptions  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dhcpConfigurations Contains information about the set of DHCP options.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DhcpOptions withDhcpConfigurations(DhcpConfiguration... dhcpConfigurations) {
         if (getDhcpConfigurations() == null) setDhcpConfigurations(new java.util.ArrayList<DhcpConfiguration>(dhcpConfigurations.length));
@@ -124,9 +118,6 @@ public class DhcpOptions  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dhcpConfigurations Contains information about the set of DHCP options.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DhcpOptions withDhcpConfigurations(java.util.Collection<DhcpConfiguration> dhcpConfigurations) {
         if (dhcpConfigurations == null) {
@@ -175,9 +166,6 @@ public class DhcpOptions  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags A list of tags for the DhcpOptions.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DhcpOptions withTags(Tag... tags) {
         if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
@@ -193,9 +181,6 @@ public class DhcpOptions  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags A list of tags for the DhcpOptions.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DhcpOptions withTags(java.util.Collection<Tag> tags) {
         if (tags == null) {

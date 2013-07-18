@@ -48,9 +48,6 @@ public class InstanceExportDetails  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId The new value for the InstanceId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceExportDetails withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -96,9 +93,6 @@ public class InstanceExportDetails  implements Serializable  {
      *
      * @param targetEnvironment The new value for the TargetEnvironment property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ExportEnvironment
      */
     public InstanceExportDetails withTargetEnvironment(String targetEnvironment) {
@@ -130,9 +124,6 @@ public class InstanceExportDetails  implements Serializable  {
      * <b>Allowed Values: </b>citrix, vmware
      *
      * @param targetEnvironment The new value for the TargetEnvironment property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see ExportEnvironment
      */

@@ -88,9 +88,6 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest  impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param routeTableIds One or more route table IDs.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeRouteTablesRequest withRouteTableIds(String... routeTableIds) {
         if (getRouteTableIds() == null) setRouteTableIds(new java.util.ArrayList<String>(routeTableIds.length));
@@ -106,9 +103,6 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest  impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param routeTableIds One or more route table IDs.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeRouteTablesRequest withRouteTableIds(java.util.Collection<String> routeTableIds) {
         if (routeTableIds == null) {
@@ -181,9 +175,6 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest  impleme
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeRouteTablesRequest withFilters(Filter... filters) {
         if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
@@ -207,9 +198,6 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest  impleme
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeRouteTablesRequest withFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {

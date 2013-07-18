@@ -48,9 +48,6 @@ public class InternetGatewayAttachment  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcId The new value for the VpcId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InternetGatewayAttachment withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -82,9 +79,6 @@ public class InternetGatewayAttachment  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param state The new value for the State property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InternetGatewayAttachment withState(String state) {
         this.state = state;

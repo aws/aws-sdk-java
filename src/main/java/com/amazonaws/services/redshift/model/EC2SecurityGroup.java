@@ -62,9 +62,6 @@ public class EC2SecurityGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param status The status of the EC2 security group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EC2SecurityGroup withStatus(String status) {
         this.status = status;
@@ -96,9 +93,6 @@ public class EC2SecurityGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eC2SecurityGroupName The name of the EC2 Security Group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EC2SecurityGroup withEC2SecurityGroupName(String eC2SecurityGroupName) {
         this.eC2SecurityGroupName = eC2SecurityGroupName;
@@ -136,9 +130,6 @@ public class EC2SecurityGroup  implements Serializable  {
      *
      * @param eC2SecurityGroupOwnerId The AWS ID of the owner of the EC2 security group specified in the
      *         <code>EC2SecurityGroupName</code> field.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EC2SecurityGroup withEC2SecurityGroupOwnerId(String eC2SecurityGroupOwnerId) {
         this.eC2SecurityGroupOwnerId = eC2SecurityGroupOwnerId;

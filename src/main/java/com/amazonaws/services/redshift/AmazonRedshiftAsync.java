@@ -84,8 +84,8 @@ import com.amazonaws.services.redshift.model.*;
  * </li>
  * <li> <p>
  * <i>Amazon Redshift Database Database Developer</i> - If you are a database developer, the Amazon Redshift <a
- * href="http://docs.aws.amazon.com/redshift/latest/dg/rs-dw-intro.html"> Database Developer Guide </a> explains how to design, build, query, and
- * maintain the databases that make up your data warehouse.
+ * href="http://docs.aws.amazon.com/redshift/latest/dg/"> Database Developer Guide </a> explains how to design, build, query, and maintain the databases
+ * that make up your data warehouse.
  * </p>
  * </li>
  * 
@@ -97,6 +97,73 @@ import com.amazonaws.services.redshift.model.*;
  * </p> 
  */       
 public interface AmazonRedshiftAsync extends AmazonRedshift {
+    /**
+     * <p>
+     * Removes the ability of the specified AWS customer account to restore
+     * the specified snapshot. If the account is currently restoring the
+     * snapshot, the restore will run to completion.
+     * </p>
+     * <p>
+     * For more information about working with snapshots, go to <a
+     * docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">
+     * Amazon Redshift Snapshots </a> in the <i>Amazon Redshift Management
+     * Guide</i> .
+     * </p>
+     *
+     * @param revokeSnapshotAccessRequest Container for the necessary
+     *           parameters to execute the RevokeSnapshotAccess operation on
+     *           AmazonRedshift.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RevokeSnapshotAccess service method, as returned by AmazonRedshift.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Snapshot> revokeSnapshotAccessAsync(RevokeSnapshotAccessRequest revokeSnapshotAccessRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Removes the ability of the specified AWS customer account to restore
+     * the specified snapshot. If the account is currently restoring the
+     * snapshot, the restore will run to completion.
+     * </p>
+     * <p>
+     * For more information about working with snapshots, go to <a
+     * docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">
+     * Amazon Redshift Snapshots </a> in the <i>Amazon Redshift Management
+     * Guide</i> .
+     * </p>
+     *
+     * @param revokeSnapshotAccessRequest Container for the necessary
+     *           parameters to execute the RevokeSnapshotAccess operation on
+     *           AmazonRedshift.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RevokeSnapshotAccess service method, as returned by AmazonRedshift.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Snapshot> revokeSnapshotAccessAsync(RevokeSnapshotAccessRequest revokeSnapshotAccessRequest,
+            AsyncHandler<RevokeSnapshotAccessRequest, Snapshot> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
     /**
      * <p>
      * Modifies a cluster subnet group to include the specified list of VPC
@@ -612,7 +679,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For information about subnet groups, go to <a
-     * .aws.amazon.com/redshift/latest/mgmt/working-with-subnet-groups.html">
+     * zon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html">
      * Amazon Redshift Cluster Subnet Groups </a> in the <i>Amazon Redshift
      * Management Guide</i> .
      * 
@@ -645,7 +712,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For information about subnet groups, go to <a
-     * .aws.amazon.com/redshift/latest/mgmt/working-with-subnet-groups.html">
+     * zon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html">
      * Amazon Redshift Cluster Subnet Groups </a> in the <i>Amazon Redshift
      * Management Guide</i> .
      * 
@@ -854,71 +921,6 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
-     * Creates a manual snapshot of the specified cluster. The cluster must
-     * be in the "available" state.
-     * </p>
-     * <p>
-     * For more information about working with snapshots, go to <a
-     * docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">
-     * Amazon Redshift Snapshots </a> in the <i>Amazon Redshift Management
-     * Guide</i> .
-     * </p>
-     *
-     * @param createClusterSnapshotRequest Container for the necessary
-     *           parameters to execute the CreateClusterSnapshot operation on
-     *           AmazonRedshift.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateClusterSnapshot service method, as returned by AmazonRedshift.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRedshift indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Snapshot> createClusterSnapshotAsync(CreateClusterSnapshotRequest createClusterSnapshotRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Creates a manual snapshot of the specified cluster. The cluster must
-     * be in the "available" state.
-     * </p>
-     * <p>
-     * For more information about working with snapshots, go to <a
-     * docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">
-     * Amazon Redshift Snapshots </a> in the <i>Amazon Redshift Management
-     * Guide</i> .
-     * </p>
-     *
-     * @param createClusterSnapshotRequest Container for the necessary
-     *           parameters to execute the CreateClusterSnapshot operation on
-     *           AmazonRedshift.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateClusterSnapshot service method, as returned by AmazonRedshift.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRedshift indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Snapshot> createClusterSnapshotAsync(CreateClusterSnapshotRequest createClusterSnapshotRequest,
-            AsyncHandler<CreateClusterSnapshotRequest, Snapshot> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Deletes a previously provisioned cluster. A successful response from
      * the web service indicates that the request was received correctly. If
      * a final cluster snapshot is requested the status of the cluster will
@@ -986,6 +988,71 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      */
     public Future<Cluster> deleteClusterAsync(DeleteClusterRequest deleteClusterRequest,
             AsyncHandler<DeleteClusterRequest, Cluster> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Creates a manual snapshot of the specified cluster. The cluster must
+     * be in the "available" state.
+     * </p>
+     * <p>
+     * For more information about working with snapshots, go to <a
+     * docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">
+     * Amazon Redshift Snapshots </a> in the <i>Amazon Redshift Management
+     * Guide</i> .
+     * </p>
+     *
+     * @param createClusterSnapshotRequest Container for the necessary
+     *           parameters to execute the CreateClusterSnapshot operation on
+     *           AmazonRedshift.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateClusterSnapshot service method, as returned by AmazonRedshift.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Snapshot> createClusterSnapshotAsync(CreateClusterSnapshotRequest createClusterSnapshotRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Creates a manual snapshot of the specified cluster. The cluster must
+     * be in the "available" state.
+     * </p>
+     * <p>
+     * For more information about working with snapshots, go to <a
+     * docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">
+     * Amazon Redshift Snapshots </a> in the <i>Amazon Redshift Management
+     * Guide</i> .
+     * </p>
+     *
+     * @param createClusterSnapshotRequest Container for the necessary
+     *           parameters to execute the CreateClusterSnapshot operation on
+     *           AmazonRedshift.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateClusterSnapshot service method, as returned by AmazonRedshift.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Snapshot> createClusterSnapshotAsync(CreateClusterSnapshotRequest createClusterSnapshotRequest,
+            AsyncHandler<CreateClusterSnapshotRequest, Snapshot> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -1058,13 +1125,16 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
     /**
      * <p>
      * Deletes the specified manual snapshot. The snapshot must be in the
-     * "available" state.
+     * "available" state, with no other users authorized to access the
+     * snapshot.
      * </p>
      * <p>
      * Unlike automated snapshots, manual snapshots are retained even after
      * you delete your cluster. Amazon Redshift does not delete your manual
      * snapshots. You must delete manual snapshot explicitly to avoid getting
-     * charged.
+     * charged. If other accounts are authorized to access the snapshot, you
+     * must revoke all of the authorizations before you can delete the
+     * snapshot.
      * </p>
      *
      * @param deleteClusterSnapshotRequest Container for the necessary
@@ -1088,13 +1158,16 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
     /**
      * <p>
      * Deletes the specified manual snapshot. The snapshot must be in the
-     * "available" state.
+     * "available" state, with no other users authorized to access the
+     * snapshot.
      * </p>
      * <p>
      * Unlike automated snapshots, manual snapshots are retained even after
      * you delete your cluster. Amazon Redshift does not delete your manual
      * snapshots. You must delete manual snapshot explicitly to avoid getting
-     * charged.
+     * charged. If other accounts are authorized to access the snapshot, you
+     * must revoke all of the authorizations before you can delete the
+     * snapshot.
      * </p>
      *
      * @param deleteClusterSnapshotRequest Container for the necessary
@@ -1660,6 +1733,71 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
+     * Authorizes the specified AWS customer account to restore the
+     * specified snapshot.
+     * </p>
+     * <p>
+     * For more information about working with snapshots, go to <a
+     * docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">
+     * Amazon Redshift Snapshots </a> in the <i>Amazon Redshift Management
+     * Guide</i> .
+     * </p>
+     *
+     * @param authorizeSnapshotAccessRequest Container for the necessary
+     *           parameters to execute the AuthorizeSnapshotAccess operation on
+     *           AmazonRedshift.
+     * 
+     * @return A Java Future object containing the response from the
+     *         AuthorizeSnapshotAccess service method, as returned by AmazonRedshift.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Snapshot> authorizeSnapshotAccessAsync(AuthorizeSnapshotAccessRequest authorizeSnapshotAccessRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Authorizes the specified AWS customer account to restore the
+     * specified snapshot.
+     * </p>
+     * <p>
+     * For more information about working with snapshots, go to <a
+     * docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">
+     * Amazon Redshift Snapshots </a> in the <i>Amazon Redshift Management
+     * Guide</i> .
+     * </p>
+     *
+     * @param authorizeSnapshotAccessRequest Container for the necessary
+     *           parameters to execute the AuthorizeSnapshotAccess operation on
+     *           AmazonRedshift.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         AuthorizeSnapshotAccess service method, as returned by AmazonRedshift.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Snapshot> authorizeSnapshotAccessAsync(AuthorizeSnapshotAccessRequest authorizeSnapshotAccessRequest,
+            AsyncHandler<AuthorizeSnapshotAccessRequest, Snapshot> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Returns a list of the available reserved node offerings by Amazon
      * Redshift with their descriptions including the node type, the fixed
      * and recurring costs of reserving the node and duration the node will
@@ -2086,7 +2224,9 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * <p>
      * Returns one or more snapshot objects, which contain metadata about
      * your cluster snapshots. By default, this operation returns information
-     * about all snapshots of all clusters that are owned by the AWS account.
+     * about all snapshots of all clusters that are owned by you AWS customer
+     * account. No information is returned for snapshots owned by inactive
+     * AWS customer accounts.
      * </p>
      *
      * @param describeClusterSnapshotsRequest Container for the necessary
@@ -2112,7 +2252,9 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * <p>
      * Returns one or more snapshot objects, which contain metadata about
      * your cluster snapshots. By default, this operation returns information
-     * about all snapshots of all clusters that are owned by the AWS account.
+     * about all snapshots of all clusters that are owned by you AWS customer
+     * account. No information is returned for snapshots owned by inactive
+     * AWS customer accounts.
      * </p>
      *
      * @param describeClusterSnapshotsRequest Container for the necessary

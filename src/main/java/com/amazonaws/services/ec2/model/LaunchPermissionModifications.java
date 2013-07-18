@@ -59,9 +59,6 @@ public class LaunchPermissionModifications  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param add The new value for the Add property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LaunchPermissionModifications withAdd(LaunchPermission... add) {
         if (getAdd() == null) setAdd(new java.util.ArrayList<LaunchPermission>(add.length));
@@ -77,9 +74,6 @@ public class LaunchPermissionModifications  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param add The new value for the Add property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LaunchPermissionModifications withAdd(java.util.Collection<LaunchPermission> add) {
         if (add == null) {
@@ -128,9 +122,6 @@ public class LaunchPermissionModifications  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param remove The new value for the Remove property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LaunchPermissionModifications withRemove(LaunchPermission... remove) {
         if (getRemove() == null) setRemove(new java.util.ArrayList<LaunchPermission>(remove.length));
@@ -146,9 +137,6 @@ public class LaunchPermissionModifications  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param remove The new value for the Remove property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LaunchPermissionModifications withRemove(java.util.Collection<LaunchPermission> remove) {
         if (remove == null) {

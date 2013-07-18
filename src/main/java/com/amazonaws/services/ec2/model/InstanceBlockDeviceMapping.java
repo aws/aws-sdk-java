@@ -63,9 +63,6 @@ public class InstanceBlockDeviceMapping  implements Serializable  {
      *
      * @param deviceName The device name (e.g., <code>/dev/sdh</code>) at which the block
      *         device is exposed on the instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceBlockDeviceMapping withDeviceName(String deviceName) {
         this.deviceName = deviceName;
@@ -97,9 +94,6 @@ public class InstanceBlockDeviceMapping  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ebs The optional EBS device mapped to the specified device name.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceBlockDeviceMapping withEbs(EbsInstanceBlockDevice ebs) {
         this.ebs = ebs;

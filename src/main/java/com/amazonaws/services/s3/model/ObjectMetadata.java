@@ -444,32 +444,38 @@ public class ObjectMetadata implements ServerSideEncryptionResult, ObjectExpirat
         metadata.put(Headers.CACHE_CONTROL, cacheControl);
     }
 
-    /**
-     * <p>
-     * Sets the base64 encoded 128-bit MD5 digest of the associated object
-     * (content - not including headers) according to RFC 1864. This data is
-     * used as a message integrity check to verify that the data received by
-     * Amazon S3 is the same data that the caller sent.
-     * </p>
-     * <p>
-     * This field represents the base64 encoded 128-bit MD5 digest digest of an
-     * object's content as calculated on the caller's side. The ETag metadata
-     * field represents the hex encoded 128-bit MD5 digest as computed by Amazon
-     * S3.
-     * </p>
-     * <p>
-     * The AWS S3 Java client will attempt to calculate this field automatically
-     * when uploading files to Amazon S3.
-     * </p>
-     *
-     * @param md5Base64
-     *            The base64 encoded MD5 hash of the content for the object
-     *            associated with this metadata.
-     *
-     * @see ObjectMetadata#getContentMD5()
-     */
+	/**
+	 * <p>
+	 * Sets the base64 encoded 128-bit MD5 digest of the associated object
+	 * (content - not including headers) according to RFC 1864. This data is
+	 * used as a message integrity check to verify that the data received by
+	 * Amazon S3 is the same data that the caller sent. If set to null,then the
+	 * MD5 digest is removed from the metadata.
+	 * </p>
+	 * <p>
+	 * This field represents the base64 encoded 128-bit MD5 digest digest of an
+	 * object's content as calculated on the caller's side. The ETag metadata
+	 * field represents the hex encoded 128-bit MD5 digest as computed by Amazon
+	 * S3.
+	 * </p>
+	 * <p>
+	 * The AWS S3 Java client will attempt to calculate this field automatically
+	 * when uploading files to Amazon S3.
+	 * </p>
+	 * 
+	 * @param md5Base64
+	 *            The base64 encoded MD5 hash of the content for the object
+	 *            associated with this metadata.
+	 * 
+	 * @see ObjectMetadata#getContentMD5()
+	 */
     public void setContentMD5(String md5Base64) {
-        metadata.put(Headers.CONTENT_MD5, md5Base64);
+    	if(md5Base64 == null){
+    		metadata.remove(Headers.CONTENT_MD5);
+    	}else{
+    		metadata.put(Headers.CONTENT_MD5, md5Base64);
+    	}
+        
     }
 
     /**

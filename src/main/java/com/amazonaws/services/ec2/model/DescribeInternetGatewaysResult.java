@@ -57,9 +57,6 @@ public class DescribeInternetGatewaysResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param internetGateways The new value for the InternetGateways property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeInternetGatewaysResult withInternetGateways(InternetGateway... internetGateways) {
         if (getInternetGateways() == null) setInternetGateways(new java.util.ArrayList<InternetGateway>(internetGateways.length));
@@ -75,9 +72,6 @@ public class DescribeInternetGatewaysResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param internetGateways The new value for the InternetGateways property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeInternetGatewaysResult withInternetGateways(java.util.Collection<InternetGateway> internetGateways) {
         if (internetGateways == null) {

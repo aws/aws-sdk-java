@@ -57,9 +57,6 @@ public class DescribeExportTasksResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param exportTasks The new value for the ExportTasks property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeExportTasksResult withExportTasks(ExportTask... exportTasks) {
         if (getExportTasks() == null) setExportTasks(new java.util.ArrayList<ExportTask>(exportTasks.length));
@@ -75,9 +72,6 @@ public class DescribeExportTasksResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param exportTasks The new value for the ExportTasks property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeExportTasksResult withExportTasks(java.util.Collection<ExportTask> exportTasks) {
         if (exportTasks == null) {

@@ -223,9 +223,6 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId Unique ID of the instance launched.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -257,9 +254,6 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param imageId Image ID of the AMI used to launch the instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withImageId(String imageId) {
         this.imageId = imageId;
@@ -291,9 +285,6 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param state The current state of the instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withState(InstanceState state) {
         this.state = state;
@@ -337,9 +328,6 @@ public class Instance  implements Serializable  {
      * @param privateDnsName The private DNS name assigned to the instance. This DNS name can only
      *         be used inside the Amazon EC2 network. This element remains empty
      *         until the instance enters a running state.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withPrivateDnsName(String privateDnsName) {
         this.privateDnsName = privateDnsName;
@@ -383,9 +371,6 @@ public class Instance  implements Serializable  {
      * @param publicDnsName The public DNS name assigned to the instance. This DNS name is
      *         contactable from outside the Amazon EC2 network. This element remains
      *         empty until the instance enters a running state.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withPublicDnsName(String publicDnsName) {
         this.publicDnsName = publicDnsName;
@@ -423,9 +408,6 @@ public class Instance  implements Serializable  {
      *
      * @param stateTransitionReason Reason for the most recent state transition. This might be an empty
      *         string.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withStateTransitionReason(String stateTransitionReason) {
         this.stateTransitionReason = stateTransitionReason;
@@ -463,9 +445,6 @@ public class Instance  implements Serializable  {
      *
      * @param keyName If this instance was launched with an associated key pair, this
      *         displays the key pair name.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withKeyName(String keyName) {
         this.keyName = keyName;
@@ -503,9 +482,6 @@ public class Instance  implements Serializable  {
      *
      * @param amiLaunchIndex The AMI launch index, which can be used to find this instance within
      *         the launch group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withAmiLaunchIndex(Integer amiLaunchIndex) {
         this.amiLaunchIndex = amiLaunchIndex;
@@ -548,9 +524,6 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param productCodes Product codes attached to this instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withProductCodes(ProductCode... productCodes) {
         if (getProductCodes() == null) setProductCodes(new java.util.ArrayList<ProductCode>(productCodes.length));
@@ -566,9 +539,6 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param productCodes Product codes attached to this instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withProductCodes(java.util.Collection<ProductCode> productCodes) {
         if (productCodes == null) {
@@ -638,9 +608,6 @@ public class Instance  implements Serializable  {
      *         href="http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
      *         Amazon Elastic Compute Cloud Developer Guide</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see InstanceType
      */
     public Instance withInstanceType(String instanceType) {
@@ -685,9 +652,6 @@ public class Instance  implements Serializable  {
      *         href="http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
      *         Amazon Elastic Compute Cloud Developer Guide</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see InstanceType
      */
     public Instance withInstanceType(InstanceType instanceType) {
@@ -719,9 +683,6 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param launchTime The time this instance launched.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withLaunchTime(java.util.Date launchTime) {
         this.launchTime = launchTime;
@@ -753,9 +714,6 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param placement The location where this instance launched.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withPlacement(Placement placement) {
         this.placement = placement;
@@ -787,9 +745,6 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param kernelId Kernel associated with this instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withKernelId(String kernelId) {
         this.kernelId = kernelId;
@@ -821,9 +776,6 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ramdiskId RAM disk associated with this instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withRamdiskId(String ramdiskId) {
         this.ramdiskId = ramdiskId;
@@ -855,9 +807,6 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param platform Platform of the instance (e.g., Windows).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withPlatform(String platform) {
         this.platform = platform;
@@ -889,9 +838,6 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param monitoring Monitoring status for this instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withMonitoring(Monitoring monitoring) {
         this.monitoring = monitoring;
@@ -923,9 +869,6 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnetId Specifies the Amazon VPC subnet ID in which the instance is running.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withSubnetId(String subnetId) {
         this.subnetId = subnetId;
@@ -957,9 +900,6 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcId Specifies the Amazon VPC in which the instance is running.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -997,9 +937,6 @@ public class Instance  implements Serializable  {
      *
      * @param privateIpAddress Specifies the private IP address that is assigned to the instance
      *         (Amazon VPC).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
@@ -1031,9 +968,6 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param publicIpAddress Specifies the IP address of the instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withPublicIpAddress(String publicIpAddress) {
         this.publicIpAddress = publicIpAddress;
@@ -1065,9 +999,6 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stateReason The reason for the state change.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withStateReason(StateReason stateReason) {
         this.stateReason = stateReason;
@@ -1099,9 +1030,6 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param architecture The architecture of this instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withArchitecture(String architecture) {
         this.architecture = architecture;
@@ -1139,9 +1067,6 @@ public class Instance  implements Serializable  {
      *
      * @param rootDeviceType The root device type used by the AMI. The AMI can use an Amazon EBS or
      *         instance store root device.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withRootDeviceType(String rootDeviceType) {
         this.rootDeviceType = rootDeviceType;
@@ -1173,9 +1098,6 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param rootDeviceName The root device name (e.g., <code>/dev/sda1</code>).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withRootDeviceName(String rootDeviceName) {
         this.rootDeviceName = rootDeviceName;
@@ -1218,9 +1140,6 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param blockDeviceMappings Block device mapping set.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withBlockDeviceMappings(InstanceBlockDeviceMapping... blockDeviceMappings) {
         if (getBlockDeviceMappings() == null) setBlockDeviceMappings(new java.util.ArrayList<InstanceBlockDeviceMapping>(blockDeviceMappings.length));
@@ -1236,9 +1155,6 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param blockDeviceMappings Block device mapping set.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withBlockDeviceMappings(java.util.Collection<InstanceBlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
@@ -1290,9 +1206,6 @@ public class Instance  implements Serializable  {
      *
      * @param virtualizationType The new value for the VirtualizationType property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see VirtualizationType
      */
     public Instance withVirtualizationType(String virtualizationType) {
@@ -1325,9 +1238,6 @@ public class Instance  implements Serializable  {
      *
      * @param virtualizationType The new value for the VirtualizationType property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see VirtualizationType
      */
     public Instance withVirtualizationType(VirtualizationType virtualizationType) {
@@ -1359,9 +1269,6 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceLifecycle 
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withInstanceLifecycle(String instanceLifecycle) {
         this.instanceLifecycle = instanceLifecycle;
@@ -1393,9 +1300,6 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param spotInstanceRequestId 
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withSpotInstanceRequestId(String spotInstanceRequestId) {
         this.spotInstanceRequestId = spotInstanceRequestId;
@@ -1433,9 +1337,6 @@ public class Instance  implements Serializable  {
      *
      * @param license Represents an active license in use and attached to an Amazon EC2
      *         instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withLicense(InstanceLicense license) {
         this.license = license;
@@ -1467,9 +1368,6 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clientToken The new value for the ClientToken property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withClientToken(String clientToken) {
         this.clientToken = clientToken;
@@ -1512,9 +1410,6 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags A list of tags for the Instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withTags(Tag... tags) {
         if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
@@ -1530,9 +1425,6 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags A list of tags for the Instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
@@ -1581,9 +1473,6 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param securityGroups The new value for the SecurityGroups property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withSecurityGroups(GroupIdentifier... securityGroups) {
         if (getSecurityGroups() == null) setSecurityGroups(new java.util.ArrayList<GroupIdentifier>(securityGroups.length));
@@ -1599,9 +1488,6 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param securityGroups The new value for the SecurityGroups property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withSecurityGroups(java.util.Collection<GroupIdentifier> securityGroups) {
         if (securityGroups == null) {
@@ -1639,9 +1525,6 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceDestCheck The new value for the SourceDestCheck property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withSourceDestCheck(Boolean sourceDestCheck) {
         this.sourceDestCheck = sourceDestCheck;
@@ -1696,9 +1579,6 @@ public class Instance  implements Serializable  {
      *
      * @param hypervisor The new value for the Hypervisor property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see HypervisorType
      */
     public Instance withHypervisor(String hypervisor) {
@@ -1730,9 +1610,6 @@ public class Instance  implements Serializable  {
      * <b>Allowed Values: </b>ovm, xen
      *
      * @param hypervisor The new value for the Hypervisor property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see HypervisorType
      */
@@ -1776,9 +1653,6 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkInterfaces The new value for the NetworkInterfaces property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withNetworkInterfaces(InstanceNetworkInterface... networkInterfaces) {
         if (getNetworkInterfaces() == null) setNetworkInterfaces(new java.util.ArrayList<InstanceNetworkInterface>(networkInterfaces.length));
@@ -1794,9 +1668,6 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkInterfaces The new value for the NetworkInterfaces property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withNetworkInterfaces(java.util.Collection<InstanceNetworkInterface> networkInterfaces) {
         if (networkInterfaces == null) {
@@ -1834,9 +1705,6 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param iamInstanceProfile The new value for the IamInstanceProfile property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withIamInstanceProfile(IamInstanceProfile iamInstanceProfile) {
         this.iamInstanceProfile = iamInstanceProfile;
@@ -1868,9 +1736,6 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ebsOptimized The new value for the EbsOptimized property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Instance withEbsOptimized(Boolean ebsOptimized) {
         this.ebsOptimized = ebsOptimized;

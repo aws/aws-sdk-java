@@ -56,9 +56,6 @@ public class Region  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param regionName Name of the region.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Region withRegionName(String regionName) {
         this.regionName = regionName;
@@ -90,9 +87,6 @@ public class Region  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param endpoint Region service endpoint.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Region withEndpoint(String endpoint) {
         this.endpoint = endpoint;

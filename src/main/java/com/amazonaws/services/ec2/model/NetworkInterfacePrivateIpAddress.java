@@ -52,9 +52,6 @@ public class NetworkInterfacePrivateIpAddress  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateIpAddress The new value for the PrivateIpAddress property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public NetworkInterfacePrivateIpAddress withPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
@@ -86,9 +83,6 @@ public class NetworkInterfacePrivateIpAddress  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateDnsName The new value for the PrivateDnsName property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public NetworkInterfacePrivateIpAddress withPrivateDnsName(String privateDnsName) {
         this.privateDnsName = privateDnsName;
@@ -120,9 +114,6 @@ public class NetworkInterfacePrivateIpAddress  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param primary The new value for the Primary property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public NetworkInterfacePrivateIpAddress withPrimary(Boolean primary) {
         this.primary = primary;
@@ -163,9 +154,6 @@ public class NetworkInterfacePrivateIpAddress  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param association The new value for the Association property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public NetworkInterfacePrivateIpAddress withAssociation(NetworkInterfaceAssociation association) {
         this.association = association;

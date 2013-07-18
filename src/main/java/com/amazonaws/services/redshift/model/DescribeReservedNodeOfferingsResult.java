@@ -70,9 +70,6 @@ public class DescribeReservedNodeOfferingsResult  implements Serializable  {
      * @param marker An optional marker returned by a previous
      *         <a>DescribeReservedNodeOfferings</a> request to indicate the first
      *         reserved node offering that the request will return.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeReservedNodeOfferingsResult withMarker(String marker) {
         this.marker = marker;
@@ -115,9 +112,6 @@ public class DescribeReservedNodeOfferingsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedNodeOfferings A list of reserved node offerings.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeReservedNodeOfferingsResult withReservedNodeOfferings(ReservedNodeOffering... reservedNodeOfferings) {
         if (getReservedNodeOfferings() == null) setReservedNodeOfferings(new java.util.ArrayList<ReservedNodeOffering>(reservedNodeOfferings.length));
@@ -133,9 +127,6 @@ public class DescribeReservedNodeOfferingsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedNodeOfferings A list of reserved node offerings.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeReservedNodeOfferingsResult withReservedNodeOfferings(java.util.Collection<ReservedNodeOffering> reservedNodeOfferings) {
         if (reservedNodeOfferings == null) {

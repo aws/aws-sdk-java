@@ -97,6 +97,18 @@ public class DescribeReservedInstancesOfferingsRequestMarshaller implements Mars
         if (describeReservedInstancesOfferingsRequest.getMaxResults() != null) {
             request.addParameter("MaxResults", StringUtils.fromInteger(describeReservedInstancesOfferingsRequest.getMaxResults()));
         }
+        if (describeReservedInstancesOfferingsRequest.isIncludeMarketplace() != null) {
+            request.addParameter("IncludeMarketplace", StringUtils.fromBoolean(describeReservedInstancesOfferingsRequest.isIncludeMarketplace()));
+        }
+        if (describeReservedInstancesOfferingsRequest.getMinDuration() != null) {
+            request.addParameter("MinDuration", StringUtils.fromLong(describeReservedInstancesOfferingsRequest.getMinDuration()));
+        }
+        if (describeReservedInstancesOfferingsRequest.getMaxDuration() != null) {
+            request.addParameter("MaxDuration", StringUtils.fromLong(describeReservedInstancesOfferingsRequest.getMaxDuration()));
+        }
+        if (describeReservedInstancesOfferingsRequest.getMaxInstanceCount() != null) {
+            request.addParameter("MaxInstanceCount", StringUtils.fromInteger(describeReservedInstancesOfferingsRequest.getMaxInstanceCount()));
+        }
 
 
         return request;

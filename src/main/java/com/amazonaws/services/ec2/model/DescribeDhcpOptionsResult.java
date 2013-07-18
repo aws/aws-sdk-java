@@ -57,9 +57,6 @@ public class DescribeDhcpOptionsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dhcpOptions The new value for the DhcpOptions property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDhcpOptionsResult withDhcpOptions(DhcpOptions... dhcpOptions) {
         if (getDhcpOptions() == null) setDhcpOptions(new java.util.ArrayList<DhcpOptions>(dhcpOptions.length));
@@ -75,9 +72,6 @@ public class DescribeDhcpOptionsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dhcpOptions The new value for the DhcpOptions property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDhcpOptionsResult withDhcpOptions(java.util.Collection<DhcpOptions> dhcpOptions) {
         if (dhcpOptions == null) {

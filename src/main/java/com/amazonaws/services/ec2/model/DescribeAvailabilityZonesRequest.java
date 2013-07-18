@@ -79,9 +79,6 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest  i
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param zoneNames A list of the availability zone names to describe.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeAvailabilityZonesRequest withZoneNames(String... zoneNames) {
         if (getZoneNames() == null) setZoneNames(new java.util.ArrayList<String>(zoneNames.length));
@@ -97,9 +94,6 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest  i
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param zoneNames A list of the availability zone names to describe.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeAvailabilityZonesRequest withZoneNames(java.util.Collection<String> zoneNames) {
         if (zoneNames == null) {
@@ -172,9 +166,6 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest  i
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeAvailabilityZonesRequest withFilters(Filter... filters) {
         if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
@@ -198,9 +189,6 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest  i
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeAvailabilityZonesRequest withFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {

@@ -120,9 +120,6 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest  implements Ser
      *
      * @param size The size of the volume, in gigabytes. Required if you are not creating
      *         a volume from a snapshot.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateVolumeRequest withSize(Integer size) {
         this.size = size;
@@ -154,9 +151,6 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param snapshotId The ID of the snapshot from which to create the new volume.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateVolumeRequest withSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
@@ -188,9 +182,6 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZone The Availability Zone in which to create the new volume.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateVolumeRequest withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -236,9 +227,6 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest  implements Ser
      *
      * @param volumeType The new value for the VolumeType property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see VolumeType
      */
     public CreateVolumeRequest withVolumeType(String volumeType) {
@@ -271,9 +259,6 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest  implements Ser
      *
      * @param volumeType The new value for the VolumeType property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see VolumeType
      */
     public CreateVolumeRequest withVolumeType(VolumeType volumeType) {
@@ -305,9 +290,6 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param iops The new value for the Iops property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateVolumeRequest withIops(Integer iops) {
         this.iops = iops;

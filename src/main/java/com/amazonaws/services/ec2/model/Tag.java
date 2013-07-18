@@ -95,9 +95,6 @@ public class Tag  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param key The tag's key.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Tag withKey(String key) {
         this.key = key;
@@ -129,9 +126,6 @@ public class Tag  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param value The tag's value.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Tag withValue(String value) {
         this.value = value;

@@ -53,9 +53,6 @@ public class ProductCode  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param productCodeId The unique ID of an AWS DevPay product code.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ProductCode withProductCodeId(String productCodeId) {
         this.productCodeId = productCodeId;
@@ -87,9 +84,6 @@ public class ProductCode  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param productCodeType The new value for the ProductCodeType property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ProductCode withProductCodeType(String productCodeType) {
         this.productCodeType = productCodeType;

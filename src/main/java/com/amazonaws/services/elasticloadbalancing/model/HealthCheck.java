@@ -236,9 +236,6 @@ public class HealthCheck  implements Serializable  {
      *         than "200 OK" within the timeout period is considered unhealthy. <p>
      *         The total length of the HTTP ping target needs to be 1024 16-bit
      *         Unicode characters or less. </note>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public HealthCheck withTarget(String target) {
         this.target = target;
@@ -285,9 +282,6 @@ public class HealthCheck  implements Serializable  {
      *
      * @param interval Specifies the approximate interval, in seconds, between health checks
      *         of an individual instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public HealthCheck withInterval(Integer interval) {
         this.interval = interval;
@@ -340,9 +334,6 @@ public class HealthCheck  implements Serializable  {
      * @param timeout Specifies the amount of time, in seconds, during which no response
      *         means a failed health probe. <note> This value must be less than the
      *         <i>Interval</i> value. </note>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public HealthCheck withTimeout(Integer timeout) {
         this.timeout = timeout;
@@ -389,9 +380,6 @@ public class HealthCheck  implements Serializable  {
      *
      * @param unhealthyThreshold Specifies the number of consecutive health probe failures required
      *         before moving the instance to the <i>Unhealthy</i> state.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public HealthCheck withUnhealthyThreshold(Integer unhealthyThreshold) {
         this.unhealthyThreshold = unhealthyThreshold;
@@ -438,9 +426,6 @@ public class HealthCheck  implements Serializable  {
      *
      * @param healthyThreshold Specifies the number of consecutive health probe successes required
      *         before moving the instance to the <i>Healthy</i> state.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public HealthCheck withHealthyThreshold(Integer healthyThreshold) {
         this.healthyThreshold = healthyThreshold;

@@ -122,9 +122,6 @@ public class LaunchSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param imageId The AMI ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LaunchSpecification withImageId(String imageId) {
         this.imageId = imageId;
@@ -156,9 +153,6 @@ public class LaunchSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param keyName The name of the key pair.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LaunchSpecification withKeyName(String keyName) {
         this.keyName = keyName;
@@ -201,9 +195,6 @@ public class LaunchSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param allSecurityGroups The new value for the AllSecurityGroups property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LaunchSpecification withAllSecurityGroups(GroupIdentifier... allSecurityGroups) {
         if (getAllSecurityGroups() == null) setAllSecurityGroups(new java.util.ArrayList<GroupIdentifier>(allSecurityGroups.length));
@@ -219,9 +210,6 @@ public class LaunchSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param allSecurityGroups The new value for the AllSecurityGroups property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LaunchSpecification withAllSecurityGroups(java.util.Collection<GroupIdentifier> allSecurityGroups) {
         if (allSecurityGroups == null) {
@@ -270,9 +258,6 @@ public class LaunchSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param securityGroups The new value for the SecurityGroups property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LaunchSpecification withSecurityGroups(String... securityGroups) {
         if (getSecurityGroups() == null) setSecurityGroups(new java.util.ArrayList<String>(securityGroups.length));
@@ -288,9 +273,6 @@ public class LaunchSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param securityGroups The new value for the SecurityGroups property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LaunchSpecification withSecurityGroups(java.util.Collection<String> securityGroups) {
         if (securityGroups == null) {
@@ -346,9 +328,6 @@ public class LaunchSpecification  implements Serializable  {
      *         launch request. All instances that collectively comprise the launch
      *         request have access to this data. User data is never returned through
      *         API responses.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LaunchSpecification withUserData(String userData) {
         this.userData = userData;
@@ -380,9 +359,6 @@ public class LaunchSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param addressingType Deprecated.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LaunchSpecification withAddressingType(String addressingType) {
         this.addressingType = addressingType;
@@ -428,9 +404,6 @@ public class LaunchSpecification  implements Serializable  {
      *
      * @param instanceType Specifies the instance type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see InstanceType
      */
     public LaunchSpecification withInstanceType(String instanceType) {
@@ -463,9 +436,6 @@ public class LaunchSpecification  implements Serializable  {
      *
      * @param instanceType Specifies the instance type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see InstanceType
      */
     public LaunchSpecification withInstanceType(InstanceType instanceType) {
@@ -497,9 +467,6 @@ public class LaunchSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param placement Defines a placement item.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LaunchSpecification withPlacement(SpotPlacement placement) {
         this.placement = placement;
@@ -531,9 +498,6 @@ public class LaunchSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param kernelId Specifies the ID of the kernel to select.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LaunchSpecification withKernelId(String kernelId) {
         this.kernelId = kernelId;
@@ -583,9 +547,6 @@ public class LaunchSpecification  implements Serializable  {
      *         additional drivers at launch. Check the kernel requirements for
      *         information on whether or not you need to specify a RAM disk and
      *         search for the kernel ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LaunchSpecification withRamdiskId(String ramdiskId) {
         this.ramdiskId = ramdiskId;
@@ -634,9 +595,6 @@ public class LaunchSpecification  implements Serializable  {
      *
      * @param blockDeviceMappings Specifies how block devices are exposed to the instance. Each mapping
      *         is made up of a virtualName and a deviceName.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LaunchSpecification withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
         if (getBlockDeviceMappings() == null) setBlockDeviceMappings(new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.length));
@@ -654,9 +612,6 @@ public class LaunchSpecification  implements Serializable  {
      *
      * @param blockDeviceMappings Specifies how block devices are exposed to the instance. Each mapping
      *         is made up of a virtualName and a deviceName.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LaunchSpecification withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
@@ -694,9 +649,6 @@ public class LaunchSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param monitoringEnabled Enables monitoring for the instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LaunchSpecification withMonitoringEnabled(Boolean monitoringEnabled) {
         this.monitoringEnabled = monitoringEnabled;
@@ -743,9 +695,6 @@ public class LaunchSpecification  implements Serializable  {
      *
      * @param subnetId Specifies the Amazon VPC subnet ID within which to launch the
      *         instance(s) for Amazon Virtual Private Cloud.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LaunchSpecification withSubnetId(String subnetId) {
         this.subnetId = subnetId;
@@ -788,9 +737,6 @@ public class LaunchSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkInterfaces The new value for the NetworkInterfaces property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LaunchSpecification withNetworkInterfaces(InstanceNetworkInterfaceSpecification... networkInterfaces) {
         if (getNetworkInterfaces() == null) setNetworkInterfaces(new java.util.ArrayList<InstanceNetworkInterfaceSpecification>(networkInterfaces.length));
@@ -806,9 +752,6 @@ public class LaunchSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkInterfaces The new value for the NetworkInterfaces property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LaunchSpecification withNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
         if (networkInterfaces == null) {
@@ -846,9 +789,6 @@ public class LaunchSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param iamInstanceProfile The new value for the IamInstanceProfile property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LaunchSpecification withIamInstanceProfile(IamInstanceProfileSpecification iamInstanceProfile) {
         this.iamInstanceProfile = iamInstanceProfile;
@@ -880,9 +820,6 @@ public class LaunchSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ebsOptimized The new value for the EbsOptimized property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LaunchSpecification withEbsOptimized(Boolean ebsOptimized) {
         this.ebsOptimized = ebsOptimized;

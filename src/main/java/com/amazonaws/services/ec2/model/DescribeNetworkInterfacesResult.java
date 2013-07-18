@@ -57,9 +57,6 @@ public class DescribeNetworkInterfacesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkInterfaces The new value for the NetworkInterfaces property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeNetworkInterfacesResult withNetworkInterfaces(NetworkInterface... networkInterfaces) {
         if (getNetworkInterfaces() == null) setNetworkInterfaces(new java.util.ArrayList<NetworkInterface>(networkInterfaces.length));
@@ -75,9 +72,6 @@ public class DescribeNetworkInterfacesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkInterfaces The new value for the NetworkInterfaces property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeNetworkInterfacesResult withNetworkInterfaces(java.util.Collection<NetworkInterface> networkInterfaces) {
         if (networkInterfaces == null) {

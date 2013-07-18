@@ -51,9 +51,6 @@ public class ConfigureHealthCheckResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param healthCheck The updated healthcheck for the instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ConfigureHealthCheckResult withHealthCheck(HealthCheck healthCheck) {
         this.healthCheck = healthCheck;

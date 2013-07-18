@@ -55,9 +55,6 @@ public class DeleteAppRequest extends AmazonWebServiceRequest  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param appId The app ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteAppRequest withAppId(String appId) {
         this.appId = appId;

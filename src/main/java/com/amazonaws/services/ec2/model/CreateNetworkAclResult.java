@@ -46,9 +46,6 @@ public class CreateNetworkAclResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkAcl The new value for the NetworkAcl property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateNetworkAclResult withNetworkAcl(NetworkAcl networkAcl) {
         this.networkAcl = networkAcl;

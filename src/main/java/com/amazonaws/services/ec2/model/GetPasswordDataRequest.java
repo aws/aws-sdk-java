@@ -88,9 +88,6 @@ public class GetPasswordDataRequest extends AmazonWebServiceRequest  implements 
      *
      * @param instanceId The ID of the instance for which you want the Windows administrator
      *         password.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetPasswordDataRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;

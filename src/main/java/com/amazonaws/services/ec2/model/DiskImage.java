@@ -50,9 +50,6 @@ public class DiskImage  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param image The new value for the Image property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DiskImage withImage(DiskImageDetail image) {
         this.image = image;
@@ -84,9 +81,6 @@ public class DiskImage  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description The new value for the Description property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DiskImage withDescription(String description) {
         this.description = description;
@@ -118,9 +112,6 @@ public class DiskImage  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volume The new value for the Volume property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DiskImage withVolume(VolumeDetail volume) {
         this.volume = volume;

@@ -62,9 +62,6 @@ public class DescribeSecurityGroupsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param securityGroups The list of described Amazon EC2 security groups.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeSecurityGroupsResult withSecurityGroups(SecurityGroup... securityGroups) {
         if (getSecurityGroups() == null) setSecurityGroups(new java.util.ArrayList<SecurityGroup>(securityGroups.length));
@@ -80,9 +77,6 @@ public class DescribeSecurityGroupsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param securityGroups The list of described Amazon EC2 security groups.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeSecurityGroupsResult withSecurityGroups(java.util.Collection<SecurityGroup> securityGroups) {
         if (securityGroups == null) {

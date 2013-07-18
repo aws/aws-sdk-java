@@ -54,9 +54,6 @@ public class VolumeStatusItem  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeId The new value for the VolumeId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VolumeStatusItem withVolumeId(String volumeId) {
         this.volumeId = volumeId;
@@ -88,9 +85,6 @@ public class VolumeStatusItem  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZone The new value for the AvailabilityZone property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VolumeStatusItem withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -122,9 +116,6 @@ public class VolumeStatusItem  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeStatus The new value for the VolumeStatus property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VolumeStatusItem withVolumeStatus(VolumeStatusInfo volumeStatus) {
         this.volumeStatus = volumeStatus;
@@ -167,9 +158,6 @@ public class VolumeStatusItem  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param events The new value for the Events property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VolumeStatusItem withEvents(VolumeStatusEvent... events) {
         if (getEvents() == null) setEvents(new java.util.ArrayList<VolumeStatusEvent>(events.length));
@@ -185,9 +173,6 @@ public class VolumeStatusItem  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param events The new value for the Events property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VolumeStatusItem withEvents(java.util.Collection<VolumeStatusEvent> events) {
         if (events == null) {
@@ -236,9 +221,6 @@ public class VolumeStatusItem  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param actions The new value for the Actions property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VolumeStatusItem withActions(VolumeStatusAction... actions) {
         if (getActions() == null) setActions(new java.util.ArrayList<VolumeStatusAction>(actions.length));
@@ -254,9 +236,6 @@ public class VolumeStatusItem  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param actions The new value for the Actions property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VolumeStatusItem withActions(java.util.Collection<VolumeStatusAction> actions) {
         if (actions == null) {

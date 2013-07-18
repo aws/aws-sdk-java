@@ -60,9 +60,6 @@ public class DescribeNetworkInterfaceAttributeResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeNetworkInterfaceAttributeResult withNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
@@ -94,9 +91,6 @@ public class DescribeNetworkInterfaceAttributeResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description String value
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeNetworkInterfaceAttributeResult withDescription(String description) {
         this.description = description;
@@ -128,9 +122,6 @@ public class DescribeNetworkInterfaceAttributeResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceDestCheck Boolean value
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeNetworkInterfaceAttributeResult withSourceDestCheck(Boolean sourceDestCheck) {
         this.sourceDestCheck = sourceDestCheck;
@@ -182,9 +173,6 @@ public class DescribeNetworkInterfaceAttributeResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groups The new value for the Groups property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeNetworkInterfaceAttributeResult withGroups(GroupIdentifier... groups) {
         if (getGroups() == null) setGroups(new java.util.ArrayList<GroupIdentifier>(groups.length));
@@ -200,9 +188,6 @@ public class DescribeNetworkInterfaceAttributeResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groups The new value for the Groups property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeNetworkInterfaceAttributeResult withGroups(java.util.Collection<GroupIdentifier> groups) {
         if (groups == null) {
@@ -240,9 +225,6 @@ public class DescribeNetworkInterfaceAttributeResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attachment The new value for the Attachment property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeNetworkInterfaceAttributeResult withAttachment(NetworkInterfaceAttachment attachment) {
         this.attachment = attachment;

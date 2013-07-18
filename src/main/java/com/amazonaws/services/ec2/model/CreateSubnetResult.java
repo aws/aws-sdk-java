@@ -51,9 +51,6 @@ public class CreateSubnetResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnet 
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateSubnetResult withSubnet(Subnet subnet) {
         this.subnet = subnet;

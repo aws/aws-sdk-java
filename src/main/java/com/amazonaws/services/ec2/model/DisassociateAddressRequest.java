@@ -84,9 +84,6 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest  impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param publicIp The elastic IP address that you are disassociating from the instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DisassociateAddressRequest withPublicIp(String publicIp) {
         this.publicIp = publicIp;
@@ -124,9 +121,6 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest  impleme
      *
      * @param associationId Association ID corresponding to the VPC elastic IP address you want to
      *         disassociate.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DisassociateAddressRequest withAssociationId(String associationId) {
         this.associationId = associationId;

@@ -23,7 +23,7 @@ import com.amazonaws.services.s3.model.ProgressListener;
 
 /**
  * Simple InputStream wrapper that occasionally notifies a progress listener
- * about the number of bytes transfered.
+ * about the number of bytes transferred.
  */
 public class ProgressReportingInputStream extends FilterInputStream {
 
@@ -43,7 +43,7 @@ public class ProgressReportingInputStream extends FilterInputStream {
     /**
      * Creates a new progress reporting input stream that simply wraps the
      * specified input stream and notifies the specified listener occasionally
-     * about the number of bytes transfered.
+     * about the number of bytes transferred.
      *
      * @param in
      *            The input stream to wrap.

@@ -70,9 +70,6 @@ public class AttachLoadBalancerToSubnetsRequest extends AmazonWebServiceRequest 
      *
      * @param loadBalancerName The name associated with the LoadBalancer. The name must be unique
      *         within the client AWS account.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AttachLoadBalancerToSubnetsRequest withLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
@@ -115,9 +112,6 @@ public class AttachLoadBalancerToSubnetsRequest extends AmazonWebServiceRequest 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnets A list of subnet IDs to add for the LoadBalancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AttachLoadBalancerToSubnetsRequest withSubnets(String... subnets) {
         if (getSubnets() == null) setSubnets(new java.util.ArrayList<String>(subnets.length));
@@ -133,9 +127,6 @@ public class AttachLoadBalancerToSubnetsRequest extends AmazonWebServiceRequest 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnets A list of subnet IDs to add for the LoadBalancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AttachLoadBalancerToSubnetsRequest withSubnets(java.util.Collection<String> subnets) {
         if (subnets == null) {

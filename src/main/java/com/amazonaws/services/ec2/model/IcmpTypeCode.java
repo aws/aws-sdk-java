@@ -70,9 +70,6 @@ public class IcmpTypeCode  implements Serializable  {
      * @param type For the ICMP protocol, the ICMP type. A value of <code>-1</code> is a
      *         wildcard meaning all types. Required if specifying <code>icmp</code>
      *         for the protocol.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public IcmpTypeCode withType(Integer type) {
         this.type = type;
@@ -116,9 +113,6 @@ public class IcmpTypeCode  implements Serializable  {
      * @param code For the ICMP protocol, the ICMP code. A value of <code>-1</code> is a
      *         wildcard meaning all codes. Required if specifying <code>icmp</code>
      *         for the protocol.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public IcmpTypeCode withCode(Integer code) {
         this.code = code;

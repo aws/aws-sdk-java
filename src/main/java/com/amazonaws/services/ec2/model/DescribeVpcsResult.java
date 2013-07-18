@@ -62,9 +62,6 @@ public class DescribeVpcsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcs 
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVpcsResult withVpcs(Vpc... vpcs) {
         if (getVpcs() == null) setVpcs(new java.util.ArrayList<Vpc>(vpcs.length));
@@ -80,9 +77,6 @@ public class DescribeVpcsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcs 
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVpcsResult withVpcs(java.util.Collection<Vpc> vpcs) {
         if (vpcs == null) {

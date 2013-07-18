@@ -23,7 +23,7 @@ package com.amazonaws.services.s3.model;
  * </p>
  * <p>
  * Objects stored in a Amazon S3 Region never leave that region unless explicitly
- * transfered to another region.
+ * transferred to another region.
  * </p>
  */
 public enum Region {

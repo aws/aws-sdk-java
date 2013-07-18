@@ -83,9 +83,6 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest  implement
      * @param stackId A stack ID. If you use this parameter, <code>DescribeInstances</code>
      *         returns descriptions of the instances associated with the specified
      *         stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeInstancesRequest withStackId(String stackId) {
         this.stackId = stackId;
@@ -129,9 +126,6 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest  implement
      * @param layerId A layer ID. If you use this parameter, <code>DescribeInstances</code>
      *         returns descriptions of the instances associated with the specified
      *         layer.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeInstancesRequest withLayerId(String layerId) {
         this.layerId = layerId;
@@ -186,9 +180,6 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest  implement
      * @param instanceIds An array of instance IDs to be described. If you use this parameter,
      *         <code>DescribeInstances</code> returns a description of the specified
      *         instances. Otherwise, it returns a description of every instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeInstancesRequest withInstanceIds(String... instanceIds) {
         if (getInstanceIds() == null) setInstanceIds(new java.util.ArrayList<String>(instanceIds.length));
@@ -208,9 +199,6 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest  implement
      * @param instanceIds An array of instance IDs to be described. If you use this parameter,
      *         <code>DescribeInstances</code> returns a description of the specified
      *         instances. Otherwise, it returns a description of every instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeInstancesRequest withInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {

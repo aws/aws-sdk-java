@@ -70,9 +70,6 @@ public class LoadBasedAutoScalingConfiguration  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param layerId The layer ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LoadBasedAutoScalingConfiguration withLayerId(String layerId) {
         this.layerId = layerId;
@@ -104,9 +101,6 @@ public class LoadBasedAutoScalingConfiguration  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param enable Whether load-based auto scaling is enabled for the layer.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LoadBasedAutoScalingConfiguration withEnable(Boolean enable) {
         this.enable = enable;
@@ -159,9 +153,6 @@ public class LoadBasedAutoScalingConfiguration  implements Serializable  {
      * @param upScaling A <code>LoadBasedAutoscalingInstruction</code> object that describes
      *         the upscaling configuration, which defines how and when OpsWorks
      *         increases the number of instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LoadBasedAutoScalingConfiguration withUpScaling(AutoScalingThresholds upScaling) {
         this.upScaling = upScaling;
@@ -205,9 +196,6 @@ public class LoadBasedAutoScalingConfiguration  implements Serializable  {
      * @param downScaling A <code>LoadBasedAutoscalingInstruction</code> object that describes
      *         the downscaling configuration, which defines how and when OpsWorks
      *         reduces the number of instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LoadBasedAutoScalingConfiguration withDownScaling(AutoScalingThresholds downScaling) {
         this.downScaling = downScaling;

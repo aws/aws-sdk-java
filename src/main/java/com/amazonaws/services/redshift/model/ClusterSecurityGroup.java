@@ -75,9 +75,6 @@ public class ClusterSecurityGroup  implements Serializable  {
      *
      * @param clusterSecurityGroupName The name of the cluster security group to which the operation was
      *         applied.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ClusterSecurityGroup withClusterSecurityGroupName(String clusterSecurityGroupName) {
         this.clusterSecurityGroupName = clusterSecurityGroupName;
@@ -109,9 +106,6 @@ public class ClusterSecurityGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description A description of the security group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ClusterSecurityGroup withDescription(String description) {
         this.description = description;
@@ -160,9 +154,6 @@ public class ClusterSecurityGroup  implements Serializable  {
      *
      * @param eC2SecurityGroups A list of EC2 security groups that are permitted to access clusters
      *         associated with this cluster security group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ClusterSecurityGroup withEC2SecurityGroups(EC2SecurityGroup... eC2SecurityGroups) {
         if (getEC2SecurityGroups() == null) setEC2SecurityGroups(new java.util.ArrayList<EC2SecurityGroup>(eC2SecurityGroups.length));
@@ -180,9 +171,6 @@ public class ClusterSecurityGroup  implements Serializable  {
      *
      * @param eC2SecurityGroups A list of EC2 security groups that are permitted to access clusters
      *         associated with this cluster security group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ClusterSecurityGroup withEC2SecurityGroups(java.util.Collection<EC2SecurityGroup> eC2SecurityGroups) {
         if (eC2SecurityGroups == null) {
@@ -237,9 +225,6 @@ public class ClusterSecurityGroup  implements Serializable  {
      *
      * @param iPRanges A list of IP ranges (CIDR blocks) that are permitted to access
      *         clusters associated with this cluster security group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ClusterSecurityGroup withIPRanges(IPRange... iPRanges) {
         if (getIPRanges() == null) setIPRanges(new java.util.ArrayList<IPRange>(iPRanges.length));
@@ -257,9 +242,6 @@ public class ClusterSecurityGroup  implements Serializable  {
      *
      * @param iPRanges A list of IP ranges (CIDR blocks) that are permitted to access
      *         clusters associated with this cluster security group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ClusterSecurityGroup withIPRanges(java.util.Collection<IPRange> iPRanges) {
         if (iPRanges == null) {

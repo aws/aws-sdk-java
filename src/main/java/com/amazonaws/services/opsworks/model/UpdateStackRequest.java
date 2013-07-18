@@ -160,9 +160,6 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackId The stack ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateStackRequest withStackId(String stackId) {
         this.stackId = stackId;
@@ -194,9 +191,6 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The stack's new name.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateStackRequest withName(String name) {
         this.name = name;
@@ -217,7 +211,6 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
             attributes = new java.util.HashMap<String,String>();
         }
         return attributes;
-
     }
     
     /**
@@ -239,15 +232,44 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param attributes One or more user-defined key/value pairs to be added to the stack
      *         attributes bag.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateStackRequest withAttributes(java.util.Map<String,String> attributes) {
         setAttributes(attributes);
         return this;
     }
     
+   	
+    /**
+     * One or more user-defined key/value pairs to be added to the stack
+     * attributes bag.
+     * <p>
+     * The method adds a new key-value pair into Attributes parameter, and
+     * returns a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param key The key of the entry to be added into Attributes.
+     * @param value The corresponding value of the entry to be added into Attributes.
+     */
+	public UpdateStackRequest addAttributesEntry(String key, String value) {
+		if (null == this.attributes) {
+			this.attributes = new java.util.HashMap<String,String>();
+		}
+		if (this.attributes.containsKey(key))
+			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+		this.attributes.put(key, value);
+		return this;
+	}
+	
+	/**
+	 * Removes all the entries added into Attributes.
+	 * <p>
+	 * Returns a reference to this object so that method calls can be chained together.
+	 */
+	public UpdateStackRequest clearAttributesEntries() {
+		this.attributes = null;
+		return this;
+	}
+	
     /**
      * The stack AWS Identity and Access Management (IAM) role, which allows
      * OpsWorks to work with AWS resources on your behalf. You must set this
@@ -320,9 +342,6 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         role ARN or the action will fail; there is no default value. You can
      *         specify the stack's current service role ARN, if you prefer, but you
      *         must do so explicitly.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateStackRequest withServiceRoleArn(String serviceRoleArn) {
         this.serviceRoleArn = serviceRoleArn;
@@ -372,9 +391,6 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         stack's EC2 instances. For more information about IAM ARNs, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateStackRequest withDefaultInstanceProfileArn(String defaultInstanceProfileArn) {
         this.defaultInstanceProfileArn = defaultInstanceProfileArn;
@@ -412,9 +428,6 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param defaultOs The cloned stack default operating system, which must be either
      *         "Amazon Linux" or "Ubuntu 12.04 LTS".
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateStackRequest withDefaultOs(String defaultOs) {
         this.defaultOs = defaultOs;
@@ -512,9 +525,6 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         <p>To obtain a generated hostname, call
      *         <code>GetHostNameSuggestion</code>, which returns a hostname based on
      *         the current theme.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateStackRequest withHostnameTheme(String hostnameTheme) {
         this.hostnameTheme = hostnameTheme;
@@ -558,9 +568,6 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      * @param defaultAvailabilityZone The stack new default Availability Zone. For more information, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      *         and Endpoints</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateStackRequest withDefaultAvailabilityZone(String defaultAvailabilityZone) {
         this.defaultAvailabilityZone = defaultAvailabilityZone;
@@ -628,9 +635,6 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">
      *         Use Custom JSON to Modify the Stack Configuration JSON</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateStackRequest withCustomJson(String customJson) {
         this.customJson = customJson;
@@ -662,9 +666,6 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param useCustomCookbooks Whether the stack uses custom cookbooks.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateStackRequest withUseCustomCookbooks(Boolean useCustomCookbooks) {
         this.useCustomCookbooks = useCustomCookbooks;
@@ -735,9 +736,6 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         Apps</a> or <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom
      *         Recipes and Cookbooks</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateStackRequest withCustomCookbooksSource(Source customCookbooksSource) {
         this.customCookbooksSource = customCookbooksSource;
@@ -775,9 +773,6 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param defaultSshKeyName A default SSH key for the stack instances. You can override this value
      *         when you create or update an instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateStackRequest withDefaultSshKeyName(String defaultSshKeyName) {
         this.defaultSshKeyName = defaultSshKeyName;
@@ -847,9 +842,6 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      *         for the Root Device</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see RootDeviceType
      */
     public UpdateStackRequest withDefaultRootDeviceType(String defaultRootDeviceType) {
@@ -897,9 +889,6 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         an instance. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      *         for the Root Device</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see RootDeviceType
      */

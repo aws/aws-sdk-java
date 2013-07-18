@@ -68,9 +68,6 @@ public class Address  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId 
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Address withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -102,9 +99,6 @@ public class Address  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param publicIp 
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Address withPublicIp(String publicIp) {
         this.publicIp = publicIp;
@@ -136,9 +130,6 @@ public class Address  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param allocationId The new value for the AllocationId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Address withAllocationId(String allocationId) {
         this.allocationId = allocationId;
@@ -170,9 +161,6 @@ public class Address  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param associationId The new value for the AssociationId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Address withAssociationId(String associationId) {
         this.associationId = associationId;
@@ -218,9 +206,6 @@ public class Address  implements Serializable  {
      *
      * @param domain The new value for the Domain property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see DomainType
      */
     public Address withDomain(String domain) {
@@ -253,9 +238,6 @@ public class Address  implements Serializable  {
      *
      * @param domain The new value for the Domain property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see DomainType
      */
     public Address withDomain(DomainType domain) {
@@ -287,9 +269,6 @@ public class Address  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Address withNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
@@ -326,9 +305,6 @@ public class Address  implements Serializable  {
      *
      * @param networkInterfaceOwnerId The new value for the NetworkInterfaceOwnerId property for this
      *         object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Address withNetworkInterfaceOwnerId(String networkInterfaceOwnerId) {
         this.networkInterfaceOwnerId = networkInterfaceOwnerId;
@@ -360,9 +336,6 @@ public class Address  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateIpAddress The new value for the PrivateIpAddress property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Address withPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;

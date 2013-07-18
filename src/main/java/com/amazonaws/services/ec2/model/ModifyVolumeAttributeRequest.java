@@ -52,9 +52,6 @@ public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest  imple
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeId The new value for the VolumeId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyVolumeAttributeRequest withVolumeId(String volumeId) {
         this.volumeId = volumeId;
@@ -86,9 +83,6 @@ public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest  imple
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param autoEnableIO The new value for the AutoEnableIO property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyVolumeAttributeRequest withAutoEnableIO(Boolean autoEnableIO) {
         this.autoEnableIO = autoEnableIO;

@@ -74,9 +74,6 @@ public class InstanceState  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId Provides an EC2 instance ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceState withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -108,9 +105,6 @@ public class InstanceState  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param state Specifies the current status of the instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceState withState(String state) {
         this.state = state;
@@ -154,9 +148,6 @@ public class InstanceState  implements Serializable  {
      * @param reasonCode Provides information about the cause of <i>OutOfService</i> instances.
      *         Specifically, it indicates whether the cause is Elastic Load Balancing
      *         or the instance behind the LoadBalancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceState withReasonCode(String reasonCode) {
         this.reasonCode = reasonCode;
@@ -188,9 +179,6 @@ public class InstanceState  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description Provides a description of the instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceState withDescription(String description) {
         this.description = description;

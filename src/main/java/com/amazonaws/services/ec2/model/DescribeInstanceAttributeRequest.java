@@ -115,9 +115,6 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest  i
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId The ID of the instance whose instance attribute is being described.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeInstanceAttributeRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -187,9 +184,6 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest  i
      *         <code>instanceInitiatedShutdownBehavior</code>,
      *         <code>rootDeviceName</code>, <code>blockDeviceMapping</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see InstanceAttributeName
      */
     public DescribeInstanceAttributeRequest withAttribute(String attribute) {
@@ -237,9 +231,6 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest  i
      *         <code>userData</code>, <code>disableApiTermination</code>,
      *         <code>instanceInitiatedShutdownBehavior</code>,
      *         <code>rootDeviceName</code>, <code>blockDeviceMapping</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see InstanceAttributeName
      */

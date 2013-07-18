@@ -82,9 +82,6 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcIds The ID of a VPC you want information about.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVpcsRequest withVpcIds(String... vpcIds) {
         if (getVpcIds() == null) setVpcIds(new java.util.ArrayList<String>(vpcIds.length));
@@ -100,9 +97,6 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcIds The ID of a VPC you want information about.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVpcsRequest withVpcIds(java.util.Collection<String> vpcIds) {
         if (vpcIds == null) {
@@ -169,9 +163,6 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest  implements Ser
      *         reference to the available filter keys for this operation, see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVpcsRequest withFilters(Filter... filters) {
         if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
@@ -193,9 +184,6 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest  implements Ser
      *         reference to the available filter keys for this operation, see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVpcsRequest withFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {

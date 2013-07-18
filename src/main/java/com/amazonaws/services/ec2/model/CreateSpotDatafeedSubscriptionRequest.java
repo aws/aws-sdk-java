@@ -87,9 +87,6 @@ public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceReque
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param bucket The Amazon S3 bucket in which to store the Spot Instance datafeed.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateSpotDatafeedSubscriptionRequest withBucket(String bucket) {
         this.bucket = bucket;
@@ -121,9 +118,6 @@ public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceReque
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param prefix The prefix that is prepended to datafeed files.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateSpotDatafeedSubscriptionRequest withPrefix(String prefix) {
         this.prefix = prefix;

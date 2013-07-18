@@ -56,9 +56,6 @@ public class RouteTable  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param routeTableId The new value for the RouteTableId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RouteTable withRouteTableId(String routeTableId) {
         this.routeTableId = routeTableId;
@@ -90,9 +87,6 @@ public class RouteTable  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcId The new value for the VpcId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RouteTable withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -135,9 +129,6 @@ public class RouteTable  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param routes The new value for the Routes property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RouteTable withRoutes(Route... routes) {
         if (getRoutes() == null) setRoutes(new java.util.ArrayList<Route>(routes.length));
@@ -153,9 +144,6 @@ public class RouteTable  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param routes The new value for the Routes property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RouteTable withRoutes(java.util.Collection<Route> routes) {
         if (routes == null) {
@@ -204,9 +192,6 @@ public class RouteTable  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param associations The new value for the Associations property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RouteTable withAssociations(RouteTableAssociation... associations) {
         if (getAssociations() == null) setAssociations(new java.util.ArrayList<RouteTableAssociation>(associations.length));
@@ -222,9 +207,6 @@ public class RouteTable  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param associations The new value for the Associations property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RouteTable withAssociations(java.util.Collection<RouteTableAssociation> associations) {
         if (associations == null) {
@@ -273,9 +255,6 @@ public class RouteTable  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags The new value for the Tags property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RouteTable withTags(Tag... tags) {
         if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
@@ -291,9 +270,6 @@ public class RouteTable  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags The new value for the Tags property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RouteTable withTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
@@ -342,9 +318,6 @@ public class RouteTable  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param propagatingVgws The new value for the PropagatingVgws property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RouteTable withPropagatingVgws(PropagatingVgw... propagatingVgws) {
         if (getPropagatingVgws() == null) setPropagatingVgws(new java.util.ArrayList<PropagatingVgw>(propagatingVgws.length));
@@ -360,9 +333,6 @@ public class RouteTable  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param propagatingVgws The new value for the PropagatingVgws property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RouteTable withPropagatingVgws(java.util.Collection<PropagatingVgw> propagatingVgws) {
         if (propagatingVgws == null) {

@@ -110,9 +110,6 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest  imple
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkAclId ID of the ACL where the entry will be created.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateNetworkAclEntryRequest withNetworkAclId(String networkAclId) {
         this.networkAclId = networkAclId;
@@ -150,9 +147,6 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest  imple
      *
      * @param ruleNumber Rule number to assign to the entry (e.g., 100). ACL entries are
      *         processed in ascending order by rule number.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateNetworkAclEntryRequest withRuleNumber(Integer ruleNumber) {
         this.ruleNumber = ruleNumber;
@@ -190,9 +184,6 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest  imple
      *
      * @param protocol IP protocol the rule applies to. Valid Values: <code>tcp</code>,
      *         <code>udp</code>, <code>icmp</code> or an IP protocol number.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateNetworkAclEntryRequest withProtocol(String protocol) {
         this.protocol = protocol;
@@ -238,9 +229,6 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest  imple
      *
      * @param ruleAction Whether to allow or deny traffic that matches the rule.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see RuleAction
      */
     public CreateNetworkAclEntryRequest withRuleAction(String ruleAction) {
@@ -272,9 +260,6 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest  imple
      * <b>Allowed Values: </b>allow, deny
      *
      * @param ruleAction Whether to allow or deny traffic that matches the rule.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see RuleAction
      */
@@ -319,9 +304,6 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest  imple
      * @param egress Whether this rule applies to egress traffic from the subnet
      *         (<code>true</code>) or ingress traffic to the subnet
      *         (<code>false</code>).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateNetworkAclEntryRequest withEgress(Boolean egress) {
         this.egress = egress;
@@ -372,9 +354,6 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest  imple
      *
      * @param cidrBlock The CIDR range to allow or deny, in CIDR notation (e.g.,
      *         <code>172.16.0.0/24</code>).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateNetworkAclEntryRequest withCidrBlock(String cidrBlock) {
         this.cidrBlock = cidrBlock;
@@ -406,9 +385,6 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest  imple
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param icmpTypeCode ICMP values.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateNetworkAclEntryRequest withIcmpTypeCode(IcmpTypeCode icmpTypeCode) {
         this.icmpTypeCode = icmpTypeCode;
@@ -440,9 +416,6 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest  imple
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param portRange Port ranges.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateNetworkAclEntryRequest withPortRange(PortRange portRange) {
         this.portRange = portRange;

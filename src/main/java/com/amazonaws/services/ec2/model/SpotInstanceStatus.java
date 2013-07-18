@@ -50,9 +50,6 @@ public class SpotInstanceStatus  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param code The new value for the Code property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SpotInstanceStatus withCode(String code) {
         this.code = code;
@@ -84,9 +81,6 @@ public class SpotInstanceStatus  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param updateTime The new value for the UpdateTime property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SpotInstanceStatus withUpdateTime(java.util.Date updateTime) {
         this.updateTime = updateTime;
@@ -118,9 +112,6 @@ public class SpotInstanceStatus  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param message The new value for the Message property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SpotInstanceStatus withMessage(String message) {
         this.message = message;

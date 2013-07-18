@@ -48,9 +48,6 @@ public class SpotInstanceStateFault  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param code The new value for the Code property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SpotInstanceStateFault withCode(String code) {
         this.code = code;
@@ -82,9 +79,6 @@ public class SpotInstanceStateFault  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param message The new value for the Message property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SpotInstanceStateFault withMessage(String message) {
         this.message = message;

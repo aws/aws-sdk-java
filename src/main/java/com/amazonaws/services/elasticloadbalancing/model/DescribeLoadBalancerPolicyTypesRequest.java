@@ -82,9 +82,6 @@ public class DescribeLoadBalancerPolicyTypesRequest extends AmazonWebServiceRequ
      * @param policyTypeNames Specifies the name of the policy types. If no names are specified,
      *         returns the description of all the policy types defined by Elastic
      *         Load Balancing service.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeLoadBalancerPolicyTypesRequest withPolicyTypeNames(String... policyTypeNames) {
         if (getPolicyTypeNames() == null) setPolicyTypeNames(new java.util.ArrayList<String>(policyTypeNames.length));
@@ -104,9 +101,6 @@ public class DescribeLoadBalancerPolicyTypesRequest extends AmazonWebServiceRequ
      * @param policyTypeNames Specifies the name of the policy types. If no names are specified,
      *         returns the description of all the policy types defined by Elastic
      *         Load Balancing service.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeLoadBalancerPolicyTypesRequest withPolicyTypeNames(java.util.Collection<String> policyTypeNames) {
         if (policyTypeNames == null) {

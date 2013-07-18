@@ -174,9 +174,6 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId The ID of the instance whose attribute is being modified.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyInstanceAttributeRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -252,9 +249,6 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest  imp
      *         <code>instanceInitiatedShutdownBehavior</code>,
      *         <code>rootDevice</code>, <code>blockDeviceMapping</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see InstanceAttributeName
      */
     public ModifyInstanceAttributeRequest withAttribute(String attribute) {
@@ -306,9 +300,6 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest  imp
      *         <code>disableApiTermination</code>,
      *         <code>instanceInitiatedShutdownBehavior</code>,
      *         <code>rootDevice</code>, <code>blockDeviceMapping</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see InstanceAttributeName
      */
@@ -365,9 +356,6 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest  imp
      *         <code>disableApiTermination</code> or
      *         <code>instanceInitiateShutdownBehavior</code> is specified as the
      *         attribute being modified.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyInstanceAttributeRequest withValue(String value) {
         this.value = value;
@@ -422,9 +410,6 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest  imp
      * @param blockDeviceMappings The new block device mappings for the instance whose attributes are
      *         being modified. <p> Only valid when blockDeviceMapping is specified as
      *         the attribute being modified.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyInstanceAttributeRequest withBlockDeviceMappings(InstanceBlockDeviceMappingSpecification... blockDeviceMappings) {
         if (getBlockDeviceMappings() == null) setBlockDeviceMappings(new java.util.ArrayList<InstanceBlockDeviceMappingSpecification>(blockDeviceMappings.length));
@@ -444,9 +429,6 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest  imp
      * @param blockDeviceMappings The new block device mappings for the instance whose attributes are
      *         being modified. <p> Only valid when blockDeviceMapping is specified as
      *         the attribute being modified.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyInstanceAttributeRequest withBlockDeviceMappings(java.util.Collection<InstanceBlockDeviceMappingSpecification> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
@@ -484,9 +466,6 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceDestCheck Boolean value
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyInstanceAttributeRequest withSourceDestCheck(Boolean sourceDestCheck) {
         this.sourceDestCheck = sourceDestCheck;
@@ -527,9 +506,6 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param disableApiTermination Boolean value
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyInstanceAttributeRequest withDisableApiTermination(Boolean disableApiTermination) {
         this.disableApiTermination = disableApiTermination;
@@ -570,9 +546,6 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceType String value
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyInstanceAttributeRequest withInstanceType(String instanceType) {
         this.instanceType = instanceType;
@@ -604,9 +577,6 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param kernel String value
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyInstanceAttributeRequest withKernel(String kernel) {
         this.kernel = kernel;
@@ -638,9 +608,6 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ramdisk String value
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyInstanceAttributeRequest withRamdisk(String ramdisk) {
         this.ramdisk = ramdisk;
@@ -672,9 +639,6 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param userData String value
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyInstanceAttributeRequest withUserData(String userData) {
         this.userData = userData;
@@ -706,9 +670,6 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceInitiatedShutdownBehavior String value
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyInstanceAttributeRequest withInstanceInitiatedShutdownBehavior(String instanceInitiatedShutdownBehavior) {
         this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior;
@@ -751,9 +712,6 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groups The new value for the Groups property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyInstanceAttributeRequest withGroups(String... groups) {
         if (getGroups() == null) setGroups(new java.util.ArrayList<String>(groups.length));
@@ -769,9 +727,6 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groups The new value for the Groups property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyInstanceAttributeRequest withGroups(java.util.Collection<String> groups) {
         if (groups == null) {
@@ -809,9 +764,6 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ebsOptimized Boolean value
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyInstanceAttributeRequest withEbsOptimized(Boolean ebsOptimized) {
         this.ebsOptimized = ebsOptimized;

@@ -91,9 +91,6 @@ public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest  implem
      *
      * @param dhcpOptionsId The ID of the DHCP options to associate with the VPC. Specify
      *         "default" to associate the default DHCP options with the VPC.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AssociateDhcpOptionsRequest withDhcpOptionsId(String dhcpOptionsId) {
         this.dhcpOptionsId = dhcpOptionsId;
@@ -125,9 +122,6 @@ public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcId The ID of the VPC to associate the DHCP options with.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AssociateDhcpOptionsRequest withVpcId(String vpcId) {
         this.vpcId = vpcId;

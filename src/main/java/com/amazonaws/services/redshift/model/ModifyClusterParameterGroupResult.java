@@ -59,9 +59,6 @@ public class ModifyClusterParameterGroupResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameterGroupName The name of the cluster parameter group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyClusterParameterGroupResult withParameterGroupName(String parameterGroupName) {
         this.parameterGroupName = parameterGroupName;
@@ -105,9 +102,6 @@ public class ModifyClusterParameterGroupResult  implements Serializable  {
      * @param parameterGroupStatus The status of the parameter group. For example, if you made a change
      *         to a parameter group name-value pair, then the change could be pending
      *         a reboot of an associated cluster.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyClusterParameterGroupResult withParameterGroupStatus(String parameterGroupStatus) {
         this.parameterGroupStatus = parameterGroupStatus;

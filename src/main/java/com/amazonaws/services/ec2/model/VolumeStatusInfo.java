@@ -48,9 +48,6 @@ public class VolumeStatusInfo  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param status The new value for the Status property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VolumeStatusInfo withStatus(String status) {
         this.status = status;
@@ -93,9 +90,6 @@ public class VolumeStatusInfo  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param details The new value for the Details property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VolumeStatusInfo withDetails(VolumeStatusDetails... details) {
         if (getDetails() == null) setDetails(new java.util.ArrayList<VolumeStatusDetails>(details.length));
@@ -111,9 +105,6 @@ public class VolumeStatusInfo  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param details The new value for the Details property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VolumeStatusInfo withDetails(java.util.Collection<VolumeStatusDetails> details) {
         if (details == null) {

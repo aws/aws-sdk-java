@@ -52,9 +52,6 @@ public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attachmentId The new value for the AttachmentId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DetachNetworkInterfaceRequest withAttachmentId(String attachmentId) {
         this.attachmentId = attachmentId;
@@ -86,9 +83,6 @@ public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param force The new value for the Force property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DetachNetworkInterfaceRequest withForce(Boolean force) {
         this.force = force;

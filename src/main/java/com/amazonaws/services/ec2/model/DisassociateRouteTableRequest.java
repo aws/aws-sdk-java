@@ -67,9 +67,6 @@ public class DisassociateRouteTableRequest extends AmazonWebServiceRequest  impl
      *
      * @param associationId The association ID representing the current association between the
      *         route table and subnet.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DisassociateRouteTableRequest withAssociationId(String associationId) {
         this.associationId = associationId;

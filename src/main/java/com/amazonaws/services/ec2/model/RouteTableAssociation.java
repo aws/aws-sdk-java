@@ -57,9 +57,6 @@ public class RouteTableAssociation  implements Serializable  {
      *
      * @param routeTableAssociationId The new value for the RouteTableAssociationId property for this
      *         object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RouteTableAssociation withRouteTableAssociationId(String routeTableAssociationId) {
         this.routeTableAssociationId = routeTableAssociationId;
@@ -91,9 +88,6 @@ public class RouteTableAssociation  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param routeTableId The new value for the RouteTableId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RouteTableAssociation withRouteTableId(String routeTableId) {
         this.routeTableId = routeTableId;
@@ -125,9 +119,6 @@ public class RouteTableAssociation  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnetId The new value for the SubnetId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RouteTableAssociation withSubnetId(String subnetId) {
         this.subnetId = subnetId;
@@ -159,9 +150,6 @@ public class RouteTableAssociation  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param main The new value for the Main property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RouteTableAssociation withMain(Boolean main) {
         this.main = main;

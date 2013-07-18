@@ -51,9 +51,6 @@ public class RegisterImageResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param imageId The ID of the new Amazon Machine Image (AMI).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RegisterImageResult withImageId(String imageId) {
         this.imageId = imageId;

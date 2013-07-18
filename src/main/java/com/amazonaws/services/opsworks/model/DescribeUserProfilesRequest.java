@@ -66,9 +66,6 @@ public class DescribeUserProfilesRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param iamUserArns An array of IAM user ARNs that identify the users to be described.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeUserProfilesRequest withIamUserArns(String... iamUserArns) {
         if (getIamUserArns() == null) setIamUserArns(new java.util.ArrayList<String>(iamUserArns.length));
@@ -84,9 +81,6 @@ public class DescribeUserProfilesRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param iamUserArns An array of IAM user ARNs that identify the users to be described.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeUserProfilesRequest withIamUserArns(java.util.Collection<String> iamUserArns) {
         if (iamUserArns == null) {

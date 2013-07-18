@@ -85,9 +85,6 @@ public class ActivateLicenseRequest extends AmazonWebServiceRequest  implements 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param licenseId Specifies the ID for the specific license to activate against.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ActivateLicenseRequest withLicenseId(String licenseId) {
         this.licenseId = licenseId;
@@ -119,9 +116,6 @@ public class ActivateLicenseRequest extends AmazonWebServiceRequest  implements 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param capacity Specifies the additional number of licenses to activate.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ActivateLicenseRequest withCapacity(Integer capacity) {
         this.capacity = capacity;

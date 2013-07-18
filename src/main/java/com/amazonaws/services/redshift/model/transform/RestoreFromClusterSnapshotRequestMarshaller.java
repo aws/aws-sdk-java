@@ -61,6 +61,9 @@ public class RestoreFromClusterSnapshotRequestMarshaller implements Marshaller<R
         if (restoreFromClusterSnapshotRequest.isPubliclyAccessible() != null) {
             request.addParameter("PubliclyAccessible", StringUtils.fromBoolean(restoreFromClusterSnapshotRequest.isPubliclyAccessible()));
         }
+        if (restoreFromClusterSnapshotRequest.getOwnerAccount() != null) {
+            request.addParameter("OwnerAccount", StringUtils.fromString(restoreFromClusterSnapshotRequest.getOwnerAccount()));
+        }
 
 
         return request;

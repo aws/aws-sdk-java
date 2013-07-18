@@ -82,9 +82,6 @@ public class ElasticLoadBalancer  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param elasticLoadBalancerName The Elastic Load Balancing instance's name.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ElasticLoadBalancer withElasticLoadBalancerName(String elasticLoadBalancerName) {
         this.elasticLoadBalancerName = elasticLoadBalancerName;
@@ -116,9 +113,6 @@ public class ElasticLoadBalancer  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param region The instance's AWS region.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ElasticLoadBalancer withRegion(String region) {
         this.region = region;
@@ -150,9 +144,6 @@ public class ElasticLoadBalancer  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dnsName The instance's public DNS name.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ElasticLoadBalancer withDnsName(String dnsName) {
         this.dnsName = dnsName;
@@ -184,9 +175,6 @@ public class ElasticLoadBalancer  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackId The ID of the stack that the instance is associated with.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ElasticLoadBalancer withStackId(String stackId) {
         this.stackId = stackId;
@@ -218,9 +206,6 @@ public class ElasticLoadBalancer  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param layerId The ID of the layer that the instance is attached to.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ElasticLoadBalancer withLayerId(String layerId) {
         this.layerId = layerId;
@@ -263,9 +248,6 @@ public class ElasticLoadBalancer  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZones The instance's Availability Zones.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ElasticLoadBalancer withAvailabilityZones(String... availabilityZones) {
         if (getAvailabilityZones() == null) setAvailabilityZones(new java.util.ArrayList<String>(availabilityZones.length));
@@ -281,9 +263,6 @@ public class ElasticLoadBalancer  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZones The instance's Availability Zones.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ElasticLoadBalancer withAvailabilityZones(java.util.Collection<String> availabilityZones) {
         if (availabilityZones == null) {
@@ -338,9 +317,6 @@ public class ElasticLoadBalancer  implements Serializable  {
      *
      * @param ec2InstanceIds A list of the EC2 instances that the Elastic Load Balancing instance
      *         is managing traffic for.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ElasticLoadBalancer withEc2InstanceIds(String... ec2InstanceIds) {
         if (getEc2InstanceIds() == null) setEc2InstanceIds(new java.util.ArrayList<String>(ec2InstanceIds.length));
@@ -358,9 +334,6 @@ public class ElasticLoadBalancer  implements Serializable  {
      *
      * @param ec2InstanceIds A list of the EC2 instances that the Elastic Load Balancing instance
      *         is managing traffic for.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ElasticLoadBalancer withEc2InstanceIds(java.util.Collection<String> ec2InstanceIds) {
         if (ec2InstanceIds == null) {

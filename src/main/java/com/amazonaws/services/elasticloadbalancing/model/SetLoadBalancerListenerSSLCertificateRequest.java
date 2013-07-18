@@ -100,9 +100,6 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends AmazonWebServi
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param loadBalancerName The name of the the LoadBalancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SetLoadBalancerListenerSSLCertificateRequest withLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
@@ -134,9 +131,6 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends AmazonWebServi
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param loadBalancerPort The port that uses the specified SSL certificate.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SetLoadBalancerListenerSSLCertificateRequest withLoadBalancerPort(Integer loadBalancerPort) {
         this.loadBalancerPort = loadBalancerPort;
@@ -192,9 +186,6 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends AmazonWebServi
      *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/ManagingServerCerts.html">
      *         Managing Server Certificates </a> in the AWS Identity and Access
      *         Management documentation.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SetLoadBalancerListenerSSLCertificateRequest withSSLCertificateId(String sSLCertificateId) {
         this.sSLCertificateId = sSLCertificateId;

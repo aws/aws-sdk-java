@@ -58,9 +58,6 @@ public class ConversionTask  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param conversionTaskId The new value for the ConversionTaskId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ConversionTask withConversionTaskId(String conversionTaskId) {
         this.conversionTaskId = conversionTaskId;
@@ -92,9 +89,6 @@ public class ConversionTask  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param expirationTime The new value for the ExpirationTime property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ConversionTask withExpirationTime(String expirationTime) {
         this.expirationTime = expirationTime;
@@ -126,9 +120,6 @@ public class ConversionTask  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param importInstance The new value for the ImportInstance property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ConversionTask withImportInstance(ImportInstanceTaskDetails importInstance) {
         this.importInstance = importInstance;
@@ -160,9 +151,6 @@ public class ConversionTask  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param importVolume The new value for the ImportVolume property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ConversionTask withImportVolume(ImportVolumeTaskDetails importVolume) {
         this.importVolume = importVolume;
@@ -194,9 +182,6 @@ public class ConversionTask  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param state The new value for the State property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ConversionTask withState(String state) {
         this.state = state;
@@ -228,9 +213,6 @@ public class ConversionTask  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param statusMessage The new value for the StatusMessage property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ConversionTask withStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
@@ -273,9 +255,6 @@ public class ConversionTask  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags The new value for the Tags property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ConversionTask withTags(Tag... tags) {
         if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
@@ -291,9 +270,6 @@ public class ConversionTask  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags The new value for the Tags property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ConversionTask withTags(java.util.Collection<Tag> tags) {
         if (tags == null) {

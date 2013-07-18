@@ -62,9 +62,6 @@ public class DescribeReservedInstancesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedInstances The list of described Reserved Instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeReservedInstancesResult withReservedInstances(ReservedInstances... reservedInstances) {
         if (getReservedInstances() == null) setReservedInstances(new java.util.ArrayList<ReservedInstances>(reservedInstances.length));
@@ -80,9 +77,6 @@ public class DescribeReservedInstancesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedInstances The list of described Reserved Instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeReservedInstancesResult withReservedInstances(java.util.Collection<ReservedInstances> reservedInstances) {
         if (reservedInstances == null) {

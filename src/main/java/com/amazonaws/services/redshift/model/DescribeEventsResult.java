@@ -70,9 +70,6 @@ public class DescribeEventsResult  implements Serializable  {
      * @param marker A marker at which to continue listing events in a new request. The
      *         response returns a marker if there are more events to list than
      *         returned in the response.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeEventsResult withMarker(String marker) {
         this.marker = marker;
@@ -115,9 +112,6 @@ public class DescribeEventsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param events A list of <a>Event</a> instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeEventsResult withEvents(Event... events) {
         if (getEvents() == null) setEvents(new java.util.ArrayList<Event>(events.length));
@@ -133,9 +127,6 @@ public class DescribeEventsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param events A list of <a>Event</a> instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeEventsResult withEvents(java.util.Collection<Event> events) {
         if (events == null) {

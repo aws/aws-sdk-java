@@ -84,9 +84,6 @@ public class AttachVpnGatewayRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpnGatewayId The ID of the VPN gateway to attach to the VPC.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AttachVpnGatewayRequest withVpnGatewayId(String vpnGatewayId) {
         this.vpnGatewayId = vpnGatewayId;
@@ -118,9 +115,6 @@ public class AttachVpnGatewayRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcId The ID of the VPC to attach to the VPN gateway.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AttachVpnGatewayRequest withVpcId(String vpcId) {
         this.vpcId = vpcId;

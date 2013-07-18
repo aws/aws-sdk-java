@@ -69,9 +69,6 @@ public class DescribeRaidArraysResult  implements Serializable  {
      *
      * @param raidArrays A <code>RaidArrays</code> object that describes the specified RAID
      *         arrays.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeRaidArraysResult withRaidArrays(RaidArray... raidArrays) {
         if (getRaidArrays() == null) setRaidArrays(new java.util.ArrayList<RaidArray>(raidArrays.length));
@@ -89,9 +86,6 @@ public class DescribeRaidArraysResult  implements Serializable  {
      *
      * @param raidArrays A <code>RaidArrays</code> object that describes the specified RAID
      *         arrays.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeRaidArraysResult withRaidArrays(java.util.Collection<RaidArray> raidArrays) {
         if (raidArrays == null) {

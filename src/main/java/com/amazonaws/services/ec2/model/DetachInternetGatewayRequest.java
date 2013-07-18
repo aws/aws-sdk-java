@@ -64,9 +64,6 @@ public class DetachInternetGatewayRequest extends AmazonWebServiceRequest  imple
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param internetGatewayId The ID of the Internet gateway to detach.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DetachInternetGatewayRequest withInternetGatewayId(String internetGatewayId) {
         this.internetGatewayId = internetGatewayId;
@@ -98,9 +95,6 @@ public class DetachInternetGatewayRequest extends AmazonWebServiceRequest  imple
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcId The ID of the VPC.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DetachInternetGatewayRequest withVpcId(String vpcId) {
         this.vpcId = vpcId;

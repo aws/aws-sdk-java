@@ -86,9 +86,6 @@ public class DeactivateLicenseRequest extends AmazonWebServiceRequest  implement
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param licenseId Specifies the ID for the specific license to deactivate against.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeactivateLicenseRequest withLicenseId(String licenseId) {
         this.licenseId = licenseId;
@@ -120,9 +117,6 @@ public class DeactivateLicenseRequest extends AmazonWebServiceRequest  implement
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param capacity Specifies the amount of capacity to deactivate against the license.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeactivateLicenseRequest withCapacity(Integer capacity) {
         this.capacity = capacity;

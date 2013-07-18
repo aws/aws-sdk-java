@@ -57,9 +57,6 @@ public class LaunchPermission  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param userId The AWS user ID of the user involved in this launch permission.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LaunchPermission withUserId(String userId) {
         this.userId = userId;
@@ -97,9 +94,6 @@ public class LaunchPermission  implements Serializable  {
      *
      * @param group The AWS group of the user involved in this launch permission. <p>
      *         Available groups: <code>all</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LaunchPermission withGroup(String group) {
         this.group = group;

@@ -109,9 +109,6 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackId The stack ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateAppRequest withStackId(String stackId) {
         this.stackId = stackId;
@@ -143,9 +140,6 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param shortname The app's short name.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateAppRequest withShortname(String shortname) {
         this.shortname = shortname;
@@ -177,9 +171,6 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The app name.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateAppRequest withName(String name) {
         this.name = name;
@@ -211,9 +202,6 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description A description of the app.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateAppRequest withDescription(String description) {
         this.description = description;
@@ -277,9 +265,6 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
      *         OpsWorks deploys an application to those instances that are members of
      *         the corresponding layer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see AppType
      */
     public CreateAppRequest withType(String type) {
@@ -324,9 +309,6 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
      *         OpsWorks deploys an application to those instances that are members of
      *         the corresponding layer.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see AppType
      */
     public CreateAppRequest withType(AppType type) {
@@ -358,9 +340,6 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param appSource A <code>Source</code> object that specifies the app repository.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateAppRequest withAppSource(Source appSource) {
         this.appSource = appSource;
@@ -409,9 +388,6 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
      *
      * @param domains The app virtual host settings, with multiple domains separated by
      *         commas. For example: <code>'www.example.com, example.com'</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateAppRequest withDomains(String... domains) {
         if (getDomains() == null) setDomains(new java.util.ArrayList<String>(domains.length));
@@ -429,9 +405,6 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
      *
      * @param domains The app virtual host settings, with multiple domains separated by
      *         commas. For example: <code>'www.example.com, example.com'</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateAppRequest withDomains(java.util.Collection<String> domains) {
         if (domains == null) {
@@ -469,9 +442,6 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param enableSsl Whether to enable SSL for the app.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateAppRequest withEnableSsl(Boolean enableSsl) {
         this.enableSsl = enableSsl;
@@ -512,9 +482,6 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sslConfiguration An <code>SslConfiguration</code> object with the SSL configuration.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateAppRequest withSslConfiguration(SslConfiguration sslConfiguration) {
         this.sslConfiguration = sslConfiguration;
@@ -535,7 +502,6 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
             attributes = new java.util.HashMap<String,String>();
         }
         return attributes;
-
     }
     
     /**
@@ -557,15 +523,44 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
      *
      * @param attributes One or more user-defined key/value pairs to be added to the stack
      *         attributes bag.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateAppRequest withAttributes(java.util.Map<String,String> attributes) {
         setAttributes(attributes);
         return this;
     }
     
+   	
+    /**
+     * One or more user-defined key/value pairs to be added to the stack
+     * attributes bag.
+     * <p>
+     * The method adds a new key-value pair into Attributes parameter, and
+     * returns a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param key The key of the entry to be added into Attributes.
+     * @param value The corresponding value of the entry to be added into Attributes.
+     */
+	public CreateAppRequest addAttributesEntry(String key, String value) {
+		if (null == this.attributes) {
+			this.attributes = new java.util.HashMap<String,String>();
+		}
+		if (this.attributes.containsKey(key))
+			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+		this.attributes.put(key, value);
+		return this;
+	}
+	
+	/**
+	 * Removes all the entries added into Attributes.
+	 * <p>
+	 * Returns a reference to this object so that method calls can be chained together.
+	 */
+	public CreateAppRequest clearAttributesEntries() {
+		this.attributes = null;
+		return this;
+	}
+	
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

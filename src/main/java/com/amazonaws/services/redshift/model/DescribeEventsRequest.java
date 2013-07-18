@@ -185,9 +185,6 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      *         <code>cluster-parameter-group</code>.</li> <li>Specify a cluster
      *         snapshot identifier when <i>SourceType</i> is
      *         <code>cluster-snapshot</code>.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeEventsRequest withSourceIdentifier(String sourceIdentifier) {
         this.sourceIdentifier = sourceIdentifier;
@@ -293,9 +290,6 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      *         <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a
      *         cluster snapshot identifier.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see SourceType
      */
     public DescribeEventsRequest withSourceType(String sourceType) {
@@ -368,9 +362,6 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      *         <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a
      *         cluster snapshot identifier.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see SourceType
      */
     public DescribeEventsRequest withSourceType(SourceType sourceType) {
@@ -420,9 +411,6 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      *         in ISO 8601 format. For more information about ISO 8601, go to the <a
      *         href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
      *         page.</a> <p>Example: <code>2009-07-08T18:00Z</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeEventsRequest withStartTime(java.util.Date startTime) {
         this.startTime = startTime;
@@ -472,9 +460,6 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      *         in ISO 8601 format. For more information about ISO 8601, go to the <a
      *         href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
      *         page.</a> <p>Example: <code>2009-07-08T18:00Z</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeEventsRequest withEndTime(java.util.Date endTime) {
         this.endTime = endTime;
@@ -524,9 +509,6 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      *         retrieve events. For example, if the request is sent at 18:00 and you
      *         specify a duration of 60, then only events which have occurred after
      *         17:00 will be returned. <p>Default: <code>60</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeEventsRequest withDuration(Integer duration) {
         this.duration = duration;
@@ -582,9 +564,6 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      *         marker is included in the response so that the remaining results may
      *         be retrieved. <p>Default: <code>100</code> <p>Constraints: Value must
      *         be at least 20 and no more than 100.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeEventsRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -634,9 +613,6 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      *         request. If this parameter is specified, the response includes only
      *         records beyond the marker, up to the value specified by
      *         <code>MaxRecords</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeEventsRequest withMarker(String marker) {
         this.marker = marker;

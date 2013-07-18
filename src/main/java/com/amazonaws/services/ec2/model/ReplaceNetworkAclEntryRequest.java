@@ -97,9 +97,6 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkAclId ID of the ACL where the entry will be replaced.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReplaceNetworkAclEntryRequest withNetworkAclId(String networkAclId) {
         this.networkAclId = networkAclId;
@@ -131,9 +128,6 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ruleNumber Rule number of the entry to replace.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReplaceNetworkAclEntryRequest withRuleNumber(Integer ruleNumber) {
         this.ruleNumber = ruleNumber;
@@ -171,9 +165,6 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest  impl
      *
      * @param protocol IP protocol the rule applies to. Valid Values: <code>tcp</code>,
      *         <code>udp</code>, <code>icmp</code> or an IP protocol number.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReplaceNetworkAclEntryRequest withProtocol(String protocol) {
         this.protocol = protocol;
@@ -219,9 +210,6 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest  impl
      *
      * @param ruleAction Whether to allow or deny traffic that matches the rule.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see RuleAction
      */
     public ReplaceNetworkAclEntryRequest withRuleAction(String ruleAction) {
@@ -253,9 +241,6 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest  impl
      * <b>Allowed Values: </b>allow, deny
      *
      * @param ruleAction Whether to allow or deny traffic that matches the rule.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see RuleAction
      */
@@ -294,9 +279,6 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest  impl
      *
      * @param egress Whether this rule applies to egress traffic from the subnet
      *         (<code>true</code>) or ingress traffic (<code>false</code>).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReplaceNetworkAclEntryRequest withEgress(Boolean egress) {
         this.egress = egress;
@@ -345,9 +327,6 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest  impl
      *
      * @param cidrBlock The CIDR range to allow or deny, in CIDR notation (e.g.,
      *         <code>172.16.0.0/24</code>).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReplaceNetworkAclEntryRequest withCidrBlock(String cidrBlock) {
         this.cidrBlock = cidrBlock;
@@ -379,9 +358,6 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param icmpTypeCode ICMP values.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReplaceNetworkAclEntryRequest withIcmpTypeCode(IcmpTypeCode icmpTypeCode) {
         this.icmpTypeCode = icmpTypeCode;
@@ -413,9 +389,6 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param portRange Port ranges.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReplaceNetworkAclEntryRequest withPortRange(PortRange portRange) {
         this.portRange = portRange;

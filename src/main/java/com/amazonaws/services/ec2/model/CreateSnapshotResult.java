@@ -51,9 +51,6 @@ public class CreateSnapshotResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param snapshot The new snapshot.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateSnapshotResult withSnapshot(Snapshot snapshot) {
         this.snapshot = snapshot;

@@ -88,9 +88,6 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest  impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkAclIds One or more network ACL IDs.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeNetworkAclsRequest withNetworkAclIds(String... networkAclIds) {
         if (getNetworkAclIds() == null) setNetworkAclIds(new java.util.ArrayList<String>(networkAclIds.length));
@@ -106,9 +103,6 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest  impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkAclIds One or more network ACL IDs.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeNetworkAclsRequest withNetworkAclIds(java.util.Collection<String> networkAclIds) {
         if (networkAclIds == null) {
@@ -181,9 +175,6 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest  impleme
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeNetworkAclsRequest withFilters(Filter... filters) {
         if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
@@ -207,9 +198,6 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest  impleme
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeNetworkAclsRequest withFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {

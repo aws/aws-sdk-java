@@ -77,9 +77,6 @@ public class CreateKeyPairRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param keyName The unique name for the new key pair.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateKeyPairRequest withKeyName(String keyName) {
         this.keyName = keyName;

@@ -57,9 +57,6 @@ public class Route  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param destinationCidrBlock The new value for the DestinationCidrBlock property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Route withDestinationCidrBlock(String destinationCidrBlock) {
         this.destinationCidrBlock = destinationCidrBlock;
@@ -91,9 +88,6 @@ public class Route  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param gatewayId The new value for the GatewayId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Route withGatewayId(String gatewayId) {
         this.gatewayId = gatewayId;
@@ -125,9 +119,6 @@ public class Route  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId The new value for the InstanceId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Route withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -159,9 +150,6 @@ public class Route  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceOwnerId The new value for the InstanceOwnerId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Route withInstanceOwnerId(String instanceOwnerId) {
         this.instanceOwnerId = instanceOwnerId;
@@ -193,9 +181,6 @@ public class Route  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Route withNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
@@ -227,9 +212,6 @@ public class Route  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param state The new value for the State property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Route withState(String state) {
         this.state = state;

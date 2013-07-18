@@ -73,9 +73,6 @@ public class ClusterSubnetGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clusterSubnetGroupName The name of the cluster subnet group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ClusterSubnetGroup withClusterSubnetGroupName(String clusterSubnetGroupName) {
         this.clusterSubnetGroupName = clusterSubnetGroupName;
@@ -107,9 +104,6 @@ public class ClusterSubnetGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description The description of the cluster subnet group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ClusterSubnetGroup withDescription(String description) {
         this.description = description;
@@ -141,9 +135,6 @@ public class ClusterSubnetGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcId The VPC ID of the cluster subnet group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ClusterSubnetGroup withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -187,9 +178,6 @@ public class ClusterSubnetGroup  implements Serializable  {
      * @param subnetGroupStatus The status of the cluster subnet group. Possible values are
      *         <code>Complete</code>, <code>Incomplete</code> and
      *         <code>Invalid</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ClusterSubnetGroup withSubnetGroupStatus(String subnetGroupStatus) {
         this.subnetGroupStatus = subnetGroupStatus;
@@ -232,9 +220,6 @@ public class ClusterSubnetGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnets A list of the VPC <a>Subnet</a> elements.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ClusterSubnetGroup withSubnets(Subnet... subnets) {
         if (getSubnets() == null) setSubnets(new java.util.ArrayList<Subnet>(subnets.length));
@@ -250,9 +235,6 @@ public class ClusterSubnetGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnets A list of the VPC <a>Subnet</a> elements.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ClusterSubnetGroup withSubnets(java.util.Collection<Subnet> subnets) {
         if (subnets == null) {

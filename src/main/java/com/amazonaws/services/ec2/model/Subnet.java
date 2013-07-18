@@ -88,9 +88,6 @@ public class Subnet  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnetId Specifies the ID of the subnet.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Subnet withSubnetId(String subnetId) {
         this.subnetId = subnetId;
@@ -128,9 +125,6 @@ public class Subnet  implements Serializable  {
      *
      * @param state Describes the current state of the subnet. The state of the subnet may
      *         be either <code>pending</code> or <code>available</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Subnet withState(String state) {
         this.state = state;
@@ -162,9 +156,6 @@ public class Subnet  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcId Contains the ID of the VPC the subnet is in.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Subnet withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -196,9 +187,6 @@ public class Subnet  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cidrBlock Specifies the CIDR block assigned to the subnet.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Subnet withCidrBlock(String cidrBlock) {
         this.cidrBlock = cidrBlock;
@@ -242,9 +230,6 @@ public class Subnet  implements Serializable  {
      * @param availableIpAddressCount Specifies the number of unused IP addresses in the subnet. <note> <p>
      *         The IP addresses for any stopped instances are considered unavailable.
      *         </note>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Subnet withAvailableIpAddressCount(Integer availableIpAddressCount) {
         this.availableIpAddressCount = availableIpAddressCount;
@@ -276,9 +261,6 @@ public class Subnet  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZone Specifies the Availability Zone the subnet is in.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Subnet withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -310,9 +292,6 @@ public class Subnet  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param defaultForAz The new value for the DefaultForAz property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Subnet withDefaultForAz(Boolean defaultForAz) {
         this.defaultForAz = defaultForAz;
@@ -353,9 +332,6 @@ public class Subnet  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param mapPublicIpOnLaunch The new value for the MapPublicIpOnLaunch property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Subnet withMapPublicIpOnLaunch(Boolean mapPublicIpOnLaunch) {
         this.mapPublicIpOnLaunch = mapPublicIpOnLaunch;
@@ -407,9 +383,6 @@ public class Subnet  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags A list of tags for the Subnet.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Subnet withTags(Tag... tags) {
         if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
@@ -425,9 +398,6 @@ public class Subnet  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags A list of tags for the Subnet.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Subnet withTags(java.util.Collection<Tag> tags) {
         if (tags == null) {

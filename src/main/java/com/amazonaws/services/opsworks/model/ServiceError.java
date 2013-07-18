@@ -76,9 +76,6 @@ public class ServiceError  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param serviceErrorId The error ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ServiceError withServiceErrorId(String serviceErrorId) {
         this.serviceErrorId = serviceErrorId;
@@ -110,9 +107,6 @@ public class ServiceError  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackId The stack ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ServiceError withStackId(String stackId) {
         this.stackId = stackId;
@@ -144,9 +138,6 @@ public class ServiceError  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId The instance ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ServiceError withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -178,9 +169,6 @@ public class ServiceError  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param type The error type.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ServiceError withType(String type) {
         this.type = type;
@@ -212,9 +200,6 @@ public class ServiceError  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param message A message that describes the error.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ServiceError withMessage(String message) {
         this.message = message;
@@ -246,9 +231,6 @@ public class ServiceError  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param createdAt When the error occurred.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ServiceError withCreatedAt(String createdAt) {
         this.createdAt = createdAt;

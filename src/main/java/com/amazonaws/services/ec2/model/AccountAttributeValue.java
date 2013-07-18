@@ -46,9 +46,6 @@ public class AccountAttributeValue  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributeValue The new value for the AttributeValue property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AccountAttributeValue withAttributeValue(String attributeValue) {
         this.attributeValue = attributeValue;

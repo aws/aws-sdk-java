@@ -311,7 +311,10 @@ public class EncryptionUtils {
         if (metadata.getContentMD5() != null) {
             metadata.addUserMetadata(Headers.UNENCRYPTED_CONTENT_MD5, metadata.getContentMD5());
         }
-
+        
+        // Removes the original content MD5 if present from the meta data.
+        metadata.setContentMD5(null);
+        
         // Record the original, unencrypted content-length so it can be accessed later
         long originalContentLength = getUnencryptedContentLength(request, metadata);
         if (originalContentLength >= 0) metadata.addUserMetadata(

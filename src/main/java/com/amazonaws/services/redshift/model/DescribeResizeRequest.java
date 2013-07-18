@@ -74,9 +74,6 @@ public class DescribeResizeRequest extends AmazonWebServiceRequest  implements S
      * @param clusterIdentifier The unique identifier of a cluster whose resize progress you are
      *         requesting. This parameter isn't case-sensitive. <p>By default, resize
      *         operations for all clusters defined for an AWS account are returned.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeResizeRequest withClusterIdentifier(String clusterIdentifier) {
         this.clusterIdentifier = clusterIdentifier;

@@ -101,9 +101,6 @@ public class VpnConnection  implements Serializable  {
      *
      * @param vpnConnectionId Specifies the ID of the VPN gateway at the VPC end of the VPN
      *         connection.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VpnConnection withVpnConnectionId(String vpnConnectionId) {
         this.vpnConnectionId = vpnConnectionId;
@@ -147,9 +144,6 @@ public class VpnConnection  implements Serializable  {
      * @param state Describes the current state of the VPN connection. Valid values are
      *         <code>pending</code>, <code>available</code>, <code>deleting</code>,
      *         and <code>deleted</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VpnConnection withState(String state) {
         this.state = state;
@@ -205,9 +199,6 @@ public class VpnConnection  implements Serializable  {
      *         in the CreateVpnConnection response; however, it's present in the
      *         DescribeVpnConnections response only if the VPN connection is in the
      *         <code>pending</code> or <code>available</code> state.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VpnConnection withCustomerGatewayConfiguration(String customerGatewayConfiguration) {
         this.customerGatewayConfiguration = customerGatewayConfiguration;
@@ -239,9 +230,6 @@ public class VpnConnection  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param type Specifies the type of VPN connection.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VpnConnection withType(String type) {
         this.type = type;
@@ -273,9 +261,6 @@ public class VpnConnection  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param customerGatewayId Specifies ID of the customer gateway at the end of the VPN connection.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VpnConnection withCustomerGatewayId(String customerGatewayId) {
         this.customerGatewayId = customerGatewayId;
@@ -313,9 +298,6 @@ public class VpnConnection  implements Serializable  {
      *
      * @param vpnGatewayId Specfies the ID of the VPN gateway at the VPC end of the VPN
      *         connection.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VpnConnection withVpnGatewayId(String vpnGatewayId) {
         this.vpnGatewayId = vpnGatewayId;
@@ -358,9 +340,6 @@ public class VpnConnection  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags A list of tags for the VpnConnection.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VpnConnection withTags(Tag... tags) {
         if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
@@ -376,9 +355,6 @@ public class VpnConnection  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags A list of tags for the VpnConnection.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VpnConnection withTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
@@ -427,9 +403,6 @@ public class VpnConnection  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vgwTelemetry The new value for the VgwTelemetry property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VpnConnection withVgwTelemetry(VgwTelemetry... vgwTelemetry) {
         if (getVgwTelemetry() == null) setVgwTelemetry(new java.util.ArrayList<VgwTelemetry>(vgwTelemetry.length));
@@ -445,9 +418,6 @@ public class VpnConnection  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vgwTelemetry The new value for the VgwTelemetry property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VpnConnection withVgwTelemetry(java.util.Collection<VgwTelemetry> vgwTelemetry) {
         if (vgwTelemetry == null) {
@@ -485,9 +455,6 @@ public class VpnConnection  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param options The new value for the Options property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VpnConnection withOptions(VpnConnectionOptions options) {
         this.options = options;
@@ -530,9 +497,6 @@ public class VpnConnection  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param routes The new value for the Routes property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VpnConnection withRoutes(VpnStaticRoute... routes) {
         if (getRoutes() == null) setRoutes(new java.util.ArrayList<VpnStaticRoute>(routes.length));
@@ -548,9 +512,6 @@ public class VpnConnection  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param routes The new value for the Routes property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VpnConnection withRoutes(java.util.Collection<VpnStaticRoute> routes) {
         if (routes == null) {

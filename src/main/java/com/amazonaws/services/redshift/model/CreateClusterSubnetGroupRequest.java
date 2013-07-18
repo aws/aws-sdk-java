@@ -23,8 +23,8 @@ import java.io.Serializable;
  * when creating Amazon Redshift subnet group.
  * </p>
  * <p>
- * For information about subnet groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-subnet-groups.html"> Amazon Redshift
- * Cluster Subnet Groups </a> in the <i>Amazon Redshift Management Guide</i> .
+ * For information about subnet groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html"> Amazon
+ * Redshift Cluster Subnet Groups </a> in the <i>Amazon Redshift Management Guide</i> .
  * 
  * </p>
  *
@@ -107,9 +107,6 @@ public class CreateClusterSubnetGroupRequest extends AmazonWebServiceRequest  im
      *         "Default".</li> <li>Must be unique for all subnet groups that are
      *         created by your AWS account.</li> </ul> <p>Example:
      *         <code>examplesubnetgroup</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateClusterSubnetGroupRequest withClusterSubnetGroupName(String clusterSubnetGroupName) {
         this.clusterSubnetGroupName = clusterSubnetGroupName;
@@ -141,9 +138,6 @@ public class CreateClusterSubnetGroupRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description A description for the subnet group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateClusterSubnetGroupRequest withDescription(String description) {
         this.description = description;
@@ -192,9 +186,6 @@ public class CreateClusterSubnetGroupRequest extends AmazonWebServiceRequest  im
      *
      * @param subnetIds An array of VPC subnet IDs. A maximum of 20 subnets can be modified in
      *         a single request.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateClusterSubnetGroupRequest withSubnetIds(String... subnetIds) {
         if (getSubnetIds() == null) setSubnetIds(new java.util.ArrayList<String>(subnetIds.length));
@@ -212,9 +203,6 @@ public class CreateClusterSubnetGroupRequest extends AmazonWebServiceRequest  im
      *
      * @param subnetIds An array of VPC subnet IDs. A maximum of 20 subnets can be modified in
      *         a single request.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateClusterSubnetGroupRequest withSubnetIds(java.util.Collection<String> subnetIds) {
         if (subnetIds == null) {

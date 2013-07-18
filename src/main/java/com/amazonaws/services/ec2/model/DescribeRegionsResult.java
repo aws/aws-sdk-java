@@ -62,9 +62,6 @@ public class DescribeRegionsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param regions The list of described Amazon EC2 regions.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeRegionsResult withRegions(Region... regions) {
         if (getRegions() == null) setRegions(new java.util.ArrayList<Region>(regions.length));
@@ -80,9 +77,6 @@ public class DescribeRegionsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param regions The list of described Amazon EC2 regions.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeRegionsResult withRegions(java.util.Collection<Region> regions) {
         if (regions == null) {

@@ -80,9 +80,6 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest  i
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedInstancesIds The optional list of Reserved Instance IDs to describe.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeReservedInstancesRequest withReservedInstancesIds(String... reservedInstancesIds) {
         if (getReservedInstancesIds() == null) setReservedInstancesIds(new java.util.ArrayList<String>(reservedInstancesIds.length));
@@ -98,9 +95,6 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest  i
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedInstancesIds The optional list of Reserved Instance IDs to describe.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeReservedInstancesRequest withReservedInstancesIds(java.util.Collection<String> reservedInstancesIds) {
         if (reservedInstancesIds == null) {
@@ -173,9 +167,6 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest  i
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeReservedInstancesRequest withFilters(Filter... filters) {
         if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
@@ -199,9 +190,6 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest  i
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeReservedInstancesRequest withFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
@@ -239,9 +227,6 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest  i
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param offeringType The Reserved Instance offering type.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeReservedInstancesRequest withOfferingType(String offeringType) {
         this.offeringType = offeringType;

@@ -54,9 +54,6 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceRegion The new value for the SourceRegion property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CopySnapshotRequest withSourceRegion(String sourceRegion) {
         this.sourceRegion = sourceRegion;
@@ -88,9 +85,6 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceSnapshotId The new value for the SourceSnapshotId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CopySnapshotRequest withSourceSnapshotId(String sourceSnapshotId) {
         this.sourceSnapshotId = sourceSnapshotId;
@@ -122,9 +116,6 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description The new value for the Description property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CopySnapshotRequest withDescription(String description) {
         this.description = description;

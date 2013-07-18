@@ -105,9 +105,6 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest  implements Ser
      *
      * @param volumeId The ID of the Amazon EBS volume. The volume and instance must be
      *         within the same Availability Zone and the instance must be running.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AttachVolumeRequest withVolumeId(String volumeId) {
         this.volumeId = volumeId;
@@ -151,9 +148,6 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest  implements Ser
      * @param instanceId The ID of the instance to which the volume attaches. The volume and
      *         instance must be within the same Availability Zone and the instance
      *         must be running.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AttachVolumeRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -191,9 +185,6 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest  implements Ser
      *
      * @param device Specifies how the device is exposed to the instance (e.g.,
      *         <code>/dev/sdh</code>).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AttachVolumeRequest withDevice(String device) {
         this.device = device;

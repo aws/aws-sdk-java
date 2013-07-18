@@ -52,9 +52,6 @@ public class ResetNetworkInterfaceAttributeRequest extends AmazonWebServiceReque
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ResetNetworkInterfaceAttributeRequest withNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
@@ -86,9 +83,6 @@ public class ResetNetworkInterfaceAttributeRequest extends AmazonWebServiceReque
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceDestCheck The new value for the SourceDestCheck property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ResetNetworkInterfaceAttributeRequest withSourceDestCheck(String sourceDestCheck) {
         this.sourceDestCheck = sourceDestCheck;

@@ -68,9 +68,6 @@ public class ModifyClusterParameterGroupRequest extends AmazonWebServiceRequest 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameterGroupName The name of the parameter group to be modified.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyClusterParameterGroupRequest withParameterGroupName(String parameterGroupName) {
         this.parameterGroupName = parameterGroupName;
@@ -131,9 +128,6 @@ public class ModifyClusterParameterGroupRequest extends AmazonWebServiceRequest 
      *         be modified in a single request. <p> For each parameter to be
      *         modified, you must supply at least the parameter name and parameter
      *         value; other name-value pairs of the parameter are optional.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyClusterParameterGroupRequest withParameters(Parameter... parameters) {
         if (getParameters() == null) setParameters(new java.util.ArrayList<Parameter>(parameters.length));
@@ -155,9 +149,6 @@ public class ModifyClusterParameterGroupRequest extends AmazonWebServiceRequest 
      *         be modified in a single request. <p> For each parameter to be
      *         modified, you must supply at least the parameter name and parameter
      *         value; other name-value pairs of the parameter are optional.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyClusterParameterGroupRequest withParameters(java.util.Collection<Parameter> parameters) {
         if (parameters == null) {

@@ -62,9 +62,6 @@ public class AttachLoadBalancerToSubnetsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnets A list of subnet IDs added for the LoadBalancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AttachLoadBalancerToSubnetsResult withSubnets(String... subnets) {
         if (getSubnets() == null) setSubnets(new java.util.ArrayList<String>(subnets.length));
@@ -80,9 +77,6 @@ public class AttachLoadBalancerToSubnetsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnets A list of subnet IDs added for the LoadBalancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AttachLoadBalancerToSubnetsResult withSubnets(java.util.Collection<String> subnets) {
         if (subnets == null) {

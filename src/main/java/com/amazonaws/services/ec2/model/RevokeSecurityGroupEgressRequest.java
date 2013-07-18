@@ -104,9 +104,6 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest  i
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groupId ID of the VPC security group to modify.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RevokeSecurityGroupEgressRequest withGroupId(String groupId) {
         this.groupId = groupId;
@@ -138,9 +135,6 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest  i
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceSecurityGroupName Deprecated.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RevokeSecurityGroupEgressRequest withSourceSecurityGroupName(String sourceSecurityGroupName) {
         this.sourceSecurityGroupName = sourceSecurityGroupName;
@@ -172,9 +166,6 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest  i
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceSecurityGroupOwnerId Deprecated.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RevokeSecurityGroupEgressRequest withSourceSecurityGroupOwnerId(String sourceSecurityGroupOwnerId) {
         this.sourceSecurityGroupOwnerId = sourceSecurityGroupOwnerId;
@@ -206,9 +197,6 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest  i
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ipProtocol Deprecated.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RevokeSecurityGroupEgressRequest withIpProtocol(String ipProtocol) {
         this.ipProtocol = ipProtocol;
@@ -240,9 +228,6 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest  i
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param fromPort Deprecated.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RevokeSecurityGroupEgressRequest withFromPort(Integer fromPort) {
         this.fromPort = fromPort;
@@ -274,9 +259,6 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest  i
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param toPort Deprecated.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RevokeSecurityGroupEgressRequest withToPort(Integer toPort) {
         this.toPort = toPort;
@@ -308,9 +290,6 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest  i
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cidrIp Deprecated.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RevokeSecurityGroupEgressRequest withCidrIp(String cidrIp) {
         this.cidrIp = cidrIp;
@@ -365,9 +344,6 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest  i
      * @param ipPermissions List of IP permissions to authorize on the specified security group.
      *         Specifying permissions through IP permissions is the preferred way of
      *         authorizing permissions since it offers more flexibility and control.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RevokeSecurityGroupEgressRequest withIpPermissions(IpPermission... ipPermissions) {
         if (getIpPermissions() == null) setIpPermissions(new java.util.ArrayList<IpPermission>(ipPermissions.length));
@@ -387,9 +363,6 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest  i
      * @param ipPermissions List of IP permissions to authorize on the specified security group.
      *         Specifying permissions through IP permissions is the preferred way of
      *         authorizing permissions since it offers more flexibility and control.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RevokeSecurityGroupEgressRequest withIpPermissions(java.util.Collection<IpPermission> ipPermissions) {
         if (ipPermissions == null) {

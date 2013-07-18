@@ -61,6 +61,9 @@ public class DescribeClusterSnapshotsRequestMarshaller implements Marshaller<Req
         if (describeClusterSnapshotsRequest.getMarker() != null) {
             request.addParameter("Marker", StringUtils.fromString(describeClusterSnapshotsRequest.getMarker()));
         }
+        if (describeClusterSnapshotsRequest.getOwnerAccount() != null) {
+            request.addParameter("OwnerAccount", StringUtils.fromString(describeClusterSnapshotsRequest.getOwnerAccount()));
+        }
 
 
         return request;

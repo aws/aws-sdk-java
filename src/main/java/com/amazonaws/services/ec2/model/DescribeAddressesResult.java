@@ -62,9 +62,6 @@ public class DescribeAddressesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param addresses The list of Elastic IPs.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeAddressesResult withAddresses(Address... addresses) {
         if (getAddresses() == null) setAddresses(new java.util.ArrayList<Address>(addresses.length));
@@ -80,9 +77,6 @@ public class DescribeAddressesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param addresses The list of Elastic IPs.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeAddressesResult withAddresses(java.util.Collection<Address> addresses) {
         if (addresses == null) {

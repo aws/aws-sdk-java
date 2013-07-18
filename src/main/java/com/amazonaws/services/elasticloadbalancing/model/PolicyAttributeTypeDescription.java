@@ -75,9 +75,6 @@ public class PolicyAttributeTypeDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributeName The name of the attribute associated with the policy type.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PolicyAttributeTypeDescription withAttributeName(String attributeName) {
         this.attributeName = attributeName;
@@ -109,9 +106,6 @@ public class PolicyAttributeTypeDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributeType The type of attribute. For example, Boolean, Integer, etc.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PolicyAttributeTypeDescription withAttributeType(String attributeType) {
         this.attributeType = attributeType;
@@ -143,9 +137,6 @@ public class PolicyAttributeTypeDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description A human-readable description of the attribute.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PolicyAttributeTypeDescription withDescription(String description) {
         this.description = description;
@@ -177,9 +168,6 @@ public class PolicyAttributeTypeDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param defaultValue The default value of the attribute, if applicable.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PolicyAttributeTypeDescription withDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
@@ -235,9 +223,6 @@ public class PolicyAttributeTypeDescription  implements Serializable  {
      *         be supplied</li> <li>ZERO_OR_MORE(0..*) : Optional. Multiple values
      *         are allowed</li> <li>ONE_OR_MORE(1..*0) : Required. Multiple values
      *         are allowed</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PolicyAttributeTypeDescription withCardinality(String cardinality) {
         this.cardinality = cardinality;

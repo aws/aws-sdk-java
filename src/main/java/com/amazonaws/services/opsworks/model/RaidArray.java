@@ -99,9 +99,6 @@ public class RaidArray  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param raidArrayId The array ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RaidArray withRaidArrayId(String raidArrayId) {
         this.raidArrayId = raidArrayId;
@@ -133,9 +130,6 @@ public class RaidArray  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId The instance ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RaidArray withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -167,9 +161,6 @@ public class RaidArray  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The array name.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RaidArray withName(String name) {
         this.name = name;
@@ -207,9 +198,6 @@ public class RaidArray  implements Serializable  {
      *
      * @param raidLevel The <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID
      *         level</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RaidArray withRaidLevel(Integer raidLevel) {
         this.raidLevel = raidLevel;
@@ -241,9 +229,6 @@ public class RaidArray  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param numberOfDisks The number of disks in the array.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RaidArray withNumberOfDisks(Integer numberOfDisks) {
         this.numberOfDisks = numberOfDisks;
@@ -275,9 +260,6 @@ public class RaidArray  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param size The array's size.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RaidArray withSize(Integer size) {
         this.size = size;
@@ -309,9 +291,6 @@ public class RaidArray  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param device The array's Linux device. For example /dev/mdadm0.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RaidArray withDevice(String device) {
         this.device = device;
@@ -343,9 +322,6 @@ public class RaidArray  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param mountPoint The array's mount point.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RaidArray withMountPoint(String mountPoint) {
         this.mountPoint = mountPoint;
@@ -389,9 +365,6 @@ public class RaidArray  implements Serializable  {
      * @param availabilityZone The array's Availability Zone. For more information, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      *         and Endpoints</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RaidArray withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -423,9 +396,6 @@ public class RaidArray  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param createdAt When the RAID array was created.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RaidArray withCreatedAt(String createdAt) {
         this.createdAt = createdAt;

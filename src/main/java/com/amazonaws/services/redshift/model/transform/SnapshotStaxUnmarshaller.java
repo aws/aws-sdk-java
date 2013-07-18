@@ -109,6 +109,38 @@ public class SnapshotStaxUnmarshaller implements Unmarshaller<Snapshot, StaxUnma
                     snapshot.setEncrypted(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("AccountsWithRestoreAccess/AccountWithRestoreAccess", targetDepth)) {
+                    snapshot.getAccountsWithRestoreAccess().add(AccountWithRestoreAccessStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("OwnerAccount", targetDepth)) {
+                    snapshot.setOwnerAccount(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("TotalBackupSizeInMegaBytes", targetDepth)) {
+                    snapshot.setTotalBackupSizeInMegaBytes(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("ActualIncrementalBackupSizeInMegaBytes", targetDepth)) {
+                    snapshot.setActualIncrementalBackupSizeInMegaBytes(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("BackupProgressInMegaBytes", targetDepth)) {
+                    snapshot.setBackupProgressInMegaBytes(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("CurrentBackupRateInMegaBytesPerSecond", targetDepth)) {
+                    snapshot.setCurrentBackupRateInMegaBytesPerSecond(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("EstimatedSecondsToCompletion", targetDepth)) {
+                    snapshot.setEstimatedSecondsToCompletion(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("ElapsedTimeInSeconds", targetDepth)) {
+                    snapshot.setElapsedTimeInSeconds(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return snapshot;

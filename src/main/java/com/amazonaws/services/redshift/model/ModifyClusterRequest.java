@@ -111,7 +111,9 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest  implements Se
      * setting. <p> Constraints: <ul> <li>Must be between 8 and 64 characters
      * in length.</li> <li>Must contain at least one uppercase letter.</li>
      * <li>Must contain at least one lowercase letter.</li> <li>Must contain
-     * one number.</li> </ul>
+     * one number.</li> <li>Can be any printable ASCII character (ASCII code
+     * 33 to 126) except ' (single quote), " (double quote), \, /, @, or
+     * space.</li> </ul>
      */
     private String masterUserPassword;
 
@@ -200,9 +202,6 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest  implements Se
      *
      * @param clusterIdentifier The unique identifier of the cluster to be modified. <p>Example:
      *         <code>examplecluster</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyClusterRequest withClusterIdentifier(String clusterIdentifier) {
         this.clusterIdentifier = clusterIdentifier;
@@ -270,9 +269,6 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest  implements Se
      *         your connection is switched to the new cluster. You can use
      *         <a>DescribeResize</a> to track the progress of the resize request.
      *         <p>Valid Values: <code> multi-node | single-node </code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyClusterRequest withClusterType(String clusterType) {
         this.clusterType = clusterType;
@@ -364,9 +360,6 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest  implements Se
      *         restored. You can use the <a>DescribeResize</a> to track the progress
      *         of the resize request. <p>Valid Values: <code> dw.hs1.xlarge</code> |
      *         <code>dw.hs1.8xlarge</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyClusterRequest withNodeType(String nodeType) {
         this.nodeType = nodeType;
@@ -458,9 +451,6 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest  implements Se
      *         restored. You can use <a>DescribeResize</a> to track the progress of
      *         the resize request. <p>Valid Values: Integer greater than
      *         <code>0</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyClusterRequest withNumberOfNodes(Integer numberOfNodes) {
         this.numberOfNodes = numberOfNodes;
@@ -539,9 +529,6 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest  implements Se
      *         <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
      *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
      *         or contain two consecutive hyphens</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyClusterRequest withClusterSecurityGroups(String... clusterSecurityGroups) {
         if (getClusterSecurityGroups() == null) setClusterSecurityGroups(new java.util.ArrayList<String>(clusterSecurityGroups.length));
@@ -569,9 +556,6 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest  implements Se
      *         <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
      *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
      *         or contain two consecutive hyphens</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyClusterRequest withClusterSecurityGroups(java.util.Collection<String> clusterSecurityGroups) {
         if (clusterSecurityGroups == null) {
@@ -626,9 +610,6 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest  implements Se
      *
      * @param vpcSecurityGroupIds A list of Virtual Private Cloud (VPC) security groups to be associated
      *         with the cluster.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyClusterRequest withVpcSecurityGroupIds(String... vpcSecurityGroupIds) {
         if (getVpcSecurityGroupIds() == null) setVpcSecurityGroupIds(new java.util.ArrayList<String>(vpcSecurityGroupIds.length));
@@ -646,9 +627,6 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest  implements Se
      *
      * @param vpcSecurityGroupIds A list of Virtual Private Cloud (VPC) security groups to be associated
      *         with the cluster.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyClusterRequest withVpcSecurityGroupIds(java.util.Collection<String> vpcSecurityGroupIds) {
         if (vpcSecurityGroupIds == null) {
@@ -674,7 +652,9 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest  implements Se
      * setting. <p> Constraints: <ul> <li>Must be between 8 and 64 characters
      * in length.</li> <li>Must contain at least one uppercase letter.</li>
      * <li>Must contain at least one lowercase letter.</li> <li>Must contain
-     * one number.</li> </ul>
+     * one number.</li> <li>Can be any printable ASCII character (ASCII code
+     * 33 to 126) except ' (single quote), " (double quote), \, /, @, or
+     * space.</li> </ul>
      *
      * @return The new password for the cluster master user. This change is
      *         asynchronously applied as soon as possible. Between the time of the
@@ -687,7 +667,9 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest  implements Se
      *         setting. <p> Constraints: <ul> <li>Must be between 8 and 64 characters
      *         in length.</li> <li>Must contain at least one uppercase letter.</li>
      *         <li>Must contain at least one lowercase letter.</li> <li>Must contain
-     *         one number.</li> </ul>
+     *         one number.</li> <li>Can be any printable ASCII character (ASCII code
+     *         33 to 126) except ' (single quote), " (double quote), \, /, @, or
+     *         space.</li> </ul>
      */
     public String getMasterUserPassword() {
         return masterUserPassword;
@@ -705,7 +687,9 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest  implements Se
      * setting. <p> Constraints: <ul> <li>Must be between 8 and 64 characters
      * in length.</li> <li>Must contain at least one uppercase letter.</li>
      * <li>Must contain at least one lowercase letter.</li> <li>Must contain
-     * one number.</li> </ul>
+     * one number.</li> <li>Can be any printable ASCII character (ASCII code
+     * 33 to 126) except ' (single quote), " (double quote), \, /, @, or
+     * space.</li> </ul>
      *
      * @param masterUserPassword The new password for the cluster master user. This change is
      *         asynchronously applied as soon as possible. Between the time of the
@@ -718,7 +702,9 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest  implements Se
      *         setting. <p> Constraints: <ul> <li>Must be between 8 and 64 characters
      *         in length.</li> <li>Must contain at least one uppercase letter.</li>
      *         <li>Must contain at least one lowercase letter.</li> <li>Must contain
-     *         one number.</li> </ul>
+     *         one number.</li> <li>Can be any printable ASCII character (ASCII code
+     *         33 to 126) except ' (single quote), " (double quote), \, /, @, or
+     *         space.</li> </ul>
      */
     public void setMasterUserPassword(String masterUserPassword) {
         this.masterUserPassword = masterUserPassword;
@@ -736,7 +722,9 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest  implements Se
      * setting. <p> Constraints: <ul> <li>Must be between 8 and 64 characters
      * in length.</li> <li>Must contain at least one uppercase letter.</li>
      * <li>Must contain at least one lowercase letter.</li> <li>Must contain
-     * one number.</li> </ul>
+     * one number.</li> <li>Can be any printable ASCII character (ASCII code
+     * 33 to 126) except ' (single quote), " (double quote), \, /, @, or
+     * space.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -751,10 +739,9 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest  implements Se
      *         setting. <p> Constraints: <ul> <li>Must be between 8 and 64 characters
      *         in length.</li> <li>Must contain at least one uppercase letter.</li>
      *         <li>Must contain at least one lowercase letter.</li> <li>Must contain
-     *         one number.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         one number.</li> <li>Can be any printable ASCII character (ASCII code
+     *         33 to 126) except ' (single quote), " (double quote), \, /, @, or
+     *         space.</li> </ul>
      */
     public ModifyClusterRequest withMasterUserPassword(String masterUserPassword) {
         this.masterUserPassword = masterUserPassword;
@@ -810,9 +797,6 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest  implements Se
      *         cluster use <a>RebootCluster</a>. <p>Default: Uses existing setting.
      *         <p>Constraints: The cluster parameter group must be in the same
      *         parameter group family that matches the cluster version.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyClusterRequest withClusterParameterGroupName(String clusterParameterGroupName) {
         this.clusterParameterGroupName = clusterParameterGroupName;
@@ -886,9 +870,6 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest  implements Se
      *         snapshots which fall outside of the new retention period will be
      *         immediately deleted. <p>Default: Uses existing setting.
      *         <p>Constraints: Must be a value from 0 to 35.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyClusterRequest withAutomatedSnapshotRetentionPeriod(Integer automatedSnapshotRetentionPeriod) {
         this.automatedSnapshotRetentionPeriod = automatedSnapshotRetentionPeriod;
@@ -974,9 +955,6 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest  implements Se
      *         ddd:hh24:mi-ddd:hh24:mi, for example <code>wed:07:30-wed:08:00</code>.
      *         <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun <p>Constraints:
      *         Must be at least 30 minutes.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyClusterRequest withPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
         this.preferredMaintenanceWindow = preferredMaintenanceWindow;
@@ -1062,9 +1040,6 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest  implements Se
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
      *         Redshift Parameter Groups</a> in the <i>Amazon Redshift Management
      *         Guide</i>. <p>Example: <code>1.0</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyClusterRequest withClusterVersion(String clusterVersion) {
         this.clusterVersion = clusterVersion;
@@ -1102,9 +1077,6 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest  implements Se
      *
      * @param allowVersionUpgrade If <code>true</code>, upgrades will be applied automatically to the
      *         cluster during the maintenance window. <p>Default: <code>false</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyClusterRequest withAllowVersionUpgrade(Boolean allowVersionUpgrade) {
         this.allowVersionUpgrade = allowVersionUpgrade;

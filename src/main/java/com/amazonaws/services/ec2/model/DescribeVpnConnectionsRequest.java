@@ -83,9 +83,6 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpnConnectionIds A VPN connection ID. More than one may be specified per request.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVpnConnectionsRequest withVpnConnectionIds(String... vpnConnectionIds) {
         if (getVpnConnectionIds() == null) setVpnConnectionIds(new java.util.ArrayList<String>(vpnConnectionIds.length));
@@ -101,9 +98,6 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpnConnectionIds A VPN connection ID. More than one may be specified per request.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVpnConnectionsRequest withVpnConnectionIds(java.util.Collection<String> vpnConnectionIds) {
         if (vpnConnectionIds == null) {
@@ -176,9 +170,6 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest  impl
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVpnConnectionsRequest withFilters(Filter... filters) {
         if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
@@ -202,9 +193,6 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest  impl
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVpnConnectionsRequest withFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {

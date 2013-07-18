@@ -54,9 +54,6 @@ public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRe
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedInstancesId The new value for the ReservedInstancesId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeReservedInstancesListingsRequest withReservedInstancesId(String reservedInstancesId) {
         this.reservedInstancesId = reservedInstancesId;
@@ -93,9 +90,6 @@ public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRe
      *
      * @param reservedInstancesListingId The new value for the ReservedInstancesListingId property for this
      *         object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeReservedInstancesListingsRequest withReservedInstancesListingId(String reservedInstancesListingId) {
         this.reservedInstancesListingId = reservedInstancesListingId;
@@ -138,9 +132,6 @@ public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRe
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param filters The new value for the Filters property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeReservedInstancesListingsRequest withFilters(Filter... filters) {
         if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
@@ -156,9 +147,6 @@ public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRe
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param filters The new value for the Filters property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeReservedInstancesListingsRequest withFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {

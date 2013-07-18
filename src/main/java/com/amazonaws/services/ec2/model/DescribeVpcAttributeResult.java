@@ -56,9 +56,6 @@ public class DescribeVpcAttributeResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcId The new value for the VpcId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVpcAttributeResult withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -90,9 +87,6 @@ public class DescribeVpcAttributeResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param enableDnsSupport Boolean value
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVpcAttributeResult withEnableDnsSupport(Boolean enableDnsSupport) {
         this.enableDnsSupport = enableDnsSupport;
@@ -133,9 +127,6 @@ public class DescribeVpcAttributeResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param enableDnsHostnames Boolean value
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVpcAttributeResult withEnableDnsHostnames(Boolean enableDnsHostnames) {
         this.enableDnsHostnames = enableDnsHostnames;

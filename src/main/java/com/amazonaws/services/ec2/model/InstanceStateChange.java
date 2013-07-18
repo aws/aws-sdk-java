@@ -61,9 +61,6 @@ public class InstanceStateChange  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId The ID of the instance whose state changed.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceStateChange withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -95,9 +92,6 @@ public class InstanceStateChange  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param currentState The current state of the specified instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceStateChange withCurrentState(InstanceState currentState) {
         this.currentState = currentState;
@@ -129,9 +123,6 @@ public class InstanceStateChange  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param previousState The previous state of the specified instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceStateChange withPreviousState(InstanceState previousState) {
         this.previousState = previousState;

@@ -83,9 +83,6 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest  imple
      * @param stackId The stack ID. If you use this parameter,
      *         <code>DescribeServiceErrors</code> returns descriptions of the errors
      *         associated with the specified stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeServiceErrorsRequest withStackId(String stackId) {
         this.stackId = stackId;
@@ -129,9 +126,6 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest  imple
      * @param instanceId The instance ID. If you use this parameter,
      *         <code>DescribeServiceErrors</code> returns descriptions of the errors
      *         associated with the specified instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeServiceErrorsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -186,9 +180,6 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest  imple
      * @param serviceErrorIds An array of service error IDs. If you use this parameter,
      *         <code>DescribeServiceErrors</code> returns descriptions of the
      *         specified errors. Otherwise, it returns a description of every error.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeServiceErrorsRequest withServiceErrorIds(String... serviceErrorIds) {
         if (getServiceErrorIds() == null) setServiceErrorIds(new java.util.ArrayList<String>(serviceErrorIds.length));
@@ -208,9 +199,6 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest  imple
      * @param serviceErrorIds An array of service error IDs. If you use this parameter,
      *         <code>DescribeServiceErrors</code> returns descriptions of the
      *         specified errors. Otherwise, it returns a description of every error.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeServiceErrorsRequest withServiceErrorIds(java.util.Collection<String> serviceErrorIds) {
         if (serviceErrorIds == null) {

@@ -73,9 +73,6 @@ public class InstanceStatusEvent  implements Serializable  {
      *
      * @param code The associated code of the event. Valid values: instance-reboot,
      *         system-reboot, instance-retirement
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceStatusEvent withCode(String code) {
         this.code = code;
@@ -107,9 +104,6 @@ public class InstanceStatusEvent  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description A description of the event.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceStatusEvent withDescription(String description) {
         this.description = description;
@@ -141,9 +135,6 @@ public class InstanceStatusEvent  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param notBefore The earliest scheduled start time for the event.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceStatusEvent withNotBefore(java.util.Date notBefore) {
         this.notBefore = notBefore;
@@ -175,9 +166,6 @@ public class InstanceStatusEvent  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param notAfter The latest scheduled end time for the event.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceStatusEvent withNotAfter(java.util.Date notAfter) {
         this.notAfter = notAfter;

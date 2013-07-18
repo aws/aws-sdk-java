@@ -58,9 +58,6 @@ public class Monitoring  implements Serializable  {
      *
      * @param state The state of monitoring on an Amazon EC2 instance (ex: enabled,
      *         disabled).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Monitoring withState(String state) {
         this.state = state;

@@ -72,9 +72,6 @@ public class DeleteClusterParameterGroupRequest extends AmazonWebServiceRequest 
      * @param parameterGroupName The name of the parameter group to be deleted. <p>Constraints: <ul>
      *         <li>Must be the name of an existing cluster parameter group.</li>
      *         <li>Cannot delete a default cluster parameter group.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteClusterParameterGroupRequest withParameterGroupName(String parameterGroupName) {
         this.parameterGroupName = parameterGroupName;

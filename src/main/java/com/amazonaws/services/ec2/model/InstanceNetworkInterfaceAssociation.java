@@ -50,9 +50,6 @@ public class InstanceNetworkInterfaceAssociation  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param publicIp The new value for the PublicIp property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceNetworkInterfaceAssociation withPublicIp(String publicIp) {
         this.publicIp = publicIp;
@@ -84,9 +81,6 @@ public class InstanceNetworkInterfaceAssociation  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param publicDnsName The new value for the PublicDnsName property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceNetworkInterfaceAssociation withPublicDnsName(String publicDnsName) {
         this.publicDnsName = publicDnsName;
@@ -118,9 +112,6 @@ public class InstanceNetworkInterfaceAssociation  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ipOwnerId The new value for the IpOwnerId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceNetworkInterfaceAssociation withIpOwnerId(String ipOwnerId) {
         this.ipOwnerId = ipOwnerId;

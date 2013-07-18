@@ -62,9 +62,6 @@ public class SslConfiguration  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param certificate The contents of the certificate's domain.crt file.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SslConfiguration withCertificate(String certificate) {
         this.certificate = certificate;
@@ -96,9 +93,6 @@ public class SslConfiguration  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateKey The private key; the contents of the certificate's domain.kex file.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SslConfiguration withPrivateKey(String privateKey) {
         this.privateKey = privateKey;
@@ -136,9 +130,6 @@ public class SslConfiguration  implements Serializable  {
      *
      * @param chain Optional. Can be used to specify an intermediate certificate authority
      *         key or client authentication.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SslConfiguration withChain(String chain) {
         this.chain = chain;

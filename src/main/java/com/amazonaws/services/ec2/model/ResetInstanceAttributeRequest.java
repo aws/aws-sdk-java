@@ -104,9 +104,6 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId The ID of the Amazon EC2 instance whose attribute is being reset.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ResetInstanceAttributeRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -158,9 +155,6 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest  impl
      * @param attribute The name of the attribute being reset. <p> Available attribute names:
      *         <code>kernel</code>, <code>ramdisk</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see InstanceAttributeName
      */
     public ResetInstanceAttributeRequest withAttribute(String attribute) {
@@ -196,9 +190,6 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest  impl
      *
      * @param attribute The name of the attribute being reset. <p> Available attribute names:
      *         <code>kernel</code>, <code>ramdisk</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see InstanceAttributeName
      */

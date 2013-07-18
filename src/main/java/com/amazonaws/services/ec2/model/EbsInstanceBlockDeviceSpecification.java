@@ -64,9 +64,6 @@ public class EbsInstanceBlockDeviceSpecification  implements Serializable  {
      *
      * @param volumeId The ID of the EBS volume that should be mounted as a block device on
      *         an Amazon EC2 instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EbsInstanceBlockDeviceSpecification withVolumeId(String volumeId) {
         this.volumeId = volumeId;
@@ -104,9 +101,6 @@ public class EbsInstanceBlockDeviceSpecification  implements Serializable  {
      *
      * @param deleteOnTermination Specifies whether the Amazon EBS volume is deleted on instance
      *         termination.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EbsInstanceBlockDeviceSpecification withDeleteOnTermination(Boolean deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;

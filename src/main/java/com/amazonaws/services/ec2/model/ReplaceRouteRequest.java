@@ -76,9 +76,6 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param routeTableId The ID of the route table where the route will be replaced.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReplaceRouteRequest withRouteTableId(String routeTableId) {
         this.routeTableId = routeTableId;
@@ -122,9 +119,6 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest  implements Ser
      * @param destinationCidrBlock The CIDR address block used for the destination match. For example:
      *         <code>0.0.0.0/0</code>. The value you provide must match the CIDR of
      *         an existing route in the table.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReplaceRouteRequest withDestinationCidrBlock(String destinationCidrBlock) {
         this.destinationCidrBlock = destinationCidrBlock;
@@ -156,9 +150,6 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param gatewayId The ID of a VPN or Internet gateway attached to your VPC.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReplaceRouteRequest withGatewayId(String gatewayId) {
         this.gatewayId = gatewayId;
@@ -190,9 +181,6 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId The ID of a NAT instance in your VPC.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReplaceRouteRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -224,9 +212,6 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReplaceRouteRequest withNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;

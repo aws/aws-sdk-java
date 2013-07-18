@@ -77,9 +77,6 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest  implemen
      * @param instanceId The instance ID. If you include this parameter,
      *         <code>DescribeElasticIps</code> returns a description of the Elastic
      *         IP addresses associated with the specified instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeElasticIpsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -140,9 +137,6 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest  implemen
      *         parameter, <code>DescribeElasticIps</code> returns a description of
      *         the specified Elastic IP addresses. Otherwise, it returns a
      *         description of every Elastic IP address.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeElasticIpsRequest withIps(String... ips) {
         if (getIps() == null) setIps(new java.util.ArrayList<String>(ips.length));
@@ -164,9 +158,6 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest  implemen
      *         parameter, <code>DescribeElasticIps</code> returns a description of
      *         the specified Elastic IP addresses. Otherwise, it returns a
      *         description of every Elastic IP address.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeElasticIpsRequest withIps(java.util.Collection<String> ips) {
         if (ips == null) {

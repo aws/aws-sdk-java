@@ -62,9 +62,6 @@ public class RequestSpotInstancesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param spotInstanceRequests Contains a list of Spot Instance requests.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RequestSpotInstancesResult withSpotInstanceRequests(SpotInstanceRequest... spotInstanceRequests) {
         if (getSpotInstanceRequests() == null) setSpotInstanceRequests(new java.util.ArrayList<SpotInstanceRequest>(spotInstanceRequests.length));
@@ -80,9 +77,6 @@ public class RequestSpotInstancesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param spotInstanceRequests Contains a list of Spot Instance requests.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RequestSpotInstancesResult withSpotInstanceRequests(java.util.Collection<SpotInstanceRequest> spotInstanceRequests) {
         if (spotInstanceRequests == null) {

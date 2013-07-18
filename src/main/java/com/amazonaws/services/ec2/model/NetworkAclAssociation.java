@@ -55,9 +55,6 @@ public class NetworkAclAssociation  implements Serializable  {
      *
      * @param networkAclAssociationId The new value for the NetworkAclAssociationId property for this
      *         object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public NetworkAclAssociation withNetworkAclAssociationId(String networkAclAssociationId) {
         this.networkAclAssociationId = networkAclAssociationId;
@@ -89,9 +86,6 @@ public class NetworkAclAssociation  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkAclId The new value for the NetworkAclId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public NetworkAclAssociation withNetworkAclId(String networkAclId) {
         this.networkAclId = networkAclId;
@@ -123,9 +117,6 @@ public class NetworkAclAssociation  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnetId The new value for the SubnetId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public NetworkAclAssociation withSubnetId(String subnetId) {
         this.subnetId = subnetId;

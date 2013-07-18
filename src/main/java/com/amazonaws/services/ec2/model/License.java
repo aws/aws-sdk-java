@@ -73,9 +73,6 @@ public class License  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param licenseId The unique ID identifying the license.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public License withLicenseId(String licenseId) {
         this.licenseId = licenseId;
@@ -107,9 +104,6 @@ public class License  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param type The license type (ex. "Microsoft/Windows/Standard").
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public License withType(String type) {
         this.type = type;
@@ -141,9 +135,6 @@ public class License  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param pool The name of the pool in which the license is kept.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public License withPool(String pool) {
         this.pool = pool;
@@ -198,9 +189,6 @@ public class License  implements Serializable  {
      * @param capacities The capacities available for this license, indicating how many
      *         licenses are in use, how many are available, how many Amazon EC2
      *         instances can be supported, etc.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public License withCapacities(LicenseCapacity... capacities) {
         if (getCapacities() == null) setCapacities(new java.util.ArrayList<LicenseCapacity>(capacities.length));
@@ -220,9 +208,6 @@ public class License  implements Serializable  {
      * @param capacities The capacities available for this license, indicating how many
      *         licenses are in use, how many are available, how many Amazon EC2
      *         instances can be supported, etc.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public License withCapacities(java.util.Collection<LicenseCapacity> capacities) {
         if (capacities == null) {
@@ -271,9 +256,6 @@ public class License  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags A list of tags for the License.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public License withTags(Tag... tags) {
         if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
@@ -289,9 +271,6 @@ public class License  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags A list of tags for the License.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public License withTags(java.util.Collection<Tag> tags) {
         if (tags == null) {

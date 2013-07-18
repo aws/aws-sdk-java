@@ -136,9 +136,6 @@ public class Listener  implements Serializable  {
      * @param protocol Specifies the LoadBalancer transport protocol to use for routing -
      *         HTTP, HTTPS, TCP or SSL. This property cannot be modified for the life
      *         of the LoadBalancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Listener withProtocol(String protocol) {
         this.protocol = protocol;
@@ -176,9 +173,6 @@ public class Listener  implements Serializable  {
      *
      * @param loadBalancerPort Specifies the external LoadBalancer port number. This property cannot
      *         be modified for the life of the LoadBalancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Listener withLoadBalancerPort(Integer loadBalancerPort) {
         this.loadBalancerPort = loadBalancerPort;
@@ -282,9 +276,6 @@ public class Listener  implements Serializable  {
      *         there is another listener with the same <code>InstancePort</code>
      *         whose <code>InstanceProtocol</code> is HTTP or TCP, the listener's
      *         <code>InstanceProtocol</code> must be either HTTP or TCP. </note>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Listener withInstanceProtocol(String instanceProtocol) {
         this.instanceProtocol = instanceProtocol;
@@ -331,9 +322,6 @@ public class Listener  implements Serializable  {
      *
      * @param instancePort Specifies the TCP port on which the instance server is listening. This
      *         property cannot be modified for the life of the LoadBalancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Listener withInstancePort(Integer instancePort) {
         this.instancePort = instancePort;
@@ -383,9 +371,6 @@ public class Listener  implements Serializable  {
      *         certificate, call the AWS Identity and Access Management <a
      *         href="http://docs.amazonwebservices.com/IAM/latest/APIReference/index.html?API_UploadServerCertificate.html">UploadServerCertificate
      *         </a> API.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Listener withSSLCertificateId(String sSLCertificateId) {
         this.sSLCertificateId = sSLCertificateId;

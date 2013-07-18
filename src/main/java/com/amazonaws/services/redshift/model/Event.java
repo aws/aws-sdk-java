@@ -69,9 +69,6 @@ public class Event  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceIdentifier The identifier for the source of the event.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Event withSourceIdentifier(String sourceIdentifier) {
         this.sourceIdentifier = sourceIdentifier;
@@ -117,9 +114,6 @@ public class Event  implements Serializable  {
      *
      * @param sourceType The source type for this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see SourceType
      */
     public Event withSourceType(String sourceType) {
@@ -152,9 +146,6 @@ public class Event  implements Serializable  {
      *
      * @param sourceType The source type for this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see SourceType
      */
     public Event withSourceType(SourceType sourceType) {
@@ -186,9 +177,6 @@ public class Event  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param message The text of this event.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Event withMessage(String message) {
         this.message = message;
@@ -220,9 +208,6 @@ public class Event  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param date The date and time of the event.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Event withDate(java.util.Date date) {
         this.date = date;

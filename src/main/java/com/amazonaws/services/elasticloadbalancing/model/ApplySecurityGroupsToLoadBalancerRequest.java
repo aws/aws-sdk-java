@@ -70,9 +70,6 @@ public class ApplySecurityGroupsToLoadBalancerRequest extends AmazonWebServiceRe
      *
      * @param loadBalancerName The name associated with the LoadBalancer. The name must be unique
      *         within the client AWS account.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ApplySecurityGroupsToLoadBalancerRequest withLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
@@ -127,9 +124,6 @@ public class ApplySecurityGroupsToLoadBalancerRequest extends AmazonWebServiceRe
      * @param securityGroups A list of security group IDs to associate with your LoadBalancer in
      *         VPC. The security group IDs must be provided as the ID and not the
      *         security group name (For example, sg-1234).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ApplySecurityGroupsToLoadBalancerRequest withSecurityGroups(String... securityGroups) {
         if (getSecurityGroups() == null) setSecurityGroups(new java.util.ArrayList<String>(securityGroups.length));
@@ -149,9 +143,6 @@ public class ApplySecurityGroupsToLoadBalancerRequest extends AmazonWebServiceRe
      * @param securityGroups A list of security group IDs to associate with your LoadBalancer in
      *         VPC. The security group IDs must be provided as the ID and not the
      *         security group name (For example, sg-1234).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ApplySecurityGroupsToLoadBalancerRequest withSecurityGroups(java.util.Collection<String> securityGroups) {
         if (securityGroups == null) {

@@ -50,9 +50,6 @@ public class CancelExportTaskRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param exportTaskId The new value for the ExportTaskId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CancelExportTaskRequest withExportTaskId(String exportTaskId) {
         this.exportTaskId = exportTaskId;

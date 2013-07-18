@@ -51,9 +51,6 @@ public class CreateInstanceResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId The instance ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateInstanceResult withInstanceId(String instanceId) {
         this.instanceId = instanceId;

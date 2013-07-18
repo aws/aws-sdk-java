@@ -121,9 +121,6 @@ public class RegisterInstancesWithLoadBalancerRequest extends AmazonWebServiceRe
      *
      * @param loadBalancerName The name associated with the LoadBalancer. The name must be unique
      *         within the client AWS account.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RegisterInstancesWithLoadBalancerRequest withLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
@@ -214,9 +211,6 @@ public class RegisterInstancesWithLoadBalancerRequest extends AmazonWebServiceRe
      *         instance, and then register the load balancer with your instance after
      *         you've restarted. To de-register your instances from load balancer,
      *         use <a>DeregisterInstancesFromLoadBalancer</a> action.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RegisterInstancesWithLoadBalancerRequest withInstances(Instance... instances) {
         if (getInstances() == null) setInstances(new java.util.ArrayList<Instance>(instances.length));
@@ -248,9 +242,6 @@ public class RegisterInstancesWithLoadBalancerRequest extends AmazonWebServiceRe
      *         instance, and then register the load balancer with your instance after
      *         you've restarted. To de-register your instances from load balancer,
      *         use <a>DeregisterInstancesFromLoadBalancer</a> action.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RegisterInstancesWithLoadBalancerRequest withInstances(java.util.Collection<Instance> instances) {
         if (instances == null) {

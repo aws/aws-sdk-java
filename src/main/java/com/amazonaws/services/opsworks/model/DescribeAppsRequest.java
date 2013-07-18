@@ -69,9 +69,6 @@ public class DescribeAppsRequest extends AmazonWebServiceRequest  implements Ser
      *
      * @param stackId The app stack ID. If you use this parameter, <code>DescribeApps</code>
      *         returns a description of the apps in the specified stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeAppsRequest withStackId(String stackId) {
         this.stackId = stackId;
@@ -126,9 +123,6 @@ public class DescribeAppsRequest extends AmazonWebServiceRequest  implements Ser
      * @param appIds An array of app IDs for the apps to be described. If you use this
      *         parameter, <code>DescribeApps</code> returns a description of the
      *         specified apps. Otherwise, it returns a description of every app.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeAppsRequest withAppIds(String... appIds) {
         if (getAppIds() == null) setAppIds(new java.util.ArrayList<String>(appIds.length));
@@ -148,9 +142,6 @@ public class DescribeAppsRequest extends AmazonWebServiceRequest  implements Ser
      * @param appIds An array of app IDs for the apps to be described. If you use this
      *         parameter, <code>DescribeApps</code> returns a description of the
      *         specified apps. Otherwise, it returns a description of every app.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeAppsRequest withAppIds(java.util.Collection<String> appIds) {
         if (appIds == null) {

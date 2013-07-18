@@ -62,9 +62,6 @@ public class SetTimeBasedAutoScalingRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId The instance ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SetTimeBasedAutoScalingRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -96,9 +93,6 @@ public class SetTimeBasedAutoScalingRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param autoScalingSchedule An <code>AutoScalingSchedule</code> with the instance schedule.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SetTimeBasedAutoScalingRequest withAutoScalingSchedule(WeeklyAutoScalingSchedule autoScalingSchedule) {
         this.autoScalingSchedule = autoScalingSchedule;

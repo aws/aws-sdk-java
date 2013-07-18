@@ -56,9 +56,6 @@ public class StateReason  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param code Reason code for the state change.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StateReason withCode(String code) {
         this.code = code;
@@ -90,9 +87,6 @@ public class StateReason  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param message Descriptive message for the state change.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StateReason withMessage(String message) {
         this.message = message;

@@ -100,9 +100,6 @@ public class Command  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param commandId The command ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Command withCommandId(String commandId) {
         this.commandId = commandId;
@@ -134,9 +131,6 @@ public class Command  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId The ID of the instance where the command was executed.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Command withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -168,9 +162,6 @@ public class Command  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param deploymentId The command deployment ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Command withDeploymentId(String deploymentId) {
         this.deploymentId = deploymentId;
@@ -202,9 +193,6 @@ public class Command  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param createdAt Date and time when the command was run.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Command withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
@@ -236,9 +224,6 @@ public class Command  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param acknowledgedAt Date and time when the command was acknowledged.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Command withAcknowledgedAt(String acknowledgedAt) {
         this.acknowledgedAt = acknowledgedAt;
@@ -270,9 +255,6 @@ public class Command  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param completedAt Date when the command completed.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Command withCompletedAt(String completedAt) {
         this.completedAt = completedAt;
@@ -310,9 +292,6 @@ public class Command  implements Serializable  {
      *
      * @param status The command status: <ul> <li>failed</li> <li>successful</li>
      *         <li>skipped</li> <li>pending</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Command withStatus(String status) {
         this.status = status;
@@ -344,9 +323,6 @@ public class Command  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param exitCode The command exit code.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Command withExitCode(Integer exitCode) {
         this.exitCode = exitCode;
@@ -378,9 +354,6 @@ public class Command  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param logUrl The URL of the command log.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Command withLogUrl(String logUrl) {
         this.logUrl = logUrl;
@@ -430,9 +403,6 @@ public class Command  implements Serializable  {
      *         <li>start</li> <li>stop</li> <li>restart</li> <li>undeploy</li>
      *         <li>update_dependencies</li> <li>install_dependencies</li>
      *         <li>update_custom_cookbooks</li> <li>execute_recipes</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Command withType(String type) {
         this.type = type;

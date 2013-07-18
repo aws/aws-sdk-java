@@ -68,9 +68,6 @@ public class DescribeElasticLoadBalancersRequest extends AmazonWebServiceRequest
      *
      * @param stackId A stack ID. The action describes the Elastic Load Balancing instances
      *         for the stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeElasticLoadBalancersRequest withStackId(String stackId) {
         this.stackId = stackId;
@@ -119,9 +116,6 @@ public class DescribeElasticLoadBalancersRequest extends AmazonWebServiceRequest
      *
      * @param layerIds A list of layer IDs. The action describes the Elastic Load Balancing
      *         instances for the specified layers.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeElasticLoadBalancersRequest withLayerIds(String... layerIds) {
         if (getLayerIds() == null) setLayerIds(new java.util.ArrayList<String>(layerIds.length));
@@ -139,9 +133,6 @@ public class DescribeElasticLoadBalancersRequest extends AmazonWebServiceRequest
      *
      * @param layerIds A list of layer IDs. The action describes the Elastic Load Balancing
      *         instances for the specified layers.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeElasticLoadBalancersRequest withLayerIds(java.util.Collection<String> layerIds) {
         if (layerIds == null) {

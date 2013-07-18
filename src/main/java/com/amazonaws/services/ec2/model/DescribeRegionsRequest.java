@@ -74,9 +74,6 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest  implements 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param regionNames The optional list of regions to describe.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeRegionsRequest withRegionNames(String... regionNames) {
         if (getRegionNames() == null) setRegionNames(new java.util.ArrayList<String>(regionNames.length));
@@ -92,9 +89,6 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest  implements 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param regionNames The optional list of regions to describe.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeRegionsRequest withRegionNames(java.util.Collection<String> regionNames) {
         if (regionNames == null) {
@@ -161,9 +155,6 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest  implements 
      *         reference to the available filter keys for this operation, see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeRegionsRequest withFilters(Filter... filters) {
         if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
@@ -185,9 +176,6 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest  implements 
      *         reference to the available filter keys for this operation, see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeRegionsRequest withFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {

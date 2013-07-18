@@ -58,9 +58,6 @@ public class ImportInstanceVolumeDetailItem  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param bytesConverted The new value for the BytesConverted property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ImportInstanceVolumeDetailItem withBytesConverted(Long bytesConverted) {
         this.bytesConverted = bytesConverted;
@@ -92,9 +89,6 @@ public class ImportInstanceVolumeDetailItem  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZone The new value for the AvailabilityZone property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ImportInstanceVolumeDetailItem withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -126,9 +120,6 @@ public class ImportInstanceVolumeDetailItem  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param image The new value for the Image property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ImportInstanceVolumeDetailItem withImage(DiskImageDescription image) {
         this.image = image;
@@ -160,9 +151,6 @@ public class ImportInstanceVolumeDetailItem  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volume The new value for the Volume property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ImportInstanceVolumeDetailItem withVolume(DiskImageVolumeDescription volume) {
         this.volume = volume;
@@ -194,9 +182,6 @@ public class ImportInstanceVolumeDetailItem  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param status The new value for the Status property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ImportInstanceVolumeDetailItem withStatus(String status) {
         this.status = status;
@@ -228,9 +213,6 @@ public class ImportInstanceVolumeDetailItem  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param statusMessage The new value for the StatusMessage property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ImportInstanceVolumeDetailItem withStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
@@ -262,9 +244,6 @@ public class ImportInstanceVolumeDetailItem  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description The new value for the Description property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ImportInstanceVolumeDetailItem withDescription(String description) {
         this.description = description;

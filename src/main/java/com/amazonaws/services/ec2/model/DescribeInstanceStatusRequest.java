@@ -135,9 +135,6 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest  impl
      *
      * @param instanceIds The list of instance IDs. If not specified, all instances are
      *         described.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeInstanceStatusRequest withInstanceIds(String... instanceIds) {
         if (getInstanceIds() == null) setInstanceIds(new java.util.ArrayList<String>(instanceIds.length));
@@ -155,9 +152,6 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest  impl
      *
      * @param instanceIds The list of instance IDs. If not specified, all instances are
      *         described.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeInstanceStatusRequest withInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
@@ -206,9 +200,6 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param filters The list of filters to limit returned results.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeInstanceStatusRequest withFilters(Filter... filters) {
         if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
@@ -224,9 +215,6 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param filters The list of filters to limit returned results.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeInstanceStatusRequest withFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
@@ -264,9 +252,6 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nextToken A string specifying the next paginated set of results to return.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeInstanceStatusRequest withNextToken(String nextToken) {
         this.nextToken = nextToken;
@@ -298,9 +283,6 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxResults The maximum number of paginated instance items per response.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeInstanceStatusRequest withMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
@@ -332,9 +314,6 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param includeAllInstances The new value for the IncludeAllInstances property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeInstanceStatusRequest withIncludeAllInstances(Boolean includeAllInstances) {
         this.includeAllInstances = includeAllInstances;

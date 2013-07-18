@@ -70,9 +70,6 @@ public class TagDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param resourceId The resource ID for the tag.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TagDescription withResourceId(String resourceId) {
         this.resourceId = resourceId;
@@ -124,9 +121,6 @@ public class TagDescription  implements Serializable  {
      * @param resourceType The type of resource identified by the associated resource ID (ex:
      *         instance, AMI, EBS volume, etc).
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ResourceType
      */
     public TagDescription withResourceType(String resourceType) {
@@ -163,9 +157,6 @@ public class TagDescription  implements Serializable  {
      * @param resourceType The type of resource identified by the associated resource ID (ex:
      *         instance, AMI, EBS volume, etc).
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ResourceType
      */
     public TagDescription withResourceType(ResourceType resourceType) {
@@ -197,9 +188,6 @@ public class TagDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param key The tag's key.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TagDescription withKey(String key) {
         this.key = key;
@@ -231,9 +219,6 @@ public class TagDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param value The tag's value.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TagDescription withValue(String value) {
         this.value = value;

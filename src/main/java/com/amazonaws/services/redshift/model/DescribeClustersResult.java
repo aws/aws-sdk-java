@@ -71,9 +71,6 @@ public class DescribeClustersResult  implements Serializable  {
      * @param marker A marker at which to continue listing clusters in a new request. A
      *         marker is returned if there are more clusters to list than were
      *         returned in the response.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeClustersResult withMarker(String marker) {
         this.marker = marker;
@@ -122,9 +119,6 @@ public class DescribeClustersResult  implements Serializable  {
      *
      * @param clusters A list of <a>Cluster</a> objects, where each object describes one
      *         cluster.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeClustersResult withClusters(Cluster... clusters) {
         if (getClusters() == null) setClusters(new java.util.ArrayList<Cluster>(clusters.length));
@@ -142,9 +136,6 @@ public class DescribeClustersResult  implements Serializable  {
      *
      * @param clusters A list of <a>Cluster</a> objects, where each object describes one
      *         cluster.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeClustersResult withClusters(java.util.Collection<Cluster> clusters) {
         if (clusters == null) {

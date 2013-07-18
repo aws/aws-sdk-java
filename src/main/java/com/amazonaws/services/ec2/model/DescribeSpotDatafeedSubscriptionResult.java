@@ -49,9 +49,6 @@ public class DescribeSpotDatafeedSubscriptionResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param spotDatafeedSubscription The Spot Instance datafeed subscription.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeSpotDatafeedSubscriptionResult withSpotDatafeedSubscription(SpotDatafeedSubscription spotDatafeedSubscription) {
         this.spotDatafeedSubscription = spotDatafeedSubscription;

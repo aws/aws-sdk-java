@@ -16,7 +16,7 @@ package com.amazonaws.services.s3.model;
 
 /**
  * Notification of a progress change on an Amazon S3 transfer. Typically this
- * means notice that another chunk of bytes was transfered, but it also signals
+ * means notice that another chunk of bytes was transferred, but it also signals
  * other types of progress events such as a transfer starting, or failing.
  */
 public class ProgressEvent {
@@ -32,8 +32,8 @@ public class ProgressEvent {
     public static final int PART_FAILED_EVENT_CODE    = 4096;
     
 
-    /** The number of bytes transfered since the last progress event. */
-    private int bytesTransfered;
+    /** The number of bytes transferred since the last progress event. */
+    private int bytesTransferred;
     
     /**
      * The unique event code that identifies what type of specific type of event
@@ -42,27 +42,43 @@ public class ProgressEvent {
     private int eventCode;
 
     
-    public ProgressEvent(int bytesTransfered) {
-        this.bytesTransfered = bytesTransfered;
+    public ProgressEvent(int bytesTransferred) {
+        this.bytesTransferred = bytesTransferred;
     }
 
     /**
-     * Sets the number of bytes transfered since the last progress event.
-     * 
-     * @param bytesTransfered
-     *            The number of bytes transfered since the last progress event.
+     * @deprecated Replaced by {@link #setBytesTransferred()}
      */
-    public void setBytesTransfered(int bytesTransfered) {
-        this.bytesTransfered = bytesTransfered;
+    @Deprecated
+    public void setBytesTransfered(int bytesTransferred) {
+        setBytesTransferred(bytesTransferred);
     }
 
     /**
-     * Returns the number of bytes transfered since the last progress event.
+     * Sets the number of bytes transferred since the last progress event.
      * 
-     * @return The number of bytes transfered since the last progress event.
+     * @param bytesTransferred
+     *            The number of bytes transferred since the last progress event.
      */
+    public void setBytesTransferred(int bytesTransferred) {
+        this.bytesTransferred = bytesTransferred;
+    }
+
+    /**
+     * @deprecated Replaced by {@link #getBytesTransferred()}
+     */
+    @Deprecated
     public int getBytesTransfered() {
-        return bytesTransfered;
+        return getBytesTransferred();
+    }
+
+    /**
+     * Returns the number of bytes transferred since the last progress event.
+     * 
+     * @return The number of bytes transferred since the last progress event.
+     */
+    public int getBytesTransferred() {
+        return bytesTransferred;
     }
 
     /**

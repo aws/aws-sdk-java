@@ -70,9 +70,6 @@ public class InstanceNetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceNetworkInterface withNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
@@ -104,9 +101,6 @@ public class InstanceNetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnetId The new value for the SubnetId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceNetworkInterface withSubnetId(String subnetId) {
         this.subnetId = subnetId;
@@ -138,9 +132,6 @@ public class InstanceNetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcId The new value for the VpcId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceNetworkInterface withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -172,9 +163,6 @@ public class InstanceNetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description The new value for the Description property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceNetworkInterface withDescription(String description) {
         this.description = description;
@@ -206,9 +194,6 @@ public class InstanceNetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ownerId The new value for the OwnerId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceNetworkInterface withOwnerId(String ownerId) {
         this.ownerId = ownerId;
@@ -240,9 +225,6 @@ public class InstanceNetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param status The new value for the Status property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceNetworkInterface withStatus(String status) {
         this.status = status;
@@ -274,9 +256,6 @@ public class InstanceNetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateIpAddress The new value for the PrivateIpAddress property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceNetworkInterface withPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
@@ -308,9 +287,6 @@ public class InstanceNetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateDnsName The new value for the PrivateDnsName property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceNetworkInterface withPrivateDnsName(String privateDnsName) {
         this.privateDnsName = privateDnsName;
@@ -342,9 +318,6 @@ public class InstanceNetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceDestCheck The new value for the SourceDestCheck property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceNetworkInterface withSourceDestCheck(Boolean sourceDestCheck) {
         this.sourceDestCheck = sourceDestCheck;
@@ -396,9 +369,6 @@ public class InstanceNetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groups The new value for the Groups property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceNetworkInterface withGroups(GroupIdentifier... groups) {
         if (getGroups() == null) setGroups(new java.util.ArrayList<GroupIdentifier>(groups.length));
@@ -414,9 +384,6 @@ public class InstanceNetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groups The new value for the Groups property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceNetworkInterface withGroups(java.util.Collection<GroupIdentifier> groups) {
         if (groups == null) {
@@ -454,9 +421,6 @@ public class InstanceNetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attachment The new value for the Attachment property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceNetworkInterface withAttachment(InstanceNetworkInterfaceAttachment attachment) {
         this.attachment = attachment;
@@ -488,9 +452,6 @@ public class InstanceNetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param association The new value for the Association property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceNetworkInterface withAssociation(InstanceNetworkInterfaceAssociation association) {
         this.association = association;
@@ -533,9 +494,6 @@ public class InstanceNetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateIpAddresses The new value for the PrivateIpAddresses property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceNetworkInterface withPrivateIpAddresses(InstancePrivateIpAddress... privateIpAddresses) {
         if (getPrivateIpAddresses() == null) setPrivateIpAddresses(new java.util.ArrayList<InstancePrivateIpAddress>(privateIpAddresses.length));
@@ -551,9 +509,6 @@ public class InstanceNetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateIpAddresses The new value for the PrivateIpAddresses property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceNetworkInterface withPrivateIpAddresses(java.util.Collection<InstancePrivateIpAddress> privateIpAddresses) {
         if (privateIpAddresses == null) {

@@ -70,9 +70,6 @@ public class LicenseCapacity  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param capacity The number of licenses available.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LicenseCapacity withCapacity(Integer capacity) {
         this.capacity = capacity;
@@ -110,9 +107,6 @@ public class LicenseCapacity  implements Serializable  {
      *
      * @param instanceCapacity The number of Amazon EC2 instances that can be supported with the
      *         license's capacity.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LicenseCapacity withInstanceCapacity(Integer instanceCapacity) {
         this.instanceCapacity = instanceCapacity;
@@ -150,9 +144,6 @@ public class LicenseCapacity  implements Serializable  {
      *
      * @param state The state of this license capacity, indicating whether the license is
      *         actively being used or not.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LicenseCapacity withState(String state) {
         this.state = state;
@@ -196,9 +187,6 @@ public class LicenseCapacity  implements Serializable  {
      * @param earliestAllowedDeactivationTime The earliest allowed time at which a license can be deactivated. Some
      *         licenses have time restrictions on when they can be activated and
      *         reactivated.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LicenseCapacity withEarliestAllowedDeactivationTime(java.util.Date earliestAllowedDeactivationTime) {
         this.earliestAllowedDeactivationTime = earliestAllowedDeactivationTime;

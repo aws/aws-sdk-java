@@ -100,9 +100,6 @@ public class Snapshot  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param snapshotId The unique ID of this snapshot.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Snapshot withSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
@@ -134,9 +131,6 @@ public class Snapshot  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeId The ID of the volume from which this snapshot was created.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Snapshot withVolumeId(String volumeId) {
         this.volumeId = volumeId;
@@ -182,9 +176,6 @@ public class Snapshot  implements Serializable  {
      *
      * @param state Snapshot state (e.g., pending, completed, or error).
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see SnapshotState
      */
     public Snapshot withState(String state) {
@@ -217,9 +208,6 @@ public class Snapshot  implements Serializable  {
      *
      * @param state Snapshot state (e.g., pending, completed, or error).
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see SnapshotState
      */
     public Snapshot withState(SnapshotState state) {
@@ -251,9 +239,6 @@ public class Snapshot  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param startTime Time stamp when the snapshot was initiated.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Snapshot withStartTime(java.util.Date startTime) {
         this.startTime = startTime;
@@ -285,9 +270,6 @@ public class Snapshot  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param progress The progress of the snapshot, in percentage.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Snapshot withProgress(String progress) {
         this.progress = progress;
@@ -319,9 +301,6 @@ public class Snapshot  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ownerId AWS Access Key ID of the user who owns the snapshot.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Snapshot withOwnerId(String ownerId) {
         this.ownerId = ownerId;
@@ -353,9 +332,6 @@ public class Snapshot  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description Description of the snapshot.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Snapshot withDescription(String description) {
         this.description = description;
@@ -387,9 +363,6 @@ public class Snapshot  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeSize The size of the volume, in gigabytes.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Snapshot withVolumeSize(Integer volumeSize) {
         this.volumeSize = volumeSize;
@@ -427,9 +400,6 @@ public class Snapshot  implements Serializable  {
      *
      * @param ownerAlias The AWS account alias (e.g., "amazon", "redhat", "self", etc.) or AWS
      *         account ID that owns the AMI.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Snapshot withOwnerAlias(String ownerAlias) {
         this.ownerAlias = ownerAlias;
@@ -472,9 +442,6 @@ public class Snapshot  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags A list of tags for the Snapshot.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Snapshot withTags(Tag... tags) {
         if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
@@ -490,9 +457,6 @@ public class Snapshot  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags A list of tags for the Snapshot.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Snapshot withTags(java.util.Collection<Tag> tags) {
         if (tags == null) {

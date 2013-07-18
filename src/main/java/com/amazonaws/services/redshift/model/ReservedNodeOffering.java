@@ -92,9 +92,6 @@ public class ReservedNodeOffering  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedNodeOfferingId The offering identifier.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedNodeOffering withReservedNodeOfferingId(String reservedNodeOfferingId) {
         this.reservedNodeOfferingId = reservedNodeOfferingId;
@@ -126,9 +123,6 @@ public class ReservedNodeOffering  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nodeType The node type offered by the reserved node offering.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedNodeOffering withNodeType(String nodeType) {
         this.nodeType = nodeType;
@@ -166,9 +160,6 @@ public class ReservedNodeOffering  implements Serializable  {
      *
      * @param duration The duration, in seconds, for which the offering will reserve the
      *         node.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedNodeOffering withDuration(Integer duration) {
         this.duration = duration;
@@ -206,9 +197,6 @@ public class ReservedNodeOffering  implements Serializable  {
      *
      * @param fixedPrice The upfront fixed charge you will pay to purchase the specific
      *         reserved node offering.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedNodeOffering withFixedPrice(Double fixedPrice) {
         this.fixedPrice = fixedPrice;
@@ -246,9 +234,6 @@ public class ReservedNodeOffering  implements Serializable  {
      *
      * @param usagePrice The rate you are charged for each hour the cluster that is using the
      *         offering is running.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedNodeOffering withUsagePrice(Double usagePrice) {
         this.usagePrice = usagePrice;
@@ -280,9 +265,6 @@ public class ReservedNodeOffering  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param currencyCode The currency code for the compute nodes offering.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedNodeOffering withCurrencyCode(String currencyCode) {
         this.currencyCode = currencyCode;
@@ -320,9 +302,6 @@ public class ReservedNodeOffering  implements Serializable  {
      *
      * @param offeringType The anticipated utilization of the reserved node, as defined in the
      *         reserved node offering.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedNodeOffering withOfferingType(String offeringType) {
         this.offeringType = offeringType;
@@ -377,9 +356,6 @@ public class ReservedNodeOffering  implements Serializable  {
      * @param recurringCharges The charge to your account regardless of whether you are creating any
      *         clusters using the node offering. Recurring charges are only in effect
      *         for heavy-utilization reserved nodes.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedNodeOffering withRecurringCharges(RecurringCharge... recurringCharges) {
         if (getRecurringCharges() == null) setRecurringCharges(new java.util.ArrayList<RecurringCharge>(recurringCharges.length));
@@ -399,9 +375,6 @@ public class ReservedNodeOffering  implements Serializable  {
      * @param recurringCharges The charge to your account regardless of whether you are creating any
      *         clusters using the node offering. Recurring charges are only in effect
      *         for heavy-utilization reserved nodes.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedNodeOffering withRecurringCharges(java.util.Collection<RecurringCharge> recurringCharges) {
         if (recurringCharges == null) {

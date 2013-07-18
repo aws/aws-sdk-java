@@ -59,9 +59,6 @@ public class DescribeVolumeStatusResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeStatuses The new value for the VolumeStatuses property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVolumeStatusResult withVolumeStatuses(VolumeStatusItem... volumeStatuses) {
         if (getVolumeStatuses() == null) setVolumeStatuses(new java.util.ArrayList<VolumeStatusItem>(volumeStatuses.length));
@@ -77,9 +74,6 @@ public class DescribeVolumeStatusResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeStatuses The new value for the VolumeStatuses property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVolumeStatusResult withVolumeStatuses(java.util.Collection<VolumeStatusItem> volumeStatuses) {
         if (volumeStatuses == null) {
@@ -117,9 +111,6 @@ public class DescribeVolumeStatusResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nextToken The new value for the NextToken property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVolumeStatusResult withNextToken(String nextToken) {
         this.nextToken = nextToken;

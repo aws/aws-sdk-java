@@ -62,9 +62,6 @@ public class DescribeAppsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param apps An array of <code>App</code> objects that describe the specified apps.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeAppsResult withApps(App... apps) {
         if (getApps() == null) setApps(new java.util.ArrayList<App>(apps.length));
@@ -80,9 +77,6 @@ public class DescribeAppsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param apps An array of <code>App</code> objects that describe the specified apps.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeAppsResult withApps(java.util.Collection<App> apps) {
         if (apps == null) {

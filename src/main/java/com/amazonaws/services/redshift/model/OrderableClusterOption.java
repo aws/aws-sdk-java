@@ -66,9 +66,6 @@ public class OrderableClusterOption  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clusterVersion The version of the orderable cluster.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OrderableClusterOption withClusterVersion(String clusterVersion) {
         this.clusterVersion = clusterVersion;
@@ -100,9 +97,6 @@ public class OrderableClusterOption  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clusterType The cluster type, for example <code>multi-node</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OrderableClusterOption withClusterType(String clusterType) {
         this.clusterType = clusterType;
@@ -134,9 +128,6 @@ public class OrderableClusterOption  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nodeType The node type for the orderable cluster.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OrderableClusterOption withNodeType(String nodeType) {
         this.nodeType = nodeType;
@@ -179,9 +170,6 @@ public class OrderableClusterOption  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZones A list of availability zones for the orderable cluster.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OrderableClusterOption withAvailabilityZones(AvailabilityZone... availabilityZones) {
         if (getAvailabilityZones() == null) setAvailabilityZones(new java.util.ArrayList<AvailabilityZone>(availabilityZones.length));
@@ -197,9 +185,6 @@ public class OrderableClusterOption  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZones A list of availability zones for the orderable cluster.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OrderableClusterOption withAvailabilityZones(java.util.Collection<AvailabilityZone> availabilityZones) {
         if (availabilityZones == null) {

@@ -62,9 +62,6 @@ public class DescribeVpnConnectionsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpnConnections 
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVpnConnectionsResult withVpnConnections(VpnConnection... vpnConnections) {
         if (getVpnConnections() == null) setVpnConnections(new java.util.ArrayList<VpnConnection>(vpnConnections.length));
@@ -80,9 +77,6 @@ public class DescribeVpnConnectionsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpnConnections 
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVpnConnectionsResult withVpnConnections(java.util.Collection<VpnConnection> vpnConnections) {
         if (vpnConnections == null) {

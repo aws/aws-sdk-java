@@ -51,9 +51,6 @@ public class CreateCustomerGatewayResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param customerGateway Information about the customer gateway.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCustomerGatewayResult withCustomerGateway(CustomerGateway customerGateway) {
         this.customerGateway = customerGateway;

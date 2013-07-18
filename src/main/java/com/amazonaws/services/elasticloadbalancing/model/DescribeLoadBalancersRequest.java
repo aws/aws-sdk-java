@@ -98,9 +98,6 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest  imple
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param loadBalancerNames A list of names associated with the LoadBalancers at creation time.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeLoadBalancersRequest withLoadBalancerNames(String... loadBalancerNames) {
         if (getLoadBalancerNames() == null) setLoadBalancerNames(new java.util.ArrayList<String>(loadBalancerNames.length));
@@ -116,9 +113,6 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest  imple
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param loadBalancerNames A list of names associated with the LoadBalancers at creation time.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeLoadBalancersRequest withLoadBalancerNames(java.util.Collection<String> loadBalancerNames) {
         if (loadBalancerNames == null) {
@@ -156,9 +150,6 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest  imple
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param marker An optional parameter reserved for future use.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeLoadBalancersRequest withMarker(String marker) {
         this.marker = marker;

@@ -82,9 +82,6 @@ public class IpPermission  implements Serializable  {
      *
      * @param ipProtocol The IP protocol of this permission. <p> Valid protocol values:
      *         <code>tcp</code>, <code>udp</code>, <code>icmp</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public IpPermission withIpProtocol(String ipProtocol) {
         this.ipProtocol = ipProtocol;
@@ -128,9 +125,6 @@ public class IpPermission  implements Serializable  {
      * @param fromPort Start of port range for the TCP and UDP protocols, or an ICMP type
      *         number. An ICMP type number of <code>-1</code> indicates a wildcard
      *         (i.e., any ICMP type number).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public IpPermission withFromPort(Integer fromPort) {
         this.fromPort = fromPort;
@@ -174,9 +168,6 @@ public class IpPermission  implements Serializable  {
      * @param toPort End of port range for the TCP and UDP protocols, or an ICMP code. An
      *         ICMP code of <code>-1</code> indicates a wildcard (i.e., any ICMP
      *         code).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public IpPermission withToPort(Integer toPort) {
         this.toPort = toPort;
@@ -219,9 +210,6 @@ public class IpPermission  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param userIdGroupPairs The list of AWS user IDs and groups included in this permission.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public IpPermission withUserIdGroupPairs(UserIdGroupPair... userIdGroupPairs) {
         if (getUserIdGroupPairs() == null) setUserIdGroupPairs(new java.util.ArrayList<UserIdGroupPair>(userIdGroupPairs.length));
@@ -237,9 +225,6 @@ public class IpPermission  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param userIdGroupPairs The list of AWS user IDs and groups included in this permission.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public IpPermission withUserIdGroupPairs(java.util.Collection<UserIdGroupPair> userIdGroupPairs) {
         if (userIdGroupPairs == null) {
@@ -288,9 +273,6 @@ public class IpPermission  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ipRanges The list of CIDR IP ranges included in this permission.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public IpPermission withIpRanges(String... ipRanges) {
         if (getIpRanges() == null) setIpRanges(new java.util.ArrayList<String>(ipRanges.length));
@@ -306,9 +288,6 @@ public class IpPermission  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ipRanges The list of CIDR IP ranges included in this permission.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public IpPermission withIpRanges(java.util.Collection<String> ipRanges) {
         if (ipRanges == null) {

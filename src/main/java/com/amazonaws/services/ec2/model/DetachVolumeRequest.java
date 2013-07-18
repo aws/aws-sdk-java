@@ -99,9 +99,6 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeId The ID of the volume to detach.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DetachVolumeRequest withVolumeId(String volumeId) {
         this.volumeId = volumeId;
@@ -133,9 +130,6 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId The ID of the instance from which to detach the the specified volume.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DetachVolumeRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -173,9 +167,6 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest  implements Ser
      *
      * @param device The device name to which the volume is attached on the specified
      *         instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DetachVolumeRequest withDevice(String device) {
         this.device = device;
@@ -249,9 +240,6 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest  implements Ser
      *         opportunity to flush file system caches nor file system meta data. If
      *         you use this option, you must perform file system check and repair
      *         procedures.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DetachVolumeRequest withForce(Boolean force) {
         this.force = force;

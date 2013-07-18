@@ -66,9 +66,6 @@ public class DescribeLoadBasedAutoScalingRequest extends AmazonWebServiceRequest
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param layerIds An array of layer IDs.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeLoadBasedAutoScalingRequest withLayerIds(String... layerIds) {
         if (getLayerIds() == null) setLayerIds(new java.util.ArrayList<String>(layerIds.length));
@@ -84,9 +81,6 @@ public class DescribeLoadBasedAutoScalingRequest extends AmazonWebServiceRequest
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param layerIds An array of layer IDs.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeLoadBasedAutoScalingRequest withLayerIds(java.util.Collection<String> layerIds) {
         if (layerIds == null) {

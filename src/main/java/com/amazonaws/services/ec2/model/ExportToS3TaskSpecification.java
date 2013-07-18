@@ -66,9 +66,6 @@ public class ExportToS3TaskSpecification  implements Serializable  {
      *
      * @param diskImageFormat The new value for the DiskImageFormat property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see DiskImageFormat
      */
     public ExportToS3TaskSpecification withDiskImageFormat(String diskImageFormat) {
@@ -100,9 +97,6 @@ public class ExportToS3TaskSpecification  implements Serializable  {
      * <b>Allowed Values: </b>vmdk, vhd
      *
      * @param diskImageFormat The new value for the DiskImageFormat property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see DiskImageFormat
      */
@@ -149,9 +143,6 @@ public class ExportToS3TaskSpecification  implements Serializable  {
      *
      * @param containerFormat The new value for the ContainerFormat property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ContainerFormat
      */
     public ExportToS3TaskSpecification withContainerFormat(String containerFormat) {
@@ -184,9 +175,6 @@ public class ExportToS3TaskSpecification  implements Serializable  {
      *
      * @param containerFormat The new value for the ContainerFormat property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ContainerFormat
      */
     public ExportToS3TaskSpecification withContainerFormat(ContainerFormat containerFormat) {
@@ -218,9 +206,6 @@ public class ExportToS3TaskSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param s3Bucket The new value for the S3Bucket property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ExportToS3TaskSpecification withS3Bucket(String s3Bucket) {
         this.s3Bucket = s3Bucket;
@@ -252,9 +237,6 @@ public class ExportToS3TaskSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param s3Prefix The new value for the S3Prefix property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ExportToS3TaskSpecification withS3Prefix(String s3Prefix) {
         this.s3Prefix = s3Prefix;

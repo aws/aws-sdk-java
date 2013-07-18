@@ -69,9 +69,6 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeIds The new value for the VolumeIds property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVolumeStatusRequest withVolumeIds(String... volumeIds) {
         if (getVolumeIds() == null) setVolumeIds(new java.util.ArrayList<String>(volumeIds.length));
@@ -87,9 +84,6 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeIds The new value for the VolumeIds property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVolumeStatusRequest withVolumeIds(java.util.Collection<String> volumeIds) {
         if (volumeIds == null) {
@@ -138,9 +132,6 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param filters The new value for the Filters property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVolumeStatusRequest withFilters(Filter... filters) {
         if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
@@ -156,9 +147,6 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param filters The new value for the Filters property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVolumeStatusRequest withFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
@@ -196,9 +184,6 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nextToken The new value for the NextToken property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVolumeStatusRequest withNextToken(String nextToken) {
         this.nextToken = nextToken;
@@ -230,9 +215,6 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxResults The new value for the MaxResults property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVolumeStatusRequest withMaxResults(Integer maxResults) {
         this.maxResults = maxResults;

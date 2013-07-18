@@ -52,9 +52,6 @@ public class DiskImageDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param format The new value for the Format property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DiskImageDescription withFormat(String format) {
         this.format = format;
@@ -86,9 +83,6 @@ public class DiskImageDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param size The new value for the Size property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DiskImageDescription withSize(Long size) {
         this.size = size;
@@ -120,9 +114,6 @@ public class DiskImageDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param importManifestUrl The new value for the ImportManifestUrl property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DiskImageDescription withImportManifestUrl(String importManifestUrl) {
         this.importManifestUrl = importManifestUrl;
@@ -154,9 +145,6 @@ public class DiskImageDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param checksum The new value for the Checksum property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DiskImageDescription withChecksum(String checksum) {
         this.checksum = checksum;

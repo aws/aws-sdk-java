@@ -20,7 +20,8 @@ import java.io.Serializable;
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#describeClusterSnapshots(DescribeClusterSnapshotsRequest) DescribeClusterSnapshots operation}.
  * <p>
  * Returns one or more snapshot objects, which contain metadata about your cluster snapshots. By default, this operation returns information about all
- * snapshots of all clusters that are owned by the AWS account.
+ * snapshots of all clusters that are owned by you AWS customer account. No information is returned for snapshots owned by inactive AWS customer
+ * accounts.
  * </p>
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeClusterSnapshots(DescribeClusterSnapshotsRequest)
@@ -82,6 +83,14 @@ public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest  im
     private String marker;
 
     /**
+     * The AWS customer account used to create or copy the snapshot. Use this
+     * field to filter the results to snapshots owned by a particular
+     * account. To describe snapshots you own, either specify your AWS
+     * customer account, or do not specify the parameter.
+     */
+    private String ownerAccount;
+
+    /**
      * The identifier of the cluster for which information about snapshots is
      * requested.
      *
@@ -111,9 +120,6 @@ public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest  im
      *
      * @param clusterIdentifier The identifier of the cluster for which information about snapshots is
      *         requested.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeClusterSnapshotsRequest withClusterIdentifier(String clusterIdentifier) {
         this.clusterIdentifier = clusterIdentifier;
@@ -151,9 +157,6 @@ public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest  im
      *
      * @param snapshotIdentifier The snapshot identifier of the snapshot about which to return
      *         information.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeClusterSnapshotsRequest withSnapshotIdentifier(String snapshotIdentifier) {
         this.snapshotIdentifier = snapshotIdentifier;
@@ -197,9 +200,6 @@ public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest  im
      * @param snapshotType The type of snapshots for which you are requesting information. By
      *         default, snapshots of all types are returned. <p> Valid Values:
      *         <code>automated</code> | <code>manual</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeClusterSnapshotsRequest withSnapshotType(String snapshotType) {
         this.snapshotType = snapshotType;
@@ -255,9 +255,6 @@ public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest  im
      *         information about ISO 8601, go to the <a
      *         href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
      *         page.</a> <p>Example: <code>2012-07-16T18:00:00Z</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeClusterSnapshotsRequest withStartTime(java.util.Date startTime) {
         this.startTime = startTime;
@@ -313,9 +310,6 @@ public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest  im
      *         more information about ISO 8601, go to the <a
      *         href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
      *         page.</a> <p>Example: <code>2012-07-16T18:00:00Z</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeClusterSnapshotsRequest withEndTime(java.util.Date endTime) {
         this.endTime = endTime;
@@ -377,9 +371,6 @@ public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest  im
      *         <a>DescribeClusterSnapshots</a> request in order to retrieve the next
      *         set of snapshot records. <p>Default: <code>100</code> <p>Constraints:
      *         Must be at least 20 and no more than 100.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeClusterSnapshotsRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -423,12 +414,58 @@ public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest  im
      * @param marker An optional marker returned by a previous
      *         <a>DescribeClusterSnapshots</a> request to indicate the first snapshot
      *         that the request will return.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeClusterSnapshotsRequest withMarker(String marker) {
         this.marker = marker;
+        return this;
+    }
+    
+    
+    /**
+     * The AWS customer account used to create or copy the snapshot. Use this
+     * field to filter the results to snapshots owned by a particular
+     * account. To describe snapshots you own, either specify your AWS
+     * customer account, or do not specify the parameter.
+     *
+     * @return The AWS customer account used to create or copy the snapshot. Use this
+     *         field to filter the results to snapshots owned by a particular
+     *         account. To describe snapshots you own, either specify your AWS
+     *         customer account, or do not specify the parameter.
+     */
+    public String getOwnerAccount() {
+        return ownerAccount;
+    }
+    
+    /**
+     * The AWS customer account used to create or copy the snapshot. Use this
+     * field to filter the results to snapshots owned by a particular
+     * account. To describe snapshots you own, either specify your AWS
+     * customer account, or do not specify the parameter.
+     *
+     * @param ownerAccount The AWS customer account used to create or copy the snapshot. Use this
+     *         field to filter the results to snapshots owned by a particular
+     *         account. To describe snapshots you own, either specify your AWS
+     *         customer account, or do not specify the parameter.
+     */
+    public void setOwnerAccount(String ownerAccount) {
+        this.ownerAccount = ownerAccount;
+    }
+    
+    /**
+     * The AWS customer account used to create or copy the snapshot. Use this
+     * field to filter the results to snapshots owned by a particular
+     * account. To describe snapshots you own, either specify your AWS
+     * customer account, or do not specify the parameter.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param ownerAccount The AWS customer account used to create or copy the snapshot. Use this
+     *         field to filter the results to snapshots owned by a particular
+     *         account. To describe snapshots you own, either specify your AWS
+     *         customer account, or do not specify the parameter.
+     */
+    public DescribeClusterSnapshotsRequest withOwnerAccount(String ownerAccount) {
+        this.ownerAccount = ownerAccount;
         return this;
     }
     
@@ -451,7 +488,8 @@ public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest  im
         if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ",");
         if (getEndTime() != null) sb.append("EndTime: " + getEndTime() + ",");
         if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() );
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
+        if (getOwnerAccount() != null) sb.append("OwnerAccount: " + getOwnerAccount() );
         sb.append("}");
         return sb.toString();
     }
@@ -468,6 +506,7 @@ public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest  im
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode()); 
         hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode()); 
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
+        hashCode = prime * hashCode + ((getOwnerAccount() == null) ? 0 : getOwnerAccount().hashCode()); 
         return hashCode;
     }
     
@@ -493,6 +532,8 @@ public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest  im
         if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false) return false; 
         if (other.getMarker() == null ^ this.getMarker() == null) return false;
         if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
+        if (other.getOwnerAccount() == null ^ this.getOwnerAccount() == null) return false;
+        if (other.getOwnerAccount() != null && other.getOwnerAccount().equals(this.getOwnerAccount()) == false) return false; 
         return true;
     }
     

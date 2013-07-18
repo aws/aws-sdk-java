@@ -86,9 +86,6 @@ public class BundleTask  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId Instance associated with this bundle task.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public BundleTask withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -120,9 +117,6 @@ public class BundleTask  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param bundleId Unique identifier for this task.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public BundleTask withBundleId(String bundleId) {
         this.bundleId = bundleId;
@@ -154,9 +148,6 @@ public class BundleTask  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param state The state of this task.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public BundleTask withState(String state) {
         this.state = state;
@@ -188,9 +179,6 @@ public class BundleTask  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param startTime The time this task started.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public BundleTask withStartTime(java.util.Date startTime) {
         this.startTime = startTime;
@@ -222,9 +210,6 @@ public class BundleTask  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param updateTime The time of the most recent update for the task.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public BundleTask withUpdateTime(java.util.Date updateTime) {
         this.updateTime = updateTime;
@@ -256,9 +241,6 @@ public class BundleTask  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param storage Amazon S3 storage locations.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public BundleTask withStorage(Storage storage) {
         this.storage = storage;
@@ -290,9 +272,6 @@ public class BundleTask  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param progress The level of task completion, in percent (e.g., 20%).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public BundleTask withProgress(String progress) {
         this.progress = progress;
@@ -324,9 +303,6 @@ public class BundleTask  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param bundleTaskError If the task fails, a description of the error.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public BundleTask withBundleTaskError(BundleTaskError bundleTaskError) {
         this.bundleTaskError = bundleTaskError;

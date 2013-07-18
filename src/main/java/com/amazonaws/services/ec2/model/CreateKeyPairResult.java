@@ -51,9 +51,6 @@ public class CreateKeyPairResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param keyPair The newly created EC2 key pair.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateKeyPairResult withKeyPair(KeyPair keyPair) {
         this.keyPair = keyPair;

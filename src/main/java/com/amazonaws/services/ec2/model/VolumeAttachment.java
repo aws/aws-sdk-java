@@ -81,9 +81,6 @@ public class VolumeAttachment  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeId 
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VolumeAttachment withVolumeId(String volumeId) {
         this.volumeId = volumeId;
@@ -115,9 +112,6 @@ public class VolumeAttachment  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId 
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VolumeAttachment withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -155,9 +149,6 @@ public class VolumeAttachment  implements Serializable  {
      *
      * @param device How the device is exposed to the instance (e.g.,
      *         <code>/dev/sdh</code>).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VolumeAttachment withDevice(String device) {
         this.device = device;
@@ -203,9 +194,6 @@ public class VolumeAttachment  implements Serializable  {
      *
      * @param state 
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see VolumeAttachmentState
      */
     public VolumeAttachment withState(String state) {
@@ -238,9 +226,6 @@ public class VolumeAttachment  implements Serializable  {
      *
      * @param state 
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see VolumeAttachmentState
      */
     public VolumeAttachment withState(VolumeAttachmentState state) {
@@ -272,9 +257,6 @@ public class VolumeAttachment  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attachTime Timestamp when this attachment initiated.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VolumeAttachment withAttachTime(java.util.Date attachTime) {
         this.attachTime = attachTime;
@@ -312,9 +294,6 @@ public class VolumeAttachment  implements Serializable  {
      *
      * @param deleteOnTermination ` <p> Whether this volume will be deleted or not when the associated
      *         instance is terminated.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VolumeAttachment withDeleteOnTermination(Boolean deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;

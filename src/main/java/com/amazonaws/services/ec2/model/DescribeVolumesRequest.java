@@ -96,9 +96,6 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest  implements 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeIds The optional list of EBS volumes to describe.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVolumesRequest withVolumeIds(String... volumeIds) {
         if (getVolumeIds() == null) setVolumeIds(new java.util.ArrayList<String>(volumeIds.length));
@@ -114,9 +111,6 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest  implements 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeIds The optional list of EBS volumes to describe.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVolumesRequest withVolumeIds(java.util.Collection<String> volumeIds) {
         if (volumeIds == null) {
@@ -183,9 +177,6 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest  implements 
      *         reference to the available filter keys for this operation, see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVolumesRequest withFilters(Filter... filters) {
         if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
@@ -207,9 +198,6 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest  implements 
      *         reference to the available filter keys for this operation, see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVolumesRequest withFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {

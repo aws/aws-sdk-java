@@ -95,9 +95,6 @@ public class CreateRouteRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param routeTableId The ID of the route table where the route will be added.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateRouteRequest withRouteTableId(String routeTableId) {
         this.routeTableId = routeTableId;
@@ -141,9 +138,6 @@ public class CreateRouteRequest extends AmazonWebServiceRequest  implements Seri
      * @param destinationCidrBlock The CIDR address block used for the destination match. For example:
      *         <code>0.0.0.0/0</code>. Routing decisions are based on the most
      *         specific match.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateRouteRequest withDestinationCidrBlock(String destinationCidrBlock) {
         this.destinationCidrBlock = destinationCidrBlock;
@@ -187,9 +181,6 @@ public class CreateRouteRequest extends AmazonWebServiceRequest  implements Seri
      * @param gatewayId The ID of a VPN or Internet gateway attached to your VPC. You must
      *         provide either <code>GatewayId</code> or <code>InstanceId</code>, but
      *         not both.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateRouteRequest withGatewayId(String gatewayId) {
         this.gatewayId = gatewayId;
@@ -227,9 +218,6 @@ public class CreateRouteRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param instanceId The ID of a NAT instance in your VPC. You must provide either
      *         <code>GatewayId</code> or <code>InstanceId</code>, but not both.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateRouteRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -261,9 +249,6 @@ public class CreateRouteRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateRouteRequest withNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;

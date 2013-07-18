@@ -18,16 +18,23 @@ package com.amazonaws.services.s3.transfer;
  * Describes the progress of a transfer.
  */
 public abstract class TransferProgress {
-    protected volatile long bytesTransfered = 0;
+    protected volatile long bytesTransferred = 0;
     protected volatile long totalBytesToTransfer = -1;
+
+    /**
+     * @deprecated Replaced by {@link #getBytesTransferred()}
+     */
+    public long getBytesTransfered() {
+        return getBytesTransferred();
+    }
 
     /**
      * Returns the number of bytes completed in the associated transfer.
      *
      * @return The number of bytes completed in the associated transfer.
      */
-    public long getBytesTransfered() {
-        return bytesTransfered;
+    public long getBytesTransferred() {
+        return bytesTransferred;
     }
 
     /**
@@ -43,15 +50,23 @@ public abstract class TransferProgress {
     }
 
     /**
-     * Returns a percentage of the number of bytes transfered out of the total
+     * @deprecated Replaced by {@link #getPercentTransferred()}
+     */
+    @Deprecated
+    public synchronized double getPercentTransfered() {
+        return getPercentTransferred();
+    }
+
+    /**
+     * Returns a percentage of the number of bytes transferred out of the total
      * number of bytes to transfer.
      *
-     * @return A percentage of the number of bytes transfered out of the total
+     * @return A percentage of the number of bytes transferred out of the total
      *         number of bytes to transfer.
      */
-    public synchronized double getPercentTransfered() {
-        if (getBytesTransfered() < 0) return 0;
+    public synchronized double getPercentTransferred() {
+        if (getBytesTransferred() < 0) return 0;
 
-        return ((double)getBytesTransfered() / (double)getTotalBytesToTransfer()) * (double)100;
+        return ((double)getBytesTransferred() / (double)getTotalBytesToTransfer()) * (double)100;
     }
 }

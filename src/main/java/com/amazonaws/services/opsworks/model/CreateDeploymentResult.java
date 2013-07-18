@@ -58,9 +58,6 @@ public class CreateDeploymentResult  implements Serializable  {
      *
      * @param deploymentId The deployment ID, which can be used with other requests to identify
      *         the deployment.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDeploymentResult withDeploymentId(String deploymentId) {
         this.deploymentId = deploymentId;

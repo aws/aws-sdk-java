@@ -78,9 +78,6 @@ public class CancelBundleTaskRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param bundleId The ID of the bundle task to cancel.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CancelBundleTaskRequest withBundleId(String bundleId) {
         this.bundleId = bundleId;

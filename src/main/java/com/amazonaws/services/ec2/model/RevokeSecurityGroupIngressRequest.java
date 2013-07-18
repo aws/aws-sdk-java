@@ -153,9 +153,6 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest  
      * @param groupName Name of the standard (EC2) security group to modify. The group must
      *         belong to your account. Can be used instead of GroupID for standard
      *         (EC2) security groups.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RevokeSecurityGroupIngressRequest withGroupName(String groupName) {
         this.groupName = groupName;
@@ -199,9 +196,6 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest  
      * @param groupId ID of the standard (EC2) or VPC security group to modify. The group
      *         must belong to your account. Required for VPC security groups; can be
      *         used instead of GroupName for standard (EC2) security groups.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RevokeSecurityGroupIngressRequest withGroupId(String groupId) {
         this.groupId = groupId;
@@ -233,9 +227,6 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest  
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceSecurityGroupName Deprecated
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RevokeSecurityGroupIngressRequest withSourceSecurityGroupName(String sourceSecurityGroupName) {
         this.sourceSecurityGroupName = sourceSecurityGroupName;
@@ -267,9 +258,6 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest  
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceSecurityGroupOwnerId Deprecated
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RevokeSecurityGroupIngressRequest withSourceSecurityGroupOwnerId(String sourceSecurityGroupOwnerId) {
         this.sourceSecurityGroupOwnerId = sourceSecurityGroupOwnerId;
@@ -301,9 +289,6 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest  
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ipProtocol Deprecated
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RevokeSecurityGroupIngressRequest withIpProtocol(String ipProtocol) {
         this.ipProtocol = ipProtocol;
@@ -335,9 +320,6 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest  
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param fromPort Deprecated
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RevokeSecurityGroupIngressRequest withFromPort(Integer fromPort) {
         this.fromPort = fromPort;
@@ -369,9 +351,6 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest  
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param toPort Deprecated
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RevokeSecurityGroupIngressRequest withToPort(Integer toPort) {
         this.toPort = toPort;
@@ -403,9 +382,6 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest  
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cidrIp Deprecated
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RevokeSecurityGroupIngressRequest withCidrIp(String cidrIp) {
         this.cidrIp = cidrIp;
@@ -472,9 +448,6 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest  
      *         permissions you specify in this list. Specifying permissions through
      *         IP permissions is the preferred way of revoking permissions since it
      *         offers more flexibility and control.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RevokeSecurityGroupIngressRequest withIpPermissions(IpPermission... ipPermissions) {
         if (getIpPermissions() == null) setIpPermissions(new java.util.ArrayList<IpPermission>(ipPermissions.length));
@@ -498,9 +471,6 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest  
      *         permissions you specify in this list. Specifying permissions through
      *         IP permissions is the preferred way of revoking permissions since it
      *         offers more flexibility and control.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RevokeSecurityGroupIngressRequest withIpPermissions(java.util.Collection<IpPermission> ipPermissions) {
         if (ipPermissions == null) {

@@ -75,9 +75,6 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends AmazonWebSer
      *
      * @param loadBalancerName The mnemonic name associated with the LoadBalancer. This name must be
      *         unique within the client AWS account.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SetLoadBalancerPoliciesForBackendServerRequest withLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
@@ -109,9 +106,6 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends AmazonWebSer
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instancePort The port number associated with the back-end server.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SetLoadBalancerPoliciesForBackendServerRequest withInstancePort(Integer instancePort) {
         this.instancePort = instancePort;
@@ -160,9 +154,6 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends AmazonWebSer
      *
      * @param policyNames List of policy names to be set. If the list is empty, then all current
      *         polices are removed from the back-end server.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SetLoadBalancerPoliciesForBackendServerRequest withPolicyNames(String... policyNames) {
         if (getPolicyNames() == null) setPolicyNames(new java.util.ArrayList<String>(policyNames.length));
@@ -180,9 +171,6 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends AmazonWebSer
      *
      * @param policyNames List of policy names to be set. If the list is empty, then all current
      *         polices are removed from the back-end server.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SetLoadBalancerPoliciesForBackendServerRequest withPolicyNames(java.util.Collection<String> policyNames) {
         if (policyNames == null) {

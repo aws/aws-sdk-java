@@ -194,9 +194,6 @@ public class DeploymentCommand  implements Serializable  {
      *         app's web or application server.</li> <li><code>undeploy</code>:
      *         Undeploy the app.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see DeploymentCommandName
      */
     public DeploymentCommand withName(String name) {
@@ -297,9 +294,6 @@ public class DeploymentCommand  implements Serializable  {
      *         app's web or application server.</li> <li><code>undeploy</code>:
      *         Undeploy the app.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see DeploymentCommandName
      */
     public DeploymentCommand withName(DeploymentCommandName name) {
@@ -322,7 +316,6 @@ public class DeploymentCommand  implements Serializable  {
             args = new java.util.HashMap<String,java.util.List<String>>();
         }
         return args;
-
     }
     
     /**
@@ -348,15 +341,45 @@ public class DeploymentCommand  implements Serializable  {
      * @param args An array of command arguments. This parameter is currently used only
      *         to specify the list of recipes to be executed by the
      *         <code>ExecuteRecipes</code> command.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeploymentCommand withArgs(java.util.Map<String,java.util.List<String>> args) {
         setArgs(args);
         return this;
     }
     
+   	
+    /**
+     * An array of command arguments. This parameter is currently used only
+     * to specify the list of recipes to be executed by the
+     * <code>ExecuteRecipes</code> command.
+     * <p>
+     * The method adds a new key-value pair into Args parameter, and returns
+     * a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param key The key of the entry to be added into Args.
+     * @param value The corresponding value of the entry to be added into Args.
+     */
+	public DeploymentCommand addArgsEntry(String key, java.util.List<String> value) {
+		if (null == this.args) {
+			this.args = new java.util.HashMap<String,java.util.List<String>>();
+		}
+		if (this.args.containsKey(key))
+			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+		this.args.put(key, value);
+		return this;
+	}
+	
+	/**
+	 * Removes all the entries added into Args.
+	 * <p>
+	 * Returns a reference to this object so that method calls can be chained together.
+	 */
+	public DeploymentCommand clearArgsEntries() {
+		this.args = null;
+		return this;
+	}
+	
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

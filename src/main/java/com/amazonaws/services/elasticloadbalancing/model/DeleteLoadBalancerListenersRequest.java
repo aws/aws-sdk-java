@@ -86,9 +86,6 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param loadBalancerName The mnemonic name associated with the LoadBalancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteLoadBalancerListenersRequest withLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
@@ -137,9 +134,6 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
      *
      * @param loadBalancerPorts The client port number(s) of the LoadBalancerListener(s) to be
      *         removed.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteLoadBalancerListenersRequest withLoadBalancerPorts(Integer... loadBalancerPorts) {
         if (getLoadBalancerPorts() == null) setLoadBalancerPorts(new java.util.ArrayList<Integer>(loadBalancerPorts.length));
@@ -157,9 +151,6 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
      *
      * @param loadBalancerPorts The client port number(s) of the LoadBalancerListener(s) to be
      *         removed.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteLoadBalancerListenersRequest withLoadBalancerPorts(java.util.Collection<Integer> loadBalancerPorts) {
         if (loadBalancerPorts == null) {

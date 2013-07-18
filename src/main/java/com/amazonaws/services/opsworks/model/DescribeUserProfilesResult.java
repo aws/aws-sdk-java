@@ -62,9 +62,6 @@ public class DescribeUserProfilesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param userProfiles A <code>Users</code> object that describes the specified users.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeUserProfilesResult withUserProfiles(UserProfile... userProfiles) {
         if (getUserProfiles() == null) setUserProfiles(new java.util.ArrayList<UserProfile>(userProfiles.length));
@@ -80,9 +77,6 @@ public class DescribeUserProfilesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param userProfiles A <code>Users</code> object that describes the specified users.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeUserProfilesResult withUserProfiles(java.util.Collection<UserProfile> userProfiles) {
         if (userProfiles == null) {

@@ -71,9 +71,6 @@ public class SetPermissionRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackId The stack ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SetPermissionRequest withStackId(String stackId) {
         this.stackId = stackId;
@@ -105,9 +102,6 @@ public class SetPermissionRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param iamUserArn The user's IAM ARN.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SetPermissionRequest withIamUserArn(String iamUserArn) {
         this.iamUserArn = iamUserArn;
@@ -139,9 +133,6 @@ public class SetPermissionRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param allowSsh The user is allowed to use SSH to communicate with the instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SetPermissionRequest withAllowSsh(Boolean allowSsh) {
         this.allowSsh = allowSsh;
@@ -182,9 +173,6 @@ public class SetPermissionRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param allowSudo The user is allowed to use <b>sudo</b> to elevate privileges.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SetPermissionRequest withAllowSudo(Boolean allowSudo) {
         this.allowSudo = allowSudo;

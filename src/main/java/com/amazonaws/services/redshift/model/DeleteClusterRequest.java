@@ -110,9 +110,6 @@ public class DeleteClusterRequest extends AmazonWebServiceRequest  implements Se
      *         63 alphanumeric characters or hyphens.</li> <li>First character must
      *         be a letter.</li> <li>Cannot end with a hyphen or contain two
      *         consecutive hyphens.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteClusterRequest withClusterIdentifier(String clusterIdentifier) {
         this.clusterIdentifier = clusterIdentifier;
@@ -180,9 +177,6 @@ public class DeleteClusterRequest extends AmazonWebServiceRequest  implements Se
      *         <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if
      *         <i>SkipFinalClusterSnapshot</i> is <code>false</code>.</note>
      *         <p>Default: <code>false</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteClusterRequest withSkipFinalClusterSnapshot(Boolean skipFinalClusterSnapshot) {
         this.skipFinalClusterSnapshot = skipFinalClusterSnapshot;
@@ -265,9 +259,6 @@ public class DeleteClusterRequest extends AmazonWebServiceRequest  implements Se
      *         <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric
      *         characters.</li> <li>First character must be a letter.</li> <li>Cannot
      *         end with a hyphen or contain two consecutive hyphens.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteClusterRequest withFinalClusterSnapshotIdentifier(String finalClusterSnapshotIdentifier) {
         this.finalClusterSnapshotIdentifier = finalClusterSnapshotIdentifier;

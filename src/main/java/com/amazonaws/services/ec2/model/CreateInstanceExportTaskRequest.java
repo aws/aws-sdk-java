@@ -56,9 +56,6 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description The new value for the Description property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateInstanceExportTaskRequest withDescription(String description) {
         this.description = description;
@@ -90,9 +87,6 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId The new value for the InstanceId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateInstanceExportTaskRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -138,9 +132,6 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest  im
      *
      * @param targetEnvironment The new value for the TargetEnvironment property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ExportEnvironment
      */
     public CreateInstanceExportTaskRequest withTargetEnvironment(String targetEnvironment) {
@@ -173,9 +164,6 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest  im
      *
      * @param targetEnvironment The new value for the TargetEnvironment property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ExportEnvironment
      */
     public CreateInstanceExportTaskRequest withTargetEnvironment(ExportEnvironment targetEnvironment) {
@@ -207,9 +195,6 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param exportToS3Task The new value for the ExportToS3Task property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateInstanceExportTaskRequest withExportToS3Task(ExportToS3TaskSpecification exportToS3Task) {
         this.exportToS3Task = exportToS3Task;

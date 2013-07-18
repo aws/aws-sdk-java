@@ -52,9 +52,6 @@ public class DescribeVpcAttributeRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcId The new value for the VpcId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVpcAttributeRequest withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -100,9 +97,6 @@ public class DescribeVpcAttributeRequest extends AmazonWebServiceRequest  implem
      *
      * @param attribute The new value for the Attribute property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see VpcAttributeName
      */
     public DescribeVpcAttributeRequest withAttribute(String attribute) {
@@ -134,9 +128,6 @@ public class DescribeVpcAttributeRequest extends AmazonWebServiceRequest  implem
      * <b>Allowed Values: </b>enableDnsSupport, enableDnsHostnames
      *
      * @param attribute The new value for the Attribute property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see VpcAttributeName
      */

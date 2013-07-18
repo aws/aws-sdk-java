@@ -62,9 +62,6 @@ public class RegisterInstancesWithLoadBalancerResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instances An updated list of instances for the LoadBalancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RegisterInstancesWithLoadBalancerResult withInstances(Instance... instances) {
         if (getInstances() == null) setInstances(new java.util.ArrayList<Instance>(instances.length));
@@ -80,9 +77,6 @@ public class RegisterInstancesWithLoadBalancerResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instances An updated list of instances for the LoadBalancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RegisterInstancesWithLoadBalancerResult withInstances(java.util.Collection<Instance> instances) {
         if (instances == null) {

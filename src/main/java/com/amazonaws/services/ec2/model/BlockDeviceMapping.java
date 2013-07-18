@@ -67,9 +67,6 @@ public class BlockDeviceMapping  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param virtualName Specifies the virtual device name.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public BlockDeviceMapping withVirtualName(String virtualName) {
         this.virtualName = virtualName;
@@ -101,9 +98,6 @@ public class BlockDeviceMapping  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param deviceName Specifies the device name (e.g., <code>/dev/sdh</code>).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public BlockDeviceMapping withDeviceName(String deviceName) {
         this.deviceName = deviceName;
@@ -141,9 +135,6 @@ public class BlockDeviceMapping  implements Serializable  {
      *
      * @param ebs Specifies parameters used to automatically setup Amazon EBS volumes
      *         when the instance is launched.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public BlockDeviceMapping withEbs(EbsBlockDevice ebs) {
         this.ebs = ebs;
@@ -175,9 +166,6 @@ public class BlockDeviceMapping  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param noDevice Specifies the device name to suppress during instance launch.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public BlockDeviceMapping withNoDevice(String noDevice) {
         this.noDevice = noDevice;

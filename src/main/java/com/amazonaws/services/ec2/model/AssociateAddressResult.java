@@ -46,9 +46,6 @@ public class AssociateAddressResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param associationId The new value for the AssociationId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AssociateAddressResult withAssociationId(String associationId) {
         this.associationId = associationId;

@@ -62,9 +62,6 @@ public class DescribeSnapshotsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param snapshots The list of described EBS snapshots.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeSnapshotsResult withSnapshots(Snapshot... snapshots) {
         if (getSnapshots() == null) setSnapshots(new java.util.ArrayList<Snapshot>(snapshots.length));
@@ -80,9 +77,6 @@ public class DescribeSnapshotsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param snapshots The list of described EBS snapshots.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeSnapshotsResult withSnapshots(java.util.Collection<Snapshot> snapshots) {
         if (snapshots == null) {

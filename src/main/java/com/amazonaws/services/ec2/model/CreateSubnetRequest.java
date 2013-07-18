@@ -96,9 +96,6 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcId The ID of the VPC to create the subnet in.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateSubnetRequest withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -130,9 +127,6 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cidrBlock The CIDR block the subnet is to cover.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateSubnetRequest withCidrBlock(String cidrBlock) {
         this.cidrBlock = cidrBlock;
@@ -164,9 +158,6 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZone The Availability Zone to create the subnet in.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateSubnetRequest withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;

@@ -96,7 +96,9 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      * that is being created. <p> Constraints: <ul> <li>Must be between 8 and
      * 64 characters in length.</li> <li>Must contain at least one uppercase
      * letter.</li> <li>Must contain at least one lowercase letter.</li>
-     * <li>Must contain one number.</li> </ul>
+     * <li>Must contain one number.</li> <li>Can be any printable ASCII
+     * character (ASCII code 33 to 126) except ' (single quote), " (double
+     * quote), \, /, @, or space.</li> </ul>
      */
     private String masterUserPassword;
 
@@ -140,11 +142,8 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      * on a random day of the week. The following list shows the time blocks
      * for each region from which the default maintenance windows are
      * assigned. <ul> <li><b>US-East (Northern Virginia) Region:</b>
-     * 03:00-11:00 UTC</li> <li><b>US-West (Northern California) Region:</b>
-     * 06:00-14:00 UTC</li> <li><b>EU (Ireland) Region:</b> 22:00-06:00
-     * UTC</li> <li><b>Asia Pacific (Singapore) Region:</b> 14:00-22:00
-     * UTC</li> <li><b>Asia Pacific (Tokyo) Region: </b> 17:00-03:00 UTC</li>
-     * </ul> <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
+     * 03:00-11:00 UTC</li> <li><b>US-West (Oregon) Region</b> 06:00-14:00
+     * UTC</li> </ul> <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
      * <p>Constraints: Minimum 30-minute window.
      */
     private String preferredMaintenanceWindow;
@@ -314,9 +313,6 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      *         list of reserved words can be found in <a
      *         href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      *         Words</a> in the Amazon Redshift Developer Guide. </li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateClusterRequest withDBName(String dBName) {
         this.dBName = dBName;
@@ -396,9 +392,6 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      *         <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
      *         <li>Must be unique for all clusters within an AWS account.</li> </ul>
      *         <p>Example: <code>myexamplecluster</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateClusterRequest withClusterIdentifier(String clusterIdentifier) {
         this.clusterIdentifier = clusterIdentifier;
@@ -460,9 +453,6 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      *         <b>NumberOfNodes</b> parameter is required.</li> </ul> <p> Valid
      *         Values: <code>multi-node</code> | <code>single-node</code> <p>Default:
      *         <code>multi-node</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateClusterRequest withClusterType(String clusterType) {
         this.clusterType = clusterType;
@@ -524,9 +514,6 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      *         Working with Clusters</a> in the <i>Amazon Redshift Management
      *         Guide</i>. <p> Valid Values: <code>dw.hs1.xlarge</code> |
      *         <code>dw.hs1.8xlarge</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateClusterRequest withNodeType(String nodeType) {
         this.nodeType = nodeType;
@@ -594,9 +581,6 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      *         can be found in <a
      *         href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      *         Words</a> in the Amazon Redshift Developer Guide. </li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateClusterRequest withMasterUsername(String masterUsername) {
         this.masterUsername = masterUsername;
@@ -609,13 +593,17 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      * that is being created. <p> Constraints: <ul> <li>Must be between 8 and
      * 64 characters in length.</li> <li>Must contain at least one uppercase
      * letter.</li> <li>Must contain at least one lowercase letter.</li>
-     * <li>Must contain one number.</li> </ul>
+     * <li>Must contain one number.</li> <li>Can be any printable ASCII
+     * character (ASCII code 33 to 126) except ' (single quote), " (double
+     * quote), \, /, @, or space.</li> </ul>
      *
      * @return The password associated with the master user account for the cluster
      *         that is being created. <p> Constraints: <ul> <li>Must be between 8 and
      *         64 characters in length.</li> <li>Must contain at least one uppercase
      *         letter.</li> <li>Must contain at least one lowercase letter.</li>
-     *         <li>Must contain one number.</li> </ul>
+     *         <li>Must contain one number.</li> <li>Can be any printable ASCII
+     *         character (ASCII code 33 to 126) except ' (single quote), " (double
+     *         quote), \, /, @, or space.</li> </ul>
      */
     public String getMasterUserPassword() {
         return masterUserPassword;
@@ -626,13 +614,17 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      * that is being created. <p> Constraints: <ul> <li>Must be between 8 and
      * 64 characters in length.</li> <li>Must contain at least one uppercase
      * letter.</li> <li>Must contain at least one lowercase letter.</li>
-     * <li>Must contain one number.</li> </ul>
+     * <li>Must contain one number.</li> <li>Can be any printable ASCII
+     * character (ASCII code 33 to 126) except ' (single quote), " (double
+     * quote), \, /, @, or space.</li> </ul>
      *
      * @param masterUserPassword The password associated with the master user account for the cluster
      *         that is being created. <p> Constraints: <ul> <li>Must be between 8 and
      *         64 characters in length.</li> <li>Must contain at least one uppercase
      *         letter.</li> <li>Must contain at least one lowercase letter.</li>
-     *         <li>Must contain one number.</li> </ul>
+     *         <li>Must contain one number.</li> <li>Can be any printable ASCII
+     *         character (ASCII code 33 to 126) except ' (single quote), " (double
+     *         quote), \, /, @, or space.</li> </ul>
      */
     public void setMasterUserPassword(String masterUserPassword) {
         this.masterUserPassword = masterUserPassword;
@@ -643,7 +635,9 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      * that is being created. <p> Constraints: <ul> <li>Must be between 8 and
      * 64 characters in length.</li> <li>Must contain at least one uppercase
      * letter.</li> <li>Must contain at least one lowercase letter.</li>
-     * <li>Must contain one number.</li> </ul>
+     * <li>Must contain one number.</li> <li>Can be any printable ASCII
+     * character (ASCII code 33 to 126) except ' (single quote), " (double
+     * quote), \, /, @, or space.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -651,10 +645,9 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      *         that is being created. <p> Constraints: <ul> <li>Must be between 8 and
      *         64 characters in length.</li> <li>Must contain at least one uppercase
      *         letter.</li> <li>Must contain at least one lowercase letter.</li>
-     *         <li>Must contain one number.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         <li>Must contain one number.</li> <li>Can be any printable ASCII
+     *         character (ASCII code 33 to 126) except ' (single quote), " (double
+     *         quote), \, /, @, or space.</li> </ul>
      */
     public CreateClusterRequest withMasterUserPassword(String masterUserPassword) {
         this.masterUserPassword = masterUserPassword;
@@ -703,9 +696,6 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      *
      * @param clusterSecurityGroups A list of security groups to be associated with this cluster. <p>
      *         Default: The default cluster security group for Amazon Redshift.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateClusterRequest withClusterSecurityGroups(String... clusterSecurityGroups) {
         if (getClusterSecurityGroups() == null) setClusterSecurityGroups(new java.util.ArrayList<String>(clusterSecurityGroups.length));
@@ -723,9 +713,6 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      *
      * @param clusterSecurityGroups A list of security groups to be associated with this cluster. <p>
      *         Default: The default cluster security group for Amazon Redshift.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateClusterRequest withClusterSecurityGroups(java.util.Collection<String> clusterSecurityGroups) {
         if (clusterSecurityGroups == null) {
@@ -786,9 +773,6 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      * @param vpcSecurityGroupIds A list of Virtual Private Cloud (VPC) security groups to be associated
      *         with the cluster. <p>Default: The default VPC security group is
      *         associated with the cluster.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateClusterRequest withVpcSecurityGroupIds(String... vpcSecurityGroupIds) {
         if (getVpcSecurityGroupIds() == null) setVpcSecurityGroupIds(new java.util.ArrayList<String>(vpcSecurityGroupIds.length));
@@ -808,9 +792,6 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      * @param vpcSecurityGroupIds A list of Virtual Private Cloud (VPC) security groups to be associated
      *         with the cluster. <p>Default: The default VPC security group is
      *         associated with the cluster.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateClusterRequest withVpcSecurityGroupIds(java.util.Collection<String> vpcSecurityGroupIds) {
         if (vpcSecurityGroupIds == null) {
@@ -860,9 +841,6 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      * @param clusterSubnetGroupName The name of a cluster subnet group to be associated with this cluster.
      *         <p> If this parameter is not provided the resulting cluster will be
      *         deployed outside virtual private cloud (VPC).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateClusterRequest withClusterSubnetGroupName(String clusterSubnetGroupName) {
         this.clusterSubnetGroupName = clusterSubnetGroupName;
@@ -936,9 +914,6 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      *         Zone in the region that is specified by the endpoint. <p> Example:
      *         <code>us-east-1d</code> <p> Constraint: The specified Availability
      *         Zone must be in the same region as the current endpoint.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateClusterRequest withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -954,11 +929,8 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      * on a random day of the week. The following list shows the time blocks
      * for each region from which the default maintenance windows are
      * assigned. <ul> <li><b>US-East (Northern Virginia) Region:</b>
-     * 03:00-11:00 UTC</li> <li><b>US-West (Northern California) Region:</b>
-     * 06:00-14:00 UTC</li> <li><b>EU (Ireland) Region:</b> 22:00-06:00
-     * UTC</li> <li><b>Asia Pacific (Singapore) Region:</b> 14:00-22:00
-     * UTC</li> <li><b>Asia Pacific (Tokyo) Region: </b> 17:00-03:00 UTC</li>
-     * </ul> <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
+     * 03:00-11:00 UTC</li> <li><b>US-West (Oregon) Region</b> 06:00-14:00
+     * UTC</li> </ul> <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
      * <p>Constraints: Minimum 30-minute window.
      *
      * @return The weekly time range (in UTC) during which automated cluster
@@ -968,11 +940,8 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      *         on a random day of the week. The following list shows the time blocks
      *         for each region from which the default maintenance windows are
      *         assigned. <ul> <li><b>US-East (Northern Virginia) Region:</b>
-     *         03:00-11:00 UTC</li> <li><b>US-West (Northern California) Region:</b>
-     *         06:00-14:00 UTC</li> <li><b>EU (Ireland) Region:</b> 22:00-06:00
-     *         UTC</li> <li><b>Asia Pacific (Singapore) Region:</b> 14:00-22:00
-     *         UTC</li> <li><b>Asia Pacific (Tokyo) Region: </b> 17:00-03:00 UTC</li>
-     *         </ul> <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
+     *         03:00-11:00 UTC</li> <li><b>US-West (Oregon) Region</b> 06:00-14:00
+     *         UTC</li> </ul> <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
      *         <p>Constraints: Minimum 30-minute window.
      */
     public String getPreferredMaintenanceWindow() {
@@ -987,11 +956,8 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      * on a random day of the week. The following list shows the time blocks
      * for each region from which the default maintenance windows are
      * assigned. <ul> <li><b>US-East (Northern Virginia) Region:</b>
-     * 03:00-11:00 UTC</li> <li><b>US-West (Northern California) Region:</b>
-     * 06:00-14:00 UTC</li> <li><b>EU (Ireland) Region:</b> 22:00-06:00
-     * UTC</li> <li><b>Asia Pacific (Singapore) Region:</b> 14:00-22:00
-     * UTC</li> <li><b>Asia Pacific (Tokyo) Region: </b> 17:00-03:00 UTC</li>
-     * </ul> <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
+     * 03:00-11:00 UTC</li> <li><b>US-West (Oregon) Region</b> 06:00-14:00
+     * UTC</li> </ul> <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
      * <p>Constraints: Minimum 30-minute window.
      *
      * @param preferredMaintenanceWindow The weekly time range (in UTC) during which automated cluster
@@ -1001,11 +967,8 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      *         on a random day of the week. The following list shows the time blocks
      *         for each region from which the default maintenance windows are
      *         assigned. <ul> <li><b>US-East (Northern Virginia) Region:</b>
-     *         03:00-11:00 UTC</li> <li><b>US-West (Northern California) Region:</b>
-     *         06:00-14:00 UTC</li> <li><b>EU (Ireland) Region:</b> 22:00-06:00
-     *         UTC</li> <li><b>Asia Pacific (Singapore) Region:</b> 14:00-22:00
-     *         UTC</li> <li><b>Asia Pacific (Tokyo) Region: </b> 17:00-03:00 UTC</li>
-     *         </ul> <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
+     *         03:00-11:00 UTC</li> <li><b>US-West (Oregon) Region</b> 06:00-14:00
+     *         UTC</li> </ul> <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
      *         <p>Constraints: Minimum 30-minute window.
      */
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
@@ -1020,11 +983,8 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      * on a random day of the week. The following list shows the time blocks
      * for each region from which the default maintenance windows are
      * assigned. <ul> <li><b>US-East (Northern Virginia) Region:</b>
-     * 03:00-11:00 UTC</li> <li><b>US-West (Northern California) Region:</b>
-     * 06:00-14:00 UTC</li> <li><b>EU (Ireland) Region:</b> 22:00-06:00
-     * UTC</li> <li><b>Asia Pacific (Singapore) Region:</b> 14:00-22:00
-     * UTC</li> <li><b>Asia Pacific (Tokyo) Region: </b> 17:00-03:00 UTC</li>
-     * </ul> <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
+     * 03:00-11:00 UTC</li> <li><b>US-West (Oregon) Region</b> 06:00-14:00
+     * UTC</li> </ul> <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
      * <p>Constraints: Minimum 30-minute window.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -1036,15 +996,9 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      *         on a random day of the week. The following list shows the time blocks
      *         for each region from which the default maintenance windows are
      *         assigned. <ul> <li><b>US-East (Northern Virginia) Region:</b>
-     *         03:00-11:00 UTC</li> <li><b>US-West (Northern California) Region:</b>
-     *         06:00-14:00 UTC</li> <li><b>EU (Ireland) Region:</b> 22:00-06:00
-     *         UTC</li> <li><b>Asia Pacific (Singapore) Region:</b> 14:00-22:00
-     *         UTC</li> <li><b>Asia Pacific (Tokyo) Region: </b> 17:00-03:00 UTC</li>
-     *         </ul> <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
+     *         03:00-11:00 UTC</li> <li><b>US-West (Oregon) Region</b> 06:00-14:00
+     *         UTC</li> </ul> <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
      *         <p>Constraints: Minimum 30-minute window.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateClusterRequest withPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
         this.preferredMaintenanceWindow = preferredMaintenanceWindow;
@@ -1118,9 +1072,6 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      *         <li>Must be 1 to 255 alphanumeric characters or hyphens.</li>
      *         <li>First character must be a letter.</li> <li>Cannot end with a
      *         hyphen or contain two consecutive hyphens.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateClusterRequest withClusterParameterGroupName(String clusterParameterGroupName) {
         this.clusterParameterGroupName = clusterParameterGroupName;
@@ -1176,9 +1127,6 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      *         are disabled, you can still create manual snapshots when you want with
      *         <a>CreateClusterSnapshot</a>. <p> Default: <code>1</code>
      *         <p>Constraints: Must be a value from 0 to 35.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateClusterRequest withAutomatedSnapshotRetentionPeriod(Integer automatedSnapshotRetentionPeriod) {
         this.automatedSnapshotRetentionPeriod = automatedSnapshotRetentionPeriod;
@@ -1234,9 +1182,6 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      *         strings. Part of the connection string requires the port on which the
      *         cluster will listen for incoming connections. <p> Default:
      *         <code>5439</code> <p> Valid Values: <code>1150-65535</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateClusterRequest withPort(Integer port) {
         this.port = port;
@@ -1286,9 +1231,6 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      *         deploy on the cluster. <p> The version selected runs on all the nodes
      *         in the cluster. <p>Constraints: Only version 1.0 is currently
      *         available. <p>Example: <code>1.0</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateClusterRequest withClusterVersion(String clusterVersion) {
         this.clusterVersion = clusterVersion;
@@ -1350,9 +1292,6 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      *         can request that the service automatically apply upgrades during the
      *         maintenance window to the Amazon Redshift engine that is running on
      *         your cluster. <p>Default: <code>true</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateClusterRequest withAllowVersionUpgrade(Boolean allowVersionUpgrade) {
         this.allowVersionUpgrade = allowVersionUpgrade;
@@ -1463,9 +1402,6 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      *         specify the number of nodes that you want in the cluster. <p>Default:
      *         <code>1</code> <p>Constraints: Value must be at least 1 and no more
      *         than 100.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateClusterRequest withNumberOfNodes(Integer numberOfNodes) {
         this.numberOfNodes = numberOfNodes;
@@ -1503,9 +1439,6 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      *
      * @param publiclyAccessible If <code>true</code>, the cluster can be accessed from a public
      *         network.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateClusterRequest withPubliclyAccessible(Boolean publiclyAccessible) {
         this.publiclyAccessible = publiclyAccessible;
@@ -1554,9 +1487,6 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      *
      * @param encrypted If <code>true</code>, the data in cluster is encrypted at rest.
      *         <p>Default: false
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateClusterRequest withEncrypted(Boolean encrypted) {
         this.encrypted = encrypted;

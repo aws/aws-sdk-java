@@ -61,8 +61,8 @@
  * </li>
  * <li> <p>
  * <i>Amazon Redshift Database Database Developer</i> - If you are a database developer, the Amazon Redshift <a
- * href="http://docs.aws.amazon.com/redshift/latest/dg/rs-dw-intro.html"> Database Developer Guide </a> explains how to design, build, query, and
- * maintain the databases that make up your data warehouse.
+ * href="http://docs.aws.amazon.com/redshift/latest/dg/"> Database Developer Guide </a> explains how to design, build, query, and maintain the databases
+ * that make up your data warehouse.
  * </p>
  * </li>
  * 

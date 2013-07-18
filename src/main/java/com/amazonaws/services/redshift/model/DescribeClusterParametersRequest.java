@@ -91,9 +91,6 @@ public class DescribeClusterParametersRequest extends AmazonWebServiceRequest  i
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameterGroupName The name of a cluster parameter group for which to return details.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeClusterParametersRequest withParameterGroupName(String parameterGroupName) {
         this.parameterGroupName = parameterGroupName;
@@ -149,9 +146,6 @@ public class DescribeClusterParametersRequest extends AmazonWebServiceRequest  i
      *         <code>engine-default</code> to show parameters that are the same as
      *         the default parameter group. <p>Default: All parameter types returned.
      *         <p>Valid Values: <code>user</code> | <code>engine-default</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeClusterParametersRequest withSource(String source) {
         this.source = source;
@@ -207,9 +201,6 @@ public class DescribeClusterParametersRequest extends AmazonWebServiceRequest  i
      *         response includes a marker that you can specify in your subsequent
      *         request to retrieve remaining result. <p>Default: <code>100</code>
      *         <p>Constraints: Value must be at least 20 and no more than 100.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeClusterParametersRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -259,9 +250,6 @@ public class DescribeClusterParametersRequest extends AmazonWebServiceRequest  i
      *         <b>DescribeClusterParameters</b> request. If this parameter is
      *         specified, the response includes only records beyond the specified
      *         marker, up to the value specified by <code>MaxRecords</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeClusterParametersRequest withMarker(String marker) {
         this.marker = marker;

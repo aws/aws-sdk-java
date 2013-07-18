@@ -51,9 +51,6 @@ public class CloneStackResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackId The cloned stack ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CloneStackResult withStackId(String stackId) {
         this.stackId = stackId;

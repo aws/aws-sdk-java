@@ -89,9 +89,6 @@ public class CreateVpcRequest extends AmazonWebServiceRequest  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cidrBlock A valid CIDR block.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateVpcRequest withCidrBlock(String cidrBlock) {
         this.cidrBlock = cidrBlock;
@@ -135,9 +132,6 @@ public class CreateVpcRequest extends AmazonWebServiceRequest  implements Serial
      * @param instanceTenancy The allowed tenancy of instances launched into the VPC. A value of
      *         default means instances can be launched with any tenancy; a value of
      *         dedicated means instances must be launched with tenancy as dedicated.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateVpcRequest withInstanceTenancy(String instanceTenancy) {
         this.instanceTenancy = instanceTenancy;

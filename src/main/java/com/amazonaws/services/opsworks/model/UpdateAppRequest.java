@@ -100,9 +100,6 @@ public class UpdateAppRequest extends AmazonWebServiceRequest  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param appId The app ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateAppRequest withAppId(String appId) {
         this.appId = appId;
@@ -134,9 +131,6 @@ public class UpdateAppRequest extends AmazonWebServiceRequest  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The app name.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateAppRequest withName(String name) {
         this.name = name;
@@ -168,9 +162,6 @@ public class UpdateAppRequest extends AmazonWebServiceRequest  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description A description of the app.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateAppRequest withDescription(String description) {
         this.description = description;
@@ -216,9 +207,6 @@ public class UpdateAppRequest extends AmazonWebServiceRequest  implements Serial
      *
      * @param type The app type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see AppType
      */
     public UpdateAppRequest withType(String type) {
@@ -251,9 +239,6 @@ public class UpdateAppRequest extends AmazonWebServiceRequest  implements Serial
      *
      * @param type The app type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see AppType
      */
     public UpdateAppRequest withType(AppType type) {
@@ -285,9 +270,6 @@ public class UpdateAppRequest extends AmazonWebServiceRequest  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param appSource A <code>Source</code> object that specifies the app repository.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateAppRequest withAppSource(Source appSource) {
         this.appSource = appSource;
@@ -336,9 +318,6 @@ public class UpdateAppRequest extends AmazonWebServiceRequest  implements Serial
      *
      * @param domains The app's virtual host settings, with multiple domains separated by
      *         commas. For example: <code>'www.example.com, example.com'</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateAppRequest withDomains(String... domains) {
         if (getDomains() == null) setDomains(new java.util.ArrayList<String>(domains.length));
@@ -356,9 +335,6 @@ public class UpdateAppRequest extends AmazonWebServiceRequest  implements Serial
      *
      * @param domains The app's virtual host settings, with multiple domains separated by
      *         commas. For example: <code>'www.example.com, example.com'</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateAppRequest withDomains(java.util.Collection<String> domains) {
         if (domains == null) {
@@ -396,9 +372,6 @@ public class UpdateAppRequest extends AmazonWebServiceRequest  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param enableSsl Whether SSL is enabled for the app.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateAppRequest withEnableSsl(Boolean enableSsl) {
         this.enableSsl = enableSsl;
@@ -439,9 +412,6 @@ public class UpdateAppRequest extends AmazonWebServiceRequest  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sslConfiguration An <code>SslConfiguration</code> object with the SSL configuration.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateAppRequest withSslConfiguration(SslConfiguration sslConfiguration) {
         this.sslConfiguration = sslConfiguration;
@@ -462,7 +432,6 @@ public class UpdateAppRequest extends AmazonWebServiceRequest  implements Serial
             attributes = new java.util.HashMap<String,String>();
         }
         return attributes;
-
     }
     
     /**
@@ -484,15 +453,44 @@ public class UpdateAppRequest extends AmazonWebServiceRequest  implements Serial
      *
      * @param attributes One or more user-defined key/value pairs to be added to the stack
      *         attributes bag.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateAppRequest withAttributes(java.util.Map<String,String> attributes) {
         setAttributes(attributes);
         return this;
     }
     
+   	
+    /**
+     * One or more user-defined key/value pairs to be added to the stack
+     * attributes bag.
+     * <p>
+     * The method adds a new key-value pair into Attributes parameter, and
+     * returns a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param key The key of the entry to be added into Attributes.
+     * @param value The corresponding value of the entry to be added into Attributes.
+     */
+	public UpdateAppRequest addAttributesEntry(String key, String value) {
+		if (null == this.attributes) {
+			this.attributes = new java.util.HashMap<String,String>();
+		}
+		if (this.attributes.containsKey(key))
+			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+		this.attributes.put(key, value);
+		return this;
+	}
+	
+	/**
+	 * Removes all the entries added into Attributes.
+	 * <p>
+	 * Returns a reference to this object so that method calls can be chained together.
+	 */
+	public UpdateAppRequest clearAttributesEntries() {
+		this.attributes = null;
+		return this;
+	}
+	
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

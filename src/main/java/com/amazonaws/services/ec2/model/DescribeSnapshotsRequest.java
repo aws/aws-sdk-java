@@ -34,13 +34,17 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest  implement
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> snapshotIds;
 
     /**
-     * The optional list of EBS snapshot owners.
+     * An optional list of owners by which to scope the described EBS
+     * snapshots. Valid values are: <ul> <code>self</code> : Snapshots owned
+     * by you <i>AWS account ID</i> : Snapshots owned by this account ID
+     * <code>amazon</code> : Snapshots owned by Amazon </ul> <p> The values
+     * <code>self</code> and <code>amazon</code> are literals.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> ownerIds;
 
     /**
-     * The optional list of users who have permission to create volumes from
-     * the described EBS snapshots.
+     * An optional list of users. The described snapshots are scoped to only
+     * those snapshots from which these users can create volumes.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> restorableByUserIds;
 
@@ -88,9 +92,6 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest  implement
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param snapshotIds The optional list of EBS snapshot IDs to describe.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeSnapshotsRequest withSnapshotIds(String... snapshotIds) {
         if (getSnapshotIds() == null) setSnapshotIds(new java.util.ArrayList<String>(snapshotIds.length));
@@ -106,9 +107,6 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest  implement
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param snapshotIds The optional list of EBS snapshot IDs to describe.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeSnapshotsRequest withSnapshotIds(java.util.Collection<String> snapshotIds) {
         if (snapshotIds == null) {
@@ -123,9 +121,17 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest  implement
     }
     
     /**
-     * The optional list of EBS snapshot owners.
+     * An optional list of owners by which to scope the described EBS
+     * snapshots. Valid values are: <ul> <code>self</code> : Snapshots owned
+     * by you <i>AWS account ID</i> : Snapshots owned by this account ID
+     * <code>amazon</code> : Snapshots owned by Amazon </ul> <p> The values
+     * <code>self</code> and <code>amazon</code> are literals.
      *
-     * @return The optional list of EBS snapshot owners.
+     * @return An optional list of owners by which to scope the described EBS
+     *         snapshots. Valid values are: <ul> <code>self</code> : Snapshots owned
+     *         by you <i>AWS account ID</i> : Snapshots owned by this account ID
+     *         <code>amazon</code> : Snapshots owned by Amazon </ul> <p> The values
+     *         <code>self</code> and <code>amazon</code> are literals.
      */
     public java.util.List<String> getOwnerIds() {
         
@@ -137,9 +143,17 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest  implement
     }
     
     /**
-     * The optional list of EBS snapshot owners.
+     * An optional list of owners by which to scope the described EBS
+     * snapshots. Valid values are: <ul> <code>self</code> : Snapshots owned
+     * by you <i>AWS account ID</i> : Snapshots owned by this account ID
+     * <code>amazon</code> : Snapshots owned by Amazon </ul> <p> The values
+     * <code>self</code> and <code>amazon</code> are literals.
      *
-     * @param ownerIds The optional list of EBS snapshot owners.
+     * @param ownerIds An optional list of owners by which to scope the described EBS
+     *         snapshots. Valid values are: <ul> <code>self</code> : Snapshots owned
+     *         by you <i>AWS account ID</i> : Snapshots owned by this account ID
+     *         <code>amazon</code> : Snapshots owned by Amazon </ul> <p> The values
+     *         <code>self</code> and <code>amazon</code> are literals.
      */
     public void setOwnerIds(java.util.Collection<String> ownerIds) {
         if (ownerIds == null) {
@@ -152,14 +166,19 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest  implement
     }
     
     /**
-     * The optional list of EBS snapshot owners.
+     * An optional list of owners by which to scope the described EBS
+     * snapshots. Valid values are: <ul> <code>self</code> : Snapshots owned
+     * by you <i>AWS account ID</i> : Snapshots owned by this account ID
+     * <code>amazon</code> : Snapshots owned by Amazon </ul> <p> The values
+     * <code>self</code> and <code>amazon</code> are literals.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ownerIds The optional list of EBS snapshot owners.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     * @param ownerIds An optional list of owners by which to scope the described EBS
+     *         snapshots. Valid values are: <ul> <code>self</code> : Snapshots owned
+     *         by you <i>AWS account ID</i> : Snapshots owned by this account ID
+     *         <code>amazon</code> : Snapshots owned by Amazon </ul> <p> The values
+     *         <code>self</code> and <code>amazon</code> are literals.
      */
     public DescribeSnapshotsRequest withOwnerIds(String... ownerIds) {
         if (getOwnerIds() == null) setOwnerIds(new java.util.ArrayList<String>(ownerIds.length));
@@ -170,14 +189,19 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest  implement
     }
     
     /**
-     * The optional list of EBS snapshot owners.
+     * An optional list of owners by which to scope the described EBS
+     * snapshots. Valid values are: <ul> <code>self</code> : Snapshots owned
+     * by you <i>AWS account ID</i> : Snapshots owned by this account ID
+     * <code>amazon</code> : Snapshots owned by Amazon </ul> <p> The values
+     * <code>self</code> and <code>amazon</code> are literals.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ownerIds The optional list of EBS snapshot owners.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     * @param ownerIds An optional list of owners by which to scope the described EBS
+     *         snapshots. Valid values are: <ul> <code>self</code> : Snapshots owned
+     *         by you <i>AWS account ID</i> : Snapshots owned by this account ID
+     *         <code>amazon</code> : Snapshots owned by Amazon </ul> <p> The values
+     *         <code>self</code> and <code>amazon</code> are literals.
      */
     public DescribeSnapshotsRequest withOwnerIds(java.util.Collection<String> ownerIds) {
         if (ownerIds == null) {
@@ -192,11 +216,11 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest  implement
     }
     
     /**
-     * The optional list of users who have permission to create volumes from
-     * the described EBS snapshots.
+     * An optional list of users. The described snapshots are scoped to only
+     * those snapshots from which these users can create volumes.
      *
-     * @return The optional list of users who have permission to create volumes from
-     *         the described EBS snapshots.
+     * @return An optional list of users. The described snapshots are scoped to only
+     *         those snapshots from which these users can create volumes.
      */
     public java.util.List<String> getRestorableByUserIds() {
         
@@ -208,11 +232,11 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest  implement
     }
     
     /**
-     * The optional list of users who have permission to create volumes from
-     * the described EBS snapshots.
+     * An optional list of users. The described snapshots are scoped to only
+     * those snapshots from which these users can create volumes.
      *
-     * @param restorableByUserIds The optional list of users who have permission to create volumes from
-     *         the described EBS snapshots.
+     * @param restorableByUserIds An optional list of users. The described snapshots are scoped to only
+     *         those snapshots from which these users can create volumes.
      */
     public void setRestorableByUserIds(java.util.Collection<String> restorableByUserIds) {
         if (restorableByUserIds == null) {
@@ -225,16 +249,13 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest  implement
     }
     
     /**
-     * The optional list of users who have permission to create volumes from
-     * the described EBS snapshots.
+     * An optional list of users. The described snapshots are scoped to only
+     * those snapshots from which these users can create volumes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param restorableByUserIds The optional list of users who have permission to create volumes from
-     *         the described EBS snapshots.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     * @param restorableByUserIds An optional list of users. The described snapshots are scoped to only
+     *         those snapshots from which these users can create volumes.
      */
     public DescribeSnapshotsRequest withRestorableByUserIds(String... restorableByUserIds) {
         if (getRestorableByUserIds() == null) setRestorableByUserIds(new java.util.ArrayList<String>(restorableByUserIds.length));
@@ -245,16 +266,13 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest  implement
     }
     
     /**
-     * The optional list of users who have permission to create volumes from
-     * the described EBS snapshots.
+     * An optional list of users. The described snapshots are scoped to only
+     * those snapshots from which these users can create volumes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param restorableByUserIds The optional list of users who have permission to create volumes from
-     *         the described EBS snapshots.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     * @param restorableByUserIds An optional list of users. The described snapshots are scoped to only
+     *         those snapshots from which these users can create volumes.
      */
     public DescribeSnapshotsRequest withRestorableByUserIds(java.util.Collection<String> restorableByUserIds) {
         if (restorableByUserIds == null) {
@@ -327,9 +345,6 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest  implement
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeSnapshotsRequest withFilters(Filter... filters) {
         if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
@@ -353,9 +368,6 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest  implement
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeSnapshotsRequest withFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {

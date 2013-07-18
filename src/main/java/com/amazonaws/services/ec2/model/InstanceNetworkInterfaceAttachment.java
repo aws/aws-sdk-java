@@ -54,9 +54,6 @@ public class InstanceNetworkInterfaceAttachment  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attachmentId The new value for the AttachmentId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceNetworkInterfaceAttachment withAttachmentId(String attachmentId) {
         this.attachmentId = attachmentId;
@@ -88,9 +85,6 @@ public class InstanceNetworkInterfaceAttachment  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param deviceIndex The new value for the DeviceIndex property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceNetworkInterfaceAttachment withDeviceIndex(Integer deviceIndex) {
         this.deviceIndex = deviceIndex;
@@ -122,9 +116,6 @@ public class InstanceNetworkInterfaceAttachment  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param status The new value for the Status property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceNetworkInterfaceAttachment withStatus(String status) {
         this.status = status;
@@ -156,9 +147,6 @@ public class InstanceNetworkInterfaceAttachment  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attachTime The new value for the AttachTime property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceNetworkInterfaceAttachment withAttachTime(java.util.Date attachTime) {
         this.attachTime = attachTime;
@@ -190,9 +178,6 @@ public class InstanceNetworkInterfaceAttachment  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param deleteOnTermination The new value for the DeleteOnTermination property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceNetworkInterfaceAttachment withDeleteOnTermination(Boolean deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;

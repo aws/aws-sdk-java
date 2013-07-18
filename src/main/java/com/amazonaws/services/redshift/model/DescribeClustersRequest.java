@@ -92,9 +92,6 @@ public class DescribeClustersRequest extends AmazonWebServiceRequest  implements
      * @param clusterIdentifier The unique identifier of a cluster whose properties you are
      *         requesting. This parameter isn't case sensitive. <p>The default is
      *         that all clusters defined for an account are returned.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeClustersRequest withClusterIdentifier(String clusterIdentifier) {
         this.clusterIdentifier = clusterIdentifier;
@@ -156,9 +153,6 @@ public class DescribeClustersRequest extends AmazonWebServiceRequest  implements
      *         new <b>DescribeClusters</b> request to continue listing results.
      *         <p>Default: <code>100</code> <p>Constraints: Value must be at least 20
      *         and no more than 100.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeClustersRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -214,9 +208,6 @@ public class DescribeClustersRequest extends AmazonWebServiceRequest  implements
      *         <b>DescribeClusters</b> request will return. <p>You can specify either
      *         a <b>Marker</b> parameter or a <b>ClusterIdentifier</b> parameter in a
      *         <b>DescribeClusters</b> request, but not both.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeClustersRequest withMarker(String marker) {
         this.marker = marker;

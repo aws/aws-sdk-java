@@ -46,9 +46,6 @@ public class ImportVolumeResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param conversionTask The new value for the ConversionTask property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ImportVolumeResult withConversionTask(ConversionTask conversionTask) {
         this.conversionTask = conversionTask;

@@ -102,9 +102,6 @@ public class CreateImageRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId The ID of the instance from which to create the new image.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateImageRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -136,9 +133,6 @@ public class CreateImageRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The name for the new AMI being created.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateImageRequest withName(String name) {
         this.name = name;
@@ -170,9 +164,6 @@ public class CreateImageRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description The description for the new AMI being created.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateImageRequest withDescription(String description) {
         this.description = description;
@@ -234,9 +225,6 @@ public class CreateImageRequest extends AmazonWebServiceRequest  implements Seri
      *         EC2 will not shut down the instance before creating the image. When
      *         this option is used, file system integrity on the created image cannot
      *         be guaranteed.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateImageRequest withNoReboot(Boolean noReboot) {
         this.noReboot = noReboot;
@@ -298,9 +286,6 @@ public class CreateImageRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param blockDeviceMappings The new value for the BlockDeviceMappings property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateImageRequest withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
         if (getBlockDeviceMappings() == null) setBlockDeviceMappings(new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.length));
@@ -316,9 +301,6 @@ public class CreateImageRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param blockDeviceMappings The new value for the BlockDeviceMappings property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateImageRequest withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {

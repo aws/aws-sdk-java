@@ -63,9 +63,6 @@ public class DeleteRouteRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param routeTableId The ID of the route table where the route will be deleted.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteRouteRequest withRouteTableId(String routeTableId) {
         this.routeTableId = routeTableId;
@@ -103,9 +100,6 @@ public class DeleteRouteRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param destinationCidrBlock The CIDR range for the route you want to delete. The value you specify
      *         must exactly match the CIDR for the route you want to delete.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteRouteRequest withDestinationCidrBlock(String destinationCidrBlock) {
         this.destinationCidrBlock = destinationCidrBlock;

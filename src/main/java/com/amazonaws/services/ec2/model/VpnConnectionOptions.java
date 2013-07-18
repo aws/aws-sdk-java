@@ -46,9 +46,6 @@ public class VpnConnectionOptions  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param staticRoutesOnly The new value for the StaticRoutesOnly property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VpnConnectionOptions withStaticRoutesOnly(Boolean staticRoutesOnly) {
         this.staticRoutesOnly = staticRoutesOnly;

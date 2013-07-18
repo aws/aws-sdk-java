@@ -81,9 +81,6 @@ public class SpotPlacement  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZone The availability zone in which an Amazon EC2 instance runs.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SpotPlacement withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -133,9 +130,6 @@ public class SpotPlacement  implements Serializable  {
      *         runs. Placement groups are primarily used for launching High
      *         Performance Computing instances in the same group to ensure fast
      *         connection speeds.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SpotPlacement withGroupName(String groupName) {
         this.groupName = groupName;

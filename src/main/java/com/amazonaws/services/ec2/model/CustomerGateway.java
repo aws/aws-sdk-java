@@ -80,9 +80,6 @@ public class CustomerGateway  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param customerGatewayId Specifies the ID of the customer gateway.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CustomerGateway withCustomerGatewayId(String customerGatewayId) {
         this.customerGatewayId = customerGatewayId;
@@ -126,9 +123,6 @@ public class CustomerGateway  implements Serializable  {
      * @param state Describes the current state of the customer gateway. Valid values are
      *         <code>pending</code>, <code>available</code>, <code>deleting</code>,
      *         and <code>deleted</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CustomerGateway withState(String state) {
         this.state = state;
@@ -160,9 +154,6 @@ public class CustomerGateway  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param type Specifies the type of VPN connection the customer gateway supports.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CustomerGateway withType(String type) {
         this.type = type;
@@ -200,9 +191,6 @@ public class CustomerGateway  implements Serializable  {
      *
      * @param ipAddress Contains the Internet-routable IP address of the customer gateway's
      *         outside interface.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CustomerGateway withIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
@@ -240,9 +228,6 @@ public class CustomerGateway  implements Serializable  {
      *
      * @param bgpAsn Specifies the customer gateway's Border Gateway Protocol (BGP)
      *         Autonomous System Number (ASN).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CustomerGateway withBgpAsn(String bgpAsn) {
         this.bgpAsn = bgpAsn;
@@ -285,9 +270,6 @@ public class CustomerGateway  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags A list of tags for the CustomerGateway.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CustomerGateway withTags(Tag... tags) {
         if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
@@ -303,9 +285,6 @@ public class CustomerGateway  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags A list of tags for the CustomerGateway.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CustomerGateway withTags(java.util.Collection<Tag> tags) {
         if (tags == null) {

@@ -68,9 +68,6 @@ public class SpotPrice  implements Serializable  {
      *
      * @param instanceType The new value for the InstanceType property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see InstanceType
      */
     public SpotPrice withInstanceType(String instanceType) {
@@ -103,9 +100,6 @@ public class SpotPrice  implements Serializable  {
      *
      * @param instanceType The new value for the InstanceType property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see InstanceType
      */
     public SpotPrice withInstanceType(InstanceType instanceType) {
@@ -137,9 +131,6 @@ public class SpotPrice  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param productDescription The new value for the ProductDescription property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SpotPrice withProductDescription(String productDescription) {
         this.productDescription = productDescription;
@@ -171,9 +162,6 @@ public class SpotPrice  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param spotPrice The new value for the SpotPrice property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SpotPrice withSpotPrice(String spotPrice) {
         this.spotPrice = spotPrice;
@@ -205,9 +193,6 @@ public class SpotPrice  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param timestamp The new value for the Timestamp property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SpotPrice withTimestamp(java.util.Date timestamp) {
         this.timestamp = timestamp;
@@ -239,9 +224,6 @@ public class SpotPrice  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZone The new value for the AvailabilityZone property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SpotPrice withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;

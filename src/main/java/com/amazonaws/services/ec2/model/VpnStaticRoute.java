@@ -51,9 +51,6 @@ public class VpnStaticRoute  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param destinationCidrBlock The new value for the DestinationCidrBlock property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VpnStaticRoute withDestinationCidrBlock(String destinationCidrBlock) {
         this.destinationCidrBlock = destinationCidrBlock;
@@ -85,9 +82,6 @@ public class VpnStaticRoute  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param source The new value for the Source property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VpnStaticRoute withSource(String source) {
         this.source = source;
@@ -119,9 +113,6 @@ public class VpnStaticRoute  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param state The new value for the State property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VpnStaticRoute withState(String state) {
         this.state = state;

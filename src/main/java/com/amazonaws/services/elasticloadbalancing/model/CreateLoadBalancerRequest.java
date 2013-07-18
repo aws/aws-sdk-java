@@ -158,9 +158,6 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest  implemen
      *
      * @param loadBalancerName The name associated with the LoadBalancer. The name must be unique
      *         within your set of LoadBalancers.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLoadBalancerRequest withLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
@@ -209,9 +206,6 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest  implemen
      *
      * @param listeners A list of the following tuples: LoadBalancerPort, InstancePort, and
      *         Protocol.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLoadBalancerRequest withListeners(Listener... listeners) {
         if (getListeners() == null) setListeners(new java.util.ArrayList<Listener>(listeners.length));
@@ -229,9 +223,6 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest  implemen
      *
      * @param listeners A list of the following tuples: LoadBalancerPort, InstancePort, and
      *         Protocol.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLoadBalancerRequest withListeners(java.util.Collection<Listener> listeners) {
         if (listeners == null) {
@@ -304,9 +295,6 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest  implemen
      *         Region as the LoadBalancer. Traffic will be equally distributed across
      *         all zones. <p> This list can be modified after the creation of the
      *         LoadBalancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLoadBalancerRequest withAvailabilityZones(String... availabilityZones) {
         if (getAvailabilityZones() == null) setAvailabilityZones(new java.util.ArrayList<String>(availabilityZones.length));
@@ -330,9 +318,6 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest  implemen
      *         Region as the LoadBalancer. Traffic will be equally distributed across
      *         all zones. <p> This list can be modified after the creation of the
      *         LoadBalancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLoadBalancerRequest withAvailabilityZones(java.util.Collection<String> availabilityZones) {
         if (availabilityZones == null) {
@@ -381,9 +366,6 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest  implemen
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnets A list of subnet IDs in your VPC to attach to your LoadBalancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLoadBalancerRequest withSubnets(String... subnets) {
         if (getSubnets() == null) setSubnets(new java.util.ArrayList<String>(subnets.length));
@@ -399,9 +381,6 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest  implemen
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnets A list of subnet IDs in your VPC to attach to your LoadBalancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLoadBalancerRequest withSubnets(java.util.Collection<String> subnets) {
         if (subnets == null) {
@@ -450,9 +429,6 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest  implemen
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param securityGroups The security groups assigned to your LoadBalancer within your VPC.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLoadBalancerRequest withSecurityGroups(String... securityGroups) {
         if (getSecurityGroups() == null) setSecurityGroups(new java.util.ArrayList<String>(securityGroups.length));
@@ -468,9 +444,6 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest  implemen
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param securityGroups The security groups assigned to your LoadBalancer within your VPC.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLoadBalancerRequest withSecurityGroups(java.util.Collection<String> securityGroups) {
         if (securityGroups == null) {
@@ -538,9 +511,6 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest  implemen
      *         resolvable DNS name that resolves to public IP addresses. Specify the
      *         value <i>internal</i> for this option to create an internal load
      *         balancer with a DNS name that resolves to private IP addresses.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLoadBalancerRequest withScheme(String scheme) {
         this.scheme = scheme;

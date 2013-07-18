@@ -79,8 +79,8 @@ import com.amazonaws.services.redshift.model.*;
  * </li>
  * <li> <p>
  * <i>Amazon Redshift Database Database Developer</i> - If you are a database developer, the Amazon Redshift <a
- * href="http://docs.aws.amazon.com/redshift/latest/dg/rs-dw-intro.html"> Database Developer Guide </a> explains how to design, build, query, and
- * maintain the databases that make up your data warehouse.
+ * href="http://docs.aws.amazon.com/redshift/latest/dg/"> Database Developer Guide </a> explains how to design, build, query, and maintain the databases
+ * that make up your data warehouse.
  * </p>
  * </li>
  * 
@@ -152,6 +152,41 @@ public interface AmazonRedshift {
 	
     /**
      * <p>
+     * Removes the ability of the specified AWS customer account to restore
+     * the specified snapshot. If the account is currently restoring the
+     * snapshot, the restore will run to completion.
+     * </p>
+     * <p>
+     * For more information about working with snapshots, go to <a
+     * docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">
+     * Amazon Redshift Snapshots </a> in the <i>Amazon Redshift Management
+     * Guide</i> .
+     * </p>
+     *
+     * @param revokeSnapshotAccessRequest Container for the necessary
+     *           parameters to execute the RevokeSnapshotAccess service method on
+     *           AmazonRedshift.
+     * 
+     * @return The response from the RevokeSnapshotAccess service method, as
+     *         returned by AmazonRedshift.
+     * 
+     * @throws AccessToSnapshotDeniedException
+     * @throws ClusterSnapshotNotFoundException
+     * @throws AuthorizationNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Snapshot revokeSnapshotAccess(RevokeSnapshotAccessRequest revokeSnapshotAccessRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Modifies a cluster subnet group to include the specified list of VPC
      * subnets. The operation replaces the existing list of subnets with the
      * new list of subnets.
@@ -166,6 +201,7 @@ public interface AmazonRedshift {
      * 
      * @throws SubnetAlreadyInUseException
      * @throws InvalidSubnetException
+     * @throws UnauthorizedOperationException
      * @throws ClusterSubnetQuotaExceededException
      * @throws ClusterSubnetGroupNotFoundException
      *
@@ -249,6 +285,7 @@ public interface AmazonRedshift {
      * 
      * @throws InvalidClusterSecurityGroupStateException
      * @throws InsufficientClusterCapacityException
+     * @throws UnauthorizedOperationException
      * @throws InvalidClusterStateException
      * @throws NumberOfNodesQuotaExceededException
      * @throws ClusterNotFoundException
@@ -418,7 +455,7 @@ public interface AmazonRedshift {
      * </p>
      * <p>
      * For information about subnet groups, go to <a
-     * .aws.amazon.com/redshift/latest/mgmt/working-with-subnet-groups.html">
+     * zon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html">
      * Amazon Redshift Cluster Subnet Groups </a> in the <i>Amazon Redshift
      * Management Guide</i> .
      * 
@@ -432,6 +469,7 @@ public interface AmazonRedshift {
      *         as returned by AmazonRedshift.
      * 
      * @throws InvalidSubnetException
+     * @throws UnauthorizedOperationException
      * @throws ClusterSubnetQuotaExceededException
      * @throws ClusterSubnetGroupAlreadyExistsException
      * @throws ClusterSubnetGroupQuotaExceededException
@@ -534,41 +572,6 @@ public interface AmazonRedshift {
 
     /**
      * <p>
-     * Creates a manual snapshot of the specified cluster. The cluster must
-     * be in the "available" state.
-     * </p>
-     * <p>
-     * For more information about working with snapshots, go to <a
-     * docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">
-     * Amazon Redshift Snapshots </a> in the <i>Amazon Redshift Management
-     * Guide</i> .
-     * </p>
-     *
-     * @param createClusterSnapshotRequest Container for the necessary
-     *           parameters to execute the CreateClusterSnapshot service method on
-     *           AmazonRedshift.
-     * 
-     * @return The response from the CreateClusterSnapshot service method, as
-     *         returned by AmazonRedshift.
-     * 
-     * @throws ClusterSnapshotAlreadyExistsException
-     * @throws InvalidClusterStateException
-     * @throws ClusterNotFoundException
-     * @throws ClusterSnapshotQuotaExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRedshift indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Snapshot createClusterSnapshot(CreateClusterSnapshotRequest createClusterSnapshotRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Deletes a previously provisioned cluster. A successful response from
      * the web service indicates that the request was received correctly. If
      * a final cluster snapshot is requested the status of the cluster will
@@ -607,6 +610,41 @@ public interface AmazonRedshift {
 
     /**
      * <p>
+     * Creates a manual snapshot of the specified cluster. The cluster must
+     * be in the "available" state.
+     * </p>
+     * <p>
+     * For more information about working with snapshots, go to <a
+     * docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">
+     * Amazon Redshift Snapshots </a> in the <i>Amazon Redshift Management
+     * Guide</i> .
+     * </p>
+     *
+     * @param createClusterSnapshotRequest Container for the necessary
+     *           parameters to execute the CreateClusterSnapshot service method on
+     *           AmazonRedshift.
+     * 
+     * @return The response from the CreateClusterSnapshot service method, as
+     *         returned by AmazonRedshift.
+     * 
+     * @throws ClusterSnapshotAlreadyExistsException
+     * @throws InvalidClusterStateException
+     * @throws ClusterNotFoundException
+     * @throws ClusterSnapshotQuotaExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Snapshot createClusterSnapshot(CreateClusterSnapshotRequest createClusterSnapshotRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Creates a new cluster. To create the cluster in virtual private cloud
      * (VPC), you must provide cluster subnet group name. If you don't
      * provide a cluster subnet group name or the cluster security group
@@ -625,10 +663,13 @@ public interface AmazonRedshift {
      * @return The response from the CreateCluster service method, as
      *         returned by AmazonRedshift.
      * 
+     * @throws InvalidSubnetException
      * @throws InsufficientClusterCapacityException
+     * @throws UnauthorizedOperationException
      * @throws NumberOfNodesQuotaExceededException
      * @throws NumberOfNodesPerClusterLimitExceededException
      * @throws ClusterSubnetGroupNotFoundException
+     * @throws InvalidClusterSubnetGroupStateException
      * @throws ClusterAlreadyExistsException
      * @throws ClusterSecurityGroupNotFoundException
      * @throws ClusterQuotaExceededException
@@ -649,13 +690,16 @@ public interface AmazonRedshift {
     /**
      * <p>
      * Deletes the specified manual snapshot. The snapshot must be in the
-     * "available" state.
+     * "available" state, with no other users authorized to access the
+     * snapshot.
      * </p>
      * <p>
      * Unlike automated snapshots, manual snapshots are retained even after
      * you delete your cluster. Amazon Redshift does not delete your manual
      * snapshots. You must delete manual snapshot explicitly to avoid getting
-     * charged.
+     * charged. If other accounts are authorized to access the snapshot, you
+     * must revoke all of the authorizations before you can delete the
+     * snapshot.
      * </p>
      *
      * @param deleteClusterSnapshotRequest Container for the necessary
@@ -939,6 +983,40 @@ public interface AmazonRedshift {
 
     /**
      * <p>
+     * Authorizes the specified AWS customer account to restore the
+     * specified snapshot.
+     * </p>
+     * <p>
+     * For more information about working with snapshots, go to <a
+     * docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">
+     * Amazon Redshift Snapshots </a> in the <i>Amazon Redshift Management
+     * Guide</i> .
+     * </p>
+     *
+     * @param authorizeSnapshotAccessRequest Container for the necessary
+     *           parameters to execute the AuthorizeSnapshotAccess service method on
+     *           AmazonRedshift.
+     * 
+     * @return The response from the AuthorizeSnapshotAccess service method,
+     *         as returned by AmazonRedshift.
+     * 
+     * @throws AuthorizationAlreadyExistsException
+     * @throws ClusterSnapshotNotFoundException
+     * @throws AuthorizationQuotaExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Snapshot authorizeSnapshotAccess(AuthorizeSnapshotAccessRequest authorizeSnapshotAccessRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Returns a list of the available reserved node offerings by Amazon
      * Redshift with their descriptions including the node type, the fixed
      * and recurring costs of reserving the node and duration the node will
@@ -1149,7 +1227,9 @@ public interface AmazonRedshift {
      * <p>
      * Returns one or more snapshot objects, which contain metadata about
      * your cluster snapshots. By default, this operation returns information
-     * about all snapshots of all clusters that are owned by the AWS account.
+     * about all snapshots of all clusters that are owned by you AWS customer
+     * account. No information is returned for snapshots owned by inactive
+     * AWS customer accounts.
      * </p>
      *
      * @param describeClusterSnapshotsRequest Container for the necessary
@@ -1279,14 +1359,20 @@ public interface AmazonRedshift {
      * @return The response from the RestoreFromClusterSnapshot service
      *         method, as returned by AmazonRedshift.
      * 
+     * @throws InvalidSubnetException
+     * @throws ClusterSubnetGroupNotFoundException
+     * @throws InvalidClusterSubnetGroupStateException
+     * @throws ClusterAlreadyExistsException
+     * @throws InvalidVPCNetworkStateException
+     * @throws InvalidClusterSnapshotStateException
+     * @throws AccessToSnapshotDeniedException
      * @throws InvalidRestoreException
+     * @throws UnauthorizedOperationException
      * @throws InsufficientClusterCapacityException
      * @throws NumberOfNodesQuotaExceededException
      * @throws NumberOfNodesPerClusterLimitExceededException
      * @throws ClusterSnapshotNotFoundException
-     * @throws ClusterAlreadyExistsException
      * @throws ClusterQuotaExceededException
-     * @throws InvalidClusterSnapshotStateException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1513,7 +1599,9 @@ public interface AmazonRedshift {
      * <p>
      * Returns one or more snapshot objects, which contain metadata about
      * your cluster snapshots. By default, this operation returns information
-     * about all snapshots of all clusters that are owned by the AWS account.
+     * about all snapshots of all clusters that are owned by you AWS customer
+     * account. No information is returned for snapshots owned by inactive
+     * AWS customer accounts.
      * </p>
      * 
      * @return The response from the DescribeClusterSnapshots service method,

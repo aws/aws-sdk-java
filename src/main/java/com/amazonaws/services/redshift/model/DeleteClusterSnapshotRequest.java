@@ -19,11 +19,12 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#deleteClusterSnapshot(DeleteClusterSnapshotRequest) DeleteClusterSnapshot operation}.
  * <p>
- * Deletes the specified manual snapshot. The snapshot must be in the "available" state.
+ * Deletes the specified manual snapshot. The snapshot must be in the "available" state, with no other users authorized to access the snapshot.
  * </p>
  * <p>
  * Unlike automated snapshots, manual snapshots are retained even after you delete your cluster. Amazon Redshift does not delete your manual snapshots.
- * You must delete manual snapshot explicitly to avoid getting charged.
+ * You must delete manual snapshot explicitly to avoid getting charged. If other accounts are authorized to access the snapshot, you must revoke all of
+ * the authorizations before you can delete the snapshot.
  * </p>
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#deleteClusterSnapshot(DeleteClusterSnapshotRequest)
@@ -73,9 +74,6 @@ public class DeleteClusterSnapshotRequest extends AmazonWebServiceRequest  imple
      * @param snapshotIdentifier The unique identifier of the manual snapshot to be deleted.
      *         <p>Constraints: Must be the name of an existing snapshot that is in
      *         the <code>available</code> state.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteClusterSnapshotRequest withSnapshotIdentifier(String snapshotIdentifier) {
         this.snapshotIdentifier = snapshotIdentifier;

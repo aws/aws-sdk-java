@@ -81,9 +81,6 @@ public class GetConsoleOutputRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId The ID of the instance for which you want console output.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetConsoleOutputRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;

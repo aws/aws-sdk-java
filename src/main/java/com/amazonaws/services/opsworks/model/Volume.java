@@ -106,9 +106,6 @@ public class Volume  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeId The volume ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Volume withVolumeId(String volumeId) {
         this.volumeId = volumeId;
@@ -140,9 +137,6 @@ public class Volume  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ec2VolumeId The Amazon EC2 volume ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Volume withEc2VolumeId(String ec2VolumeId) {
         this.ec2VolumeId = ec2VolumeId;
@@ -174,9 +168,6 @@ public class Volume  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The volume name.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Volume withName(String name) {
         this.name = name;
@@ -208,9 +199,6 @@ public class Volume  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param raidArrayId The RAID array ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Volume withRaidArrayId(String raidArrayId) {
         this.raidArrayId = raidArrayId;
@@ -242,9 +230,6 @@ public class Volume  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId The instance ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Volume withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -282,9 +267,6 @@ public class Volume  implements Serializable  {
      *
      * @param status The value returned by <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Volume withStatus(String status) {
         this.status = status;
@@ -316,9 +298,6 @@ public class Volume  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param size The volume size.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Volume withSize(Integer size) {
         this.size = size;
@@ -350,9 +329,6 @@ public class Volume  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param device The device name.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Volume withDevice(String device) {
         this.device = device;
@@ -384,9 +360,6 @@ public class Volume  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param mountPoint The volume mount point. For example "/dev/sdh".
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Volume withMountPoint(String mountPoint) {
         this.mountPoint = mountPoint;
@@ -430,9 +403,6 @@ public class Volume  implements Serializable  {
      * @param region The AWS region. For more information about AWS regions, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      *         and Endpoints</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Volume withRegion(String region) {
         this.region = region;
@@ -476,9 +446,6 @@ public class Volume  implements Serializable  {
      * @param availabilityZone The volume Availability Zone. For more information, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      *         and Endpoints</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Volume withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;

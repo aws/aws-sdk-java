@@ -51,9 +51,6 @@ public class AvailabilityZone  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The name of the availability zone.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AvailabilityZone withName(String name) {
         this.name = name;

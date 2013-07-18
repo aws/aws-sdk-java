@@ -69,9 +69,6 @@ public class DescribeTimeBasedAutoScalingResult  implements Serializable  {
      *
      * @param timeBasedAutoScalingConfigurations An array of <code>TimeBasedAutoScalingConfiguration</code> objects
      *         that describe the configuration for the specified instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeTimeBasedAutoScalingResult withTimeBasedAutoScalingConfigurations(TimeBasedAutoScalingConfiguration... timeBasedAutoScalingConfigurations) {
         if (getTimeBasedAutoScalingConfigurations() == null) setTimeBasedAutoScalingConfigurations(new java.util.ArrayList<TimeBasedAutoScalingConfiguration>(timeBasedAutoScalingConfigurations.length));
@@ -89,9 +86,6 @@ public class DescribeTimeBasedAutoScalingResult  implements Serializable  {
      *
      * @param timeBasedAutoScalingConfigurations An array of <code>TimeBasedAutoScalingConfiguration</code> objects
      *         that describe the configuration for the specified instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeTimeBasedAutoScalingResult withTimeBasedAutoScalingConfigurations(java.util.Collection<TimeBasedAutoScalingConfiguration> timeBasedAutoScalingConfigurations) {
         if (timeBasedAutoScalingConfigurations == null) {

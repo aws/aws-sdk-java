@@ -56,9 +56,6 @@ public class GetHostnameSuggestionResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param layerId The layer ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetHostnameSuggestionResult withLayerId(String layerId) {
         this.layerId = layerId;
@@ -90,9 +87,6 @@ public class GetHostnameSuggestionResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param hostname The generated hostname.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetHostnameSuggestionResult withHostname(String hostname) {
         this.hostname = hostname;

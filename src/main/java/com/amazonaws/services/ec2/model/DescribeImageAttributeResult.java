@@ -51,9 +51,6 @@ public class DescribeImageAttributeResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param imageAttribute The described image attribute of the associated AMI.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeImageAttributeResult withImageAttribute(ImageAttribute imageAttribute) {
         this.imageAttribute = imageAttribute;

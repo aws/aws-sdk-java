@@ -73,9 +73,6 @@ public class InstanceState  implements Serializable  {
      * @param code A 16-bit unsigned integer. The high byte is an opaque internal value
      *         and should be ignored. The low byte is set based on the state
      *         represented.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceState withCode(Integer code) {
         this.code = code;
@@ -121,9 +118,6 @@ public class InstanceState  implements Serializable  {
      *
      * @param name The current state of the instance.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see InstanceStateName
      */
     public InstanceState withName(String name) {
@@ -155,9 +149,6 @@ public class InstanceState  implements Serializable  {
      * <b>Allowed Values: </b>pending, running, shutting-down, terminated, stopping, stopped
      *
      * @param name The current state of the instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see InstanceStateName
      */

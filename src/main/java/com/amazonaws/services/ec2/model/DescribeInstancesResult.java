@@ -62,9 +62,6 @@ public class DescribeInstancesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservations The list of reservations containing the describes instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeInstancesResult withReservations(Reservation... reservations) {
         if (getReservations() == null) setReservations(new java.util.ArrayList<Reservation>(reservations.length));
@@ -80,9 +77,6 @@ public class DescribeInstancesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservations The list of reservations containing the describes instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeInstancesResult withReservations(java.util.Collection<Reservation> reservations) {
         if (reservations == null) {

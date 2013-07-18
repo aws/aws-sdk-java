@@ -112,9 +112,6 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest  impleme
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVpnGatewaysRequest withVpnGatewayIds(String... vpnGatewayIds) {
         if (getVpnGatewayIds() == null) setVpnGatewayIds(new java.util.ArrayList<String>(vpnGatewayIds.length));
@@ -138,9 +135,6 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest  impleme
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVpnGatewaysRequest withVpnGatewayIds(java.util.Collection<String> vpnGatewayIds) {
         if (vpnGatewayIds == null) {
@@ -213,9 +207,6 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest  impleme
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVpnGatewaysRequest withFilters(Filter... filters) {
         if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
@@ -239,9 +230,6 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest  impleme
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVpnGatewaysRequest withFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {

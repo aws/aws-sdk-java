@@ -149,9 +149,6 @@ public class Stack  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackId The stack ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Stack withStackId(String stackId) {
         this.stackId = stackId;
@@ -183,9 +180,6 @@ public class Stack  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The stack name.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Stack withName(String name) {
         this.name = name;
@@ -235,9 +229,6 @@ public class Stack  implements Serializable  {
      *         AWS regions, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      *         and Endpoints</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Stack withRegion(String region) {
         this.region = region;
@@ -256,7 +247,6 @@ public class Stack  implements Serializable  {
             attributes = new java.util.HashMap<String,String>();
         }
         return attributes;
-
     }
     
     /**
@@ -274,15 +264,43 @@ public class Stack  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributes The contents of the stack's attributes bag.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Stack withAttributes(java.util.Map<String,String> attributes) {
         setAttributes(attributes);
         return this;
     }
     
+   	
+    /**
+     * The contents of the stack's attributes bag.
+     * <p>
+     * The method adds a new key-value pair into Attributes parameter, and
+     * returns a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param key The key of the entry to be added into Attributes.
+     * @param value The corresponding value of the entry to be added into Attributes.
+     */
+	public Stack addAttributesEntry(String key, String value) {
+		if (null == this.attributes) {
+			this.attributes = new java.util.HashMap<String,String>();
+		}
+		if (this.attributes.containsKey(key))
+			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+		this.attributes.put(key, value);
+		return this;
+	}
+	
+	/**
+	 * Removes all the entries added into Attributes.
+	 * <p>
+	 * Returns a reference to this object so that method calls can be chained together.
+	 */
+	public Stack clearAttributesEntries() {
+		this.attributes = null;
+		return this;
+	}
+	
     /**
      * The stack AWS Identity and Access Management (IAM) role.
      *
@@ -307,9 +325,6 @@ public class Stack  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param serviceRoleArn The stack AWS Identity and Access Management (IAM) role.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Stack withServiceRoleArn(String serviceRoleArn) {
         this.serviceRoleArn = serviceRoleArn;
@@ -359,9 +374,6 @@ public class Stack  implements Serializable  {
      *         stack's EC2 instances. For more information about IAM ARNs, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Stack withDefaultInstanceProfileArn(String defaultInstanceProfileArn) {
         this.defaultInstanceProfileArn = defaultInstanceProfileArn;
@@ -399,9 +411,6 @@ public class Stack  implements Serializable  {
      *
      * @param defaultOs The cloned stack default operating system, which must be either
      *         "Amazon Linux" or "Ubuntu 12.04 LTS".
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Stack withDefaultOs(String defaultOs) {
         this.defaultOs = defaultOs;
@@ -433,9 +442,6 @@ public class Stack  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param hostnameTheme The stack host name theme, with spaces replaced by underscores.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Stack withHostnameTheme(String hostnameTheme) {
         this.hostnameTheme = hostnameTheme;
@@ -479,9 +485,6 @@ public class Stack  implements Serializable  {
      * @param defaultAvailabilityZone The stack's default Availability Zone. For more information, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      *         and Endpoints</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Stack withDefaultAvailabilityZone(String defaultAvailabilityZone) {
         this.defaultAvailabilityZone = defaultAvailabilityZone;
@@ -549,9 +552,6 @@ public class Stack  implements Serializable  {
      *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">
      *         Use Custom JSON to Modify the Stack Configuration JSON</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Stack withCustomJson(String customJson) {
         this.customJson = customJson;
@@ -583,9 +583,6 @@ public class Stack  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param useCustomCookbooks Whether the stack uses custom cookbooks.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Stack withUseCustomCookbooks(Boolean useCustomCookbooks) {
         this.useCustomCookbooks = useCustomCookbooks;
@@ -656,9 +653,6 @@ public class Stack  implements Serializable  {
      *         Apps</a> or <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom
      *         Recipes and Cookbooks</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Stack withCustomCookbooksSource(Source customCookbooksSource) {
         this.customCookbooksSource = customCookbooksSource;
@@ -696,9 +690,6 @@ public class Stack  implements Serializable  {
      *
      * @param defaultSshKeyName A default SSH key for the stack's instances. You can override this
      *         value when you create or update an instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Stack withDefaultSshKeyName(String defaultSshKeyName) {
         this.defaultSshKeyName = defaultSshKeyName;
@@ -730,9 +721,6 @@ public class Stack  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param createdAt Date when the stack was created.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Stack withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
@@ -802,9 +790,6 @@ public class Stack  implements Serializable  {
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      *         for the Root Device</a>.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see RootDeviceType
      */
     public Stack withDefaultRootDeviceType(String defaultRootDeviceType) {
@@ -852,9 +837,6 @@ public class Stack  implements Serializable  {
      *         an instance. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      *         for the Root Device</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see RootDeviceType
      */

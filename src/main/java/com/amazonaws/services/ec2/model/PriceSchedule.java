@@ -52,9 +52,6 @@ public class PriceSchedule  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param term The new value for the Term property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PriceSchedule withTerm(Long term) {
         this.term = term;
@@ -86,9 +83,6 @@ public class PriceSchedule  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param price The new value for the Price property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PriceSchedule withPrice(Double price) {
         this.price = price;
@@ -120,9 +114,6 @@ public class PriceSchedule  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param currencyCode The new value for the CurrencyCode property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PriceSchedule withCurrencyCode(String currencyCode) {
         this.currencyCode = currencyCode;
@@ -154,9 +145,6 @@ public class PriceSchedule  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param active The new value for the Active property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PriceSchedule withActive(Boolean active) {
         this.active = active;

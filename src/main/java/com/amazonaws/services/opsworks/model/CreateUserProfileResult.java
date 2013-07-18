@@ -51,9 +51,6 @@ public class CreateUserProfileResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param iamUserArn The user's IAM ARN.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateUserProfileResult withIamUserArn(String iamUserArn) {
         this.iamUserArn = iamUserArn;

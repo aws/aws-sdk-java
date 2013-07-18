@@ -56,9 +56,6 @@ public class ClusterParameterGroupStatus  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameterGroupName The name of the cluster parameter group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ClusterParameterGroupStatus withParameterGroupName(String parameterGroupName) {
         this.parameterGroupName = parameterGroupName;
@@ -90,9 +87,6 @@ public class ClusterParameterGroupStatus  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameterApplyStatus The status of parameter updates.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ClusterParameterGroupStatus withParameterApplyStatus(String parameterApplyStatus) {
         this.parameterApplyStatus = parameterApplyStatus;

@@ -69,9 +69,6 @@ public class ReservedInstancesListing  implements Serializable  {
      *
      * @param reservedInstancesListingId The new value for the ReservedInstancesListingId property for this
      *         object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedInstancesListing withReservedInstancesListingId(String reservedInstancesListingId) {
         this.reservedInstancesListingId = reservedInstancesListingId;
@@ -103,9 +100,6 @@ public class ReservedInstancesListing  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedInstancesId The new value for the ReservedInstancesId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedInstancesListing withReservedInstancesId(String reservedInstancesId) {
         this.reservedInstancesId = reservedInstancesId;
@@ -137,9 +131,6 @@ public class ReservedInstancesListing  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param createDate The new value for the CreateDate property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedInstancesListing withCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
@@ -171,9 +162,6 @@ public class ReservedInstancesListing  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param updateDate The new value for the UpdateDate property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedInstancesListing withUpdateDate(java.util.Date updateDate) {
         this.updateDate = updateDate;
@@ -205,9 +193,6 @@ public class ReservedInstancesListing  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param status The new value for the Status property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedInstancesListing withStatus(String status) {
         this.status = status;
@@ -239,9 +224,6 @@ public class ReservedInstancesListing  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param statusMessage The new value for the StatusMessage property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedInstancesListing withStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
@@ -284,9 +266,6 @@ public class ReservedInstancesListing  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceCounts The new value for the InstanceCounts property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedInstancesListing withInstanceCounts(InstanceCount... instanceCounts) {
         if (getInstanceCounts() == null) setInstanceCounts(new java.util.ArrayList<InstanceCount>(instanceCounts.length));
@@ -302,9 +281,6 @@ public class ReservedInstancesListing  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceCounts The new value for the InstanceCounts property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedInstancesListing withInstanceCounts(java.util.Collection<InstanceCount> instanceCounts) {
         if (instanceCounts == null) {
@@ -353,9 +329,6 @@ public class ReservedInstancesListing  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param priceSchedules The new value for the PriceSchedules property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedInstancesListing withPriceSchedules(PriceSchedule... priceSchedules) {
         if (getPriceSchedules() == null) setPriceSchedules(new java.util.ArrayList<PriceSchedule>(priceSchedules.length));
@@ -371,9 +344,6 @@ public class ReservedInstancesListing  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param priceSchedules The new value for the PriceSchedules property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedInstancesListing withPriceSchedules(java.util.Collection<PriceSchedule> priceSchedules) {
         if (priceSchedules == null) {
@@ -422,9 +392,6 @@ public class ReservedInstancesListing  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags The new value for the Tags property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedInstancesListing withTags(Tag... tags) {
         if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
@@ -440,9 +407,6 @@ public class ReservedInstancesListing  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags The new value for the Tags property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedInstancesListing withTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
@@ -480,9 +444,6 @@ public class ReservedInstancesListing  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clientToken The new value for the ClientToken property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedInstancesListing withClientToken(String clientToken) {
         this.clientToken = clientToken;

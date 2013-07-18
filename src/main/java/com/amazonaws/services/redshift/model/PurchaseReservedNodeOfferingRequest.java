@@ -77,9 +77,6 @@ public class PurchaseReservedNodeOfferingRequest extends AmazonWebServiceRequest
      *
      * @param reservedNodeOfferingId The unique identifier of the reserved node offering you want to
      *         purchase.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PurchaseReservedNodeOfferingRequest withReservedNodeOfferingId(String reservedNodeOfferingId) {
         this.reservedNodeOfferingId = reservedNodeOfferingId;
@@ -117,9 +114,6 @@ public class PurchaseReservedNodeOfferingRequest extends AmazonWebServiceRequest
      *
      * @param nodeCount The number of reserved nodes you want to purchase. <p>Default:
      *         <code>1</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PurchaseReservedNodeOfferingRequest withNodeCount(Integer nodeCount) {
         this.nodeCount = nodeCount;

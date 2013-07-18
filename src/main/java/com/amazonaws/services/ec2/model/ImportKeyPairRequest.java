@@ -100,9 +100,6 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param keyName The unique name for the key pair.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ImportKeyPairRequest withKeyName(String keyName) {
         this.keyName = keyName;
@@ -134,9 +131,6 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param publicKeyMaterial The public key portion of the key pair being imported.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ImportKeyPairRequest withPublicKeyMaterial(String publicKeyMaterial) {
         this.publicKeyMaterial = publicKeyMaterial;

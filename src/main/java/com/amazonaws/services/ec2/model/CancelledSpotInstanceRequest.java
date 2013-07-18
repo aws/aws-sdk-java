@@ -49,9 +49,6 @@ public class CancelledSpotInstanceRequest  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param spotInstanceRequestId The new value for the SpotInstanceRequestId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CancelledSpotInstanceRequest withSpotInstanceRequestId(String spotInstanceRequestId) {
         this.spotInstanceRequestId = spotInstanceRequestId;
@@ -83,9 +80,6 @@ public class CancelledSpotInstanceRequest  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param state The new value for the State property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CancelledSpotInstanceRequest withState(String state) {
         this.state = state;

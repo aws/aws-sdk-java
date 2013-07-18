@@ -93,9 +93,6 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest  implem
      *
      * @param loadBalancerName The mnemonic name associated with the LoadBalancer. This name must be
      *         unique within the client AWS account.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ConfigureHealthCheckRequest withLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
@@ -133,9 +130,6 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest  implem
      *
      * @param healthCheck A structure containing the configuration information for the new
      *         healthcheck.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ConfigureHealthCheckRequest withHealthCheck(HealthCheck healthCheck) {
         this.healthCheck = healthCheck;

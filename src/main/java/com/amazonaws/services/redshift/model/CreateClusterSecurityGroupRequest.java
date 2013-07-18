@@ -100,9 +100,6 @@ public class CreateClusterSecurityGroupRequest extends AmazonWebServiceRequest  
      *         "Default".</li> <li>Must be unique for all security groups that are
      *         created by your AWS account.</li> </ul> <p>Example:
      *         <code>examplesecuritygroup</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateClusterSecurityGroupRequest withClusterSecurityGroupName(String clusterSecurityGroupName) {
         this.clusterSecurityGroupName = clusterSecurityGroupName;
@@ -134,9 +131,6 @@ public class CreateClusterSecurityGroupRequest extends AmazonWebServiceRequest  
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description A description for the security group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateClusterSecurityGroupRequest withDescription(String description) {
         this.description = description;

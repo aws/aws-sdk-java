@@ -90,9 +90,6 @@ public class Placement  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZone The availability zone in which an Amazon EC2 instance runs.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Placement withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -142,9 +139,6 @@ public class Placement  implements Serializable  {
      *         runs. Placement groups are primarily used for launching High
      *         Performance Computing instances in the same group to ensure fast
      *         connection speeds.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Placement withGroupName(String groupName) {
         this.groupName = groupName;
@@ -200,9 +194,6 @@ public class Placement  implements Serializable  {
      *         dedicated means all instances launched into the VPC will be launched
      *         as dedicated tenancy regardless of the tenancy assigned to the
      *         instance at launch.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Placement withTenancy(String tenancy) {
         this.tenancy = tenancy;

@@ -104,9 +104,6 @@ public class DescribeOrderableClusterOptionsRequest extends AmazonWebServiceRequ
      *         available offerings matching the specified version. <p>Default: All
      *         versions. <p>Constraints: Must be one of the version returned from
      *         <a>DescribeClusterVersions</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeOrderableClusterOptionsRequest withClusterVersion(String clusterVersion) {
         this.clusterVersion = clusterVersion;
@@ -144,9 +141,6 @@ public class DescribeOrderableClusterOptionsRequest extends AmazonWebServiceRequ
      *
      * @param nodeType The node type filter value. Specify this parameter to show only the
      *         available offerings matching the specified node type.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeOrderableClusterOptionsRequest withNodeType(String nodeType) {
         this.nodeType = nodeType;
@@ -202,9 +196,6 @@ public class DescribeOrderableClusterOptionsRequest extends AmazonWebServiceRequ
      *         marker is included in the response so that the remaining results may
      *         be retrieved. <p>Default: <code>100</code> <p>Constraints: minimum 20,
      *         maximum 100.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeOrderableClusterOptionsRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -254,9 +245,6 @@ public class DescribeOrderableClusterOptionsRequest extends AmazonWebServiceRequ
      *         <b>DescribeOrderableClusterOptions</b> request. If this parameter is
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <code>MaxRecords</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeOrderableClusterOptionsRequest withMarker(String marker) {
         this.marker = marker;

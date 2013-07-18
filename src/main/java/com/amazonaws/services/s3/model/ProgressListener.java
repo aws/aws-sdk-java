@@ -24,7 +24,7 @@ package com.amazonaws.services.s3.model;
 public interface ProgressListener {
 
     /**
-     * Called when progress has changed, such as additional bytes transfered,
+     * Called when progress has changed, such as additional bytes transferred,
      * transfer failed, etc.
      * 
      * @param progressEvent

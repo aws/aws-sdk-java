@@ -76,9 +76,6 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param keyNames The optional list of key pair names to describe.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeKeyPairsRequest withKeyNames(String... keyNames) {
         if (getKeyNames() == null) setKeyNames(new java.util.ArrayList<String>(keyNames.length));
@@ -94,9 +91,6 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param keyNames The optional list of key pair names to describe.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeKeyPairsRequest withKeyNames(java.util.Collection<String> keyNames) {
         if (keyNames == null) {
@@ -169,9 +163,6 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest  implements
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeKeyPairsRequest withFilters(Filter... filters) {
         if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
@@ -195,9 +186,6 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest  implements
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeKeyPairsRequest withFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {

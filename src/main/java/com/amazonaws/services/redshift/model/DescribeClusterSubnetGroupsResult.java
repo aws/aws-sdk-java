@@ -70,9 +70,6 @@ public class DescribeClusterSubnetGroupsResult  implements Serializable  {
      * @param marker A marker at which to continue listing cluster subnet groups in a new
      *         request. A marker is returned if there are more cluster subnet groups
      *         to list than were returned in the response.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeClusterSubnetGroupsResult withMarker(String marker) {
         this.marker = marker;
@@ -115,9 +112,6 @@ public class DescribeClusterSubnetGroupsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clusterSubnetGroups A list of <a>ClusterSubnetGroup</a> instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeClusterSubnetGroupsResult withClusterSubnetGroups(ClusterSubnetGroup... clusterSubnetGroups) {
         if (getClusterSubnetGroups() == null) setClusterSubnetGroups(new java.util.ArrayList<ClusterSubnetGroup>(clusterSubnetGroups.length));
@@ -133,9 +127,6 @@ public class DescribeClusterSubnetGroupsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clusterSubnetGroups A list of <a>ClusterSubnetGroup</a> instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeClusterSubnetGroupsResult withClusterSubnetGroups(java.util.Collection<ClusterSubnetGroup> clusterSubnetGroups) {
         if (clusterSubnetGroups == null) {

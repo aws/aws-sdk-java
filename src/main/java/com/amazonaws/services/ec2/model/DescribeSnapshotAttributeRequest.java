@@ -104,9 +104,6 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest  i
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param snapshotId The ID of the EBS snapshot whose attribute is being described.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeSnapshotAttributeRequest withSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
@@ -158,9 +155,6 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest  i
      * @param attribute The name of the EBS attribute to describe. <p> Available attribute
      *         names: createVolumePermission
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see SnapshotAttributeName
      */
     public DescribeSnapshotAttributeRequest withAttribute(String attribute) {
@@ -196,9 +190,6 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest  i
      *
      * @param attribute The name of the EBS attribute to describe. <p> Available attribute
      *         names: createVolumePermission
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see SnapshotAttributeName
      */
