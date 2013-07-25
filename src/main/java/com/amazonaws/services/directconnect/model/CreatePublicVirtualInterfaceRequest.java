@@ -62,9 +62,6 @@ public class CreatePublicVirtualInterfaceRequest extends AmazonWebServiceRequest
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param connectionId ID of the connection. <p>Example: dxcon-fg5678gh <p>Default: None
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreatePublicVirtualInterfaceRequest withConnectionId(String connectionId) {
         this.connectionId = connectionId;
@@ -102,9 +99,6 @@ public class CreatePublicVirtualInterfaceRequest extends AmazonWebServiceRequest
      *
      * @param newPublicVirtualInterface Detailed information of the public virtual interface to be created.
      *         <p>Default: None
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreatePublicVirtualInterfaceRequest withNewPublicVirtualInterface(NewPublicVirtualInterface newPublicVirtualInterface) {
         this.newPublicVirtualInterface = newPublicVirtualInterface;

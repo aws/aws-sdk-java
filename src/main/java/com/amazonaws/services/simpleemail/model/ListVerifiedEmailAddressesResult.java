@@ -62,9 +62,6 @@ public class ListVerifiedEmailAddressesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param verifiedEmailAddresses A list of email addresses that have been verified.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListVerifiedEmailAddressesResult withVerifiedEmailAddresses(String... verifiedEmailAddresses) {
         if (getVerifiedEmailAddresses() == null) setVerifiedEmailAddresses(new java.util.ArrayList<String>(verifiedEmailAddresses.length));
@@ -80,9 +77,6 @@ public class ListVerifiedEmailAddressesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param verifiedEmailAddresses A list of email addresses that have been verified.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListVerifiedEmailAddressesResult withVerifiedEmailAddresses(java.util.Collection<String> verifiedEmailAddresses) {
         if (verifiedEmailAddresses == null) {

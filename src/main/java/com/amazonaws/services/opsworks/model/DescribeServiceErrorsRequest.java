@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#describeServiceErrors(DescribeServiceErrorsRequest) DescribeServiceErrors operation}.
  * <p>
- * Describes OpsWorks service errors.
+ * Describes AWS OpsWorks service errors.
  * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeServiceErrors(DescribeServiceErrorsRequest)

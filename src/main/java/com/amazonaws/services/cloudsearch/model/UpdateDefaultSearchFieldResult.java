@@ -58,9 +58,6 @@ public class UpdateDefaultSearchFieldResult  implements Serializable  {
      *
      * @param defaultSearchField The value of the <code>DefaultSearchField</code> configured for this
      *         search domain and its current status.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateDefaultSearchFieldResult withDefaultSearchField(DefaultSearchFieldStatus defaultSearchField) {
         this.defaultSearchField = defaultSearchField;

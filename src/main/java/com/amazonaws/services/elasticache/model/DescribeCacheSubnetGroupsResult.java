@@ -56,9 +56,6 @@ public class DescribeCacheSubnetGroupsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param marker The marker obtained from a previous operation response.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeCacheSubnetGroupsResult withMarker(String marker) {
         this.marker = marker;
@@ -101,9 +98,6 @@ public class DescribeCacheSubnetGroupsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheSubnetGroups One or more Cache Subnet Groups.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeCacheSubnetGroupsResult withCacheSubnetGroups(CacheSubnetGroup... cacheSubnetGroups) {
         if (getCacheSubnetGroups() == null) setCacheSubnetGroups(new java.util.ArrayList<CacheSubnetGroup>(cacheSubnetGroups.length));
@@ -119,9 +113,6 @@ public class DescribeCacheSubnetGroupsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheSubnetGroups One or more Cache Subnet Groups.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeCacheSubnetGroupsResult withCacheSubnetGroups(java.util.Collection<CacheSubnetGroup> cacheSubnetGroups) {
         if (cacheSubnetGroups == null) {

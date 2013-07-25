@@ -75,9 +75,6 @@ public class DeleteSnapshotScheduleResult  implements Serializable  {
      *
      * @param volumeARN The Amazon Resource Name (ARN) of the volume of which the snapshot was
      *         taken.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteSnapshotScheduleResult withVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;

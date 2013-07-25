@@ -175,9 +175,6 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest  impl
      *
      * @param hostedZoneId The ID of the hosted zone that contains the resource record sets that
      *         you want to get.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListResourceRecordSetsRequest withHostedZoneId(String hostedZoneId) {
         this.hostedZoneId = hostedZoneId;
@@ -224,9 +221,6 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest  impl
      *
      * @param startRecordName The first name in the lexicographic ordering of domain names that you
      *         want the <code>ListResourceRecordSets</code> request to list.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListResourceRecordSetsRequest withStartRecordName(String startRecordName) {
         this.startRecordName = startRecordName;
@@ -338,9 +332,6 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest  impl
      *         <code>type</code> without specifying <code>name</code> returns an
      *         <a>InvalidInput</a> error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see RRType
      */
     public ListResourceRecordSetsRequest withStartRecordType(String startRecordType) {
@@ -417,9 +408,6 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest  impl
      *         <code>type</code> without specifying <code>name</code> returns an
      *         <a>InvalidInput</a> error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see RRType
      */
     public ListResourceRecordSetsRequest withStartRecordType(RRType startRecordType) {
@@ -484,9 +472,6 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest  impl
      *         <code>ListResourceRecordSetsResponse$NextRecordIdentifier</code> from
      *         the previous response to get the next resource record set that has the
      *         current DNS name and type.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListResourceRecordSetsRequest withStartRecordIdentifier(String startRecordIdentifier) {
         this.startRecordIdentifier = startRecordIdentifier;
@@ -518,9 +503,6 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxItems The maximum number of records you want in the response body.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListResourceRecordSetsRequest withMaxItems(String maxItems) {
         this.maxItems = maxItems;

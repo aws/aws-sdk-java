@@ -89,9 +89,6 @@ public class InvalidationList  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param marker The value you provided for the Marker request parameter.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InvalidationList withMarker(String marker) {
         this.marker = marker;
@@ -135,9 +132,6 @@ public class InvalidationList  implements Serializable  {
      * @param nextMarker If IsTruncated is true, this element is present and contains the value
      *         you can use for the Marker request parameter to continue listing your
      *         invalidation batches where they left off.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InvalidationList withNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
@@ -169,9 +163,6 @@ public class InvalidationList  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxItems The value you provided for the MaxItems request parameter.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InvalidationList withMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
@@ -221,9 +212,6 @@ public class InvalidationList  implements Serializable  {
      *         to be listed. If your results were truncated, you can make a follow-up
      *         pagination request using the Marker request parameter to retrieve more
      *         invalidation batches in the list.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InvalidationList withIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
@@ -276,9 +264,6 @@ public class InvalidationList  implements Serializable  {
      *
      * @param quantity The number of invalidation batches that were created by the current
      *         AWS account.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InvalidationList withQuantity(Integer quantity) {
         this.quantity = quantity;
@@ -327,9 +312,6 @@ public class InvalidationList  implements Serializable  {
      *
      * @param items A complex type that contains one InvalidationSummary element for each
      *         invalidation batch that was created by the current AWS account.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InvalidationList withItems(InvalidationSummary... items) {
         if (getItems() == null) setItems(new java.util.ArrayList<InvalidationSummary>(items.length));
@@ -347,9 +329,6 @@ public class InvalidationList  implements Serializable  {
      *
      * @param items A complex type that contains one InvalidationSummary element for each
      *         invalidation batch that was created by the current AWS account.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InvalidationList withItems(java.util.Collection<InvalidationSummary> items) {
         if (items == null) {

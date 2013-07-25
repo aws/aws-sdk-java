@@ -116,9 +116,6 @@ public class DescribeDBLogFilesRequest extends AmazonWebServiceRequest  implemen
      *         to 63 alphanumeric characters or hyphens</li> <li>First character must
      *         be a letter</li> <li>Cannot end with a hyphen or contain two
      *         consecutive hyphens</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDBLogFilesRequest withDBInstanceIdentifier(String dBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -156,9 +153,6 @@ public class DescribeDBLogFilesRequest extends AmazonWebServiceRequest  implemen
      *
      * @param filenameContains Filters the available log files for log file names that contain the
      *         specified string.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDBLogFilesRequest withFilenameContains(String filenameContains) {
         this.filenameContains = filenameContains;
@@ -196,9 +190,6 @@ public class DescribeDBLogFilesRequest extends AmazonWebServiceRequest  implemen
      *
      * @param fileLastWritten Filters the available log files for files written since the specified
      *         date, in POSIX timestamp format.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDBLogFilesRequest withFileLastWritten(Long fileLastWritten) {
         this.fileLastWritten = fileLastWritten;
@@ -236,9 +227,6 @@ public class DescribeDBLogFilesRequest extends AmazonWebServiceRequest  implemen
      *
      * @param fileSize Filters the available log files for files larger than the specified
      *         size.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDBLogFilesRequest withFileSize(Long fileSize) {
         this.fileSize = fileSize;
@@ -288,9 +276,6 @@ public class DescribeDBLogFilesRequest extends AmazonWebServiceRequest  implemen
      *         records exist than the specified MaxRecords value, a pagination token
      *         called a marker is included in the response so that the remaining
      *         results can be retrieved.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDBLogFilesRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -334,9 +319,6 @@ public class DescribeDBLogFilesRequest extends AmazonWebServiceRequest  implemen
      * @param marker The pagination token provided in the previous request. If this
      *         parameter is specified the response includes only records beyond the
      *         marker, up to MaxRecords.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDBLogFilesRequest withMarker(String marker) {
         this.marker = marker;

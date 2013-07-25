@@ -38,7 +38,6 @@ public class GetIdentityNotificationAttributesResult  implements Serializable  {
             notificationAttributes = new java.util.HashMap<String,IdentityNotificationAttributes>();
         }
         return notificationAttributes;
-
     }
     
     /**
@@ -56,15 +55,43 @@ public class GetIdentityNotificationAttributesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param notificationAttributes A map of Identity to IdentityNotificationAttributes.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetIdentityNotificationAttributesResult withNotificationAttributes(java.util.Map<String,IdentityNotificationAttributes> notificationAttributes) {
         setNotificationAttributes(notificationAttributes);
         return this;
     }
     
+   	
+    /**
+     * A map of Identity to IdentityNotificationAttributes.
+     * <p>
+     * The method adds a new key-value pair into NotificationAttributes
+     * parameter, and returns a reference to this object so that method calls
+     * can be chained together.
+     *
+     * @param key The key of the entry to be added into NotificationAttributes.
+     * @param value The corresponding value of the entry to be added into NotificationAttributes.
+     */
+	public GetIdentityNotificationAttributesResult addNotificationAttributesEntry(String key, IdentityNotificationAttributes value) {
+		if (null == this.notificationAttributes) {
+			this.notificationAttributes = new java.util.HashMap<String,IdentityNotificationAttributes>();
+		}
+		if (this.notificationAttributes.containsKey(key))
+			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+		this.notificationAttributes.put(key, value);
+		return this;
+	}
+	
+	/**
+	 * Removes all the entries added into NotificationAttributes.
+	 * <p>
+	 * Returns a reference to this object so that method calls can be chained together.
+	 */
+	public GetIdentityNotificationAttributesResult clearNotificationAttributesEntries() {
+		this.notificationAttributes = null;
+		return this;
+	}
+	
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -77,9 +77,6 @@ public class GetRoleRequest extends AmazonWebServiceRequest  implements Serializ
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param roleName Name of the role to get information about.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetRoleRequest withRoleName(String roleName) {
         this.roleName = roleName;

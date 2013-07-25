@@ -81,9 +81,6 @@ public class AdjustmentType  implements Serializable  {
      * @param adjustmentType A policy adjustment type. Valid values are
      *         <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
      *         <code>PercentChangeInCapacity</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AdjustmentType withAdjustmentType(String adjustmentType) {
         this.adjustmentType = adjustmentType;

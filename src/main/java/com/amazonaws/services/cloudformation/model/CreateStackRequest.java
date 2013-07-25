@@ -178,9 +178,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         your AWS account. <note>Must contain only alphanumeric characters
      *         (case sensitive) and start with an alpha character. Maximum length of
      *         the name is 255 characters.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateStackRequest withStackName(String stackName) {
         this.stackName = stackName;
@@ -251,9 +248,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         CloudFormation User Guide</a>.) <p>Conditional: You must pass
      *         <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateStackRequest withTemplateBody(String templateBody) {
         this.templateBody = templateBody;
@@ -330,9 +324,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         CloudFormation User Guide</a>. <p>Conditional: You must pass
      *         <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateStackRequest withTemplateURL(String templateURL) {
         this.templateURL = templateURL;
@@ -381,9 +372,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param parameters A list of <code>Parameter</code> structures that specify input
      *         parameters for the stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateStackRequest withParameters(Parameter... parameters) {
         if (getParameters() == null) setParameters(new java.util.ArrayList<Parameter>(parameters.length));
@@ -401,9 +389,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param parameters A list of <code>Parameter</code> structures that specify input
      *         parameters for the stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateStackRequest withParameters(java.util.Collection<Parameter> parameters) {
         if (parameters == null) {
@@ -459,9 +444,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         creation failed. You can specify either <code>DisableRollback</code>
      *         or <code>OnFailure</code>, but not both. <p>Default:
      *         <code>false</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateStackRequest withDisableRollback(Boolean disableRollback) {
         this.disableRollback = disableRollback;
@@ -529,9 +511,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      * @param timeoutInMinutes The amount of time that can pass before the stack status becomes
      *         CREATE_FAILED; if <code>DisableRollback</code> is not set or is set to
      *         <code>false</code>, the stack will be rolled back.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateStackRequest withTimeoutInMinutes(Integer timeoutInMinutes) {
         this.timeoutInMinutes = timeoutInMinutes;
@@ -601,9 +580,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         related events. You can find your SNS topic ARNs using the <a
      *         href="http://console.aws.amazon.com/sns">SNS console</a> or your
      *         Command Line Interface (CLI).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateStackRequest withNotificationARNs(String... notificationARNs) {
         if (getNotificationARNs() == null) setNotificationARNs(new java.util.ArrayList<String>(notificationARNs.length));
@@ -628,9 +604,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         related events. You can find your SNS topic ARNs using the <a
      *         href="http://console.aws.amazon.com/sns">SNS console</a> or your
      *         Command Line Interface (CLI).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateStackRequest withNotificationARNs(java.util.Collection<String> notificationARNs) {
         if (notificationARNs == null) {
@@ -751,9 +724,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      *         and <a
      *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateStackRequest withCapabilities(String... capabilities) {
         if (getCapabilities() == null) setCapabilities(new java.util.ArrayList<String>(capabilities.length));
@@ -793,9 +763,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      *         and <a
      *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateStackRequest withCapabilities(java.util.Collection<String> capabilities) {
         if (capabilities == null) {
@@ -865,9 +832,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         either <code>OnFailure</code> or <code>DisableRollback</code>, but not
      *         both. <p>Default: <code>ROLLBACK</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see OnFailure
      */
     public CreateStackRequest withOnFailure(String onFailure) {
@@ -911,9 +875,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         must be one of: DO_NOTHING, ROLLBACK, or DELETE. You can specify
      *         either <code>OnFailure</code> or <code>DisableRollback</code>, but not
      *         both. <p>Default: <code>ROLLBACK</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see OnFailure
      */
@@ -975,9 +936,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         represented by key/value pairs. Tags defined for the stack are
      *         propogated to EC2 resources that are created as part of the stack. A
      *         maximum number of 10 tags can be specified.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateStackRequest withTags(Tag... tags) {
         if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
@@ -999,9 +957,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         represented by key/value pairs. Tags defined for the stack are
      *         propogated to EC2 resources that are created as part of the stack. A
      *         maximum number of 10 tags can be specified.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateStackRequest withTags(java.util.Collection<Tag> tags) {
         if (tags == null) {

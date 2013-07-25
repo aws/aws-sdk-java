@@ -85,9 +85,6 @@ public class DecisionTaskStartedEventAttributes  implements Serializable  {
      * @param identity Identity of the decider making the request. This enables diagnostic
      *         tracing when problems arise. The form of this identity is user
      *         defined.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DecisionTaskStartedEventAttributes withIdentity(String identity) {
         this.identity = identity;
@@ -137,9 +134,6 @@ public class DecisionTaskStartedEventAttributes  implements Serializable  {
      *         recorded when this decision task was scheduled. This information can
      *         be useful for diagnosing problems by tracing back the chain of events
      *         leading up to this event.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DecisionTaskStartedEventAttributes withScheduledEventId(Long scheduledEventId) {
         this.scheduledEventId = scheduledEventId;

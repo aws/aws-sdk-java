@@ -62,9 +62,6 @@ public class DeleteIdentityRequest extends AmazonWebServiceRequest  implements S
      *
      * @param identity The identity to be removed from the list of identities for the AWS
      *         Account.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteIdentityRequest withIdentity(String identity) {
         this.identity = identity;

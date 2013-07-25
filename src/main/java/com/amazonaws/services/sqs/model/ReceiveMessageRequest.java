@@ -79,9 +79,6 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param queueUrl The new value for the QueueUrl property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReceiveMessageRequest withQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
@@ -124,9 +121,6 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributeNames The new value for the AttributeNames property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReceiveMessageRequest withAttributeNames(String... attributeNames) {
         if (getAttributeNames() == null) setAttributeNames(new java.util.ArrayList<String>(attributeNames.length));
@@ -142,9 +136,6 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributeNames The new value for the AttributeNames property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReceiveMessageRequest withAttributeNames(java.util.Collection<String> attributeNames) {
         if (attributeNames == null) {
@@ -182,9 +173,6 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxNumberOfMessages The new value for the MaxNumberOfMessages property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReceiveMessageRequest withMaxNumberOfMessages(Integer maxNumberOfMessages) {
         this.maxNumberOfMessages = maxNumberOfMessages;
@@ -216,9 +204,6 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param visibilityTimeout The new value for the VisibilityTimeout property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReceiveMessageRequest withVisibilityTimeout(Integer visibilityTimeout) {
         this.visibilityTimeout = visibilityTimeout;
@@ -250,9 +235,6 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param waitTimeSeconds The new value for the WaitTimeSeconds property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReceiveMessageRequest withWaitTimeSeconds(Integer waitTimeSeconds) {
         this.waitTimeSeconds = waitTimeSeconds;

@@ -103,9 +103,6 @@ public class HealthCheckConfig  implements Serializable  {
      * <b>Pattern: </b>^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$<br/>
      *
      * @param iPAddress IP Address of the instance being checked.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public HealthCheckConfig withIPAddress(String iPAddress) {
         this.iPAddress = iPAddress;
@@ -152,9 +149,6 @@ public class HealthCheckConfig  implements Serializable  {
      *
      * @param port Port on which connection will be opened to the instance to health
      *         check. For HTTP this defaults to 80 if the port is not specified.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public HealthCheckConfig withPort(Integer port) {
         this.port = port;
@@ -206,9 +200,6 @@ public class HealthCheckConfig  implements Serializable  {
      * @param type The type of health check to be performed. Currently supported
      *         protocols are TCP and HTTP.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see HealthCheckType
      */
     public HealthCheckConfig withType(String type) {
@@ -244,9 +235,6 @@ public class HealthCheckConfig  implements Serializable  {
      *
      * @param type The type of health check to be performed. Currently supported
      *         protocols are TCP and HTTP.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see HealthCheckType
      */
@@ -300,9 +288,6 @@ public class HealthCheckConfig  implements Serializable  {
      * @param resourcePath Path to ping on the instance to check the health. Required only for
      *         HTTP health checks, HTTP request is issued to the instance on the
      *         given port and path.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public HealthCheckConfig withResourcePath(String resourcePath) {
         this.resourcePath = resourcePath;
@@ -343,9 +328,6 @@ public class HealthCheckConfig  implements Serializable  {
      * <b>Length: </b>0 - 255<br/>
      *
      * @param fullyQualifiedDomainName Fully qualified domain name of the instance to be health checked.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public HealthCheckConfig withFullyQualifiedDomainName(String fullyQualifiedDomainName) {
         this.fullyQualifiedDomainName = fullyQualifiedDomainName;

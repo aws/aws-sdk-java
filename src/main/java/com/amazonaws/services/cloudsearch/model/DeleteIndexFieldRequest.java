@@ -112,9 +112,6 @@ public class DeleteIndexFieldRequest extends AmazonWebServiceRequest  implements
      *         Domain names must start with a letter or number and can contain the
      *         following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase
      *         letters and underscores are not allowed.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteIndexFieldRequest withDomainName(String domainName) {
         this.domainName = domainName;
@@ -182,9 +179,6 @@ public class DeleteIndexFieldRequest extends AmazonWebServiceRequest  implements
      *         (lowercase), 0-9, and _ (underscore). Uppercase letters and hyphens
      *         are not allowed. The names "body", "docid", and "text_relevance" are
      *         reserved and cannot be specified as field or rank expression names.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteIndexFieldRequest withIndexFieldName(String indexFieldName) {
         this.indexFieldName = indexFieldName;

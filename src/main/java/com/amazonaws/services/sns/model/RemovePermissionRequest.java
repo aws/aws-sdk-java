@@ -84,9 +84,6 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param topicArn The ARN of the topic whose access control policy you wish to modify.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RemovePermissionRequest withTopicArn(String topicArn) {
         this.topicArn = topicArn;
@@ -118,9 +115,6 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param label The unique label of the statement you want to remove.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RemovePermissionRequest withLabel(String label) {
         this.label = label;

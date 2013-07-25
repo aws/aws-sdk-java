@@ -69,9 +69,6 @@ public class DescribeDBParametersResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameters A list of <a>Parameter</a> instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDBParametersResult withParameters(Parameter... parameters) {
         if (getParameters() == null) setParameters(new java.util.ArrayList<Parameter>(parameters.length));
@@ -87,9 +84,6 @@ public class DescribeDBParametersResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameters A list of <a>Parameter</a> instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDBParametersResult withParameters(java.util.Collection<Parameter> parameters) {
         if (parameters == null) {
@@ -139,9 +133,6 @@ public class DescribeDBParametersResult  implements Serializable  {
      * @param marker An optional pagination token provided by a previous request. If this
      *         parameter is specified, the response includes only records beyond the
      *         marker, up to the value specified by <code>MaxRecords</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDBParametersResult withMarker(String marker) {
         this.marker = marker;

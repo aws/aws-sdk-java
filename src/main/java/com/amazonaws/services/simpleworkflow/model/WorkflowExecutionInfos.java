@@ -72,9 +72,6 @@ public class WorkflowExecutionInfos  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param executionInfos The list of workflow information structures.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public WorkflowExecutionInfos withExecutionInfos(WorkflowExecutionInfo... executionInfos) {
         if (getExecutionInfos() == null) setExecutionInfos(new java.util.ArrayList<WorkflowExecutionInfo>(executionInfos.length));
@@ -90,9 +87,6 @@ public class WorkflowExecutionInfos  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param executionInfos The list of workflow information structures.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public WorkflowExecutionInfos withExecutionInfos(java.util.Collection<WorkflowExecutionInfo> executionInfos) {
         if (executionInfos == null) {
@@ -151,9 +145,6 @@ public class WorkflowExecutionInfos  implements Serializable  {
      * @param nextPageToken The token of the next page in the result. If set, the results have
      *         more than one page. The next page can be retrieved by repeating the
      *         request with this token and all other arguments unchanged.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public WorkflowExecutionInfos withNextPageToken(String nextPageToken) {
         this.nextPageToken = nextPageToken;

@@ -130,9 +130,6 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest  impl
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>. <p>This parameter is optional. If
      *         it is not included, it defaults to a slash (/).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateVirtualMFADeviceRequest withPath(String path) {
         this.path = path;
@@ -182,9 +179,6 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest  impl
      *
      * @param virtualMFADeviceName The name of the virtual MFA device. Use with path to uniquely identify
      *         a virtual MFA device.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateVirtualMFADeviceRequest withVirtualMFADeviceName(String virtualMFADeviceName) {
         this.virtualMFADeviceName = virtualMFADeviceName;

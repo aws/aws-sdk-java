@@ -84,9 +84,6 @@ public class ConnectionOrderStep  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param number Number of an order step. <p>Example: 1
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ConnectionOrderStep withNumber(String number) {
         this.number = number;
@@ -118,9 +115,6 @@ public class ConnectionOrderStep  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name Name of the order step. <p>Example: Authorize cross connect
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ConnectionOrderStep withName(String name) {
         this.name = name;
@@ -164,9 +158,6 @@ public class ConnectionOrderStep  implements Serializable  {
      * @param description More detailed description of the order step. <p>Example: "<i>AWS will
      *         prepare your connection and send you an email with an LOA to provide
      *         to the colocation provider</i>"
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ConnectionOrderStep withDescription(String description) {
         this.description = description;
@@ -204,9 +195,6 @@ public class ConnectionOrderStep  implements Serializable  {
      *
      * @param owner The entity who owns the completion of the order step. <p>Example: AWS,
      *         Customer
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ConnectionOrderStep withOwner(String owner) {
         this.owner = owner;
@@ -238,9 +226,6 @@ public class ConnectionOrderStep  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sla Time to complete the order step in minutes. <p>Example: 60
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ConnectionOrderStep withSla(Integer sla) {
         this.sla = sla;
@@ -298,9 +283,6 @@ public class ConnectionOrderStep  implements Serializable  {
      *         not yet completed.</li> <li><b>Completed</b>: This step has been
      *         completed</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see StepState
      */
     public ConnectionOrderStep withStepState(String stepState) {
@@ -340,9 +322,6 @@ public class ConnectionOrderStep  implements Serializable  {
      * @param stepState State of the connection step. <ul> <li><b>Pending</b>: This step is
      *         not yet completed.</li> <li><b>Completed</b>: This step has been
      *         completed</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see StepState
      */

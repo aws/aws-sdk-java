@@ -94,9 +94,6 @@ public class CreateAccountAliasRequest extends AmazonWebServiceRequest  implemen
      * <b>Pattern: </b>^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$<br/>
      *
      * @param accountAlias Name of the account alias to create.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateAccountAliasRequest withAccountAlias(String accountAlias) {
         this.accountAlias = accountAlias;

@@ -114,9 +114,6 @@ public class DescribeSnapshotScheduleResult  implements Serializable  {
      *
      * @param volumeARN The Amazon Resource Name (ARN) of the volume that was specified in the
      *         request.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeSnapshotScheduleResult withVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
@@ -169,9 +166,6 @@ public class DescribeSnapshotScheduleResult  implements Serializable  {
      * @param startAt The hour of the day at which the snapshot schedule begins represented
      *         as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the
      *         day is in the time zone of the gateway.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeSnapshotScheduleResult withStartAt(Integer startAt) {
         this.startAt = startAt;
@@ -212,9 +206,6 @@ public class DescribeSnapshotScheduleResult  implements Serializable  {
      * <b>Range: </b>1 - 24<br/>
      *
      * @param recurrenceInHours The number of hours between snapshots.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeSnapshotScheduleResult withRecurrenceInHours(Integer recurrenceInHours) {
         this.recurrenceInHours = recurrenceInHours;
@@ -255,9 +246,6 @@ public class DescribeSnapshotScheduleResult  implements Serializable  {
      * <b>Length: </b>1 - 255<br/>
      *
      * @param description The snapshot description.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeSnapshotScheduleResult withDescription(String description) {
         this.description = description;
@@ -309,9 +297,6 @@ public class DescribeSnapshotScheduleResult  implements Serializable  {
      * @param timezone One of the <a>GatewayTimezone</a> values that indicates the time zone
      *         of the gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see GatewayTimezone
      */
     public DescribeSnapshotScheduleResult withTimezone(String timezone) {
@@ -347,9 +332,6 @@ public class DescribeSnapshotScheduleResult  implements Serializable  {
      *
      * @param timezone One of the <a>GatewayTimezone</a> values that indicates the time zone
      *         of the gateway.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see GatewayTimezone
      */

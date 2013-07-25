@@ -87,9 +87,6 @@ public class DefaultSearchFieldStatus  implements Serializable  {
      * @param options The name of the <code>IndexField</code> to use as the default search
      *         field. The default is an empty string, which automatically searches
      *         all text fields.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DefaultSearchFieldStatus withOptions(String options) {
         this.options = options;
@@ -127,9 +124,6 @@ public class DefaultSearchFieldStatus  implements Serializable  {
      *
      * @param status The status of an option, including when it was last updated and
      *         whether it is actively in use for searches.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DefaultSearchFieldStatus withStatus(OptionStatus status) {
         this.status = status;

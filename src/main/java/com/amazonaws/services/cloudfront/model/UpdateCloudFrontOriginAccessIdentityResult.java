@@ -56,9 +56,6 @@ public class UpdateCloudFrontOriginAccessIdentityResult  implements Serializable
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cloudFrontOriginAccessIdentity The origin access identity's information.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateCloudFrontOriginAccessIdentityResult withCloudFrontOriginAccessIdentity(CloudFrontOriginAccessIdentity cloudFrontOriginAccessIdentity) {
         this.cloudFrontOriginAccessIdentity = cloudFrontOriginAccessIdentity;
@@ -90,9 +87,6 @@ public class UpdateCloudFrontOriginAccessIdentityResult  implements Serializable
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eTag The current version of the configuration. For example: E2QWRUHAPOMQZL.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateCloudFrontOriginAccessIdentityResult withETag(String eTag) {
         this.eTag = eTag;

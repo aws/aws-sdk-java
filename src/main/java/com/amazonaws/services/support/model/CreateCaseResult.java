@@ -66,9 +66,6 @@ public class CreateCaseResult  implements Serializable  {
      * @param caseId String that indicates the AWS Support caseID requested or returned in
      *         the call. The caseID is an alphanumeric string formatted as shown in
      *         this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCaseResult withCaseId(String caseId) {
         this.caseId = caseId;

@@ -78,9 +78,6 @@ public class DeleteAlarmsRequest extends AmazonWebServiceRequest  implements Ser
      * <b>Length: </b>0 - 100<br/>
      *
      * @param alarmNames A list of alarms to be deleted.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteAlarmsRequest withAlarmNames(String... alarmNames) {
         if (getAlarmNames() == null) setAlarmNames(new java.util.ArrayList<String>(alarmNames.length));
@@ -99,9 +96,6 @@ public class DeleteAlarmsRequest extends AmazonWebServiceRequest  implements Ser
      * <b>Length: </b>0 - 100<br/>
      *
      * @param alarmNames A list of alarms to be deleted.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteAlarmsRequest withAlarmNames(java.util.Collection<String> alarmNames) {
         if (alarmNames == null) {

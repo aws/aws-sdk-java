@@ -97,9 +97,6 @@ public class DescribeWorkflowTypeRequest extends AmazonWebServiceRequest  implem
      * <b>Length: </b>1 - 256<br/>
      *
      * @param domain The name of the domain in which this workflow type is registered.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeWorkflowTypeRequest withDomain(String domain) {
         this.domain = domain;
@@ -131,9 +128,6 @@ public class DescribeWorkflowTypeRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param workflowType The workflow type to describe.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeWorkflowTypeRequest withWorkflowType(WorkflowType workflowType) {
         this.workflowType = workflowType;

@@ -99,9 +99,6 @@ public class UpdatePipelineNotificationsRequest extends AmazonWebServiceRequest 
      *
      * @param id The identifier of the pipeline for which you want to change
      *         notification settings.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdatePipelineNotificationsRequest withId(String id) {
         this.id = id;
@@ -235,9 +232,6 @@ public class UpdatePipelineNotificationsRequest extends AmazonWebServiceRequest 
      *         that you want to notify when Elastic Transcoder encounters an error
      *         condition. This is the ARN that Amazon SNS returned when you created
      *         the topic.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdatePipelineNotificationsRequest withNotifications(Notifications notifications) {
         this.notifications = notifications;

@@ -100,9 +100,6 @@ public class AudioParameters  implements Serializable  {
      *
      * @param codec The audio codec for the output file. This value must be
      *         <code>AAC</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AudioParameters withCodec(String codec) {
         this.codec = codec;
@@ -167,9 +164,6 @@ public class AudioParameters  implements Serializable  {
      *         <code>32000</code>, <code>44100</code>, <code>48000</code>,
      *         <code>96000</code> <p>If you specify <code>auto</code>, Elastic
      *         Transcoder automatically detects the sample rate.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AudioParameters withSampleRate(String sampleRate) {
         this.sampleRate = sampleRate;
@@ -216,9 +210,6 @@ public class AudioParameters  implements Serializable  {
      *
      * @param bitRate The bit rate of the audio stream in the output file, in
      *         kilobits/second. Enter an integer between 64 and 320, inclusive.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AudioParameters withBitRate(String bitRate) {
         this.bitRate = bitRate;
@@ -277,9 +268,6 @@ public class AudioParameters  implements Serializable  {
      *         <p><code>auto</code>, <code>0</code>, <code>1</code>, <code>2</code>
      *         <p>If you specify <code>auto</code>, Elastic Transcoder automatically
      *         detects the number of channels in the input file.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AudioParameters withChannels(String channels) {
         this.channels = channels;

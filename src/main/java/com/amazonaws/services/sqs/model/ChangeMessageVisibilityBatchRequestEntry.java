@@ -73,9 +73,6 @@ public class ChangeMessageVisibilityBatchRequestEntry  implements Serializable  
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param id The new value for the Id property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ChangeMessageVisibilityBatchRequestEntry withId(String id) {
         this.id = id;
@@ -107,9 +104,6 @@ public class ChangeMessageVisibilityBatchRequestEntry  implements Serializable  
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param receiptHandle The new value for the ReceiptHandle property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ChangeMessageVisibilityBatchRequestEntry withReceiptHandle(String receiptHandle) {
         this.receiptHandle = receiptHandle;
@@ -141,9 +135,6 @@ public class ChangeMessageVisibilityBatchRequestEntry  implements Serializable  
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param visibilityTimeout The new value for the VisibilityTimeout property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ChangeMessageVisibilityBatchRequestEntry withVisibilityTimeout(Integer visibilityTimeout) {
         this.visibilityTimeout = visibilityTimeout;

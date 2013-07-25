@@ -62,9 +62,6 @@ public class DeleteOptionGroupRequest extends AmazonWebServiceRequest  implement
      *
      * @param optionGroupName The name of the option group to be deleted. <note>You cannot delete
      *         default Option Groups.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteOptionGroupRequest withOptionGroupName(String optionGroupName) {
         this.optionGroupName = optionGroupName;

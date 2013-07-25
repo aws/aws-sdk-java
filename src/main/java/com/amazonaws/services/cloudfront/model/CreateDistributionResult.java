@@ -63,9 +63,6 @@ public class CreateDistributionResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param distribution The distribution's information.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDistributionResult withDistribution(Distribution distribution) {
         this.distribution = distribution;
@@ -109,9 +106,6 @@ public class CreateDistributionResult  implements Serializable  {
      * @param location The fully qualified URI of the new distribution resource just created.
      *         For example:
      *         https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDistributionResult withLocation(String location) {
         this.location = location;
@@ -143,9 +137,6 @@ public class CreateDistributionResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eTag The current version of the distribution created.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDistributionResult withETag(String eTag) {
         this.eTag = eTag;

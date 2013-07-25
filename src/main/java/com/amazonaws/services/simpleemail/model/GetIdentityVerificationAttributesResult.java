@@ -38,7 +38,6 @@ public class GetIdentityVerificationAttributesResult  implements Serializable  {
             verificationAttributes = new java.util.HashMap<String,IdentityVerificationAttributes>();
         }
         return verificationAttributes;
-
     }
     
     /**
@@ -56,15 +55,43 @@ public class GetIdentityVerificationAttributesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param verificationAttributes A map of Identities to IdentityVerificationAttributes objects.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetIdentityVerificationAttributesResult withVerificationAttributes(java.util.Map<String,IdentityVerificationAttributes> verificationAttributes) {
         setVerificationAttributes(verificationAttributes);
         return this;
     }
     
+   	
+    /**
+     * A map of Identities to IdentityVerificationAttributes objects.
+     * <p>
+     * The method adds a new key-value pair into VerificationAttributes
+     * parameter, and returns a reference to this object so that method calls
+     * can be chained together.
+     *
+     * @param key The key of the entry to be added into VerificationAttributes.
+     * @param value The corresponding value of the entry to be added into VerificationAttributes.
+     */
+	public GetIdentityVerificationAttributesResult addVerificationAttributesEntry(String key, IdentityVerificationAttributes value) {
+		if (null == this.verificationAttributes) {
+			this.verificationAttributes = new java.util.HashMap<String,IdentityVerificationAttributes>();
+		}
+		if (this.verificationAttributes.containsKey(key))
+			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+		this.verificationAttributes.put(key, value);
+		return this;
+	}
+	
+	/**
+	 * Removes all the entries added into VerificationAttributes.
+	 * <p>
+	 * Returns a reference to this object so that method calls can be chained together.
+	 */
+	public GetIdentityVerificationAttributesResult clearVerificationAttributesEntries() {
+		this.verificationAttributes = null;
+		return this;
+	}
+	
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

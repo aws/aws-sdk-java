@@ -90,9 +90,6 @@ public class DeleteMessageBatchRequest extends AmazonWebServiceRequest  implemen
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param queueUrl The new value for the QueueUrl property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteMessageBatchRequest withQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
@@ -135,9 +132,6 @@ public class DeleteMessageBatchRequest extends AmazonWebServiceRequest  implemen
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param entries The new value for the Entries property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteMessageBatchRequest withEntries(DeleteMessageBatchRequestEntry... entries) {
         if (getEntries() == null) setEntries(new java.util.ArrayList<DeleteMessageBatchRequestEntry>(entries.length));
@@ -153,9 +147,6 @@ public class DeleteMessageBatchRequest extends AmazonWebServiceRequest  implemen
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param entries The new value for the Entries property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteMessageBatchRequest withEntries(java.util.Collection<DeleteMessageBatchRequestEntry> entries) {
         if (entries == null) {

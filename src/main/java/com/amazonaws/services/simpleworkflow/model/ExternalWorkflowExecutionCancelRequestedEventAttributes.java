@@ -69,9 +69,6 @@ public class ExternalWorkflowExecutionCancelRequestedEventAttributes  implements
      *
      * @param workflowExecution The external workflow execution to which the cancellation request was
      *         delivered.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ExternalWorkflowExecutionCancelRequestedEventAttributes withWorkflowExecution(WorkflowExecution workflowExecution) {
         this.workflowExecution = workflowExecution;
@@ -139,9 +136,6 @@ public class ExternalWorkflowExecutionCancelRequestedEventAttributes  implements
      *         this external workflow execution. This information can be useful for
      *         diagnosing problems by tracing back the chain of events leading up to
      *         this event.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ExternalWorkflowExecutionCancelRequestedEventAttributes withInitiatedEventId(Long initiatedEventId) {
         this.initiatedEventId = initiatedEventId;

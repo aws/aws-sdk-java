@@ -57,9 +57,6 @@ public class Aliases  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param quantity The number of CNAMEs, if any, for this distribution.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Aliases withQuantity(Integer quantity) {
         this.quantity = quantity;
@@ -108,9 +105,6 @@ public class Aliases  implements Serializable  {
      *
      * @param items Optional: A complex type that contains CNAME elements, if any, for
      *         this distribution. If Quantity is 0, you can omit Items.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Aliases withItems(String... items) {
         if (getItems() == null) setItems(new java.util.ArrayList<String>(items.length));
@@ -128,9 +122,6 @@ public class Aliases  implements Serializable  {
      *
      * @param items Optional: A complex type that contains CNAME elements, if any, for
      *         this distribution. If Quantity is 0, you can omit Items.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Aliases withItems(java.util.Collection<String> items) {
         if (items == null) {

@@ -79,9 +79,6 @@ public class ListSubscriptionsRequest extends AmazonWebServiceRequest  implement
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nextToken Token returned by the previous <code>ListSubscriptions</code> request.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListSubscriptionsRequest withNextToken(String nextToken) {
         this.nextToken = nextToken;

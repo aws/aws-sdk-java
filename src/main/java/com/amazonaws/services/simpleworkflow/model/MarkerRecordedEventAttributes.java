@@ -79,9 +79,6 @@ public class MarkerRecordedEventAttributes  implements Serializable  {
      * <b>Length: </b>1 - 256<br/>
      *
      * @param markerName The name of the marker.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MarkerRecordedEventAttributes withMarkerName(String markerName) {
         this.markerName = markerName;
@@ -122,9 +119,6 @@ public class MarkerRecordedEventAttributes  implements Serializable  {
      * <b>Length: </b>0 - 32768<br/>
      *
      * @param details Details of the marker (if any).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MarkerRecordedEventAttributes withDetails(String details) {
         this.details = details;
@@ -174,9 +168,6 @@ public class MarkerRecordedEventAttributes  implements Serializable  {
      *         to the decision task that resulted in the <code>RecordMarker</code>
      *         decision that requested this marker. This information can be useful
      *         for diagnosing problems by tracing back the cause of events.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MarkerRecordedEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
         this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;

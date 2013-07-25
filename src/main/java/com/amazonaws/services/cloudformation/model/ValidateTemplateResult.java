@@ -82,9 +82,6 @@ public class ValidateTemplateResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameters A list of <code>TemplateParameter</code> structures.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ValidateTemplateResult withParameters(TemplateParameter... parameters) {
         if (getParameters() == null) setParameters(new java.util.ArrayList<TemplateParameter>(parameters.length));
@@ -100,9 +97,6 @@ public class ValidateTemplateResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameters A list of <code>TemplateParameter</code> structures.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ValidateTemplateResult withParameters(java.util.Collection<TemplateParameter> parameters) {
         if (parameters == null) {
@@ -140,9 +134,6 @@ public class ValidateTemplateResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description The description found within the template.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ValidateTemplateResult withDescription(String description) {
         this.description = description;
@@ -215,9 +206,6 @@ public class ValidateTemplateResult  implements Serializable  {
      *         parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
      *         actions with your template; otherwise, those actions return an
      *         InsufficientCapabilities error.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ValidateTemplateResult withCapabilities(String... capabilities) {
         if (getCapabilities() == null) setCapabilities(new java.util.ArrayList<String>(capabilities.length));
@@ -243,9 +231,6 @@ public class ValidateTemplateResult  implements Serializable  {
      *         parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
      *         actions with your template; otherwise, those actions return an
      *         InsufficientCapabilities error.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ValidateTemplateResult withCapabilities(java.util.Collection<String> capabilities) {
         if (capabilities == null) {
@@ -283,9 +268,6 @@ public class ValidateTemplateResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param capabilitiesReason The capabilities reason found within the template.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ValidateTemplateResult withCapabilitiesReason(String capabilitiesReason) {
         this.capabilitiesReason = capabilitiesReason;

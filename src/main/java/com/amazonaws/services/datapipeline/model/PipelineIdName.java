@@ -83,9 +83,6 @@ public class PipelineIdName  implements Serializable  {
      *
      * @param id Identifier of the pipeline that was assigned by AWS Data Pipeline.
      *         This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PipelineIdName withId(String id) {
         this.id = id;
@@ -129,9 +126,6 @@ public class PipelineIdName  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param name Name of the pipeline.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PipelineIdName withName(String name) {
         this.name = name;

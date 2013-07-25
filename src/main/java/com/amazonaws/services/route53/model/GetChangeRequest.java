@@ -111,9 +111,6 @@ public class GetChangeRequest extends AmazonWebServiceRequest  implements Serial
      * @param id The ID of the change batch request. The value that you specify here is
      *         the value that <code>ChangeResourceRecordSets</code> returned in the
      *         Id element when you submitted the request.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetChangeRequest withId(String id) {
         this.id = id;

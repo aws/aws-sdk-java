@@ -96,9 +96,6 @@ public class InstanceGroupModifyConfig  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param instanceGroupId Unique ID of the instance group to expand or shrink.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceGroupModifyConfig withInstanceGroupId(String instanceGroupId) {
         this.instanceGroupId = instanceGroupId;
@@ -130,9 +127,6 @@ public class InstanceGroupModifyConfig  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceCount Target size for the instance group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceGroupModifyConfig withInstanceCount(Integer instanceCount) {
         this.instanceCount = instanceCount;

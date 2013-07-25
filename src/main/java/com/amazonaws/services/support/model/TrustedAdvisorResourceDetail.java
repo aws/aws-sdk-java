@@ -78,9 +78,6 @@ public class TrustedAdvisorResourceDetail  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param status Status code for the resource identified in the Trusted Advisor check.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedAdvisorResourceDetail withStatus(String status) {
         this.status = status;
@@ -112,9 +109,6 @@ public class TrustedAdvisorResourceDetail  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param region AWS region in which the identified resource is located.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedAdvisorResourceDetail withRegion(String region) {
         this.region = region;
@@ -146,9 +140,6 @@ public class TrustedAdvisorResourceDetail  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param resourceId Unique identifier for the identified resource.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedAdvisorResourceDetail withResourceId(String resourceId) {
         this.resourceId = resourceId;
@@ -186,9 +177,6 @@ public class TrustedAdvisorResourceDetail  implements Serializable  {
      *
      * @param isSuppressed Indicates whether the specified AWS resource has had its participation
      *         in Trusted Advisor checks suppressed.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedAdvisorResourceDetail withIsSuppressed(Boolean isSuppressed) {
         this.isSuppressed = isSuppressed;
@@ -278,9 +266,6 @@ public class TrustedAdvisorResourceDetail  implements Serializable  {
      *         object returned by the call to <a
      *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
      *         title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedAdvisorResourceDetail withMetadata(String... metadata) {
         if (getMetadata() == null) setMetadata(new java.util.ArrayList<String>(metadata.length));
@@ -308,9 +293,6 @@ public class TrustedAdvisorResourceDetail  implements Serializable  {
      *         object returned by the call to <a
      *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
      *         title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedAdvisorResourceDetail withMetadata(java.util.Collection<String> metadata) {
         if (metadata == null) {

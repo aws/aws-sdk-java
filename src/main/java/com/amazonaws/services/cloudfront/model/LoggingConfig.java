@@ -146,9 +146,6 @@ public class LoggingConfig  implements Serializable  {
      *         Prefix elements. If you specify false for Enabled but you specify
      *         values for Bucket, prefix and IncludeCookies, the values are
      *         automatically deleted.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LoggingConfig withEnabled(Boolean enabled) {
         this.enabled = enabled;
@@ -237,9 +234,6 @@ public class LoggingConfig  implements Serializable  {
      *         want to include cookies when you create a distribution or if you want
      *         to disable include cookies for an existing distribution, specify false
      *         for IncludeCookies.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LoggingConfig withIncludeCookies(Boolean includeCookies) {
         this.includeCookies = includeCookies;
@@ -298,9 +292,6 @@ public class LoggingConfig  implements Serializable  {
      *
      * @param bucket The Amazon S3 bucket to store the access logs in, for example,
      *         myawslogbucket.s3.amazonaws.com.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LoggingConfig withBucket(String bucket) {
         this.bucket = bucket;
@@ -350,9 +341,6 @@ public class LoggingConfig  implements Serializable  {
      *         log filenames for this distribution, for example, myprefix/. If you
      *         want to enable logging, but you do not want to specify a prefix, you
      *         still must include an empty Prefix element in the Logging element.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LoggingConfig withPrefix(String prefix) {
         this.prefix = prefix;

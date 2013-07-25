@@ -77,9 +77,6 @@ public class GetTopicAttributesRequest extends AmazonWebServiceRequest  implemen
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param topicArn The ARN of the topic whose properties you want to get.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetTopicAttributesRequest withTopicArn(String topicArn) {
         this.topicArn = topicArn;

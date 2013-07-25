@@ -25,6 +25,7 @@ import com.amazonaws.transform.*;
 import org.codehaus.jackson.JsonToken;
 import static org.codehaus.jackson.JsonToken.*;
 
+
 /**
  * Start Gateway Result JSON Unmarshaller
  */

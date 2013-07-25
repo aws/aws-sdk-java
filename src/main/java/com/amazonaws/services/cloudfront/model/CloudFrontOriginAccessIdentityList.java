@@ -90,9 +90,6 @@ public class CloudFrontOriginAccessIdentityList  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param marker The value you provided for the Marker request parameter.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CloudFrontOriginAccessIdentityList withMarker(String marker) {
         this.marker = marker;
@@ -136,9 +133,6 @@ public class CloudFrontOriginAccessIdentityList  implements Serializable  {
      * @param nextMarker If IsTruncated is true, this element is present and contains the value
      *         you can use for the Marker request parameter to continue listing your
      *         origin access identities where they left off.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CloudFrontOriginAccessIdentityList withNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
@@ -170,9 +164,6 @@ public class CloudFrontOriginAccessIdentityList  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxItems The value you provided for the MaxItems request parameter.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CloudFrontOriginAccessIdentityList withMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
@@ -222,9 +213,6 @@ public class CloudFrontOriginAccessIdentityList  implements Serializable  {
      *         be listed. If your results were truncated, you can make a follow-up
      *         pagination request using the Marker request parameter to retrieve more
      *         items in the list.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CloudFrontOriginAccessIdentityList withIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
@@ -277,9 +265,6 @@ public class CloudFrontOriginAccessIdentityList  implements Serializable  {
      *
      * @param quantity The number of CloudFront origin access identities that were created by
      *         the current AWS account.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CloudFrontOriginAccessIdentityList withQuantity(Integer quantity) {
         this.quantity = quantity;
@@ -334,9 +319,6 @@ public class CloudFrontOriginAccessIdentityList  implements Serializable  {
      * @param items A complex type that contains one CloudFrontOriginAccessIdentitySummary
      *         element for each origin access identity that was created by the
      *         current AWS account.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CloudFrontOriginAccessIdentityList withItems(CloudFrontOriginAccessIdentitySummary... items) {
         if (getItems() == null) setItems(new java.util.ArrayList<CloudFrontOriginAccessIdentitySummary>(items.length));
@@ -356,9 +338,6 @@ public class CloudFrontOriginAccessIdentityList  implements Serializable  {
      * @param items A complex type that contains one CloudFrontOriginAccessIdentitySummary
      *         element for each origin access identity that was created by the
      *         current AWS account.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CloudFrontOriginAccessIdentityList withItems(java.util.Collection<CloudFrontOriginAccessIdentitySummary> items) {
         if (items == null) {

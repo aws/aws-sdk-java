@@ -100,9 +100,6 @@ public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest  i
      *         <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
      *         or contain two consecutive hyphens</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDBParameterGroupsRequest withDBParameterGroupName(String dBParameterGroupName) {
         this.dBParameterGroupName = dBParameterGroupName;
@@ -158,9 +155,6 @@ public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest  i
      *         pagination token called a marker is included in the response so that
      *         the remaining results may be retrieved. <p>Default: 100
      *         <p>Constraints: minimum 20, maximum 100
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDBParameterGroupsRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -210,9 +204,6 @@ public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest  i
      *         DescribeDBParameterGroups request. If this parameter is specified, the
      *         response includes only records beyond the marker, up to the value
      *         specified by <code>MaxRecords</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDBParameterGroupsRequest withMarker(String marker) {
         this.marker = marker;

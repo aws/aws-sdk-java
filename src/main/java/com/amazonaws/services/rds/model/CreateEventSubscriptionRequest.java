@@ -123,9 +123,6 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest  imp
      *
      * @param subscriptionName The name of the subscription. <p>Constraints: The name must be less
      *         than 255 characters.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateEventSubscriptionRequest withSubscriptionName(String subscriptionName) {
         this.subscriptionName = subscriptionName;
@@ -169,9 +166,6 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest  imp
      * @param snsTopicArn The Amazon Resource Name (ARN) of the SNS topic created for event
      *         notification. The ARN is created by Amazon SNS when you create a topic
      *         and subscribe to it.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateEventSubscriptionRequest withSnsTopicArn(String snsTopicArn) {
         this.snsTopicArn = snsTopicArn;
@@ -227,9 +221,6 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest  imp
      *         would set this parameter to db-instance. if this value is not
      *         specified, all events are returned. <p>Valid values: db-instance |
      *         db-parameter-group | db-security-group | db-snapshot
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateEventSubscriptionRequest withSourceType(String sourceType) {
         this.sourceType = sourceType;
@@ -302,9 +293,6 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest  imp
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
      *         topic in the Amazon RDS User Guide or by using the
      *         <b>DescribeEventCategories</b> action.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateEventSubscriptionRequest withEventCategories(String... eventCategories) {
         if (getEventCategories() == null) setEventCategories(new java.util.ArrayList<String>(eventCategories.length));
@@ -330,9 +318,6 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest  imp
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
      *         topic in the Amazon RDS User Guide or by using the
      *         <b>DescribeEventCategories</b> action.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateEventSubscriptionRequest withEventCategories(java.util.Collection<String> eventCategories) {
         if (eventCategories == null) {
@@ -447,9 +432,6 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest  imp
      *         DB parameter group, a DBParameterGroupName must be supplied.</li>
      *         <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must
      *         be supplied.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateEventSubscriptionRequest withSourceIds(String... sourceIds) {
         if (getSourceIds() == null) setSourceIds(new java.util.ArrayList<String>(sourceIds.length));
@@ -487,9 +469,6 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest  imp
      *         DB parameter group, a DBParameterGroupName must be supplied.</li>
      *         <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must
      *         be supplied.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateEventSubscriptionRequest withSourceIds(java.util.Collection<String> sourceIds) {
         if (sourceIds == null) {
@@ -533,9 +512,6 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest  imp
      *
      * @param enabled A Boolean value; set to <b>true</b> to activate the subscription, set
      *         to <b>false</b> to create the subscription but not active it.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateEventSubscriptionRequest withEnabled(Boolean enabled) {
         this.enabled = enabled;

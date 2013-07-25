@@ -56,9 +56,6 @@ public class UpdateDistributionResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param distribution The distribution's information.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateDistributionResult withDistribution(Distribution distribution) {
         this.distribution = distribution;
@@ -90,9 +87,6 @@ public class UpdateDistributionResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eTag The current version of the configuration. For example: E2QWRUHAPOMQZL.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateDistributionResult withETag(String eTag) {
         this.eTag = eTag;

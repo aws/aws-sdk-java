@@ -136,9 +136,6 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest  implements
      *         from 1 to 63 alphanumeric characters or hyphens</li> <li>First
      *         character must be a letter</li> <li>Cannot end with a hyphen or
      *         contain two consecutive hyphens</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteDBInstanceRequest withDBInstanceIdentifier(String dBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -200,9 +197,6 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest  implements
      *         DB Instance is deleted. <note>The FinalDBSnapshotIdentifier parameter
      *         must be specified if SkipFinalSnapshot is <code>false</code>.</note>
      *         <p>Default: <code>false</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteDBInstanceRequest withSkipFinalSnapshot(Boolean skipFinalSnapshot) {
         this.skipFinalSnapshot = skipFinalSnapshot;
@@ -289,9 +283,6 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest  implements
      *         alphanumeric characters</li> <li>First character must be a letter</li>
      *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      *         </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteDBInstanceRequest withFinalDBSnapshotIdentifier(String finalDBSnapshotIdentifier) {
         this.finalDBSnapshotIdentifier = finalDBSnapshotIdentifier;

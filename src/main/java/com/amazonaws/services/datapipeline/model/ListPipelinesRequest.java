@@ -99,9 +99,6 @@ public class ListPipelinesRequest extends AmazonWebServiceRequest  implements Se
      *         action returns <code>HasMoreResults</code> as <code>True</code>, you
      *         can call <a>ListPipelines</a> again and pass the marker value from the
      *         response to retrieve the next set of results.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListPipelinesRequest withMarker(String marker) {
         this.marker = marker;

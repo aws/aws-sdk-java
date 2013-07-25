@@ -17,7 +17,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes an OpsWorks service error.
+ * Describes an AWS OpsWorks service error.
  * </p>
  */
 public class ServiceError  implements Serializable  {

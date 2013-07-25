@@ -140,9 +140,6 @@ public class CreatePrivateVirtualInterfaceResult  implements Serializable  {
      *
      * @param virtualInterfaceId ID of the virtual interface. <p>Example: dxvif-123dfg56 <p>Default:
      *         None
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreatePrivateVirtualInterfaceResult withVirtualInterfaceId(String virtualInterfaceId) {
         this.virtualInterfaceId = virtualInterfaceId;
@@ -180,9 +177,6 @@ public class CreatePrivateVirtualInterfaceResult  implements Serializable  {
      *
      * @param location Where the AWS Direct Connect offering is located. <p>Example: EqSV5
      *         <p>Default: None
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreatePrivateVirtualInterfaceResult withLocation(String location) {
         this.location = location;
@@ -214,9 +208,6 @@ public class CreatePrivateVirtualInterfaceResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param connectionId ID of the connection. <p>Example: dxcon-fg5678gh <p>Default: None
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreatePrivateVirtualInterfaceResult withConnectionId(String connectionId) {
         this.connectionId = connectionId;
@@ -254,9 +245,6 @@ public class CreatePrivateVirtualInterfaceResult  implements Serializable  {
      *
      * @param virtualInterfaceType The type of virtual interface <p>Example: Private (Amazon VPC) or
      *         public (Amazon S3, Amazon DynamoDB, etc.)
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreatePrivateVirtualInterfaceResult withVirtualInterfaceType(String virtualInterfaceType) {
         this.virtualInterfaceType = virtualInterfaceType;
@@ -294,9 +282,6 @@ public class CreatePrivateVirtualInterfaceResult  implements Serializable  {
      *
      * @param virtualInterfaceName The name of the virtual interface assigned by the customer <p>Example:
      *         "Dev VPC"
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreatePrivateVirtualInterfaceResult withVirtualInterfaceName(String virtualInterfaceName) {
         this.virtualInterfaceName = virtualInterfaceName;
@@ -328,9 +313,6 @@ public class CreatePrivateVirtualInterfaceResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vlan VLAN ID <p>Example: 101
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreatePrivateVirtualInterfaceResult withVlan(Integer vlan) {
         this.vlan = vlan;
@@ -368,9 +350,6 @@ public class CreatePrivateVirtualInterfaceResult  implements Serializable  {
      *
      * @param asn Autonomous system (AS) number for Border Gateway Protocol (BGP)
      *         configuration <p>Example: 65000
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreatePrivateVirtualInterfaceResult withAsn(Integer asn) {
         this.asn = asn;
@@ -402,9 +381,6 @@ public class CreatePrivateVirtualInterfaceResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param authKey Authentication key for BGP configuration <p>Example: asdf34example
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreatePrivateVirtualInterfaceResult withAuthKey(String authKey) {
         this.authKey = authKey;
@@ -436,9 +412,6 @@ public class CreatePrivateVirtualInterfaceResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param amazonAddress IP address assigned to the Amazon interface. <p>Example: 192.168.1.1
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreatePrivateVirtualInterfaceResult withAmazonAddress(String amazonAddress) {
         this.amazonAddress = amazonAddress;
@@ -470,9 +443,6 @@ public class CreatePrivateVirtualInterfaceResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param customerAddress IP address assigned to the customer interface. <p>Example: 192.168.1.2
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreatePrivateVirtualInterfaceResult withCustomerAddress(String customerAddress) {
         this.customerAddress = customerAddress;
@@ -578,9 +548,6 @@ public class CreatePrivateVirtualInterfaceResult  implements Serializable  {
      *         traffic.</li> <li><b>Deleted</b>: A virtual interface that cannot
      *         forward traffic.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see VirtualInterfaceState
      */
     public CreatePrivateVirtualInterfaceResult withVirtualInterfaceState(String virtualInterfaceState) {
@@ -653,9 +620,6 @@ public class CreatePrivateVirtualInterfaceResult  implements Serializable  {
      *         traffic.</li> <li><b>Deleted</b>: A virtual interface that cannot
      *         forward traffic.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see VirtualInterfaceState
      */
     public CreatePrivateVirtualInterfaceResult withVirtualInterfaceState(VirtualInterfaceState virtualInterfaceState) {
@@ -687,9 +651,6 @@ public class CreatePrivateVirtualInterfaceResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param customerRouterConfig Information for generating the customer router configuration.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreatePrivateVirtualInterfaceResult withCustomerRouterConfig(String customerRouterConfig) {
         this.customerRouterConfig = customerRouterConfig;
@@ -721,9 +682,6 @@ public class CreatePrivateVirtualInterfaceResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param virtualGatewayId Virtual private gateway to a VPC. <p>Example: vgw-123er56
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreatePrivateVirtualInterfaceResult withVirtualGatewayId(String virtualGatewayId) {
         this.virtualGatewayId = virtualGatewayId;
@@ -766,9 +724,6 @@ public class CreatePrivateVirtualInterfaceResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param routeFilterPrefixes A list of route filter prefixes.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreatePrivateVirtualInterfaceResult withRouteFilterPrefixes(RouteFilterPrefix... routeFilterPrefixes) {
         if (getRouteFilterPrefixes() == null) setRouteFilterPrefixes(new java.util.ArrayList<RouteFilterPrefix>(routeFilterPrefixes.length));
@@ -784,9 +739,6 @@ public class CreatePrivateVirtualInterfaceResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param routeFilterPrefixes A list of route filter prefixes.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreatePrivateVirtualInterfaceResult withRouteFilterPrefixes(java.util.Collection<RouteFilterPrefix> routeFilterPrefixes) {
         if (routeFilterPrefixes == null) {

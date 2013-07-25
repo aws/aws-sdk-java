@@ -105,9 +105,6 @@ public class DescribeIndexFieldsRequest extends AmazonWebServiceRequest  impleme
      *         Domain names must start with a letter or number and can contain the
      *         following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase
      *         letters and underscores are not allowed.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeIndexFieldsRequest withDomainName(String domainName) {
         this.domainName = domainName;
@@ -156,9 +153,6 @@ public class DescribeIndexFieldsRequest extends AmazonWebServiceRequest  impleme
      *
      * @param fieldNames Limits the <code>DescribeIndexFields</code> response to the specified
      *         fields.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeIndexFieldsRequest withFieldNames(String... fieldNames) {
         if (getFieldNames() == null) setFieldNames(new java.util.ArrayList<String>(fieldNames.length));
@@ -176,9 +170,6 @@ public class DescribeIndexFieldsRequest extends AmazonWebServiceRequest  impleme
      *
      * @param fieldNames Limits the <code>DescribeIndexFields</code> response to the specified
      *         fields.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeIndexFieldsRequest withFieldNames(java.util.Collection<String> fieldNames) {
         if (fieldNames == null) {

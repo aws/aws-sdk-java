@@ -207,9 +207,6 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param topicArn The topic you want to publish to.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PublishRequest withTopicArn(String topicArn) {
         this.topicArn = topicArn;
@@ -373,9 +370,6 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      *         parse or validate any key or value in the message will cause the
      *         <code>Publish</code> call to return an error (no partial
      *         delivery).</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PublishRequest withMessage(String message) {
         this.message = message;
@@ -443,9 +437,6 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      *         with a letter, number or punctuation mark; must not include line
      *         breaks or control characters; and must be less than 100 characters
      *         long.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PublishRequest withSubject(String subject) {
         this.subject = subject;
@@ -567,9 +558,6 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      *         Different Messages for Each Protocol</a> in the <i>Amazon Simple
      *         Notification Service Getting Started Guide</i>. <p>Valid value:
      *         <code>json</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PublishRequest withMessageStructure(String messageStructure) {
         this.messageStructure = messageStructure;

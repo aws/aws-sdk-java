@@ -191,9 +191,6 @@ public class ListJobsRequest extends AmazonWebServiceRequest  implements Seriali
      *         Glacier uses the AWS Account ID associated with the credentials used
      *         to sign the request. If you specify your Account ID, do not include
      *         hyphens in it.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListJobsRequest withAccountId(String accountId) {
         this.accountId = accountId;
@@ -225,9 +222,6 @@ public class ListJobsRequest extends AmazonWebServiceRequest  implements Seriali
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vaultName The name of the vault.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListJobsRequest withVaultName(String vaultName) {
         this.vaultName = vaultName;
@@ -271,9 +265,6 @@ public class ListJobsRequest extends AmazonWebServiceRequest  implements Seriali
      * @param limit Specifies that the response be limited to the specified number of
      *         items or fewer. If not specified, the List Jobs operation returns up
      *         to 1,000 jobs.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListJobsRequest withLimit(String limit) {
         this.limit = limit;
@@ -329,9 +320,6 @@ public class ListJobsRequest extends AmazonWebServiceRequest  implements Seriali
      *         previous List Jobs response. You need only include the marker if you
      *         are continuing the pagination of results started in a previous List
      *         Jobs request.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListJobsRequest withMarker(String marker) {
         this.marker = marker;
@@ -369,9 +357,6 @@ public class ListJobsRequest extends AmazonWebServiceRequest  implements Seriali
      *
      * @param statuscode Specifies the type of job status to return. You can specify the
      *         following values: "InProgress", "Succeeded", or "Failed".
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListJobsRequest withStatuscode(String statuscode) {
         this.statuscode = statuscode;
@@ -409,9 +394,6 @@ public class ListJobsRequest extends AmazonWebServiceRequest  implements Seriali
      *
      * @param completed Specifies the state of the jobs to return. You can specify
      *         <code>true</code> or <code>false</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListJobsRequest withCompleted(String completed) {
         this.completed = completed;

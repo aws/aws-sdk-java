@@ -90,9 +90,6 @@ public class StackSummary  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackId Unique stack identifier.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StackSummary withStackId(String stackId) {
         this.stackId = stackId;
@@ -124,9 +121,6 @@ public class StackSummary  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackName The name associated with the stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StackSummary withStackName(String stackName) {
         this.stackName = stackName;
@@ -158,9 +152,6 @@ public class StackSummary  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param templateDescription The template description of the template used to create the stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StackSummary withTemplateDescription(String templateDescription) {
         this.templateDescription = templateDescription;
@@ -192,9 +183,6 @@ public class StackSummary  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param creationTime The time the stack was created.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StackSummary withCreationTime(java.util.Date creationTime) {
         this.creationTime = creationTime;
@@ -232,9 +220,6 @@ public class StackSummary  implements Serializable  {
      *
      * @param lastUpdatedTime The time the stack was last updated. This field will only be returned
      *         if the stack has been updated at least once.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StackSummary withLastUpdatedTime(java.util.Date lastUpdatedTime) {
         this.lastUpdatedTime = lastUpdatedTime;
@@ -266,9 +251,6 @@ public class StackSummary  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param deletionTime The time the stack was deleted.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StackSummary withDeletionTime(java.util.Date deletionTime) {
         this.deletionTime = deletionTime;
@@ -314,9 +296,6 @@ public class StackSummary  implements Serializable  {
      *
      * @param stackStatus The current status of the stack.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see StackStatus
      */
     public StackSummary withStackStatus(String stackStatus) {
@@ -349,9 +328,6 @@ public class StackSummary  implements Serializable  {
      *
      * @param stackStatus The current status of the stack.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see StackStatus
      */
     public StackSummary withStackStatus(StackStatus stackStatus) {
@@ -383,9 +359,6 @@ public class StackSummary  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackStatusReason Success/Failure message associated with the stack status.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StackSummary withStackStatusReason(String stackStatusReason) {
         this.stackStatusReason = stackStatusReason;

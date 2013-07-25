@@ -106,9 +106,6 @@ public class WorkflowTypeDetail  implements Serializable  {
      *         <a>DeprecateWorkflowType</a>, but is still in use. You should keep
      *         workers supporting this type running. You cannot create new workflow
      *         executions of this type. </li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public WorkflowTypeDetail withTypeInfo(WorkflowTypeInfo typeInfo) {
         this.typeInfo = typeInfo;
@@ -146,9 +143,6 @@ public class WorkflowTypeDetail  implements Serializable  {
      *
      * @param configuration Configuration settings of the workflow type registered through
      *         <a>RegisterWorkflowType</a>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public WorkflowTypeDetail withConfiguration(WorkflowTypeConfiguration configuration) {
         this.configuration = configuration;

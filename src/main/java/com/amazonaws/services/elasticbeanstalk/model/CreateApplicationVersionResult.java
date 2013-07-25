@@ -51,9 +51,6 @@ public class CreateApplicationVersionResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param applicationVersion The <a>ApplicationVersionDescription</a> of the application version.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateApplicationVersionResult withApplicationVersion(ApplicationVersionDescription applicationVersion) {
         this.applicationVersion = applicationVersion;

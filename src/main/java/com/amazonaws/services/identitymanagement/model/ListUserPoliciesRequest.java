@@ -118,9 +118,6 @@ public class ListUserPoliciesRequest extends AmazonWebServiceRequest  implements
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param userName The name of the user to list policies for.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListUserPoliciesRequest withUserName(String userName) {
         this.userName = userName;
@@ -182,9 +179,6 @@ public class ListUserPoliciesRequest extends AmazonWebServiceRequest  implements
      *         request after you've received a response where the results are
      *         truncated. Set it to the value of the <code>Marker</code> element in
      *         the response you just received.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListUserPoliciesRequest withMarker(String marker) {
         this.marker = marker;
@@ -243,9 +237,6 @@ public class ListUserPoliciesRequest extends AmazonWebServiceRequest  implements
      *         of policy names you want in the response. If there are additional
      *         policy names beyond the maximum you specify, the
      *         <code>IsTruncated</code> response element is <code>true</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListUserPoliciesRequest withMaxItems(Integer maxItems) {
         this.maxItems = maxItems;

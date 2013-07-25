@@ -56,9 +56,6 @@ public class EventCategoriesMap  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceType The source type that the returned categories belong to
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EventCategoriesMap withSourceType(String sourceType) {
         this.sourceType = sourceType;
@@ -101,9 +98,6 @@ public class EventCategoriesMap  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eventCategories The event categories for the specified source type
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EventCategoriesMap withEventCategories(String... eventCategories) {
         if (getEventCategories() == null) setEventCategories(new java.util.ArrayList<String>(eventCategories.length));
@@ -119,9 +113,6 @@ public class EventCategoriesMap  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eventCategories The event categories for the specified source type
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EventCategoriesMap withEventCategories(java.util.Collection<String> eventCategories) {
         if (eventCategories == null) {

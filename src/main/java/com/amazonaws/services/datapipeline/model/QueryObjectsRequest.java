@@ -114,9 +114,6 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest  implements Ser
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param pipelineId Identifier of the pipeline to be queried for object names.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public QueryObjectsRequest withPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
@@ -166,9 +163,6 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest  implements Ser
      *         can contain a maximum of ten selectors. The conditions in the query
      *         are limited to top-level String fields in the object. These filters
      *         can be applied to components, instances, and attempts.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public QueryObjectsRequest withQuery(Query query) {
         this.query = query;
@@ -224,9 +218,6 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest  implements Ser
      * @param sphere Specifies whether the query applies to components or instances.
      *         Allowable values: <code>COMPONENT</code>, <code>INSTANCE</code>,
      *         <code>ATTEMPT</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public QueryObjectsRequest withSphere(String sphere) {
         this.sphere = sphere;
@@ -294,9 +285,6 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest  implements Ser
      *         action returns <code>HasMoreResults</code> as <code>True</code>, you
      *         can call <a>QueryObjects</a> again and pass the marker value from the
      *         response to retrieve the next set of results.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public QueryObjectsRequest withMarker(String marker) {
         this.marker = marker;
@@ -334,9 +322,6 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest  implements Ser
      *
      * @param limit Specifies the maximum number of object names that <a>QueryObjects</a>
      *         will return in a single call. The default value is 100.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public QueryObjectsRequest withLimit(Integer limit) {
         this.limit = limit;

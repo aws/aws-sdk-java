@@ -16,6 +16,7 @@ package com.amazonaws.transform;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
+import com.amazonaws.util.json.JSONException;
 import com.amazonaws.util.json.JSONObject;
 
 /**
@@ -32,29 +33,47 @@ public class JsonErrorUnmarshaller extends AbstractErrorUnmarshaller<JSONObject>
     public AmazonServiceException unmarshall(JSONObject json) throws Exception {
         String message = parseMessage(json);
         String errorCode = parseErrorCode(json);
-        
+
         if ((null == message || message.isEmpty()) && (null == errorCode || errorCode.isEmpty())) {
-        	/**
-        	 * Trigger the catch block in AmazonHttpClient.handleErrorResponse to handle 413 and 503 errors
-        	 */
-        	throw new AmazonClientException("Neither error message nor error code is found in the error response payload.");
+            /**
+             * Trigger the catch block in AmazonHttpClient.handleErrorResponse to handle 413 and 503 errors
+             */
+            throw new AmazonClientException("Neither error message nor error code is found in the error response payload.");
         } else {
-        	AmazonServiceException ase = newException(message);
+            AmazonServiceException ase = newException(message);
             ase.setErrorCode(errorCode);
             return ase;
         }
     }
 
     public String parseMessage(JSONObject json) throws Exception {
-        String message = "";
-        if (json.has("message")) {
-            message = json.getString("message");
-        } else if (json.has("Message")) {
-            message = json.getString("Message");
+        return parseMember("message", json);
+    }
+
+    public String parseMember(String key, JSONObject json) throws JSONException {
+        if (key == null || key.length() == 0) {
+            return null;
         }
 
-        return message;
+        String firstLetterUppercaseKey;
+        String firstLetterLowercaseKey;
+
+        firstLetterLowercaseKey = key.substring(0, 1).toLowerCase()
+                + key.substring(1);
+
+        firstLetterUppercaseKey = key.substring(0, 1).toUpperCase()
+                + key.substring(1);
+
+         String value = "";
+         if (json.has(firstLetterUppercaseKey)) {
+             value = json.getString(firstLetterUppercaseKey);
+         } else if (json.has(firstLetterLowercaseKey)) {
+             value = json.getString(firstLetterLowercaseKey);
+         }
+
+         return value;
     }
+
 
     public String parseErrorCode(JSONObject json) throws Exception {
         if (json.has("__type")) {

@@ -64,9 +64,6 @@ public class TrustedAdvisorCostOptimizingSummary  implements Serializable  {
      *
      * @param estimatedMonthlySavings Reports the estimated monthly savings determined by the Trusted
      *         Advisor check for your account.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedAdvisorCostOptimizingSummary withEstimatedMonthlySavings(Double estimatedMonthlySavings) {
         this.estimatedMonthlySavings = estimatedMonthlySavings;
@@ -104,9 +101,6 @@ public class TrustedAdvisorCostOptimizingSummary  implements Serializable  {
      *
      * @param estimatedPercentMonthlySavings Reports the estimated percentage of savings determined for your
      *         account by the Trusted Advisor check.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedAdvisorCostOptimizingSummary withEstimatedPercentMonthlySavings(Double estimatedPercentMonthlySavings) {
         this.estimatedPercentMonthlySavings = estimatedPercentMonthlySavings;

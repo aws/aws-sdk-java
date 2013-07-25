@@ -89,9 +89,6 @@ public class PutMetricDataRequest extends AmazonWebServiceRequest  implements Se
      * <b>Pattern: </b>[^:].*<br/>
      *
      * @param namespace The namespace for the metric data.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PutMetricDataRequest withNamespace(String namespace) {
         this.namespace = namespace;
@@ -134,9 +131,6 @@ public class PutMetricDataRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param metricData A list of data describing the metric.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PutMetricDataRequest withMetricData(MetricDatum... metricData) {
         if (getMetricData() == null) setMetricData(new java.util.ArrayList<MetricDatum>(metricData.length));
@@ -152,9 +146,6 @@ public class PutMetricDataRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param metricData A list of data describing the metric.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PutMetricDataRequest withMetricData(java.util.Collection<MetricDatum> metricData) {
         if (metricData == null) {

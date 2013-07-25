@@ -51,9 +51,6 @@ public class GetRoleResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param role Information about the role.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetRoleResult withRole(Role role) {
         this.role = role;

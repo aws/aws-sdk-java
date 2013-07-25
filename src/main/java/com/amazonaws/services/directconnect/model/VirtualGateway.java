@@ -66,9 +66,6 @@ public class VirtualGateway  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param virtualGatewayId Virtual private gateway to a VPC. <p>Example: vgw-123er56
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VirtualGateway withVirtualGatewayId(String virtualGatewayId) {
         this.virtualGatewayId = virtualGatewayId;
@@ -136,9 +133,6 @@ public class VirtualGateway  implements Serializable  {
      *         calling <i>DeleteVpnGateway</i>.</li> <li><b>Deleted</b>: In this
      *         state, a private virtual interface is unable to send traffic over this
      *         gateway.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VirtualGateway withVirtualGatewayState(String virtualGatewayState) {
         this.virtualGatewayState = virtualGatewayState;

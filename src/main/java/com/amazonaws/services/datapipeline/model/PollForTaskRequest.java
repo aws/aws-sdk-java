@@ -136,9 +136,6 @@ public class PollForTaskRequest extends AmazonWebServiceRequest  implements Seri
      *         <code>workerGroup</code> in the call to <a>PollForTask</a>. There are
      *         no wildcard values permitted in <code>workerGroup</code>, the string
      *         must be an exact, case-sensitive, match.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PollForTaskRequest withWorkerGroup(String workerGroup) {
         this.workerGroup = workerGroup;
@@ -182,9 +179,6 @@ public class PollForTaskRequest extends AmazonWebServiceRequest  implements Seri
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param hostname The public DNS name of the calling task runner.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PollForTaskRequest withHostname(String hostname) {
         this.hostname = hostname;
@@ -264,9 +258,6 @@ public class PollForTaskRequest extends AmazonWebServiceRequest  implements Seri
      *         Passing in this value proves that your task runner is running on an
      *         EC2 instance, and ensures the proper AWS Data Pipeline service charges
      *         are applied to your pipeline.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PollForTaskRequest withInstanceIdentity(InstanceIdentity instanceIdentity) {
         this.instanceIdentity = instanceIdentity;

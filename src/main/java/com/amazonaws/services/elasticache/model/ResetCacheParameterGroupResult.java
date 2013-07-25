@@ -51,9 +51,6 @@ public class ResetCacheParameterGroupResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheParameterGroupName The name of the Cache Parameter Group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ResetCacheParameterGroupResult withCacheParameterGroupName(String cacheParameterGroupName) {
         this.cacheParameterGroupName = cacheParameterGroupName;

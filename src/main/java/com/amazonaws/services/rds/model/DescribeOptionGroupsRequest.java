@@ -92,9 +92,6 @@ public class DescribeOptionGroupsRequest extends AmazonWebServiceRequest  implem
      *
      * @param optionGroupName The name of the option group to describe. Cannot be supplied together
      *         with EngineName or MajorEngineVersion.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeOptionGroupsRequest withOptionGroupName(String optionGroupName) {
         this.optionGroupName = optionGroupName;
@@ -144,9 +141,6 @@ public class DescribeOptionGroupsRequest extends AmazonWebServiceRequest  implem
      *         DescribeOptionGroups request. If this parameter is specified, the
      *         response includes only records beyond the marker, up to the value
      *         specified by <code>MaxRecords</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeOptionGroupsRequest withMarker(String marker) {
         this.marker = marker;
@@ -202,9 +196,6 @@ public class DescribeOptionGroupsRequest extends AmazonWebServiceRequest  implem
      *         pagination token called a marker is included in the response so that
      *         the remaining results can be retrieved. <p>Default: 100
      *         <p>Constraints: minimum 20, maximum 100
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeOptionGroupsRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -242,9 +233,6 @@ public class DescribeOptionGroupsRequest extends AmazonWebServiceRequest  implem
      *
      * @param engineName Filters the list of option groups to only include groups associated
      *         with a specific database engine.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeOptionGroupsRequest withEngineName(String engineName) {
         this.engineName = engineName;
@@ -288,9 +276,6 @@ public class DescribeOptionGroupsRequest extends AmazonWebServiceRequest  implem
      * @param majorEngineVersion Filters the list of option groups to only include groups associated
      *         with a specific database engine version. If specified, then EngineName
      *         must also be specified.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeOptionGroupsRequest withMajorEngineVersion(String majorEngineVersion) {
         this.majorEngineVersion = majorEngineVersion;

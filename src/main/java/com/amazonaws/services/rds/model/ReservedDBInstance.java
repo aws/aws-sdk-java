@@ -116,9 +116,6 @@ public class ReservedDBInstance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedDBInstanceId The unique identifier for the reservation.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedDBInstance withReservedDBInstanceId(String reservedDBInstanceId) {
         this.reservedDBInstanceId = reservedDBInstanceId;
@@ -150,9 +147,6 @@ public class ReservedDBInstance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedDBInstancesOfferingId The offering identifier.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedDBInstance withReservedDBInstancesOfferingId(String reservedDBInstancesOfferingId) {
         this.reservedDBInstancesOfferingId = reservedDBInstancesOfferingId;
@@ -184,9 +178,6 @@ public class ReservedDBInstance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBInstanceClass The DB instance class for the reserved DB Instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedDBInstance withDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
@@ -218,9 +209,6 @@ public class ReservedDBInstance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param startTime The time the reservation started.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedDBInstance withStartTime(java.util.Date startTime) {
         this.startTime = startTime;
@@ -252,9 +240,6 @@ public class ReservedDBInstance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param duration The duration of the reservation in seconds.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedDBInstance withDuration(Integer duration) {
         this.duration = duration;
@@ -286,9 +271,6 @@ public class ReservedDBInstance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param fixedPrice The fixed price charged for this reserved DB Instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedDBInstance withFixedPrice(Double fixedPrice) {
         this.fixedPrice = fixedPrice;
@@ -320,9 +302,6 @@ public class ReservedDBInstance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param usagePrice The hourly price charged for this reserved DB Instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedDBInstance withUsagePrice(Double usagePrice) {
         this.usagePrice = usagePrice;
@@ -354,9 +333,6 @@ public class ReservedDBInstance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param currencyCode The currency code for the reserved DB Instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedDBInstance withCurrencyCode(String currencyCode) {
         this.currencyCode = currencyCode;
@@ -388,9 +364,6 @@ public class ReservedDBInstance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBInstanceCount The number of reserved DB Instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedDBInstance withDBInstanceCount(Integer dBInstanceCount) {
         this.dBInstanceCount = dBInstanceCount;
@@ -422,9 +395,6 @@ public class ReservedDBInstance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param productDescription The description of the reserved DB Instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedDBInstance withProductDescription(String productDescription) {
         this.productDescription = productDescription;
@@ -456,9 +426,6 @@ public class ReservedDBInstance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param offeringType The offering type of this reserved DB Instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedDBInstance withOfferingType(String offeringType) {
         this.offeringType = offeringType;
@@ -490,9 +457,6 @@ public class ReservedDBInstance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param multiAZ Indicates if the reservation applies to Multi-AZ deployments.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedDBInstance withMultiAZ(Boolean multiAZ) {
         this.multiAZ = multiAZ;
@@ -533,9 +497,6 @@ public class ReservedDBInstance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param state The state of the reserved DB Instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedDBInstance withState(String state) {
         this.state = state;
@@ -578,9 +539,6 @@ public class ReservedDBInstance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param recurringCharges The recurring price charged to run this reserved DB Instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedDBInstance withRecurringCharges(RecurringCharge... recurringCharges) {
         if (getRecurringCharges() == null) setRecurringCharges(new java.util.ArrayList<RecurringCharge>(recurringCharges.length));
@@ -596,9 +554,6 @@ public class ReservedDBInstance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param recurringCharges The recurring price charged to run this reserved DB Instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedDBInstance withRecurringCharges(java.util.Collection<RecurringCharge> recurringCharges) {
         if (recurringCharges == null) {

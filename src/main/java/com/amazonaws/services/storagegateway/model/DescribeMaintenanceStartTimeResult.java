@@ -126,9 +126,6 @@ public class DescribeMaintenanceStartTimeResult  implements Serializable  {
      * @param gatewayARN The Amazon Resource Name (ARN) of the gateway. Use the
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeMaintenanceStartTimeResult withGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
@@ -181,9 +178,6 @@ public class DescribeMaintenanceStartTimeResult  implements Serializable  {
      * @param hourOfDay The hour component of the maintenance start time represented as
      *         <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day
      *         is in the time zone of the gateway.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeMaintenanceStartTimeResult withHourOfDay(Integer hourOfDay) {
         this.hourOfDay = hourOfDay;
@@ -236,9 +230,6 @@ public class DescribeMaintenanceStartTimeResult  implements Serializable  {
      * @param minuteOfHour The minute component of the maintenance start time represented as
      *         <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the
      *         hour is in the time zone of the gateway.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeMaintenanceStartTimeResult withMinuteOfHour(Integer minuteOfHour) {
         this.minuteOfHour = minuteOfHour;
@@ -291,9 +282,6 @@ public class DescribeMaintenanceStartTimeResult  implements Serializable  {
      * @param dayOfWeek An ordinal number between 0 and 6 that represents the day of the week,
      *         where 0 represents Sunday and 6 represents Saturday. The day of week
      *         is in the time zone of the gateway.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeMaintenanceStartTimeResult withDayOfWeek(Integer dayOfWeek) {
         this.dayOfWeek = dayOfWeek;
@@ -351,9 +339,6 @@ public class DescribeMaintenanceStartTimeResult  implements Serializable  {
      *         that is set for the gateway. The start time and day of week specified
      *         should be in the time zone of the gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see GatewayTimezone
      */
     public DescribeMaintenanceStartTimeResult withTimezone(String timezone) {
@@ -393,9 +378,6 @@ public class DescribeMaintenanceStartTimeResult  implements Serializable  {
      * @param timezone One of the <a>GatewayTimezone</a> values that indicates the time zone
      *         that is set for the gateway. The start time and day of week specified
      *         should be in the time zone of the gateway.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see GatewayTimezone
      */

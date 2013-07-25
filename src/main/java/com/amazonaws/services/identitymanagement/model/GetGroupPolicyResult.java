@@ -85,9 +85,6 @@ public class GetGroupPolicyResult  implements Serializable  {
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param groupName The group the policy is associated with.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetGroupPolicyResult withGroupName(String groupName) {
         this.groupName = groupName;
@@ -131,9 +128,6 @@ public class GetGroupPolicyResult  implements Serializable  {
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param policyName The name of the policy.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetGroupPolicyResult withPolicyName(String policyName) {
         this.policyName = policyName;
@@ -177,9 +171,6 @@ public class GetGroupPolicyResult  implements Serializable  {
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      *
      * @param policyDocument The policy document.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetGroupPolicyResult withPolicyDocument(String policyDocument) {
         this.policyDocument = policyDocument;

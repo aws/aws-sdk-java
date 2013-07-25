@@ -121,6 +121,20 @@ public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateSt
             if (updateStackRequest.getCustomJson() != null) {
                 jsonWriter.key("CustomJson").value(updateStackRequest.getCustomJson());
             }
+            StackConfigurationManager configurationManager = updateStackRequest.getConfigurationManager();
+            if (configurationManager != null) {
+
+                jsonWriter.key("ConfigurationManager");
+                jsonWriter.object();
+
+                if (configurationManager.getName() != null) {
+                    jsonWriter.key("Name").value(configurationManager.getName());
+                }
+                if (configurationManager.getVersion() != null) {
+                    jsonWriter.key("Version").value(configurationManager.getVersion());
+                }
+                jsonWriter.endObject();
+            }
             if (updateStackRequest.isUseCustomCookbooks() != null) {
                 jsonWriter.key("UseCustomCookbooks").value(updateStackRequest.isUseCustomCookbooks());
             }

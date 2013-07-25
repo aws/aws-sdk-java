@@ -51,9 +51,6 @@ public class ListDistributionsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param distributionList The DistributionList type.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListDistributionsResult withDistributionList(DistributionList distributionList) {
         this.distributionList = distributionList;

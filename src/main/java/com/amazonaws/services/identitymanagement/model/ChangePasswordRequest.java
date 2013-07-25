@@ -67,9 +67,6 @@ public class ChangePasswordRequest extends AmazonWebServiceRequest  implements S
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      *
      * @param oldPassword The new value for the OldPassword property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ChangePasswordRequest withOldPassword(String oldPassword) {
         this.oldPassword = oldPassword;
@@ -113,9 +110,6 @@ public class ChangePasswordRequest extends AmazonWebServiceRequest  implements S
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      *
      * @param newPassword The new value for the NewPassword property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ChangePasswordRequest withNewPassword(String newPassword) {
         this.newPassword = newPassword;

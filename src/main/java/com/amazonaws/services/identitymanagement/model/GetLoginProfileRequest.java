@@ -93,9 +93,6 @@ public class GetLoginProfileRequest extends AmazonWebServiceRequest  implements 
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param userName Name of the user whose login profile you want to retrieve.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetLoginProfileRequest withUserName(String userName) {
         this.userName = userName;

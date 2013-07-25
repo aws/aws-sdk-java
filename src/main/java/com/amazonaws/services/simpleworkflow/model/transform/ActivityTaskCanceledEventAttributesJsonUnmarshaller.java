@@ -25,6 +25,7 @@ import com.amazonaws.transform.*;
 import org.codehaus.jackson.JsonToken;
 import static org.codehaus.jackson.JsonToken.*;
 
+
 /**
  * Activity Task Canceled Event Attributes JSON Unmarshaller
  */

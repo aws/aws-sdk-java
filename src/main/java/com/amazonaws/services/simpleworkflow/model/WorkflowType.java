@@ -87,9 +87,6 @@ public class WorkflowType  implements Serializable  {
      * @param name The name of the workflow type. This field is required. <note>The
      *         combination of workflow type name and version must be unique with in a
      *         domain.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public WorkflowType withName(String name) {
         this.name = name;
@@ -142,9 +139,6 @@ public class WorkflowType  implements Serializable  {
      * @param version The version of the workflow type. This field is required. <note>The
      *         combination of workflow type name and version must be unique with in a
      *         domain.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public WorkflowType withVersion(String version) {
         this.version = version;

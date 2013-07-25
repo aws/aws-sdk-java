@@ -65,9 +65,6 @@ public class DescribeDefaultSearchFieldResult  implements Serializable  {
      * @param defaultSearchField The name of the <code>IndexField</code> to use for search requests
      *         issued with the <code>q</code> parameter. The default is the empty
      *         string, which automatically searches all text fields.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDefaultSearchFieldResult withDefaultSearchField(DefaultSearchFieldStatus defaultSearchField) {
         this.defaultSearchField = defaultSearchField;

@@ -76,9 +76,6 @@ public class Alarm  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param alarmName The name of the alarm.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Alarm withAlarmName(String alarmName) {
         this.alarmName = alarmName;
@@ -122,9 +119,6 @@ public class Alarm  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param alarmARN The Amazon Resource Name (ARN) of the alarm.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Alarm withAlarmARN(String alarmARN) {
         this.alarmARN = alarmARN;

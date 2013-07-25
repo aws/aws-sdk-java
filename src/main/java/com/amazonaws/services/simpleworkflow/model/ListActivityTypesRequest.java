@@ -141,9 +141,6 @@ public class ListActivityTypesRequest extends AmazonWebServiceRequest  implement
      *
      * @param domain The name of the domain in which the activity types have been
      *         registered.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListActivityTypesRequest withDomain(String domain) {
         this.domain = domain;
@@ -184,9 +181,6 @@ public class ListActivityTypesRequest extends AmazonWebServiceRequest  implement
      * <b>Length: </b>1 - 256<br/>
      *
      * @param name If specified, only lists the activity types that have this name.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListActivityTypesRequest withName(String name) {
         this.name = name;
@@ -232,9 +226,6 @@ public class ListActivityTypesRequest extends AmazonWebServiceRequest  implement
      *
      * @param registrationStatus Specifies the registration status of the activity types to list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see RegistrationStatus
      */
     public ListActivityTypesRequest withRegistrationStatus(String registrationStatus) {
@@ -266,9 +257,6 @@ public class ListActivityTypesRequest extends AmazonWebServiceRequest  implement
      * <b>Allowed Values: </b>REGISTERED, DEPRECATED
      *
      * @param registrationStatus Specifies the registration status of the activity types to list.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see RegistrationStatus
      */
@@ -328,9 +316,6 @@ public class ListActivityTypesRequest extends AmazonWebServiceRequest  implement
      *         was returned, the results have more than one page. To get the next
      *         page of results, repeat the call with the <code>nextPageToken</code>
      *         and keep all other arguments unchanged.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListActivityTypesRequest withNextPageToken(String nextPageToken) {
         this.nextPageToken = nextPageToken;
@@ -401,9 +386,6 @@ public class ListActivityTypesRequest extends AmazonWebServiceRequest  implement
      *         greater than 100. Note that the number of types may be less than the
      *         maxiumum page size, in which case, the returned page will have fewer
      *         results than the maximumPageSize specified.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListActivityTypesRequest withMaximumPageSize(Integer maximumPageSize) {
         this.maximumPageSize = maximumPageSize;
@@ -447,9 +429,6 @@ public class ListActivityTypesRequest extends AmazonWebServiceRequest  implement
      * @param reverseOrder When set to <code>true</code>, returns the results in reverse order.
      *         By default the results are returned in ascending alphabetical order of
      *         the <code>name</code> of the activity types.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListActivityTypesRequest withReverseOrder(Boolean reverseOrder) {
         this.reverseOrder = reverseOrder;

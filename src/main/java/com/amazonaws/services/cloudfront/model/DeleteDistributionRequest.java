@@ -85,9 +85,6 @@ public class DeleteDistributionRequest extends AmazonWebServiceRequest  implemen
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param id The distribution id.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteDistributionRequest withId(String id) {
         this.id = id;
@@ -125,9 +122,6 @@ public class DeleteDistributionRequest extends AmazonWebServiceRequest  implemen
      *
      * @param ifMatch The value of the ETag header you received when you disabled the
      *         distribution. For example: E2QWRUHAPOMQZL.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteDistributionRequest withIfMatch(String ifMatch) {
         this.ifMatch = ifMatch;

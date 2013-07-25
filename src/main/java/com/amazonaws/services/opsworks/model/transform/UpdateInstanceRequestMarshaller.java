@@ -114,11 +114,17 @@ public class UpdateInstanceRequestMarshaller implements Marshaller<Request<Updat
             if (updateInstanceRequest.getOs() != null) {
                 jsonWriter.key("Os").value(updateInstanceRequest.getOs());
             }
+            if (updateInstanceRequest.getAmiId() != null) {
+                jsonWriter.key("AmiId").value(updateInstanceRequest.getAmiId());
+            }
             if (updateInstanceRequest.getSshKeyName() != null) {
                 jsonWriter.key("SshKeyName").value(updateInstanceRequest.getSshKeyName());
             }
             if (updateInstanceRequest.getArchitecture() != null) {
                 jsonWriter.key("Architecture").value(updateInstanceRequest.getArchitecture());
+            }
+            if (updateInstanceRequest.isInstallUpdatesOnBoot() != null) {
+                jsonWriter.key("InstallUpdatesOnBoot").value(updateInstanceRequest.isInstallUpdatesOnBoot());
             }
 
           jsonWriter.endObject();

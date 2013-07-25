@@ -220,9 +220,6 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest  implemen
      *         alphanumeric characters or hyphens.</li> <li>First character must be a
      *         letter.</li> <li>Cannot end with a hyphen or contain two consecutive
      *         hyphens.</li> </ul> <p>Example: <code>mycachecluster</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCacheClusterRequest withCacheClusterId(String cacheClusterId) {
         this.cacheClusterId = cacheClusterId;
@@ -254,9 +251,6 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest  implemen
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param numCacheNodes The number of Cache Nodes the Cache Cluster should have.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCacheClusterRequest withNumCacheNodes(Integer numCacheNodes) {
         this.numCacheNodes = numCacheNodes;
@@ -324,9 +318,6 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest  implemen
      *         <code>cache.m3.2xlarge</code> | <code>cache.m2.xlarge</code> |
      *         <code>cache.m2.2xlarge</code> | <code>cache.m2.4xlarge</code> |
      *         <code>cache.c1.xlarge</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCacheClusterRequest withCacheNodeType(String cacheNodeType) {
         this.cacheNodeType = cacheNodeType;
@@ -370,9 +361,6 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest  implemen
      * @param engine The name of the cache engine to be used for this Cache Cluster.
      *         <note>Currently, <i>memcached</i> is the only cache engine supported
      *         by the service.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCacheClusterRequest withEngine(String engine) {
         this.engine = engine;
@@ -404,9 +392,6 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest  implemen
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param engineVersion The version of the cache engine to be used for this cluster.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCacheClusterRequest withEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
@@ -450,9 +435,6 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest  implemen
      * @param cacheParameterGroupName The name of the cache parameter group to associate with this Cache
      *         cluster. If this argument is omitted, the default CacheParameterGroup
      *         for the specified engine will be used.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCacheClusterRequest withCacheParameterGroupName(String cacheParameterGroupName) {
         this.cacheParameterGroupName = cacheParameterGroupName;
@@ -496,9 +478,6 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest  implemen
      * @param cacheSubnetGroupName The name of the Cache Subnet Group to be used for the Cache Cluster.
      *         <p>Use this parameter only when you are creating a cluster in an
      *         Amazon Virtual Private Cloud (VPC).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCacheClusterRequest withCacheSubnetGroupName(String cacheSubnetGroupName) {
         this.cacheSubnetGroupName = cacheSubnetGroupName;
@@ -553,9 +532,6 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest  implemen
      * @param cacheSecurityGroupNames A list of Cache Security Group Names to associate with this Cache
      *         Cluster. <p> Use this parameter only when you are creating a cluster
      *         outside of an Amazon Virtual Private Cloud (VPC).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCacheClusterRequest withCacheSecurityGroupNames(String... cacheSecurityGroupNames) {
         if (getCacheSecurityGroupNames() == null) setCacheSecurityGroupNames(new java.util.ArrayList<String>(cacheSecurityGroupNames.length));
@@ -575,9 +551,6 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest  implemen
      * @param cacheSecurityGroupNames A list of Cache Security Group Names to associate with this Cache
      *         Cluster. <p> Use this parameter only when you are creating a cluster
      *         outside of an Amazon Virtual Private Cloud (VPC).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCacheClusterRequest withCacheSecurityGroupNames(java.util.Collection<String> cacheSecurityGroupNames) {
         if (cacheSecurityGroupNames == null) {
@@ -638,9 +611,6 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest  implemen
      * @param securityGroupIds Specifies the VPC Security Groups associated with the Cache Cluster.
      *         <p>Use this parameter only when you are creating a cluster in an
      *         Amazon Virtual Private Cloud (VPC).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCacheClusterRequest withSecurityGroupIds(String... securityGroupIds) {
         if (getSecurityGroupIds() == null) setSecurityGroupIds(new java.util.ArrayList<String>(securityGroupIds.length));
@@ -660,9 +630,6 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest  implemen
      * @param securityGroupIds Specifies the VPC Security Groups associated with the Cache Cluster.
      *         <p>Use this parameter only when you are creating a cluster in an
      *         Amazon Virtual Private Cloud (VPC).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCacheClusterRequest withSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
         if (securityGroupIds == null) {
@@ -718,9 +685,6 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest  implemen
      *         <p> All cache nodes belonging to a cache cluster are placed in the
      *         preferred availability zone. <p> Default: System chosen (random)
      *         availability zone.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCacheClusterRequest withPreferredAvailabilityZone(String preferredAvailabilityZone) {
         this.preferredAvailabilityZone = preferredAvailabilityZone;
@@ -758,9 +722,6 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest  implemen
      *
      * @param preferredMaintenanceWindow The weekly time range (in UTC) during which system maintenance can
      *         occur. <p> Example: <code>sun:05:00-sun:09:00</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCacheClusterRequest withPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
         this.preferredMaintenanceWindow = preferredMaintenanceWindow;
@@ -798,9 +759,6 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest  implemen
      *
      * @param port The port number on which each of the Cache Nodes will accept
      *         connections.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCacheClusterRequest withPort(Integer port) {
         this.port = port;
@@ -850,9 +808,6 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest  implemen
      *         Service (SNS) topic to which notifications will be sent. <note> The
      *         Amazon SNS topic owner must be the same as the Cache Cluster owner.
      *         </note>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCacheClusterRequest withNotificationTopicArn(String notificationTopicArn) {
         this.notificationTopicArn = notificationTopicArn;
@@ -896,9 +851,6 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest  implemen
      * @param autoMinorVersionUpgrade Indicates that minor engine upgrades will be applied automatically to
      *         the Cache Cluster during the maintenance window. <p>Default:
      *         <code>true</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCacheClusterRequest withAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
         this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;

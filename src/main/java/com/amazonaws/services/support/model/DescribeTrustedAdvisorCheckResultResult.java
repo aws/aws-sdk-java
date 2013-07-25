@@ -72,9 +72,6 @@ public class DescribeTrustedAdvisorCheckResultResult  implements Serializable  {
      *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckResult.html"
      *         title="TrustedAdvisorCheckResult">TrustedAdvisorCheckResult</a>
      *         object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeTrustedAdvisorCheckResultResult withResult(TrustedAdvisorCheckResult result) {
         this.result = result;

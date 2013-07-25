@@ -213,9 +213,6 @@ public class Operator  implements Serializable  {
      *         User-defined fields that you add to a pipeline should prefix their
      *         name with the string "my".
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see OperatorType
      */
     public Operator withType(String type) {
@@ -328,9 +325,6 @@ public class Operator  implements Serializable  {
      *         User-defined fields that you add to a pipeline should prefix their
      *         name with the string "my".
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see OperatorType
      */
     public Operator withType(OperatorType type) {
@@ -373,9 +367,6 @@ public class Operator  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param values The value that the actual field value will be compared with.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Operator withValues(String... values) {
         if (getValues() == null) setValues(new java.util.ArrayList<String>(values.length));
@@ -391,9 +382,6 @@ public class Operator  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param values The value that the actual field value will be compared with.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Operator withValues(java.util.Collection<String> values) {
         if (values == null) {

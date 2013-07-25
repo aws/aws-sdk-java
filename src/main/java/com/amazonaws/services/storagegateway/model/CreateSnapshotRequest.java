@@ -101,9 +101,6 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest  implements S
      *
      * @param volumeARN The Amazon Resource Name (ARN) of the volume. Use the
      *         <a>ListVolumes</a> operation to return a list of gateway volumes.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateSnapshotRequest withVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
@@ -162,9 +159,6 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest  implements S
      *         console, Elastic Block Store snapshots panel in the <b>Description</b>
      *         field, and in the AWS Storage Gateway snapshot <b>Details</b> pane,
      *         <b>Description</b> field
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateSnapshotRequest withSnapshotDescription(String snapshotDescription) {
         this.snapshotDescription = snapshotDescription;

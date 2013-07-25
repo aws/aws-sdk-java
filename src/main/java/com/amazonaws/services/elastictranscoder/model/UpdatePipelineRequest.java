@@ -216,9 +216,6 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest  implements S
      * <b>Pattern: </b>^\d{13}-\w{6}$<br/>
      *
      * @param id The ID of the pipeline that you want to update.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdatePipelineRequest withId(String id) {
         this.id = id;
@@ -271,9 +268,6 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest  implements S
      * @param name The name of the pipeline. We recommend that the name be unique within
      *         the AWS account, but uniqueness is not enforced. <p>Constraints:
      *         Maximum 40 characters
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdatePipelineRequest withName(String name) {
         this.name = name;
@@ -320,9 +314,6 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest  implements S
      *
      * @param inputBucket The Amazon S3 bucket in which you saved the media files that you want
      *         to transcode and the graphics that you want to use as watermarks.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdatePipelineRequest withInputBucket(String inputBucket) {
         this.inputBucket = inputBucket;
@@ -369,9 +360,6 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest  implements S
      *
      * @param role The IAM Amazon Resource Name (ARN) for the role that you want Elastic
      *         Transcoder to use to transcode jobs for this pipeline.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdatePipelineRequest withRole(String role) {
         this.role = role;
@@ -421,9 +409,6 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest  implements S
      *         notify in order to report job status. <important>To receive
      *         notifications, you must also subscribe to the new topic in the Amazon
      *         SNS console.</important>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdatePipelineRequest withNotifications(Notifications notifications) {
         this.notifications = notifications;
@@ -767,9 +752,6 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest  implements S
      *         <code>Standard</code> or <code>ReducedRedundancy</code>, that you want
      *         Elastic Transcoder to assign to the video files and playlists that it
      *         stores in your Amazon S3 bucket.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdatePipelineRequest withContentConfig(PipelineOutputConfig contentConfig) {
         this.contentConfig = contentConfig;
@@ -1083,9 +1065,6 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest  implements S
      *         <code>ReducedRedundancy</code>, that you want Elastic Transcoder to
      *         assign to the thumbnails that it stores in your Amazon S3 bucket.</li>
      *         </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdatePipelineRequest withThumbnailConfig(PipelineOutputConfig thumbnailConfig) {
         this.thumbnailConfig = thumbnailConfig;

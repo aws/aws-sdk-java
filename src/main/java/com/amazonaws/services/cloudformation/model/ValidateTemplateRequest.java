@@ -116,9 +116,6 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest  implements
      *         CloudFormation User Guide</a>.) <p>Conditional: You must pass
      *         <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ValidateTemplateRequest withTemplateBody(String templateBody) {
         this.templateBody = templateBody;
@@ -195,9 +192,6 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest  implements
      *         CloudFormation User Guide</a>. <p>Conditional: You must pass
      *         <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ValidateTemplateRequest withTemplateURL(String templateURL) {
         this.templateURL = templateURL;

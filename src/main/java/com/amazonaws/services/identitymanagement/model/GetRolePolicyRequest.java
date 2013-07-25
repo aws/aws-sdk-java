@@ -85,9 +85,6 @@ public class GetRolePolicyRequest extends AmazonWebServiceRequest  implements Se
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param roleName Name of the role associated with the policy.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetRolePolicyRequest withRoleName(String roleName) {
         this.roleName = roleName;
@@ -131,9 +128,6 @@ public class GetRolePolicyRequest extends AmazonWebServiceRequest  implements Se
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param policyName Name of the policy document to get.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetRolePolicyRequest withPolicyName(String policyName) {
         this.policyName = policyName;

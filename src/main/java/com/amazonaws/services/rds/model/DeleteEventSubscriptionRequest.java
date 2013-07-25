@@ -62,9 +62,6 @@ public class DeleteEventSubscriptionRequest extends AmazonWebServiceRequest  imp
      *
      * @param subscriptionName The name of the RDS event notification subscription you want to
      *         delete.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteEventSubscriptionRequest withSubscriptionName(String subscriptionName) {
         this.subscriptionName = subscriptionName;

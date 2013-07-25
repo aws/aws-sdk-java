@@ -58,9 +58,6 @@ public class VerifyDomainIdentityResult  implements Serializable  {
      *
      * @param verificationToken A TXT record that must be placed in the DNS settings for the domain,
      *         in order to complete domain verification.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VerifyDomainIdentityResult withVerificationToken(String verificationToken) {
         this.verificationToken = verificationToken;

@@ -44,9 +44,9 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
 
     /**
      * The stack AWS Identity and Access Management (IAM) role, which allows
-     * OpsWorks to work with AWS resources on your behalf. You must set this
-     * parameter to the Amazon Resource Name (ARN) for an existing IAM role.
-     * For more information about IAM ARNs, see <a
+     * AWS OpsWorks to work with AWS resources on your behalf. You must set
+     * this parameter to the Amazon Resource Name (ARN) for an existing IAM
+     * role. For more information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>. <note>You must set this parameter to a valid service
      * role ARN or the action will fail; there is no default value. You can
@@ -64,23 +64,34 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
     private String defaultInstanceProfileArn;
 
     /**
-     * The cloned stack default operating system, which must be either
-     * "Amazon Linux" or "Ubuntu 12.04 LTS".
+     * The stack default operating system, which must be set to one of the
+     * following. <ul> <li>Standard operating systems: <code>Amazon
+     * Linux</code> or <code>Ubuntu 12.04 LTS</code></li> <li>Custom AMIs:
+     * <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
+     * Linux</code>. If you set this parameter to <code>Custom</code>, you
+     * must use the <a>CreateInstance</a> action's AmiId parameter to specify
+     * the custom AMI that you want to use. For more information on the
+     * standard operating systems, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
+     * Systems</a>For more information on how to use custom AMIs with
+     * OpsWorks, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+     * Custom AMIs</a>.
      */
     private String defaultOs;
 
     /**
      * The stack's new host name theme, with spaces are replaced by
-     * underscores. The theme is used to generate hostnames for the stack's
+     * underscores. The theme is used to generate host names for the stack's
      * instances. By default, <code>HostnameTheme</code> is set to
-     * Layer_Dependent, which creates hostnames by appending integers to the
-     * layer's shortname. The other themes are: <ul> <li>Baked_Goods</li>
+     * Layer_Dependent, which creates host names by appending integers to the
+     * layer's short name. The other themes are: <ul> <li>Baked_Goods</li>
      * <li>Clouds</li> <li>European_Cities</li> <li>Fruits</li>
      * <li>Greek_Deities</li> <li>Legendary_Creatures_from_Japan</li>
      * <li>Planets_and_Moons</li> <li>Roman_Deities</li>
      * <li>Scottish_Islands</li> <li>US_Cities</li> <li>Wild_Cats</li> </ul>
-     * <p>To obtain a generated hostname, call
-     * <code>GetHostNameSuggestion</code>, which returns a hostname based on
+     * <p>To obtain a generated host name, call
+     * <code>GetHostNameSuggestion</code>, which returns a host name based on
      * the current theme.
      */
     private String hostnameTheme;
@@ -98,10 +109,18 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      * The string should be in the following format and must escape
      * characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
      * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">
-     * Use Custom JSON to Modify the Stack Configuration JSON</a>.
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+     * Custom JSON to Modify the Stack Configuration JSON</a>.
      */
     private String customJson;
+
+    /**
+     * The configuration manager. When you update a stack you can optionally
+     * use the configuration manager to specify the Chef version, 0.9 or
+     * 11.4. If you omit this parameter, AWS OpsWorks does not change the
+     * Chef version.
+     */
+    private StackConfigurationManager configurationManager;
 
     /**
      * Whether the stack uses custom cookbooks.
@@ -113,7 +132,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      * a repository. For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
      * Apps</a> or <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom
      * Recipes and Cookbooks</a>.
      */
     private Source customCookbooksSource;
@@ -272,9 +291,9 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
 	
     /**
      * The stack AWS Identity and Access Management (IAM) role, which allows
-     * OpsWorks to work with AWS resources on your behalf. You must set this
-     * parameter to the Amazon Resource Name (ARN) for an existing IAM role.
-     * For more information about IAM ARNs, see <a
+     * AWS OpsWorks to work with AWS resources on your behalf. You must set
+     * this parameter to the Amazon Resource Name (ARN) for an existing IAM
+     * role. For more information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>. <note>You must set this parameter to a valid service
      * role ARN or the action will fail; there is no default value. You can
@@ -282,9 +301,9 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      * must do so explicitly.</note>
      *
      * @return The stack AWS Identity and Access Management (IAM) role, which allows
-     *         OpsWorks to work with AWS resources on your behalf. You must set this
-     *         parameter to the Amazon Resource Name (ARN) for an existing IAM role.
-     *         For more information about IAM ARNs, see <a
+     *         AWS OpsWorks to work with AWS resources on your behalf. You must set
+     *         this parameter to the Amazon Resource Name (ARN) for an existing IAM
+     *         role. For more information about IAM ARNs, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>. <note>You must set this parameter to a valid service
      *         role ARN or the action will fail; there is no default value. You can
@@ -297,9 +316,9 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
     
     /**
      * The stack AWS Identity and Access Management (IAM) role, which allows
-     * OpsWorks to work with AWS resources on your behalf. You must set this
-     * parameter to the Amazon Resource Name (ARN) for an existing IAM role.
-     * For more information about IAM ARNs, see <a
+     * AWS OpsWorks to work with AWS resources on your behalf. You must set
+     * this parameter to the Amazon Resource Name (ARN) for an existing IAM
+     * role. For more information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>. <note>You must set this parameter to a valid service
      * role ARN or the action will fail; there is no default value. You can
@@ -307,9 +326,9 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      * must do so explicitly.</note>
      *
      * @param serviceRoleArn The stack AWS Identity and Access Management (IAM) role, which allows
-     *         OpsWorks to work with AWS resources on your behalf. You must set this
-     *         parameter to the Amazon Resource Name (ARN) for an existing IAM role.
-     *         For more information about IAM ARNs, see <a
+     *         AWS OpsWorks to work with AWS resources on your behalf. You must set
+     *         this parameter to the Amazon Resource Name (ARN) for an existing IAM
+     *         role. For more information about IAM ARNs, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>. <note>You must set this parameter to a valid service
      *         role ARN or the action will fail; there is no default value. You can
@@ -322,9 +341,9 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
     
     /**
      * The stack AWS Identity and Access Management (IAM) role, which allows
-     * OpsWorks to work with AWS resources on your behalf. You must set this
-     * parameter to the Amazon Resource Name (ARN) for an existing IAM role.
-     * For more information about IAM ARNs, see <a
+     * AWS OpsWorks to work with AWS resources on your behalf. You must set
+     * this parameter to the Amazon Resource Name (ARN) for an existing IAM
+     * role. For more information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>. <note>You must set this parameter to a valid service
      * role ARN or the action will fail; there is no default value. You can
@@ -334,9 +353,9 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param serviceRoleArn The stack AWS Identity and Access Management (IAM) role, which allows
-     *         OpsWorks to work with AWS resources on your behalf. You must set this
-     *         parameter to the Amazon Resource Name (ARN) for an existing IAM role.
-     *         For more information about IAM ARNs, see <a
+     *         AWS OpsWorks to work with AWS resources on your behalf. You must set
+     *         this parameter to the Amazon Resource Name (ARN) for an existing IAM
+     *         role. For more information about IAM ARNs, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>. <note>You must set this parameter to a valid service
      *         role ARN or the action will fail; there is no default value. You can
@@ -399,35 +418,101 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
     
     
     /**
-     * The cloned stack default operating system, which must be either
-     * "Amazon Linux" or "Ubuntu 12.04 LTS".
+     * The stack default operating system, which must be set to one of the
+     * following. <ul> <li>Standard operating systems: <code>Amazon
+     * Linux</code> or <code>Ubuntu 12.04 LTS</code></li> <li>Custom AMIs:
+     * <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
+     * Linux</code>. If you set this parameter to <code>Custom</code>, you
+     * must use the <a>CreateInstance</a> action's AmiId parameter to specify
+     * the custom AMI that you want to use. For more information on the
+     * standard operating systems, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
+     * Systems</a>For more information on how to use custom AMIs with
+     * OpsWorks, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+     * Custom AMIs</a>.
      *
-     * @return The cloned stack default operating system, which must be either
-     *         "Amazon Linux" or "Ubuntu 12.04 LTS".
+     * @return The stack default operating system, which must be set to one of the
+     *         following. <ul> <li>Standard operating systems: <code>Amazon
+     *         Linux</code> or <code>Ubuntu 12.04 LTS</code></li> <li>Custom AMIs:
+     *         <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
+     *         Linux</code>. If you set this parameter to <code>Custom</code>, you
+     *         must use the <a>CreateInstance</a> action's AmiId parameter to specify
+     *         the custom AMI that you want to use. For more information on the
+     *         standard operating systems, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
+     *         Systems</a>For more information on how to use custom AMIs with
+     *         OpsWorks, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+     *         Custom AMIs</a>.
      */
     public String getDefaultOs() {
         return defaultOs;
     }
     
     /**
-     * The cloned stack default operating system, which must be either
-     * "Amazon Linux" or "Ubuntu 12.04 LTS".
+     * The stack default operating system, which must be set to one of the
+     * following. <ul> <li>Standard operating systems: <code>Amazon
+     * Linux</code> or <code>Ubuntu 12.04 LTS</code></li> <li>Custom AMIs:
+     * <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
+     * Linux</code>. If you set this parameter to <code>Custom</code>, you
+     * must use the <a>CreateInstance</a> action's AmiId parameter to specify
+     * the custom AMI that you want to use. For more information on the
+     * standard operating systems, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
+     * Systems</a>For more information on how to use custom AMIs with
+     * OpsWorks, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+     * Custom AMIs</a>.
      *
-     * @param defaultOs The cloned stack default operating system, which must be either
-     *         "Amazon Linux" or "Ubuntu 12.04 LTS".
+     * @param defaultOs The stack default operating system, which must be set to one of the
+     *         following. <ul> <li>Standard operating systems: <code>Amazon
+     *         Linux</code> or <code>Ubuntu 12.04 LTS</code></li> <li>Custom AMIs:
+     *         <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
+     *         Linux</code>. If you set this parameter to <code>Custom</code>, you
+     *         must use the <a>CreateInstance</a> action's AmiId parameter to specify
+     *         the custom AMI that you want to use. For more information on the
+     *         standard operating systems, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
+     *         Systems</a>For more information on how to use custom AMIs with
+     *         OpsWorks, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+     *         Custom AMIs</a>.
      */
     public void setDefaultOs(String defaultOs) {
         this.defaultOs = defaultOs;
     }
     
     /**
-     * The cloned stack default operating system, which must be either
-     * "Amazon Linux" or "Ubuntu 12.04 LTS".
+     * The stack default operating system, which must be set to one of the
+     * following. <ul> <li>Standard operating systems: <code>Amazon
+     * Linux</code> or <code>Ubuntu 12.04 LTS</code></li> <li>Custom AMIs:
+     * <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
+     * Linux</code>. If you set this parameter to <code>Custom</code>, you
+     * must use the <a>CreateInstance</a> action's AmiId parameter to specify
+     * the custom AMI that you want to use. For more information on the
+     * standard operating systems, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
+     * Systems</a>For more information on how to use custom AMIs with
+     * OpsWorks, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+     * Custom AMIs</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param defaultOs The cloned stack default operating system, which must be either
-     *         "Amazon Linux" or "Ubuntu 12.04 LTS".
+     * @param defaultOs The stack default operating system, which must be set to one of the
+     *         following. <ul> <li>Standard operating systems: <code>Amazon
+     *         Linux</code> or <code>Ubuntu 12.04 LTS</code></li> <li>Custom AMIs:
+     *         <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
+     *         Linux</code>. If you set this parameter to <code>Custom</code>, you
+     *         must use the <a>CreateInstance</a> action's AmiId parameter to specify
+     *         the custom AMI that you want to use. For more information on the
+     *         standard operating systems, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
+     *         Systems</a>For more information on how to use custom AMIs with
+     *         OpsWorks, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+     *         Custom AMIs</a>.
      */
     public UpdateStackRequest withDefaultOs(String defaultOs) {
         this.defaultOs = defaultOs;
@@ -437,29 +522,29 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
     
     /**
      * The stack's new host name theme, with spaces are replaced by
-     * underscores. The theme is used to generate hostnames for the stack's
+     * underscores. The theme is used to generate host names for the stack's
      * instances. By default, <code>HostnameTheme</code> is set to
-     * Layer_Dependent, which creates hostnames by appending integers to the
-     * layer's shortname. The other themes are: <ul> <li>Baked_Goods</li>
+     * Layer_Dependent, which creates host names by appending integers to the
+     * layer's short name. The other themes are: <ul> <li>Baked_Goods</li>
      * <li>Clouds</li> <li>European_Cities</li> <li>Fruits</li>
      * <li>Greek_Deities</li> <li>Legendary_Creatures_from_Japan</li>
      * <li>Planets_and_Moons</li> <li>Roman_Deities</li>
      * <li>Scottish_Islands</li> <li>US_Cities</li> <li>Wild_Cats</li> </ul>
-     * <p>To obtain a generated hostname, call
-     * <code>GetHostNameSuggestion</code>, which returns a hostname based on
+     * <p>To obtain a generated host name, call
+     * <code>GetHostNameSuggestion</code>, which returns a host name based on
      * the current theme.
      *
      * @return The stack's new host name theme, with spaces are replaced by
-     *         underscores. The theme is used to generate hostnames for the stack's
+     *         underscores. The theme is used to generate host names for the stack's
      *         instances. By default, <code>HostnameTheme</code> is set to
-     *         Layer_Dependent, which creates hostnames by appending integers to the
-     *         layer's shortname. The other themes are: <ul> <li>Baked_Goods</li>
+     *         Layer_Dependent, which creates host names by appending integers to the
+     *         layer's short name. The other themes are: <ul> <li>Baked_Goods</li>
      *         <li>Clouds</li> <li>European_Cities</li> <li>Fruits</li>
      *         <li>Greek_Deities</li> <li>Legendary_Creatures_from_Japan</li>
      *         <li>Planets_and_Moons</li> <li>Roman_Deities</li>
      *         <li>Scottish_Islands</li> <li>US_Cities</li> <li>Wild_Cats</li> </ul>
-     *         <p>To obtain a generated hostname, call
-     *         <code>GetHostNameSuggestion</code>, which returns a hostname based on
+     *         <p>To obtain a generated host name, call
+     *         <code>GetHostNameSuggestion</code>, which returns a host name based on
      *         the current theme.
      */
     public String getHostnameTheme() {
@@ -468,29 +553,29 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
     
     /**
      * The stack's new host name theme, with spaces are replaced by
-     * underscores. The theme is used to generate hostnames for the stack's
+     * underscores. The theme is used to generate host names for the stack's
      * instances. By default, <code>HostnameTheme</code> is set to
-     * Layer_Dependent, which creates hostnames by appending integers to the
-     * layer's shortname. The other themes are: <ul> <li>Baked_Goods</li>
+     * Layer_Dependent, which creates host names by appending integers to the
+     * layer's short name. The other themes are: <ul> <li>Baked_Goods</li>
      * <li>Clouds</li> <li>European_Cities</li> <li>Fruits</li>
      * <li>Greek_Deities</li> <li>Legendary_Creatures_from_Japan</li>
      * <li>Planets_and_Moons</li> <li>Roman_Deities</li>
      * <li>Scottish_Islands</li> <li>US_Cities</li> <li>Wild_Cats</li> </ul>
-     * <p>To obtain a generated hostname, call
-     * <code>GetHostNameSuggestion</code>, which returns a hostname based on
+     * <p>To obtain a generated host name, call
+     * <code>GetHostNameSuggestion</code>, which returns a host name based on
      * the current theme.
      *
      * @param hostnameTheme The stack's new host name theme, with spaces are replaced by
-     *         underscores. The theme is used to generate hostnames for the stack's
+     *         underscores. The theme is used to generate host names for the stack's
      *         instances. By default, <code>HostnameTheme</code> is set to
-     *         Layer_Dependent, which creates hostnames by appending integers to the
-     *         layer's shortname. The other themes are: <ul> <li>Baked_Goods</li>
+     *         Layer_Dependent, which creates host names by appending integers to the
+     *         layer's short name. The other themes are: <ul> <li>Baked_Goods</li>
      *         <li>Clouds</li> <li>European_Cities</li> <li>Fruits</li>
      *         <li>Greek_Deities</li> <li>Legendary_Creatures_from_Japan</li>
      *         <li>Planets_and_Moons</li> <li>Roman_Deities</li>
      *         <li>Scottish_Islands</li> <li>US_Cities</li> <li>Wild_Cats</li> </ul>
-     *         <p>To obtain a generated hostname, call
-     *         <code>GetHostNameSuggestion</code>, which returns a hostname based on
+     *         <p>To obtain a generated host name, call
+     *         <code>GetHostNameSuggestion</code>, which returns a host name based on
      *         the current theme.
      */
     public void setHostnameTheme(String hostnameTheme) {
@@ -499,31 +584,31 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
     
     /**
      * The stack's new host name theme, with spaces are replaced by
-     * underscores. The theme is used to generate hostnames for the stack's
+     * underscores. The theme is used to generate host names for the stack's
      * instances. By default, <code>HostnameTheme</code> is set to
-     * Layer_Dependent, which creates hostnames by appending integers to the
-     * layer's shortname. The other themes are: <ul> <li>Baked_Goods</li>
+     * Layer_Dependent, which creates host names by appending integers to the
+     * layer's short name. The other themes are: <ul> <li>Baked_Goods</li>
      * <li>Clouds</li> <li>European_Cities</li> <li>Fruits</li>
      * <li>Greek_Deities</li> <li>Legendary_Creatures_from_Japan</li>
      * <li>Planets_and_Moons</li> <li>Roman_Deities</li>
      * <li>Scottish_Islands</li> <li>US_Cities</li> <li>Wild_Cats</li> </ul>
-     * <p>To obtain a generated hostname, call
-     * <code>GetHostNameSuggestion</code>, which returns a hostname based on
+     * <p>To obtain a generated host name, call
+     * <code>GetHostNameSuggestion</code>, which returns a host name based on
      * the current theme.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param hostnameTheme The stack's new host name theme, with spaces are replaced by
-     *         underscores. The theme is used to generate hostnames for the stack's
+     *         underscores. The theme is used to generate host names for the stack's
      *         instances. By default, <code>HostnameTheme</code> is set to
-     *         Layer_Dependent, which creates hostnames by appending integers to the
-     *         layer's shortname. The other themes are: <ul> <li>Baked_Goods</li>
+     *         Layer_Dependent, which creates host names by appending integers to the
+     *         layer's short name. The other themes are: <ul> <li>Baked_Goods</li>
      *         <li>Clouds</li> <li>European_Cities</li> <li>Fruits</li>
      *         <li>Greek_Deities</li> <li>Legendary_Creatures_from_Japan</li>
      *         <li>Planets_and_Moons</li> <li>Roman_Deities</li>
      *         <li>Scottish_Islands</li> <li>US_Cities</li> <li>Wild_Cats</li> </ul>
-     *         <p>To obtain a generated hostname, call
-     *         <code>GetHostNameSuggestion</code>, which returns a hostname based on
+     *         <p>To obtain a generated host name, call
+     *         <code>GetHostNameSuggestion</code>, which returns a host name based on
      *         the current theme.
      */
     public UpdateStackRequest withHostnameTheme(String hostnameTheme) {
@@ -581,16 +666,16 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      * The string should be in the following format and must escape
      * characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
      * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">
-     * Use Custom JSON to Modify the Stack Configuration JSON</a>.
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+     * Custom JSON to Modify the Stack Configuration JSON</a>.
      *
      * @return A string that contains user-defined, custom JSON. It is used to
      *         override the corresponding default stack configuration JSON values.
      *         The string should be in the following format and must escape
      *         characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
      *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">
-     *         Use Custom JSON to Modify the Stack Configuration JSON</a>.
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+     *         Custom JSON to Modify the Stack Configuration JSON</a>.
      */
     public String getCustomJson() {
         return customJson;
@@ -602,16 +687,16 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      * The string should be in the following format and must escape
      * characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
      * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">
-     * Use Custom JSON to Modify the Stack Configuration JSON</a>.
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+     * Custom JSON to Modify the Stack Configuration JSON</a>.
      *
      * @param customJson A string that contains user-defined, custom JSON. It is used to
      *         override the corresponding default stack configuration JSON values.
      *         The string should be in the following format and must escape
      *         characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
      *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">
-     *         Use Custom JSON to Modify the Stack Configuration JSON</a>.
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+     *         Custom JSON to Modify the Stack Configuration JSON</a>.
      */
     public void setCustomJson(String customJson) {
         this.customJson = customJson;
@@ -623,8 +708,8 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      * The string should be in the following format and must escape
      * characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
      * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">
-     * Use Custom JSON to Modify the Stack Configuration JSON</a>.
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+     * Custom JSON to Modify the Stack Configuration JSON</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -633,11 +718,60 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         The string should be in the following format and must escape
      *         characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
      *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">
-     *         Use Custom JSON to Modify the Stack Configuration JSON</a>.
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+     *         Custom JSON to Modify the Stack Configuration JSON</a>.
      */
     public UpdateStackRequest withCustomJson(String customJson) {
         this.customJson = customJson;
+        return this;
+    }
+    
+    
+    /**
+     * The configuration manager. When you update a stack you can optionally
+     * use the configuration manager to specify the Chef version, 0.9 or
+     * 11.4. If you omit this parameter, AWS OpsWorks does not change the
+     * Chef version.
+     *
+     * @return The configuration manager. When you update a stack you can optionally
+     *         use the configuration manager to specify the Chef version, 0.9 or
+     *         11.4. If you omit this parameter, AWS OpsWorks does not change the
+     *         Chef version.
+     */
+    public StackConfigurationManager getConfigurationManager() {
+        return configurationManager;
+    }
+    
+    /**
+     * The configuration manager. When you update a stack you can optionally
+     * use the configuration manager to specify the Chef version, 0.9 or
+     * 11.4. If you omit this parameter, AWS OpsWorks does not change the
+     * Chef version.
+     *
+     * @param configurationManager The configuration manager. When you update a stack you can optionally
+     *         use the configuration manager to specify the Chef version, 0.9 or
+     *         11.4. If you omit this parameter, AWS OpsWorks does not change the
+     *         Chef version.
+     */
+    public void setConfigurationManager(StackConfigurationManager configurationManager) {
+        this.configurationManager = configurationManager;
+    }
+    
+    /**
+     * The configuration manager. When you update a stack you can optionally
+     * use the configuration manager to specify the Chef version, 0.9 or
+     * 11.4. If you omit this parameter, AWS OpsWorks does not change the
+     * Chef version.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param configurationManager The configuration manager. When you update a stack you can optionally
+     *         use the configuration manager to specify the Chef version, 0.9 or
+     *         11.4. If you omit this parameter, AWS OpsWorks does not change the
+     *         Chef version.
+     */
+    public UpdateStackRequest withConfigurationManager(StackConfigurationManager configurationManager) {
+        this.configurationManager = configurationManager;
         return this;
     }
     
@@ -687,14 +821,14 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      * a repository. For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
      * Apps</a> or <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom
      * Recipes and Cookbooks</a>.
      *
      * @return Contains the information required to retrieve an app or cookbook from
      *         a repository. For more information, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
      *         Apps</a> or <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom
      *         Recipes and Cookbooks</a>.
      */
     public Source getCustomCookbooksSource() {
@@ -706,14 +840,14 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      * a repository. For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
      * Apps</a> or <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom
      * Recipes and Cookbooks</a>.
      *
      * @param customCookbooksSource Contains the information required to retrieve an app or cookbook from
      *         a repository. For more information, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
      *         Apps</a> or <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom
      *         Recipes and Cookbooks</a>.
      */
     public void setCustomCookbooksSource(Source customCookbooksSource) {
@@ -725,7 +859,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      * a repository. For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
      * Apps</a> or <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom
      * Recipes and Cookbooks</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -734,7 +868,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         a repository. For more information, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
      *         Apps</a> or <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom
      *         Recipes and Cookbooks</a>.
      */
     public UpdateStackRequest withCustomCookbooksSource(Source customCookbooksSource) {
@@ -918,6 +1052,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
         if (getHostnameTheme() != null) sb.append("HostnameTheme: " + getHostnameTheme() + ",");
         if (getDefaultAvailabilityZone() != null) sb.append("DefaultAvailabilityZone: " + getDefaultAvailabilityZone() + ",");
         if (getCustomJson() != null) sb.append("CustomJson: " + getCustomJson() + ",");
+        if (getConfigurationManager() != null) sb.append("ConfigurationManager: " + getConfigurationManager() + ",");
         if (isUseCustomCookbooks() != null) sb.append("UseCustomCookbooks: " + isUseCustomCookbooks() + ",");
         if (getCustomCookbooksSource() != null) sb.append("CustomCookbooksSource: " + getCustomCookbooksSource() + ",");
         if (getDefaultSshKeyName() != null) sb.append("DefaultSshKeyName: " + getDefaultSshKeyName() + ",");
@@ -940,6 +1075,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
         hashCode = prime * hashCode + ((getHostnameTheme() == null) ? 0 : getHostnameTheme().hashCode()); 
         hashCode = prime * hashCode + ((getDefaultAvailabilityZone() == null) ? 0 : getDefaultAvailabilityZone().hashCode()); 
         hashCode = prime * hashCode + ((getCustomJson() == null) ? 0 : getCustomJson().hashCode()); 
+        hashCode = prime * hashCode + ((getConfigurationManager() == null) ? 0 : getConfigurationManager().hashCode()); 
         hashCode = prime * hashCode + ((isUseCustomCookbooks() == null) ? 0 : isUseCustomCookbooks().hashCode()); 
         hashCode = prime * hashCode + ((getCustomCookbooksSource() == null) ? 0 : getCustomCookbooksSource().hashCode()); 
         hashCode = prime * hashCode + ((getDefaultSshKeyName() == null) ? 0 : getDefaultSshKeyName().hashCode()); 
@@ -973,6 +1109,8 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
         if (other.getDefaultAvailabilityZone() != null && other.getDefaultAvailabilityZone().equals(this.getDefaultAvailabilityZone()) == false) return false; 
         if (other.getCustomJson() == null ^ this.getCustomJson() == null) return false;
         if (other.getCustomJson() != null && other.getCustomJson().equals(this.getCustomJson()) == false) return false; 
+        if (other.getConfigurationManager() == null ^ this.getConfigurationManager() == null) return false;
+        if (other.getConfigurationManager() != null && other.getConfigurationManager().equals(this.getConfigurationManager()) == false) return false; 
         if (other.isUseCustomCookbooks() == null ^ this.isUseCustomCookbooks() == null) return false;
         if (other.isUseCustomCookbooks() != null && other.isUseCustomCookbooks().equals(this.isUseCustomCookbooks()) == false) return false; 
         if (other.getCustomCookbooksSource() == null ^ this.getCustomCookbooksSource() == null) return false;

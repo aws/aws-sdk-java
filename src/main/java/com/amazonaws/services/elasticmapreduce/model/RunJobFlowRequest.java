@@ -208,9 +208,6 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param name The name of the job flow.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RunJobFlowRequest withName(String name) {
         this.name = name;
@@ -260,9 +257,6 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      *
      * @param logUri Specifies the location in Amazon S3 to write the log files of the job
      *         flow. If a value is not provided, logs are not created.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RunJobFlowRequest withLogUri(String logUri) {
         this.logUri = logUri;
@@ -306,9 +300,6 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param additionalInfo A JSON string for selecting additional features.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RunJobFlowRequest withAdditionalInfo(String additionalInfo) {
         this.additionalInfo = additionalInfo;
@@ -430,9 +421,6 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      *         Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      *         MapReduce Developer's Guide.</i>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RunJobFlowRequest withAmiVersion(String amiVersion) {
         this.amiVersion = amiVersion;
@@ -470,9 +458,6 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      *
      * @param instances A specification of the number and type of Amazon EC2 instances on
      *         which to run the job flow.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RunJobFlowRequest withInstances(JobFlowInstancesConfig instances) {
         this.instances = instances;
@@ -515,9 +500,6 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param steps A list of steps to be executed by the job flow.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RunJobFlowRequest withSteps(StepConfig... steps) {
         if (getSteps() == null) setSteps(new java.util.ArrayList<StepConfig>(steps.length));
@@ -533,9 +515,6 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param steps A list of steps to be executed by the job flow.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RunJobFlowRequest withSteps(java.util.Collection<StepConfig> steps) {
         if (steps == null) {
@@ -590,9 +569,6 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      *
      * @param bootstrapActions A list of bootstrap actions that will be run before Hadoop is started
      *         on the cluster nodes.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RunJobFlowRequest withBootstrapActions(BootstrapActionConfig... bootstrapActions) {
         if (getBootstrapActions() == null) setBootstrapActions(new java.util.ArrayList<BootstrapActionConfig>(bootstrapActions.length));
@@ -610,9 +586,6 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      *
      * @param bootstrapActions A list of bootstrap actions that will be run before Hadoop is started
      *         on the cluster nodes.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RunJobFlowRequest withBootstrapActions(java.util.Collection<BootstrapActionConfig> bootstrapActions) {
         if (bootstrapActions == null) {
@@ -709,9 +682,6 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      *         href="http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
      *         <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
      *         <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RunJobFlowRequest withSupportedProducts(String... supportedProducts) {
         if (getSupportedProducts() == null) setSupportedProducts(new java.util.ArrayList<String>(supportedProducts.length));
@@ -743,9 +713,6 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      *         href="http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
      *         <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
      *         <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RunJobFlowRequest withSupportedProducts(java.util.Collection<String> supportedProducts) {
         if (supportedProducts == null) {
@@ -813,9 +780,6 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      *         they have the proper policy permissions set) manage the job flow. If
      *         it is set to <code>false</code>, only the IAM user that created the
      *         job flow can view and manage it.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RunJobFlowRequest withVisibleToAllUsers(Boolean visibleToAllUsers) {
         this.visibleToAllUsers = visibleToAllUsers;
@@ -896,9 +860,6 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      *         this role. The default role is <code>EMRJobflowDefault</code>. In
      *         order to use the default role, you must have already created it using
      *         the CLI.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RunJobFlowRequest withJobFlowRole(String jobFlowRole) {
         this.jobFlowRole = jobFlowRole;

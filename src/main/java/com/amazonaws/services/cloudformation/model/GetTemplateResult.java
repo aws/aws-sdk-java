@@ -84,9 +84,6 @@ public class GetTemplateResult  implements Serializable  {
      *         the <a
      *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/">AWS
      *         CloudFormation User Guide</a>.)
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetTemplateResult withTemplateBody(String templateBody) {
         this.templateBody = templateBody;

@@ -90,9 +90,6 @@ public class DescribeCacheEngineVersionsRequest extends AmazonWebServiceRequest 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param engine The cache engine to return.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeCacheEngineVersionsRequest withEngine(String engine) {
         this.engine = engine;
@@ -124,9 +121,6 @@ public class DescribeCacheEngineVersionsRequest extends AmazonWebServiceRequest 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param engineVersion The cache engine version to return. <p>Example: <code>1.4.14</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeCacheEngineVersionsRequest withEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
@@ -176,9 +170,6 @@ public class DescribeCacheEngineVersionsRequest extends AmazonWebServiceRequest 
      *         for. <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric
      *         characters</li> <li>First character must be a letter</li> <li>Cannot
      *         end with a hyphen or contain two consecutive hyphens</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeCacheEngineVersionsRequest withCacheParameterGroupFamily(String cacheParameterGroupFamily) {
         this.cacheParameterGroupFamily = cacheParameterGroupFamily;
@@ -228,9 +219,6 @@ public class DescribeCacheEngineVersionsRequest extends AmazonWebServiceRequest 
      *         records exist than the specified <i>MaxRecords</i> value, a marker is
      *         included in the response so that the remaining results may be
      *         retrieved.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeCacheEngineVersionsRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -280,9 +268,6 @@ public class DescribeCacheEngineVersionsRequest extends AmazonWebServiceRequest 
      *         DescribeCacheParameterGroups request. If this parameter is specified,
      *         the response includes only records beyond the marker, up to the value
      *         specified by <i>MaxRecords</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeCacheEngineVersionsRequest withMarker(String marker) {
         this.marker = marker;
@@ -320,9 +305,6 @@ public class DescribeCacheEngineVersionsRequest extends AmazonWebServiceRequest 
      *
      * @param defaultOnly Indicates that only the default version of the specified engine or
      *         engine and major version combination is returned.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeCacheEngineVersionsRequest withDefaultOnly(Boolean defaultOnly) {
         this.defaultOnly = defaultOnly;

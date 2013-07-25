@@ -85,9 +85,6 @@ public class DeleteConnectionResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param connectionId ID of the connection. <p>Example: dxcon-fg5678gh <p>Default: None
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteConnectionResult withConnectionId(String connectionId) {
         this.connectionId = connectionId;
@@ -125,9 +122,6 @@ public class DeleteConnectionResult  implements Serializable  {
      *
      * @param connectionName The name of the connection. <p>Example: "<i>1G Connection to AWS</i>"
      *         <p>Default: None
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteConnectionResult withConnectionName(String connectionName) {
         this.connectionName = connectionName;
@@ -221,9 +215,6 @@ public class DeleteConnectionResult  implements Serializable  {
      *         available before virtual interfaces can be created.</li>
      *         <li><b>Deleted</b>: A connection that has been deleted.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ConnectionState
      */
     public DeleteConnectionResult withConnectionState(String connectionState) {
@@ -288,9 +279,6 @@ public class DeleteConnectionResult  implements Serializable  {
      *         available before virtual interfaces can be created.</li>
      *         <li><b>Deleted</b>: A connection that has been deleted.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ConnectionState
      */
     public DeleteConnectionResult withConnectionState(ConnectionState connectionState) {
@@ -328,9 +316,6 @@ public class DeleteConnectionResult  implements Serializable  {
      *
      * @param region The AWS region where the offering is located. <p>Example: us-east-1
      *         <p>Default: None
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteConnectionResult withRegion(String region) {
         this.region = region;
@@ -368,9 +353,6 @@ public class DeleteConnectionResult  implements Serializable  {
      *
      * @param location Where the AWS Direct Connect offering is located. <p>Example: EqSV5
      *         <p>Default: None
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteConnectionResult withLocation(String location) {
         this.location = location;

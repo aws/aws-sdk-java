@@ -98,9 +98,6 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest  implement
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceGroups Instance Groups to add.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AddInstanceGroupsRequest withInstanceGroups(InstanceGroupConfig... instanceGroups) {
         if (getInstanceGroups() == null) setInstanceGroups(new java.util.ArrayList<InstanceGroupConfig>(instanceGroups.length));
@@ -116,9 +113,6 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest  implement
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceGroups Instance Groups to add.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AddInstanceGroupsRequest withInstanceGroups(java.util.Collection<InstanceGroupConfig> instanceGroups) {
         if (instanceGroups == null) {
@@ -168,9 +162,6 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest  implement
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param jobFlowId Job flow in which to add the instance groups.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AddInstanceGroupsRequest withJobFlowId(String jobFlowId) {
         this.jobFlowId = jobFlowId;

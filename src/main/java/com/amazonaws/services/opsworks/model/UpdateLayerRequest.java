@@ -37,10 +37,10 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
     private String name;
 
     /**
-     * The layer short name, which is used internally by OpsWorksand by Chef.
-     * The shortname is also used as the name for the directory where your
-     * app files are installed. It can have a maximum of 200 characters and
-     * must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
+     * The layer short name, which is used internally by AWS OpsWorksand by
+     * Chef. The short name is also used as the name for the directory where
+     * your app files are installed. It can have a maximum of 200 characters
+     * and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
      */
     private String shortname;
 
@@ -92,6 +92,19 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
      * custom recipes.
      */
     private Recipes customRecipes;
+
+    /**
+     * Whether to install operating system and package updates when the
+     * instance boots. The default value is <code>true</code>. To control
+     * when updates are installed, set this value to <code>false</code>. You
+     * must then update your instances manually by using
+     * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
+     * stack command or manually running <code>yum</code> (Amazon Linux) or
+     * <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     * recommend using the default value of <code>true</code>, to ensure that
+     * your instances have the latest security updates.</note>
+     */
+    private Boolean installUpdatesOnBoot;
 
     /**
      * The layer ID.
@@ -156,47 +169,47 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
     
     
     /**
-     * The layer short name, which is used internally by OpsWorksand by Chef.
-     * The shortname is also used as the name for the directory where your
-     * app files are installed. It can have a maximum of 200 characters and
-     * must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
+     * The layer short name, which is used internally by AWS OpsWorksand by
+     * Chef. The short name is also used as the name for the directory where
+     * your app files are installed. It can have a maximum of 200 characters
+     * and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
      *
-     * @return The layer short name, which is used internally by OpsWorksand by Chef.
-     *         The shortname is also used as the name for the directory where your
-     *         app files are installed. It can have a maximum of 200 characters and
-     *         must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
+     * @return The layer short name, which is used internally by AWS OpsWorksand by
+     *         Chef. The short name is also used as the name for the directory where
+     *         your app files are installed. It can have a maximum of 200 characters
+     *         and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
      */
     public String getShortname() {
         return shortname;
     }
     
     /**
-     * The layer short name, which is used internally by OpsWorksand by Chef.
-     * The shortname is also used as the name for the directory where your
-     * app files are installed. It can have a maximum of 200 characters and
-     * must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
+     * The layer short name, which is used internally by AWS OpsWorksand by
+     * Chef. The short name is also used as the name for the directory where
+     * your app files are installed. It can have a maximum of 200 characters
+     * and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
      *
-     * @param shortname The layer short name, which is used internally by OpsWorksand by Chef.
-     *         The shortname is also used as the name for the directory where your
-     *         app files are installed. It can have a maximum of 200 characters and
-     *         must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
+     * @param shortname The layer short name, which is used internally by AWS OpsWorksand by
+     *         Chef. The short name is also used as the name for the directory where
+     *         your app files are installed. It can have a maximum of 200 characters
+     *         and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
      */
     public void setShortname(String shortname) {
         this.shortname = shortname;
     }
     
     /**
-     * The layer short name, which is used internally by OpsWorksand by Chef.
-     * The shortname is also used as the name for the directory where your
-     * app files are installed. It can have a maximum of 200 characters and
-     * must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
+     * The layer short name, which is used internally by AWS OpsWorksand by
+     * Chef. The short name is also used as the name for the directory where
+     * your app files are installed. It can have a maximum of 200 characters
+     * and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param shortname The layer short name, which is used internally by OpsWorksand by Chef.
-     *         The shortname is also used as the name for the directory where your
-     *         app files are installed. It can have a maximum of 200 characters and
-     *         must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
+     * @param shortname The layer short name, which is used internally by AWS OpsWorksand by
+     *         Chef. The short name is also used as the name for the directory where
+     *         your app files are installed. It can have a maximum of 200 characters
+     *         and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
      */
     public UpdateLayerRequest withShortname(String shortname) {
         this.shortname = shortname;
@@ -664,6 +677,110 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
     
     
     /**
+     * Whether to install operating system and package updates when the
+     * instance boots. The default value is <code>true</code>. To control
+     * when updates are installed, set this value to <code>false</code>. You
+     * must then update your instances manually by using
+     * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
+     * stack command or manually running <code>yum</code> (Amazon Linux) or
+     * <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     * recommend using the default value of <code>true</code>, to ensure that
+     * your instances have the latest security updates.</note>
+     *
+     * @return Whether to install operating system and package updates when the
+     *         instance boots. The default value is <code>true</code>. To control
+     *         when updates are installed, set this value to <code>false</code>. You
+     *         must then update your instances manually by using
+     *         <a>CreateDeployment</a> to run the <code>update_dependencies</code>
+     *         stack command or manually running <code>yum</code> (Amazon Linux) or
+     *         <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     *         recommend using the default value of <code>true</code>, to ensure that
+     *         your instances have the latest security updates.</note>
+     */
+    public Boolean isInstallUpdatesOnBoot() {
+        return installUpdatesOnBoot;
+    }
+    
+    /**
+     * Whether to install operating system and package updates when the
+     * instance boots. The default value is <code>true</code>. To control
+     * when updates are installed, set this value to <code>false</code>. You
+     * must then update your instances manually by using
+     * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
+     * stack command or manually running <code>yum</code> (Amazon Linux) or
+     * <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     * recommend using the default value of <code>true</code>, to ensure that
+     * your instances have the latest security updates.</note>
+     *
+     * @param installUpdatesOnBoot Whether to install operating system and package updates when the
+     *         instance boots. The default value is <code>true</code>. To control
+     *         when updates are installed, set this value to <code>false</code>. You
+     *         must then update your instances manually by using
+     *         <a>CreateDeployment</a> to run the <code>update_dependencies</code>
+     *         stack command or manually running <code>yum</code> (Amazon Linux) or
+     *         <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     *         recommend using the default value of <code>true</code>, to ensure that
+     *         your instances have the latest security updates.</note>
+     */
+    public void setInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
+        this.installUpdatesOnBoot = installUpdatesOnBoot;
+    }
+    
+    /**
+     * Whether to install operating system and package updates when the
+     * instance boots. The default value is <code>true</code>. To control
+     * when updates are installed, set this value to <code>false</code>. You
+     * must then update your instances manually by using
+     * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
+     * stack command or manually running <code>yum</code> (Amazon Linux) or
+     * <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     * recommend using the default value of <code>true</code>, to ensure that
+     * your instances have the latest security updates.</note>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param installUpdatesOnBoot Whether to install operating system and package updates when the
+     *         instance boots. The default value is <code>true</code>. To control
+     *         when updates are installed, set this value to <code>false</code>. You
+     *         must then update your instances manually by using
+     *         <a>CreateDeployment</a> to run the <code>update_dependencies</code>
+     *         stack command or manually running <code>yum</code> (Amazon Linux) or
+     *         <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     *         recommend using the default value of <code>true</code>, to ensure that
+     *         your instances have the latest security updates.</note>
+     */
+    public UpdateLayerRequest withInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
+        this.installUpdatesOnBoot = installUpdatesOnBoot;
+        return this;
+    }
+    
+    
+    /**
+     * Whether to install operating system and package updates when the
+     * instance boots. The default value is <code>true</code>. To control
+     * when updates are installed, set this value to <code>false</code>. You
+     * must then update your instances manually by using
+     * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
+     * stack command or manually running <code>yum</code> (Amazon Linux) or
+     * <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     * recommend using the default value of <code>true</code>, to ensure that
+     * your instances have the latest security updates.</note>
+     *
+     * @return Whether to install operating system and package updates when the
+     *         instance boots. The default value is <code>true</code>. To control
+     *         when updates are installed, set this value to <code>false</code>. You
+     *         must then update your instances manually by using
+     *         <a>CreateDeployment</a> to run the <code>update_dependencies</code>
+     *         stack command or manually running <code>yum</code> (Amazon Linux) or
+     *         <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     *         recommend using the default value of <code>true</code>, to ensure that
+     *         your instances have the latest security updates.</note>
+     */
+    public Boolean getInstallUpdatesOnBoot() {
+        return installUpdatesOnBoot;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -685,7 +802,8 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
         if (getVolumeConfigurations() != null) sb.append("VolumeConfigurations: " + getVolumeConfigurations() + ",");
         if (isEnableAutoHealing() != null) sb.append("EnableAutoHealing: " + isEnableAutoHealing() + ",");
         if (isAutoAssignElasticIps() != null) sb.append("AutoAssignElasticIps: " + isAutoAssignElasticIps() + ",");
-        if (getCustomRecipes() != null) sb.append("CustomRecipes: " + getCustomRecipes() );
+        if (getCustomRecipes() != null) sb.append("CustomRecipes: " + getCustomRecipes() + ",");
+        if (isInstallUpdatesOnBoot() != null) sb.append("InstallUpdatesOnBoot: " + isInstallUpdatesOnBoot() );
         sb.append("}");
         return sb.toString();
     }
@@ -706,6 +824,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
         hashCode = prime * hashCode + ((isEnableAutoHealing() == null) ? 0 : isEnableAutoHealing().hashCode()); 
         hashCode = prime * hashCode + ((isAutoAssignElasticIps() == null) ? 0 : isAutoAssignElasticIps().hashCode()); 
         hashCode = prime * hashCode + ((getCustomRecipes() == null) ? 0 : getCustomRecipes().hashCode()); 
+        hashCode = prime * hashCode + ((isInstallUpdatesOnBoot() == null) ? 0 : isInstallUpdatesOnBoot().hashCode()); 
         return hashCode;
     }
     
@@ -739,6 +858,8 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
         if (other.isAutoAssignElasticIps() != null && other.isAutoAssignElasticIps().equals(this.isAutoAssignElasticIps()) == false) return false; 
         if (other.getCustomRecipes() == null ^ this.getCustomRecipes() == null) return false;
         if (other.getCustomRecipes() != null && other.getCustomRecipes().equals(this.getCustomRecipes()) == false) return false; 
+        if (other.isInstallUpdatesOnBoot() == null ^ this.isInstallUpdatesOnBoot() == null) return false;
+        if (other.isInstallUpdatesOnBoot() != null && other.isInstallUpdatesOnBoot().equals(this.isInstallUpdatesOnBoot()) == false) return false; 
         return true;
     }
     

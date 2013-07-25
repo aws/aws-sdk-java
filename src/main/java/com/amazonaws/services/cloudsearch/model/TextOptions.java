@@ -74,9 +74,6 @@ public class TextOptions  implements Serializable  {
      * <b>Length: </b>0 - 1024<br/>
      *
      * @param defaultValue The default value for a text field.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TextOptions withDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
@@ -108,9 +105,6 @@ public class TextOptions  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param facetEnabled Specifies whether facets are enabled for this field.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TextOptions withFacetEnabled(Boolean facetEnabled) {
         this.facetEnabled = facetEnabled;
@@ -157,9 +151,6 @@ public class TextOptions  implements Serializable  {
      *
      * @param resultEnabled Specifies whether values of this field can be returned in search
      *         results and used for ranking.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TextOptions withResultEnabled(Boolean resultEnabled) {
         this.resultEnabled = resultEnabled;

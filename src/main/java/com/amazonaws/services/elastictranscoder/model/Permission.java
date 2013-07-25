@@ -149,9 +149,6 @@ public class Permission  implements Serializable  {
      *         <li><code>Group</code>: One of the following predefined Amazon S3
      *         groups: <code>AllUsers</code>, <code>AuthenticatedUsers</code>, or
      *         <code>LogDelivery</code>.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Permission withGranteeType(String granteeType) {
         this.granteeType = granteeType;
@@ -216,9 +213,6 @@ public class Permission  implements Serializable  {
      *         canonical user ID for an AWS account, an origin access identity for a
      *         CloudFront distribution, the registered email address of an AWS
      *         account, or a predefined Amazon S3 group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Permission withGrantee(String grantee) {
         this.grantee = grantee;
@@ -330,9 +324,6 @@ public class Permission  implements Serializable  {
      *         <li><code>FULL_CONTROL</code>: The grantee has READ, READ_ACP, and
      *         WRITE_ACP permissions for the thumbnails that Elastic Transcoder adds
      *         to the Amazon S3 bucket.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Permission withAccess(String... access) {
         if (getAccess() == null) setAccess(new java.util.ArrayList<String>(access.length));
@@ -371,9 +362,6 @@ public class Permission  implements Serializable  {
      *         <li><code>FULL_CONTROL</code>: The grantee has READ, READ_ACP, and
      *         WRITE_ACP permissions for the thumbnails that Elastic Transcoder adds
      *         to the Amazon S3 bucket.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Permission withAccess(java.util.Collection<String> access) {
         if (access == null) {

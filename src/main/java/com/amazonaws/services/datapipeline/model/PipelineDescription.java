@@ -98,9 +98,6 @@ public class PipelineDescription  implements Serializable  {
      *
      * @param pipelineId The pipeline identifier that was assigned by AWS Data Pipeline. This
      *         is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PipelineDescription withPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
@@ -144,9 +141,6 @@ public class PipelineDescription  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param name Name of the pipeline.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PipelineDescription withName(String name) {
         this.name = name;
@@ -195,9 +189,6 @@ public class PipelineDescription  implements Serializable  {
      *
      * @param fields A list of read-only fields that contain metadata about the pipeline:
      *         @userId, @accountId, and @pipelineState.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PipelineDescription withFields(Field... fields) {
         if (getFields() == null) setFields(new java.util.ArrayList<Field>(fields.length));
@@ -215,9 +206,6 @@ public class PipelineDescription  implements Serializable  {
      *
      * @param fields A list of read-only fields that contain metadata about the pipeline:
      *         @userId, @accountId, and @pipelineState.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PipelineDescription withFields(java.util.Collection<Field> fields) {
         if (fields == null) {
@@ -267,9 +255,6 @@ public class PipelineDescription  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param description Description of the pipeline.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PipelineDescription withDescription(String description) {
         this.description = description;

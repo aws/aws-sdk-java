@@ -99,9 +99,6 @@ public class DeleteServerCertificateRequest extends AmazonWebServiceRequest  imp
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param serverCertificateName The name of the server certificate you want to delete.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteServerCertificateRequest withServerCertificateName(String serverCertificateName) {
         this.serverCertificateName = serverCertificateName;

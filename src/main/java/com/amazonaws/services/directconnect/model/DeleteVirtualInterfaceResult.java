@@ -138,9 +138,6 @@ public class DeleteVirtualInterfaceResult  implements Serializable  {
      *         traffic.</li> <li><b>Deleted</b>: A virtual interface that cannot
      *         forward traffic.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see VirtualInterfaceState
      */
     public DeleteVirtualInterfaceResult withVirtualInterfaceState(String virtualInterfaceState) {
@@ -212,9 +209,6 @@ public class DeleteVirtualInterfaceResult  implements Serializable  {
      *         <i>DeleteVirtualInterface</i> until it can no longer forward
      *         traffic.</li> <li><b>Deleted</b>: A virtual interface that cannot
      *         forward traffic.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see VirtualInterfaceState
      */

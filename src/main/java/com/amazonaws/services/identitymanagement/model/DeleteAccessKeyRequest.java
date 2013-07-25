@@ -107,9 +107,6 @@ public class DeleteAccessKeyRequest extends AmazonWebServiceRequest  implements 
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param userName Name of the user whose key you want to delete.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteAccessKeyRequest withUserName(String userName) {
         this.userName = userName;
@@ -159,9 +156,6 @@ public class DeleteAccessKeyRequest extends AmazonWebServiceRequest  implements 
      *
      * @param accessKeyId The Access Key ID for the Access Key ID and Secret Access Key you want
      *         to delete.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteAccessKeyRequest withAccessKeyId(String accessKeyId) {
         this.accessKeyId = accessKeyId;

@@ -134,9 +134,6 @@ public class JobFlowExecutionStatusDetail  implements Serializable  {
      *
      * @param state The state of the job flow.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see JobFlowExecutionState
      */
     public JobFlowExecutionStatusDetail withState(String state) {
@@ -169,9 +166,6 @@ public class JobFlowExecutionStatusDetail  implements Serializable  {
      *
      * @param state The state of the job flow.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see JobFlowExecutionState
      */
     public JobFlowExecutionStatusDetail withState(JobFlowExecutionState state) {
@@ -203,9 +197,6 @@ public class JobFlowExecutionStatusDetail  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param creationDateTime The creation date and time of the job flow.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public JobFlowExecutionStatusDetail withCreationDateTime(java.util.Date creationDateTime) {
         this.creationDateTime = creationDateTime;
@@ -237,9 +228,6 @@ public class JobFlowExecutionStatusDetail  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param startDateTime The start date and time of the job flow.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public JobFlowExecutionStatusDetail withStartDateTime(java.util.Date startDateTime) {
         this.startDateTime = startDateTime;
@@ -277,9 +265,6 @@ public class JobFlowExecutionStatusDetail  implements Serializable  {
      *
      * @param readyDateTime The date and time when the job flow was ready to start running
      *         bootstrap actions.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public JobFlowExecutionStatusDetail withReadyDateTime(java.util.Date readyDateTime) {
         this.readyDateTime = readyDateTime;
@@ -311,9 +296,6 @@ public class JobFlowExecutionStatusDetail  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param endDateTime The completion date and time of the job flow.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public JobFlowExecutionStatusDetail withEndDateTime(java.util.Date endDateTime) {
         this.endDateTime = endDateTime;
@@ -357,9 +339,6 @@ public class JobFlowExecutionStatusDetail  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param lastStateChangeReason Description of the job flow last changed state.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public JobFlowExecutionStatusDetail withLastStateChangeReason(String lastStateChangeReason) {
         this.lastStateChangeReason = lastStateChangeReason;

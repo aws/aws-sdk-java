@@ -58,9 +58,6 @@ public class DescribeStemmingOptionsResult  implements Serializable  {
      *
      * @param stems The stemming options configured for this search domain and the current
      *         status of those options.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeStemmingOptionsResult withStems(StemmingOptionsStatus stems) {
         this.stems = stems;

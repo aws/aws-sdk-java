@@ -178,9 +178,6 @@ public class ServerCertificateMetadata  implements Serializable  {
      *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ServerCertificateMetadata withPath(String path) {
         this.path = path;
@@ -224,9 +221,6 @@ public class ServerCertificateMetadata  implements Serializable  {
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param serverCertificateName The name that identifies the server certificate.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ServerCertificateMetadata withServerCertificateName(String serverCertificateName) {
         this.serverCertificateName = serverCertificateName;
@@ -294,9 +288,6 @@ public class ServerCertificateMetadata  implements Serializable  {
      *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ServerCertificateMetadata withServerCertificateId(String serverCertificateId) {
         this.serverCertificateId = serverCertificateId;
@@ -361,9 +352,6 @@ public class ServerCertificateMetadata  implements Serializable  {
      *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ServerCertificateMetadata withArn(String arn) {
         this.arn = arn;
@@ -395,9 +383,6 @@ public class ServerCertificateMetadata  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param uploadDate The date when the server certificate was uploaded.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ServerCertificateMetadata withUploadDate(java.util.Date uploadDate) {
         this.uploadDate = uploadDate;

@@ -97,9 +97,6 @@ public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes  imp
      *
      * @param workflowId The <code>workflowId</code> of the external workflow execution to be
      *         canceled.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RequestCancelExternalWorkflowExecutionInitiatedEventAttributes withWorkflowId(String workflowId) {
         this.workflowId = workflowId;
@@ -146,9 +143,6 @@ public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes  imp
      *
      * @param runId The <code>runId</code> of the external workflow execution to be
      *         canceled.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RequestCancelExternalWorkflowExecutionInitiatedEventAttributes withRunId(String runId) {
         this.runId = runId;
@@ -204,9 +198,6 @@ public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes  imp
      *         <code>RequestCancelExternalWorkflowExecution</code> decision for this
      *         cancellation request. This information can be useful for diagnosing
      *         problems by tracing back the cause of events.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RequestCancelExternalWorkflowExecutionInitiatedEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
         this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;
@@ -253,9 +244,6 @@ public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes  imp
      *
      * @param control Optional data attached to the event that can be used by the decider in
      *         subsequent workflow tasks.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RequestCancelExternalWorkflowExecutionInitiatedEventAttributes withControl(String control) {
         this.control = control;

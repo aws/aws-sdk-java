@@ -112,9 +112,6 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest  implements S
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param userName Name of the user.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListAccessKeysRequest withUserName(String userName) {
         this.userName = userName;
@@ -176,9 +173,6 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest  implements S
      *         subsequent request after you've received a response where the results
      *         are truncated. Set it to the value of the <code>Marker</code> element
      *         in the response you just received.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListAccessKeysRequest withMarker(String marker) {
         this.marker = marker;
@@ -237,9 +231,6 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest  implements S
      *         maximum number of keys you want in the response. If there are
      *         additional keys beyond the maximum you specify, the
      *         <code>IsTruncated</code> response element is <code>true</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListAccessKeysRequest withMaxItems(Integer maxItems) {
         this.maxItems = maxItems;

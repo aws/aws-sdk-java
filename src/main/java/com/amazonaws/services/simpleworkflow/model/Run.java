@@ -77,9 +77,6 @@ public class Run  implements Serializable  {
      * @param runId The <code>runId</code> of a workflow execution. This Id is generated
      *         by the service and can be used to uniquely identify the workflow
      *         execution within a domain.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Run withRunId(String runId) {
         this.runId = runId;

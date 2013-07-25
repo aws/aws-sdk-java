@@ -94,9 +94,6 @@ public class DescribeCacheSecurityGroupsRequest extends AmazonWebServiceRequest 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheSecurityGroupName The name of the Cache Security Group to return details for.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeCacheSecurityGroupsRequest withCacheSecurityGroupName(String cacheSecurityGroupName) {
         this.cacheSecurityGroupName = cacheSecurityGroupName;
@@ -146,9 +143,6 @@ public class DescribeCacheSecurityGroupsRequest extends AmazonWebServiceRequest 
      *         records exist than the specified <i>MaxRecords</i> value, a marker is
      *         included in the response so that the remaining results may be
      *         retrieved. <p> Default: 100 <p> Constraints: minimum 20, maximum 100
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeCacheSecurityGroupsRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -198,9 +192,6 @@ public class DescribeCacheSecurityGroupsRequest extends AmazonWebServiceRequest 
      *         request. If this parameter is specified, the response includes only
      *         records beyond the marker, up to the value specified by
      *         <i>MaxRecords</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeCacheSecurityGroupsRequest withMarker(String marker) {
         this.marker = marker;

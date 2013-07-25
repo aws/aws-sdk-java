@@ -77,9 +77,6 @@ public class DescribeOrderableDBInstanceOptionsResult  implements Serializable  
      *
      * @param orderableDBInstanceOptions An <a>OrderableDBInstanceOption</a> structure containing information
      *         about orderable options for the DB Instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeOrderableDBInstanceOptionsResult withOrderableDBInstanceOptions(OrderableDBInstanceOption... orderableDBInstanceOptions) {
         if (getOrderableDBInstanceOptions() == null) setOrderableDBInstanceOptions(new java.util.ArrayList<OrderableDBInstanceOption>(orderableDBInstanceOptions.length));
@@ -97,9 +94,6 @@ public class DescribeOrderableDBInstanceOptionsResult  implements Serializable  
      *
      * @param orderableDBInstanceOptions An <a>OrderableDBInstanceOption</a> structure containing information
      *         about orderable options for the DB Instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeOrderableDBInstanceOptionsResult withOrderableDBInstanceOptions(java.util.Collection<OrderableDBInstanceOption> orderableDBInstanceOptions) {
         if (orderableDBInstanceOptions == null) {
@@ -155,9 +149,6 @@ public class DescribeOrderableDBInstanceOptionsResult  implements Serializable  
      *         OrderableDBInstanceOptions request. If this parameter is specified,
      *         the response includes only records beyond the marker, up to the value
      *         specified by <code>MaxRecords</code> .
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeOrderableDBInstanceOptionsResult withMarker(String marker) {
         this.marker = marker;

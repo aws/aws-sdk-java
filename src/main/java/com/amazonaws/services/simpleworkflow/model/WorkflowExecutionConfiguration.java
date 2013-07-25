@@ -127,9 +127,6 @@ public class WorkflowExecutionConfiguration  implements Serializable  {
      *         <code>0</code>. An integer value can be used to specify the duration
      *         in seconds while <code>NONE</code> can be used to specify unlimited
      *         duration.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public WorkflowExecutionConfiguration withTaskStartToCloseTimeout(String taskStartToCloseTimeout) {
         this.taskStartToCloseTimeout = taskStartToCloseTimeout;
@@ -188,9 +185,6 @@ public class WorkflowExecutionConfiguration  implements Serializable  {
      *         are integers greater than or equal to <code>0</code>. An integer value
      *         can be used to specify the duration in seconds while <code>NONE</code>
      *         can be used to specify unlimited duration.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public WorkflowExecutionConfiguration withExecutionStartToCloseTimeout(String executionStartToCloseTimeout) {
         this.executionStartToCloseTimeout = executionStartToCloseTimeout;
@@ -228,9 +222,6 @@ public class WorkflowExecutionConfiguration  implements Serializable  {
      *
      * @param taskList The task list used for the decision tasks generated for this workflow
      *         execution.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public WorkflowExecutionConfiguration withTaskList(TaskList taskList) {
         this.taskList = taskList;
@@ -336,9 +327,6 @@ public class WorkflowExecutionConfiguration  implements Serializable  {
      *         execution history with this event. </li> <li><b>ABANDON:</b> no action
      *         will be taken. The child executions will continue to run.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ChildPolicy
      */
     public WorkflowExecutionConfiguration withChildPolicy(String childPolicy) {
@@ -410,9 +398,6 @@ public class WorkflowExecutionConfiguration  implements Serializable  {
      *         is up to the decider to take appropriate actions when it receives an
      *         execution history with this event. </li> <li><b>ABANDON:</b> no action
      *         will be taken. The child executions will continue to run.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see ChildPolicy
      */

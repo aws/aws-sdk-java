@@ -128,9 +128,6 @@ public class ScalingPolicy  implements Serializable  {
      *
      * @param autoScalingGroupName The name of the Auto Scaling group associated with this scaling
      *         policy.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ScalingPolicy withAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
@@ -174,9 +171,6 @@ public class ScalingPolicy  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param policyName The name of the scaling policy.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ScalingPolicy withPolicyName(String policyName) {
         this.policyName = policyName;
@@ -220,9 +214,6 @@ public class ScalingPolicy  implements Serializable  {
      * @param scalingAdjustment The number associated with the specified adjustment type. A positive
      *         value adds to the current capacity and a negative value removes from
      *         the current capacity.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ScalingPolicy withScalingAdjustment(Integer scalingAdjustment) {
         this.scalingAdjustment = scalingAdjustment;
@@ -284,9 +275,6 @@ public class ScalingPolicy  implements Serializable  {
      *         number or a percentage of the current capacity. Valid values are
      *         <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
      *         <code>PercentChangeInCapacity</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ScalingPolicy withAdjustmentType(String adjustmentType) {
         this.adjustmentType = adjustmentType;
@@ -324,9 +312,6 @@ public class ScalingPolicy  implements Serializable  {
      *
      * @param cooldown The amount of time, in seconds, after a scaling activity completes
      *         before any further trigger-related scaling activities can start.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ScalingPolicy withCooldown(Integer cooldown) {
         this.cooldown = cooldown;
@@ -370,9 +355,6 @@ public class ScalingPolicy  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param policyARN The Amazon Resource Name (ARN) of the policy.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ScalingPolicy withPolicyARN(String policyARN) {
         this.policyARN = policyARN;
@@ -415,9 +397,6 @@ public class ScalingPolicy  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param alarms A list of CloudWatch Alarms related to the policy.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ScalingPolicy withAlarms(Alarm... alarms) {
         if (getAlarms() == null) setAlarms(new java.util.ArrayList<Alarm>(alarms.length));
@@ -433,9 +412,6 @@ public class ScalingPolicy  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param alarms A list of CloudWatch Alarms related to the policy.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ScalingPolicy withAlarms(java.util.Collection<Alarm> alarms) {
         if (alarms == null) {
@@ -479,9 +455,6 @@ public class ScalingPolicy  implements Serializable  {
      *
      * @param minAdjustmentStep Changes the <code>DesiredCapacity</code> of the Auto Scaling group by
      *         at least the specified number of instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ScalingPolicy withMinAdjustmentStep(Integer minAdjustmentStep) {
         this.minAdjustmentStep = minAdjustmentStep;

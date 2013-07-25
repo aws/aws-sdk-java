@@ -124,9 +124,6 @@ public class CreateJobPlaylist  implements Serializable  {
      *         unique. Elastic Transcoder automatically appends .m3u8 to the file
      *         name. If you include .m3u8 in <code>Name</code>, it will appear twice
      *         in the file name.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateJobPlaylist withName(String name) {
         this.name = name;
@@ -167,9 +164,6 @@ public class CreateJobPlaylist  implements Serializable  {
      * <b>Pattern: </b>(^HLSv3$)<br/>
      *
      * @param format This value must currently be HLSv3.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateJobPlaylist withFormat(String format) {
         this.format = format;
@@ -239,9 +233,6 @@ public class CreateJobPlaylist  implements Serializable  {
      *         playlist, the value of the <code>Outputs:Key</code> object. If you
      *         include more than one output in a playlist, the value of
      *         <code>SegmentDuration</code> for all of the outputs must be the same.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateJobPlaylist withOutputKeys(String... outputKeys) {
         if (getOutputKeys() == null) setOutputKeys(new java.util.ArrayList<String>(outputKeys.length));
@@ -266,9 +257,6 @@ public class CreateJobPlaylist  implements Serializable  {
      *         playlist, the value of the <code>Outputs:Key</code> object. If you
      *         include more than one output in a playlist, the value of
      *         <code>SegmentDuration</code> for all of the outputs must be the same.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateJobPlaylist withOutputKeys(java.util.Collection<String> outputKeys) {
         if (outputKeys == null) {

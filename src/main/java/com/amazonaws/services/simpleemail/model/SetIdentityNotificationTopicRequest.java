@@ -82,9 +82,6 @@ public class SetIdentityNotificationTopicRequest extends AmazonWebServiceRequest
      *
      * @param identity The identity for which the topic will be set. Examples:
      *         <code>user@example.com</code>, <code>example.com</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SetIdentityNotificationTopicRequest withIdentity(String identity) {
         this.identity = identity;
@@ -136,9 +133,6 @@ public class SetIdentityNotificationTopicRequest extends AmazonWebServiceRequest
      * @param notificationType The type of feedback notifications that will be published to the
      *         specified topic.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see NotificationType
      */
     public SetIdentityNotificationTopicRequest withNotificationType(String notificationType) {
@@ -174,9 +168,6 @@ public class SetIdentityNotificationTopicRequest extends AmazonWebServiceRequest
      *
      * @param notificationType The type of feedback notifications that will be published to the
      *         specified topic.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see NotificationType
      */
@@ -227,9 +218,6 @@ public class SetIdentityNotificationTopicRequest extends AmazonWebServiceRequest
      *         Service (Amazon SNS) topic. If the parameter is ommited from the
      *         request or a null value is passed, the topic is cleared and publishing
      *         is disabled.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SetIdentityNotificationTopicRequest withSnsTopic(String snsTopic) {
         this.snsTopic = snsTopic;

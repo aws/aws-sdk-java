@@ -94,9 +94,6 @@ public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest  i
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subscriptionArn The ARN of the subscription to modify.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SetSubscriptionAttributesRequest withSubscriptionArn(String subscriptionArn) {
         this.subscriptionArn = subscriptionArn;
@@ -140,9 +137,6 @@ public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest  i
      * @param attributeName The name of the attribute you want to set. Only a subset of the
      *         subscriptions attributes are mutable. <p>Valid values:
      *         <code>DeliveryPolicy</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SetSubscriptionAttributesRequest withAttributeName(String attributeName) {
         this.attributeName = attributeName;
@@ -174,9 +168,6 @@ public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest  i
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributeValue The new value for the attribute in JSON format.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SetSubscriptionAttributesRequest withAttributeValue(String attributeValue) {
         this.attributeValue = attributeValue;

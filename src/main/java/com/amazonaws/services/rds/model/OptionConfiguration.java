@@ -72,9 +72,6 @@ public class OptionConfiguration  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionName The configuration of options to include in a group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionConfiguration withOptionName(String optionName) {
         this.optionName = optionName;
@@ -106,9 +103,6 @@ public class OptionConfiguration  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param port The optional port for the option.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionConfiguration withPort(Integer port) {
         this.port = port;
@@ -151,9 +145,6 @@ public class OptionConfiguration  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBSecurityGroupMemberships A list of DBSecurityGroupMemebrship name strings used for this option.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionConfiguration withDBSecurityGroupMemberships(String... dBSecurityGroupMemberships) {
         if (getDBSecurityGroupMemberships() == null) setDBSecurityGroupMemberships(new java.util.ArrayList<String>(dBSecurityGroupMemberships.length));
@@ -169,9 +160,6 @@ public class OptionConfiguration  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBSecurityGroupMemberships A list of DBSecurityGroupMemebrship name strings used for this option.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionConfiguration withDBSecurityGroupMemberships(java.util.Collection<String> dBSecurityGroupMemberships) {
         if (dBSecurityGroupMemberships == null) {
@@ -226,9 +214,6 @@ public class OptionConfiguration  implements Serializable  {
      *
      * @param vpcSecurityGroupMemberships A list of VpcSecurityGroupMemebrship name strings used for this
      *         option.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionConfiguration withVpcSecurityGroupMemberships(String... vpcSecurityGroupMemberships) {
         if (getVpcSecurityGroupMemberships() == null) setVpcSecurityGroupMemberships(new java.util.ArrayList<String>(vpcSecurityGroupMemberships.length));
@@ -246,9 +231,6 @@ public class OptionConfiguration  implements Serializable  {
      *
      * @param vpcSecurityGroupMemberships A list of VpcSecurityGroupMemebrship name strings used for this
      *         option.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionConfiguration withVpcSecurityGroupMemberships(java.util.Collection<String> vpcSecurityGroupMemberships) {
         if (vpcSecurityGroupMemberships == null) {
@@ -297,9 +279,6 @@ public class OptionConfiguration  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionSettings The option settings to include in an option group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionConfiguration withOptionSettings(OptionSetting... optionSettings) {
         if (getOptionSettings() == null) setOptionSettings(new java.util.ArrayList<OptionSetting>(optionSettings.length));
@@ -315,9 +294,6 @@ public class OptionConfiguration  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionSettings The option settings to include in an option group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionConfiguration withOptionSettings(java.util.Collection<OptionSetting> optionSettings) {
         if (optionSettings == null) {

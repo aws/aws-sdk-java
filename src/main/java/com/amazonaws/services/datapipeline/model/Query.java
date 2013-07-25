@@ -69,9 +69,6 @@ public class Query  implements Serializable  {
      *
      * @param selectors List of selectors that define the query. An object must satisfy all of
      *         the selectors to match the query.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Query withSelectors(Selector... selectors) {
         if (getSelectors() == null) setSelectors(new java.util.ArrayList<Selector>(selectors.length));
@@ -89,9 +86,6 @@ public class Query  implements Serializable  {
      *
      * @param selectors List of selectors that define the query. An object must satisfy all of
      *         the selectors to match the query.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Query withSelectors(java.util.Collection<Selector> selectors) {
         if (selectors == null) {

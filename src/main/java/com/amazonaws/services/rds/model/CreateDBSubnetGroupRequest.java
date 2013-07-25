@@ -86,9 +86,6 @@ public class CreateDBSubnetGroupRequest extends AmazonWebServiceRequest  impleme
      *         string. <p>Constraints: Must contain no more than 255 alphanumeric
      *         characters or hyphens. Must not be "Default". <p>Example:
      *         <code>mySubnetgroup</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBSubnetGroupRequest withDBSubnetGroupName(String dBSubnetGroupName) {
         this.dBSubnetGroupName = dBSubnetGroupName;
@@ -120,9 +117,6 @@ public class CreateDBSubnetGroupRequest extends AmazonWebServiceRequest  impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBSubnetGroupDescription The description for the DB Subnet Group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBSubnetGroupRequest withDBSubnetGroupDescription(String dBSubnetGroupDescription) {
         this.dBSubnetGroupDescription = dBSubnetGroupDescription;
@@ -165,9 +159,6 @@ public class CreateDBSubnetGroupRequest extends AmazonWebServiceRequest  impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnetIds The EC2 Subnet IDs for the DB Subnet Group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBSubnetGroupRequest withSubnetIds(String... subnetIds) {
         if (getSubnetIds() == null) setSubnetIds(new java.util.ArrayList<String>(subnetIds.length));
@@ -183,9 +174,6 @@ public class CreateDBSubnetGroupRequest extends AmazonWebServiceRequest  impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnetIds The EC2 Subnet IDs for the DB Subnet Group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBSubnetGroupRequest withSubnetIds(java.util.Collection<String> subnetIds) {
         if (subnetIds == null) {

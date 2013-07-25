@@ -50,8 +50,8 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
     /**
      * The app type. Each supported type is associated with a particular
      * layer. For example, PHP applications are associated with a PHP layer.
-     * OpsWorks deploys an application to those instances that are members of
-     * the corresponding layer.
+     * AWS OpsWorks deploys an application to those instances that are
+     * members of the corresponding layer.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>rails, php, nodejs, static, other
@@ -212,16 +212,16 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
     /**
      * The app type. Each supported type is associated with a particular
      * layer. For example, PHP applications are associated with a PHP layer.
-     * OpsWorks deploys an application to those instances that are members of
-     * the corresponding layer.
+     * AWS OpsWorks deploys an application to those instances that are
+     * members of the corresponding layer.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>rails, php, nodejs, static, other
      *
      * @return The app type. Each supported type is associated with a particular
      *         layer. For example, PHP applications are associated with a PHP layer.
-     *         OpsWorks deploys an application to those instances that are members of
-     *         the corresponding layer.
+     *         AWS OpsWorks deploys an application to those instances that are
+     *         members of the corresponding layer.
      *
      * @see AppType
      */
@@ -232,16 +232,16 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
     /**
      * The app type. Each supported type is associated with a particular
      * layer. For example, PHP applications are associated with a PHP layer.
-     * OpsWorks deploys an application to those instances that are members of
-     * the corresponding layer.
+     * AWS OpsWorks deploys an application to those instances that are
+     * members of the corresponding layer.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>rails, php, nodejs, static, other
      *
      * @param type The app type. Each supported type is associated with a particular
      *         layer. For example, PHP applications are associated with a PHP layer.
-     *         OpsWorks deploys an application to those instances that are members of
-     *         the corresponding layer.
+     *         AWS OpsWorks deploys an application to those instances that are
+     *         members of the corresponding layer.
      *
      * @see AppType
      */
@@ -252,8 +252,8 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
     /**
      * The app type. Each supported type is associated with a particular
      * layer. For example, PHP applications are associated with a PHP layer.
-     * OpsWorks deploys an application to those instances that are members of
-     * the corresponding layer.
+     * AWS OpsWorks deploys an application to those instances that are
+     * members of the corresponding layer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -262,8 +262,8 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
      *
      * @param type The app type. Each supported type is associated with a particular
      *         layer. For example, PHP applications are associated with a PHP layer.
-     *         OpsWorks deploys an application to those instances that are members of
-     *         the corresponding layer.
+     *         AWS OpsWorks deploys an application to those instances that are
+     *         members of the corresponding layer.
      *
      * @see AppType
      */
@@ -276,16 +276,16 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
     /**
      * The app type. Each supported type is associated with a particular
      * layer. For example, PHP applications are associated with a PHP layer.
-     * OpsWorks deploys an application to those instances that are members of
-     * the corresponding layer.
+     * AWS OpsWorks deploys an application to those instances that are
+     * members of the corresponding layer.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>rails, php, nodejs, static, other
      *
      * @param type The app type. Each supported type is associated with a particular
      *         layer. For example, PHP applications are associated with a PHP layer.
-     *         OpsWorks deploys an application to those instances that are members of
-     *         the corresponding layer.
+     *         AWS OpsWorks deploys an application to those instances that are
+     *         members of the corresponding layer.
      *
      * @see AppType
      */
@@ -296,8 +296,8 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
     /**
      * The app type. Each supported type is associated with a particular
      * layer. For example, PHP applications are associated with a PHP layer.
-     * OpsWorks deploys an application to those instances that are members of
-     * the corresponding layer.
+     * AWS OpsWorks deploys an application to those instances that are
+     * members of the corresponding layer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -306,8 +306,8 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
      *
      * @param type The app type. Each supported type is associated with a particular
      *         layer. For example, PHP applications are associated with a PHP layer.
-     *         OpsWorks deploys an application to those instances that are members of
-     *         the corresponding layer.
+     *         AWS OpsWorks deploys an application to those instances that are
+     *         members of the corresponding layer.
      *
      * @see AppType
      */

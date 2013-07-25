@@ -62,9 +62,6 @@ public class DescribeApplicationVersionsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param applicationVersions A list of <a>ApplicationVersionDescription</a> .
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeApplicationVersionsResult withApplicationVersions(ApplicationVersionDescription... applicationVersions) {
         if (getApplicationVersions() == null) setApplicationVersions(new java.util.ArrayList<ApplicationVersionDescription>(applicationVersions.length));
@@ -80,9 +77,6 @@ public class DescribeApplicationVersionsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param applicationVersions A list of <a>ApplicationVersionDescription</a> .
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeApplicationVersionsResult withApplicationVersions(java.util.Collection<ApplicationVersionDescription> applicationVersions) {
         if (applicationVersions == null) {

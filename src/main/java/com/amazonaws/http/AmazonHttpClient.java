@@ -20,6 +20,7 @@ import java.net.URI;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -48,12 +49,14 @@ import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.Request;
 import com.amazonaws.ResponseMetadata;
+import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.handlers.RequestHandler;
 import com.amazonaws.internal.CRC32MismatchException;
 import com.amazonaws.internal.CustomBackoffStrategy;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.CountingInputStream;
+import com.amazonaws.util.DateUtils;
 import com.amazonaws.util.ResponseMetadataCache;
 import com.amazonaws.util.TimingInfo;
 
@@ -348,10 +351,20 @@ public class AmazonHttpClient {
                     awsRequestMetrics.addProperty(Field.AWSRequestID.name(), exception.getRequestId());
                     awsRequestMetrics.addProperty(Field.AWSErrorCode.name(), exception.getErrorCode());
                     awsRequestMetrics.addProperty(Field.StatusCode.name(), exception.getStatusCode());
-
+                    
                     if (!shouldRetry(httpRequest, exception, retryCount)) {
                         throw exception;
                     }
+                    
+                    /*
+                     * Checking for clock skew error again because we don't want to set the
+                     * global time offset for every service exception.
+                     */
+                    if(isClockSkewError(exception)) {
+                    	int timeOffset = parseClockSkewOffset(response, exception);
+                    	SDKGlobalConfiguration.setGlobalTimeOffset(timeOffset);                     
+                    }
+                    
                     resetRequestAfterError(request, exception);
                 }
             } catch (IOException ioe) {
@@ -512,6 +525,13 @@ public class AmazonHttpClient {
              * get through the next time.
              */
             if (isThrottlingException(ase)) return true;
+            
+            /*
+             * Clock skew exception. If it is then we will get the time offset 
+             * between the device time and the server time to set the clock skew
+             * and then retry the request.
+             */
+            if (isClockSkewError(ase)) return true;
         }
 
         return false;
@@ -757,8 +777,75 @@ public class AmazonHttpClient {
         if (ase == null) return false;
         return "Request entity too large".equals(ase.getErrorCode());
     }
+    
+    /**
+     * Returns true if the specified exception is a clock skew error.
+     *
+     * @param ase
+     *            The exception to test.
+     *
+     * @return True if the exception resulted from a clock skews error message
+     *         from a service, otherwise false.
+     */
+    public boolean isClockSkewError(AmazonServiceException exception) {
+        if (exception == null) return false;
 
+        return "RequestTimeTooSkewed".equals(exception.getErrorCode())
+                || "RequestExpired".equals(exception.getErrorCode())
+                || "InvalidSignatureException".equals(exception.getErrorCode())
+                || "SignatureDoesNotMatch".equals(exception.getErrorCode());
+    }
 
+    /**
+     * Returns date string from the exception message body in form of yyyyMMdd'T'HHmmss'Z'
+     * We needed to extract date from the message body because SQS is the only service
+     * that does not provide date header in the response. Example, when device time is
+     * behind than the server time than we get a string that looks something like this:
+     * "Signature expired: 20130401T030113Z is now earlier than 20130401T034613Z (20130401T040113Z - 15 min.)"
+     * 
+     * 
+     * @param body
+     *              The message from where the server time is being extracted
+     * 
+     * @return Return datetime in string format (yyyyMMdd'T'HHmmss'Z')
+     */
+    private String getServerDateFromException(String body) {
+        int startPos = body.indexOf("(");
+        int endPos = 0;
+        if(body.contains(" + 15")) {
+            endPos = body.indexOf(" + 15");
+        } else {
+            endPos = body.indexOf(" - 15");
+        }
+        String msg = body.substring(startPos+1, endPos);
+        return msg;
+    }
+    
+    private int parseClockSkewOffset(org.apache.http.HttpResponse response, AmazonServiceException exception) {
+        DateUtils dateUtils = new DateUtils(); 
+        Date deviceDate = new Date();
+        Date serverDate = null;
+        String serverDateStr = null;
+        Header[] responseDateHeader = response.getHeaders("Date");
+        
+        try {
+            if(responseDateHeader.length == 0) {
+                // SQS doesn't return Date header
+                serverDateStr = getServerDateFromException(exception.getMessage());
+                serverDate = dateUtils.parseCompressedIso8601Date(serverDateStr);
+            } else {
+                serverDateStr = responseDateHeader[0].getValue();
+                serverDate = dateUtils.parseRfc822Date(serverDateStr);
+            }
+        }
+        catch(Exception e) {
+            log.warn("Unable to parse clock skew offset from response: " + serverDateStr, e);
+        }
+        
+        long diff = deviceDate.getTime() - serverDate.getTime();
+        return (int)(diff / 1000);
+    }
+    
     @Override
     protected void finalize() throws Throwable {
         this.shutdown();

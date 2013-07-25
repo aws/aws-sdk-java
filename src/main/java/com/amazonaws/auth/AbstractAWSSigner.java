@@ -34,6 +34,7 @@ import org.apache.commons.codec.binary.Base64;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
+import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.util.HttpUtils;
 import com.amazonaws.util.StringInputStream;
 
@@ -397,6 +398,15 @@ public abstract class AbstractAWSSigner implements Signer {
             dateValue = new Date(epochMillis);   
         }
         return dateValue;
+    }
+    
+    protected int getTimeOffset(Request<?> request) {
+    	int timeOffset = request.getTimeOffset();
+        if(SDKGlobalConfiguration.getGlobalTimeOffset() != 0) {
+            // if global time offset is set then use that (For clock skew issues)
+            timeOffset = SDKGlobalConfiguration.getGlobalTimeOffset();
+        }
+        return timeOffset;
     }
     
     /**

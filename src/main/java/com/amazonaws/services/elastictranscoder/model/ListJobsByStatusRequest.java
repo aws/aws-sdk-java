@@ -109,9 +109,6 @@ public class ListJobsByStatusRequest extends AmazonWebServiceRequest  implements
      *         AWS account that have a given status, specify the following status:
      *         <code>Submitted</code>, <code>Progressing</code>,
      *         <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListJobsByStatusRequest withStatus(String status) {
         this.status = status;
@@ -164,9 +161,6 @@ public class ListJobsByStatusRequest extends AmazonWebServiceRequest  implements
      * @param ascending To list jobs in chronological order by the date and time that they
      *         were submitted, enter <code>true</code>. To list jobs in reverse
      *         chronological order, enter <code>false</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListJobsByStatusRequest withAscending(String ascending) {
         this.ascending = ascending;
@@ -219,9 +213,6 @@ public class ListJobsByStatusRequest extends AmazonWebServiceRequest  implements
      * @param pageToken When Elastic Transcoder returns more than one page of results, use
      *         <code>pageToken</code> in subsequent <code>GET</code> requests to get
      *         each successive page of results.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListJobsByStatusRequest withPageToken(String pageToken) {
         this.pageToken = pageToken;

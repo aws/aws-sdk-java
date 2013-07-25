@@ -63,9 +63,6 @@ public class UIntOptions  implements Serializable  {
      * <b>Range: </b>0 - <br/>
      *
      * @param defaultValue The default value for an unsigned integer field.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UIntOptions withDefaultValue(Integer defaultValue) {
         this.defaultValue = defaultValue;

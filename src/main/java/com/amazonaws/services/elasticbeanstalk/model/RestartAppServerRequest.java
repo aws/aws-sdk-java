@@ -93,9 +93,6 @@ public class RestartAppServerRequest extends AmazonWebServiceRequest  implements
      *         You must specify either this or an EnvironmentName, or both. If you do
      *         not specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RestartAppServerRequest withEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
@@ -154,9 +151,6 @@ public class RestartAppServerRequest extends AmazonWebServiceRequest  implements
      *         You must specify either this or an EnvironmentId, or both. If you do
      *         not specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RestartAppServerRequest withEnvironmentName(String environmentName) {
         this.environmentName = environmentName;

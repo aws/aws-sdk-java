@@ -407,9 +407,6 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      *         Instance. <p>Default: <code>ORCL</code> <p>Constraints: <ul>
      *         <li>Cannot be longer than 8 characters</li> </ul> <p><b>SQL Server</b>
      *         <p>Not applicable. Must be null.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceRequest withDBName(String dBName) {
         this.dBName = dBName;
@@ -471,9 +468,6 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      *         <li>First character must be a letter.</li> <li>Cannot end with a
      *         hyphen or contain two consecutive hyphens.</li> </ul> <p>Example:
      *         <code>mydbinstance</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceRequest withDBInstanceIdentifier(String dBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -541,9 +535,6 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      *         Constraints: Must be an integer from 200 to 1024 (Standard Edition and
      *         Enterprise Edition) or from 30 to 1024 (Express Edition and Web
      *         Edition)
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceRequest withAllocatedStorage(Integer allocatedStorage) {
         this.allocatedStorage = allocatedStorage;
@@ -587,9 +578,6 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      * @param dBInstanceClass The compute and memory capacity of the DB Instance. <p> Valid Values:
      *         <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
      *         db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceRequest withDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
@@ -645,9 +633,6 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      *         <code>oracle-se</code> | <code>oracle-ee</code> |
      *         <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
      *         <code>sqlserver-ex</code> | <code>sqlserver-web</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceRequest withEngine(String engine) {
         this.engine = engine;
@@ -739,9 +724,6 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      *         alphanumeric characters.</li> <li>First character must be a
      *         letter.</li> <li>Cannot be a reserved word for the chosen database
      *         engine.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceRequest withMasterUsername(String masterUsername) {
         this.masterUsername = masterUsername;
@@ -803,9 +785,6 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      *         <p><b>Oracle</b> <p> Constraints: Must contain from 8 to 30
      *         alphanumeric characters. <p><b>SQL Server</b> <p> Constraints: Must
      *         contain from 8 to 128 alphanumeric characters.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceRequest withMasterUserPassword(String masterUserPassword) {
         this.masterUserPassword = masterUserPassword;
@@ -854,9 +833,6 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      *
      * @param dBSecurityGroups A list of DB Security Groups to associate with this DB Instance. <p>
      *         Default: The default DB Security Group for the database engine.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceRequest withDBSecurityGroups(String... dBSecurityGroups) {
         if (getDBSecurityGroups() == null) setDBSecurityGroups(new java.util.ArrayList<String>(dBSecurityGroups.length));
@@ -874,9 +850,6 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      *
      * @param dBSecurityGroups A list of DB Security Groups to associate with this DB Instance. <p>
      *         Default: The default DB Security Group for the database engine.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceRequest withDBSecurityGroups(java.util.Collection<String> dBSecurityGroups) {
         if (dBSecurityGroups == null) {
@@ -937,9 +910,6 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      * @param vpcSecurityGroupIds A list of EC2 VPC Security Groups to associate with this DB Instance.
      *         <p> Default: The default EC2 VPC Security Group for the DB Subnet
      *         group's VPC.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceRequest withVpcSecurityGroupIds(String... vpcSecurityGroupIds) {
         if (getVpcSecurityGroupIds() == null) setVpcSecurityGroupIds(new java.util.ArrayList<String>(vpcSecurityGroupIds.length));
@@ -959,9 +929,6 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      * @param vpcSecurityGroupIds A list of EC2 VPC Security Groups to associate with this DB Instance.
      *         <p> Default: The default EC2 VPC Security Group for the DB Subnet
      *         group's VPC.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceRequest withVpcSecurityGroupIds(java.util.Collection<String> vpcSecurityGroupIds) {
         if (vpcSecurityGroupIds == null) {
@@ -1029,9 +996,6 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      *         Constraint: The AvailabilityZone parameter cannot be specified if the
      *         MultiAZ parameter is set to <code>true</code>. The specified
      *         Availability Zone must be in the same region as the current endpoint.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceRequest withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -1069,9 +1033,6 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      *
      * @param dBSubnetGroupName A DB Subnet Group to associate with this DB Instance. <p> If there is
      *         no DB Subnet Group, then it is a non-VPC DB instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceRequest withDBSubnetGroupName(String dBSubnetGroupName) {
         this.dBSubnetGroupName = dBSubnetGroupName;
@@ -1151,9 +1112,6 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      *         Adjusting the Preferred Maintenance Window</a> in the Amazon RDS User
      *         Guide. <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
      *         <p>Constraints: Minimum 30-minute window.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceRequest withPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
         this.preferredMaintenanceWindow = preferredMaintenanceWindow;
@@ -1215,9 +1173,6 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      *         255 alphanumeric characters</li> <li>First character must be a
      *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
      *         hyphens</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceRequest withDBParameterGroupName(String dBParameterGroupName) {
         this.dBParameterGroupName = dBParameterGroupName;
@@ -1279,9 +1234,6 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      *         <p>Constraints: <ul> <li>Must be a value from 0 to 8</li> <li>Cannot
      *         be set to 0 if the DB Instance is a master instance with read
      *         replicas</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceRequest withBackupRetentionPeriod(Integer backupRetentionPeriod) {
         this.backupRetentionPeriod = backupRetentionPeriod;
@@ -1391,9 +1343,6 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      *         <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
      *         Coordinated (UTC). Must not conflict with the preferred maintenance
      *         window. Must be at least 30 minutes.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceRequest withPreferredBackupWindow(String preferredBackupWindow) {
         this.preferredBackupWindow = preferredBackupWindow;
@@ -1461,9 +1410,6 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      *         Server</b> <p> Default: <code>1433</code> <p> Valid Values:
      *         <code>1150-65535</code> except for <code>1434</code> and
      *         <code>3389</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceRequest withPort(Integer port) {
         this.port = port;
@@ -1507,9 +1453,6 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      * @param multiAZ Specifies if the DB Instance is a Multi-AZ deployment. You cannot set
      *         the AvailabilityZone parameter if the MultiAZ parameter is set to
      *         true.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceRequest withMultiAZ(Boolean multiAZ) {
         this.multiAZ = multiAZ;
@@ -1572,9 +1515,6 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      *         <p>Example: <code>5.1.42</code> <p>Type: String <p><b>Oracle</b>
      *         <p>Example: <code>11.2.0.2.v2</code> <p>Type: String <p><b>SQL
      *         Server</b> <p>Example: <code>10.50.2789.0.v1</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceRequest withEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
@@ -1618,9 +1558,6 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      * @param autoMinorVersionUpgrade Indicates that minor engine upgrades will be applied automatically to
      *         the DB Instance during the maintenance window. <p>Default:
      *         <code>true</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceRequest withAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
         this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
@@ -1677,9 +1614,6 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      * @param licenseModel License model information for this DB Instance. <p> Valid values:
      *         <code>license-included</code> | <code>bring-your-own-license</code> |
      *         <code>general-public-license</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceRequest withLicenseModel(String licenseModel) {
         this.licenseModel = licenseModel;
@@ -1723,9 +1657,6 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      * @param iops The amount of Provisioned IOPS (input/output operations per second) to
      *         be initially allocated for the DB Instance. <p> Constraints: Must be
      *         an integer greater than 1000.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceRequest withIops(Integer iops) {
         this.iops = iops;
@@ -1799,9 +1730,6 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      *         Advanced Security TDE, cannot be removed from an option group, and
      *         that option group cannot be removed from a DB instance once it is
      *         associated with a DB instance
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceRequest withOptionGroupName(String optionGroupName) {
         this.optionGroupName = optionGroupName;
@@ -1839,9 +1767,6 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      *
      * @param characterSetName For supported engines, indicates that the DB Instance should be
      *         associated with the specified CharacterSet.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceRequest withCharacterSetName(String characterSetName) {
         this.characterSetName = characterSetName;
@@ -1945,9 +1870,6 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      *         publicly accessible. If a specific DB subnet group has been specified
      *         as part of the request and the PubliclyAccessible value has not been
      *         set, the DB instance will be private.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceRequest withPubliclyAccessible(Boolean publiclyAccessible) {
         this.publiclyAccessible = publiclyAccessible;

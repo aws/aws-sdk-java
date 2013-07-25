@@ -68,7 +68,9 @@ public class AWS3Signer extends AbstractAWSSigner {
 
         SigningAlgorithm algorithm = SigningAlgorithm.HmacSHA256;
         String nonce = UUID.randomUUID().toString();
-        Date dateValue = getSignatureDate(request.getTimeOffset());
+        
+        int timeOffset = getTimeOffset(request);
+        Date dateValue = getSignatureDate(timeOffset);
         String date = dateUtils.formatRfc822Date(dateValue);
         boolean isHttps = false;
 

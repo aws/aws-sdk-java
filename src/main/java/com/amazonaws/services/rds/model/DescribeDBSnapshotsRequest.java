@@ -130,9 +130,6 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest  impleme
      *         from 1 to 63 alphanumeric characters or hyphens</li> <li>First
      *         character must be a letter</li> <li>Cannot end with a hyphen or
      *         contain two consecutive hyphens</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDBSnapshotsRequest withDBInstanceIdentifier(String dBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -200,9 +197,6 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest  impleme
      *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      *         <li>If this is the identifier of an automated snapshot, the
      *         <code>SnapshotType</code> parameter must also be specified.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDBSnapshotsRequest withDBSnapshotIdentifier(String dBSnapshotIdentifier) {
         this.dBSnapshotIdentifier = dBSnapshotIdentifier;
@@ -240,9 +234,6 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest  impleme
      *
      * @param snapshotType An optional snapshot type for which snapshots will be returned. If not
      *         specified, the returned results will include snapshots of all types.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDBSnapshotsRequest withSnapshotType(String snapshotType) {
         this.snapshotType = snapshotType;
@@ -298,9 +289,6 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest  impleme
      *         pagination token called a marker is included in the response so that
      *         the remaining results may be retrieved. <p>Default: 100
      *         <p>Constraints: minimum 20, maximum 100
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDBSnapshotsRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -350,9 +338,6 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest  impleme
      *         DescribeDBSnapshots request. If this parameter is specified, the
      *         response includes only records beyond the marker, up to the value
      *         specified by <code>MaxRecords</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDBSnapshotsRequest withMarker(String marker) {
         this.marker = marker;

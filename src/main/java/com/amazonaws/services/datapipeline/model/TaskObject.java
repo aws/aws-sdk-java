@@ -99,9 +99,6 @@ public class TaskObject  implements Serializable  {
      *
      * @param taskId An internal identifier for the task. This ID is passed to the
      *         <a>SetTaskStatus</a> and <a>ReportTaskProgress</a> actions.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TaskObject withTaskId(String taskId) {
         this.taskId = taskId;
@@ -145,9 +142,6 @@ public class TaskObject  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param pipelineId Identifier of the pipeline that provided the task.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TaskObject withPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
@@ -197,9 +191,6 @@ public class TaskObject  implements Serializable  {
      *
      * @param attemptId Identifier of the pipeline task attempt object. AWS Data Pipeline uses
      *         this value to track how many times a task is attempted.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TaskObject withAttemptId(String attemptId) {
         this.attemptId = attemptId;
@@ -220,7 +211,6 @@ public class TaskObject  implements Serializable  {
             objects = new java.util.HashMap<String,PipelineObject>();
         }
         return objects;
-
     }
     
     /**
@@ -242,15 +232,44 @@ public class TaskObject  implements Serializable  {
      *
      * @param objects Connection information for the location where the task runner will
      *         publish the output of the task.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TaskObject withObjects(java.util.Map<String,PipelineObject> objects) {
         setObjects(objects);
         return this;
     }
     
+   	
+    /**
+     * Connection information for the location where the task runner will
+     * publish the output of the task.
+     * <p>
+     * The method adds a new key-value pair into Objects parameter, and
+     * returns a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param key The key of the entry to be added into Objects.
+     * @param value The corresponding value of the entry to be added into Objects.
+     */
+	public TaskObject addObjectsEntry(String key, PipelineObject value) {
+		if (null == this.objects) {
+			this.objects = new java.util.HashMap<String,PipelineObject>();
+		}
+		if (this.objects.containsKey(key))
+			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+		this.objects.put(key, value);
+		return this;
+	}
+	
+	/**
+	 * Removes all the entries added into Objects.
+	 * <p>
+	 * Returns a reference to this object so that method calls can be chained together.
+	 */
+	public TaskObject clearObjectsEntries() {
+		this.objects = null;
+		return this;
+	}
+	
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

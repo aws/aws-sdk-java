@@ -128,9 +128,6 @@ public class StartTimerDecisionAttributes  implements Serializable  {
      *         <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
      *         (vertical bar), or any control characters (\u0000-\u001f | \u007f -
      *         \u009f). Also, it must not contain the literal string "arn".
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StartTimerDecisionAttributes withTimerId(String timerId) {
         this.timerId = timerId;
@@ -177,9 +174,6 @@ public class StartTimerDecisionAttributes  implements Serializable  {
      *
      * @param control Optional data attached to the event that can be used by the decider in
      *         subsequent workflow tasks.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StartTimerDecisionAttributes withControl(String control) {
         this.control = control;
@@ -232,9 +226,6 @@ public class StartTimerDecisionAttributes  implements Serializable  {
      * @param startToFireTimeout The duration to wait before firing the timer. This field is required.
      *         <p>The duration is specified in seconds. The valid values are integers
      *         greater than or equal to 0.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StartTimerDecisionAttributes withStartToFireTimeout(String startToFireTimeout) {
         this.startToFireTimeout = startToFireTimeout;

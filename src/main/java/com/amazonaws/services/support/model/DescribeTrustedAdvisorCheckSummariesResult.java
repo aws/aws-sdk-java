@@ -104,9 +104,6 @@ public class DescribeTrustedAdvisorCheckSummariesResult  implements Serializable
      *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
      *         title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>
      *         request.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeTrustedAdvisorCheckSummariesResult withSummaries(TrustedAdvisorCheckSummary... summaries) {
         if (getSummaries() == null) setSummaries(new java.util.ArrayList<TrustedAdvisorCheckSummary>(summaries.length));
@@ -134,9 +131,6 @@ public class DescribeTrustedAdvisorCheckSummariesResult  implements Serializable
      *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
      *         title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>
      *         request.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeTrustedAdvisorCheckSummariesResult withSummaries(java.util.Collection<TrustedAdvisorCheckSummary> summaries) {
         if (summaries == null) {

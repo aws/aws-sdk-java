@@ -97,9 +97,6 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest  implements S
      *         and "Domain". If this parameter is omitted, then all identities will
      *         be listed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see IdentityType
      */
     public ListIdentitiesRequest withIdentityType(String identityType) {
@@ -140,9 +137,6 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest  implements S
      *         and "Domain". If this parameter is omitted, then all identities will
      *         be listed.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see IdentityType
      */
     public ListIdentitiesRequest withIdentityType(IdentityType identityType) {
@@ -174,9 +168,6 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nextToken The token to use for pagination.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListIdentitiesRequest withNextToken(String nextToken) {
         this.nextToken = nextToken;
@@ -214,9 +205,6 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest  implements S
      *
      * @param maxItems The maximum number of identities per page. Possible values are 1-100
      *         inclusive.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListIdentitiesRequest withMaxItems(Integer maxItems) {
         this.maxItems = maxItems;

@@ -58,9 +58,6 @@ public class CancelJobResult  implements Serializable  {
      *
      * @param success Specifies whether (true) or not (false) AWS Import/Export updated your
      *         job.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CancelJobResult withSuccess(Boolean success) {
         this.success = success;

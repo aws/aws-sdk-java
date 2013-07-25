@@ -88,9 +88,6 @@ public class DeleteDBSnapshotRequest extends AmazonWebServiceRequest  implements
      *
      * @param dBSnapshotIdentifier The DBSnapshot identifier. <p>Constraints: Must be the name of an
      *         existing DB Snapshot in the <code>available</code> state.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteDBSnapshotRequest withDBSnapshotIdentifier(String dBSnapshotIdentifier) {
         this.dBSnapshotIdentifier = dBSnapshotIdentifier;

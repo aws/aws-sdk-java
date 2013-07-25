@@ -62,9 +62,6 @@ public class DescribeVirtualInterfacesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param virtualInterfaces A list of virtual interfaces.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVirtualInterfacesResult withVirtualInterfaces(VirtualInterface... virtualInterfaces) {
         if (getVirtualInterfaces() == null) setVirtualInterfaces(new java.util.ArrayList<VirtualInterface>(virtualInterfaces.length));
@@ -80,9 +77,6 @@ public class DescribeVirtualInterfacesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param virtualInterfaces A list of virtual interfaces.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVirtualInterfacesResult withVirtualInterfaces(java.util.Collection<VirtualInterface> virtualInterfaces) {
         if (virtualInterfaces == null) {

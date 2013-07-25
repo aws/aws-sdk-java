@@ -126,9 +126,6 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest  implements S
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param groupName Name of the group to associate the policy with.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PutGroupPolicyRequest withGroupName(String groupName) {
         this.groupName = groupName;
@@ -172,9 +169,6 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest  implements S
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param policyName Name of the policy document.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PutGroupPolicyRequest withPolicyName(String policyName) {
         this.policyName = policyName;
@@ -218,9 +212,6 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest  implements S
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      *
      * @param policyDocument The policy document.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PutGroupPolicyRequest withPolicyDocument(String policyDocument) {
         this.policyDocument = policyDocument;

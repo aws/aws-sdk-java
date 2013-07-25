@@ -48,6 +48,11 @@ public class ElasticLoadBalancer  implements Serializable  {
     private String layerId;
 
     /**
+     * The VPC ID.
+     */
+    private String vpcId;
+
+    /**
      * The instance's Availability Zones.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> availabilityZones;
@@ -214,6 +219,37 @@ public class ElasticLoadBalancer  implements Serializable  {
     
     
     /**
+     * The VPC ID.
+     *
+     * @return The VPC ID.
+     */
+    public String getVpcId() {
+        return vpcId;
+    }
+    
+    /**
+     * The VPC ID.
+     *
+     * @param vpcId The VPC ID.
+     */
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+    
+    /**
+     * The VPC ID.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param vpcId The VPC ID.
+     */
+    public ElasticLoadBalancer withVpcId(String vpcId) {
+        this.vpcId = vpcId;
+        return this;
+    }
+    
+    
+    /**
      * The instance's Availability Zones.
      *
      * @return The instance's Availability Zones.
@@ -364,6 +400,7 @@ public class ElasticLoadBalancer  implements Serializable  {
         if (getDnsName() != null) sb.append("DnsName: " + getDnsName() + ",");
         if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");
         if (getLayerId() != null) sb.append("LayerId: " + getLayerId() + ",");
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");
         if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() + ",");
         if (getEc2InstanceIds() != null) sb.append("Ec2InstanceIds: " + getEc2InstanceIds() );
         sb.append("}");
@@ -380,6 +417,7 @@ public class ElasticLoadBalancer  implements Serializable  {
         hashCode = prime * hashCode + ((getDnsName() == null) ? 0 : getDnsName().hashCode()); 
         hashCode = prime * hashCode + ((getStackId() == null) ? 0 : getStackId().hashCode()); 
         hashCode = prime * hashCode + ((getLayerId() == null) ? 0 : getLayerId().hashCode()); 
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode()); 
         hashCode = prime * hashCode + ((getAvailabilityZones() == null) ? 0 : getAvailabilityZones().hashCode()); 
         hashCode = prime * hashCode + ((getEc2InstanceIds() == null) ? 0 : getEc2InstanceIds().hashCode()); 
         return hashCode;
@@ -403,6 +441,8 @@ public class ElasticLoadBalancer  implements Serializable  {
         if (other.getStackId() != null && other.getStackId().equals(this.getStackId()) == false) return false; 
         if (other.getLayerId() == null ^ this.getLayerId() == null) return false;
         if (other.getLayerId() != null && other.getLayerId().equals(this.getLayerId()) == false) return false; 
+        if (other.getVpcId() == null ^ this.getVpcId() == null) return false;
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false) return false; 
         if (other.getAvailabilityZones() == null ^ this.getAvailabilityZones() == null) return false;
         if (other.getAvailabilityZones() != null && other.getAvailabilityZones().equals(this.getAvailabilityZones()) == false) return false; 
         if (other.getEc2InstanceIds() == null ^ this.getEc2InstanceIds() == null) return false;

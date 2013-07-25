@@ -71,9 +71,6 @@ public class WorkflowExecution  implements Serializable  {
      * <b>Length: </b>1 - 256<br/>
      *
      * @param workflowId The user defined identifier associated with the workflow execution.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public WorkflowExecution withWorkflowId(String workflowId) {
         this.workflowId = workflowId;
@@ -114,9 +111,6 @@ public class WorkflowExecution  implements Serializable  {
      * <b>Length: </b>1 - 64<br/>
      *
      * @param runId A system generated unique identifier for the workflow execution.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public WorkflowExecution withRunId(String runId) {
         this.runId = runId;

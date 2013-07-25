@@ -226,9 +226,6 @@ public class JobOutput  implements Serializable  {
      * @param id A sequential counter, starting with 1, that identifies an output among
      *         the outputs from the current job. In the Output syntax, this value is
      *         always 1.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public JobOutput withId(String id) {
         this.id = id;
@@ -287,9 +284,6 @@ public class JobOutput  implements Serializable  {
      *         the file in the Amazon S3 bucket specified by the
      *         <code>OutputBucket</code> object in the pipeline that is specified by
      *         the pipeline ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public JobOutput withKey(String key) {
         this.key = key;
@@ -492,9 +486,6 @@ public class JobOutput  implements Serializable  {
      *         appears in the preset that you specified in the <code>PresetID</code>
      *         value of <code>CreateJobOutput</code>. Elastic Transcoder also appends
      *         the applicable file name extension.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public JobOutput withThumbnailPattern(String thumbnailPattern) {
         this.thumbnailPattern = thumbnailPattern;
@@ -565,9 +556,6 @@ public class JobOutput  implements Serializable  {
      *         <code>180</code>, <code>270</code> <p> The value <code>auto</code>
      *         generally works only if the file that you're transcoding contains
      *         rotation metadata.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public JobOutput withRotate(String rotate) {
         this.rotate = rotate;
@@ -644,9 +632,6 @@ public class JobOutput  implements Serializable  {
      *         Transcoder returned in the response when you created the preset. You
      *         can also use the Elastic Transcoder system presets, which you can get
      *         with <code>ListPresets</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public JobOutput withPresetId(String presetId) {
         this.presetId = presetId;
@@ -747,9 +732,6 @@ public class JobOutput  implements Serializable  {
      *         an output-specific playlist for each output that you specify in
      *         OutputKeys. To add an output to the master playlist for this job,
      *         include it in <code>OutputKeys</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public JobOutput withSegmentDuration(String segmentDuration) {
         this.segmentDuration = segmentDuration;
@@ -904,9 +886,6 @@ public class JobOutput  implements Serializable  {
      *         value of <code>Status</code> is one of the following:
      *         <code>Submitted</code>, <code>Progressing</code>,
      *         <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public JobOutput withStatus(String status) {
         this.status = status;
@@ -947,9 +926,6 @@ public class JobOutput  implements Serializable  {
      * <b>Length: </b>0 - 255<br/>
      *
      * @param statusDetail Information that further explains <code>Status</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public JobOutput withStatusDetail(String statusDetail) {
         this.statusDetail = statusDetail;
@@ -981,9 +957,6 @@ public class JobOutput  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param duration Duration of the output file, in seconds.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public JobOutput withDuration(Long duration) {
         this.duration = duration;
@@ -1015,9 +988,6 @@ public class JobOutput  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param width Specifies the width of the output file in pixels.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public JobOutput withWidth(Integer width) {
         this.width = width;
@@ -1049,9 +1019,6 @@ public class JobOutput  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param height Height of the output file, in pixels.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public JobOutput withHeight(Integer height) {
         this.height = height;
@@ -1160,9 +1127,6 @@ public class JobOutput  implements Serializable  {
      *         in the same location, the second watermark that you add will cover the
      *         first one, the third one will cover the second, and the fourth one
      *         will cover the third.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public JobOutput withWatermarks(JobWatermark... watermarks) {
         if (getWatermarks() == null) setWatermarks(new java.util.ArrayList<JobWatermark>(watermarks.length));
@@ -1200,9 +1164,6 @@ public class JobOutput  implements Serializable  {
      *         in the same location, the second watermark that you add will cover the
      *         first one, the third one will cover the second, and the fourth one
      *         will cover the third.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public JobOutput withWatermarks(java.util.Collection<JobWatermark> watermarks) {
         if (watermarks == null) {

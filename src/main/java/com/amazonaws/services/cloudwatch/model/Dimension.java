@@ -71,9 +71,6 @@ public class Dimension  implements Serializable  {
      * <b>Length: </b>1 - 255<br/>
      *
      * @param name The name of the dimension.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Dimension withName(String name) {
         this.name = name;
@@ -114,9 +111,6 @@ public class Dimension  implements Serializable  {
      * <b>Length: </b>1 - 255<br/>
      *
      * @param value The value representing the dimension measurement
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Dimension withValue(String value) {
         this.value = value;

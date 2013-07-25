@@ -86,9 +86,6 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest  implements Se
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param autoScalingGroupName The name or ARN of the Auto Scaling group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ExecutePolicyRequest withAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
@@ -132,9 +129,6 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest  implements Se
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param policyName The name or PolicyARN of the policy you want to run.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ExecutePolicyRequest withPolicyName(String policyName) {
         this.policyName = policyName;
@@ -172,9 +166,6 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest  implements Se
      *
      * @param honorCooldown Set to <code>True</code> if you want Auto Scaling to reject this
      *         request when the Auto Scaling group is in cooldown.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ExecutePolicyRequest withHonorCooldown(Boolean honorCooldown) {
         this.honorCooldown = honorCooldown;

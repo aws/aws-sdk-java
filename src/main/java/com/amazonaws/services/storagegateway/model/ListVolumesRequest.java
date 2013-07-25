@@ -106,9 +106,6 @@ public class ListVolumesRequest extends AmazonWebServiceRequest  implements Seri
      * @param gatewayARN The Amazon Resource Name (ARN) of the gateway. Use the
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListVolumesRequest withGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
@@ -161,9 +158,6 @@ public class ListVolumesRequest extends AmazonWebServiceRequest  implements Seri
      * @param marker A string that indicates the position at which to begin the returned
      *         list of volumes. Obtain the marker from the response of a previous
      *         List iSCSI Volumes request.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListVolumesRequest withMarker(String marker) {
         this.marker = marker;
@@ -210,9 +204,6 @@ public class ListVolumesRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param limit Specifies that the list of volumes returned be limited to the
      *         specified number of items.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListVolumesRequest withLimit(Integer limit) {
         this.limit = limit;

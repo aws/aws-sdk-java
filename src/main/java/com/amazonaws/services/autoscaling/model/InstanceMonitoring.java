@@ -51,9 +51,6 @@ public class InstanceMonitoring  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param enabled If <code>True</code>, instance monitoring is enabled.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceMonitoring withEnabled(Boolean enabled) {
         this.enabled = enabled;

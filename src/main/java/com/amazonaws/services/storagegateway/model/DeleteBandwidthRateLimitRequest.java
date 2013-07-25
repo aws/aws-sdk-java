@@ -93,9 +93,6 @@ public class DeleteBandwidthRateLimitRequest extends AmazonWebServiceRequest  im
      * @param gatewayARN The Amazon Resource Name (ARN) of the gateway. Use the
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteBandwidthRateLimitRequest withGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
@@ -153,9 +150,6 @@ public class DeleteBandwidthRateLimitRequest extends AmazonWebServiceRequest  im
      *         bandwidth rate limit to delete. <p><i>Valid Values</i>:
      *         <code>Upload</code>, <code>Download</code>, <code>All</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see BandwidthType
      */
     public DeleteBandwidthRateLimitRequest withBandwidthType(String bandwidthType) {
@@ -195,9 +189,6 @@ public class DeleteBandwidthRateLimitRequest extends AmazonWebServiceRequest  im
      * @param bandwidthType One of the <a>BandwidthType</a> values that indicates the gateway
      *         bandwidth rate limit to delete. <p><i>Valid Values</i>:
      *         <code>Upload</code>, <code>Download</code>, <code>All</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see BandwidthType
      */

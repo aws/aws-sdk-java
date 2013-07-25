@@ -134,9 +134,6 @@ public class CreateUserRequest extends AmazonWebServiceRequest  implements Seria
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>. <p>This parameter is optional. If
      *         it is not included, it defaults to a slash (/).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateUserRequest withPath(String path) {
         this.path = path;
@@ -180,9 +177,6 @@ public class CreateUserRequest extends AmazonWebServiceRequest  implements Seria
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param userName Name of the user to create.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateUserRequest withUserName(String userName) {
         this.userName = userName;

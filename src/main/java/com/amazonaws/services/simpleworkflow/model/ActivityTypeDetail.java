@@ -105,9 +105,6 @@ public class ActivityTypeDetail  implements Serializable  {
      *         <a>DeprecateActivityType</a>, but is still in use. You should keep
      *         workers supporting this type running. You cannot create new tasks of
      *         this type. </li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ActivityTypeDetail withTypeInfo(ActivityTypeInfo typeInfo) {
         this.typeInfo = typeInfo;
@@ -139,9 +136,6 @@ public class ActivityTypeDetail  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param configuration The configuration settings registered with the activity type.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ActivityTypeDetail withConfiguration(ActivityTypeConfiguration configuration) {
         this.configuration = configuration;

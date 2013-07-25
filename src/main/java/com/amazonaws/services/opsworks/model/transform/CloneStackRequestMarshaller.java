@@ -124,6 +124,20 @@ public class CloneStackRequestMarshaller implements Marshaller<Request<CloneStac
             if (cloneStackRequest.getCustomJson() != null) {
                 jsonWriter.key("CustomJson").value(cloneStackRequest.getCustomJson());
             }
+            StackConfigurationManager configurationManager = cloneStackRequest.getConfigurationManager();
+            if (configurationManager != null) {
+
+                jsonWriter.key("ConfigurationManager");
+                jsonWriter.object();
+
+                if (configurationManager.getName() != null) {
+                    jsonWriter.key("Name").value(configurationManager.getName());
+                }
+                if (configurationManager.getVersion() != null) {
+                    jsonWriter.key("Version").value(configurationManager.getVersion());
+                }
+                jsonWriter.endObject();
+            }
             if (cloneStackRequest.isUseCustomCookbooks() != null) {
                 jsonWriter.key("UseCustomCookbooks").value(cloneStackRequest.isUseCustomCookbooks());
             }

@@ -102,9 +102,6 @@ public class ReservedDBInstancesOffering  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedDBInstancesOfferingId The offering identifier.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedDBInstancesOffering withReservedDBInstancesOfferingId(String reservedDBInstancesOfferingId) {
         this.reservedDBInstancesOfferingId = reservedDBInstancesOfferingId;
@@ -136,9 +133,6 @@ public class ReservedDBInstancesOffering  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBInstanceClass The DB instance class for the reserved DB Instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedDBInstancesOffering withDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
@@ -170,9 +164,6 @@ public class ReservedDBInstancesOffering  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param duration The duration of the offering in seconds.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedDBInstancesOffering withDuration(Integer duration) {
         this.duration = duration;
@@ -204,9 +195,6 @@ public class ReservedDBInstancesOffering  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param fixedPrice The fixed price charged for this offering.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedDBInstancesOffering withFixedPrice(Double fixedPrice) {
         this.fixedPrice = fixedPrice;
@@ -238,9 +226,6 @@ public class ReservedDBInstancesOffering  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param usagePrice The hourly price charged for this offering.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedDBInstancesOffering withUsagePrice(Double usagePrice) {
         this.usagePrice = usagePrice;
@@ -272,9 +257,6 @@ public class ReservedDBInstancesOffering  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param currencyCode The currency code for the reserved DB Instance offering.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedDBInstancesOffering withCurrencyCode(String currencyCode) {
         this.currencyCode = currencyCode;
@@ -306,9 +288,6 @@ public class ReservedDBInstancesOffering  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param productDescription The database engine used by the offering.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedDBInstancesOffering withProductDescription(String productDescription) {
         this.productDescription = productDescription;
@@ -340,9 +319,6 @@ public class ReservedDBInstancesOffering  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param offeringType The offering type.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedDBInstancesOffering withOfferingType(String offeringType) {
         this.offeringType = offeringType;
@@ -374,9 +350,6 @@ public class ReservedDBInstancesOffering  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param multiAZ Indicates if the offering applies to Multi-AZ deployments.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedDBInstancesOffering withMultiAZ(Boolean multiAZ) {
         this.multiAZ = multiAZ;
@@ -428,9 +401,6 @@ public class ReservedDBInstancesOffering  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param recurringCharges The recurring price charged to run this reserved DB Instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedDBInstancesOffering withRecurringCharges(RecurringCharge... recurringCharges) {
         if (getRecurringCharges() == null) setRecurringCharges(new java.util.ArrayList<RecurringCharge>(recurringCharges.length));
@@ -446,9 +416,6 @@ public class ReservedDBInstancesOffering  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param recurringCharges The recurring price charged to run this reserved DB Instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReservedDBInstancesOffering withRecurringCharges(java.util.Collection<RecurringCharge> recurringCharges) {
         if (recurringCharges == null) {

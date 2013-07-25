@@ -90,9 +90,6 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param queueUrl The new value for the QueueUrl property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SendMessageBatchRequest withQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
@@ -135,9 +132,6 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param entries The new value for the Entries property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SendMessageBatchRequest withEntries(SendMessageBatchRequestEntry... entries) {
         if (getEntries() == null) setEntries(new java.util.ArrayList<SendMessageBatchRequestEntry>(entries.length));
@@ -153,9 +147,6 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param entries The new value for the Entries property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SendMessageBatchRequest withEntries(java.util.Collection<SendMessageBatchRequestEntry> entries) {
         if (entries == null) {

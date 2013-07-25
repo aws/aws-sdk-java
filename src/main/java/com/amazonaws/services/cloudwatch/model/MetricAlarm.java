@@ -228,9 +228,6 @@ public class MetricAlarm  implements Serializable  {
      * <b>Length: </b>1 - 255<br/>
      *
      * @param alarmName The name of the alarm.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MetricAlarm withAlarmName(String alarmName) {
         this.alarmName = alarmName;
@@ -271,9 +268,6 @@ public class MetricAlarm  implements Serializable  {
      * <b>Length: </b>1 - 1600<br/>
      *
      * @param alarmArn The Amazon Resource Name (ARN) of the alarm.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MetricAlarm withAlarmArn(String alarmArn) {
         this.alarmArn = alarmArn;
@@ -314,9 +308,6 @@ public class MetricAlarm  implements Serializable  {
      * <b>Length: </b>0 - 255<br/>
      *
      * @param alarmDescription The description for the alarm.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MetricAlarm withAlarmDescription(String alarmDescription) {
         this.alarmDescription = alarmDescription;
@@ -348,9 +339,6 @@ public class MetricAlarm  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param alarmConfigurationUpdatedTimestamp The time stamp of the last update to the alarm configuration.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MetricAlarm withAlarmConfigurationUpdatedTimestamp(java.util.Date alarmConfigurationUpdatedTimestamp) {
         this.alarmConfigurationUpdatedTimestamp = alarmConfigurationUpdatedTimestamp;
@@ -388,9 +376,6 @@ public class MetricAlarm  implements Serializable  {
      *
      * @param actionsEnabled Indicates whether actions should be executed during any changes to the
      *         alarm's state.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MetricAlarm withActionsEnabled(Boolean actionsEnabled) {
         this.actionsEnabled = actionsEnabled;
@@ -477,9 +462,6 @@ public class MetricAlarm  implements Serializable  {
      *         as an Amazon Resource Number (ARN). Currently the only actions
      *         supported are publishing to an Amazon SNS topic and triggering an Auto
      *         Scaling policy.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MetricAlarm withOKActions(String... oKActions) {
         if (getOKActions() == null) setOKActions(new java.util.ArrayList<String>(oKActions.length));
@@ -506,9 +488,6 @@ public class MetricAlarm  implements Serializable  {
      *         as an Amazon Resource Number (ARN). Currently the only actions
      *         supported are publishing to an Amazon SNS topic and triggering an Auto
      *         Scaling policy.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MetricAlarm withOKActions(java.util.Collection<String> oKActions) {
         if (oKActions == null) {
@@ -590,9 +569,6 @@ public class MetricAlarm  implements Serializable  {
      *         specified as an Amazon Resource Number (ARN). Currently the only
      *         actions supported are publishing to an Amazon SNS topic and triggering
      *         an Auto Scaling policy.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MetricAlarm withAlarmActions(String... alarmActions) {
         if (getAlarmActions() == null) setAlarmActions(new java.util.ArrayList<String>(alarmActions.length));
@@ -619,9 +595,6 @@ public class MetricAlarm  implements Serializable  {
      *         specified as an Amazon Resource Number (ARN). Currently the only
      *         actions supported are publishing to an Amazon SNS topic and triggering
      *         an Auto Scaling policy.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MetricAlarm withAlarmActions(java.util.Collection<String> alarmActions) {
         if (alarmActions == null) {
@@ -703,9 +676,6 @@ public class MetricAlarm  implements Serializable  {
      *         is specified as an Amazon Resource Number (ARN). Currently the only
      *         actions supported are publishing to an Amazon SNS topic or triggering
      *         an Auto Scaling policy.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MetricAlarm withInsufficientDataActions(String... insufficientDataActions) {
         if (getInsufficientDataActions() == null) setInsufficientDataActions(new java.util.ArrayList<String>(insufficientDataActions.length));
@@ -732,9 +702,6 @@ public class MetricAlarm  implements Serializable  {
      *         is specified as an Amazon Resource Number (ARN). Currently the only
      *         actions supported are publishing to an Amazon SNS topic or triggering
      *         an Auto Scaling policy.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MetricAlarm withInsufficientDataActions(java.util.Collection<String> insufficientDataActions) {
         if (insufficientDataActions == null) {
@@ -786,9 +753,6 @@ public class MetricAlarm  implements Serializable  {
      *
      * @param stateValue The state value for the alarm.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see StateValue
      */
     public MetricAlarm withStateValue(String stateValue) {
@@ -820,9 +784,6 @@ public class MetricAlarm  implements Serializable  {
      * <b>Allowed Values: </b>OK, ALARM, INSUFFICIENT_DATA
      *
      * @param stateValue The state value for the alarm.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see StateValue
      */
@@ -864,9 +825,6 @@ public class MetricAlarm  implements Serializable  {
      * <b>Length: </b>0 - 1023<br/>
      *
      * @param stateReason A human-readable explanation for the alarm's state.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MetricAlarm withStateReason(String stateReason) {
         this.stateReason = stateReason;
@@ -907,9 +865,6 @@ public class MetricAlarm  implements Serializable  {
      * <b>Length: </b>0 - 4000<br/>
      *
      * @param stateReasonData An explanation for the alarm's state in machine-readable JSON format
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MetricAlarm withStateReasonData(String stateReasonData) {
         this.stateReasonData = stateReasonData;
@@ -941,9 +896,6 @@ public class MetricAlarm  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stateUpdatedTimestamp The time stamp of the last update to the alarm's state.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MetricAlarm withStateUpdatedTimestamp(java.util.Date stateUpdatedTimestamp) {
         this.stateUpdatedTimestamp = stateUpdatedTimestamp;
@@ -984,9 +936,6 @@ public class MetricAlarm  implements Serializable  {
      * <b>Length: </b>1 - 255<br/>
      *
      * @param metricName The name of the alarm's metric.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MetricAlarm withMetricName(String metricName) {
         this.metricName = metricName;
@@ -1030,9 +979,6 @@ public class MetricAlarm  implements Serializable  {
      * <b>Pattern: </b>[^:].*<br/>
      *
      * @param namespace The namespace of alarm's associated metric.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MetricAlarm withNamespace(String namespace) {
         this.namespace = namespace;
@@ -1078,9 +1024,6 @@ public class MetricAlarm  implements Serializable  {
      *
      * @param statistic The statistic to apply to the alarm's associated metric.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see Statistic
      */
     public MetricAlarm withStatistic(String statistic) {
@@ -1112,9 +1055,6 @@ public class MetricAlarm  implements Serializable  {
      * <b>Allowed Values: </b>SampleCount, Average, Sum, Minimum, Maximum
      *
      * @param statistic The statistic to apply to the alarm's associated metric.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see Statistic
      */
@@ -1167,9 +1107,6 @@ public class MetricAlarm  implements Serializable  {
      * <b>Length: </b>0 - 10<br/>
      *
      * @param dimensions The list of dimensions associated with the alarm's associated metric.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MetricAlarm withDimensions(Dimension... dimensions) {
         if (getDimensions() == null) setDimensions(new java.util.ArrayList<Dimension>(dimensions.length));
@@ -1188,9 +1125,6 @@ public class MetricAlarm  implements Serializable  {
      * <b>Length: </b>0 - 10<br/>
      *
      * @param dimensions The list of dimensions associated with the alarm's associated metric.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MetricAlarm withDimensions(java.util.Collection<Dimension> dimensions) {
         if (dimensions == null) {
@@ -1237,9 +1171,6 @@ public class MetricAlarm  implements Serializable  {
      * <b>Range: </b>60 - <br/>
      *
      * @param period The period in seconds over which the statistic is applied.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MetricAlarm withPeriod(Integer period) {
         this.period = period;
@@ -1285,9 +1216,6 @@ public class MetricAlarm  implements Serializable  {
      *
      * @param unit The unit of the alarm's associated metric.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see StandardUnit
      */
     public MetricAlarm withUnit(String unit) {
@@ -1319,9 +1247,6 @@ public class MetricAlarm  implements Serializable  {
      * <b>Allowed Values: </b>Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, Bytes/Second, Kilobytes/Second, Megabytes/Second, Gigabytes/Second, Terabytes/Second, Bits/Second, Kilobits/Second, Megabits/Second, Gigabits/Second, Terabits/Second, Count/Second, None
      *
      * @param unit The unit of the alarm's associated metric.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see StandardUnit
      */
@@ -1369,9 +1294,6 @@ public class MetricAlarm  implements Serializable  {
      *
      * @param evaluationPeriods The number of periods over which data is compared to the specified
      *         threshold.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MetricAlarm withEvaluationPeriods(Integer evaluationPeriods) {
         this.evaluationPeriods = evaluationPeriods;
@@ -1403,9 +1325,6 @@ public class MetricAlarm  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param threshold The value against which the specified statistic is compared.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MetricAlarm withThreshold(Double threshold) {
         this.threshold = threshold;
@@ -1463,9 +1382,6 @@ public class MetricAlarm  implements Serializable  {
      *         <code>Statistic</code> and <code>Threshold</code>. The specified
      *         <code>Statistic</code> value is used as the first operand.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ComparisonOperator
      */
     public MetricAlarm withComparisonOperator(String comparisonOperator) {
@@ -1505,9 +1421,6 @@ public class MetricAlarm  implements Serializable  {
      * @param comparisonOperator The arithmetic operation to use when comparing the specified
      *         <code>Statistic</code> and <code>Threshold</code>. The specified
      *         <code>Statistic</code> value is used as the first operand.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see ComparisonOperator
      */

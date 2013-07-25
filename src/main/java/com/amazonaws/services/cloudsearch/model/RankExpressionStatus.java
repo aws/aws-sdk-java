@@ -64,9 +64,6 @@ public class RankExpressionStatus  implements Serializable  {
      *
      * @param options The expression that is evaluated for ranking or thresholding while
      *         processing a search request.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RankExpressionStatus withOptions(NamedRankExpression options) {
         this.options = options;
@@ -104,9 +101,6 @@ public class RankExpressionStatus  implements Serializable  {
      *
      * @param status The status of an option, including when it was last updated and
      *         whether it is actively in use for searches.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RankExpressionStatus withStatus(OptionStatus status) {
         this.status = status;

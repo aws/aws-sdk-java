@@ -118,9 +118,6 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest  implements
      *         alphanumeric characters or hyphens</li> <li>First character must be a
      *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
      *         hyphens</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RebootDBInstanceRequest withDBInstanceIdentifier(String dBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -164,9 +161,6 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest  implements
      * @param forceFailover When <code>true</code>, the reboot will be conducted through a MultiAZ
      *         failover. <p>Constraint: You cannot specify <code>true</code> if the
      *         instance is not configured for MultiAZ.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RebootDBInstanceRequest withForceFailover(Boolean forceFailover) {
         this.forceFailover = forceFailover;

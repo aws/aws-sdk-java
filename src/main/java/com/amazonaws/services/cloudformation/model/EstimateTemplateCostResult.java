@@ -58,9 +58,6 @@ public class EstimateTemplateCostResult  implements Serializable  {
      *
      * @param url An AWS Simple Monthly Calculator URL with a query string that
      *         describes the resources required to run the template.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EstimateTemplateCostResult withUrl(String url) {
         this.url = url;

@@ -70,9 +70,6 @@ public class ForwardedValues  implements Serializable  {
      * @param queryString Indicates whether you want CloudFront to forward query strings to the
      *         origin that is associated with this cache behavior. If so, specify
      *         true; if not, specify false.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ForwardedValues withQueryString(Boolean queryString) {
         this.queryString = queryString;
@@ -117,9 +114,6 @@ public class ForwardedValues  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cookies A complex type that specifies how CloudFront handles cookies.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ForwardedValues withCookies(CookiePreference cookies) {
         this.cookies = cookies;

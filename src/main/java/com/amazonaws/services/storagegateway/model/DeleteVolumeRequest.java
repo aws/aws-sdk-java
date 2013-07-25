@@ -85,9 +85,6 @@ public class DeleteVolumeRequest extends AmazonWebServiceRequest  implements Ser
      *
      * @param volumeARN The Amazon Resource Name (ARN) of the volume. Use the
      *         <a>ListVolumes</a> operation to return a list of gateway volumes.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteVolumeRequest withVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;

@@ -72,9 +72,6 @@ public class AddCommunicationToCaseResult  implements Serializable  {
      *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_AddCommunicationToCase.html"
      *         title="AddCommunicationToCase">AddCommunicationToCase</a> succeeds.
      *         Returns an error otherwise.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AddCommunicationToCaseResult withResult(Boolean result) {
         this.result = result;

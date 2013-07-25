@@ -71,9 +71,6 @@ public class DescribeEventCategoriesRequest extends AmazonWebServiceRequest  imp
      * @param sourceType The type of source that will be generating the events. <p>Valid
      *         values: db-instance | db-parameter-group | db-security-group |
      *         db-snapshot
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeEventCategoriesRequest withSourceType(String sourceType) {
         this.sourceType = sourceType;

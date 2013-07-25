@@ -51,9 +51,6 @@ public class DefineRankExpressionResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param rankExpression The value of a <code>RankExpression</code> and its current status.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DefineRankExpressionResult withRankExpression(RankExpressionStatus rankExpression) {
         this.rankExpression = rankExpression;

@@ -105,9 +105,6 @@ public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest  im
      * @param gatewayARN The Amazon Resource Name (ARN) of the gateway. Use the
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateBandwidthRateLimitRequest withGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
@@ -148,9 +145,6 @@ public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest  im
      * <b>Range: </b>51200 - <br/>
      *
      * @param averageUploadRateLimitInBitsPerSec The average upload bandwidth rate limit in bits per second.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateBandwidthRateLimitRequest withAverageUploadRateLimitInBitsPerSec(Long averageUploadRateLimitInBitsPerSec) {
         this.averageUploadRateLimitInBitsPerSec = averageUploadRateLimitInBitsPerSec;
@@ -191,9 +185,6 @@ public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest  im
      * <b>Range: </b>102400 - <br/>
      *
      * @param averageDownloadRateLimitInBitsPerSec The average download bandwidth rate limit in bits per second.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateBandwidthRateLimitRequest withAverageDownloadRateLimitInBitsPerSec(Long averageDownloadRateLimitInBitsPerSec) {
         this.averageDownloadRateLimitInBitsPerSec = averageDownloadRateLimitInBitsPerSec;

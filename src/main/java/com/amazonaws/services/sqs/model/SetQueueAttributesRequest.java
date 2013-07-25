@@ -75,9 +75,6 @@ public class SetQueueAttributesRequest extends AmazonWebServiceRequest  implemen
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param queueUrl The new value for the QueueUrl property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SetQueueAttributesRequest withQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
@@ -96,7 +93,6 @@ public class SetQueueAttributesRequest extends AmazonWebServiceRequest  implemen
             attributes = new java.util.HashMap<String,String>();
         }
         return attributes;
-
     }
     
     /**
@@ -114,15 +110,43 @@ public class SetQueueAttributesRequest extends AmazonWebServiceRequest  implemen
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributes The new value for the Attributes property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SetQueueAttributesRequest withAttributes(java.util.Map<String,String> attributes) {
         setAttributes(attributes);
         return this;
     }
     
+   	
+    /**
+     * Sets the value of the Attributes property for this object.
+     * <p>
+     * The method adds a new key-value pair into Attributes parameter, and
+     * returns a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param key The key of the entry to be added into Attributes.
+     * @param value The corresponding value of the entry to be added into Attributes.
+     */
+	public SetQueueAttributesRequest addAttributesEntry(String key, String value) {
+		if (null == this.attributes) {
+			this.attributes = new java.util.HashMap<String,String>();
+		}
+		if (this.attributes.containsKey(key))
+			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+		this.attributes.put(key, value);
+		return this;
+	}
+	
+	/**
+	 * Removes all the entries added into Attributes.
+	 * <p>
+	 * Returns a reference to this object so that method calls can be chained together.
+	 */
+	public SetQueueAttributesRequest clearAttributesEntries() {
+		this.attributes = null;
+		return this;
+	}
+	
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

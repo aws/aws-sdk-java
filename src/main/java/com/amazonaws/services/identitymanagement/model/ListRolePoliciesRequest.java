@@ -97,9 +97,6 @@ public class ListRolePoliciesRequest extends AmazonWebServiceRequest  implements
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param roleName The name of the role to list policies for.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListRolePoliciesRequest withRoleName(String roleName) {
         this.roleName = roleName;
@@ -161,9 +158,6 @@ public class ListRolePoliciesRequest extends AmazonWebServiceRequest  implements
      *         subsequent request after you've received a response where the results
      *         are truncated. Set it to the value of the <code>Marker</code> element
      *         in the response you just received.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListRolePoliciesRequest withMarker(String marker) {
         this.marker = marker;
@@ -222,9 +216,6 @@ public class ListRolePoliciesRequest extends AmazonWebServiceRequest  implements
      *         maximum number of user names you want in the response. If there are
      *         additional user names beyond the maximum you specify, the
      *         <code>IsTruncated</code> response element is <code>true</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListRolePoliciesRequest withMaxItems(Integer maxItems) {
         this.maxItems = maxItems;

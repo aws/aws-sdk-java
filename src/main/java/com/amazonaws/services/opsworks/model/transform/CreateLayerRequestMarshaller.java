@@ -251,6 +251,9 @@ public class CreateLayerRequestMarshaller implements Marshaller<Request<CreateLa
                 }
                 jsonWriter.endObject();
             }
+            if (createLayerRequest.isInstallUpdatesOnBoot() != null) {
+                jsonWriter.key("InstallUpdatesOnBoot").value(createLayerRequest.isInstallUpdatesOnBoot());
+            }
 
           jsonWriter.endObject();
           

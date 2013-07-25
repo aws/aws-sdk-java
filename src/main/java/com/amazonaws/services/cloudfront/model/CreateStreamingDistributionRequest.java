@@ -77,9 +77,6 @@ public class CreateStreamingDistributionRequest extends AmazonWebServiceRequest 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param streamingDistributionConfig The streaming distribution's configuration information.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateStreamingDistributionRequest withStreamingDistributionConfig(StreamingDistributionConfig streamingDistributionConfig) {
         this.streamingDistributionConfig = streamingDistributionConfig;

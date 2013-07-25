@@ -96,9 +96,6 @@ public class TrustedSigners  implements Serializable  {
      *
      * @param enabled Specifies whether you want to require end users to use signed URLs to
      *         access the files specified by PathPattern and TargetOriginId.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedSigners withEnabled(Boolean enabled) {
         this.enabled = enabled;
@@ -141,9 +138,6 @@ public class TrustedSigners  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param quantity The number of trusted signers for this cache behavior.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedSigners withQuantity(Integer quantity) {
         this.quantity = quantity;
@@ -192,9 +186,6 @@ public class TrustedSigners  implements Serializable  {
      *
      * @param items Optional: A complex type that contains trusted signers for this cache
      *         behavior. If Quantity is 0, you can omit Items.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedSigners withItems(String... items) {
         if (getItems() == null) setItems(new java.util.ArrayList<String>(items.length));
@@ -212,9 +203,6 @@ public class TrustedSigners  implements Serializable  {
      *
      * @param items Optional: A complex type that contains trusted signers for this cache
      *         behavior. If Quantity is 0, you can omit Items.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedSigners withItems(java.util.Collection<String> items) {
         if (items == null) {

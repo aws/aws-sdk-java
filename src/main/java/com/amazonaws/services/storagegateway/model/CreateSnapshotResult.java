@@ -87,9 +87,6 @@ public class CreateSnapshotResult  implements Serializable  {
      *
      * @param volumeARN The Amazon Resource Name (ARN) of the volume of which the snapshot was
      *         taken.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateSnapshotResult withVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
@@ -148,9 +145,6 @@ public class CreateSnapshotResult  implements Serializable  {
      *         operations such as describing snapshots (Amazon Elastic Compute Cloud
      *         API <code>DescribeSnapshots</code>) or creating a volume from a
      *         snapshot (<a>CreateStorediSCSIVolume</a>).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateSnapshotResult withSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;

@@ -116,9 +116,6 @@ public class PromoteReadReplicaRequest extends AmazonWebServiceRequest  implemen
      *         alphanumeric characters or hyphens</li> <li>First character must be a
      *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
      *         hyphens</li> </ul> <p>Example: <copy>mydbinstance</copy>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PromoteReadReplicaRequest withDBInstanceIdentifier(String dBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -168,9 +165,6 @@ public class PromoteReadReplicaRequest extends AmazonWebServiceRequest  implemen
      *         to a positive number enables backups. Setting this parameter to 0
      *         disables automated backups. <p> Default: 1 <p>Constraints: <ul>
      *         <li>Must be a value from 0 to 8</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PromoteReadReplicaRequest withBackupRetentionPeriod(Integer backupRetentionPeriod) {
         this.backupRetentionPeriod = backupRetentionPeriod;
@@ -280,9 +274,6 @@ public class PromoteReadReplicaRequest extends AmazonWebServiceRequest  implemen
      *         <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
      *         Coordinated (UTC). Must not conflict with the preferred maintenance
      *         window. Must be at least 30 minutes.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PromoteReadReplicaRequest withPreferredBackupWindow(String preferredBackupWindow) {
         this.preferredBackupWindow = preferredBackupWindow;

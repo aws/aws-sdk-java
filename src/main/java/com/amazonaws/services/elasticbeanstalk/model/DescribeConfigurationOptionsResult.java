@@ -68,9 +68,6 @@ public class DescribeConfigurationOptionsResult  implements Serializable  {
      * <b>Length: </b>0 - 100<br/>
      *
      * @param solutionStackName The name of the solution stack these configuration options belong to.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeConfigurationOptionsResult withSolutionStackName(String solutionStackName) {
         this.solutionStackName = solutionStackName;
@@ -113,9 +110,6 @@ public class DescribeConfigurationOptionsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param options A list of <a>ConfigurationOptionDescription</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeConfigurationOptionsResult withOptions(ConfigurationOptionDescription... options) {
         if (getOptions() == null) setOptions(new java.util.ArrayList<ConfigurationOptionDescription>(options.length));
@@ -131,9 +125,6 @@ public class DescribeConfigurationOptionsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param options A list of <a>ConfigurationOptionDescription</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeConfigurationOptionsResult withOptions(java.util.Collection<ConfigurationOptionDescription> options) {
         if (options == null) {

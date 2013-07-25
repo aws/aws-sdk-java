@@ -97,9 +97,6 @@ public class DescribeActivityTypeRequest extends AmazonWebServiceRequest  implem
      * <b>Length: </b>1 - 256<br/>
      *
      * @param domain The name of the domain in which the activity type is registered.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeActivityTypeRequest withDomain(String domain) {
         this.domain = domain;
@@ -131,9 +128,6 @@ public class DescribeActivityTypeRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param activityType The activity type to describe.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeActivityTypeRequest withActivityType(ActivityType activityType) {
         this.activityType = activityType;

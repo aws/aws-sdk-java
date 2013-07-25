@@ -171,9 +171,6 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * @param dBInstanceIdentifier The DB Instance identifier of the Read Replica. This is the unique key
      *         that identifies a DB Instance. This parameter is stored as a lowercase
      *         string.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceReadReplicaRequest withDBInstanceIdentifier(String dBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -223,9 +220,6 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *         Read Replica. Each DB Instance can have up to five Read Replicas.
      *         <p>Constraints: Must be the identifier of an existing DB Instance that
      *         is not already a Read Replica DB Instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceReadReplicaRequest withSourceDBInstanceIdentifier(String sourceDBInstanceIdentifier) {
         this.sourceDBInstanceIdentifier = sourceDBInstanceIdentifier;
@@ -275,9 +269,6 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *         <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
      *         db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code> <p>Default:
      *         Inherits from the source DB Instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceReadReplicaRequest withDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
@@ -321,9 +312,6 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * @param availabilityZone The Amazon EC2 Availability Zone that the Read Replica will be created
      *         in. <p> Default: A random, system-chosen Availability Zone in the
      *         endpoint's region. <p> Example: <code>us-east-1d</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceReadReplicaRequest withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -367,9 +355,6 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * @param port The port number that the DB Instance uses for connections. <p>Default:
      *         Inherits from the source DB Instance <p>Valid Values:
      *         <code>1150-65535</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceReadReplicaRequest withPort(Integer port) {
         this.port = port;
@@ -413,9 +398,6 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * @param autoMinorVersionUpgrade Indicates that minor engine upgrades will be applied automatically to
      *         the Read Replica during the maintenance window. <p>Default: Inherits
      *         from the source DB Instance
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceReadReplicaRequest withAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
         this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
@@ -466,9 +448,6 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *
      * @param iops The amount of Provisioned IOPS (input/output operations per second) to
      *         be initially allocated for the DB Instance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceReadReplicaRequest withIops(Integer iops) {
         this.iops = iops;
@@ -506,9 +485,6 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *
      * @param optionGroupName The option group the DB instance will be associated with. If omitted,
      *         the default Option Group for the engine specified will be used.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceReadReplicaRequest withOptionGroupName(String optionGroupName) {
         this.optionGroupName = optionGroupName;
@@ -612,9 +588,6 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      *         publicly accessible. If a specific DB subnet group has been specified
      *         as part of the request and the PubliclyAccessible value has not been
      *         set, the DB instance will be private.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateDBInstanceReadReplicaRequest withPubliclyAccessible(Boolean publiclyAccessible) {
         this.publiclyAccessible = publiclyAccessible;

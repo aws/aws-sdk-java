@@ -63,9 +63,6 @@ public class CreateInvalidationResult  implements Serializable  {
      *
      * @param location The fully qualified URI of the distribution and invalidation batch
      *         request, including the Invalidation ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateInvalidationResult withLocation(String location) {
         this.location = location;
@@ -97,9 +94,6 @@ public class CreateInvalidationResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param invalidation The invalidation's information.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateInvalidationResult withInvalidation(Invalidation invalidation) {
         this.invalidation = invalidation;

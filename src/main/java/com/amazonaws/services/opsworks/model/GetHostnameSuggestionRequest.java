@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#getHostnameSuggestion(GetHostnameSuggestionRequest) GetHostnameSuggestion operation}.
  * <p>
- * Gets a generated hostname for the specified layer, based on the current hostname theme.
+ * Gets a generated host name for the specified layer, based on the current host name theme.
  * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#getHostnameSuggestion(GetHostnameSuggestionRequest)

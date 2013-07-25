@@ -25,6 +25,7 @@ import com.amazonaws.transform.*;
 import org.codehaus.jackson.JsonToken;
 import static org.codehaus.jackson.JsonToken.*;
 
+
 /**
  * Request Cancel External Workflow Execution Initiated Event Attributes JSON Unmarshaller
  */

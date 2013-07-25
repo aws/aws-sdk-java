@@ -94,9 +94,6 @@ public class S3Location  implements Serializable  {
      * <b>Length: </b>0 - 255<br/>
      *
      * @param s3Bucket The Amazon S3 bucket where the data is located.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public S3Location withS3Bucket(String s3Bucket) {
         this.s3Bucket = s3Bucket;
@@ -137,9 +134,6 @@ public class S3Location  implements Serializable  {
      * <b>Length: </b>0 - 1024<br/>
      *
      * @param s3Key The Amazon S3 key where the data is located.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public S3Location withS3Key(String s3Key) {
         this.s3Key = s3Key;

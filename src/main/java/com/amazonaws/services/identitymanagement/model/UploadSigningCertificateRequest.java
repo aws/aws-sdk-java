@@ -112,9 +112,6 @@ public class UploadSigningCertificateRequest extends AmazonWebServiceRequest  im
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param userName Name of the user the signing certificate is for.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UploadSigningCertificateRequest withUserName(String userName) {
         this.userName = userName;
@@ -158,9 +155,6 @@ public class UploadSigningCertificateRequest extends AmazonWebServiceRequest  im
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      *
      * @param certificateBody The contents of the signing certificate.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UploadSigningCertificateRequest withCertificateBody(String certificateBody) {
         this.certificateBody = certificateBody;

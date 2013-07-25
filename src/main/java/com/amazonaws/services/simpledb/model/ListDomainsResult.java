@@ -66,9 +66,6 @@ public class ListDomainsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param domainNames A list of domain names that match the expression.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListDomainsResult withDomainNames(String... domainNames) {
         if (getDomainNames() == null) setDomainNames(new java.util.ArrayList<String>(domainNames.length));
@@ -84,9 +81,6 @@ public class ListDomainsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param domainNames A list of domain names that match the expression.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListDomainsResult withDomainNames(java.util.Collection<String> domainNames) {
         if (domainNames == null) {
@@ -130,9 +124,6 @@ public class ListDomainsResult  implements Serializable  {
      *
      * @param nextToken An opaque token indicating that there are more domains than the
      *         specified <code>MaxNumberOfDomains</code> still available.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListDomainsResult withNextToken(String nextToken) {
         this.nextToken = nextToken;

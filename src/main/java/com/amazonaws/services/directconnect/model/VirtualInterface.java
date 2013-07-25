@@ -140,9 +140,6 @@ public class VirtualInterface  implements Serializable  {
      *
      * @param virtualInterfaceId ID of the virtual interface. <p>Example: dxvif-123dfg56 <p>Default:
      *         None
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VirtualInterface withVirtualInterfaceId(String virtualInterfaceId) {
         this.virtualInterfaceId = virtualInterfaceId;
@@ -180,9 +177,6 @@ public class VirtualInterface  implements Serializable  {
      *
      * @param location Where the AWS Direct Connect offering is located. <p>Example: EqSV5
      *         <p>Default: None
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VirtualInterface withLocation(String location) {
         this.location = location;
@@ -214,9 +208,6 @@ public class VirtualInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param connectionId ID of the connection. <p>Example: dxcon-fg5678gh <p>Default: None
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VirtualInterface withConnectionId(String connectionId) {
         this.connectionId = connectionId;
@@ -254,9 +245,6 @@ public class VirtualInterface  implements Serializable  {
      *
      * @param virtualInterfaceType The type of virtual interface <p>Example: Private (Amazon VPC) or
      *         public (Amazon S3, Amazon DynamoDB, etc.)
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VirtualInterface withVirtualInterfaceType(String virtualInterfaceType) {
         this.virtualInterfaceType = virtualInterfaceType;
@@ -294,9 +282,6 @@ public class VirtualInterface  implements Serializable  {
      *
      * @param virtualInterfaceName The name of the virtual interface assigned by the customer <p>Example:
      *         "Dev VPC"
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VirtualInterface withVirtualInterfaceName(String virtualInterfaceName) {
         this.virtualInterfaceName = virtualInterfaceName;
@@ -328,9 +313,6 @@ public class VirtualInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vlan VLAN ID <p>Example: 101
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VirtualInterface withVlan(Integer vlan) {
         this.vlan = vlan;
@@ -368,9 +350,6 @@ public class VirtualInterface  implements Serializable  {
      *
      * @param asn Autonomous system (AS) number for Border Gateway Protocol (BGP)
      *         configuration <p>Example: 65000
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VirtualInterface withAsn(Integer asn) {
         this.asn = asn;
@@ -402,9 +381,6 @@ public class VirtualInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param authKey Authentication key for BGP configuration <p>Example: asdf34example
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VirtualInterface withAuthKey(String authKey) {
         this.authKey = authKey;
@@ -436,9 +412,6 @@ public class VirtualInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param amazonAddress IP address assigned to the Amazon interface. <p>Example: 192.168.1.1
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VirtualInterface withAmazonAddress(String amazonAddress) {
         this.amazonAddress = amazonAddress;
@@ -470,9 +443,6 @@ public class VirtualInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param customerAddress IP address assigned to the customer interface. <p>Example: 192.168.1.2
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VirtualInterface withCustomerAddress(String customerAddress) {
         this.customerAddress = customerAddress;
@@ -578,9 +548,6 @@ public class VirtualInterface  implements Serializable  {
      *         traffic.</li> <li><b>Deleted</b>: A virtual interface that cannot
      *         forward traffic.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see VirtualInterfaceState
      */
     public VirtualInterface withVirtualInterfaceState(String virtualInterfaceState) {
@@ -653,9 +620,6 @@ public class VirtualInterface  implements Serializable  {
      *         traffic.</li> <li><b>Deleted</b>: A virtual interface that cannot
      *         forward traffic.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see VirtualInterfaceState
      */
     public VirtualInterface withVirtualInterfaceState(VirtualInterfaceState virtualInterfaceState) {
@@ -687,9 +651,6 @@ public class VirtualInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param customerRouterConfig Information for generating the customer router configuration.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VirtualInterface withCustomerRouterConfig(String customerRouterConfig) {
         this.customerRouterConfig = customerRouterConfig;
@@ -721,9 +682,6 @@ public class VirtualInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param virtualGatewayId Virtual private gateway to a VPC. <p>Example: vgw-123er56
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VirtualInterface withVirtualGatewayId(String virtualGatewayId) {
         this.virtualGatewayId = virtualGatewayId;
@@ -766,9 +724,6 @@ public class VirtualInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param routeFilterPrefixes A list of route filter prefixes.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VirtualInterface withRouteFilterPrefixes(RouteFilterPrefix... routeFilterPrefixes) {
         if (getRouteFilterPrefixes() == null) setRouteFilterPrefixes(new java.util.ArrayList<RouteFilterPrefix>(routeFilterPrefixes.length));
@@ -784,9 +739,6 @@ public class VirtualInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param routeFilterPrefixes A list of route filter prefixes.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VirtualInterface withRouteFilterPrefixes(java.util.Collection<RouteFilterPrefix> routeFilterPrefixes) {
         if (routeFilterPrefixes == null) {

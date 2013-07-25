@@ -58,9 +58,6 @@ public class CookieNames  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param quantity The number of whitelisted cookies for this cache behavior.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CookieNames withQuantity(Integer quantity) {
         this.quantity = quantity;
@@ -109,9 +106,6 @@ public class CookieNames  implements Serializable  {
      *
      * @param items Optional: A complex type that contains whitelisted cookies for this
      *         cache behavior. If Quantity is 0, you can omit Items.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CookieNames withItems(String... items) {
         if (getItems() == null) setItems(new java.util.ArrayList<String>(items.length));
@@ -129,9 +123,6 @@ public class CookieNames  implements Serializable  {
      *
      * @param items Optional: A complex type that contains whitelisted cookies for this
      *         cache behavior. If Quantity is 0, you can omit Items.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CookieNames withItems(java.util.Collection<String> items) {
         if (items == null) {

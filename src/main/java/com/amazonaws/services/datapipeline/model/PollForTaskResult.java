@@ -93,9 +93,6 @@ public class PollForTaskResult  implements Serializable  {
      *         identifier for the task being assigned. The calling task runner uses
      *         taskId in subsequent calls to <a>ReportTaskProgress</a> and
      *         <a>SetTaskStatus</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PollForTaskResult withTaskObject(TaskObject taskObject) {
         this.taskObject = taskObject;

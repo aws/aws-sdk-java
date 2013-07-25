@@ -62,9 +62,6 @@ public class ValidateConfigurationSettingsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param messages A list of <a>ValidationMessage</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ValidateConfigurationSettingsResult withMessages(ValidationMessage... messages) {
         if (getMessages() == null) setMessages(new java.util.ArrayList<ValidationMessage>(messages.length));
@@ -80,9 +77,6 @@ public class ValidateConfigurationSettingsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param messages A list of <a>ValidationMessage</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ValidateConfigurationSettingsResult withMessages(java.util.Collection<ValidationMessage> messages) {
         if (messages == null) {

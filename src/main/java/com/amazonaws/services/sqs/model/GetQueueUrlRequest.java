@@ -73,9 +73,6 @@ public class GetQueueUrlRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param queueName The new value for the QueueName property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetQueueUrlRequest withQueueName(String queueName) {
         this.queueName = queueName;
@@ -108,9 +105,6 @@ public class GetQueueUrlRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param queueOwnerAWSAccountId The new value for the QueueOwnerAWSAccountId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetQueueUrlRequest withQueueOwnerAWSAccountId(String queueOwnerAWSAccountId) {
         this.queueOwnerAWSAccountId = queueOwnerAWSAccountId;

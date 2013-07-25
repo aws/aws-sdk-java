@@ -82,9 +82,6 @@ public class StackResourceSummary  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param logicalResourceId The logical name of the resource specified in the template.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StackResourceSummary withLogicalResourceId(String logicalResourceId) {
         this.logicalResourceId = logicalResourceId;
@@ -122,9 +119,6 @@ public class StackResourceSummary  implements Serializable  {
      *
      * @param physicalResourceId The name or unique identifier that corresponds to a physical instance
      *         ID of the resource.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StackResourceSummary withPhysicalResourceId(String physicalResourceId) {
         this.physicalResourceId = physicalResourceId;
@@ -168,9 +162,6 @@ public class StackResourceSummary  implements Serializable  {
      * @param resourceType Type of the resource. (For more information, go to the <a
      *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>.)
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StackResourceSummary withResourceType(String resourceType) {
         this.resourceType = resourceType;
@@ -202,9 +193,6 @@ public class StackResourceSummary  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param lastUpdatedTimestamp Time the status was updated.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StackResourceSummary withLastUpdatedTimestamp(java.util.Date lastUpdatedTimestamp) {
         this.lastUpdatedTimestamp = lastUpdatedTimestamp;
@@ -250,9 +238,6 @@ public class StackResourceSummary  implements Serializable  {
      *
      * @param resourceStatus Current status of the resource.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ResourceStatus
      */
     public StackResourceSummary withResourceStatus(String resourceStatus) {
@@ -285,9 +270,6 @@ public class StackResourceSummary  implements Serializable  {
      *
      * @param resourceStatus Current status of the resource.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ResourceStatus
      */
     public StackResourceSummary withResourceStatus(ResourceStatus resourceStatus) {
@@ -319,9 +301,6 @@ public class StackResourceSummary  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param resourceStatusReason Success/failure message associated with the resource.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StackResourceSummary withResourceStatusReason(String resourceStatusReason) {
         this.resourceStatusReason = resourceStatusReason;

@@ -161,9 +161,6 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      *         to update. <p> If no application is found with this name,
      *         <code>UpdateConfigurationTemplate</code> returns an
      *         <code>InvalidParameterValue</code> error.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateConfigurationTemplateRequest withApplicationName(String applicationName) {
         this.applicationName = applicationName;
@@ -222,9 +219,6 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      *         configuration template is found with this name,
      *         <code>UpdateConfigurationTemplate</code> returns an
      *         <code>InvalidParameterValue</code> error.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateConfigurationTemplateRequest withTemplateName(String templateName) {
         this.templateName = templateName;
@@ -265,9 +259,6 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      * <b>Length: </b>0 - 200<br/>
      *
      * @param description A new description for the configuration.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateConfigurationTemplateRequest withDescription(String description) {
         this.description = description;
@@ -316,9 +307,6 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      *
      * @param optionSettings A list of configuration option settings to update with the new
      *         specified option value.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateConfigurationTemplateRequest withOptionSettings(ConfigurationOptionSetting... optionSettings) {
         if (getOptionSettings() == null) setOptionSettings(new java.util.ArrayList<ConfigurationOptionSetting>(optionSettings.length));
@@ -336,9 +324,6 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      *
      * @param optionSettings A list of configuration option settings to update with the new
      *         specified option value.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateConfigurationTemplateRequest withOptionSettings(java.util.Collection<ConfigurationOptionSetting> optionSettings) {
         if (optionSettings == null) {
@@ -399,9 +384,6 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      * @param optionsToRemove A list of configuration options to remove from the configuration set.
      *         <p> Constraint: You can remove only <code>UserDefined</code>
      *         configuration options.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateConfigurationTemplateRequest withOptionsToRemove(OptionSpecification... optionsToRemove) {
         if (getOptionsToRemove() == null) setOptionsToRemove(new java.util.ArrayList<OptionSpecification>(optionsToRemove.length));
@@ -421,9 +403,6 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      * @param optionsToRemove A list of configuration options to remove from the configuration set.
      *         <p> Constraint: You can remove only <code>UserDefined</code>
      *         configuration options.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateConfigurationTemplateRequest withOptionsToRemove(java.util.Collection<OptionSpecification> optionsToRemove) {
         if (optionsToRemove == null) {

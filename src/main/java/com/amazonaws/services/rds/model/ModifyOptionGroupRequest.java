@@ -116,9 +116,6 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest  implement
      *         TDE option for Oracle Advanced Security TDE, cannot be removed from an
      *         option group, and that option group cannot be removed from a DB
      *         instance once it is associated with a DB instance
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyOptionGroupRequest withOptionGroupName(String optionGroupName) {
         this.optionGroupName = optionGroupName;
@@ -173,9 +170,6 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest  implement
      * @param optionsToInclude Options in this list are added to the Option Group or, if already
      *         present, the specified configuration is used to update the existing
      *         configuration.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyOptionGroupRequest withOptionsToInclude(OptionConfiguration... optionsToInclude) {
         if (getOptionsToInclude() == null) setOptionsToInclude(new java.util.ArrayList<OptionConfiguration>(optionsToInclude.length));
@@ -195,9 +189,6 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest  implement
      * @param optionsToInclude Options in this list are added to the Option Group or, if already
      *         present, the specified configuration is used to update the existing
      *         configuration.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyOptionGroupRequest withOptionsToInclude(java.util.Collection<OptionConfiguration> optionsToInclude) {
         if (optionsToInclude == null) {
@@ -246,9 +237,6 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest  implement
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionsToRemove Options in this list are removed from the Option Group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyOptionGroupRequest withOptionsToRemove(String... optionsToRemove) {
         if (getOptionsToRemove() == null) setOptionsToRemove(new java.util.ArrayList<String>(optionsToRemove.length));
@@ -264,9 +252,6 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest  implement
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionsToRemove Options in this list are removed from the Option Group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyOptionGroupRequest withOptionsToRemove(java.util.Collection<String> optionsToRemove) {
         if (optionsToRemove == null) {
@@ -316,9 +301,6 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest  implement
      * @param applyImmediately Indicates whether the changes should be applied immediately, or during
      *         the next maintenance window for each instance associated with the
      *         Option Group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyOptionGroupRequest withApplyImmediately(Boolean applyImmediately) {
         this.applyImmediately = applyImmediately;

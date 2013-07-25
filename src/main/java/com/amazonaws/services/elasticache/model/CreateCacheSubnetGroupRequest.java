@@ -86,9 +86,6 @@ public class CreateCacheSubnetGroupRequest extends AmazonWebServiceRequest  impl
      *         lowercase string. <p>Constraints: Must contain no more than 255
      *         alphanumeric characters or hyphens. <p>Example:
      *         <code>mysubnetgroup</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCacheSubnetGroupRequest withCacheSubnetGroupName(String cacheSubnetGroupName) {
         this.cacheSubnetGroupName = cacheSubnetGroupName;
@@ -120,9 +117,6 @@ public class CreateCacheSubnetGroupRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheSubnetGroupDescription The description for the Cache Subnet Group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCacheSubnetGroupRequest withCacheSubnetGroupDescription(String cacheSubnetGroupDescription) {
         this.cacheSubnetGroupDescription = cacheSubnetGroupDescription;
@@ -165,9 +159,6 @@ public class CreateCacheSubnetGroupRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnetIds The EC2 Subnet IDs for the Cache Subnet Group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCacheSubnetGroupRequest withSubnetIds(String... subnetIds) {
         if (getSubnetIds() == null) setSubnetIds(new java.util.ArrayList<String>(subnetIds.length));
@@ -183,9 +174,6 @@ public class CreateCacheSubnetGroupRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnetIds The EC2 Subnet IDs for the Cache Subnet Group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCacheSubnetGroupRequest withSubnetIds(java.util.Collection<String> subnetIds) {
         if (subnetIds == null) {

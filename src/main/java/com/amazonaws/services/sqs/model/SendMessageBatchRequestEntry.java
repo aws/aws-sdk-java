@@ -73,9 +73,6 @@ public class SendMessageBatchRequestEntry  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param id The new value for the Id property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SendMessageBatchRequestEntry withId(String id) {
         this.id = id;
@@ -107,9 +104,6 @@ public class SendMessageBatchRequestEntry  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param messageBody The new value for the MessageBody property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SendMessageBatchRequestEntry withMessageBody(String messageBody) {
         this.messageBody = messageBody;
@@ -141,9 +135,6 @@ public class SendMessageBatchRequestEntry  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param delaySeconds The new value for the DelaySeconds property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SendMessageBatchRequestEntry withDelaySeconds(Integer delaySeconds) {
         this.delaySeconds = delaySeconds;

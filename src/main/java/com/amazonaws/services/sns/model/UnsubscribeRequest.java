@@ -79,9 +79,6 @@ public class UnsubscribeRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subscriptionArn The ARN of the subscription to be deleted.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UnsubscribeRequest withSubscriptionArn(String subscriptionArn) {
         this.subscriptionArn = subscriptionArn;

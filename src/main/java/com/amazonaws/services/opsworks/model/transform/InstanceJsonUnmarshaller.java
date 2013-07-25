@@ -25,6 +25,7 @@ import com.amazonaws.transform.*;
 import org.codehaus.jackson.JsonToken;
 import static org.codehaus.jackson.JsonToken.*;
 
+
 /**
  * Instance JSON Unmarshaller
  */
@@ -87,6 +88,10 @@ public class InstanceJsonUnmarshaller implements Unmarshaller<Instance, JsonUnma
                     context.nextToken();
                     instance.setOs(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AmiId", targetDepth)) {
+                    context.nextToken();
+                    instance.setAmiId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("AvailabilityZone", targetDepth)) {
                     context.nextToken();
                     instance.setAvailabilityZone(StringJsonUnmarshaller.getInstance().unmarshall(context));
@@ -146,6 +151,10 @@ public class InstanceJsonUnmarshaller implements Unmarshaller<Instance, JsonUnma
                 if (context.testExpression("RootDeviceVolumeId", targetDepth)) {
                     context.nextToken();
                     instance.setRootDeviceVolumeId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("InstallUpdatesOnBoot", targetDepth)) {
+                    context.nextToken();
+                    instance.setInstallUpdatesOnBoot(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

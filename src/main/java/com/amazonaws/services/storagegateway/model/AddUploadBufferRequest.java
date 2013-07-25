@@ -94,9 +94,6 @@ public class AddUploadBufferRequest extends AmazonWebServiceRequest  implements 
      * @param gatewayARN The Amazon Resource Name (ARN) of the gateway. Use the
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AddUploadBufferRequest withGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
@@ -157,9 +154,6 @@ public class AddUploadBufferRequest extends AmazonWebServiceRequest  implements 
      *         upload buffer. Each string in the array must be minimum length of 1
      *         and maximum length of 300. You can get disk IDs from the
      *         <a>ListLocalDisks</a> API.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AddUploadBufferRequest withDiskIds(String... diskIds) {
         if (getDiskIds() == null) setDiskIds(new java.util.ArrayList<String>(diskIds.length));
@@ -181,9 +175,6 @@ public class AddUploadBufferRequest extends AmazonWebServiceRequest  implements 
      *         upload buffer. Each string in the array must be minimum length of 1
      *         and maximum length of 300. You can get disk IDs from the
      *         <a>ListLocalDisks</a> API.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AddUploadBufferRequest withDiskIds(java.util.Collection<String> diskIds) {
         if (diskIds == null) {

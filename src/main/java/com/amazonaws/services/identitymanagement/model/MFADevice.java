@@ -112,9 +112,6 @@ public class MFADevice  implements Serializable  {
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param userName The user with whom the MFA device is associated.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MFADevice withUserName(String userName) {
         this.userName = userName;
@@ -164,9 +161,6 @@ public class MFADevice  implements Serializable  {
      *
      * @param serialNumber The serial number that uniquely identifies the MFA device. For virtual
      *         MFA devices, the serial number is the device ARN.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MFADevice withSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
@@ -198,9 +192,6 @@ public class MFADevice  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param enableDate The date when the MFA device was enabled for the user.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MFADevice withEnableDate(java.util.Date enableDate) {
         this.enableDate = enableDate;

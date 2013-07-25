@@ -84,9 +84,6 @@ public class DescribeOptionGroupOptionsRequest extends AmazonWebServiceRequest  
      *
      * @param engineName A required parameter. Options available for the given Engine name will
      *         be described.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeOptionGroupOptionsRequest withEngineName(String engineName) {
         this.engineName = engineName;
@@ -124,9 +121,6 @@ public class DescribeOptionGroupOptionsRequest extends AmazonWebServiceRequest  
      *
      * @param majorEngineVersion If specified, filters the results to include only options for the
      *         specified major engine version.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeOptionGroupOptionsRequest withMajorEngineVersion(String majorEngineVersion) {
         this.majorEngineVersion = majorEngineVersion;
@@ -182,9 +176,6 @@ public class DescribeOptionGroupOptionsRequest extends AmazonWebServiceRequest  
      *         pagination token called a marker is included in the response so that
      *         the remaining results can be retrieved. <p>Default: 100
      *         <p>Constraints: minimum 20, maximum 100
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeOptionGroupOptionsRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -228,9 +219,6 @@ public class DescribeOptionGroupOptionsRequest extends AmazonWebServiceRequest  
      * @param marker An optional pagination token provided by a previous request. If this
      *         parameter is specified, the response includes only records beyond the
      *         marker, up to the value specified by <code>MaxRecords</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeOptionGroupOptionsRequest withMarker(String marker) {
         this.marker = marker;

@@ -112,9 +112,6 @@ public class RawMessage  implements Serializable  {
      *         <p>For more information, go to the<a
      *         href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
      *         SES Developer Guide</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RawMessage withData(java.nio.ByteBuffer data) {
         this.data = data;

@@ -114,9 +114,6 @@ public class S3OriginConfig  implements Serializable  {
      *         and include an empty OriginAccessIdentity element. To replace the
      *         origin access identity, update the distribution configuration and
      *         specify the new origin access identity.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public S3OriginConfig withOriginAccessIdentity(String originAccessIdentity) {
         this.originAccessIdentity = originAccessIdentity;

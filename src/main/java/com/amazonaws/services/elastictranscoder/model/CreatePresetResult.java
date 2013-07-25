@@ -67,9 +67,6 @@ public class CreatePresetResult  implements Serializable  {
      *
      * @param preset A section of the response body that provides information about the
      *         preset that is created.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreatePresetResult withPreset(Preset preset) {
         this.preset = preset;
@@ -125,9 +122,6 @@ public class CreatePresetResult  implements Serializable  {
      *         the reason the preset settings don't meet the standard. Elastic
      *         Transcoder created the preset because the settings might produce
      *         acceptable output.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreatePresetResult withWarning(String warning) {
         this.warning = warning;

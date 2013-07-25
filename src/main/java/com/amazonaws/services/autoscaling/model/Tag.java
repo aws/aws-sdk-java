@@ -98,9 +98,6 @@ public class Tag  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param resourceId The name of the Auto Scaling group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Tag withResourceId(String resourceId) {
         this.resourceId = resourceId;
@@ -147,9 +144,6 @@ public class Tag  implements Serializable  {
      *
      * @param resourceType The kind of resource to which the tag is applied. Currently, Auto
      *         Scaling supports the <code>auto-scaling-group</code> resource type.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Tag withResourceType(String resourceType) {
         this.resourceType = resourceType;
@@ -193,9 +187,6 @@ public class Tag  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param key The key of the tag.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Tag withKey(String key) {
         this.key = key;
@@ -239,9 +230,6 @@ public class Tag  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param value The value of the tag.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Tag withValue(String value) {
         this.value = value;
@@ -291,9 +279,6 @@ public class Tag  implements Serializable  {
      *         after the tag is created. The same behavior applies to updates: If you
      *         change a tag, the changed tag will be applied to all instances
      *         launched after you made the change.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Tag withPropagateAtLaunch(Boolean propagateAtLaunch) {
         this.propagateAtLaunch = propagateAtLaunch;

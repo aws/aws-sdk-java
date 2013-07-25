@@ -161,9 +161,6 @@ public class ConfigurationOptionDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param namespace A unique namespace identifying the option's associated AWS resource.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ConfigurationOptionDescription withNamespace(String namespace) {
         this.namespace = namespace;
@@ -195,9 +192,6 @@ public class ConfigurationOptionDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The name of the configuration option.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ConfigurationOptionDescription withName(String name) {
         this.name = name;
@@ -229,9 +223,6 @@ public class ConfigurationOptionDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param defaultValue The default value for this configuration option.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ConfigurationOptionDescription withDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
@@ -377,9 +368,6 @@ public class ConfigurationOptionDescription  implements Serializable  {
      *         the entire time. However, a short application outage occurs when the
      *         application servers on the running Amazon EC2 instances are restarted.
      *         </li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ConfigurationOptionDescription withChangeSeverity(String changeSeverity) {
         this.changeSeverity = changeSeverity;
@@ -483,9 +471,6 @@ public class ConfigurationOptionDescription  implements Serializable  {
      *         the user. </li> </ul> <p> Constraint: You can remove only
      *         <code>UserDefined</code> options from a configuration. <p> Valid
      *         Values: <code>true</code> | <code>false</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ConfigurationOptionDescription withUserDefined(Boolean userDefined) {
         this.userDefined = userDefined;
@@ -654,9 +639,6 @@ public class ConfigurationOptionDescription  implements Serializable  {
      *         values. </li> <li> <code>Boolean</code> : Values for this option are
      *         either <code>true</code> or <code>false</code> . </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ConfigurationOptionValueType
      */
     public ConfigurationOptionDescription withValueType(String valueType) {
@@ -749,9 +731,6 @@ public class ConfigurationOptionDescription  implements Serializable  {
      *         values. </li> <li> <code>Boolean</code> : Values for this option are
      *         either <code>true</code> or <code>false</code> . </li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ConfigurationOptionValueType
      */
     public ConfigurationOptionDescription withValueType(ConfigurationOptionValueType valueType) {
@@ -800,9 +779,6 @@ public class ConfigurationOptionDescription  implements Serializable  {
      *
      * @param valueOptions If specified, values for the configuration option are selected from
      *         this list.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ConfigurationOptionDescription withValueOptions(String... valueOptions) {
         if (getValueOptions() == null) setValueOptions(new java.util.ArrayList<String>(valueOptions.length));
@@ -820,9 +796,6 @@ public class ConfigurationOptionDescription  implements Serializable  {
      *
      * @param valueOptions If specified, values for the configuration option are selected from
      *         this list.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ConfigurationOptionDescription withValueOptions(java.util.Collection<String> valueOptions) {
         if (valueOptions == null) {
@@ -866,9 +839,6 @@ public class ConfigurationOptionDescription  implements Serializable  {
      *
      * @param minValue If specified, the configuration option must be a numeric value greater
      *         than this value.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ConfigurationOptionDescription withMinValue(Integer minValue) {
         this.minValue = minValue;
@@ -906,9 +876,6 @@ public class ConfigurationOptionDescription  implements Serializable  {
      *
      * @param maxValue If specified, the configuration option must be a numeric value less
      *         than this value.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ConfigurationOptionDescription withMaxValue(Integer maxValue) {
         this.maxValue = maxValue;
@@ -946,9 +913,6 @@ public class ConfigurationOptionDescription  implements Serializable  {
      *
      * @param maxLength If specified, the configuration option must be a string value no
      *         longer than this value.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ConfigurationOptionDescription withMaxLength(Integer maxLength) {
         this.maxLength = maxLength;
@@ -986,9 +950,6 @@ public class ConfigurationOptionDescription  implements Serializable  {
      *
      * @param regex If specified, the configuration option must be a string value that
      *         satisfies this regular expression.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ConfigurationOptionDescription withRegex(OptionRestrictionRegex regex) {
         this.regex = regex;

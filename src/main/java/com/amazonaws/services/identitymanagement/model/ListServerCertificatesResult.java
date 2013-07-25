@@ -81,9 +81,6 @@ public class ListServerCertificatesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param serverCertificateMetadataList A list of server certificates.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListServerCertificatesResult withServerCertificateMetadataList(ServerCertificateMetadata... serverCertificateMetadataList) {
         if (getServerCertificateMetadataList() == null) setServerCertificateMetadataList(new java.util.ArrayList<ServerCertificateMetadata>(serverCertificateMetadataList.length));
@@ -99,9 +96,6 @@ public class ListServerCertificatesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param serverCertificateMetadataList A list of server certificates.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListServerCertificatesResult withServerCertificateMetadataList(java.util.Collection<ServerCertificateMetadata> serverCertificateMetadataList) {
         if (serverCertificateMetadataList == null) {
@@ -157,9 +151,6 @@ public class ListServerCertificatesResult  implements Serializable  {
      *         list. If your results were truncated, you can make a subsequent
      *         pagination request using the <code>Marker</code> request parameter to
      *         retrieve more server certificates in the list.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListServerCertificatesResult withIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
@@ -230,9 +221,6 @@ public class ListServerCertificatesResult  implements Serializable  {
      * @param marker If <code>IsTruncated</code> is <code>true</code>, this element is
      *         present and contains the value to use for the <code>Marker</code>
      *         parameter in a subsequent pagination request.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListServerCertificatesResult withMarker(String marker) {
         this.marker = marker;

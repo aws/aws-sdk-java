@@ -76,9 +76,6 @@ public class GetStreamingDistributionConfigRequest extends AmazonWebServiceReque
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param id The streaming distribution's id.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetStreamingDistributionConfigRequest withId(String id) {
         this.id = id;

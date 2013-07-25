@@ -101,18 +101,18 @@ public class Layer  implements Serializable  {
     private Boolean autoAssignElasticIps;
 
     /**
-     * OpsWorks supports five lifecycle events, <b>setup</b>,
+     * AWS OpsWorks supports five lifecycle events, <b>setup</b>,
      * <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and
-     * <b>shutdown</b>. For each layer, OpsWorks runs a set of standard
+     * <b>shutdown</b>. For each layer, AWS OpsWorks runs a set of standard
      * recipes for each event. In addition, you can provide custom recipes
-     * for any or all layers and events. OpsWorks runs custom event recipes
-     * after the standard recipes. <code>LayerCustomRecipes</code> specifies
-     * the custom recipes for a particular layer to be run in response to
-     * each of the five events. <p>To specify a recipe, use the cookbook's
-     * directory name in the repository followed by two colons and the recipe
-     * name, which is the recipe's file name without the .rb extension. For
-     * example: phpapp2::dbsetup specifies the dbsetup.rb recipe in the
-     * repository's phpapp2 folder.
+     * for any or all layers and events. AWS OpsWorks runs custom event
+     * recipes after the standard recipes. <code>LayerCustomRecipes</code>
+     * specifies the custom recipes for a particular layer to be run in
+     * response to each of the five events. <p>To specify a recipe, use the
+     * cookbook's directory name in the repository followed by two colons and
+     * the recipe name, which is the recipe's file name without the .rb
+     * extension. For example: phpapp2::dbsetup specifies the dbsetup.rb
+     * recipe in the repository's phpapp2 folder.
      */
     private Recipes defaultRecipes;
 
@@ -126,6 +126,19 @@ public class Layer  implements Serializable  {
      * Date when the layer was created.
      */
     private String createdAt;
+
+    /**
+     * Whether to install operating system and package updates when the
+     * instance boots. The default value is <code>true</code>. If this value
+     * is set to <code>false</code>, you must then update your instances
+     * manually by using <a>CreateDeployment</a> to run the
+     * <code>update_dependencies</code> stack command or manually running
+     * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on
+     * the instances. <note>We strongly recommend using the default value of
+     * <code>true</code>, to ensure that your instances have the latest
+     * security updates.</note>
+     */
+    private Boolean installUpdatesOnBoot;
 
     /**
      * The layer stack ID.
@@ -837,95 +850,95 @@ public class Layer  implements Serializable  {
     }
     
     /**
-     * OpsWorks supports five lifecycle events, <b>setup</b>,
+     * AWS OpsWorks supports five lifecycle events, <b>setup</b>,
      * <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and
-     * <b>shutdown</b>. For each layer, OpsWorks runs a set of standard
+     * <b>shutdown</b>. For each layer, AWS OpsWorks runs a set of standard
      * recipes for each event. In addition, you can provide custom recipes
-     * for any or all layers and events. OpsWorks runs custom event recipes
-     * after the standard recipes. <code>LayerCustomRecipes</code> specifies
-     * the custom recipes for a particular layer to be run in response to
-     * each of the five events. <p>To specify a recipe, use the cookbook's
-     * directory name in the repository followed by two colons and the recipe
-     * name, which is the recipe's file name without the .rb extension. For
-     * example: phpapp2::dbsetup specifies the dbsetup.rb recipe in the
-     * repository's phpapp2 folder.
+     * for any or all layers and events. AWS OpsWorks runs custom event
+     * recipes after the standard recipes. <code>LayerCustomRecipes</code>
+     * specifies the custom recipes for a particular layer to be run in
+     * response to each of the five events. <p>To specify a recipe, use the
+     * cookbook's directory name in the repository followed by two colons and
+     * the recipe name, which is the recipe's file name without the .rb
+     * extension. For example: phpapp2::dbsetup specifies the dbsetup.rb
+     * recipe in the repository's phpapp2 folder.
      *
-     * @return OpsWorks supports five lifecycle events, <b>setup</b>,
+     * @return AWS OpsWorks supports five lifecycle events, <b>setup</b>,
      *         <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and
-     *         <b>shutdown</b>. For each layer, OpsWorks runs a set of standard
+     *         <b>shutdown</b>. For each layer, AWS OpsWorks runs a set of standard
      *         recipes for each event. In addition, you can provide custom recipes
-     *         for any or all layers and events. OpsWorks runs custom event recipes
-     *         after the standard recipes. <code>LayerCustomRecipes</code> specifies
-     *         the custom recipes for a particular layer to be run in response to
-     *         each of the five events. <p>To specify a recipe, use the cookbook's
-     *         directory name in the repository followed by two colons and the recipe
-     *         name, which is the recipe's file name without the .rb extension. For
-     *         example: phpapp2::dbsetup specifies the dbsetup.rb recipe in the
-     *         repository's phpapp2 folder.
+     *         for any or all layers and events. AWS OpsWorks runs custom event
+     *         recipes after the standard recipes. <code>LayerCustomRecipes</code>
+     *         specifies the custom recipes for a particular layer to be run in
+     *         response to each of the five events. <p>To specify a recipe, use the
+     *         cookbook's directory name in the repository followed by two colons and
+     *         the recipe name, which is the recipe's file name without the .rb
+     *         extension. For example: phpapp2::dbsetup specifies the dbsetup.rb
+     *         recipe in the repository's phpapp2 folder.
      */
     public Recipes getDefaultRecipes() {
         return defaultRecipes;
     }
     
     /**
-     * OpsWorks supports five lifecycle events, <b>setup</b>,
+     * AWS OpsWorks supports five lifecycle events, <b>setup</b>,
      * <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and
-     * <b>shutdown</b>. For each layer, OpsWorks runs a set of standard
+     * <b>shutdown</b>. For each layer, AWS OpsWorks runs a set of standard
      * recipes for each event. In addition, you can provide custom recipes
-     * for any or all layers and events. OpsWorks runs custom event recipes
-     * after the standard recipes. <code>LayerCustomRecipes</code> specifies
-     * the custom recipes for a particular layer to be run in response to
-     * each of the five events. <p>To specify a recipe, use the cookbook's
-     * directory name in the repository followed by two colons and the recipe
-     * name, which is the recipe's file name without the .rb extension. For
-     * example: phpapp2::dbsetup specifies the dbsetup.rb recipe in the
-     * repository's phpapp2 folder.
+     * for any or all layers and events. AWS OpsWorks runs custom event
+     * recipes after the standard recipes. <code>LayerCustomRecipes</code>
+     * specifies the custom recipes for a particular layer to be run in
+     * response to each of the five events. <p>To specify a recipe, use the
+     * cookbook's directory name in the repository followed by two colons and
+     * the recipe name, which is the recipe's file name without the .rb
+     * extension. For example: phpapp2::dbsetup specifies the dbsetup.rb
+     * recipe in the repository's phpapp2 folder.
      *
-     * @param defaultRecipes OpsWorks supports five lifecycle events, <b>setup</b>,
+     * @param defaultRecipes AWS OpsWorks supports five lifecycle events, <b>setup</b>,
      *         <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and
-     *         <b>shutdown</b>. For each layer, OpsWorks runs a set of standard
+     *         <b>shutdown</b>. For each layer, AWS OpsWorks runs a set of standard
      *         recipes for each event. In addition, you can provide custom recipes
-     *         for any or all layers and events. OpsWorks runs custom event recipes
-     *         after the standard recipes. <code>LayerCustomRecipes</code> specifies
-     *         the custom recipes for a particular layer to be run in response to
-     *         each of the five events. <p>To specify a recipe, use the cookbook's
-     *         directory name in the repository followed by two colons and the recipe
-     *         name, which is the recipe's file name without the .rb extension. For
-     *         example: phpapp2::dbsetup specifies the dbsetup.rb recipe in the
-     *         repository's phpapp2 folder.
+     *         for any or all layers and events. AWS OpsWorks runs custom event
+     *         recipes after the standard recipes. <code>LayerCustomRecipes</code>
+     *         specifies the custom recipes for a particular layer to be run in
+     *         response to each of the five events. <p>To specify a recipe, use the
+     *         cookbook's directory name in the repository followed by two colons and
+     *         the recipe name, which is the recipe's file name without the .rb
+     *         extension. For example: phpapp2::dbsetup specifies the dbsetup.rb
+     *         recipe in the repository's phpapp2 folder.
      */
     public void setDefaultRecipes(Recipes defaultRecipes) {
         this.defaultRecipes = defaultRecipes;
     }
     
     /**
-     * OpsWorks supports five lifecycle events, <b>setup</b>,
+     * AWS OpsWorks supports five lifecycle events, <b>setup</b>,
      * <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and
-     * <b>shutdown</b>. For each layer, OpsWorks runs a set of standard
+     * <b>shutdown</b>. For each layer, AWS OpsWorks runs a set of standard
      * recipes for each event. In addition, you can provide custom recipes
-     * for any or all layers and events. OpsWorks runs custom event recipes
-     * after the standard recipes. <code>LayerCustomRecipes</code> specifies
-     * the custom recipes for a particular layer to be run in response to
-     * each of the five events. <p>To specify a recipe, use the cookbook's
-     * directory name in the repository followed by two colons and the recipe
-     * name, which is the recipe's file name without the .rb extension. For
-     * example: phpapp2::dbsetup specifies the dbsetup.rb recipe in the
-     * repository's phpapp2 folder.
+     * for any or all layers and events. AWS OpsWorks runs custom event
+     * recipes after the standard recipes. <code>LayerCustomRecipes</code>
+     * specifies the custom recipes for a particular layer to be run in
+     * response to each of the five events. <p>To specify a recipe, use the
+     * cookbook's directory name in the repository followed by two colons and
+     * the recipe name, which is the recipe's file name without the .rb
+     * extension. For example: phpapp2::dbsetup specifies the dbsetup.rb
+     * recipe in the repository's phpapp2 folder.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param defaultRecipes OpsWorks supports five lifecycle events, <b>setup</b>,
+     * @param defaultRecipes AWS OpsWorks supports five lifecycle events, <b>setup</b>,
      *         <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and
-     *         <b>shutdown</b>. For each layer, OpsWorks runs a set of standard
+     *         <b>shutdown</b>. For each layer, AWS OpsWorks runs a set of standard
      *         recipes for each event. In addition, you can provide custom recipes
-     *         for any or all layers and events. OpsWorks runs custom event recipes
-     *         after the standard recipes. <code>LayerCustomRecipes</code> specifies
-     *         the custom recipes for a particular layer to be run in response to
-     *         each of the five events. <p>To specify a recipe, use the cookbook's
-     *         directory name in the repository followed by two colons and the recipe
-     *         name, which is the recipe's file name without the .rb extension. For
-     *         example: phpapp2::dbsetup specifies the dbsetup.rb recipe in the
-     *         repository's phpapp2 folder.
+     *         for any or all layers and events. AWS OpsWorks runs custom event
+     *         recipes after the standard recipes. <code>LayerCustomRecipes</code>
+     *         specifies the custom recipes for a particular layer to be run in
+     *         response to each of the five events. <p>To specify a recipe, use the
+     *         cookbook's directory name in the repository followed by two colons and
+     *         the recipe name, which is the recipe's file name without the .rb
+     *         extension. For example: phpapp2::dbsetup specifies the dbsetup.rb
+     *         recipe in the repository's phpapp2 folder.
      */
     public Layer withDefaultRecipes(Recipes defaultRecipes) {
         this.defaultRecipes = defaultRecipes;
@@ -1002,6 +1015,110 @@ public class Layer  implements Serializable  {
     
     
     /**
+     * Whether to install operating system and package updates when the
+     * instance boots. The default value is <code>true</code>. If this value
+     * is set to <code>false</code>, you must then update your instances
+     * manually by using <a>CreateDeployment</a> to run the
+     * <code>update_dependencies</code> stack command or manually running
+     * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on
+     * the instances. <note>We strongly recommend using the default value of
+     * <code>true</code>, to ensure that your instances have the latest
+     * security updates.</note>
+     *
+     * @return Whether to install operating system and package updates when the
+     *         instance boots. The default value is <code>true</code>. If this value
+     *         is set to <code>false</code>, you must then update your instances
+     *         manually by using <a>CreateDeployment</a> to run the
+     *         <code>update_dependencies</code> stack command or manually running
+     *         <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on
+     *         the instances. <note>We strongly recommend using the default value of
+     *         <code>true</code>, to ensure that your instances have the latest
+     *         security updates.</note>
+     */
+    public Boolean isInstallUpdatesOnBoot() {
+        return installUpdatesOnBoot;
+    }
+    
+    /**
+     * Whether to install operating system and package updates when the
+     * instance boots. The default value is <code>true</code>. If this value
+     * is set to <code>false</code>, you must then update your instances
+     * manually by using <a>CreateDeployment</a> to run the
+     * <code>update_dependencies</code> stack command or manually running
+     * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on
+     * the instances. <note>We strongly recommend using the default value of
+     * <code>true</code>, to ensure that your instances have the latest
+     * security updates.</note>
+     *
+     * @param installUpdatesOnBoot Whether to install operating system and package updates when the
+     *         instance boots. The default value is <code>true</code>. If this value
+     *         is set to <code>false</code>, you must then update your instances
+     *         manually by using <a>CreateDeployment</a> to run the
+     *         <code>update_dependencies</code> stack command or manually running
+     *         <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on
+     *         the instances. <note>We strongly recommend using the default value of
+     *         <code>true</code>, to ensure that your instances have the latest
+     *         security updates.</note>
+     */
+    public void setInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
+        this.installUpdatesOnBoot = installUpdatesOnBoot;
+    }
+    
+    /**
+     * Whether to install operating system and package updates when the
+     * instance boots. The default value is <code>true</code>. If this value
+     * is set to <code>false</code>, you must then update your instances
+     * manually by using <a>CreateDeployment</a> to run the
+     * <code>update_dependencies</code> stack command or manually running
+     * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on
+     * the instances. <note>We strongly recommend using the default value of
+     * <code>true</code>, to ensure that your instances have the latest
+     * security updates.</note>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param installUpdatesOnBoot Whether to install operating system and package updates when the
+     *         instance boots. The default value is <code>true</code>. If this value
+     *         is set to <code>false</code>, you must then update your instances
+     *         manually by using <a>CreateDeployment</a> to run the
+     *         <code>update_dependencies</code> stack command or manually running
+     *         <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on
+     *         the instances. <note>We strongly recommend using the default value of
+     *         <code>true</code>, to ensure that your instances have the latest
+     *         security updates.</note>
+     */
+    public Layer withInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
+        this.installUpdatesOnBoot = installUpdatesOnBoot;
+        return this;
+    }
+    
+    
+    /**
+     * Whether to install operating system and package updates when the
+     * instance boots. The default value is <code>true</code>. If this value
+     * is set to <code>false</code>, you must then update your instances
+     * manually by using <a>CreateDeployment</a> to run the
+     * <code>update_dependencies</code> stack command or manually running
+     * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on
+     * the instances. <note>We strongly recommend using the default value of
+     * <code>true</code>, to ensure that your instances have the latest
+     * security updates.</note>
+     *
+     * @return Whether to install operating system and package updates when the
+     *         instance boots. The default value is <code>true</code>. If this value
+     *         is set to <code>false</code>, you must then update your instances
+     *         manually by using <a>CreateDeployment</a> to run the
+     *         <code>update_dependencies</code> stack command or manually running
+     *         <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on
+     *         the instances. <note>We strongly recommend using the default value of
+     *         <code>true</code>, to ensure that your instances have the latest
+     *         security updates.</note>
+     */
+    public Boolean getInstallUpdatesOnBoot() {
+        return installUpdatesOnBoot;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1028,7 +1145,8 @@ public class Layer  implements Serializable  {
         if (isAutoAssignElasticIps() != null) sb.append("AutoAssignElasticIps: " + isAutoAssignElasticIps() + ",");
         if (getDefaultRecipes() != null) sb.append("DefaultRecipes: " + getDefaultRecipes() + ",");
         if (getCustomRecipes() != null) sb.append("CustomRecipes: " + getCustomRecipes() + ",");
-        if (getCreatedAt() != null) sb.append("CreatedAt: " + getCreatedAt() );
+        if (getCreatedAt() != null) sb.append("CreatedAt: " + getCreatedAt() + ",");
+        if (isInstallUpdatesOnBoot() != null) sb.append("InstallUpdatesOnBoot: " + isInstallUpdatesOnBoot() );
         sb.append("}");
         return sb.toString();
     }
@@ -1054,6 +1172,7 @@ public class Layer  implements Serializable  {
         hashCode = prime * hashCode + ((getDefaultRecipes() == null) ? 0 : getDefaultRecipes().hashCode()); 
         hashCode = prime * hashCode + ((getCustomRecipes() == null) ? 0 : getCustomRecipes().hashCode()); 
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode()); 
+        hashCode = prime * hashCode + ((isInstallUpdatesOnBoot() == null) ? 0 : isInstallUpdatesOnBoot().hashCode()); 
         return hashCode;
     }
     
@@ -1097,6 +1216,8 @@ public class Layer  implements Serializable  {
         if (other.getCustomRecipes() != null && other.getCustomRecipes().equals(this.getCustomRecipes()) == false) return false; 
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null) return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false) return false; 
+        if (other.isInstallUpdatesOnBoot() == null ^ this.isInstallUpdatesOnBoot() == null) return false;
+        if (other.isInstallUpdatesOnBoot() != null && other.isInstallUpdatesOnBoot().equals(this.isInstallUpdatesOnBoot()) == false) return false; 
         return true;
     }
     

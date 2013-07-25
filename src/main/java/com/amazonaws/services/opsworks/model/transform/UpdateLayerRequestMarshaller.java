@@ -248,6 +248,9 @@ public class UpdateLayerRequestMarshaller implements Marshaller<Request<UpdateLa
                 }
                 jsonWriter.endObject();
             }
+            if (updateLayerRequest.isInstallUpdatesOnBoot() != null) {
+                jsonWriter.key("InstallUpdatesOnBoot").value(updateLayerRequest.isInstallUpdatesOnBoot());
+            }
 
           jsonWriter.endObject();
           

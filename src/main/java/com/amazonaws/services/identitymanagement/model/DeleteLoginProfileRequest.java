@@ -97,9 +97,6 @@ public class DeleteLoginProfileRequest extends AmazonWebServiceRequest  implemen
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param userName Name of the user whose password you want to delete.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteLoginProfileRequest withUserName(String userName) {
         this.userName = userName;

@@ -72,9 +72,6 @@ public class ChangeResourceRecordSetsResult  implements Serializable  {
      *         hosted zone. <p>This element contains an ID that you use when
      *         performing a <a>GetChange</a> action to get detailed information about
      *         the change.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ChangeResourceRecordSetsResult withChangeInfo(ChangeInfo changeInfo) {
         this.changeInfo = changeInfo;

@@ -111,9 +111,6 @@ public class CreateCacheSecurityGroupRequest extends AmazonWebServiceRequest  im
      *         lowercase string. <p>Constraints: Must contain no more than 255
      *         alphanumeric characters. Must not be "Default". <p>Example:
      *         <code>mysecuritygroup</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCacheSecurityGroupRequest withCacheSecurityGroupName(String cacheSecurityGroupName) {
         this.cacheSecurityGroupName = cacheSecurityGroupName;
@@ -145,9 +142,6 @@ public class CreateCacheSecurityGroupRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description The description for the Cache Security Group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCacheSecurityGroupRequest withDescription(String description) {
         this.description = description;

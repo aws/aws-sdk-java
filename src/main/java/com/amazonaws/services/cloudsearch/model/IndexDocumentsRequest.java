@@ -100,9 +100,6 @@ public class IndexDocumentsRequest extends AmazonWebServiceRequest  implements S
      *         Domain names must start with a letter or number and can contain the
      *         following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase
      *         letters and underscores are not allowed.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public IndexDocumentsRequest withDomainName(String domainName) {
         this.domainName = domainName;

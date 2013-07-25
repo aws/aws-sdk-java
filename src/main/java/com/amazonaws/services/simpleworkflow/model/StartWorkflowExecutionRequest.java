@@ -221,9 +221,6 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest  impl
      * <b>Length: </b>1 - 256<br/>
      *
      * @param domain The name of the domain in which the workflow execution is created.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StartWorkflowExecutionRequest withDomain(String domain) {
         this.domain = domain;
@@ -318,9 +315,6 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest  impl
      *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control
      *         characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
      *         contain the literal string "arn".
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StartWorkflowExecutionRequest withWorkflowId(String workflowId) {
         this.workflowId = workflowId;
@@ -352,9 +346,6 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param workflowType The type of the workflow to start.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StartWorkflowExecutionRequest withWorkflowType(WorkflowType workflowType) {
         this.workflowType = workflowType;
@@ -446,9 +437,6 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest  impl
      *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control
      *         characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
      *         contain the literal string "arn".
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StartWorkflowExecutionRequest withTaskList(TaskList taskList) {
         this.taskList = taskList;
@@ -507,9 +495,6 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest  impl
      *         should be meaningful to the workflow you are starting. This
      *         <code>input</code> is made available to the new workflow execution in
      *         the <code>WorkflowExecutionStarted</code> history event.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StartWorkflowExecutionRequest withInput(String input) {
         this.input = input;
@@ -616,9 +601,6 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest  impl
      *         default when the workflow type is registered. If neither this
      *         parameter nor a default execution start-to-close timeout is specified,
      *         a fault is returned. </note>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StartWorkflowExecutionRequest withExecutionStartToCloseTimeout(String executionStartToCloseTimeout) {
         this.executionStartToCloseTimeout = executionStartToCloseTimeout;
@@ -688,9 +670,6 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest  impl
      *         specify a maximum of 5 tags. You can list workflow executions with a
      *         specific tag by calling <a>ListOpenWorkflowExecutions</a> or
      *         <a>ListClosedWorkflowExecutions</a> and specifying a <a>TagFilter</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StartWorkflowExecutionRequest withTagList(String... tagList) {
         if (getTagList() == null) setTagList(new java.util.ArrayList<String>(tagList.length));
@@ -715,9 +694,6 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest  impl
      *         specify a maximum of 5 tags. You can list workflow executions with a
      *         specific tag by calling <a>ListOpenWorkflowExecutions</a> or
      *         <a>ListClosedWorkflowExecutions</a> and specifying a <a>TagFilter</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StartWorkflowExecutionRequest withTagList(java.util.Collection<String> tagList) {
         if (tagList == null) {
@@ -830,9 +806,6 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest  impl
      *         parameter. If neither this parameter is set nor a default task
      *         start-to-close timeout was specified at registration time then a fault
      *         will be returned.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StartWorkflowExecutionRequest withTaskStartToCloseTimeout(String taskStartToCloseTimeout) {
         this.taskStartToCloseTimeout = taskStartToCloseTimeout;
@@ -974,9 +947,6 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest  impl
      *         If neither this parameter is set nor a default child policy was
      *         specified at registration time then a fault will be returned.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ChildPolicy
      */
     public StartWorkflowExecutionRequest withChildPolicy(String childPolicy) {
@@ -1072,9 +1042,6 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest  impl
      *         either as a default for the workflow type or through this parameter.
      *         If neither this parameter is set nor a default child policy was
      *         specified at registration time then a fault will be returned.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see ChildPolicy
      */

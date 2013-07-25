@@ -77,9 +77,6 @@ public class DeletePresetRequest extends AmazonWebServiceRequest  implements Ser
      *
      * @param id The identifier of the preset for which you want to get detailed
      *         information.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeletePresetRequest withId(String id) {
         this.id = id;

@@ -179,9 +179,6 @@ public class EnvironmentDescription  implements Serializable  {
      * <b>Length: </b>4 - 23<br/>
      *
      * @param environmentName The name of this environment.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EnvironmentDescription withEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
@@ -213,9 +210,6 @@ public class EnvironmentDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param environmentId The ID of this environment.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EnvironmentDescription withEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
@@ -256,9 +250,6 @@ public class EnvironmentDescription  implements Serializable  {
      * <b>Length: </b>1 - 100<br/>
      *
      * @param applicationName The name of the application associated with this environment.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EnvironmentDescription withApplicationName(String applicationName) {
         this.applicationName = applicationName;
@@ -299,9 +290,6 @@ public class EnvironmentDescription  implements Serializable  {
      * <b>Length: </b>1 - 100<br/>
      *
      * @param versionLabel The application version deployed in this environment.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EnvironmentDescription withVersionLabel(String versionLabel) {
         this.versionLabel = versionLabel;
@@ -348,9 +336,6 @@ public class EnvironmentDescription  implements Serializable  {
      *
      * @param solutionStackName The name of the <code>SolutionStack</code> deployed with this
      *         environment.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EnvironmentDescription withSolutionStackName(String solutionStackName) {
         this.solutionStackName = solutionStackName;
@@ -397,9 +382,6 @@ public class EnvironmentDescription  implements Serializable  {
      *
      * @param templateName The name of the configuration template used to originally launch this
      *         environment.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EnvironmentDescription withTemplateName(String templateName) {
         this.templateName = templateName;
@@ -440,9 +422,6 @@ public class EnvironmentDescription  implements Serializable  {
      * <b>Length: </b>0 - 200<br/>
      *
      * @param description Describes this environment.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EnvironmentDescription withDescription(String description) {
         this.description = description;
@@ -474,9 +453,6 @@ public class EnvironmentDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param endpointURL The URL to the LoadBalancer for this environment.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EnvironmentDescription withEndpointURL(String endpointURL) {
         this.endpointURL = endpointURL;
@@ -517,9 +493,6 @@ public class EnvironmentDescription  implements Serializable  {
      * <b>Length: </b>1 - 255<br/>
      *
      * @param cNAME The URL to the CNAME for this environment.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EnvironmentDescription withCNAME(String cNAME) {
         this.cNAME = cNAME;
@@ -551,9 +524,6 @@ public class EnvironmentDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dateCreated The creation date for this environment.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EnvironmentDescription withDateCreated(java.util.Date dateCreated) {
         this.dateCreated = dateCreated;
@@ -585,9 +555,6 @@ public class EnvironmentDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dateUpdated The last modified date for this environment.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EnvironmentDescription withDateUpdated(java.util.Date dateUpdated) {
         this.dateUpdated = dateUpdated;
@@ -681,9 +648,6 @@ public class EnvironmentDescription  implements Serializable  {
      *         </li> <li> <code>Terminated</code>: Environment is not running. </li>
      *         </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see EnvironmentStatus
      */
     public EnvironmentDescription withStatus(String status) {
@@ -747,9 +711,6 @@ public class EnvironmentDescription  implements Serializable  {
      *         <code>Terminating</code>: Environment is in the shut-down process.
      *         </li> <li> <code>Terminated</code>: Environment is not running. </li>
      *         </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see EnvironmentStatus
      */
@@ -898,9 +859,6 @@ public class EnvironmentDescription  implements Serializable  {
      *         <code>UpdateEnvironment</code> or <code>RestartEnvironement</code>
      *         request. </li> </ul> <p> Default: <code>Grey</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see EnvironmentHealth
      */
     public EnvironmentDescription withHealth(String health) {
@@ -1001,9 +959,6 @@ public class EnvironmentDescription  implements Serializable  {
      *         <code>UpdateEnvironment</code> or <code>RestartEnvironement</code>
      *         request. </li> </ul> <p> Default: <code>Grey</code>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see EnvironmentHealth
      */
     public EnvironmentDescription withHealth(EnvironmentHealth health) {
@@ -1035,9 +990,6 @@ public class EnvironmentDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param resources The description of the AWS resources used by this environment.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EnvironmentDescription withResources(EnvironmentResourcesDescription resources) {
         this.resources = resources;

@@ -123,9 +123,6 @@ public class SendEmailRequest extends AmazonWebServiceRequest  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param source The identity's email address.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SendEmailRequest withSource(String source) {
         this.source = source;
@@ -157,9 +154,6 @@ public class SendEmailRequest extends AmazonWebServiceRequest  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param destination The destination for this email, composed of To:, CC:, and BCC: fields.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SendEmailRequest withDestination(Destination destination) {
         this.destination = destination;
@@ -191,9 +185,6 @@ public class SendEmailRequest extends AmazonWebServiceRequest  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param message The message to be sent.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SendEmailRequest withMessage(Message message) {
         this.message = message;
@@ -242,9 +233,6 @@ public class SendEmailRequest extends AmazonWebServiceRequest  implements Serial
      *
      * @param replyToAddresses The reply-to email address(es) for the message. If the recipient
      *         replies to the message, each reply-to address will receive the reply.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SendEmailRequest withReplyToAddresses(String... replyToAddresses) {
         if (getReplyToAddresses() == null) setReplyToAddresses(new java.util.ArrayList<String>(replyToAddresses.length));
@@ -262,9 +250,6 @@ public class SendEmailRequest extends AmazonWebServiceRequest  implements Serial
      *
      * @param replyToAddresses The reply-to email address(es) for the message. If the recipient
      *         replies to the message, each reply-to address will receive the reply.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SendEmailRequest withReplyToAddresses(java.util.Collection<String> replyToAddresses) {
         if (replyToAddresses == null) {
@@ -326,9 +311,6 @@ public class SendEmailRequest extends AmazonWebServiceRequest  implements Serial
      *         message will be returned from the recipient's ISP; this message will
      *         then be forwarded to the email address specified by the
      *         <code>ReturnPath</code> parameter.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SendEmailRequest withReturnPath(String returnPath) {
         this.returnPath = returnPath;

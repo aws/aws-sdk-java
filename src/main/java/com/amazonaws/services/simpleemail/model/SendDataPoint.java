@@ -71,9 +71,6 @@ public class SendDataPoint  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param timestamp Time of the data point.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SendDataPoint withTimestamp(java.util.Date timestamp) {
         this.timestamp = timestamp;
@@ -105,9 +102,6 @@ public class SendDataPoint  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param deliveryAttempts Number of emails that have been enqueued for sending.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SendDataPoint withDeliveryAttempts(Long deliveryAttempts) {
         this.deliveryAttempts = deliveryAttempts;
@@ -139,9 +133,6 @@ public class SendDataPoint  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param bounces Number of emails that have bounced.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SendDataPoint withBounces(Long bounces) {
         this.bounces = bounces;
@@ -173,9 +164,6 @@ public class SendDataPoint  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param complaints Number of unwanted emails that were rejected by recipients.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SendDataPoint withComplaints(Long complaints) {
         this.complaints = complaints;
@@ -207,9 +195,6 @@ public class SendDataPoint  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param rejects Number of emails rejected by Amazon SES.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SendDataPoint withRejects(Long rejects) {
         this.rejects = rejects;

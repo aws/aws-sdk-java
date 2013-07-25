@@ -70,9 +70,6 @@ public class DescribeDBInstancesResult  implements Serializable  {
      * @param marker An optional pagination token provided by a previous request. If this
      *         parameter is specified, the response includes only records beyond the
      *         marker, up to the value specified by <code>MaxRecords</code> .
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDBInstancesResult withMarker(String marker) {
         this.marker = marker;
@@ -115,9 +112,6 @@ public class DescribeDBInstancesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBInstances A list of <a>DBInstance</a> instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDBInstancesResult withDBInstances(DBInstance... dBInstances) {
         if (getDBInstances() == null) setDBInstances(new java.util.ArrayList<DBInstance>(dBInstances.length));
@@ -133,9 +127,6 @@ public class DescribeDBInstancesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBInstances A list of <a>DBInstance</a> instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDBInstancesResult withDBInstances(java.util.Collection<DBInstance> dBInstances) {
         if (dBInstances == null) {

@@ -37,9 +37,9 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> layerIds;
 
     /**
-     * The instance type. OpsWorks supports all instance types except Cluster
-     * Compute, Cluster GPU, and High Memory Cluster. For more information,
-     * see <a
+     * The instance type. AWS OpsWorks supports all instance types except
+     * Cluster Compute, Cluster GPU, and High Memory Cluster. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Families and Types</a>. The parameter values that you use to specify
      * the various types are in the API Name column of the Available Instance
@@ -67,9 +67,29 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
     private String hostname;
 
     /**
-     * The instance operating system.
+     * The instance operating system, which must be set to one of the
+     * following. <ul> <li>Standard operating systems: <code>Amazon
+     * Linux</code> or <code>Ubuntu 12.04 LTS</code></li> <li>Custom AMIs:
+     * <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
+     * Linux</code>. If you set this parameter to <code>Custom</code>, you
+     * must use the <a>CreateInstance</a> action's AmiId parameter to specify
+     * the custom AMI that you want to use. For more information on the
+     * standard operating systems, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
+     * Systems</a>For more information on how to use custom AMIs with
+     * OpsWorks, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+     * Custom AMIs</a>.
      */
     private String os;
+
+    /**
+     * A custom AMI ID to be used to create the instance. The AMI should be
+     * based on one of the standard AWS OpsWorks APIs: Amazon Linux or Ubuntu
+     * 12.04 LTS. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
+     */
+    private String amiId;
 
     /**
      * The instance SSH key name.
@@ -87,6 +107,19 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
      * <b>Allowed Values: </b>x86_64, i386
      */
     private String architecture;
+
+    /**
+     * Whether to install operating system and package updates when the
+     * instance boots. The default value is <code>true</code>. To control
+     * when updates are installed, set this value to <code>false</code>. You
+     * must then update your instances manually by using
+     * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
+     * stack command or manually running <code>yum</code> (Amazon Linux) or
+     * <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     * recommend using the default value of <code>true</code>, to ensure that
+     * your instances have the latest security updates.</note>
+     */
+    private Boolean installUpdatesOnBoot;
 
     /**
      * The instance ID.
@@ -183,17 +216,17 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
     }
     
     /**
-     * The instance type. OpsWorks supports all instance types except Cluster
-     * Compute, Cluster GPU, and High Memory Cluster. For more information,
-     * see <a
+     * The instance type. AWS OpsWorks supports all instance types except
+     * Cluster Compute, Cluster GPU, and High Memory Cluster. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Families and Types</a>. The parameter values that you use to specify
      * the various types are in the API Name column of the Available Instance
      * Types table.
      *
-     * @return The instance type. OpsWorks supports all instance types except Cluster
-     *         Compute, Cluster GPU, and High Memory Cluster. For more information,
-     *         see <a
+     * @return The instance type. AWS OpsWorks supports all instance types except
+     *         Cluster Compute, Cluster GPU, and High Memory Cluster. For more
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      *         Families and Types</a>. The parameter values that you use to specify
      *         the various types are in the API Name column of the Available Instance
@@ -204,17 +237,17 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
     }
     
     /**
-     * The instance type. OpsWorks supports all instance types except Cluster
-     * Compute, Cluster GPU, and High Memory Cluster. For more information,
-     * see <a
+     * The instance type. AWS OpsWorks supports all instance types except
+     * Cluster Compute, Cluster GPU, and High Memory Cluster. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Families and Types</a>. The parameter values that you use to specify
      * the various types are in the API Name column of the Available Instance
      * Types table.
      *
-     * @param instanceType The instance type. OpsWorks supports all instance types except Cluster
-     *         Compute, Cluster GPU, and High Memory Cluster. For more information,
-     *         see <a
+     * @param instanceType The instance type. AWS OpsWorks supports all instance types except
+     *         Cluster Compute, Cluster GPU, and High Memory Cluster. For more
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      *         Families and Types</a>. The parameter values that you use to specify
      *         the various types are in the API Name column of the Available Instance
@@ -225,9 +258,9 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
     }
     
     /**
-     * The instance type. OpsWorks supports all instance types except Cluster
-     * Compute, Cluster GPU, and High Memory Cluster. For more information,
-     * see <a
+     * The instance type. AWS OpsWorks supports all instance types except
+     * Cluster Compute, Cluster GPU, and High Memory Cluster. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Families and Types</a>. The parameter values that you use to specify
      * the various types are in the API Name column of the Available Instance
@@ -235,9 +268,9 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceType The instance type. OpsWorks supports all instance types except Cluster
-     *         Compute, Cluster GPU, and High Memory Cluster. For more information,
-     *         see <a
+     * @param instanceType The instance type. AWS OpsWorks supports all instance types except
+     *         Cluster Compute, Cluster GPU, and High Memory Cluster. For more
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      *         Families and Types</a>. The parameter values that you use to specify
      *         the various types are in the API Name column of the Available Instance
@@ -418,32 +451,153 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
     
     
     /**
-     * The instance operating system.
+     * The instance operating system, which must be set to one of the
+     * following. <ul> <li>Standard operating systems: <code>Amazon
+     * Linux</code> or <code>Ubuntu 12.04 LTS</code></li> <li>Custom AMIs:
+     * <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
+     * Linux</code>. If you set this parameter to <code>Custom</code>, you
+     * must use the <a>CreateInstance</a> action's AmiId parameter to specify
+     * the custom AMI that you want to use. For more information on the
+     * standard operating systems, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
+     * Systems</a>For more information on how to use custom AMIs with
+     * OpsWorks, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+     * Custom AMIs</a>.
      *
-     * @return The instance operating system.
+     * @return The instance operating system, which must be set to one of the
+     *         following. <ul> <li>Standard operating systems: <code>Amazon
+     *         Linux</code> or <code>Ubuntu 12.04 LTS</code></li> <li>Custom AMIs:
+     *         <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
+     *         Linux</code>. If you set this parameter to <code>Custom</code>, you
+     *         must use the <a>CreateInstance</a> action's AmiId parameter to specify
+     *         the custom AMI that you want to use. For more information on the
+     *         standard operating systems, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
+     *         Systems</a>For more information on how to use custom AMIs with
+     *         OpsWorks, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+     *         Custom AMIs</a>.
      */
     public String getOs() {
         return os;
     }
     
     /**
-     * The instance operating system.
+     * The instance operating system, which must be set to one of the
+     * following. <ul> <li>Standard operating systems: <code>Amazon
+     * Linux</code> or <code>Ubuntu 12.04 LTS</code></li> <li>Custom AMIs:
+     * <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
+     * Linux</code>. If you set this parameter to <code>Custom</code>, you
+     * must use the <a>CreateInstance</a> action's AmiId parameter to specify
+     * the custom AMI that you want to use. For more information on the
+     * standard operating systems, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
+     * Systems</a>For more information on how to use custom AMIs with
+     * OpsWorks, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+     * Custom AMIs</a>.
      *
-     * @param os The instance operating system.
+     * @param os The instance operating system, which must be set to one of the
+     *         following. <ul> <li>Standard operating systems: <code>Amazon
+     *         Linux</code> or <code>Ubuntu 12.04 LTS</code></li> <li>Custom AMIs:
+     *         <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
+     *         Linux</code>. If you set this parameter to <code>Custom</code>, you
+     *         must use the <a>CreateInstance</a> action's AmiId parameter to specify
+     *         the custom AMI that you want to use. For more information on the
+     *         standard operating systems, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
+     *         Systems</a>For more information on how to use custom AMIs with
+     *         OpsWorks, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+     *         Custom AMIs</a>.
      */
     public void setOs(String os) {
         this.os = os;
     }
     
     /**
-     * The instance operating system.
+     * The instance operating system, which must be set to one of the
+     * following. <ul> <li>Standard operating systems: <code>Amazon
+     * Linux</code> or <code>Ubuntu 12.04 LTS</code></li> <li>Custom AMIs:
+     * <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
+     * Linux</code>. If you set this parameter to <code>Custom</code>, you
+     * must use the <a>CreateInstance</a> action's AmiId parameter to specify
+     * the custom AMI that you want to use. For more information on the
+     * standard operating systems, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
+     * Systems</a>For more information on how to use custom AMIs with
+     * OpsWorks, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+     * Custom AMIs</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param os The instance operating system.
+     * @param os The instance operating system, which must be set to one of the
+     *         following. <ul> <li>Standard operating systems: <code>Amazon
+     *         Linux</code> or <code>Ubuntu 12.04 LTS</code></li> <li>Custom AMIs:
+     *         <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
+     *         Linux</code>. If you set this parameter to <code>Custom</code>, you
+     *         must use the <a>CreateInstance</a> action's AmiId parameter to specify
+     *         the custom AMI that you want to use. For more information on the
+     *         standard operating systems, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
+     *         Systems</a>For more information on how to use custom AMIs with
+     *         OpsWorks, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+     *         Custom AMIs</a>.
      */
     public UpdateInstanceRequest withOs(String os) {
         this.os = os;
+        return this;
+    }
+    
+    
+    /**
+     * A custom AMI ID to be used to create the instance. The AMI should be
+     * based on one of the standard AWS OpsWorks APIs: Amazon Linux or Ubuntu
+     * 12.04 LTS. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
+     *
+     * @return A custom AMI ID to be used to create the instance. The AMI should be
+     *         based on one of the standard AWS OpsWorks APIs: Amazon Linux or Ubuntu
+     *         12.04 LTS. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
+     */
+    public String getAmiId() {
+        return amiId;
+    }
+    
+    /**
+     * A custom AMI ID to be used to create the instance. The AMI should be
+     * based on one of the standard AWS OpsWorks APIs: Amazon Linux or Ubuntu
+     * 12.04 LTS. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
+     *
+     * @param amiId A custom AMI ID to be used to create the instance. The AMI should be
+     *         based on one of the standard AWS OpsWorks APIs: Amazon Linux or Ubuntu
+     *         12.04 LTS. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
+     */
+    public void setAmiId(String amiId) {
+        this.amiId = amiId;
+    }
+    
+    /**
+     * A custom AMI ID to be used to create the instance. The AMI should be
+     * based on one of the standard AWS OpsWorks APIs: Amazon Linux or Ubuntu
+     * 12.04 LTS. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param amiId A custom AMI ID to be used to create the instance. The AMI should be
+     *         based on one of the standard AWS OpsWorks APIs: Amazon Linux or Ubuntu
+     *         12.04 LTS. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
+     */
+    public UpdateInstanceRequest withAmiId(String amiId) {
+        this.amiId = amiId;
         return this;
     }
     
@@ -597,6 +751,110 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
     }
     
     /**
+     * Whether to install operating system and package updates when the
+     * instance boots. The default value is <code>true</code>. To control
+     * when updates are installed, set this value to <code>false</code>. You
+     * must then update your instances manually by using
+     * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
+     * stack command or manually running <code>yum</code> (Amazon Linux) or
+     * <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     * recommend using the default value of <code>true</code>, to ensure that
+     * your instances have the latest security updates.</note>
+     *
+     * @return Whether to install operating system and package updates when the
+     *         instance boots. The default value is <code>true</code>. To control
+     *         when updates are installed, set this value to <code>false</code>. You
+     *         must then update your instances manually by using
+     *         <a>CreateDeployment</a> to run the <code>update_dependencies</code>
+     *         stack command or manually running <code>yum</code> (Amazon Linux) or
+     *         <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     *         recommend using the default value of <code>true</code>, to ensure that
+     *         your instances have the latest security updates.</note>
+     */
+    public Boolean isInstallUpdatesOnBoot() {
+        return installUpdatesOnBoot;
+    }
+    
+    /**
+     * Whether to install operating system and package updates when the
+     * instance boots. The default value is <code>true</code>. To control
+     * when updates are installed, set this value to <code>false</code>. You
+     * must then update your instances manually by using
+     * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
+     * stack command or manually running <code>yum</code> (Amazon Linux) or
+     * <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     * recommend using the default value of <code>true</code>, to ensure that
+     * your instances have the latest security updates.</note>
+     *
+     * @param installUpdatesOnBoot Whether to install operating system and package updates when the
+     *         instance boots. The default value is <code>true</code>. To control
+     *         when updates are installed, set this value to <code>false</code>. You
+     *         must then update your instances manually by using
+     *         <a>CreateDeployment</a> to run the <code>update_dependencies</code>
+     *         stack command or manually running <code>yum</code> (Amazon Linux) or
+     *         <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     *         recommend using the default value of <code>true</code>, to ensure that
+     *         your instances have the latest security updates.</note>
+     */
+    public void setInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
+        this.installUpdatesOnBoot = installUpdatesOnBoot;
+    }
+    
+    /**
+     * Whether to install operating system and package updates when the
+     * instance boots. The default value is <code>true</code>. To control
+     * when updates are installed, set this value to <code>false</code>. You
+     * must then update your instances manually by using
+     * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
+     * stack command or manually running <code>yum</code> (Amazon Linux) or
+     * <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     * recommend using the default value of <code>true</code>, to ensure that
+     * your instances have the latest security updates.</note>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param installUpdatesOnBoot Whether to install operating system and package updates when the
+     *         instance boots. The default value is <code>true</code>. To control
+     *         when updates are installed, set this value to <code>false</code>. You
+     *         must then update your instances manually by using
+     *         <a>CreateDeployment</a> to run the <code>update_dependencies</code>
+     *         stack command or manually running <code>yum</code> (Amazon Linux) or
+     *         <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     *         recommend using the default value of <code>true</code>, to ensure that
+     *         your instances have the latest security updates.</note>
+     */
+    public UpdateInstanceRequest withInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
+        this.installUpdatesOnBoot = installUpdatesOnBoot;
+        return this;
+    }
+    
+    
+    /**
+     * Whether to install operating system and package updates when the
+     * instance boots. The default value is <code>true</code>. To control
+     * when updates are installed, set this value to <code>false</code>. You
+     * must then update your instances manually by using
+     * <a>CreateDeployment</a> to run the <code>update_dependencies</code>
+     * stack command or manually running <code>yum</code> (Amazon Linux) or
+     * <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     * recommend using the default value of <code>true</code>, to ensure that
+     * your instances have the latest security updates.</note>
+     *
+     * @return Whether to install operating system and package updates when the
+     *         instance boots. The default value is <code>true</code>. To control
+     *         when updates are installed, set this value to <code>false</code>. You
+     *         must then update your instances manually by using
+     *         <a>CreateDeployment</a> to run the <code>update_dependencies</code>
+     *         stack command or manually running <code>yum</code> (Amazon Linux) or
+     *         <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
+     *         recommend using the default value of <code>true</code>, to ensure that
+     *         your instances have the latest security updates.</note>
+     */
+    public Boolean getInstallUpdatesOnBoot() {
+        return installUpdatesOnBoot;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -614,8 +872,10 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
         if (getAutoScalingType() != null) sb.append("AutoScalingType: " + getAutoScalingType() + ",");
         if (getHostname() != null) sb.append("Hostname: " + getHostname() + ",");
         if (getOs() != null) sb.append("Os: " + getOs() + ",");
+        if (getAmiId() != null) sb.append("AmiId: " + getAmiId() + ",");
         if (getSshKeyName() != null) sb.append("SshKeyName: " + getSshKeyName() + ",");
-        if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() );
+        if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() + ",");
+        if (isInstallUpdatesOnBoot() != null) sb.append("InstallUpdatesOnBoot: " + isInstallUpdatesOnBoot() );
         sb.append("}");
         return sb.toString();
     }
@@ -631,8 +891,10 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
         hashCode = prime * hashCode + ((getAutoScalingType() == null) ? 0 : getAutoScalingType().hashCode()); 
         hashCode = prime * hashCode + ((getHostname() == null) ? 0 : getHostname().hashCode()); 
         hashCode = prime * hashCode + ((getOs() == null) ? 0 : getOs().hashCode()); 
+        hashCode = prime * hashCode + ((getAmiId() == null) ? 0 : getAmiId().hashCode()); 
         hashCode = prime * hashCode + ((getSshKeyName() == null) ? 0 : getSshKeyName().hashCode()); 
         hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode()); 
+        hashCode = prime * hashCode + ((isInstallUpdatesOnBoot() == null) ? 0 : isInstallUpdatesOnBoot().hashCode()); 
         return hashCode;
     }
     
@@ -656,10 +918,14 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
         if (other.getHostname() != null && other.getHostname().equals(this.getHostname()) == false) return false; 
         if (other.getOs() == null ^ this.getOs() == null) return false;
         if (other.getOs() != null && other.getOs().equals(this.getOs()) == false) return false; 
+        if (other.getAmiId() == null ^ this.getAmiId() == null) return false;
+        if (other.getAmiId() != null && other.getAmiId().equals(this.getAmiId()) == false) return false; 
         if (other.getSshKeyName() == null ^ this.getSshKeyName() == null) return false;
         if (other.getSshKeyName() != null && other.getSshKeyName().equals(this.getSshKeyName()) == false) return false; 
         if (other.getArchitecture() == null ^ this.getArchitecture() == null) return false;
         if (other.getArchitecture() != null && other.getArchitecture().equals(this.getArchitecture()) == false) return false; 
+        if (other.isInstallUpdatesOnBoot() == null ^ this.isInstallUpdatesOnBoot() == null) return false;
+        if (other.isInstallUpdatesOnBoot() != null && other.isInstallUpdatesOnBoot().equals(this.isInstallUpdatesOnBoot()) == false) return false; 
         return true;
     }
     

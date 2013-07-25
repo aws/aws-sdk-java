@@ -142,9 +142,6 @@ public class Job  implements Serializable  {
      *
      * @param id The identifier that Elastic Transcoder assigned to the job. You use
      *         this value to get settings for the job or to delete the job.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Job withId(String id) {
         this.id = id;
@@ -209,9 +206,6 @@ public class Job  implements Serializable  {
      *         including the Amazon S3 bucket from which Elastic Transcoder gets the
      *         files to transcode and the bucket into which Elastic Transcoder puts
      *         the transcoded files.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Job withPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
@@ -249,9 +243,6 @@ public class Job  implements Serializable  {
      *
      * @param input A section of the request or response body that provides information
      *         about the file that is being transcoded.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Job withInput(JobInput input) {
         this.input = input;
@@ -319,9 +310,6 @@ public class Job  implements Serializable  {
      *         <p><important>Outputs recommended instead.</important> A section of
      *         the request or response body that provides information about the
      *         transcoded (target) file.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Job withOutput(JobOutput output) {
         this.output = output;
@@ -406,9 +394,6 @@ public class Job  implements Serializable  {
      *         specify more than one output for a job, Elastic Transcoder creates the
      *         files for each output in the order in which you specify them in the
      *         job.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Job withOutputs(JobOutput... outputs) {
         if (getOutputs() == null) setOutputs(new java.util.ArrayList<JobOutput>(outputs.length));
@@ -438,9 +423,6 @@ public class Job  implements Serializable  {
      *         specify more than one output for a job, Elastic Transcoder creates the
      *         files for each output in the order in which you specify them in the
      *         job.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Job withOutputs(java.util.Collection<JobOutput> outputs) {
         if (outputs == null) {
@@ -505,9 +487,6 @@ public class Job  implements Serializable  {
      *         names of all files that this job creates, including output files,
      *         thumbnails, and playlists. We recommend that you add a / or some other
      *         delimiter to the end of the <code>OutputKeyPrefix</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Job withOutputKeyPrefix(String outputKeyPrefix) {
         this.outputKeyPrefix = outputKeyPrefix;
@@ -580,9 +559,6 @@ public class Job  implements Serializable  {
      *         contains information about the master playlists that you want Elastic
      *         Transcoder to create. <p>We recommend that you create only one master
      *         playlist. The maximum number of master playlists in a job is 30.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Job withPlaylists(Playlist... playlists) {
         if (getPlaylists() == null) setPlaylists(new java.util.ArrayList<Playlist>(playlists.length));
@@ -608,9 +584,6 @@ public class Job  implements Serializable  {
      *         contains information about the master playlists that you want Elastic
      *         Transcoder to create. <p>We recommend that you create only one master
      *         playlist. The maximum number of master playlists in a job is 30.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Job withPlaylists(java.util.Collection<Playlist> playlists) {
         if (playlists == null) {
@@ -669,9 +642,6 @@ public class Job  implements Serializable  {
      * @param status The status of the job: <code>Submitted</code>,
      *         <code>Progressing</code>, <code>Complete</code>,
      *         <code>Canceled</code>, or <code>Error</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Job withStatus(String status) {
         this.status = status;

@@ -210,9 +210,6 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param launchConfigurationName The name of the launch configuration to create.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLaunchConfigurationRequest withLaunchConfigurationName(String launchConfigurationName) {
         this.launchConfigurationName = launchConfigurationName;
@@ -274,9 +271,6 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      *         during registration. For more information about Amazon EC2 images,
      *         please see <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
      *         documentation</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLaunchConfigurationRequest withImageId(String imageId) {
         this.imageId = imageId;
@@ -320,9 +314,6 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param keyName The name of the Amazon EC2 key pair.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLaunchConfigurationRequest withKeyName(String keyName) {
         this.keyName = keyName;
@@ -425,9 +416,6 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      *         more information about Amazon VPC security groups, go to <a
      *         href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">
      *         Security Groups</a> in the Amazon VPC product documentation.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLaunchConfigurationRequest withSecurityGroups(String... securityGroups) {
         if (getSecurityGroups() == null) setSecurityGroups(new java.util.ArrayList<String>(securityGroups.length));
@@ -463,9 +451,6 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      *         more information about Amazon VPC security groups, go to <a
      *         href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">
      *         Security Groups</a> in the Amazon VPC product documentation.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLaunchConfigurationRequest withSecurityGroups(java.util.Collection<String> securityGroups) {
         if (securityGroups == null) {
@@ -533,9 +518,6 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      *         information about Amazon EC2 user data, please see <a
      *         href="http://aws.amazon.com/ec2/"> Amazon EC2 product
      *         documentation</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLaunchConfigurationRequest withUserData(String userData) {
         this.userData = userData;
@@ -597,9 +579,6 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      *         about Amazon EC2 instance types, please see <a
      *         href="http://aws.amazon.com/ec2/"> Amazon EC2 product
      *         documentation</a>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLaunchConfigurationRequest withInstanceType(String instanceType) {
         this.instanceType = instanceType;
@@ -643,9 +622,6 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param kernelId The ID of the kernel associated with the Amazon EC2 AMI.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLaunchConfigurationRequest withKernelId(String kernelId) {
         this.kernelId = kernelId;
@@ -689,9 +665,6 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param ramdiskId The ID of the RAM disk associated with the Amazon EC2 AMI.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLaunchConfigurationRequest withRamdiskId(String ramdiskId) {
         this.ramdiskId = ramdiskId;
@@ -770,9 +743,6 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      *         more information about Amazon EC2 BlockDeviceMappings, go to <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
      *         Block Device Mapping</a> in the Amazon EC2 product documentation.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLaunchConfigurationRequest withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
         if (getBlockDeviceMappings() == null) setBlockDeviceMappings(new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.length));
@@ -800,9 +770,6 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      *         more information about Amazon EC2 BlockDeviceMappings, go to <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
      *         Block Device Mapping</a> in the Amazon EC2 product documentation.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLaunchConfigurationRequest withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
@@ -876,9 +843,6 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      *         generate metrics every 5 minutes. For information about monitoring,
      *         see the <a href="http://aws.amazon.com/cloudwatch/">Amazon
      *         CloudWatch</a> product page.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLaunchConfigurationRequest withInstanceMonitoring(InstanceMonitoring instanceMonitoring) {
         this.instanceMonitoring = instanceMonitoring;
@@ -955,9 +919,6 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      *         href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">
      *         Using Auto Scaling to Launch Spot Instances</a> in the <i>Auto Scaling
      *         Developer Guide</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLaunchConfigurationRequest withSpotPrice(String spotPrice) {
         this.spotPrice = spotPrice;
@@ -1031,9 +992,6 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      *         href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
      *         Auto Scaling Instances With an IAM Role</a> in the <i>Auto Scaling
      *         Developer Guide</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLaunchConfigurationRequest withIamInstanceProfile(String iamInstanceProfile) {
         this.iamInstanceProfile = iamInstanceProfile;
@@ -1065,9 +1023,6 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ebsOptimized The new value for the EbsOptimized property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLaunchConfigurationRequest withEbsOptimized(Boolean ebsOptimized) {
         this.ebsOptimized = ebsOptimized;

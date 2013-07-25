@@ -92,9 +92,6 @@ public class DescribeCachediSCSIVolumesRequest extends AmazonWebServiceRequest  
      *         Name (ARN) of a cached volume. All of the specified cached volumes
      *         must be from the same gateway. Use <a>ListVolumes</a> to get volume
      *         ARNs of a gateway.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeCachediSCSIVolumesRequest withVolumeARNs(String... volumeARNs) {
         if (getVolumeARNs() == null) setVolumeARNs(new java.util.ArrayList<String>(volumeARNs.length));
@@ -116,9 +113,6 @@ public class DescribeCachediSCSIVolumesRequest extends AmazonWebServiceRequest  
      *         Name (ARN) of a cached volume. All of the specified cached volumes
      *         must be from the same gateway. Use <a>ListVolumes</a> to get volume
      *         ARNs of a gateway.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeCachediSCSIVolumesRequest withVolumeARNs(java.util.Collection<String> volumeARNs) {
         if (volumeARNs == null) {

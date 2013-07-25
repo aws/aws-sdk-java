@@ -77,9 +77,6 @@ public class SendMessageRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param queueUrl The new value for the QueueUrl property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SendMessageRequest withQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
@@ -111,9 +108,6 @@ public class SendMessageRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param messageBody The new value for the MessageBody property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SendMessageRequest withMessageBody(String messageBody) {
         this.messageBody = messageBody;
@@ -145,9 +139,6 @@ public class SendMessageRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param delaySeconds The new value for the DelaySeconds property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SendMessageRequest withDelaySeconds(Integer delaySeconds) {
         this.delaySeconds = delaySeconds;

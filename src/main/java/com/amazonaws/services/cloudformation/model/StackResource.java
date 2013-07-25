@@ -97,9 +97,6 @@ public class StackResource  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackName The name associated with the stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StackResource withStackName(String stackName) {
         this.stackName = stackName;
@@ -131,9 +128,6 @@ public class StackResource  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackId Unique identifier of the stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StackResource withStackId(String stackId) {
         this.stackId = stackId;
@@ -165,9 +159,6 @@ public class StackResource  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param logicalResourceId The logical name of the resource specified in the template.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StackResource withLogicalResourceId(String logicalResourceId) {
         this.logicalResourceId = logicalResourceId;
@@ -205,9 +196,6 @@ public class StackResource  implements Serializable  {
      *
      * @param physicalResourceId The name or unique identifier that corresponds to a physical instance
      *         ID of a resource supported by AWS CloudFormation.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StackResource withPhysicalResourceId(String physicalResourceId) {
         this.physicalResourceId = physicalResourceId;
@@ -251,9 +239,6 @@ public class StackResource  implements Serializable  {
      * @param resourceType Type of the resource. (For more information, go to the <a
      *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>.)
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StackResource withResourceType(String resourceType) {
         this.resourceType = resourceType;
@@ -285,9 +270,6 @@ public class StackResource  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param timestamp Time the status was updated.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StackResource withTimestamp(java.util.Date timestamp) {
         this.timestamp = timestamp;
@@ -333,9 +315,6 @@ public class StackResource  implements Serializable  {
      *
      * @param resourceStatus Current status of the resource.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ResourceStatus
      */
     public StackResource withResourceStatus(String resourceStatus) {
@@ -368,9 +347,6 @@ public class StackResource  implements Serializable  {
      *
      * @param resourceStatus Current status of the resource.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ResourceStatus
      */
     public StackResource withResourceStatus(ResourceStatus resourceStatus) {
@@ -402,9 +378,6 @@ public class StackResource  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param resourceStatusReason Success/failure message associated with the resource.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StackResource withResourceStatusReason(String resourceStatusReason) {
         this.resourceStatusReason = resourceStatusReason;
@@ -436,9 +409,6 @@ public class StackResource  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description User defined description associated with the resource.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StackResource withDescription(String description) {
         this.description = description;

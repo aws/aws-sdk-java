@@ -131,9 +131,6 @@ public class HostedZone  implements Serializable  {
      * <b>Length: </b>0 - 32<br/>
      *
      * @param id The ID of the specified hosted zone.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public HostedZone withId(String id) {
         this.id = id;
@@ -222,9 +219,6 @@ public class HostedZone  implements Serializable  {
      *         registrar to change the authoritative name servers for your domain to
      *         the set of <code>NameServers</code> elements returned in
      *         <code>DelegationSet</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public HostedZone withName(String name) {
         this.name = name;
@@ -265,9 +259,6 @@ public class HostedZone  implements Serializable  {
      * <b>Length: </b>1 - 128<br/>
      *
      * @param callerReference A unique string that identifies the request to create the hosted zone.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public HostedZone withCallerReference(String callerReference) {
         this.callerReference = callerReference;
@@ -299,9 +290,6 @@ public class HostedZone  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param config A complex type that contains the <code>Comment</code> element.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public HostedZone withConfig(HostedZoneConfig config) {
         this.config = config;
@@ -333,9 +321,6 @@ public class HostedZone  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param resourceRecordSetCount Total number of resource record sets in the hosted zone.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public HostedZone withResourceRecordSetCount(Long resourceRecordSetCount) {
         this.resourceRecordSetCount = resourceRecordSetCount;

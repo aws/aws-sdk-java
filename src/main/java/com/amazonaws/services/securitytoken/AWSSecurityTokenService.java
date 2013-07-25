@@ -106,15 +106,16 @@ public interface AWSSecurityTokenService {
 	
     /**
      * <p>
-     * Returns a set of temporary credentials for an AWS account or IAM user.
-     * The credentials consist of an access key ID, a secret access key, and
-     * a security token. Typically, you use <code>GetSessionToken</code> if
-     * you want use MFA to protect programmatic calls to specific AWS APIs
-     * like Amazon EC2 <code>StopInstances</code> . MFA-enabled IAM users
-     * would need to call <code>GetSessionToken</code> and submit an MFA code
-     * that is associated with their MFA device. Using the temporary security
-     * credentials that are returned from the call, IAM users can then make
-     * programmatic calls to APIs that require MFA authentication.
+     * Returns a set of temporary credentials for an AWS account or IAM
+     * user. The credentials consist of an access key ID, a secret access
+     * key, and a security token. Typically, you use
+     * <code>GetSessionToken</code> if you want use MFA to protect
+     * programmatic calls to specific AWS APIs like Amazon EC2
+     * <code>StopInstances</code> . MFA-enabled IAM users would need to call
+     * <code>GetSessionToken</code> and submit an MFA code that is associated
+     * with their MFA device. Using the temporary security credentials that
+     * are returned from the call, IAM users can then make programmatic calls
+     * to APIs that require MFA authentication.
      * </p>
      * <p>
      * The <code>GetSessionToken</code> action must be called by using the
@@ -136,6 +137,7 @@ public interface AWSSecurityTokenService {
      * /docs.aws.amazon.com/IAM/latest/UserGuide/CreatingSessionTokens.html">
      * Creating Temporary Credentials to Enable Access for IAM Users </a> in
      * <i>Using IAM</i> .
+     * 
      * </p>
      *
      * @param getSessionTokenRequest Container for the necessary parameters
@@ -155,6 +157,73 @@ public interface AWSSecurityTokenService {
      *             either a problem with the data in the request, or a server side issue.
      */
     public GetSessionTokenResult getSessionToken(GetSessionTokenRequest getSessionTokenRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Decodes additional information about the authorization status of a
+     * request from an encoded message returned in response to an AWS
+     * request.
+     * </p>
+     * <p>
+     * For example, if a user is not authorized to perform an action that he
+     * or she has requested, the request returns a
+     * <code>Client.UnauthorizedOperation</code> response (an HTTP 403
+     * response). Some AWS actions additionally return an encoded message
+     * that can provide details about this authorization failure.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Only certain AWS actions return an encoded authorization
+     * message. The documentation for an individual action indicates whether
+     * that action returns an encoded message in addition to returning an
+     * HTTP code.
+     * </p>
+     * <p>
+     * The message is encoded because the details of the authorization status
+     * can constitute privileged information that the user who requested the
+     * action should not see. To decode an authorization status message, a
+     * user must be granted permissions via an IAM policy to request the
+     * <code>DecodeAuthorizationMessage</code> (
+     * <code>sts:DecodeAuthorizationMessage</code> )
+     * action.
+     * </p>
+     * <p>
+     * The decoded message includes the following type of information:
+     * </p>
+     * 
+     * <ul>
+     * <li>Whether the request was denied due to an explicit deny or due to
+     * the absence of an explicit allow. For more information, see <a
+     * uide/AccessPolicyLanguage_EvaluationLogic.html#policy-eval-denyallow">
+     * Determining Whether a Request is Allowed or Denied </a> in <i>Using
+     * IAM</i> .
+     * </li>
+     * <li>The principal who made the request.</li>
+     * <li>The requested action.</li>
+     * <li>The requested resource.</li>
+     * <li>The values of condition keys in the context of the user's
+     * request.</li>
+     * 
+     * </ul>
+     *
+     * @param decodeAuthorizationMessageRequest Container for the necessary
+     *           parameters to execute the DecodeAuthorizationMessage service method on
+     *           AWSSecurityTokenService.
+     * 
+     * @return The response from the DecodeAuthorizationMessage service
+     *         method, as returned by AWSSecurityTokenService.
+     * 
+     * @throws InvalidAuthorizationMessageException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSSecurityTokenService indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DecodeAuthorizationMessageResult decodeAuthorizationMessage(DecodeAuthorizationMessageRequest decodeAuthorizationMessageRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -288,6 +357,7 @@ public interface AWSSecurityTokenService {
      * tp://docs.aws.amazon.com/IAM/latest/UserGuide/CreatingFedTokens.html">
      * Creating Temporary Credentials to Enable Access for Federated Users
      * </a> in <i>Using Temporary Security Credentials</i> .
+     * 
      * </p>
      *
      * @param getFederationTokenRequest Container for the necessary
@@ -376,7 +446,8 @@ public interface AWSSecurityTokenService {
      * <p>
      * <b>Important:</b> You cannot call <code>Assumerole</code> by using
      * AWS account credentials; access will be denied. You must use IAM user
-     * credentials to call <code>AssumeRole</code> .
+     * credentials or temporary security credentials to call
+     * <code>AssumeRole</code> .
      * 
      * </p>
      * <p>
@@ -412,15 +483,16 @@ public interface AWSSecurityTokenService {
 
     /**
      * <p>
-     * Returns a set of temporary credentials for an AWS account or IAM user.
-     * The credentials consist of an access key ID, a secret access key, and
-     * a security token. Typically, you use <code>GetSessionToken</code> if
-     * you want use MFA to protect programmatic calls to specific AWS APIs
-     * like Amazon EC2 <code>StopInstances</code> . MFA-enabled IAM users
-     * would need to call <code>GetSessionToken</code> and submit an MFA code
-     * that is associated with their MFA device. Using the temporary security
-     * credentials that are returned from the call, IAM users can then make
-     * programmatic calls to APIs that require MFA authentication.
+     * Returns a set of temporary credentials for an AWS account or IAM
+     * user. The credentials consist of an access key ID, a secret access
+     * key, and a security token. Typically, you use
+     * <code>GetSessionToken</code> if you want use MFA to protect
+     * programmatic calls to specific AWS APIs like Amazon EC2
+     * <code>StopInstances</code> . MFA-enabled IAM users would need to call
+     * <code>GetSessionToken</code> and submit an MFA code that is associated
+     * with their MFA device. Using the temporary security credentials that
+     * are returned from the call, IAM users can then make programmatic calls
+     * to APIs that require MFA authentication.
      * </p>
      * <p>
      * The <code>GetSessionToken</code> action must be called by using the
@@ -442,6 +514,7 @@ public interface AWSSecurityTokenService {
      * /docs.aws.amazon.com/IAM/latest/UserGuide/CreatingSessionTokens.html">
      * Creating Temporary Credentials to Enable Access for IAM Users </a> in
      * <i>Using IAM</i> .
+     * 
      * </p>
      * 
      * @return The response from the GetSessionToken service method, as

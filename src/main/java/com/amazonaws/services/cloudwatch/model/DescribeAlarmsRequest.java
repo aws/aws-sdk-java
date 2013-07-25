@@ -118,9 +118,6 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest  implements S
      * <b>Length: </b>0 - 100<br/>
      *
      * @param alarmNames A list of alarm names to retrieve information for.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeAlarmsRequest withAlarmNames(String... alarmNames) {
         if (getAlarmNames() == null) setAlarmNames(new java.util.ArrayList<String>(alarmNames.length));
@@ -139,9 +136,6 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest  implements S
      * <b>Length: </b>0 - 100<br/>
      *
      * @param alarmNames A list of alarm names to retrieve information for.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeAlarmsRequest withAlarmNames(java.util.Collection<String> alarmNames) {
         if (alarmNames == null) {
@@ -194,9 +188,6 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest  implements S
      *
      * @param alarmNamePrefix The alarm name prefix. <code>AlarmNames</code> cannot be specified if
      *         this parameter is specified.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeAlarmsRequest withAlarmNamePrefix(String alarmNamePrefix) {
         this.alarmNamePrefix = alarmNamePrefix;
@@ -242,9 +233,6 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest  implements S
      *
      * @param stateValue The state value to be used in matching alarms.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see StateValue
      */
     public DescribeAlarmsRequest withStateValue(String stateValue) {
@@ -276,9 +264,6 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest  implements S
      * <b>Allowed Values: </b>OK, ALARM, INSUFFICIENT_DATA
      *
      * @param stateValue The state value to be used in matching alarms.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see StateValue
      */
@@ -320,9 +305,6 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest  implements S
      * <b>Length: </b>1 - 1024<br/>
      *
      * @param actionPrefix The action name prefix.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeAlarmsRequest withActionPrefix(String actionPrefix) {
         this.actionPrefix = actionPrefix;
@@ -363,9 +345,6 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest  implements S
      * <b>Range: </b>1 - 100<br/>
      *
      * @param maxRecords The maximum number of alarm descriptions to retrieve.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeAlarmsRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -403,9 +382,6 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest  implements S
      *
      * @param nextToken The token returned by a previous call to indicate that there is more
      *         data available.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeAlarmsRequest withNextToken(String nextToken) {
         this.nextToken = nextToken;

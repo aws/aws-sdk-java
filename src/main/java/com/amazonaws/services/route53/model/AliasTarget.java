@@ -162,9 +162,6 @@ public class AliasTarget  implements Serializable  {
      *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      *         Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
      *         Guide</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AliasTarget withHostedZoneId(String hostedZoneId) {
         this.hostedZoneId = hostedZoneId;
@@ -235,9 +232,6 @@ public class AliasTarget  implements Serializable  {
      *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      *         Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
      *         Guide</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AliasTarget withDNSName(String dNSName) {
         this.dNSName = dNSName;
@@ -305,9 +299,6 @@ public class AliasTarget  implements Serializable  {
      *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      *         Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
      *         Guide</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AliasTarget withEvaluateTargetHealth(Boolean evaluateTargetHealth) {
         this.evaluateTargetHealth = evaluateTargetHealth;

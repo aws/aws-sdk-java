@@ -74,9 +74,6 @@ public class ReadPresetRequest extends AmazonWebServiceRequest  implements Seria
      *
      * @param id The identifier of the preset for which you want to get detailed
      *         information.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReadPresetRequest withId(String id) {
         this.id = id;

@@ -58,9 +58,6 @@ public class ReadPipelineResult  implements Serializable  {
      *
      * @param pipeline A section of the response body that provides information about the
      *         pipeline.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReadPipelineResult withPipeline(Pipeline pipeline) {
         this.pipeline = pipeline;

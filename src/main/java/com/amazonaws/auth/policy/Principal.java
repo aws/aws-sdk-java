@@ -73,6 +73,20 @@ public class Principal {
     }
 
     /**
+     * Constructs a new principal with the specified web identity provider.
+     *
+     * @param webIdentityProvider
+     *            An web identity provider.
+     */
+    public Principal(WebIdentityProviders webIdentityProvider) {
+        if (webIdentityProvider == null) {
+            throw new IllegalArgumentException("Null web identity provider specified");
+        }
+        this.id = webIdentityProvider.getWebIdentityProvider();
+        provider = "Federated";
+    }
+
+    /**
      * Returns the provider for this principal, which indicates in what group of
      * users this principal resides.
      *
@@ -125,6 +139,46 @@ public class Principal {
                 for (Services s : Services.values()) {
                     if (s.getServiceId().equalsIgnoreCase(serviceId)) {
                         return s;
+                    }
+                }
+            }
+
+            return null;
+        }
+
+
+    }
+
+    /**
+     * Web identity providers, such as Login with Amazon, Facebook, or Google.
+     */
+     public static enum WebIdentityProviders {
+
+        Facebook("graph.facebook.com"),
+        Google("accounts.google.com"),
+        Amazon("www.amazon.com");
+
+        private String webIdentityProvider;
+
+        /**
+         * The web identity provider which has the right to assume the role.
+         */
+        private WebIdentityProviders(String webIdentityProvider) {
+            this.webIdentityProvider = webIdentityProvider;
+        }
+
+        public String getWebIdentityProvider() {
+            return webIdentityProvider;
+        }
+
+        /**
+         * Construct the Services object from a string representing web identity provider.
+         */
+        public static WebIdentityProviders fromString(String webIdentityProvider) {
+            if (webIdentityProvider != null) {
+                for (WebIdentityProviders provider : WebIdentityProviders.values()) {
+                    if (provider.getWebIdentityProvider().equalsIgnoreCase(webIdentityProvider)) {
+                        return provider;
                     }
                 }
             }

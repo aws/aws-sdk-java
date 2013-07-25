@@ -166,9 +166,6 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param domainName The name of the domain in which to perform the operation.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteAttributesRequest withDomainName(String domainName) {
         this.domainName = domainName;
@@ -212,9 +209,6 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest  implements
      * @param itemName The name of the item. Similar to rows on a spreadsheet, items
      *         represent individual objects that contain one or more value-attribute
      *         pairs.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteAttributesRequest withItemName(String itemName) {
         this.itemName = itemName;
@@ -263,9 +257,6 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest  implements
      *
      * @param attributes A list of Attributes. Similar to columns on a spreadsheet, attributes
      *         represent categories of data that can be assigned to items.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteAttributesRequest withAttributes(Attribute... attributes) {
         if (getAttributes() == null) setAttributes(new java.util.ArrayList<Attribute>(attributes.length));
@@ -283,9 +274,6 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest  implements
      *
      * @param attributes A list of Attributes. Similar to columns on a spreadsheet, attributes
      *         represent categories of data that can be assigned to items.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteAttributesRequest withAttributes(java.util.Collection<Attribute> attributes) {
         if (attributes == null) {
@@ -341,9 +329,6 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest  implements
      *         specified attributes will be deleted or not. The update condition must
      *         be satisfied in order for this request to be processed and the
      *         attributes to be deleted.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteAttributesRequest withExpected(UpdateCondition expected) {
         this.expected = expected;

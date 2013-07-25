@@ -80,9 +80,6 @@ public class UploadListElement  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param multipartUploadId The ID of a multipart upload.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UploadListElement withMultipartUploadId(String multipartUploadId) {
         this.multipartUploadId = multipartUploadId;
@@ -114,9 +111,6 @@ public class UploadListElement  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vaultARN The Amazon Resource Name (ARN) of the vault that contains the archive.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UploadListElement withVaultARN(String vaultARN) {
         this.vaultARN = vaultARN;
@@ -154,9 +148,6 @@ public class UploadListElement  implements Serializable  {
      *
      * @param archiveDescription The description of the archive that was specified in the Initiate
      *         Multipart Upload request.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UploadListElement withArchiveDescription(String archiveDescription) {
         this.archiveDescription = archiveDescription;
@@ -200,9 +191,6 @@ public class UploadListElement  implements Serializable  {
      * @param partSizeInBytes The part size, in bytes, specified in the Initiate Multipart Upload
      *         request. This is the size of all the parts in the upload except the
      *         last part, which may be smaller than this size.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UploadListElement withPartSizeInBytes(Long partSizeInBytes) {
         this.partSizeInBytes = partSizeInBytes;
@@ -234,9 +222,6 @@ public class UploadListElement  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param creationDate The UTC time at which the multipart upload was initiated.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UploadListElement withCreationDate(String creationDate) {
         this.creationDate = creationDate;

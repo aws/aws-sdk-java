@@ -94,9 +94,6 @@ public class GetUserRequest extends AmazonWebServiceRequest  implements Serializ
      * @param userName Name of the user to get information about. <p>This parameter is
      *         optional. If it is not included, it defaults to the user making the
      *         request.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetUserRequest withUserName(String userName) {
         this.userName = userName;

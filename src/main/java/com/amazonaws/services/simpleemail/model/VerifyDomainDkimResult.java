@@ -83,9 +83,6 @@ public class VerifyDomainDkimResult  implements Serializable  {
      *         name's DNS for DKIM verification to complete, and which must remain
      *         published in order for DKIM signing to succeed. The tokens are CNAME
      *         DNS records pointing to DKIM public keys hosted by Amazon SES.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VerifyDomainDkimResult withDkimTokens(String... dkimTokens) {
         if (getDkimTokens() == null) setDkimTokens(new java.util.ArrayList<String>(dkimTokens.length));
@@ -107,9 +104,6 @@ public class VerifyDomainDkimResult  implements Serializable  {
      *         name's DNS for DKIM verification to complete, and which must remain
      *         published in order for DKIM signing to succeed. The tokens are CNAME
      *         DNS records pointing to DKIM public keys hosted by Amazon SES.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VerifyDomainDkimResult withDkimTokens(java.util.Collection<String> dkimTokens) {
         if (dkimTokens == null) {

@@ -73,9 +73,6 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest  implemen
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param queueUrl The new value for the QueueUrl property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetQueueAttributesRequest withQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
@@ -118,9 +115,6 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest  implemen
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributeNames The new value for the AttributeNames property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetQueueAttributesRequest withAttributeNames(String... attributeNames) {
         if (getAttributeNames() == null) setAttributeNames(new java.util.ArrayList<String>(attributeNames.length));
@@ -136,9 +130,6 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest  implemen
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributeNames The new value for the AttributeNames property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetQueueAttributesRequest withAttributeNames(java.util.Collection<String> attributeNames) {
         if (attributeNames == null) {

@@ -57,9 +57,6 @@ public class LaunchConfiguration  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The name of the launch configuration.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public LaunchConfiguration withName(String name) {
         this.name = name;

@@ -67,9 +67,6 @@ public class CompleteMultipartUploadResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param location The relative URI path of the newly added archive resource.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CompleteMultipartUploadResult withLocation(String location) {
         this.location = location;
@@ -101,9 +98,6 @@ public class CompleteMultipartUploadResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param checksum The checksum of the archive computed by Amazon Glacier.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CompleteMultipartUploadResult withChecksum(String checksum) {
         this.checksum = checksum;
@@ -141,9 +135,6 @@ public class CompleteMultipartUploadResult  implements Serializable  {
      *
      * @param archiveId The ID of the archive. This value is also included as part of the
      *         location.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CompleteMultipartUploadResult withArchiveId(String archiveId) {
         this.archiveId = archiveId;

@@ -85,9 +85,6 @@ public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest  impl
      *         Resource Name (ARN). For information about creating an ARN, see <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      *         Constructing an RDS Amazon Resource Name (ARN)</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RemoveTagsFromResourceRequest withResourceName(String resourceName) {
         this.resourceName = resourceName;
@@ -130,9 +127,6 @@ public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tagKeys The tag key (name) of the tag to be removed.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RemoveTagsFromResourceRequest withTagKeys(String... tagKeys) {
         if (getTagKeys() == null) setTagKeys(new java.util.ArrayList<String>(tagKeys.length));
@@ -148,9 +142,6 @@ public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tagKeys The tag key (name) of the tag to be removed.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RemoveTagsFromResourceRequest withTagKeys(java.util.Collection<String> tagKeys) {
         if (tagKeys == null) {

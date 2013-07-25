@@ -68,9 +68,6 @@ public class ListJobsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param jobs A list container for Jobs returned by the ListJobs operation.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListJobsResult withJobs(Job... jobs) {
         if (getJobs() == null) setJobs(new java.util.ArrayList<Job>(jobs.length));
@@ -86,9 +83,6 @@ public class ListJobsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param jobs A list container for Jobs returned by the ListJobs operation.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListJobsResult withJobs(java.util.Collection<Job> jobs) {
         if (jobs == null) {
@@ -132,9 +126,6 @@ public class ListJobsResult  implements Serializable  {
      *
      * @param isTruncated Indicates whether the list of jobs was truncated. If true, then call
      *         ListJobs again using the last JobId element as the marker.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListJobsResult withIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;

@@ -80,9 +80,6 @@ public class Event  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceIdentifier Provides the identifier for the source of the event.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Event withSourceIdentifier(String sourceIdentifier) {
         this.sourceIdentifier = sourceIdentifier;
@@ -128,9 +125,6 @@ public class Event  implements Serializable  {
      *
      * @param sourceType Specifies the source type for this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see SourceType
      */
     public Event withSourceType(String sourceType) {
@@ -163,9 +157,6 @@ public class Event  implements Serializable  {
      *
      * @param sourceType Specifies the source type for this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see SourceType
      */
     public Event withSourceType(SourceType sourceType) {
@@ -197,9 +188,6 @@ public class Event  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param message Provides the text of this event.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Event withMessage(String message) {
         this.message = message;
@@ -242,9 +230,6 @@ public class Event  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eventCategories Specifies the category for the event.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Event withEventCategories(String... eventCategories) {
         if (getEventCategories() == null) setEventCategories(new java.util.ArrayList<String>(eventCategories.length));
@@ -260,9 +245,6 @@ public class Event  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eventCategories Specifies the category for the event.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Event withEventCategories(java.util.Collection<String> eventCategories) {
         if (eventCategories == null) {
@@ -300,9 +282,6 @@ public class Event  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param date Specifies the date and time of the event.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Event withDate(java.util.Date date) {
         this.date = date;

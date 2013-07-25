@@ -73,9 +73,6 @@ public class ValidationWarning  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param id The identifier of the object that contains the validation warning.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ValidationWarning withId(String id) {
         this.id = id;
@@ -118,9 +115,6 @@ public class ValidationWarning  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param warnings A description of the validation warning.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ValidationWarning withWarnings(String... warnings) {
         if (getWarnings() == null) setWarnings(new java.util.ArrayList<String>(warnings.length));
@@ -136,9 +130,6 @@ public class ValidationWarning  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param warnings A description of the validation warning.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ValidationWarning withWarnings(java.util.Collection<String> warnings) {
         if (warnings == null) {

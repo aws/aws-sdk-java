@@ -57,9 +57,6 @@ public class Category  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param code Category code for the support case.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Category withCode(String code) {
         this.code = code;
@@ -91,9 +88,6 @@ public class Category  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name Category name for the support case.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Category withName(String name) {
         this.name = name;

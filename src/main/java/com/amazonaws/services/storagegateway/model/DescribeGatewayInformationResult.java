@@ -139,9 +139,6 @@ public class DescribeGatewayInformationResult  implements Serializable  {
      * @param gatewayARN The Amazon Resource Name (ARN) of the gateway. Use the
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeGatewayInformationResult withGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
@@ -182,9 +179,6 @@ public class DescribeGatewayInformationResult  implements Serializable  {
      * <b>Length: </b>12 - 30<br/>
      *
      * @param gatewayId The gateway ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeGatewayInformationResult withGatewayId(String gatewayId) {
         this.gatewayId = gatewayId;
@@ -236,9 +230,6 @@ public class DescribeGatewayInformationResult  implements Serializable  {
      * @param gatewayTimezone One of the <a>GatewayTimezone</a> values that indicates the time zone
      *         configured for the gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see GatewayTimezone
      */
     public DescribeGatewayInformationResult withGatewayTimezone(String gatewayTimezone) {
@@ -274,9 +265,6 @@ public class DescribeGatewayInformationResult  implements Serializable  {
      *
      * @param gatewayTimezone One of the <a>GatewayTimezone</a> values that indicates the time zone
      *         configured for the gateway.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see GatewayTimezone
      */
@@ -329,9 +317,6 @@ public class DescribeGatewayInformationResult  implements Serializable  {
      * @param gatewayState One of the <a>GatewayState</a> values that indicates the operating
      *         state of the gateway.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see GatewayState
      */
     public DescribeGatewayInformationResult withGatewayState(String gatewayState) {
@@ -367,9 +352,6 @@ public class DescribeGatewayInformationResult  implements Serializable  {
      *
      * @param gatewayState One of the <a>GatewayState</a> values that indicates the operating
      *         state of the gateway.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see GatewayState
      */
@@ -419,9 +401,6 @@ public class DescribeGatewayInformationResult  implements Serializable  {
      *
      * @param gatewayNetworkInterfaces A <a>NetworkInterface</a> array that contains descriptions of the
      *         gateway network interfaces.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeGatewayInformationResult withGatewayNetworkInterfaces(NetworkInterface... gatewayNetworkInterfaces) {
         if (getGatewayNetworkInterfaces() == null) setGatewayNetworkInterfaces(new java.util.ArrayList<NetworkInterface>(gatewayNetworkInterfaces.length));
@@ -439,9 +418,6 @@ public class DescribeGatewayInformationResult  implements Serializable  {
      *
      * @param gatewayNetworkInterfaces A <a>NetworkInterface</a> array that contains descriptions of the
      *         gateway network interfaces.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeGatewayInformationResult withGatewayNetworkInterfaces(java.util.Collection<NetworkInterface> gatewayNetworkInterfaces) {
         if (gatewayNetworkInterfaces == null) {
@@ -493,9 +469,6 @@ public class DescribeGatewayInformationResult  implements Serializable  {
      *
      * @param gatewayType TBD
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see GatewayType
      */
     public DescribeGatewayInformationResult withGatewayType(String gatewayType) {
@@ -527,9 +500,6 @@ public class DescribeGatewayInformationResult  implements Serializable  {
      * <b>Allowed Values: </b>STORED, CACHED
      *
      * @param gatewayType TBD
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see GatewayType
      */
@@ -595,9 +565,6 @@ public class DescribeGatewayInformationResult  implements Serializable  {
      *         an update this field is not returned in the response. <!-- Q: [eronh]
      *         This next sentence doesn't seem to agree with the preceding one, nor
      *         does it agree with the response example. -->
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeGatewayInformationResult withNextUpdateAvailabilityDate(String nextUpdateAvailabilityDate) {
         this.nextUpdateAvailabilityDate = nextUpdateAvailabilityDate;

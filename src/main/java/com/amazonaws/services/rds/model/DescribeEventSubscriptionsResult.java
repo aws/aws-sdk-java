@@ -77,9 +77,6 @@ public class DescribeEventSubscriptionsResult  implements Serializable  {
      *         DescribeOrderableDBInstanceOptions request. If this parameter is
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <code>MaxRecords</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeEventSubscriptionsResult withMarker(String marker) {
         this.marker = marker;
@@ -122,9 +119,6 @@ public class DescribeEventSubscriptionsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eventSubscriptionsList A list of EventSubscriptions data types.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeEventSubscriptionsResult withEventSubscriptionsList(EventSubscription... eventSubscriptionsList) {
         if (getEventSubscriptionsList() == null) setEventSubscriptionsList(new java.util.ArrayList<EventSubscription>(eventSubscriptionsList.length));
@@ -140,9 +134,6 @@ public class DescribeEventSubscriptionsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eventSubscriptionsList A list of EventSubscriptions data types.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeEventSubscriptionsResult withEventSubscriptionsList(java.util.Collection<EventSubscription> eventSubscriptionsList) {
         if (eventSubscriptionsList == null) {

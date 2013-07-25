@@ -108,9 +108,6 @@ public class DeleteHostedZoneRequest extends AmazonWebServiceRequest  implements
      *
      * @param id The ID of the request. Include this ID in a call to <a>GetChange</a>
      *         to track when the change has propagated to all Route 53 DNS servers.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteHostedZoneRequest withId(String id) {
         this.id = id;

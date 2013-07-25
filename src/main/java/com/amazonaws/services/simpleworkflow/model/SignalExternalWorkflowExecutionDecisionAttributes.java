@@ -123,9 +123,6 @@ public class SignalExternalWorkflowExecutionDecisionAttributes  implements Seria
      *
      * @param workflowId The <code>workflowId</code> of the workflow execution to be signaled.
      *         This field is required.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SignalExternalWorkflowExecutionDecisionAttributes withWorkflowId(String workflowId) {
         this.workflowId = workflowId;
@@ -166,9 +163,6 @@ public class SignalExternalWorkflowExecutionDecisionAttributes  implements Seria
      * <b>Length: </b>0 - 64<br/>
      *
      * @param runId The <code>runId</code> of the workflow execution to be signaled.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SignalExternalWorkflowExecutionDecisionAttributes withRunId(String runId) {
         this.runId = runId;
@@ -215,9 +209,6 @@ public class SignalExternalWorkflowExecutionDecisionAttributes  implements Seria
      *
      * @param signalName The name of the signal.The target workflow execution will use the
      *         signal name and input to process the signal. This field is required.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SignalExternalWorkflowExecutionDecisionAttributes withSignalName(String signalName) {
         this.signalName = signalName;
@@ -264,9 +255,6 @@ public class SignalExternalWorkflowExecutionDecisionAttributes  implements Seria
      *
      * @param input Optional input to be provided with the signal.The target workflow
      *         execution will use the signal name and input to process the signal.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SignalExternalWorkflowExecutionDecisionAttributes withInput(String input) {
         this.input = input;
@@ -313,9 +301,6 @@ public class SignalExternalWorkflowExecutionDecisionAttributes  implements Seria
      *
      * @param control Optional data attached to the event that can be used by the decider in
      *         subsequent decision tasks.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SignalExternalWorkflowExecutionDecisionAttributes withControl(String control) {
         this.control = control;

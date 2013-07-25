@@ -87,9 +87,6 @@ public class Message  implements Serializable  {
      *
      * @param subject The subject of the message: A short summary of the content, which will
      *         appear in the recipient's inbox.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Message withSubject(Content subject) {
         this.subject = subject;
@@ -121,9 +118,6 @@ public class Message  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param body The message body.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Message withBody(Body body) {
         this.body = body;

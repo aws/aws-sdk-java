@@ -85,9 +85,6 @@ public class ListLocalDisksRequest extends AmazonWebServiceRequest  implements S
      * @param gatewayARN The Amazon Resource Name (ARN) of the gateway. Use the
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListLocalDisksRequest withGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;

@@ -130,9 +130,6 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      * @param stackName The name or stack ID of the stack to update. <note> Must contain only
      *         alphanumeric characters (case sensitive) and start with an alpha
      *         character. Maximum length of the name is 255 characters. </note>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateStackRequest withStackName(String stackName) {
         this.stackName = stackName;
@@ -203,9 +200,6 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         CloudFormation User Guide</a>.) <p>Conditional: You must pass
      *         <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateStackRequest withTemplateBody(String templateBody) {
         this.templateBody = templateBody;
@@ -282,9 +276,6 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         CloudFormation User Guide</a>. <p>Conditional: You must pass
      *         <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateStackRequest withTemplateURL(String templateURL) {
         this.templateURL = templateURL;
@@ -333,9 +324,6 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param parameters A list of <code>Parameter</code> structures that specify input
      *         parameters for the stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateStackRequest withParameters(Parameter... parameters) {
         if (getParameters() == null) setParameters(new java.util.ArrayList<Parameter>(parameters.length));
@@ -353,9 +341,6 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param parameters A list of <code>Parameter</code> structures that specify input
      *         parameters for the stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateStackRequest withParameters(java.util.Collection<Parameter> parameters) {
         if (parameters == null) {
@@ -476,9 +461,6 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      *         and <a
      *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateStackRequest withCapabilities(String... capabilities) {
         if (getCapabilities() == null) setCapabilities(new java.util.ArrayList<String>(capabilities.length));
@@ -518,9 +500,6 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      *         and <a
      *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateStackRequest withCapabilities(java.util.Collection<String> capabilities) {
         if (capabilities == null) {

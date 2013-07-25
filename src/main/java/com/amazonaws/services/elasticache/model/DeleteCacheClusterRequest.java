@@ -85,9 +85,6 @@ public class DeleteCacheClusterRequest extends AmazonWebServiceRequest  implemen
      *
      * @param cacheClusterId The Cache Cluster identifier for the Cache Cluster to be deleted. This
      *         parameter isn't case sensitive.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteCacheClusterRequest withCacheClusterId(String cacheClusterId) {
         this.cacheClusterId = cacheClusterId;

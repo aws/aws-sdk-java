@@ -58,9 +58,6 @@ public class UpdateSynonymOptionsResult  implements Serializable  {
      *
      * @param synonyms The synonym options configured for this search domain and the current
      *         status of those options.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateSynonymOptionsResult withSynonyms(SynonymOptionsStatus synonyms) {
         this.synonyms = synonyms;

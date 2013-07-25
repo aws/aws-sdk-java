@@ -116,9 +116,6 @@ public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest  imple
      *         <code>SourceEnvironmentName</code>. You may also specify both. If you
      *         specify the <code>SourceEnvironmentId</code>, you must specify the
      *         <code>DestinationEnvironmentId</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SwapEnvironmentCNAMEsRequest withSourceEnvironmentId(String sourceEnvironmentId) {
         this.sourceEnvironmentId = sourceEnvironmentId;
@@ -183,9 +180,6 @@ public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest  imple
      *         <code>SourceEnvironmentName</code>. You may also specify both. If you
      *         specify the <code>SourceEnvironmentName</code>, you must specify the
      *         <code>DestinationEnvironmentName</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SwapEnvironmentCNAMEsRequest withSourceEnvironmentName(String sourceEnvironmentName) {
         this.sourceEnvironmentName = sourceEnvironmentName;
@@ -241,9 +235,6 @@ public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest  imple
      *         <code>DestinationEnvironmentName</code>. You may also specify both.
      *         You must specify the <code>SourceEnvironmentId</code> with the
      *         <code>DestinationEnvironmentId</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SwapEnvironmentCNAMEsRequest withDestinationEnvironmentId(String destinationEnvironmentId) {
         this.destinationEnvironmentId = destinationEnvironmentId;
@@ -308,9 +299,6 @@ public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest  imple
      *         <code>DestinationEnvironmentName</code>. You may also specify both.
      *         You must specify the <code>SourceEnvironmentName</code> with the
      *         <code>DestinationEnvironmentName</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SwapEnvironmentCNAMEsRequest withDestinationEnvironmentName(String destinationEnvironmentName) {
         this.destinationEnvironmentName = destinationEnvironmentName;

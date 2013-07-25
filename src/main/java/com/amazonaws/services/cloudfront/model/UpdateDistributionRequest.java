@@ -94,9 +94,6 @@ public class UpdateDistributionRequest extends AmazonWebServiceRequest  implemen
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param distributionConfig The distribution's configuration information.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateDistributionRequest withDistributionConfig(DistributionConfig distributionConfig) {
         this.distributionConfig = distributionConfig;
@@ -128,9 +125,6 @@ public class UpdateDistributionRequest extends AmazonWebServiceRequest  implemen
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param id The distribution's id.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateDistributionRequest withId(String id) {
         this.id = id;
@@ -168,9 +162,6 @@ public class UpdateDistributionRequest extends AmazonWebServiceRequest  implemen
      *
      * @param ifMatch The value of the ETag header you received when retrieving the
      *         distribution's configuration. For example: E2QWRUHAPOMQZL.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateDistributionRequest withIfMatch(String ifMatch) {
         this.ifMatch = ifMatch;

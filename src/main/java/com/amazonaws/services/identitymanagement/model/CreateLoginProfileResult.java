@@ -51,9 +51,6 @@ public class CreateLoginProfileResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param loginProfile The user name and password create date.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLoginProfileResult withLoginProfile(LoginProfile loginProfile) {
         this.loginProfile = loginProfile;

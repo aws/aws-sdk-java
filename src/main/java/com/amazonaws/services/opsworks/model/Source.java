@@ -19,7 +19,7 @@ import java.io.Serializable;
  * <p>
  * Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a
  * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html"> Creating Apps </a> or <a
- * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html"> Custom Recipes and Cookbooks </a> .
+ * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html"> Custom Recipes and Cookbooks </a> .
  * </p>
  */
 public class Source  implements Serializable  {
@@ -59,9 +59,9 @@ public class Source  implements Serializable  {
     private String sshKey;
 
     /**
-     * The application's version. OpsWorks enables you to easily deploy new
-     * versions of an application. One of the simplest approaches is to have
-     * branches or revisions in your repository that represent different
+     * The application's version. AWS OpsWorks enables you to easily deploy
+     * new versions of an application. One of the simplest approaches is to
+     * have branches or revisions in your repository that represent different
      * versions that can potentially be deployed.
      */
     private String revision;
@@ -304,14 +304,14 @@ public class Source  implements Serializable  {
     
     
     /**
-     * The application's version. OpsWorks enables you to easily deploy new
-     * versions of an application. One of the simplest approaches is to have
-     * branches or revisions in your repository that represent different
+     * The application's version. AWS OpsWorks enables you to easily deploy
+     * new versions of an application. One of the simplest approaches is to
+     * have branches or revisions in your repository that represent different
      * versions that can potentially be deployed.
      *
-     * @return The application's version. OpsWorks enables you to easily deploy new
-     *         versions of an application. One of the simplest approaches is to have
-     *         branches or revisions in your repository that represent different
+     * @return The application's version. AWS OpsWorks enables you to easily deploy
+     *         new versions of an application. One of the simplest approaches is to
+     *         have branches or revisions in your repository that represent different
      *         versions that can potentially be deployed.
      */
     public String getRevision() {
@@ -319,14 +319,14 @@ public class Source  implements Serializable  {
     }
     
     /**
-     * The application's version. OpsWorks enables you to easily deploy new
-     * versions of an application. One of the simplest approaches is to have
-     * branches or revisions in your repository that represent different
+     * The application's version. AWS OpsWorks enables you to easily deploy
+     * new versions of an application. One of the simplest approaches is to
+     * have branches or revisions in your repository that represent different
      * versions that can potentially be deployed.
      *
-     * @param revision The application's version. OpsWorks enables you to easily deploy new
-     *         versions of an application. One of the simplest approaches is to have
-     *         branches or revisions in your repository that represent different
+     * @param revision The application's version. AWS OpsWorks enables you to easily deploy
+     *         new versions of an application. One of the simplest approaches is to
+     *         have branches or revisions in your repository that represent different
      *         versions that can potentially be deployed.
      */
     public void setRevision(String revision) {
@@ -334,16 +334,16 @@ public class Source  implements Serializable  {
     }
     
     /**
-     * The application's version. OpsWorks enables you to easily deploy new
-     * versions of an application. One of the simplest approaches is to have
-     * branches or revisions in your repository that represent different
+     * The application's version. AWS OpsWorks enables you to easily deploy
+     * new versions of an application. One of the simplest approaches is to
+     * have branches or revisions in your repository that represent different
      * versions that can potentially be deployed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param revision The application's version. OpsWorks enables you to easily deploy new
-     *         versions of an application. One of the simplest approaches is to have
-     *         branches or revisions in your repository that represent different
+     * @param revision The application's version. AWS OpsWorks enables you to easily deploy
+     *         new versions of an application. One of the simplest approaches is to
+     *         have branches or revisions in your repository that represent different
      *         versions that can potentially be deployed.
      */
     public Source withRevision(String revision) {

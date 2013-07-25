@@ -103,9 +103,6 @@ public class GetJobOutputResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param body The job data, either archive data or inventory data.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetJobOutputResult withBody(java.io.InputStream body) {
         this.body = body;
@@ -209,9 +206,6 @@ public class GetJobOutputResult  implements Serializable  {
      *         3.1 MB archive and you specify a range that starts at 2 MB and ends at
      *         3.1 MB (the end of the archive), then the x-amz-sha256-tree-hash is
      *         returned as a response header.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetJobOutputResult withChecksum(String checksum) {
         this.checksum = checksum;
@@ -249,9 +243,6 @@ public class GetJobOutputResult  implements Serializable  {
      *
      * @param status The HTTP response code for a job output request. The value depends on
      *         whether a range was specified in the request.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetJobOutputResult withStatus(Integer status) {
         this.status = status;
@@ -301,9 +292,6 @@ public class GetJobOutputResult  implements Serializable  {
      *         is downloaded, the response provides the range of bytes Amazon Glacier
      *         returned. For example, bytes 0-1048575/8388608 returns the first 1 MB
      *         from 8 MB.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetJobOutputResult withContentRange(String contentRange) {
         this.contentRange = contentRange;
@@ -341,9 +329,6 @@ public class GetJobOutputResult  implements Serializable  {
      *
      * @param acceptRanges Indicates the range units accepted. For more information, go to <a
      *         href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetJobOutputResult withAcceptRanges(String acceptRanges) {
         this.acceptRanges = acceptRanges;
@@ -405,9 +390,6 @@ public class GetJobOutputResult  implements Serializable  {
      *         format when you initiated the job, the Content-Type is text/csv.
      *         Otherwise, by default, vault inventory is returned as JSON, and the
      *         Content-Type is application/json.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetJobOutputResult withContentType(String contentType) {
         this.contentType = contentType;
@@ -439,9 +421,6 @@ public class GetJobOutputResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param archiveDescription The description of an archive.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetJobOutputResult withArchiveDescription(String archiveDescription) {
         this.archiveDescription = archiveDescription;

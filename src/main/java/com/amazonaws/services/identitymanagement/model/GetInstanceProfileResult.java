@@ -51,9 +51,6 @@ public class GetInstanceProfileResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceProfile Information about the instance profile.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetInstanceProfileResult withInstanceProfile(InstanceProfile instanceProfile) {
         this.instanceProfile = instanceProfile;

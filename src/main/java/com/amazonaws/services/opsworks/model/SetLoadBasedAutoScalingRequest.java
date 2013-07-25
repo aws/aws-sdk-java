@@ -45,7 +45,7 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest  imp
     /**
      * An <code>AutoScalingThresholds</code> object with the upscaling
      * threshold configuration. If the load exceeds these thresholds for a
-     * specified amount of time, OpsWorks starts a specified number of
+     * specified amount of time, AWS OpsWorks starts a specified number of
      * instances.
      */
     private AutoScalingThresholds upScaling;
@@ -53,7 +53,7 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest  imp
     /**
      * An <code>AutoScalingThresholds</code> object with the downscaling
      * threshold configuration. If the load falls below these thresholds for
-     * a specified amount of time, OpsWorks stops a specified number of
+     * a specified amount of time, AWS OpsWorks stops a specified number of
      * instances.
      */
     private AutoScalingThresholds downScaling;
@@ -132,12 +132,12 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest  imp
     /**
      * An <code>AutoScalingThresholds</code> object with the upscaling
      * threshold configuration. If the load exceeds these thresholds for a
-     * specified amount of time, OpsWorks starts a specified number of
+     * specified amount of time, AWS OpsWorks starts a specified number of
      * instances.
      *
      * @return An <code>AutoScalingThresholds</code> object with the upscaling
      *         threshold configuration. If the load exceeds these thresholds for a
-     *         specified amount of time, OpsWorks starts a specified number of
+     *         specified amount of time, AWS OpsWorks starts a specified number of
      *         instances.
      */
     public AutoScalingThresholds getUpScaling() {
@@ -147,12 +147,12 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest  imp
     /**
      * An <code>AutoScalingThresholds</code> object with the upscaling
      * threshold configuration. If the load exceeds these thresholds for a
-     * specified amount of time, OpsWorks starts a specified number of
+     * specified amount of time, AWS OpsWorks starts a specified number of
      * instances.
      *
      * @param upScaling An <code>AutoScalingThresholds</code> object with the upscaling
      *         threshold configuration. If the load exceeds these thresholds for a
-     *         specified amount of time, OpsWorks starts a specified number of
+     *         specified amount of time, AWS OpsWorks starts a specified number of
      *         instances.
      */
     public void setUpScaling(AutoScalingThresholds upScaling) {
@@ -162,14 +162,14 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest  imp
     /**
      * An <code>AutoScalingThresholds</code> object with the upscaling
      * threshold configuration. If the load exceeds these thresholds for a
-     * specified amount of time, OpsWorks starts a specified number of
+     * specified amount of time, AWS OpsWorks starts a specified number of
      * instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param upScaling An <code>AutoScalingThresholds</code> object with the upscaling
      *         threshold configuration. If the load exceeds these thresholds for a
-     *         specified amount of time, OpsWorks starts a specified number of
+     *         specified amount of time, AWS OpsWorks starts a specified number of
      *         instances.
      */
     public SetLoadBasedAutoScalingRequest withUpScaling(AutoScalingThresholds upScaling) {
@@ -181,12 +181,12 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest  imp
     /**
      * An <code>AutoScalingThresholds</code> object with the downscaling
      * threshold configuration. If the load falls below these thresholds for
-     * a specified amount of time, OpsWorks stops a specified number of
+     * a specified amount of time, AWS OpsWorks stops a specified number of
      * instances.
      *
      * @return An <code>AutoScalingThresholds</code> object with the downscaling
      *         threshold configuration. If the load falls below these thresholds for
-     *         a specified amount of time, OpsWorks stops a specified number of
+     *         a specified amount of time, AWS OpsWorks stops a specified number of
      *         instances.
      */
     public AutoScalingThresholds getDownScaling() {
@@ -196,12 +196,12 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest  imp
     /**
      * An <code>AutoScalingThresholds</code> object with the downscaling
      * threshold configuration. If the load falls below these thresholds for
-     * a specified amount of time, OpsWorks stops a specified number of
+     * a specified amount of time, AWS OpsWorks stops a specified number of
      * instances.
      *
      * @param downScaling An <code>AutoScalingThresholds</code> object with the downscaling
      *         threshold configuration. If the load falls below these thresholds for
-     *         a specified amount of time, OpsWorks stops a specified number of
+     *         a specified amount of time, AWS OpsWorks stops a specified number of
      *         instances.
      */
     public void setDownScaling(AutoScalingThresholds downScaling) {
@@ -211,14 +211,14 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest  imp
     /**
      * An <code>AutoScalingThresholds</code> object with the downscaling
      * threshold configuration. If the load falls below these thresholds for
-     * a specified amount of time, OpsWorks stops a specified number of
+     * a specified amount of time, AWS OpsWorks stops a specified number of
      * instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param downScaling An <code>AutoScalingThresholds</code> object with the downscaling
      *         threshold configuration. If the load falls below these thresholds for
-     *         a specified amount of time, OpsWorks stops a specified number of
+     *         a specified amount of time, AWS OpsWorks stops a specified number of
      *         instances.
      */
     public SetLoadBasedAutoScalingRequest withDownScaling(AutoScalingThresholds downScaling) {

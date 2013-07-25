@@ -56,9 +56,6 @@ public class Parameter  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameterKey The key associated with the parameter.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Parameter withParameterKey(String parameterKey) {
         this.parameterKey = parameterKey;
@@ -90,9 +87,6 @@ public class Parameter  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameterValue The value associated with the parameter.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Parameter withParameterValue(String parameterValue) {
         this.parameterValue = parameterValue;

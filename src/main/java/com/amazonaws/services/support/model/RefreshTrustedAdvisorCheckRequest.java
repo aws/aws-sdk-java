@@ -58,9 +58,6 @@ public class RefreshTrustedAdvisorCheckRequest extends AmazonWebServiceRequest  
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param checkId 
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RefreshTrustedAdvisorCheckRequest withCheckId(String checkId) {
         this.checkId = checkId;

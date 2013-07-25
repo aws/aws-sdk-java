@@ -44,6 +44,11 @@ public class DateUtils {
     protected final SimpleDateFormat rfc822DateFormat =
         new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z", Locale.US);
 
+    /**
+     * This is another ISO 8601 format that's used in clock skew error response
+     */
+    protected final SimpleDateFormat compressedIso8601DateFormat =
+        new SimpleDateFormat("yyyyMMdd'T'HHmmss'Z'");
 
     /**
      * Constructs a new DateUtils object, ready to parse/format dates.
@@ -52,6 +57,7 @@ public class DateUtils {
         iso8601DateFormat.setTimeZone(new SimpleTimeZone(0, "GMT"));
         rfc822DateFormat.setTimeZone(new SimpleTimeZone(0, "GMT"));
         alternateIso8601DateFormat.setTimeZone(new SimpleTimeZone(0, "GMT"));
+        compressedIso8601DateFormat.setTimeZone(new SimpleTimeZone(0, "GMT"));
     }
 
     /**
@@ -126,4 +132,21 @@ public class DateUtils {
         }
     }
 
+    /**
+     * Parses the specified date string as a compressedIso8601DateFormat ("yyyyMMdd'T'HHmmss'Z'") and returns the Date
+     * object.
+     *
+     * @param dateString
+     *            The date string to parse.
+     *
+     * @return The parsed Date object.
+     *
+     * @throws ParseException
+     *             If the date string could not be parsed.
+     */
+    public Date parseCompressedIso8601Date(String dateString) throws ParseException {
+        synchronized (compressedIso8601DateFormat) {
+            return compressedIso8601DateFormat.parse(dateString);
+        }
+    }
 }

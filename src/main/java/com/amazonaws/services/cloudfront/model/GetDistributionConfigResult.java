@@ -56,9 +56,6 @@ public class GetDistributionConfigResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param distributionConfig The distribution's configuration information.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetDistributionConfigResult withDistributionConfig(DistributionConfig distributionConfig) {
         this.distributionConfig = distributionConfig;
@@ -90,9 +87,6 @@ public class GetDistributionConfigResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eTag The current version of the configuration. For example: E2QWRUHAPOMQZL.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetDistributionConfigResult withETag(String eTag) {
         this.eTag = eTag;

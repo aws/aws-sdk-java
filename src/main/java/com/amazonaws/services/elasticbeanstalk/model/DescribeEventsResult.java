@@ -69,9 +69,6 @@ public class DescribeEventsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param events A list of <a>EventDescription</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeEventsResult withEvents(EventDescription... events) {
         if (getEvents() == null) setEvents(new java.util.ArrayList<EventDescription>(events.length));
@@ -87,9 +84,6 @@ public class DescribeEventsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param events A list of <a>EventDescription</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeEventsResult withEvents(java.util.Collection<EventDescription> events) {
         if (events == null) {
@@ -139,9 +133,6 @@ public class DescribeEventsResult  implements Serializable  {
      * @param nextToken If returned, this indicates that there are more results to obtain. Use
      *         this token in the next <a>DescribeEvents</a> call to get the next
      *         batch of events.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeEventsResult withNextToken(String nextToken) {
         this.nextToken = nextToken;

@@ -94,9 +94,6 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheParameterGroupName The name of the Cache Parameter Group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ResetCacheParameterGroupRequest withCacheParameterGroupName(String cacheParameterGroupName) {
         this.cacheParameterGroupName = cacheParameterGroupName;
@@ -134,9 +131,6 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest  im
      *
      * @param resetAllParameters Specifies whether (<i>true</i>) or not (<i>false</i>) to reset all
      *         parameters in the Cache Parameter Group to default values.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ResetCacheParameterGroupRequest withResetAllParameters(Boolean resetAllParameters) {
         this.resetAllParameters = resetAllParameters;
@@ -202,9 +196,6 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest  im
      * @param parameterNameValues An array of parameter names which should be reset. If not resetting
      *         the entire CacheParameterGroup, at least one parameter name must be
      *         supplied.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ResetCacheParameterGroupRequest withParameterNameValues(ParameterNameValue... parameterNameValues) {
         if (getParameterNameValues() == null) setParameterNameValues(new java.util.ArrayList<ParameterNameValue>(parameterNameValues.length));
@@ -224,9 +215,6 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest  im
      * @param parameterNameValues An array of parameter names which should be reset. If not resetting
      *         the entire CacheParameterGroup, at least one parameter name must be
      *         supplied.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ResetCacheParameterGroupRequest withParameterNameValues(java.util.Collection<ParameterNameValue> parameterNameValues) {
         if (parameterNameValues == null) {

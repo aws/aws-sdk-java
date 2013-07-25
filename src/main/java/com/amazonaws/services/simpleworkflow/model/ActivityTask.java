@@ -111,9 +111,6 @@ public class ActivityTask  implements Serializable  {
      * @param taskToken The opaque string used as a handle on the task. This token is used by
      *         workers to communicate progress and response information back to the
      *         system about the task.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ActivityTask withTaskToken(String taskToken) {
         this.taskToken = taskToken;
@@ -154,9 +151,6 @@ public class ActivityTask  implements Serializable  {
      * <b>Length: </b>1 - 256<br/>
      *
      * @param activityId The unique ID of the task.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ActivityTask withActivityId(String activityId) {
         this.activityId = activityId;
@@ -194,9 +188,6 @@ public class ActivityTask  implements Serializable  {
      *
      * @param startedEventId The id of the <code>ActivityTaskStarted</code> event recorded in the
      *         history.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ActivityTask withStartedEventId(Long startedEventId) {
         this.startedEventId = startedEventId;
@@ -228,9 +219,6 @@ public class ActivityTask  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param workflowExecution The workflow execution that started this activity task.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ActivityTask withWorkflowExecution(WorkflowExecution workflowExecution) {
         this.workflowExecution = workflowExecution;
@@ -262,9 +250,6 @@ public class ActivityTask  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param activityType The type of this activity task.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ActivityTask withActivityType(ActivityType activityType) {
         this.activityType = activityType;
@@ -317,9 +302,6 @@ public class ActivityTask  implements Serializable  {
      * @param input The inputs provided when the activity task was scheduled. The form of
      *         the input is user defined and should be meaningful to the activity
      *         implementation.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ActivityTask withInput(String input) {
         this.input = input;

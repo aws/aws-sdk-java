@@ -131,9 +131,6 @@ public class UpdateApplicationVersionRequest extends AmazonWebServiceRequest  im
      * @param applicationName The name of the application associated with this version. <p> If no
      *         application is found with this name, <code>UpdateApplication</code>
      *         returns an <code>InvalidParameterValue</code> error.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateApplicationVersionRequest withApplicationName(String applicationName) {
         this.applicationName = applicationName;
@@ -186,9 +183,6 @@ public class UpdateApplicationVersionRequest extends AmazonWebServiceRequest  im
      * @param versionLabel The name of the version to update. <p> If no application version is
      *         found with this label, <code>UpdateApplication</code> returns an
      *         <code>InvalidParameterValue</code> error.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateApplicationVersionRequest withVersionLabel(String versionLabel) {
         this.versionLabel = versionLabel;
@@ -229,9 +223,6 @@ public class UpdateApplicationVersionRequest extends AmazonWebServiceRequest  im
      * <b>Length: </b>0 - 200<br/>
      *
      * @param description A new description for this release.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateApplicationVersionRequest withDescription(String description) {
         this.description = description;

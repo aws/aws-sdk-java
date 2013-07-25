@@ -78,9 +78,6 @@ public class TrustedAdvisorResourcesSummary  implements Serializable  {
      *
      * @param resourcesProcessed Reports the number of AWS resources that were analyzed in your Trusted
      *         Advisor check.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedAdvisorResourcesSummary withResourcesProcessed(Long resourcesProcessed) {
         this.resourcesProcessed = resourcesProcessed;
@@ -118,9 +115,6 @@ public class TrustedAdvisorResourcesSummary  implements Serializable  {
      *
      * @param resourcesFlagged Reports the number of AWS resources that were flagged in your Trusted
      *         Advisor check.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedAdvisorResourcesSummary withResourcesFlagged(Long resourcesFlagged) {
         this.resourcesFlagged = resourcesFlagged;
@@ -158,9 +152,6 @@ public class TrustedAdvisorResourcesSummary  implements Serializable  {
      *
      * @param resourcesIgnored Indicates the number of resources ignored by Trusted Advisor due to
      *         unavailability of information.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedAdvisorResourcesSummary withResourcesIgnored(Long resourcesIgnored) {
         this.resourcesIgnored = resourcesIgnored;
@@ -198,9 +189,6 @@ public class TrustedAdvisorResourcesSummary  implements Serializable  {
      *
      * @param resourcesSuppressed Indicates whether the specified AWS resource has had its participation
      *         in Trusted Advisor checks suppressed.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedAdvisorResourcesSummary withResourcesSuppressed(Long resourcesSuppressed) {
         this.resourcesSuppressed = resourcesSuppressed;

@@ -113,9 +113,6 @@ public class DescribeUploadBufferResult  implements Serializable  {
      *         gateway. If you don't remember the ARN of a gateway, you can use the
      *         <a>ListGateways</a> operations to return a list of gateways for your
      *         account and region.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeUploadBufferResult withGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
@@ -182,9 +179,6 @@ public class DescribeUploadBufferResult  implements Serializable  {
      *         length of 1 and maximum length of 300). If no local disks are
      *         configured as working storage, then the <code>DiskIds</code> array is
      *         empty.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeUploadBufferResult withDiskIds(String... diskIds) {
         if (getDiskIds() == null) setDiskIds(new java.util.ArrayList<String>(diskIds.length));
@@ -208,9 +202,6 @@ public class DescribeUploadBufferResult  implements Serializable  {
      *         length of 1 and maximum length of 300). If no local disks are
      *         configured as working storage, then the <code>DiskIds</code> array is
      *         empty.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeUploadBufferResult withDiskIds(java.util.Collection<String> diskIds) {
         if (diskIds == null) {
@@ -254,9 +245,6 @@ public class DescribeUploadBufferResult  implements Serializable  {
      *
      * @param uploadBufferUsedInBytes The total upload buffer in bytes in use by the gateway. If no upload
      *         buffer is configured for the gateway, this field returns 0.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeUploadBufferResult withUploadBufferUsedInBytes(Long uploadBufferUsedInBytes) {
         this.uploadBufferUsedInBytes = uploadBufferUsedInBytes;
@@ -294,9 +282,6 @@ public class DescribeUploadBufferResult  implements Serializable  {
      *
      * @param uploadBufferAllocatedInBytes The total upload buffer in bytes allocated for the gateway. If no
      *         upload buffer is configured for the gateway, this field returns 0.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeUploadBufferResult withUploadBufferAllocatedInBytes(Long uploadBufferAllocatedInBytes) {
         this.uploadBufferAllocatedInBytes = uploadBufferAllocatedInBytes;

@@ -71,9 +71,6 @@ public class WorkflowTypeFilter  implements Serializable  {
      * <b>Length: </b>1 - 256<br/>
      *
      * @param name Name of the workflow type. This field is required.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public WorkflowTypeFilter withName(String name) {
         this.name = name;
@@ -114,9 +111,6 @@ public class WorkflowTypeFilter  implements Serializable  {
      * <b>Length: </b>0 - 64<br/>
      *
      * @param version Version of the workflow type.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public WorkflowTypeFilter withVersion(String version) {
         this.version = version;

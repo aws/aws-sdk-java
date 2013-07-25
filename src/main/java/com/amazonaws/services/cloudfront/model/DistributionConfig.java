@@ -227,9 +227,6 @@ public class DistributionConfig  implements Serializable  {
      *         create a distribution but the content of the DistributionConfig is
      *         different from the original request, CloudFront returns a
      *         DistributionAlreadyExists error.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DistributionConfig withCallerReference(String callerReference) {
         this.callerReference = callerReference;
@@ -267,9 +264,6 @@ public class DistributionConfig  implements Serializable  {
      *
      * @param aliases A complex type that contains information about CNAMEs (alternate
      *         domain names), if any, for this distribution.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DistributionConfig withAliases(Aliases aliases) {
         this.aliases = aliases;
@@ -361,9 +355,6 @@ public class DistributionConfig  implements Serializable  {
      *         distribution configuration and include an empty DefaultRootObject
      *         element. To replace the default root object, update the distribution
      *         configuration and specify the new object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DistributionConfig withDefaultRootObject(String defaultRootObject) {
         this.defaultRootObject = defaultRootObject;
@@ -401,9 +392,6 @@ public class DistributionConfig  implements Serializable  {
      *
      * @param origins A complex type that contains information about origins for this
      *         distribution.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DistributionConfig withOrigins(Origins origins) {
         this.origins = origins;
@@ -453,9 +441,6 @@ public class DistributionConfig  implements Serializable  {
      *         specify a CacheBehavior element or if files don't match any of the
      *         values of PathPattern in CacheBehavior elements.You must create
      *         exactly one default cache behavior.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DistributionConfig withDefaultCacheBehavior(DefaultCacheBehavior defaultCacheBehavior) {
         this.defaultCacheBehavior = defaultCacheBehavior;
@@ -487,9 +472,6 @@ public class DistributionConfig  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheBehaviors A complex type that contains zero or more CacheBehavior elements.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DistributionConfig withCacheBehaviors(CacheBehaviors cacheBehaviors) {
         this.cacheBehaviors = cacheBehaviors;
@@ -521,9 +503,6 @@ public class DistributionConfig  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param comment Any comments you want to include about the distribution.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DistributionConfig withComment(String comment) {
         this.comment = comment;
@@ -561,9 +540,6 @@ public class DistributionConfig  implements Serializable  {
      *
      * @param logging A complex type that controls whether access logs are written for the
      *         distribution.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DistributionConfig withLogging(LoggingConfig logging) {
         this.logging = logging;
@@ -615,9 +591,6 @@ public class DistributionConfig  implements Serializable  {
      * @param priceClass A complex type that contains information about price class for this
      *         distribution.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see PriceClass
      */
     public DistributionConfig withPriceClass(String priceClass) {
@@ -653,9 +626,6 @@ public class DistributionConfig  implements Serializable  {
      *
      * @param priceClass A complex type that contains information about price class for this
      *         distribution.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see PriceClass
      */
@@ -694,9 +664,6 @@ public class DistributionConfig  implements Serializable  {
      *
      * @param enabled Whether the distribution is enabled to accept end user requests for
      *         content.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DistributionConfig withEnabled(Boolean enabled) {
         this.enabled = enabled;
@@ -745,9 +712,6 @@ public class DistributionConfig  implements Serializable  {
      *
      * @param viewerCertificate A complex type that contains information about viewer certificates for
      *         this distribution.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DistributionConfig withViewerCertificate(ViewerCertificate viewerCertificate) {
         this.viewerCertificate = viewerCertificate;

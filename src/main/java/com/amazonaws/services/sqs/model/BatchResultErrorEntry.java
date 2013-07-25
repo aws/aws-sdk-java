@@ -52,9 +52,6 @@ public class BatchResultErrorEntry  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param id The new value for the Id property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public BatchResultErrorEntry withId(String id) {
         this.id = id;
@@ -86,9 +83,6 @@ public class BatchResultErrorEntry  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param senderFault The new value for the SenderFault property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public BatchResultErrorEntry withSenderFault(Boolean senderFault) {
         this.senderFault = senderFault;
@@ -129,9 +123,6 @@ public class BatchResultErrorEntry  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param code The new value for the Code property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public BatchResultErrorEntry withCode(String code) {
         this.code = code;
@@ -163,9 +154,6 @@ public class BatchResultErrorEntry  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param message The new value for the Message property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public BatchResultErrorEntry withMessage(String message) {
         this.message = message;

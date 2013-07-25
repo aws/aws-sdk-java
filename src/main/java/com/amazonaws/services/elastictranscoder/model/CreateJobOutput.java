@@ -168,9 +168,6 @@ public class CreateJobOutput  implements Serializable  {
      *         <code>OutputBucket</code> object in the pipeline that is specified by
      *         the pipeline ID. If a file with the specified name already exists in
      *         the output bucket, the job fails.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateJobOutput withKey(String key) {
         this.key = key;
@@ -373,9 +370,6 @@ public class CreateJobOutput  implements Serializable  {
      *         appears in the preset that you specified in the <code>PresetID</code>
      *         value of <code>CreateJobOutput</code>. Elastic Transcoder also appends
      *         the applicable file name extension.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateJobOutput withThumbnailPattern(String thumbnailPattern) {
         this.thumbnailPattern = thumbnailPattern;
@@ -446,9 +440,6 @@ public class CreateJobOutput  implements Serializable  {
      *         <code>180</code>, <code>270</code>. The value <code>auto</code>
      *         generally works only if the file that you're transcoding contains
      *         rotation metadata.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateJobOutput withRotate(String rotate) {
         this.rotate = rotate;
@@ -501,9 +492,6 @@ public class CreateJobOutput  implements Serializable  {
      * @param presetId The <code>Id</code> of the preset to use for this job. The preset
      *         determines the audio, video, and thumbnail settings that Elastic
      *         Transcoder uses for transcoding.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateJobOutput withPresetId(String presetId) {
         this.presetId = presetId;
@@ -562,9 +550,6 @@ public class CreateJobOutput  implements Serializable  {
      *         of <code>Container</code> is ts (MPEG-TS), SegmentDuration is the
      *         duration of each .ts file in seconds. The range of valid values is 1
      *         to 60 seconds.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateJobOutput withSegmentDuration(String segmentDuration) {
         this.segmentDuration = segmentDuration;
@@ -625,9 +610,6 @@ public class CreateJobOutput  implements Serializable  {
      *         add to the video during transcoding. You can specify up to four
      *         watermarks for each output. Settings for each watermark must be
      *         defined in the preset for the current output.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateJobOutput withWatermarks(JobWatermark... watermarks) {
         if (getWatermarks() == null) setWatermarks(new java.util.ArrayList<JobWatermark>(watermarks.length));
@@ -649,9 +631,6 @@ public class CreateJobOutput  implements Serializable  {
      *         add to the video during transcoding. You can specify up to four
      *         watermarks for each output. Settings for each watermark must be
      *         defined in the preset for the current output.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateJobOutput withWatermarks(java.util.Collection<JobWatermark> watermarks) {
         if (watermarks == null) {

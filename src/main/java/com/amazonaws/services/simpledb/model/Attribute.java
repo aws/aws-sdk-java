@@ -88,9 +88,6 @@ public class Attribute  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The name of the attribute.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Attribute withName(String name) {
         this.name = name;
@@ -122,9 +119,6 @@ public class Attribute  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param alternateNameEncoding 
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Attribute withAlternateNameEncoding(String alternateNameEncoding) {
         this.alternateNameEncoding = alternateNameEncoding;
@@ -156,9 +150,6 @@ public class Attribute  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param value The value of the attribute.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Attribute withValue(String value) {
         this.value = value;
@@ -190,9 +181,6 @@ public class Attribute  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param alternateValueEncoding 
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Attribute withAlternateValueEncoding(String alternateValueEncoding) {
         this.alternateValueEncoding = alternateValueEncoding;

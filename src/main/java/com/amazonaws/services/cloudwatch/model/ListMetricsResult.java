@@ -67,9 +67,6 @@ public class ListMetricsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param metrics A list of metrics used to generate statistics for an AWS account.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListMetricsResult withMetrics(Metric... metrics) {
         if (getMetrics() == null) setMetrics(new java.util.ArrayList<Metric>(metrics.length));
@@ -85,9 +82,6 @@ public class ListMetricsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param metrics A list of metrics used to generate statistics for an AWS account.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListMetricsResult withMetrics(java.util.Collection<Metric> metrics) {
         if (metrics == null) {
@@ -125,9 +119,6 @@ public class ListMetricsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nextToken A string that marks the start of the next batch of returned results.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListMetricsResult withNextToken(String nextToken) {
         this.nextToken = nextToken;

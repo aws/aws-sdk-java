@@ -25,6 +25,7 @@ import com.amazonaws.transform.*;
 import org.codehaus.jackson.JsonToken;
 import static org.codehaus.jackson.JsonToken.*;
 
+
 /**
  * Elastic Ip JSON Unmarshaller
  */
@@ -56,6 +57,10 @@ public class ElasticIpJsonUnmarshaller implements Unmarshaller<ElasticIp, JsonUn
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
                     elasticIp.setName(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Domain", targetDepth)) {
+                    context.nextToken();
+                    elasticIp.setDomain(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Region", targetDepth)) {
                     context.nextToken();

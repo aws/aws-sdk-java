@@ -101,9 +101,6 @@ public class MetricDatum  implements Serializable  {
      * <b>Length: </b>1 - 255<br/>
      *
      * @param metricName The name of the metric.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MetricDatum withMetricName(String metricName) {
         this.metricName = metricName;
@@ -155,9 +152,6 @@ public class MetricDatum  implements Serializable  {
      * <b>Length: </b>0 - 10<br/>
      *
      * @param dimensions A list of dimensions associated with the metric.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MetricDatum withDimensions(Dimension... dimensions) {
         if (getDimensions() == null) setDimensions(new java.util.ArrayList<Dimension>(dimensions.length));
@@ -176,9 +170,6 @@ public class MetricDatum  implements Serializable  {
      * <b>Length: </b>0 - 10<br/>
      *
      * @param dimensions A list of dimensions associated with the metric.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MetricDatum withDimensions(java.util.Collection<Dimension> dimensions) {
         if (dimensions == null) {
@@ -222,9 +213,6 @@ public class MetricDatum  implements Serializable  {
      *
      * @param timestamp The time stamp used for the metric. If not specified, the default
      *         value is set to the time the metric data was received.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MetricDatum withTimestamp(java.util.Date timestamp) {
         this.timestamp = timestamp;
@@ -286,9 +274,6 @@ public class MetricDatum  implements Serializable  {
      *         base-10 exponents greater than 126 (1 x 10^126) are truncated.
      *         Likewise, values with base-10 exponents less than -130 (1 x 10^-130)
      *         are also truncated. </important>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MetricDatum withValue(Double value) {
         this.value = value;
@@ -320,9 +305,6 @@ public class MetricDatum  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param statisticValues A set of statistical values describing the metric.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MetricDatum withStatisticValues(StatisticSet statisticValues) {
         this.statisticValues = statisticValues;
@@ -368,9 +350,6 @@ public class MetricDatum  implements Serializable  {
      *
      * @param unit The unit of the metric.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see StandardUnit
      */
     public MetricDatum withUnit(String unit) {
@@ -402,9 +381,6 @@ public class MetricDatum  implements Serializable  {
      * <b>Allowed Values: </b>Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, Bytes/Second, Kilobytes/Second, Megabytes/Second, Gigabytes/Second, Terabytes/Second, Bits/Second, Kilobits/Second, Megabits/Second, Gigabits/Second, Terabits/Second, Count/Second, None
      *
      * @param unit The unit of the metric.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see StandardUnit
      */

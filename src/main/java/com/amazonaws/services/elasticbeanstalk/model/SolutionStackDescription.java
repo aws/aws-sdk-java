@@ -68,9 +68,6 @@ public class SolutionStackDescription  implements Serializable  {
      * <b>Length: </b>0 - 100<br/>
      *
      * @param solutionStackName The name of the solution stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SolutionStackDescription withSolutionStackName(String solutionStackName) {
         this.solutionStackName = solutionStackName;
@@ -113,9 +110,6 @@ public class SolutionStackDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param permittedFileTypes The permitted file types allowed for a solution stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SolutionStackDescription withPermittedFileTypes(String... permittedFileTypes) {
         if (getPermittedFileTypes() == null) setPermittedFileTypes(new java.util.ArrayList<String>(permittedFileTypes.length));
@@ -131,9 +125,6 @@ public class SolutionStackDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param permittedFileTypes The permitted file types allowed for a solution stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SolutionStackDescription withPermittedFileTypes(java.util.Collection<String> permittedFileTypes) {
         if (permittedFileTypes == null) {

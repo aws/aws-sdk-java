@@ -82,9 +82,6 @@ public class AddRoleToInstanceProfileRequest extends AmazonWebServiceRequest  im
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param instanceProfileName Name of the instance profile to update.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AddRoleToInstanceProfileRequest withInstanceProfileName(String instanceProfileName) {
         this.instanceProfileName = instanceProfileName;
@@ -128,9 +125,6 @@ public class AddRoleToInstanceProfileRequest extends AmazonWebServiceRequest  im
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param roleName Name of the role to add.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AddRoleToInstanceProfileRequest withRoleName(String roleName) {
         this.roleName = roleName;

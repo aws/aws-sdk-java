@@ -100,9 +100,6 @@ public class DescribeConnectionDetailResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param connectionId ID of the connection. <p>Example: dxcon-fg5678gh <p>Default: None
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeConnectionDetailResult withConnectionId(String connectionId) {
         this.connectionId = connectionId;
@@ -140,9 +137,6 @@ public class DescribeConnectionDetailResult  implements Serializable  {
      *
      * @param connectionName The name of the connection. <p>Example: "<i>1G Connection to AWS</i>"
      *         <p>Default: None
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeConnectionDetailResult withConnectionName(String connectionName) {
         this.connectionName = connectionName;
@@ -236,9 +230,6 @@ public class DescribeConnectionDetailResult  implements Serializable  {
      *         available before virtual interfaces can be created.</li>
      *         <li><b>Deleted</b>: A connection that has been deleted.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ConnectionState
      */
     public DescribeConnectionDetailResult withConnectionState(String connectionState) {
@@ -303,9 +294,6 @@ public class DescribeConnectionDetailResult  implements Serializable  {
      *         available before virtual interfaces can be created.</li>
      *         <li><b>Deleted</b>: A connection that has been deleted.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ConnectionState
      */
     public DescribeConnectionDetailResult withConnectionState(ConnectionState connectionState) {
@@ -343,9 +331,6 @@ public class DescribeConnectionDetailResult  implements Serializable  {
      *
      * @param region The AWS region where the offering is located. <p>Example: us-east-1
      *         <p>Default: None
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeConnectionDetailResult withRegion(String region) {
         this.region = region;
@@ -383,9 +368,6 @@ public class DescribeConnectionDetailResult  implements Serializable  {
      *
      * @param location Where the AWS Direct Connect offering is located. <p>Example: EqSV5
      *         <p>Default: None
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeConnectionDetailResult withLocation(String location) {
         this.location = location;
@@ -417,9 +399,6 @@ public class DescribeConnectionDetailResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param bandwidth Bandwidth of the connection. <p>Example: 1Gbps <p>Default: None
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeConnectionDetailResult withBandwidth(String bandwidth) {
         this.bandwidth = bandwidth;
@@ -462,9 +441,6 @@ public class DescribeConnectionDetailResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param connectionCosts A list of connection costs.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeConnectionDetailResult withConnectionCosts(ConnectionCost... connectionCosts) {
         if (getConnectionCosts() == null) setConnectionCosts(new java.util.ArrayList<ConnectionCost>(connectionCosts.length));
@@ -480,9 +456,6 @@ public class DescribeConnectionDetailResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param connectionCosts A list of connection costs.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeConnectionDetailResult withConnectionCosts(java.util.Collection<ConnectionCost> connectionCosts) {
         if (connectionCosts == null) {
@@ -531,9 +504,6 @@ public class DescribeConnectionDetailResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param orderSteps A list of connection order steps.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeConnectionDetailResult withOrderSteps(ConnectionOrderStep... orderSteps) {
         if (getOrderSteps() == null) setOrderSteps(new java.util.ArrayList<ConnectionOrderStep>(orderSteps.length));
@@ -549,9 +519,6 @@ public class DescribeConnectionDetailResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param orderSteps A list of connection order steps.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeConnectionDetailResult withOrderSteps(java.util.Collection<ConnectionOrderStep> orderSteps) {
         if (orderSteps == null) {

@@ -69,9 +69,6 @@ public class DescribeOptionGroupOptionsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionGroupOptions List of available option group options.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeOptionGroupOptionsResult withOptionGroupOptions(OptionGroupOption... optionGroupOptions) {
         if (getOptionGroupOptions() == null) setOptionGroupOptions(new java.util.ArrayList<OptionGroupOption>(optionGroupOptions.length));
@@ -87,9 +84,6 @@ public class DescribeOptionGroupOptionsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionGroupOptions List of available option group options.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeOptionGroupOptionsResult withOptionGroupOptions(java.util.Collection<OptionGroupOption> optionGroupOptions) {
         if (optionGroupOptions == null) {
@@ -139,9 +133,6 @@ public class DescribeOptionGroupOptionsResult  implements Serializable  {
      * @param marker An optional pagination token provided by a previous request. If this
      *         parameter is specified, the response includes only records beyond the
      *         marker, up to the value specified by <code>MaxRecords</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeOptionGroupOptionsResult withMarker(String marker) {
         this.marker = marker;

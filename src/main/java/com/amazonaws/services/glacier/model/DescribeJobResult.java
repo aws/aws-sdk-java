@@ -137,9 +137,6 @@ public class DescribeJobResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param jobId An opaque string that identifies an Amazon Glacier job.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeJobResult withJobId(String jobId) {
         this.jobId = jobId;
@@ -171,9 +168,6 @@ public class DescribeJobResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param jobDescription The job description you provided when you initiated the job.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeJobResult withJobDescription(String jobDescription) {
         this.jobDescription = jobDescription;
@@ -219,9 +213,6 @@ public class DescribeJobResult  implements Serializable  {
      *
      * @param action The job type. It is either ArchiveRetrieval or InventoryRetrieval.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ActionCode
      */
     public DescribeJobResult withAction(String action) {
@@ -253,9 +244,6 @@ public class DescribeJobResult  implements Serializable  {
      * <b>Allowed Values: </b>ArchiveRetrieval, InventoryRetrieval
      *
      * @param action The job type. It is either ArchiveRetrieval or InventoryRetrieval.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see ActionCode
      */
@@ -294,9 +282,6 @@ public class DescribeJobResult  implements Serializable  {
      *
      * @param archiveId For an ArchiveRetrieval job, this is the archive ID requested for
      *         download. Otherwise, this field is null.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeJobResult withArchiveId(String archiveId) {
         this.archiveId = archiveId;
@@ -334,9 +319,6 @@ public class DescribeJobResult  implements Serializable  {
      *
      * @param vaultARN The Amazon Resource Name (ARN) of the vault from which the archive
      *         retrieval was requested.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeJobResult withVaultARN(String vaultARN) {
         this.vaultARN = vaultARN;
@@ -374,9 +356,6 @@ public class DescribeJobResult  implements Serializable  {
      *
      * @param creationDate The UTC date when the job was created. A string representation of ISO
      *         8601 date format, for example, "2012-03-20T17:03:43.221Z".
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeJobResult withCreationDate(String creationDate) {
         this.creationDate = creationDate;
@@ -408,9 +387,6 @@ public class DescribeJobResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param completed The job status. When a job is completed, you get the job's output.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeJobResult withCompleted(Boolean completed) {
         this.completed = completed;
@@ -471,9 +447,6 @@ public class DescribeJobResult  implements Serializable  {
      * @param statusCode The status code can be InProgress, Succeeded, or Failed, and indicates
      *         the status of the job.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see StatusCode
      */
     public DescribeJobResult withStatusCode(String statusCode) {
@@ -510,9 +483,6 @@ public class DescribeJobResult  implements Serializable  {
      * @param statusCode The status code can be InProgress, Succeeded, or Failed, and indicates
      *         the status of the job.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see StatusCode
      */
     public DescribeJobResult withStatusCode(StatusCode statusCode) {
@@ -544,9 +514,6 @@ public class DescribeJobResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param statusMessage A friendly message that describes the job status.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeJobResult withStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
@@ -590,9 +557,6 @@ public class DescribeJobResult  implements Serializable  {
      * @param archiveSizeInBytes For an ArchiveRetrieval job, this is the size in bytes of the archive
      *         being requested for download. For the InventoryRetrieval job, the
      *         value is null.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeJobResult withArchiveSizeInBytes(Long archiveSizeInBytes) {
         this.archiveSizeInBytes = archiveSizeInBytes;
@@ -636,9 +600,6 @@ public class DescribeJobResult  implements Serializable  {
      * @param inventorySizeInBytes For an InventoryRetrieval job, this is the size in bytes of the
      *         inventory requested for download. For the ArchiveRetrieval job, the
      *         value is null.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeJobResult withInventorySizeInBytes(Long inventorySizeInBytes) {
         this.inventorySizeInBytes = inventorySizeInBytes;
@@ -676,9 +637,6 @@ public class DescribeJobResult  implements Serializable  {
      *
      * @param sNSTopic An Amazon Simple Notification Service (Amazon SNS) topic that receives
      *         notification.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeJobResult withSNSTopic(String sNSTopic) {
         this.sNSTopic = sNSTopic;
@@ -716,9 +674,6 @@ public class DescribeJobResult  implements Serializable  {
      *
      * @param completionDate The UTC time that the archive retrieval request completed. While the
      *         job is in progress, the value will be null.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeJobResult withCompletionDate(String completionDate) {
         this.completionDate = completionDate;
@@ -756,9 +711,6 @@ public class DescribeJobResult  implements Serializable  {
      *
      * @param sHA256TreeHash For an ArchiveRetrieval job, it is the checksum of the archive.
      *         Otherwise, the value is null.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeJobResult withSHA256TreeHash(String sHA256TreeHash) {
         this.sHA256TreeHash = sHA256TreeHash;
@@ -791,9 +743,6 @@ public class DescribeJobResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param archiveSHA256TreeHash The new value for the ArchiveSHA256TreeHash property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeJobResult withArchiveSHA256TreeHash(String archiveSHA256TreeHash) {
         this.archiveSHA256TreeHash = archiveSHA256TreeHash;
@@ -825,9 +774,6 @@ public class DescribeJobResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param retrievalByteRange The new value for the RetrievalByteRange property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeJobResult withRetrievalByteRange(String retrievalByteRange) {
         this.retrievalByteRange = retrievalByteRange;

@@ -76,9 +76,6 @@ public class PendingModifiedValues  implements Serializable  {
      *
      * @param numCacheNodes Contains the new <i>NumCacheNodes</i> for the Cache Cluster that will
      *         be applied or is in progress.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PendingModifiedValues withNumCacheNodes(Integer numCacheNodes) {
         this.numCacheNodes = numCacheNodes;
@@ -127,9 +124,6 @@ public class PendingModifiedValues  implements Serializable  {
      *
      * @param cacheNodeIdsToRemove Contains the list of node Ids to remove from the Cache Cluster that
      *         will be applied or is in progress.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PendingModifiedValues withCacheNodeIdsToRemove(String... cacheNodeIdsToRemove) {
         if (getCacheNodeIdsToRemove() == null) setCacheNodeIdsToRemove(new java.util.ArrayList<String>(cacheNodeIdsToRemove.length));
@@ -147,9 +141,6 @@ public class PendingModifiedValues  implements Serializable  {
      *
      * @param cacheNodeIdsToRemove Contains the list of node Ids to remove from the Cache Cluster that
      *         will be applied or is in progress.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PendingModifiedValues withCacheNodeIdsToRemove(java.util.Collection<String> cacheNodeIdsToRemove) {
         if (cacheNodeIdsToRemove == null) {
@@ -193,9 +184,6 @@ public class PendingModifiedValues  implements Serializable  {
      *
      * @param engineVersion Contains the new version of the Cache Engine the Cache Cluster will be
      *         upgraded to.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PendingModifiedValues withEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;

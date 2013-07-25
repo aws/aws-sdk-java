@@ -66,9 +66,6 @@ public class CacheSecurityGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ownerId Provides the AWS ID of the owner of a specific Cache Security Group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CacheSecurityGroup withOwnerId(String ownerId) {
         this.ownerId = ownerId;
@@ -100,9 +97,6 @@ public class CacheSecurityGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheSecurityGroupName Specifies the name of the Cache Security Group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CacheSecurityGroup withCacheSecurityGroupName(String cacheSecurityGroupName) {
         this.cacheSecurityGroupName = cacheSecurityGroupName;
@@ -134,9 +128,6 @@ public class CacheSecurityGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description Provides the description of the Cache Security Group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CacheSecurityGroup withDescription(String description) {
         this.description = description;
@@ -179,9 +170,6 @@ public class CacheSecurityGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eC2SecurityGroups Contains a list of <a>EC2SecurityGroup</a> elements.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CacheSecurityGroup withEC2SecurityGroups(EC2SecurityGroup... eC2SecurityGroups) {
         if (getEC2SecurityGroups() == null) setEC2SecurityGroups(new java.util.ArrayList<EC2SecurityGroup>(eC2SecurityGroups.length));
@@ -197,9 +185,6 @@ public class CacheSecurityGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eC2SecurityGroups Contains a list of <a>EC2SecurityGroup</a> elements.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CacheSecurityGroup withEC2SecurityGroups(java.util.Collection<EC2SecurityGroup> eC2SecurityGroups) {
         if (eC2SecurityGroups == null) {

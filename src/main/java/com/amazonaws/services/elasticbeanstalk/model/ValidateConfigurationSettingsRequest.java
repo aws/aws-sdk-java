@@ -127,9 +127,6 @@ public class ValidateConfigurationSettingsRequest extends AmazonWebServiceReques
      *
      * @param applicationName The name of the application that the configuration template or
      *         environment belongs to.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ValidateConfigurationSettingsRequest withApplicationName(String applicationName) {
         this.applicationName = applicationName;
@@ -182,9 +179,6 @@ public class ValidateConfigurationSettingsRequest extends AmazonWebServiceReques
      * @param templateName The name of the configuration template to validate the settings
      *         against. <p> Condition: You cannot specify both this and an
      *         environment name.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ValidateConfigurationSettingsRequest withTemplateName(String templateName) {
         this.templateName = templateName;
@@ -237,9 +231,6 @@ public class ValidateConfigurationSettingsRequest extends AmazonWebServiceReques
      * @param environmentName The name of the environment to validate the settings against. <p>
      *         Condition: You cannot specify both this and a configuration template
      *         name.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ValidateConfigurationSettingsRequest withEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
@@ -282,9 +273,6 @@ public class ValidateConfigurationSettingsRequest extends AmazonWebServiceReques
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionSettings A list of the options and desired values to evaluate.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ValidateConfigurationSettingsRequest withOptionSettings(ConfigurationOptionSetting... optionSettings) {
         if (getOptionSettings() == null) setOptionSettings(new java.util.ArrayList<ConfigurationOptionSetting>(optionSettings.length));
@@ -300,9 +288,6 @@ public class ValidateConfigurationSettingsRequest extends AmazonWebServiceReques
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionSettings A list of the options and desired values to evaluate.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ValidateConfigurationSettingsRequest withOptionSettings(java.util.Collection<ConfigurationOptionSetting> optionSettings) {
         if (optionSettings == null) {

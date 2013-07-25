@@ -71,9 +71,6 @@ public class ListQueuesRequest extends AmazonWebServiceRequest  implements Seria
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param queueNamePrefix The new value for the QueueNamePrefix property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListQueuesRequest withQueueNamePrefix(String queueNamePrefix) {
         this.queueNamePrefix = queueNamePrefix;

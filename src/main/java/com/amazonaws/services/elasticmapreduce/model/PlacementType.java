@@ -89,9 +89,6 @@ public class PlacementType  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param availabilityZone The Amazon EC2 Availability Zone for the job flow.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public PlacementType withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;

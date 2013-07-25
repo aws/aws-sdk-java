@@ -89,9 +89,6 @@ public class VolumeiSCSIAttributes  implements Serializable  {
      * <b>Length: </b>50 - 800<br/>
      *
      * @param targetARN The Amazon Resource Name (ARN) of the volume target.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VolumeiSCSIAttributes withTargetARN(String targetARN) {
         this.targetARN = targetARN;
@@ -132,9 +129,6 @@ public class VolumeiSCSIAttributes  implements Serializable  {
      * <b>Pattern: </b>\A(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}\z<br/>
      *
      * @param networkInterfaceId The network interface identifier.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VolumeiSCSIAttributes withNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
@@ -166,9 +160,6 @@ public class VolumeiSCSIAttributes  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkInterfacePort The port used to communicate with iSCSI targets.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VolumeiSCSIAttributes withNetworkInterfacePort(Integer networkInterfacePort) {
         this.networkInterfacePort = networkInterfacePort;
@@ -209,9 +200,6 @@ public class VolumeiSCSIAttributes  implements Serializable  {
      * <b>Range: </b>1 - <br/>
      *
      * @param lunNumber The logical disk number.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VolumeiSCSIAttributes withLunNumber(Integer lunNumber) {
         this.lunNumber = lunNumber;
@@ -243,9 +231,6 @@ public class VolumeiSCSIAttributes  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param chapEnabled Indicates whether mutual CHAP is enabled for the iSCSI target.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VolumeiSCSIAttributes withChapEnabled(Boolean chapEnabled) {
         this.chapEnabled = chapEnabled;

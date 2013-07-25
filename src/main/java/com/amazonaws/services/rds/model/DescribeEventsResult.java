@@ -70,9 +70,6 @@ public class DescribeEventsResult  implements Serializable  {
      * @param marker An optional pagination token provided by a previous Events request. If
      *         this parameter is specified, the response includes only records beyond
      *         the marker, up to the value specified by <code>MaxRecords</code> .
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeEventsResult withMarker(String marker) {
         this.marker = marker;
@@ -115,9 +112,6 @@ public class DescribeEventsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param events A list of <a>Event</a> instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeEventsResult withEvents(Event... events) {
         if (getEvents() == null) setEvents(new java.util.ArrayList<Event>(events.length));
@@ -133,9 +127,6 @@ public class DescribeEventsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param events A list of <a>Event</a> instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeEventsResult withEvents(java.util.Collection<Event> events) {
         if (events == null) {

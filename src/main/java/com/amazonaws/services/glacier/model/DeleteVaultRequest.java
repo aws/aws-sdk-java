@@ -150,9 +150,6 @@ public class DeleteVaultRequest extends AmazonWebServiceRequest  implements Seri
      *         Glacier uses the AWS Account ID associated with the credentials used
      *         to sign the request. If you specify your Account ID, do not include
      *         hyphens in it.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteVaultRequest withAccountId(String accountId) {
         this.accountId = accountId;
@@ -184,9 +181,6 @@ public class DeleteVaultRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vaultName The name of the vault.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteVaultRequest withVaultName(String vaultName) {
         this.vaultName = vaultName;

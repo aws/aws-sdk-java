@@ -81,9 +81,6 @@ public class DeleteDomainRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param domainName The name of the domain to delete.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteDomainRequest withDomainName(String domainName) {
         this.domainName = domainName;

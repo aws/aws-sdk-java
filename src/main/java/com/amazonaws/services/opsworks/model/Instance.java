@@ -53,9 +53,9 @@ public class Instance  implements Serializable  {
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupIds;
 
     /**
-     * The instance type. OpsWorks supports all instance types except Cluster
-     * Compute, Cluster GPU, and High Memory Cluster. For more information,
-     * see <a
+     * The instance type. AWS OpsWorks supports all instance types except
+     * Cluster Compute, Cluster GPU, and High Memory Cluster. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Families and Types</a>. The parameter values that specify the various
      * types are in the API Name column of the Available Instance Types
@@ -83,6 +83,14 @@ public class Instance  implements Serializable  {
      * The instance operating system.
      */
     private String os;
+
+    /**
+     * A custom AMI ID to be used to create the instance. The AMI should be
+     * based on one of the standard AWS OpsWorks APIs: Amazon Linux or Ubuntu
+     * 12.04 LTS. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
+     */
+    private String amiId;
 
     /**
      * The instance Availability Zone. For more information, see <a
@@ -180,6 +188,19 @@ public class Instance  implements Serializable  {
      * The root device volume ID.
      */
     private String rootDeviceVolumeId;
+
+    /**
+     * Whether to install operating system and package updates when the
+     * instance boots. The default value is <code>true</code>. If this value
+     * is set to <code>false</code>, you must then update your instances
+     * manually by using <a>CreateDeployment</a> to run the
+     * <code>update_dependencies</code> stack command or manually running
+     * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on
+     * the instances. <note>We strongly recommend using the default value of
+     * <code>true</code>, to ensure that your instances have the latest
+     * security updates.</note>
+     */
+    private Boolean installUpdatesOnBoot;
 
     /**
      * The instance ID.
@@ -432,17 +453,17 @@ public class Instance  implements Serializable  {
     }
     
     /**
-     * The instance type. OpsWorks supports all instance types except Cluster
-     * Compute, Cluster GPU, and High Memory Cluster. For more information,
-     * see <a
+     * The instance type. AWS OpsWorks supports all instance types except
+     * Cluster Compute, Cluster GPU, and High Memory Cluster. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Families and Types</a>. The parameter values that specify the various
      * types are in the API Name column of the Available Instance Types
      * table.
      *
-     * @return The instance type. OpsWorks supports all instance types except Cluster
-     *         Compute, Cluster GPU, and High Memory Cluster. For more information,
-     *         see <a
+     * @return The instance type. AWS OpsWorks supports all instance types except
+     *         Cluster Compute, Cluster GPU, and High Memory Cluster. For more
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      *         Families and Types</a>. The parameter values that specify the various
      *         types are in the API Name column of the Available Instance Types
@@ -453,17 +474,17 @@ public class Instance  implements Serializable  {
     }
     
     /**
-     * The instance type. OpsWorks supports all instance types except Cluster
-     * Compute, Cluster GPU, and High Memory Cluster. For more information,
-     * see <a
+     * The instance type. AWS OpsWorks supports all instance types except
+     * Cluster Compute, Cluster GPU, and High Memory Cluster. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Families and Types</a>. The parameter values that specify the various
      * types are in the API Name column of the Available Instance Types
      * table.
      *
-     * @param instanceType The instance type. OpsWorks supports all instance types except Cluster
-     *         Compute, Cluster GPU, and High Memory Cluster. For more information,
-     *         see <a
+     * @param instanceType The instance type. AWS OpsWorks supports all instance types except
+     *         Cluster Compute, Cluster GPU, and High Memory Cluster. For more
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      *         Families and Types</a>. The parameter values that specify the various
      *         types are in the API Name column of the Available Instance Types
@@ -474,9 +495,9 @@ public class Instance  implements Serializable  {
     }
     
     /**
-     * The instance type. OpsWorks supports all instance types except Cluster
-     * Compute, Cluster GPU, and High Memory Cluster. For more information,
-     * see <a
+     * The instance type. AWS OpsWorks supports all instance types except
+     * Cluster Compute, Cluster GPU, and High Memory Cluster. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Families and Types</a>. The parameter values that specify the various
      * types are in the API Name column of the Available Instance Types
@@ -484,9 +505,9 @@ public class Instance  implements Serializable  {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceType The instance type. OpsWorks supports all instance types except Cluster
-     *         Compute, Cluster GPU, and High Memory Cluster. For more information,
-     *         see <a
+     * @param instanceType The instance type. AWS OpsWorks supports all instance types except
+     *         Cluster Compute, Cluster GPU, and High Memory Cluster. For more
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      *         Families and Types</a>. The parameter values that specify the various
      *         types are in the API Name column of the Available Instance Types
@@ -623,6 +644,55 @@ public class Instance  implements Serializable  {
      */
     public Instance withOs(String os) {
         this.os = os;
+        return this;
+    }
+    
+    
+    /**
+     * A custom AMI ID to be used to create the instance. The AMI should be
+     * based on one of the standard AWS OpsWorks APIs: Amazon Linux or Ubuntu
+     * 12.04 LTS. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
+     *
+     * @return A custom AMI ID to be used to create the instance. The AMI should be
+     *         based on one of the standard AWS OpsWorks APIs: Amazon Linux or Ubuntu
+     *         12.04 LTS. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
+     */
+    public String getAmiId() {
+        return amiId;
+    }
+    
+    /**
+     * A custom AMI ID to be used to create the instance. The AMI should be
+     * based on one of the standard AWS OpsWorks APIs: Amazon Linux or Ubuntu
+     * 12.04 LTS. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
+     *
+     * @param amiId A custom AMI ID to be used to create the instance. The AMI should be
+     *         based on one of the standard AWS OpsWorks APIs: Amazon Linux or Ubuntu
+     *         12.04 LTS. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
+     */
+    public void setAmiId(String amiId) {
+        this.amiId = amiId;
+    }
+    
+    /**
+     * A custom AMI ID to be used to create the instance. The AMI should be
+     * based on one of the standard AWS OpsWorks APIs: Amazon Linux or Ubuntu
+     * 12.04 LTS. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param amiId A custom AMI ID to be used to create the instance. The AMI should be
+     *         based on one of the standard AWS OpsWorks APIs: Amazon Linux or Ubuntu
+     *         12.04 LTS. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
+     */
+    public Instance withAmiId(String amiId) {
+        this.amiId = amiId;
         return this;
     }
     
@@ -1341,6 +1411,110 @@ public class Instance  implements Serializable  {
     
     
     /**
+     * Whether to install operating system and package updates when the
+     * instance boots. The default value is <code>true</code>. If this value
+     * is set to <code>false</code>, you must then update your instances
+     * manually by using <a>CreateDeployment</a> to run the
+     * <code>update_dependencies</code> stack command or manually running
+     * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on
+     * the instances. <note>We strongly recommend using the default value of
+     * <code>true</code>, to ensure that your instances have the latest
+     * security updates.</note>
+     *
+     * @return Whether to install operating system and package updates when the
+     *         instance boots. The default value is <code>true</code>. If this value
+     *         is set to <code>false</code>, you must then update your instances
+     *         manually by using <a>CreateDeployment</a> to run the
+     *         <code>update_dependencies</code> stack command or manually running
+     *         <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on
+     *         the instances. <note>We strongly recommend using the default value of
+     *         <code>true</code>, to ensure that your instances have the latest
+     *         security updates.</note>
+     */
+    public Boolean isInstallUpdatesOnBoot() {
+        return installUpdatesOnBoot;
+    }
+    
+    /**
+     * Whether to install operating system and package updates when the
+     * instance boots. The default value is <code>true</code>. If this value
+     * is set to <code>false</code>, you must then update your instances
+     * manually by using <a>CreateDeployment</a> to run the
+     * <code>update_dependencies</code> stack command or manually running
+     * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on
+     * the instances. <note>We strongly recommend using the default value of
+     * <code>true</code>, to ensure that your instances have the latest
+     * security updates.</note>
+     *
+     * @param installUpdatesOnBoot Whether to install operating system and package updates when the
+     *         instance boots. The default value is <code>true</code>. If this value
+     *         is set to <code>false</code>, you must then update your instances
+     *         manually by using <a>CreateDeployment</a> to run the
+     *         <code>update_dependencies</code> stack command or manually running
+     *         <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on
+     *         the instances. <note>We strongly recommend using the default value of
+     *         <code>true</code>, to ensure that your instances have the latest
+     *         security updates.</note>
+     */
+    public void setInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
+        this.installUpdatesOnBoot = installUpdatesOnBoot;
+    }
+    
+    /**
+     * Whether to install operating system and package updates when the
+     * instance boots. The default value is <code>true</code>. If this value
+     * is set to <code>false</code>, you must then update your instances
+     * manually by using <a>CreateDeployment</a> to run the
+     * <code>update_dependencies</code> stack command or manually running
+     * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on
+     * the instances. <note>We strongly recommend using the default value of
+     * <code>true</code>, to ensure that your instances have the latest
+     * security updates.</note>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param installUpdatesOnBoot Whether to install operating system and package updates when the
+     *         instance boots. The default value is <code>true</code>. If this value
+     *         is set to <code>false</code>, you must then update your instances
+     *         manually by using <a>CreateDeployment</a> to run the
+     *         <code>update_dependencies</code> stack command or manually running
+     *         <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on
+     *         the instances. <note>We strongly recommend using the default value of
+     *         <code>true</code>, to ensure that your instances have the latest
+     *         security updates.</note>
+     */
+    public Instance withInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
+        this.installUpdatesOnBoot = installUpdatesOnBoot;
+        return this;
+    }
+    
+    
+    /**
+     * Whether to install operating system and package updates when the
+     * instance boots. The default value is <code>true</code>. If this value
+     * is set to <code>false</code>, you must then update your instances
+     * manually by using <a>CreateDeployment</a> to run the
+     * <code>update_dependencies</code> stack command or manually running
+     * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on
+     * the instances. <note>We strongly recommend using the default value of
+     * <code>true</code>, to ensure that your instances have the latest
+     * security updates.</note>
+     *
+     * @return Whether to install operating system and package updates when the
+     *         instance boots. The default value is <code>true</code>. If this value
+     *         is set to <code>false</code>, you must then update your instances
+     *         manually by using <a>CreateDeployment</a> to run the
+     *         <code>update_dependencies</code> stack command or manually running
+     *         <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on
+     *         the instances. <note>We strongly recommend using the default value of
+     *         <code>true</code>, to ensure that your instances have the latest
+     *         security updates.</note>
+     */
+    public Boolean getInstallUpdatesOnBoot() {
+        return installUpdatesOnBoot;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1362,6 +1536,7 @@ public class Instance  implements Serializable  {
         if (getInstanceProfileArn() != null) sb.append("InstanceProfileArn: " + getInstanceProfileArn() + ",");
         if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
         if (getOs() != null) sb.append("Os: " + getOs() + ",");
+        if (getAmiId() != null) sb.append("AmiId: " + getAmiId() + ",");
         if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
         if (getPublicDns() != null) sb.append("PublicDns: " + getPublicDns() + ",");
         if (getPrivateDns() != null) sb.append("PrivateDns: " + getPrivateDns() + ",");
@@ -1376,7 +1551,8 @@ public class Instance  implements Serializable  {
         if (getLastServiceErrorId() != null) sb.append("LastServiceErrorId: " + getLastServiceErrorId() + ",");
         if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() + ",");
         if (getRootDeviceType() != null) sb.append("RootDeviceType: " + getRootDeviceType() + ",");
-        if (getRootDeviceVolumeId() != null) sb.append("RootDeviceVolumeId: " + getRootDeviceVolumeId() );
+        if (getRootDeviceVolumeId() != null) sb.append("RootDeviceVolumeId: " + getRootDeviceVolumeId() + ",");
+        if (isInstallUpdatesOnBoot() != null) sb.append("InstallUpdatesOnBoot: " + isInstallUpdatesOnBoot() );
         sb.append("}");
         return sb.toString();
     }
@@ -1396,6 +1572,7 @@ public class Instance  implements Serializable  {
         hashCode = prime * hashCode + ((getInstanceProfileArn() == null) ? 0 : getInstanceProfileArn().hashCode()); 
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
         hashCode = prime * hashCode + ((getOs() == null) ? 0 : getOs().hashCode()); 
+        hashCode = prime * hashCode + ((getAmiId() == null) ? 0 : getAmiId().hashCode()); 
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode()); 
         hashCode = prime * hashCode + ((getPublicDns() == null) ? 0 : getPublicDns().hashCode()); 
         hashCode = prime * hashCode + ((getPrivateDns() == null) ? 0 : getPrivateDns().hashCode()); 
@@ -1411,6 +1588,7 @@ public class Instance  implements Serializable  {
         hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode()); 
         hashCode = prime * hashCode + ((getRootDeviceType() == null) ? 0 : getRootDeviceType().hashCode()); 
         hashCode = prime * hashCode + ((getRootDeviceVolumeId() == null) ? 0 : getRootDeviceVolumeId().hashCode()); 
+        hashCode = prime * hashCode + ((isInstallUpdatesOnBoot() == null) ? 0 : isInstallUpdatesOnBoot().hashCode()); 
         return hashCode;
     }
     
@@ -1442,6 +1620,8 @@ public class Instance  implements Serializable  {
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
         if (other.getOs() == null ^ this.getOs() == null) return false;
         if (other.getOs() != null && other.getOs().equals(this.getOs()) == false) return false; 
+        if (other.getAmiId() == null ^ this.getAmiId() == null) return false;
+        if (other.getAmiId() != null && other.getAmiId().equals(this.getAmiId()) == false) return false; 
         if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null) return false;
         if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false) return false; 
         if (other.getPublicDns() == null ^ this.getPublicDns() == null) return false;
@@ -1472,6 +1652,8 @@ public class Instance  implements Serializable  {
         if (other.getRootDeviceType() != null && other.getRootDeviceType().equals(this.getRootDeviceType()) == false) return false; 
         if (other.getRootDeviceVolumeId() == null ^ this.getRootDeviceVolumeId() == null) return false;
         if (other.getRootDeviceVolumeId() != null && other.getRootDeviceVolumeId().equals(this.getRootDeviceVolumeId()) == false) return false; 
+        if (other.isInstallUpdatesOnBoot() == null ^ this.isInstallUpdatesOnBoot() == null) return false;
+        if (other.isInstallUpdatesOnBoot() != null && other.isInstallUpdatesOnBoot().equals(this.isInstallUpdatesOnBoot()) == false) return false; 
         return true;
     }
     

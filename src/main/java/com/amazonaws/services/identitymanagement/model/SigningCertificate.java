@@ -153,9 +153,6 @@ public class SigningCertificate  implements Serializable  {
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param userName Name of the user the signing certificate is associated with.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SigningCertificate withUserName(String userName) {
         this.userName = userName;
@@ -199,9 +196,6 @@ public class SigningCertificate  implements Serializable  {
      * <b>Pattern: </b>[\w]*<br/>
      *
      * @param certificateId The ID for the signing certificate.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SigningCertificate withCertificateId(String certificateId) {
         this.certificateId = certificateId;
@@ -245,9 +239,6 @@ public class SigningCertificate  implements Serializable  {
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      *
      * @param certificateBody The contents of the signing certificate.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SigningCertificate withCertificateBody(String certificateBody) {
         this.certificateBody = certificateBody;
@@ -305,9 +296,6 @@ public class SigningCertificate  implements Serializable  {
      *         key is valid for API calls, while <code>Inactive</code> means it is
      *         not.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see StatusType
      */
     public SigningCertificate withStatus(String status) {
@@ -348,9 +336,6 @@ public class SigningCertificate  implements Serializable  {
      *         key is valid for API calls, while <code>Inactive</code> means it is
      *         not.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see StatusType
      */
     public SigningCertificate withStatus(StatusType status) {
@@ -382,9 +367,6 @@ public class SigningCertificate  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param uploadDate The date when the signing certificate was uploaded.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SigningCertificate withUploadDate(java.util.Date uploadDate) {
         this.uploadDate = uploadDate;

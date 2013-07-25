@@ -152,9 +152,6 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest  implements 
      * @param jobFlowId A string that uniquely identifies the job flow. This identifier is
      *         returned by <a>RunJobFlow</a> and can also be obtained from
      *         <a>DescribeJobFlows</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AddJobFlowStepsRequest withJobFlowId(String jobFlowId) {
         this.jobFlowId = jobFlowId;
@@ -197,9 +194,6 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest  implements 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param steps A list of <a>StepConfig</a> to be executed by the job flow.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AddJobFlowStepsRequest withSteps(StepConfig... steps) {
         if (getSteps() == null) setSteps(new java.util.ArrayList<StepConfig>(steps.length));
@@ -215,9 +209,6 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest  implements 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param steps A list of <a>StepConfig</a> to be executed by the job flow.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AddJobFlowStepsRequest withSteps(java.util.Collection<StepConfig> steps) {
         if (steps == null) {

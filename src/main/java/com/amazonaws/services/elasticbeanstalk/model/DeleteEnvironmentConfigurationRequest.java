@@ -105,9 +105,6 @@ public class DeleteEnvironmentConfigurationRequest extends AmazonWebServiceReque
      * <b>Length: </b>1 - 100<br/>
      *
      * @param applicationName The name of the application the environment is associated with.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteEnvironmentConfigurationRequest withApplicationName(String applicationName) {
         this.applicationName = applicationName;
@@ -148,9 +145,6 @@ public class DeleteEnvironmentConfigurationRequest extends AmazonWebServiceReque
      * <b>Length: </b>4 - 23<br/>
      *
      * @param environmentName The name of the environment to delete the draft configuration from.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteEnvironmentConfigurationRequest withEnvironmentName(String environmentName) {
         this.environmentName = environmentName;

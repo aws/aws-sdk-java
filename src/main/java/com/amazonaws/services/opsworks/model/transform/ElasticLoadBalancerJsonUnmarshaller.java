@@ -25,6 +25,7 @@ import com.amazonaws.transform.*;
 import org.codehaus.jackson.JsonToken;
 import static org.codehaus.jackson.JsonToken.*;
 
+
 /**
  * Elastic Load Balancer JSON Unmarshaller
  */
@@ -68,6 +69,10 @@ public class ElasticLoadBalancerJsonUnmarshaller implements Unmarshaller<Elastic
                 if (context.testExpression("LayerId", targetDepth)) {
                     context.nextToken();
                     elasticLoadBalancer.setLayerId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("VpcId", targetDepth)) {
+                    context.nextToken();
+                    elasticLoadBalancer.setVpcId(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZones", targetDepth)) {
                     elasticLoadBalancer.setAvailabilityZones(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));

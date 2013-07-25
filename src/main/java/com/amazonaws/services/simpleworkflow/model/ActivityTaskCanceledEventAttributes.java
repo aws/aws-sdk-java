@@ -87,9 +87,6 @@ public class ActivityTaskCanceledEventAttributes  implements Serializable  {
      * <b>Length: </b>0 - 32768<br/>
      *
      * @param details Details of the cancellation (if any).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ActivityTaskCanceledEventAttributes withDetails(String details) {
         this.details = details;
@@ -139,9 +136,6 @@ public class ActivityTaskCanceledEventAttributes  implements Serializable  {
      *         recorded when this activity task was scheduled. This information can
      *         be useful for diagnosing problems by tracing back the chain of events
      *         leading up to this event.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ActivityTaskCanceledEventAttributes withScheduledEventId(Long scheduledEventId) {
         this.scheduledEventId = scheduledEventId;
@@ -191,9 +185,6 @@ public class ActivityTaskCanceledEventAttributes  implements Serializable  {
      *         this activity task was started. This information can be useful for
      *         diagnosing problems by tracing back the chain of events leading up to
      *         this event.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ActivityTaskCanceledEventAttributes withStartedEventId(Long startedEventId) {
         this.startedEventId = startedEventId;
@@ -243,9 +234,6 @@ public class ActivityTaskCanceledEventAttributes  implements Serializable  {
      *         <code>ActivityTaskCancelRequested</code> event recorded for this
      *         activity task. This information can be useful for diagnosing problems
      *         by tracing back the chain of events leading up to this event.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ActivityTaskCanceledEventAttributes withLatestCancelRequestedEventId(Long latestCancelRequestedEventId) {
         this.latestCancelRequestedEventId = latestCancelRequestedEventId;

@@ -120,9 +120,6 @@ public class DistributionSummary  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param id The identifier for the distribution. For example: EDFDVBD632BHDS5.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DistributionSummary withId(String id) {
         this.id = id;
@@ -172,9 +169,6 @@ public class DistributionSummary  implements Serializable  {
      *         distribution. When the status is Deployed, the distribution's
      *         information is fully propagated throughout the Amazon CloudFront
      *         system.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DistributionSummary withStatus(String status) {
         this.status = status;
@@ -206,9 +200,6 @@ public class DistributionSummary  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param lastModifiedTime The date and time the distribution was last modified.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DistributionSummary withLastModifiedTime(java.util.Date lastModifiedTime) {
         this.lastModifiedTime = lastModifiedTime;
@@ -246,9 +237,6 @@ public class DistributionSummary  implements Serializable  {
      *
      * @param domainName The domain name corresponding to the distribution. For example:
      *         d604721fxaaqy9.cloudfront.net.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DistributionSummary withDomainName(String domainName) {
         this.domainName = domainName;
@@ -286,9 +274,6 @@ public class DistributionSummary  implements Serializable  {
      *
      * @param aliases A complex type that contains information about CNAMEs (alternate
      *         domain names), if any, for this distribution.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DistributionSummary withAliases(Aliases aliases) {
         this.aliases = aliases;
@@ -326,9 +311,6 @@ public class DistributionSummary  implements Serializable  {
      *
      * @param origins A complex type that contains information about origins for this
      *         distribution.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DistributionSummary withOrigins(Origins origins) {
         this.origins = origins;
@@ -378,9 +360,6 @@ public class DistributionSummary  implements Serializable  {
      *         specify a CacheBehavior element or if files don't match any of the
      *         values of PathPattern in CacheBehavior elements.You must create
      *         exactly one default cache behavior.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DistributionSummary withDefaultCacheBehavior(DefaultCacheBehavior defaultCacheBehavior) {
         this.defaultCacheBehavior = defaultCacheBehavior;
@@ -412,9 +391,6 @@ public class DistributionSummary  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheBehaviors A complex type that contains zero or more CacheBehavior elements.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DistributionSummary withCacheBehaviors(CacheBehaviors cacheBehaviors) {
         this.cacheBehaviors = cacheBehaviors;
@@ -446,9 +422,6 @@ public class DistributionSummary  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param comment The comment originally specified when this distribution was created.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DistributionSummary withComment(String comment) {
         this.comment = comment;
@@ -494,9 +467,6 @@ public class DistributionSummary  implements Serializable  {
      *
      * @param priceClass The new value for the PriceClass property for this object.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see PriceClass
      */
     public DistributionSummary withPriceClass(String priceClass) {
@@ -528,9 +498,6 @@ public class DistributionSummary  implements Serializable  {
      * <b>Allowed Values: </b>PriceClass_100, PriceClass_200, PriceClass_All
      *
      * @param priceClass The new value for the PriceClass property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see PriceClass
      */
@@ -569,9 +536,6 @@ public class DistributionSummary  implements Serializable  {
      *
      * @param enabled Whether the distribution is enabled to accept end user requests for
      *         content.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DistributionSummary withEnabled(Boolean enabled) {
         this.enabled = enabled;
@@ -620,9 +584,6 @@ public class DistributionSummary  implements Serializable  {
      *
      * @param viewerCertificate A complex type that contains information about viewer certificates for
      *         this distribution.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DistributionSummary withViewerCertificate(ViewerCertificate viewerCertificate) {
         this.viewerCertificate = viewerCertificate;

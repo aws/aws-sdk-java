@@ -61,9 +61,6 @@ public class ListTagsForResourceResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tagList List of tags returned by the ListTagsForResource operation.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListTagsForResourceResult withTagList(Tag... tagList) {
         if (getTagList() == null) setTagList(new java.util.ArrayList<Tag>(tagList.length));
@@ -79,9 +76,6 @@ public class ListTagsForResourceResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tagList List of tags returned by the ListTagsForResource operation.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListTagsForResourceResult withTagList(java.util.Collection<Tag> tagList) {
         if (tagList == null) {

@@ -117,9 +117,6 @@ public class CreateApplicationRequest extends AmazonWebServiceRequest  implement
      * @param applicationName The name of the application. <p> Constraint: This name must be unique
      *         within your account. If the specified name already exists, the action
      *         returns an <code>InvalidParameterValue</code> error.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateApplicationRequest withApplicationName(String applicationName) {
         this.applicationName = applicationName;
@@ -160,9 +157,6 @@ public class CreateApplicationRequest extends AmazonWebServiceRequest  implement
      * <b>Length: </b>0 - 200<br/>
      *
      * @param description Describes the application.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateApplicationRequest withDescription(String description) {
         this.description = description;

@@ -139,9 +139,6 @@ public class ListDomainsRequest extends AmazonWebServiceRequest  implements Seri
      *         returned, the result has more than one page. To get the next page of
      *         results, repeat the call with the returned token and all other
      *         arguments unchanged.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListDomainsRequest withNextPageToken(String nextPageToken) {
         this.nextPageToken = nextPageToken;
@@ -187,9 +184,6 @@ public class ListDomainsRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param registrationStatus Specifies the registration status of the domains to list.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see RegistrationStatus
      */
     public ListDomainsRequest withRegistrationStatus(String registrationStatus) {
@@ -221,9 +215,6 @@ public class ListDomainsRequest extends AmazonWebServiceRequest  implements Seri
      * <b>Allowed Values: </b>REGISTERED, DEPRECATED
      *
      * @param registrationStatus Specifies the registration status of the domains to list.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see RegistrationStatus
      */
@@ -295,9 +286,6 @@ public class ListDomainsRequest extends AmazonWebServiceRequest  implements Seri
      *         greater than 100. Note that the number of domains may be less than the
      *         maxiumum page size, in which case, the returned page will have fewer
      *         results than the maximumPageSize specified.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListDomainsRequest withMaximumPageSize(Integer maximumPageSize) {
         this.maximumPageSize = maximumPageSize;
@@ -341,9 +329,6 @@ public class ListDomainsRequest extends AmazonWebServiceRequest  implements Seri
      * @param reverseOrder When set to <code>true</code>, returns the results in reverse order.
      *         By default the results are returned in ascending alphabetical order of
      *         the <code>name</code> of the domains.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListDomainsRequest withReverseOrder(Boolean reverseOrder) {
         this.reverseOrder = reverseOrder;

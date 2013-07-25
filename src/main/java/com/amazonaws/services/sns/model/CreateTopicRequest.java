@@ -102,9 +102,6 @@ public class CreateTopicRequest extends AmazonWebServiceRequest  implements Seri
      *         must be made up of only uppercase and lowercase ASCII letters,
      *         numbers, underscores, and hyphens, and must be between 1 and 256
      *         characters long.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateTopicRequest withName(String name) {
         this.name = name;

@@ -43,6 +43,7 @@ import java.io.Serializable;
  * Permissions in Temporary Credentials </a> in <i>Using Temporary Security Credentials</i> . For information about using <code>GetFederationToken</code>
  * to create temporary security credentials, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/CreatingFedTokens.html"> Creating Temporary
  * Credentials to Enable Access for Federated Users </a> in <i>Using Temporary Security Credentials</i> .
+ * 
  * </p>
  *
  * @see com.amazonaws.services.securitytoken.AWSSecurityTokenService#getFederationToken(GetFederationTokenRequest)
@@ -169,9 +170,6 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest  implemen
      *         the temporary security credentials (such as <code>Bob</code>). For
      *         example, you can reference the federated user name in a resource-based
      *         policy, such as in an Amazon S3 bucket policy.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetFederationTokenRequest withName(String name) {
         this.name = name;
@@ -257,9 +255,6 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest  implemen
      *         users can only access AWS resources that explicitly allow those
      *         federated users in a resource policy, such as in an Amazon S3 bucket
      *         policy.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetFederationTokenRequest withPolicy(String policy) {
         this.policy = policy;
@@ -330,9 +325,6 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest  implemen
      *         default. Sessions for AWS account owners are restricted to a maximum
      *         of 3600 seconds (one hour). If the duration is longer than one hour,
      *         the session for AWS account owners defaults to one hour.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetFederationTokenRequest withDurationSeconds(Integer durationSeconds) {
         this.durationSeconds = durationSeconds;

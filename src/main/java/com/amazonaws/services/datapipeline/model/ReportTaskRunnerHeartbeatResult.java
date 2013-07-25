@@ -65,9 +65,6 @@ public class ReportTaskRunnerHeartbeatResult  implements Serializable  {
      * @param terminate Indicates whether the calling task runner should terminate. If
      *         <code>True</code>, the task runner that called
      *         <a>ReportTaskRunnerHeartbeat</a> should terminate.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReportTaskRunnerHeartbeatResult withTerminate(Boolean terminate) {
         this.terminate = terminate;

@@ -112,9 +112,6 @@ public class CancelWorkflowExecutionFailedEventAttributes  implements Serializab
      *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see CancelWorkflowExecutionFailedCause
      */
     public CancelWorkflowExecutionFailedEventAttributes withCause(String cause) {
@@ -166,9 +163,6 @@ public class CancelWorkflowExecutionFailedEventAttributes  implements Serializab
      *         sufficient permissions. For details and example IAM policies, see <a
      *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see CancelWorkflowExecutionFailedCause
      */
@@ -225,9 +219,6 @@ public class CancelWorkflowExecutionFailedEventAttributes  implements Serializab
      *         <code>CancelWorkflowExecution</code> decision for this cancellation
      *         request. This information can be useful for diagnosing problems by
      *         tracing back the cause of events.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CancelWorkflowExecutionFailedEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
         this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;

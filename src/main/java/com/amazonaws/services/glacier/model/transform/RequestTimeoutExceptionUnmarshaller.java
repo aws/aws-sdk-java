@@ -36,6 +36,10 @@ public class RequestTimeoutExceptionUnmarshaller extends GlacierErrorUnmarshalle
         RequestTimeoutException e = (RequestTimeoutException)super.unmarshall(json);
         
         
+        e.setType(parseMember("Type", json));
+        
+        e.setCode(parseMember("Code", json));
+        
         return e;
     }
 }

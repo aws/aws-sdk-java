@@ -51,9 +51,6 @@ public class GetSessionTokenResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param credentials The session credentials for API authentication.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetSessionTokenResult withCredentials(Credentials credentials) {
         this.credentials = credentials;

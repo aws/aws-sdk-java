@@ -81,9 +81,6 @@ public class IdentityVerificationAttributes  implements Serializable  {
      * @param verificationStatus The verification status of the identity: "Pending", "Success",
      *         "Failed", or "TemporaryFailure".
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see VerificationStatus
      */
     public IdentityVerificationAttributes withVerificationStatus(String verificationStatus) {
@@ -119,9 +116,6 @@ public class IdentityVerificationAttributes  implements Serializable  {
      *
      * @param verificationStatus The verification status of the identity: "Pending", "Success",
      *         "Failed", or "TemporaryFailure".
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see VerificationStatus
      */
@@ -160,9 +154,6 @@ public class IdentityVerificationAttributes  implements Serializable  {
      *
      * @param verificationToken The verification token for a domain identity. Null for email address
      *         identities.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public IdentityVerificationAttributes withVerificationToken(String verificationToken) {
         this.verificationToken = verificationToken;

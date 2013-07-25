@@ -83,9 +83,6 @@ public class DescribeTerminationPolicyTypesResult  implements Serializable  {
      *         <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
      *         <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
      *         <code>Default</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeTerminationPolicyTypesResult withTerminationPolicyTypes(String... terminationPolicyTypes) {
         if (getTerminationPolicyTypes() == null) setTerminationPolicyTypes(new java.util.ArrayList<String>(terminationPolicyTypes.length));
@@ -107,9 +104,6 @@ public class DescribeTerminationPolicyTypesResult  implements Serializable  {
      *         <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
      *         <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
      *         <code>Default</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeTerminationPolicyTypesResult withTerminationPolicyTypes(java.util.Collection<String> terminationPolicyTypes) {
         if (terminationPolicyTypes == null) {

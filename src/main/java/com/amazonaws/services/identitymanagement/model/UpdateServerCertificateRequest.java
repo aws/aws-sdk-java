@@ -122,9 +122,6 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest  imp
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param serverCertificateName The name of the server certificate that you want to update.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateServerCertificateRequest withServerCertificateName(String serverCertificateName) {
         this.serverCertificateName = serverCertificateName;
@@ -174,9 +171,6 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest  imp
      *
      * @param newPath The new path for the server certificate. Include this only if you are
      *         updating the server certificate's path.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateServerCertificateRequest withNewPath(String newPath) {
         this.newPath = newPath;
@@ -226,9 +220,6 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest  imp
      *
      * @param newServerCertificateName The new name for the server certificate. Include this only if you are
      *         updating the server certificate's name.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateServerCertificateRequest withNewServerCertificateName(String newServerCertificateName) {
         this.newServerCertificateName = newServerCertificateName;

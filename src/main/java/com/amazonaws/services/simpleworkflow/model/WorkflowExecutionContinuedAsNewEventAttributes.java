@@ -139,9 +139,6 @@ public class WorkflowExecutionContinuedAsNewEventAttributes  implements Serializ
      * <b>Length: </b>0 - 32768<br/>
      *
      * @param input The input provided to the new workflow execution.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public WorkflowExecutionContinuedAsNewEventAttributes withInput(String input) {
         this.input = input;
@@ -197,9 +194,6 @@ public class WorkflowExecutionContinuedAsNewEventAttributes  implements Serializ
      *         <code>ContinueAsNewWorkflowExecution</code> decision that started this
      *         execution. This information can be useful for diagnosing problems by
      *         tracing back the cause of events.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public WorkflowExecutionContinuedAsNewEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
         this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;
@@ -240,9 +234,6 @@ public class WorkflowExecutionContinuedAsNewEventAttributes  implements Serializ
      * <b>Length: </b>1 - 64<br/>
      *
      * @param newExecutionRunId The <code>runId</code> of the new workflow execution.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public WorkflowExecutionContinuedAsNewEventAttributes withNewExecutionRunId(String newExecutionRunId) {
         this.newExecutionRunId = newExecutionRunId;
@@ -301,9 +292,6 @@ public class WorkflowExecutionContinuedAsNewEventAttributes  implements Serializ
      *         valid values are integers greater than or equal to <code>0</code>. An
      *         integer value can be used to specify the duration in seconds while
      *         <code>NONE</code> can be used to specify unlimited duration.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public WorkflowExecutionContinuedAsNewEventAttributes withExecutionStartToCloseTimeout(String executionStartToCloseTimeout) {
         this.executionStartToCloseTimeout = executionStartToCloseTimeout;
@@ -335,9 +323,6 @@ public class WorkflowExecutionContinuedAsNewEventAttributes  implements Serializ
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param taskList Represents a task list.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public WorkflowExecutionContinuedAsNewEventAttributes withTaskList(TaskList taskList) {
         this.taskList = taskList;
@@ -402,9 +387,6 @@ public class WorkflowExecutionContinuedAsNewEventAttributes  implements Serializ
      *         <code>0</code>. An integer value can be used to specify the duration
      *         in seconds while <code>NONE</code> can be used to specify unlimited
      *         duration.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public WorkflowExecutionContinuedAsNewEventAttributes withTaskStartToCloseTimeout(String taskStartToCloseTimeout) {
         this.taskStartToCloseTimeout = taskStartToCloseTimeout;
@@ -510,9 +492,6 @@ public class WorkflowExecutionContinuedAsNewEventAttributes  implements Serializ
      *         execution history with this event. </li> <li><b>ABANDON:</b> no action
      *         will be taken. The child executions will continue to run.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ChildPolicy
      */
     public WorkflowExecutionContinuedAsNewEventAttributes withChildPolicy(String childPolicy) {
@@ -585,9 +564,6 @@ public class WorkflowExecutionContinuedAsNewEventAttributes  implements Serializ
      *         execution history with this event. </li> <li><b>ABANDON:</b> no action
      *         will be taken. The child executions will continue to run.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ChildPolicy
      */
     public WorkflowExecutionContinuedAsNewEventAttributes withChildPolicy(ChildPolicy childPolicy) {
@@ -639,9 +615,6 @@ public class WorkflowExecutionContinuedAsNewEventAttributes  implements Serializ
      * <b>Length: </b>0 - 5<br/>
      *
      * @param tagList The list of tags associated with the new workflow execution.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public WorkflowExecutionContinuedAsNewEventAttributes withTagList(String... tagList) {
         if (getTagList() == null) setTagList(new java.util.ArrayList<String>(tagList.length));
@@ -660,9 +633,6 @@ public class WorkflowExecutionContinuedAsNewEventAttributes  implements Serializ
      * <b>Length: </b>0 - 5<br/>
      *
      * @param tagList The list of tags associated with the new workflow execution.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public WorkflowExecutionContinuedAsNewEventAttributes withTagList(java.util.Collection<String> tagList) {
         if (tagList == null) {
@@ -700,9 +670,6 @@ public class WorkflowExecutionContinuedAsNewEventAttributes  implements Serializ
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param workflowType Represents a workflow type.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public WorkflowExecutionContinuedAsNewEventAttributes withWorkflowType(WorkflowType workflowType) {
         this.workflowType = workflowType;

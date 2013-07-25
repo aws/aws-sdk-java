@@ -48,9 +48,6 @@ public class SendMessageResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param mD5OfMessageBody The new value for the MD5OfMessageBody property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SendMessageResult withMD5OfMessageBody(String mD5OfMessageBody) {
         this.mD5OfMessageBody = mD5OfMessageBody;
@@ -82,9 +79,6 @@ public class SendMessageResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param messageId The new value for the MessageId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SendMessageResult withMessageId(String messageId) {
         this.messageId = messageId;

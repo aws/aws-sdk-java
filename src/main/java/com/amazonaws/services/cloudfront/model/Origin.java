@@ -102,9 +102,6 @@ public class Origin  implements Serializable  {
      *         cache behavior. The Id identifies the origin that CloudFront routes a
      *         request to when the request matches the path pattern for that cache
      *         behavior.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Origin withId(String id) {
         this.id = id;
@@ -160,9 +157,6 @@ public class Origin  implements Serializable  {
      *         myawsbucket.s3.amazonaws.com. Custom origins: The DNS domain name for
      *         the HTTP server from which you want CloudFront to get objects for this
      *         origin, for example, www.example.com.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Origin withDomainName(String domainName) {
         this.domainName = domainName;
@@ -206,9 +200,6 @@ public class Origin  implements Serializable  {
      * @param s3OriginConfig A complex type that contains information about the Amazon S3 origin.
      *         If the origin is a custom origin, use the CustomOriginConfig element
      *         instead.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Origin withS3OriginConfig(S3OriginConfig s3OriginConfig) {
         this.s3OriginConfig = s3OriginConfig;
@@ -246,9 +237,6 @@ public class Origin  implements Serializable  {
      *
      * @param customOriginConfig A complex type that contains information about a custom origin. If the
      *         origin is an Amazon S3 bucket, use the S3OriginConfig element instead.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Origin withCustomOriginConfig(CustomOriginConfig customOriginConfig) {
         this.customOriginConfig = customOriginConfig;

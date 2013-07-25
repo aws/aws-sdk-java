@@ -98,9 +98,6 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest  imp
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param autoScalingGroupName The name or ARN of the Auto Scaling group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EnableMetricsCollectionRequest withAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
@@ -179,9 +176,6 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest  imp
      *         <li><p>GroupPendingInstances</li>
      *         <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
      *         </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EnableMetricsCollectionRequest withMetrics(String... metrics) {
         if (getMetrics() == null) setMetrics(new java.util.ArrayList<String>(metrics.length));
@@ -209,9 +203,6 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest  imp
      *         <li><p>GroupPendingInstances</li>
      *         <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
      *         </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EnableMetricsCollectionRequest withMetrics(java.util.Collection<String> metrics) {
         if (metrics == null) {
@@ -267,9 +258,6 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest  imp
      *
      * @param granularity The granularity to associate with the metrics to collect. Currently,
      *         the only legal granularity is "1Minute".
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EnableMetricsCollectionRequest withGranularity(String granularity) {
         this.granularity = granularity;

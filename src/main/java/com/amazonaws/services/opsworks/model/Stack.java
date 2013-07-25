@@ -59,8 +59,19 @@ public class Stack  implements Serializable  {
     private String defaultInstanceProfileArn;
 
     /**
-     * The cloned stack default operating system, which must be either
-     * "Amazon Linux" or "Ubuntu 12.04 LTS".
+     * The stack default operating system, which must be set to one of the
+     * following. <ul> <li>Standard operating systems: <code>Amazon
+     * Linux</code> or <code>Ubuntu</code> 12.04 LTS"</li> <li>Custom AMIs:
+     * <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
+     * Linux</code>. If you set this parameter to <code>Custom</code>, you
+     * must use the <a>CreateInstance</a> action's AmiId parameter to specify
+     * the custom AMI that you want to use. For more information on the
+     * standard operating systems, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
+     * Systems</a>For more information on how to use custom AMIs with
+     * OpsWorks, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+     * Custom AMIs</a>.
      */
     private String defaultOs;
 
@@ -82,10 +93,15 @@ public class Stack  implements Serializable  {
      * The string should be in the following format and must escape
      * characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
      * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">
-     * Use Custom JSON to Modify the Stack Configuration JSON</a>.
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+     * Custom JSON to Modify the Stack Configuration JSON</a>.
      */
     private String customJson;
+
+    /**
+     * The configuration manager.
+     */
+    private StackConfigurationManager configurationManager;
 
     /**
      * Whether the stack uses custom cookbooks.
@@ -97,7 +113,7 @@ public class Stack  implements Serializable  {
      * a repository. For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
      * Apps</a> or <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom
      * Recipes and Cookbooks</a>.
      */
     private Source customCookbooksSource;
@@ -382,35 +398,101 @@ public class Stack  implements Serializable  {
     
     
     /**
-     * The cloned stack default operating system, which must be either
-     * "Amazon Linux" or "Ubuntu 12.04 LTS".
+     * The stack default operating system, which must be set to one of the
+     * following. <ul> <li>Standard operating systems: <code>Amazon
+     * Linux</code> or <code>Ubuntu</code> 12.04 LTS"</li> <li>Custom AMIs:
+     * <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
+     * Linux</code>. If you set this parameter to <code>Custom</code>, you
+     * must use the <a>CreateInstance</a> action's AmiId parameter to specify
+     * the custom AMI that you want to use. For more information on the
+     * standard operating systems, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
+     * Systems</a>For more information on how to use custom AMIs with
+     * OpsWorks, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+     * Custom AMIs</a>.
      *
-     * @return The cloned stack default operating system, which must be either
-     *         "Amazon Linux" or "Ubuntu 12.04 LTS".
+     * @return The stack default operating system, which must be set to one of the
+     *         following. <ul> <li>Standard operating systems: <code>Amazon
+     *         Linux</code> or <code>Ubuntu</code> 12.04 LTS"</li> <li>Custom AMIs:
+     *         <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
+     *         Linux</code>. If you set this parameter to <code>Custom</code>, you
+     *         must use the <a>CreateInstance</a> action's AmiId parameter to specify
+     *         the custom AMI that you want to use. For more information on the
+     *         standard operating systems, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
+     *         Systems</a>For more information on how to use custom AMIs with
+     *         OpsWorks, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+     *         Custom AMIs</a>.
      */
     public String getDefaultOs() {
         return defaultOs;
     }
     
     /**
-     * The cloned stack default operating system, which must be either
-     * "Amazon Linux" or "Ubuntu 12.04 LTS".
+     * The stack default operating system, which must be set to one of the
+     * following. <ul> <li>Standard operating systems: <code>Amazon
+     * Linux</code> or <code>Ubuntu</code> 12.04 LTS"</li> <li>Custom AMIs:
+     * <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
+     * Linux</code>. If you set this parameter to <code>Custom</code>, you
+     * must use the <a>CreateInstance</a> action's AmiId parameter to specify
+     * the custom AMI that you want to use. For more information on the
+     * standard operating systems, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
+     * Systems</a>For more information on how to use custom AMIs with
+     * OpsWorks, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+     * Custom AMIs</a>.
      *
-     * @param defaultOs The cloned stack default operating system, which must be either
-     *         "Amazon Linux" or "Ubuntu 12.04 LTS".
+     * @param defaultOs The stack default operating system, which must be set to one of the
+     *         following. <ul> <li>Standard operating systems: <code>Amazon
+     *         Linux</code> or <code>Ubuntu</code> 12.04 LTS"</li> <li>Custom AMIs:
+     *         <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
+     *         Linux</code>. If you set this parameter to <code>Custom</code>, you
+     *         must use the <a>CreateInstance</a> action's AmiId parameter to specify
+     *         the custom AMI that you want to use. For more information on the
+     *         standard operating systems, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
+     *         Systems</a>For more information on how to use custom AMIs with
+     *         OpsWorks, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+     *         Custom AMIs</a>.
      */
     public void setDefaultOs(String defaultOs) {
         this.defaultOs = defaultOs;
     }
     
     /**
-     * The cloned stack default operating system, which must be either
-     * "Amazon Linux" or "Ubuntu 12.04 LTS".
+     * The stack default operating system, which must be set to one of the
+     * following. <ul> <li>Standard operating systems: <code>Amazon
+     * Linux</code> or <code>Ubuntu</code> 12.04 LTS"</li> <li>Custom AMIs:
+     * <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
+     * Linux</code>. If you set this parameter to <code>Custom</code>, you
+     * must use the <a>CreateInstance</a> action's AmiId parameter to specify
+     * the custom AMI that you want to use. For more information on the
+     * standard operating systems, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
+     * Systems</a>For more information on how to use custom AMIs with
+     * OpsWorks, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+     * Custom AMIs</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param defaultOs The cloned stack default operating system, which must be either
-     *         "Amazon Linux" or "Ubuntu 12.04 LTS".
+     * @param defaultOs The stack default operating system, which must be set to one of the
+     *         following. <ul> <li>Standard operating systems: <code>Amazon
+     *         Linux</code> or <code>Ubuntu</code> 12.04 LTS"</li> <li>Custom AMIs:
+     *         <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
+     *         Linux</code>. If you set this parameter to <code>Custom</code>, you
+     *         must use the <a>CreateInstance</a> action's AmiId parameter to specify
+     *         the custom AMI that you want to use. For more information on the
+     *         standard operating systems, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
+     *         Systems</a>For more information on how to use custom AMIs with
+     *         OpsWorks, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+     *         Custom AMIs</a>.
      */
     public Stack withDefaultOs(String defaultOs) {
         this.defaultOs = defaultOs;
@@ -498,16 +580,16 @@ public class Stack  implements Serializable  {
      * The string should be in the following format and must escape
      * characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
      * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">
-     * Use Custom JSON to Modify the Stack Configuration JSON</a>.
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+     * Custom JSON to Modify the Stack Configuration JSON</a>.
      *
      * @return A string that contains user-defined, custom JSON. It is used to
      *         override the corresponding default stack configuration JSON values.
      *         The string should be in the following format and must escape
      *         characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
      *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">
-     *         Use Custom JSON to Modify the Stack Configuration JSON</a>.
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+     *         Custom JSON to Modify the Stack Configuration JSON</a>.
      */
     public String getCustomJson() {
         return customJson;
@@ -519,16 +601,16 @@ public class Stack  implements Serializable  {
      * The string should be in the following format and must escape
      * characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
      * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">
-     * Use Custom JSON to Modify the Stack Configuration JSON</a>.
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+     * Custom JSON to Modify the Stack Configuration JSON</a>.
      *
      * @param customJson A string that contains user-defined, custom JSON. It is used to
      *         override the corresponding default stack configuration JSON values.
      *         The string should be in the following format and must escape
      *         characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
      *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">
-     *         Use Custom JSON to Modify the Stack Configuration JSON</a>.
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+     *         Custom JSON to Modify the Stack Configuration JSON</a>.
      */
     public void setCustomJson(String customJson) {
         this.customJson = customJson;
@@ -540,8 +622,8 @@ public class Stack  implements Serializable  {
      * The string should be in the following format and must escape
      * characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
      * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">
-     * Use Custom JSON to Modify the Stack Configuration JSON</a>.
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+     * Custom JSON to Modify the Stack Configuration JSON</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -550,11 +632,42 @@ public class Stack  implements Serializable  {
      *         The string should be in the following format and must escape
      *         characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
      *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">
-     *         Use Custom JSON to Modify the Stack Configuration JSON</a>.
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+     *         Custom JSON to Modify the Stack Configuration JSON</a>.
      */
     public Stack withCustomJson(String customJson) {
         this.customJson = customJson;
+        return this;
+    }
+    
+    
+    /**
+     * The configuration manager.
+     *
+     * @return The configuration manager.
+     */
+    public StackConfigurationManager getConfigurationManager() {
+        return configurationManager;
+    }
+    
+    /**
+     * The configuration manager.
+     *
+     * @param configurationManager The configuration manager.
+     */
+    public void setConfigurationManager(StackConfigurationManager configurationManager) {
+        this.configurationManager = configurationManager;
+    }
+    
+    /**
+     * The configuration manager.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param configurationManager The configuration manager.
+     */
+    public Stack withConfigurationManager(StackConfigurationManager configurationManager) {
+        this.configurationManager = configurationManager;
         return this;
     }
     
@@ -604,14 +717,14 @@ public class Stack  implements Serializable  {
      * a repository. For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
      * Apps</a> or <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom
      * Recipes and Cookbooks</a>.
      *
      * @return Contains the information required to retrieve an app or cookbook from
      *         a repository. For more information, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
      *         Apps</a> or <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom
      *         Recipes and Cookbooks</a>.
      */
     public Source getCustomCookbooksSource() {
@@ -623,14 +736,14 @@ public class Stack  implements Serializable  {
      * a repository. For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
      * Apps</a> or <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom
      * Recipes and Cookbooks</a>.
      *
      * @param customCookbooksSource Contains the information required to retrieve an app or cookbook from
      *         a repository. For more information, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
      *         Apps</a> or <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom
      *         Recipes and Cookbooks</a>.
      */
     public void setCustomCookbooksSource(Source customCookbooksSource) {
@@ -642,7 +755,7 @@ public class Stack  implements Serializable  {
      * a repository. For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
      * Apps</a> or <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom
      * Recipes and Cookbooks</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -651,7 +764,7 @@ public class Stack  implements Serializable  {
      *         a repository. For more information, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
      *         Apps</a> or <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom
      *         Recipes and Cookbooks</a>.
      */
     public Stack withCustomCookbooksSource(Source customCookbooksSource) {
@@ -867,6 +980,7 @@ public class Stack  implements Serializable  {
         if (getHostnameTheme() != null) sb.append("HostnameTheme: " + getHostnameTheme() + ",");
         if (getDefaultAvailabilityZone() != null) sb.append("DefaultAvailabilityZone: " + getDefaultAvailabilityZone() + ",");
         if (getCustomJson() != null) sb.append("CustomJson: " + getCustomJson() + ",");
+        if (getConfigurationManager() != null) sb.append("ConfigurationManager: " + getConfigurationManager() + ",");
         if (isUseCustomCookbooks() != null) sb.append("UseCustomCookbooks: " + isUseCustomCookbooks() + ",");
         if (getCustomCookbooksSource() != null) sb.append("CustomCookbooksSource: " + getCustomCookbooksSource() + ",");
         if (getDefaultSshKeyName() != null) sb.append("DefaultSshKeyName: " + getDefaultSshKeyName() + ",");
@@ -891,6 +1005,7 @@ public class Stack  implements Serializable  {
         hashCode = prime * hashCode + ((getHostnameTheme() == null) ? 0 : getHostnameTheme().hashCode()); 
         hashCode = prime * hashCode + ((getDefaultAvailabilityZone() == null) ? 0 : getDefaultAvailabilityZone().hashCode()); 
         hashCode = prime * hashCode + ((getCustomJson() == null) ? 0 : getCustomJson().hashCode()); 
+        hashCode = prime * hashCode + ((getConfigurationManager() == null) ? 0 : getConfigurationManager().hashCode()); 
         hashCode = prime * hashCode + ((isUseCustomCookbooks() == null) ? 0 : isUseCustomCookbooks().hashCode()); 
         hashCode = prime * hashCode + ((getCustomCookbooksSource() == null) ? 0 : getCustomCookbooksSource().hashCode()); 
         hashCode = prime * hashCode + ((getDefaultSshKeyName() == null) ? 0 : getDefaultSshKeyName().hashCode()); 
@@ -927,6 +1042,8 @@ public class Stack  implements Serializable  {
         if (other.getDefaultAvailabilityZone() != null && other.getDefaultAvailabilityZone().equals(this.getDefaultAvailabilityZone()) == false) return false; 
         if (other.getCustomJson() == null ^ this.getCustomJson() == null) return false;
         if (other.getCustomJson() != null && other.getCustomJson().equals(this.getCustomJson()) == false) return false; 
+        if (other.getConfigurationManager() == null ^ this.getConfigurationManager() == null) return false;
+        if (other.getConfigurationManager() != null && other.getConfigurationManager().equals(this.getConfigurationManager()) == false) return false; 
         if (other.isUseCustomCookbooks() == null ^ this.isUseCustomCookbooks() == null) return false;
         if (other.isUseCustomCookbooks() != null && other.isUseCustomCookbooks().equals(this.isUseCustomCookbooks()) == false) return false; 
         if (other.getCustomCookbooksSource() == null ^ this.getCustomCookbooksSource() == null) return false;

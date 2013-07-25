@@ -38,6 +38,7 @@ import java.io.Serializable;
  * For more information about using <code>GetSessionToken</code> to create temporary credentials, go to <a
  * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/CreatingSessionTokens.html"> Creating Temporary Credentials to Enable Access for IAM Users </a>
  * in <i>Using IAM</i> .
+ * 
  * </p>
  *
  * @see com.amazonaws.services.securitytoken.AWSSecurityTokenService#getSessionToken(GetSessionTokenRequest)
@@ -157,9 +158,6 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest  implements 
      *         as the default. Sessions for AWS account owners are restricted to a
      *         maximum of 3600 seconds (one hour). If the duration is longer than one
      *         hour, the session for AWS account owners defaults to one hour.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetSessionTokenRequest withDurationSeconds(Integer durationSeconds) {
         this.durationSeconds = durationSeconds;
@@ -251,9 +249,6 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest  implements 
      *         <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the
      *         device for an IAM user by going to the AWS Management Console and
      *         viewing the user's security credentials.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetSessionTokenRequest withSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
@@ -327,9 +322,6 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest  implements 
      *         provide a code when requesting a set of temporary security
      *         credentials, the user will receive an "access denied" response when
      *         requesting resources that require MFA authentication.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetSessionTokenRequest withTokenCode(String tokenCode) {
         this.tokenCode = tokenCode;

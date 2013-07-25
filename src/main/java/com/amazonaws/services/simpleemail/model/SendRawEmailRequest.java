@@ -149,9 +149,6 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest  implements Ser
      *         complaints will be sent to this email address. This takes precedence
      *         over any <i>Return-Path</i> header that you might include in the raw
      *         text of the message. </note>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SendRawEmailRequest withSource(String source) {
         this.source = source;
@@ -194,9 +191,6 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param destinations A list of destinations for the message.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SendRawEmailRequest withDestinations(String... destinations) {
         if (getDestinations() == null) setDestinations(new java.util.ArrayList<String>(destinations.length));
@@ -212,9 +206,6 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param destinations A list of destinations for the message.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SendRawEmailRequest withDestinations(java.util.Collection<String> destinations) {
         if (destinations == null) {
@@ -300,9 +291,6 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest  implements Ser
      *         href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
      *         SES Developer Guide</a> for more details. </li> <li>Content must be
      *         base64-encoded, if MIME requires it.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SendRawEmailRequest withRawMessage(RawMessage rawMessage) {
         this.rawMessage = rawMessage;

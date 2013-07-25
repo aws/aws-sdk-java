@@ -150,9 +150,6 @@ public class DomainStatus  implements Serializable  {
      * <b>Length: </b>1 - 64<br/>
      *
      * @param domainId An internally generated unique identifier for a domain.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DomainStatus withDomainId(String domainId) {
         this.domainId = domainId;
@@ -220,9 +217,6 @@ public class DomainStatus  implements Serializable  {
      *         Domain names must start with a letter or number and can contain the
      *         following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase
      *         letters and underscores are not allowed.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DomainStatus withDomainName(String domainName) {
         this.domainName = domainName;
@@ -272,9 +266,6 @@ public class DomainStatus  implements Serializable  {
      *         initialize a domain when <a>CreateDomain</a> is called. Newly created
      *         search domains are returned from <a>DescribeDomains</a> with a false
      *         value for Created until domain creation is complete.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DomainStatus withCreated(Boolean created) {
         this.created = created;
@@ -345,9 +336,6 @@ public class DomainStatus  implements Serializable  {
      *         called. Newly deleted search domains are returned from
      *         <a>DescribeDomains</a> with a true value for IsDeleted for several
      *         minutes until resource cleanup is complete.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DomainStatus withDeleted(Boolean deleted) {
         this.deleted = deleted;
@@ -411,9 +399,6 @@ public class DomainStatus  implements Serializable  {
      *
      * @param numSearchableDocs The number of documents that have been submitted to the domain and
      *         indexed.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DomainStatus withNumSearchableDocs(Integer numSearchableDocs) {
         this.numSearchableDocs = numSearchableDocs;
@@ -445,9 +430,6 @@ public class DomainStatus  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param docService The service endpoint for updating documents in a search domain.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DomainStatus withDocService(ServiceEndpoint docService) {
         this.docService = docService;
@@ -485,9 +467,6 @@ public class DomainStatus  implements Serializable  {
      *
      * @param searchService The service endpoint for requesting search results from a search
      *         domain.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DomainStatus withSearchService(ServiceEndpoint searchService) {
         this.searchService = searchService;
@@ -525,9 +504,6 @@ public class DomainStatus  implements Serializable  {
      *
      * @param requiresIndexDocuments True if <a>IndexDocuments</a> needs to be called to activate the
      *         current domain configuration.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DomainStatus withRequiresIndexDocuments(Boolean requiresIndexDocuments) {
         this.requiresIndexDocuments = requiresIndexDocuments;
@@ -576,9 +552,6 @@ public class DomainStatus  implements Serializable  {
      *
      * @param processing True if processing is being done to activate the current domain
      *         configuration.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DomainStatus withProcessing(Boolean processing) {
         this.processing = processing;
@@ -635,9 +608,6 @@ public class DomainStatus  implements Serializable  {
      *
      * @param searchInstanceType The instance type that is being used to process search requests.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see SearchInstanceType
      */
     public DomainStatus withSearchInstanceType(String searchInstanceType) {
@@ -669,9 +639,6 @@ public class DomainStatus  implements Serializable  {
      * <b>Allowed Values: </b>SearchInstance:t1.micro, SearchInstance:m1.small, SearchInstance:m1.large, SearchInstance:m2.xlarge
      *
      * @param searchInstanceType The instance type that is being used to process search requests.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see SearchInstanceType
      */
@@ -713,9 +680,6 @@ public class DomainStatus  implements Serializable  {
      * <b>Range: </b>1 - <br/>
      *
      * @param searchPartitionCount The number of partitions across which the search index is spread.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DomainStatus withSearchPartitionCount(Integer searchPartitionCount) {
         this.searchPartitionCount = searchPartitionCount;
@@ -762,9 +726,6 @@ public class DomainStatus  implements Serializable  {
      *
      * @param searchInstanceCount The number of search instances that are available to process search
      *         requests.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DomainStatus withSearchInstanceCount(Integer searchInstanceCount) {
         this.searchInstanceCount = searchInstanceCount;

@@ -25,6 +25,7 @@ import com.amazonaws.transform.*;
 import org.codehaus.jackson.JsonToken;
 import static org.codehaus.jackson.JsonToken.*;
 
+
 /**
  * Layer JSON Unmarshaller
  */
@@ -107,6 +108,10 @@ public class LayerJsonUnmarshaller implements Unmarshaller<Layer, JsonUnmarshall
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
                     layer.setCreatedAt(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("InstallUpdatesOnBoot", targetDepth)) {
+                    context.nextToken();
+                    layer.setInstallUpdatesOnBoot(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

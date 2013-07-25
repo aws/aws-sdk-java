@@ -100,9 +100,6 @@ public class StreamingDistribution  implements Serializable  {
      *
      * @param id The identifier for the streaming distribution. For example:
      *         EGTXBD79H29TRA8.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StreamingDistribution withId(String id) {
         this.id = id;
@@ -146,9 +143,6 @@ public class StreamingDistribution  implements Serializable  {
      * @param status The current status of the streaming distribution. When the status is
      *         Deployed, the distribution's information is fully propagated
      *         throughout the Amazon CloudFront system.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StreamingDistribution withStatus(String status) {
         this.status = status;
@@ -180,9 +174,6 @@ public class StreamingDistribution  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param lastModifiedTime The date and time the distribution was last modified.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StreamingDistribution withLastModifiedTime(java.util.Date lastModifiedTime) {
         this.lastModifiedTime = lastModifiedTime;
@@ -220,9 +211,6 @@ public class StreamingDistribution  implements Serializable  {
      *
      * @param domainName The domain name corresponding to the streaming distribution. For
      *         example: s5c39gqb8ow64r.cloudfront.net.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StreamingDistribution withDomainName(String domainName) {
         this.domainName = domainName;
@@ -302,9 +290,6 @@ public class StreamingDistribution  implements Serializable  {
      *         key pairs associated with the trusted signer's AWS account. If no
      *         KeyPairId element appears for a Signer, that signer can't create
      *         working signed URLs.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StreamingDistribution withActiveTrustedSigners(ActiveTrustedSigners activeTrustedSigners) {
         this.activeTrustedSigners = activeTrustedSigners;
@@ -336,9 +321,6 @@ public class StreamingDistribution  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param streamingDistributionConfig The current configuration information for the streaming distribution.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StreamingDistribution withStreamingDistributionConfig(StreamingDistributionConfig streamingDistributionConfig) {
         this.streamingDistributionConfig = streamingDistributionConfig;

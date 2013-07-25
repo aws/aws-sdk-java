@@ -68,9 +68,6 @@ public class ListAvailableSolutionStacksResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param solutionStacks A list of available solution stacks.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListAvailableSolutionStacksResult withSolutionStacks(String... solutionStacks) {
         if (getSolutionStacks() == null) setSolutionStacks(new java.util.ArrayList<String>(solutionStacks.length));
@@ -86,9 +83,6 @@ public class ListAvailableSolutionStacksResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param solutionStacks A list of available solution stacks.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListAvailableSolutionStacksResult withSolutionStacks(java.util.Collection<String> solutionStacks) {
         if (solutionStacks == null) {
@@ -143,9 +137,6 @@ public class ListAvailableSolutionStacksResult  implements Serializable  {
      *
      * @param solutionStackDetails A list of available solution stacks and their
      *         <a>SolutionStackDescription</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListAvailableSolutionStacksResult withSolutionStackDetails(SolutionStackDescription... solutionStackDetails) {
         if (getSolutionStackDetails() == null) setSolutionStackDetails(new java.util.ArrayList<SolutionStackDescription>(solutionStackDetails.length));
@@ -163,9 +154,6 @@ public class ListAvailableSolutionStacksResult  implements Serializable  {
      *
      * @param solutionStackDetails A list of available solution stacks and their
      *         <a>SolutionStackDescription</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListAvailableSolutionStacksResult withSolutionStackDetails(java.util.Collection<SolutionStackDescription> solutionStackDetails) {
         if (solutionStackDetails == null) {

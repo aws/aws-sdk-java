@@ -77,9 +77,6 @@ public class TestRoleResult  implements Serializable  {
      *
      * @param success If the operation is successful, this value is <code>true</code>;
      *         otherwise, the value is <code>false</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TestRoleResult withSuccess(String success) {
         this.success = success;
@@ -134,9 +131,6 @@ public class TestRoleResult  implements Serializable  {
      * @param messages If the <code>Success</code> element contains <code>false</code>, this
      *         value is an array of one or more error messages that were generated
      *         during the test process.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TestRoleResult withMessages(String... messages) {
         if (getMessages() == null) setMessages(new java.util.ArrayList<String>(messages.length));
@@ -156,9 +150,6 @@ public class TestRoleResult  implements Serializable  {
      * @param messages If the <code>Success</code> element contains <code>false</code>, this
      *         value is an array of one or more error messages that were generated
      *         during the test process.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TestRoleResult withMessages(java.util.Collection<String> messages) {
         if (messages == null) {

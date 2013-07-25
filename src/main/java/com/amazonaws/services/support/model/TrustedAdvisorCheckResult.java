@@ -90,9 +90,6 @@ public class TrustedAdvisorCheckResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param checkId Unique identifier for a Trusted Advisor check.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedAdvisorCheckResult withCheckId(String checkId) {
         this.checkId = checkId;
@@ -124,9 +121,6 @@ public class TrustedAdvisorCheckResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param timestamp Time at which Trusted Advisor ran the check.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedAdvisorCheckResult withTimestamp(String timestamp) {
         this.timestamp = timestamp;
@@ -164,9 +158,6 @@ public class TrustedAdvisorCheckResult  implements Serializable  {
      *
      * @param status Overall status of the check. Status values are "ok," "warning,"
      *         "error," or "not_available."
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedAdvisorCheckResult withStatus(String status) {
         this.status = status;
@@ -216,9 +207,6 @@ public class TrustedAdvisorCheckResult  implements Serializable  {
      *         analyzed in a call to Trusted Advisor <a
      *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
      *         title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedAdvisorCheckResult withResourcesSummary(TrustedAdvisorResourcesSummary resourcesSummary) {
         this.resourcesSummary = resourcesSummary;
@@ -262,9 +250,6 @@ public class TrustedAdvisorCheckResult  implements Serializable  {
      * @param categorySpecificSummary Reports summaries for each Trusted Advisor category. Only the category
      *         <i>cost optimizing</i> is currently supported. The other categories
      *         are security, fault tolerance, and performance.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedAdvisorCheckResult withCategorySpecificSummary(TrustedAdvisorCategorySpecificSummary categorySpecificSummary) {
         this.categorySpecificSummary = categorySpecificSummary;
@@ -307,9 +292,6 @@ public class TrustedAdvisorCheckResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param flaggedResources List of AWS resources flagged by the Trusted Advisor check.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedAdvisorCheckResult withFlaggedResources(TrustedAdvisorResourceDetail... flaggedResources) {
         if (getFlaggedResources() == null) setFlaggedResources(new java.util.ArrayList<TrustedAdvisorResourceDetail>(flaggedResources.length));
@@ -325,9 +307,6 @@ public class TrustedAdvisorCheckResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param flaggedResources List of AWS resources flagged by the Trusted Advisor check.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedAdvisorCheckResult withFlaggedResources(java.util.Collection<TrustedAdvisorResourceDetail> flaggedResources) {
         if (flaggedResources == null) {

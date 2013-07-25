@@ -170,9 +170,6 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param contentLength The new value for the ContentLength property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UploadArchiveRequest withContentLength(Long contentLength) {
         this.contentLength = contentLength;
@@ -204,9 +201,6 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vaultName The name of the vault.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UploadArchiveRequest withVaultName(String vaultName) {
         this.vaultName = vaultName;
@@ -262,9 +256,6 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest  implements Se
      *         Glacier uses the AWS Account ID associated with the credentials used
      *         to sign the request. If you specify your Account ID, do not include
      *         hyphens in it.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UploadArchiveRequest withAccountId(String accountId) {
         this.accountId = accountId;
@@ -296,9 +287,6 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param archiveDescription The optional description of the archive you are uploading.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UploadArchiveRequest withArchiveDescription(String archiveDescription) {
         this.archiveDescription = archiveDescription;
@@ -330,9 +318,6 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param checksum The SHA256 checksum (a linear hash) of the payload.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UploadArchiveRequest withChecksum(String checksum) {
         this.checksum = checksum;
@@ -364,9 +349,6 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param body The data to upload.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UploadArchiveRequest withBody(java.io.InputStream body) {
         this.body = body;

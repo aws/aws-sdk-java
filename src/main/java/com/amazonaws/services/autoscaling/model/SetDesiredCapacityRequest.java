@@ -102,9 +102,6 @@ public class SetDesiredCapacityRequest extends AmazonWebServiceRequest  implemen
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param autoScalingGroupName The name of the Auto Scaling group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SetDesiredCapacityRequest withAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
@@ -136,9 +133,6 @@ public class SetDesiredCapacityRequest extends AmazonWebServiceRequest  implemen
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param desiredCapacity The new capacity setting for the Auto Scaling group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SetDesiredCapacityRequest withDesiredCapacity(Integer desiredCapacity) {
         this.desiredCapacity = desiredCapacity;
@@ -182,9 +176,6 @@ public class SetDesiredCapacityRequest extends AmazonWebServiceRequest  implemen
      * @param honorCooldown By default, <code>SetDesiredCapacity</code> overrides any cooldown
      *         period. Set to <code>True</code> if you want Auto Scaling to reject
      *         this request when the Auto Scaling group is in cooldown.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SetDesiredCapacityRequest withHonorCooldown(Boolean honorCooldown) {
         this.honorCooldown = honorCooldown;

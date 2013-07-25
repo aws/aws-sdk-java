@@ -81,9 +81,6 @@ public class ListSigningCertificatesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param certificates A list of the user's signing certificate information.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListSigningCertificatesResult withCertificates(SigningCertificate... certificates) {
         if (getCertificates() == null) setCertificates(new java.util.ArrayList<SigningCertificate>(certificates.length));
@@ -99,9 +96,6 @@ public class ListSigningCertificatesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param certificates A list of the user's signing certificate information.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListSigningCertificatesResult withCertificates(java.util.Collection<SigningCertificate> certificates) {
         if (certificates == null) {
@@ -157,9 +151,6 @@ public class ListSigningCertificatesResult  implements Serializable  {
      *         If your results were truncated, you can make a subsequent pagination
      *         request using the <code>Marker</code> request parameter to retrieve
      *         more certificates in the list.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListSigningCertificatesResult withIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
@@ -230,9 +221,6 @@ public class ListSigningCertificatesResult  implements Serializable  {
      * @param marker If <code>IsTruncated</code> is <code>true</code>, this element is
      *         present and contains the value to use for the <code>Marker</code>
      *         parameter in a subsequent pagination request.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListSigningCertificatesResult withMarker(String marker) {
         this.marker = marker;

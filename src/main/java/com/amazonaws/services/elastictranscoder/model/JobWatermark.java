@@ -101,9 +101,6 @@ public class JobWatermark  implements Serializable  {
      *         watermarks to the video during transcoding. The settings are in the
      *         preset specified by Preset for the current output. In that preset, the
      *         value of Watermarks Id tells Elastic Transcoder which settings to use.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public JobWatermark withPresetWatermarkId(String presetWatermarkId) {
         this.presetWatermarkId = presetWatermarkId;
@@ -189,9 +186,6 @@ public class JobWatermark  implements Serializable  {
      *         prefix, for example, <b>logos/128x64.png</b>, include the prefix in
      *         the key. If the file isn't in the specified bucket, Elastic Transcoder
      *         returns an error.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public JobWatermark withInputKey(String inputKey) {
         this.inputKey = inputKey;

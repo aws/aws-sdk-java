@@ -112,9 +112,6 @@ public class ContinueAsNewWorkflowExecutionFailedEventAttributes  implements Ser
      *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ContinueAsNewWorkflowExecutionFailedCause
      */
     public ContinueAsNewWorkflowExecutionFailedEventAttributes withCause(String cause) {
@@ -166,9 +163,6 @@ public class ContinueAsNewWorkflowExecutionFailedEventAttributes  implements Ser
      *         sufficient permissions. For details and example IAM policies, see <a
      *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see ContinueAsNewWorkflowExecutionFailedCause
      */
@@ -225,9 +219,6 @@ public class ContinueAsNewWorkflowExecutionFailedEventAttributes  implements Ser
      *         <code>ContinueAsNewWorkflowExecution</code> decision that started this
      *         execution. This information can be useful for diagnosing problems by
      *         tracing back the cause of events.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ContinueAsNewWorkflowExecutionFailedEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
         this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;

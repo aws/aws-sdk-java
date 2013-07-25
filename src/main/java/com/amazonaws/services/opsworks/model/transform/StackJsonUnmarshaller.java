@@ -25,6 +25,7 @@ import com.amazonaws.transform.*;
 import org.codehaus.jackson.JsonToken;
 import static org.codehaus.jackson.JsonToken.*;
 
+
 /**
  * Stack JSON Unmarshaller
  */
@@ -87,6 +88,10 @@ public class StackJsonUnmarshaller implements Unmarshaller<Stack, JsonUnmarshall
                 if (context.testExpression("CustomJson", targetDepth)) {
                     context.nextToken();
                     stack.setCustomJson(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ConfigurationManager", targetDepth)) {
+                    context.nextToken();
+                    stack.setConfigurationManager(StackConfigurationManagerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("UseCustomCookbooks", targetDepth)) {
                     context.nextToken();

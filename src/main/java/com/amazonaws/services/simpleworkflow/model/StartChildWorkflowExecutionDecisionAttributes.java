@@ -201,9 +201,6 @@ public class StartChildWorkflowExecutionDecisionAttributes  implements Serializa
      *
      * @param workflowType The type of the workflow execution to be started. This field is
      *         required.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StartChildWorkflowExecutionDecisionAttributes withWorkflowType(WorkflowType workflowType) {
         this.workflowType = workflowType;
@@ -274,9 +271,6 @@ public class StartChildWorkflowExecutionDecisionAttributes  implements Serializa
      *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control
      *         characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
      *         contain the literal string "arn".
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StartChildWorkflowExecutionDecisionAttributes withWorkflowId(String workflowId) {
         this.workflowId = workflowId;
@@ -329,9 +323,6 @@ public class StartChildWorkflowExecutionDecisionAttributes  implements Serializa
      * @param control Optional data attached to the event that can be used by the decider in
      *         subsequent workflow tasks. This data is not sent to the child workflow
      *         execution.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StartChildWorkflowExecutionDecisionAttributes withControl(String control) {
         this.control = control;
@@ -372,9 +363,6 @@ public class StartChildWorkflowExecutionDecisionAttributes  implements Serializa
      * <b>Length: </b>0 - 32768<br/>
      *
      * @param input The input to be provided to the workflow execution.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StartChildWorkflowExecutionDecisionAttributes withInput(String input) {
         this.input = input;
@@ -469,9 +457,6 @@ public class StartChildWorkflowExecutionDecisionAttributes  implements Serializa
      *         workflow type or through this parameter. If neither this parameter is
      *         set nor a default execution start-to-close timeout was specified at
      *         registration time then a fault will be returned.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StartChildWorkflowExecutionDecisionAttributes withExecutionStartToCloseTimeout(String executionStartToCloseTimeout) {
         this.executionStartToCloseTimeout = executionStartToCloseTimeout;
@@ -557,9 +542,6 @@ public class StartChildWorkflowExecutionDecisionAttributes  implements Serializa
      *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control
      *         characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
      *         contain the literal string "arn".
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StartChildWorkflowExecutionDecisionAttributes withTaskList(TaskList taskList) {
         this.taskList = taskList;
@@ -666,9 +648,6 @@ public class StartChildWorkflowExecutionDecisionAttributes  implements Serializa
      *         parameter. If neither this parameter is set nor a default task
      *         start-to-close timeout was specified at registration time then a fault
      *         will be returned.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StartChildWorkflowExecutionDecisionAttributes withTaskStartToCloseTimeout(String taskStartToCloseTimeout) {
         this.taskStartToCloseTimeout = taskStartToCloseTimeout;
@@ -816,9 +795,6 @@ public class StartChildWorkflowExecutionDecisionAttributes  implements Serializa
      *         policy was specified at registration time then a fault will be
      *         returned. </note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ChildPolicy
      */
     public StartChildWorkflowExecutionDecisionAttributes withChildPolicy(String childPolicy) {
@@ -919,9 +895,6 @@ public class StartChildWorkflowExecutionDecisionAttributes  implements Serializa
      *         policy was specified at registration time then a fault will be
      *         returned. </note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ChildPolicy
      */
     public StartChildWorkflowExecutionDecisionAttributes withChildPolicy(ChildPolicy childPolicy) {
@@ -991,9 +964,6 @@ public class StartChildWorkflowExecutionDecisionAttributes  implements Serializa
      *         maximum of 5 tags can be specified. You can list workflow executions
      *         with a specific tag by calling <a>ListOpenWorkflowExecutions</a> or
      *         <a>ListClosedWorkflowExecutions</a> and specifying a <a>TagFilter</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StartChildWorkflowExecutionDecisionAttributes withTagList(String... tagList) {
         if (getTagList() == null) setTagList(new java.util.ArrayList<String>(tagList.length));
@@ -1018,9 +988,6 @@ public class StartChildWorkflowExecutionDecisionAttributes  implements Serializa
      *         maximum of 5 tags can be specified. You can list workflow executions
      *         with a specific tag by calling <a>ListOpenWorkflowExecutions</a> or
      *         <a>ListClosedWorkflowExecutions</a> and specifying a <a>TagFilter</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StartChildWorkflowExecutionDecisionAttributes withTagList(java.util.Collection<String> tagList) {
         if (tagList == null) {

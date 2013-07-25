@@ -75,9 +75,6 @@ public class ChangeMessageVisibilityBatchRequest extends AmazonWebServiceRequest
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param queueUrl The new value for the QueueUrl property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ChangeMessageVisibilityBatchRequest withQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
@@ -120,9 +117,6 @@ public class ChangeMessageVisibilityBatchRequest extends AmazonWebServiceRequest
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param entries The new value for the Entries property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ChangeMessageVisibilityBatchRequest withEntries(ChangeMessageVisibilityBatchRequestEntry... entries) {
         if (getEntries() == null) setEntries(new java.util.ArrayList<ChangeMessageVisibilityBatchRequestEntry>(entries.length));
@@ -138,9 +132,6 @@ public class ChangeMessageVisibilityBatchRequest extends AmazonWebServiceRequest
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param entries The new value for the Entries property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ChangeMessageVisibilityBatchRequest withEntries(java.util.Collection<ChangeMessageVisibilityBatchRequestEntry> entries) {
         if (entries == null) {

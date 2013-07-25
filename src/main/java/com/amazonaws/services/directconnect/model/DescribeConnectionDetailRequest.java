@@ -55,9 +55,6 @@ public class DescribeConnectionDetailRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param connectionId ID of the connection. <p>Example: dxcon-fg5678gh <p>Default: None
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeConnectionDetailRequest withConnectionId(String connectionId) {
         this.connectionId = connectionId;

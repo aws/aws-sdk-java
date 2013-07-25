@@ -132,9 +132,6 @@ public class ListServerCertificatesRequest extends AmazonWebServiceRequest  impl
      *         for which the path starts with <code>/company/servercerts</code>.
      *         <p>This parameter is optional. If it is not included, it defaults to a
      *         slash (/), listing all server certificates.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListServerCertificatesRequest withPathPrefix(String pathPrefix) {
         this.pathPrefix = pathPrefix;
@@ -196,9 +193,6 @@ public class ListServerCertificatesRequest extends AmazonWebServiceRequest  impl
      *         request after you've received a response where the results are
      *         truncated. Set it to the value of the <code>Marker</code> element in
      *         the response you just received.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListServerCertificatesRequest withMarker(String marker) {
         this.marker = marker;
@@ -263,9 +257,6 @@ public class ListServerCertificatesRequest extends AmazonWebServiceRequest  impl
      *         additional server certificates beyond the maximum you specify, the
      *         <code>IsTruncated</code> response element will be set to
      *         <code>true</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListServerCertificatesRequest withMaxItems(Integer maxItems) {
         this.maxItems = maxItems;

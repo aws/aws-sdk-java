@@ -51,9 +51,6 @@ public class CreateAccessKeyResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param accessKey Information about the access key.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateAccessKeyResult withAccessKey(AccessKey accessKey) {
         this.accessKey = accessKey;

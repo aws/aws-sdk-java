@@ -67,9 +67,6 @@ public class ReadPipelineRequest extends AmazonWebServiceRequest  implements Ser
      * <b>Pattern: </b>^\d{13}-\w{6}$<br/>
      *
      * @param id The identifier of the pipeline to read.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReadPipelineRequest withId(String id) {
         this.id = id;

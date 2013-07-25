@@ -78,9 +78,6 @@ public class TimerCanceledEventAttributes  implements Serializable  {
      * <b>Length: </b>1 - 256<br/>
      *
      * @param timerId The unique Id of the timer that was canceled.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TimerCanceledEventAttributes withTimerId(String timerId) {
         this.timerId = timerId;
@@ -124,9 +121,6 @@ public class TimerCanceledEventAttributes  implements Serializable  {
      * @param startedEventId The id of the <code>TimerStarted</code> event that was recorded when
      *         this timer was started. This information can be useful for diagnosing
      *         problems by tracing back the chain of events leading up to this event.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TimerCanceledEventAttributes withStartedEventId(Long startedEventId) {
         this.startedEventId = startedEventId;
@@ -176,9 +170,6 @@ public class TimerCanceledEventAttributes  implements Serializable  {
      *         to the decision task that resulted in the <code>CancelTimer</code>
      *         decision to cancel this timer. This information can be useful for
      *         diagnosing problems by tracing back the cause of events.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TimerCanceledEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
         this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;

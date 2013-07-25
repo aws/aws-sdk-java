@@ -107,9 +107,6 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest  implements 
      *         request and specify the value of <code>NextMarker</code> from the last
      *         response in the <code>marker</code> parameter to get the next page of
      *         results.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListHostedZonesRequest withMarker(String marker) {
         this.marker = marker;
@@ -147,9 +144,6 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest  implements 
      *
      * @param maxItems Specify the maximum number of hosted zones to return per page of
      *         results.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListHostedZonesRequest withMaxItems(String maxItems) {
         this.maxItems = maxItems;

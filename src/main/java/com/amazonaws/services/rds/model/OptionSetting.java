@@ -93,9 +93,6 @@ public class OptionSetting  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The name of the option that has settings that you can set.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionSetting withName(String name) {
         this.name = name;
@@ -127,9 +124,6 @@ public class OptionSetting  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param value The current value of the option setting.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionSetting withValue(String value) {
         this.value = value;
@@ -161,9 +155,6 @@ public class OptionSetting  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param defaultValue The default value of the option setting.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionSetting withDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
@@ -195,9 +186,6 @@ public class OptionSetting  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description The description of the option setting.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionSetting withDescription(String description) {
         this.description = description;
@@ -229,9 +217,6 @@ public class OptionSetting  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param applyType The DB engine specific parameter type.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionSetting withApplyType(String applyType) {
         this.applyType = applyType;
@@ -263,9 +248,6 @@ public class OptionSetting  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dataType The data type of the option setting.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionSetting withDataType(String dataType) {
         this.dataType = dataType;
@@ -297,9 +279,6 @@ public class OptionSetting  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param allowedValues The allowed values of the option setting.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionSetting withAllowedValues(String allowedValues) {
         this.allowedValues = allowedValues;
@@ -337,9 +316,6 @@ public class OptionSetting  implements Serializable  {
      *
      * @param isModifiable A Boolean value that, when true, indicates the option setting can be
      *         modified from the default.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionSetting withIsModifiable(Boolean isModifiable) {
         this.isModifiable = isModifiable;
@@ -382,9 +358,6 @@ public class OptionSetting  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param isCollection Indicates if the option setting is part of a collection.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionSetting withIsCollection(Boolean isCollection) {
         this.isCollection = isCollection;

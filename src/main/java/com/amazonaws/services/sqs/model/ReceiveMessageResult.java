@@ -57,9 +57,6 @@ public class ReceiveMessageResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param messages The new value for the Messages property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReceiveMessageResult withMessages(Message... messages) {
         if (getMessages() == null) setMessages(new java.util.ArrayList<Message>(messages.length));
@@ -75,9 +72,6 @@ public class ReceiveMessageResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param messages The new value for the Messages property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReceiveMessageResult withMessages(java.util.Collection<Message> messages) {
         if (messages == null) {

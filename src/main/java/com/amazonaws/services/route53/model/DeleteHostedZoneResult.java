@@ -58,9 +58,6 @@ public class DeleteHostedZoneResult  implements Serializable  {
      *
      * @param changeInfo A complex type that contains the ID, the status, and the date and time
      *         of your delete request.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteHostedZoneResult withChangeInfo(ChangeInfo changeInfo) {
         this.changeInfo = changeInfo;

@@ -79,9 +79,6 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param queueUrl The new value for the QueueUrl property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ChangeMessageVisibilityRequest withQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
@@ -113,9 +110,6 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param receiptHandle The new value for the ReceiptHandle property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ChangeMessageVisibilityRequest withReceiptHandle(String receiptHandle) {
         this.receiptHandle = receiptHandle;
@@ -147,9 +141,6 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param visibilityTimeout The new value for the VisibilityTimeout property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ChangeMessageVisibilityRequest withVisibilityTimeout(Integer visibilityTimeout) {
         this.visibilityTimeout = visibilityTimeout;

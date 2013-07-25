@@ -63,9 +63,6 @@ public class TaskList  implements Serializable  {
      * <b>Length: </b>1 - 256<br/>
      *
      * @param name The name of the task list.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TaskList withName(String name) {
         this.name = name;

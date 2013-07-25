@@ -140,9 +140,6 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest  imp
      * @param gatewayARN The Amazon Resource Name (ARN) of the gateway. Use the
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCachediSCSIVolumeRequest withGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
@@ -174,9 +171,6 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeSizeInBytes The size of the cached volume.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCachediSCSIVolumeRequest withVolumeSizeInBytes(Long volumeSizeInBytes) {
         this.volumeSizeInBytes = volumeSizeInBytes;
@@ -247,9 +241,6 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest  imp
      *         field. To list snapshots for your account, use <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      *         in Amazon Elastic Compute Cloud API Reference.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCachediSCSIVolumeRequest withSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
@@ -317,9 +308,6 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest  imp
      *         <b>TargetName</b> as <i>myvolume</i> results in the target ARN of
      *         <i>arn:aws:storagegateway:us-east-1:111122223333:gateway/mygateway/target/iqn.1997-05.com.amazon:myvolume</i>.
      *         The target name must be unique across all volumes of a gateway.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCachediSCSIVolumeRequest withTargetName(String targetName) {
         this.targetName = targetName;
@@ -378,9 +366,6 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest  imp
      *         target. Only IPv4 addresses are accepted. Use the
      *         <a>DescribeGatewayInformation</a> operation to get a list of the
      *         network interfaces available on the gateway.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCachediSCSIVolumeRequest withNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
@@ -421,9 +406,6 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest  imp
      * <b>Length: </b>5 - 100<br/>
      *
      * @param clientToken A unique identifying string for the cached volume.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCachediSCSIVolumeRequest withClientToken(String clientToken) {
         this.clientToken = clientToken;

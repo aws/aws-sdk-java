@@ -62,9 +62,6 @@ public class DescribeOfferingDetailRequest extends AmazonWebServiceRequest  impl
      *
      * @param offeringId The ID of the offering. <p>Example: us-west-1_EqSV5_1G <p>Default:
      *         None
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeOfferingDetailRequest withOfferingId(String offeringId) {
         this.offeringId = offeringId;

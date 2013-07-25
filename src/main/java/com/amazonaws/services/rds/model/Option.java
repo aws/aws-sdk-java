@@ -88,9 +88,6 @@ public class Option  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionName The name of the option.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Option withOptionName(String optionName) {
         this.optionName = optionName;
@@ -122,9 +119,6 @@ public class Option  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionDescription The description of the option.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Option withOptionDescription(String optionDescription) {
         this.optionDescription = optionDescription;
@@ -156,9 +150,6 @@ public class Option  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param persistent Indicate if this option is persistent.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Option withPersistent(Boolean persistent) {
         this.persistent = persistent;
@@ -199,9 +190,6 @@ public class Option  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param permanent Indicate if this option is permanent.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Option withPermanent(Boolean permanent) {
         this.permanent = permanent;
@@ -242,9 +230,6 @@ public class Option  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param port If required, the port configured for this option to use.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Option withPort(Integer port) {
         this.port = port;
@@ -287,9 +272,6 @@ public class Option  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionSettings The option settings for this option.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Option withOptionSettings(OptionSetting... optionSettings) {
         if (getOptionSettings() == null) setOptionSettings(new java.util.ArrayList<OptionSetting>(optionSettings.length));
@@ -305,9 +287,6 @@ public class Option  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionSettings The option settings for this option.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Option withOptionSettings(java.util.Collection<OptionSetting> optionSettings) {
         if (optionSettings == null) {
@@ -362,9 +341,6 @@ public class Option  implements Serializable  {
      *
      * @param dBSecurityGroupMemberships If the option requires access to a port, then this DB Security Group
      *         allows access to the port.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Option withDBSecurityGroupMemberships(DBSecurityGroupMembership... dBSecurityGroupMemberships) {
         if (getDBSecurityGroupMemberships() == null) setDBSecurityGroupMemberships(new java.util.ArrayList<DBSecurityGroupMembership>(dBSecurityGroupMemberships.length));
@@ -382,9 +358,6 @@ public class Option  implements Serializable  {
      *
      * @param dBSecurityGroupMemberships If the option requires access to a port, then this DB Security Group
      *         allows access to the port.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Option withDBSecurityGroupMemberships(java.util.Collection<DBSecurityGroupMembership> dBSecurityGroupMemberships) {
         if (dBSecurityGroupMemberships == null) {
@@ -439,9 +412,6 @@ public class Option  implements Serializable  {
      *
      * @param vpcSecurityGroupMemberships If the option requires access to a port, then this VPC Security Group
      *         allows access to the port.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Option withVpcSecurityGroupMemberships(VpcSecurityGroupMembership... vpcSecurityGroupMemberships) {
         if (getVpcSecurityGroupMemberships() == null) setVpcSecurityGroupMemberships(new java.util.ArrayList<VpcSecurityGroupMembership>(vpcSecurityGroupMemberships.length));
@@ -459,9 +429,6 @@ public class Option  implements Serializable  {
      *
      * @param vpcSecurityGroupMemberships If the option requires access to a port, then this VPC Security Group
      *         allows access to the port.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Option withVpcSecurityGroupMemberships(java.util.Collection<VpcSecurityGroupMembership> vpcSecurityGroupMemberships) {
         if (vpcSecurityGroupMemberships == null) {

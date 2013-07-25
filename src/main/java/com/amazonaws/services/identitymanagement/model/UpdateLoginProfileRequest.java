@@ -101,9 +101,6 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest  implemen
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param userName Name of the user whose password you want to update.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateLoginProfileRequest withUserName(String userName) {
         this.userName = userName;
@@ -147,9 +144,6 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest  implemen
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      *
      * @param password The new password for the user name.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateLoginProfileRequest withPassword(String password) {
         this.password = password;

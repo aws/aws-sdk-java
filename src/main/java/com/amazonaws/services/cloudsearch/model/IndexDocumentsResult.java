@@ -69,9 +69,6 @@ public class IndexDocumentsResult  implements Serializable  {
      *
      * @param fieldNames The names of the fields that are currently being processed due to an
      *         <code>IndexDocuments</code> action.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public IndexDocumentsResult withFieldNames(String... fieldNames) {
         if (getFieldNames() == null) setFieldNames(new java.util.ArrayList<String>(fieldNames.length));
@@ -89,9 +86,6 @@ public class IndexDocumentsResult  implements Serializable  {
      *
      * @param fieldNames The names of the fields that are currently being processed due to an
      *         <code>IndexDocuments</code> action.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public IndexDocumentsResult withFieldNames(java.util.Collection<String> fieldNames) {
         if (fieldNames == null) {

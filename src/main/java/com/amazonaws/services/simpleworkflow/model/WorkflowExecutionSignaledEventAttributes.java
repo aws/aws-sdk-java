@@ -96,9 +96,6 @@ public class WorkflowExecutionSignaledEventAttributes  implements Serializable  
      *
      * @param signalName The name of the signal received. The decider can use the signal name
      *         and inputs to determine how to the process the signal.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public WorkflowExecutionSignaledEventAttributes withSignalName(String signalName) {
         this.signalName = signalName;
@@ -145,9 +142,6 @@ public class WorkflowExecutionSignaledEventAttributes  implements Serializable  
      *
      * @param input Inputs provided with the signal (if any). The decider can use the
      *         signal name and inputs to determine how to process the signal.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public WorkflowExecutionSignaledEventAttributes withInput(String input) {
         this.input = input;
@@ -185,9 +179,6 @@ public class WorkflowExecutionSignaledEventAttributes  implements Serializable  
      *
      * @param externalWorkflowExecution The workflow execution that sent the signal. This is set only of the
      *         signal was sent by another workflow execution.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public WorkflowExecutionSignaledEventAttributes withExternalWorkflowExecution(WorkflowExecution externalWorkflowExecution) {
         this.externalWorkflowExecution = externalWorkflowExecution;
@@ -255,9 +246,6 @@ public class WorkflowExecutionSignaledEventAttributes  implements Serializable  
      *         information can be useful for diagnosing problems by tracing back the
      *         chain of events leading up to this event. This field is set only if
      *         the signal was initiated by another workflow execution.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public WorkflowExecutionSignaledEventAttributes withExternalInitiatedEventId(Long externalInitiatedEventId) {
         this.externalInitiatedEventId = externalInitiatedEventId;

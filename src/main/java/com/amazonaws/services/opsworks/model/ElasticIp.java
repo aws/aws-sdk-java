@@ -23,14 +23,19 @@ import java.io.Serializable;
 public class ElasticIp  implements Serializable  {
 
     /**
-     * The Elastic IP address
+     * The IP address
      */
     private String ip;
 
     /**
-     * The Elastic IP address name.
+     * The name.
      */
     private String name;
+
+    /**
+     * The domain.
+     */
+    private String domain;
 
     /**
      * The AWS region. For more information, see <a
@@ -40,29 +45,29 @@ public class ElasticIp  implements Serializable  {
     private String region;
 
     /**
-     * The Elastic IP address
+     * The IP address
      *
-     * @return The Elastic IP address
+     * @return The IP address
      */
     public String getIp() {
         return ip;
     }
     
     /**
-     * The Elastic IP address
+     * The IP address
      *
-     * @param ip The Elastic IP address
+     * @param ip The IP address
      */
     public void setIp(String ip) {
         this.ip = ip;
     }
     
     /**
-     * The Elastic IP address
+     * The IP address
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ip The Elastic IP address
+     * @param ip The IP address
      */
     public ElasticIp withIp(String ip) {
         this.ip = ip;
@@ -71,32 +76,63 @@ public class ElasticIp  implements Serializable  {
     
     
     /**
-     * The Elastic IP address name.
+     * The name.
      *
-     * @return The Elastic IP address name.
+     * @return The name.
      */
     public String getName() {
         return name;
     }
     
     /**
-     * The Elastic IP address name.
+     * The name.
      *
-     * @param name The Elastic IP address name.
+     * @param name The name.
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * The Elastic IP address name.
+     * The name.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param name The Elastic IP address name.
+     * @param name The name.
      */
     public ElasticIp withName(String name) {
         this.name = name;
+        return this;
+    }
+    
+    
+    /**
+     * The domain.
+     *
+     * @return The domain.
+     */
+    public String getDomain() {
+        return domain;
+    }
+    
+    /**
+     * The domain.
+     *
+     * @param domain The domain.
+     */
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+    
+    /**
+     * The domain.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param domain The domain.
+     */
+    public ElasticIp withDomain(String domain) {
+        this.domain = domain;
         return this;
     }
     
@@ -158,6 +194,7 @@ public class ElasticIp  implements Serializable  {
         sb.append("{");
         if (getIp() != null) sb.append("Ip: " + getIp() + ",");
         if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");
         if (getRegion() != null) sb.append("Region: " + getRegion() );
         sb.append("}");
         return sb.toString();
@@ -170,6 +207,7 @@ public class ElasticIp  implements Serializable  {
         
         hashCode = prime * hashCode + ((getIp() == null) ? 0 : getIp().hashCode()); 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
+        hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode()); 
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode()); 
         return hashCode;
     }
@@ -186,6 +224,8 @@ public class ElasticIp  implements Serializable  {
         if (other.getIp() != null && other.getIp().equals(this.getIp()) == false) return false; 
         if (other.getName() == null ^ this.getName() == null) return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
+        if (other.getDomain() == null ^ this.getDomain() == null) return false;
+        if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false) return false; 
         if (other.getRegion() == null ^ this.getRegion() == null) return false;
         if (other.getRegion() != null && other.getRegion().equals(this.getRegion()) == false) return false; 
         return true;

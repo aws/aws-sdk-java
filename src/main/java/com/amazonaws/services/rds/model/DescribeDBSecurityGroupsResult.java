@@ -70,9 +70,6 @@ public class DescribeDBSecurityGroupsResult  implements Serializable  {
      * @param marker An optional pagination token provided by a previous request. If this
      *         parameter is specified, the response includes only records beyond the
      *         marker, up to the value specified by <code>MaxRecords</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDBSecurityGroupsResult withMarker(String marker) {
         this.marker = marker;
@@ -115,9 +112,6 @@ public class DescribeDBSecurityGroupsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBSecurityGroups A list of <a>DBSecurityGroup</a> instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDBSecurityGroupsResult withDBSecurityGroups(DBSecurityGroup... dBSecurityGroups) {
         if (getDBSecurityGroups() == null) setDBSecurityGroups(new java.util.ArrayList<DBSecurityGroup>(dBSecurityGroups.length));
@@ -133,9 +127,6 @@ public class DescribeDBSecurityGroupsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBSecurityGroups A list of <a>DBSecurityGroup</a> instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDBSecurityGroupsResult withDBSecurityGroups(java.util.Collection<DBSecurityGroup> dBSecurityGroups) {
         if (dBSecurityGroups == null) {

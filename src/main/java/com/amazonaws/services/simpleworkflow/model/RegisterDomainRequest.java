@@ -144,9 +144,6 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest  implements S
      *         <code>|</code> (vertical bar), or any control characters
      *         (\u0000-\u001f | \u007f - \u009f). Also, it must not contain the
      *         literal string "arn".
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RegisterDomainRequest withName(String name) {
         this.name = name;
@@ -187,9 +184,6 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest  implements S
      * <b>Length: </b>0 - 1024<br/>
      *
      * @param description Textual description of the domain.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RegisterDomainRequest withDescription(String description) {
         this.description = description;
@@ -260,9 +254,6 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest  implements S
      *         execution will not be available in the results of visibility calls. If
      *         a duration of <code>NONE</code> is specified, the records for workflow
      *         executions in this domain are not retained at all.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RegisterDomainRequest withWorkflowExecutionRetentionPeriodInDays(String workflowExecutionRetentionPeriodInDays) {
         this.workflowExecutionRetentionPeriodInDays = workflowExecutionRetentionPeriodInDays;

@@ -84,9 +84,6 @@ public class Metric  implements Serializable  {
      * <b>Pattern: </b>[^:].*<br/>
      *
      * @param namespace The namespace of the metric.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Metric withNamespace(String namespace) {
         this.namespace = namespace;
@@ -127,9 +124,6 @@ public class Metric  implements Serializable  {
      * <b>Length: </b>1 - 255<br/>
      *
      * @param metricName The name of the metric.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Metric withMetricName(String metricName) {
         this.metricName = metricName;
@@ -181,9 +175,6 @@ public class Metric  implements Serializable  {
      * <b>Length: </b>0 - 10<br/>
      *
      * @param dimensions A list of dimensions associated with the metric.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Metric withDimensions(Dimension... dimensions) {
         if (getDimensions() == null) setDimensions(new java.util.ArrayList<Dimension>(dimensions.length));
@@ -202,9 +193,6 @@ public class Metric  implements Serializable  {
      * <b>Length: </b>0 - 10<br/>
      *
      * @param dimensions A list of dimensions associated with the metric.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Metric withDimensions(java.util.Collection<Dimension> dimensions) {
         if (dimensions == null) {

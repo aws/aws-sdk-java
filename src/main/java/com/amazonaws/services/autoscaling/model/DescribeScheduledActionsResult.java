@@ -73,9 +73,6 @@ public class DescribeScheduledActionsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param scheduledUpdateGroupActions A list of scheduled actions designed to update an Auto Scaling group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeScheduledActionsResult withScheduledUpdateGroupActions(ScheduledUpdateGroupAction... scheduledUpdateGroupActions) {
         if (getScheduledUpdateGroupActions() == null) setScheduledUpdateGroupActions(new java.util.ArrayList<ScheduledUpdateGroupAction>(scheduledUpdateGroupActions.length));
@@ -91,9 +88,6 @@ public class DescribeScheduledActionsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param scheduledUpdateGroupActions A list of scheduled actions designed to update an Auto Scaling group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeScheduledActionsResult withScheduledUpdateGroupActions(java.util.Collection<ScheduledUpdateGroupAction> scheduledUpdateGroupActions) {
         if (scheduledUpdateGroupActions == null) {
@@ -140,9 +134,6 @@ public class DescribeScheduledActionsResult  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param nextToken A string that marks the start of the next batch of returned results.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeScheduledActionsResult withNextToken(String nextToken) {
         this.nextToken = nextToken;

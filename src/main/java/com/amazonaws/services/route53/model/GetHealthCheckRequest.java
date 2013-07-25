@@ -67,9 +67,6 @@ public class GetHealthCheckRequest extends AmazonWebServiceRequest  implements S
      * <b>Length: </b>0 - 64<br/>
      *
      * @param healthCheckId The ID of the health check to retrieve.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetHealthCheckRequest withHealthCheckId(String healthCheckId) {
         this.healthCheckId = healthCheckId;

@@ -125,9 +125,6 @@ public class RespondDecisionTaskCompletedRequest extends AmazonWebServiceRequest
      *         treated as an opaque value. If the task is passed to another process,
      *         its <code>taskToken</code> must also be passed. This enables it to
      *         provide its progress and respond with results. </important>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RespondDecisionTaskCompletedRequest withTaskToken(String taskToken) {
         this.taskToken = taskToken;
@@ -182,9 +179,6 @@ public class RespondDecisionTaskCompletedRequest extends AmazonWebServiceRequest
      * @param decisions The list of decisions (possibly empty) made by the decider while
      *         processing this decision task. See the docs for the <a>Decision</a>
      *         structure for details.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RespondDecisionTaskCompletedRequest withDecisions(Decision... decisions) {
         if (getDecisions() == null) setDecisions(new java.util.ArrayList<Decision>(decisions.length));
@@ -204,9 +198,6 @@ public class RespondDecisionTaskCompletedRequest extends AmazonWebServiceRequest
      * @param decisions The list of decisions (possibly empty) made by the decider while
      *         processing this decision task. See the docs for the <a>Decision</a>
      *         structure for details.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RespondDecisionTaskCompletedRequest withDecisions(java.util.Collection<Decision> decisions) {
         if (decisions == null) {
@@ -253,9 +244,6 @@ public class RespondDecisionTaskCompletedRequest extends AmazonWebServiceRequest
      * <b>Length: </b>0 - 32768<br/>
      *
      * @param executionContext User defined context to add to workflow execution.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RespondDecisionTaskCompletedRequest withExecutionContext(String executionContext) {
         this.executionContext = executionContext;

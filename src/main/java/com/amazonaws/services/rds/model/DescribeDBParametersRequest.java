@@ -124,9 +124,6 @@ public class DescribeDBParametersRequest extends AmazonWebServiceRequest  implem
      *         <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
      *         or contain two consecutive hyphens</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDBParametersRequest withDBParameterGroupName(String dBParameterGroupName) {
         this.dBParameterGroupName = dBParameterGroupName;
@@ -164,9 +161,6 @@ public class DescribeDBParametersRequest extends AmazonWebServiceRequest  implem
      *
      * @param source The parameter types to return. <p>Default: All parameter types
      *         returned <p>Valid Values: <code>user | system | engine-default</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDBParametersRequest withSource(String source) {
         this.source = source;
@@ -222,9 +216,6 @@ public class DescribeDBParametersRequest extends AmazonWebServiceRequest  implem
      *         pagination token called a marker is included in the response so that
      *         the remaining results may be retrieved. <p>Default: 100
      *         <p>Constraints: minimum 20, maximum 100
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDBParametersRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -274,9 +265,6 @@ public class DescribeDBParametersRequest extends AmazonWebServiceRequest  implem
      *         DescribeDBParameters request. If this parameter is specified, the
      *         response includes only records beyond the marker, up to the value
      *         specified by <code>MaxRecords</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeDBParametersRequest withMarker(String marker) {
         this.marker = marker;

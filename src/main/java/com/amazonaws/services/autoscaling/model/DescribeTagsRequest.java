@@ -118,9 +118,6 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest  implements Ser
      *         Auto Scaling group, the key and value, or whether the new tag will be
      *         applied to instances launched after the tag is created
      *         (PropagateAtLaunch).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeTagsRequest withFilters(Filter... filters) {
         if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
@@ -144,9 +141,6 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest  implements Ser
      *         Auto Scaling group, the key and value, or whether the new tag will be
      *         applied to instances launched after the tag is created
      *         (PropagateAtLaunch).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeTagsRequest withFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
@@ -193,9 +187,6 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest  implements Ser
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param nextToken A string that marks the start of the next batch of returned results.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeTagsRequest withNextToken(String nextToken) {
         this.nextToken = nextToken;
@@ -236,9 +227,6 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest  implements Ser
      * <b>Range: </b>1 - 50<br/>
      *
      * @param maxRecords The maximum number of records to return.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeTagsRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;

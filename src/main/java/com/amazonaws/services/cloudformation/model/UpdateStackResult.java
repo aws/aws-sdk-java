@@ -51,9 +51,6 @@ public class UpdateStackResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackId Unique identifier of the stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateStackResult withStackId(String stackId) {
         this.stackId = stackId;

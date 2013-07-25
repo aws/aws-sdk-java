@@ -89,9 +89,6 @@ public class FailWorkflowExecutionDecisionAttributes  implements Serializable  {
      * <b>Length: </b>0 - 256<br/>
      *
      * @param reason A descriptive reason for the failure that may help in diagnostics.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public FailWorkflowExecutionDecisionAttributes withReason(String reason) {
         this.reason = reason;
@@ -132,9 +129,6 @@ public class FailWorkflowExecutionDecisionAttributes  implements Serializable  {
      * <b>Length: </b>0 - 32768<br/>
      *
      * @param details Optional details of the failure.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public FailWorkflowExecutionDecisionAttributes withDetails(String details) {
         this.details = details;

@@ -36,6 +36,10 @@ public class LimitExceededExceptionUnmarshaller extends GlacierErrorUnmarshaller
         LimitExceededException e = (LimitExceededException)super.unmarshall(json);
         
         
+        e.setType(parseMember("Type", json));
+        
+        e.setCode(parseMember("Code", json));
+        
         return e;
     }
 }

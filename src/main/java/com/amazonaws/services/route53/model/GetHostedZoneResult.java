@@ -64,9 +64,6 @@ public class GetHostedZoneResult  implements Serializable  {
      *
      * @param hostedZone A complex type that contains the information about the specified
      *         hosted zone.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetHostedZoneResult withHostedZone(HostedZone hostedZone) {
         this.hostedZone = hostedZone;
@@ -104,9 +101,6 @@ public class GetHostedZoneResult  implements Serializable  {
      *
      * @param delegationSet A complex type that contains information about the name servers for
      *         the specified hosted zone.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetHostedZoneResult withDelegationSet(DelegationSet delegationSet) {
         this.delegationSet = delegationSet;

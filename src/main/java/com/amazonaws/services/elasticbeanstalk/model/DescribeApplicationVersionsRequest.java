@@ -93,9 +93,6 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest 
      * @param applicationName If specified, AWS Elastic Beanstalk restricts the returned
      *         descriptions to only include ones that are associated with the
      *         specified application.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeApplicationVersionsRequest withApplicationName(String applicationName) {
         this.applicationName = applicationName;
@@ -144,9 +141,6 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest 
      *
      * @param versionLabels If specified, restricts the returned descriptions to only include ones
      *         that have the specified version labels.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeApplicationVersionsRequest withVersionLabels(String... versionLabels) {
         if (getVersionLabels() == null) setVersionLabels(new java.util.ArrayList<String>(versionLabels.length));
@@ -164,9 +158,6 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest 
      *
      * @param versionLabels If specified, restricts the returned descriptions to only include ones
      *         that have the specified version labels.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeApplicationVersionsRequest withVersionLabels(java.util.Collection<String> versionLabels) {
         if (versionLabels == null) {

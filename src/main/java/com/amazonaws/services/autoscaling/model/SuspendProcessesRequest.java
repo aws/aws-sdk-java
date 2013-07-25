@@ -89,9 +89,6 @@ public class SuspendProcessesRequest extends AmazonWebServiceRequest  implements
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param autoScalingGroupName The name or Amazon Resource Name (ARN) of the Auto Scaling group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SuspendProcessesRequest withAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
@@ -164,9 +161,6 @@ public class SuspendProcessesRequest extends AmazonWebServiceRequest  implements
      *         <li>AlarmNotification</li> <li>ScheduledActions</li>
      *         <li>AddToLoadBalancer</li> </ul> <p> To suspend all process types,
      *         omit this parameter.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SuspendProcessesRequest withScalingProcesses(String... scalingProcesses) {
         if (getScalingProcesses() == null) setScalingProcesses(new java.util.ArrayList<String>(scalingProcesses.length));
@@ -192,9 +186,6 @@ public class SuspendProcessesRequest extends AmazonWebServiceRequest  implements
      *         <li>AlarmNotification</li> <li>ScheduledActions</li>
      *         <li>AddToLoadBalancer</li> </ul> <p> To suspend all process types,
      *         omit this parameter.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SuspendProcessesRequest withScalingProcesses(java.util.Collection<String> scalingProcesses) {
         if (scalingProcesses == null) {

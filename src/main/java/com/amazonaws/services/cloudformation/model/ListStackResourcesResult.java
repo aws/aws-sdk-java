@@ -71,9 +71,6 @@ public class ListStackResourcesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackResourceSummaries A list of <code>StackResourceSummary</code> structures.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListStackResourcesResult withStackResourceSummaries(StackResourceSummary... stackResourceSummaries) {
         if (getStackResourceSummaries() == null) setStackResourceSummaries(new java.util.ArrayList<StackResourceSummary>(stackResourceSummaries.length));
@@ -89,9 +86,6 @@ public class ListStackResourcesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackResourceSummaries A list of <code>StackResourceSummary</code> structures.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListStackResourcesResult withStackResourceSummaries(java.util.Collection<StackResourceSummary> stackResourceSummaries) {
         if (stackResourceSummaries == null) {
@@ -144,9 +138,6 @@ public class ListStackResourcesResult  implements Serializable  {
      *
      * @param nextToken String that identifies the start of the next list of events, if there
      *         is one.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListStackResourcesResult withNextToken(String nextToken) {
         this.nextToken = nextToken;

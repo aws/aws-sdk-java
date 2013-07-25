@@ -63,9 +63,6 @@ public class NetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ipv4Address The Internet Protocol version 4 (IPv4) address of the interface.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public NetworkInterface withIpv4Address(String ipv4Address) {
         this.ipv4Address = ipv4Address;
@@ -103,9 +100,6 @@ public class NetworkInterface  implements Serializable  {
      *
      * @param macAddress The Media Access Control (MAC) address of the interface. <note>This is
      *         currently unsupported and will not be returned in output.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public NetworkInterface withMacAddress(String macAddress) {
         this.macAddress = macAddress;
@@ -143,9 +137,6 @@ public class NetworkInterface  implements Serializable  {
      *
      * @param ipv6Address The Internet Protocol version 6 (IPv6) address of the interface.
      *         <i>Currently not supported</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public NetworkInterface withIpv6Address(String ipv6Address) {
         this.ipv6Address = ipv6Address;

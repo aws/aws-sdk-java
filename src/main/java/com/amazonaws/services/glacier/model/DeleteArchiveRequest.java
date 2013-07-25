@@ -164,9 +164,6 @@ public class DeleteArchiveRequest extends AmazonWebServiceRequest  implements Se
      *         Glacier uses the AWS Account ID associated with the credentials used
      *         to sign the request. If you specify your Account ID, do not include
      *         hyphens in it.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteArchiveRequest withAccountId(String accountId) {
         this.accountId = accountId;
@@ -198,9 +195,6 @@ public class DeleteArchiveRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vaultName The name of the vault.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteArchiveRequest withVaultName(String vaultName) {
         this.vaultName = vaultName;
@@ -232,9 +226,6 @@ public class DeleteArchiveRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param archiveId The ID of the archive to delete.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteArchiveRequest withArchiveId(String archiveId) {
         this.archiveId = archiveId;

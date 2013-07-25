@@ -57,9 +57,6 @@ public class OptionGroupMembership  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionGroupName The name of the option group that the instance belongs to.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionGroupMembership withOptionGroupName(String optionGroupName) {
         this.optionGroupName = optionGroupName;
@@ -97,9 +94,6 @@ public class OptionGroupMembership  implements Serializable  {
      *
      * @param status The status of the DB Instance's option group membership (e.g. in-sync,
      *         pending, pending-maintenance, applying).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionGroupMembership withStatus(String status) {
         this.status = status;

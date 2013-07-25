@@ -89,9 +89,6 @@ public class ScheduleActivityTaskFailedEventAttributes  implements Serializable 
      *
      * @param activityType The activity type provided in the <code>ScheduleActivityTask</code>
      *         decision that failed.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ScheduleActivityTaskFailedEventAttributes withActivityType(ActivityType activityType) {
         this.activityType = activityType;
@@ -138,9 +135,6 @@ public class ScheduleActivityTaskFailedEventAttributes  implements Serializable 
      *
      * @param activityId The activityId provided in the <code>ScheduleActivityTask</code>
      *         decision that failed.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ScheduleActivityTaskFailedEventAttributes withActivityId(String activityId) {
         this.activityId = activityId;
@@ -222,9 +216,6 @@ public class ScheduleActivityTaskFailedEventAttributes  implements Serializable 
      *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ScheduleActivityTaskFailedCause
      */
     public ScheduleActivityTaskFailedEventAttributes withCause(String cause) {
@@ -281,9 +272,6 @@ public class ScheduleActivityTaskFailedEventAttributes  implements Serializable 
      *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ScheduleActivityTaskFailedCause
      */
     public ScheduleActivityTaskFailedEventAttributes withCause(ScheduleActivityTaskFailedCause cause) {
@@ -333,9 +321,6 @@ public class ScheduleActivityTaskFailedEventAttributes  implements Serializable 
      *         to the decision that resulted in the scheduling of this activity task.
      *         This information can be useful for diagnosing problems by tracing back
      *         the chain of events leading up to this event.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ScheduleActivityTaskFailedEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
         this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;

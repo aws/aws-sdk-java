@@ -87,9 +87,6 @@ public class SourceDataMap  implements Serializable  {
      *
      * @param sourceName The name of the document source field to add to this
      *         <code>IndexField</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SourceDataMap withSourceName(String sourceName) {
         this.sourceName = sourceName;
@@ -130,9 +127,6 @@ public class SourceDataMap  implements Serializable  {
      * <b>Length: </b>0 - 1024<br/>
      *
      * @param defaultValue The value of a field or source document attribute.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SourceDataMap withDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
@@ -151,7 +145,6 @@ public class SourceDataMap  implements Serializable  {
             cases = new java.util.HashMap<String,String>();
         }
         return cases;
-
     }
     
     /**
@@ -169,15 +162,43 @@ public class SourceDataMap  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cases A map that translates source field values to custom values.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SourceDataMap withCases(java.util.Map<String,String> cases) {
         setCases(cases);
         return this;
     }
     
+   	
+    /**
+     * A map that translates source field values to custom values.
+     * <p>
+     * The method adds a new key-value pair into Cases parameter, and returns
+     * a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param key The key of the entry to be added into Cases.
+     * @param value The corresponding value of the entry to be added into Cases.
+     */
+	public SourceDataMap addCasesEntry(String key, String value) {
+		if (null == this.cases) {
+			this.cases = new java.util.HashMap<String,String>();
+		}
+		if (this.cases.containsKey(key))
+			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+		this.cases.put(key, value);
+		return this;
+	}
+	
+	/**
+	 * Removes all the entries added into Cases.
+	 * <p>
+	 * Returns a reference to this object so that method calls can be chained together.
+	 */
+	public SourceDataMap clearCasesEntries() {
+		this.cases = null;
+		return this;
+	}
+	
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

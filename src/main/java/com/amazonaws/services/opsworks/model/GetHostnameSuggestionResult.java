@@ -28,7 +28,7 @@ public class GetHostnameSuggestionResult  implements Serializable  {
     private String layerId;
 
     /**
-     * The generated hostname.
+     * The generated host name.
      */
     private String hostname;
 
@@ -64,29 +64,29 @@ public class GetHostnameSuggestionResult  implements Serializable  {
     
     
     /**
-     * The generated hostname.
+     * The generated host name.
      *
-     * @return The generated hostname.
+     * @return The generated host name.
      */
     public String getHostname() {
         return hostname;
     }
     
     /**
-     * The generated hostname.
+     * The generated host name.
      *
-     * @param hostname The generated hostname.
+     * @param hostname The generated host name.
      */
     public void setHostname(String hostname) {
         this.hostname = hostname;
     }
     
     /**
-     * The generated hostname.
+     * The generated host name.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param hostname The generated hostname.
+     * @param hostname The generated host name.
      */
     public GetHostnameSuggestionResult withHostname(String hostname) {
         this.hostname = hostname;

@@ -67,9 +67,6 @@ public class MetricGranularityType  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param granularity The granularity of a Metric.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public MetricGranularityType withGranularity(String granularity) {
         this.granularity = granularity;

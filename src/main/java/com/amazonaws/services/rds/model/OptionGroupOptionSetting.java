@@ -78,9 +78,6 @@ public class OptionGroupOptionSetting  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param settingName The name of the option group option.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionGroupOptionSetting withSettingName(String settingName) {
         this.settingName = settingName;
@@ -112,9 +109,6 @@ public class OptionGroupOptionSetting  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param settingDescription The description of the option group option.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionGroupOptionSetting withSettingDescription(String settingDescription) {
         this.settingDescription = settingDescription;
@@ -146,9 +140,6 @@ public class OptionGroupOptionSetting  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param defaultValue The default value for the option group option.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionGroupOptionSetting withDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
@@ -180,9 +171,6 @@ public class OptionGroupOptionSetting  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param applyType The DB engine specific parameter type for the option group option.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionGroupOptionSetting withApplyType(String applyType) {
         this.applyType = applyType;
@@ -214,9 +202,6 @@ public class OptionGroupOptionSetting  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param allowedValues Indicates the acceptable values for the option group option.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionGroupOptionSetting withAllowedValues(String allowedValues) {
         this.allowedValues = allowedValues;
@@ -254,9 +239,6 @@ public class OptionGroupOptionSetting  implements Serializable  {
      *
      * @param isModifiable Boolean value where true indicates that this option group option can
      *         be changed from the default value.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionGroupOptionSetting withIsModifiable(Boolean isModifiable) {
         this.isModifiable = isModifiable;

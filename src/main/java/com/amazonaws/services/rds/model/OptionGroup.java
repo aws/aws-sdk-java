@@ -88,9 +88,6 @@ public class OptionGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionGroupName Specifies the name of the option group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionGroup withOptionGroupName(String optionGroupName) {
         this.optionGroupName = optionGroupName;
@@ -122,9 +119,6 @@ public class OptionGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionGroupDescription Provides the description of the option group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionGroup withOptionGroupDescription(String optionGroupDescription) {
         this.optionGroupDescription = optionGroupDescription;
@@ -156,9 +150,6 @@ public class OptionGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param engineName Engine name that this option group can be applied to.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionGroup withEngineName(String engineName) {
         this.engineName = engineName;
@@ -190,9 +181,6 @@ public class OptionGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param majorEngineVersion Indicates the major engine version associated with this option group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionGroup withMajorEngineVersion(String majorEngineVersion) {
         this.majorEngineVersion = majorEngineVersion;
@@ -235,9 +223,6 @@ public class OptionGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param options Indicates what options are available in the option group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionGroup withOptions(Option... options) {
         if (getOptions() == null) setOptions(new java.util.ArrayList<Option>(options.length));
@@ -253,9 +238,6 @@ public class OptionGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param options Indicates what options are available in the option group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionGroup withOptions(java.util.Collection<Option> options) {
         if (options == null) {
@@ -305,9 +287,6 @@ public class OptionGroup  implements Serializable  {
      * @param allowsVpcAndNonVpcInstanceMemberships Indicates whether this option group can be applied to both VPC and
      *         non-VPC instances. The value 'true' indicates the option group can be
      *         applied to both VPC and non-VPC instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionGroup withAllowsVpcAndNonVpcInstanceMemberships(Boolean allowsVpcAndNonVpcInstanceMemberships) {
         this.allowsVpcAndNonVpcInstanceMemberships = allowsVpcAndNonVpcInstanceMemberships;
@@ -382,9 +361,6 @@ public class OptionGroup  implements Serializable  {
      *         non-VPC instances. If this field contains a value, then this option
      *         group can only be applied to instances that are in the VPC indicated
      *         by this field.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public OptionGroup withVpcId(String vpcId) {
         this.vpcId = vpcId;

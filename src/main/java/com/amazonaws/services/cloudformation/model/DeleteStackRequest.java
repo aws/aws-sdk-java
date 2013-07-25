@@ -56,9 +56,6 @@ public class DeleteStackRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackName The name or the unique identifier associated with the stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteStackRequest withStackName(String stackName) {
         this.stackName = stackName;

@@ -56,9 +56,6 @@ public class GetCloudFrontOriginAccessIdentityConfigResult  implements Serializa
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cloudFrontOriginAccessIdentityConfig The origin access identity's configuration information.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetCloudFrontOriginAccessIdentityConfigResult withCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig) {
         this.cloudFrontOriginAccessIdentityConfig = cloudFrontOriginAccessIdentityConfig;
@@ -90,9 +87,6 @@ public class GetCloudFrontOriginAccessIdentityConfigResult  implements Serializa
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eTag The current version of the configuration. For example: E2QWRUHAPOMQZL.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetCloudFrontOriginAccessIdentityConfigResult withETag(String eTag) {
         this.eTag = eTag;

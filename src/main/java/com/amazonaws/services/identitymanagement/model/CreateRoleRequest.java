@@ -126,9 +126,6 @@ public class CreateRoleRequest extends AmazonWebServiceRequest  implements Seria
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>. <p>This parameter is optional. If
      *         it is not included, it defaults to a slash (/).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateRoleRequest withPath(String path) {
         this.path = path;
@@ -172,9 +169,6 @@ public class CreateRoleRequest extends AmazonWebServiceRequest  implements Seria
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param roleName Name of the role to create.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateRoleRequest withRoleName(String roleName) {
         this.roleName = roleName;
@@ -218,9 +212,6 @@ public class CreateRoleRequest extends AmazonWebServiceRequest  implements Seria
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      *
      * @param assumeRolePolicyDocument The policy that grants an entity permission to assume the role.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateRoleRequest withAssumeRolePolicyDocument(String assumeRolePolicyDocument) {
         this.assumeRolePolicyDocument = assumeRolePolicyDocument;

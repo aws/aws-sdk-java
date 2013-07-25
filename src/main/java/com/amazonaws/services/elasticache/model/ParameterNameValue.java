@@ -94,9 +94,6 @@ public class ParameterNameValue  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameterName Specifies the name of the parameter.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ParameterNameValue withParameterName(String parameterName) {
         this.parameterName = parameterName;
@@ -128,9 +125,6 @@ public class ParameterNameValue  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameterValue Specifies the value of the parameter.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ParameterNameValue withParameterValue(String parameterValue) {
         this.parameterValue = parameterValue;

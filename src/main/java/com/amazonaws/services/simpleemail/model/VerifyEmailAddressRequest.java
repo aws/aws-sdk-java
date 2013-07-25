@@ -59,9 +59,6 @@ public class VerifyEmailAddressRequest extends AmazonWebServiceRequest  implemen
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param emailAddress The email address to be verified.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VerifyEmailAddressRequest withEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;

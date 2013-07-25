@@ -76,9 +76,6 @@ public class TrustedAdvisorCheckDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param id Unique identifier for a specific Trusted Advisor check description.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedAdvisorCheckDescription withId(String id) {
         this.id = id;
@@ -116,9 +113,6 @@ public class TrustedAdvisorCheckDescription  implements Serializable  {
      *
      * @param name Display name for the Trusted Advisor check. Corresponds to the display
      *         name for the check in the Trusted Advisor user interface.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedAdvisorCheckDescription withName(String name) {
         this.name = name;
@@ -150,9 +144,6 @@ public class TrustedAdvisorCheckDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description Description of the Trusted Advisor check.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedAdvisorCheckDescription withDescription(String description) {
         this.description = description;
@@ -184,9 +175,6 @@ public class TrustedAdvisorCheckDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param category Category to which the Trusted Advisor check belongs.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedAdvisorCheckDescription withCategory(String category) {
         this.category = category;
@@ -247,9 +235,6 @@ public class TrustedAdvisorCheckDescription  implements Serializable  {
      *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorResourceDetail.html"
      *         title="TrustedAdvisorResourceDetail">TrustedAdvisorResourceDetail</a>
      *         objects for a Trusted Advisor check.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedAdvisorCheckDescription withMetadata(String... metadata) {
         if (getMetadata() == null) setMetadata(new java.util.ArrayList<String>(metadata.length));
@@ -271,9 +256,6 @@ public class TrustedAdvisorCheckDescription  implements Serializable  {
      *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorResourceDetail.html"
      *         title="TrustedAdvisorResourceDetail">TrustedAdvisorResourceDetail</a>
      *         objects for a Trusted Advisor check.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedAdvisorCheckDescription withMetadata(java.util.Collection<String> metadata) {
         if (metadata == null) {

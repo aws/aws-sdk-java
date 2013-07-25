@@ -131,9 +131,6 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
      *         only the available offering that matches the specified reservation
      *         identifier. <p>Example:
      *         <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeReservedDBInstancesOfferingsRequest withReservedDBInstancesOfferingId(String reservedDBInstancesOfferingId) {
         this.reservedDBInstancesOfferingId = reservedDBInstancesOfferingId;
@@ -171,9 +168,6 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
      *
      * @param dBInstanceClass The DB Instance class filter value. Specify this parameter to show
      *         only the available offerings matching the specified DB Instance class.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeReservedDBInstancesOfferingsRequest withDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
@@ -217,9 +211,6 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
      * @param duration Duration filter value, specified in years or seconds. Specify this
      *         parameter to show only reservations for this duration. <p>Valid
      *         Values: <code>1 | 3 | 31536000 | 94608000</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeReservedDBInstancesOfferingsRequest withDuration(String duration) {
         this.duration = duration;
@@ -257,9 +248,6 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
      *
      * @param productDescription Product description filter value. Specify this parameter to show only
      *         the available offerings matching the specified product description.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeReservedDBInstancesOfferingsRequest withProductDescription(String productDescription) {
         this.productDescription = productDescription;
@@ -309,9 +297,6 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
      *         the available offerings matching the specified offering type. <p>Valid
      *         Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
      *         Utilization" </code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeReservedDBInstancesOfferingsRequest withOfferingType(String offeringType) {
         this.offeringType = offeringType;
@@ -349,9 +334,6 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
      *
      * @param multiAZ The Multi-AZ filter value. Specify this parameter to show only the
      *         available offerings matching the specified Multi-AZ parameter.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeReservedDBInstancesOfferingsRequest withMultiAZ(Boolean multiAZ) {
         this.multiAZ = multiAZ;
@@ -418,9 +400,6 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
      *         called a marker is included in the response so that the following
      *         results can be retrieved. <p>Default: 100 <p>Constraints: minimum 20,
      *         maximum 100
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeReservedDBInstancesOfferingsRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -464,9 +443,6 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
      * @param marker An optional pagination token provided by a previous request. If this
      *         parameter is specified, the response includes only records beyond the
      *         marker, up to the value specified by <code>MaxRecords</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeReservedDBInstancesOfferingsRequest withMarker(String marker) {
         this.marker = marker;

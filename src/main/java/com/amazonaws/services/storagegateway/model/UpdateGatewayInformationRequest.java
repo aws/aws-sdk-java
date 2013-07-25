@@ -103,9 +103,6 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest  im
      * @param gatewayARN The Amazon Resource Name (ARN) of the gateway. Use the
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateGatewayInformationRequest withGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
@@ -161,9 +158,6 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest  im
      * @param gatewayName A unique identifier for your gateway. This name becomes part of the
      *         gateway Amazon Resources Name (ARN) which is what you use as an input
      *         to other operations.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateGatewayInformationRequest withGatewayName(String gatewayName) {
         this.gatewayName = gatewayName;
@@ -221,9 +215,6 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest  im
      *         for your gateway. The time zone is used, for example, when a time
      *         stamp is given to a snapshot.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see GatewayTimezone
      */
     public UpdateGatewayInformationRequest withGatewayTimezone(String gatewayTimezone) {
@@ -263,9 +254,6 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest  im
      * @param gatewayTimezone One of the <a>GatewayTimezone</a> values that represents the time zone
      *         for your gateway. The time zone is used, for example, when a time
      *         stamp is given to a snapshot.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see GatewayTimezone
      */

@@ -91,9 +91,6 @@ public class DeleteApplicationRequest extends AmazonWebServiceRequest  implement
      * <b>Length: </b>1 - 100<br/>
      *
      * @param applicationName The name of the application to delete.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteApplicationRequest withApplicationName(String applicationName) {
         this.applicationName = applicationName;

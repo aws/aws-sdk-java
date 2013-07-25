@@ -247,7 +247,8 @@ public class AWS4Signer extends AbstractAWSSigner {
     }
 
     protected Date getDateFromRequest(Request<?> request) {
-        Date date = getSignatureDate(request.getTimeOffset());
+    	int timeOffset = getTimeOffset(request);
+        Date date = getSignatureDate(timeOffset);
         if (overriddenDate != null) date = overriddenDate;
         return date;
     }
@@ -298,41 +299,41 @@ public class AWS4Signer extends AbstractAWSSigner {
      * The default implementation doesn't need to do anything.
      */
     protected void processRequestPayload(Request<?> request, HeaderSigningResult headerSigningResult) {
-    	return;
+        return;
     }
 
     protected class HeaderSigningResult {
 
-    	private String dateTime;
-    	private String scope;
-    	private byte[] kSigning;
-    	private byte[] signature;
+        private String dateTime;
+        private String scope;
+        private byte[] kSigning;
+        private byte[] signature;
 
-    	public HeaderSigningResult(String dateTime, String scope, byte[] kSigning, byte[] signature) {
-    		this.dateTime = dateTime;
-    		this.scope = scope;
-    		this.kSigning = kSigning;
-    		this.signature = signature;
-    	}
+        public HeaderSigningResult(String dateTime, String scope, byte[] kSigning, byte[] signature) {
+            this.dateTime = dateTime;
+            this.scope = scope;
+            this.kSigning = kSigning;
+            this.signature = signature;
+        }
 
-    	public String getDateTime() {
-    		return dateTime;
-    	}
+        public String getDateTime() {
+            return dateTime;
+        }
 
-    	public String getScope() {
-    		return scope;
-    	}
+        public String getScope() {
+            return scope;
+        }
 
-    	public byte[] getKSigning() {
-    		byte[] kSigningCopy = new byte[kSigning.length];
-    		System.arraycopy(kSigning, 0, kSigningCopy, 0, kSigning.length);
-    		return kSigningCopy;
-    	}
+        public byte[] getKSigning() {
+            byte[] kSigningCopy = new byte[kSigning.length];
+            System.arraycopy(kSigning, 0, kSigningCopy, 0, kSigning.length);
+            return kSigningCopy;
+        }
 
-    	public byte[] getSignature() {
-    		byte[] signatureCopy = new byte[signature.length];
-    		System.arraycopy(signature, 0, signatureCopy, 0, signature.length);
-    		return signatureCopy;
-    	}
+        public byte[] getSignature() {
+            byte[] signatureCopy = new byte[signature.length];
+            System.arraycopy(signature, 0, signatureCopy, 0, signature.length);
+            return signatureCopy;
+        }
     }
 }

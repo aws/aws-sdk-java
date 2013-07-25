@@ -91,9 +91,6 @@ public class ReportTaskProgressRequest extends AmazonWebServiceRequest  implemen
      * @param taskId Identifier of the task assigned to the task runner. This value is
      *         provided in the <a>TaskObject</a> that the service returns with the
      *         response for the <a>PollForTask</a> action.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ReportTaskProgressRequest withTaskId(String taskId) {
         this.taskId = taskId;

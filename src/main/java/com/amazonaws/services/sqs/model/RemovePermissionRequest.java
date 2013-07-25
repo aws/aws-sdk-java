@@ -75,9 +75,6 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param queueUrl The new value for the QueueUrl property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RemovePermissionRequest withQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
@@ -109,9 +106,6 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param label The new value for the Label property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RemovePermissionRequest withLabel(String label) {
         this.label = label;

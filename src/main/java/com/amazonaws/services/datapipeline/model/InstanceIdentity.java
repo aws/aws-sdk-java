@@ -97,9 +97,6 @@ public class InstanceIdentity  implements Serializable  {
      * @param document A description of an Amazon EC2 instance that is generated when the
      *         instance is launched and exposed to the instance via the instance
      *         metadata service in the form of a JSON representation of an object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceIdentity withDocument(String document) {
         this.document = document;
@@ -149,9 +146,6 @@ public class InstanceIdentity  implements Serializable  {
      *
      * @param signature A signature which can be used to verify the accuracy and authenticity
      *         of the information provided in the instance identity document.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InstanceIdentity withSignature(String signature) {
         this.signature = signature;

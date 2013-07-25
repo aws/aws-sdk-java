@@ -73,9 +73,6 @@ public class WorkflowTypeInfos  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param typeInfos The list of workflow type information.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public WorkflowTypeInfos withTypeInfos(WorkflowTypeInfo... typeInfos) {
         if (getTypeInfos() == null) setTypeInfos(new java.util.ArrayList<WorkflowTypeInfo>(typeInfos.length));
@@ -91,9 +88,6 @@ public class WorkflowTypeInfos  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param typeInfos The list of workflow type information.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public WorkflowTypeInfos withTypeInfos(java.util.Collection<WorkflowTypeInfo> typeInfos) {
         if (typeInfos == null) {
@@ -158,9 +152,6 @@ public class WorkflowTypeInfos  implements Serializable  {
      *         consists of more than one page. You can retrieve the next page by
      *         repeating the request (that returned the structure) with the this
      *         token and all other arguments unchanged.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public WorkflowTypeInfos withNextPageToken(String nextPageToken) {
         this.nextPageToken = nextPageToken;

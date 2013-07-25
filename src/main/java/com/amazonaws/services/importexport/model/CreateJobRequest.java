@@ -90,9 +90,6 @@ public class CreateJobRequest extends AmazonWebServiceRequest  implements Serial
      *
      * @param jobType Specifies whether the job to initiate is an import or export job.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see JobType
      */
     public CreateJobRequest withJobType(String jobType) {
@@ -125,9 +122,6 @@ public class CreateJobRequest extends AmazonWebServiceRequest  implements Serial
      *
      * @param jobType Specifies whether the job to initiate is an import or export job.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see JobType
      */
     public CreateJobRequest withJobType(JobType jobType) {
@@ -159,9 +153,6 @@ public class CreateJobRequest extends AmazonWebServiceRequest  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param manifest The UTF-8 encoded text of the manifest file.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateJobRequest withManifest(String manifest) {
         this.manifest = manifest;
@@ -193,9 +184,6 @@ public class CreateJobRequest extends AmazonWebServiceRequest  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param manifestAddendum For internal use only.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateJobRequest withManifestAddendum(String manifestAddendum) {
         this.manifestAddendum = manifestAddendum;
@@ -233,9 +221,6 @@ public class CreateJobRequest extends AmazonWebServiceRequest  implements Serial
      *
      * @param validateOnly Validate the manifest and parameter values in the request but do not
      *         actually create a job.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateJobRequest withValidateOnly(Boolean validateOnly) {
         this.validateOnly = validateOnly;

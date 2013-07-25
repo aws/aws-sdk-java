@@ -94,9 +94,6 @@ public class EnvironmentResourceDescription  implements Serializable  {
      * <b>Length: </b>4 - 23<br/>
      *
      * @param environmentName The name of the environment.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EnvironmentResourceDescription withEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
@@ -139,9 +136,6 @@ public class EnvironmentResourceDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param autoScalingGroups The <code>AutoScalingGroups</code> used by this environment.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EnvironmentResourceDescription withAutoScalingGroups(AutoScalingGroup... autoScalingGroups) {
         if (getAutoScalingGroups() == null) setAutoScalingGroups(new java.util.ArrayList<AutoScalingGroup>(autoScalingGroups.length));
@@ -157,9 +151,6 @@ public class EnvironmentResourceDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param autoScalingGroups The <code>AutoScalingGroups</code> used by this environment.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EnvironmentResourceDescription withAutoScalingGroups(java.util.Collection<AutoScalingGroup> autoScalingGroups) {
         if (autoScalingGroups == null) {
@@ -208,9 +199,6 @@ public class EnvironmentResourceDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instances The Amazon EC2 instances used by this environment.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EnvironmentResourceDescription withInstances(Instance... instances) {
         if (getInstances() == null) setInstances(new java.util.ArrayList<Instance>(instances.length));
@@ -226,9 +214,6 @@ public class EnvironmentResourceDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instances The Amazon EC2 instances used by this environment.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EnvironmentResourceDescription withInstances(java.util.Collection<Instance> instances) {
         if (instances == null) {
@@ -277,9 +262,6 @@ public class EnvironmentResourceDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param launchConfigurations The Auto Scaling launch configurations in use by this environment.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EnvironmentResourceDescription withLaunchConfigurations(LaunchConfiguration... launchConfigurations) {
         if (getLaunchConfigurations() == null) setLaunchConfigurations(new java.util.ArrayList<LaunchConfiguration>(launchConfigurations.length));
@@ -295,9 +277,6 @@ public class EnvironmentResourceDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param launchConfigurations The Auto Scaling launch configurations in use by this environment.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EnvironmentResourceDescription withLaunchConfigurations(java.util.Collection<LaunchConfiguration> launchConfigurations) {
         if (launchConfigurations == null) {
@@ -346,9 +325,6 @@ public class EnvironmentResourceDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param loadBalancers The LoadBalancers in use by this environment.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EnvironmentResourceDescription withLoadBalancers(LoadBalancer... loadBalancers) {
         if (getLoadBalancers() == null) setLoadBalancers(new java.util.ArrayList<LoadBalancer>(loadBalancers.length));
@@ -364,9 +340,6 @@ public class EnvironmentResourceDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param loadBalancers The LoadBalancers in use by this environment.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EnvironmentResourceDescription withLoadBalancers(java.util.Collection<LoadBalancer> loadBalancers) {
         if (loadBalancers == null) {
@@ -415,9 +388,6 @@ public class EnvironmentResourceDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param triggers The <code>AutoScaling</code> triggers in use by this environment.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EnvironmentResourceDescription withTriggers(Trigger... triggers) {
         if (getTriggers() == null) setTriggers(new java.util.ArrayList<Trigger>(triggers.length));
@@ -433,9 +403,6 @@ public class EnvironmentResourceDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param triggers The <code>AutoScaling</code> triggers in use by this environment.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public EnvironmentResourceDescription withTriggers(java.util.Collection<Trigger> triggers) {
         if (triggers == null) {

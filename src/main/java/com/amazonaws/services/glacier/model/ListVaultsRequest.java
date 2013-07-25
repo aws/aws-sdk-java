@@ -166,9 +166,6 @@ public class ListVaultsRequest extends AmazonWebServiceRequest  implements Seria
      *         Glacier uses the AWS Account ID associated with the credentials used
      *         to sign the request. If you specify your Account ID, do not include
      *         hyphens in it.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListVaultsRequest withAccountId(String accountId) {
         this.accountId = accountId;
@@ -206,9 +203,6 @@ public class ListVaultsRequest extends AmazonWebServiceRequest  implements Seria
      *
      * @param marker A string used for pagination. The marker specifies the vault ARN after
      *         which the listing of vaults should begin.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListVaultsRequest withMarker(String marker) {
         this.marker = marker;
@@ -246,9 +240,6 @@ public class ListVaultsRequest extends AmazonWebServiceRequest  implements Seria
      *
      * @param limit The maximum number of items returned in the response. If you don't
      *         specify a value, the List Vaults operation returns up to 1,000 items.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListVaultsRequest withLimit(String limit) {
         this.limit = limit;

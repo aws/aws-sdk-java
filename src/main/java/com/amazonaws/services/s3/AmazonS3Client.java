@@ -73,6 +73,7 @@ import com.amazonaws.services.s3.internal.ProgressReportingInputStream;
 import com.amazonaws.services.s3.internal.RepeatableFileInputStream;
 import com.amazonaws.services.s3.internal.RepeatableInputStream;
 import com.amazonaws.services.s3.internal.ResponseHeaderHandlerChain;
+import com.amazonaws.util.ContentLengthValidationInputStream;
 import com.amazonaws.services.s3.internal.S3ErrorResponseHandler;
 import com.amazonaws.services.s3.internal.S3MetadataResponseHandler;
 import com.amazonaws.services.s3.internal.S3ObjectResponseHandler;
@@ -948,6 +949,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                                     + "checksum and verify data integrity.", e);
                     }
                 }
+            }else{
+				input = new S3ObjectInputStream(
+						new ContentLengthValidationInputStream(input,s3Object.getObjectMetadata()
+										.getContentLength()),
+						input.getHttpRequest());
+            	
             }
 
             s3Object.setObjectContent(input);

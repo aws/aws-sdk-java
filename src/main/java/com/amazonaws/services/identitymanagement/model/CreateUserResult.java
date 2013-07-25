@@ -51,9 +51,6 @@ public class CreateUserResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param user Information about the user.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateUserResult withUser(User user) {
         this.user = user;

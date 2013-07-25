@@ -84,9 +84,6 @@ public class WorkflowExecutionTimedOutEventAttributes  implements Serializable  
      *
      * @param timeoutType The type of timeout that caused this event.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see WorkflowExecutionTimeoutType
      */
     public WorkflowExecutionTimedOutEventAttributes withTimeoutType(String timeoutType) {
@@ -118,9 +115,6 @@ public class WorkflowExecutionTimedOutEventAttributes  implements Serializable  
      * <b>Allowed Values: </b>START_TO_CLOSE
      *
      * @param timeoutType The type of timeout that caused this event.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see WorkflowExecutionTimeoutType
      */
@@ -215,9 +209,6 @@ public class WorkflowExecutionTimedOutEventAttributes  implements Serializable  
      *         execution history with this event. </li> <li><b>ABANDON:</b> no action
      *         will be taken. The child executions will continue to run.</li> </ul>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ChildPolicy
      */
     public WorkflowExecutionTimedOutEventAttributes withChildPolicy(String childPolicy) {
@@ -281,9 +272,6 @@ public class WorkflowExecutionTimedOutEventAttributes  implements Serializable  
      *         is up to the decider to take appropriate actions when it receives an
      *         execution history with this event. </li> <li><b>ABANDON:</b> no action
      *         will be taken. The child executions will continue to run.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see ChildPolicy
      */

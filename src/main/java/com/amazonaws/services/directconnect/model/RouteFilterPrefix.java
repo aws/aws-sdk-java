@@ -58,9 +58,6 @@ public class RouteFilterPrefix  implements Serializable  {
      *
      * @param cidr CIDR notation for the advertised route. Multiple routes are separated
      *         by commas <p>Example: 10.10.10.0/24,10.10.11.0/24
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RouteFilterPrefix withCidr(String cidr) {
         this.cidr = cidr;

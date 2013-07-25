@@ -62,9 +62,6 @@ public class DescribeVirtualGatewaysResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param virtualGateways A list of virtual gateways.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVirtualGatewaysResult withVirtualGateways(VirtualGateway... virtualGateways) {
         if (getVirtualGateways() == null) setVirtualGateways(new java.util.ArrayList<VirtualGateway>(virtualGateways.length));
@@ -80,9 +77,6 @@ public class DescribeVirtualGatewaysResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param virtualGateways A list of virtual gateways.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeVirtualGatewaysResult withVirtualGateways(java.util.Collection<VirtualGateway> virtualGateways) {
         if (virtualGateways == null) {

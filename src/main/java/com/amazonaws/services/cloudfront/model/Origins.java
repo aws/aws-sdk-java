@@ -59,9 +59,6 @@ public class Origins  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param quantity The number of origins for this distribution.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Origins withQuantity(Integer quantity) {
         this.quantity = quantity;
@@ -113,9 +110,6 @@ public class Origins  implements Serializable  {
      * <b>Length: </b>1 - <br/>
      *
      * @param items A complex type that contains origins for this distribution.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Origins withItems(Origin... items) {
         if (getItems() == null) setItems(new java.util.ArrayList<Origin>(items.length));
@@ -134,9 +128,6 @@ public class Origins  implements Serializable  {
      * <b>Length: </b>1 - <br/>
      *
      * @param items A complex type that contains origins for this distribution.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Origins withItems(java.util.Collection<Origin> items) {
         if (items == null) {

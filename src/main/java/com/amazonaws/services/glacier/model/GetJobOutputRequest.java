@@ -199,9 +199,6 @@ public class GetJobOutputRequest extends AmazonWebServiceRequest  implements Ser
      *         Glacier uses the AWS Account ID associated with the credentials used
      *         to sign the request. If you specify your Account ID, do not include
      *         hyphens in it.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetJobOutputRequest withAccountId(String accountId) {
         this.accountId = accountId;
@@ -233,9 +230,6 @@ public class GetJobOutputRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vaultName The name of the vault.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetJobOutputRequest withVaultName(String vaultName) {
         this.vaultName = vaultName;
@@ -267,9 +261,6 @@ public class GetJobOutputRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param jobId The job ID whose data is downloaded.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetJobOutputRequest withJobId(String jobId) {
         this.jobId = jobId;
@@ -319,9 +310,6 @@ public class GetJobOutputRequest extends AmazonWebServiceRequest  implements Ser
      *         want to download the first 1,048,576 bytes, specify "Range:
      *         bytes=0-1048575". By default, this operation downloads the entire
      *         output.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetJobOutputRequest withRange(String range) {
         this.range = range;

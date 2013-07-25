@@ -75,9 +75,6 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param queueUrl The new value for the QueueUrl property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteMessageRequest withQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
@@ -109,9 +106,6 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param receiptHandle The new value for the ReceiptHandle property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteMessageRequest withReceiptHandle(String receiptHandle) {
         this.receiptHandle = receiptHandle;

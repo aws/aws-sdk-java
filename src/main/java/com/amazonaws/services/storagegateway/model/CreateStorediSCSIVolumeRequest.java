@@ -147,9 +147,6 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest  imp
      * @param gatewayARN The Amazon Resource Name (ARN) of the gateway. Use the
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateStorediSCSIVolumeRequest withGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
@@ -208,9 +205,6 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest  imp
      *         a stored volume. Use <a
      *         href="http://docs.amazonwebservices.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a>
      *         to list disk IDs for a gateway.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateStorediSCSIVolumeRequest withDiskId(String diskId) {
         this.diskId = diskId;
@@ -281,9 +275,6 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest  imp
      *         field. To list snapshots for your account use <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      *         in the <i>Amazon Elastic Compute Cloud API Reference</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateStorediSCSIVolumeRequest withSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
@@ -327,9 +318,6 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest  imp
      * @param preserveExistingData Specify this field as true if you want to preserve the data on the
      *         local disk. Otherwise, specifying this field as false creates an empty
      *         volume. <p><i>Valid Values</i>: true, false
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateStorediSCSIVolumeRequest withPreserveExistingData(Boolean preserveExistingData) {
         this.preserveExistingData = preserveExistingData;
@@ -416,9 +404,6 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest  imp
      *         of
      *         arn:aws:storagegateway:us-east-1:111122223333:gateway/mygateway/target/iqn.1997-05.com.amazon:myvolume.
      *         The target name must be unique across all volumes of a gateway.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateStorediSCSIVolumeRequest withTargetName(String targetName) {
         this.targetName = targetName;
@@ -483,9 +468,6 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest  imp
      *         <a>DescribeGatewayInformation</a> to get a list of the network
      *         interfaces available on a gateway. <p><i>Valid Values</i>: A valid IP
      *         address.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateStorediSCSIVolumeRequest withNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;

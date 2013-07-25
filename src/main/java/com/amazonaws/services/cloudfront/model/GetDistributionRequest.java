@@ -76,9 +76,6 @@ public class GetDistributionRequest extends AmazonWebServiceRequest  implements 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param id The distribution's id.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetDistributionRequest withId(String id) {
         this.id = id;

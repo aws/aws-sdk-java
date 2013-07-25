@@ -107,9 +107,6 @@ public class CreateSnapshotFromVolumeRecoveryPointResult  implements Serializabl
      *         operations such as describing snapshots (Amazon Elastic Compute Cloud
      *         API DescribeSnapshots) or creating a volume from a snapshot
      *         (<a>CreateStorediSCSIVolume</a>).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateSnapshotFromVolumeRecoveryPointResult withSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
@@ -156,9 +153,6 @@ public class CreateSnapshotFromVolumeRecoveryPointResult  implements Serializabl
      *
      * @param volumeARN The ARN of the volume of which the snapshot was taken. Obtain volume
      *         ARNs from the <a>ListVolumes</a> operation.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateSnapshotFromVolumeRecoveryPointResult withVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
@@ -202,9 +196,6 @@ public class CreateSnapshotFromVolumeRecoveryPointResult  implements Serializabl
      * @param volumeRecoveryPointTime The time of the recovery point. Data up to this recovery point are
      *         included in the snapshot. <p><emphasis>Type</emphasis>: String format
      *         of a date in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateSnapshotFromVolumeRecoveryPointResult withVolumeRecoveryPointTime(String volumeRecoveryPointTime) {
         this.volumeRecoveryPointTime = volumeRecoveryPointTime;

@@ -146,9 +146,6 @@ public class DescribeChapCredentialsResult  implements Serializable  {
      *         CHAP with the initiator (e.g. Windows client). </li> <li>
      *         <p><b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage
      *         volume. </li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeChapCredentialsResult withChapCredentials(ChapInfo... chapCredentials) {
         if (getChapCredentials() == null) setChapCredentials(new java.util.ArrayList<ChapInfo>(chapCredentials.length));
@@ -188,9 +185,6 @@ public class DescribeChapCredentialsResult  implements Serializable  {
      *         CHAP with the initiator (e.g. Windows client). </li> <li>
      *         <p><b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage
      *         volume. </li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeChapCredentialsResult withChapCredentials(java.util.Collection<ChapInfo> chapCredentials) {
         if (chapCredentials == null) {

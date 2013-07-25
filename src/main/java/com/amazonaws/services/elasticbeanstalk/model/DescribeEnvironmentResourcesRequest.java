@@ -93,9 +93,6 @@ public class DescribeEnvironmentResourcesRequest extends AmazonWebServiceRequest
      *         Condition: You must specify either this or an EnvironmentName, or
      *         both. If you do not specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeEnvironmentResourcesRequest withEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
@@ -154,9 +151,6 @@ public class DescribeEnvironmentResourcesRequest extends AmazonWebServiceRequest
      *         Condition: You must specify either this or an EnvironmentId, or both.
      *         If you do not specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeEnvironmentResourcesRequest withEnvironmentName(String environmentName) {
         this.environmentName = environmentName;

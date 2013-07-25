@@ -118,9 +118,6 @@ public class DescribeCacheClustersRequest extends AmazonWebServiceRequest  imple
      * @param cacheClusterId The user-supplied cluster identifier. If this parameter is specified,
      *         only information about that specific Cache Cluster is returned. This
      *         parameter isn't case sensitive.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeCacheClustersRequest withCacheClusterId(String cacheClusterId) {
         this.cacheClusterId = cacheClusterId;
@@ -170,9 +167,6 @@ public class DescribeCacheClustersRequest extends AmazonWebServiceRequest  imple
      *         records exist than the specified <i>MaxRecords</i> value, a marker is
      *         included in the response so that the remaining results may be
      *         retrieved. <p> Default: 100 <p> Constraints: minimum 20, maximum 100
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeCacheClustersRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -222,9 +216,6 @@ public class DescribeCacheClustersRequest extends AmazonWebServiceRequest  imple
      *         request. If this parameter is specified, the response includes only
      *         records beyond the marker, up to the value specified by
      *         <i>MaxRecords</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeCacheClustersRequest withMarker(String marker) {
         this.marker = marker;
@@ -262,9 +253,6 @@ public class DescribeCacheClustersRequest extends AmazonWebServiceRequest  imple
      *
      * @param showCacheNodeInfo An optional flag that can be included in the DescribeCacheCluster
      *         request to retrieve Cache Nodes information.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeCacheClustersRequest withShowCacheNodeInfo(Boolean showCacheNodeInfo) {
         this.showCacheNodeInfo = showCacheNodeInfo;

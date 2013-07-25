@@ -175,9 +175,6 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest  implemen
      *
      * @param cacheClusterId The Cache Cluster identifier. This value is stored as a lowercase
      *         string.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyCacheClusterRequest withCacheClusterId(String cacheClusterId) {
         this.cacheClusterId = cacheClusterId;
@@ -239,9 +236,6 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest  implemen
      *         number of Cache Nodes, Cache Nodes will be removed. When removing
      *         Cache Nodes, the Ids of the specific Cache Nodes to be removed must be
      *         supplied using the CacheNodeIdsToRemove parameter.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyCacheClusterRequest withNumCacheNodes(Integer numCacheNodes) {
         this.numCacheNodes = numCacheNodes;
@@ -308,9 +302,6 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest  implemen
      *         The number of Cache Node Ids supplied in this parameter must match the
      *         difference between the existing number of Cache Nodes in the cluster
      *         and the new NumCacheNodes requested.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyCacheClusterRequest withCacheNodeIdsToRemove(String... cacheNodeIdsToRemove) {
         if (getCacheNodeIdsToRemove() == null) setCacheNodeIdsToRemove(new java.util.ArrayList<String>(cacheNodeIdsToRemove.length));
@@ -334,9 +325,6 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest  implemen
      *         The number of Cache Node Ids supplied in this parameter must match the
      *         difference between the existing number of Cache Nodes in the cluster
      *         and the new NumCacheNodes requested.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyCacheClusterRequest withCacheNodeIdsToRemove(java.util.Collection<String> cacheNodeIdsToRemove) {
         if (cacheNodeIdsToRemove == null) {
@@ -415,9 +403,6 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest  implemen
      *         outside of an Amazon Virtual Private Cloud (VPC). <p>Constraints: Must
      *         contain no more than 255 alphanumeric characters. Must not be
      *         "Default".
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyCacheClusterRequest withCacheSecurityGroupNames(String... cacheSecurityGroupNames) {
         if (getCacheSecurityGroupNames() == null) setCacheSecurityGroupNames(new java.util.ArrayList<String>(cacheSecurityGroupNames.length));
@@ -443,9 +428,6 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest  implemen
      *         outside of an Amazon Virtual Private Cloud (VPC). <p>Constraints: Must
      *         contain no more than 255 alphanumeric characters. Must not be
      *         "Default".
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyCacheClusterRequest withCacheSecurityGroupNames(java.util.Collection<String> cacheSecurityGroupNames) {
         if (cacheSecurityGroupNames == null) {
@@ -506,9 +488,6 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest  implemen
      * @param securityGroupIds Specifies the VPC Security Groups associated with the Cache Cluster.
      *         <p>This parameter can be used only with clusters that are created in
      *         an Amazon Virtual Private Cloud (VPC).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyCacheClusterRequest withSecurityGroupIds(String... securityGroupIds) {
         if (getSecurityGroupIds() == null) setSecurityGroupIds(new java.util.ArrayList<String>(securityGroupIds.length));
@@ -528,9 +507,6 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest  implemen
      * @param securityGroupIds Specifies the VPC Security Groups associated with the Cache Cluster.
      *         <p>This parameter can be used only with clusters that are created in
      *         an Amazon Virtual Private Cloud (VPC).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyCacheClusterRequest withSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
         if (securityGroupIds == null) {
@@ -592,9 +568,6 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest  implemen
      *         If moving this window to the current time, there must be at least 120
      *         minutes between the current time and end of the window to ensure
      *         pending changes are applied.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyCacheClusterRequest withPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
         this.preferredMaintenanceWindow = preferredMaintenanceWindow;
@@ -638,9 +611,6 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest  implemen
      * @param notificationTopicArn The Amazon Resource Name (ARN) of the SNS topic to which notifications
      *         will be sent. <note> The SNS topic owner must be same as the Cache
      *         Cluster owner. </note>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyCacheClusterRequest withNotificationTopicArn(String notificationTopicArn) {
         this.notificationTopicArn = notificationTopicArn;
@@ -690,9 +660,6 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest  implemen
      *         This change is asynchronously applied as soon as possible for
      *         parameters when the <i>ApplyImmediately</i> parameter is specified as
      *         <i>true</i> for this request.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyCacheClusterRequest withCacheParameterGroupName(String cacheParameterGroupName) {
         this.cacheParameterGroupName = cacheParameterGroupName;
@@ -736,9 +703,6 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest  implemen
      * @param notificationTopicStatus The status of the Amazon SNS notification topic. The value can be
      *         <i>active</i> or <i>inactive</i>. Notifications are sent only if the
      *         status is <i>active</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyCacheClusterRequest withNotificationTopicStatus(String notificationTopicStatus) {
         this.notificationTopicStatus = notificationTopicStatus;
@@ -806,9 +770,6 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest  implemen
      *         changes to the Cache Cluster are applied on the next maintenance
      *         reboot, or the next failure reboot, whichever occurs first. <p>
      *         Default: <code>false</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyCacheClusterRequest withApplyImmediately(Boolean applyImmediately) {
         this.applyImmediately = applyImmediately;
@@ -861,9 +822,6 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest  implemen
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param engineVersion The version of the cache engine to upgrade this cluster to.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyCacheClusterRequest withEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
@@ -907,9 +865,6 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest  implemen
      * @param autoMinorVersionUpgrade Indicates that minor engine upgrades will be applied automatically to
      *         the Cache Cluster during the maintenance window. <p>Default:
      *         <code>true</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyCacheClusterRequest withAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
         this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;

@@ -110,9 +110,6 @@ public class Parameter  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameterName Specifies the name of the parameter.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Parameter withParameterName(String parameterName) {
         this.parameterName = parameterName;
@@ -144,9 +141,6 @@ public class Parameter  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameterValue Specifies the value of the parameter.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Parameter withParameterValue(String parameterValue) {
         this.parameterValue = parameterValue;
@@ -178,9 +172,6 @@ public class Parameter  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description Provides a description of the parameter.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Parameter withDescription(String description) {
         this.description = description;
@@ -212,9 +203,6 @@ public class Parameter  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param source Indicates the source of the parameter value.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Parameter withSource(String source) {
         this.source = source;
@@ -246,9 +234,6 @@ public class Parameter  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param applyType Specifies the engine specific parameters type.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Parameter withApplyType(String applyType) {
         this.applyType = applyType;
@@ -280,9 +265,6 @@ public class Parameter  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dataType Specifies the valid data type for the parameter.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Parameter withDataType(String dataType) {
         this.dataType = dataType;
@@ -314,9 +296,6 @@ public class Parameter  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param allowedValues Specifies the valid range of values for the parameter.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Parameter withAllowedValues(String allowedValues) {
         this.allowedValues = allowedValues;
@@ -360,9 +339,6 @@ public class Parameter  implements Serializable  {
      * @param isModifiable Indicates whether (<code>true</code>) or not (<code>false</code>) the
      *         parameter can be modified. Some parameters have security or
      *         operational implications that prevent them from being changed.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Parameter withIsModifiable(Boolean isModifiable) {
         this.isModifiable = isModifiable;
@@ -407,9 +383,6 @@ public class Parameter  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param minimumEngineVersion The earliest engine version to which the parameter can apply.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public Parameter withMinimumEngineVersion(String minimumEngineVersion) {
         this.minimumEngineVersion = minimumEngineVersion;
@@ -455,9 +428,6 @@ public class Parameter  implements Serializable  {
      *
      * @param applyMethod Indicates when to apply parameter updates.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ApplyMethod
      */
     public Parameter withApplyMethod(String applyMethod) {
@@ -489,9 +459,6 @@ public class Parameter  implements Serializable  {
      * <b>Allowed Values: </b>immediate, pending-reboot
      *
      * @param applyMethod Indicates when to apply parameter updates.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see ApplyMethod
      */

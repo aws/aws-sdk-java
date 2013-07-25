@@ -79,9 +79,6 @@ public class DescribeTrustedAdvisorChecksRequest extends AmazonWebServiceRequest
      *         support. AWS Support currently supports English and Japanese, for
      *         which the codes are <i>en</i> and <i>ja</i>, respectively. Language
      *         parameters must be passed explicitly for operations that take them.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeTrustedAdvisorChecksRequest withLanguage(String language) {
         this.language = language;

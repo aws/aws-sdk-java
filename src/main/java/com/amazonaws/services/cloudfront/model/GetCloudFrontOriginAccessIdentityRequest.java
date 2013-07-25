@@ -76,9 +76,6 @@ public class GetCloudFrontOriginAccessIdentityRequest extends AmazonWebServiceRe
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param id The identity's id.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetCloudFrontOriginAccessIdentityRequest withId(String id) {
         this.id = id;

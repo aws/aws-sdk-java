@@ -169,9 +169,6 @@ public class InvalidationBatch  implements Serializable  {
      *         (http://www.ietf.org/rfc/rfc1738.txt), URL encode those characters. Do
      *         not URL encode any other characters in the path, or CloudFront will
      *         not invalidate the old version of the updated object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InvalidationBatch withPaths(Paths paths) {
         this.paths = paths;
@@ -257,9 +254,6 @@ public class InvalidationBatch  implements Serializable  {
      *         in a previous request to create a distribution but the content of any
      *         Path is different from the original request, CloudFront returns an
      *         InvalidationBatchAlreadyExists error.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public InvalidationBatch withCallerReference(String callerReference) {
         this.callerReference = callerReference;

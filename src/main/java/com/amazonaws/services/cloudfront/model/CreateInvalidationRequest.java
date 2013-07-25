@@ -83,9 +83,6 @@ public class CreateInvalidationRequest extends AmazonWebServiceRequest  implemen
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param distributionId The distribution's id.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateInvalidationRequest withDistributionId(String distributionId) {
         this.distributionId = distributionId;
@@ -117,9 +114,6 @@ public class CreateInvalidationRequest extends AmazonWebServiceRequest  implemen
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param invalidationBatch The batch information for the invalidation.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateInvalidationRequest withInvalidationBatch(InvalidationBatch invalidationBatch) {
         this.invalidationBatch = invalidationBatch;

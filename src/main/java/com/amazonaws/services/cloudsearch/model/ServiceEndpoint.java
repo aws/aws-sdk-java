@@ -79,9 +79,6 @@ public class ServiceEndpoint  implements Serializable  {
      *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i> for more information.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ServiceEndpoint withArn(String arn) {
         this.arn = arn;
@@ -119,9 +116,6 @@ public class ServiceEndpoint  implements Serializable  {
      *
      * @param endpoint The URL (including /version/pathPrefix) to which service requests can
      *         be submitted.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ServiceEndpoint withEndpoint(String endpoint) {
         this.endpoint = endpoint;

@@ -62,9 +62,6 @@ public class DescribeIndexFieldsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param indexFields The index fields configured for the domain.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeIndexFieldsResult withIndexFields(IndexFieldStatus... indexFields) {
         if (getIndexFields() == null) setIndexFields(new java.util.ArrayList<IndexFieldStatus>(indexFields.length));
@@ -80,9 +77,6 @@ public class DescribeIndexFieldsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param indexFields The index fields configured for the domain.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeIndexFieldsResult withIndexFields(java.util.Collection<IndexFieldStatus> indexFields) {
         if (indexFields == null) {

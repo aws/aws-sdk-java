@@ -103,9 +103,6 @@ public class AddUserToGroupRequest extends AmazonWebServiceRequest  implements S
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param groupName Name of the group to update.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AddUserToGroupRequest withGroupName(String groupName) {
         this.groupName = groupName;
@@ -149,9 +146,6 @@ public class AddUserToGroupRequest extends AmazonWebServiceRequest  implements S
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param userName Name of the user to add.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AddUserToGroupRequest withUserName(String userName) {
         this.userName = userName;

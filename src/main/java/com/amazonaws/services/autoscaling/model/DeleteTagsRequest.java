@@ -94,9 +94,6 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest  implements Seria
      *         <i>auto-scaling-group</i>, Resource ID = <i>AutoScalingGroupName</i>,
      *         key=<i>value</i>, value=<i>value</i>, propagate=<i>true</i> or
      *         <i>false</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteTagsRequest withTags(Tag... tags) {
         if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
@@ -120,9 +117,6 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest  implements Seria
      *         <i>auto-scaling-group</i>, Resource ID = <i>AutoScalingGroupName</i>,
      *         key=<i>value</i>, value=<i>value</i>, propagate=<i>true</i> or
      *         <i>false</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteTagsRequest withTags(java.util.Collection<Tag> tags) {
         if (tags == null) {

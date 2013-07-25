@@ -74,9 +74,6 @@ public class ListStackResourcesRequest extends AmazonWebServiceRequest  implemen
      *
      * @param stackName The name or the unique identifier associated with the stack.
      *         <p>Default: There is no default value.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListStackResourcesRequest withStackName(String stackName) {
         this.stackName = stackName;
@@ -123,9 +120,6 @@ public class ListStackResourcesRequest extends AmazonWebServiceRequest  implemen
      *
      * @param nextToken String that identifies the start of the next list of stack resource
      *         summaries, if there is one. <p>Default: There is no default value.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListStackResourcesRequest withNextToken(String nextToken) {
         this.nextToken = nextToken;

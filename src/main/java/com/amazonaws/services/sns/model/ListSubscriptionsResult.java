@@ -67,9 +67,6 @@ public class ListSubscriptionsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subscriptions A list of subscriptions.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListSubscriptionsResult withSubscriptions(Subscription... subscriptions) {
         if (getSubscriptions() == null) setSubscriptions(new java.util.ArrayList<Subscription>(subscriptions.length));
@@ -85,9 +82,6 @@ public class ListSubscriptionsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subscriptions A list of subscriptions.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListSubscriptionsResult withSubscriptions(java.util.Collection<Subscription> subscriptions) {
         if (subscriptions == null) {
@@ -137,9 +131,6 @@ public class ListSubscriptionsResult  implements Serializable  {
      * @param nextToken Token to pass along to the next <code>ListSubscriptions</code>
      *         request. This element is returned if there are more subscriptions to
      *         retrieve.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListSubscriptionsResult withNextToken(String nextToken) {
         this.nextToken = nextToken;

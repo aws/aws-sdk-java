@@ -70,9 +70,6 @@ public class CloudFrontOriginAccessIdentitySummary  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param id The ID for the origin access identity. For example: E74FTE3AJFJ256A.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CloudFrontOriginAccessIdentitySummary withId(String id) {
         this.id = id;
@@ -116,9 +113,6 @@ public class CloudFrontOriginAccessIdentitySummary  implements Serializable  {
      * @param s3CanonicalUserId The Amazon S3 canonical user ID for the origin access identity, which
      *         you use when giving the origin access identity read permission to an
      *         object in Amazon S3.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CloudFrontOriginAccessIdentitySummary withS3CanonicalUserId(String s3CanonicalUserId) {
         this.s3CanonicalUserId = s3CanonicalUserId;
@@ -156,9 +150,6 @@ public class CloudFrontOriginAccessIdentitySummary  implements Serializable  {
      *
      * @param comment The comment for this origin access identity, as originally specified
      *         when created.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CloudFrontOriginAccessIdentitySummary withComment(String comment) {
         this.comment = comment;

@@ -121,6 +121,20 @@ public class CreateStackRequestMarshaller implements Marshaller<Request<CreateSt
             if (createStackRequest.getCustomJson() != null) {
                 jsonWriter.key("CustomJson").value(createStackRequest.getCustomJson());
             }
+            StackConfigurationManager configurationManager = createStackRequest.getConfigurationManager();
+            if (configurationManager != null) {
+
+                jsonWriter.key("ConfigurationManager");
+                jsonWriter.object();
+
+                if (configurationManager.getName() != null) {
+                    jsonWriter.key("Name").value(configurationManager.getName());
+                }
+                if (configurationManager.getVersion() != null) {
+                    jsonWriter.key("Version").value(configurationManager.getVersion());
+                }
+                jsonWriter.endObject();
+            }
             if (createStackRequest.isUseCustomCookbooks() != null) {
                 jsonWriter.key("UseCustomCookbooks").value(createStackRequest.isUseCustomCookbooks());
             }

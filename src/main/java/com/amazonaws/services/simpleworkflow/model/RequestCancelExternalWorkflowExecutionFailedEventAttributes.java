@@ -114,9 +114,6 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes  implem
      *
      * @param workflowId The <code>workflowId</code> of the external workflow to which the
      *         cancel request was to be delivered.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RequestCancelExternalWorkflowExecutionFailedEventAttributes withWorkflowId(String workflowId) {
         this.workflowId = workflowId;
@@ -157,9 +154,6 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes  implem
      * <b>Length: </b>0 - 64<br/>
      *
      * @param runId The <code>runId</code> of the external workflow execution.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RequestCancelExternalWorkflowExecutionFailedEventAttributes withRunId(String runId) {
         this.runId = runId;
@@ -241,9 +235,6 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes  implem
      *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see RequestCancelExternalWorkflowExecutionFailedCause
      */
     public RequestCancelExternalWorkflowExecutionFailedEventAttributes withCause(String cause) {
@@ -299,9 +290,6 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes  implem
      *         example IAM policies, see <a
      *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see RequestCancelExternalWorkflowExecutionFailedCause
      */
@@ -370,9 +358,6 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes  implem
      *         this external workflow execution. This information can be useful for
      *         diagnosing problems by tracing back the chain of events leading up to
      *         this event.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RequestCancelExternalWorkflowExecutionFailedEventAttributes withInitiatedEventId(Long initiatedEventId) {
         this.initiatedEventId = initiatedEventId;
@@ -428,9 +413,6 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes  implem
      *         <code>RequestCancelExternalWorkflowExecution</code> decision for this
      *         cancellation request. This information can be useful for diagnosing
      *         problems by tracing back the cause of events.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RequestCancelExternalWorkflowExecutionFailedEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
         this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;
@@ -471,9 +453,6 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes  implem
      * <b>Length: </b>0 - 32768<br/>
      *
      * @param control The new value for the Control property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RequestCancelExternalWorkflowExecutionFailedEventAttributes withControl(String control) {
         this.control = control;

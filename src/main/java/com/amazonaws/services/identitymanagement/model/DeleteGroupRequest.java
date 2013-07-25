@@ -92,9 +92,6 @@ public class DeleteGroupRequest extends AmazonWebServiceRequest  implements Seri
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param groupName Name of the group to delete.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteGroupRequest withGroupName(String groupName) {
         this.groupName = groupName;

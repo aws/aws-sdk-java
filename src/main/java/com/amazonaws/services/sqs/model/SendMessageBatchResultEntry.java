@@ -50,9 +50,6 @@ public class SendMessageBatchResultEntry  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param id The new value for the Id property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SendMessageBatchResultEntry withId(String id) {
         this.id = id;
@@ -84,9 +81,6 @@ public class SendMessageBatchResultEntry  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param messageId The new value for the MessageId property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SendMessageBatchResultEntry withMessageId(String messageId) {
         this.messageId = messageId;
@@ -118,9 +112,6 @@ public class SendMessageBatchResultEntry  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param mD5OfMessageBody The new value for the MD5OfMessageBody property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SendMessageBatchResultEntry withMD5OfMessageBody(String mD5OfMessageBody) {
         this.mD5OfMessageBody = mD5OfMessageBody;

@@ -95,9 +95,6 @@ public class ListStreamingDistributionsRequest extends AmazonWebServiceRequest  
      *         the list that occur after the marker. To get the next page of results,
      *         set the Marker to the value of the NextMarker from the current page's
      *         response (which is also the ID of the last distribution on that page).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListStreamingDistributionsRequest withMarker(String marker) {
         this.marker = marker;
@@ -135,9 +132,6 @@ public class ListStreamingDistributionsRequest extends AmazonWebServiceRequest  
      *
      * @param maxItems The maximum number of streaming distributions you want in the response
      *         body.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListStreamingDistributionsRequest withMaxItems(String maxItems) {
         this.maxItems = maxItems;

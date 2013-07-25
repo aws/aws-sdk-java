@@ -85,9 +85,6 @@ public class GetRolePolicyResult  implements Serializable  {
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param roleName The role the policy is associated with.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetRolePolicyResult withRoleName(String roleName) {
         this.roleName = roleName;
@@ -131,9 +128,6 @@ public class GetRolePolicyResult  implements Serializable  {
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param policyName The name of the policy.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetRolePolicyResult withPolicyName(String policyName) {
         this.policyName = policyName;
@@ -177,9 +171,6 @@ public class GetRolePolicyResult  implements Serializable  {
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      *
      * @param policyDocument The policy document.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public GetRolePolicyResult withPolicyDocument(String policyDocument) {
         this.policyDocument = policyDocument;

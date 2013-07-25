@@ -51,9 +51,6 @@ public class ListInvalidationsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param invalidationList Information about invalidation batches.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListInvalidationsResult withInvalidationList(InvalidationList invalidationList) {
         this.invalidationList = invalidationList;

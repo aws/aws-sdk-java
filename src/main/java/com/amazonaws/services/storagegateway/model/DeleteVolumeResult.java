@@ -70,9 +70,6 @@ public class DeleteVolumeResult  implements Serializable  {
      *
      * @param volumeARN The Amazon Resource Name (ARN) of the storage volume that was deleted.
      *         It is the same ARN you provided in the request.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DeleteVolumeResult withVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;

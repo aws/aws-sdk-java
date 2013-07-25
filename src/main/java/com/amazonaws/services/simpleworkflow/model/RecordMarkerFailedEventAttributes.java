@@ -86,9 +86,6 @@ public class RecordMarkerFailedEventAttributes  implements Serializable  {
      * <b>Length: </b>1 - 256<br/>
      *
      * @param markerName The marker's name.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RecordMarkerFailedEventAttributes withMarkerName(String markerName) {
         this.markerName = markerName;
@@ -170,9 +167,6 @@ public class RecordMarkerFailedEventAttributes  implements Serializable  {
      *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see RecordMarkerFailedCause
      */
     public RecordMarkerFailedEventAttributes withCause(String cause) {
@@ -229,9 +223,6 @@ public class RecordMarkerFailedEventAttributes  implements Serializable  {
      *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see RecordMarkerFailedCause
      */
     public RecordMarkerFailedEventAttributes withCause(RecordMarkerFailedCause cause) {
@@ -287,9 +278,6 @@ public class RecordMarkerFailedEventAttributes  implements Serializable  {
      *         <code>RecordMarkerFailed</code> decision for this cancellation
      *         request. This information can be useful for diagnosing problems by
      *         tracing back the cause of events.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public RecordMarkerFailedEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
         this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;

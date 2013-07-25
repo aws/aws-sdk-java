@@ -83,9 +83,6 @@ public class ListVolumeRecoveryPointsResult  implements Serializable  {
      *
      * @param gatewayARN The Amazon Resource Name (ARN) of the activated gateway whose local
      *         disk information is returned.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListVolumeRecoveryPointsResult withGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
@@ -140,9 +137,6 @@ public class ListVolumeRecoveryPointsResult  implements Serializable  {
      * @param volumeRecoveryPointInfos An array of <a>VolumeRecoveryPointInfo</a> objects, where each object
      *         describes a recovery point. If no recovery points are defined for the
      *         volume, then <i>VolumeRecoveryPointInfos</i> is an empty array "[]"
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListVolumeRecoveryPointsResult withVolumeRecoveryPointInfos(VolumeRecoveryPointInfo... volumeRecoveryPointInfos) {
         if (getVolumeRecoveryPointInfos() == null) setVolumeRecoveryPointInfos(new java.util.ArrayList<VolumeRecoveryPointInfo>(volumeRecoveryPointInfos.length));
@@ -162,9 +156,6 @@ public class ListVolumeRecoveryPointsResult  implements Serializable  {
      * @param volumeRecoveryPointInfos An array of <a>VolumeRecoveryPointInfo</a> objects, where each object
      *         describes a recovery point. If no recovery points are defined for the
      *         volume, then <i>VolumeRecoveryPointInfos</i> is an empty array "[]"
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListVolumeRecoveryPointsResult withVolumeRecoveryPointInfos(java.util.Collection<VolumeRecoveryPointInfo> volumeRecoveryPointInfos) {
         if (volumeRecoveryPointInfos == null) {

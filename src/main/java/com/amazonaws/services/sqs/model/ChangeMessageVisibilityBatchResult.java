@@ -59,9 +59,6 @@ public class ChangeMessageVisibilityBatchResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param successful The new value for the Successful property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ChangeMessageVisibilityBatchResult withSuccessful(ChangeMessageVisibilityBatchResultEntry... successful) {
         if (getSuccessful() == null) setSuccessful(new java.util.ArrayList<ChangeMessageVisibilityBatchResultEntry>(successful.length));
@@ -77,9 +74,6 @@ public class ChangeMessageVisibilityBatchResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param successful The new value for the Successful property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ChangeMessageVisibilityBatchResult withSuccessful(java.util.Collection<ChangeMessageVisibilityBatchResultEntry> successful) {
         if (successful == null) {
@@ -128,9 +122,6 @@ public class ChangeMessageVisibilityBatchResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param failed The new value for the Failed property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ChangeMessageVisibilityBatchResult withFailed(BatchResultErrorEntry... failed) {
         if (getFailed() == null) setFailed(new java.util.ArrayList<BatchResultErrorEntry>(failed.length));
@@ -146,9 +137,6 @@ public class ChangeMessageVisibilityBatchResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param failed The new value for the Failed property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ChangeMessageVisibilityBatchResult withFailed(java.util.Collection<BatchResultErrorEntry> failed) {
         if (failed == null) {

@@ -112,9 +112,6 @@ public class FailWorkflowExecutionFailedEventAttributes  implements Serializable
      *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see FailWorkflowExecutionFailedCause
      */
     public FailWorkflowExecutionFailedEventAttributes withCause(String cause) {
@@ -166,9 +163,6 @@ public class FailWorkflowExecutionFailedEventAttributes  implements Serializable
      *         sufficient permissions. For details and example IAM policies, see <a
      *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see FailWorkflowExecutionFailedCause
      */
@@ -225,9 +219,6 @@ public class FailWorkflowExecutionFailedEventAttributes  implements Serializable
      *         <code>FailWorkflowExecution</code> decision to fail this execution.
      *         This information can be useful for diagnosing problems by tracing back
      *         the cause of events.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public FailWorkflowExecutionFailedEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
         this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;

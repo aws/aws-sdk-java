@@ -64,9 +64,6 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest  implements S
      *
      * @param stackName The name or the unique identifier associated with the stack.
      *         <p>Default: There is no default value.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeStacksRequest withStackName(String stackName) {
         this.stackName = stackName;
@@ -107,9 +104,6 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest  implements S
      * <b>Length: </b>1 - 1024<br/>
      *
      * @param nextToken The new value for the NextToken property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeStacksRequest withNextToken(String nextToken) {
         this.nextToken = nextToken;

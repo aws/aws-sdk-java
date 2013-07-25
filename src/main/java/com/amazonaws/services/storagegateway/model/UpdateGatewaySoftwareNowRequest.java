@@ -90,9 +90,6 @@ public class UpdateGatewaySoftwareNowRequest extends AmazonWebServiceRequest  im
      * @param gatewayARN The Amazon Resource Name (ARN) of the gateway. Use the
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateGatewaySoftwareNowRequest withGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;

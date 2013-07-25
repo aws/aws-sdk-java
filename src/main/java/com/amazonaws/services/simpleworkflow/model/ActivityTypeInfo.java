@@ -80,9 +80,6 @@ public class ActivityTypeInfo  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param activityType The <a>ActivityType</a> type structure representing the activity type.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ActivityTypeInfo withActivityType(ActivityType activityType) {
         this.activityType = activityType;
@@ -128,9 +125,6 @@ public class ActivityTypeInfo  implements Serializable  {
      *
      * @param status The current status of the activity type.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see RegistrationStatus
      */
     public ActivityTypeInfo withStatus(String status) {
@@ -162,9 +156,6 @@ public class ActivityTypeInfo  implements Serializable  {
      * <b>Allowed Values: </b>REGISTERED, DEPRECATED
      *
      * @param status The current status of the activity type.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see RegistrationStatus
      */
@@ -212,9 +203,6 @@ public class ActivityTypeInfo  implements Serializable  {
      *
      * @param description The description of the activity type provided in
      *         <a>RegisterActivityType</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ActivityTypeInfo withDescription(String description) {
         this.description = description;
@@ -252,9 +240,6 @@ public class ActivityTypeInfo  implements Serializable  {
      *
      * @param creationDate The date and time this activity type was created through
      *         <a>RegisterActivityType</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ActivityTypeInfo withCreationDate(java.util.Date creationDate) {
         this.creationDate = creationDate;
@@ -292,9 +277,6 @@ public class ActivityTypeInfo  implements Serializable  {
      *
      * @param deprecationDate If DEPRECATED, the date and time <a>DeprecateActivityType</a> was
      *         called.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ActivityTypeInfo withDeprecationDate(java.util.Date deprecationDate) {
         this.deprecationDate = deprecationDate;

@@ -81,9 +81,6 @@ public class CancelTimerDecisionAttributes  implements Serializable  {
      * <b>Length: </b>1 - 256<br/>
      *
      * @param timerId The unique Id of the timer to cancel. This field is required.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CancelTimerDecisionAttributes withTimerId(String timerId) {
         this.timerId = timerId;

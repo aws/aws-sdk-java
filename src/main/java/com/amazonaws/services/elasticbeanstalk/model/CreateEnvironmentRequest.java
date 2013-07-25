@@ -212,9 +212,6 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest  implement
      *         <p> If no application is found with this name,
      *         <code>CreateEnvironment</code> returns an
      *         <code>InvalidParameterValue</code> error.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateEnvironmentRequest withApplicationName(String applicationName) {
         this.applicationName = applicationName;
@@ -285,9 +282,6 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest  implement
      *         <code>InvalidParameterValue</code> error. <p> Default: If not
      *         specified, AWS Elastic Beanstalk attempts to launch the most recently
      *         created application version.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateEnvironmentRequest withVersionLabel(String versionLabel) {
         this.versionLabel = versionLabel;
@@ -370,9 +364,6 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest  implement
      *         <code>InvalidParameterValue</code> error. <p>Default: If the CNAME
      *         parameter is not specified, the environment name becomes part of the
      *         CNAME, and therefore part of the visible URL for your application.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateEnvironmentRequest withEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
@@ -455,9 +446,6 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest  implement
      *         Elastic Beanstalk returns an <code>InvalidParameterCombination</code>
      *         error. If you do not specify either, AWS Elastic Beanstalk returns a
      *         <code>MissingRequiredParameter</code> error.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateEnvironmentRequest withTemplateName(String templateName) {
         this.templateName = templateName;
@@ -540,9 +528,6 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest  implement
      *         Elastic Beanstalk returns an <code>InvalidParameterCombination</code>
      *         error. If you do not specify either, AWS Elastic Beanstalk returns a
      *         <code>MissingRequiredParameter</code> error.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateEnvironmentRequest withSolutionStackName(String solutionStackName) {
         this.solutionStackName = solutionStackName;
@@ -595,9 +580,6 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest  implement
      * @param cNAMEPrefix If specified, the environment attempts to use this value as the prefix
      *         for the CNAME. If not specified, the environment uses the environment
      *         name.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateEnvironmentRequest withCNAMEPrefix(String cNAMEPrefix) {
         this.cNAMEPrefix = cNAMEPrefix;
@@ -638,9 +620,6 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest  implement
      * <b>Length: </b>0 - 200<br/>
      *
      * @param description Describes this environment.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateEnvironmentRequest withDescription(String description) {
         this.description = description;
@@ -701,9 +680,6 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest  implement
      *         options to the requested value in the configuration set for the new
      *         environment. These override the values obtained from the solution
      *         stack or the configuration template.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateEnvironmentRequest withOptionSettings(ConfigurationOptionSetting... optionSettings) {
         if (getOptionSettings() == null) setOptionSettings(new java.util.ArrayList<ConfigurationOptionSetting>(optionSettings.length));
@@ -725,9 +701,6 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest  implement
      *         options to the requested value in the configuration set for the new
      *         environment. These override the values obtained from the solution
      *         stack or the configuration template.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateEnvironmentRequest withOptionSettings(java.util.Collection<ConfigurationOptionSetting> optionSettings) {
         if (optionSettings == null) {
@@ -782,9 +755,6 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest  implement
      *
      * @param optionsToRemove A list of custom user-defined configuration options to remove from the
      *         configuration set for this new environment.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateEnvironmentRequest withOptionsToRemove(OptionSpecification... optionsToRemove) {
         if (getOptionsToRemove() == null) setOptionsToRemove(new java.util.ArrayList<OptionSpecification>(optionsToRemove.length));
@@ -802,9 +772,6 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest  implement
      *
      * @param optionsToRemove A list of custom user-defined configuration options to remove from the
      *         configuration set for this new environment.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateEnvironmentRequest withOptionsToRemove(java.util.Collection<OptionSpecification> optionsToRemove) {
         if (optionsToRemove == null) {

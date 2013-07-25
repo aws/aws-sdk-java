@@ -114,6 +114,9 @@ public class CreateInstanceRequestMarshaller implements Marshaller<Request<Creat
             if (createInstanceRequest.getOs() != null) {
                 jsonWriter.key("Os").value(createInstanceRequest.getOs());
             }
+            if (createInstanceRequest.getAmiId() != null) {
+                jsonWriter.key("AmiId").value(createInstanceRequest.getAmiId());
+            }
             if (createInstanceRequest.getSshKeyName() != null) {
                 jsonWriter.key("SshKeyName").value(createInstanceRequest.getSshKeyName());
             }
@@ -125,6 +128,9 @@ public class CreateInstanceRequestMarshaller implements Marshaller<Request<Creat
             }
             if (createInstanceRequest.getRootDeviceType() != null) {
                 jsonWriter.key("RootDeviceType").value(createInstanceRequest.getRootDeviceType());
+            }
+            if (createInstanceRequest.isInstallUpdatesOnBoot() != null) {
+                jsonWriter.key("InstallUpdatesOnBoot").value(createInstanceRequest.isInstallUpdatesOnBoot());
             }
 
           jsonWriter.endObject();

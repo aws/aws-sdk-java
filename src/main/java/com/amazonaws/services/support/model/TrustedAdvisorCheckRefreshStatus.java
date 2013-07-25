@@ -72,9 +72,6 @@ public class TrustedAdvisorCheckRefreshStatus  implements Serializable  {
      *
      * @param checkId String that specifies the <i>checkId</i> value of the Trusted Advisor
      *         check.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedAdvisorCheckRefreshStatus withCheckId(String checkId) {
         this.checkId = checkId;
@@ -112,9 +109,6 @@ public class TrustedAdvisorCheckRefreshStatus  implements Serializable  {
      *
      * @param status Indicates the status of the Trusted Advisor check for which a refresh
      *         has been requested.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedAdvisorCheckRefreshStatus withStatus(String status) {
         this.status = status;
@@ -164,9 +158,6 @@ public class TrustedAdvisorCheckRefreshStatus  implements Serializable  {
      *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html"
      *         title="RefreshTrustedAdvisorCheck">RefreshTrustedAdvisorCheck</a> can
      *         trigger a refresh.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public TrustedAdvisorCheckRefreshStatus withMillisUntilNextRefreshable(Long millisUntilNextRefreshable) {
         this.millisUntilNextRefreshable = millisUntilNextRefreshable;

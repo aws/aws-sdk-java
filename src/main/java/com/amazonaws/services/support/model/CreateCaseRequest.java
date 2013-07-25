@@ -144,9 +144,6 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subject Title of the AWS Support case.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCaseRequest withSubject(String subject) {
         this.subject = subject;
@@ -199,9 +196,6 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
      * @param serviceCode Code for the AWS service returned by the call to <a
      *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"
      *         title="DescribeServices">DescribeServices</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCaseRequest withServiceCode(String serviceCode) {
         this.serviceCode = serviceCode;
@@ -263,9 +257,6 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
      *         availability of severity levels depends on each customer's support
      *         subscription. In other words, your subscription may not necessarily
      *         require the urgent level of response time.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCaseRequest withSeverityCode(String severityCode) {
         this.severityCode = severityCode;
@@ -297,9 +288,6 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param categoryCode Specifies the category of problem for the AWS Support case.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCaseRequest withCategoryCode(String categoryCode) {
         this.categoryCode = categoryCode;
@@ -358,9 +346,6 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
      *         an AWS Support case by calling <a
      *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"
      *         title="CreateCase">CreateCase</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCaseRequest withCommunicationBody(String communicationBody) {
         this.communicationBody = communicationBody;
@@ -418,9 +403,6 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
      *
      * @param ccEmailAddresses List of email addresses that AWS Support copies on case
      *         correspondence.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCaseRequest withCcEmailAddresses(String... ccEmailAddresses) {
         if (getCcEmailAddresses() == null) setCcEmailAddresses(new java.util.ArrayList<String>(ccEmailAddresses.length));
@@ -441,9 +423,6 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
      *
      * @param ccEmailAddresses List of email addresses that AWS Support copies on case
      *         correspondence.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCaseRequest withCcEmailAddresses(java.util.Collection<String> ccEmailAddresses) {
         if (ccEmailAddresses == null) {
@@ -499,9 +478,6 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
      *         support. AWS Support currently supports English and Japanese, for
      *         which the codes are <i>en</i> and <i>ja</i>, respectively. Language
      *         parameters must be passed explicitly for operations that take them.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCaseRequest withLanguage(String language) {
         this.language = language;
@@ -545,9 +521,6 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
      * @param issueType Field passed as a parameter in a <a
      *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"
      *         title="CreateCase">CreateCase</a> call.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateCaseRequest withIssueType(String issueType) {
         this.issueType = issueType;

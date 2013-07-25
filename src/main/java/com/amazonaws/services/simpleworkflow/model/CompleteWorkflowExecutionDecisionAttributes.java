@@ -88,9 +88,6 @@ public class CompleteWorkflowExecutionDecisionAttributes  implements Serializabl
      *
      * @param result The result of the workflow execution. The form of the result is
      *         implementation defined.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CompleteWorkflowExecutionDecisionAttributes withResult(String result) {
         this.result = result;

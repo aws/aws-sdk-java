@@ -56,9 +56,6 @@ public class DescribeCacheSecurityGroupsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param marker The marker obtained from a previous operation response.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeCacheSecurityGroupsResult withMarker(String marker) {
         this.marker = marker;
@@ -101,9 +98,6 @@ public class DescribeCacheSecurityGroupsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheSecurityGroups A list of <a>CacheSecurityGroup</a> instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeCacheSecurityGroupsResult withCacheSecurityGroups(CacheSecurityGroup... cacheSecurityGroups) {
         if (getCacheSecurityGroups() == null) setCacheSecurityGroups(new java.util.ArrayList<CacheSecurityGroup>(cacheSecurityGroups.length));
@@ -119,9 +113,6 @@ public class DescribeCacheSecurityGroupsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheSecurityGroups A list of <a>CacheSecurityGroup</a> instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeCacheSecurityGroupsResult withCacheSecurityGroups(java.util.Collection<CacheSecurityGroup> cacheSecurityGroups) {
         if (cacheSecurityGroups == null) {

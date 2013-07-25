@@ -89,9 +89,6 @@ public class ChildWorkflowExecutionFailedEventAttributes  implements Serializabl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param workflowExecution The child workflow execution that failed.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ChildWorkflowExecutionFailedEventAttributes withWorkflowExecution(WorkflowExecution workflowExecution) {
         this.workflowExecution = workflowExecution;
@@ -123,9 +120,6 @@ public class ChildWorkflowExecutionFailedEventAttributes  implements Serializabl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param workflowType The type of the child workflow execution.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ChildWorkflowExecutionFailedEventAttributes withWorkflowType(WorkflowType workflowType) {
         this.workflowType = workflowType;
@@ -166,9 +160,6 @@ public class ChildWorkflowExecutionFailedEventAttributes  implements Serializabl
      * <b>Length: </b>0 - 256<br/>
      *
      * @param reason The reason for the failure (if provided).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ChildWorkflowExecutionFailedEventAttributes withReason(String reason) {
         this.reason = reason;
@@ -209,9 +200,6 @@ public class ChildWorkflowExecutionFailedEventAttributes  implements Serializabl
      * <b>Length: </b>0 - 32768<br/>
      *
      * @param details The details of the failure (if provided).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ChildWorkflowExecutionFailedEventAttributes withDetails(String details) {
         this.details = details;
@@ -267,9 +255,6 @@ public class ChildWorkflowExecutionFailedEventAttributes  implements Serializabl
      *         <a>Decision</a> to start this child workflow execution. This
      *         information can be useful for diagnosing problems by tracing back the
      *         chain of events leading up to this event.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ChildWorkflowExecutionFailedEventAttributes withInitiatedEventId(Long initiatedEventId) {
         this.initiatedEventId = initiatedEventId;
@@ -319,9 +304,6 @@ public class ChildWorkflowExecutionFailedEventAttributes  implements Serializabl
      *         recorded when this child workflow execution was started. This
      *         information can be useful for diagnosing problems by tracing back the
      *         chain of events leading up to this event.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ChildWorkflowExecutionFailedEventAttributes withStartedEventId(Long startedEventId) {
         this.startedEventId = startedEventId;

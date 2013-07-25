@@ -74,9 +74,6 @@ public class StorageGatewayError  implements Serializable  {
      *
      * @param errorCode Additional information about the error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ErrorCode
      */
     public StorageGatewayError withErrorCode(String errorCode) {
@@ -109,9 +106,6 @@ public class StorageGatewayError  implements Serializable  {
      *
      * @param errorCode Additional information about the error.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see ErrorCode
      */
     public StorageGatewayError withErrorCode(ErrorCode errorCode) {
@@ -130,7 +124,6 @@ public class StorageGatewayError  implements Serializable  {
             errorDetails = new java.util.HashMap<String,String>();
         }
         return errorDetails;
-
     }
     
     /**
@@ -148,15 +141,43 @@ public class StorageGatewayError  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param errorDetails Human-readable text that provides detail about the error that occured.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StorageGatewayError withErrorDetails(java.util.Map<String,String> errorDetails) {
         setErrorDetails(errorDetails);
         return this;
     }
     
+   	
+    /**
+     * Human-readable text that provides detail about the error that occured.
+     * <p>
+     * The method adds a new key-value pair into ErrorDetails parameter, and
+     * returns a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param key The key of the entry to be added into ErrorDetails.
+     * @param value The corresponding value of the entry to be added into ErrorDetails.
+     */
+	public StorageGatewayError addErrorDetailsEntry(String key, String value) {
+		if (null == this.errorDetails) {
+			this.errorDetails = new java.util.HashMap<String,String>();
+		}
+		if (this.errorDetails.containsKey(key))
+			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+		this.errorDetails.put(key, value);
+		return this;
+	}
+	
+	/**
+	 * Removes all the entries added into ErrorDetails.
+	 * <p>
+	 * Returns a reference to this object so that method calls can be chained together.
+	 */
+	public StorageGatewayError clearErrorDetailsEntries() {
+		this.errorDetails = null;
+		return this;
+	}
+	
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

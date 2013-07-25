@@ -105,9 +105,6 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest  implemen
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param userName Name of the user to create a password for.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLoginProfileRequest withUserName(String userName) {
         this.userName = userName;
@@ -151,9 +148,6 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest  implemen
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      *
      * @param password The new password for the user name.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public CreateLoginProfileRequest withPassword(String password) {
         this.password = password;

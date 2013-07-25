@@ -88,9 +88,6 @@ public class VolumeRecoveryPointInfo  implements Serializable  {
      *
      * @param volumeARN The Amazon Resource Name (ARN) of the volume associated with the
      *         recovery point.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VolumeRecoveryPointInfo withVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
@@ -128,9 +125,6 @@ public class VolumeRecoveryPointInfo  implements Serializable  {
      *
      * @param volumeSizeInBytes The size, in bytes, of the volume to which the recovery point is
      *         associated.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VolumeRecoveryPointInfo withVolumeSizeInBytes(Long volumeSizeInBytes) {
         this.volumeSizeInBytes = volumeSizeInBytes;
@@ -168,9 +162,6 @@ public class VolumeRecoveryPointInfo  implements Serializable  {
      *
      * @param volumeUsageInBytes The size, in bytes, of the volume in use at the time of the recovery
      *         point.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VolumeRecoveryPointInfo withVolumeUsageInBytes(Long volumeUsageInBytes) {
         this.volumeUsageInBytes = volumeUsageInBytes;
@@ -208,9 +199,6 @@ public class VolumeRecoveryPointInfo  implements Serializable  {
      *
      * @param volumeRecoveryPointTime The time of the recovery point. The format of the time is in the
      *         ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public VolumeRecoveryPointInfo withVolumeRecoveryPointTime(String volumeRecoveryPointTime) {
         this.volumeRecoveryPointTime = volumeRecoveryPointTime;

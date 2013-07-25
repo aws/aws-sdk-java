@@ -83,9 +83,6 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param queueUrl The new value for the QueueUrl property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AddPermissionRequest withQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
@@ -117,9 +114,6 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param label The new value for the Label property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AddPermissionRequest withLabel(String label) {
         this.label = label;
@@ -162,9 +156,6 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param aWSAccountIds The new value for the AWSAccountIds property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AddPermissionRequest withAWSAccountIds(String... aWSAccountIds) {
         if (getAWSAccountIds() == null) setAWSAccountIds(new java.util.ArrayList<String>(aWSAccountIds.length));
@@ -180,9 +171,6 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param aWSAccountIds The new value for the AWSAccountIds property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AddPermissionRequest withAWSAccountIds(java.util.Collection<String> aWSAccountIds) {
         if (aWSAccountIds == null) {
@@ -231,9 +219,6 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param actions The new value for the Actions property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AddPermissionRequest withActions(String... actions) {
         if (getActions() == null) setActions(new java.util.ArrayList<String>(actions.length));
@@ -249,9 +234,6 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param actions The new value for the Actions property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AddPermissionRequest withActions(java.util.Collection<String> actions) {
         if (actions == null) {

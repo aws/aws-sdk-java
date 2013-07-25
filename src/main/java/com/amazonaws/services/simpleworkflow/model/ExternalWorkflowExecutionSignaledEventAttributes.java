@@ -60,9 +60,6 @@ public class ExternalWorkflowExecutionSignaledEventAttributes  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param workflowExecution The external workflow execution that the signal was delivered to.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ExternalWorkflowExecutionSignaledEventAttributes withWorkflowExecution(WorkflowExecution workflowExecution) {
         this.workflowExecution = workflowExecution;
@@ -118,9 +115,6 @@ public class ExternalWorkflowExecutionSignaledEventAttributes  implements Serial
      *         <code>SignalExternalWorkflowExecution</code> decision to request this
      *         signal. This information can be useful for diagnosing problems by
      *         tracing back the chain of events leading up to this event.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ExternalWorkflowExecutionSignaledEventAttributes withInitiatedEventId(Long initiatedEventId) {
         this.initiatedEventId = initiatedEventId;

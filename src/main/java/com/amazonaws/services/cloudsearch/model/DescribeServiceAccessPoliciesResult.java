@@ -58,9 +58,6 @@ public class DescribeServiceAccessPoliciesResult  implements Serializable  {
      *
      * @param accessPolicies A <code>PolicyDocument</code> that specifies access policies for the
      *         search domain's services, and the current status of those policies.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeServiceAccessPoliciesResult withAccessPolicies(AccessPoliciesStatus accessPolicies) {
         this.accessPolicies = accessPolicies;

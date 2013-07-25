@@ -124,9 +124,6 @@ public class SubscribeRequest extends AmazonWebServiceRequest  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param topicArn The ARN of topic you want to subscribe to.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SubscribeRequest withTopicArn(String topicArn) {
         this.topicArn = topicArn;
@@ -200,9 +197,6 @@ public class SubscribeRequest extends AmazonWebServiceRequest  implements Serial
      *         message via SMTP</li> <li><code>sms</code> -- delivery of message via
      *         SMS</li> <li><code>sqs</code> -- delivery of JSON-encoded message to
      *         an Amazon SQS queue</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SubscribeRequest withProtocol(String protocol) {
         this.protocol = protocol;
@@ -288,9 +282,6 @@ public class SubscribeRequest extends AmazonWebServiceRequest  implements Serial
      *         phone number of an SMS-enabled device</li> <li>For the
      *         <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS
      *         queue</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public SubscribeRequest withEndpoint(String endpoint) {
         this.endpoint = endpoint;

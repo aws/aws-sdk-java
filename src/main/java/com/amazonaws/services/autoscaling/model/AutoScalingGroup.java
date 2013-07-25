@@ -201,9 +201,6 @@ public class AutoScalingGroup  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param autoScalingGroupName Specifies the name of the group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AutoScalingGroup withAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
@@ -247,9 +244,6 @@ public class AutoScalingGroup  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param autoScalingGroupARN The Amazon Resource Name (ARN) of the Auto Scaling group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AutoScalingGroup withAutoScalingGroupARN(String autoScalingGroupARN) {
         this.autoScalingGroupARN = autoScalingGroupARN;
@@ -293,9 +287,6 @@ public class AutoScalingGroup  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param launchConfigurationName Specifies the name of the associated <a>LaunchConfiguration</a>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AutoScalingGroup withLaunchConfigurationName(String launchConfigurationName) {
         this.launchConfigurationName = launchConfigurationName;
@@ -327,9 +318,6 @@ public class AutoScalingGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param minSize Contains the minimum size of the Auto Scaling group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AutoScalingGroup withMinSize(Integer minSize) {
         this.minSize = minSize;
@@ -361,9 +349,6 @@ public class AutoScalingGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxSize Contains the maximum size of the Auto Scaling group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AutoScalingGroup withMaxSize(Integer maxSize) {
         this.maxSize = maxSize;
@@ -395,9 +380,6 @@ public class AutoScalingGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param desiredCapacity Specifies the desired capacity for the Auto Scaling group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AutoScalingGroup withDesiredCapacity(Integer desiredCapacity) {
         this.desiredCapacity = desiredCapacity;
@@ -435,9 +417,6 @@ public class AutoScalingGroup  implements Serializable  {
      *
      * @param defaultCooldown The number of seconds after a scaling activity completes before any
      *         further scaling activities can start.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AutoScalingGroup withDefaultCooldown(Integer defaultCooldown) {
         this.defaultCooldown = defaultCooldown;
@@ -489,9 +468,6 @@ public class AutoScalingGroup  implements Serializable  {
      * <b>Length: </b>1 - <br/>
      *
      * @param availabilityZones Contains a list of Availability Zones for the group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AutoScalingGroup withAvailabilityZones(String... availabilityZones) {
         if (getAvailabilityZones() == null) setAvailabilityZones(new java.util.ArrayList<String>(availabilityZones.length));
@@ -510,9 +486,6 @@ public class AutoScalingGroup  implements Serializable  {
      * <b>Length: </b>1 - <br/>
      *
      * @param availabilityZones Contains a list of Availability Zones for the group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AutoScalingGroup withAvailabilityZones(java.util.Collection<String> availabilityZones) {
         if (availabilityZones == null) {
@@ -561,9 +534,6 @@ public class AutoScalingGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param loadBalancerNames A list of load balancers associated with this Auto Scaling group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AutoScalingGroup withLoadBalancerNames(String... loadBalancerNames) {
         if (getLoadBalancerNames() == null) setLoadBalancerNames(new java.util.ArrayList<String>(loadBalancerNames.length));
@@ -579,9 +549,6 @@ public class AutoScalingGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param loadBalancerNames A list of load balancers associated with this Auto Scaling group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AutoScalingGroup withLoadBalancerNames(java.util.Collection<String> loadBalancerNames) {
         if (loadBalancerNames == null) {
@@ -637,9 +604,6 @@ public class AutoScalingGroup  implements Serializable  {
      *
      * @param healthCheckType The service of interest for the health status check, either "EC2" for
      *         Amazon EC2 or "ELB" for Elastic Load Balancing.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AutoScalingGroup withHealthCheckType(String healthCheckType) {
         this.healthCheckType = healthCheckType;
@@ -683,9 +647,6 @@ public class AutoScalingGroup  implements Serializable  {
      * @param healthCheckGracePeriod The length of time that Auto Scaling waits before checking an
      *         instance's health status. The grace period begins when an instance
      *         comes into service.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AutoScalingGroup withHealthCheckGracePeriod(Integer healthCheckGracePeriod) {
         this.healthCheckGracePeriod = healthCheckGracePeriod;
@@ -728,9 +689,6 @@ public class AutoScalingGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instances Provides a summary list of Amazon EC2 instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AutoScalingGroup withInstances(Instance... instances) {
         if (getInstances() == null) setInstances(new java.util.ArrayList<Instance>(instances.length));
@@ -746,9 +704,6 @@ public class AutoScalingGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instances Provides a summary list of Amazon EC2 instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AutoScalingGroup withInstances(java.util.Collection<Instance> instances) {
         if (instances == null) {
@@ -786,9 +741,6 @@ public class AutoScalingGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param createdTime Specifies the date and time the Auto Scaling group was created.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AutoScalingGroup withCreatedTime(java.util.Date createdTime) {
         this.createdTime = createdTime;
@@ -831,9 +783,6 @@ public class AutoScalingGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param suspendedProcesses Suspended processes associated with this Auto Scaling group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AutoScalingGroup withSuspendedProcesses(SuspendedProcess... suspendedProcesses) {
         if (getSuspendedProcesses() == null) setSuspendedProcesses(new java.util.ArrayList<SuspendedProcess>(suspendedProcesses.length));
@@ -849,9 +798,6 @@ public class AutoScalingGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param suspendedProcesses Suspended processes associated with this Auto Scaling group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AutoScalingGroup withSuspendedProcesses(java.util.Collection<SuspendedProcess> suspendedProcesses) {
         if (suspendedProcesses == null) {
@@ -919,9 +865,6 @@ public class AutoScalingGroup  implements Serializable  {
      *         information, go to <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
      *         Using Cluster Instances</a> in the Amazon EC2 User Guide.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AutoScalingGroup withPlacementGroup(String placementGroup) {
         this.placementGroup = placementGroup;
@@ -989,9 +932,6 @@ public class AutoScalingGroup  implements Serializable  {
      *         you specify <code>VPCZoneIdentifier</code> with
      *         <code>AvailabilityZones</code>, ensure that the subnets' Availability
      *         Zones match the values you specify for <code>AvailabilityZones</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AutoScalingGroup withVPCZoneIdentifier(String vPCZoneIdentifier) {
         this.vPCZoneIdentifier = vPCZoneIdentifier;
@@ -1034,9 +974,6 @@ public class AutoScalingGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param enabledMetrics A list of metrics enabled for this Auto Scaling group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AutoScalingGroup withEnabledMetrics(EnabledMetric... enabledMetrics) {
         if (getEnabledMetrics() == null) setEnabledMetrics(new java.util.ArrayList<EnabledMetric>(enabledMetrics.length));
@@ -1052,9 +989,6 @@ public class AutoScalingGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param enabledMetrics A list of metrics enabled for this Auto Scaling group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AutoScalingGroup withEnabledMetrics(java.util.Collection<EnabledMetric> enabledMetrics) {
         if (enabledMetrics == null) {
@@ -1104,9 +1038,6 @@ public class AutoScalingGroup  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param status A list of status conditions for the Auto Scaling group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AutoScalingGroup withStatus(String status) {
         this.status = status;
@@ -1149,9 +1080,6 @@ public class AutoScalingGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags A list of tags for the Auto Scaling group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AutoScalingGroup withTags(TagDescription... tags) {
         if (getTags() == null) setTags(new java.util.ArrayList<TagDescription>(tags.length));
@@ -1167,9 +1095,6 @@ public class AutoScalingGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags A list of tags for the Auto Scaling group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AutoScalingGroup withTags(java.util.Collection<TagDescription> tags) {
         if (tags == null) {
@@ -1224,9 +1149,6 @@ public class AutoScalingGroup  implements Serializable  {
      *
      * @param terminationPolicies A standalone termination policy or a list of termination policies for
      *         this Auto Scaling group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AutoScalingGroup withTerminationPolicies(String... terminationPolicies) {
         if (getTerminationPolicies() == null) setTerminationPolicies(new java.util.ArrayList<String>(terminationPolicies.length));
@@ -1244,9 +1166,6 @@ public class AutoScalingGroup  implements Serializable  {
      *
      * @param terminationPolicies A standalone termination policy or a list of termination policies for
      *         this Auto Scaling group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public AutoScalingGroup withTerminationPolicies(java.util.Collection<String> terminationPolicies) {
         if (terminationPolicies == null) {

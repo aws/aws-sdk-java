@@ -25,6 +25,9 @@ import com.amazonaws.transform.*;
 import org.codehaus.jackson.JsonToken;
 import static org.codehaus.jackson.JsonToken.*;
 
+import com.amazonaws.util.ContentLengthValidationInputStream;
+
+
 /**
  * Get Job Output Result JSON Unmarshaller
  */
@@ -51,8 +54,8 @@ public class GetJobOutputResultJsonUnmarshaller implements Unmarshaller<GetJobOu
                 getJobOutputResult.setArchiveDescription(context.getHeader("x-amz-archive-description"));
         }
         
-        getJobOutputResult.setStatus(context.getHttpResponse().getStatusCode());getJobOutputResult.setBody(context.getHttpResponse().getContent());
-            
+        getJobOutputResult.setStatus(context.getHttpResponse().getStatusCode());getJobOutputResult.setBody(new ContentLengthValidationInputStream(context.getHttpResponse().getContent(),Long.parseLong(context.getHeader("Content-Length"))));
+        	
         return getJobOutputResult;
     }
 

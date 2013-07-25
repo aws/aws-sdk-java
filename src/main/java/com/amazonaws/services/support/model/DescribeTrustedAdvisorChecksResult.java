@@ -76,9 +76,6 @@ public class DescribeTrustedAdvisorChecksResult  implements Serializable  {
      * @param checks List of the checks returned by calling <a
      *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
      *         title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeTrustedAdvisorChecksResult withChecks(TrustedAdvisorCheckDescription... checks) {
         if (getChecks() == null) setChecks(new java.util.ArrayList<TrustedAdvisorCheckDescription>(checks.length));
@@ -98,9 +95,6 @@ public class DescribeTrustedAdvisorChecksResult  implements Serializable  {
      * @param checks List of the checks returned by calling <a
      *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
      *         title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeTrustedAdvisorChecksResult withChecks(java.util.Collection<TrustedAdvisorCheckDescription> checks) {
         if (checks == null) {

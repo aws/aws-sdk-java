@@ -190,9 +190,6 @@ public class ScheduleActivityTaskDecisionAttributes  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param activityType The type of the activity task to schedule. This field is required.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ScheduleActivityTaskDecisionAttributes withActivityType(ActivityType activityType) {
         this.activityType = activityType;
@@ -263,9 +260,6 @@ public class ScheduleActivityTaskDecisionAttributes  implements Serializable  {
      *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control
      *         characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
      *         contain the literal string "arn".
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ScheduleActivityTaskDecisionAttributes withActivityId(String activityId) {
         this.activityId = activityId;
@@ -312,9 +306,6 @@ public class ScheduleActivityTaskDecisionAttributes  implements Serializable  {
      *
      * @param control Optional data attached to the event that can be used by the decider in
      *         subsequent workflow tasks. This data is not sent to the activity.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ScheduleActivityTaskDecisionAttributes withControl(String control) {
         this.control = control;
@@ -355,9 +346,6 @@ public class ScheduleActivityTaskDecisionAttributes  implements Serializable  {
      * <b>Length: </b>0 - 32768<br/>
      *
      * @param input The input provided to the activity task.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ScheduleActivityTaskDecisionAttributes withInput(String input) {
         this.input = input;
@@ -440,9 +428,6 @@ public class ScheduleActivityTaskDecisionAttributes  implements Serializable  {
      *         for the activity type or through this field. If neither this field is
      *         set nor a default schedule-to-close timeout was specified at
      *         registration time then a fault will be returned.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ScheduleActivityTaskDecisionAttributes withScheduleToCloseTimeout(String scheduleToCloseTimeout) {
         this.scheduleToCloseTimeout = scheduleToCloseTimeout;
@@ -534,9 +519,6 @@ public class ScheduleActivityTaskDecisionAttributes  implements Serializable  {
      *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control
      *         characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
      *         contain the literal string "arn".
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ScheduleActivityTaskDecisionAttributes withTaskList(TaskList taskList) {
         this.taskList = taskList;
@@ -637,9 +619,6 @@ public class ScheduleActivityTaskDecisionAttributes  implements Serializable  {
      *         type or through this field. If neither this field is set nor a default
      *         schedule-to-start timeout was specified at registration time then a
      *         fault will be returned.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ScheduleActivityTaskDecisionAttributes withScheduleToStartTimeout(String scheduleToStartTimeout) {
         this.scheduleToStartTimeout = scheduleToStartTimeout;
@@ -740,9 +719,6 @@ public class ScheduleActivityTaskDecisionAttributes  implements Serializable  {
      *         type or through this field. If neither this field is set nor a default
      *         start-to-close timeout was specified at registration time then a fault
      *         will be returned.</note>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ScheduleActivityTaskDecisionAttributes withStartToCloseTimeout(String startToCloseTimeout) {
         this.startToCloseTimeout = startToCloseTimeout;
@@ -843,9 +819,6 @@ public class ScheduleActivityTaskDecisionAttributes  implements Serializable  {
      *         <code>0</code>. An integer value can be used to specify the duration
      *         in seconds while <code>NONE</code> can be used to specify unlimited
      *         duration.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ScheduleActivityTaskDecisionAttributes withHeartbeatTimeout(String heartbeatTimeout) {
         this.heartbeatTimeout = heartbeatTimeout;

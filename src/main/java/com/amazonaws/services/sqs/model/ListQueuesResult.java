@@ -57,9 +57,6 @@ public class ListQueuesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param queueUrls The new value for the QueueUrls property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListQueuesResult withQueueUrls(String... queueUrls) {
         if (getQueueUrls() == null) setQueueUrls(new java.util.ArrayList<String>(queueUrls.length));
@@ -75,9 +72,6 @@ public class ListQueuesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param queueUrls The new value for the QueueUrls property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ListQueuesResult withQueueUrls(java.util.Collection<String> queueUrls) {
         if (queueUrls == null) {

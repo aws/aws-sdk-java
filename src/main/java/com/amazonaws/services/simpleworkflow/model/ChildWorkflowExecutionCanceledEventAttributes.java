@@ -81,9 +81,6 @@ public class ChildWorkflowExecutionCanceledEventAttributes  implements Serializa
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param workflowExecution The child workflow execution that was canceled.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ChildWorkflowExecutionCanceledEventAttributes withWorkflowExecution(WorkflowExecution workflowExecution) {
         this.workflowExecution = workflowExecution;
@@ -115,9 +112,6 @@ public class ChildWorkflowExecutionCanceledEventAttributes  implements Serializa
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param workflowType The type of the child workflow execution.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ChildWorkflowExecutionCanceledEventAttributes withWorkflowType(WorkflowType workflowType) {
         this.workflowType = workflowType;
@@ -158,9 +152,6 @@ public class ChildWorkflowExecutionCanceledEventAttributes  implements Serializa
      * <b>Length: </b>0 - 32768<br/>
      *
      * @param details Details of the cancellation (if provided).
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ChildWorkflowExecutionCanceledEventAttributes withDetails(String details) {
         this.details = details;
@@ -216,9 +207,6 @@ public class ChildWorkflowExecutionCanceledEventAttributes  implements Serializa
      *         <a>Decision</a> to start this child workflow execution. This
      *         information can be useful for diagnosing problems by tracing back the
      *         chain of events leading up to this event.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ChildWorkflowExecutionCanceledEventAttributes withInitiatedEventId(Long initiatedEventId) {
         this.initiatedEventId = initiatedEventId;
@@ -268,9 +256,6 @@ public class ChildWorkflowExecutionCanceledEventAttributes  implements Serializa
      *         recorded when this child workflow execution was started. This
      *         information can be useful for diagnosing problems by tracing back the
      *         chain of events leading up to this event.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ChildWorkflowExecutionCanceledEventAttributes withStartedEventId(Long startedEventId) {
         this.startedEventId = startedEventId;

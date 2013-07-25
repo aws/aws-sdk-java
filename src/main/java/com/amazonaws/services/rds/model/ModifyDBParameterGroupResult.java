@@ -51,9 +51,6 @@ public class ModifyDBParameterGroupResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBParameterGroupName The name of the DB Parameter Group.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public ModifyDBParameterGroupResult withDBParameterGroupName(String dBParameterGroupName) {
         this.dBParameterGroupName = dBParameterGroupName;

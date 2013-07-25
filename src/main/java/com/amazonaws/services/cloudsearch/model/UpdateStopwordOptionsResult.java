@@ -58,9 +58,6 @@ public class UpdateStopwordOptionsResult  implements Serializable  {
      *
      * @param stopwords The stopword options configured for this search domain and the current
      *         status of those options.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateStopwordOptionsResult withStopwords(StopwordOptionsStatus stopwords) {
         this.stopwords = stopwords;

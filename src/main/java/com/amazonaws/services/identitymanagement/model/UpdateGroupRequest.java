@@ -129,9 +129,6 @@ public class UpdateGroupRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param groupName Name of the group to update. If you're changing the name of the group,
      *         this is the original name.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateGroupRequest withGroupName(String groupName) {
         this.groupName = groupName;
@@ -181,9 +178,6 @@ public class UpdateGroupRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param newPath New path for the group. Only include this if changing the group's
      *         path.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateGroupRequest withNewPath(String newPath) {
         this.newPath = newPath;
@@ -233,9 +227,6 @@ public class UpdateGroupRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param newGroupName New name for the group. Only include this if changing the group's
      *         name.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public UpdateGroupRequest withNewGroupName(String newGroupName) {
         this.newGroupName = newGroupName;

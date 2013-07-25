@@ -96,9 +96,6 @@ public class DescribeOrderableDBInstanceOptionsRequest extends AmazonWebServiceR
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param engine The name of the engine to retrieve DB Instance options for.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeOrderableDBInstanceOptionsRequest withEngine(String engine) {
         this.engine = engine;
@@ -136,9 +133,6 @@ public class DescribeOrderableDBInstanceOptionsRequest extends AmazonWebServiceR
      *
      * @param engineVersion The engine version filter value. Specify this parameter to show only
      *         the available offerings matching the specified engine version.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeOrderableDBInstanceOptionsRequest withEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
@@ -176,9 +170,6 @@ public class DescribeOrderableDBInstanceOptionsRequest extends AmazonWebServiceR
      *
      * @param dBInstanceClass The DB Instance class filter value. Specify this parameter to show
      *         only the available offerings matching the specified DB Instance class.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeOrderableDBInstanceOptionsRequest withDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
@@ -216,9 +207,6 @@ public class DescribeOrderableDBInstanceOptionsRequest extends AmazonWebServiceR
      *
      * @param licenseModel The license model filter value. Specify this parameter to show only
      *         the available offerings matching the specified license model.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeOrderableDBInstanceOptionsRequest withLicenseModel(String licenseModel) {
         this.licenseModel = licenseModel;
@@ -256,9 +244,6 @@ public class DescribeOrderableDBInstanceOptionsRequest extends AmazonWebServiceR
      *
      * @param vpc The VPC filter value. Specify this parameter to show only the
      *         available VPC or non-VPC offerings.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeOrderableDBInstanceOptionsRequest withVpc(Boolean vpc) {
         this.vpc = vpc;
@@ -325,9 +310,6 @@ public class DescribeOrderableDBInstanceOptionsRequest extends AmazonWebServiceR
      *         pagination token called a marker is included in the response so that
      *         the remaining results can be retrieved. <p>Default: 100
      *         <p>Constraints: minimum 20, maximum 100
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeOrderableDBInstanceOptionsRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -377,9 +359,6 @@ public class DescribeOrderableDBInstanceOptionsRequest extends AmazonWebServiceR
      *         DescribeOrderableDBInstanceOptions request. If this parameter is
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <code>MaxRecords</code> .
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public DescribeOrderableDBInstanceOptionsRequest withMarker(String marker) {
         this.marker = marker;

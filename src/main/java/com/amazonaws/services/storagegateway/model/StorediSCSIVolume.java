@@ -134,9 +134,6 @@ public class StorediSCSIVolume  implements Serializable  {
      * <b>Length: </b>50 - 500<br/>
      *
      * @param volumeARN The Amazon Resource Name (ARN) of the storage volume.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StorediSCSIVolume withVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
@@ -177,9 +174,6 @@ public class StorediSCSIVolume  implements Serializable  {
      * <b>Length: </b>12 - 30<br/>
      *
      * @param volumeId The unique identifier of the volume, e.g. vol-AE4B946D.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StorediSCSIVolume withVolumeId(String volumeId) {
         this.volumeId = volumeId;
@@ -231,9 +225,6 @@ public class StorediSCSIVolume  implements Serializable  {
      * @param volumeType One of the <a>VolumeType</a> enumeration values describing the type of
      *         the volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see VolumeType
      */
     public StorediSCSIVolume withVolumeType(String volumeType) {
@@ -269,9 +260,6 @@ public class StorediSCSIVolume  implements Serializable  {
      *
      * @param volumeType One of the <a>VolumeType</a> enumeration values describing the type of
      *         the volume.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      *
      * @see VolumeType
      */
@@ -324,9 +312,6 @@ public class StorediSCSIVolume  implements Serializable  {
      * @param volumeStatus One of the <a>VolumeStatus</a> values that indicates the state of the
      *         storage volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see VolumeStatus
      */
     public StorediSCSIVolume withVolumeStatus(String volumeStatus) {
@@ -363,9 +348,6 @@ public class StorediSCSIVolume  implements Serializable  {
      * @param volumeStatus One of the <a>VolumeStatus</a> values that indicates the state of the
      *         storage volume.
      *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
      * @see VolumeStatus
      */
     public StorediSCSIVolume withVolumeStatus(VolumeStatus volumeStatus) {
@@ -397,9 +379,6 @@ public class StorediSCSIVolume  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeSizeInBytes The size of the volume in bytes.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StorediSCSIVolume withVolumeSizeInBytes(Long volumeSizeInBytes) {
         this.volumeSizeInBytes = volumeSizeInBytes;
@@ -449,9 +428,6 @@ public class StorediSCSIVolume  implements Serializable  {
      *         bootstrapping that represents the percent of data transferred. This
      *         field does not appear in the response if the stored volume is not
      *         restoring or bootstrapping.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StorediSCSIVolume withVolumeProgress(Double volumeProgress) {
         this.volumeProgress = volumeProgress;
@@ -498,9 +474,6 @@ public class StorediSCSIVolume  implements Serializable  {
      *
      * @param volumeDiskId The disk ID of the local disk that was specified in the
      *         <a>CreateStorediSCSIVolume</a> operation.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StorediSCSIVolume withVolumeDiskId(String volumeDiskId) {
         this.volumeDiskId = volumeDiskId;
@@ -553,9 +526,6 @@ public class StorediSCSIVolume  implements Serializable  {
      * @param sourceSnapshotId If the stored volume was created from a snapshot, this field contains
      *         the snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not
      *         included.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StorediSCSIVolume withSourceSnapshotId(String sourceSnapshotId) {
         this.sourceSnapshotId = sourceSnapshotId;
@@ -599,9 +569,6 @@ public class StorediSCSIVolume  implements Serializable  {
      * @param preservedExistingData Indicates if when the stored volume was created, existing data on the
      *         underlying local disk was preserved. <p><i>Valid Values</i>: true,
      *         false
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StorediSCSIVolume withPreservedExistingData(Boolean preservedExistingData) {
         this.preservedExistingData = preservedExistingData;
@@ -652,9 +619,6 @@ public class StorediSCSIVolume  implements Serializable  {
      *
      * @param volumeiSCSIAttributes An <a>VolumeiSCSIAttributes</a> object that represents a collection of
      *         iSCSI attributes for one stored volume.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
      */
     public StorediSCSIVolume withVolumeiSCSIAttributes(VolumeiSCSIAttributes volumeiSCSIAttributes) {
         this.volumeiSCSIAttributes = volumeiSCSIAttributes;
