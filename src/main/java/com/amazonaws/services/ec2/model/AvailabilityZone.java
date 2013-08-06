@@ -66,6 +66,9 @@ public class AvailabilityZone  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param zoneName Name of the Availability Zone.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AvailabilityZone withZoneName(String zoneName) {
         this.zoneName = zoneName;
@@ -97,6 +100,9 @@ public class AvailabilityZone  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param state State of the Availability Zone.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AvailabilityZone withState(String state) {
         this.state = state;
@@ -128,6 +134,9 @@ public class AvailabilityZone  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param regionName Name of the region in which this zone resides.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AvailabilityZone withRegionName(String regionName) {
         this.regionName = regionName;
@@ -170,6 +179,9 @@ public class AvailabilityZone  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param messages A list of messages about the Availability Zone.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AvailabilityZone withMessages(AvailabilityZoneMessage... messages) {
         if (getMessages() == null) setMessages(new java.util.ArrayList<AvailabilityZoneMessage>(messages.length));
@@ -185,6 +197,9 @@ public class AvailabilityZone  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param messages A list of messages about the Availability Zone.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AvailabilityZone withMessages(java.util.Collection<AvailabilityZoneMessage> messages) {
         if (messages == null) {

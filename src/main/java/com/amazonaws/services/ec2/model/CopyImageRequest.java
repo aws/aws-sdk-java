@@ -58,6 +58,9 @@ public class CopyImageRequest extends AmazonWebServiceRequest  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceRegion The new value for the SourceRegion property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CopyImageRequest withSourceRegion(String sourceRegion) {
         this.sourceRegion = sourceRegion;
@@ -89,6 +92,9 @@ public class CopyImageRequest extends AmazonWebServiceRequest  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceImageId The new value for the SourceImageId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CopyImageRequest withSourceImageId(String sourceImageId) {
         this.sourceImageId = sourceImageId;
@@ -120,6 +126,9 @@ public class CopyImageRequest extends AmazonWebServiceRequest  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The new value for the Name property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CopyImageRequest withName(String name) {
         this.name = name;
@@ -151,6 +160,9 @@ public class CopyImageRequest extends AmazonWebServiceRequest  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description The new value for the Description property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CopyImageRequest withDescription(String description) {
         this.description = description;
@@ -182,6 +194,9 @@ public class CopyImageRequest extends AmazonWebServiceRequest  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clientToken The new value for the ClientToken property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CopyImageRequest withClientToken(String clientToken) {
         this.clientToken = clientToken;

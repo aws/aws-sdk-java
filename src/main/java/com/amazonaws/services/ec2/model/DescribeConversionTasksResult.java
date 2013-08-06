@@ -57,6 +57,9 @@ public class DescribeConversionTasksResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param conversionTasks The new value for the ConversionTasks property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeConversionTasksResult withConversionTasks(ConversionTask... conversionTasks) {
         if (getConversionTasks() == null) setConversionTasks(new java.util.ArrayList<ConversionTask>(conversionTasks.length));
@@ -72,6 +75,9 @@ public class DescribeConversionTasksResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param conversionTasks The new value for the ConversionTasks property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeConversionTasksResult withConversionTasks(java.util.Collection<ConversionTask> conversionTasks) {
         if (conversionTasks == null) {

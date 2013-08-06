@@ -92,6 +92,9 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param publicIp The elastic IP address that you are releasing from your account.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ReleaseAddressRequest withPublicIp(String publicIp) {
         this.publicIp = publicIp;
@@ -129,6 +132,9 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest  implements S
      *
      * @param allocationId The allocation ID that AWS provided when you allocated the address for
      *         use with Amazon VPC.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ReleaseAddressRequest withAllocationId(String allocationId) {
         this.allocationId = allocationId;

@@ -95,6 +95,9 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest  impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groupName Name of the security group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateSecurityGroupRequest withGroupName(String groupName) {
         this.groupName = groupName;
@@ -126,6 +129,9 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest  impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description Description of the group. This is informational only.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateSecurityGroupRequest withDescription(String description) {
         this.description = description;
@@ -157,6 +163,9 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest  impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcId ID of the VPC.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateSecurityGroupRequest withVpcId(String vpcId) {
         this.vpcId = vpcId;

@@ -88,6 +88,9 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedInstancesOfferingId The unique ID of the Reserved Instances offering being purchased.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PurchaseReservedInstancesOfferingRequest withReservedInstancesOfferingId(String reservedInstancesOfferingId) {
         this.reservedInstancesOfferingId = reservedInstancesOfferingId;
@@ -119,6 +122,9 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceCount The number of Reserved Instances to purchase.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PurchaseReservedInstancesOfferingRequest withInstanceCount(Integer instanceCount) {
         this.instanceCount = instanceCount;
@@ -150,6 +156,9 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param limitPrice The new value for the LimitPrice property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PurchaseReservedInstancesOfferingRequest withLimitPrice(ReservedInstanceLimitPrice limitPrice) {
         this.limitPrice = limitPrice;

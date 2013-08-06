@@ -60,6 +60,9 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnetId The new value for the SubnetId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateNetworkInterfaceRequest withSubnetId(String subnetId) {
         this.subnetId = subnetId;
@@ -91,6 +94,9 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description The new value for the Description property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateNetworkInterfaceRequest withDescription(String description) {
         this.description = description;
@@ -122,6 +128,9 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateIpAddress The new value for the PrivateIpAddress property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateNetworkInterfaceRequest withPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
@@ -164,6 +173,9 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groups The new value for the Groups property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateNetworkInterfaceRequest withGroups(String... groups) {
         if (getGroups() == null) setGroups(new java.util.ArrayList<String>(groups.length));
@@ -179,6 +191,9 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groups The new value for the Groups property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateNetworkInterfaceRequest withGroups(java.util.Collection<String> groups) {
         if (groups == null) {
@@ -227,6 +242,9 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateIpAddresses The new value for the PrivateIpAddresses property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateNetworkInterfaceRequest withPrivateIpAddresses(PrivateIpAddressSpecification... privateIpAddresses) {
         if (getPrivateIpAddresses() == null) setPrivateIpAddresses(new java.util.ArrayList<PrivateIpAddressSpecification>(privateIpAddresses.length));
@@ -242,6 +260,9 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateIpAddresses The new value for the PrivateIpAddresses property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateNetworkInterfaceRequest withPrivateIpAddresses(java.util.Collection<PrivateIpAddressSpecification> privateIpAddresses) {
         if (privateIpAddresses == null) {
@@ -285,6 +306,9 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest  impl
      *
      * @param secondaryPrivateIpAddressCount The new value for the SecondaryPrivateIpAddressCount property for this
      *         object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateNetworkInterfaceRequest withSecondaryPrivateIpAddressCount(Integer secondaryPrivateIpAddressCount) {
         this.secondaryPrivateIpAddressCount = secondaryPrivateIpAddressCount;

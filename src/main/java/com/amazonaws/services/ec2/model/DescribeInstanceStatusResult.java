@@ -72,6 +72,9 @@ public class DescribeInstanceStatusResult  implements Serializable  {
      *
      * @param instanceStatuses Collection of instance statuses describing the state of the requested
      *         instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeInstanceStatusResult withInstanceStatuses(InstanceStatus... instanceStatuses) {
         if (getInstanceStatuses() == null) setInstanceStatuses(new java.util.ArrayList<InstanceStatus>(instanceStatuses.length));
@@ -89,6 +92,9 @@ public class DescribeInstanceStatusResult  implements Serializable  {
      *
      * @param instanceStatuses Collection of instance statuses describing the state of the requested
      *         instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeInstanceStatusResult withInstanceStatuses(java.util.Collection<InstanceStatus> instanceStatuses) {
         if (instanceStatuses == null) {
@@ -126,6 +132,9 @@ public class DescribeInstanceStatusResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nextToken A string specifying the next paginated set of results to return.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeInstanceStatusResult withNextToken(String nextToken) {
         this.nextToken = nextToken;

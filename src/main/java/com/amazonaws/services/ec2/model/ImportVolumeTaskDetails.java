@@ -54,6 +54,9 @@ public class ImportVolumeTaskDetails  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param bytesConverted The new value for the BytesConverted property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ImportVolumeTaskDetails withBytesConverted(Long bytesConverted) {
         this.bytesConverted = bytesConverted;
@@ -85,6 +88,9 @@ public class ImportVolumeTaskDetails  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZone The new value for the AvailabilityZone property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ImportVolumeTaskDetails withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -116,6 +122,9 @@ public class ImportVolumeTaskDetails  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description The new value for the Description property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ImportVolumeTaskDetails withDescription(String description) {
         this.description = description;
@@ -147,6 +156,9 @@ public class ImportVolumeTaskDetails  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param image The new value for the Image property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ImportVolumeTaskDetails withImage(DiskImageDescription image) {
         this.image = image;
@@ -178,6 +190,9 @@ public class ImportVolumeTaskDetails  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volume The new value for the Volume property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ImportVolumeTaskDetails withVolume(DiskImageVolumeDescription volume) {
         this.volume = volume;

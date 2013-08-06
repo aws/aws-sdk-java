@@ -46,6 +46,9 @@ public class ImportInstanceResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param conversionTask The new value for the ConversionTask property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ImportInstanceResult withConversionTask(ConversionTask conversionTask) {
         this.conversionTask = conversionTask;

@@ -237,6 +237,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param imageId Unique ID of a machine image, returned by a call to DescribeImages.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunInstancesRequest withImageId(String imageId) {
         this.imageId = imageId;
@@ -274,6 +277,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      *
      * @param minCount Minimum number of instances to launch. If the value is more than
      *         Amazon EC2 can launch, no instances are launched at all.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunInstancesRequest withMinCount(Integer minCount) {
         this.minCount = minCount;
@@ -323,6 +329,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      *         Amazon EC2 can launch, the largest possible number above minCount will
      *         be launched instead. <p> Between 1 and the maximum number allowed for
      *         your account (default: 20).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunInstancesRequest withMaxCount(Integer maxCount) {
         this.maxCount = maxCount;
@@ -354,6 +363,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param keyName The name of the key pair.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunInstancesRequest withKeyName(String keyName) {
         this.keyName = keyName;
@@ -402,6 +414,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      *
      * @param securityGroups The names of the security groups into which the instances will be
      *         launched.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunInstancesRequest withSecurityGroups(String... securityGroups) {
         if (getSecurityGroups() == null) setSecurityGroups(new java.util.ArrayList<String>(securityGroups.length));
@@ -419,6 +434,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      *
      * @param securityGroups The names of the security groups into which the instances will be
      *         launched.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunInstancesRequest withSecurityGroups(java.util.Collection<String> securityGroups) {
         if (securityGroups == null) {
@@ -467,6 +485,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param securityGroupIds The new value for the SecurityGroupIds property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunInstancesRequest withSecurityGroupIds(String... securityGroupIds) {
         if (getSecurityGroupIds() == null) setSecurityGroupIds(new java.util.ArrayList<String>(securityGroupIds.length));
@@ -482,6 +503,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param securityGroupIds The new value for the SecurityGroupIds property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunInstancesRequest withSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
         if (securityGroupIds == null) {
@@ -519,6 +543,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param userData Specifies additional information to make available to the instance(s).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunInstancesRequest withUserData(String userData) {
         this.userData = userData;
@@ -564,6 +591,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      *
      * @param instanceType Specifies the instance type for the launched instances.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see InstanceType
      */
     public RunInstancesRequest withInstanceType(String instanceType) {
@@ -595,6 +625,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, hs1.8xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge, cr1.8xlarge
      *
      * @param instanceType Specifies the instance type for the launched instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see InstanceType
      */
@@ -633,6 +666,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      *
      * @param placement Specifies the placement constraints (Availability Zones) for launching
      *         the instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunInstancesRequest withPlacement(Placement placement) {
         this.placement = placement;
@@ -664,6 +700,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param kernelId The ID of the kernel with which to launch the instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunInstancesRequest withKernelId(String kernelId) {
         this.kernelId = kernelId;
@@ -719,6 +758,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      *         for information on whether you need to specify a RAM disk. To find
      *         kernel requirements, go to the Resource Center and search for the
      *         kernel ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunInstancesRequest withRamdiskId(String ramdiskId) {
         this.ramdiskId = ramdiskId;
@@ -767,6 +809,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      *
      * @param blockDeviceMappings Specifies how block devices are exposed to the instance. Each mapping
      *         is made up of a virtualName and a deviceName.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunInstancesRequest withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
         if (getBlockDeviceMappings() == null) setBlockDeviceMappings(new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.length));
@@ -784,6 +829,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      *
      * @param blockDeviceMappings Specifies how block devices are exposed to the instance. Each mapping
      *         is made up of a virtualName and a deviceName.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunInstancesRequest withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
@@ -821,6 +869,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param monitoring Enables monitoring for the instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunInstancesRequest withMonitoring(Boolean monitoring) {
         this.monitoring = monitoring;
@@ -867,6 +918,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      *
      * @param subnetId Specifies the subnet ID within which to launch the instance(s) for
      *         Amazon Virtual Private Cloud.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunInstancesRequest withSubnetId(String subnetId) {
         this.subnetId = subnetId;
@@ -910,6 +964,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      * @param disableApiTermination Specifies whether the instance can be terminated using the APIs. You
      *         must modify this attribute before you can terminate any "locked"
      *         instances from the APIs.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunInstancesRequest withDisableApiTermination(Boolean disableApiTermination) {
         this.disableApiTermination = disableApiTermination;
@@ -960,6 +1017,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      *
      * @param instanceInitiatedShutdownBehavior Specifies whether the instance's Amazon EBS volumes are stopped or
      *         terminated when the instance is shut down.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunInstancesRequest withInstanceInitiatedShutdownBehavior(String instanceInitiatedShutdownBehavior) {
         this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior;
@@ -997,6 +1057,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      *
      * @param license Specifies active licenses in use and attached to an Amazon EC2
      *         instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunInstancesRequest withLicense(InstanceLicenseSpecification license) {
         this.license = license;
@@ -1040,6 +1103,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      * @param privateIpAddress If you're using Amazon Virtual Private Cloud, you can optionally use
      *         this parameter to assign the instance a specific available IP address
      *         from the subnet.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunInstancesRequest withPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
@@ -1083,6 +1149,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      * @param clientToken Unique, case-sensitive identifier you provide to ensure idempotency of
      *         the request. For more information, go to How to Ensure Idempotency in
      *         the Amazon Elastic Compute Cloud User Guide.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunInstancesRequest withClientToken(String clientToken) {
         this.clientToken = clientToken;
@@ -1114,6 +1183,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param additionalInfo Do not use. Reserved for internal use.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunInstancesRequest withAdditionalInfo(String additionalInfo) {
         this.additionalInfo = additionalInfo;
@@ -1156,6 +1228,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkInterfaces The new value for the NetworkInterfaces property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunInstancesRequest withNetworkInterfaces(InstanceNetworkInterfaceSpecification... networkInterfaces) {
         if (getNetworkInterfaces() == null) setNetworkInterfaces(new java.util.ArrayList<InstanceNetworkInterfaceSpecification>(networkInterfaces.length));
@@ -1171,6 +1246,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkInterfaces The new value for the NetworkInterfaces property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunInstancesRequest withNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
         if (networkInterfaces == null) {
@@ -1208,6 +1286,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param iamInstanceProfile The new value for the IamInstanceProfile property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunInstancesRequest withIamInstanceProfile(IamInstanceProfileSpecification iamInstanceProfile) {
         this.iamInstanceProfile = iamInstanceProfile;
@@ -1239,6 +1320,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ebsOptimized The new value for the EbsOptimized property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunInstancesRequest withEbsOptimized(Boolean ebsOptimized) {
         this.ebsOptimized = ebsOptimized;

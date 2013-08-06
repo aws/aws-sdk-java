@@ -52,6 +52,9 @@ public class EnableVolumeIORequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeId The new value for the VolumeId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EnableVolumeIORequest withVolumeId(String volumeId) {
         this.volumeId = volumeId;

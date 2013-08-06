@@ -56,6 +56,9 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedInstancesId The new value for the ReservedInstancesId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateReservedInstancesListingRequest withReservedInstancesId(String reservedInstancesId) {
         this.reservedInstancesId = reservedInstancesId;
@@ -87,6 +90,9 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceCount The new value for the InstanceCount property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateReservedInstancesListingRequest withInstanceCount(Integer instanceCount) {
         this.instanceCount = instanceCount;
@@ -129,6 +135,9 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param priceSchedules The new value for the PriceSchedules property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateReservedInstancesListingRequest withPriceSchedules(PriceScheduleSpecification... priceSchedules) {
         if (getPriceSchedules() == null) setPriceSchedules(new java.util.ArrayList<PriceScheduleSpecification>(priceSchedules.length));
@@ -144,6 +153,9 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param priceSchedules The new value for the PriceSchedules property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateReservedInstancesListingRequest withPriceSchedules(java.util.Collection<PriceScheduleSpecification> priceSchedules) {
         if (priceSchedules == null) {
@@ -181,6 +193,9 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clientToken The new value for the ClientToken property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateReservedInstancesListingRequest withClientToken(String clientToken) {
         this.clientToken = clientToken;

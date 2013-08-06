@@ -61,6 +61,9 @@ public class GetConsoleOutputResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId The ID of the instance whose console output was requested.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetConsoleOutputResult withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -92,6 +95,9 @@ public class GetConsoleOutputResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param timestamp The time the output was last updated.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetConsoleOutputResult withTimestamp(java.util.Date timestamp) {
         this.timestamp = timestamp;
@@ -123,6 +129,9 @@ public class GetConsoleOutputResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param output The console output, Base64 encoded.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetConsoleOutputResult withOutput(String output) {
         this.output = output;

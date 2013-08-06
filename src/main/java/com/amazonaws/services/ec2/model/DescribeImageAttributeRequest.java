@@ -88,6 +88,9 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param imageId The ID of the AMI whose attribute is to be described.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeImageAttributeRequest withImageId(String imageId) {
         this.imageId = imageId;
@@ -131,6 +134,9 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest  impl
      * @param attribute The name of the attribute to describe. <p> Available attribute names:
      *         <code>productCodes</code>, <code>kernel</code>, <code>ramdisk</code>,
      *         <code>launchPermisson</code>, <code>blockDeviceMapping</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeImageAttributeRequest withAttribute(String attribute) {
         this.attribute = attribute;

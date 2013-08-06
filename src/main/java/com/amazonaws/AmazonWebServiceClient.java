@@ -20,6 +20,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map.Entry;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import com.amazonaws.handlers.RequestHandler;
 import com.amazonaws.http.AmazonHttpClient;
@@ -63,7 +64,7 @@ public abstract class AmazonWebServiceClient {
     public AmazonWebServiceClient(ClientConfiguration clientConfiguration) {
         this.clientConfiguration = clientConfiguration;
         client = new AmazonHttpClient(clientConfiguration);
-        requestHandlers = Collections.synchronizedList(new LinkedList<RequestHandler>());
+        requestHandlers = new CopyOnWriteArrayList<RequestHandler>();
     }
 
     /**

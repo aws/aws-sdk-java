@@ -52,6 +52,9 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeId The new value for the VolumeId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeVolumeAttributeRequest withVolumeId(String volumeId) {
         this.volumeId = volumeId;
@@ -97,6 +100,9 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest  imp
      *
      * @param attribute The new value for the Attribute property for this object.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see VolumeAttributeName
      */
     public DescribeVolumeAttributeRequest withAttribute(String attribute) {
@@ -128,6 +134,9 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest  imp
      * <b>Allowed Values: </b>autoEnableIO, productCodes
      *
      * @param attribute The new value for the Attribute property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see VolumeAttributeName
      */

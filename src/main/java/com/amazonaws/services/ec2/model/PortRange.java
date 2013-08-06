@@ -62,6 +62,9 @@ public class PortRange  implements Serializable  {
      *
      * @param from The first port in the range. Required if specifying <code>tcp</code>
      *         or <code>udp</code> for the protocol.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PortRange withFrom(Integer from) {
         this.from = from;
@@ -99,6 +102,9 @@ public class PortRange  implements Serializable  {
      *
      * @param to The last port in the range. Required if specifying <code>tcp</code> or
      *         <code>udp</code> for the protocol.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PortRange withTo(Integer to) {
         this.to = to;

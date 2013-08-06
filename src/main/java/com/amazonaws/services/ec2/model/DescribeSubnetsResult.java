@@ -62,6 +62,9 @@ public class DescribeSubnetsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnets Contains a set of one or more <a>Subnet</a> instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeSubnetsResult withSubnets(Subnet... subnets) {
         if (getSubnets() == null) setSubnets(new java.util.ArrayList<Subnet>(subnets.length));
@@ -77,6 +80,9 @@ public class DescribeSubnetsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnets Contains a set of one or more <a>Subnet</a> instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeSubnetsResult withSubnets(java.util.Collection<Subnet> subnets) {
         if (subnets == null) {

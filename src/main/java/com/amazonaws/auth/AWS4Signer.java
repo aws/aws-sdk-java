@@ -56,6 +56,24 @@ public class AWS4Signer extends AbstractAWSSigner {
     /** Date override for testing only */
     protected Date overriddenDate;
 
+    protected ThreadLocal<SimpleDateFormat> dateTimeFormat = new ThreadLocal<SimpleDateFormat>() {
+        @Override
+        protected SimpleDateFormat initialValue() {
+            final SimpleDateFormat dateTimeFormat = new SimpleDateFormat("yyyyMMdd'T'HHmmss'Z'");
+            dateTimeFormat.setTimeZone(new SimpleTimeZone(0, "UTC"));
+            return dateTimeFormat;
+        }
+    };
+
+    protected ThreadLocal<SimpleDateFormat> dateStampFormat = new ThreadLocal<SimpleDateFormat>() {
+        @Override
+        protected SimpleDateFormat initialValue() {
+            final SimpleDateFormat dateStampFormat = new SimpleDateFormat("yyyyMMdd");
+            dateStampFormat.setTimeZone(new SimpleTimeZone(0, "UTC"));
+            return dateStampFormat;
+        }
+    };
+
     protected static final Log log = LogFactory.getLog(AWS4Signer.class);
 
 
@@ -233,17 +251,11 @@ public class AWS4Signer extends AbstractAWSSigner {
     }
 
     protected String getDateTimeStamp(Date date) {
-        SimpleDateFormat dateTimeFormat;
-        dateTimeFormat = new SimpleDateFormat("yyyyMMdd'T'HHmmss'Z'");
-        dateTimeFormat.setTimeZone(new SimpleTimeZone(0, "UTC"));
-        return dateTimeFormat.format(date);
+        return dateTimeFormat.get().format(date);
     }
 
     protected String getDateStamp(Date date) {
-        SimpleDateFormat dateStampFormat;
-        dateStampFormat = new SimpleDateFormat("yyyyMMdd");
-        dateStampFormat.setTimeZone(new SimpleTimeZone(0, "UTC"));
-        return dateStampFormat.format(date);
+        return dateStampFormat.get().format(date);
     }
 
     protected Date getDateFromRequest(Request<?> request) {

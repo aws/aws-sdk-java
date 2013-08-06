@@ -88,6 +88,9 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param productCode The product code to confirm.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ConfirmProductInstanceRequest withProductCode(String productCode) {
         this.productCode = productCode;
@@ -119,6 +122,9 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId The ID of the instance to confirm.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ConfirmProductInstanceRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;

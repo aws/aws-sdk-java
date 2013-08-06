@@ -63,6 +63,9 @@ public class UserIdGroupPair  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param userId The AWS user ID of an account.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UserIdGroupPair withUserId(String userId) {
         this.userId = userId;
@@ -100,6 +103,9 @@ public class UserIdGroupPair  implements Serializable  {
      *
      * @param groupName Name of the security group in the specified AWS account. Cannot be
      *         used when specifying a CIDR IP address range.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UserIdGroupPair withGroupName(String groupName) {
         this.groupName = groupName;
@@ -137,6 +143,9 @@ public class UserIdGroupPair  implements Serializable  {
      *
      * @param groupId ID of the security group in the specified AWS account. Cannot be used
      *         when specifying a CIDR IP address range.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UserIdGroupPair withGroupId(String groupId) {
         this.groupId = groupId;

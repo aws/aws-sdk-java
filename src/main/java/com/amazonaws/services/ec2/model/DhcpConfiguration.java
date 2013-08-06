@@ -56,6 +56,9 @@ public class DhcpConfiguration  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param key Contains the name of a DHCP option.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DhcpConfiguration withKey(String key) {
         this.key = key;
@@ -98,6 +101,9 @@ public class DhcpConfiguration  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param values Contains a set of values for a DHCP option.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DhcpConfiguration withValues(String... values) {
         if (getValues() == null) setValues(new java.util.ArrayList<String>(values.length));
@@ -113,6 +119,9 @@ public class DhcpConfiguration  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param values Contains a set of values for a DHCP option.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DhcpConfiguration withValues(java.util.Collection<String> values) {
         if (values == null) {

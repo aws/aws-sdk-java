@@ -48,6 +48,9 @@ public class IamInstanceProfileSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param arn The new value for the Arn property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public IamInstanceProfileSpecification withArn(String arn) {
         this.arn = arn;
@@ -79,6 +82,9 @@ public class IamInstanceProfileSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The new value for the Name property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public IamInstanceProfileSpecification withName(String name) {
         this.name = name;

@@ -89,6 +89,9 @@ public class RebootInstancesRequest extends AmazonWebServiceRequest  implements 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceIds The list of instances to terminate.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RebootInstancesRequest withInstanceIds(String... instanceIds) {
         if (getInstanceIds() == null) setInstanceIds(new java.util.ArrayList<String>(instanceIds.length));
@@ -104,6 +107,9 @@ public class RebootInstancesRequest extends AmazonWebServiceRequest  implements 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceIds The list of instances to terminate.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RebootInstancesRequest withInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {

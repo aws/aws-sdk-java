@@ -54,6 +54,9 @@ public class VgwTelemetry  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param outsideIpAddress The new value for the OutsideIpAddress property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VgwTelemetry withOutsideIpAddress(String outsideIpAddress) {
         this.outsideIpAddress = outsideIpAddress;
@@ -85,6 +88,9 @@ public class VgwTelemetry  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param status The new value for the Status property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VgwTelemetry withStatus(String status) {
         this.status = status;
@@ -116,6 +122,9 @@ public class VgwTelemetry  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param lastStatusChange The new value for the LastStatusChange property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VgwTelemetry withLastStatusChange(java.util.Date lastStatusChange) {
         this.lastStatusChange = lastStatusChange;
@@ -147,6 +156,9 @@ public class VgwTelemetry  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param statusMessage The new value for the StatusMessage property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VgwTelemetry withStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
@@ -178,6 +190,9 @@ public class VgwTelemetry  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param acceptedRouteCount The new value for the AcceptedRouteCount property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VgwTelemetry withAcceptedRouteCount(Integer acceptedRouteCount) {
         this.acceptedRouteCount = acceptedRouteCount;

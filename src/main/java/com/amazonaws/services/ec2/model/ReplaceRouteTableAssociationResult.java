@@ -46,6 +46,9 @@ public class ReplaceRouteTableAssociationResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param newAssociationId The new value for the NewAssociationId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ReplaceRouteTableAssociationResult withNewAssociationId(String newAssociationId) {
         this.newAssociationId = newAssociationId;

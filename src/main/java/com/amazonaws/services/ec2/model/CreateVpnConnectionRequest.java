@@ -103,6 +103,9 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest  impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param type The type of VPN connection.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateVpnConnectionRequest withType(String type) {
         this.type = type;
@@ -134,6 +137,9 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest  impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param customerGatewayId The ID of the customer gateway.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateVpnConnectionRequest withCustomerGatewayId(String customerGatewayId) {
         this.customerGatewayId = customerGatewayId;
@@ -165,6 +171,9 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest  impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpnGatewayId The ID of the VPN gateway.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateVpnConnectionRequest withVpnGatewayId(String vpnGatewayId) {
         this.vpnGatewayId = vpnGatewayId;
@@ -196,6 +205,9 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest  impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param options The new value for the Options property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateVpnConnectionRequest withOptions(VpnConnectionOptionsSpecification options) {
         this.options = options;

@@ -61,6 +61,9 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest  impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param exportTaskIds The new value for the ExportTaskIds property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeExportTasksRequest withExportTaskIds(String... exportTaskIds) {
         if (getExportTaskIds() == null) setExportTaskIds(new java.util.ArrayList<String>(exportTaskIds.length));
@@ -76,6 +79,9 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest  impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param exportTaskIds The new value for the ExportTaskIds property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeExportTasksRequest withExportTaskIds(java.util.Collection<String> exportTaskIds) {
         if (exportTaskIds == null) {

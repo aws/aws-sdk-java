@@ -64,6 +64,9 @@ public class NetworkAclEntry  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ruleNumber The new value for the RuleNumber property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkAclEntry withRuleNumber(Integer ruleNumber) {
         this.ruleNumber = ruleNumber;
@@ -95,6 +98,9 @@ public class NetworkAclEntry  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param protocol The new value for the Protocol property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkAclEntry withProtocol(String protocol) {
         this.protocol = protocol;
@@ -140,6 +146,9 @@ public class NetworkAclEntry  implements Serializable  {
      *
      * @param ruleAction The new value for the RuleAction property for this object.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see RuleAction
      */
     public NetworkAclEntry withRuleAction(String ruleAction) {
@@ -172,6 +181,9 @@ public class NetworkAclEntry  implements Serializable  {
      *
      * @param ruleAction The new value for the RuleAction property for this object.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see RuleAction
      */
     public NetworkAclEntry withRuleAction(RuleAction ruleAction) {
@@ -203,6 +215,9 @@ public class NetworkAclEntry  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param egress The new value for the Egress property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkAclEntry withEgress(Boolean egress) {
         this.egress = egress;
@@ -243,6 +258,9 @@ public class NetworkAclEntry  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cidrBlock The new value for the CidrBlock property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkAclEntry withCidrBlock(String cidrBlock) {
         this.cidrBlock = cidrBlock;
@@ -274,6 +292,9 @@ public class NetworkAclEntry  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param icmpTypeCode 
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkAclEntry withIcmpTypeCode(IcmpTypeCode icmpTypeCode) {
         this.icmpTypeCode = icmpTypeCode;
@@ -305,6 +326,9 @@ public class NetworkAclEntry  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param portRange 
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkAclEntry withPortRange(PortRange portRange) {
         this.portRange = portRange;

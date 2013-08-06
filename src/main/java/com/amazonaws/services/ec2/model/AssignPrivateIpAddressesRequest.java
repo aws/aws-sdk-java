@@ -56,6 +56,9 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AssignPrivateIpAddressesRequest withNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
@@ -98,6 +101,9 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateIpAddresses The new value for the PrivateIpAddresses property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AssignPrivateIpAddressesRequest withPrivateIpAddresses(String... privateIpAddresses) {
         if (getPrivateIpAddresses() == null) setPrivateIpAddresses(new java.util.ArrayList<String>(privateIpAddresses.length));
@@ -113,6 +119,9 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateIpAddresses The new value for the PrivateIpAddresses property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AssignPrivateIpAddressesRequest withPrivateIpAddresses(java.util.Collection<String> privateIpAddresses) {
         if (privateIpAddresses == null) {
@@ -156,6 +165,9 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest  im
      *
      * @param secondaryPrivateIpAddressCount The new value for the SecondaryPrivateIpAddressCount property for this
      *         object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AssignPrivateIpAddressesRequest withSecondaryPrivateIpAddressCount(Integer secondaryPrivateIpAddressCount) {
         this.secondaryPrivateIpAddressCount = secondaryPrivateIpAddressCount;
@@ -187,6 +199,9 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param allowReassignment The new value for the AllowReassignment property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AssignPrivateIpAddressesRequest withAllowReassignment(Boolean allowReassignment) {
         this.allowReassignment = allowReassignment;

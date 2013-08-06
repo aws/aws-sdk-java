@@ -86,6 +86,9 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest  impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groupName The name of the Amazon EC2 security group to delete.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteSecurityGroupRequest withGroupName(String groupName) {
         this.groupName = groupName;
@@ -117,6 +120,9 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest  impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groupId The ID of the Amazon EC2 security group to delete.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteSecurityGroupRequest withGroupId(String groupId) {
         this.groupId = groupId;

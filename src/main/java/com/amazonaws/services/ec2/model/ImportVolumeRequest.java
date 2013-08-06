@@ -56,6 +56,9 @@ public class ImportVolumeRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZone The new value for the AvailabilityZone property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ImportVolumeRequest withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -87,6 +90,9 @@ public class ImportVolumeRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param image The new value for the Image property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ImportVolumeRequest withImage(DiskImageDetail image) {
         this.image = image;
@@ -118,6 +124,9 @@ public class ImportVolumeRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description The new value for the Description property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ImportVolumeRequest withDescription(String description) {
         this.description = description;
@@ -149,6 +158,9 @@ public class ImportVolumeRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volume The new value for the Volume property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ImportVolumeRequest withVolume(VolumeDetail volume) {
         this.volume = volume;

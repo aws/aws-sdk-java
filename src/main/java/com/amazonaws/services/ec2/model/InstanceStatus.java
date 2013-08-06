@@ -70,6 +70,9 @@ public class InstanceStatus  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId The ID of the Amazon EC2 instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceStatus withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -101,6 +104,9 @@ public class InstanceStatus  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZone The Amazon EC2 instance's availability zone.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceStatus withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -143,6 +149,9 @@ public class InstanceStatus  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param events Events that affect the status of the associated Amazon EC2 instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceStatus withEvents(InstanceStatusEvent... events) {
         if (getEvents() == null) setEvents(new java.util.ArrayList<InstanceStatusEvent>(events.length));
@@ -158,6 +167,9 @@ public class InstanceStatus  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param events Events that affect the status of the associated Amazon EC2 instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceStatus withEvents(java.util.Collection<InstanceStatusEvent> events) {
         if (events == null) {
@@ -195,6 +207,9 @@ public class InstanceStatus  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceState Represents the state of an Amazon EC2 instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceStatus withInstanceState(InstanceState instanceState) {
         this.instanceState = instanceState;
@@ -226,6 +241,9 @@ public class InstanceStatus  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param systemStatus The new value for the SystemStatus property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceStatus withSystemStatus(InstanceStatusSummary systemStatus) {
         this.systemStatus = systemStatus;
@@ -257,6 +275,9 @@ public class InstanceStatus  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceStatus The new value for the InstanceStatus property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceStatus withInstanceStatus(InstanceStatusSummary instanceStatus) {
         this.instanceStatus = instanceStatus;

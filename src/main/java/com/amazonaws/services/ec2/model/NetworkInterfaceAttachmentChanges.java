@@ -48,6 +48,9 @@ public class NetworkInterfaceAttachmentChanges  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attachmentId The new value for the AttachmentId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkInterfaceAttachmentChanges withAttachmentId(String attachmentId) {
         this.attachmentId = attachmentId;
@@ -79,6 +82,9 @@ public class NetworkInterfaceAttachmentChanges  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param deleteOnTermination The new value for the DeleteOnTermination property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkInterfaceAttachmentChanges withDeleteOnTermination(Boolean deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;

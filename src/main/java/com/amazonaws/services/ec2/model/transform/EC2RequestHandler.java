@@ -51,10 +51,23 @@ public class EC2RequestHandler extends AbstractRequestHandler {
         // the query string params follow a different form than the XML responses, so we manually set the parameters here.
         else if (originalRequest instanceof RequestSpotInstancesRequest) {
             RequestSpotInstancesRequest requestSpotInstancesRequest = (RequestSpotInstancesRequest)originalRequest;
-            int count = 1;
+
+            // Marshall the security groups specified only by name
+            int groupNameCount = 1;
+            for (String groupName : requestSpotInstancesRequest.getLaunchSpecification().getSecurityGroups()) {
+                request.addParameter("LaunchSpecification.SecurityGroup." + groupNameCount++, groupName);
+            }
+
+            // Then loop through the GroupIdentifier objects and marshall any specified IDs
+            // and any additional group names
+            int groupIdCount = 1;
             for (GroupIdentifier group : requestSpotInstancesRequest.getLaunchSpecification().getAllSecurityGroups()) {
                 if (group.getGroupId() != null) {
-                    request.addParameter("LaunchSpecification.SecurityGroupId." + count++, group.getGroupId());
+                    request.addParameter("LaunchSpecification.SecurityGroupId." + groupIdCount++, group.getGroupId());
+                }
+
+                if (group.getGroupName() != null) {
+                    request.addParameter("LaunchSpecification.SecurityGroup." + groupNameCount++, group.getGroupName());
                 }
             }
 

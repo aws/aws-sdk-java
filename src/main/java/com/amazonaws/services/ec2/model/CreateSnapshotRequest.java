@@ -89,6 +89,9 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeId The ID of the volume from which to create the snapshot.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateSnapshotRequest withVolumeId(String volumeId) {
         this.volumeId = volumeId;
@@ -120,6 +123,9 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description The description for the new snapshot.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateSnapshotRequest withDescription(String description) {
         this.description = description;

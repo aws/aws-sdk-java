@@ -75,6 +75,9 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groupNames The name of the <code>PlacementGroup</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribePlacementGroupsRequest withGroupNames(String... groupNames) {
         if (getGroupNames() == null) setGroupNames(new java.util.ArrayList<String>(groupNames.length));
@@ -90,6 +93,9 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groupNames The name of the <code>PlacementGroup</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribePlacementGroupsRequest withGroupNames(java.util.Collection<String> groupNames) {
         if (groupNames == null) {
@@ -162,6 +168,9 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest  imp
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribePlacementGroupsRequest withFilters(Filter... filters) {
         if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
@@ -185,6 +194,9 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest  imp
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribePlacementGroupsRequest withFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {

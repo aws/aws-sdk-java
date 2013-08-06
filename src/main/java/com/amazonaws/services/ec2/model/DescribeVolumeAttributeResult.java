@@ -53,6 +53,9 @@ public class DescribeVolumeAttributeResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeId The new value for the VolumeId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeVolumeAttributeResult withVolumeId(String volumeId) {
         this.volumeId = volumeId;
@@ -84,6 +87,9 @@ public class DescribeVolumeAttributeResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param autoEnableIO Boolean value
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeVolumeAttributeResult withAutoEnableIO(Boolean autoEnableIO) {
         this.autoEnableIO = autoEnableIO;
@@ -135,6 +141,9 @@ public class DescribeVolumeAttributeResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param productCodes The new value for the ProductCodes property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeVolumeAttributeResult withProductCodes(ProductCode... productCodes) {
         if (getProductCodes() == null) setProductCodes(new java.util.ArrayList<ProductCode>(productCodes.length));
@@ -150,6 +159,9 @@ public class DescribeVolumeAttributeResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param productCodes The new value for the ProductCodes property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeVolumeAttributeResult withProductCodes(java.util.Collection<ProductCode> productCodes) {
         if (productCodes == null) {

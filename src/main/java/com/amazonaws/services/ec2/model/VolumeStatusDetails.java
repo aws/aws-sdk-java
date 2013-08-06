@@ -48,6 +48,9 @@ public class VolumeStatusDetails  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The new value for the Name property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VolumeStatusDetails withName(String name) {
         this.name = name;
@@ -79,6 +82,9 @@ public class VolumeStatusDetails  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param status The new value for the Status property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VolumeStatusDetails withStatus(String status) {
         this.status = status;

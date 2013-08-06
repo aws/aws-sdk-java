@@ -62,6 +62,9 @@ public class InstanceNetworkInterfaceSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceNetworkInterfaceSpecification withNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
@@ -93,6 +96,9 @@ public class InstanceNetworkInterfaceSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param deviceIndex The new value for the DeviceIndex property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceNetworkInterfaceSpecification withDeviceIndex(Integer deviceIndex) {
         this.deviceIndex = deviceIndex;
@@ -124,6 +130,9 @@ public class InstanceNetworkInterfaceSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnetId The new value for the SubnetId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceNetworkInterfaceSpecification withSubnetId(String subnetId) {
         this.subnetId = subnetId;
@@ -155,6 +164,9 @@ public class InstanceNetworkInterfaceSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description The new value for the Description property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceNetworkInterfaceSpecification withDescription(String description) {
         this.description = description;
@@ -186,6 +198,9 @@ public class InstanceNetworkInterfaceSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateIpAddress The new value for the PrivateIpAddress property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceNetworkInterfaceSpecification withPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
@@ -228,6 +243,9 @@ public class InstanceNetworkInterfaceSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groups The new value for the Groups property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceNetworkInterfaceSpecification withGroups(String... groups) {
         if (getGroups() == null) setGroups(new java.util.ArrayList<String>(groups.length));
@@ -243,6 +261,9 @@ public class InstanceNetworkInterfaceSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groups The new value for the Groups property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceNetworkInterfaceSpecification withGroups(java.util.Collection<String> groups) {
         if (groups == null) {
@@ -280,6 +301,9 @@ public class InstanceNetworkInterfaceSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param deleteOnTermination The new value for the DeleteOnTermination property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceNetworkInterfaceSpecification withDeleteOnTermination(Boolean deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;
@@ -331,6 +355,9 @@ public class InstanceNetworkInterfaceSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateIpAddresses The new value for the PrivateIpAddresses property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceNetworkInterfaceSpecification withPrivateIpAddresses(PrivateIpAddressSpecification... privateIpAddresses) {
         if (getPrivateIpAddresses() == null) setPrivateIpAddresses(new java.util.ArrayList<PrivateIpAddressSpecification>(privateIpAddresses.length));
@@ -346,6 +373,9 @@ public class InstanceNetworkInterfaceSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateIpAddresses The new value for the PrivateIpAddresses property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceNetworkInterfaceSpecification withPrivateIpAddresses(java.util.Collection<PrivateIpAddressSpecification> privateIpAddresses) {
         if (privateIpAddresses == null) {
@@ -389,6 +419,9 @@ public class InstanceNetworkInterfaceSpecification  implements Serializable  {
      *
      * @param secondaryPrivateIpAddressCount The new value for the SecondaryPrivateIpAddressCount property for this
      *         object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceNetworkInterfaceSpecification withSecondaryPrivateIpAddressCount(Integer secondaryPrivateIpAddressCount) {
         this.secondaryPrivateIpAddressCount = secondaryPrivateIpAddressCount;

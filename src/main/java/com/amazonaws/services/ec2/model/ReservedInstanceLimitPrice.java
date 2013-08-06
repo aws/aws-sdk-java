@@ -48,6 +48,9 @@ public class ReservedInstanceLimitPrice  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param amount The new value for the Amount property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ReservedInstanceLimitPrice withAmount(Double amount) {
         this.amount = amount;
@@ -79,6 +82,9 @@ public class ReservedInstanceLimitPrice  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param currencyCode The new value for the CurrencyCode property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ReservedInstanceLimitPrice withCurrencyCode(String currencyCode) {
         this.currencyCode = currencyCode;

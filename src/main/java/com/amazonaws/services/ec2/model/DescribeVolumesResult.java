@@ -62,6 +62,9 @@ public class DescribeVolumesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumes The list of described EBS volumes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeVolumesResult withVolumes(Volume... volumes) {
         if (getVolumes() == null) setVolumes(new java.util.ArrayList<Volume>(volumes.length));
@@ -77,6 +80,9 @@ public class DescribeVolumesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumes The list of described EBS volumes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeVolumesResult withVolumes(java.util.Collection<Volume> volumes) {
         if (volumes == null) {

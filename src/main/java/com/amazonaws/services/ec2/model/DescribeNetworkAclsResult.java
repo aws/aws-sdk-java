@@ -57,6 +57,9 @@ public class DescribeNetworkAclsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkAcls The new value for the NetworkAcls property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeNetworkAclsResult withNetworkAcls(NetworkAcl... networkAcls) {
         if (getNetworkAcls() == null) setNetworkAcls(new java.util.ArrayList<NetworkAcl>(networkAcls.length));
@@ -72,6 +75,9 @@ public class DescribeNetworkAclsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkAcls The new value for the NetworkAcls property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeNetworkAclsResult withNetworkAcls(java.util.Collection<NetworkAcl> networkAcls) {
         if (networkAcls == null) {

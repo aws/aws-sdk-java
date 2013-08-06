@@ -60,6 +60,9 @@ public class DescribeSnapshotAttributeResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param snapshotId The ID of the snapshot whose attribute is being described.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeSnapshotAttributeResult withSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
@@ -114,6 +117,9 @@ public class DescribeSnapshotAttributeResult  implements Serializable  {
      * @param createVolumePermissions The list of permissions describing who can create a volume from the
      *         associated EBS snapshot. <p> Only available if the
      *         createVolumePermission attribute is requested.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeSnapshotAttributeResult withCreateVolumePermissions(CreateVolumePermission... createVolumePermissions) {
         if (getCreateVolumePermissions() == null) setCreateVolumePermissions(new java.util.ArrayList<CreateVolumePermission>(createVolumePermissions.length));
@@ -133,6 +139,9 @@ public class DescribeSnapshotAttributeResult  implements Serializable  {
      * @param createVolumePermissions The list of permissions describing who can create a volume from the
      *         associated EBS snapshot. <p> Only available if the
      *         createVolumePermission attribute is requested.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeSnapshotAttributeResult withCreateVolumePermissions(java.util.Collection<CreateVolumePermission> createVolumePermissions) {
         if (createVolumePermissions == null) {
@@ -181,6 +190,9 @@ public class DescribeSnapshotAttributeResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param productCodes The new value for the ProductCodes property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeSnapshotAttributeResult withProductCodes(ProductCode... productCodes) {
         if (getProductCodes() == null) setProductCodes(new java.util.ArrayList<ProductCode>(productCodes.length));
@@ -196,6 +208,9 @@ public class DescribeSnapshotAttributeResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param productCodes The new value for the ProductCodes property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeSnapshotAttributeResult withProductCodes(java.util.Collection<ProductCode> productCodes) {
         if (productCodes == null) {

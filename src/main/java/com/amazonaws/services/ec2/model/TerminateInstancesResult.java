@@ -69,6 +69,9 @@ public class TerminateInstancesResult  implements Serializable  {
      *
      * @param terminatingInstances The list of the terminating instances and details on how their state
      *         has changed.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public TerminateInstancesResult withTerminatingInstances(InstanceStateChange... terminatingInstances) {
         if (getTerminatingInstances() == null) setTerminatingInstances(new java.util.ArrayList<InstanceStateChange>(terminatingInstances.length));
@@ -86,6 +89,9 @@ public class TerminateInstancesResult  implements Serializable  {
      *
      * @param terminatingInstances The list of the terminating instances and details on how their state
      *         has changed.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public TerminateInstancesResult withTerminatingInstances(java.util.Collection<InstanceStateChange> terminatingInstances) {
         if (terminatingInstances == null) {

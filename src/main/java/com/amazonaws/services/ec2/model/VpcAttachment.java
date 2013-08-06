@@ -56,6 +56,9 @@ public class VpcAttachment  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcId 
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VpcAttachment withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -87,6 +90,9 @@ public class VpcAttachment  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param state 
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VpcAttachment withState(String state) {
         this.state = state;

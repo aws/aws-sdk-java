@@ -84,6 +84,9 @@ public class BundleInstanceRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId The ID of the instance to bundle.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public BundleInstanceRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -115,6 +118,9 @@ public class BundleInstanceRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param storage 
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public BundleInstanceRequest withStorage(Storage storage) {
         this.storage = storage;

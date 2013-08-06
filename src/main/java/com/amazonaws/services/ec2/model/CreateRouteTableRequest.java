@@ -57,6 +57,9 @@ public class CreateRouteTableRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcId The ID of the VPC where the route table will be created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateRouteTableRequest withVpcId(String vpcId) {
         this.vpcId = vpcId;

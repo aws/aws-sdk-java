@@ -61,6 +61,9 @@ public class DescribeTagsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags A list of the tags for the specified resources.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeTagsResult withTags(TagDescription... tags) {
         if (getTags() == null) setTags(new java.util.ArrayList<TagDescription>(tags.length));
@@ -76,6 +79,9 @@ public class DescribeTagsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags A list of the tags for the specified resources.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeTagsResult withTags(java.util.Collection<TagDescription> tags) {
         if (tags == null) {

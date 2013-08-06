@@ -68,6 +68,9 @@ public class GetPasswordDataResult  implements Serializable  {
      *
      * @param instanceId The ID of the instance whose Windows administrator password was
      *         requested.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetPasswordDataResult withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -99,6 +102,9 @@ public class GetPasswordDataResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param timestamp The time the data was last updated.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetPasswordDataResult withTimestamp(java.util.Date timestamp) {
         this.timestamp = timestamp;
@@ -130,6 +136,9 @@ public class GetPasswordDataResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param passwordData The Windows administrator password of the specified instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetPasswordDataResult withPasswordData(String passwordData) {
         this.passwordData = passwordData;

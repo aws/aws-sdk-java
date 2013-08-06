@@ -56,6 +56,9 @@ public class ImportKeyPairResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param keyName The specified unique key pair name.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ImportKeyPairResult withKeyName(String keyName) {
         this.keyName = keyName;
@@ -93,6 +96,9 @@ public class ImportKeyPairResult  implements Serializable  {
      *
      * @param keyFingerprint The MD5 public key fingerprint as specified in section 4 of <a
      *         href="http://tools.ietf.org/html/rfc4716"> RFC4716 </a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ImportKeyPairResult withKeyFingerprint(String keyFingerprint) {
         this.keyFingerprint = keyFingerprint;

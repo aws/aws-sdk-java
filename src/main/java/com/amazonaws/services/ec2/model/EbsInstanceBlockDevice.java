@@ -68,6 +68,9 @@ public class EbsInstanceBlockDevice  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeId The ID of the EBS volume.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EbsInstanceBlockDevice withVolumeId(String volumeId) {
         this.volumeId = volumeId;
@@ -99,6 +102,9 @@ public class EbsInstanceBlockDevice  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param status The status of the EBS volume.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EbsInstanceBlockDevice withStatus(String status) {
         this.status = status;
@@ -136,6 +142,9 @@ public class EbsInstanceBlockDevice  implements Serializable  {
      *
      * @param attachTime The time at which the EBS volume was attached to the associated
      *         instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EbsInstanceBlockDevice withAttachTime(java.util.Date attachTime) {
         this.attachTime = attachTime;
@@ -173,6 +182,9 @@ public class EbsInstanceBlockDevice  implements Serializable  {
      *
      * @param deleteOnTermination Specifies whether the Amazon EBS volume is deleted on instance
      *         termination.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EbsInstanceBlockDevice withDeleteOnTermination(Boolean deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;

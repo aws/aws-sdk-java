@@ -56,6 +56,9 @@ public class RecurringCharge  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param frequency The frequency of the recurring charge.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RecurringCharge withFrequency(String frequency) {
         this.frequency = frequency;
@@ -87,6 +90,9 @@ public class RecurringCharge  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param amount The amount of the recurring charge.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RecurringCharge withAmount(Double amount) {
         this.amount = amount;

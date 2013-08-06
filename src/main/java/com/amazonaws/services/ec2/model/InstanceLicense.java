@@ -58,6 +58,9 @@ public class InstanceLicense  implements Serializable  {
      *
      * @param pool The license pool from which this license was used (ex:
      *         <code>'windows'</code>).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceLicense withPool(String pool) {
         this.pool = pool;

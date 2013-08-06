@@ -104,6 +104,9 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param snapshotId The ID of the snapshot whose attribute is being reset.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ResetSnapshotAttributeRequest withSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
@@ -155,6 +158,9 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest  impl
      * @param attribute The name of the attribute being reset. <p> Available attribute names:
      *         <code>createVolumePermission</code>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see SnapshotAttributeName
      */
     public ResetSnapshotAttributeRequest withAttribute(String attribute) {
@@ -190,6 +196,9 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest  impl
      *
      * @param attribute The name of the attribute being reset. <p> Available attribute names:
      *         <code>createVolumePermission</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see SnapshotAttributeName
      */

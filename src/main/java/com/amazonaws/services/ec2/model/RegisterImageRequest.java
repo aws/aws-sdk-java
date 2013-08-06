@@ -130,6 +130,9 @@ public class RegisterImageRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param imageLocation The full path to your AMI manifest in Amazon S3 storage.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RegisterImageRequest withImageLocation(String imageLocation) {
         this.imageLocation = imageLocation;
@@ -179,6 +182,9 @@ public class RegisterImageRequest extends AmazonWebServiceRequest  implements Se
      *         alphanumeric characters, parenthesis (<code>()</code>), commas
      *         (<code>,</code>), slashes (<code>/</code>), dashes (<code>-</code>),
      *         or underscores(<code>_</code>)
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RegisterImageRequest withName(String name) {
         this.name = name;
@@ -210,6 +216,9 @@ public class RegisterImageRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description The description describing the new AMI.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RegisterImageRequest withDescription(String description) {
         this.description = description;
@@ -247,6 +256,9 @@ public class RegisterImageRequest extends AmazonWebServiceRequest  implements Se
      *
      * @param architecture The architecture of the image. <p> Valid Values: <code>i386</code>,
      *         <code>x86_64</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RegisterImageRequest withArchitecture(String architecture) {
         this.architecture = architecture;
@@ -278,6 +290,9 @@ public class RegisterImageRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param kernelId The optional ID of a specific kernel to register with the new AMI.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RegisterImageRequest withKernelId(String kernelId) {
         this.kernelId = kernelId;
@@ -327,6 +342,9 @@ public class RegisterImageRequest extends AmazonWebServiceRequest  implements Se
      *         <p> Some kernels require additional drivers at launch. Check the
      *         kernel requirements for information on whether you need to specify a
      *         RAM disk.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RegisterImageRequest withRamdiskId(String ramdiskId) {
         this.ramdiskId = ramdiskId;
@@ -358,6 +376,9 @@ public class RegisterImageRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param rootDeviceName The root device name (e.g., <code>/dev/sda1</code>).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RegisterImageRequest withRootDeviceName(String rootDeviceName) {
         this.rootDeviceName = rootDeviceName;
@@ -412,6 +433,9 @@ public class RegisterImageRequest extends AmazonWebServiceRequest  implements Se
      * @param blockDeviceMappings The block device mappings for the new AMI, which specify how different
      *         block devices (ex: EBS volumes and ephemeral drives) will be exposed
      *         on instances launched from the new image.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RegisterImageRequest withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
         if (getBlockDeviceMappings() == null) setBlockDeviceMappings(new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.length));
@@ -431,6 +455,9 @@ public class RegisterImageRequest extends AmazonWebServiceRequest  implements Se
      * @param blockDeviceMappings The block device mappings for the new AMI, which specify how different
      *         block devices (ex: EBS volumes and ephemeral drives) will be exposed
      *         on instances launched from the new image.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RegisterImageRequest withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {

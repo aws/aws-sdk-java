@@ -134,6 +134,9 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
      *
      * @param imageIds An optional list of the AMI IDs to describe. If not specified, all
      *         AMIs will be described.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeImagesRequest withImageIds(String... imageIds) {
         if (getImageIds() == null) setImageIds(new java.util.ArrayList<String>(imageIds.length));
@@ -151,6 +154,9 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
      *
      * @param imageIds An optional list of the AMI IDs to describe. If not specified, all
      *         AMIs will be described.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeImagesRequest withImageIds(java.util.Collection<String> imageIds) {
         if (imageIds == null) {
@@ -235,6 +241,9 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
      *         Amazon <code>all</code> : Do not scope the AMIs returned by owner
      *         </ul> <p> The values <code>self</code>, <code>aws-marketplace</code>,
      *         <code>amazon</code>, and <code>all</code> are literals.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeImagesRequest withOwners(String... owners) {
         if (getOwners() == null) setOwners(new java.util.ArrayList<String>(owners.length));
@@ -262,6 +271,9 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
      *         Amazon <code>all</code> : Do not scope the AMIs returned by owner
      *         </ul> <p> The values <code>self</code>, <code>aws-marketplace</code>,
      *         <code>amazon</code>, and <code>all</code> are literals.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeImagesRequest withOwners(java.util.Collection<String> owners) {
         if (owners == null) {
@@ -340,6 +352,9 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
      *         ID</code> : AMIs for which this account ID has launch permissions
      *         <code>all</code> : AMIs that have public launch permissions </ul> <p>
      *         The values <code>self</code> and <code>all</code> are literals.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeImagesRequest withExecutableUsers(String... executableUsers) {
         if (getExecutableUsers() == null) setExecutableUsers(new java.util.ArrayList<String>(executableUsers.length));
@@ -365,6 +380,9 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
      *         ID</code> : AMIs for which this account ID has launch permissions
      *         <code>all</code> : AMIs that have public launch permissions </ul> <p>
      *         The values <code>self</code> and <code>all</code> are literals.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeImagesRequest withExecutableUsers(java.util.Collection<String> executableUsers) {
         if (executableUsers == null) {
@@ -431,6 +449,9 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
      *         reference to the available filter keys for this operation, see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeImagesRequest withFilters(Filter... filters) {
         if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
@@ -452,6 +473,9 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
      *         reference to the available filter keys for this operation, see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeImagesRequest withFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {

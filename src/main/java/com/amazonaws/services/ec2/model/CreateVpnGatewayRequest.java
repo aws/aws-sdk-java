@@ -82,6 +82,9 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param type The type of VPN connection this VPN gateway supports.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateVpnGatewayRequest withType(String type) {
         this.type = type;
@@ -113,6 +116,9 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZone The Availability Zone in which to create the VPN gateway.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateVpnGatewayRequest withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;

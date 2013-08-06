@@ -79,6 +79,9 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest  impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dhcpOptionsIds The new value for the DhcpOptionsIds property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeDhcpOptionsRequest withDhcpOptionsIds(String... dhcpOptionsIds) {
         if (getDhcpOptionsIds() == null) setDhcpOptionsIds(new java.util.ArrayList<String>(dhcpOptionsIds.length));
@@ -94,6 +97,9 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest  impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dhcpOptionsIds The new value for the DhcpOptionsIds property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeDhcpOptionsRequest withDhcpOptionsIds(java.util.Collection<String> dhcpOptionsIds) {
         if (dhcpOptionsIds == null) {
@@ -166,6 +172,9 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest  impleme
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeDhcpOptionsRequest withFilters(Filter... filters) {
         if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
@@ -189,6 +198,9 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest  impleme
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeDhcpOptionsRequest withFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {

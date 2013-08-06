@@ -100,6 +100,9 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groupName The name of the <code>PlacementGroup</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreatePlacementGroupRequest withGroupName(String groupName) {
         this.groupName = groupName;
@@ -145,6 +148,9 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest  implem
      *
      * @param strategy The <code>PlacementGroup</code> strategy.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see PlacementStrategy
      */
     public CreatePlacementGroupRequest withStrategy(String strategy) {
@@ -176,6 +182,9 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest  implem
      * <b>Allowed Values: </b>cluster
      *
      * @param strategy The <code>PlacementGroup</code> strategy.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see PlacementStrategy
      */

@@ -48,6 +48,9 @@ public class InstanceCount  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param state The new value for the State property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceCount withState(String state) {
         this.state = state;
@@ -79,6 +82,9 @@ public class InstanceCount  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceCount The new value for the InstanceCount property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceCount withInstanceCount(Integer instanceCount) {
         this.instanceCount = instanceCount;

@@ -56,6 +56,9 @@ public class ExportTask  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param exportTaskId The new value for the ExportTaskId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ExportTask withExportTaskId(String exportTaskId) {
         this.exportTaskId = exportTaskId;
@@ -87,6 +90,9 @@ public class ExportTask  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description The new value for the Description property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ExportTask withDescription(String description) {
         this.description = description;
@@ -118,6 +124,9 @@ public class ExportTask  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param state The new value for the State property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ExportTask withState(String state) {
         this.state = state;
@@ -149,6 +158,9 @@ public class ExportTask  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param statusMessage The new value for the StatusMessage property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ExportTask withStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
@@ -181,6 +193,9 @@ public class ExportTask  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceExportDetails The new value for the InstanceExportDetails property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ExportTask withInstanceExportDetails(InstanceExportDetails instanceExportDetails) {
         this.instanceExportDetails = instanceExportDetails;
@@ -212,6 +227,9 @@ public class ExportTask  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param exportToS3Task The new value for the ExportToS3Task property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ExportTask withExportToS3Task(ExportToS3Task exportToS3Task) {
         this.exportToS3Task = exportToS3Task;

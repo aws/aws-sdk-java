@@ -88,6 +88,9 @@ public class UnmonitorInstancesRequest extends AmazonWebServiceRequest  implemen
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceIds The list of Amazon EC2 instances on which to disable monitoring.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UnmonitorInstancesRequest withInstanceIds(String... instanceIds) {
         if (getInstanceIds() == null) setInstanceIds(new java.util.ArrayList<String>(instanceIds.length));
@@ -103,6 +106,9 @@ public class UnmonitorInstancesRequest extends AmazonWebServiceRequest  implemen
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceIds The list of Amazon EC2 instances on which to disable monitoring.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UnmonitorInstancesRequest withInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {

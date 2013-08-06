@@ -53,6 +53,9 @@ public class GroupIdentifier  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groupName 
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GroupIdentifier withGroupName(String groupName) {
         this.groupName = groupName;
@@ -84,6 +87,9 @@ public class GroupIdentifier  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groupId The new value for the GroupId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GroupIdentifier withGroupId(String groupId) {
         this.groupId = groupId;

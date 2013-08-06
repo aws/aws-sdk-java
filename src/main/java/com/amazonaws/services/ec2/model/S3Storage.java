@@ -93,6 +93,9 @@ public class S3Storage  implements Serializable  {
      *         you already own or a new bucket that Amazon EC2 creates on your
      *         behalf. <p> If you specify a bucket that belongs to someone else,
      *         Amazon EC2 returns an error.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public S3Storage withBucket(String bucket) {
         this.bucket = bucket;
@@ -124,6 +127,9 @@ public class S3Storage  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param prefix The prefix to use when storing the AMI in S3.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public S3Storage withPrefix(String prefix) {
         this.prefix = prefix;
@@ -155,6 +161,9 @@ public class S3Storage  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param aWSAccessKeyId The Access Key ID of the owner of the Amazon S3 bucket.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public S3Storage withAWSAccessKeyId(String aWSAccessKeyId) {
         this.aWSAccessKeyId = aWSAccessKeyId;
@@ -192,6 +201,9 @@ public class S3Storage  implements Serializable  {
      *
      * @param uploadPolicy A Base64-encoded Amazon S3 upload policy that gives Amazon EC2
      *         permission to upload items into Amazon S3 on the user's behalf.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public S3Storage withUploadPolicy(String uploadPolicy) {
         this.uploadPolicy = uploadPolicy;
@@ -223,6 +235,9 @@ public class S3Storage  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param uploadPolicySignature The signature of the Base64 encoded JSON document.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public S3Storage withUploadPolicySignature(String uploadPolicySignature) {
         this.uploadPolicySignature = uploadPolicySignature;

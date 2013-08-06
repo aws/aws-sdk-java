@@ -48,6 +48,9 @@ public class AccountAttribute  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributeName The new value for the AttributeName property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AccountAttribute withAttributeName(String attributeName) {
         this.attributeName = attributeName;
@@ -90,6 +93,9 @@ public class AccountAttribute  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributeValues The new value for the AttributeValues property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AccountAttribute withAttributeValues(AccountAttributeValue... attributeValues) {
         if (getAttributeValues() == null) setAttributeValues(new java.util.ArrayList<AccountAttributeValue>(attributeValues.length));
@@ -105,6 +111,9 @@ public class AccountAttribute  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributeValues The new value for the AttributeValues property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AccountAttribute withAttributeValues(java.util.Collection<AccountAttributeValue> attributeValues) {
         if (attributeValues == null) {

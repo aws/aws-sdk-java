@@ -58,6 +58,9 @@ public class ConfirmProductInstanceResult  implements Serializable  {
      *
      * @param ownerId The instance owner's account ID. Only present if the product code is
      *         attached to the instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ConfirmProductInstanceResult withOwnerId(String ownerId) {
         this.ownerId = ownerId;

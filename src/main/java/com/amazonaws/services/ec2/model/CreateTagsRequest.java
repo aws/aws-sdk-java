@@ -105,6 +105,9 @@ public class CreateTagsRequest extends AmazonWebServiceRequest  implements Seria
      *
      * @param resources One or more IDs of resources to tag. This could be the ID of an AMI,
      *         an instance, an EBS volume, or snapshot, etc.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateTagsRequest withResources(String... resources) {
         if (getResources() == null) setResources(new java.util.ArrayList<String>(resources.length));
@@ -122,6 +125,9 @@ public class CreateTagsRequest extends AmazonWebServiceRequest  implements Seria
      *
      * @param resources One or more IDs of resources to tag. This could be the ID of an AMI,
      *         an instance, an EBS volume, or snapshot, etc.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateTagsRequest withResources(java.util.Collection<String> resources) {
         if (resources == null) {
@@ -176,6 +182,9 @@ public class CreateTagsRequest extends AmazonWebServiceRequest  implements Seria
      *
      * @param tags The tags to add or overwrite for the specified resources. Each tag
      *         item consists of a key-value pair.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateTagsRequest withTags(Tag... tags) {
         if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
@@ -193,6 +202,9 @@ public class CreateTagsRequest extends AmazonWebServiceRequest  implements Seria
      *
      * @param tags The tags to add or overwrite for the specified resources. Each tag
      *         item consists of a key-value pair.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateTagsRequest withTags(java.util.Collection<Tag> tags) {
         if (tags == null) {

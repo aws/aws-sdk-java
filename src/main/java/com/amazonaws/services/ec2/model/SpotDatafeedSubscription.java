@@ -72,6 +72,9 @@ public class SpotDatafeedSubscription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ownerId Specifies the AWS account ID of the account.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SpotDatafeedSubscription withOwnerId(String ownerId) {
         this.ownerId = ownerId;
@@ -109,6 +112,9 @@ public class SpotDatafeedSubscription  implements Serializable  {
      *
      * @param bucket Specifies the Amazon S3 bucket where the Spot Instance data feed is
      *         located.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SpotDatafeedSubscription withBucket(String bucket) {
         this.bucket = bucket;
@@ -140,6 +146,9 @@ public class SpotDatafeedSubscription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param prefix Contains the prefix that is prepended to data feed files.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SpotDatafeedSubscription withPrefix(String prefix) {
         this.prefix = prefix;
@@ -171,6 +180,9 @@ public class SpotDatafeedSubscription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param state Specifies the state of the Spot Instance request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SpotDatafeedSubscription withState(String state) {
         this.state = state;
@@ -202,6 +214,9 @@ public class SpotDatafeedSubscription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param fault Specifies a fault code for the Spot Instance request, if present.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SpotDatafeedSubscription withFault(SpotInstanceStateFault fault) {
         this.fault = fault;

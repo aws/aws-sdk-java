@@ -62,6 +62,9 @@ public class DescribeImagesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param images The list of the described AMIs.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeImagesResult withImages(Image... images) {
         if (getImages() == null) setImages(new java.util.ArrayList<Image>(images.length));
@@ -77,6 +80,9 @@ public class DescribeImagesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param images The list of the described AMIs.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeImagesResult withImages(java.util.Collection<Image> images) {
         if (images == null) {

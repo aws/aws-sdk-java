@@ -68,6 +68,9 @@ public class DescribeLicensesResult  implements Serializable  {
      *
      * @param licenses Specifies active licenses in use and attached to an Amazon EC2
      *         instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeLicensesResult withLicenses(License... licenses) {
         if (getLicenses() == null) setLicenses(new java.util.ArrayList<License>(licenses.length));
@@ -85,6 +88,9 @@ public class DescribeLicensesResult  implements Serializable  {
      *
      * @param licenses Specifies active licenses in use and attached to an Amazon EC2
      *         instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeLicensesResult withLicenses(java.util.Collection<License> licenses) {
         if (licenses == null) {

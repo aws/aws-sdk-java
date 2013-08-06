@@ -51,6 +51,9 @@ public class AttachVolumeResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attachment 
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AttachVolumeResult withAttachment(VolumeAttachment attachment) {
         this.attachment = attachment;

@@ -136,6 +136,9 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param snapshotId The ID of the EBS snapshot whose attributes are being modified.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ModifySnapshotAttributeRequest withSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
@@ -187,6 +190,9 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest  imp
      * @param attribute The name of the attribute being modified. <p> Available attribute
      *         names: <code>createVolumePermission</code>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see SnapshotAttributeName
      */
     public ModifySnapshotAttributeRequest withAttribute(String attribute) {
@@ -222,6 +228,9 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest  imp
      *
      * @param attribute The name of the attribute being modified. <p> Available attribute
      *         names: <code>createVolumePermission</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see SnapshotAttributeName
      */
@@ -260,6 +269,9 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest  imp
      *
      * @param operationType The operation to perform on the attribute. <p> Available operation
      *         names: <code>add</code>, <code>remove</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ModifySnapshotAttributeRequest withOperationType(String operationType) {
         this.operationType = operationType;
@@ -326,6 +338,9 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest  imp
      *         Currently supports "all". <note> Only valid when the
      *         <code>createVolumePermission</code> attribute is being modified.
      *         </note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ModifySnapshotAttributeRequest withUserIds(String... userIds) {
         if (getUserIds() == null) setUserIds(new java.util.ArrayList<String>(userIds.length));
@@ -349,6 +364,9 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest  imp
      *         Currently supports "all". <note> Only valid when the
      *         <code>createVolumePermission</code> attribute is being modified.
      *         </note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ModifySnapshotAttributeRequest withUserIds(java.util.Collection<String> userIds) {
         if (userIds == null) {
@@ -421,6 +439,9 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest  imp
      *         Currently supports "all". <note> Only valid when the
      *         <code>createVolumePermission</code> attribute is being modified.
      *         </note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ModifySnapshotAttributeRequest withGroupNames(String... groupNames) {
         if (getGroupNames() == null) setGroupNames(new java.util.ArrayList<String>(groupNames.length));
@@ -444,6 +465,9 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest  imp
      *         Currently supports "all". <note> Only valid when the
      *         <code>createVolumePermission</code> attribute is being modified.
      *         </note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ModifySnapshotAttributeRequest withGroupNames(java.util.Collection<String> groupNames) {
         if (groupNames == null) {
@@ -482,6 +506,9 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param createVolumePermission The new value for the CreateVolumePermission property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ModifySnapshotAttributeRequest withCreateVolumePermission(CreateVolumePermissionModifications createVolumePermission) {
         this.createVolumePermission = createVolumePermission;

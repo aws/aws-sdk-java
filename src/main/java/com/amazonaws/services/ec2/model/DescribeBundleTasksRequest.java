@@ -76,6 +76,9 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest  impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param bundleIds The list of bundle task IDs to describe.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeBundleTasksRequest withBundleIds(String... bundleIds) {
         if (getBundleIds() == null) setBundleIds(new java.util.ArrayList<String>(bundleIds.length));
@@ -91,6 +94,9 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest  impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param bundleIds The list of bundle task IDs to describe.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeBundleTasksRequest withBundleIds(java.util.Collection<String> bundleIds) {
         if (bundleIds == null) {
@@ -163,6 +169,9 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest  impleme
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeBundleTasksRequest withFilters(Filter... filters) {
         if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
@@ -186,6 +195,9 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest  impleme
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeBundleTasksRequest withFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {

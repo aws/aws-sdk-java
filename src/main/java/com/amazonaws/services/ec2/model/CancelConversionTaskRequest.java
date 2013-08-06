@@ -52,6 +52,9 @@ public class CancelConversionTaskRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param conversionTaskId The new value for the ConversionTaskId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CancelConversionTaskRequest withConversionTaskId(String conversionTaskId) {
         this.conversionTaskId = conversionTaskId;
@@ -83,6 +86,9 @@ public class CancelConversionTaskRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reasonMessage The new value for the ReasonMessage property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CancelConversionTaskRequest withReasonMessage(String reasonMessage) {
         this.reasonMessage = reasonMessage;

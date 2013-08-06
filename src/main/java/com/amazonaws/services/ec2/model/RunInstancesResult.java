@@ -51,6 +51,9 @@ public class RunInstancesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservation The newly created reservation, containing the new instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunInstancesResult withReservation(Reservation reservation) {
         this.reservation = reservation;

@@ -54,6 +54,9 @@ public class VolumeStatusEvent  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eventType The new value for the EventType property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VolumeStatusEvent withEventType(String eventType) {
         this.eventType = eventType;
@@ -85,6 +88,9 @@ public class VolumeStatusEvent  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description The new value for the Description property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VolumeStatusEvent withDescription(String description) {
         this.description = description;
@@ -116,6 +122,9 @@ public class VolumeStatusEvent  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param notBefore The new value for the NotBefore property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VolumeStatusEvent withNotBefore(java.util.Date notBefore) {
         this.notBefore = notBefore;
@@ -147,6 +156,9 @@ public class VolumeStatusEvent  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param notAfter The new value for the NotAfter property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VolumeStatusEvent withNotAfter(java.util.Date notAfter) {
         this.notAfter = notAfter;
@@ -178,6 +190,9 @@ public class VolumeStatusEvent  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eventId The new value for the EventId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VolumeStatusEvent withEventId(String eventId) {
         this.eventId = eventId;

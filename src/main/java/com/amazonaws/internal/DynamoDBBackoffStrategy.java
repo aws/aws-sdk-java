@@ -15,9 +15,22 @@
 package com.amazonaws.internal;
 
 public class DynamoDBBackoffStrategy extends CustomBackoffStrategy {
-    public int getBackoffPeriod(int retries) {
-        return (retries == 0) ? 0 : 50 * (int)Math.pow(2, retries - 1);
-    }
+	public int getBackoffPeriod(int retries) {
+
+		if (retries <= 0) {
+			return 0;
+		} else {
+
+			int delay = 50 * (int) Math.pow(2, retries - 1);
+
+			if (delay < 0) {
+				delay = Integer.MAX_VALUE;
+			}
+
+			return delay;
+		}
+
+	}
 
     public static final CustomBackoffStrategy DEFAULT = new DynamoDBBackoffStrategy();
 }

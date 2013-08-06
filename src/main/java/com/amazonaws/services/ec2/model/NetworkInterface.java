@@ -80,6 +80,9 @@ public class NetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkInterface withNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
@@ -111,6 +114,9 @@ public class NetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnetId The new value for the SubnetId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkInterface withSubnetId(String subnetId) {
         this.subnetId = subnetId;
@@ -142,6 +148,9 @@ public class NetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcId The new value for the VpcId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkInterface withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -173,6 +182,9 @@ public class NetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZone The new value for the AvailabilityZone property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkInterface withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -204,6 +216,9 @@ public class NetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description The new value for the Description property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkInterface withDescription(String description) {
         this.description = description;
@@ -235,6 +250,9 @@ public class NetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ownerId The new value for the OwnerId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkInterface withOwnerId(String ownerId) {
         this.ownerId = ownerId;
@@ -266,6 +284,9 @@ public class NetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param requesterId The new value for the RequesterId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkInterface withRequesterId(String requesterId) {
         this.requesterId = requesterId;
@@ -297,6 +318,9 @@ public class NetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param requesterManaged The new value for the RequesterManaged property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkInterface withRequesterManaged(Boolean requesterManaged) {
         this.requesterManaged = requesterManaged;
@@ -337,6 +361,9 @@ public class NetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param status The new value for the Status property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkInterface withStatus(String status) {
         this.status = status;
@@ -368,6 +395,9 @@ public class NetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param macAddress The new value for the MacAddress property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkInterface withMacAddress(String macAddress) {
         this.macAddress = macAddress;
@@ -399,6 +429,9 @@ public class NetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateIpAddress The new value for the PrivateIpAddress property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkInterface withPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
@@ -430,6 +463,9 @@ public class NetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateDnsName The new value for the PrivateDnsName property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkInterface withPrivateDnsName(String privateDnsName) {
         this.privateDnsName = privateDnsName;
@@ -461,6 +497,9 @@ public class NetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceDestCheck The new value for the SourceDestCheck property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkInterface withSourceDestCheck(Boolean sourceDestCheck) {
         this.sourceDestCheck = sourceDestCheck;
@@ -512,6 +551,9 @@ public class NetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groups The new value for the Groups property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkInterface withGroups(GroupIdentifier... groups) {
         if (getGroups() == null) setGroups(new java.util.ArrayList<GroupIdentifier>(groups.length));
@@ -527,6 +569,9 @@ public class NetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groups The new value for the Groups property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkInterface withGroups(java.util.Collection<GroupIdentifier> groups) {
         if (groups == null) {
@@ -564,6 +609,9 @@ public class NetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attachment The new value for the Attachment property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkInterface withAttachment(NetworkInterfaceAttachment attachment) {
         this.attachment = attachment;
@@ -595,6 +643,9 @@ public class NetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param association The new value for the Association property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkInterface withAssociation(NetworkInterfaceAssociation association) {
         this.association = association;
@@ -637,6 +688,9 @@ public class NetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tagSet The new value for the TagSet property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkInterface withTagSet(Tag... tagSet) {
         if (getTagSet() == null) setTagSet(new java.util.ArrayList<Tag>(tagSet.length));
@@ -652,6 +706,9 @@ public class NetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tagSet The new value for the TagSet property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkInterface withTagSet(java.util.Collection<Tag> tagSet) {
         if (tagSet == null) {
@@ -700,6 +757,9 @@ public class NetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateIpAddresses The new value for the PrivateIpAddresses property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkInterface withPrivateIpAddresses(NetworkInterfacePrivateIpAddress... privateIpAddresses) {
         if (getPrivateIpAddresses() == null) setPrivateIpAddresses(new java.util.ArrayList<NetworkInterfacePrivateIpAddress>(privateIpAddresses.length));
@@ -715,6 +775,9 @@ public class NetworkInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateIpAddresses The new value for the PrivateIpAddresses property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkInterface withPrivateIpAddresses(java.util.Collection<NetworkInterfacePrivateIpAddress> privateIpAddresses) {
         if (privateIpAddresses == null) {

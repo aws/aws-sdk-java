@@ -101,6 +101,9 @@ public class Filter  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name Specifies the name of the filter.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Filter withName(String name) {
         this.name = name;
@@ -143,6 +146,9 @@ public class Filter  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param values Contains one or more values for the filter.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Filter withValues(String... values) {
         if (getValues() == null) setValues(new java.util.ArrayList<String>(values.length));
@@ -158,6 +164,9 @@ public class Filter  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param values Contains one or more values for the filter.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Filter withValues(java.util.Collection<String> values) {
         if (values == null) {

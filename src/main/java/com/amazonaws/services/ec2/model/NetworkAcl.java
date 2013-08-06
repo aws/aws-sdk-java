@@ -56,6 +56,9 @@ public class NetworkAcl  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkAclId The new value for the NetworkAclId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkAcl withNetworkAclId(String networkAclId) {
         this.networkAclId = networkAclId;
@@ -87,6 +90,9 @@ public class NetworkAcl  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcId The new value for the VpcId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkAcl withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -118,6 +124,9 @@ public class NetworkAcl  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param isDefault The new value for the IsDefault property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkAcl withIsDefault(Boolean isDefault) {
         this.isDefault = isDefault;
@@ -169,6 +178,9 @@ public class NetworkAcl  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param entries The new value for the Entries property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkAcl withEntries(NetworkAclEntry... entries) {
         if (getEntries() == null) setEntries(new java.util.ArrayList<NetworkAclEntry>(entries.length));
@@ -184,6 +196,9 @@ public class NetworkAcl  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param entries The new value for the Entries property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkAcl withEntries(java.util.Collection<NetworkAclEntry> entries) {
         if (entries == null) {
@@ -232,6 +247,9 @@ public class NetworkAcl  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param associations The new value for the Associations property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkAcl withAssociations(NetworkAclAssociation... associations) {
         if (getAssociations() == null) setAssociations(new java.util.ArrayList<NetworkAclAssociation>(associations.length));
@@ -247,6 +265,9 @@ public class NetworkAcl  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param associations The new value for the Associations property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkAcl withAssociations(java.util.Collection<NetworkAclAssociation> associations) {
         if (associations == null) {
@@ -295,6 +316,9 @@ public class NetworkAcl  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags The new value for the Tags property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkAcl withTags(Tag... tags) {
         if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
@@ -310,6 +334,9 @@ public class NetworkAcl  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags The new value for the Tags property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkAcl withTags(java.util.Collection<Tag> tags) {
         if (tags == null) {

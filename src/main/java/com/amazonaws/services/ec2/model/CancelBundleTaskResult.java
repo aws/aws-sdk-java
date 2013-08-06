@@ -51,6 +51,9 @@ public class CancelBundleTaskResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param bundleTask The canceled bundle task.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CancelBundleTaskResult withBundleTask(BundleTask bundleTask) {
         this.bundleTask = bundleTask;

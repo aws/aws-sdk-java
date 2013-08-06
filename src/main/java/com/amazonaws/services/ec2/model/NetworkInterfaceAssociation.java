@@ -52,6 +52,9 @@ public class NetworkInterfaceAssociation  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param publicIp The new value for the PublicIp property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkInterfaceAssociation withPublicIp(String publicIp) {
         this.publicIp = publicIp;
@@ -83,6 +86,9 @@ public class NetworkInterfaceAssociation  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ipOwnerId The new value for the IpOwnerId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkInterfaceAssociation withIpOwnerId(String ipOwnerId) {
         this.ipOwnerId = ipOwnerId;
@@ -114,6 +120,9 @@ public class NetworkInterfaceAssociation  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param allocationId The new value for the AllocationId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkInterfaceAssociation withAllocationId(String allocationId) {
         this.allocationId = allocationId;
@@ -145,6 +154,9 @@ public class NetworkInterfaceAssociation  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param associationId The new value for the AssociationId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NetworkInterfaceAssociation withAssociationId(String associationId) {
         this.associationId = associationId;

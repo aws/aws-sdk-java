@@ -88,6 +88,9 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param internetGatewayIds One or more Internet gateway IDs.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeInternetGatewaysRequest withInternetGatewayIds(String... internetGatewayIds) {
         if (getInternetGatewayIds() == null) setInternetGatewayIds(new java.util.ArrayList<String>(internetGatewayIds.length));
@@ -103,6 +106,9 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param internetGatewayIds One or more Internet gateway IDs.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeInternetGatewaysRequest withInternetGatewayIds(java.util.Collection<String> internetGatewayIds) {
         if (internetGatewayIds == null) {
@@ -175,6 +181,9 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest  im
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeInternetGatewaysRequest withFilters(Filter... filters) {
         if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
@@ -198,6 +207,9 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest  im
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeInternetGatewaysRequest withFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {

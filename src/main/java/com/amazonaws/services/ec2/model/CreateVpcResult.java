@@ -51,6 +51,9 @@ public class CreateVpcResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpc Information about the VPC.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateVpcResult withVpc(Vpc vpc) {
         this.vpc = vpc;

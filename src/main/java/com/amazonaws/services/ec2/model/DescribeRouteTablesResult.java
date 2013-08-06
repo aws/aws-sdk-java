@@ -57,6 +57,9 @@ public class DescribeRouteTablesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param routeTables The new value for the RouteTables property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeRouteTablesResult withRouteTables(RouteTable... routeTables) {
         if (getRouteTables() == null) setRouteTables(new java.util.ArrayList<RouteTable>(routeTables.length));
@@ -72,6 +75,9 @@ public class DescribeRouteTablesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param routeTables The new value for the RouteTables property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeRouteTablesResult withRouteTables(java.util.Collection<RouteTable> routeTables) {
         if (routeTables == null) {

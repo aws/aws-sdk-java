@@ -79,6 +79,9 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest  implements 
      * @param domain Set to <code>vpc</code> to allocate the address to your VPC. By
      *         default, will allocate to EC2.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see DomainType
      */
     public AllocateAddressRequest withDomain(String domain) {
@@ -114,6 +117,9 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest  implements 
      *
      * @param domain Set to <code>vpc</code> to allocate the address to your VPC. By
      *         default, will allocate to EC2.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see DomainType
      */

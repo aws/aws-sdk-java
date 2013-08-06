@@ -46,6 +46,9 @@ public class AttachNetworkInterfaceResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attachmentId The new value for the AttachmentId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AttachNetworkInterfaceResult withAttachmentId(String attachmentId) {
         this.attachmentId = attachmentId;

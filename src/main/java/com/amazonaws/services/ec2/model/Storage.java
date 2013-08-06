@@ -51,6 +51,9 @@ public class Storage  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param s3 The details of S3 storage for bundling a Windows instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Storage withS3(S3Storage s3) {
         this.s3 = s3;

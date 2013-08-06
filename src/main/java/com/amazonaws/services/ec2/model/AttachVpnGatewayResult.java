@@ -51,6 +51,9 @@ public class AttachVpnGatewayResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcAttachement 
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AttachVpnGatewayResult withVpcAttachement(VpcAttachment vpcAttachement) {
         this.vpcAttachement = vpcAttachement;

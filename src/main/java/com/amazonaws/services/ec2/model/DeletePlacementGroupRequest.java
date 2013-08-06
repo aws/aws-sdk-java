@@ -77,6 +77,9 @@ public class DeletePlacementGroupRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groupName The name of the <code>PlacementGroup</code> to delete.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeletePlacementGroupRequest withGroupName(String groupName) {
         this.groupName = groupName;

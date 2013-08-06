@@ -70,6 +70,9 @@ public class MonitorInstancesResult  implements Serializable  {
      *
      * @param instanceMonitorings A list of updated monitoring information for the instances specified
      *         in the request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public MonitorInstancesResult withInstanceMonitorings(InstanceMonitoring... instanceMonitorings) {
         if (getInstanceMonitorings() == null) setInstanceMonitorings(new java.util.ArrayList<InstanceMonitoring>(instanceMonitorings.length));
@@ -87,6 +90,9 @@ public class MonitorInstancesResult  implements Serializable  {
      *
      * @param instanceMonitorings A list of updated monitoring information for the instances specified
      *         in the request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public MonitorInstancesResult withInstanceMonitorings(java.util.Collection<InstanceMonitoring> instanceMonitorings) {
         if (instanceMonitorings == null) {

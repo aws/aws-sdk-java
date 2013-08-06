@@ -105,6 +105,9 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest  imple
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param type The type of VPN connection this customer gateway supports.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateCustomerGatewayRequest withType(String type) {
         this.type = type;
@@ -142,6 +145,9 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest  imple
      *
      * @param publicIp The Internet-routable IP address for the customer gateway's outside
      *         interface. The address must be static
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateCustomerGatewayRequest withPublicIp(String publicIp) {
         this.publicIp = publicIp;
@@ -179,6 +185,9 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest  imple
      *
      * @param bgpAsn The customer gateway's Border Gateway Protocol (BGP) Autonomous System
      *         Number (ASN).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateCustomerGatewayRequest withBgpAsn(Integer bgpAsn) {
         this.bgpAsn = bgpAsn;

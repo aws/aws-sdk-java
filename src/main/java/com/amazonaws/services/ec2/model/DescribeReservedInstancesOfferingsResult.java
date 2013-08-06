@@ -64,6 +64,9 @@ public class DescribeReservedInstancesOfferingsResult  implements Serializable  
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedInstancesOfferings The list of described Reserved Instance offerings.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedInstancesOfferingsResult withReservedInstancesOfferings(ReservedInstancesOffering... reservedInstancesOfferings) {
         if (getReservedInstancesOfferings() == null) setReservedInstancesOfferings(new java.util.ArrayList<ReservedInstancesOffering>(reservedInstancesOfferings.length));
@@ -79,6 +82,9 @@ public class DescribeReservedInstancesOfferingsResult  implements Serializable  
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedInstancesOfferings The list of described Reserved Instance offerings.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedInstancesOfferingsResult withReservedInstancesOfferings(java.util.Collection<ReservedInstancesOffering> reservedInstancesOfferings) {
         if (reservedInstancesOfferings == null) {
@@ -116,6 +122,9 @@ public class DescribeReservedInstancesOfferingsResult  implements Serializable  
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nextToken The new value for the NextToken property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedInstancesOfferingsResult withNextToken(String nextToken) {
         this.nextToken = nextToken;

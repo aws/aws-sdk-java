@@ -59,6 +59,9 @@ public class CreateVolumePermissionModifications  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param add The new value for the Add property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateVolumePermissionModifications withAdd(CreateVolumePermission... add) {
         if (getAdd() == null) setAdd(new java.util.ArrayList<CreateVolumePermission>(add.length));
@@ -74,6 +77,9 @@ public class CreateVolumePermissionModifications  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param add The new value for the Add property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateVolumePermissionModifications withAdd(java.util.Collection<CreateVolumePermission> add) {
         if (add == null) {
@@ -122,6 +128,9 @@ public class CreateVolumePermissionModifications  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param remove The new value for the Remove property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateVolumePermissionModifications withRemove(CreateVolumePermission... remove) {
         if (getRemove() == null) setRemove(new java.util.ArrayList<CreateVolumePermission>(remove.length));
@@ -137,6 +146,9 @@ public class CreateVolumePermissionModifications  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param remove The new value for the Remove property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateVolumePermissionModifications withRemove(java.util.Collection<CreateVolumePermission> remove) {
         if (remove == null) {

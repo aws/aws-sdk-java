@@ -54,6 +54,9 @@ public class AttachNetworkInterfaceRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AttachNetworkInterfaceRequest withNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
@@ -85,6 +88,9 @@ public class AttachNetworkInterfaceRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId The new value for the InstanceId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AttachNetworkInterfaceRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -116,6 +122,9 @@ public class AttachNetworkInterfaceRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param deviceIndex The new value for the DeviceIndex property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AttachNetworkInterfaceRequest withDeviceIndex(Integer deviceIndex) {
         this.deviceIndex = deviceIndex;

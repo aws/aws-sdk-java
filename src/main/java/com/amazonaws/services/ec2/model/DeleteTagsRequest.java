@@ -102,6 +102,9 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest  implements Seria
      *
      * @param resources A list of one or more resource IDs. This could be the ID of an AMI, an
      *         instance, an EBS volume, or snapshot, etc.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteTagsRequest withResources(String... resources) {
         if (getResources() == null) setResources(new java.util.ArrayList<String>(resources.length));
@@ -119,6 +122,9 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest  implements Seria
      *
      * @param resources A list of one or more resource IDs. This could be the ID of an AMI, an
      *         instance, an EBS volume, or snapshot, etc.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteTagsRequest withResources(java.util.Collection<String> resources) {
         if (resources == null) {
@@ -179,6 +185,9 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest  implements Seria
      * @param tags The tags to delete from the specified resources. Each tag item
      *         consists of a key-value pair. <p> If a tag is specified without a
      *         value, the tag and all of its values are deleted.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteTagsRequest withTags(Tag... tags) {
         if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
@@ -198,6 +207,9 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest  implements Seria
      * @param tags The tags to delete from the specified resources. Each tag item
      *         consists of a key-value pair. <p> If a tag is specified without a
      *         value, the tag and all of its values are deleted.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteTagsRequest withTags(java.util.Collection<Tag> tags) {
         if (tags == null) {

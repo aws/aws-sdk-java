@@ -138,6 +138,9 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *
      * @param reservedInstancesOfferingIds An optional list of the unique IDs of the Reserved Instance offerings
      *         to describe.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedInstancesOfferingsRequest withReservedInstancesOfferingIds(String... reservedInstancesOfferingIds) {
         if (getReservedInstancesOfferingIds() == null) setReservedInstancesOfferingIds(new java.util.ArrayList<String>(reservedInstancesOfferingIds.length));
@@ -155,6 +158,9 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *
      * @param reservedInstancesOfferingIds An optional list of the unique IDs of the Reserved Instance offerings
      *         to describe.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedInstancesOfferingsRequest withReservedInstancesOfferingIds(java.util.Collection<String> reservedInstancesOfferingIds) {
         if (reservedInstancesOfferingIds == null) {
@@ -206,6 +212,9 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *
      * @param instanceType The instance type on which the Reserved Instance can be used.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see InstanceType
      */
     public DescribeReservedInstancesOfferingsRequest withInstanceType(String instanceType) {
@@ -238,6 +247,9 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *
      * @param instanceType The instance type on which the Reserved Instance can be used.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see InstanceType
      */
     public DescribeReservedInstancesOfferingsRequest withInstanceType(InstanceType instanceType) {
@@ -269,6 +281,9 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZone The Availability Zone in which the Reserved Instance can be used.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedInstancesOfferingsRequest withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -300,6 +315,9 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param productDescription The Reserved Instance product description.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedInstancesOfferingsRequest withProductDescription(String productDescription) {
         this.productDescription = productDescription;
@@ -366,6 +384,9 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *         filter keys for this operation, see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedInstancesOfferingsRequest withFilters(Filter... filters) {
         if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
@@ -389,6 +410,9 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *         filter keys for this operation, see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedInstancesOfferingsRequest withFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
@@ -438,6 +462,9 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * @param instanceTenancy The tenancy of the Reserved Instance offering. A Reserved Instance
      *         with tenancy of dedicated will run on single-tenant hardware and can
      *         only be launched within a VPC.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedInstancesOfferingsRequest withInstanceTenancy(String instanceTenancy) {
         this.instanceTenancy = instanceTenancy;
@@ -469,6 +496,9 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param offeringType The Reserved Instance offering type.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedInstancesOfferingsRequest withOfferingType(String offeringType) {
         this.offeringType = offeringType;
@@ -500,6 +530,9 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nextToken The new value for the NextToken property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedInstancesOfferingsRequest withNextToken(String nextToken) {
         this.nextToken = nextToken;
@@ -531,6 +564,9 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxResults The new value for the MaxResults property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedInstancesOfferingsRequest withMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
@@ -562,6 +598,9 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param includeMarketplace Include Marketplace offerings in the response.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedInstancesOfferingsRequest withIncludeMarketplace(Boolean includeMarketplace) {
         this.includeMarketplace = includeMarketplace;
@@ -602,6 +641,9 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param minDuration Minimum duration (in seconds) to filter when searching for offerings.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedInstancesOfferingsRequest withMinDuration(Long minDuration) {
         this.minDuration = minDuration;
@@ -633,6 +675,9 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxDuration Maximum duration (in seconds) to filter when searching for offerings.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedInstancesOfferingsRequest withMaxDuration(Long maxDuration) {
         this.maxDuration = maxDuration;
@@ -664,6 +709,9 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxInstanceCount Maximum number of instances to filter when searching for offerings.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedInstancesOfferingsRequest withMaxInstanceCount(Integer maxInstanceCount) {
         this.maxInstanceCount = maxInstanceCount;

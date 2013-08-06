@@ -76,6 +76,9 @@ public class DeleteKeyPairRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param keyName The name of the Amazon EC2 key pair to delete.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteKeyPairRequest withKeyName(String keyName) {
         this.keyName = keyName;

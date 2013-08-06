@@ -76,6 +76,9 @@ public class DeleteVolumeRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeId The ID of the EBS volume to delete.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteVolumeRequest withVolumeId(String volumeId) {
         this.volumeId = volumeId;

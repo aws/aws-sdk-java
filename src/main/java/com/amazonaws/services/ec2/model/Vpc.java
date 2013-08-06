@@ -84,6 +84,9 @@ public class Vpc  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcId Specifies the ID of the VPC.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Vpc withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -121,6 +124,9 @@ public class Vpc  implements Serializable  {
      *
      * @param state Describes the current state of the VPC. The state of the subnet may be
      *         either <code>pending</code> or <code>available</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Vpc withState(String state) {
         this.state = state;
@@ -152,6 +158,9 @@ public class Vpc  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cidrBlock Specifies the CIDR block the VPC covers.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Vpc withCidrBlock(String cidrBlock) {
         this.cidrBlock = cidrBlock;
@@ -195,6 +204,9 @@ public class Vpc  implements Serializable  {
      * @param dhcpOptionsId Specifies the ID of the set of DHCP options associated with the VPC.
      *         Contains a value of <code>default</code> if the default options are
      *         associated with the VPC.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Vpc withDhcpOptionsId(String dhcpOptionsId) {
         this.dhcpOptionsId = dhcpOptionsId;
@@ -237,6 +249,9 @@ public class Vpc  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags A list of tags for the VPC.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Vpc withTags(Tag... tags) {
         if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
@@ -252,6 +267,9 @@ public class Vpc  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags A list of tags for the VPC.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Vpc withTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
@@ -289,6 +307,9 @@ public class Vpc  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceTenancy The allowed tenancy of instances launched into the VPC.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Vpc withInstanceTenancy(String instanceTenancy) {
         this.instanceTenancy = instanceTenancy;
@@ -320,6 +341,9 @@ public class Vpc  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param isDefault 
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Vpc withIsDefault(Boolean isDefault) {
         this.isDefault = isDefault;

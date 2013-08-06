@@ -103,6 +103,9 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param startTime The start date and time of the Spot Instance price history data.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeSpotPriceHistoryRequest withStartTime(java.util.Date startTime) {
         this.startTime = startTime;
@@ -134,6 +137,9 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param endTime The end date and time of the Spot Instance price history data.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeSpotPriceHistoryRequest withEndTime(java.util.Date endTime) {
         this.endTime = endTime;
@@ -176,6 +182,9 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceTypes Specifies the instance type to return.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeSpotPriceHistoryRequest withInstanceTypes(String... instanceTypes) {
         if (getInstanceTypes() == null) setInstanceTypes(new java.util.ArrayList<String>(instanceTypes.length));
@@ -191,6 +200,9 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceTypes Specifies the instance type to return.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeSpotPriceHistoryRequest withInstanceTypes(java.util.Collection<String> instanceTypes) {
         if (instanceTypes == null) {
@@ -239,6 +251,9 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param productDescriptions The description of the AMI.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeSpotPriceHistoryRequest withProductDescriptions(String... productDescriptions) {
         if (getProductDescriptions() == null) setProductDescriptions(new java.util.ArrayList<String>(productDescriptions.length));
@@ -254,6 +269,9 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param productDescriptions The description of the AMI.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeSpotPriceHistoryRequest withProductDescriptions(java.util.Collection<String> productDescriptions) {
         if (productDescriptions == null) {
@@ -326,6 +344,9 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeSpotPriceHistoryRequest withFilters(Filter... filters) {
         if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
@@ -349,6 +370,9 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeSpotPriceHistoryRequest withFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
@@ -386,6 +410,9 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZone Filters the results by availability zone (ex: 'us-east-1a').
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeSpotPriceHistoryRequest withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -417,6 +444,9 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxResults Specifies the number of rows to return.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeSpotPriceHistoryRequest withMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
@@ -448,6 +478,9 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nextToken Specifies the next set of rows to return.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeSpotPriceHistoryRequest withNextToken(String nextToken) {
         this.nextToken = nextToken;

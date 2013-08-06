@@ -90,6 +90,9 @@ public class PlacementGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groupName The name of this <code>PlacementGroup</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PlacementGroup withGroupName(String groupName) {
         this.groupName = groupName;
@@ -141,6 +144,9 @@ public class PlacementGroup  implements Serializable  {
      * @param strategy The strategy to use when allocating Amazon EC2 instances for the
      *         <code>PlacementGroup</code>.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see PlacementStrategy
      */
     public PlacementGroup withStrategy(String strategy) {
@@ -176,6 +182,9 @@ public class PlacementGroup  implements Serializable  {
      *
      * @param strategy The strategy to use when allocating Amazon EC2 instances for the
      *         <code>PlacementGroup</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see PlacementStrategy
      */
@@ -222,6 +231,9 @@ public class PlacementGroup  implements Serializable  {
      *
      * @param state The state of this <code>PlacementGroup</code>.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see PlacementGroupState
      */
     public PlacementGroup withState(String state) {
@@ -253,6 +265,9 @@ public class PlacementGroup  implements Serializable  {
      * <b>Allowed Values: </b>pending, available, deleting, deleted
      *
      * @param state The state of this <code>PlacementGroup</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see PlacementGroupState
      */

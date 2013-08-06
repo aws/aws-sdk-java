@@ -57,6 +57,9 @@ public class CreateVolumePermission  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param userId The user ID of the user that can create volumes from the snapshot.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateVolumePermission withUserId(String userId) {
         this.userId = userId;
@@ -94,6 +97,9 @@ public class CreateVolumePermission  implements Serializable  {
      *
      * @param group The group that is allowed to create volumes from the snapshot
      *         (currently supports "all").
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateVolumePermission withGroup(String group) {
         this.group = group;

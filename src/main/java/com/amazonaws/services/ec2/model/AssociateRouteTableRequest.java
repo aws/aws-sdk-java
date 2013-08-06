@@ -66,6 +66,9 @@ public class AssociateRouteTableRequest extends AmazonWebServiceRequest  impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnetId The ID of the subnet.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AssociateRouteTableRequest withSubnetId(String subnetId) {
         this.subnetId = subnetId;
@@ -97,6 +100,9 @@ public class AssociateRouteTableRequest extends AmazonWebServiceRequest  impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param routeTableId The ID of the route table.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AssociateRouteTableRequest withRouteTableId(String routeTableId) {
         this.routeTableId = routeTableId;

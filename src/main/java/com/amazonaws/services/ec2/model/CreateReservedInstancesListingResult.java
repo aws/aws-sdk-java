@@ -62,6 +62,9 @@ public class CreateReservedInstancesListingResult  implements Serializable  {
      *
      * @param reservedInstancesListings The new value for the ReservedInstancesListings property for this
      *         object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateReservedInstancesListingResult withReservedInstancesListings(ReservedInstancesListing... reservedInstancesListings) {
         if (getReservedInstancesListings() == null) setReservedInstancesListings(new java.util.ArrayList<ReservedInstancesListing>(reservedInstancesListings.length));
@@ -79,6 +82,9 @@ public class CreateReservedInstancesListingResult  implements Serializable  {
      *
      * @param reservedInstancesListings The new value for the ReservedInstancesListings property for this
      *         object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateReservedInstancesListingResult withReservedInstancesListings(java.util.Collection<ReservedInstancesListing> reservedInstancesListings) {
         if (reservedInstancesListings == null) {

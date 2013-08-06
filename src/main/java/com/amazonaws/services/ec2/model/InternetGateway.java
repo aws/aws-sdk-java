@@ -50,6 +50,9 @@ public class InternetGateway  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param internetGatewayId The new value for the InternetGatewayId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InternetGateway withInternetGatewayId(String internetGatewayId) {
         this.internetGatewayId = internetGatewayId;
@@ -92,6 +95,9 @@ public class InternetGateway  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attachments The new value for the Attachments property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InternetGateway withAttachments(InternetGatewayAttachment... attachments) {
         if (getAttachments() == null) setAttachments(new java.util.ArrayList<InternetGatewayAttachment>(attachments.length));
@@ -107,6 +113,9 @@ public class InternetGateway  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attachments The new value for the Attachments property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InternetGateway withAttachments(java.util.Collection<InternetGatewayAttachment> attachments) {
         if (attachments == null) {
@@ -155,6 +164,9 @@ public class InternetGateway  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags The new value for the Tags property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InternetGateway withTags(Tag... tags) {
         if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
@@ -170,6 +182,9 @@ public class InternetGateway  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags The new value for the Tags property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InternetGateway withTags(java.util.Collection<Tag> tags) {
         if (tags == null) {

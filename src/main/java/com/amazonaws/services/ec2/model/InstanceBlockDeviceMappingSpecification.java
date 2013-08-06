@@ -75,6 +75,9 @@ public class InstanceBlockDeviceMappingSpecification  implements Serializable  {
      *
      * @param deviceName The device name (e.g., <code>/dev/sdh</code>) at which the block
      *         device is exposed on the instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceBlockDeviceMappingSpecification withDeviceName(String deviceName) {
         this.deviceName = deviceName;
@@ -112,6 +115,9 @@ public class InstanceBlockDeviceMappingSpecification  implements Serializable  {
      *
      * @param ebs The EBS instance block device specification describing the EBS block
      *         device to map to the specified device name on a running instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceBlockDeviceMappingSpecification withEbs(EbsInstanceBlockDeviceSpecification ebs) {
         this.ebs = ebs;
@@ -143,6 +149,9 @@ public class InstanceBlockDeviceMappingSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param virtualName The virtual device name.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceBlockDeviceMappingSpecification withVirtualName(String virtualName) {
         this.virtualName = virtualName;
@@ -180,6 +189,9 @@ public class InstanceBlockDeviceMappingSpecification  implements Serializable  {
      *
      * @param noDevice When set to the empty string, specifies that the device name in this
      *         object should not be mapped to any real device.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceBlockDeviceMappingSpecification withNoDevice(String noDevice) {
         this.noDevice = noDevice;

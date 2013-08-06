@@ -58,6 +58,9 @@ public class DetachVolumeResult  implements Serializable  {
      *
      * @param attachment The updated EBS volume attachment information after trying to detach
      *         the volume from the specified instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DetachVolumeResult withAttachment(VolumeAttachment attachment) {
         this.attachment = attachment;

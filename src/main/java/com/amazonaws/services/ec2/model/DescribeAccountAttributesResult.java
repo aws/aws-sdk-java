@@ -57,6 +57,9 @@ public class DescribeAccountAttributesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param accountAttributes The new value for the AccountAttributes property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeAccountAttributesResult withAccountAttributes(AccountAttribute... accountAttributes) {
         if (getAccountAttributes() == null) setAccountAttributes(new java.util.ArrayList<AccountAttribute>(accountAttributes.length));
@@ -72,6 +75,9 @@ public class DescribeAccountAttributesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param accountAttributes The new value for the AccountAttributes property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeAccountAttributesResult withAccountAttributes(java.util.Collection<AccountAttribute> accountAttributes) {
         if (accountAttributes == null) {

@@ -99,6 +99,9 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId The instance to associate with the IP address.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AssociateAddressRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -130,6 +133,9 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param publicIp IP address that you are assigning to the instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AssociateAddressRequest withPublicIp(String publicIp) {
         this.publicIp = publicIp;
@@ -167,6 +173,9 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest  implements
      *
      * @param allocationId The allocation ID that AWS returned when you allocated the elastic IP
      *         address for use with Amazon VPC.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AssociateAddressRequest withAllocationId(String allocationId) {
         this.allocationId = allocationId;
@@ -198,6 +207,9 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AssociateAddressRequest withNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
@@ -229,6 +241,9 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateIpAddress The new value for the PrivateIpAddress property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AssociateAddressRequest withPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
@@ -260,6 +275,9 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param allowReassociation The new value for the AllowReassociation property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AssociateAddressRequest withAllowReassociation(Boolean allowReassociation) {
         this.allowReassociation = allowReassociation;

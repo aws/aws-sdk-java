@@ -79,6 +79,9 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param customerGatewayIds A set of one or more customer gateway IDs.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCustomerGatewaysRequest withCustomerGatewayIds(String... customerGatewayIds) {
         if (getCustomerGatewayIds() == null) setCustomerGatewayIds(new java.util.ArrayList<String>(customerGatewayIds.length));
@@ -94,6 +97,9 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param customerGatewayIds A set of one or more customer gateway IDs.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCustomerGatewaysRequest withCustomerGatewayIds(java.util.Collection<String> customerGatewayIds) {
         if (customerGatewayIds == null) {
@@ -166,6 +172,9 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest  im
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCustomerGatewaysRequest withFilters(Filter... filters) {
         if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
@@ -189,6 +198,9 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest  im
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCustomerGatewaysRequest withFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {

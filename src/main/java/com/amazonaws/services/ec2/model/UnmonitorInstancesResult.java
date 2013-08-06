@@ -69,6 +69,9 @@ public class UnmonitorInstancesResult  implements Serializable  {
      *
      * @param instanceMonitorings A list of updated monitoring information for the instances specified
      *         in the request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UnmonitorInstancesResult withInstanceMonitorings(InstanceMonitoring... instanceMonitorings) {
         if (getInstanceMonitorings() == null) setInstanceMonitorings(new java.util.ArrayList<InstanceMonitoring>(instanceMonitorings.length));
@@ -86,6 +89,9 @@ public class UnmonitorInstancesResult  implements Serializable  {
      *
      * @param instanceMonitorings A list of updated monitoring information for the instances specified
      *         in the request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UnmonitorInstancesResult withInstanceMonitorings(java.util.Collection<InstanceMonitoring> instanceMonitorings) {
         if (instanceMonitorings == null) {

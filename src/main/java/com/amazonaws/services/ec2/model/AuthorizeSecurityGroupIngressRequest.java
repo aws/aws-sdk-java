@@ -150,6 +150,9 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
      * @param groupName Name of the standard (EC2) security group to modify. The group must
      *         belong to your account. Can be used instead of GroupID for standard
      *         (EC2) security groups.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AuthorizeSecurityGroupIngressRequest withGroupName(String groupName) {
         this.groupName = groupName;
@@ -193,6 +196,9 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
      * @param groupId ID of the standard (EC2) or VPC security group to modify. The group
      *         must belong to your account. Required for VPC security groups; can be
      *         used instead of GroupName for standard (EC2) security groups.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AuthorizeSecurityGroupIngressRequest withGroupId(String groupId) {
         this.groupId = groupId;
@@ -224,6 +230,9 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceSecurityGroupName Deprecated
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AuthorizeSecurityGroupIngressRequest withSourceSecurityGroupName(String sourceSecurityGroupName) {
         this.sourceSecurityGroupName = sourceSecurityGroupName;
@@ -255,6 +264,9 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceSecurityGroupOwnerId Deprecated
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AuthorizeSecurityGroupIngressRequest withSourceSecurityGroupOwnerId(String sourceSecurityGroupOwnerId) {
         this.sourceSecurityGroupOwnerId = sourceSecurityGroupOwnerId;
@@ -286,6 +298,9 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ipProtocol Deprecated
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AuthorizeSecurityGroupIngressRequest withIpProtocol(String ipProtocol) {
         this.ipProtocol = ipProtocol;
@@ -317,6 +332,9 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param fromPort Deprecated
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AuthorizeSecurityGroupIngressRequest withFromPort(Integer fromPort) {
         this.fromPort = fromPort;
@@ -348,6 +366,9 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param toPort Deprecated
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AuthorizeSecurityGroupIngressRequest withToPort(Integer toPort) {
         this.toPort = toPort;
@@ -379,6 +400,9 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cidrIp Deprecated
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AuthorizeSecurityGroupIngressRequest withCidrIp(String cidrIp) {
         this.cidrIp = cidrIp;
@@ -433,6 +457,9 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
      * @param ipPermissions List of IP permissions to authorize on the specified security group.
      *         Specifying permissions through IP permissions is the preferred way of
      *         authorizing permissions since it offers more flexibility and control.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AuthorizeSecurityGroupIngressRequest withIpPermissions(IpPermission... ipPermissions) {
         if (getIpPermissions() == null) setIpPermissions(new java.util.ArrayList<IpPermission>(ipPermissions.length));
@@ -452,6 +479,9 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
      * @param ipPermissions List of IP permissions to authorize on the specified security group.
      *         Specifying permissions through IP permissions is the preferred way of
      *         authorizing permissions since it offers more flexibility and control.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AuthorizeSecurityGroupIngressRequest withIpPermissions(java.util.Collection<IpPermission> ipPermissions) {
         if (ipPermissions == null) {

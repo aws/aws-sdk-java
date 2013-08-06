@@ -83,6 +83,9 @@ public class DescribeLicensesRequest extends AmazonWebServiceRequest  implements
      *
      * @param licenseIds Specifies the license registration for which details are to be
      *         returned.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeLicensesRequest withLicenseIds(String... licenseIds) {
         if (getLicenseIds() == null) setLicenseIds(new java.util.ArrayList<String>(licenseIds.length));
@@ -100,6 +103,9 @@ public class DescribeLicensesRequest extends AmazonWebServiceRequest  implements
      *
      * @param licenseIds Specifies the license registration for which details are to be
      *         returned.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeLicensesRequest withLicenseIds(java.util.Collection<String> licenseIds) {
         if (licenseIds == null) {
@@ -172,6 +178,9 @@ public class DescribeLicensesRequest extends AmazonWebServiceRequest  implements
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeLicensesRequest withFilters(Filter... filters) {
         if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
@@ -195,6 +204,9 @@ public class DescribeLicensesRequest extends AmazonWebServiceRequest  implements
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeLicensesRequest withFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {

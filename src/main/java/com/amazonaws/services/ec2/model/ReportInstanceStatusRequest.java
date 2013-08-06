@@ -71,6 +71,9 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instances The new value for the Instances property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ReportInstanceStatusRequest withInstances(String... instances) {
         if (getInstances() == null) setInstances(new java.util.ArrayList<String>(instances.length));
@@ -86,6 +89,9 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instances The new value for the Instances property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ReportInstanceStatusRequest withInstances(java.util.Collection<String> instances) {
         if (instances == null) {
@@ -123,6 +129,9 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param status The new value for the Status property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ReportInstanceStatusRequest withStatus(String status) {
         this.status = status;
@@ -154,6 +163,9 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param startTime The new value for the StartTime property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ReportInstanceStatusRequest withStartTime(java.util.Date startTime) {
         this.startTime = startTime;
@@ -185,6 +197,9 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param endTime The new value for the EndTime property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ReportInstanceStatusRequest withEndTime(java.util.Date endTime) {
         this.endTime = endTime;
@@ -227,6 +242,9 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reasonCodes The new value for the ReasonCodes property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ReportInstanceStatusRequest withReasonCodes(String... reasonCodes) {
         if (getReasonCodes() == null) setReasonCodes(new java.util.ArrayList<String>(reasonCodes.length));
@@ -242,6 +260,9 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reasonCodes The new value for the ReasonCodes property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ReportInstanceStatusRequest withReasonCodes(java.util.Collection<String> reasonCodes) {
         if (reasonCodes == null) {
@@ -279,6 +300,9 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description The new value for the Description property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ReportInstanceStatusRequest withDescription(String description) {
         this.description = description;

@@ -58,6 +58,9 @@ public class DescribeNetworkInterfaceAttributeRequest extends AmazonWebServiceRe
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeNetworkInterfaceAttributeRequest withNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
@@ -89,6 +92,9 @@ public class DescribeNetworkInterfaceAttributeRequest extends AmazonWebServiceRe
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description The new value for the Description property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeNetworkInterfaceAttributeRequest withDescription(String description) {
         this.description = description;
@@ -120,6 +126,9 @@ public class DescribeNetworkInterfaceAttributeRequest extends AmazonWebServiceRe
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceDestCheck The new value for the SourceDestCheck property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeNetworkInterfaceAttributeRequest withSourceDestCheck(String sourceDestCheck) {
         this.sourceDestCheck = sourceDestCheck;
@@ -151,6 +160,9 @@ public class DescribeNetworkInterfaceAttributeRequest extends AmazonWebServiceRe
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groups The new value for the Groups property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeNetworkInterfaceAttributeRequest withGroups(String groups) {
         this.groups = groups;
@@ -182,6 +194,9 @@ public class DescribeNetworkInterfaceAttributeRequest extends AmazonWebServiceRe
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attachment The new value for the Attachment property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeNetworkInterfaceAttributeRequest withAttachment(String attachment) {
         this.attachment = attachment;

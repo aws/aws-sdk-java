@@ -55,6 +55,9 @@ public class AllocateAddressResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param publicIp IP address for use with your account.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AllocateAddressResult withPublicIp(String publicIp) {
         this.publicIp = publicIp;
@@ -100,6 +103,9 @@ public class AllocateAddressResult  implements Serializable  {
      *
      * @param domain The new value for the Domain property for this object.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see DomainType
      */
     public AllocateAddressResult withDomain(String domain) {
@@ -132,6 +138,9 @@ public class AllocateAddressResult  implements Serializable  {
      *
      * @param domain The new value for the Domain property for this object.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see DomainType
      */
     public AllocateAddressResult withDomain(DomainType domain) {
@@ -163,6 +172,9 @@ public class AllocateAddressResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param allocationId The new value for the AllocationId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AllocateAddressResult withAllocationId(String allocationId) {
         this.allocationId = allocationId;

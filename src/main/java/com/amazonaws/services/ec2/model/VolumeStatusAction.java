@@ -52,6 +52,9 @@ public class VolumeStatusAction  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param code The new value for the Code property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VolumeStatusAction withCode(String code) {
         this.code = code;
@@ -83,6 +86,9 @@ public class VolumeStatusAction  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description The new value for the Description property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VolumeStatusAction withDescription(String description) {
         this.description = description;
@@ -114,6 +120,9 @@ public class VolumeStatusAction  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eventType The new value for the EventType property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VolumeStatusAction withEventType(String eventType) {
         this.eventType = eventType;
@@ -145,6 +154,9 @@ public class VolumeStatusAction  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eventId The new value for the EventId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VolumeStatusAction withEventId(String eventId) {
         this.eventId = eventId;

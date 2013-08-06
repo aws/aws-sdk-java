@@ -48,6 +48,9 @@ public class PrivateIpAddressSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateIpAddress The new value for the PrivateIpAddress property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PrivateIpAddressSpecification withPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
@@ -79,6 +82,9 @@ public class PrivateIpAddressSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param primary The new value for the Primary property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PrivateIpAddressSpecification withPrimary(Boolean primary) {
         this.primary = primary;

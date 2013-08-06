@@ -76,6 +76,9 @@ public class DeregisterImageRequest extends AmazonWebServiceRequest  implements 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param imageId The ID of the AMI to deregister.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeregisterImageRequest withImageId(String imageId) {
         this.imageId = imageId;

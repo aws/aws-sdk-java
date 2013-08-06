@@ -102,6 +102,9 @@ public class StopInstancesRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceIds The list of Amazon EC2 instances to stop.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StopInstancesRequest withInstanceIds(String... instanceIds) {
         if (getInstanceIds() == null) setInstanceIds(new java.util.ArrayList<String>(instanceIds.length));
@@ -117,6 +120,9 @@ public class StopInstancesRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceIds The list of Amazon EC2 instances to stop.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StopInstancesRequest withInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
@@ -172,6 +178,9 @@ public class StopInstancesRequest extends AmazonWebServiceRequest  implements Se
      *         to flush file system caches nor file system meta data. If you use this
      *         option, you must perform file system check and repair procedures. This
      *         option is not recommended for Windows instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StopInstancesRequest withForce(Boolean force) {
         this.force = force;

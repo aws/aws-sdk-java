@@ -48,6 +48,9 @@ public class DiskImageVolumeDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param size The new value for the Size property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DiskImageVolumeDescription withSize(Long size) {
         this.size = size;
@@ -79,6 +82,9 @@ public class DiskImageVolumeDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param id The new value for the Id property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DiskImageVolumeDescription withId(String id) {
         this.id = id;

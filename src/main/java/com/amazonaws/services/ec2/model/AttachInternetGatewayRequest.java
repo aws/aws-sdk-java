@@ -61,6 +61,9 @@ public class AttachInternetGatewayRequest extends AmazonWebServiceRequest  imple
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param internetGatewayId The ID of the Internet gateway to attach.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AttachInternetGatewayRequest withInternetGatewayId(String internetGatewayId) {
         this.internetGatewayId = internetGatewayId;
@@ -92,6 +95,9 @@ public class AttachInternetGatewayRequest extends AmazonWebServiceRequest  imple
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcId The ID of the VPC.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AttachInternetGatewayRequest withVpcId(String vpcId) {
         this.vpcId = vpcId;

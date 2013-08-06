@@ -55,6 +55,9 @@ public class CancelReservedInstancesListingRequest extends AmazonWebServiceReque
      *
      * @param reservedInstancesListingId The new value for the ReservedInstancesListingId property for this
      *         object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CancelReservedInstancesListingRequest withReservedInstancesListingId(String reservedInstancesListingId) {
         this.reservedInstancesListingId = reservedInstancesListingId;

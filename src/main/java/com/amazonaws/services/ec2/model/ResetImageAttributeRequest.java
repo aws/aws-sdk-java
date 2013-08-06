@@ -88,6 +88,9 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest  impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param imageId The ID of the AMI whose attribute is being reset.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ResetImageAttributeRequest withImageId(String imageId) {
         this.imageId = imageId;
@@ -125,6 +128,9 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest  impleme
      *
      * @param attribute The name of the attribute being reset. <p> Available attribute names:
      *         <code>launchPermission</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ResetImageAttributeRequest withAttribute(String attribute) {
         this.attribute = attribute;

@@ -93,6 +93,9 @@ public class Volume  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeId The unique ID of this volume.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Volume withVolumeId(String volumeId) {
         this.volumeId = volumeId;
@@ -124,6 +127,9 @@ public class Volume  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param size The size of this volume, in gigabytes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Volume withSize(Integer size) {
         this.size = size;
@@ -155,6 +161,9 @@ public class Volume  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param snapshotId Optional snapshot from which this volume was created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Volume withSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
@@ -186,6 +195,9 @@ public class Volume  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZone Availability zone in which this volume was created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Volume withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -231,6 +243,9 @@ public class Volume  implements Serializable  {
      *
      * @param state State of this volume (e.g., creating, available).
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see VolumeState
      */
     public Volume withState(String state) {
@@ -263,6 +278,9 @@ public class Volume  implements Serializable  {
      *
      * @param state State of this volume (e.g., creating, available).
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see VolumeState
      */
     public Volume withState(VolumeState state) {
@@ -294,6 +312,9 @@ public class Volume  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param createTime Timestamp when volume creation was initiated.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Volume withCreateTime(java.util.Date createTime) {
         this.createTime = createTime;
@@ -336,6 +357,9 @@ public class Volume  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attachments Information on what this volume is attached to.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Volume withAttachments(VolumeAttachment... attachments) {
         if (getAttachments() == null) setAttachments(new java.util.ArrayList<VolumeAttachment>(attachments.length));
@@ -351,6 +375,9 @@ public class Volume  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attachments Information on what this volume is attached to.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Volume withAttachments(java.util.Collection<VolumeAttachment> attachments) {
         if (attachments == null) {
@@ -399,6 +426,9 @@ public class Volume  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags A list of tags for the Volume.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Volume withTags(Tag... tags) {
         if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
@@ -414,6 +444,9 @@ public class Volume  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags A list of tags for the Volume.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Volume withTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
@@ -465,6 +498,9 @@ public class Volume  implements Serializable  {
      *
      * @param volumeType The new value for the VolumeType property for this object.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see VolumeType
      */
     public Volume withVolumeType(String volumeType) {
@@ -497,6 +533,9 @@ public class Volume  implements Serializable  {
      *
      * @param volumeType The new value for the VolumeType property for this object.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see VolumeType
      */
     public Volume withVolumeType(VolumeType volumeType) {
@@ -528,6 +567,9 @@ public class Volume  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param iops The new value for the Iops property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Volume withIops(Integer iops) {
         this.iops = iops;

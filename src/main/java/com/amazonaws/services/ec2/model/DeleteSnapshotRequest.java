@@ -77,6 +77,9 @@ public class DeleteSnapshotRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param snapshotId The ID of the snapshot to delete.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteSnapshotRequest withSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;

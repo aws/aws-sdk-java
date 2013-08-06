@@ -87,6 +87,9 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param filters A list of filters used to match properties for tags.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeTagsRequest withFilters(Filter... filters) {
         if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
@@ -102,6 +105,9 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param filters A list of filters used to match properties for tags.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeTagsRequest withFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {

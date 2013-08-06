@@ -28,84 +28,102 @@ import com.amazonaws.util.json.JSONObject;
  * Credentials provider implementation that loads credentials from the Amazon
  * EC2 Instance Metadata Service.
  */
-public class InstanceProfileCredentialsProvider implements AWSCredentialsProvider {
+public class InstanceProfileCredentialsProvider implements
+		AWSCredentialsProvider {
 
-    protected AWSCredentials credentials;
-    protected Date credentialsExpiration;
+	protected volatile AWSCredentials credentials;
+	protected volatile Date credentialsExpiration;
 
-    public AWSCredentials getCredentials() {
-        if (needsToLoadCredentials()) loadCredentials();
-        if (expired()) {
-            throw new AmazonClientException("The credentials received from the Amazon EC2 metadata service have expired");
-        }
+	public AWSCredentials getCredentials() {
+		if (needsToLoadCredentials())
+			loadCredentials();
+		if (expired()) {
+			throw new AmazonClientException(
+					"The credentials received from the Amazon EC2 metadata service have expired");
+		}
 
-        return credentials;
-    }
+		return credentials;
+	}
 
-    public void refresh() {
-        loadCredentials();
-    }
+	public void refresh() {
+		credentials = null;
+	}
 
-    protected boolean needsToLoadCredentials() {
-        if (credentials == null) return true;
+	protected boolean needsToLoadCredentials() {
+		if (credentials == null)
+			return true;
 
-        if (credentialsExpiration != null) {
-            int thresholdInMilliseconds = 1000 * 60 * 5;
-            boolean withinExpirationThreshold = credentialsExpiration.getTime() - System.currentTimeMillis() < thresholdInMilliseconds;
-            if (withinExpirationThreshold) return true;
-        }
+		if (credentialsExpiration != null) {
+			int thresholdInMilliseconds = 1000 * 60 * 5;
+			boolean withinExpirationThreshold = credentialsExpiration.getTime()
+					- System.currentTimeMillis() < thresholdInMilliseconds;
+			if (withinExpirationThreshold)
+				return true;
+		}
 
-        return false;
-    }
+		return false;
+	}
 
-    private boolean expired() {
-        if (credentialsExpiration != null) {
-            if (credentialsExpiration.getTime() < System.currentTimeMillis()) {
-                return true;
-            }
-        }
+	private boolean expired() {
+		if (credentialsExpiration != null) {
+			if (credentialsExpiration.getTime() < System.currentTimeMillis()) {
+				return true;
+			}
+		}
 
-        return false;
-    }
+		return false;
+	}
 
-    private synchronized void loadCredentials() {
-        try {
-            String credentialsResponse = new EC2MetadataClient().getDefaultCredentials();
-            JSONObject jsonObject = new JSONObject(credentialsResponse);
+	private synchronized void loadCredentials() {
 
-            if (jsonObject.has("Token")) {
-                credentials = new BasicSessionCredentials(
-                        jsonObject.getString("AccessKeyId"),
-                        jsonObject.getString("SecretAccessKey"),
-                        jsonObject.getString("Token"));
-            } else {
-                credentials = new BasicAWSCredentials(
-                        jsonObject.getString("AccessKeyId"),
-                        jsonObject.getString("SecretAccessKey"));
-            }
+		if (needsToLoadCredentials()) {
+			try {
+				String credentialsResponse = new EC2MetadataClient()
+						.getDefaultCredentials();
+				JSONObject jsonObject = new JSONObject(credentialsResponse);
 
-            if (jsonObject.has("Expiration")) {
-                /*
-                 * TODO: The expiration string comes in a different format than
-                 *       what we deal with in other parts of the SDK, so we have
-                 *       to convert it to the ISO8601 syntax we expect.
-                 */
-                String expiration = jsonObject.getString("Expiration");
-                expiration = expiration.replaceAll("\\+0000$", "Z");
+				if (jsonObject.has("Token")) {
+					credentials = new BasicSessionCredentials(
+							jsonObject.getString("AccessKeyId"),
+							jsonObject.getString("SecretAccessKey"),
+							jsonObject.getString("Token"));
+				} else {
+					credentials = new BasicAWSCredentials(
+							jsonObject.getString("AccessKeyId"),
+							jsonObject.getString("SecretAccessKey"));
+				}
 
-                credentialsExpiration = new DateUtils().parseIso8601Date(expiration);
-            }
-        } catch (IOException e) {
-            throw new AmazonClientException("Unable to load credentials from Amazon EC2 metadata service", e);
-        } catch (JSONException e) {
-            throw new AmazonClientException("Unable to parse credentials from Amazon EC2 metadata service", e);
-        } catch (ParseException e) {
-            throw new AmazonClientException("Unable to parse credentials expiration date from Amazon EC2 metadata service", e);
-        }
-    }
+				if (jsonObject.has("Expiration")) {
+					/*
+					 * TODO: The expiration string comes in a different format
+					 * than what we deal with in other parts of the SDK, so we
+					 * have to convert it to the ISO8601 syntax we expect.
+					 */
+					String expiration = jsonObject.getString("Expiration");
+					expiration = expiration.replaceAll("\\+0000$", "Z");
 
-    @Override
-    public String toString() {
-        return getClass().getSimpleName();
-    }
+					credentialsExpiration = new DateUtils()
+							.parseIso8601Date(expiration);
+				}
+			} catch (IOException e) {
+				throw new AmazonClientException(
+						"Unable to load credentials from Amazon EC2 metadata service",
+						e);
+			} catch (JSONException e) {
+				throw new AmazonClientException(
+						"Unable to parse credentials from Amazon EC2 metadata service",
+						e);
+			} catch (ParseException e) {
+				throw new AmazonClientException(
+						"Unable to parse credentials expiration date from Amazon EC2 metadata service",
+						e);
+			}
+		}
+
+	}
+
+	@Override
+	public String toString() {
+		return getClass().getSimpleName();
+	}
 }

@@ -59,6 +59,9 @@ public class InstanceLicenseSpecification  implements Serializable  {
      *
      * @param pool The license pool from which to take a license when starting Amazon EC2
      *         instances in the associated <code>RunInstances</code> request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceLicenseSpecification withPool(String pool) {
         this.pool = pool;

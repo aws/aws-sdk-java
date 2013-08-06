@@ -88,6 +88,9 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest  impl
      *
      * @param groupNames An optional list of group names that specify the Amazon EC2 security
      *         groups to describe.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeSecurityGroupsRequest withGroupNames(String... groupNames) {
         if (getGroupNames() == null) setGroupNames(new java.util.ArrayList<String>(groupNames.length));
@@ -105,6 +108,9 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest  impl
      *
      * @param groupNames An optional list of group names that specify the Amazon EC2 security
      *         groups to describe.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeSecurityGroupsRequest withGroupNames(java.util.Collection<String> groupNames) {
         if (groupNames == null) {
@@ -153,6 +159,9 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groupIds The new value for the GroupIds property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeSecurityGroupsRequest withGroupIds(String... groupIds) {
         if (getGroupIds() == null) setGroupIds(new java.util.ArrayList<String>(groupIds.length));
@@ -168,6 +177,9 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groupIds The new value for the GroupIds property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeSecurityGroupsRequest withGroupIds(java.util.Collection<String> groupIds) {
         if (groupIds == null) {
@@ -240,6 +252,9 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest  impl
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeSecurityGroupsRequest withFilters(Filter... filters) {
         if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
@@ -263,6 +278,9 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest  impl
      *         see the <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeSecurityGroupsRequest withFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {

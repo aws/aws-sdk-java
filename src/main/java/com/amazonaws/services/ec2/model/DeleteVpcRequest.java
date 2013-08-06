@@ -77,6 +77,9 @@ public class DeleteVpcRequest extends AmazonWebServiceRequest  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcId The ID of the VPC you want to delete.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteVpcRequest withVpcId(String vpcId) {
         this.vpcId = vpcId;

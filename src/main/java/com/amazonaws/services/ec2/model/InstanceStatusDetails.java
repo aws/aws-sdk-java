@@ -50,6 +50,9 @@ public class InstanceStatusDetails  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The new value for the Name property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceStatusDetails withName(String name) {
         this.name = name;
@@ -81,6 +84,9 @@ public class InstanceStatusDetails  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param status The new value for the Status property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceStatusDetails withStatus(String status) {
         this.status = status;
@@ -112,6 +118,9 @@ public class InstanceStatusDetails  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param impairedSince The new value for the ImpairedSince property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceStatusDetails withImpairedSince(java.util.Date impairedSince) {
         this.impairedSince = impairedSince;

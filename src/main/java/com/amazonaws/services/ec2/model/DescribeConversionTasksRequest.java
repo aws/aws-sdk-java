@@ -63,6 +63,9 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param filters The new value for the Filters property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeConversionTasksRequest withFilters(Filter... filters) {
         if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
@@ -78,6 +81,9 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param filters The new value for the Filters property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeConversionTasksRequest withFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
@@ -126,6 +132,9 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param conversionTaskIds The new value for the ConversionTaskIds property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeConversionTasksRequest withConversionTaskIds(String... conversionTaskIds) {
         if (getConversionTaskIds() == null) setConversionTaskIds(new java.util.ArrayList<String>(conversionTaskIds.length));
@@ -141,6 +150,9 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param conversionTaskIds The new value for the ConversionTaskIds property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeConversionTasksRequest withConversionTaskIds(java.util.Collection<String> conversionTaskIds) {
         if (conversionTaskIds == null) {

@@ -95,6 +95,9 @@ public class StartInstancesRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceIds The list of Amazon EC2 instances to start.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StartInstancesRequest withInstanceIds(String... instanceIds) {
         if (getInstanceIds() == null) setInstanceIds(new java.util.ArrayList<String>(instanceIds.length));
@@ -110,6 +113,9 @@ public class StartInstancesRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceIds The list of Amazon EC2 instances to start.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StartInstancesRequest withInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
@@ -147,6 +153,9 @@ public class StartInstancesRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param additionalInfo The new value for the AdditionalInfo property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StartInstancesRequest withAdditionalInfo(String additionalInfo) {
         this.additionalInfo = additionalInfo;

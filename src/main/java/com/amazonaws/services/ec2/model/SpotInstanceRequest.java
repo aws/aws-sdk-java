@@ -86,6 +86,9 @@ public class SpotInstanceRequest  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param spotInstanceRequestId The new value for the SpotInstanceRequestId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SpotInstanceRequest withSpotInstanceRequestId(String spotInstanceRequestId) {
         this.spotInstanceRequestId = spotInstanceRequestId;
@@ -117,6 +120,9 @@ public class SpotInstanceRequest  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param spotPrice The new value for the SpotPrice property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SpotInstanceRequest withSpotPrice(String spotPrice) {
         this.spotPrice = spotPrice;
@@ -162,6 +168,9 @@ public class SpotInstanceRequest  implements Serializable  {
      *
      * @param type The new value for the Type property for this object.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see SpotInstanceType
      */
     public SpotInstanceRequest withType(String type) {
@@ -194,6 +203,9 @@ public class SpotInstanceRequest  implements Serializable  {
      *
      * @param type The new value for the Type property for this object.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see SpotInstanceType
      */
     public SpotInstanceRequest withType(SpotInstanceType type) {
@@ -225,6 +237,9 @@ public class SpotInstanceRequest  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param state The new value for the State property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SpotInstanceRequest withState(String state) {
         this.state = state;
@@ -256,6 +271,9 @@ public class SpotInstanceRequest  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param fault The new value for the Fault property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SpotInstanceRequest withFault(SpotInstanceStateFault fault) {
         this.fault = fault;
@@ -287,6 +305,9 @@ public class SpotInstanceRequest  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param status The new value for the Status property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SpotInstanceRequest withStatus(SpotInstanceStatus status) {
         this.status = status;
@@ -318,6 +339,9 @@ public class SpotInstanceRequest  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param validFrom The new value for the ValidFrom property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SpotInstanceRequest withValidFrom(java.util.Date validFrom) {
         this.validFrom = validFrom;
@@ -349,6 +373,9 @@ public class SpotInstanceRequest  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param validUntil The new value for the ValidUntil property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SpotInstanceRequest withValidUntil(java.util.Date validUntil) {
         this.validUntil = validUntil;
@@ -380,6 +407,9 @@ public class SpotInstanceRequest  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param launchGroup The new value for the LaunchGroup property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SpotInstanceRequest withLaunchGroup(String launchGroup) {
         this.launchGroup = launchGroup;
@@ -412,6 +442,9 @@ public class SpotInstanceRequest  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZoneGroup The new value for the AvailabilityZoneGroup property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SpotInstanceRequest withAvailabilityZoneGroup(String availabilityZoneGroup) {
         this.availabilityZoneGroup = availabilityZoneGroup;
@@ -443,6 +476,9 @@ public class SpotInstanceRequest  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param launchSpecification The LaunchSpecificationType data type.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SpotInstanceRequest withLaunchSpecification(LaunchSpecification launchSpecification) {
         this.launchSpecification = launchSpecification;
@@ -474,6 +510,9 @@ public class SpotInstanceRequest  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId The new value for the InstanceId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SpotInstanceRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -505,6 +544,9 @@ public class SpotInstanceRequest  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param createTime The new value for the CreateTime property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SpotInstanceRequest withCreateTime(java.util.Date createTime) {
         this.createTime = createTime;
@@ -536,6 +578,9 @@ public class SpotInstanceRequest  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param productDescription The new value for the ProductDescription property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SpotInstanceRequest withProductDescription(String productDescription) {
         this.productDescription = productDescription;
@@ -578,6 +623,9 @@ public class SpotInstanceRequest  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags A list of tags for this spot instance request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SpotInstanceRequest withTags(Tag... tags) {
         if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
@@ -593,6 +641,9 @@ public class SpotInstanceRequest  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags A list of tags for this spot instance request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SpotInstanceRequest withTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
@@ -630,6 +681,9 @@ public class SpotInstanceRequest  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param launchedAvailabilityZone The Availability Zone in which the bid is launched.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SpotInstanceRequest withLaunchedAvailabilityZone(String launchedAvailabilityZone) {
         this.launchedAvailabilityZone = launchedAvailabilityZone;
