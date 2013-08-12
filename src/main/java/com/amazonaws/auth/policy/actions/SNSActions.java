@@ -26,12 +26,29 @@ import com.amazonaws.services.sns.AmazonSNS;
  */
 public enum SNSActions implements Action {
 
+    /** Represents any action being taken on Amazon SNS. */
+    AllSnsActions("sns:*"),
+
     /**
      * Action for the AddPermission operation on Amazon SNS.
      *
      * @see AmazonSNS#addPermission(com.amazonaws.services.sns.model.AddPermissionRequest)
      */
     AddPermission("sns:AddPermission"),
+
+    /**
+     * Action for the ConfirmSubscription operation on Amazon SNS.
+     *
+     * @see AmazonSNS#confirmSubscription(com.amazonaws.services.sns.model.ConfirmSubscriptionRequest)
+     */
+    ConfirmSubscription("sns:ConfirmSubscription"),
+
+    /**
+     * Action for the CreateTopic operation on Amazon SNS.
+     *
+     * @see AmazonSNS#createTopic(com.amazonaws.services.sns.model.CreateTopic)
+     */
+    CreateTopic("sns:CreateTopic"),
 
     /**
      * Action for the DeleteTopic operation on Amazon SNS.
@@ -41,6 +58,13 @@ public enum SNSActions implements Action {
     DeleteTopic("sns:DeleteTopic"),
 
     /**
+     * Action for the GetSubscriptionAttributes operation on Amazon SNS.
+     *
+     * @see AmazonSNS#getSubscriptionAttributes(com.amazonaws.services.sns.model.GetSubscriptionAttributes)
+     */
+    GetSubscriptionAttributes("sns:GetSubscriptionAttributes"),
+
+    /**
      * Action for the GetTopicAttributes operation on Amazon SNS.
      *
      * @see AmazonSNS#getTopicAttributes(com.amazonaws.services.sns.model.GetTopicAttributesRequest)
@@ -48,11 +72,25 @@ public enum SNSActions implements Action {
     GetTopicAttributes("sns:GetTopicAttributes"),
 
     /**
+     * Action for the ListSubscriptions operation on Amazon SNS.
+     *
+     * @see AmazonSNS#listSubscriptions(com.amazonaws.services.sns.model.ListSubscriptions)
+     */
+    ListSubscriptions("sns:ListSubscriptions"),
+
+    /**
      * Action for the ListSubscriptionsByTopic operation on Amazon SNS.
      *
      * @see AmazonSNS#listSubscriptionsByTopic(com.amazonaws.services.sns.model.ListSubscriptionsByTopicRequest)
      */
     ListSubscriptionsByTopic("sns:ListSubscriptionsByTopic"),
+
+    /**
+     * Action for the ListTopics operation on Amazon SNS.
+     *
+     * @see AmazonSNS#listTopics(com.amazonaws.services.sns.model.ListTopics)
+     */
+    ListTopics("sns:ListTopics"),
 
     /**
      * Action for the Publish operation on Amazon SNS.
@@ -69,6 +107,13 @@ public enum SNSActions implements Action {
     RemovePermission("sns:RemovePermission"),
 
     /**
+     * Action for the SetSubscriptionAttributes operation on Amazon SNS.
+     *
+     * @see AmazonSNS#setSubscriptionAttributes(com.amazonaws.services.sns.model.SetSubscriptionAttributes)
+     */
+    SetSubscriptionAttributes("sns:SetSubscriptionAttributes"),
+
+    /**
      * Action for the SetTopicAttributes operation on Amazon SNS.
      *
      * @see AmazonSNS#setTopicAttributes(com.amazonaws.services.sns.model.SetTopicAttributesRequest)
@@ -80,7 +125,14 @@ public enum SNSActions implements Action {
      *
      * @see AmazonSNS#subscribe(com.amazonaws.services.sns.model.SubscribeRequest)
      */
-    Subscribe("sns:Subscribe");
+    Subscribe("sns:Subscribe"),
+
+    /**
+     * Action for the Unsubscribe operation on Amazon SNS.
+     *
+     * @see AmazonSNS#unsubscribe(com.amazonaws.services.sns.model.Unsubscribe)
+     */
+    Unsubscribe("sns:Unsubscribe");
 
     private final String action;
 
