@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Status information about an activity task.
  * </p>
  */
-public class ActivityTaskStatus  implements Serializable  {
+public class ActivityTaskStatus implements Serializable {
 
     /**
      * Set to <code>true</code> if cancellation of the task is requested.
@@ -51,6 +51,9 @@ public class ActivityTaskStatus  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cancelRequested Set to <code>true</code> if cancellation of the task is requested.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActivityTaskStatus withCancelRequested(Boolean cancelRequested) {
         this.cancelRequested = cancelRequested;

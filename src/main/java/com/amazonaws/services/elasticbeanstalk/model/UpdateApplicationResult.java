@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Result message containing a single description of an application.
  * </p>
  */
-public class UpdateApplicationResult  implements Serializable  {
+public class UpdateApplicationResult implements Serializable {
 
     /**
      * The <a>ApplicationDescription</a> of the application.
@@ -51,6 +51,9 @@ public class UpdateApplicationResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param application The <a>ApplicationDescription</a> of the application.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateApplicationResult withApplication(ApplicationDescription application) {
         this.application = application;

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Used to filter the workflow executions in visibility APIs based on a tag.
  * </p>
  */
-public class TagFilter  implements Serializable  {
+public class TagFilter implements Serializable {
 
     /**
      * Specifies the tag that must be associated with the execution for it to
@@ -70,6 +70,9 @@ public class TagFilter  implements Serializable  {
      *
      * @param tag Specifies the tag that must be associated with the execution for it to
      *         meet the filter criteria. This field is required.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public TagFilter withTag(String tag) {
         this.tag = tag;

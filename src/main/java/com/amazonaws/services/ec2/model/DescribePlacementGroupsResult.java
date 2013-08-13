@@ -19,7 +19,7 @@ import java.io.Serializable;
  * <p>
  * </p>
  */
-public class DescribePlacementGroupsResult  implements Serializable  {
+public class DescribePlacementGroupsResult implements Serializable {
 
     /**
      * Contains information about the specified <code>PlacementGroups</code>.

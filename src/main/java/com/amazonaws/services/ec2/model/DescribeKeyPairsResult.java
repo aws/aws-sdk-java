@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The result of describing a user's key pairs.
  * </p>
  */
-public class DescribeKeyPairsResult  implements Serializable  {
+public class DescribeKeyPairsResult implements Serializable {
 
     /**
      * The list of described key pairs.

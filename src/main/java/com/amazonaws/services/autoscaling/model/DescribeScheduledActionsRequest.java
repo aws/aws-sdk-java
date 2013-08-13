@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeScheduledActions(DescribeScheduledActionsRequest)
  */
-public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the Auto Scaling group.
@@ -109,6 +109,9 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest  im
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param autoScalingGroupName The name of the Auto Scaling group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeScheduledActionsRequest withAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
@@ -175,6 +178,9 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest  im
      *         actions cannot contain more than 50 items. If an auto scaling group
      *         name is provided, the results are limited to that group. If unknown
      *         scheduled actions are requested, they are ignored with no error.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeScheduledActionsRequest withScheduledActionNames(String... scheduledActionNames) {
         if (getScheduledActionNames() == null) setScheduledActionNames(new java.util.ArrayList<String>(scheduledActionNames.length));
@@ -198,6 +204,9 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest  im
      *         actions cannot contain more than 50 items. If an auto scaling group
      *         name is provided, the results are limited to that group. If unknown
      *         scheduled actions are requested, they are ignored with no error.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeScheduledActionsRequest withScheduledActionNames(java.util.Collection<String> scheduledActionNames) {
         if (scheduledActionNames == null) {
@@ -241,6 +250,9 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest  im
      *
      * @param startTime The earliest scheduled start time to return. If scheduled action names
      *         are provided, this field will be ignored.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeScheduledActionsRequest withStartTime(java.util.Date startTime) {
         this.startTime = startTime;
@@ -278,6 +290,9 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest  im
      *
      * @param endTime The latest scheduled start time to return. If scheduled action names
      *         are provided, this field is ignored.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeScheduledActionsRequest withEndTime(java.util.Date endTime) {
         this.endTime = endTime;
@@ -318,6 +333,9 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest  im
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param nextToken A string that marks the start of the next batch of returned results.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeScheduledActionsRequest withNextToken(String nextToken) {
         this.nextToken = nextToken;
@@ -358,6 +376,9 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest  im
      * <b>Range: </b>1 - 50<br/>
      *
      * @param maxRecords The maximum number of scheduled actions to return.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeScheduledActionsRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;

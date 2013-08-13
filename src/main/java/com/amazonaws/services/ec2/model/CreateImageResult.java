@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The result of creating a new EC2 image. Contains the ID of the new image.
  * </p>
  */
-public class CreateImageResult  implements Serializable  {
+public class CreateImageResult implements Serializable {
 
     /**
      * The ID of the new AMI.

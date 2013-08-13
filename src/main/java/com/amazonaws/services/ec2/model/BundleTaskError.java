@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents an error that occurred during a bundle task.
  * </p>
  */
-public class BundleTaskError  implements Serializable  {
+public class BundleTaskError implements Serializable {
 
     /**
      * Error code.

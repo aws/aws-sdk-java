@@ -16,16 +16,19 @@ package com.amazonaws.services.sqs.model;
 import java.io.Serializable;
 
 /**
- * List Queues Result
+ * 
  */
-public class ListQueuesResult  implements Serializable  {
+public class ListQueuesResult implements Serializable {
 
+    /**
+     * A list of queue URLs, up to 1000 entries.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> queueUrls;
 
     /**
-     * Returns the value of the QueueUrls property for this object.
+     * A list of queue URLs, up to 1000 entries.
      *
-     * @return The value of the QueueUrls property for this object.
+     * @return A list of queue URLs, up to 1000 entries.
      */
     public java.util.List<String> getQueueUrls() {
         
@@ -37,9 +40,9 @@ public class ListQueuesResult  implements Serializable  {
     }
     
     /**
-     * Sets the value of the QueueUrls property for this object.
+     * A list of queue URLs, up to 1000 entries.
      *
-     * @param queueUrls The new value for the QueueUrls property for this object.
+     * @param queueUrls A list of queue URLs, up to 1000 entries.
      */
     public void setQueueUrls(java.util.Collection<String> queueUrls) {
         if (queueUrls == null) {
@@ -52,11 +55,14 @@ public class ListQueuesResult  implements Serializable  {
     }
     
     /**
-     * Sets the value of the QueueUrls property for this object.
+     * A list of queue URLs, up to 1000 entries.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queueUrls The new value for the QueueUrls property for this object.
+     * @param queueUrls A list of queue URLs, up to 1000 entries.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListQueuesResult withQueueUrls(String... queueUrls) {
         if (getQueueUrls() == null) setQueueUrls(new java.util.ArrayList<String>(queueUrls.length));
@@ -67,11 +73,14 @@ public class ListQueuesResult  implements Serializable  {
     }
     
     /**
-     * Sets the value of the QueueUrls property for this object.
+     * A list of queue URLs, up to 1000 entries.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queueUrls The new value for the QueueUrls property for this object.
+     * @param queueUrls A list of queue URLs, up to 1000 entries.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListQueuesResult withQueueUrls(java.util.Collection<String> queueUrls) {
         if (queueUrls == null) {

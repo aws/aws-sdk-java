@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes a security group.
  * </p>
  */
-public class ClusterSecurityGroupMembership  implements Serializable  {
+public class ClusterSecurityGroupMembership implements Serializable {
 
     /**
      * The name of the cluster security group.
@@ -56,6 +56,9 @@ public class ClusterSecurityGroupMembership  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clusterSecurityGroupName The name of the cluster security group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ClusterSecurityGroupMembership withClusterSecurityGroupName(String clusterSecurityGroupName) {
         this.clusterSecurityGroupName = clusterSecurityGroupName;
@@ -87,6 +90,9 @@ public class ClusterSecurityGroupMembership  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param status The status of the cluster security group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ClusterSecurityGroupMembership withStatus(String status) {
         this.status = status;

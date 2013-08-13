@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Create Network Interface Result
  */
-public class CreateNetworkInterfaceResult  implements Serializable  {
+public class CreateNetworkInterfaceResult implements Serializable {
 
     private NetworkInterface networkInterface;
 

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * 
  * </p>
  */
-public class Address  implements Serializable  {
+public class Address implements Serializable {
 
     /**
      * 

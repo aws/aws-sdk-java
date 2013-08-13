@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The output for the CreateAppCookieStickinessPolicy action.
  * </p>
  */
-public class CreateAppCookieStickinessPolicyResult  implements Serializable  {
+public class CreateAppCookieStickinessPolicyResult implements Serializable {
 
     /**
      * Returns a string representation of this object; useful for testing and

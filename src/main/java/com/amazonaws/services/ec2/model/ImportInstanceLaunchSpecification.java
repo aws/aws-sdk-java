@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Import Instance Launch Specification
  */
-public class ImportInstanceLaunchSpecification  implements Serializable  {
+public class ImportInstanceLaunchSpecification implements Serializable {
 
     private String architecture;
 

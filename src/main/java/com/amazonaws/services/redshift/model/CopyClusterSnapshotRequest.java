@@ -34,7 +34,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#copyClusterSnapshot(CopyClusterSnapshotRequest)
  */
-public class CopyClusterSnapshotRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CopyClusterSnapshotRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The identifier for the source snapshot. <p>Constraints: <ul> <li>Must
@@ -89,6 +89,9 @@ public class CopyClusterSnapshotRequest extends AmazonWebServiceRequest  impleme
      * @param sourceSnapshotIdentifier The identifier for the source snapshot. <p>Constraints: <ul> <li>Must
      *         be the identifier for a valid automated snapshot whose state is
      *         "available".</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CopyClusterSnapshotRequest withSourceSnapshotIdentifier(String sourceSnapshotIdentifier) {
         this.sourceSnapshotIdentifier = sourceSnapshotIdentifier;
@@ -150,6 +153,9 @@ public class CopyClusterSnapshotRequest extends AmazonWebServiceRequest  impleme
      *         be a letter.</li> <li>Cannot end with a hyphen or contain two
      *         consecutive hyphens.</li> <li>Must be unique for the AWS account that
      *         is making the request.</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CopyClusterSnapshotRequest withTargetSnapshotIdentifier(String targetSnapshotIdentifier) {
         this.targetSnapshotIdentifier = targetSnapshotIdentifier;

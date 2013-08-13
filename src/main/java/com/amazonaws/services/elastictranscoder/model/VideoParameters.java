@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The <code>VideoParameters</code> structure.
  * </p>
  */
-public class VideoParameters  implements Serializable  {
+public class VideoParameters implements Serializable {
 
     /**
      * The video codec for the output file. Valid values include
@@ -367,6 +367,9 @@ public class VideoParameters  implements Serializable  {
      * @param codec The video codec for the output file. Valid values include
      *         <code>H.264</code> and <code>vp8</code>. You can only specify
      *         <code>vp8</code> when the container type is <code>webm</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VideoParameters withCodec(String codec) {
         this.codec = codec;
@@ -645,6 +648,9 @@ public class VideoParameters  implements Serializable  {
      *         <code>BufferSize</code>, Elastic Transcoder sets
      *         <code>BufferSize</code> to 10 times the value of
      *         <code>MaxBitRate</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VideoParameters withCodecOptions(java.util.Map<String,String> codecOptions) {
         setCodecOptions(codecOptions);
@@ -787,6 +793,9 @@ public class VideoParameters  implements Serializable  {
      *         formatted as a string; valid values are between 1 (every frame is a
      *         key frame) and 100000, inclusive. A higher value results in higher
      *         compression but may also discernibly decrease video quality.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VideoParameters withKeyframesMaxDist(String keyframesMaxDist) {
         this.keyframesMaxDist = keyframesMaxDist;
@@ -863,6 +872,9 @@ public class VideoParameters  implements Serializable  {
      *         number of frames in a group of pictures, or GOP).</li>
      *         <li><code>false</code>: The distance between key frames can vary.</li>
      *         </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VideoParameters withFixedGOP(String fixedGOP) {
         this.fixedGOP = fixedGOP;
@@ -981,6 +993,9 @@ public class VideoParameters  implements Serializable  {
      *         <li>2 - 2000 : 2500</li> <li>3 - 10000 : 12500</li> <li>3.1 - 14000 :
      *         17500</li> <li>3.2 - 20000 : 25000</li> <li>4 - 20000 : 25000</li>
      *         <li>4.1 - 50000 : 62500</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VideoParameters withBitRate(String bitRate) {
         this.bitRate = bitRate;
@@ -1135,6 +1150,9 @@ public class VideoParameters  implements Serializable  {
      *         3041280</li> <li>2 - 3041280</li> <li>2.1 - 5068800</li> <li>2.2 -
      *         5184000</li> <li>3 - 10368000</li> <li>3.1 - 27648000</li> <li>3.2 -
      *         55296000</li> <li>4 - 62914560</li> <li>4.1 - 62914560</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VideoParameters withFrameRate(String frameRate) {
         this.frameRate = frameRate;
@@ -1217,6 +1235,9 @@ public class VideoParameters  implements Serializable  {
      *         values include: <code>10</code>, <code>15</code>, <code>23.97</code>,
      *         <code>24</code>, <code>25</code>, <code>29.97</code>, <code>30</code>,
      *         <code>60</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VideoParameters withMaxFrameRate(String maxFrameRate) {
         this.maxFrameRate = maxFrameRate;
@@ -1419,6 +1440,9 @@ public class VideoParameters  implements Serializable  {
      *         101376</li> <li>2.1 - 202752</li> <li>2.2 - 404720</li> <li>3 -
      *         404720</li> <li>3.1 - 921600</li> <li>3.2 - 1310720</li> <li>4 -
      *         2097152</li> <li>4.1 - 2097152</li> </ul> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VideoParameters withResolution(String resolution) {
         this.resolution = resolution;
@@ -1549,6 +1573,9 @@ public class VideoParameters  implements Serializable  {
      *         (black bars on the sides) or letterboxing (black bars on the top and
      *         bottom) to maintain the aspect ratio of the active region of the
      *         video.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VideoParameters withAspectRatio(String aspectRatio) {
         this.aspectRatio = aspectRatio;
@@ -1607,6 +1634,9 @@ public class VideoParameters  implements Serializable  {
      *         <code>auto</code>, Elastic Transcoder uses 1920 (Full HD) as the
      *         default value. If you specify a numeric value, enter an even integer
      *         between 128 and 4096.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VideoParameters withMaxWidth(String maxWidth) {
         this.maxWidth = maxWidth;
@@ -1665,6 +1695,9 @@ public class VideoParameters  implements Serializable  {
      *         <code>auto</code>, Elastic Transcoder uses 1080 (Full HD) as the
      *         default value. If you specify a numeric value, enter an even integer
      *         between 96 and 3072.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VideoParameters withMaxHeight(String maxHeight) {
         this.maxHeight = maxHeight;
@@ -1711,6 +1744,9 @@ public class VideoParameters  implements Serializable  {
      *
      * @param displayAspectRatio The value that Elastic Transcoder adds to the metadata in the output
      *         file.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VideoParameters withDisplayAspectRatio(String displayAspectRatio) {
         this.displayAspectRatio = displayAspectRatio;
@@ -1913,6 +1949,9 @@ public class VideoParameters  implements Serializable  {
      *         <code>MaxWidth</code> and <code>MaxHeight</code> without dropping
      *         below either value. If you specify this option, Elastic Transcoder
      *         does not scale the video up.</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VideoParameters withSizingPolicy(String sizingPolicy) {
         this.sizingPolicy = sizingPolicy;
@@ -1977,6 +2016,9 @@ public class VideoParameters  implements Serializable  {
      *         right sides of the output video to make the total size of the output
      *         video match the values that you specified for <code>MaxWidth</code>
      *         and <code>MaxHeight</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VideoParameters withPaddingPolicy(String paddingPolicy) {
         this.paddingPolicy = paddingPolicy;
@@ -2091,6 +2133,9 @@ public class VideoParameters  implements Serializable  {
      *         the job than you specify watermark settings in the preset, which
      *         allows you to use the same preset for up to four watermarks that have
      *         different dimensions.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VideoParameters withWatermarks(PresetWatermark... watermarks) {
         if (getWatermarks() == null) setWatermarks(new java.util.ArrayList<PresetWatermark>(watermarks.length));
@@ -2130,6 +2175,9 @@ public class VideoParameters  implements Serializable  {
      *         the job than you specify watermark settings in the preset, which
      *         allows you to use the same preset for up to four watermarks that have
      *         different dimensions.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VideoParameters withWatermarks(java.util.Collection<PresetWatermark> watermarks) {
         if (watermarks == null) {

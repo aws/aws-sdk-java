@@ -33,7 +33,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.cloudwatch.AmazonCloudWatch#listMetrics(ListMetricsRequest)
  */
-public class ListMetricsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ListMetricsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The namespace to filter against.
@@ -102,6 +102,9 @@ public class ListMetricsRequest extends AmazonWebServiceRequest  implements Seri
      * <b>Pattern: </b>[^:].*<br/>
      *
      * @param namespace The namespace to filter against.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListMetricsRequest withNamespace(String namespace) {
         this.namespace = namespace;
@@ -142,6 +145,9 @@ public class ListMetricsRequest extends AmazonWebServiceRequest  implements Seri
      * <b>Length: </b>1 - 255<br/>
      *
      * @param metricName The name of the metric to filter against.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListMetricsRequest withMetricName(String metricName) {
         this.metricName = metricName;
@@ -193,6 +199,9 @@ public class ListMetricsRequest extends AmazonWebServiceRequest  implements Seri
      * <b>Length: </b>0 - 10<br/>
      *
      * @param dimensions A list of dimensions to filter against.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListMetricsRequest withDimensions(DimensionFilter... dimensions) {
         if (getDimensions() == null) setDimensions(new java.util.ArrayList<DimensionFilter>(dimensions.length));
@@ -211,6 +220,9 @@ public class ListMetricsRequest extends AmazonWebServiceRequest  implements Seri
      * <b>Length: </b>0 - 10<br/>
      *
      * @param dimensions A list of dimensions to filter against.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListMetricsRequest withDimensions(java.util.Collection<DimensionFilter> dimensions) {
         if (dimensions == null) {
@@ -254,6 +266,9 @@ public class ListMetricsRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param nextToken The token returned by a previous call to indicate that there is more
      *         data available.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListMetricsRequest withNextToken(String nextToken) {
         this.nextToken = nextToken;

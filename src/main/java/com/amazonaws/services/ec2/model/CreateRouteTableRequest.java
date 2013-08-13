@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.CreateRouteTableRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -26,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createRouteTable(CreateRouteTableRequest)
  */
-public class CreateRouteTableRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateRouteTableRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateRouteTableRequest> {
 
     /**
      * The ID of the VPC where the route table will be created.
@@ -66,6 +68,18 @@ public class CreateRouteTableRequest extends AmazonWebServiceRequest  implements
         return this;
     }
     
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<CreateRouteTableRequest> getDryRunRequest() {
+        Request<CreateRouteTableRequest> request = new CreateRouteTableRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

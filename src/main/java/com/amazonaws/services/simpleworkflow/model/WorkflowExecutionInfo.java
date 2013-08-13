@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains information about a workflow execution.
  * </p>
  */
-public class WorkflowExecutionInfo  implements Serializable  {
+public class WorkflowExecutionInfo implements Serializable {
 
     /**
      * The workflow execution this information is about.
@@ -115,6 +115,9 @@ public class WorkflowExecutionInfo  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param execution The workflow execution this information is about.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionInfo withExecution(WorkflowExecution execution) {
         this.execution = execution;
@@ -146,6 +149,9 @@ public class WorkflowExecutionInfo  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param workflowType The type of the workflow execution.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionInfo withWorkflowType(WorkflowType workflowType) {
         this.workflowType = workflowType;
@@ -177,6 +183,9 @@ public class WorkflowExecutionInfo  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param startTimestamp The time when the execution was started.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionInfo withStartTimestamp(java.util.Date startTimestamp) {
         this.startTimestamp = startTimestamp;
@@ -214,6 +223,9 @@ public class WorkflowExecutionInfo  implements Serializable  {
      *
      * @param closeTimestamp The time when the workflow execution was closed. Set only if the
      *         execution status is CLOSED.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionInfo withCloseTimestamp(java.util.Date closeTimestamp) {
         this.closeTimestamp = closeTimestamp;
@@ -259,6 +271,9 @@ public class WorkflowExecutionInfo  implements Serializable  {
      *
      * @param executionStatus The current status of the execution.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ExecutionStatus
      */
     public WorkflowExecutionInfo withExecutionStatus(String executionStatus) {
@@ -290,6 +305,9 @@ public class WorkflowExecutionInfo  implements Serializable  {
      * <b>Allowed Values: </b>OPEN, CLOSED
      *
      * @param executionStatus The current status of the execution.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see ExecutionStatus
      */
@@ -396,6 +414,9 @@ public class WorkflowExecutionInfo  implements Serializable  {
      *         the current execution was completed and a new execution was started to
      *         carry on the workflow.</li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see CloseStatus
      */
     public WorkflowExecutionInfo withCloseStatus(String closeStatus) {
@@ -468,6 +489,9 @@ public class WorkflowExecutionInfo  implements Serializable  {
      *         the current execution was completed and a new execution was started to
      *         carry on the workflow.</li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see CloseStatus
      */
     public WorkflowExecutionInfo withCloseStatus(CloseStatus closeStatus) {
@@ -505,6 +529,9 @@ public class WorkflowExecutionInfo  implements Serializable  {
      *
      * @param parent If this workflow execution is a child of another execution then
      *         contains the workflow execution that started this execution.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionInfo withParent(WorkflowExecution parent) {
         this.parent = parent;
@@ -568,6 +595,9 @@ public class WorkflowExecutionInfo  implements Serializable  {
      * @param tagList The list of tags associated with the workflow execution. Tags can be
      *         used to identify and list workflow executions of interest through the
      *         visibility APIs. A workflow execution can have a maximum of 5 tags.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionInfo withTagList(String... tagList) {
         if (getTagList() == null) setTagList(new java.util.ArrayList<String>(tagList.length));
@@ -590,6 +620,9 @@ public class WorkflowExecutionInfo  implements Serializable  {
      * @param tagList The list of tags associated with the workflow execution. Tags can be
      *         used to identify and list workflow executions of interest through the
      *         visibility APIs. A workflow execution can have a maximum of 5 tags.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionInfo withTagList(java.util.Collection<String> tagList) {
         if (tagList == null) {
@@ -633,6 +666,9 @@ public class WorkflowExecutionInfo  implements Serializable  {
      *
      * @param cancelRequested Set to true if a cancellation is requested for this workflow
      *         execution.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionInfo withCancelRequested(Boolean cancelRequested) {
         this.cancelRequested = cancelRequested;

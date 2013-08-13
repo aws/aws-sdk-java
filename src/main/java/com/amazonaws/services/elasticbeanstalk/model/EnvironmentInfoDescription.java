@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The information retrieved from the Amazon EC2 instances.
  * </p>
  */
-public class EnvironmentInfoDescription  implements Serializable  {
+public class EnvironmentInfoDescription implements Serializable {
 
     /**
      * The type of information retrieved.
@@ -89,6 +89,9 @@ public class EnvironmentInfoDescription  implements Serializable  {
      *
      * @param infoType The type of information retrieved.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see EnvironmentInfoType
      */
     public EnvironmentInfoDescription withInfoType(String infoType) {
@@ -121,6 +124,9 @@ public class EnvironmentInfoDescription  implements Serializable  {
      *
      * @param infoType The type of information retrieved.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see EnvironmentInfoType
      */
     public EnvironmentInfoDescription withInfoType(EnvironmentInfoType infoType) {
@@ -152,6 +158,9 @@ public class EnvironmentInfoDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ec2InstanceId The Amazon EC2 Instance ID for this information.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EnvironmentInfoDescription withEc2InstanceId(String ec2InstanceId) {
         this.ec2InstanceId = ec2InstanceId;
@@ -183,6 +192,9 @@ public class EnvironmentInfoDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sampleTimestamp The time stamp when this information was retrieved.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EnvironmentInfoDescription withSampleTimestamp(java.util.Date sampleTimestamp) {
         this.sampleTimestamp = sampleTimestamp;
@@ -214,6 +226,9 @@ public class EnvironmentInfoDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param message The retrieved information.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EnvironmentInfoDescription withMessage(String message) {
         this.message = message;

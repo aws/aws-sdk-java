@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#deleteInstance(DeleteInstanceRequest)
  */
-public class DeleteInstanceRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteInstanceRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The instance ID.
@@ -66,6 +66,9 @@ public class DeleteInstanceRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId The instance ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteInstanceRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -97,6 +100,9 @@ public class DeleteInstanceRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param deleteElasticIp Whether to delete the instance Elastic IP address.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteInstanceRequest withDeleteElasticIp(Boolean deleteElasticIp) {
         this.deleteElasticIp = deleteElasticIp;
@@ -137,6 +143,9 @@ public class DeleteInstanceRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param deleteVolumes Whether to delete the instance Amazon EBS volumes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteInstanceRequest withDeleteVolumes(Boolean deleteVolumes) {
         this.deleteVolumes = deleteVolumes;

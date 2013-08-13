@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.DescribeSpotPriceHistoryRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -33,7 +35,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeSpotPriceHistory(DescribeSpotPriceHistoryRequest)
  */
-public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeSpotPriceHistoryRequest> {
 
     /**
      * The start date and time of the Spot Instance price history data.
@@ -487,6 +489,18 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
         return this;
     }
     
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<DescribeSpotPriceHistoryRequest> getDryRunRequest() {
+        Request<DescribeSpotPriceHistoryRequest> request = new DescribeSpotPriceHistoryRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

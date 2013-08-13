@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Provides details of the <code>WorkflowExecutionFailed</code> event.
  * </p>
  */
-public class WorkflowExecutionFailedEventAttributes  implements Serializable  {
+public class WorkflowExecutionFailedEventAttributes implements Serializable {
 
     /**
      * The descriptive reason provided for the failure (if any).
@@ -80,6 +80,9 @@ public class WorkflowExecutionFailedEventAttributes  implements Serializable  {
      * <b>Length: </b>0 - 256<br/>
      *
      * @param reason The descriptive reason provided for the failure (if any).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionFailedEventAttributes withReason(String reason) {
         this.reason = reason;
@@ -120,6 +123,9 @@ public class WorkflowExecutionFailedEventAttributes  implements Serializable  {
      * <b>Length: </b>0 - 32768<br/>
      *
      * @param details The details of the failure (if any).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionFailedEventAttributes withDetails(String details) {
         this.details = details;
@@ -175,6 +181,9 @@ public class WorkflowExecutionFailedEventAttributes  implements Serializable  {
      *         <code>FailWorkflowExecution</code> decision to fail this execution.
      *         This information can be useful for diagnosing problems by tracing back
      *         the cause of events.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionFailedEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
         this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;

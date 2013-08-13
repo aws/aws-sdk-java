@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#modifyCacheParameterGroup(ModifyCacheParameterGroupRequest)
  */
-public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the cache parameter group to modify.
@@ -91,6 +91,9 @@ public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest  i
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheParameterGroupName The name of the cache parameter group to modify.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ModifyCacheParameterGroupRequest withCacheParameterGroupName(String cacheParameterGroupName) {
         this.cacheParameterGroupName = cacheParameterGroupName;
@@ -151,6 +154,9 @@ public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest  i
      *         least one parameter name and value must be supplied; subsequent
      *         arguments are optional. A maximum of 20 parameters may be modified in
      *         a single request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ModifyCacheParameterGroupRequest withParameterNameValues(ParameterNameValue... parameterNameValues) {
         if (getParameterNameValues() == null) setParameterNameValues(new java.util.ArrayList<ParameterNameValue>(parameterNameValues.length));
@@ -172,6 +178,9 @@ public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest  i
      *         least one parameter name and value must be supplied; subsequent
      *         arguments are optional. A maximum of 20 parameters may be modified in
      *         a single request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ModifyCacheParameterGroupRequest withParameterNameValues(java.util.Collection<ParameterNameValue> parameterNameValues) {
         if (parameterNameValues == null) {

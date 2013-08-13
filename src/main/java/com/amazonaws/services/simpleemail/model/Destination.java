@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents the destination of the message, consisting of To:, CC:, and BCC: fields.
  * </p>
  */
-public class Destination  implements Serializable  {
+public class Destination implements Serializable {
 
     /**
      * The To: field(s) of the message.
@@ -93,6 +93,9 @@ public class Destination  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param toAddresses The To: field(s) of the message.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Destination withToAddresses(String... toAddresses) {
         if (getToAddresses() == null) setToAddresses(new java.util.ArrayList<String>(toAddresses.length));
@@ -108,6 +111,9 @@ public class Destination  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param toAddresses The To: field(s) of the message.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Destination withToAddresses(java.util.Collection<String> toAddresses) {
         if (toAddresses == null) {
@@ -156,6 +162,9 @@ public class Destination  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ccAddresses The CC: field(s) of the message.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Destination withCcAddresses(String... ccAddresses) {
         if (getCcAddresses() == null) setCcAddresses(new java.util.ArrayList<String>(ccAddresses.length));
@@ -171,6 +180,9 @@ public class Destination  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ccAddresses The CC: field(s) of the message.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Destination withCcAddresses(java.util.Collection<String> ccAddresses) {
         if (ccAddresses == null) {
@@ -219,6 +231,9 @@ public class Destination  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param bccAddresses The BCC: field(s) of the message.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Destination withBccAddresses(String... bccAddresses) {
         if (getBccAddresses() == null) setBccAddresses(new java.util.ArrayList<String>(bccAddresses.length));
@@ -234,6 +249,9 @@ public class Destination  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param bccAddresses The BCC: field(s) of the message.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Destination withBccAddresses(java.util.Collection<String> bccAddresses) {
         if (bccAddresses == null) {

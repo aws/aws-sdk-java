@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.ImportVolumeRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -22,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#importVolume(ImportVolumeRequest)
  */
-public class ImportVolumeRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ImportVolumeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ImportVolumeRequest> {
 
     private String availabilityZone;
 
@@ -167,6 +169,18 @@ public class ImportVolumeRequest extends AmazonWebServiceRequest  implements Ser
         return this;
     }
     
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<ImportVolumeRequest> getDryRunRequest() {
+        Request<ImportVolumeRequest> request = new ImportVolumeRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

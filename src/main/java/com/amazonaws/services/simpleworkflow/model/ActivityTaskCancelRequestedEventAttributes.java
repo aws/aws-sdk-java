@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Provides details of the <code>ActivityTaskCancelRequested</code> event.
  * </p>
  */
-public class ActivityTaskCancelRequestedEventAttributes  implements Serializable  {
+public class ActivityTaskCancelRequestedEventAttributes implements Serializable {
 
     /**
      * The id of the <code>DecisionTaskCompleted</code> event corresponding
@@ -87,6 +87,9 @@ public class ActivityTaskCancelRequestedEventAttributes  implements Serializable
      *         <code>RequestCancelActivityTask</code> decision for this cancellation
      *         request. This information can be useful for diagnosing problems by
      *         tracing back the cause of events.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActivityTaskCancelRequestedEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
         this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;
@@ -127,6 +130,9 @@ public class ActivityTaskCancelRequestedEventAttributes  implements Serializable
      * <b>Length: </b>1 - 256<br/>
      *
      * @param activityId The unique ID of the task.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActivityTaskCancelRequestedEventAttributes withActivityId(String activityId) {
         this.activityId = activityId;

@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.DescribeBundleTasksRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -25,7 +27,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeBundleTasks(DescribeBundleTasksRequest)
  */
-public class DescribeBundleTasksRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeBundleTasksRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeBundleTasksRequest> {
 
     /**
      * The list of bundle task IDs to describe.
@@ -209,6 +211,18 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest  impleme
         }
 
         return this;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<DescribeBundleTasksRequest> getDryRunRequest() {
+        Request<DescribeBundleTasksRequest> request = new DescribeBundleTasksRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

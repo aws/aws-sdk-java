@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.DeregisterImageRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -24,7 +26,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deregisterImage(DeregisterImageRequest)
  */
-public class DeregisterImageRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeregisterImageRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeregisterImageRequest> {
 
     /**
      * The ID of the AMI to deregister.
@@ -85,6 +87,18 @@ public class DeregisterImageRequest extends AmazonWebServiceRequest  implements 
         return this;
     }
     
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<DeregisterImageRequest> getDryRunRequest() {
+        Request<DeregisterImageRequest> request = new DeregisterImageRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

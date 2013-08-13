@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeReservedDBInstances(DescribeReservedDBInstancesRequest)
  */
-public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The reserved DB Instance identifier filter value. Specify this
@@ -131,6 +131,9 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
      * @param reservedDBInstanceId The reserved DB Instance identifier filter value. Specify this
      *         parameter to show only the reservation that matches the specified
      *         reservation ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedDBInstancesRequest withReservedDBInstanceId(String reservedDBInstanceId) {
         this.reservedDBInstanceId = reservedDBInstanceId;
@@ -174,6 +177,9 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
      * @param reservedDBInstancesOfferingId The offering identifier filter value. Specify this parameter to show
      *         only purchased reservations matching the specified offering
      *         identifier.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedDBInstancesRequest withReservedDBInstancesOfferingId(String reservedDBInstancesOfferingId) {
         this.reservedDBInstancesOfferingId = reservedDBInstancesOfferingId;
@@ -211,6 +217,9 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
      *
      * @param dBInstanceClass The DB Instance class filter value. Specify this parameter to show
      *         only those reservations matching the specified DB Instances class.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedDBInstancesRequest withDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
@@ -254,6 +263,9 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
      * @param duration The duration filter value, specified in years or seconds. Specify this
      *         parameter to show only reservations for this duration. <p>Valid
      *         Values: <code>1 | 3 | 31536000 | 94608000</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedDBInstancesRequest withDuration(String duration) {
         this.duration = duration;
@@ -291,6 +303,9 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
      *
      * @param productDescription The product description filter value. Specify this parameter to show
      *         only those reservations matching the specified product description.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedDBInstancesRequest withProductDescription(String productDescription) {
         this.productDescription = productDescription;
@@ -340,6 +355,9 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
      *         the available offerings matching the specified offering type. <p>Valid
      *         Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
      *         Utilization" </code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedDBInstancesRequest withOfferingType(String offeringType) {
         this.offeringType = offeringType;
@@ -377,6 +395,9 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
      *
      * @param multiAZ The Multi-AZ filter value. Specify this parameter to show only those
      *         reservations matching the specified Multi-AZ parameter.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedDBInstancesRequest withMultiAZ(Boolean multiAZ) {
         this.multiAZ = multiAZ;
@@ -443,6 +464,9 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
      *         called a marker is included in the response so that the following
      *         results can be retrieved. <p>Default: 100 <p>Constraints: minimum 20,
      *         maximum 100
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedDBInstancesRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -486,6 +510,9 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
      * @param marker An optional pagination token provided by a previous request. If this
      *         parameter is specified, the response includes only records beyond the
      *         marker, up to the value specified by <code>MaxRecords</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedDBInstancesRequest withMarker(String marker) {
         this.marker = marker;

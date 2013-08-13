@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes a cluster version, including the parameter group family and description of the version.
  * </p>
  */
-public class ClusterVersion  implements Serializable  {
+public class ClusterVersion implements Serializable {
 
     /**
      * The version number used by the cluster.
@@ -61,6 +61,9 @@ public class ClusterVersion  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clusterVersion The version number used by the cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ClusterVersion withClusterVersion(String clusterVersion) {
         this.clusterVersion = clusterVersion;
@@ -92,6 +95,9 @@ public class ClusterVersion  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clusterParameterGroupFamily The name of the cluster parameter group family for the cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ClusterVersion withClusterParameterGroupFamily(String clusterParameterGroupFamily) {
         this.clusterParameterGroupFamily = clusterParameterGroupFamily;
@@ -123,6 +129,9 @@ public class ClusterVersion  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description The description of the cluster version.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ClusterVersion withDescription(String description) {
         this.description = description;

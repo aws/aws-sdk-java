@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The SpotDatafeedSubscriptionType data type.
  * </p>
  */
-public class SpotDatafeedSubscription  implements Serializable  {
+public class SpotDatafeedSubscription implements Serializable {
 
     /**
      * Specifies the AWS account ID of the account.

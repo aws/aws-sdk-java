@@ -28,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#addTagsToResource(AddTagsToResourceRequest)
  */
-public class AddTagsToResourceRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The DB Instance the tags will be added to. This value is an Amazon
@@ -85,6 +85,9 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest  implement
      *         Resource Name (ARN). For information about creating an ARN, see <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      *         Constructing an RDS Amazon Resource Name (ARN)</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AddTagsToResourceRequest withResourceName(String resourceName) {
         this.resourceName = resourceName;
@@ -127,6 +130,9 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest  implement
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags The tags to be assigned to the DB Instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AddTagsToResourceRequest withTags(Tag... tags) {
         if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
@@ -142,6 +148,9 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest  implement
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags The tags to be assigned to the DB Instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AddTagsToResourceRequest withTags(java.util.Collection<Tag> tags) {
         if (tags == null) {

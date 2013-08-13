@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A complex type containing the response information for the request.
  * </p>
  */
-public class DeleteHostedZoneResult  implements Serializable  {
+public class DeleteHostedZoneResult implements Serializable {
 
     /**
      * A complex type that contains the ID, the status, and the date and time
@@ -58,6 +58,9 @@ public class DeleteHostedZoneResult  implements Serializable  {
      *
      * @param changeInfo A complex type that contains the ID, the status, and the date and time
      *         of your delete request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteHostedZoneResult withChangeInfo(ChangeInfo changeInfo) {
         this.changeInfo = changeInfo;

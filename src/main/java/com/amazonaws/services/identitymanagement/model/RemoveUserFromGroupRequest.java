@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#removeUserFromGroup(RemoveUserFromGroupRequest)
  */
-public class RemoveUserFromGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class RemoveUserFromGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the group to update.
@@ -103,6 +103,9 @@ public class RemoveUserFromGroupRequest extends AmazonWebServiceRequest  impleme
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param groupName Name of the group to update.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RemoveUserFromGroupRequest withGroupName(String groupName) {
         this.groupName = groupName;
@@ -146,6 +149,9 @@ public class RemoveUserFromGroupRequest extends AmazonWebServiceRequest  impleme
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param userName Name of the user to remove.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RemoveUserFromGroupRequest withUserName(String userName) {
         this.userName = userName;

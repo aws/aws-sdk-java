@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#updateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest)
  */
-public class UpdateServiceAccessPoliciesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class UpdateServiceAccessPoliciesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * A string that represents the name of a domain. Domain names must be
@@ -114,6 +114,9 @@ public class UpdateServiceAccessPoliciesRequest extends AmazonWebServiceRequest 
      *         Domain names must start with a letter or number and can contain the
      *         following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase
      *         letters and underscores are not allowed.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateServiceAccessPoliciesRequest withDomainName(String domainName) {
         this.domainName = domainName;
@@ -205,6 +208,9 @@ public class UpdateServiceAccessPoliciesRequest extends AmazonWebServiceRequest 
      *         {"Effect":"Allow", "Action": "*", "Resource":
      *         "arn:aws:cs:us-east-1:1234567890:documents/movies", "Condition": {
      *         "IpAddress": { aws:SourceIp": ["203.0.113.1/32"] } }} ] }</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateServiceAccessPoliciesRequest withAccessPolicies(String accessPolicies) {
         this.accessPolicies = accessPolicies;

@@ -19,7 +19,7 @@ import java.io.Serializable;
  * <p>
  * </p>
  */
-public class Item  implements Serializable  {
+public class Item implements Serializable {
 
     /**
      * The name of the item.
@@ -83,6 +83,9 @@ public class Item  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The name of the item.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Item withName(String name) {
         this.name = name;
@@ -114,6 +117,9 @@ public class Item  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param alternateNameEncoding 
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Item withAlternateNameEncoding(String alternateNameEncoding) {
         this.alternateNameEncoding = alternateNameEncoding;
@@ -156,6 +162,9 @@ public class Item  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributes A list of attributes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Item withAttributes(Attribute... attributes) {
         if (getAttributes() == null) setAttributes(new java.util.ArrayList<Attribute>(attributes.length));
@@ -171,6 +180,9 @@ public class Item  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributes A list of attributes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Item withAttributes(java.util.Collection<Attribute> attributes) {
         if (attributes == null) {

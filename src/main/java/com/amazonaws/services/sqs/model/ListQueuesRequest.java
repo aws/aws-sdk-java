@@ -18,12 +18,18 @@ import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#listQueues(ListQueuesRequest) ListQueues operation}.
- * 
+ * <p>
+ * Returns a list of your queues.
+ * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#listQueues(ListQueuesRequest)
  */
-public class ListQueuesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ListQueuesRequest extends AmazonWebServiceRequest implements Serializable {
 
+    /**
+     * A string to use for filtering the list results. Only those queues
+     * whose name begins with the specified string are returned.
+     */
     private String queueNamePrefix;
 
     /**
@@ -39,7 +45,9 @@ public class ListQueuesRequest extends AmazonWebServiceRequest  implements Seria
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param queueNamePrefix
+     * @param queueNamePrefix A string to use for filtering the list results.
+     * Only those queues whose name begins with the specified string are
+     * returned.
      */
     public ListQueuesRequest(String queueNamePrefix) {
         setQueueNamePrefix(queueNamePrefix);
@@ -48,29 +56,38 @@ public class ListQueuesRequest extends AmazonWebServiceRequest  implements Seria
     
     
     /**
-     * Returns the value of the QueueNamePrefix property for this object.
+     * A string to use for filtering the list results. Only those queues
+     * whose name begins with the specified string are returned.
      *
-     * @return The value of the QueueNamePrefix property for this object.
+     * @return A string to use for filtering the list results. Only those queues
+     *         whose name begins with the specified string are returned.
      */
     public String getQueueNamePrefix() {
         return queueNamePrefix;
     }
     
     /**
-     * Sets the value of the QueueNamePrefix property for this object.
+     * A string to use for filtering the list results. Only those queues
+     * whose name begins with the specified string are returned.
      *
-     * @param queueNamePrefix The new value for the QueueNamePrefix property for this object.
+     * @param queueNamePrefix A string to use for filtering the list results. Only those queues
+     *         whose name begins with the specified string are returned.
      */
     public void setQueueNamePrefix(String queueNamePrefix) {
         this.queueNamePrefix = queueNamePrefix;
     }
     
     /**
-     * Sets the value of the QueueNamePrefix property for this object.
+     * A string to use for filtering the list results. Only those queues
+     * whose name begins with the specified string are returned.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queueNamePrefix The new value for the QueueNamePrefix property for this object.
+     * @param queueNamePrefix A string to use for filtering the list results. Only those queues
+     *         whose name begins with the specified string are returned.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListQueuesRequest withQueueNamePrefix(String queueNamePrefix) {
         this.queueNamePrefix = queueNamePrefix;

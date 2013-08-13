@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.importexport.AmazonImportExport#cancelJob(CancelJobRequest)
  */
-public class CancelJobRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CancelJobRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * A unique identifier which refers to a particular job.
@@ -55,6 +55,9 @@ public class CancelJobRequest extends AmazonWebServiceRequest  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param jobId A unique identifier which refers to a particular job.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CancelJobRequest withJobId(String jobId) {
         this.jobId = jobId;

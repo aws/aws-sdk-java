@@ -58,7 +58,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.glacier.AmazonGlacier#completeMultipartUpload(CompleteMultipartUploadRequest)
  */
-public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The <code>AccountId</code> is the AWS Account ID. You can specify
@@ -208,6 +208,9 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest  imp
      *         Glacier uses the AWS Account ID associated with the credentials used
      *         to sign the request. If you specify your Account ID, do not include
      *         hyphens in it.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CompleteMultipartUploadRequest withAccountId(String accountId) {
         this.accountId = accountId;
@@ -239,6 +242,9 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vaultName The name of the vault.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CompleteMultipartUploadRequest withVaultName(String vaultName) {
         this.vaultName = vaultName;
@@ -270,6 +276,9 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param uploadId The upload ID of the multipart upload.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CompleteMultipartUploadRequest withUploadId(String uploadId) {
         this.uploadId = uploadId;
@@ -307,6 +316,9 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest  imp
      *
      * @param archiveSize The total size, in bytes, of the entire archive. This value should be
      *         the sum of all the sizes of the individual parts that you uploaded.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CompleteMultipartUploadRequest withArchiveSize(String archiveSize) {
         this.archiveSize = archiveSize;
@@ -362,6 +374,9 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest  imp
      *         the request does not match the SHA256 tree hash of the final assembled
      *         archive as computed by Amazon Glacier, Amazon Glacier returns an error
      *         and the request fails.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CompleteMultipartUploadRequest withChecksum(String checksum) {
         this.checksum = checksum;

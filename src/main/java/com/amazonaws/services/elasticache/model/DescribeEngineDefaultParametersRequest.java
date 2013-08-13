@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest)
  */
-public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the Cache Parameter Group Family. <note>Currently,
@@ -108,6 +108,9 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
      * @param cacheParameterGroupFamily The name of the Cache Parameter Group Family. <note>Currently,
      *         <i>memcached1.4</i> is the only cache parameter group family supported
      *         by the service.</note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEngineDefaultParametersRequest withCacheParameterGroupFamily(String cacheParameterGroupFamily) {
         this.cacheParameterGroupFamily = cacheParameterGroupFamily;
@@ -157,6 +160,9 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
      *         records exist than the specified <i>MaxRecords</i> value, a marker is
      *         included in the response so that the remaining results may be
      *         retrieved.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEngineDefaultParametersRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -206,6 +212,9 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
      *         request. If this parameter is specified, the response includes only
      *         records beyond the marker, up to the value specified by
      *         <i>MaxRecords</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEngineDefaultParametersRequest withMarker(String marker) {
         this.marker = marker;

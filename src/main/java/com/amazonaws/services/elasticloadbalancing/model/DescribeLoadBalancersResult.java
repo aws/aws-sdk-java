@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The output for the DescribeLoadBalancers action.
  * </p>
  */
-public class DescribeLoadBalancersResult  implements Serializable  {
+public class DescribeLoadBalancersResult implements Serializable {
 
     /**
      * A list of LoadBalancer description structures.
@@ -67,6 +67,9 @@ public class DescribeLoadBalancersResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param loadBalancerDescriptions A list of LoadBalancer description structures.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeLoadBalancersResult withLoadBalancerDescriptions(LoadBalancerDescription... loadBalancerDescriptions) {
         if (getLoadBalancerDescriptions() == null) setLoadBalancerDescriptions(new java.util.ArrayList<LoadBalancerDescription>(loadBalancerDescriptions.length));
@@ -82,6 +85,9 @@ public class DescribeLoadBalancersResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param loadBalancerDescriptions A list of LoadBalancer description structures.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeLoadBalancersResult withLoadBalancerDescriptions(java.util.Collection<LoadBalancerDescription> loadBalancerDescriptions) {
         if (loadBalancerDescriptions == null) {
@@ -119,6 +125,9 @@ public class DescribeLoadBalancersResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nextMarker An optional parameter reserved for future use.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeLoadBalancersResult withNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;

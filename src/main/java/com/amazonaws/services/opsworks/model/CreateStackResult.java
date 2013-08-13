@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the response to a <code>CreateStack</code> request.
  * </p>
  */
-public class CreateStackResult  implements Serializable  {
+public class CreateStackResult implements Serializable {
 
     /**
      * The stack ID, which is an opaque string that you use to identify the
@@ -58,6 +58,9 @@ public class CreateStackResult  implements Serializable  {
      *
      * @param stackId The stack ID, which is an opaque string that you use to identify the
      *         stack when performing actions such as <code>DescribeStacks</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateStackResult withStackId(String stackId) {
         this.stackId = stackId;

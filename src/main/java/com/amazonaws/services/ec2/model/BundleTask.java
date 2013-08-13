@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents a task to bundle an EC2 Windows instance into a new image.
  * </p>
  */
-public class BundleTask  implements Serializable  {
+public class BundleTask implements Serializable {
 
     /**
      * Instance associated with this bundle task.

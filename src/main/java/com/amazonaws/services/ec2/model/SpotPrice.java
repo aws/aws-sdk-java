@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Spot Price
  */
-public class SpotPrice  implements Serializable  {
+public class SpotPrice implements Serializable {
 
     private String instanceType;
 

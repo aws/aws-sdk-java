@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the output from the DescribeClusterSecurityGroups action.
  * </p>
  */
-public class DescribeClusterSecurityGroupsResult  implements Serializable  {
+public class DescribeClusterSecurityGroupsResult implements Serializable {
 
     /**
      * A marker at which to continue listing cluster security groups in a new
@@ -70,6 +70,9 @@ public class DescribeClusterSecurityGroupsResult  implements Serializable  {
      * @param marker A marker at which to continue listing cluster security groups in a new
      *         request. The response returns a marker if there are more security
      *         groups to list than could be returned in the response.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterSecurityGroupsResult withMarker(String marker) {
         this.marker = marker;
@@ -112,6 +115,9 @@ public class DescribeClusterSecurityGroupsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clusterSecurityGroups A list of <a>ClusterSecurityGroup</a> instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterSecurityGroupsResult withClusterSecurityGroups(ClusterSecurityGroup... clusterSecurityGroups) {
         if (getClusterSecurityGroups() == null) setClusterSecurityGroups(new java.util.ArrayList<ClusterSecurityGroup>(clusterSecurityGroups.length));
@@ -127,6 +133,9 @@ public class DescribeClusterSecurityGroupsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clusterSecurityGroups A list of <a>ClusterSecurityGroup</a> instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterSecurityGroupsResult withClusterSecurityGroups(java.util.Collection<ClusterSecurityGroup> clusterSecurityGroups) {
         if (clusterSecurityGroups == null) {

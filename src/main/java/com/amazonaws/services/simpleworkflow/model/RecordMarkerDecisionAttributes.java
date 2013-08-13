@@ -38,7 +38,7 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a> .
  * </p>
  */
-public class RecordMarkerDecisionAttributes  implements Serializable  {
+public class RecordMarkerDecisionAttributes implements Serializable {
 
     /**
      * The name of the marker. This file is required.
@@ -89,6 +89,9 @@ public class RecordMarkerDecisionAttributes  implements Serializable  {
      * <b>Length: </b>1 - 256<br/>
      *
      * @param markerName The name of the marker. This file is required.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RecordMarkerDecisionAttributes withMarkerName(String markerName) {
         this.markerName = markerName;
@@ -129,6 +132,9 @@ public class RecordMarkerDecisionAttributes  implements Serializable  {
      * <b>Length: </b>0 - 32768<br/>
      *
      * @param details Optional details of the marker.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RecordMarkerDecisionAttributes withDetails(String details) {
         this.details = details;

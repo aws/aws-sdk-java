@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Instance Export Details
  */
-public class InstanceExportDetails  implements Serializable  {
+public class InstanceExportDetails implements Serializable {
 
     private String instanceId;
 

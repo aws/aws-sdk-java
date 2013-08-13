@@ -28,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#activatePipeline(ActivatePipelineRequest)
  */
-public class ActivatePipelineRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ActivatePipelineRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The identifier of the pipeline to activate.
@@ -75,6 +75,9 @@ public class ActivatePipelineRequest extends AmazonWebServiceRequest  implements
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param pipelineId The identifier of the pipeline to activate.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActivatePipelineRequest withPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;

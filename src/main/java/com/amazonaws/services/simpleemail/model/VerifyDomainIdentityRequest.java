@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#verifyDomainIdentity(VerifyDomainIdentityRequest)
  */
-public class VerifyDomainIdentityRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class VerifyDomainIdentityRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The domain to be verified.
@@ -55,6 +55,9 @@ public class VerifyDomainIdentityRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param domain The domain to be verified.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VerifyDomainIdentityRequest withDomain(String domain) {
         this.domain = domain;

@@ -39,7 +39,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#updateTable(UpdateTableRequest)
  */
-public class UpdateTableRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class UpdateTableRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the table to be updated.
@@ -60,6 +60,34 @@ public class UpdateTableRequest extends AmazonWebServiceRequest  implements Seri
      */
     private ProvisionedThroughput provisionedThroughput;
 
+    /**
+     * Default constructor for a new UpdateTableRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public UpdateTableRequest() {}
+    
+
+
+    /**
+     * Constructs a new UpdateTableRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param tableName The name of the table to be updated.
+     * @param provisionedThroughput The provisioned throughput settings for
+     * the specified table. The settings can be modified using the
+     * <i>UpdateTable</i> operation. <p>For current minimum and maximum
+     * provisioned throughput values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+     * in the Amazon DynamoDB Developer Guide.
+     */
+    public UpdateTableRequest(String tableName, ProvisionedThroughput provisionedThroughput) {
+        setTableName(tableName);
+        setProvisionedThroughput(provisionedThroughput);
+    }
+
+    
+    
     /**
      * The name of the table to be updated.
      * <p>
@@ -96,6 +124,9 @@ public class UpdateTableRequest extends AmazonWebServiceRequest  implements Seri
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
      * @param tableName The name of the table to be updated.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateTableRequest withTableName(String tableName) {
         this.tableName = tableName;
@@ -157,6 +188,9 @@ public class UpdateTableRequest extends AmazonWebServiceRequest  implements Seri
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      *         in the Amazon DynamoDB Developer Guide.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateTableRequest withProvisionedThroughput(ProvisionedThroughput provisionedThroughput) {
         this.provisionedThroughput = provisionedThroughput;

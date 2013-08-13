@@ -55,7 +55,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#terminateWorkflowExecution(TerminateWorkflowExecutionRequest)
  */
-public class TerminateWorkflowExecutionRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class TerminateWorkflowExecutionRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The domain of the workflow execution to terminate.
@@ -152,6 +152,9 @@ public class TerminateWorkflowExecutionRequest extends AmazonWebServiceRequest  
      * <b>Length: </b>1 - 256<br/>
      *
      * @param domain The domain of the workflow execution to terminate.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public TerminateWorkflowExecutionRequest withDomain(String domain) {
         this.domain = domain;
@@ -192,6 +195,9 @@ public class TerminateWorkflowExecutionRequest extends AmazonWebServiceRequest  
      * <b>Length: </b>1 - 256<br/>
      *
      * @param workflowId The workflowId of the workflow execution to terminate.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public TerminateWorkflowExecutionRequest withWorkflowId(String workflowId) {
         this.workflowId = workflowId;
@@ -232,6 +238,9 @@ public class TerminateWorkflowExecutionRequest extends AmazonWebServiceRequest  
      * <b>Length: </b>0 - 64<br/>
      *
      * @param runId The runId of the workflow execution to terminate.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public TerminateWorkflowExecutionRequest withRunId(String runId) {
         this.runId = runId;
@@ -272,6 +281,9 @@ public class TerminateWorkflowExecutionRequest extends AmazonWebServiceRequest  
      * <b>Length: </b>0 - 256<br/>
      *
      * @param reason An optional descriptive reason for terminating the workflow execution.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public TerminateWorkflowExecutionRequest withReason(String reason) {
         this.reason = reason;
@@ -312,6 +324,9 @@ public class TerminateWorkflowExecutionRequest extends AmazonWebServiceRequest  
      * <b>Length: </b>0 - 32768<br/>
      *
      * @param details Optional details for terminating the workflow execution.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public TerminateWorkflowExecutionRequest withDetails(String details) {
         this.details = details;
@@ -441,6 +456,9 @@ public class TerminateWorkflowExecutionRequest extends AmazonWebServiceRequest  
      *         If neither this parameter is set nor a default child policy was
      *         specified at registration time, a fault will be returned.</note>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ChildPolicy
      */
     public TerminateWorkflowExecutionRequest withChildPolicy(String childPolicy) {
@@ -528,6 +546,9 @@ public class TerminateWorkflowExecutionRequest extends AmazonWebServiceRequest  
      *         either as a default for the workflow type or through this parameter.
      *         If neither this parameter is set nor a default child policy was
      *         specified at registration time, a fault will be returned.</note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see ChildPolicy
      */

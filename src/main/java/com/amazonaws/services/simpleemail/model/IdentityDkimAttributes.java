@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents the DKIM attributes of a verified email address or a domain.
  * </p>
  */
-public class IdentityDkimAttributes  implements Serializable  {
+public class IdentityDkimAttributes implements Serializable {
 
     /**
      * True if DKIM signing is enabled for email sent from the identity;
@@ -78,6 +78,9 @@ public class IdentityDkimAttributes  implements Serializable  {
      *
      * @param dkimEnabled True if DKIM signing is enabled for email sent from the identity;
      *         false otherwise.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public IdentityDkimAttributes withDkimEnabled(Boolean dkimEnabled) {
         this.dkimEnabled = dkimEnabled;
@@ -146,6 +149,9 @@ public class IdentityDkimAttributes  implements Serializable  {
      *         records (tokens) published in the domain name's DNS. (This only
      *         applies to domain identities, not email address identities.)
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see VerificationStatus
      */
     public IdentityDkimAttributes withDkimVerificationStatus(String dkimVerificationStatus) {
@@ -185,6 +191,9 @@ public class IdentityDkimAttributes  implements Serializable  {
      * @param dkimVerificationStatus Describes whether Amazon SES has successfully verified the DKIM DNS
      *         records (tokens) published in the domain name's DNS. (This only
      *         applies to domain identities, not email address identities.)
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see VerificationStatus
      */
@@ -258,6 +267,9 @@ public class IdentityDkimAttributes  implements Serializable  {
      *         <code>CNAME</code> DNS records that point to DKIM public keys hosted
      *         by Amazon SES. (This only applies to domain entities, not email
      *         address identities.)
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public IdentityDkimAttributes withDkimTokens(String... dkimTokens) {
         if (getDkimTokens() == null) setDkimTokens(new java.util.ArrayList<String>(dkimTokens.length));
@@ -283,6 +295,9 @@ public class IdentityDkimAttributes  implements Serializable  {
      *         <code>CNAME</code> DNS records that point to DKIM public keys hosted
      *         by Amazon SES. (This only applies to domain entities, not email
      *         address identities.)
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public IdentityDkimAttributes withDkimTokens(java.util.Collection<String> dkimTokens) {
         if (dkimTokens == null) {

@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.RebootInstancesRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -26,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#rebootInstances(RebootInstancesRequest)
  */
-public class RebootInstancesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class RebootInstancesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<RebootInstancesRequest> {
 
     /**
      * The list of instances to terminate.
@@ -121,6 +123,18 @@ public class RebootInstancesRequest extends AmazonWebServiceRequest  implements 
         }
 
         return this;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<RebootInstancesRequest> getDryRunRequest() {
+        Request<RebootInstancesRequest> request = new RebootInstancesRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

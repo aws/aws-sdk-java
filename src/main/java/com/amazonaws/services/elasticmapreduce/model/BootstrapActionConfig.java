@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Configuration of a bootstrap action.
  * </p>
  */
-public class BootstrapActionConfig  implements Serializable  {
+public class BootstrapActionConfig implements Serializable {
 
     /**
      * The name of the bootstrap action.
@@ -95,6 +95,9 @@ public class BootstrapActionConfig  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param name The name of the bootstrap action.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public BootstrapActionConfig withName(String name) {
         this.name = name;
@@ -126,6 +129,9 @@ public class BootstrapActionConfig  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param scriptBootstrapAction The script run by the bootstrap action.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public BootstrapActionConfig withScriptBootstrapAction(ScriptBootstrapActionConfig scriptBootstrapAction) {
         this.scriptBootstrapAction = scriptBootstrapAction;

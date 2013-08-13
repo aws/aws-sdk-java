@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes a parameter group.
  * </p>
  */
-public class ClusterParameterGroup  implements Serializable  {
+public class ClusterParameterGroup implements Serializable {
 
     /**
      * The name of the cluster parameter group.
@@ -62,6 +62,9 @@ public class ClusterParameterGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameterGroupName The name of the cluster parameter group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ClusterParameterGroup withParameterGroupName(String parameterGroupName) {
         this.parameterGroupName = parameterGroupName;
@@ -99,6 +102,9 @@ public class ClusterParameterGroup  implements Serializable  {
      *
      * @param parameterGroupFamily The name of the cluster parameter group family that this cluster
      *         parameter group is compatible with.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ClusterParameterGroup withParameterGroupFamily(String parameterGroupFamily) {
         this.parameterGroupFamily = parameterGroupFamily;
@@ -130,6 +136,9 @@ public class ClusterParameterGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description The description of the parameter group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ClusterParameterGroup withDescription(String description) {
         this.description = description;

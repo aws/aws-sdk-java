@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A complex type that contains name server information.
  * </p>
  */
-public class DelegationSet  implements Serializable  {
+public class DelegationSet implements Serializable {
 
     /**
      * A complex type that contains the authoritative name servers for the
@@ -119,6 +119,9 @@ public class DelegationSet  implements Serializable  {
      *         hosted zone. Use the method provided by your domain registrar to add
      *         an NS record to your domain for each <code>NameServer</code> that is
      *         assigned to your hosted zone.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DelegationSet withNameServers(String... nameServers) {
         if (getNameServers() == null) setNameServers(new java.util.ArrayList<String>(nameServers.length));
@@ -143,6 +146,9 @@ public class DelegationSet  implements Serializable  {
      *         hosted zone. Use the method provided by your domain registrar to add
      *         an NS record to your domain for each <code>NameServer</code> that is
      *         assigned to your hosted zone.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DelegationSet withNameServers(java.util.Collection<String> nameServers) {
         if (nameServers == null) {

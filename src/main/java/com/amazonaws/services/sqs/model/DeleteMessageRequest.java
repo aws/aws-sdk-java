@@ -18,14 +18,23 @@ import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#deleteMessage(DeleteMessageRequest) DeleteMessage operation}.
- * 
+ * <p>
+ * The <code>DeleteMessage</code> action unconditionally removes the specified message from the specified queue. Even if the message is locked by another
+ * reader due to the visibility timeout setting, it is still deleted from the queue.
+ * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#deleteMessage(DeleteMessageRequest)
  */
-public class DeleteMessageRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteMessageRequest extends AmazonWebServiceRequest implements Serializable {
 
+    /**
+     * The URL of the SQS queue to take action on.
+     */
     private String queueUrl;
 
+    /**
+     * The receipt handle associated with the message to delete.
+     */
     private String receiptHandle;
 
     /**
@@ -41,8 +50,9 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest  implements Se
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param queueUrl
-     * @param receiptHandle
+     * @param queueUrl The URL of the SQS queue to take action on.
+     * @param receiptHandle The receipt handle associated with the message to
+     * delete.
      */
     public DeleteMessageRequest(String queueUrl, String receiptHandle) {
         setQueueUrl(queueUrl);
@@ -52,29 +62,32 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest  implements Se
     
     
     /**
-     * Returns the value of the QueueUrl property for this object.
+     * The URL of the SQS queue to take action on.
      *
-     * @return The value of the QueueUrl property for this object.
+     * @return The URL of the SQS queue to take action on.
      */
     public String getQueueUrl() {
         return queueUrl;
     }
     
     /**
-     * Sets the value of the QueueUrl property for this object.
+     * The URL of the SQS queue to take action on.
      *
-     * @param queueUrl The new value for the QueueUrl property for this object.
+     * @param queueUrl The URL of the SQS queue to take action on.
      */
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
     
     /**
-     * Sets the value of the QueueUrl property for this object.
+     * The URL of the SQS queue to take action on.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queueUrl The new value for the QueueUrl property for this object.
+     * @param queueUrl The URL of the SQS queue to take action on.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteMessageRequest withQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
@@ -83,29 +96,32 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest  implements Se
     
     
     /**
-     * Returns the value of the ReceiptHandle property for this object.
+     * The receipt handle associated with the message to delete.
      *
-     * @return The value of the ReceiptHandle property for this object.
+     * @return The receipt handle associated with the message to delete.
      */
     public String getReceiptHandle() {
         return receiptHandle;
     }
     
     /**
-     * Sets the value of the ReceiptHandle property for this object.
+     * The receipt handle associated with the message to delete.
      *
-     * @param receiptHandle The new value for the ReceiptHandle property for this object.
+     * @param receiptHandle The receipt handle associated with the message to delete.
      */
     public void setReceiptHandle(String receiptHandle) {
         this.receiptHandle = receiptHandle;
     }
     
     /**
-     * Sets the value of the ReceiptHandle property for this object.
+     * The receipt handle associated with the message to delete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param receiptHandle The new value for the ReceiptHandle property for this object.
+     * @param receiptHandle The receipt handle associated with the message to delete.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteMessageRequest withReceiptHandle(String receiptHandle) {
         this.receiptHandle = receiptHandle;

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A complex type that contains zero or more CacheBehavior elements.
  * </p>
  */
-public class CacheBehaviors  implements Serializable  {
+public class CacheBehaviors implements Serializable {
 
     /**
      * The number of cache behaviors for this distribution.
@@ -57,6 +57,9 @@ public class CacheBehaviors  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param quantity The number of cache behaviors for this distribution.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheBehaviors withQuantity(Integer quantity) {
         this.quantity = quantity;
@@ -105,6 +108,9 @@ public class CacheBehaviors  implements Serializable  {
      *
      * @param items Optional: A complex type that contains cache behaviors for this
      *         distribution. If Quantity is 0, you can omit Items.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheBehaviors withItems(CacheBehavior... items) {
         if (getItems() == null) setItems(new java.util.ArrayList<CacheBehavior>(items.length));
@@ -122,6 +128,9 @@ public class CacheBehaviors  implements Serializable  {
      *
      * @param items Optional: A complex type that contains cache behaviors for this
      *         distribution. If Quantity is 0, you can omit Items.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheBehaviors withItems(java.util.Collection<CacheBehavior> items) {
         if (items == null) {

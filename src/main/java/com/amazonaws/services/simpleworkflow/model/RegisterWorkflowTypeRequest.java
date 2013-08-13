@@ -56,7 +56,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#registerWorkflowType(RegisterWorkflowTypeRequest)
  */
-public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the domain in which to register the workflow type.
@@ -195,6 +195,9 @@ public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest  implem
      * <b>Length: </b>1 - 256<br/>
      *
      * @param domain The name of the domain in which to register the workflow type.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RegisterWorkflowTypeRequest withDomain(String domain) {
         this.domain = domain;
@@ -259,6 +262,9 @@ public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest  implem
      *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control
      *         characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
      *         contain the literal string "arn".
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RegisterWorkflowTypeRequest withName(String name) {
         this.name = name;
@@ -341,6 +347,9 @@ public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest  implem
      *         <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
      *         (vertical bar), or any control characters (\u0000-\u001f | \u007f -
      *         \u009f). Also, it must not contain the literal string "arn".
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RegisterWorkflowTypeRequest withVersion(String version) {
         this.version = version;
@@ -381,6 +390,9 @@ public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest  implem
      * <b>Length: </b>0 - 1024<br/>
      *
      * @param description Textual description of the workflow type.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RegisterWorkflowTypeRequest withDescription(String description) {
         this.description = description;
@@ -457,6 +469,9 @@ public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest  implem
      *         valid values are integers greater than or equal to <code>0</code>. An
      *         integer value can be used to specify the duration in seconds while
      *         <code>NONE</code> can be used to specify unlimited duration.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RegisterWorkflowTypeRequest withDefaultTaskStartToCloseTimeout(String defaultTaskStartToCloseTimeout) {
         this.defaultTaskStartToCloseTimeout = defaultTaskStartToCloseTimeout;
@@ -551,6 +566,9 @@ public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest  implem
      *         <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year
      *         max limit on the time that a workflow execution can run. Exceeding
      *         this limit will always cause the workflow execution to time out.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RegisterWorkflowTypeRequest withDefaultExecutionStartToCloseTimeout(String defaultExecutionStartToCloseTimeout) {
         this.defaultExecutionStartToCloseTimeout = defaultExecutionStartToCloseTimeout;
@@ -606,6 +624,9 @@ public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest  implem
      *         if a task list is not provided when starting the execution through the
      *         <a>StartWorkflowExecution</a> Action or
      *         <code>StartChildWorkflowExecution</code> <a>Decision</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RegisterWorkflowTypeRequest withDefaultTaskList(TaskList defaultTaskList) {
         this.defaultTaskList = defaultTaskList;
@@ -729,6 +750,9 @@ public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest  implem
      *         <li><b>ABANDON:</b> no action will be taken. The child executions will
      *         continue to run.</li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ChildPolicy
      */
     public RegisterWorkflowTypeRequest withDefaultChildPolicy(String defaultChildPolicy) {
@@ -812,6 +836,9 @@ public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest  implem
      *         receives an execution history with this event. </li>
      *         <li><b>ABANDON:</b> no action will be taken. The child executions will
      *         continue to run.</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see ChildPolicy
      */

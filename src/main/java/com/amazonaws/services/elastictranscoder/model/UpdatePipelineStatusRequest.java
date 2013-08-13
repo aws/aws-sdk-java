@@ -29,7 +29,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#updatePipelineStatus(UpdatePipelineStatusRequest)
  */
-public class UpdatePipelineStatusRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class UpdatePipelineStatusRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The identifier of the pipeline to update.
@@ -82,6 +82,9 @@ public class UpdatePipelineStatusRequest extends AmazonWebServiceRequest  implem
      * <b>Pattern: </b>^\d{13}-\w{6}$<br/>
      *
      * @param id The identifier of the pipeline to update.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdatePipelineStatusRequest withId(String id) {
         this.id = id;
@@ -134,6 +137,9 @@ public class UpdatePipelineStatusRequest extends AmazonWebServiceRequest  implem
      * @param status The desired status of the pipeline: <ul> <li> <code>Active</code>: The
      *         pipeline is processing jobs.</li> <li> <code>Paused</code>: The
      *         pipeline is not currently processing jobs.</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdatePipelineStatusRequest withStatus(String status) {
         this.status = status;

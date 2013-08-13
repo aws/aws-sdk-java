@@ -30,7 +30,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#modifyDBParameterGroup(ModifyDBParameterGroupRequest)
  */
-public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
@@ -136,6 +136,9 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest  impl
      *         alphanumeric characters</li> <li>First character must be a letter</li>
      *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      *         </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ModifyDBParameterGroupRequest withDBParameterGroupName(String dBParameterGroupName) {
         this.dBParameterGroupName = dBParameterGroupName;
@@ -220,6 +223,9 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest  impl
      *         <note>You can use the immediate value with dynamic parameters only.
      *         You can use the pending-reboot value for both dynamic and static
      *         parameters, and changes are applied when DB Instance reboots. </note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ModifyDBParameterGroupRequest withParameters(Parameter... parameters) {
         if (getParameters() == null) setParameters(new java.util.ArrayList<Parameter>(parameters.length));
@@ -249,6 +255,9 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest  impl
      *         <note>You can use the immediate value with dynamic parameters only.
      *         You can use the pending-reboot value for both dynamic and static
      *         parameters, and changes are applied when DB Instance reboots. </note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ModifyDBParameterGroupRequest withParameters(java.util.Collection<Parameter> parameters) {
         if (parameters == null) {

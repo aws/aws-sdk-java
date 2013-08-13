@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents a usage charge for Amazon EC2 resources that repeats on a schedule.
  * </p>
  */
-public class RecurringCharge  implements Serializable  {
+public class RecurringCharge implements Serializable {
 
     /**
      * The frequency of the recurring charge.

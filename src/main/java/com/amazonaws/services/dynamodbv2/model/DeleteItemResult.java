@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents the output of a <i>DeleteItem</i> operation.
  * </p>
  */
-public class DeleteItemResult  implements Serializable  {
+public class DeleteItemResult implements Serializable {
 
     /**
      * A map of attribute names to <i>AttributeValue</i> objects,
@@ -109,6 +109,9 @@ public class DeleteItemResult  implements Serializable  {
      *         operation. This map appears in the response only if
      *         <i>ReturnValues</i> was specified as <code>ALL_OLD</code> in the
      *         request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteItemResult withAttributes(java.util.Map<String,AttributeValue> attributes) {
         setAttributes(attributes);
@@ -204,6 +207,9 @@ public class DeleteItemResult  implements Serializable  {
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
      *         Throughput</a> in the Amazon DynamoDB Developer Guide.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteItemResult withConsumedCapacity(ConsumedCapacity consumedCapacity) {
         this.consumedCapacity = consumedCapacity;
@@ -319,6 +325,9 @@ public class DeleteItemResult  implements Serializable  {
      *         estimate to measure whether a secondary index is approaching its size
      *         limit. <p>The estimate is subject to change over time; therefore, do
      *         not rely on the precision or accuracy of the estimate. </li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteItemResult withItemCollectionMetrics(ItemCollectionMetrics itemCollectionMetrics) {
         this.itemCollectionMetrics = itemCollectionMetrics;

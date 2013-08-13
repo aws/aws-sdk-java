@@ -35,7 +35,7 @@ import java.io.Serializable;
  * Multiple conditions are "ANDed" together. In other words, all of the conditions must be met to be included in the output.
  * </p>
  */
-public class Condition  implements Serializable  {
+public class Condition implements Serializable {
 
     /**
      * Represents one or more values to evaluate against the supplied
@@ -255,6 +255,9 @@ public class Condition  implements Serializable  {
      *         <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
      *         unsigned when it compares binary values, for example when evaluating
      *         query expressions. </note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Condition withAttributeValueList(AttributeValue... attributeValueList) {
         if (getAttributeValueList() == null) setAttributeValueList(new java.util.ArrayList<AttributeValue>(attributeValueList.length));
@@ -292,6 +295,9 @@ public class Condition  implements Serializable  {
      *         <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
      *         unsigned when it compares binary values, for example when evaluating
      *         query expressions. </note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Condition withAttributeValueList(java.util.Collection<AttributeValue> attributeValueList) {
         if (attributeValueList == null) {
@@ -889,6 +895,9 @@ public class Condition  implements Serializable  {
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code> </li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ComparisonOperator
      */
     public Condition withComparisonOperator(String comparisonOperator) {
@@ -1284,6 +1293,9 @@ public class Condition  implements Serializable  {
      *         For example, <code>{"S":"6"}</code> does not compare to
      *         <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
      *         to <code>{"NS":["6", "2", "1"]}</code> </li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see ComparisonOperator
      */

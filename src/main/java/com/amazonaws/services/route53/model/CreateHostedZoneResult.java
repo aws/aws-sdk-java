@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A complex type containing the response information for the new hosted zone.
  * </p>
  */
-public class CreateHostedZoneResult  implements Serializable  {
+public class CreateHostedZoneResult implements Serializable {
 
     /**
      * A complex type that contains identifying information about the hosted
@@ -79,6 +79,9 @@ public class CreateHostedZoneResult  implements Serializable  {
      *
      * @param hostedZone A complex type that contains identifying information about the hosted
      *         zone.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateHostedZoneResult withHostedZone(HostedZone hostedZone) {
         this.hostedZone = hostedZone;
@@ -128,6 +131,9 @@ public class CreateHostedZoneResult  implements Serializable  {
      *         hosted zone. This includes an ID that you use when you call the
      *         <a>GetChange</a> action to get the current status of the change
      *         request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateHostedZoneResult withChangeInfo(ChangeInfo changeInfo) {
         this.changeInfo = changeInfo;
@@ -159,6 +165,9 @@ public class CreateHostedZoneResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param delegationSet A complex type that contains name server information.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateHostedZoneResult withDelegationSet(DelegationSet delegationSet) {
         this.delegationSet = delegationSet;
@@ -199,6 +208,9 @@ public class CreateHostedZoneResult  implements Serializable  {
      * <b>Length: </b>0 - 1024<br/>
      *
      * @param location The unique URL representing the new hosted zone.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateHostedZoneResult withLocation(String location) {
         this.location = location;

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the GetUser action.
  * </p>
  */
-public class GetUserResult  implements Serializable  {
+public class GetUserResult implements Serializable {
 
     /**
      * Information about the user.
@@ -51,6 +51,9 @@ public class GetUserResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param user Information about the user.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetUserResult withUser(User user) {
         this.user = user;

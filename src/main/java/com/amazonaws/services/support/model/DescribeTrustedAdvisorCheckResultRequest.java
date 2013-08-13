@@ -49,7 +49,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.support.AWSSupport#describeTrustedAdvisorCheckResult(DescribeTrustedAdvisorCheckResultRequest)
  */
-public class DescribeTrustedAdvisorCheckResultRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeTrustedAdvisorCheckResultRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * 
@@ -88,6 +88,9 @@ public class DescribeTrustedAdvisorCheckResultRequest extends AmazonWebServiceRe
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param checkId 
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeTrustedAdvisorCheckResultRequest withCheckId(String checkId) {
         this.checkId = checkId;
@@ -137,6 +140,9 @@ public class DescribeTrustedAdvisorCheckResultRequest extends AmazonWebServiceRe
      *         support. AWS Support currently supports English and Japanese, for
      *         which the codes are <i>en</i> and <i>ja</i>, respectively. Language
      *         parameters must be passed explicitly for operations that take them.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeTrustedAdvisorCheckResultRequest withLanguage(String language) {
         this.language = language;

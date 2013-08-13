@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A specification identifying an individual configuration option.
  * </p>
  */
-public class OptionSpecification  implements Serializable  {
+public class OptionSpecification implements Serializable {
 
     /**
      * A unique namespace identifying the option's associated AWS resource.
@@ -62,6 +62,9 @@ public class OptionSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param namespace A unique namespace identifying the option's associated AWS resource.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public OptionSpecification withNamespace(String namespace) {
         this.namespace = namespace;
@@ -93,6 +96,9 @@ public class OptionSpecification  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionName The name of the configuration option.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public OptionSpecification withOptionName(String optionName) {
         this.optionName = optionName;

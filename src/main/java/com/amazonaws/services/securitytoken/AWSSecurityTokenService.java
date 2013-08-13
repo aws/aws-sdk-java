@@ -103,7 +103,7 @@ public interface AWSSecurityTokenService {
      * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      */
     public void setRegion(Region region) throws java.lang.IllegalArgumentException;
-	
+    
     /**
      * <p>
      * Returns a set of temporary credentials for an AWS account or IAM

@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.DetachVolumeRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -24,7 +26,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#detachVolume(DetachVolumeRequest)
  */
-public class DetachVolumeRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DetachVolumeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DetachVolumeRequest> {
 
     /**
      * The ID of the volume to detach.
@@ -280,6 +282,18 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest  implements Ser
      */
     public Boolean getForce() {
         return force;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<DetachVolumeRequest> getDryRunRequest() {
+        Request<DetachVolumeRequest> request = new DetachVolumeRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

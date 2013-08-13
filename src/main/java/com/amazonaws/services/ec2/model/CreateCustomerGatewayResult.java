@@ -20,7 +20,7 @@ import java.io.Serializable;
  * 
  * </p>
  */
-public class CreateCustomerGatewayResult  implements Serializable  {
+public class CreateCustomerGatewayResult implements Serializable {
 
     /**
      * Information about the customer gateway.

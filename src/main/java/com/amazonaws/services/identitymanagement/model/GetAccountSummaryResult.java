@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the GetAccountSummary action.
  * </p>
  */
-public class GetAccountSummaryResult  implements Serializable  {
+public class GetAccountSummaryResult implements Serializable {
 
     /**
      * A set of key value pairs containing account-level information. <p>
@@ -293,6 +293,9 @@ public class GetAccountSummaryResult  implements Serializable  {
      *         Number of users for the AWS account</li>
      *         <li><p><code>UsersQuota</code> - Maximum users allowed for the AWS
      *         account</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetAccountSummaryResult withSummaryMap(java.util.Map<String,Integer> summaryMap) {
         setSummaryMap(summaryMap);

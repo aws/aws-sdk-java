@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.DescribeImagesRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -56,7 +58,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeImages(DescribeImagesRequest)
  */
-public class DescribeImagesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeImagesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeImagesRequest> {
 
     /**
      * An optional list of the AMI IDs to describe. If not specified, all
@@ -66,22 +68,24 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
 
     /**
      * An optional list of owners by which to scope the described AMIs. Valid
-     * values are: <ul> <code>self</code> : AMIs owned by you <i>AWS account
-     * ID</i> : AMIs owned by this account ID <code>aws-marketplace</code> :
-     * AMIs owned by the AWS Marketplace <code>amazon</code> : AMIs owned by
-     * Amazon <code>all</code> : Do not scope the AMIs returned by owner
-     * </ul> <p> The values <code>self</code>, <code>aws-marketplace</code>,
+     * values are: <ul> <li> <code>self</code> : AMIs owned by you </li> <li>
+     * <i>AWS account ID</i> : AMIs owned by this account ID </li> <li>
+     * <code>aws-marketplace</code> : AMIs owned by the AWS Marketplace </li>
+     * <li> <code>amazon</code> : AMIs owned by Amazon </li> <li>
+     * <code>all</code> : Do not scope the AMIs returned by owner </li> </ul>
+     * <p> The values <code>self</code>, <code>aws-marketplace</code>,
      * <code>amazon</code>, and <code>all</code> are literals.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> owners;
 
     /**
      * An optional list of users whose launch permissions will be used to
-     * scope the described AMIs. Valid values are: <ul> <code>self</code> :
-     * AMIs for which you have explicit launch permissions <code>AWS account
-     * ID</code> : AMIs for which this account ID has launch permissions
-     * <code>all</code> : AMIs that have public launch permissions </ul> <p>
-     * The values <code>self</code> and <code>all</code> are literals.
+     * scope the described AMIs. Valid values are: <ul> <li>
+     * <code>self</code> : AMIs for which you have explicit launch
+     * permissions </li> <li> <code>AWS account ID</code> : AMIs for which
+     * this account ID has launch permissions </li> <li> <code>all</code> :
+     * AMIs that have public launch permissions </li> </ul> <p> The values
+     * <code>self</code> and <code>all</code> are literals.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> executableUsers;
 
@@ -172,19 +176,21 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
     
     /**
      * An optional list of owners by which to scope the described AMIs. Valid
-     * values are: <ul> <code>self</code> : AMIs owned by you <i>AWS account
-     * ID</i> : AMIs owned by this account ID <code>aws-marketplace</code> :
-     * AMIs owned by the AWS Marketplace <code>amazon</code> : AMIs owned by
-     * Amazon <code>all</code> : Do not scope the AMIs returned by owner
-     * </ul> <p> The values <code>self</code>, <code>aws-marketplace</code>,
+     * values are: <ul> <li> <code>self</code> : AMIs owned by you </li> <li>
+     * <i>AWS account ID</i> : AMIs owned by this account ID </li> <li>
+     * <code>aws-marketplace</code> : AMIs owned by the AWS Marketplace </li>
+     * <li> <code>amazon</code> : AMIs owned by Amazon </li> <li>
+     * <code>all</code> : Do not scope the AMIs returned by owner </li> </ul>
+     * <p> The values <code>self</code>, <code>aws-marketplace</code>,
      * <code>amazon</code>, and <code>all</code> are literals.
      *
      * @return An optional list of owners by which to scope the described AMIs. Valid
-     *         values are: <ul> <code>self</code> : AMIs owned by you <i>AWS account
-     *         ID</i> : AMIs owned by this account ID <code>aws-marketplace</code> :
-     *         AMIs owned by the AWS Marketplace <code>amazon</code> : AMIs owned by
-     *         Amazon <code>all</code> : Do not scope the AMIs returned by owner
-     *         </ul> <p> The values <code>self</code>, <code>aws-marketplace</code>,
+     *         values are: <ul> <li> <code>self</code> : AMIs owned by you </li> <li>
+     *         <i>AWS account ID</i> : AMIs owned by this account ID </li> <li>
+     *         <code>aws-marketplace</code> : AMIs owned by the AWS Marketplace </li>
+     *         <li> <code>amazon</code> : AMIs owned by Amazon </li> <li>
+     *         <code>all</code> : Do not scope the AMIs returned by owner </li> </ul>
+     *         <p> The values <code>self</code>, <code>aws-marketplace</code>,
      *         <code>amazon</code>, and <code>all</code> are literals.
      */
     public java.util.List<String> getOwners() {
@@ -198,19 +204,21 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
     
     /**
      * An optional list of owners by which to scope the described AMIs. Valid
-     * values are: <ul> <code>self</code> : AMIs owned by you <i>AWS account
-     * ID</i> : AMIs owned by this account ID <code>aws-marketplace</code> :
-     * AMIs owned by the AWS Marketplace <code>amazon</code> : AMIs owned by
-     * Amazon <code>all</code> : Do not scope the AMIs returned by owner
-     * </ul> <p> The values <code>self</code>, <code>aws-marketplace</code>,
+     * values are: <ul> <li> <code>self</code> : AMIs owned by you </li> <li>
+     * <i>AWS account ID</i> : AMIs owned by this account ID </li> <li>
+     * <code>aws-marketplace</code> : AMIs owned by the AWS Marketplace </li>
+     * <li> <code>amazon</code> : AMIs owned by Amazon </li> <li>
+     * <code>all</code> : Do not scope the AMIs returned by owner </li> </ul>
+     * <p> The values <code>self</code>, <code>aws-marketplace</code>,
      * <code>amazon</code>, and <code>all</code> are literals.
      *
      * @param owners An optional list of owners by which to scope the described AMIs. Valid
-     *         values are: <ul> <code>self</code> : AMIs owned by you <i>AWS account
-     *         ID</i> : AMIs owned by this account ID <code>aws-marketplace</code> :
-     *         AMIs owned by the AWS Marketplace <code>amazon</code> : AMIs owned by
-     *         Amazon <code>all</code> : Do not scope the AMIs returned by owner
-     *         </ul> <p> The values <code>self</code>, <code>aws-marketplace</code>,
+     *         values are: <ul> <li> <code>self</code> : AMIs owned by you </li> <li>
+     *         <i>AWS account ID</i> : AMIs owned by this account ID </li> <li>
+     *         <code>aws-marketplace</code> : AMIs owned by the AWS Marketplace </li>
+     *         <li> <code>amazon</code> : AMIs owned by Amazon </li> <li>
+     *         <code>all</code> : Do not scope the AMIs returned by owner </li> </ul>
+     *         <p> The values <code>self</code>, <code>aws-marketplace</code>,
      *         <code>amazon</code>, and <code>all</code> are literals.
      */
     public void setOwners(java.util.Collection<String> owners) {
@@ -225,21 +233,23 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
     
     /**
      * An optional list of owners by which to scope the described AMIs. Valid
-     * values are: <ul> <code>self</code> : AMIs owned by you <i>AWS account
-     * ID</i> : AMIs owned by this account ID <code>aws-marketplace</code> :
-     * AMIs owned by the AWS Marketplace <code>amazon</code> : AMIs owned by
-     * Amazon <code>all</code> : Do not scope the AMIs returned by owner
-     * </ul> <p> The values <code>self</code>, <code>aws-marketplace</code>,
+     * values are: <ul> <li> <code>self</code> : AMIs owned by you </li> <li>
+     * <i>AWS account ID</i> : AMIs owned by this account ID </li> <li>
+     * <code>aws-marketplace</code> : AMIs owned by the AWS Marketplace </li>
+     * <li> <code>amazon</code> : AMIs owned by Amazon </li> <li>
+     * <code>all</code> : Do not scope the AMIs returned by owner </li> </ul>
+     * <p> The values <code>self</code>, <code>aws-marketplace</code>,
      * <code>amazon</code>, and <code>all</code> are literals.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param owners An optional list of owners by which to scope the described AMIs. Valid
-     *         values are: <ul> <code>self</code> : AMIs owned by you <i>AWS account
-     *         ID</i> : AMIs owned by this account ID <code>aws-marketplace</code> :
-     *         AMIs owned by the AWS Marketplace <code>amazon</code> : AMIs owned by
-     *         Amazon <code>all</code> : Do not scope the AMIs returned by owner
-     *         </ul> <p> The values <code>self</code>, <code>aws-marketplace</code>,
+     *         values are: <ul> <li> <code>self</code> : AMIs owned by you </li> <li>
+     *         <i>AWS account ID</i> : AMIs owned by this account ID </li> <li>
+     *         <code>aws-marketplace</code> : AMIs owned by the AWS Marketplace </li>
+     *         <li> <code>amazon</code> : AMIs owned by Amazon </li> <li>
+     *         <code>all</code> : Do not scope the AMIs returned by owner </li> </ul>
+     *         <p> The values <code>self</code>, <code>aws-marketplace</code>,
      *         <code>amazon</code>, and <code>all</code> are literals.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -255,21 +265,23 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
     
     /**
      * An optional list of owners by which to scope the described AMIs. Valid
-     * values are: <ul> <code>self</code> : AMIs owned by you <i>AWS account
-     * ID</i> : AMIs owned by this account ID <code>aws-marketplace</code> :
-     * AMIs owned by the AWS Marketplace <code>amazon</code> : AMIs owned by
-     * Amazon <code>all</code> : Do not scope the AMIs returned by owner
-     * </ul> <p> The values <code>self</code>, <code>aws-marketplace</code>,
+     * values are: <ul> <li> <code>self</code> : AMIs owned by you </li> <li>
+     * <i>AWS account ID</i> : AMIs owned by this account ID </li> <li>
+     * <code>aws-marketplace</code> : AMIs owned by the AWS Marketplace </li>
+     * <li> <code>amazon</code> : AMIs owned by Amazon </li> <li>
+     * <code>all</code> : Do not scope the AMIs returned by owner </li> </ul>
+     * <p> The values <code>self</code>, <code>aws-marketplace</code>,
      * <code>amazon</code>, and <code>all</code> are literals.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param owners An optional list of owners by which to scope the described AMIs. Valid
-     *         values are: <ul> <code>self</code> : AMIs owned by you <i>AWS account
-     *         ID</i> : AMIs owned by this account ID <code>aws-marketplace</code> :
-     *         AMIs owned by the AWS Marketplace <code>amazon</code> : AMIs owned by
-     *         Amazon <code>all</code> : Do not scope the AMIs returned by owner
-     *         </ul> <p> The values <code>self</code>, <code>aws-marketplace</code>,
+     *         values are: <ul> <li> <code>self</code> : AMIs owned by you </li> <li>
+     *         <i>AWS account ID</i> : AMIs owned by this account ID </li> <li>
+     *         <code>aws-marketplace</code> : AMIs owned by the AWS Marketplace </li>
+     *         <li> <code>amazon</code> : AMIs owned by Amazon </li> <li>
+     *         <code>all</code> : Do not scope the AMIs returned by owner </li> </ul>
+     *         <p> The values <code>self</code>, <code>aws-marketplace</code>,
      *         <code>amazon</code>, and <code>all</code> are literals.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -289,18 +301,20 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
     
     /**
      * An optional list of users whose launch permissions will be used to
-     * scope the described AMIs. Valid values are: <ul> <code>self</code> :
-     * AMIs for which you have explicit launch permissions <code>AWS account
-     * ID</code> : AMIs for which this account ID has launch permissions
-     * <code>all</code> : AMIs that have public launch permissions </ul> <p>
-     * The values <code>self</code> and <code>all</code> are literals.
+     * scope the described AMIs. Valid values are: <ul> <li>
+     * <code>self</code> : AMIs for which you have explicit launch
+     * permissions </li> <li> <code>AWS account ID</code> : AMIs for which
+     * this account ID has launch permissions </li> <li> <code>all</code> :
+     * AMIs that have public launch permissions </li> </ul> <p> The values
+     * <code>self</code> and <code>all</code> are literals.
      *
      * @return An optional list of users whose launch permissions will be used to
-     *         scope the described AMIs. Valid values are: <ul> <code>self</code> :
-     *         AMIs for which you have explicit launch permissions <code>AWS account
-     *         ID</code> : AMIs for which this account ID has launch permissions
-     *         <code>all</code> : AMIs that have public launch permissions </ul> <p>
-     *         The values <code>self</code> and <code>all</code> are literals.
+     *         scope the described AMIs. Valid values are: <ul> <li>
+     *         <code>self</code> : AMIs for which you have explicit launch
+     *         permissions </li> <li> <code>AWS account ID</code> : AMIs for which
+     *         this account ID has launch permissions </li> <li> <code>all</code> :
+     *         AMIs that have public launch permissions </li> </ul> <p> The values
+     *         <code>self</code> and <code>all</code> are literals.
      */
     public java.util.List<String> getExecutableUsers() {
         
@@ -313,18 +327,20 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
     
     /**
      * An optional list of users whose launch permissions will be used to
-     * scope the described AMIs. Valid values are: <ul> <code>self</code> :
-     * AMIs for which you have explicit launch permissions <code>AWS account
-     * ID</code> : AMIs for which this account ID has launch permissions
-     * <code>all</code> : AMIs that have public launch permissions </ul> <p>
-     * The values <code>self</code> and <code>all</code> are literals.
+     * scope the described AMIs. Valid values are: <ul> <li>
+     * <code>self</code> : AMIs for which you have explicit launch
+     * permissions </li> <li> <code>AWS account ID</code> : AMIs for which
+     * this account ID has launch permissions </li> <li> <code>all</code> :
+     * AMIs that have public launch permissions </li> </ul> <p> The values
+     * <code>self</code> and <code>all</code> are literals.
      *
      * @param executableUsers An optional list of users whose launch permissions will be used to
-     *         scope the described AMIs. Valid values are: <ul> <code>self</code> :
-     *         AMIs for which you have explicit launch permissions <code>AWS account
-     *         ID</code> : AMIs for which this account ID has launch permissions
-     *         <code>all</code> : AMIs that have public launch permissions </ul> <p>
-     *         The values <code>self</code> and <code>all</code> are literals.
+     *         scope the described AMIs. Valid values are: <ul> <li>
+     *         <code>self</code> : AMIs for which you have explicit launch
+     *         permissions </li> <li> <code>AWS account ID</code> : AMIs for which
+     *         this account ID has launch permissions </li> <li> <code>all</code> :
+     *         AMIs that have public launch permissions </li> </ul> <p> The values
+     *         <code>self</code> and <code>all</code> are literals.
      */
     public void setExecutableUsers(java.util.Collection<String> executableUsers) {
         if (executableUsers == null) {
@@ -338,20 +354,22 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
     
     /**
      * An optional list of users whose launch permissions will be used to
-     * scope the described AMIs. Valid values are: <ul> <code>self</code> :
-     * AMIs for which you have explicit launch permissions <code>AWS account
-     * ID</code> : AMIs for which this account ID has launch permissions
-     * <code>all</code> : AMIs that have public launch permissions </ul> <p>
-     * The values <code>self</code> and <code>all</code> are literals.
+     * scope the described AMIs. Valid values are: <ul> <li>
+     * <code>self</code> : AMIs for which you have explicit launch
+     * permissions </li> <li> <code>AWS account ID</code> : AMIs for which
+     * this account ID has launch permissions </li> <li> <code>all</code> :
+     * AMIs that have public launch permissions </li> </ul> <p> The values
+     * <code>self</code> and <code>all</code> are literals.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param executableUsers An optional list of users whose launch permissions will be used to
-     *         scope the described AMIs. Valid values are: <ul> <code>self</code> :
-     *         AMIs for which you have explicit launch permissions <code>AWS account
-     *         ID</code> : AMIs for which this account ID has launch permissions
-     *         <code>all</code> : AMIs that have public launch permissions </ul> <p>
-     *         The values <code>self</code> and <code>all</code> are literals.
+     *         scope the described AMIs. Valid values are: <ul> <li>
+     *         <code>self</code> : AMIs for which you have explicit launch
+     *         permissions </li> <li> <code>AWS account ID</code> : AMIs for which
+     *         this account ID has launch permissions </li> <li> <code>all</code> :
+     *         AMIs that have public launch permissions </li> </ul> <p> The values
+     *         <code>self</code> and <code>all</code> are literals.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -366,20 +384,22 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
     
     /**
      * An optional list of users whose launch permissions will be used to
-     * scope the described AMIs. Valid values are: <ul> <code>self</code> :
-     * AMIs for which you have explicit launch permissions <code>AWS account
-     * ID</code> : AMIs for which this account ID has launch permissions
-     * <code>all</code> : AMIs that have public launch permissions </ul> <p>
-     * The values <code>self</code> and <code>all</code> are literals.
+     * scope the described AMIs. Valid values are: <ul> <li>
+     * <code>self</code> : AMIs for which you have explicit launch
+     * permissions </li> <li> <code>AWS account ID</code> : AMIs for which
+     * this account ID has launch permissions </li> <li> <code>all</code> :
+     * AMIs that have public launch permissions </li> </ul> <p> The values
+     * <code>self</code> and <code>all</code> are literals.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param executableUsers An optional list of users whose launch permissions will be used to
-     *         scope the described AMIs. Valid values are: <ul> <code>self</code> :
-     *         AMIs for which you have explicit launch permissions <code>AWS account
-     *         ID</code> : AMIs for which this account ID has launch permissions
-     *         <code>all</code> : AMIs that have public launch permissions </ul> <p>
-     *         The values <code>self</code> and <code>all</code> are literals.
+     *         scope the described AMIs. Valid values are: <ul> <li>
+     *         <code>self</code> : AMIs for which you have explicit launch
+     *         permissions </li> <li> <code>AWS account ID</code> : AMIs for which
+     *         this account ID has launch permissions </li> <li> <code>all</code> :
+     *         AMIs that have public launch permissions </li> </ul> <p> The values
+     *         <code>self</code> and <code>all</code> are literals.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -487,6 +507,18 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
         }
 
         return this;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<DescribeImagesRequest> getDryRunRequest() {
+        Request<DescribeImagesRequest> request = new DescribeImagesRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

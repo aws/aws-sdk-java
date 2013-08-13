@@ -16,7 +16,9 @@ package com.amazonaws.services.sns.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Response for Publish action.
+ * </p>
  */
 public class PublishResult  implements Serializable  {
 
@@ -56,6 +58,9 @@ public class PublishResult  implements Serializable  {
      *
      * @param messageId Unique identifier assigned to the published message. <p>Length
      *         Constraint: Maximum 100 characters
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
      */
     public PublishResult withMessageId(String messageId) {
         this.messageId = messageId;

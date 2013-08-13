@@ -22,7 +22,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteVpnConnectionRoute(DeleteVpnConnectionRouteRequest)
  */
-public class DeleteVpnConnectionRouteRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteVpnConnectionRouteRequest extends AmazonWebServiceRequest implements Serializable {
 
     private String vpnConnectionId;
 

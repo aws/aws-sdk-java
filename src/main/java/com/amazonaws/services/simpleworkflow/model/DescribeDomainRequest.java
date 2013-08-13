@@ -42,7 +42,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#describeDomain(DescribeDomainRequest)
  */
-public class DescribeDomainRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeDomainRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the domain to describe.
@@ -85,6 +85,9 @@ public class DescribeDomainRequest extends AmazonWebServiceRequest  implements S
      * <b>Length: </b>1 - 256<br/>
      *
      * @param name The name of the domain to describe.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeDomainRequest withName(String name) {
         this.name = name;

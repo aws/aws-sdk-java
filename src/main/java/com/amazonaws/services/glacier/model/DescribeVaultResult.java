@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the Amazon Glacier response to your request.
  * </p>
  */
-public class DescribeVaultResult  implements Serializable  {
+public class DescribeVaultResult implements Serializable {
 
     /**
      * The Amazon Resource Name (ARN) of the vault.
@@ -83,6 +83,9 @@ public class DescribeVaultResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vaultARN The Amazon Resource Name (ARN) of the vault.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeVaultResult withVaultARN(String vaultARN) {
         this.vaultARN = vaultARN;
@@ -114,6 +117,9 @@ public class DescribeVaultResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vaultName The name of the vault.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeVaultResult withVaultName(String vaultName) {
         this.vaultName = vaultName;
@@ -151,6 +157,9 @@ public class DescribeVaultResult  implements Serializable  {
      *
      * @param creationDate The UTC date when the vault was created. A string representation of
      *         ISO 8601 date format, for example, "2012-03-20T17:03:43.221Z".
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeVaultResult withCreationDate(String creationDate) {
         this.creationDate = creationDate;
@@ -194,6 +203,9 @@ public class DescribeVaultResult  implements Serializable  {
      * @param lastInventoryDate The UTC date when Amazon Glacier completed the last vault inventory. A
      *         string representation of ISO 8601 date format, for example,
      *         "2012-03-20T17:03:43.221Z".
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeVaultResult withLastInventoryDate(String lastInventoryDate) {
         this.lastInventoryDate = lastInventoryDate;
@@ -237,6 +249,9 @@ public class DescribeVaultResult  implements Serializable  {
      * @param numberOfArchives The number of archives in the vault as of the last inventory date.
      *         This field will return <code>null</code> if an inventory has not yet
      *         run on the vault, for example, if you just created the vault.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeVaultResult withNumberOfArchives(Long numberOfArchives) {
         this.numberOfArchives = numberOfArchives;
@@ -280,6 +295,9 @@ public class DescribeVaultResult  implements Serializable  {
      * @param sizeInBytes Total size, in bytes, of the archives in the vault as of the last
      *         inventory date. This field will return null if an inventory has not
      *         yet run on the vault, for example, if you just created the vault.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeVaultResult withSizeInBytes(Long sizeInBytes) {
         this.sizeInBytes = sizeInBytes;

@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#restoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest)
  */
-public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The identifier for the DB Snapshot to restore from. <p>Constraints:
@@ -220,6 +220,9 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         <ul> <li>Must contain from 1 to 63 alphanumeric characters or
      *         hyphens</li> <li>First character must be a letter</li> <li>Cannot end
      *         with a hyphen or contain two consecutive hyphens</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreDBInstanceFromDBSnapshotRequest withDBInstanceIdentifier(String dBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -275,6 +278,9 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         255 alphanumeric characters or hyphens</li> <li>First character must
      *         be a letter</li> <li>Cannot end with a hyphen or contain two
      *         consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreDBInstanceFromDBSnapshotRequest withDBSnapshotIdentifier(String dBSnapshotIdentifier) {
         this.dBSnapshotIdentifier = dBSnapshotIdentifier;
@@ -318,6 +324,9 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * @param dBInstanceClass The compute and memory capacity of the Amazon RDS DB instance.
      *         <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
      *         db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreDBInstanceFromDBSnapshotRequest withDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
@@ -361,6 +370,9 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * @param port The port number on which the database accepts connections. <p>Default:
      *         The same port as the original DB Instance <p>Constraints: Value must
      *         be <code>1150-65535</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreDBInstanceFromDBSnapshotRequest withPort(Integer port) {
         this.port = port;
@@ -416,6 +428,9 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         <p>Constraint: You cannot specify the AvailabilityZone parameter if
      *         the MultiAZ parameter is set to <code>true</code>. <p>Example:
      *         <code>us-east-1a</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreDBInstanceFromDBSnapshotRequest withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -447,6 +462,9 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBSubnetGroupName The DB Subnet Group name to use for the new instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreDBInstanceFromDBSnapshotRequest withDBSubnetGroupName(String dBSubnetGroupName) {
         this.dBSubnetGroupName = dBSubnetGroupName;
@@ -490,6 +508,9 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * @param multiAZ Specifies if the DB Instance is a Multi-AZ deployment. <p>Constraint:
      *         You cannot specify the AvailabilityZone parameter if the MultiAZ
      *         parameter is set to <code>true</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreDBInstanceFromDBSnapshotRequest withMultiAZ(Boolean multiAZ) {
         this.multiAZ = multiAZ;
@@ -606,6 +627,9 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         publicly accessible. If a specific DB subnet group has been specified
      *         as part of the request and the PubliclyAccessible value has not been
      *         set, the DB instance will be private.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreDBInstanceFromDBSnapshotRequest withPubliclyAccessible(Boolean publiclyAccessible) {
         this.publiclyAccessible = publiclyAccessible;
@@ -676,6 +700,9 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *
      * @param autoMinorVersionUpgrade Indicates that minor version upgrades will be applied automatically to
      *         the DB Instance during the maintenance window.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreDBInstanceFromDBSnapshotRequest withAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
         this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
@@ -736,6 +763,9 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         Same as source. <p> Valid values: <code>license-included</code> |
      *         <code>bring-your-own-license</code> |
      *         <code>general-public-license</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreDBInstanceFromDBSnapshotRequest withLicenseModel(String licenseModel) {
         this.licenseModel = licenseModel;
@@ -773,6 +803,9 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *
      * @param dBName The database name for the restored DB Instance. <note> <p>This
      *         parameter doesn't apply to the MySQL engine. </note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreDBInstanceFromDBSnapshotRequest withDBName(String dBName) {
         this.dBName = dBName;
@@ -816,6 +849,9 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * @param engine The database engine to use for the new instance. <p>Default: The same
      *         as source <p>Constraint: Must be compatible with the engine of the
      *         source <p>Example: <code>oracle-ee</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreDBInstanceFromDBSnapshotRequest withEngine(String engine) {
         this.engine = engine;
@@ -883,6 +919,9 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         non-PIOPS instance, which will take additional time, though your DB
      *         instance will be available for connections before the conversion
      *         starts. <p> Constraints: Must be an integer greater than 1000.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreDBInstanceFromDBSnapshotRequest withIops(Integer iops) {
         this.iops = iops;
@@ -956,6 +995,9 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      *         TDE, cannot be removed from an option group, and that option group
      *         cannot be removed from a DB instance once it is associated with a DB
      *         instance
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreDBInstanceFromDBSnapshotRequest withOptionGroupName(String optionGroupName) {
         this.optionGroupName = optionGroupName;

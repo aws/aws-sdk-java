@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.DescribeLicensesRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -25,7 +27,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeLicenses(DescribeLicensesRequest)
  */
-public class DescribeLicensesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeLicensesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeLicensesRequest> {
 
     /**
      * Specifies the license registration for which details are to be
@@ -218,6 +220,18 @@ public class DescribeLicensesRequest extends AmazonWebServiceRequest  implements
         }
 
         return this;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<DescribeLicensesRequest> getDryRunRequest() {
+        Request<DescribeLicensesRequest> request = new DescribeLicensesRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

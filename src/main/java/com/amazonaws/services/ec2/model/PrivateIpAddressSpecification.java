@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Private Ip Address Specification
  */
-public class PrivateIpAddressSpecification  implements Serializable  {
+public class PrivateIpAddressSpecification implements Serializable {
 
     private String privateIpAddress;
 

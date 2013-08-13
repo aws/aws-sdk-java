@@ -21,7 +21,7 @@ import java.io.Serializable;
  * default, the value of the source attribute is copied to the index field.
  * </p>
  */
-public class SourceAttribute  implements Serializable  {
+public class SourceAttribute implements Serializable {
 
     /**
      * Identifies the transformation to apply when copying data from a source
@@ -95,6 +95,9 @@ public class SourceAttribute  implements Serializable  {
      * @param sourceDataFunction Identifies the transformation to apply when copying data from a source
      *         attribute.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see SourceDataFunction
      */
     public SourceAttribute withSourceDataFunction(String sourceDataFunction) {
@@ -130,6 +133,9 @@ public class SourceAttribute  implements Serializable  {
      *
      * @param sourceDataFunction Identifies the transformation to apply when copying data from a source
      *         attribute.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see SourceDataFunction
      */
@@ -168,6 +174,9 @@ public class SourceAttribute  implements Serializable  {
      *
      * @param sourceDataCopy Copies data from a source document attribute to an
      *         <code>IndexField</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SourceAttribute withSourceDataCopy(SourceData sourceDataCopy) {
         this.sourceDataCopy = sourceDataCopy;
@@ -211,6 +220,9 @@ public class SourceAttribute  implements Serializable  {
      * @param sourceDataTrimTitle Trims common title words from a source document attribute when
      *         populating an <code>IndexField</code>. This can be used to create an
      *         <code>IndexField</code> you can use for sorting.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SourceAttribute withSourceDataTrimTitle(SourceDataTrimTitle sourceDataTrimTitle) {
         this.sourceDataTrimTitle = sourceDataTrimTitle;
@@ -248,6 +260,9 @@ public class SourceAttribute  implements Serializable  {
      *
      * @param sourceDataMap Maps source document attribute values to new values when populating
      *         the <code>IndexField</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SourceAttribute withSourceDataMap(SourceDataMap sourceDataMap) {
         this.sourceDataMap = sourceDataMap;

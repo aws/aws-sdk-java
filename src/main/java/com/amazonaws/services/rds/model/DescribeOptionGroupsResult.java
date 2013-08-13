@@ -20,7 +20,7 @@ import java.io.Serializable;
  * List of option groups.
  * </p>
  */
-public class DescribeOptionGroupsResult  implements Serializable  {
+public class DescribeOptionGroupsResult implements Serializable {
 
     /**
      * List of option groups.
@@ -69,6 +69,9 @@ public class DescribeOptionGroupsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionGroupsList List of option groups.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeOptionGroupsResult withOptionGroupsList(OptionGroup... optionGroupsList) {
         if (getOptionGroupsList() == null) setOptionGroupsList(new java.util.ArrayList<OptionGroup>(optionGroupsList.length));
@@ -84,6 +87,9 @@ public class DescribeOptionGroupsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionGroupsList List of option groups.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeOptionGroupsResult withOptionGroupsList(java.util.Collection<OptionGroup> optionGroupsList) {
         if (optionGroupsList == null) {
@@ -133,6 +139,9 @@ public class DescribeOptionGroupsResult  implements Serializable  {
      * @param marker An optional pagination token provided by a previous request. If this
      *         parameter is specified, the response includes only records beyond the
      *         marker, up to the value specified by <code>MaxRecords</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeOptionGroupsResult withMarker(String marker) {
         this.marker = marker;

@@ -26,7 +26,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#stopInstance(StopInstanceRequest)
  */
-public class StopInstanceRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class StopInstanceRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The instance ID.
@@ -57,6 +57,9 @@ public class StopInstanceRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId The instance ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StopInstanceRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;

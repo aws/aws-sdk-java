@@ -30,7 +30,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#createConnection(CreateConnectionRequest)
  */
-public class CreateConnectionRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateConnectionRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The ID of the offering. <p>Example: us-west-1_EqSV5_1G <p>Default:
@@ -74,6 +74,9 @@ public class CreateConnectionRequest extends AmazonWebServiceRequest  implements
      *
      * @param offeringId The ID of the offering. <p>Example: us-west-1_EqSV5_1G <p>Default:
      *         None
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateConnectionRequest withOfferingId(String offeringId) {
         this.offeringId = offeringId;
@@ -111,6 +114,9 @@ public class CreateConnectionRequest extends AmazonWebServiceRequest  implements
      *
      * @param connectionName The name of the connection. <p>Example: "<i>1G Connection to AWS</i>"
      *         <p>Default: None
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateConnectionRequest withConnectionName(String connectionName) {
         this.connectionName = connectionName;

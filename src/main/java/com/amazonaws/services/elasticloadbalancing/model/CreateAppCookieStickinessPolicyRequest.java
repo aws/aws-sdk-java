@@ -37,7 +37,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#createAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest)
  */
-public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name associated with the LoadBalancer. The name must be unique
@@ -113,6 +113,9 @@ public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequ
      *
      * @param loadBalancerName The name associated with the LoadBalancer. The name must be unique
      *         within the client AWS account.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateAppCookieStickinessPolicyRequest withLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
@@ -150,6 +153,9 @@ public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequ
      *
      * @param policyName The name of the policy being created. The name must be unique within
      *         the set of policies for this LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateAppCookieStickinessPolicyRequest withPolicyName(String policyName) {
         this.policyName = policyName;
@@ -181,6 +187,9 @@ public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequ
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cookieName Name of the application cookie used for stickiness.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateAppCookieStickinessPolicyRequest withCookieName(String cookieName) {
         this.cookieName = cookieName;

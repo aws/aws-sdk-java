@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#listTables(ListTablesRequest)
  */
-public class ListTablesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ListTablesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the table that starts the list. If you already ran a
@@ -46,6 +46,50 @@ public class ListTablesRequest extends AmazonWebServiceRequest  implements Seria
      */
     private Integer limit;
 
+    /**
+     * Default constructor for a new ListTablesRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ListTablesRequest() {}
+    
+
+
+    /**
+     * Constructs a new ListTablesRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param exclusiveStartTableName The name of the table that starts the
+     * list. If you already ran a <i>ListTables</i> operation and received a
+     * <i>LastEvaluatedTableName</i> value in the response, use that value
+     * here to continue the list.
+     */
+    public ListTablesRequest(String exclusiveStartTableName) {
+        setExclusiveStartTableName(exclusiveStartTableName);
+    }
+
+    
+    
+
+
+    /**
+     * Constructs a new ListTablesRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param exclusiveStartTableName The name of the table that starts the
+     * list. If you already ran a <i>ListTables</i> operation and received a
+     * <i>LastEvaluatedTableName</i> value in the response, use that value
+     * here to continue the list.
+     * @param limit A maximum number of table names to return.
+     */
+    public ListTablesRequest(String exclusiveStartTableName, Integer limit) {
+        setExclusiveStartTableName(exclusiveStartTableName);
+        setLimit(limit);
+    }
+
+    
+    
     /**
      * The name of the table that starts the list. If you already ran a
      * <i>ListTables</i> operation and received a
@@ -100,6 +144,9 @@ public class ListTablesRequest extends AmazonWebServiceRequest  implements Seria
      *         <i>ListTables</i> operation and received a
      *         <i>LastEvaluatedTableName</i> value in the response, use that value
      *         here to continue the list.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListTablesRequest withExclusiveStartTableName(String exclusiveStartTableName) {
         this.exclusiveStartTableName = exclusiveStartTableName;
@@ -140,6 +187,9 @@ public class ListTablesRequest extends AmazonWebServiceRequest  implements Seria
      * <b>Range: </b>1 - 100<br/>
      *
      * @param limit A maximum number of table names to return.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListTablesRequest withLimit(Integer limit) {
         this.limit = limit;

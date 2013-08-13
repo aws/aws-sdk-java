@@ -21,7 +21,7 @@ import java.io.Serializable;
  * variety of email clients.
  * </p>
  */
-public class Body  implements Serializable  {
+public class Body implements Serializable {
 
     /**
      * The content of the message, in text format. Use this for text-based
@@ -96,6 +96,9 @@ public class Body  implements Serializable  {
      * @param text The content of the message, in text format. Use this for text-based
      *         email clients, or clients on high-latency networks (such as mobile
      *         devices).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Body withText(Content text) {
         this.text = text;
@@ -139,6 +142,9 @@ public class Body  implements Serializable  {
      * @param html The content of the message, in HTML format. Use this for email clients
      *         that can process HTML. You can include clickable links, formatted
      *         text, and much more in an HTML message.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Body withHtml(Content html) {
         this.html = html;

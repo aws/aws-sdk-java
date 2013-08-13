@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.cloudwatch.AmazonCloudWatch#describeAlarmsForMetric(DescribeAlarmsForMetricRequest)
  */
-public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the metric.
@@ -108,6 +108,9 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest  imp
      * <b>Length: </b>1 - 255<br/>
      *
      * @param metricName The name of the metric.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeAlarmsForMetricRequest withMetricName(String metricName) {
         this.metricName = metricName;
@@ -151,6 +154,9 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest  imp
      * <b>Pattern: </b>[^:].*<br/>
      *
      * @param namespace The namespace of the metric.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeAlarmsForMetricRequest withNamespace(String namespace) {
         this.namespace = namespace;
@@ -196,6 +202,9 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest  imp
      *
      * @param statistic The statistic for the metric.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see Statistic
      */
     public DescribeAlarmsForMetricRequest withStatistic(String statistic) {
@@ -227,6 +236,9 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest  imp
      * <b>Allowed Values: </b>SampleCount, Average, Sum, Minimum, Maximum
      *
      * @param statistic The statistic for the metric.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see Statistic
      */
@@ -279,6 +291,9 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest  imp
      * <b>Length: </b>0 - 10<br/>
      *
      * @param dimensions The list of dimensions associated with the metric.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeAlarmsForMetricRequest withDimensions(Dimension... dimensions) {
         if (getDimensions() == null) setDimensions(new java.util.ArrayList<Dimension>(dimensions.length));
@@ -297,6 +312,9 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest  imp
      * <b>Length: </b>0 - 10<br/>
      *
      * @param dimensions The list of dimensions associated with the metric.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeAlarmsForMetricRequest withDimensions(java.util.Collection<Dimension> dimensions) {
         if (dimensions == null) {
@@ -343,6 +361,9 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest  imp
      * <b>Range: </b>60 - <br/>
      *
      * @param period The period in seconds over which the statistic is applied.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeAlarmsForMetricRequest withPeriod(Integer period) {
         this.period = period;
@@ -388,6 +409,9 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest  imp
      *
      * @param unit The unit for the metric.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see StandardUnit
      */
     public DescribeAlarmsForMetricRequest withUnit(String unit) {
@@ -419,6 +443,9 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest  imp
      * <b>Allowed Values: </b>Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, Bytes/Second, Kilobytes/Second, Megabytes/Second, Gigabytes/Second, Terabytes/Second, Bits/Second, Kilobits/Second, Megabits/Second, Gigabits/Second, Terabits/Second, Count/Second, None
      *
      * @param unit The unit for the metric.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see StandardUnit
      */

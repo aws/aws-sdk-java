@@ -29,7 +29,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createGroup(CreateGroupRequest)
  */
-public class CreateGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The path to the group. For more information about paths, see <a
@@ -135,6 +135,9 @@ public class CreateGroupRequest extends AmazonWebServiceRequest  implements Seri
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>. <p>This parameter is optional. If
      *         it is not included, it defaults to a slash (/).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateGroupRequest withPath(String path) {
         this.path = path;
@@ -178,6 +181,9 @@ public class CreateGroupRequest extends AmazonWebServiceRequest  implements Seri
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param groupName Name of the group to create. Do not include the path in this value.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateGroupRequest withGroupName(String groupName) {
         this.groupName = groupName;

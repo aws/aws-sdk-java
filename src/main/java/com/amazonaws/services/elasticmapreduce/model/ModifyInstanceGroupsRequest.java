@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#modifyInstanceGroups(ModifyInstanceGroupsRequest)
  */
-public class ModifyInstanceGroupsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ModifyInstanceGroupsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Instance groups to change.
@@ -88,6 +88,9 @@ public class ModifyInstanceGroupsRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceGroups Instance groups to change.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ModifyInstanceGroupsRequest withInstanceGroups(InstanceGroupModifyConfig... instanceGroups) {
         if (getInstanceGroups() == null) setInstanceGroups(new java.util.ArrayList<InstanceGroupModifyConfig>(instanceGroups.length));
@@ -103,6 +106,9 @@ public class ModifyInstanceGroupsRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceGroups Instance groups to change.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ModifyInstanceGroupsRequest withInstanceGroups(java.util.Collection<InstanceGroupModifyConfig> instanceGroups) {
         if (instanceGroups == null) {

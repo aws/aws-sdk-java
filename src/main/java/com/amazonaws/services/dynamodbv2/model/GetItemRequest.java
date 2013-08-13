@@ -30,7 +30,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#getItem(GetItemRequest)
  */
-public class GetItemRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class GetItemRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the table containing the requested item.
@@ -134,6 +134,9 @@ public class GetItemRequest extends AmazonWebServiceRequest  implements Serializ
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
      * @param tableName The name of the table containing the requested item.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetItemRequest withTableName(String tableName) {
         this.tableName = tableName;
@@ -172,6 +175,9 @@ public class GetItemRequest extends AmazonWebServiceRequest  implements Serializ
      *
      * @param key A map of attribute names to <i>AttributeValue</i> objects,
      *         representing the primary key of the item to retrieve.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetItemRequest withKey(java.util.Map<String,AttributeValue> key) {
         setKey(key);
@@ -307,6 +313,9 @@ public class GetItemRequest extends AmazonWebServiceRequest  implements Serializ
      *         are specified, then all attributes will be returned. If any of the
      *         requested attributes are not found, they will not appear in the
      *         result.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetItemRequest withAttributesToGet(String... attributesToGet) {
         if (getAttributesToGet() == null) setAttributesToGet(new java.util.ArrayList<String>(attributesToGet.length));
@@ -331,6 +340,9 @@ public class GetItemRequest extends AmazonWebServiceRequest  implements Serializ
      *         are specified, then all attributes will be returned. If any of the
      *         requested attributes are not found, they will not appear in the
      *         result.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetItemRequest withAttributesToGet(java.util.Collection<String> attributesToGet) {
         if (attributesToGet == null) {
@@ -374,6 +386,9 @@ public class GetItemRequest extends AmazonWebServiceRequest  implements Serializ
      *
      * @param consistentRead If set to <code>true</code>, then the operation uses strongly
      *         consistent reads; otherwise, eventually consistent reads are used.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetItemRequest withConsistentRead(Boolean consistentRead) {
         this.consistentRead = consistentRead;
@@ -442,6 +457,9 @@ public class GetItemRequest extends AmazonWebServiceRequest  implements Serializ
      *         the response; if set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ReturnConsumedCapacity
      */
     public GetItemRequest withReturnConsumedCapacity(String returnConsumedCapacity) {
@@ -481,6 +499,9 @@ public class GetItemRequest extends AmazonWebServiceRequest  implements Serializ
      * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
      *         the response; if set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see ReturnConsumedCapacity
      */

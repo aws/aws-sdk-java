@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The LaunchSpecificationType data type.
  * </p>
  */
-public class LaunchSpecification  implements Serializable  {
+public class LaunchSpecification implements Serializable {
 
     /**
      * The AMI ID.

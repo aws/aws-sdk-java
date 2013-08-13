@@ -38,7 +38,7 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a> .
  * </p>
  */
-public class CancelTimerDecisionAttributes  implements Serializable  {
+public class CancelTimerDecisionAttributes implements Serializable {
 
     /**
      * The unique Id of the timer to cancel. This field is required.
@@ -81,6 +81,9 @@ public class CancelTimerDecisionAttributes  implements Serializable  {
      * <b>Length: </b>1 - 256<br/>
      *
      * @param timerId The unique Id of the timer to cancel. This field is required.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CancelTimerDecisionAttributes withTimerId(String timerId) {
         this.timerId = timerId;

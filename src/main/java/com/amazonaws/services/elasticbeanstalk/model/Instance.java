@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The description of an Amazon EC2 instance.
  * </p>
  */
-public class Instance  implements Serializable  {
+public class Instance implements Serializable {
 
     /**
      * The ID of the Amazon EC2 instance.
@@ -57,6 +57,9 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param id The ID of the Amazon EC2 instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withId(String id) {
         this.id = id;

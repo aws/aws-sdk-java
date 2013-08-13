@@ -33,7 +33,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.simpledb.AmazonSimpleDB#select(SelectRequest)
  */
-public class SelectRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class SelectRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The expression used to query the domain.
@@ -121,6 +121,9 @@ public class SelectRequest extends AmazonWebServiceRequest  implements Serializa
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param selectExpression The expression used to query the domain.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SelectRequest withSelectExpression(String selectExpression) {
         this.selectExpression = selectExpression;
@@ -158,6 +161,9 @@ public class SelectRequest extends AmazonWebServiceRequest  implements Serializa
      *
      * @param nextToken A string informing Amazon SimpleDB where to start the next list of
      *         <code>ItemNames</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SelectRequest withNextToken(String nextToken) {
         this.nextToken = nextToken;
@@ -213,6 +219,9 @@ public class SelectRequest extends AmazonWebServiceRequest  implements Serializa
      *         written to SimpleDB will be returned. Otherwise, results will be
      *         consistent eventually, and the client may not see data that was
      *         written immediately before your read.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SelectRequest withConsistentRead(Boolean consistentRead) {
         this.consistentRead = consistentRead;

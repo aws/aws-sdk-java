@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.DeleteVpnConnectionRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -31,7 +33,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteVpnConnection(DeleteVpnConnectionRequest)
  */
-public class DeleteVpnConnectionRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteVpnConnectionRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeleteVpnConnectionRequest> {
 
     /**
      * The ID of the VPN connection to delete
@@ -92,6 +94,18 @@ public class DeleteVpnConnectionRequest extends AmazonWebServiceRequest  impleme
         return this;
     }
     
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<DeleteVpnConnectionRequest> getDryRunRequest() {
+        Request<DeleteVpnConnectionRequest> request = new DeleteVpnConnectionRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

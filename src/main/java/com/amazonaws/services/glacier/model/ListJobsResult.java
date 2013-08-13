@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the Amazon Glacier response to your request.
  * </p>
  */
-public class ListJobsResult  implements Serializable  {
+public class ListJobsResult implements Serializable {
 
     /**
      * A list of job objects. Each job object contains metadata describing
@@ -77,6 +77,9 @@ public class ListJobsResult  implements Serializable  {
      *
      * @param jobList A list of job objects. Each job object contains metadata describing
      *         the job.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListJobsResult withJobList(GlacierJobDescription... jobList) {
         if (getJobList() == null) setJobList(new java.util.ArrayList<GlacierJobDescription>(jobList.length));
@@ -94,6 +97,9 @@ public class ListJobsResult  implements Serializable  {
      *
      * @param jobList A list of job objects. Each job object contains metadata describing
      *         the job.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListJobsResult withJobList(java.util.Collection<GlacierJobDescription> jobList) {
         if (jobList == null) {
@@ -149,6 +155,9 @@ public class ListJobsResult  implements Serializable  {
      *         results. You use this value in a new List Jobs request to obtain more
      *         jobs in the list. If there are no more jobs, this value is
      *         <code>null</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListJobsResult withMarker(String marker) {
         this.marker = marker;

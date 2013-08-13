@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents the output of a <i>BatchWriteItem</i> operation.
  * </p>
  */
-public class BatchWriteItemResult  implements Serializable  {
+public class BatchWriteItemResult implements Serializable {
 
     /**
      * A map of tables and requests against those tables that were not
@@ -251,6 +251,9 @@ public class BatchWriteItemResult  implements Serializable  {
      *         attributes that are part of an index key, then the data types for
      *         those attributes must match those of the schema in the table's
      *         attribute definition.</li> </ul> </li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public BatchWriteItemResult withUnprocessedItems(java.util.Map<String,java.util.List<WriteRequest>> unprocessedItems) {
         setUnprocessedItems(unprocessedItems);
@@ -417,6 +420,9 @@ public class BatchWriteItemResult  implements Serializable  {
      *         measure whether a secondary index is approaching its size limit.
      *         <p>The estimate is subject to change over time; therefore, do not rely
      *         on the precision or accuracy of the estimate. </li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public BatchWriteItemResult withItemCollectionMetrics(java.util.Map<String,java.util.List<ItemCollectionMetrics>> itemCollectionMetrics) {
         setItemCollectionMetrics(itemCollectionMetrics);
@@ -516,6 +522,9 @@ public class BatchWriteItemResult  implements Serializable  {
      *         of: <ul> <li> <p><i>TableName</i> - The table that consumed the
      *         provisioned throughput. </li> <li> <p><i>CapacityUnits</i> - The total
      *         number of capacity units consumed. </li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public BatchWriteItemResult withConsumedCapacity(ConsumedCapacity... consumedCapacity) {
         if (getConsumedCapacity() == null) setConsumedCapacity(new java.util.ArrayList<ConsumedCapacity>(consumedCapacity.length));
@@ -537,6 +546,9 @@ public class BatchWriteItemResult  implements Serializable  {
      *         of: <ul> <li> <p><i>TableName</i> - The table that consumed the
      *         provisioned throughput. </li> <li> <p><i>CapacityUnits</i> - The total
      *         number of capacity units consumed. </li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public BatchWriteItemResult withConsumedCapacity(java.util.Collection<ConsumedCapacity> consumedCapacity) {
         if (consumedCapacity == null) {

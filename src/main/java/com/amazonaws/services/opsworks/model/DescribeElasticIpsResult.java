@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribeElasticIps</code> request.
  * </p>
  */
-public class DescribeElasticIpsResult  implements Serializable  {
+public class DescribeElasticIpsResult implements Serializable {
 
     /**
      * An <code>ElasticIps</code> object that describes the specified Elastic
@@ -69,6 +69,9 @@ public class DescribeElasticIpsResult  implements Serializable  {
      *
      * @param elasticIps An <code>ElasticIps</code> object that describes the specified Elastic
      *         IP addresses.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeElasticIpsResult withElasticIps(ElasticIp... elasticIps) {
         if (getElasticIps() == null) setElasticIps(new java.util.ArrayList<ElasticIp>(elasticIps.length));
@@ -86,6 +89,9 @@ public class DescribeElasticIpsResult  implements Serializable  {
      *
      * @param elasticIps An <code>ElasticIps</code> object that describes the specified Elastic
      *         IP addresses.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeElasticIpsResult withElasticIps(java.util.Collection<ElasticIp> elasticIps) {
         if (elasticIps == null) {

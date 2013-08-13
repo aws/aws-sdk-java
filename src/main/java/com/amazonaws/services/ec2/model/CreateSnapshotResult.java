@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The result of creating a snapshot from an EBS volume.
  * </p>
  */
-public class CreateSnapshotResult  implements Serializable  {
+public class CreateSnapshotResult implements Serializable {
 
     /**
      * The new snapshot.

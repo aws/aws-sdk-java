@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Provides details of the <code>RequestCancelActivityTaskFailed</code> event.
  * </p>
  */
-public class RequestCancelActivityTaskFailedEventAttributes  implements Serializable  {
+public class RequestCancelActivityTaskFailedEventAttributes implements Serializable {
 
     /**
      * The activityId provided in the <code>RequestCancelActivityTask</code>
@@ -93,6 +93,9 @@ public class RequestCancelActivityTaskFailedEventAttributes  implements Serializ
      *
      * @param activityId The activityId provided in the <code>RequestCancelActivityTask</code>
      *         decision that failed.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RequestCancelActivityTaskFailedEventAttributes withActivityId(String activityId) {
         this.activityId = activityId;
@@ -174,6 +177,9 @@ public class RequestCancelActivityTaskFailedEventAttributes  implements Serializ
      *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see RequestCancelActivityTaskFailedCause
      */
     public RequestCancelActivityTaskFailedEventAttributes withCause(String cause) {
@@ -230,6 +236,9 @@ public class RequestCancelActivityTaskFailedEventAttributes  implements Serializ
      *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see RequestCancelActivityTaskFailedCause
      */
     public RequestCancelActivityTaskFailedEventAttributes withCause(RequestCancelActivityTaskFailedCause cause) {
@@ -285,6 +294,9 @@ public class RequestCancelActivityTaskFailedEventAttributes  implements Serializ
      *         <code>RequestCancelActivityTask</code> decision for this cancellation
      *         request. This information can be useful for diagnosing problems by
      *         tracing back the cause of events.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RequestCancelActivityTaskFailedEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
         this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;

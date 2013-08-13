@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Specifies how to map source attribute values to custom values when populating an <code>IndexField</code> .
  * </p>
  */
-public class SourceDataMap  implements Serializable  {
+public class SourceDataMap implements Serializable {
 
     /**
      * The name of the document source field to add to this
@@ -87,6 +87,9 @@ public class SourceDataMap  implements Serializable  {
      *
      * @param sourceName The name of the document source field to add to this
      *         <code>IndexField</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SourceDataMap withSourceName(String sourceName) {
         this.sourceName = sourceName;
@@ -127,6 +130,9 @@ public class SourceDataMap  implements Serializable  {
      * <b>Length: </b>0 - 1024<br/>
      *
      * @param defaultValue The value of a field or source document attribute.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SourceDataMap withDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
@@ -162,6 +168,9 @@ public class SourceDataMap  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cases A map that translates source field values to custom values.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SourceDataMap withCases(java.util.Map<String,String> cases) {
         setCases(cases);

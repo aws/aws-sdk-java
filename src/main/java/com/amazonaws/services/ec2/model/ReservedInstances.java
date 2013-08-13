@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A group of Amazon EC2 Reserved Instances purchased by this account.
  * </p>
  */
-public class ReservedInstances  implements Serializable  {
+public class ReservedInstances implements Serializable {
 
     /**
      * The unique ID of the Reserved Instances purchase.

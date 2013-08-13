@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Spot Instance Status
  */
-public class SpotInstanceStatus  implements Serializable  {
+public class SpotInstanceStatus implements Serializable {
 
     private String code;
 

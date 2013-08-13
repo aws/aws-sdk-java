@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the GetGroup action.
  * </p>
  */
-public class GetGroupResult  implements Serializable  {
+public class GetGroupResult implements Serializable {
 
     /**
      * Information about the group.
@@ -75,6 +75,9 @@ public class GetGroupResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param group Information about the group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetGroupResult withGroup(Group group) {
         this.group = group;
@@ -117,6 +120,9 @@ public class GetGroupResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param users A list of users in the group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetGroupResult withUsers(User... users) {
         if (getUsers() == null) setUsers(new java.util.ArrayList<User>(users.length));
@@ -132,6 +138,9 @@ public class GetGroupResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param users A list of users in the group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetGroupResult withUsers(java.util.Collection<User> users) {
         if (users == null) {
@@ -187,6 +196,9 @@ public class GetGroupResult  implements Serializable  {
      *         your results were truncated, you can make a subsequent pagination
      *         request using the <code>Marker</code> request parameter to retrieve
      *         more user names in the list.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetGroupResult withIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
@@ -257,6 +269,9 @@ public class GetGroupResult  implements Serializable  {
      * @param marker If IsTruncated is <code>true</code>, then this element is present and
      *         contains the value to use for the <code>Marker</code> parameter in a
      *         subsequent pagination request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetGroupResult withMarker(String marker) {
         this.marker = marker;

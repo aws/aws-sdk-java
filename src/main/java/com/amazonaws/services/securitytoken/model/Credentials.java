@@ -20,7 +20,7 @@ import java.io.Serializable;
  * AWS credentials for API authentication.
  * </p>
  */
-public class Credentials  implements Serializable  {
+public class Credentials implements Serializable {
 
     /**
      * The access key ID that identifies the temporary security credentials.
@@ -113,6 +113,9 @@ public class Credentials  implements Serializable  {
      * <b>Pattern: </b>[\w]*<br/>
      *
      * @param accessKeyId The access key ID that identifies the temporary security credentials.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Credentials withAccessKeyId(String accessKeyId) {
         this.accessKeyId = accessKeyId;
@@ -144,6 +147,9 @@ public class Credentials  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param secretAccessKey The secret access key that can be used to sign requests.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Credentials withSecretAccessKey(String secretAccessKey) {
         this.secretAccessKey = secretAccessKey;
@@ -181,6 +187,9 @@ public class Credentials  implements Serializable  {
      *
      * @param sessionToken The token that users must pass to the service API to use the temporary
      *         credentials.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Credentials withSessionToken(String sessionToken) {
         this.sessionToken = sessionToken;
@@ -212,6 +221,9 @@ public class Credentials  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param expiration The date on which the current credentials expire.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Credentials withExpiration(java.util.Date expiration) {
         this.expiration = expiration;

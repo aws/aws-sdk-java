@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The pipeline (queue) that is used to manage jobs.
  * </p>
  */
-public class Pipeline  implements Serializable  {
+public class Pipeline implements Serializable {
 
     /**
      * The identifier for the pipeline. You use this value to identify the
@@ -224,6 +224,9 @@ public class Pipeline  implements Serializable  {
      * @param id The identifier for the pipeline. You use this value to identify the
      *         pipeline in which you want to perform a variety of operations, such as
      *         creating a job or a preset.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Pipeline withId(String id) {
         this.id = id;
@@ -255,6 +258,9 @@ public class Pipeline  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param arn The Amazon Resource Name (ARN) for the pipeline.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Pipeline withArn(String arn) {
         this.arn = arn;
@@ -307,6 +313,9 @@ public class Pipeline  implements Serializable  {
      * @param name The name of the pipeline. We recommend that the name be unique within
      *         the AWS account, but uniqueness is not enforced. <p>Constraints:
      *         Maximum 40 characters
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Pipeline withName(String name) {
         this.name = name;
@@ -359,6 +368,9 @@ public class Pipeline  implements Serializable  {
      * @param status The current status of the pipeline: <ul> <li><code>Active</code>: The
      *         pipeline is processing jobs.</li> <li><code>Paused</code>: The
      *         pipeline is not currently processing jobs.</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Pipeline withStatus(String status) {
         this.status = status;
@@ -411,6 +423,9 @@ public class Pipeline  implements Serializable  {
      * @param inputBucket The Amazon S3 bucket from which Elastic Transcoder gets media files
      *         for transcoding and the graphics files, if any, that you want to use
      *         for watermarks.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Pipeline withInputBucket(String inputBucket) {
         this.inputBucket = inputBucket;
@@ -469,6 +484,9 @@ public class Pipeline  implements Serializable  {
      *         transcoded files, thumbnails, and playlists. Either you specify this
      *         value, or you specify both <code>ContentConfig</code> and
      *         <code>ThumbnailConfig</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Pipeline withOutputBucket(String outputBucket) {
         this.outputBucket = outputBucket;
@@ -515,6 +533,9 @@ public class Pipeline  implements Serializable  {
      *
      * @param role The IAM Amazon Resource Name (ARN) for the role that Elastic
      *         Transcoder uses to transcode jobs for this pipeline.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Pipeline withRole(String role) {
         this.role = role;
@@ -618,6 +639,9 @@ public class Pipeline  implements Serializable  {
      *         <li><b>Error</b> (optional): The Amazon SNS topic that you want to
      *         notify when Elastic Transcoder encounters an error condition.</li>
      *         </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Pipeline withNotifications(Notifications notifications) {
         this.notifications = notifications;
@@ -841,6 +865,9 @@ public class Pipeline  implements Serializable  {
      *         Amazon S3 storage class, Standard or ReducedRedundancy, that you want
      *         Elastic Transcoder to assign to the video files and playlists that it
      *         stores in your Amazon S3 bucket. </li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Pipeline withContentConfig(PipelineOutputConfig contentConfig) {
         this.contentConfig = contentConfig;
@@ -1070,6 +1097,9 @@ public class Pipeline  implements Serializable  {
      *         <code>Standard</code> or <code>ReducedRedundancy</code>, that you want
      *         Elastic Transcoder to assign to the thumbnails that it stores in your
      *         Amazon S3 bucket.</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Pipeline withThumbnailConfig(PipelineOutputConfig thumbnailConfig) {
         this.thumbnailConfig = thumbnailConfig;

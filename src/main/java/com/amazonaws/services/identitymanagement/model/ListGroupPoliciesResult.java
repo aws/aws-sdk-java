@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the ListGroupPolicies action.
  * </p>
  */
-public class ListGroupPoliciesResult  implements Serializable  {
+public class ListGroupPoliciesResult implements Serializable {
 
     /**
      * A list of policy names.
@@ -81,6 +81,9 @@ public class ListGroupPoliciesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param policyNames A list of policy names.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListGroupPoliciesResult withPolicyNames(String... policyNames) {
         if (getPolicyNames() == null) setPolicyNames(new java.util.ArrayList<String>(policyNames.length));
@@ -96,6 +99,9 @@ public class ListGroupPoliciesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param policyNames A list of policy names.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListGroupPoliciesResult withPolicyNames(java.util.Collection<String> policyNames) {
         if (policyNames == null) {
@@ -151,6 +157,9 @@ public class ListGroupPoliciesResult  implements Serializable  {
      *         your results were truncated, you can make a subsequent pagination
      *         request using the <code>Marker</code> request parameter to retrieve
      *         more policy names in the list.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListGroupPoliciesResult withIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
@@ -221,6 +230,9 @@ public class ListGroupPoliciesResult  implements Serializable  {
      * @param marker If <code>IsTruncated</code> is <code>true</code>, this element is
      *         present and contains the value to use for the <code>Marker</code>
      *         parameter in a subsequent pagination request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListGroupPoliciesResult withMarker(String marker) {
         this.marker = marker;

@@ -28,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listMFADevices(ListMFADevicesRequest)
  */
-public class ListMFADevicesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ListMFADevicesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the user whose MFA devices you want to list.
@@ -119,6 +119,9 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest  implements S
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param userName Name of the user whose MFA devices you want to list.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListMFADevicesRequest withUserName(String userName) {
         this.userName = userName;
@@ -180,6 +183,9 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest  implements S
      *         request after you've received a response where the results are
      *         truncated. Set it to the value of the <code>Marker</code> element in
      *         the response you just received.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListMFADevicesRequest withMarker(String marker) {
         this.marker = marker;
@@ -238,6 +244,9 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest  implements S
      *         of MFA devices you want in the response. If there are additional MFA
      *         devices beyond the maximum you specify, the <code>IsTruncated</code>
      *         response element is <code>true</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListMFADevicesRequest withMaxItems(Integer maxItems) {
         this.maxItems = maxItems;

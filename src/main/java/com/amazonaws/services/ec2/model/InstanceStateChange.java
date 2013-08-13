@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents a state change for a specific EC2 instance.
  * </p>
  */
-public class InstanceStateChange  implements Serializable  {
+public class InstanceStateChange implements Serializable {
 
     /**
      * The ID of the instance whose state changed.

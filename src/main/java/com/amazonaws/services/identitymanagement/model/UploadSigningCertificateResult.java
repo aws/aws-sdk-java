@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the UploadSigningCertificate action.
  * </p>
  */
-public class UploadSigningCertificateResult  implements Serializable  {
+public class UploadSigningCertificateResult implements Serializable {
 
     /**
      * Information about the certificate.
@@ -51,6 +51,9 @@ public class UploadSigningCertificateResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param certificate Information about the certificate.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UploadSigningCertificateResult withCertificate(SigningCertificate certificate) {
         this.certificate = certificate;

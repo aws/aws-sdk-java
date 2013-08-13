@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The <code>ReadJobResponse</code> structure.
  * </p>
  */
-public class ReadJobResult  implements Serializable  {
+public class ReadJobResult implements Serializable {
 
     /**
      * A section of the response body that provides information about the
@@ -58,6 +58,9 @@ public class ReadJobResult  implements Serializable  {
      *
      * @param job A section of the response body that provides information about the
      *         job.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ReadJobResult withJob(Job job) {
         this.job = job;

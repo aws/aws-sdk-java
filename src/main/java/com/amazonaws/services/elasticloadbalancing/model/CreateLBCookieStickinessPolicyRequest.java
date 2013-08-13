@@ -35,7 +35,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#createLBCookieStickinessPolicy(CreateLBCookieStickinessPolicyRequest)
  */
-public class CreateLBCookieStickinessPolicyRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateLBCookieStickinessPolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name associated with the LoadBalancer. The name must be unique
@@ -111,6 +111,9 @@ public class CreateLBCookieStickinessPolicyRequest extends AmazonWebServiceReque
      *
      * @param loadBalancerName The name associated with the LoadBalancer. The name must be unique
      *         within the client AWS account.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateLBCookieStickinessPolicyRequest withLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
@@ -148,6 +151,9 @@ public class CreateLBCookieStickinessPolicyRequest extends AmazonWebServiceReque
      *
      * @param policyName The name of the policy being created. The name must be unique within
      *         the set of policies for this LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateLBCookieStickinessPolicyRequest withPolicyName(String policyName) {
         this.policyName = policyName;
@@ -191,6 +197,9 @@ public class CreateLBCookieStickinessPolicyRequest extends AmazonWebServiceReque
      * @param cookieExpirationPeriod The time period in seconds after which the cookie should be considered
      *         stale. Not specifying this parameter indicates that the sticky session
      *         will last for the duration of the browser session.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateLBCookieStickinessPolicyRequest withCookieExpirationPeriod(Long cookieExpirationPeriod) {
         this.cookieExpirationPeriod = cookieExpirationPeriod;

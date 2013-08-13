@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The result of creating a new EC2 key pair.
  * </p>
  */
-public class CreateKeyPairResult  implements Serializable  {
+public class CreateKeyPairResult implements Serializable {
 
     /**
      * The newly created EC2 key pair.

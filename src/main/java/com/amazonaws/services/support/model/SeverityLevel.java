@@ -20,7 +20,7 @@ import java.io.Serializable;
  * JSON-formatted pair of strings consisting of a code and name that represent a severity level that can be applied to a support case.
  * </p>
  */
-public class SeverityLevel  implements Serializable  {
+public class SeverityLevel implements Serializable {
 
     /**
      * String that represents one of four values: "low," "medium," "high,"
@@ -70,6 +70,9 @@ public class SeverityLevel  implements Serializable  {
      * @param code String that represents one of four values: "low," "medium," "high,"
      *         and "urgent". These values correspond to response times returned to
      *         the caller in the string <code>SeverityLevel.name</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SeverityLevel withCode(String code) {
         this.code = code;
@@ -101,6 +104,9 @@ public class SeverityLevel  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name Name of severity levels that correspond to the severity level codes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SeverityLevel withName(String name) {
         this.name = name;

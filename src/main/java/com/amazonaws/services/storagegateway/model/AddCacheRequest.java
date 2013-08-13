@@ -30,7 +30,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#addCache(AddCacheRequest)
  */
-public class AddCacheRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class AddCacheRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the ListGateways
@@ -88,6 +88,9 @@ public class AddCacheRequest extends AmazonWebServiceRequest  implements Seriali
      *
      * @param gatewayARN The Amazon Resource Name (ARN) of the gateway. Use the ListGateways
      *         operation to return a list of gateways for your account and region.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AddCacheRequest withGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
@@ -148,6 +151,9 @@ public class AddCacheRequest extends AmazonWebServiceRequest  implements Seriali
      *         cache. Each string in the array must be minimum length of 1 and
      *         maximum length of 300. You can get the disk IDs from the
      *         ListLocalDisks API.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AddCacheRequest withDiskIds(String... diskIds) {
         if (getDiskIds() == null) setDiskIds(new java.util.ArrayList<String>(diskIds.length));
@@ -169,6 +175,9 @@ public class AddCacheRequest extends AmazonWebServiceRequest  implements Seriali
      *         cache. Each string in the array must be minimum length of 1 and
      *         maximum length of 300. You can get the disk IDs from the
      *         ListLocalDisks API.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AddCacheRequest withDiskIds(java.util.Collection<String> diskIds) {
         if (diskIds == null) {

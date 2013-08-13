@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A specification for an environment configuration
  * </p>
  */
-public class SourceConfiguration  implements Serializable  {
+public class SourceConfiguration implements Serializable {
 
     /**
      * The name of the application associated with the configuration.
@@ -77,6 +77,9 @@ public class SourceConfiguration  implements Serializable  {
      * <b>Length: </b>1 - 100<br/>
      *
      * @param applicationName The name of the application associated with the configuration.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SourceConfiguration withApplicationName(String applicationName) {
         this.applicationName = applicationName;
@@ -117,6 +120,9 @@ public class SourceConfiguration  implements Serializable  {
      * <b>Length: </b>1 - 100<br/>
      *
      * @param templateName The name of the configuration template.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SourceConfiguration withTemplateName(String templateName) {
         this.templateName = templateName;

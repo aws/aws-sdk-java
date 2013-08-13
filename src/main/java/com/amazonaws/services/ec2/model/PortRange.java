@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class PortRange  implements Serializable  {
+public class PortRange implements Serializable {
 
     /**
      * The first port in the range. Required if specifying <code>tcp</code>

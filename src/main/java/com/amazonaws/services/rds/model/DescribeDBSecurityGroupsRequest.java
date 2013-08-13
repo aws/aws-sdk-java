@@ -28,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeDBSecurityGroups(DescribeDBSecurityGroupsRequest)
  */
-public class DescribeDBSecurityGroupsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeDBSecurityGroupsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the DB Security Group to return details for.
@@ -82,6 +82,9 @@ public class DescribeDBSecurityGroupsRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBSecurityGroupName The name of the DB Security Group to return details for.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeDBSecurityGroupsRequest withDBSecurityGroupName(String dBSecurityGroupName) {
         this.dBSecurityGroupName = dBSecurityGroupName;
@@ -137,6 +140,9 @@ public class DescribeDBSecurityGroupsRequest extends AmazonWebServiceRequest  im
      *         pagination token called a marker is included in the response so that
      *         the remaining results may be retrieved. <p>Default: 100
      *         <p>Constraints: minimum 20, maximum 100
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeDBSecurityGroupsRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -186,6 +192,9 @@ public class DescribeDBSecurityGroupsRequest extends AmazonWebServiceRequest  im
      *         DescribeDBSecurityGroups request. If this parameter is specified, the
      *         response includes only records beyond the marker, up to the value
      *         specified by <code>MaxRecords</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeDBSecurityGroupsRequest withMarker(String marker) {
         this.marker = marker;

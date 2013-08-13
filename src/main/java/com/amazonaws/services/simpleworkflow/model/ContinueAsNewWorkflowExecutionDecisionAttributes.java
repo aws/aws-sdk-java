@@ -45,7 +45,7 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a> .
  * </p>
  */
-public class ContinueAsNewWorkflowExecutionDecisionAttributes  implements Serializable  {
+public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Serializable {
 
     /**
      * The input provided to the new workflow execution.
@@ -167,6 +167,9 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes  implements Serial
      * <b>Length: </b>0 - 32768<br/>
      *
      * @param input The input provided to the new workflow execution.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ContinueAsNewWorkflowExecutionDecisionAttributes withInput(String input) {
         this.input = input;
@@ -267,6 +270,9 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes  implements Serial
      *         neither this field is set nor a default execution start-to-close
      *         timeout was specified at registration time then a fault will be
      *         returned.</note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ContinueAsNewWorkflowExecutionDecisionAttributes withExecutionStartToCloseTimeout(String executionStartToCloseTimeout) {
         this.executionStartToCloseTimeout = executionStartToCloseTimeout;
@@ -298,6 +304,9 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param taskList Represents a task list.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ContinueAsNewWorkflowExecutionDecisionAttributes withTaskList(TaskList taskList) {
         this.taskList = taskList;
@@ -404,6 +413,9 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes  implements Serial
      *         parameter. If neither this parameter is set nor a default task
      *         start-to-close timeout was specified at registration time then a fault
      *         will be returned.</note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ContinueAsNewWorkflowExecutionDecisionAttributes withTaskStartToCloseTimeout(String taskStartToCloseTimeout) {
         this.taskStartToCloseTimeout = taskStartToCloseTimeout;
@@ -545,6 +557,9 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes  implements Serial
      *         field. If neither this field is set nor a default child policy was
      *         specified at registration time then a fault will be returned. </note>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ChildPolicy
      */
     public ContinueAsNewWorkflowExecutionDecisionAttributes withChildPolicy(String childPolicy) {
@@ -641,6 +656,9 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes  implements Serial
      *         field. If neither this field is set nor a default child policy was
      *         specified at registration time then a fault will be returned. </note>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ChildPolicy
      */
     public ContinueAsNewWorkflowExecutionDecisionAttributes withChildPolicy(ChildPolicy childPolicy) {
@@ -710,6 +728,9 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes  implements Serial
      *         maximum of 5 tags can be specified. You can list workflow executions
      *         with a specific tag by calling <a>ListOpenWorkflowExecutions</a> or
      *         <a>ListClosedWorkflowExecutions</a> and specifying a <a>TagFilter</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ContinueAsNewWorkflowExecutionDecisionAttributes withTagList(String... tagList) {
         if (getTagList() == null) setTagList(new java.util.ArrayList<String>(tagList.length));
@@ -734,6 +755,9 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes  implements Serial
      *         maximum of 5 tags can be specified. You can list workflow executions
      *         with a specific tag by calling <a>ListOpenWorkflowExecutions</a> or
      *         <a>ListClosedWorkflowExecutions</a> and specifying a <a>TagFilter</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ContinueAsNewWorkflowExecutionDecisionAttributes withTagList(java.util.Collection<String> tagList) {
         if (tagList == null) {
@@ -780,6 +804,9 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes  implements Serial
      * <b>Length: </b>1 - 64<br/>
      *
      * @param workflowTypeVersion The new value for the WorkflowTypeVersion property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ContinueAsNewWorkflowExecutionDecisionAttributes withWorkflowTypeVersion(String workflowTypeVersion) {
         this.workflowTypeVersion = workflowTypeVersion;

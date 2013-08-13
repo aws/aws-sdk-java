@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes the properties of a Listener for the LoadBalancer.
  * </p>
  */
-public class Listener  implements Serializable  {
+public class Listener implements Serializable {
 
     /**
      * The protocol that is used by the Listener.
@@ -56,6 +56,9 @@ public class Listener  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param protocol The protocol that is used by the Listener.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Listener withProtocol(String protocol) {
         this.protocol = protocol;
@@ -87,6 +90,9 @@ public class Listener  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param port The port that is used by the Listener.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Listener withPort(Integer port) {
         this.port = port;

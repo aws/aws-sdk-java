@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#defineRankExpression(DefineRankExpressionRequest)
  */
-public class DefineRankExpressionRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DefineRankExpressionRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * A string that represents the name of a domain. Domain names must be
@@ -106,6 +106,9 @@ public class DefineRankExpressionRequest extends AmazonWebServiceRequest  implem
      *         Domain names must start with a letter or number and can contain the
      *         following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase
      *         letters and underscores are not allowed.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DefineRankExpressionRequest withDomainName(String domainName) {
         this.domainName = domainName;
@@ -143,6 +146,9 @@ public class DefineRankExpressionRequest extends AmazonWebServiceRequest  implem
      *
      * @param rankExpression A named expression that can be evaluated at search time and used for
      *         ranking or thresholding in a search query.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DefineRankExpressionRequest withRankExpression(NamedRankExpression rankExpression) {
         this.rankExpression = rankExpression;

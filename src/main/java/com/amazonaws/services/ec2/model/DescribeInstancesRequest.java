@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.DescribeInstancesRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -32,7 +34,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeInstances(DescribeInstancesRequest)
  */
-public class DescribeInstancesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeInstancesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeInstancesRequest> {
 
     /**
      * An optional list of the instances to describe.
@@ -216,6 +218,18 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest  implement
         }
 
         return this;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<DescribeInstancesRequest> getDryRunRequest() {
+        Request<DescribeInstancesRequest> request = new DescribeInstancesRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

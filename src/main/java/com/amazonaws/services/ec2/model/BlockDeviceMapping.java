@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The BlockDeviceMappingItemType data type.
  * </p>
  */
-public class BlockDeviceMapping  implements Serializable  {
+public class BlockDeviceMapping implements Serializable {
 
     /**
      * Specifies the virtual device name.

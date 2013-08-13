@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeStacks(DescribeStacksRequest)
  */
-public class DescribeStacksRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeStacksRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * An array of stack IDs that specify the stacks to be described. If you
@@ -80,6 +80,9 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest  implements S
      * @param stackIds An array of stack IDs that specify the stacks to be described. If you
      *         omit this parameter, <code>DescribeStacks</code> returns a description
      *         of every stack.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeStacksRequest withStackIds(String... stackIds) {
         if (getStackIds() == null) setStackIds(new java.util.ArrayList<String>(stackIds.length));
@@ -99,6 +102,9 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest  implements S
      * @param stackIds An array of stack IDs that specify the stacks to be described. If you
      *         omit this parameter, <code>DescribeStacks</code> returns a description
      *         of every stack.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeStacksRequest withStackIds(java.util.Collection<String> stackIds) {
         if (stackIds == null) {

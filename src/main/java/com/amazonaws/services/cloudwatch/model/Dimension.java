@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The <code>Dimension</code> data type further expands on the identity of a metric using a Name, Value pair.
  * </p>
  */
-public class Dimension  implements Serializable  {
+public class Dimension implements Serializable {
 
     /**
      * The name of the dimension.
@@ -71,6 +71,9 @@ public class Dimension  implements Serializable  {
      * <b>Length: </b>1 - 255<br/>
      *
      * @param name The name of the dimension.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Dimension withName(String name) {
         this.name = name;
@@ -111,6 +114,9 @@ public class Dimension  implements Serializable  {
      * <b>Length: </b>1 - 255<br/>
      *
      * @param value The value representing the dimension measurement
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Dimension withValue(String value) {
         this.value = value;

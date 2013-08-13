@@ -102,7 +102,7 @@ public interface AWSStorageGateway {
      * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      */
     public void setRegion(Region region) throws java.lang.IllegalArgumentException;
-	
+    
     /**
      * <p>
      * This operation deletes the bandwidth rate limits of a gateway. You can

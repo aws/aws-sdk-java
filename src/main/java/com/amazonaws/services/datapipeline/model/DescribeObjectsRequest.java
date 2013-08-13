@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#describeObjects(DescribeObjectsRequest)
  */
-public class DescribeObjectsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeObjectsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Identifier of the pipeline that contains the object definitions.
@@ -98,6 +98,9 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest  implements 
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param pipelineId Identifier of the pipeline that contains the object definitions.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeObjectsRequest withPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
@@ -152,6 +155,9 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest  implements 
      * @param objectIds Identifiers of the pipeline objects that contain the definitions to be
      *         described. You can pass as many as 25 identifiers in a single call to
      *         DescribeObjects.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeObjectsRequest withObjectIds(String... objectIds) {
         if (getObjectIds() == null) setObjectIds(new java.util.ArrayList<String>(objectIds.length));
@@ -171,6 +177,9 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest  implements 
      * @param objectIds Identifiers of the pipeline objects that contain the definitions to be
      *         described. You can pass as many as 25 identifiers in a single call to
      *         DescribeObjects.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeObjectsRequest withObjectIds(java.util.Collection<String> objectIds) {
         if (objectIds == null) {
@@ -214,6 +223,9 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest  implements 
      *
      * @param evaluateExpressions Indicates whether any expressions in the object should be evaluated
      *         when the object descriptions are returned.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeObjectsRequest withEvaluateExpressions(Boolean evaluateExpressions) {
         this.evaluateExpressions = evaluateExpressions;
@@ -292,6 +304,9 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest  implements 
      *         the action returns <code>HasMoreResults</code> as <code>True</code>,
      *         you can call <a>DescribeObjects</a> again and pass the marker value
      *         from the response to retrieve the next set of results.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeObjectsRequest withMarker(String marker) {
         this.marker = marker;

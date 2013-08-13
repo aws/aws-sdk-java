@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The stemming options configured for this search domain and the current status of those options.
  * </p>
  */
-public class StemmingOptionsStatus  implements Serializable  {
+public class StemmingOptionsStatus implements Serializable {
 
     /**
      * Maps terms to their stems, serialized as a JSON document. The document
@@ -85,6 +85,9 @@ public class StemmingOptionsStatus  implements Serializable  {
      *         mapping terms to their stems. The maximum size of a stemming document
      *         is 500KB. Example: <code>{ "stems": {"people": "person", "walking":
      *         "walk"} }</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StemmingOptionsStatus withOptions(String options) {
         this.options = options;
@@ -122,6 +125,9 @@ public class StemmingOptionsStatus  implements Serializable  {
      *
      * @param status The status of an option, including when it was last updated and
      *         whether it is actively in use for searches.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StemmingOptionsStatus withStatus(OptionStatus status) {
         this.status = status;

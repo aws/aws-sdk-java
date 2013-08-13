@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#readJob(ReadJobRequest)
  */
-public class ReadJobRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ReadJobRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The identifier of the job for which you want to get detailed
@@ -74,6 +74,9 @@ public class ReadJobRequest extends AmazonWebServiceRequest  implements Serializ
      *
      * @param id The identifier of the job for which you want to get detailed
      *         information.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ReadJobRequest withId(String id) {
         this.id = id;

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * An active offer for Amazon EC2 Reserved Instances.
  * </p>
  */
-public class ReservedInstancesOffering  implements Serializable  {
+public class ReservedInstancesOffering implements Serializable {
 
     /**
      * The unique ID of this Reserved Instances offering.

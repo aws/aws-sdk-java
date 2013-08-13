@@ -20,7 +20,7 @@ import java.io.Serializable;
  * This data type is used as a response element in the action DescribeDBEngineVersions.
  * </p>
  */
-public class CharacterSet  implements Serializable  {
+public class CharacterSet implements Serializable {
 
     /**
      * The name of the character set.
@@ -56,6 +56,9 @@ public class CharacterSet  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param characterSetName The name of the character set.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CharacterSet withCharacterSetName(String characterSetName) {
         this.characterSetName = characterSetName;
@@ -87,6 +90,9 @@ public class CharacterSet  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param characterSetDescription The description of the character set.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CharacterSet withCharacterSetDescription(String characterSetDescription) {
         this.characterSetDescription = characterSetDescription;

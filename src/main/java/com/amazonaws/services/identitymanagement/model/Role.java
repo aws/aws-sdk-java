@@ -39,7 +39,7 @@ import java.io.Serializable;
  * 
  * </ul>
  */
-public class Role  implements Serializable  {
+public class Role implements Serializable {
 
     /**
      * Path to the role. For more information about paths, see <a
@@ -158,6 +158,9 @@ public class Role  implements Serializable  {
      *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Role withPath(String path) {
         this.path = path;
@@ -201,6 +204,9 @@ public class Role  implements Serializable  {
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param roleName The name identifying the role.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Role withRoleName(String roleName) {
         this.roleName = roleName;
@@ -268,6 +274,9 @@ public class Role  implements Serializable  {
      *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Role withRoleId(String roleId) {
         this.roleId = roleId;
@@ -332,6 +341,9 @@ public class Role  implements Serializable  {
      *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Role withArn(String arn) {
         this.arn = arn;
@@ -363,6 +375,9 @@ public class Role  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param createDate The date when the role was created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Role withCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
@@ -424,6 +439,9 @@ public class Role  implements Serializable  {
      *         returned policy is URL-encoded according to RFC 3986. For more
      *         information about RFC 3986, go to <a
      *         href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Role withAssumeRolePolicyDocument(String assumeRolePolicyDocument) {
         this.assumeRolePolicyDocument = assumeRolePolicyDocument;

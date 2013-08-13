@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteAccountPasswordPolicy(DeleteAccountPasswordPolicyRequest)
  */
-public class DeleteAccountPasswordPolicyRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteAccountPasswordPolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Returns a string representation of this object; useful for testing and

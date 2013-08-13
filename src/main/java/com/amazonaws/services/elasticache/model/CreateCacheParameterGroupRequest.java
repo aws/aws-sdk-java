@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#createCacheParameterGroup(CreateCacheParameterGroupRequest)
  */
-public class CreateCacheParameterGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateCacheParameterGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the Cache Parameter Group.
@@ -95,6 +95,9 @@ public class CreateCacheParameterGroupRequest extends AmazonWebServiceRequest  i
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheParameterGroupName The name of the Cache Parameter Group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateCacheParameterGroupRequest withCacheParameterGroupName(String cacheParameterGroupName) {
         this.cacheParameterGroupName = cacheParameterGroupName;
@@ -138,6 +141,9 @@ public class CreateCacheParameterGroupRequest extends AmazonWebServiceRequest  i
      * @param cacheParameterGroupFamily The name of the Cache Parameter Group Family the Cache Parameter Group
      *         can be used with. <note>Currently, <i>memcached1.4</i> is the only
      *         cache parameter group family supported by the service.</note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateCacheParameterGroupRequest withCacheParameterGroupFamily(String cacheParameterGroupFamily) {
         this.cacheParameterGroupFamily = cacheParameterGroupFamily;
@@ -169,6 +175,9 @@ public class CreateCacheParameterGroupRequest extends AmazonWebServiceRequest  i
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description The description for the Cache Parameter Group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateCacheParameterGroupRequest withDescription(String description) {
         this.description = description;

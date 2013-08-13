@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.DescribeVpnGatewaysRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -33,7 +35,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVpnGateways(DescribeVpnGatewaysRequest)
  */
-public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeVpnGatewaysRequest> {
 
     /**
      * A list of filters used to match properties for VPN Gateways. For a
@@ -253,6 +255,18 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest  impleme
         }
 
         return this;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<DescribeVpnGatewaysRequest> getDryRunRequest() {
+        Request<DescribeVpnGatewaysRequest> request = new DescribeVpnGatewaysRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

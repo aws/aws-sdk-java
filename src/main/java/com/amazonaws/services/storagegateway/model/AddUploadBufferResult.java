@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The Amazon Resource Name (ARN) of the gateway for which upload buffer was configured.
  * </p>
  */
-public class AddUploadBufferResult  implements Serializable  {
+public class AddUploadBufferResult implements Serializable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -77,6 +77,9 @@ public class AddUploadBufferResult  implements Serializable  {
      * @param gatewayARN The Amazon Resource Name (ARN) of the gateway. Use the
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AddUploadBufferResult withGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;

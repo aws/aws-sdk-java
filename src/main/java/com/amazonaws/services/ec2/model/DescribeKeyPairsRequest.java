@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.DescribeKeyPairsRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -25,7 +27,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeKeyPairs(DescribeKeyPairsRequest)
  */
-public class DescribeKeyPairsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeKeyPairsRequest> {
 
     /**
      * The optional list of key pair names to describe.
@@ -209,6 +211,18 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest  implements
         }
 
         return this;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<DescribeKeyPairsRequest> getDryRunRequest() {
+        Request<DescribeKeyPairsRequest> request = new DescribeKeyPairsRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

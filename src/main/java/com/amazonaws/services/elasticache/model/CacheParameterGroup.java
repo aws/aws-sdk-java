@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains a set of parameters and their values which can be applied to a Cache Cluster.
  * </p>
  */
-public class CacheParameterGroup  implements Serializable  {
+public class CacheParameterGroup implements Serializable {
 
     /**
      * Provides the name of the Cache Parameter Group.
@@ -63,6 +63,9 @@ public class CacheParameterGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheParameterGroupName Provides the name of the Cache Parameter Group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheParameterGroup withCacheParameterGroupName(String cacheParameterGroupName) {
         this.cacheParameterGroupName = cacheParameterGroupName;
@@ -100,6 +103,9 @@ public class CacheParameterGroup  implements Serializable  {
      *
      * @param cacheParameterGroupFamily Provides the name of the Cache Parameter Group Family that this Cache
      *         Parameter Group is compatible with.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheParameterGroup withCacheParameterGroupFamily(String cacheParameterGroupFamily) {
         this.cacheParameterGroupFamily = cacheParameterGroupFamily;
@@ -137,6 +143,9 @@ public class CacheParameterGroup  implements Serializable  {
      *
      * @param description Provides the customer-specified description for this Cache Parameter
      *         Group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheParameterGroup withDescription(String description) {
         this.description = description;

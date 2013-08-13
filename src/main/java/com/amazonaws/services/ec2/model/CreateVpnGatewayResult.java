@@ -20,7 +20,7 @@ import java.io.Serializable;
  * 
  * </p>
  */
-public class CreateVpnGatewayResult  implements Serializable  {
+public class CreateVpnGatewayResult implements Serializable {
 
     /**
      * 

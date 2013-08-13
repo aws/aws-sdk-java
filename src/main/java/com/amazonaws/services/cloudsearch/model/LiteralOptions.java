@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Options that define a literal field in the search index.
  * </p>
  */
-public class LiteralOptions  implements Serializable  {
+public class LiteralOptions implements Serializable {
 
     /**
      * The default value for a literal field.
@@ -79,6 +79,9 @@ public class LiteralOptions  implements Serializable  {
      * <b>Length: </b>0 - 1024<br/>
      *
      * @param defaultValue The default value for a literal field.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LiteralOptions withDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
@@ -110,6 +113,9 @@ public class LiteralOptions  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param searchEnabled Specifies whether search is enabled for this field.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LiteralOptions withSearchEnabled(Boolean searchEnabled) {
         this.searchEnabled = searchEnabled;
@@ -150,6 +156,9 @@ public class LiteralOptions  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param facetEnabled Specifies whether facets are enabled for this field.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LiteralOptions withFacetEnabled(Boolean facetEnabled) {
         this.facetEnabled = facetEnabled;
@@ -196,6 +205,9 @@ public class LiteralOptions  implements Serializable  {
      *
      * @param resultEnabled Specifies whether values of this field can be returned in search
      *         results and used for ranking.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LiteralOptions withResultEnabled(Boolean resultEnabled) {
         this.resultEnabled = resultEnabled;

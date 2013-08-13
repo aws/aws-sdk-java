@@ -39,7 +39,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#query(QueryRequest)
  */
-public class QueryRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class QueryRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the table containing the requested items.
@@ -262,6 +262,27 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
     private String returnConsumedCapacity;
 
     /**
+     * Default constructor for a new QueryRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public QueryRequest() {}
+    
+
+
+    /**
+     * Constructs a new QueryRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param tableName The name of the table containing the requested items.
+     */
+    public QueryRequest(String tableName) {
+        setTableName(tableName);
+    }
+
+    
+    
+    /**
      * The name of the table containing the requested items.
      * <p>
      * <b>Constraints:</b><br/>
@@ -297,6 +318,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
      * @param tableName The name of the table containing the requested items.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public QueryRequest withTableName(String tableName) {
         this.tableName = tableName;
@@ -340,6 +364,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
      * @param indexName The name of an index on the table to query.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public QueryRequest withIndexName(String indexName) {
         this.indexName = indexName;
@@ -577,6 +604,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         specifying <i>AttributesToGet</i> without any value for
      *         <i>Select</i>.)
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see Select
      */
     public QueryRequest withSelect(String select) {
@@ -737,6 +767,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         specifying <i>AttributesToGet</i> without any value for
      *         <i>Select</i>.)
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see Select
      */
     public QueryRequest withSelect(Select select) {
@@ -862,6 +895,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
      *         specifying <i>AttributesToGet</i> without any value for
      *         <i>Select</i>.)
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public QueryRequest withAttributesToGet(String... attributesToGet) {
         if (getAttributesToGet() == null) setAttributesToGet(new java.util.ArrayList<String>(attributesToGet.length));
@@ -906,6 +942,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
      *         specifying <i>AttributesToGet</i> without any value for
      *         <i>Select</i>.)
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public QueryRequest withAttributesToGet(java.util.Collection<String> attributesToGet) {
         if (attributesToGet == null) {
@@ -1018,6 +1057,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         the operation. For more information see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      *         and Scan</a> in the Amazon DynamoDB Developer Guide.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public QueryRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -1055,6 +1097,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *
      * @param consistentRead If set to <code>true</code>, then the operation uses strongly
      *         consistent reads; otherwise, eventually consistent reads are used.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public QueryRequest withConsistentRead(Boolean consistentRead) {
         this.consistentRead = consistentRead;
@@ -1584,6 +1629,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>.
      *         Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
      *         "2", "1"]}</code> </li> </ul></li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public QueryRequest withKeyConditions(java.util.Map<String,Condition> keyConditions) {
         setKeyConditions(keyConditions);
@@ -1768,6 +1816,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         treats each byte of the binary data as unsigned when it compares
      *         binary values. <p>If <i>ScanIndexForward</i> is not specified, the
      *         results are returned in ascending order.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public QueryRequest withScanIndexForward(Boolean scanIndexForward) {
         this.scanIndexForward = scanIndexForward;
@@ -1841,6 +1892,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         Use the value that was returned for <i>LastEvaluatedKey</i> in the
      *         previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
      *         be String, Number or Binary. No set data types are allowed.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public QueryRequest withExclusiveStartKey(java.util.Map<String,AttributeValue> exclusiveStartKey) {
         setExclusiveStartKey(exclusiveStartKey);
@@ -1975,6 +2029,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         the response; if set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ReturnConsumedCapacity
      */
     public QueryRequest withReturnConsumedCapacity(String returnConsumedCapacity) {
@@ -2014,6 +2071,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
      *         the response; if set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see ReturnConsumedCapacity
      */

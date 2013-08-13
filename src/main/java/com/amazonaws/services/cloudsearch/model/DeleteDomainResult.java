@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A response message that contains the status of a newly deleted domain, or no status if the domain has already been completely deleted.
  * </p>
  */
-public class DeleteDomainResult  implements Serializable  {
+public class DeleteDomainResult implements Serializable {
 
     /**
      * The current status of the search domain.
@@ -51,6 +51,9 @@ public class DeleteDomainResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param domainStatus The current status of the search domain.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteDomainResult withDomainStatus(DomainStatus domainStatus) {
         this.domainStatus = domainStatus;

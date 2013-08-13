@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The result of calling the UnmonitorInstances operation. Contains the updated monitoring status for each instance specified in the request.
  * </p>
  */
-public class UnmonitorInstancesResult  implements Serializable  {
+public class UnmonitorInstancesResult implements Serializable {
 
     /**
      * A list of updated monitoring information for the instances specified

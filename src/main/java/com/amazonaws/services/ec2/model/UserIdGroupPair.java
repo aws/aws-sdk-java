@@ -20,7 +20,7 @@ import java.io.Serializable;
  * An AWS user ID identifying an AWS account, and the name of a security group within that account.
  * </p>
  */
-public class UserIdGroupPair  implements Serializable  {
+public class UserIdGroupPair implements Serializable {
 
     /**
      * The AWS user ID of an account.

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * CloudFront origin access identity.
  * </p>
  */
-public class CloudFrontOriginAccessIdentity  implements Serializable  {
+public class CloudFrontOriginAccessIdentity implements Serializable {
 
     /**
      * The ID for the origin access identity. For example: E74FTE3AJFJ256A.
@@ -89,6 +89,9 @@ public class CloudFrontOriginAccessIdentity  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param id The ID for the origin access identity. For example: E74FTE3AJFJ256A.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CloudFrontOriginAccessIdentity withId(String id) {
         this.id = id;
@@ -132,6 +135,9 @@ public class CloudFrontOriginAccessIdentity  implements Serializable  {
      * @param s3CanonicalUserId The Amazon S3 canonical user ID for the origin access identity, which
      *         you use when giving the origin access identity read permission to an
      *         object in Amazon S3.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CloudFrontOriginAccessIdentity withS3CanonicalUserId(String s3CanonicalUserId) {
         this.s3CanonicalUserId = s3CanonicalUserId;
@@ -163,6 +169,9 @@ public class CloudFrontOriginAccessIdentity  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cloudFrontOriginAccessIdentityConfig The current configuration information for the identity.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CloudFrontOriginAccessIdentity withCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig) {
         this.cloudFrontOriginAccessIdentityConfig = cloudFrontOriginAccessIdentityConfig;

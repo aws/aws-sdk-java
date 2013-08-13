@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Describe Network Interfaces Result
  */
-public class DescribeNetworkInterfacesResult  implements Serializable  {
+public class DescribeNetworkInterfacesResult implements Serializable {
 
     private com.amazonaws.internal.ListWithAutoConstructFlag<NetworkInterface> networkInterfaces;
 

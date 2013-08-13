@@ -20,7 +20,7 @@ import java.io.Serializable;
  * This data type is used as a response element to DownloadDBLogFilePortion.
  * </p>
  */
-public class DownloadDBLogFilePortionResult  implements Serializable  {
+public class DownloadDBLogFilePortionResult implements Serializable {
 
     /**
      * Entries from the specified log file.
@@ -63,6 +63,9 @@ public class DownloadDBLogFilePortionResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param logFileData Entries from the specified log file.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DownloadDBLogFilePortionResult withLogFileData(String logFileData) {
         this.logFileData = logFileData;
@@ -100,6 +103,9 @@ public class DownloadDBLogFilePortionResult  implements Serializable  {
      *
      * @param marker An optional pagination token provided by a previous
      *         DownloadDBLogFilePortion request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DownloadDBLogFilePortionResult withMarker(String marker) {
         this.marker = marker;
@@ -137,6 +143,9 @@ public class DownloadDBLogFilePortionResult  implements Serializable  {
      *
      * @param additionalDataPending Boolean value that if true, indicates there is more data to be
      *         downloaded.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DownloadDBLogFilePortionResult withAdditionalDataPending(Boolean additionalDataPending) {
         this.additionalDataPending = additionalDataPending;

@@ -33,7 +33,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listSigningCertificates(ListSigningCertificatesRequest)
  */
-public class ListSigningCertificatesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ListSigningCertificatesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the user.
@@ -109,6 +109,9 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest  imp
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param userName The name of the user.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListSigningCertificatesRequest withUserName(String userName) {
         this.userName = userName;
@@ -170,6 +173,9 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest  imp
      *         request after you've received a response where the results are
      *         truncated. Set it to the value of the <code>Marker</code> element in
      *         the response you just received.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListSigningCertificatesRequest withMarker(String marker) {
         this.marker = marker;
@@ -228,6 +234,9 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest  imp
      *         of certificate IDs you want in the response. If there are additional
      *         certificate IDs beyond the maximum you specify, the
      *         <code>IsTruncated</code> response element is <code>true</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListSigningCertificatesRequest withMaxItems(Integer maxItems) {
         this.maxItems = maxItems;

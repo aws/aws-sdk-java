@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes a layer.
  * </p>
  */
-public class Layer  implements Serializable  {
+public class Layer implements Serializable {
 
     /**
      * The layer stack ID.
@@ -164,6 +164,9 @@ public class Layer  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackId The layer stack ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Layer withStackId(String stackId) {
         this.stackId = stackId;
@@ -195,6 +198,9 @@ public class Layer  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param layerId The layer ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Layer withLayerId(String layerId) {
         this.layerId = layerId;
@@ -258,6 +264,9 @@ public class Layer  implements Serializable  {
      *         <li>MemcachedServer</li> <li>MySqlMaster</li> <li>NodeJsAppServer</li>
      *         <li>PhpAppServer</li> <li>RailsAppServer</li> <li>WebServer</li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see LayerType
      */
     public Layer withType(String type) {
@@ -302,6 +311,9 @@ public class Layer  implements Serializable  {
      *         <li>MemcachedServer</li> <li>MySqlMaster</li> <li>NodeJsAppServer</li>
      *         <li>PhpAppServer</li> <li>RailsAppServer</li> <li>WebServer</li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see LayerType
      */
     public Layer withType(LayerType type) {
@@ -333,6 +345,9 @@ public class Layer  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The layer name.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Layer withName(String name) {
         this.name = name;
@@ -364,6 +379,9 @@ public class Layer  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param shortname The layer short name.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Layer withShortname(String shortname) {
         this.shortname = shortname;
@@ -399,6 +417,9 @@ public class Layer  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributes The layer attributes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Layer withAttributes(java.util.Map<String,String> attributes) {
         setAttributes(attributes);
@@ -478,6 +499,9 @@ public class Layer  implements Serializable  {
      *         instances. For more information about IAM ARNs, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Layer withCustomInstanceProfileArn(String customInstanceProfileArn) {
         this.customInstanceProfileArn = customInstanceProfileArn;
@@ -520,6 +544,9 @@ public class Layer  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param customSecurityGroupIds An array containing the layer's custom security group IDs.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Layer withCustomSecurityGroupIds(String... customSecurityGroupIds) {
         if (getCustomSecurityGroupIds() == null) setCustomSecurityGroupIds(new java.util.ArrayList<String>(customSecurityGroupIds.length));
@@ -535,6 +562,9 @@ public class Layer  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param customSecurityGroupIds An array containing the layer's custom security group IDs.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Layer withCustomSecurityGroupIds(java.util.Collection<String> customSecurityGroupIds) {
         if (customSecurityGroupIds == null) {
@@ -583,6 +613,9 @@ public class Layer  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param defaultSecurityGroupNames An array containing the layer's security group names.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Layer withDefaultSecurityGroupNames(String... defaultSecurityGroupNames) {
         if (getDefaultSecurityGroupNames() == null) setDefaultSecurityGroupNames(new java.util.ArrayList<String>(defaultSecurityGroupNames.length));
@@ -598,6 +631,9 @@ public class Layer  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param defaultSecurityGroupNames An array containing the layer's security group names.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Layer withDefaultSecurityGroupNames(java.util.Collection<String> defaultSecurityGroupNames) {
         if (defaultSecurityGroupNames == null) {
@@ -652,6 +688,9 @@ public class Layer  implements Serializable  {
      *
      * @param packages An array of <code>Package</code> objects that describe the layer's
      *         packages.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Layer withPackages(String... packages) {
         if (getPackages() == null) setPackages(new java.util.ArrayList<String>(packages.length));
@@ -669,6 +708,9 @@ public class Layer  implements Serializable  {
      *
      * @param packages An array of <code>Package</code> objects that describe the layer's
      *         packages.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Layer withPackages(java.util.Collection<String> packages) {
         if (packages == null) {
@@ -723,6 +765,9 @@ public class Layer  implements Serializable  {
      *
      * @param volumeConfigurations A <code>VolumeConfigurations</code> object that describes the layer's
      *         Amazon EBS volumes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Layer withVolumeConfigurations(VolumeConfiguration... volumeConfigurations) {
         if (getVolumeConfigurations() == null) setVolumeConfigurations(new java.util.ArrayList<VolumeConfiguration>(volumeConfigurations.length));
@@ -740,6 +785,9 @@ public class Layer  implements Serializable  {
      *
      * @param volumeConfigurations A <code>VolumeConfigurations</code> object that describes the layer's
      *         Amazon EBS volumes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Layer withVolumeConfigurations(java.util.Collection<VolumeConfiguration> volumeConfigurations) {
         if (volumeConfigurations == null) {
@@ -777,6 +825,9 @@ public class Layer  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param enableAutoHealing Whether auto healing is disabled for the layer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Layer withEnableAutoHealing(Boolean enableAutoHealing) {
         this.enableAutoHealing = enableAutoHealing;
@@ -829,6 +880,9 @@ public class Layer  implements Serializable  {
      * @param autoAssignElasticIps Whether the layer has an automatically assigned <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      *         IP address</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Layer withAutoAssignElasticIps(Boolean autoAssignElasticIps) {
         this.autoAssignElasticIps = autoAssignElasticIps;
@@ -939,6 +993,9 @@ public class Layer  implements Serializable  {
      *         the recipe name, which is the recipe's file name without the .rb
      *         extension. For example: phpapp2::dbsetup specifies the dbsetup.rb
      *         recipe in the repository's phpapp2 folder.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Layer withDefaultRecipes(Recipes defaultRecipes) {
         this.defaultRecipes = defaultRecipes;
@@ -976,6 +1033,9 @@ public class Layer  implements Serializable  {
      *
      * @param customRecipes A <code>LayerCustomRecipes</code> object that specifies the layer's
      *         custom recipes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Layer withCustomRecipes(Recipes customRecipes) {
         this.customRecipes = customRecipes;
@@ -1007,6 +1067,9 @@ public class Layer  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param createdAt Date when the layer was created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Layer withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
@@ -1086,6 +1149,9 @@ public class Layer  implements Serializable  {
      *         the instances. <note>We strongly recommend using the default value of
      *         <code>true</code>, to ensure that your instances have the latest
      *         security updates.</note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Layer withInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
         this.installUpdatesOnBoot = installUpdatesOnBoot;

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The output for the DeregisterInstancesFromLoadBalancer action.
  * </p>
  */
-public class DeregisterInstancesFromLoadBalancerResult  implements Serializable  {
+public class DeregisterInstancesFromLoadBalancerResult implements Serializable {
 
     /**
      * An updated list of remaining instances registered with the
@@ -69,6 +69,9 @@ public class DeregisterInstancesFromLoadBalancerResult  implements Serializable 
      *
      * @param instances An updated list of remaining instances registered with the
      *         LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeregisterInstancesFromLoadBalancerResult withInstances(Instance... instances) {
         if (getInstances() == null) setInstances(new java.util.ArrayList<Instance>(instances.length));
@@ -86,6 +89,9 @@ public class DeregisterInstancesFromLoadBalancerResult  implements Serializable 
      *
      * @param instances An updated list of remaining instances registered with the
      *         LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeregisterInstancesFromLoadBalancerResult withInstances(java.util.Collection<Instance> instances) {
         if (instances == null) {

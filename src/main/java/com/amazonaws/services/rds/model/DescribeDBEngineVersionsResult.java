@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the DescribeDBEngineVersions action.
  * </p>
  */
-public class DescribeDBEngineVersionsResult  implements Serializable  {
+public class DescribeDBEngineVersionsResult implements Serializable {
 
     /**
      * An optional pagination token provided by a previous request. If this
@@ -70,6 +70,9 @@ public class DescribeDBEngineVersionsResult  implements Serializable  {
      * @param marker An optional pagination token provided by a previous request. If this
      *         parameter is specified, the response includes only records beyond the
      *         marker, up to the value specified by <code>MaxRecords</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeDBEngineVersionsResult withMarker(String marker) {
         this.marker = marker;
@@ -112,6 +115,9 @@ public class DescribeDBEngineVersionsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBEngineVersions A list of <code>DBEngineVersion</code> elements.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeDBEngineVersionsResult withDBEngineVersions(DBEngineVersion... dBEngineVersions) {
         if (getDBEngineVersions() == null) setDBEngineVersions(new java.util.ArrayList<DBEngineVersion>(dBEngineVersions.length));
@@ -127,6 +133,9 @@ public class DescribeDBEngineVersionsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBEngineVersions A list of <code>DBEngineVersion</code> elements.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeDBEngineVersionsResult withDBEngineVersions(java.util.Collection<DBEngineVersion> dBEngineVersions) {
         if (dBEngineVersions == null) {

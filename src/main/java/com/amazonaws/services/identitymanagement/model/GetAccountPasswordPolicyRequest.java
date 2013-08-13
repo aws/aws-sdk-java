@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getAccountPasswordPolicy(GetAccountPasswordPolicyRequest)
  */
-public class GetAccountPasswordPolicyRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class GetAccountPasswordPolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Returns a string representation of this object; useful for testing and

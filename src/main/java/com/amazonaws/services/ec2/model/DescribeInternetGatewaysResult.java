@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Describe Internet Gateways Result
  */
-public class DescribeInternetGatewaysResult  implements Serializable  {
+public class DescribeInternetGatewaysResult implements Serializable {
 
     private com.amazonaws.internal.ListWithAutoConstructFlag<InternetGateway> internetGateways;
 

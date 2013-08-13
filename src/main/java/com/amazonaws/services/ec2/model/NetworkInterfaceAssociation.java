@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Network Interface Association
  */
-public class NetworkInterfaceAssociation  implements Serializable  {
+public class NetworkInterfaceAssociation implements Serializable {
 
     private String publicIp;
 

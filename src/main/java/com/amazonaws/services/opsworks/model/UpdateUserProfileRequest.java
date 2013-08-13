@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#updateUserProfile(UpdateUserProfileRequest)
  */
-public class UpdateUserProfileRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class UpdateUserProfileRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The user IAM ARN.
@@ -65,6 +65,9 @@ public class UpdateUserProfileRequest extends AmazonWebServiceRequest  implement
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param iamUserArn The user IAM ARN.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateUserProfileRequest withIamUserArn(String iamUserArn) {
         this.iamUserArn = iamUserArn;
@@ -96,6 +99,9 @@ public class UpdateUserProfileRequest extends AmazonWebServiceRequest  implement
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sshUsername The user's new SSH user name.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateUserProfileRequest withSshUsername(String sshUsername) {
         this.sshUsername = sshUsername;
@@ -127,6 +133,9 @@ public class UpdateUserProfileRequest extends AmazonWebServiceRequest  implement
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sshPublicKey The user's new SSH public key.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateUserProfileRequest withSshPublicKey(String sshPublicKey) {
         this.sshPublicKey = sshPublicKey;

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the GetFederationToken action.
  * </p>
  */
-public class GetFederationTokenResult  implements Serializable  {
+public class GetFederationTokenResult implements Serializable {
 
     /**
      * Credentials for the service API authentication.
@@ -69,6 +69,9 @@ public class GetFederationTokenResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param credentials Credentials for the service API authentication.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetFederationTokenResult withCredentials(Credentials credentials) {
         this.credentials = credentials;
@@ -118,6 +121,9 @@ public class GetFederationTokenResult  implements Serializable  {
      *         (such as <code>arn:aws:sts::123456789012:federated-user/Bob</code> or
      *         <code>123456789012:Bob</code>). You can use the federated user's ARN
      *         in your resource policies like in an Amazon S3 bucket policy.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetFederationTokenResult withFederatedUser(FederatedUser federatedUser) {
         this.federatedUser = federatedUser;
@@ -170,6 +176,9 @@ public class GetFederationTokenResult  implements Serializable  {
      * @param packedPolicySize A percentage value indicating the size of the policy in packed form.
      *         The service rejects policies for which the packed size is greater than
      *         100 percent of the allowed value.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetFederationTokenResult withPackedPolicySize(Integer packedPolicySize) {
         this.packedPolicySize = packedPolicySize;

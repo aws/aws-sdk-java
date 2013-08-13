@@ -32,7 +32,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#enableAvailabilityZonesForLoadBalancer(EnableAvailabilityZonesForLoadBalancerRequest)
  */
-public class EnableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class EnableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name associated with the LoadBalancer. The name must be unique
@@ -102,6 +102,9 @@ public class EnableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServ
      *
      * @param loadBalancerName The name associated with the LoadBalancer. The name must be unique
      *         within the client AWS account.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EnableAvailabilityZonesForLoadBalancerRequest withLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
@@ -150,6 +153,9 @@ public class EnableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServ
      *
      * @param availabilityZones A list of new Availability Zones for the LoadBalancer. Each
      *         Availability Zone must be in the same Region as the LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EnableAvailabilityZonesForLoadBalancerRequest withAvailabilityZones(String... availabilityZones) {
         if (getAvailabilityZones() == null) setAvailabilityZones(new java.util.ArrayList<String>(availabilityZones.length));
@@ -167,6 +173,9 @@ public class EnableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServ
      *
      * @param availabilityZones A list of new Availability Zones for the LoadBalancer. Each
      *         Availability Zone must be in the same Region as the LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EnableAvailabilityZonesForLoadBalancerRequest withAvailabilityZones(java.util.Collection<String> availabilityZones) {
         if (availabilityZones == null) {

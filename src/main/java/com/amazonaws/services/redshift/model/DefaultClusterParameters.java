@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes the default cluster parameters for a parameter group family.
  * </p>
  */
-public class DefaultClusterParameters  implements Serializable  {
+public class DefaultClusterParameters implements Serializable {
 
     /**
      * The name of the cluster parameter group family to which the engine
@@ -68,6 +68,9 @@ public class DefaultClusterParameters  implements Serializable  {
      *
      * @param parameterGroupFamily The name of the cluster parameter group family to which the engine
      *         default parameters apply.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DefaultClusterParameters withParameterGroupFamily(String parameterGroupFamily) {
         this.parameterGroupFamily = parameterGroupFamily;
@@ -99,6 +102,9 @@ public class DefaultClusterParameters  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param marker An identifier to allow retrieval of paginated results.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DefaultClusterParameters withMarker(String marker) {
         this.marker = marker;
@@ -141,6 +147,9 @@ public class DefaultClusterParameters  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameters The list of cluster default parameters.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DefaultClusterParameters withParameters(Parameter... parameters) {
         if (getParameters() == null) setParameters(new java.util.ArrayList<Parameter>(parameters.length));
@@ -156,6 +165,9 @@ public class DefaultClusterParameters  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameters The list of cluster default parameters.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DefaultClusterParameters withParameters(java.util.Collection<Parameter> parameters) {
         if (parameters == null) {

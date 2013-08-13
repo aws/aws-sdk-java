@@ -18,16 +18,46 @@ import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#changeMessageVisibility(ChangeMessageVisibilityRequest) ChangeMessageVisibility operation}.
- * 
+ * <p>
+ * The <code>ChangeMessageVisibility</code> action changes the visibility timeout of a specified message in a queue to a new value. The maximum allowed
+ * timeout value you can set the value to is 12 hours. This means you can't extend the timeout of a message in an existing queue to more than a total
+ * visibility timeout of 12 hours. (For more information visibility timeout, see <a
+ * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html"> Visibility Timeout </a> in the Amazon SQS Developer
+ * Guide.)
+ * </p>
+ * <p>
+ * For example, let's say you have a message and its default message visibility timeout is 30 minutes. You could call <code>ChangeMessageVisiblity</code>
+ * with a value of two hours and the effective timeout would be two hours and 30 minutes. When that time comes near you could again extend the time out
+ * by calling ChangeMessageVisiblity, but this time the maximum allowed timeout would be 9 hours and 30 minutes.
+ * </p>
+ * <p>
+ * <b>IMPORTANT:</b>If you attempt to set the VisibilityTimeout to an amount more than the maximum time left, Amazon SQS returns an error. It will not
+ * automatically recalculate and increase the timeout to the maximum time remaining.
+ * </p>
+ * <p>
+ * <b>IMPORTANT:</b>Unlike with a queue, when you change the visibility timeout for a specific message, that timeout value is applied immediately but is
+ * not saved in memory for that message. If you don't delete a message after it is received, the visibility timeout for the message the next time it is
+ * received reverts to the original timeout value, not the value you set with the ChangeMessageVisibility action.
+ * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#changeMessageVisibility(ChangeMessageVisibilityRequest)
  */
-public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest implements Serializable {
 
+    /**
+     * The URL of the SQS queue to take action on.
+     */
     private String queueUrl;
 
+    /**
+     * The receipt handle associated with the message whose visibility
+     * timeout should be changed.
+     */
     private String receiptHandle;
 
+    /**
+     * The new value (in seconds) for the message's visibility timeout.
+     */
     private Integer visibilityTimeout;
 
     /**
@@ -43,9 +73,11 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest  imp
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param queueUrl
-     * @param receiptHandle
-     * @param visibilityTimeout
+     * @param queueUrl The URL of the SQS queue to take action on.
+     * @param receiptHandle The receipt handle associated with the message
+     * whose visibility timeout should be changed.
+     * @param visibilityTimeout The new value (in seconds) for the message's
+     * visibility timeout.
      */
     public ChangeMessageVisibilityRequest(String queueUrl, String receiptHandle, Integer visibilityTimeout) {
         setQueueUrl(queueUrl);
@@ -56,29 +88,32 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest  imp
     
     
     /**
-     * Returns the value of the QueueUrl property for this object.
+     * The URL of the SQS queue to take action on.
      *
-     * @return The value of the QueueUrl property for this object.
+     * @return The URL of the SQS queue to take action on.
      */
     public String getQueueUrl() {
         return queueUrl;
     }
     
     /**
-     * Sets the value of the QueueUrl property for this object.
+     * The URL of the SQS queue to take action on.
      *
-     * @param queueUrl The new value for the QueueUrl property for this object.
+     * @param queueUrl The URL of the SQS queue to take action on.
      */
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
     
     /**
-     * Sets the value of the QueueUrl property for this object.
+     * The URL of the SQS queue to take action on.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queueUrl The new value for the QueueUrl property for this object.
+     * @param queueUrl The URL of the SQS queue to take action on.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChangeMessageVisibilityRequest withQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
@@ -87,29 +122,38 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest  imp
     
     
     /**
-     * Returns the value of the ReceiptHandle property for this object.
+     * The receipt handle associated with the message whose visibility
+     * timeout should be changed.
      *
-     * @return The value of the ReceiptHandle property for this object.
+     * @return The receipt handle associated with the message whose visibility
+     *         timeout should be changed.
      */
     public String getReceiptHandle() {
         return receiptHandle;
     }
     
     /**
-     * Sets the value of the ReceiptHandle property for this object.
+     * The receipt handle associated with the message whose visibility
+     * timeout should be changed.
      *
-     * @param receiptHandle The new value for the ReceiptHandle property for this object.
+     * @param receiptHandle The receipt handle associated with the message whose visibility
+     *         timeout should be changed.
      */
     public void setReceiptHandle(String receiptHandle) {
         this.receiptHandle = receiptHandle;
     }
     
     /**
-     * Sets the value of the ReceiptHandle property for this object.
+     * The receipt handle associated with the message whose visibility
+     * timeout should be changed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param receiptHandle The new value for the ReceiptHandle property for this object.
+     * @param receiptHandle The receipt handle associated with the message whose visibility
+     *         timeout should be changed.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChangeMessageVisibilityRequest withReceiptHandle(String receiptHandle) {
         this.receiptHandle = receiptHandle;
@@ -118,29 +162,32 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest  imp
     
     
     /**
-     * Returns the value of the VisibilityTimeout property for this object.
+     * The new value (in seconds) for the message's visibility timeout.
      *
-     * @return The value of the VisibilityTimeout property for this object.
+     * @return The new value (in seconds) for the message's visibility timeout.
      */
     public Integer getVisibilityTimeout() {
         return visibilityTimeout;
     }
     
     /**
-     * Sets the value of the VisibilityTimeout property for this object.
+     * The new value (in seconds) for the message's visibility timeout.
      *
-     * @param visibilityTimeout The new value for the VisibilityTimeout property for this object.
+     * @param visibilityTimeout The new value (in seconds) for the message's visibility timeout.
      */
     public void setVisibilityTimeout(Integer visibilityTimeout) {
         this.visibilityTimeout = visibilityTimeout;
     }
     
     /**
-     * Sets the value of the VisibilityTimeout property for this object.
+     * The new value (in seconds) for the message's visibility timeout.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param visibilityTimeout The new value for the VisibilityTimeout property for this object.
+     * @param visibilityTimeout The new value (in seconds) for the message's visibility timeout.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChangeMessageVisibilityRequest withVisibilityTimeout(Integer visibilityTimeout) {
         this.visibilityTimeout = visibilityTimeout;

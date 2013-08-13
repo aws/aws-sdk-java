@@ -90,7 +90,7 @@ public interface AmazonSimpleEmailService {
      * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      */
     public void setRegion(Region region) throws java.lang.IllegalArgumentException;
-	
+    
     /**
      * <p>
      * Deletes the specified identity (email address or domain) from the list

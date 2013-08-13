@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Vpn Static Route
  */
-public class VpnStaticRoute  implements Serializable  {
+public class VpnStaticRoute implements Serializable {
 
     private String destinationCidrBlock;
 

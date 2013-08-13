@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The ListenerDescription data type.
  * </p>
  */
-public class ListenerDescription  implements Serializable  {
+public class ListenerDescription implements Serializable {
 
     /**
      * The Listener data type.
@@ -63,6 +63,9 @@ public class ListenerDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param listener The Listener data type.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListenerDescription withListener(Listener listener) {
         this.listener = listener;
@@ -111,6 +114,9 @@ public class ListenerDescription  implements Serializable  {
      *
      * @param policyNames A list of policies enabled for this listener. An empty list indicates
      *         that no policies are enabled.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListenerDescription withPolicyNames(String... policyNames) {
         if (getPolicyNames() == null) setPolicyNames(new java.util.ArrayList<String>(policyNames.length));
@@ -128,6 +134,9 @@ public class ListenerDescription  implements Serializable  {
      *
      * @param policyNames A list of policies enabled for this listener. An empty list indicates
      *         that no policies are enabled.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListenerDescription withPolicyNames(java.util.Collection<String> policyNames) {
         if (policyNames == null) {

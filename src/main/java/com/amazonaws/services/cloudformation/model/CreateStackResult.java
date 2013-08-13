@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The output for a CreateStack action.
  * </p>
  */
-public class CreateStackResult  implements Serializable  {
+public class CreateStackResult implements Serializable {
 
     /**
      * Unique identifier of the stack.
@@ -51,6 +51,9 @@ public class CreateStackResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackId Unique identifier of the stack.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateStackResult withStackId(String stackId) {
         this.stackId = stackId;

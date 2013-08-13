@@ -55,7 +55,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#batchGetItem(BatchGetItemRequest)
  */
-public class BatchGetItemRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class BatchGetItemRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * A map of one or more table names and, for each table, the
@@ -85,6 +85,96 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest  implements Ser
      */
     private String returnConsumedCapacity;
 
+    /**
+     * Default constructor for a new BatchGetItemRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public BatchGetItemRequest() {}
+    
+
+
+    /**
+     * Constructs a new BatchGetItemRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param requestItems A map of one or more table names and, for each
+     * table, the corresponding primary keys for the items to retrieve. Each
+     * table name can be invoked only once. <p>Each element in the map
+     * consists of the following: <ul> <li> <p><i>Keys</i> - An array of
+     * primary key attribute values that define specific items in the table.
+     * </li> <li> <p><i>AttributesToGet</i> - One or more attributes to be
+     * retrieved from the table or index. By default, all attributes are
+     * returned. If a specified attribute is not found, it does not appear in
+     * the result. </li> <li> <p><i>ConsistentRead</i> - If
+     * <code>true</code>, a strongly consistent read is used; if
+     * <code>false</code> (the default), an eventually consistent read is
+     * used. </li> </ul>
+     */
+    public BatchGetItemRequest(java.util.Map<String,KeysAndAttributes> requestItems) {
+        setRequestItems(requestItems);
+    }
+
+    
+    
+
+
+    /**
+     * Constructs a new BatchGetItemRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param requestItems A map of one or more table names and, for each
+     * table, the corresponding primary keys for the items to retrieve. Each
+     * table name can be invoked only once. <p>Each element in the map
+     * consists of the following: <ul> <li> <p><i>Keys</i> - An array of
+     * primary key attribute values that define specific items in the table.
+     * </li> <li> <p><i>AttributesToGet</i> - One or more attributes to be
+     * retrieved from the table or index. By default, all attributes are
+     * returned. If a specified attribute is not found, it does not appear in
+     * the result. </li> <li> <p><i>ConsistentRead</i> - If
+     * <code>true</code>, a strongly consistent read is used; if
+     * <code>false</code> (the default), an eventually consistent read is
+     * used. </li> </ul>
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>,
+     * <i>ConsumedCapacity</i> is included in the response; if set to
+     * <code>NONE</code> (the default), <i>ConsumedCapacity</i> is not
+     * included.
+     */
+    public BatchGetItemRequest(java.util.Map<String,KeysAndAttributes> requestItems, String returnConsumedCapacity) {
+        setRequestItems(requestItems);
+        setReturnConsumedCapacity(returnConsumedCapacity);
+    }
+
+    
+    
+    /**
+     * Constructs a new BatchGetItemRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param requestItems A map of one or more table names and, for each
+     * table, the corresponding primary keys for the items to retrieve. Each
+     * table name can be invoked only once. <p>Each element in the map
+     * consists of the following: <ul> <li> <p><i>Keys</i> - An array of
+     * primary key attribute values that define specific items in the table.
+     * </li> <li> <p><i>AttributesToGet</i> - One or more attributes to be
+     * retrieved from the table or index. By default, all attributes are
+     * returned. If a specified attribute is not found, it does not appear in
+     * the result. </li> <li> <p><i>ConsistentRead</i> - If
+     * <code>true</code>, a strongly consistent read is used; if
+     * <code>false</code> (the default), an eventually consistent read is
+     * used. </li> </ul>
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>,
+     * <i>ConsumedCapacity</i> is included in the response; if set to
+     * <code>NONE</code> (the default), <i>ConsumedCapacity</i> is not
+     * included.
+     */
+    public BatchGetItemRequest(java.util.Map<String,KeysAndAttributes> requestItems, ReturnConsumedCapacity returnConsumedCapacity) {
+        this.requestItems = requestItems;
+        this.returnConsumedCapacity = returnConsumedCapacity.toString();
+    }
+    
     /**
      * A map of one or more table names and, for each table, the
      * corresponding primary keys for the items to retrieve. Each table name
@@ -179,6 +269,9 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest  implements Ser
      *         </li> <li> <p><i>ConsistentRead</i> - If <code>true</code>, a strongly
      *         consistent read is used; if <code>false</code> (the default), an
      *         eventually consistent read is used. </li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public BatchGetItemRequest withRequestItems(java.util.Map<String,KeysAndAttributes> requestItems) {
         setRequestItems(requestItems);
@@ -279,6 +372,9 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest  implements Ser
      *         the response; if set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ReturnConsumedCapacity
      */
     public BatchGetItemRequest withReturnConsumedCapacity(String returnConsumedCapacity) {
@@ -318,6 +414,9 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest  implements Ser
      * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
      *         the response; if set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see ReturnConsumedCapacity
      */

@@ -38,7 +38,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#setTerminationProtection(SetTerminationProtectionRequest)
  */
-public class SetTerminationProtectionRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class SetTerminationProtectionRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * A list of strings that uniquely identify the job flows to protect.
@@ -101,6 +101,9 @@ public class SetTerminationProtectionRequest extends AmazonWebServiceRequest  im
      * @param jobFlowIds A list of strings that uniquely identify the job flows to protect.
      *         This identifier is returned by <a>RunJobFlow</a> and can also be
      *         obtained from <a>DescribeJobFlows</a> .
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SetTerminationProtectionRequest withJobFlowIds(String... jobFlowIds) {
         if (getJobFlowIds() == null) setJobFlowIds(new java.util.ArrayList<String>(jobFlowIds.length));
@@ -120,6 +123,9 @@ public class SetTerminationProtectionRequest extends AmazonWebServiceRequest  im
      * @param jobFlowIds A list of strings that uniquely identify the job flows to protect.
      *         This identifier is returned by <a>RunJobFlow</a> and can also be
      *         obtained from <a>DescribeJobFlows</a> .
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SetTerminationProtectionRequest withJobFlowIds(java.util.Collection<String> jobFlowIds) {
         if (jobFlowIds == null) {
@@ -169,6 +175,9 @@ public class SetTerminationProtectionRequest extends AmazonWebServiceRequest  im
      * @param terminationProtected A Boolean that indicates whether to protect the job flow and prevent
      *         the Amazon EC2 instances in the cluster from shutting down due to API
      *         calls, user intervention, or job-flow error.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SetTerminationProtectionRequest withTerminationProtected(Boolean terminationProtected) {
         this.terminationProtected = terminationProtected;

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A structure containing information about a new private virtual interface.
  * </p>
  */
-public class NewPrivateVirtualInterface  implements Serializable  {
+public class NewPrivateVirtualInterface implements Serializable {
 
     /**
      * The name of the virtual interface assigned by the customer <p>Example:
@@ -86,6 +86,9 @@ public class NewPrivateVirtualInterface  implements Serializable  {
      *
      * @param virtualInterfaceName The name of the virtual interface assigned by the customer <p>Example:
      *         "Dev VPC"
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NewPrivateVirtualInterface withVirtualInterfaceName(String virtualInterfaceName) {
         this.virtualInterfaceName = virtualInterfaceName;
@@ -117,6 +120,9 @@ public class NewPrivateVirtualInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vlan VLAN ID <p>Example: 101
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NewPrivateVirtualInterface withVlan(Integer vlan) {
         this.vlan = vlan;
@@ -154,6 +160,9 @@ public class NewPrivateVirtualInterface  implements Serializable  {
      *
      * @param asn Autonomous system (AS) number for Border Gateway Protocol (BGP)
      *         configuration <p>Example: 65000
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NewPrivateVirtualInterface withAsn(Integer asn) {
         this.asn = asn;
@@ -185,6 +194,9 @@ public class NewPrivateVirtualInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param authKey Authentication key for BGP configuration <p>Example: asdf34example
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NewPrivateVirtualInterface withAuthKey(String authKey) {
         this.authKey = authKey;
@@ -216,6 +228,9 @@ public class NewPrivateVirtualInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param amazonAddress IP address assigned to the Amazon interface. <p>Example: 192.168.1.1
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NewPrivateVirtualInterface withAmazonAddress(String amazonAddress) {
         this.amazonAddress = amazonAddress;
@@ -247,6 +262,9 @@ public class NewPrivateVirtualInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param customerAddress The new value for the CustomerAddress property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NewPrivateVirtualInterface withCustomerAddress(String customerAddress) {
         this.customerAddress = customerAddress;
@@ -278,6 +296,9 @@ public class NewPrivateVirtualInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param virtualGatewayId Virtual private gateway to a VPC. <p>Example: vgw-123er56
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NewPrivateVirtualInterface withVirtualGatewayId(String virtualGatewayId) {
         this.virtualGatewayId = virtualGatewayId;

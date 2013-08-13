@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Results of a CreateStorageLocationResult call.
  * </p>
  */
-public class CreateStorageLocationResult  implements Serializable  {
+public class CreateStorageLocationResult implements Serializable {
 
     /**
      * The name of the Amazon S3 bucket created.
@@ -63,6 +63,9 @@ public class CreateStorageLocationResult  implements Serializable  {
      * <b>Length: </b>0 - 255<br/>
      *
      * @param s3Bucket The name of the Amazon S3 bucket created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateStorageLocationResult withS3Bucket(String s3Bucket) {
         this.s3Bucket = s3Bucket;

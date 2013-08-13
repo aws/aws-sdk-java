@@ -26,7 +26,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#restoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest)
  */
-public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The identifier of the source DB Instance from which to restore.
@@ -248,6 +248,9 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      *         characters or hyphens</li> <li>First character must be a letter</li>
      *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      *         </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreDBInstanceToPointInTimeRequest withSourceDBInstanceIdentifier(String sourceDBInstanceIdentifier) {
         this.sourceDBInstanceIdentifier = sourceDBInstanceIdentifier;
@@ -297,6 +300,9 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      *         <ul> <li>Must contain from 1 to 63 alphanumeric characters or
      *         hyphens</li> <li>First character must be a letter</li> <li>Cannot end
      *         with a hyphen or contain two consecutive hyphens</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreDBInstanceToPointInTimeRequest withTargetDBInstanceIdentifier(String targetDBInstanceIdentifier) {
         this.targetDBInstanceIdentifier = targetDBInstanceIdentifier;
@@ -352,6 +358,9 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      *         time for the DB Instance</li> <li>Cannot be specified if
      *         UseLatestRestorableTime parameter is true</li> </ul> <p>Example:
      *         <code>2009-09-07T23:45:00Z</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreDBInstanceToPointInTimeRequest withRestoreTime(java.util.Date restoreTime) {
         this.restoreTime = restoreTime;
@@ -401,6 +410,9 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      *         DB Instance is restored from the latest backup time. <p>Default:
      *         <code>false</code> <p>Constraints: Cannot be specified if RestoreTime
      *         parameter is provided.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreDBInstanceToPointInTimeRequest withUseLatestRestorableTime(Boolean useLatestRestorableTime) {
         this.useLatestRestorableTime = useLatestRestorableTime;
@@ -465,6 +477,9 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      *         <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
      *         db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
      *         <p>Default: The same DBInstanceClass as the original DB Instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreDBInstanceToPointInTimeRequest withDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
@@ -508,6 +523,9 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      * @param port The port number on which the database accepts connections.
      *         <p>Constraints: Value must be <code>1150-65535</code> <p>Default: The
      *         same port as the original DB Instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreDBInstanceToPointInTimeRequest withPort(Integer port) {
         this.port = port;
@@ -563,6 +581,9 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      *         <p>Constraint: You cannot specify the AvailabilityZone parameter if
      *         the MultiAZ parameter is set to true. <p>Example:
      *         <code>us-east-1a</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreDBInstanceToPointInTimeRequest withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -594,6 +615,9 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBSubnetGroupName The DB subnet group name to use for the new instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreDBInstanceToPointInTimeRequest withDBSubnetGroupName(String dBSubnetGroupName) {
         this.dBSubnetGroupName = dBSubnetGroupName;
@@ -637,6 +661,9 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      * @param multiAZ Specifies if the DB Instance is a Multi-AZ deployment. <p>Constraint:
      *         You cannot specify the AvailabilityZone parameter if the MultiAZ
      *         parameter is set to <code>true</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreDBInstanceToPointInTimeRequest withMultiAZ(Boolean multiAZ) {
         this.multiAZ = multiAZ;
@@ -753,6 +780,9 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      *         publicly accessible. If a specific DB subnet group has been specified
      *         as part of the request and the PubliclyAccessible value has not been
      *         set, the DB instance will be private.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreDBInstanceToPointInTimeRequest withPubliclyAccessible(Boolean publiclyAccessible) {
         this.publiclyAccessible = publiclyAccessible;
@@ -823,6 +853,9 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      *
      * @param autoMinorVersionUpgrade Indicates that minor version upgrades will be applied automatically to
      *         the DB Instance during the maintenance window.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreDBInstanceToPointInTimeRequest withAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
         this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
@@ -883,6 +916,9 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      *         Same as source. <p> Valid values: <code>license-included</code> |
      *         <code>bring-your-own-license</code> |
      *         <code>general-public-license</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreDBInstanceToPointInTimeRequest withLicenseModel(String licenseModel) {
         this.licenseModel = licenseModel;
@@ -920,6 +956,9 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      *
      * @param dBName The database name for the restored DB Instance. <note> <p>This
      *         parameter is not used for the MySQL engine. </note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreDBInstanceToPointInTimeRequest withDBName(String dBName) {
         this.dBName = dBName;
@@ -963,6 +1002,9 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      * @param engine The database engine to use for the new instance. <p>Default: The same
      *         as source <p>Constraint: Must be compatible with the engine of the
      *         source <p>Example: <code>oracle-ee</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreDBInstanceToPointInTimeRequest withEngine(String engine) {
         this.engine = engine;
@@ -1006,6 +1048,9 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      * @param iops The amount of Provisioned IOPS (input/output operations per second) to
      *         be initially allocated for the DB Instance. <p> Constraints: Must be
      *         an integer greater than 1000.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreDBInstanceToPointInTimeRequest withIops(Integer iops) {
         this.iops = iops;
@@ -1079,6 +1124,9 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      *         TDE, cannot be removed from an option group, and that option group
      *         cannot be removed from a DB instance once it is associated with a DB
      *         instance
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreDBInstanceToPointInTimeRequest withOptionGroupName(String optionGroupName) {
         this.optionGroupName = optionGroupName;

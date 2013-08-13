@@ -14,48 +14,112 @@
  */
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
-import java.util.HashMap;
-import java.util.List;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.OutputStreamWriter;
+import java.io.StringWriter;
+import java.io.Writer;
 import java.util.Map;
+import java.util.List;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
+import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
+import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.StringInputStream;
+import com.amazonaws.util.json.*;
 
 /**
  * Set Visible To All Users Request Marshaller
  */
 public class SetVisibleToAllUsersRequestMarshaller implements Marshaller<Request<SetVisibleToAllUsersRequest>, SetVisibleToAllUsersRequest> {
 
-    public Request<SetVisibleToAllUsersRequest> marshall(SetVisibleToAllUsersRequest setVisibleToAllUsersRequest) {
+    
 
-        if (setVisibleToAllUsersRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+    public Request<SetVisibleToAllUsersRequest> marshall(SetVisibleToAllUsersRequest setVisibleToAllUsersRequest) {
+    if (setVisibleToAllUsersRequest == null) {
+        throw new AmazonClientException("Invalid argument passed to marshall(...)");
+    }
 
         Request<SetVisibleToAllUsersRequest> request = new DefaultRequest<SetVisibleToAllUsersRequest>(setVisibleToAllUsersRequest, "AmazonElasticMapReduce");
-        request.addParameter("Action", "SetVisibleToAllUsers");
-        request.addParameter("Version", "2009-03-31");
+        String target = "ElasticMapReduce.SetVisibleToAllUsers";
+        request.addHeader("X-Amz-Target", target);
+        request.addHeader("Content-Type", "application/x-amz-json-1.1");
+
+        
+        request.setHttpMethod(HttpMethodName.POST);
 
 
-        java.util.List<String> jobFlowIdsList = setVisibleToAllUsersRequest.getJobFlowIds();
-        int jobFlowIdsListIndex = 1;
+        String uriResourcePath = ""; 
 
-        for (String jobFlowIdsListValue : jobFlowIdsList) {
-            if (jobFlowIdsListValue != null) {
-                request.addParameter("JobFlowIds.member." + jobFlowIdsListIndex, StringUtils.fromString(jobFlowIdsListValue));
+        uriResourcePath = uriResourcePath.replaceAll("//", "/");
+
+        if (uriResourcePath.contains("?")) {
+            String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
+            uriResourcePath    = uriResourcePath.substring(0, uriResourcePath.indexOf("?"));
+
+            for (String s : queryString.split("[;&]")) {
+                String[] nameValuePair = s.split("=");
+                if (nameValuePair.length == 2) {
+                    request.addParameter(nameValuePair[0], nameValuePair[1]);
+                } else {
+                    request.addParameter(s, null);
+                }
+            }
+        }
+
+        request.setResourcePath(uriResourcePath);
+
+
+        
+        try {
+          StringWriter stringWriter = new StringWriter();
+          JSONWriter jsonWriter = new JSONWriter(stringWriter);
+
+          
+            
+          jsonWriter.object();
+          
+
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> jobFlowIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(setVisibleToAllUsersRequest.getJobFlowIds());
+            if (jobFlowIdsList != null && !(jobFlowIdsList.isAutoConstruct() && jobFlowIdsList.isEmpty())) {
+
+                jsonWriter.key("JobFlowIds");
+                jsonWriter.array();
+
+                for (String jobFlowIdsListValue : jobFlowIdsList) {
+                    if (jobFlowIdsListValue != null) {
+                        jsonWriter.value(jobFlowIdsListValue);
+                    }
+                }
+                jsonWriter.endArray();
+            }
+            if (setVisibleToAllUsersRequest.isVisibleToAllUsers() != null) {
+                jsonWriter.key("VisibleToAllUsers").value(setVisibleToAllUsersRequest.isVisibleToAllUsers());
             }
 
-            jobFlowIdsListIndex++;
-        }
-        if (setVisibleToAllUsersRequest.isVisibleToAllUsers() != null) {
-            request.addParameter("VisibleToAllUsers", StringUtils.fromBoolean(setVisibleToAllUsersRequest.isVisibleToAllUsers()));
-        }
+          jsonWriter.endObject();
+          
 
+          String snippet = stringWriter.toString();
+          byte[] content = snippet.getBytes("UTF-8");
+          request.setContent(new StringInputStream(snippet));
+          request.addHeader("Content-Length", Integer.toString(content.length));
+        } catch(Throwable t) {
+          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+        }
+        
 
         return request;
+    }
+
+    private String getString(String s) {
+        if (s == null) return "";
+        return s;
     }
 }

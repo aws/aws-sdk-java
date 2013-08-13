@@ -27,7 +27,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#deleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest)
  */
-public class DeleteCacheSubnetGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteCacheSubnetGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the Cache Subnet Group to delete. <p>Constraints: Must
@@ -65,6 +65,9 @@ public class DeleteCacheSubnetGroupRequest extends AmazonWebServiceRequest  impl
      *
      * @param cacheSubnetGroupName The name of the Cache Subnet Group to delete. <p>Constraints: Must
      *         contain no more than 255 alphanumeric characters or hyphens.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteCacheSubnetGroupRequest withCacheSubnetGroupName(String cacheSubnetGroupName) {
         this.cacheSubnetGroupName = cacheSubnetGroupName;

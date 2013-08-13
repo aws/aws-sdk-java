@@ -73,7 +73,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.securitytoken.AWSSecurityTokenService#assumeRole(AssumeRoleRequest)
  */
-public class AssumeRoleRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The Amazon Resource Name (ARN) of the role that the caller is
@@ -176,6 +176,9 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest  implements Seria
      *
      * @param roleArn The Amazon Resource Name (ARN) of the role that the caller is
      *         assuming.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AssumeRoleRequest withRoleArn(String roleArn) {
         this.roleArn = roleArn;
@@ -225,6 +228,9 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest  implements Seria
      *
      * @param roleSessionName An identifier for the assumed role session. The session name is
      *         included as part of the <code>AssumedRoleUser</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AssumeRoleRequest withRoleSessionName(String roleSessionName) {
         this.roleSessionName = roleSessionName;
@@ -298,6 +304,9 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest  implements Seria
      *         of this policy and the access policy that is associated with the role.
      *         Use this policy to further restrict the permissions of the temporary
      *         security credentials.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AssumeRoleRequest withPolicy(String policy) {
         this.policy = policy;
@@ -350,6 +359,9 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest  implements Seria
      * @param durationSeconds The duration, in seconds, of the role session. The value can range
      *         from 900 seconds (15 minutes) to 3600 seconds (1 hour). By default,
      *         the value is set to 3600 seconds.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AssumeRoleRequest withDurationSeconds(Integer durationSeconds) {
         this.durationSeconds = durationSeconds;
@@ -453,6 +465,9 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest  implements Seria
      *         href="http://docs.aws.amazon.com/STS/latest/UsingSTS/sts-delegating-externalid.html"
      *         target="_blank">About the External ID</a> in <i>Using Temporary
      *         Security Credentials</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AssumeRoleRequest withExternalId(String externalId) {
         this.externalId = externalId;

@@ -28,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#attachElasticLoadBalancer(AttachElasticLoadBalancerRequest)
  */
-public class AttachElasticLoadBalancerRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class AttachElasticLoadBalancerRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The Elastic Load Balancing instance's name.
@@ -65,6 +65,9 @@ public class AttachElasticLoadBalancerRequest extends AmazonWebServiceRequest  i
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param elasticLoadBalancerName The Elastic Load Balancing instance's name.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AttachElasticLoadBalancerRequest withElasticLoadBalancerName(String elasticLoadBalancerName) {
         this.elasticLoadBalancerName = elasticLoadBalancerName;
@@ -102,6 +105,9 @@ public class AttachElasticLoadBalancerRequest extends AmazonWebServiceRequest  i
      *
      * @param layerId The ID of the layer that the Elastic Load Balancing instance is to be
      *         attached to.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AttachElasticLoadBalancerRequest withLayerId(String layerId) {
         this.layerId = layerId;

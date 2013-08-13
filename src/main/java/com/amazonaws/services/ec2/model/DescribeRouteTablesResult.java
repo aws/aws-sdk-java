@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Describe Route Tables Result
  */
-public class DescribeRouteTablesResult  implements Serializable  {
+public class DescribeRouteTablesResult implements Serializable {
 
     private com.amazonaws.internal.ListWithAutoConstructFlag<RouteTable> routeTables;
 

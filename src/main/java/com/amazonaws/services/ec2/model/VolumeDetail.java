@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Volume Detail
  */
-public class VolumeDetail  implements Serializable  {
+public class VolumeDetail implements Serializable {
 
     private Long size;
 

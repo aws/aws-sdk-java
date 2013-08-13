@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents an Amazon EC2 instance.
  * </p>
  */
-public class Instance  implements Serializable  {
+public class Instance implements Serializable {
 
     /**
      * Unique ID of the instance launched.

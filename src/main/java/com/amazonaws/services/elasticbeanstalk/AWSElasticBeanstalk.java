@@ -103,7 +103,7 @@ public interface AWSElasticBeanstalk {
      * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      */
     public void setRegion(Region region) throws java.lang.IllegalArgumentException;
-	
+    
     /**
      * <p>
      * Checks if the specified CNAME is available.

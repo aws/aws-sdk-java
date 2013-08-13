@@ -18,14 +18,24 @@ import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#changeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest) ChangeMessageVisibilityBatch operation}.
- * 
+ * <p>
+ * This is a batch version of ChangeMessageVisibility. It takes multiple receipt handles and performs the operation on each of the them. The result of
+ * the operation on each message is reported individually in the response.
+ * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#changeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest)
  */
-public class ChangeMessageVisibilityBatchRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ChangeMessageVisibilityBatchRequest extends AmazonWebServiceRequest implements Serializable {
 
+    /**
+     * The URL of the SQS queue to take action on.
+     */
     private String queueUrl;
 
+    /**
+     * A list of receipt handles of the messages for which the visibility
+     * timeout must be changed.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ChangeMessageVisibilityBatchRequestEntry> entries;
 
     /**
@@ -41,8 +51,9 @@ public class ChangeMessageVisibilityBatchRequest extends AmazonWebServiceRequest
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param queueUrl
-     * @param entries
+     * @param queueUrl The URL of the SQS queue to take action on.
+     * @param entries A list of receipt handles of the messages for which the
+     * visibility timeout must be changed.
      */
     public ChangeMessageVisibilityBatchRequest(String queueUrl, java.util.List<ChangeMessageVisibilityBatchRequestEntry> entries) {
         setQueueUrl(queueUrl);
@@ -52,29 +63,32 @@ public class ChangeMessageVisibilityBatchRequest extends AmazonWebServiceRequest
     
     
     /**
-     * Returns the value of the QueueUrl property for this object.
+     * The URL of the SQS queue to take action on.
      *
-     * @return The value of the QueueUrl property for this object.
+     * @return The URL of the SQS queue to take action on.
      */
     public String getQueueUrl() {
         return queueUrl;
     }
     
     /**
-     * Sets the value of the QueueUrl property for this object.
+     * The URL of the SQS queue to take action on.
      *
-     * @param queueUrl The new value for the QueueUrl property for this object.
+     * @param queueUrl The URL of the SQS queue to take action on.
      */
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
     
     /**
-     * Sets the value of the QueueUrl property for this object.
+     * The URL of the SQS queue to take action on.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queueUrl The new value for the QueueUrl property for this object.
+     * @param queueUrl The URL of the SQS queue to take action on.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChangeMessageVisibilityBatchRequest withQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
@@ -83,9 +97,11 @@ public class ChangeMessageVisibilityBatchRequest extends AmazonWebServiceRequest
     
     
     /**
-     * Returns the value of the Entries property for this object.
+     * A list of receipt handles of the messages for which the visibility
+     * timeout must be changed.
      *
-     * @return The value of the Entries property for this object.
+     * @return A list of receipt handles of the messages for which the visibility
+     *         timeout must be changed.
      */
     public java.util.List<ChangeMessageVisibilityBatchRequestEntry> getEntries() {
         
@@ -97,9 +113,11 @@ public class ChangeMessageVisibilityBatchRequest extends AmazonWebServiceRequest
     }
     
     /**
-     * Sets the value of the Entries property for this object.
+     * A list of receipt handles of the messages for which the visibility
+     * timeout must be changed.
      *
-     * @param entries The new value for the Entries property for this object.
+     * @param entries A list of receipt handles of the messages for which the visibility
+     *         timeout must be changed.
      */
     public void setEntries(java.util.Collection<ChangeMessageVisibilityBatchRequestEntry> entries) {
         if (entries == null) {
@@ -112,11 +130,16 @@ public class ChangeMessageVisibilityBatchRequest extends AmazonWebServiceRequest
     }
     
     /**
-     * Sets the value of the Entries property for this object.
+     * A list of receipt handles of the messages for which the visibility
+     * timeout must be changed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param entries The new value for the Entries property for this object.
+     * @param entries A list of receipt handles of the messages for which the visibility
+     *         timeout must be changed.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChangeMessageVisibilityBatchRequest withEntries(ChangeMessageVisibilityBatchRequestEntry... entries) {
         if (getEntries() == null) setEntries(new java.util.ArrayList<ChangeMessageVisibilityBatchRequestEntry>(entries.length));
@@ -127,11 +150,16 @@ public class ChangeMessageVisibilityBatchRequest extends AmazonWebServiceRequest
     }
     
     /**
-     * Sets the value of the Entries property for this object.
+     * A list of receipt handles of the messages for which the visibility
+     * timeout must be changed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param entries The new value for the Entries property for this object.
+     * @param entries A list of receipt handles of the messages for which the visibility
+     *         timeout must be changed.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChangeMessageVisibilityBatchRequest withEntries(java.util.Collection<ChangeMessageVisibilityBatchRequestEntry> entries) {
         if (entries == null) {

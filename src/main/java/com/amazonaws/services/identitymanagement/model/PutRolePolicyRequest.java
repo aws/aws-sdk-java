@@ -36,7 +36,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#putRolePolicy(PutRolePolicyRequest)
  */
-public class PutRolePolicyRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class PutRolePolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the role to associate the policy with.
@@ -101,6 +101,9 @@ public class PutRolePolicyRequest extends AmazonWebServiceRequest  implements Se
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param roleName Name of the role to associate the policy with.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PutRolePolicyRequest withRoleName(String roleName) {
         this.roleName = roleName;
@@ -144,6 +147,9 @@ public class PutRolePolicyRequest extends AmazonWebServiceRequest  implements Se
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param policyName Name of the policy document.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PutRolePolicyRequest withPolicyName(String policyName) {
         this.policyName = policyName;
@@ -187,6 +193,9 @@ public class PutRolePolicyRequest extends AmazonWebServiceRequest  implements Se
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      *
      * @param policyDocument The policy document.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PutRolePolicyRequest withPolicyDocument(String policyDocument) {
         this.policyDocument = policyDocument;

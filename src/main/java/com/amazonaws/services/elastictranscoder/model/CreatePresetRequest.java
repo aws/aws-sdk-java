@@ -35,7 +35,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#createPreset(CreatePresetRequest)
  */
-public class CreatePresetRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreatePresetRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the preset. We recommend that the name be unique within
@@ -118,6 +118,9 @@ public class CreatePresetRequest extends AmazonWebServiceRequest  implements Ser
      *
      * @param name The name of the preset. We recommend that the name be unique within
      *         the AWS account, but uniqueness is not enforced.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreatePresetRequest withName(String name) {
         this.name = name;
@@ -158,6 +161,9 @@ public class CreatePresetRequest extends AmazonWebServiceRequest  implements Ser
      * <b>Length: </b>0 - 255<br/>
      *
      * @param description A description of the preset.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreatePresetRequest withDescription(String description) {
         this.description = description;
@@ -204,6 +210,9 @@ public class CreatePresetRequest extends AmazonWebServiceRequest  implements Ser
      *
      * @param container The container type for the output file. This value must be
      *         <code>mp4</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreatePresetRequest withContainer(String container) {
         this.container = container;
@@ -235,6 +244,9 @@ public class CreatePresetRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param video A section of the request body that specifies the video parameters.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreatePresetRequest withVideo(VideoParameters video) {
         this.video = video;
@@ -266,6 +278,9 @@ public class CreatePresetRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param audio A section of the request body that specifies the audio parameters.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreatePresetRequest withAudio(AudioParameters audio) {
         this.audio = audio;
@@ -303,6 +318,9 @@ public class CreatePresetRequest extends AmazonWebServiceRequest  implements Ser
      *
      * @param thumbnails A section of the request body that specifies the thumbnail parameters,
      *         if any.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreatePresetRequest withThumbnails(Thumbnails thumbnails) {
         this.thumbnails = thumbnails;

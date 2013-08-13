@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents the state of an Amazon EC2 instance.
  * </p>
  */
-public class InstanceState  implements Serializable  {
+public class InstanceState implements Serializable {
 
     /**
      * A 16-bit unsigned integer. The high byte is an opaque internal value

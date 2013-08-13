@@ -37,16 +37,36 @@ public class DynamoDBMapperConfig {
 
     /**
      * Enumeration of behaviors for the save operation.
-     * <p>
-     * UPDATE will not affect unmodeled attributes on a save operation. CLOBBER
-     * will clear and replace all attributes, included unmodeled ones, (delete
-     * and recreate) on save. Versioned field constraints will also be
-     * disregarded.
-     * <p>
-     * By default, the mapper uses UPDATE.
      */
     public static enum SaveBehavior {
-        UPDATE, CLOBBER
+        /**
+         * UPDATE will not affect unmodeled attributes on a save operation and a
+         * null value for the modeled attribute will remove it from that item in
+         * DynamoDB.
+         * <p>
+         * Because of the limitation of updateItem request, the implementation
+         * of UPDATE will send a putItem request when a key-only object is being
+         * saved, and it will send another updateItem request if the given
+         * key(s) already exists in the table.
+         * <p>
+         * By default, the mapper uses UPDATE.
+         */
+        UPDATE,
+        
+        /**
+         * UPDATE_SKIP_NULL_ATTRIBUTES is similar to UPDATE, except that it
+         * ignores any null value attribute(s) and will NOT remove them from
+         * that item in DynamoDB. It also guarantees to send only one single
+         * updateItem request, no matter the object is key-only or not.
+         */
+        UPDATE_SKIP_NULL_ATTRIBUTES,
+        
+        /**
+         * CLOBBER will clear and replace all attributes, included unmodeled
+         * ones, (delete and recreate) on save. Versioned field constraints will
+         * also be disregarded.
+         */
+        CLOBBER
     };
 
     /**

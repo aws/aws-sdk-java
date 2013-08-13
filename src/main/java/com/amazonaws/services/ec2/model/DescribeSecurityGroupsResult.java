@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The result of describing the Amazon EC2 security groups for your account.
  * </p>
  */
-public class DescribeSecurityGroupsResult  implements Serializable  {
+public class DescribeSecurityGroupsResult implements Serializable {
 
     /**
      * The list of described Amazon EC2 security groups.

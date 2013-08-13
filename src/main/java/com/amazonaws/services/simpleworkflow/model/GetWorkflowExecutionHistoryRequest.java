@@ -46,7 +46,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#getWorkflowExecutionHistory(GetWorkflowExecutionHistoryRequest)
  */
-public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the domain containing the workflow execution.
@@ -126,6 +126,9 @@ public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest 
      * <b>Length: </b>1 - 256<br/>
      *
      * @param domain The name of the domain containing the workflow execution.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetWorkflowExecutionHistoryRequest withDomain(String domain) {
         this.domain = domain;
@@ -157,6 +160,9 @@ public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param execution Specifies the workflow execution for which to return the history.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetWorkflowExecutionHistoryRequest withExecution(WorkflowExecution execution) {
         this.execution = execution;
@@ -209,6 +215,9 @@ public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest 
      * @param nextPageToken If a <code>NextPageToken</code> is returned, the result has more than
      *         one pages. To get the next page, repeat the call and specify the
      *         nextPageToken with all other arguments unchanged.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetWorkflowExecutionHistoryRequest withNextPageToken(String nextPageToken) {
         this.nextPageToken = nextPageToken;
@@ -291,6 +300,9 @@ public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest 
      *         larger than 100. Note that the number of events may be less than the
      *         maxiumum page size, in which case, the returned page will have fewer
      *         results than the maximumPageSize specified.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetWorkflowExecutionHistoryRequest withMaximumPageSize(Integer maximumPageSize) {
         this.maximumPageSize = maximumPageSize;
@@ -334,6 +346,9 @@ public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest 
      * @param reverseOrder When set to <code>true</code>, returns the events in reverse order. By
      *         default the results are returned in ascending order of the
      *         <code>eventTimeStamp</code> of the events.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetWorkflowExecutionHistoryRequest withReverseOrder(Boolean reverseOrder) {
         this.reverseOrder = reverseOrder;

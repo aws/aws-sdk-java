@@ -26,7 +26,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#setIdentityFeedbackForwardingEnabled(SetIdentityFeedbackForwardingEnabledRequest)
  */
-public class SetIdentityFeedbackForwardingEnabledRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class SetIdentityFeedbackForwardingEnabledRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The identity for which to set feedback notification forwarding.
@@ -75,6 +75,9 @@ public class SetIdentityFeedbackForwardingEnabledRequest extends AmazonWebServic
      *
      * @param identity The identity for which to set feedback notification forwarding.
      *         Examples: <code>user@example.com</code>, <code>example.com</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SetIdentityFeedbackForwardingEnabledRequest withIdentity(String identity) {
         this.identity = identity;
@@ -142,6 +145,9 @@ public class SetIdentityFeedbackForwardingEnabledRequest extends AmazonWebServic
      *         publish feedback notifications only through Amazon SNS. This value can
      *         only be set to <code>false</code> when topics are specified for both
      *         <code>Bounce</code> and <code>Complaint</code> topic types.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SetIdentityFeedbackForwardingEnabledRequest withForwardingEnabled(Boolean forwardingEnabled) {
         this.forwardingEnabled = forwardingEnabled;

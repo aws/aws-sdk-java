@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Cancelled Spot Instance Request
  */
-public class CancelledSpotInstanceRequest  implements Serializable  {
+public class CancelledSpotInstanceRequest implements Serializable {
 
     private String spotInstanceRequestId;
 

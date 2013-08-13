@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The output for the SetLoadBalancerPoliciesOfListener action.
  * </p>
  */
-public class SetLoadBalancerPoliciesOfListenerResult  implements Serializable  {
+public class SetLoadBalancerPoliciesOfListenerResult implements Serializable {
 
     /**
      * Returns a string representation of this object; useful for testing and

@@ -38,7 +38,7 @@ public class DeleteVpcRequestMarshaller implements Marshaller<Request<DeleteVpcR
 
         Request<DeleteVpcRequest> request = new DefaultRequest<DeleteVpcRequest>(deleteVpcRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteVpc");
-        request.addParameter("Version", "2013-02-01");
+        request.addParameter("Version", "2013-06-15");
 
         if (deleteVpcRequest.getVpcId() != null) {
             request.addParameter("VpcId", StringUtils.fromString(deleteVpcRequest.getVpcId()));

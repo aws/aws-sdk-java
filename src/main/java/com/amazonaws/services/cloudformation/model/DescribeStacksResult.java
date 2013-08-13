@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The output for a DescribeStacks action.
  * </p>
  */
-public class DescribeStacksResult  implements Serializable  {
+public class DescribeStacksResult implements Serializable {
 
     /**
      * A list of stack structures.
@@ -64,6 +64,9 @@ public class DescribeStacksResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stacks A list of stack structures.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeStacksResult withStacks(Stack... stacks) {
         if (getStacks() == null) setStacks(new java.util.ArrayList<Stack>(stacks.length));
@@ -79,6 +82,9 @@ public class DescribeStacksResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stacks A list of stack structures.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeStacksResult withStacks(java.util.Collection<Stack> stacks) {
         if (stacks == null) {
@@ -125,6 +131,9 @@ public class DescribeStacksResult  implements Serializable  {
      * <b>Length: </b>1 - 1024<br/>
      *
      * @param nextToken The new value for the NextToken property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeStacksResult withNextToken(String nextToken) {
         this.nextToken = nextToken;

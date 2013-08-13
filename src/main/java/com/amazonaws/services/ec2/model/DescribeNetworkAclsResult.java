@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Describe Network Acls Result
  */
-public class DescribeNetworkAclsResult  implements Serializable  {
+public class DescribeNetworkAclsResult implements Serializable {
 
     private com.amazonaws.internal.ListWithAutoConstructFlag<NetworkAcl> networkAcls;
 

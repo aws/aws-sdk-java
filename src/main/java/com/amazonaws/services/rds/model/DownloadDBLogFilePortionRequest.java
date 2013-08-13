@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#downloadDBLogFilePortion(DownloadDBLogFilePortionRequest)
  */
-public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The customer-assigned name of the DB Instance that contains the log
@@ -100,6 +100,9 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest  im
      *         to 63 alphanumeric characters or hyphens</li> <li>First character must
      *         be a letter</li> <li>Cannot end with a hyphen or contain two
      *         consecutive hyphens</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DownloadDBLogFilePortionRequest withDBInstanceIdentifier(String dBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -131,6 +134,9 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param logFileName The name of the log file to be downloaded.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DownloadDBLogFilePortionRequest withLogFileName(String logFileName) {
         this.logFileName = logFileName;
@@ -174,6 +180,9 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest  im
      * @param marker The pagination token provided in the previous request. If this
      *         parameter is specified the response includes only records beyond the
      *         marker, up to MaxRecords.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DownloadDBLogFilePortionRequest withMarker(String marker) {
         this.marker = marker;
@@ -205,6 +214,9 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param numberOfLines The number of lines remaining to be downloaded.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DownloadDBLogFilePortionRequest withNumberOfLines(Integer numberOfLines) {
         this.numberOfLines = numberOfLines;

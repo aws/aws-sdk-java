@@ -14,48 +14,112 @@
  */
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
-import java.util.HashMap;
-import java.util.List;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.OutputStreamWriter;
+import java.io.StringWriter;
+import java.io.Writer;
 import java.util.Map;
+import java.util.List;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
+import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
+import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.StringInputStream;
+import com.amazonaws.util.json.*;
 
 /**
  * Set Termination Protection Request Marshaller
  */
 public class SetTerminationProtectionRequestMarshaller implements Marshaller<Request<SetTerminationProtectionRequest>, SetTerminationProtectionRequest> {
 
-    public Request<SetTerminationProtectionRequest> marshall(SetTerminationProtectionRequest setTerminationProtectionRequest) {
+    
 
-        if (setTerminationProtectionRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+    public Request<SetTerminationProtectionRequest> marshall(SetTerminationProtectionRequest setTerminationProtectionRequest) {
+    if (setTerminationProtectionRequest == null) {
+        throw new AmazonClientException("Invalid argument passed to marshall(...)");
+    }
 
         Request<SetTerminationProtectionRequest> request = new DefaultRequest<SetTerminationProtectionRequest>(setTerminationProtectionRequest, "AmazonElasticMapReduce");
-        request.addParameter("Action", "SetTerminationProtection");
-        request.addParameter("Version", "2009-03-31");
+        String target = "ElasticMapReduce.SetTerminationProtection";
+        request.addHeader("X-Amz-Target", target);
+        request.addHeader("Content-Type", "application/x-amz-json-1.1");
+
+        
+        request.setHttpMethod(HttpMethodName.POST);
 
 
-        java.util.List<String> jobFlowIdsList = setTerminationProtectionRequest.getJobFlowIds();
-        int jobFlowIdsListIndex = 1;
+        String uriResourcePath = ""; 
 
-        for (String jobFlowIdsListValue : jobFlowIdsList) {
-            if (jobFlowIdsListValue != null) {
-                request.addParameter("JobFlowIds.member." + jobFlowIdsListIndex, StringUtils.fromString(jobFlowIdsListValue));
+        uriResourcePath = uriResourcePath.replaceAll("//", "/");
+
+        if (uriResourcePath.contains("?")) {
+            String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
+            uriResourcePath    = uriResourcePath.substring(0, uriResourcePath.indexOf("?"));
+
+            for (String s : queryString.split("[;&]")) {
+                String[] nameValuePair = s.split("=");
+                if (nameValuePair.length == 2) {
+                    request.addParameter(nameValuePair[0], nameValuePair[1]);
+                } else {
+                    request.addParameter(s, null);
+                }
+            }
+        }
+
+        request.setResourcePath(uriResourcePath);
+
+
+        
+        try {
+          StringWriter stringWriter = new StringWriter();
+          JSONWriter jsonWriter = new JSONWriter(stringWriter);
+
+          
+            
+          jsonWriter.object();
+          
+
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> jobFlowIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(setTerminationProtectionRequest.getJobFlowIds());
+            if (jobFlowIdsList != null && !(jobFlowIdsList.isAutoConstruct() && jobFlowIdsList.isEmpty())) {
+
+                jsonWriter.key("JobFlowIds");
+                jsonWriter.array();
+
+                for (String jobFlowIdsListValue : jobFlowIdsList) {
+                    if (jobFlowIdsListValue != null) {
+                        jsonWriter.value(jobFlowIdsListValue);
+                    }
+                }
+                jsonWriter.endArray();
+            }
+            if (setTerminationProtectionRequest.isTerminationProtected() != null) {
+                jsonWriter.key("TerminationProtected").value(setTerminationProtectionRequest.isTerminationProtected());
             }
 
-            jobFlowIdsListIndex++;
-        }
-        if (setTerminationProtectionRequest.isTerminationProtected() != null) {
-            request.addParameter("TerminationProtected", StringUtils.fromBoolean(setTerminationProtectionRequest.isTerminationProtected()));
-        }
+          jsonWriter.endObject();
+          
 
+          String snippet = stringWriter.toString();
+          byte[] content = snippet.getBytes("UTF-8");
+          request.setContent(new StringInputStream(snippet));
+          request.addHeader("Content-Length", Integer.toString(content.length));
+        } catch(Throwable t) {
+          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+        }
+        
 
         return request;
+    }
+
+    private String getString(String s) {
+        if (s == null) return "";
+        return s;
     }
 }

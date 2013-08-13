@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#describeGatewayInformation(DescribeGatewayInformationRequest)
  */
-public class DescribeGatewayInformationRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeGatewayInformationRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -82,6 +82,9 @@ public class DescribeGatewayInformationRequest extends AmazonWebServiceRequest  
      * @param gatewayARN The Amazon Resource Name (ARN) of the gateway. Use the
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeGatewayInformationRequest withGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;

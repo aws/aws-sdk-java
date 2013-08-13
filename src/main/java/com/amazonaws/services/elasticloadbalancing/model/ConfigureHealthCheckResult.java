@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The output for the ConfigureHealthCheck action.
  * </p>
  */
-public class ConfigureHealthCheckResult  implements Serializable  {
+public class ConfigureHealthCheckResult implements Serializable {
 
     /**
      * The updated healthcheck for the instances.
@@ -51,6 +51,9 @@ public class ConfigureHealthCheckResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param healthCheck The updated healthcheck for the instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ConfigureHealthCheckResult withHealthCheck(HealthCheck healthCheck) {
         this.healthCheck = healthCheck;

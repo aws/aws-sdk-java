@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents the output of a <i>BatchGetItem</i> operation.
  * </p>
  */
-public class BatchGetItemResult  implements Serializable  {
+public class BatchGetItemResult implements Serializable {
 
     /**
      * A map of table name to a list of items. Each object in
@@ -100,6 +100,9 @@ public class BatchGetItemResult  implements Serializable  {
      * @param responses A map of table name to a list of items. Each object in
      *         <i>Responses</i> consists of a table name, along with a map of
      *         attribute data consisting of the data type and attribute value.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public BatchGetItemResult withResponses(java.util.Map<String,java.util.List<java.util.Map<String,AttributeValue>>> responses) {
         setResponses(responses);
@@ -281,6 +284,9 @@ public class BatchGetItemResult  implements Serializable  {
      *         <p><i>ConsistentRead</i> - The consistency of a read operation. If set
      *         to <code>true</code>, then a strongly consistent read is used;
      *         otherwise, an eventually consistent read is used. </li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public BatchGetItemResult withUnprocessedKeys(java.util.Map<String,KeysAndAttributes> unprocessedKeys) {
         setUnprocessedKeys(unprocessedKeys);
@@ -388,6 +394,9 @@ public class BatchGetItemResult  implements Serializable  {
      *         consists of: <ul> <li> <p><i>TableName</i> - The table that consumed
      *         the provisioned throughput. </li> <li> <p><i>CapacityUnits</i> - The
      *         total number of capacity units consumed. </li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public BatchGetItemResult withConsumedCapacity(ConsumedCapacity... consumedCapacity) {
         if (getConsumedCapacity() == null) setConsumedCapacity(new java.util.ArrayList<ConsumedCapacity>(consumedCapacity.length));
@@ -409,6 +418,9 @@ public class BatchGetItemResult  implements Serializable  {
      *         consists of: <ul> <li> <p><i>TableName</i> - The table that consumed
      *         the provisioned throughput. </li> <li> <p><i>CapacityUnits</i> - The
      *         total number of capacity units consumed. </li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public BatchGetItemResult withConsumedCapacity(java.util.Collection<ConsumedCapacity> consumedCapacity) {
         if (consumedCapacity == null) {

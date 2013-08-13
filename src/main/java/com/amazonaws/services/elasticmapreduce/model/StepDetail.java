@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Combines the execution state and configuration of a step.
  * </p>
  */
-public class StepDetail  implements Serializable  {
+public class StepDetail implements Serializable {
 
     /**
      * The step configuration.
@@ -79,6 +79,9 @@ public class StepDetail  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stepConfig The step configuration.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StepDetail withStepConfig(StepConfig stepConfig) {
         this.stepConfig = stepConfig;
@@ -110,6 +113,9 @@ public class StepDetail  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param executionStatusDetail The description of the step status.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StepDetail withExecutionStatusDetail(StepExecutionStatusDetail executionStatusDetail) {
         this.executionStatusDetail = executionStatusDetail;

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes the properties of an application version.
  * </p>
  */
-public class ApplicationVersionDescription  implements Serializable  {
+public class ApplicationVersionDescription implements Serializable {
 
     /**
      * The name of the application associated with this release.
@@ -101,6 +101,9 @@ public class ApplicationVersionDescription  implements Serializable  {
      * <b>Length: </b>1 - 100<br/>
      *
      * @param applicationName The name of the application associated with this release.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ApplicationVersionDescription withApplicationName(String applicationName) {
         this.applicationName = applicationName;
@@ -141,6 +144,9 @@ public class ApplicationVersionDescription  implements Serializable  {
      * <b>Length: </b>0 - 200<br/>
      *
      * @param description The description of this application version.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ApplicationVersionDescription withDescription(String description) {
         this.description = description;
@@ -187,6 +193,9 @@ public class ApplicationVersionDescription  implements Serializable  {
      *
      * @param versionLabel A label uniquely identifying the version for the associated
      *         application.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ApplicationVersionDescription withVersionLabel(String versionLabel) {
         this.versionLabel = versionLabel;
@@ -218,6 +227,9 @@ public class ApplicationVersionDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceBundle The location where the source bundle is located for this version.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ApplicationVersionDescription withSourceBundle(S3Location sourceBundle) {
         this.sourceBundle = sourceBundle;
@@ -249,6 +261,9 @@ public class ApplicationVersionDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dateCreated The creation date of the application version.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ApplicationVersionDescription withDateCreated(java.util.Date dateCreated) {
         this.dateCreated = dateCreated;
@@ -280,6 +295,9 @@ public class ApplicationVersionDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dateUpdated The last modified date of the application version.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ApplicationVersionDescription withDateUpdated(java.util.Date dateUpdated) {
         this.dateUpdated = dateUpdated;

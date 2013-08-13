@@ -21,7 +21,7 @@ import java.io.Serializable;
  * <code>HostedZoneConfig</code> and <code>Comment</code> elements from the XML document.
  * </p>
  */
-public class HostedZoneConfig  implements Serializable  {
+public class HostedZoneConfig implements Serializable {
 
     /**
      * An optional comment about your hosted zone. If you don't want to
@@ -84,6 +84,9 @@ public class HostedZoneConfig  implements Serializable  {
      * @param comment An optional comment about your hosted zone. If you don't want to
      *         specify a comment, you can omit the <code>HostedZoneConfig</code> and
      *         <code>Comment</code> elements from the XML document.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public HostedZoneConfig withComment(String comment) {
         this.comment = comment;

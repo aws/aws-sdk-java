@@ -16,18 +16,25 @@ package com.amazonaws.services.sqs.model;
 import java.io.Serializable;
 
 /**
- * Send Message Batch Result
+ * 
  */
-public class SendMessageBatchResult  implements Serializable  {
+public class SendMessageBatchResult implements Serializable {
 
+    /**
+     * A list of <a>SendMessageBatchResultEntry</a>s.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<SendMessageBatchResultEntry> successful;
 
+    /**
+     * A list of <a>BatchResultErrorEntry</a>s with the error detail about
+     * each message that could not be enqueued.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<BatchResultErrorEntry> failed;
 
     /**
-     * Returns the value of the Successful property for this object.
+     * A list of <a>SendMessageBatchResultEntry</a>s.
      *
-     * @return The value of the Successful property for this object.
+     * @return A list of <a>SendMessageBatchResultEntry</a>s.
      */
     public java.util.List<SendMessageBatchResultEntry> getSuccessful() {
         
@@ -39,9 +46,9 @@ public class SendMessageBatchResult  implements Serializable  {
     }
     
     /**
-     * Sets the value of the Successful property for this object.
+     * A list of <a>SendMessageBatchResultEntry</a>s.
      *
-     * @param successful The new value for the Successful property for this object.
+     * @param successful A list of <a>SendMessageBatchResultEntry</a>s.
      */
     public void setSuccessful(java.util.Collection<SendMessageBatchResultEntry> successful) {
         if (successful == null) {
@@ -54,11 +61,14 @@ public class SendMessageBatchResult  implements Serializable  {
     }
     
     /**
-     * Sets the value of the Successful property for this object.
+     * A list of <a>SendMessageBatchResultEntry</a>s.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param successful The new value for the Successful property for this object.
+     * @param successful A list of <a>SendMessageBatchResultEntry</a>s.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SendMessageBatchResult withSuccessful(SendMessageBatchResultEntry... successful) {
         if (getSuccessful() == null) setSuccessful(new java.util.ArrayList<SendMessageBatchResultEntry>(successful.length));
@@ -69,11 +79,14 @@ public class SendMessageBatchResult  implements Serializable  {
     }
     
     /**
-     * Sets the value of the Successful property for this object.
+     * A list of <a>SendMessageBatchResultEntry</a>s.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param successful The new value for the Successful property for this object.
+     * @param successful A list of <a>SendMessageBatchResultEntry</a>s.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SendMessageBatchResult withSuccessful(java.util.Collection<SendMessageBatchResultEntry> successful) {
         if (successful == null) {
@@ -88,9 +101,11 @@ public class SendMessageBatchResult  implements Serializable  {
     }
     
     /**
-     * Returns the value of the Failed property for this object.
+     * A list of <a>BatchResultErrorEntry</a>s with the error detail about
+     * each message that could not be enqueued.
      *
-     * @return The value of the Failed property for this object.
+     * @return A list of <a>BatchResultErrorEntry</a>s with the error detail about
+     *         each message that could not be enqueued.
      */
     public java.util.List<BatchResultErrorEntry> getFailed() {
         
@@ -102,9 +117,11 @@ public class SendMessageBatchResult  implements Serializable  {
     }
     
     /**
-     * Sets the value of the Failed property for this object.
+     * A list of <a>BatchResultErrorEntry</a>s with the error detail about
+     * each message that could not be enqueued.
      *
-     * @param failed The new value for the Failed property for this object.
+     * @param failed A list of <a>BatchResultErrorEntry</a>s with the error detail about
+     *         each message that could not be enqueued.
      */
     public void setFailed(java.util.Collection<BatchResultErrorEntry> failed) {
         if (failed == null) {
@@ -117,11 +134,16 @@ public class SendMessageBatchResult  implements Serializable  {
     }
     
     /**
-     * Sets the value of the Failed property for this object.
+     * A list of <a>BatchResultErrorEntry</a>s with the error detail about
+     * each message that could not be enqueued.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param failed The new value for the Failed property for this object.
+     * @param failed A list of <a>BatchResultErrorEntry</a>s with the error detail about
+     *         each message that could not be enqueued.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SendMessageBatchResult withFailed(BatchResultErrorEntry... failed) {
         if (getFailed() == null) setFailed(new java.util.ArrayList<BatchResultErrorEntry>(failed.length));
@@ -132,11 +154,16 @@ public class SendMessageBatchResult  implements Serializable  {
     }
     
     /**
-     * Sets the value of the Failed property for this object.
+     * A list of <a>BatchResultErrorEntry</a>s with the error detail about
+     * each message that could not be enqueued.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param failed The new value for the Failed property for this object.
+     * @param failed A list of <a>BatchResultErrorEntry</a>s with the error detail about
+     *         each message that could not be enqueued.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SendMessageBatchResult withFailed(java.util.Collection<BatchResultErrorEntry> failed) {
         if (failed == null) {

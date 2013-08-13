@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains details about a workflow execution.
  * </p>
  */
-public class WorkflowExecutionDetail  implements Serializable  {
+public class WorkflowExecutionDetail implements Serializable {
 
     /**
      * Information about the workflow execution.
@@ -82,6 +82,9 @@ public class WorkflowExecutionDetail  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param executionInfo Information about the workflow execution.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionDetail withExecutionInfo(WorkflowExecutionInfo executionInfo) {
         this.executionInfo = executionInfo;
@@ -119,6 +122,9 @@ public class WorkflowExecutionDetail  implements Serializable  {
      *
      * @param executionConfiguration The configuration settings for this workflow execution including
      *         timeout values, tasklist etc.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionDetail withExecutionConfiguration(WorkflowExecutionConfiguration executionConfiguration) {
         this.executionConfiguration = executionConfiguration;
@@ -156,6 +162,9 @@ public class WorkflowExecutionDetail  implements Serializable  {
      *
      * @param openCounts The number of tasks for this workflow execution. This includes open
      *         and closed tasks of all types.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionDetail withOpenCounts(WorkflowExecutionOpenCounts openCounts) {
         this.openCounts = openCounts;
@@ -205,6 +214,9 @@ public class WorkflowExecutionDetail  implements Serializable  {
      *         execution. You can use this information to determine if the workflow
      *         has not made progress for an unusually long period of time and might
      *         require a corrective action.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionDetail withLatestActivityTaskTimestamp(java.util.Date latestActivityTaskTimestamp) {
         this.latestActivityTaskTimestamp = latestActivityTaskTimestamp;
@@ -263,6 +275,9 @@ public class WorkflowExecutionDetail  implements Serializable  {
      *         execution. A decider can provide an executionContext, which is a free
      *         form string, when closing a decision task using
      *         <a>RespondDecisionTaskCompleted</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionDetail withLatestExecutionContext(String latestExecutionContext) {
         this.latestExecutionContext = latestExecutionContext;

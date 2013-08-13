@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A key value pair.
  * </p>
  */
-public class KeyValue  implements Serializable  {
+public class KeyValue implements Serializable {
 
     /**
      * The unique identifier of a key value pair.
@@ -99,6 +99,9 @@ public class KeyValue  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param key The unique identifier of a key value pair.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public KeyValue withKey(String key) {
         this.key = key;
@@ -142,6 +145,9 @@ public class KeyValue  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param value The value part of the identified key.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public KeyValue withValue(String value) {
         this.value = value;

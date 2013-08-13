@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes a deployment of a stack or app.
  * </p>
  */
-public class Deployment  implements Serializable  {
+public class Deployment implements Serializable {
 
     /**
      * The deployment ID.
@@ -113,6 +113,9 @@ public class Deployment  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param deploymentId The deployment ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Deployment withDeploymentId(String deploymentId) {
         this.deploymentId = deploymentId;
@@ -144,6 +147,9 @@ public class Deployment  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackId The stack ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Deployment withStackId(String stackId) {
         this.stackId = stackId;
@@ -175,6 +181,9 @@ public class Deployment  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param appId The app ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Deployment withAppId(String appId) {
         this.appId = appId;
@@ -206,6 +215,9 @@ public class Deployment  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param createdAt Date when the deployment was created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Deployment withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
@@ -237,6 +249,9 @@ public class Deployment  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param completedAt Date when the deployment completed.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Deployment withCompletedAt(String completedAt) {
         this.completedAt = completedAt;
@@ -268,6 +283,9 @@ public class Deployment  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param duration The deployment duration.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Deployment withDuration(Integer duration) {
         this.duration = duration;
@@ -299,6 +317,9 @@ public class Deployment  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param iamUserArn The user's IAM ARN.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Deployment withIamUserArn(String iamUserArn) {
         this.iamUserArn = iamUserArn;
@@ -330,6 +351,9 @@ public class Deployment  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param comment A user-defined comment.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Deployment withComment(String comment) {
         this.comment = comment;
@@ -361,6 +385,9 @@ public class Deployment  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param command Used to specify a deployment operation.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Deployment withCommand(DeploymentCommand command) {
         this.command = command;
@@ -398,6 +425,9 @@ public class Deployment  implements Serializable  {
      *
      * @param status The deployment status: <ul> <li>running</li> <li>successful</li>
      *         <li>failed</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Deployment withStatus(String status) {
         this.status = status;
@@ -465,6 +495,9 @@ public class Deployment  implements Serializable  {
      *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      *         Custom JSON to Modify the Stack Configuration JSON</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Deployment withCustomJson(String customJson) {
         this.customJson = customJson;
@@ -507,6 +540,9 @@ public class Deployment  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceIds The IDs of the target instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Deployment withInstanceIds(String... instanceIds) {
         if (getInstanceIds() == null) setInstanceIds(new java.util.ArrayList<String>(instanceIds.length));
@@ -522,6 +558,9 @@ public class Deployment  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceIds The IDs of the target instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Deployment withInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the response to a <code>CreateLayer</code> request.
  * </p>
  */
-public class CreateLayerResult  implements Serializable  {
+public class CreateLayerResult implements Serializable {
 
     /**
      * The layer ID.
@@ -51,6 +51,9 @@ public class CreateLayerResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param layerId The layer ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateLayerResult withLayerId(String layerId) {
         this.layerId = layerId;

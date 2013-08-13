@@ -29,7 +29,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#deletePipeline(DeletePipelineRequest)
  */
-public class DeletePipelineRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeletePipelineRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The identifier of the pipeline to be deleted.
@@ -76,6 +76,9 @@ public class DeletePipelineRequest extends AmazonWebServiceRequest  implements S
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param pipelineId The identifier of the pipeline to be deleted.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeletePipelineRequest withPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains one or more Cache Clusters.
  * </p>
  */
-public class DescribeCacheClustersResult  implements Serializable  {
+public class DescribeCacheClustersResult implements Serializable {
 
     /**
      * The marker obtained from a previous operation response.
@@ -56,6 +56,9 @@ public class DescribeCacheClustersResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param marker The marker obtained from a previous operation response.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCacheClustersResult withMarker(String marker) {
         this.marker = marker;
@@ -98,6 +101,9 @@ public class DescribeCacheClustersResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheClusters A list of CacheClusters.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCacheClustersResult withCacheClusters(CacheCluster... cacheClusters) {
         if (getCacheClusters() == null) setCacheClusters(new java.util.ArrayList<CacheCluster>(cacheClusters.length));
@@ -113,6 +119,9 @@ public class DescribeCacheClustersResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheClusters A list of CacheClusters.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCacheClustersResult withCacheClusters(java.util.Collection<CacheCluster> cacheClusters) {
         if (cacheClusters == null) {

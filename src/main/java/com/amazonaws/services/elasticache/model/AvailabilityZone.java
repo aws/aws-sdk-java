@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Availability Zone in which the Cache Cluster is launched
  * </p>
  */
-public class AvailabilityZone  implements Serializable  {
+public class AvailabilityZone implements Serializable {
 
     /**
      * Specifies the name of the Availability Zone
@@ -51,6 +51,9 @@ public class AvailabilityZone  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name Specifies the name of the Availability Zone
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AvailabilityZone withName(String name) {
         this.name = name;

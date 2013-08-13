@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Object that exposes the fields used by a communication for an AWS Support case.
  * </p>
  */
-public class Communication  implements Serializable  {
+public class Communication implements Serializable {
 
     /**
      * String that indicates the AWS Support caseID requested or returned in
@@ -81,6 +81,9 @@ public class Communication  implements Serializable  {
      * @param caseId String that indicates the AWS Support caseID requested or returned in
      *         the call. The caseID is an alphanumeric string formatted as shown in
      *         this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Communication withCaseId(String caseId) {
         this.caseId = caseId;
@@ -118,6 +121,9 @@ public class Communication  implements Serializable  {
      *
      * @param body Contains the text of the the commmunication between the customer and
      *         AWS Support.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Communication withBody(String body) {
         this.body = body;
@@ -149,6 +155,9 @@ public class Communication  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param submittedBy Email address of the account that submitted the AWS Support case.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Communication withSubmittedBy(String submittedBy) {
         this.submittedBy = submittedBy;
@@ -180,6 +189,9 @@ public class Communication  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param timeCreated Time the support case was created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Communication withTimeCreated(String timeCreated) {
         this.timeCreated = timeCreated;

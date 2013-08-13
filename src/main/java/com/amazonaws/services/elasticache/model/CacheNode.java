@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A Cache Cluster is made up of one or more Cache Nodes. Each Cache Node is an separate endpoint servicing the memcached protocol.
  * </p>
  */
-public class CacheNode  implements Serializable  {
+public class CacheNode implements Serializable {
 
     /**
      * Specifies a Cache Node identifier. This is the unique key that
@@ -85,6 +85,9 @@ public class CacheNode  implements Serializable  {
      *
      * @param cacheNodeId Specifies a Cache Node identifier. This is the unique key that
      *         identifies a Cache Node per Customer (AWS account).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheNode withCacheNodeId(String cacheNodeId) {
         this.cacheNodeId = cacheNodeId;
@@ -116,6 +119,9 @@ public class CacheNode  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheNodeStatus Specifies the current state of this Cache Node.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheNode withCacheNodeStatus(String cacheNodeStatus) {
         this.cacheNodeStatus = cacheNodeStatus;
@@ -147,6 +153,9 @@ public class CacheNode  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheNodeCreateTime Provides the date and time the Cache Node was created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheNode withCacheNodeCreateTime(java.util.Date cacheNodeCreateTime) {
         this.cacheNodeCreateTime = cacheNodeCreateTime;
@@ -178,6 +187,9 @@ public class CacheNode  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param endpoint Specifies the endpoint details for a Cache Node.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheNode withEndpoint(Endpoint endpoint) {
         this.endpoint = endpoint;
@@ -215,6 +227,9 @@ public class CacheNode  implements Serializable  {
      *
      * @param parameterGroupStatus Specifies the status of the parameter group applied to this Cache
      *         Node.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheNode withParameterGroupStatus(String parameterGroupStatus) {
         this.parameterGroupStatus = parameterGroupStatus;

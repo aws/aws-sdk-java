@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Provides details of the <code>ChildWorkflowExecutionTerminated</code> event.
  * </p>
  */
-public class ChildWorkflowExecutionTerminatedEventAttributes  implements Serializable  {
+public class ChildWorkflowExecutionTerminatedEventAttributes implements Serializable {
 
     /**
      * The child workflow execution that was terminated.
@@ -73,6 +73,9 @@ public class ChildWorkflowExecutionTerminatedEventAttributes  implements Seriali
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param workflowExecution The child workflow execution that was terminated.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChildWorkflowExecutionTerminatedEventAttributes withWorkflowExecution(WorkflowExecution workflowExecution) {
         this.workflowExecution = workflowExecution;
@@ -104,6 +107,9 @@ public class ChildWorkflowExecutionTerminatedEventAttributes  implements Seriali
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param workflowType The type of the child workflow execution.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChildWorkflowExecutionTerminatedEventAttributes withWorkflowType(WorkflowType workflowType) {
         this.workflowType = workflowType;
@@ -159,6 +165,9 @@ public class ChildWorkflowExecutionTerminatedEventAttributes  implements Seriali
      *         <a>Decision</a> to start this child workflow execution. This
      *         information can be useful for diagnosing problems by tracing back the
      *         chain of events leading up to this event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChildWorkflowExecutionTerminatedEventAttributes withInitiatedEventId(Long initiatedEventId) {
         this.initiatedEventId = initiatedEventId;
@@ -208,6 +217,9 @@ public class ChildWorkflowExecutionTerminatedEventAttributes  implements Seriali
      *         recorded when this child workflow execution was started. This
      *         information can be useful for diagnosing problems by tracing back the
      *         chain of events leading up to this event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChildWorkflowExecutionTerminatedEventAttributes withStartedEventId(Long startedEventId) {
         this.startedEventId = startedEventId;

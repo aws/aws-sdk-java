@@ -29,7 +29,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#revokeSnapshotAccess(RevokeSnapshotAccessRequest)
  */
-public class RevokeSnapshotAccessRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class RevokeSnapshotAccessRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The identifier of the snapshot that the account can no longer access.
@@ -66,6 +66,9 @@ public class RevokeSnapshotAccessRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param snapshotIdentifier The identifier of the snapshot that the account can no longer access.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RevokeSnapshotAccessRequest withSnapshotIdentifier(String snapshotIdentifier) {
         this.snapshotIdentifier = snapshotIdentifier;
@@ -103,6 +106,9 @@ public class RevokeSnapshotAccessRequest extends AmazonWebServiceRequest  implem
      *
      * @param accountWithRestoreAccess The identifier of the AWS customer account that can no longer restore
      *         the specified snapshot.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RevokeSnapshotAccessRequest withAccountWithRestoreAccess(String accountWithRestoreAccess) {
         this.accountWithRestoreAccess = accountWithRestoreAccess;

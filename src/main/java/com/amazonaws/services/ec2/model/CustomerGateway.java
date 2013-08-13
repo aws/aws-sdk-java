@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The CustomerGateway data type.
  * </p>
  */
-public class CustomerGateway  implements Serializable  {
+public class CustomerGateway implements Serializable {
 
     /**
      * Specifies the ID of the customer gateway.

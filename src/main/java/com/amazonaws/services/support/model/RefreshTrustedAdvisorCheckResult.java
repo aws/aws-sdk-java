@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class RefreshTrustedAdvisorCheckResult  implements Serializable  {
+public class RefreshTrustedAdvisorCheckResult implements Serializable {
 
     /**
      * Returns the overall status of the <a
@@ -70,6 +70,9 @@ public class RefreshTrustedAdvisorCheckResult  implements Serializable  {
      *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html"
      *         title="RefreshTrustedAdvisorCheck">RefreshTrustedAdvisorCheck</a>
      *         call.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RefreshTrustedAdvisorCheckResult withStatus(TrustedAdvisorCheckRefreshStatus status) {
         this.status = status;

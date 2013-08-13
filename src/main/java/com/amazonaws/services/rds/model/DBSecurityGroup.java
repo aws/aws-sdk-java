@@ -31,7 +31,7 @@ import java.io.Serializable;
  * This data type is used as a response element in the DescribeDBSecurityGroups action.
  * </p>
  */
-public class DBSecurityGroup  implements Serializable  {
+public class DBSecurityGroup implements Serializable {
 
     /**
      * Provides the AWS ID of the owner of a specific DB Security Group.
@@ -87,6 +87,9 @@ public class DBSecurityGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ownerId Provides the AWS ID of the owner of a specific DB Security Group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBSecurityGroup withOwnerId(String ownerId) {
         this.ownerId = ownerId;
@@ -118,6 +121,9 @@ public class DBSecurityGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBSecurityGroupName Specifies the name of the DB Security Group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBSecurityGroup withDBSecurityGroupName(String dBSecurityGroupName) {
         this.dBSecurityGroupName = dBSecurityGroupName;
@@ -149,6 +155,9 @@ public class DBSecurityGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBSecurityGroupDescription Provides the description of the DB Security Group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBSecurityGroup withDBSecurityGroupDescription(String dBSecurityGroupDescription) {
         this.dBSecurityGroupDescription = dBSecurityGroupDescription;
@@ -180,6 +189,9 @@ public class DBSecurityGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcId Provides the VpcId of the DB Security Group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBSecurityGroup withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -222,6 +234,9 @@ public class DBSecurityGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eC2SecurityGroups Contains a list of <a>EC2SecurityGroup</a> elements.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBSecurityGroup withEC2SecurityGroups(EC2SecurityGroup... eC2SecurityGroups) {
         if (getEC2SecurityGroups() == null) setEC2SecurityGroups(new java.util.ArrayList<EC2SecurityGroup>(eC2SecurityGroups.length));
@@ -237,6 +252,9 @@ public class DBSecurityGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eC2SecurityGroups Contains a list of <a>EC2SecurityGroup</a> elements.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBSecurityGroup withEC2SecurityGroups(java.util.Collection<EC2SecurityGroup> eC2SecurityGroups) {
         if (eC2SecurityGroups == null) {
@@ -285,6 +303,9 @@ public class DBSecurityGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param iPRanges Contains a list of <a>IPRange</a> elements.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBSecurityGroup withIPRanges(IPRange... iPRanges) {
         if (getIPRanges() == null) setIPRanges(new java.util.ArrayList<IPRange>(iPRanges.length));
@@ -300,6 +321,9 @@ public class DBSecurityGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param iPRanges Contains a list of <a>IPRange</a> elements.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBSecurityGroup withIPRanges(java.util.Collection<IPRange> iPRanges) {
         if (iPRanges == null) {

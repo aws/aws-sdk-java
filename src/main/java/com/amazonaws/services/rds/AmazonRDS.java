@@ -97,7 +97,7 @@ public interface AmazonRDS {
      * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      */
     public void setRegion(Region region) throws java.lang.IllegalArgumentException;
-	
+    
     /**
      * <p>
      * Returns information about reserved DB Instances for this account, or

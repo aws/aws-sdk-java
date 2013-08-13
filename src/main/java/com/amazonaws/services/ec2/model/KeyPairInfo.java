@@ -23,7 +23,7 @@ import java.io.Serializable;
  * The private key material is only available when initially creating the key pair.
  * </p>
  */
-public class KeyPairInfo  implements Serializable  {
+public class KeyPairInfo implements Serializable {
 
     /**
      * The name of the key pair.

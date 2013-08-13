@@ -28,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#rebootCluster(RebootClusterRequest)
  */
-public class RebootClusterRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class RebootClusterRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The cluster identifier.
@@ -59,6 +59,9 @@ public class RebootClusterRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clusterIdentifier The cluster identifier.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RebootClusterRequest withClusterIdentifier(String clusterIdentifier) {
         this.clusterIdentifier = clusterIdentifier;

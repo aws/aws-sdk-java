@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Specifies the details of a how an EC2 EBS volume is attached to an instance.
  * </p>
  */
-public class VolumeAttachment  implements Serializable  {
+public class VolumeAttachment implements Serializable {
 
     /**
      * 

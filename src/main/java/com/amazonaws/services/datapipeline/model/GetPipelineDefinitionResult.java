@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the output from the GetPipelineDefinition action.
  * </p>
  */
-public class GetPipelineDefinitionResult  implements Serializable  {
+public class GetPipelineDefinitionResult implements Serializable {
 
     /**
      * An array of objects defined in the pipeline.
@@ -62,6 +62,9 @@ public class GetPipelineDefinitionResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param pipelineObjects An array of objects defined in the pipeline.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetPipelineDefinitionResult withPipelineObjects(PipelineObject... pipelineObjects) {
         if (getPipelineObjects() == null) setPipelineObjects(new java.util.ArrayList<PipelineObject>(pipelineObjects.length));
@@ -77,6 +80,9 @@ public class GetPipelineDefinitionResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param pipelineObjects An array of objects defined in the pipeline.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetPipelineDefinitionResult withPipelineObjects(java.util.Collection<PipelineObject> pipelineObjects) {
         if (pipelineObjects == null) {

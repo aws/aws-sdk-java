@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#deleteDomain(DeleteDomainRequest)
  */
-public class DeleteDomainRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteDomainRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * A string that represents the name of a domain. Domain names must be
@@ -99,6 +99,9 @@ public class DeleteDomainRequest extends AmazonWebServiceRequest  implements Ser
      *         Domain names must start with a letter or number and can contain the
      *         following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase
      *         letters and underscores are not allowed.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteDomainRequest withDomainName(String domainName) {
         this.domainName = domainName;

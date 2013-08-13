@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.CreateSecurityGroupRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -30,7 +32,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createSecurityGroup(CreateSecurityGroupRequest)
  */
-public class CreateSecurityGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateSecurityGroupRequest> {
 
     /**
      * Name of the security group.
@@ -172,6 +174,18 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest  impleme
         return this;
     }
     
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<CreateSecurityGroupRequest> getDryRunRequest() {
+        Request<CreateSecurityGroupRequest> request = new CreateSecurityGroupRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

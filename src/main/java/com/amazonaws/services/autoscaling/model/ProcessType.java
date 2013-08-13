@@ -90,7 +90,7 @@ import java.io.Serializable;
  * scheduled actions might not function as expected.
  * </p>
  */
-public class ProcessType  implements Serializable  {
+public class ProcessType implements Serializable {
 
     /**
      * The name of a process.
@@ -137,6 +137,9 @@ public class ProcessType  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param processName The name of a process.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ProcessType withProcessName(String processName) {
         this.processName = processName;

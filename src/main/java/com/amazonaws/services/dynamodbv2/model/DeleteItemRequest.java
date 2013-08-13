@@ -36,7 +36,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#deleteItem(DeleteItemRequest)
  */
-public class DeleteItemRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteItemRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the table from which to delete the item.
@@ -185,6 +185,9 @@ public class DeleteItemRequest extends AmazonWebServiceRequest  implements Seria
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
      * @param tableName The name of the table from which to delete the item.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteItemRequest withTableName(String tableName) {
         this.tableName = tableName;
@@ -223,6 +226,9 @@ public class DeleteItemRequest extends AmazonWebServiceRequest  implements Seria
      *
      * @param key A map of attribute names to <i>AttributeValue</i> objects,
      *         representing the primary key of the item to delete.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteItemRequest withKey(java.util.Map<String,AttributeValue> key) {
         setKey(key);
@@ -517,6 +523,9 @@ public class DeleteItemRequest extends AmazonWebServiceRequest  implements Seria
      *         specify more than one condition for <i>Exists</i>, then all of the
      *         conditions must evaluate to true. (In other words, the conditions are
      *         ANDed together.) Otherwise, the conditional operation will fail.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteItemRequest withExpected(java.util.Map<String,ExpectedAttributeValue> expected) {
         setExpected(expected);
@@ -660,6 +669,9 @@ public class DeleteItemRequest extends AmazonWebServiceRequest  implements Seria
      *         <p><code>ALL_OLD</code> - The content of the old item is returned.
      *         </li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ReturnValue
      */
     public DeleteItemRequest withReturnValues(String returnValues) {
@@ -715,6 +727,9 @@ public class DeleteItemRequest extends AmazonWebServiceRequest  implements Seria
      *         returned. (This is the default for <i>ReturnValues</i>.) </li> <li>
      *         <p><code>ALL_OLD</code> - The content of the old item is returned.
      *         </li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see ReturnValue
      */
@@ -773,6 +788,9 @@ public class DeleteItemRequest extends AmazonWebServiceRequest  implements Seria
      *         the response; if set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ReturnConsumedCapacity
      */
     public DeleteItemRequest withReturnConsumedCapacity(String returnConsumedCapacity) {
@@ -812,6 +830,9 @@ public class DeleteItemRequest extends AmazonWebServiceRequest  implements Seria
      * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
      *         the response; if set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see ReturnConsumedCapacity
      */
@@ -876,6 +897,9 @@ public class DeleteItemRequest extends AmazonWebServiceRequest  implements Seria
      *         response. If set to <code>NONE</code> (the default), no statistics are
      *         returned..
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ReturnItemCollectionMetrics
      */
     public DeleteItemRequest withReturnItemCollectionMetrics(String returnItemCollectionMetrics) {
@@ -919,6 +943,9 @@ public class DeleteItemRequest extends AmazonWebServiceRequest  implements Seria
      *         any, that were modified during the operation are returned in the
      *         response. If set to <code>NONE</code> (the default), no statistics are
      *         returned..
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see ReturnItemCollectionMetrics
      */

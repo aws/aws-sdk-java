@@ -30,7 +30,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#terminateJobFlows(TerminateJobFlowsRequest)
  */
-public class TerminateJobFlowsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class TerminateJobFlowsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * A list of job flows to be shutdown.
@@ -93,6 +93,9 @@ public class TerminateJobFlowsRequest extends AmazonWebServiceRequest  implement
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param jobFlowIds A list of job flows to be shutdown.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public TerminateJobFlowsRequest withJobFlowIds(String... jobFlowIds) {
         if (getJobFlowIds() == null) setJobFlowIds(new java.util.ArrayList<String>(jobFlowIds.length));
@@ -108,6 +111,9 @@ public class TerminateJobFlowsRequest extends AmazonWebServiceRequest  implement
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param jobFlowIds A list of job flows to be shutdown.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public TerminateJobFlowsRequest withJobFlowIds(java.util.Collection<String> jobFlowIds) {
         if (jobFlowIds == null) {

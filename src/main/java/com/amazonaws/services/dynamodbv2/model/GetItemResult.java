@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents the output of a <i>GetItem</i> operation.
  * </p>
  */
-public class GetItemResult  implements Serializable  {
+public class GetItemResult implements Serializable {
 
     /**
      * A map of attribute names to <i>AttributeValue</i> objects, as
@@ -69,6 +69,9 @@ public class GetItemResult  implements Serializable  {
      *
      * @param item A map of attribute names to <i>AttributeValue</i> objects, as
      *         specified by <i>AttributesToGet</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetItemResult withItem(java.util.Map<String,AttributeValue> item) {
         setItem(item);
@@ -161,6 +164,9 @@ public class GetItemResult  implements Serializable  {
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
      *         Throughput</a> in the Amazon DynamoDB Developer Guide.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetItemResult withConsumedCapacity(ConsumedCapacity consumedCapacity) {
         this.consumedCapacity = consumedCapacity;

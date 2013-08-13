@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A complex type that contains an optional comment and the changes that you want to make with a change batch request.
  * </p>
  */
-public class ChangeBatch  implements Serializable  {
+public class ChangeBatch implements Serializable {
 
     /**
      * <i>Optional:</i> Any comments you want to include about a change batch
@@ -102,6 +102,9 @@ public class ChangeBatch  implements Serializable  {
      *
      * @param comment <i>Optional:</i> Any comments you want to include about a change batch
      *         request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChangeBatch withComment(String comment) {
         this.comment = comment;
@@ -159,6 +162,9 @@ public class ChangeBatch  implements Serializable  {
      *
      * @param changes A complex type that contains one <code>Change</code> element for each
      *         resource record set that you want to create or delete.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChangeBatch withChanges(Change... changes) {
         if (getChanges() == null) setChanges(new java.util.ArrayList<Change>(changes.length));
@@ -179,6 +185,9 @@ public class ChangeBatch  implements Serializable  {
      *
      * @param changes A complex type that contains one <code>Change</code> element for each
      *         resource record set that you want to create or delete.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChangeBatch withChanges(java.util.Collection<Change> changes) {
         if (changes == null) {

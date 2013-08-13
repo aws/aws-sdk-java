@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The output from the SetTaskStatus action.
  * </p>
  */
-public class SetTaskStatusResult  implements Serializable  {
+public class SetTaskStatusResult implements Serializable {
 
     /**
      * Returns a string representation of this object; useful for testing and

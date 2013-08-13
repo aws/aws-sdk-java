@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The output for the CreateLBCookieStickinessPolicy action.
  * </p>
  */
-public class CreateLBCookieStickinessPolicyResult  implements Serializable  {
+public class CreateLBCookieStickinessPolicyResult implements Serializable {
 
     /**
      * Returns a string representation of this object; useful for testing and

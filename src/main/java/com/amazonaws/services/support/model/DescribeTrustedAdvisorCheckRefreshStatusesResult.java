@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Returns the objects or data listed below if successful. Otherwise, returns an error.
  * </p>
  */
-public class DescribeTrustedAdvisorCheckRefreshStatusesResult  implements Serializable  {
+public class DescribeTrustedAdvisorCheckRefreshStatusesResult implements Serializable {
 
     /**
      * List of the statuses of the Trusted Advisor checks you've specified
@@ -104,6 +104,9 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesResult  implements Serial
      *         successfully.</li> <li><b>enqueued</b>. The refresh check is queued
      *         for execution. </li> <li><b>abandoned</b>. An error has prevented the
      *         check from refreshing. </li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeTrustedAdvisorCheckRefreshStatusesResult withStatuses(TrustedAdvisorCheckRefreshStatus... statuses) {
         if (getStatuses() == null) setStatuses(new java.util.ArrayList<TrustedAdvisorCheckRefreshStatus>(statuses.length));
@@ -131,6 +134,9 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesResult  implements Serial
      *         successfully.</li> <li><b>enqueued</b>. The refresh check is queued
      *         for execution. </li> <li><b>abandoned</b>. An error has prevented the
      *         check from refreshing. </li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeTrustedAdvisorCheckRefreshStatusesResult withStatuses(java.util.Collection<TrustedAdvisorCheckRefreshStatus> statuses) {
         if (statuses == null) {

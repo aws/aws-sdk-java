@@ -26,7 +26,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeClusterSnapshots(DescribeClusterSnapshotsRequest)
  */
-public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The identifier of the cluster for which information about snapshots is
@@ -120,6 +120,9 @@ public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest  im
      *
      * @param clusterIdentifier The identifier of the cluster for which information about snapshots is
      *         requested.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterSnapshotsRequest withClusterIdentifier(String clusterIdentifier) {
         this.clusterIdentifier = clusterIdentifier;
@@ -157,6 +160,9 @@ public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest  im
      *
      * @param snapshotIdentifier The snapshot identifier of the snapshot about which to return
      *         information.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterSnapshotsRequest withSnapshotIdentifier(String snapshotIdentifier) {
         this.snapshotIdentifier = snapshotIdentifier;
@@ -200,6 +206,9 @@ public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest  im
      * @param snapshotType The type of snapshots for which you are requesting information. By
      *         default, snapshots of all types are returned. <p> Valid Values:
      *         <code>automated</code> | <code>manual</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterSnapshotsRequest withSnapshotType(String snapshotType) {
         this.snapshotType = snapshotType;
@@ -255,6 +264,9 @@ public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest  im
      *         information about ISO 8601, go to the <a
      *         href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
      *         page.</a> <p>Example: <code>2012-07-16T18:00:00Z</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterSnapshotsRequest withStartTime(java.util.Date startTime) {
         this.startTime = startTime;
@@ -310,6 +322,9 @@ public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest  im
      *         more information about ISO 8601, go to the <a
      *         href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
      *         page.</a> <p>Example: <code>2012-07-16T18:00:00Z</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterSnapshotsRequest withEndTime(java.util.Date endTime) {
         this.endTime = endTime;
@@ -371,6 +386,9 @@ public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest  im
      *         <a>DescribeClusterSnapshots</a> request in order to retrieve the next
      *         set of snapshot records. <p>Default: <code>100</code> <p>Constraints:
      *         Must be at least 20 and no more than 100.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterSnapshotsRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -414,6 +432,9 @@ public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest  im
      * @param marker An optional marker returned by a previous
      *         <a>DescribeClusterSnapshots</a> request to indicate the first snapshot
      *         that the request will return.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterSnapshotsRequest withMarker(String marker) {
         this.marker = marker;
@@ -463,6 +484,9 @@ public class DescribeClusterSnapshotsRequest extends AmazonWebServiceRequest  im
      *         field to filter the results to snapshots owned by a particular
      *         account. To describe snapshots you own, either specify your AWS
      *         customer account, or do not specify the parameter.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterSnapshotsRequest withOwnerAccount(String ownerAccount) {
         this.ownerAccount = ownerAccount;

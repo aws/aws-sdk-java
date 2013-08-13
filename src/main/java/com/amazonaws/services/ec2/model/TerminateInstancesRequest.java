@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.TerminateInstancesRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -28,7 +30,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#terminateInstances(TerminateInstancesRequest)
  */
-public class TerminateInstancesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class TerminateInstancesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<TerminateInstancesRequest> {
 
     /**
      * The list of instances to terminate.
@@ -123,6 +125,18 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest  implemen
         }
 
         return this;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<TerminateInstancesRequest> getDryRunRequest() {
+        Request<TerminateInstancesRequest> request = new TerminateInstancesRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

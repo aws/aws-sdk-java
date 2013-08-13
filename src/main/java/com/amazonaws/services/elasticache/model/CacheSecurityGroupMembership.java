@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Links a CacheCluster to one or more CacheSecurityGroups.
  * </p>
  */
-public class CacheSecurityGroupMembership  implements Serializable  {
+public class CacheSecurityGroupMembership implements Serializable {
 
     /**
      * The name of the Cache Security Group.
@@ -64,6 +64,9 @@ public class CacheSecurityGroupMembership  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheSecurityGroupName The name of the Cache Security Group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheSecurityGroupMembership withCacheSecurityGroupName(String cacheSecurityGroupName) {
         this.cacheSecurityGroupName = cacheSecurityGroupName;
@@ -107,6 +110,9 @@ public class CacheSecurityGroupMembership  implements Serializable  {
      * @param status The status of the CacheSecurityGroupMembership, the status changes
      *         either when a CacheSecurityGroup is modified, or when the
      *         CacheSecurityGroups assigned to a Cache Cluster are modified.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheSecurityGroupMembership withStatus(String status) {
         this.status = status;

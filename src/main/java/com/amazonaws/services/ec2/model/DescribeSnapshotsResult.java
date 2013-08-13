@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The result of describing EBS snapshots.
  * </p>
  */
-public class DescribeSnapshotsResult  implements Serializable  {
+public class DescribeSnapshotsResult implements Serializable {
 
     /**
      * The list of described EBS snapshots.

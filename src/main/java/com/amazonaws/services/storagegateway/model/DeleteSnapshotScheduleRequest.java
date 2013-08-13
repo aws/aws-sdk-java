@@ -33,7 +33,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#deleteSnapshotSchedule(DeleteSnapshotScheduleRequest)
  */
-public class DeleteSnapshotScheduleRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteSnapshotScheduleRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The Amazon Resource Name (ARN) of the volume. Use the
@@ -83,6 +83,9 @@ public class DeleteSnapshotScheduleRequest extends AmazonWebServiceRequest  impl
      *
      * @param volumeARN The Amazon Resource Name (ARN) of the volume. Use the
      *         <a>ListVolumes</a> operation to return a list of gateway volumes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteSnapshotScheduleRequest withVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;

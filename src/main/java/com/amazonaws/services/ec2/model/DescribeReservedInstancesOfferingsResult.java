@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The result of describing Reserved Instance offerings.
  * </p>
  */
-public class DescribeReservedInstancesOfferingsResult  implements Serializable  {
+public class DescribeReservedInstancesOfferingsResult implements Serializable {
 
     /**
      * The list of described Reserved Instance offerings.

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes the monitoring status of an Amazon EC2 instance.
  * </p>
  */
-public class Monitoring  implements Serializable  {
+public class Monitoring implements Serializable {
 
     /**
      * The state of monitoring on an Amazon EC2 instance (ex: enabled,

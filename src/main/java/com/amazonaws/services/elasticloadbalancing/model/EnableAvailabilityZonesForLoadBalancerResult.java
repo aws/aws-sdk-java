@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The output for the EnableAvailabilityZonesForLoadBalancer action.
  * </p>
  */
-public class EnableAvailabilityZonesForLoadBalancerResult  implements Serializable  {
+public class EnableAvailabilityZonesForLoadBalancerResult implements Serializable {
 
     /**
      * An updated list of Availability Zones for the LoadBalancer.
@@ -62,6 +62,9 @@ public class EnableAvailabilityZonesForLoadBalancerResult  implements Serializab
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZones An updated list of Availability Zones for the LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EnableAvailabilityZonesForLoadBalancerResult withAvailabilityZones(String... availabilityZones) {
         if (getAvailabilityZones() == null) setAvailabilityZones(new java.util.ArrayList<String>(availabilityZones.length));
@@ -77,6 +80,9 @@ public class EnableAvailabilityZonesForLoadBalancerResult  implements Serializab
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZones An updated list of Availability Zones for the LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EnableAvailabilityZonesForLoadBalancerResult withAvailabilityZones(java.util.Collection<String> availabilityZones) {
         if (availabilityZones == null) {

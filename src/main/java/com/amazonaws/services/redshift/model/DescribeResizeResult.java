@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes the result of a cluster resize operation.
  * </p>
  */
-public class DescribeResizeResult  implements Serializable  {
+public class DescribeResizeResult implements Serializable {
 
     /**
      * The node type that the cluster will have after the resize is complete.
@@ -88,6 +88,9 @@ public class DescribeResizeResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param targetNodeType The node type that the cluster will have after the resize is complete.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeResizeResult withTargetNodeType(String targetNodeType) {
         this.targetNodeType = targetNodeType;
@@ -125,6 +128,9 @@ public class DescribeResizeResult  implements Serializable  {
      *
      * @param targetNumberOfNodes The number of nodes that the cluster will have after the resize is
      *         complete.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeResizeResult withTargetNumberOfNodes(Integer targetNumberOfNodes) {
         this.targetNumberOfNodes = targetNumberOfNodes;
@@ -162,6 +168,9 @@ public class DescribeResizeResult  implements Serializable  {
      *
      * @param targetClusterType The cluster type after the resize is complete. <p>Valid Values:
      *         <code>multi-node</code> | <code>single-node</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeResizeResult withTargetClusterType(String targetClusterType) {
         this.targetClusterType = targetClusterType;
@@ -205,6 +214,9 @@ public class DescribeResizeResult  implements Serializable  {
      * @param status The status of the resize operation. <p>Valid Values: <code>NONE</code>
      *         | <code>IN_PROGRESS</code> | <code>FAILED</code> |
      *         <code>SUCCEEDED</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeResizeResult withStatus(String status) {
         this.status = status;
@@ -253,6 +265,9 @@ public class DescribeResizeResult  implements Serializable  {
      *
      * @param importTablesCompleted The names of tables that have been completely imported . <p>Valid
      *         Values: List of table names.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeResizeResult withImportTablesCompleted(String... importTablesCompleted) {
         if (getImportTablesCompleted() == null) setImportTablesCompleted(new java.util.ArrayList<String>(importTablesCompleted.length));
@@ -270,6 +285,9 @@ public class DescribeResizeResult  implements Serializable  {
      *
      * @param importTablesCompleted The names of tables that have been completely imported . <p>Valid
      *         Values: List of table names.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeResizeResult withImportTablesCompleted(java.util.Collection<String> importTablesCompleted) {
         if (importTablesCompleted == null) {
@@ -324,6 +342,9 @@ public class DescribeResizeResult  implements Serializable  {
      *
      * @param importTablesInProgress The names of tables that are being currently imported. <p>Valid
      *         Values: List of table names.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeResizeResult withImportTablesInProgress(String... importTablesInProgress) {
         if (getImportTablesInProgress() == null) setImportTablesInProgress(new java.util.ArrayList<String>(importTablesInProgress.length));
@@ -341,6 +362,9 @@ public class DescribeResizeResult  implements Serializable  {
      *
      * @param importTablesInProgress The names of tables that are being currently imported. <p>Valid
      *         Values: List of table names.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeResizeResult withImportTablesInProgress(java.util.Collection<String> importTablesInProgress) {
         if (importTablesInProgress == null) {
@@ -395,6 +419,9 @@ public class DescribeResizeResult  implements Serializable  {
      *
      * @param importTablesNotStarted The names of tables that have not been yet imported. <p>Valid Values:
      *         List of table names
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeResizeResult withImportTablesNotStarted(String... importTablesNotStarted) {
         if (getImportTablesNotStarted() == null) setImportTablesNotStarted(new java.util.ArrayList<String>(importTablesNotStarted.length));
@@ -412,6 +439,9 @@ public class DescribeResizeResult  implements Serializable  {
      *
      * @param importTablesNotStarted The names of tables that have not been yet imported. <p>Valid Values:
      *         List of table names
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeResizeResult withImportTablesNotStarted(java.util.Collection<String> importTablesNotStarted) {
         if (importTablesNotStarted == null) {

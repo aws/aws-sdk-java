@@ -48,7 +48,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#respondActivityTaskFailed(RespondActivityTaskFailedRequest)
  */
-public class RespondActivityTaskFailedRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class RespondActivityTaskFailedRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The <code>taskToken</code> of the <a>ActivityTask</a>. <important> The
@@ -135,6 +135,9 @@ public class RespondActivityTaskFailedRequest extends AmazonWebServiceRequest  i
      *         treated as an opaque value. If the task is passed to another process,
      *         its <code>taskToken</code> must also be passed. This enables it to
      *         provide its progress and respond with results. </important>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RespondActivityTaskFailedRequest withTaskToken(String taskToken) {
         this.taskToken = taskToken;
@@ -175,6 +178,9 @@ public class RespondActivityTaskFailedRequest extends AmazonWebServiceRequest  i
      * <b>Length: </b>0 - 256<br/>
      *
      * @param reason Description of the error that may assist in diagnostics.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RespondActivityTaskFailedRequest withReason(String reason) {
         this.reason = reason;
@@ -215,6 +221,9 @@ public class RespondActivityTaskFailedRequest extends AmazonWebServiceRequest  i
      * <b>Length: </b>0 - 32768<br/>
      *
      * @param details Optional detailed information about the failure.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RespondActivityTaskFailedRequest withDetails(String details) {
         this.details = details;

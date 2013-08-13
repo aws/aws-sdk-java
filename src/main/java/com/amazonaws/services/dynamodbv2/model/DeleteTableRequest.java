@@ -38,7 +38,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#deleteTable(DeleteTableRequest)
  */
-public class DeleteTableRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteTableRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the table to delete.
@@ -106,6 +106,9 @@ public class DeleteTableRequest extends AmazonWebServiceRequest  implements Seri
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
      * @param tableName The name of the table to delete.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteTableRequest withTableName(String tableName) {
         this.tableName = tableName;

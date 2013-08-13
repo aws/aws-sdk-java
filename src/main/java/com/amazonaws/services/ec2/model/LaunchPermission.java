@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes a permission to launch an Amazon Machine Image (AMI).
  * </p>
  */
-public class LaunchPermission  implements Serializable  {
+public class LaunchPermission implements Serializable {
 
     /**
      * The AWS user ID of the user involved in this launch permission.

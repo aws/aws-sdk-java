@@ -29,7 +29,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteRole(DeleteRoleRequest)
  */
-public class DeleteRoleRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteRoleRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the role to delete.
@@ -76,6 +76,9 @@ public class DeleteRoleRequest extends AmazonWebServiceRequest  implements Seria
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param roleName Name of the role to delete.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteRoleRequest withRoleName(String roleName) {
         this.roleName = roleName;

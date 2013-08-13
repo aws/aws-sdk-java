@@ -20,7 +20,7 @@ import java.io.Serializable;
  * This data type is used as a response element to DescribeDBLogFiles.
  * </p>
  */
-public class DescribeDBLogFilesDetails  implements Serializable  {
+public class DescribeDBLogFilesDetails implements Serializable {
 
     /**
      * The name of the log file for the specified DB instance.
@@ -61,6 +61,9 @@ public class DescribeDBLogFilesDetails  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param logFileName The name of the log file for the specified DB instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeDBLogFilesDetails withLogFileName(String logFileName) {
         this.logFileName = logFileName;
@@ -92,6 +95,9 @@ public class DescribeDBLogFilesDetails  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param lastWritten A POSIX timestamp when the last log entry was written.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeDBLogFilesDetails withLastWritten(Long lastWritten) {
         this.lastWritten = lastWritten;
@@ -123,6 +129,9 @@ public class DescribeDBLogFilesDetails  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param size The size, in bytes, of the log file for the specified DB instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeDBLogFilesDetails withSize(Long size) {
         this.size = size;

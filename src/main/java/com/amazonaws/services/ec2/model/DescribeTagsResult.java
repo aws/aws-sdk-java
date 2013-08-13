@@ -19,7 +19,7 @@ import java.io.Serializable;
  * <p>
  * </p>
  */
-public class DescribeTagsResult  implements Serializable  {
+public class DescribeTagsResult implements Serializable {
 
     /**
      * A list of the tags for the specified resources.

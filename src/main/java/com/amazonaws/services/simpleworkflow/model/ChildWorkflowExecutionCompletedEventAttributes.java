@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Provides details of the <code>ChildWorkflowExecutionCompleted</code> event.
  * </p>
  */
-public class ChildWorkflowExecutionCompletedEventAttributes  implements Serializable  {
+public class ChildWorkflowExecutionCompletedEventAttributes implements Serializable {
 
     /**
      * The child workflow execution that was completed.
@@ -81,6 +81,9 @@ public class ChildWorkflowExecutionCompletedEventAttributes  implements Serializ
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param workflowExecution The child workflow execution that was completed.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChildWorkflowExecutionCompletedEventAttributes withWorkflowExecution(WorkflowExecution workflowExecution) {
         this.workflowExecution = workflowExecution;
@@ -112,6 +115,9 @@ public class ChildWorkflowExecutionCompletedEventAttributes  implements Serializ
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param workflowType The type of the child workflow execution.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChildWorkflowExecutionCompletedEventAttributes withWorkflowType(WorkflowType workflowType) {
         this.workflowType = workflowType;
@@ -152,6 +158,9 @@ public class ChildWorkflowExecutionCompletedEventAttributes  implements Serializ
      * <b>Length: </b>0 - 32768<br/>
      *
      * @param result The result of the child workflow execution (if any).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChildWorkflowExecutionCompletedEventAttributes withResult(String result) {
         this.result = result;
@@ -207,6 +216,9 @@ public class ChildWorkflowExecutionCompletedEventAttributes  implements Serializ
      *         <a>Decision</a> to start this child workflow execution. This
      *         information can be useful for diagnosing problems by tracing back the
      *         chain of events leading up to this event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChildWorkflowExecutionCompletedEventAttributes withInitiatedEventId(Long initiatedEventId) {
         this.initiatedEventId = initiatedEventId;
@@ -256,6 +268,9 @@ public class ChildWorkflowExecutionCompletedEventAttributes  implements Serializ
      *         recorded when this child workflow execution was started. This
      *         information can be useful for diagnosing problems by tracing back the
      *         chain of events leading up to this event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChildWorkflowExecutionCompletedEventAttributes withStartedEventId(Long startedEventId) {
         this.startedEventId = startedEventId;

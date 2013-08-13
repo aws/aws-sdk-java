@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The output for the DescribeJobFlows operation.
  * </p>
  */
-public class DescribeJobFlowsResult  implements Serializable  {
+public class DescribeJobFlowsResult implements Serializable {
 
     /**
      * A list of job flows matching the parameters supplied.
@@ -62,6 +62,9 @@ public class DescribeJobFlowsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param jobFlows A list of job flows matching the parameters supplied.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeJobFlowsResult withJobFlows(JobFlowDetail... jobFlows) {
         if (getJobFlows() == null) setJobFlows(new java.util.ArrayList<JobFlowDetail>(jobFlows.length));
@@ -77,6 +80,9 @@ public class DescribeJobFlowsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param jobFlows A list of job flows matching the parameters supplied.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeJobFlowsResult withJobFlows(java.util.Collection<JobFlowDetail> jobFlows) {
         if (jobFlows == null) {

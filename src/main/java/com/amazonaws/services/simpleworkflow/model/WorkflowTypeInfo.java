@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains information about a workflow type.
  * </p>
  */
-public class WorkflowTypeInfo  implements Serializable  {
+public class WorkflowTypeInfo implements Serializable {
 
     /**
      * The workflow type this information is about.
@@ -79,6 +79,9 @@ public class WorkflowTypeInfo  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param workflowType The workflow type this information is about.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowTypeInfo withWorkflowType(WorkflowType workflowType) {
         this.workflowType = workflowType;
@@ -124,6 +127,9 @@ public class WorkflowTypeInfo  implements Serializable  {
      *
      * @param status The current status of the workflow type.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see RegistrationStatus
      */
     public WorkflowTypeInfo withStatus(String status) {
@@ -155,6 +161,9 @@ public class WorkflowTypeInfo  implements Serializable  {
      * <b>Allowed Values: </b>REGISTERED, DEPRECATED
      *
      * @param status The current status of the workflow type.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see RegistrationStatus
      */
@@ -202,6 +211,9 @@ public class WorkflowTypeInfo  implements Serializable  {
      *
      * @param description The description of the type registered through
      *         <a>RegisterWorkflowType</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowTypeInfo withDescription(String description) {
         this.description = description;
@@ -233,6 +245,9 @@ public class WorkflowTypeInfo  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param creationDate The date when this type was registered.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowTypeInfo withCreationDate(java.util.Date creationDate) {
         this.creationDate = creationDate;
@@ -270,6 +285,9 @@ public class WorkflowTypeInfo  implements Serializable  {
      *
      * @param deprecationDate If the type is in deprecated state, then it is set to the date when
      *         the type was deprecated.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowTypeInfo withDeprecationDate(java.util.Date deprecationDate) {
         this.deprecationDate = deprecationDate;

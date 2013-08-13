@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The output for the GetMetricStatistics action.
  * </p>
  */
-public class GetMetricStatisticsResult  implements Serializable  {
+public class GetMetricStatisticsResult implements Serializable {
 
     /**
      * A label describing the specified metric.
@@ -56,6 +56,9 @@ public class GetMetricStatisticsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param label A label describing the specified metric.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetMetricStatisticsResult withLabel(String label) {
         this.label = label;
@@ -98,6 +101,9 @@ public class GetMetricStatisticsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param datapoints The datapoints for the specified metric.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetMetricStatisticsResult withDatapoints(Datapoint... datapoints) {
         if (getDatapoints() == null) setDatapoints(new java.util.ArrayList<Datapoint>(datapoints.length));
@@ -113,6 +119,9 @@ public class GetMetricStatisticsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param datapoints The datapoints for the specified metric.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetMetricStatisticsResult withDatapoints(java.util.Collection<Datapoint> datapoints) {
         if (datapoints == null) {

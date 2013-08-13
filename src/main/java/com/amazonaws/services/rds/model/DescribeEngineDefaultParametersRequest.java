@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest)
  */
-public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the DB Parameter Group Family.
@@ -94,6 +94,9 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBParameterGroupFamily The name of the DB Parameter Group Family.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEngineDefaultParametersRequest withDBParameterGroupFamily(String dBParameterGroupFamily) {
         this.dBParameterGroupFamily = dBParameterGroupFamily;
@@ -149,6 +152,9 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
      *         pagination token called a marker is included in the response so that
      *         the remaining results may be retrieved. <p>Default: 100
      *         <p>Constraints: minimum 20, maximum 100
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEngineDefaultParametersRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -198,6 +204,9 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
      *         DescribeEngineDefaultParameters request. If this parameter is
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <code>MaxRecords</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEngineDefaultParametersRequest withMarker(String marker) {
         this.marker = marker;

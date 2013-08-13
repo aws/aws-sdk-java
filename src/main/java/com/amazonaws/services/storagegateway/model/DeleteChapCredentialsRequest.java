@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#deleteChapCredentials(DeleteChapCredentialsRequest)
  */
-public class DeleteChapCredentialsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteChapCredentialsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The Amazon Resource Name (ARN) of the iSCSI volume target. Use the
@@ -90,6 +90,9 @@ public class DeleteChapCredentialsRequest extends AmazonWebServiceRequest  imple
      * @param targetARN The Amazon Resource Name (ARN) of the iSCSI volume target. Use the
      *         <a>DescribeStorediSCSIVolumes</a> operation to return to retrieve the
      *         TargetARN for specified VolumeARN.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteChapCredentialsRequest withTargetARN(String targetARN) {
         this.targetARN = targetARN;
@@ -133,6 +136,9 @@ public class DeleteChapCredentialsRequest extends AmazonWebServiceRequest  imple
      * <b>Pattern: </b>[0-9a-z:.-]+<br/>
      *
      * @param initiatorName The iSCSI initiator that connects to the target.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteChapCredentialsRequest withInitiatorName(String initiatorName) {
         this.initiatorName = initiatorName;

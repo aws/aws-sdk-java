@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents the output of an <i>UpdateItem</i> operation.
  * </p>
  */
-public class UpdateItemResult  implements Serializable  {
+public class UpdateItemResult implements Serializable {
 
     /**
      * A map of attribute values as they appeared before the
@@ -91,6 +91,9 @@ public class UpdateItemResult  implements Serializable  {
      *         <i>UpdateItem</i> operation, but only if <i>ReturnValues</i> was
      *         specified as something other than <code>NONE</code> in the request.
      *         Each element represents one attribute.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateItemResult withAttributes(java.util.Map<String,AttributeValue> attributes) {
         setAttributes(attributes);
@@ -185,6 +188,9 @@ public class UpdateItemResult  implements Serializable  {
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
      *         Throughput</a> in the Amazon DynamoDB Developer Guide.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateItemResult withConsumedCapacity(ConsumedCapacity consumedCapacity) {
         this.consumedCapacity = consumedCapacity;
@@ -234,6 +240,9 @@ public class UpdateItemResult  implements Serializable  {
      *         operation. <i>ItemCollectionMetrics</i> is only returned if it was
      *         asked for in the request. If the table does not have any secondary
      *         indexes, this information is not returned in the response.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateItemResult withItemCollectionMetrics(ItemCollectionMetrics itemCollectionMetrics) {
         this.itemCollectionMetrics = itemCollectionMetrics;

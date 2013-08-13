@@ -20,7 +20,7 @@ import java.io.Serializable;
  * This data type is used as a response element in the action DescribeCacheEngineVersions.
  * </p>
  */
-public class CacheEngineVersion  implements Serializable  {
+public class CacheEngineVersion implements Serializable {
 
     /**
      * The name of the cache engine.
@@ -71,6 +71,9 @@ public class CacheEngineVersion  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param engine The name of the cache engine.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheEngineVersion withEngine(String engine) {
         this.engine = engine;
@@ -102,6 +105,9 @@ public class CacheEngineVersion  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param engineVersion The version number of the cache engine.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheEngineVersion withEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
@@ -133,6 +139,9 @@ public class CacheEngineVersion  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheParameterGroupFamily The name of the CacheParameterGroupFamily for the cache engine.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheEngineVersion withCacheParameterGroupFamily(String cacheParameterGroupFamily) {
         this.cacheParameterGroupFamily = cacheParameterGroupFamily;
@@ -164,6 +173,9 @@ public class CacheEngineVersion  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheEngineDescription The description of the cache engine.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheEngineVersion withCacheEngineDescription(String cacheEngineDescription) {
         this.cacheEngineDescription = cacheEngineDescription;
@@ -195,6 +207,9 @@ public class CacheEngineVersion  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheEngineVersionDescription The description of the cache engine version.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheEngineVersion withCacheEngineVersionDescription(String cacheEngineVersionDescription) {
         this.cacheEngineVersionDescription = cacheEngineVersionDescription;

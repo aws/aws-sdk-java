@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The output for the TerminateInstanceInAutoScalingGroup action.
  * </p>
  */
-public class TerminateInstanceInAutoScalingGroupResult  implements Serializable  {
+public class TerminateInstanceInAutoScalingGroupResult implements Serializable {
 
     /**
      * A scaling Activity.
@@ -51,6 +51,9 @@ public class TerminateInstanceInAutoScalingGroupResult  implements Serializable 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param activity A scaling Activity.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public TerminateInstanceInAutoScalingGroupResult withActivity(Activity activity) {
         this.activity = activity;

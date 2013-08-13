@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents the capacity that a license is able to support.
  * </p>
  */
-public class LicenseCapacity  implements Serializable  {
+public class LicenseCapacity implements Serializable {
 
     /**
      * The number of licenses available.

@@ -27,7 +27,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#resetDBParameterGroup(ResetDBParameterGroupRequest)
  */
-public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be 1
@@ -124,6 +124,9 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest  imple
      *         to 255 alphanumeric characters</li> <li>First character must be a
      *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
      *         hyphens</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ResetDBParameterGroupRequest withDBParameterGroupName(String dBParameterGroupName) {
         this.dBParameterGroupName = dBParameterGroupName;
@@ -167,6 +170,9 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest  imple
      * @param resetAllParameters Specifies whether (<code>true</code>) or not (<code>false</code>) to
      *         reset all parameters in the DB Parameter Group to default values.
      *         <p>Default: <code>true</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ResetDBParameterGroupRequest withResetAllParameters(Boolean resetAllParameters) {
         this.resetAllParameters = resetAllParameters;
@@ -276,6 +282,9 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest  imple
      *         value for both dynamic and static parameters, and changes are applied
      *         when DB Instance reboots. <p><b>Oracle</b> <p>Valid Values (for Apply
      *         method): <code>pending-reboot</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ResetDBParameterGroupRequest withParameters(Parameter... parameters) {
         if (getParameters() == null) setParameters(new java.util.ArrayList<Parameter>(parameters.length));
@@ -309,6 +318,9 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest  imple
      *         value for both dynamic and static parameters, and changes are applied
      *         when DB Instance reboots. <p><b>Oracle</b> <p>Valid Values (for Apply
      *         method): <code>pending-reboot</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ResetDBParameterGroupRequest withParameters(java.util.Collection<Parameter> parameters) {
         if (parameters == null) {

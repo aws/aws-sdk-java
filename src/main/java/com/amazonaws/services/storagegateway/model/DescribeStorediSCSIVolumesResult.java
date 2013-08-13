@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A JSON object containing a list of DescribeStorediSCSIVolumesOutput$StorediSCSIVolumes.
  * </p>
  */
-public class DescribeStorediSCSIVolumesResult  implements Serializable  {
+public class DescribeStorediSCSIVolumesResult implements Serializable {
 
     /**
      * Describes a single unit of output from
@@ -293,6 +293,9 @@ public class DescribeStorediSCSIVolumesResult  implements Serializable  {
      *         <p><b>VolumeType</b>: One of the enumeration values describing the
      *         type of the volume. Currently, on STORED volumes are supported. </li>
      *         </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeStorediSCSIVolumesResult withStorediSCSIVolumes(StorediSCSIVolume... storediSCSIVolumes) {
         if (getStorediSCSIVolumes() == null) setStorediSCSIVolumes(new java.util.ArrayList<StorediSCSIVolume>(storediSCSIVolumes.length));
@@ -374,6 +377,9 @@ public class DescribeStorediSCSIVolumesResult  implements Serializable  {
      *         <p><b>VolumeType</b>: One of the enumeration values describing the
      *         type of the volume. Currently, on STORED volumes are supported. </li>
      *         </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeStorediSCSIVolumesResult withStorediSCSIVolumes(java.util.Collection<StorediSCSIVolume> storediSCSIVolumes) {
         if (storediSCSIVolumes == null) {

@@ -27,7 +27,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#describeEvents(DescribeEventsRequest)
  */
-public class DescribeEventsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeEventsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * If specified, AWS Elastic Beanstalk restricts the returned
@@ -160,6 +160,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      *
      * @param applicationName If specified, AWS Elastic Beanstalk restricts the returned
      *         descriptions to include only those associated with this application.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEventsRequest withApplicationName(String applicationName) {
         this.applicationName = applicationName;
@@ -206,6 +209,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      *
      * @param versionLabel If specified, AWS Elastic Beanstalk restricts the returned
      *         descriptions to those associated with this application version.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEventsRequest withVersionLabel(String versionLabel) {
         this.versionLabel = versionLabel;
@@ -258,6 +264,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      * @param templateName If specified, AWS Elastic Beanstalk restricts the returned
      *         descriptions to those that are associated with this environment
      *         configuration.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEventsRequest withTemplateName(String templateName) {
         this.templateName = templateName;
@@ -295,6 +304,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      *
      * @param environmentId If specified, AWS Elastic Beanstalk restricts the returned
      *         descriptions to those associated with this environment.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEventsRequest withEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
@@ -341,6 +353,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      *
      * @param environmentName If specified, AWS Elastic Beanstalk restricts the returned
      *         descriptions to those associated with this environment.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEventsRequest withEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
@@ -378,6 +393,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      *
      * @param requestId If specified, AWS Elastic Beanstalk restricts the described events to
      *         include only those associated with this request ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEventsRequest withRequestId(String requestId) {
         this.requestId = requestId;
@@ -429,6 +447,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      * @param severity If specified, limits the events returned from this call to include
      *         only those with the specified severity or higher.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see EventSeverity
      */
     public DescribeEventsRequest withSeverity(String severity) {
@@ -464,6 +485,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      *
      * @param severity If specified, limits the events returned from this call to include
      *         only those with the specified severity or higher.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see EventSeverity
      */
@@ -502,6 +526,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      *
      * @param startTime If specified, AWS Elastic Beanstalk restricts the returned
      *         descriptions to those that occur on or after this time.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEventsRequest withStartTime(java.util.Date startTime) {
         this.startTime = startTime;
@@ -545,6 +572,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      * @param endTime If specified, AWS Elastic Beanstalk restricts the returned
      *         descriptions to those that occur up to, but not including, the
      *         <code>EndTime</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEventsRequest withEndTime(java.util.Date endTime) {
         this.endTime = endTime;
@@ -591,6 +621,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      *
      * @param maxRecords Specifies the maximum number of events that can be returned, beginning
      *         with the most recent event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEventsRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -628,6 +661,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      *
      * @param nextToken Pagination token. If specified, the events return the next batch of
      *         results.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEventsRequest withNextToken(String nextToken) {
         this.nextToken = nextToken;

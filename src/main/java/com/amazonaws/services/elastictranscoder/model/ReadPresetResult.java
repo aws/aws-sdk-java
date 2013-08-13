@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The <code>ReadPresetResponse</code> structure.
  * </p>
  */
-public class ReadPresetResult  implements Serializable  {
+public class ReadPresetResult implements Serializable {
 
     /**
      * A section of the response body that provides information about the
@@ -58,6 +58,9 @@ public class ReadPresetResult  implements Serializable  {
      *
      * @param preset A section of the response body that provides information about the
      *         preset.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ReadPresetResult withPreset(Preset preset) {
         this.preset = preset;

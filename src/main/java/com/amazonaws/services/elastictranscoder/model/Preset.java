@@ -22,7 +22,7 @@ import java.io.Serializable;
  * included among the default presets. You specify which preset you want to use when you create a job.
  * </p>
  */
-public class Preset  implements Serializable  {
+public class Preset implements Serializable {
 
     /**
      * Identifier for the new preset. You use this value to get settings for
@@ -125,6 +125,9 @@ public class Preset  implements Serializable  {
      *
      * @param id Identifier for the new preset. You use this value to get settings for
      *         the preset or to delete it.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Preset withId(String id) {
         this.id = id;
@@ -165,6 +168,9 @@ public class Preset  implements Serializable  {
      * <b>Length: </b>1 - 40<br/>
      *
      * @param name The name of the preset.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Preset withName(String name) {
         this.name = name;
@@ -205,6 +211,9 @@ public class Preset  implements Serializable  {
      * <b>Length: </b>0 - 255<br/>
      *
      * @param description A description of the preset.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Preset withDescription(String description) {
         this.description = description;
@@ -251,6 +260,9 @@ public class Preset  implements Serializable  {
      *
      * @param container The container type for the output file. This value must be
      *         <code>mp4</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Preset withContainer(String container) {
         this.container = container;
@@ -288,6 +300,9 @@ public class Preset  implements Serializable  {
      *
      * @param audio A section of the response body that provides information about the
      *         audio preset values.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Preset withAudio(AudioParameters audio) {
         this.audio = audio;
@@ -325,6 +340,9 @@ public class Preset  implements Serializable  {
      *
      * @param video A section of the response body that provides information about the
      *         video preset values.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Preset withVideo(VideoParameters video) {
         this.video = video;
@@ -362,6 +380,9 @@ public class Preset  implements Serializable  {
      *
      * @param thumbnails A section of the response body that provides information about the
      *         thumbnail preset values, if any.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Preset withThumbnails(Thumbnails thumbnails) {
         this.thumbnails = thumbnails;
@@ -414,6 +435,9 @@ public class Preset  implements Serializable  {
      * @param type Whether the preset is a default preset provided by Elastic Transcoder
      *         (<code>System</code>) or a preset that you have defined
      *         (<code>Custom</code>).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Preset withType(String type) {
         this.type = type;

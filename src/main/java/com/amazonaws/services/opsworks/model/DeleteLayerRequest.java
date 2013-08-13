@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#deleteLayer(DeleteLayerRequest)
  */
-public class DeleteLayerRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteLayerRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The layer ID.
@@ -56,6 +56,9 @@ public class DeleteLayerRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param layerId The layer ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteLayerRequest withLayerId(String layerId) {
         this.layerId = layerId;

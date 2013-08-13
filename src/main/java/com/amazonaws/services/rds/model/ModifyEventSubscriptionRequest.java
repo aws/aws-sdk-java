@@ -30,7 +30,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#modifyEventSubscription(ModifyEventSubscriptionRequest)
  */
-public class ModifyEventSubscriptionRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ModifyEventSubscriptionRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the RDS event notification subscription.
@@ -92,6 +92,9 @@ public class ModifyEventSubscriptionRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subscriptionName The name of the RDS event notification subscription.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ModifyEventSubscriptionRequest withSubscriptionName(String subscriptionName) {
         this.subscriptionName = subscriptionName;
@@ -135,6 +138,9 @@ public class ModifyEventSubscriptionRequest extends AmazonWebServiceRequest  imp
      * @param snsTopicArn The Amazon Resource Name (ARN) of the SNS topic created for event
      *         notification. The ARN is created by Amazon SNS when you create a topic
      *         and subscribe to it.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ModifyEventSubscriptionRequest withSnsTopicArn(String snsTopicArn) {
         this.snsTopicArn = snsTopicArn;
@@ -190,6 +196,9 @@ public class ModifyEventSubscriptionRequest extends AmazonWebServiceRequest  imp
      *         would set this parameter to db-instance. if this value is not
      *         specified, all events are returned. <p>Valid values: db-instance |
      *         db-parameter-group | db-security-group | db-snapshot
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ModifyEventSubscriptionRequest withSourceType(String sourceType) {
         this.sourceType = sourceType;
@@ -262,6 +271,9 @@ public class ModifyEventSubscriptionRequest extends AmazonWebServiceRequest  imp
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
      *         topic in the Amazon RDS User Guide or by using the
      *         <b>DescribeEventCategories</b> action.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ModifyEventSubscriptionRequest withEventCategories(String... eventCategories) {
         if (getEventCategories() == null) setEventCategories(new java.util.ArrayList<String>(eventCategories.length));
@@ -287,6 +299,9 @@ public class ModifyEventSubscriptionRequest extends AmazonWebServiceRequest  imp
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
      *         topic in the Amazon RDS User Guide or by using the
      *         <b>DescribeEventCategories</b> action.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ModifyEventSubscriptionRequest withEventCategories(java.util.Collection<String> eventCategories) {
         if (eventCategories == null) {
@@ -324,6 +339,9 @@ public class ModifyEventSubscriptionRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param enabled A Boolean value; set to <b>true</b> to activate the subscription.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ModifyEventSubscriptionRequest withEnabled(Boolean enabled) {
         this.enabled = enabled;

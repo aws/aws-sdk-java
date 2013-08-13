@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the GetLoginProfile action.
  * </p>
  */
-public class GetLoginProfileResult  implements Serializable  {
+public class GetLoginProfileResult implements Serializable {
 
     /**
      * User name and password create date for the user.
@@ -51,6 +51,9 @@ public class GetLoginProfileResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param loginProfile User name and password create date for the user.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetLoginProfileResult withLoginProfile(LoginProfile loginProfile) {
         this.loginProfile = loginProfile;

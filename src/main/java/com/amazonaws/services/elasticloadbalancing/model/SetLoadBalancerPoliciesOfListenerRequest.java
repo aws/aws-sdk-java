@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#setLoadBalancerPoliciesOfListener(SetLoadBalancerPoliciesOfListenerRequest)
  */
-public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name associated with the LoadBalancer. The name must be unique
@@ -104,6 +104,9 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
      *
      * @param loadBalancerName The name associated with the LoadBalancer. The name must be unique
      *         within the client AWS account.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SetLoadBalancerPoliciesOfListenerRequest withLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
@@ -141,6 +144,9 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
      *
      * @param loadBalancerPort The external port of the LoadBalancer with which this policy applies
      *         to.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SetLoadBalancerPoliciesOfListenerRequest withLoadBalancerPort(Integer loadBalancerPort) {
         this.loadBalancerPort = loadBalancerPort;
@@ -195,6 +201,9 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
      * @param policyNames List of policies to be associated with the listener. Currently this
      *         list can have at most one policy. If the list is empty, the current
      *         policy is removed from the listener.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SetLoadBalancerPoliciesOfListenerRequest withPolicyNames(String... policyNames) {
         if (getPolicyNames() == null) setPolicyNames(new java.util.ArrayList<String>(policyNames.length));
@@ -214,6 +223,9 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
      * @param policyNames List of policies to be associated with the listener. Currently this
      *         list can have at most one policy. If the list is empty, the current
      *         policy is removed from the listener.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SetLoadBalancerPoliciesOfListenerRequest withPolicyNames(java.util.Collection<String> policyNames) {
         if (policyNames == null) {

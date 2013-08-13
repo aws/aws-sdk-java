@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribeLoadBasedAutoScaling</code> request.
  * </p>
  */
-public class DescribeLoadBasedAutoScalingResult  implements Serializable  {
+public class DescribeLoadBasedAutoScalingResult implements Serializable {
 
     /**
      * An array of <code>LoadBasedAutoScalingConfiguration</code> objects
@@ -69,6 +69,9 @@ public class DescribeLoadBasedAutoScalingResult  implements Serializable  {
      *
      * @param loadBasedAutoScalingConfigurations An array of <code>LoadBasedAutoScalingConfiguration</code> objects
      *         that describe each layer's configuration.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeLoadBasedAutoScalingResult withLoadBasedAutoScalingConfigurations(LoadBasedAutoScalingConfiguration... loadBasedAutoScalingConfigurations) {
         if (getLoadBasedAutoScalingConfigurations() == null) setLoadBasedAutoScalingConfigurations(new java.util.ArrayList<LoadBasedAutoScalingConfiguration>(loadBasedAutoScalingConfigurations.length));
@@ -86,6 +89,9 @@ public class DescribeLoadBasedAutoScalingResult  implements Serializable  {
      *
      * @param loadBasedAutoScalingConfigurations An array of <code>LoadBasedAutoScalingConfiguration</code> objects
      *         that describe each layer's configuration.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeLoadBasedAutoScalingResult withLoadBasedAutoScalingConfigurations(java.util.Collection<LoadBasedAutoScalingConfiguration> loadBasedAutoScalingConfigurations) {
         if (loadBasedAutoScalingConfigurations == null) {

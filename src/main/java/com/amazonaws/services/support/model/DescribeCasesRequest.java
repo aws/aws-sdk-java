@@ -31,7 +31,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.support.AWSSupport#describeCases(DescribeCasesRequest)
  */
-public class DescribeCasesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeCasesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * A list of Strings comprising ID numbers for support cases you want
@@ -138,6 +138,9 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest  implements Se
      *
      * @param caseIdList A list of Strings comprising ID numbers for support cases you want
      *         returned. The maximum number of cases is 100.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCasesRequest withCaseIdList(String... caseIdList) {
         if (getCaseIdList() == null) setCaseIdList(new java.util.ArrayList<String>(caseIdList.length));
@@ -158,6 +161,9 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest  implements Se
      *
      * @param caseIdList A list of Strings comprising ID numbers for support cases you want
      *         returned. The maximum number of cases is 100.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCasesRequest withCaseIdList(java.util.Collection<String> caseIdList) {
         if (caseIdList == null) {
@@ -201,6 +207,9 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest  implements Se
      *
      * @param displayId String that corresponds to the ID value displayed for a case in the
      *         AWS Support Center user interface.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCasesRequest withDisplayId(String displayId) {
         this.displayId = displayId;
@@ -232,6 +241,9 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param afterTime Start date for a filtered date search on support case communications.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCasesRequest withAfterTime(String afterTime) {
         this.afterTime = afterTime;
@@ -263,6 +275,9 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param beforeTime End date for a filtered date search on support case communications.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCasesRequest withBeforeTime(String beforeTime) {
         this.beforeTime = beforeTime;
@@ -312,6 +327,9 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest  implements Se
      *         listed in the <a
      *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeCases.html"
      *         title="DescribeCases">DescribeCases</a> search.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCasesRequest withIncludeResolvedCases(Boolean includeResolvedCases) {
         this.includeResolvedCases = includeResolvedCases;
@@ -358,6 +376,9 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nextToken Defines a resumption point for pagination.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCasesRequest withNextToken(String nextToken) {
         this.nextToken = nextToken;
@@ -404,6 +425,9 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest  implements Se
      *
      * @param maxResults Integer that sets the maximum number of results to return before
      *         paginating.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCasesRequest withMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
@@ -453,6 +477,9 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest  implements Se
      *         support. AWS Support currently supports English and Japanese, for
      *         which the codes are <i>en</i> and <i>ja</i>, respectively. Language
      *         parameters must be passed explicitly for operations that take them.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCasesRequest withLanguage(String language) {
         this.language = language;

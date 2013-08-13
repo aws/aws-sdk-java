@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.cloudfront.AmazonCloudFront#getStreamingDistribution(GetStreamingDistributionRequest)
  */
-public class GetStreamingDistributionRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class GetStreamingDistributionRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The streaming distribution's id.
@@ -76,6 +76,9 @@ public class GetStreamingDistributionRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param id The streaming distribution's id.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetStreamingDistributionRequest withId(String id) {
         this.id = id;

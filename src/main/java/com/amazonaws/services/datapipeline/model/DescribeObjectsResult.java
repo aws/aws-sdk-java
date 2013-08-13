@@ -20,7 +20,7 @@ import java.io.Serializable;
  * If <code>True</code> , there are more results that can be returned in another call to DescribeObjects.
  * </p>
  */
-public class DescribeObjectsResult  implements Serializable  {
+public class DescribeObjectsResult implements Serializable {
 
     /**
      * An array of object definitions that are returned by the call to
@@ -84,6 +84,9 @@ public class DescribeObjectsResult  implements Serializable  {
      *
      * @param pipelineObjects An array of object definitions that are returned by the call to
      *         <a>DescribeObjects</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeObjectsResult withPipelineObjects(PipelineObject... pipelineObjects) {
         if (getPipelineObjects() == null) setPipelineObjects(new java.util.ArrayList<PipelineObject>(pipelineObjects.length));
@@ -101,6 +104,9 @@ public class DescribeObjectsResult  implements Serializable  {
      *
      * @param pipelineObjects An array of object definitions that are returned by the call to
      *         <a>DescribeObjects</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeObjectsResult withPipelineObjects(java.util.Collection<PipelineObject> pipelineObjects) {
         if (pipelineObjects == null) {
@@ -156,6 +162,9 @@ public class DescribeObjectsResult  implements Serializable  {
      *
      * @param marker The starting point for the next page of results. To view the next page
      *         of results, call <a>DescribeObjects</a> again with this marker value.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeObjectsResult withMarker(String marker) {
         this.marker = marker;
@@ -187,6 +196,9 @@ public class DescribeObjectsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param hasMoreResults If <code>True</code>, there are more pages of results to return.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeObjectsResult withHasMoreResults(Boolean hasMoreResults) {
         this.hasMoreResults = hasMoreResults;

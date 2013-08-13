@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#estimateTemplateCost(EstimateTemplateCostRequest)
  */
-public class EstimateTemplateCostRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class EstimateTemplateCostRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Structure containing the template body. (For more information, go to
@@ -123,6 +123,9 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest  implem
      *         CloudFormation User Guide</a>.) <p>Conditional: You must pass
      *         <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EstimateTemplateCostRequest withTemplateBody(String templateBody) {
         this.templateBody = templateBody;
@@ -199,6 +202,9 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest  implem
      *         CloudFormation User Guide</a>. <p>Conditional: You must pass
      *         <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EstimateTemplateCostRequest withTemplateURL(String templateURL) {
         this.templateURL = templateURL;
@@ -247,6 +253,9 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest  implem
      *
      * @param parameters A list of <code>Parameter</code> structures that specify input
      *         parameters.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EstimateTemplateCostRequest withParameters(Parameter... parameters) {
         if (getParameters() == null) setParameters(new java.util.ArrayList<Parameter>(parameters.length));
@@ -264,6 +273,9 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest  implem
      *
      * @param parameters A list of <code>Parameter</code> structures that specify input
      *         parameters.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EstimateTemplateCostRequest withParameters(java.util.Collection<Parameter> parameters) {
         if (parameters == null) {

@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateAssumeRolePolicy(UpdateAssumeRolePolicyRequest)
  */
-public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the role to update.
@@ -81,6 +81,9 @@ public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest  impl
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param roleName Name of the role to update.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateAssumeRolePolicyRequest withRoleName(String roleName) {
         this.roleName = roleName;
@@ -124,6 +127,9 @@ public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest  impl
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      *
      * @param policyDocument The policy that grants an entity permission to assume the role.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateAssumeRolePolicyRequest withPolicyDocument(String policyDocument) {
         this.policyDocument = policyDocument;

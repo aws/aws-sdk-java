@@ -28,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteLaunchConfiguration(DeleteLaunchConfigurationRequest)
  */
-public class DeleteLaunchConfigurationRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteLaunchConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the launch configuration.
@@ -75,6 +75,9 @@ public class DeleteLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param launchConfigurationName The name of the launch configuration.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteLaunchConfigurationRequest withLaunchConfigurationName(String launchConfigurationName) {
         this.launchConfigurationName = launchConfigurationName;

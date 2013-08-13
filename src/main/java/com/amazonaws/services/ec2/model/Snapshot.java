@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents a snapshot of an Amazon EC2 EBS volume.
  * </p>
  */
-public class Snapshot  implements Serializable  {
+public class Snapshot implements Serializable {
 
     /**
      * The unique ID of this snapshot.

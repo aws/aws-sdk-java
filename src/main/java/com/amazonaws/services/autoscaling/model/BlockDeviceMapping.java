@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The <code>BlockDeviceMapping</code> data type.
  * </p>
  */
-public class BlockDeviceMapping  implements Serializable  {
+public class BlockDeviceMapping implements Serializable {
 
     /**
      * The virtual name associated with the device.
@@ -81,6 +81,9 @@ public class BlockDeviceMapping  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param virtualName The virtual name associated with the device.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public BlockDeviceMapping withVirtualName(String virtualName) {
         this.virtualName = virtualName;
@@ -124,6 +127,9 @@ public class BlockDeviceMapping  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param deviceName The name of the device within Amazon EC2.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public BlockDeviceMapping withDeviceName(String deviceName) {
         this.deviceName = deviceName;
@@ -155,6 +161,9 @@ public class BlockDeviceMapping  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ebs The Elastic Block Storage volume information.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public BlockDeviceMapping withEbs(Ebs ebs) {
         this.ebs = ebs;

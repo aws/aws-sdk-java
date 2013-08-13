@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Create Instance Export Task Result
  */
-public class CreateInstanceExportTaskResult  implements Serializable  {
+public class CreateInstanceExportTaskResult implements Serializable {
 
     private ExportTask exportTask;
 

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The result of registering a new Amazon Machine Image (AMI). Contains the ID of the new image.
  * </p>
  */
-public class RegisterImageResult  implements Serializable  {
+public class RegisterImageResult implements Serializable {
 
     /**
      * The ID of the new Amazon Machine Image (AMI).

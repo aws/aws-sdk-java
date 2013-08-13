@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#purchaseReservedDBInstancesOffering(PurchaseReservedDBInstancesOfferingRequest)
  */
-public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The ID of the Reserved DB Instance offering to purchase. <p>Example:
@@ -96,6 +96,9 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
      *
      * @param reservedDBInstancesOfferingId The ID of the Reserved DB Instance offering to purchase. <p>Example:
      *         438012d3-4052-4cc7-b2e3-8d3372e0e706
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PurchaseReservedDBInstancesOfferingRequest withReservedDBInstancesOfferingId(String reservedDBInstancesOfferingId) {
         this.reservedDBInstancesOfferingId = reservedDBInstancesOfferingId;
@@ -133,6 +136,9 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
      *
      * @param reservedDBInstanceId Customer-specified identifier to track this reservation. <p>Example:
      *         myreservationID
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PurchaseReservedDBInstancesOfferingRequest withReservedDBInstanceId(String reservedDBInstanceId) {
         this.reservedDBInstanceId = reservedDBInstanceId;
@@ -164,6 +170,9 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBInstanceCount The number of instances to reserve. <p>Default: <code>1</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PurchaseReservedDBInstancesOfferingRequest withDBInstanceCount(Integer dBInstanceCount) {
         this.dBInstanceCount = dBInstanceCount;

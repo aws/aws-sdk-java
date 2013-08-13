@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#listPresets(ListPresetsRequest)
  */
-public class ListPresetsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ListPresetsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Returns a string representation of this object; useful for testing and

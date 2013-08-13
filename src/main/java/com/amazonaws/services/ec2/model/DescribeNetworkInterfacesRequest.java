@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.DescribeNetworkInterfacesRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -22,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeNetworkInterfaces(DescribeNetworkInterfacesRequest)
  */
-public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeNetworkInterfacesRequest> {
 
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> networkInterfaceIds;
 
@@ -164,6 +166,18 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest  i
         }
 
         return this;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<DescribeNetworkInterfacesRequest> getDryRunRequest() {
+        Request<DescribeNetworkInterfacesRequest> request = new DescribeNetworkInterfacesRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

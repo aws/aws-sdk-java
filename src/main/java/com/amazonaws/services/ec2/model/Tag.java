@@ -21,7 +21,7 @@ import java.io.Serializable;
  * such as by purpose, owner, or environment.
  * </p>
  */
-public class Tag  implements Serializable  {
+public class Tag implements Serializable {
 
     /**
      * The tag's key.

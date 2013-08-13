@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#evaluateExpression(EvaluateExpressionRequest)
  */
-public class EvaluateExpressionRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class EvaluateExpressionRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The identifier of the pipeline.
@@ -89,6 +89,9 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest  implemen
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param pipelineId The identifier of the pipeline.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EvaluateExpressionRequest withPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
@@ -132,6 +135,9 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest  implemen
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param objectId The identifier of the object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EvaluateExpressionRequest withObjectId(String objectId) {
         this.objectId = objectId;
@@ -175,6 +181,9 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest  implemen
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param expression The expression to evaluate.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EvaluateExpressionRequest withExpression(String expression) {
         this.expression = expression;

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Provides details of the <code>DecisionTaskCompleted</code> event.
  * </p>
  */
-public class DecisionTaskCompletedEventAttributes  implements Serializable  {
+public class DecisionTaskCompletedEventAttributes implements Serializable {
 
     /**
      * User defined context for the workflow execution.
@@ -79,6 +79,9 @@ public class DecisionTaskCompletedEventAttributes  implements Serializable  {
      * <b>Length: </b>0 - 32768<br/>
      *
      * @param executionContext User defined context for the workflow execution.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DecisionTaskCompletedEventAttributes withExecutionContext(String executionContext) {
         this.executionContext = executionContext;
@@ -128,6 +131,9 @@ public class DecisionTaskCompletedEventAttributes  implements Serializable  {
      *         recorded when this decision task was scheduled. This information can
      *         be useful for diagnosing problems by tracing back the chain of events
      *         leading up to this event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DecisionTaskCompletedEventAttributes withScheduledEventId(Long scheduledEventId) {
         this.scheduledEventId = scheduledEventId;
@@ -177,6 +183,9 @@ public class DecisionTaskCompletedEventAttributes  implements Serializable  {
      *         this decision task was started. This information can be useful for
      *         diagnosing problems by tracing back the chain of events leading up to
      *         this event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DecisionTaskCompletedEventAttributes withStartedEventId(Long startedEventId) {
         this.startedEventId = startedEventId;

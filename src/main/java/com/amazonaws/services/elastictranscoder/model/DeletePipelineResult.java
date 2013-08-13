@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The <code>DeletePipelineResponse</code> structure.
  * </p>
  */
-public class DeletePipelineResult  implements Serializable  {
+public class DeletePipelineResult implements Serializable {
 
     /**
      * Returns a string representation of this object; useful for testing and

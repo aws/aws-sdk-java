@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeCacheParameters(DescribeCacheParametersRequest)
  */
-public class DescribeCacheParametersRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeCacheParametersRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of a specific cache parameter group to return details for.
@@ -99,6 +99,9 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheParameterGroupName The name of a specific cache parameter group to return details for.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCacheParametersRequest withCacheParameterGroupName(String cacheParameterGroupName) {
         this.cacheParameterGroupName = cacheParameterGroupName;
@@ -136,6 +139,9 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest  imp
      *
      * @param source The parameter types to return. <p> Valid values: <code>user</code> |
      *         <code>system</code> | <code>engine-default</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCacheParametersRequest withSource(String source) {
         this.source = source;
@@ -185,6 +191,9 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest  imp
      *         records exist than the specified <i>MaxRecords</i> value, a marker is
      *         included in the response so that the remaining results may be
      *         retrieved.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCacheParametersRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -234,6 +243,9 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest  imp
      *         request. If this parameter is specified, the response includes only
      *         records beyond the marker, up to the value specified by
      *         <i>MaxRecords</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCacheParametersRequest withMarker(String marker) {
         this.marker = marker;

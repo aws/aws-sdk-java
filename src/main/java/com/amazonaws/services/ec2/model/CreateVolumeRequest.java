@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.CreateVolumeRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -24,7 +26,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createVolume(CreateVolumeRequest)
  */
-public class CreateVolumeRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateVolumeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateVolumeRequest> {
 
     /**
      * The size of the volume, in gigabytes. Required if you are not creating
@@ -314,6 +316,18 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest  implements Ser
         return this;
     }
     
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<CreateVolumeRequest> getDryRunRequest() {
+        Request<CreateVolumeRequest> request = new CreateVolumeRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

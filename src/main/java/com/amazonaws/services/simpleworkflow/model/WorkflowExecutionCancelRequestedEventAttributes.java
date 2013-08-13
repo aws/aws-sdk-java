@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Provides details of the <code>WorkflowExecutionCancelRequested</code> event.
  * </p>
  */
-public class WorkflowExecutionCancelRequestedEventAttributes  implements Serializable  {
+public class WorkflowExecutionCancelRequestedEventAttributes implements Serializable {
 
     /**
      * The external workflow execution for which the cancellation was
@@ -81,6 +81,9 @@ public class WorkflowExecutionCancelRequestedEventAttributes  implements Seriali
      *
      * @param externalWorkflowExecution The external workflow execution for which the cancellation was
      *         requested.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionCancelRequestedEventAttributes withExternalWorkflowExecution(WorkflowExecution externalWorkflowExecution) {
         this.externalWorkflowExecution = externalWorkflowExecution;
@@ -154,6 +157,9 @@ public class WorkflowExecutionCancelRequestedEventAttributes  implements Seriali
      *         the history of the source workflow execution. This information can be
      *         useful for diagnosing problems by tracing back the chain of events
      *         leading up to this event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionCancelRequestedEventAttributes withExternalInitiatedEventId(Long externalInitiatedEventId) {
         this.externalInitiatedEventId = externalInitiatedEventId;
@@ -217,6 +223,9 @@ public class WorkflowExecutionCancelRequestedEventAttributes  implements Seriali
      *         the parent workflow execution times out or is terminated, and the
      *         child policy is set to cancel child executions.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see WorkflowExecutionCancelRequestedCause
      */
     public WorkflowExecutionCancelRequestedEventAttributes withCause(String cause) {
@@ -260,6 +269,9 @@ public class WorkflowExecutionCancelRequestedEventAttributes  implements Seriali
      *         was automatically generated, and specifies the cause. This happens if
      *         the parent workflow execution times out or is terminated, and the
      *         child policy is set to cancel child executions.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see WorkflowExecutionCancelRequestedCause
      */

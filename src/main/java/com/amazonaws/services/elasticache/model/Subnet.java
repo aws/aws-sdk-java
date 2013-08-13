@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Network Subnet associated with a Cache Cluster
  * </p>
  */
-public class Subnet  implements Serializable  {
+public class Subnet implements Serializable {
 
     /**
      * Specifies the unique identifier for the Subnet
@@ -56,6 +56,9 @@ public class Subnet  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnetIdentifier Specifies the unique identifier for the Subnet
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Subnet withSubnetIdentifier(String subnetIdentifier) {
         this.subnetIdentifier = subnetIdentifier;
@@ -87,6 +90,9 @@ public class Subnet  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnetAvailabilityZone Specifies the Availability Zone associated with the Subnet
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Subnet withSubnetAvailabilityZone(AvailabilityZone subnetAvailabilityZone) {
         this.subnetAvailabilityZone = subnetAvailabilityZone;

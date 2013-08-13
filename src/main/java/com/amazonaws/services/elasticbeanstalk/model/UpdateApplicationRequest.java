@@ -28,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#updateApplication(UpdateApplicationRequest)
  */
-public class UpdateApplicationRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class UpdateApplicationRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the application to update. If no such application is
@@ -117,6 +117,9 @@ public class UpdateApplicationRequest extends AmazonWebServiceRequest  implement
      * @param applicationName The name of the application to update. If no such application is
      *         found, <code>UpdateApplication</code> returns an
      *         <code>InvalidParameterValue</code> error.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateApplicationRequest withApplicationName(String applicationName) {
         this.applicationName = applicationName;
@@ -163,6 +166,9 @@ public class UpdateApplicationRequest extends AmazonWebServiceRequest  implement
      *
      * @param description A new description for the application. <p>Default: If not specified,
      *         AWS Elastic Beanstalk does not update the description.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateApplicationRequest withDescription(String description) {
         this.description = description;

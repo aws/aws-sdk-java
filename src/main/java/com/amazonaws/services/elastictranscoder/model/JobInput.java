@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Information about the file that you're transcoding.
  * </p>
  */
-public class JobInput  implements Serializable  {
+public class JobInput implements Serializable {
 
     /**
      * The name of the file to transcode. Elsewhere in the body of the JSON
@@ -173,6 +173,9 @@ public class JobInput  implements Serializable  {
      *         name includes a prefix, such as <code>cooking/lasagna.mpg</code>,
      *         include the prefix in the key. If the file isn't in the specified
      *         bucket, Elastic Transcoder returns an error.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public JobInput withKey(String key) {
         this.key = key;
@@ -255,6 +258,9 @@ public class JobInput  implements Serializable  {
      *         <code>29.97</code>, <code>30</code>, <code>60</code> <p>If you specify
      *         a value other than <code>auto</code>, Elastic Transcoder disables
      *         automatic detection of the frame rate.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public JobInput withFrameRate(String frameRate) {
         this.frameRate = frameRate;
@@ -301,6 +307,9 @@ public class JobInput  implements Serializable  {
      *
      * @param resolution This value must be <code>auto</code>, which causes Elastic Transcoder
      *         to automatically detect the resolution of the input file.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public JobInput withResolution(String resolution) {
         this.resolution = resolution;
@@ -377,6 +386,9 @@ public class JobInput  implements Serializable  {
      *         <code>4:3</code>, <code>3:2</code>, <code>16:9</code> <p> If you
      *         specify a value other than <code>auto</code>, Elastic Transcoder
      *         disables automatic detection of the aspect ratio.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public JobInput withAspectRatio(String aspectRatio) {
         this.aspectRatio = aspectRatio;
@@ -453,6 +465,9 @@ public class JobInput  implements Serializable  {
      *         <code>false</code> <p>If you specify a value other than
      *         <code>auto</code>, Elastic Transcoder disables automatic detection of
      *         interlacing.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public JobInput withInterlaced(String interlaced) {
         this.interlaced = interlaced;
@@ -541,6 +556,9 @@ public class JobInput  implements Serializable  {
      *         <code>mp4</code>, <code>mpeg</code>, <code>mpeg-ps</code>,
      *         <code>mpeg-ts</code>, <code>mxf</code>, <code>ogg</code>,
      *         <code>vob</code>, <code>wav</code>, <code>webm</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public JobInput withContainer(String container) {
         this.container = container;

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The result of describing the bundle tasks for the user's account.
  * </p>
  */
-public class DescribeBundleTasksResult  implements Serializable  {
+public class DescribeBundleTasksResult implements Serializable {
 
     /**
      * The list of described bundle tasks.

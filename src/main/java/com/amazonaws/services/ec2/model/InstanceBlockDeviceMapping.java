@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes how block devices are mapped on an Amazon EC2 instance.
  * </p>
  */
-public class InstanceBlockDeviceMapping  implements Serializable  {
+public class InstanceBlockDeviceMapping implements Serializable {
 
     /**
      * The device name (e.g., <code>/dev/sdh</code>) at which the block

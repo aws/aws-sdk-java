@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#getHostedZone(GetHostedZoneRequest)
  */
-public class GetHostedZoneRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class GetHostedZoneRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The ID of the hosted zone for which you want to get a list of the name
@@ -97,6 +97,9 @@ public class GetHostedZoneRequest extends AmazonWebServiceRequest  implements Se
      *
      * @param id The ID of the hosted zone for which you want to get a list of the name
      *         servers in the delegation set.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetHostedZoneRequest withId(String id) {
         this.id = id;

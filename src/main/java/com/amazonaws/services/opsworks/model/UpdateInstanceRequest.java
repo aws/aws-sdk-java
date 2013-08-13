@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#updateInstance(UpdateInstanceRequest)
  */
-public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The instance ID.
@@ -145,6 +145,9 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId The instance ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateInstanceRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -187,6 +190,9 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param layerIds The instance's layer IDs.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateInstanceRequest withLayerIds(String... layerIds) {
         if (getLayerIds() == null) setLayerIds(new java.util.ArrayList<String>(layerIds.length));
@@ -202,6 +208,9 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param layerIds The instance's layer IDs.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateInstanceRequest withLayerIds(java.util.Collection<String> layerIds) {
         if (layerIds == null) {
@@ -275,6 +284,9 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
      *         Families and Types</a>. The parameter values that you use to specify
      *         the various types are in the API Name column of the Available Instance
      *         Types table.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateInstanceRequest withInstanceType(String instanceType) {
         this.instanceType = instanceType;
@@ -356,6 +368,9 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
      *         auto scaling instance, which is started and stopped based on load
      *         metrics.</li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see AutoScalingType
      */
     public UpdateInstanceRequest withAutoScalingType(String autoScalingType) {
@@ -412,6 +427,9 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
      *         auto scaling instance, which is started and stopped based on load
      *         metrics.</li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see AutoScalingType
      */
     public UpdateInstanceRequest withAutoScalingType(AutoScalingType autoScalingType) {
@@ -443,6 +461,9 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param hostname The instance host name.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateInstanceRequest withHostname(String hostname) {
         this.hostname = hostname;
@@ -546,6 +567,9 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
      *         OpsWorks, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      *         Custom AMIs</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateInstanceRequest withOs(String os) {
         this.os = os;
@@ -595,6 +619,9 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
      *         based on one of the standard AWS OpsWorks APIs: Amazon Linux or Ubuntu
      *         12.04 LTS. For more information, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateInstanceRequest withAmiId(String amiId) {
         this.amiId = amiId;
@@ -626,6 +653,9 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sshKeyName The instance SSH key name.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateInstanceRequest withSshKeyName(String sshKeyName) {
         this.sshKeyName = sshKeyName;
@@ -695,6 +725,9 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      *         Families and Types</a>.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see Architecture
      */
     public UpdateInstanceRequest withArchitecture(String architecture) {
@@ -742,6 +775,9 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
      *         by the different instance types, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      *         Families and Types</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see Architecture
      */
@@ -822,6 +858,9 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
      *         <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
      *         recommend using the default value of <code>true</code>, to ensure that
      *         your instances have the latest security updates.</note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateInstanceRequest withInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
         this.installUpdatesOnBoot = installUpdatesOnBoot;

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * name, and region. This ARN is used to reference the gateway in other API operations as well as resource-based authorization.
  * </p>
  */
-public class ActivateGatewayResult  implements Serializable  {
+public class ActivateGatewayResult implements Serializable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -78,6 +78,9 @@ public class ActivateGatewayResult  implements Serializable  {
      * @param gatewayARN The Amazon Resource Name (ARN) of the gateway. Use the
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActivateGatewayResult withGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;

@@ -27,7 +27,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#deleteApplicationVersion(DeleteApplicationVersionRequest)
  */
-public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the application to delete releases from.
@@ -112,6 +112,9 @@ public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest  im
      * <b>Length: </b>1 - 100<br/>
      *
      * @param applicationName The name of the application to delete releases from.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteApplicationVersionRequest withApplicationName(String applicationName) {
         this.applicationName = applicationName;
@@ -152,6 +155,9 @@ public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest  im
      * <b>Length: </b>1 - 100<br/>
      *
      * @param versionLabel The label of the version to delete.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteApplicationVersionRequest withVersionLabel(String versionLabel) {
         this.versionLabel = versionLabel;
@@ -213,6 +219,9 @@ public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest  im
      *         </li> <li> <code>false</code>: No action is taken on the Amazon S3
      *         source bundle specified at time of creation. </li> </ul> <p> Valid
      *         Values: <code>true</code> | <code>false</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteApplicationVersionRequest withDeleteSourceBundle(Boolean deleteSourceBundle) {
         this.deleteSourceBundle = deleteSourceBundle;

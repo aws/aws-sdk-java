@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.cloudfront.AmazonCloudFront#listDistributions(ListDistributionsRequest)
  */
-public class ListDistributionsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ListDistributionsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Use this when paginating results to indicate where to begin in your
@@ -94,6 +94,9 @@ public class ListDistributionsRequest extends AmazonWebServiceRequest  implement
      *         that occur after the marker. To get the next page of results, set the
      *         Marker to the value of the NextMarker from the current page's response
      *         (which is also the ID of the last distribution on that page).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListDistributionsRequest withMarker(String marker) {
         this.marker = marker;
@@ -125,6 +128,9 @@ public class ListDistributionsRequest extends AmazonWebServiceRequest  implement
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxItems The maximum number of distributions you want in the response body.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListDistributionsRequest withMaxItems(String maxItems) {
         this.maxItems = maxItems;

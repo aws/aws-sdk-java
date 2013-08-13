@@ -14,210 +14,348 @@
  */
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
-import java.util.HashMap;
-import java.util.List;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.OutputStreamWriter;
+import java.io.StringWriter;
+import java.io.Writer;
 import java.util.Map;
+import java.util.List;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
+import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
+import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.StringInputStream;
+import com.amazonaws.util.json.*;
 
 /**
  * Run Job Flow Request Marshaller
  */
 public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlowRequest>, RunJobFlowRequest> {
 
-    public Request<RunJobFlowRequest> marshall(RunJobFlowRequest runJobFlowRequest) {
+    
 
-        if (runJobFlowRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+    public Request<RunJobFlowRequest> marshall(RunJobFlowRequest runJobFlowRequest) {
+    if (runJobFlowRequest == null) {
+        throw new AmazonClientException("Invalid argument passed to marshall(...)");
+    }
 
         Request<RunJobFlowRequest> request = new DefaultRequest<RunJobFlowRequest>(runJobFlowRequest, "AmazonElasticMapReduce");
-        request.addParameter("Action", "RunJobFlow");
-        request.addParameter("Version", "2009-03-31");
+        String target = "ElasticMapReduce.RunJobFlow";
+        request.addHeader("X-Amz-Target", target);
+        request.addHeader("Content-Type", "application/x-amz-json-1.1");
 
-        if (runJobFlowRequest.getName() != null) {
-            request.addParameter("Name", StringUtils.fromString(runJobFlowRequest.getName()));
-        }
-        if (runJobFlowRequest.getLogUri() != null) {
-            request.addParameter("LogUri", StringUtils.fromString(runJobFlowRequest.getLogUri()));
-        }
-        if (runJobFlowRequest.getAdditionalInfo() != null) {
-            request.addParameter("AdditionalInfo", StringUtils.fromString(runJobFlowRequest.getAdditionalInfo()));
-        }
-        if (runJobFlowRequest.getAmiVersion() != null) {
-            request.addParameter("AmiVersion", StringUtils.fromString(runJobFlowRequest.getAmiVersion()));
-        }
-        JobFlowInstancesConfig jobFlowInstancesConfigInstances = runJobFlowRequest.getInstances();
-        if (jobFlowInstancesConfigInstances != null) {
-            if (jobFlowInstancesConfigInstances.getMasterInstanceType() != null) {
-                request.addParameter("Instances.MasterInstanceType", StringUtils.fromString(jobFlowInstancesConfigInstances.getMasterInstanceType()));
-            }
-            if (jobFlowInstancesConfigInstances.getSlaveInstanceType() != null) {
-                request.addParameter("Instances.SlaveInstanceType", StringUtils.fromString(jobFlowInstancesConfigInstances.getSlaveInstanceType()));
-            }
-            if (jobFlowInstancesConfigInstances.getInstanceCount() != null) {
-                request.addParameter("Instances.InstanceCount", StringUtils.fromInteger(jobFlowInstancesConfigInstances.getInstanceCount()));
-            }
+        
+        request.setHttpMethod(HttpMethodName.POST);
 
-            java.util.List<InstanceGroupConfig> instanceGroupsList = jobFlowInstancesConfigInstances.getInstanceGroups();
-            int instanceGroupsListIndex = 1;
 
-            for (InstanceGroupConfig instanceGroupsListValue : instanceGroupsList) {
-                InstanceGroupConfig instanceGroupConfigMember = instanceGroupsListValue;
-                if (instanceGroupConfigMember != null) {
-                    if (instanceGroupConfigMember.getName() != null) {
-                        request.addParameter("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".Name", StringUtils.fromString(instanceGroupConfigMember.getName()));
-                    }
-                    if (instanceGroupConfigMember.getMarket() != null) {
-                        request.addParameter("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".Market", StringUtils.fromString(instanceGroupConfigMember.getMarket()));
-                    }
-                    if (instanceGroupConfigMember.getInstanceRole() != null) {
-                        request.addParameter("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".InstanceRole", StringUtils.fromString(instanceGroupConfigMember.getInstanceRole()));
-                    }
-                    if (instanceGroupConfigMember.getBidPrice() != null) {
-                        request.addParameter("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".BidPrice", StringUtils.fromString(instanceGroupConfigMember.getBidPrice()));
-                    }
-                    if (instanceGroupConfigMember.getInstanceType() != null) {
-                        request.addParameter("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".InstanceType", StringUtils.fromString(instanceGroupConfigMember.getInstanceType()));
-                    }
-                    if (instanceGroupConfigMember.getInstanceCount() != null) {
-                        request.addParameter("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".InstanceCount", StringUtils.fromInteger(instanceGroupConfigMember.getInstanceCount()));
-                    }
-                }
+        String uriResourcePath = ""; 
 
-                instanceGroupsListIndex++;
-            }
-            if (jobFlowInstancesConfigInstances.getEc2KeyName() != null) {
-                request.addParameter("Instances.Ec2KeyName", StringUtils.fromString(jobFlowInstancesConfigInstances.getEc2KeyName()));
-            }
-            PlacementType placementTypePlacement = jobFlowInstancesConfigInstances.getPlacement();
-            if (placementTypePlacement != null) {
-                if (placementTypePlacement.getAvailabilityZone() != null) {
-                    request.addParameter("Instances.Placement.AvailabilityZone", StringUtils.fromString(placementTypePlacement.getAvailabilityZone()));
+        uriResourcePath = uriResourcePath.replaceAll("//", "/");
+
+        if (uriResourcePath.contains("?")) {
+            String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
+            uriResourcePath    = uriResourcePath.substring(0, uriResourcePath.indexOf("?"));
+
+            for (String s : queryString.split("[;&]")) {
+                String[] nameValuePair = s.split("=");
+                if (nameValuePair.length == 2) {
+                    request.addParameter(nameValuePair[0], nameValuePair[1]);
+                } else {
+                    request.addParameter(s, null);
                 }
             }
-            if (jobFlowInstancesConfigInstances.isKeepJobFlowAliveWhenNoSteps() != null) {
-                request.addParameter("Instances.KeepJobFlowAliveWhenNoSteps", StringUtils.fromBoolean(jobFlowInstancesConfigInstances.isKeepJobFlowAliveWhenNoSteps()));
-            }
-            if (jobFlowInstancesConfigInstances.isTerminationProtected() != null) {
-                request.addParameter("Instances.TerminationProtected", StringUtils.fromBoolean(jobFlowInstancesConfigInstances.isTerminationProtected()));
-            }
-            if (jobFlowInstancesConfigInstances.getHadoopVersion() != null) {
-                request.addParameter("Instances.HadoopVersion", StringUtils.fromString(jobFlowInstancesConfigInstances.getHadoopVersion()));
-            }
-            if (jobFlowInstancesConfigInstances.getEc2SubnetId() != null) {
-                request.addParameter("Instances.Ec2SubnetId", StringUtils.fromString(jobFlowInstancesConfigInstances.getEc2SubnetId()));
-            }
         }
 
-        java.util.List<StepConfig> stepsList = runJobFlowRequest.getSteps();
-        int stepsListIndex = 1;
+        request.setResourcePath(uriResourcePath);
 
-        for (StepConfig stepsListValue : stepsList) {
-            StepConfig stepConfigMember = stepsListValue;
-            if (stepConfigMember != null) {
-                if (stepConfigMember.getName() != null) {
-                    request.addParameter("Steps.member." + stepsListIndex + ".Name", StringUtils.fromString(stepConfigMember.getName()));
+
+        
+        try {
+          StringWriter stringWriter = new StringWriter();
+          JSONWriter jsonWriter = new JSONWriter(stringWriter);
+
+          
+            
+          jsonWriter.object();
+          
+            if (runJobFlowRequest.getName() != null) {
+                jsonWriter.key("Name").value(runJobFlowRequest.getName());
+            }
+            if (runJobFlowRequest.getLogUri() != null) {
+                jsonWriter.key("LogUri").value(runJobFlowRequest.getLogUri());
+            }
+            if (runJobFlowRequest.getAdditionalInfo() != null) {
+                jsonWriter.key("AdditionalInfo").value(runJobFlowRequest.getAdditionalInfo());
+            }
+            if (runJobFlowRequest.getAmiVersion() != null) {
+                jsonWriter.key("AmiVersion").value(runJobFlowRequest.getAmiVersion());
+            }
+            JobFlowInstancesConfig instances = runJobFlowRequest.getInstances();
+            if (instances != null) {
+
+                jsonWriter.key("Instances");
+                jsonWriter.object();
+
+                if (instances.getMasterInstanceType() != null) {
+                    jsonWriter.key("MasterInstanceType").value(instances.getMasterInstanceType());
                 }
-                if (stepConfigMember.getActionOnFailure() != null) {
-                    request.addParameter("Steps.member." + stepsListIndex + ".ActionOnFailure", StringUtils.fromString(stepConfigMember.getActionOnFailure()));
+                if (instances.getSlaveInstanceType() != null) {
+                    jsonWriter.key("SlaveInstanceType").value(instances.getSlaveInstanceType());
                 }
-                HadoopJarStepConfig hadoopJarStepConfigHadoopJarStep = stepConfigMember.getHadoopJarStep();
-                if (hadoopJarStepConfigHadoopJarStep != null) {
+                if (instances.getInstanceCount() != null) {
+                    jsonWriter.key("InstanceCount").value(instances.getInstanceCount());
+                }
 
-                    java.util.List<KeyValue> propertiesList = hadoopJarStepConfigHadoopJarStep.getProperties();
-                    int propertiesListIndex = 1;
+                com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupConfig> instanceGroupsList = (com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupConfig>)(instances.getInstanceGroups());
+                if (instanceGroupsList != null && !(instanceGroupsList.isAutoConstruct() && instanceGroupsList.isEmpty())) {
 
-                    for (KeyValue propertiesListValue : propertiesList) {
-                        KeyValue keyValueMember = propertiesListValue;
-                        if (keyValueMember != null) {
-                            if (keyValueMember.getKey() != null) {
-                                request.addParameter("Steps.member." + stepsListIndex + ".HadoopJarStep.Properties.member." + propertiesListIndex + ".Key", StringUtils.fromString(keyValueMember.getKey()));
+                    jsonWriter.key("InstanceGroups");
+                    jsonWriter.array();
+
+                    for (InstanceGroupConfig instanceGroupsListValue : instanceGroupsList) {
+                        if (instanceGroupsListValue != null) {
+                            jsonWriter.object();
+                            if (instanceGroupsListValue.getName() != null) {
+                                jsonWriter.key("Name").value(instanceGroupsListValue.getName());
                             }
-                            if (keyValueMember.getValue() != null) {
-                                request.addParameter("Steps.member." + stepsListIndex + ".HadoopJarStep.Properties.member." + propertiesListIndex + ".Value", StringUtils.fromString(keyValueMember.getValue()));
+                            if (instanceGroupsListValue.getMarket() != null) {
+                                jsonWriter.key("Market").value(instanceGroupsListValue.getMarket());
                             }
+                            if (instanceGroupsListValue.getInstanceRole() != null) {
+                                jsonWriter.key("InstanceRole").value(instanceGroupsListValue.getInstanceRole());
+                            }
+                            if (instanceGroupsListValue.getBidPrice() != null) {
+                                jsonWriter.key("BidPrice").value(instanceGroupsListValue.getBidPrice());
+                            }
+                            if (instanceGroupsListValue.getInstanceType() != null) {
+                                jsonWriter.key("InstanceType").value(instanceGroupsListValue.getInstanceType());
+                            }
+                            if (instanceGroupsListValue.getInstanceCount() != null) {
+                                jsonWriter.key("InstanceCount").value(instanceGroupsListValue.getInstanceCount());
+                            }
+                            jsonWriter.endObject();
                         }
-
-                        propertiesListIndex++;
                     }
-                    if (hadoopJarStepConfigHadoopJarStep.getJar() != null) {
-                        request.addParameter("Steps.member." + stepsListIndex + ".HadoopJarStep.Jar", StringUtils.fromString(hadoopJarStepConfigHadoopJarStep.getJar()));
-                    }
-                    if (hadoopJarStepConfigHadoopJarStep.getMainClass() != null) {
-                        request.addParameter("Steps.member." + stepsListIndex + ".HadoopJarStep.MainClass", StringUtils.fromString(hadoopJarStepConfigHadoopJarStep.getMainClass()));
-                    }
-
-                    java.util.List<String> argsList = hadoopJarStepConfigHadoopJarStep.getArgs();
-                    int argsListIndex = 1;
-
-                    for (String argsListValue : argsList) {
-                        if (argsListValue != null) {
-                            request.addParameter("Steps.member." + stepsListIndex + ".HadoopJarStep.Args.member." + argsListIndex, StringUtils.fromString(argsListValue));
-                        }
-
-                        argsListIndex++;
-                    }
+                    jsonWriter.endArray();
                 }
+                if (instances.getEc2KeyName() != null) {
+                    jsonWriter.key("Ec2KeyName").value(instances.getEc2KeyName());
+                }
+                PlacementType placement = instances.getPlacement();
+                if (placement != null) {
+
+                    jsonWriter.key("Placement");
+                    jsonWriter.object();
+
+                    if (placement.getAvailabilityZone() != null) {
+                        jsonWriter.key("AvailabilityZone").value(placement.getAvailabilityZone());
+                    }
+                    jsonWriter.endObject();
+                }
+                if (instances.isKeepJobFlowAliveWhenNoSteps() != null) {
+                    jsonWriter.key("KeepJobFlowAliveWhenNoSteps").value(instances.isKeepJobFlowAliveWhenNoSteps());
+                }
+                if (instances.isTerminationProtected() != null) {
+                    jsonWriter.key("TerminationProtected").value(instances.isTerminationProtected());
+                }
+                if (instances.getHadoopVersion() != null) {
+                    jsonWriter.key("HadoopVersion").value(instances.getHadoopVersion());
+                }
+                if (instances.getEc2SubnetId() != null) {
+                    jsonWriter.key("Ec2SubnetId").value(instances.getEc2SubnetId());
+                }
+                jsonWriter.endObject();
             }
 
-            stepsListIndex++;
-        }
+            com.amazonaws.internal.ListWithAutoConstructFlag<StepConfig> stepsList = (com.amazonaws.internal.ListWithAutoConstructFlag<StepConfig>)(runJobFlowRequest.getSteps());
+            if (stepsList != null && !(stepsList.isAutoConstruct() && stepsList.isEmpty())) {
 
-        java.util.List<BootstrapActionConfig> bootstrapActionsList = runJobFlowRequest.getBootstrapActions();
-        int bootstrapActionsListIndex = 1;
+                jsonWriter.key("Steps");
+                jsonWriter.array();
 
-        for (BootstrapActionConfig bootstrapActionsListValue : bootstrapActionsList) {
-            BootstrapActionConfig bootstrapActionConfigMember = bootstrapActionsListValue;
-            if (bootstrapActionConfigMember != null) {
-                if (bootstrapActionConfigMember.getName() != null) {
-                    request.addParameter("BootstrapActions.member." + bootstrapActionsListIndex + ".Name", StringUtils.fromString(bootstrapActionConfigMember.getName()));
-                }
-                ScriptBootstrapActionConfig scriptBootstrapActionConfigScriptBootstrapAction = bootstrapActionConfigMember.getScriptBootstrapAction();
-                if (scriptBootstrapActionConfigScriptBootstrapAction != null) {
-                    if (scriptBootstrapActionConfigScriptBootstrapAction.getPath() != null) {
-                        request.addParameter("BootstrapActions.member." + bootstrapActionsListIndex + ".ScriptBootstrapAction.Path", StringUtils.fromString(scriptBootstrapActionConfigScriptBootstrapAction.getPath()));
+                for (StepConfig stepsListValue : stepsList) {
+                    if (stepsListValue != null) {
+                        jsonWriter.object();
+                        if (stepsListValue.getName() != null) {
+                            jsonWriter.key("Name").value(stepsListValue.getName());
+                        }
+                        if (stepsListValue.getActionOnFailure() != null) {
+                            jsonWriter.key("ActionOnFailure").value(stepsListValue.getActionOnFailure());
+                        }
+                        HadoopJarStepConfig hadoopJarStep = stepsListValue.getHadoopJarStep();
+                        if (hadoopJarStep != null) {
+
+                            jsonWriter.key("HadoopJarStep");
+                            jsonWriter.object();
+
+
+                            com.amazonaws.internal.ListWithAutoConstructFlag<KeyValue> propertiesList = (com.amazonaws.internal.ListWithAutoConstructFlag<KeyValue>)(hadoopJarStep.getProperties());
+                            if (propertiesList != null && !(propertiesList.isAutoConstruct() && propertiesList.isEmpty())) {
+
+                                jsonWriter.key("Properties");
+                                jsonWriter.array();
+
+                                for (KeyValue propertiesListValue : propertiesList) {
+                                    if (propertiesListValue != null) {
+                                        jsonWriter.object();
+                                        if (propertiesListValue.getKey() != null) {
+                                            jsonWriter.key("Key").value(propertiesListValue.getKey());
+                                        }
+                                        if (propertiesListValue.getValue() != null) {
+                                            jsonWriter.key("Value").value(propertiesListValue.getValue());
+                                        }
+                                        jsonWriter.endObject();
+                                    }
+                                }
+                                jsonWriter.endArray();
+                            }
+                            if (hadoopJarStep.getJar() != null) {
+                                jsonWriter.key("Jar").value(hadoopJarStep.getJar());
+                            }
+                            if (hadoopJarStep.getMainClass() != null) {
+                                jsonWriter.key("MainClass").value(hadoopJarStep.getMainClass());
+                            }
+
+                            com.amazonaws.internal.ListWithAutoConstructFlag<String> argsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(hadoopJarStep.getArgs());
+                            if (argsList != null && !(argsList.isAutoConstruct() && argsList.isEmpty())) {
+
+                                jsonWriter.key("Args");
+                                jsonWriter.array();
+
+                                for (String argsListValue : argsList) {
+                                    if (argsListValue != null) {
+                                        jsonWriter.value(argsListValue);
+                                    }
+                                }
+                                jsonWriter.endArray();
+                            }
+                            jsonWriter.endObject();
+                        }
+                        jsonWriter.endObject();
                     }
+                }
+                jsonWriter.endArray();
+            }
 
-                    java.util.List<String> argsList = scriptBootstrapActionConfigScriptBootstrapAction.getArgs();
-                    int argsListIndex = 1;
+            com.amazonaws.internal.ListWithAutoConstructFlag<BootstrapActionConfig> bootstrapActionsList = (com.amazonaws.internal.ListWithAutoConstructFlag<BootstrapActionConfig>)(runJobFlowRequest.getBootstrapActions());
+            if (bootstrapActionsList != null && !(bootstrapActionsList.isAutoConstruct() && bootstrapActionsList.isEmpty())) {
 
-                    for (String argsListValue : argsList) {
-                        if (argsListValue != null) {
-                            request.addParameter("BootstrapActions.member." + bootstrapActionsListIndex + ".ScriptBootstrapAction.Args.member." + argsListIndex, StringUtils.fromString(argsListValue));
+                jsonWriter.key("BootstrapActions");
+                jsonWriter.array();
+
+                for (BootstrapActionConfig bootstrapActionsListValue : bootstrapActionsList) {
+                    if (bootstrapActionsListValue != null) {
+                        jsonWriter.object();
+                        if (bootstrapActionsListValue.getName() != null) {
+                            jsonWriter.key("Name").value(bootstrapActionsListValue.getName());
+                        }
+                        ScriptBootstrapActionConfig scriptBootstrapAction = bootstrapActionsListValue.getScriptBootstrapAction();
+                        if (scriptBootstrapAction != null) {
+
+                            jsonWriter.key("ScriptBootstrapAction");
+                            jsonWriter.object();
+
+                            if (scriptBootstrapAction.getPath() != null) {
+                                jsonWriter.key("Path").value(scriptBootstrapAction.getPath());
+                            }
+
+                            com.amazonaws.internal.ListWithAutoConstructFlag<String> argsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(scriptBootstrapAction.getArgs());
+                            if (argsList != null && !(argsList.isAutoConstruct() && argsList.isEmpty())) {
+
+                                jsonWriter.key("Args");
+                                jsonWriter.array();
+
+                                for (String argsListValue : argsList) {
+                                    if (argsListValue != null) {
+                                        jsonWriter.value(argsListValue);
+                                    }
+                                }
+                                jsonWriter.endArray();
+                            }
+                            jsonWriter.endObject();
+                        }
+                        jsonWriter.endObject();
+                    }
+                }
+                jsonWriter.endArray();
+            }
+
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> supportedProductsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(runJobFlowRequest.getSupportedProducts());
+            if (supportedProductsList != null && !(supportedProductsList.isAutoConstruct() && supportedProductsList.isEmpty())) {
+
+                jsonWriter.key("SupportedProducts");
+                jsonWriter.array();
+
+                for (String supportedProductsListValue : supportedProductsList) {
+                    if (supportedProductsListValue != null) {
+                        jsonWriter.value(supportedProductsListValue);
+                    }
+                }
+                jsonWriter.endArray();
+            }
+
+            com.amazonaws.internal.ListWithAutoConstructFlag<SupportedProductConfig> newSupportedProductsList = (com.amazonaws.internal.ListWithAutoConstructFlag<SupportedProductConfig>)(runJobFlowRequest.getNewSupportedProducts());
+            if (newSupportedProductsList != null && !(newSupportedProductsList.isAutoConstruct() && newSupportedProductsList.isEmpty())) {
+
+                jsonWriter.key("NewSupportedProducts");
+                jsonWriter.array();
+
+                for (SupportedProductConfig newSupportedProductsListValue : newSupportedProductsList) {
+                    if (newSupportedProductsListValue != null) {
+                        jsonWriter.object();
+                        if (newSupportedProductsListValue.getName() != null) {
+                            jsonWriter.key("Name").value(newSupportedProductsListValue.getName());
                         }
 
-                        argsListIndex++;
+                        com.amazonaws.internal.ListWithAutoConstructFlag<String> argsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(newSupportedProductsListValue.getArgs());
+                        if (argsList != null && !(argsList.isAutoConstruct() && argsList.isEmpty())) {
+
+                            jsonWriter.key("Args");
+                            jsonWriter.array();
+
+                            for (String argsListValue : argsList) {
+                                if (argsListValue != null) {
+                                    jsonWriter.value(argsListValue);
+                                }
+                            }
+                            jsonWriter.endArray();
+                        }
+                        jsonWriter.endObject();
                     }
                 }
+                jsonWriter.endArray();
+            }
+            if (runJobFlowRequest.isVisibleToAllUsers() != null) {
+                jsonWriter.key("VisibleToAllUsers").value(runJobFlowRequest.isVisibleToAllUsers());
+            }
+            if (runJobFlowRequest.getJobFlowRole() != null) {
+                jsonWriter.key("JobFlowRole").value(runJobFlowRequest.getJobFlowRole());
             }
 
-            bootstrapActionsListIndex++;
-        }
+          jsonWriter.endObject();
+          
 
-        java.util.List<String> supportedProductsList = runJobFlowRequest.getSupportedProducts();
-        int supportedProductsListIndex = 1;
-
-        for (String supportedProductsListValue : supportedProductsList) {
-            if (supportedProductsListValue != null) {
-                request.addParameter("SupportedProducts.member." + supportedProductsListIndex, StringUtils.fromString(supportedProductsListValue));
-            }
-
-            supportedProductsListIndex++;
+          String snippet = stringWriter.toString();
+          byte[] content = snippet.getBytes("UTF-8");
+          request.setContent(new StringInputStream(snippet));
+          request.addHeader("Content-Length", Integer.toString(content.length));
+        } catch(Throwable t) {
+          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
-        if (runJobFlowRequest.isVisibleToAllUsers() != null) {
-            request.addParameter("VisibleToAllUsers", StringUtils.fromBoolean(runJobFlowRequest.isVisibleToAllUsers()));
-        }
-        if (runJobFlowRequest.getJobFlowRole() != null) {
-            request.addParameter("JobFlowRole", StringUtils.fromString(runJobFlowRequest.getJobFlowRole()));
-        }
-
+        
 
         return request;
+    }
+
+    private String getString(String s) {
+        if (s == null) return "";
+        return s;
     }
 }

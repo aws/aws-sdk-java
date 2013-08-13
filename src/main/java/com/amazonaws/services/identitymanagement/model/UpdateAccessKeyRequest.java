@@ -34,7 +34,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateAccessKey(UpdateAccessKeyRequest)
  */
-public class UpdateAccessKeyRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the user whose key you want to update.
@@ -142,6 +142,9 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest  implements 
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param userName Name of the user whose key you want to update.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateAccessKeyRequest withUserName(String userName) {
         this.userName = userName;
@@ -185,6 +188,9 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest  implements 
      * <b>Pattern: </b>[\w]*<br/>
      *
      * @param accessKeyId The Access Key ID of the Secret Access Key you want to update.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateAccessKeyRequest withAccessKeyId(String accessKeyId) {
         this.accessKeyId = accessKeyId;
@@ -242,6 +248,9 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest  implements 
      *         <code>Active</code> means the key can be used for API calls to AWS,
      *         while <code>Inactive</code> means the key cannot be used.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see StatusType
      */
     public UpdateAccessKeyRequest withStatus(String status) {
@@ -281,6 +290,9 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest  implements 
      * @param status The status you want to assign to the Secret Access Key.
      *         <code>Active</code> means the key can be used for API calls to AWS,
      *         while <code>Inactive</code> means the key cannot be used.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see StatusType
      */

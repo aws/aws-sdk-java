@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The result of calling the StartInstances operation. Contains details on how the specified instances are changing state.
  * </p>
  */
-public class StartInstancesResult  implements Serializable  {
+public class StartInstancesResult implements Serializable {
 
     /**
      * The list of the starting instances and details on how their state has

@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.RegisterImageRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -33,7 +35,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#registerImage(RegisterImageRequest)
  */
-public class RegisterImageRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class RegisterImageRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<RegisterImageRequest> {
 
     /**
      * The full path to your AMI manifest in Amazon S3 storage.
@@ -469,6 +471,18 @@ public class RegisterImageRequest extends AmazonWebServiceRequest  implements Se
         }
 
         return this;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<RegisterImageRequest> getDryRunRequest() {
+        Request<RegisterImageRequest> request = new RegisterImageRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The result of describing an account's available Elastic IPs.
  * </p>
  */
-public class DescribeAddressesResult  implements Serializable  {
+public class DescribeAddressesResult implements Serializable {
 
     /**
      * The list of Elastic IPs.

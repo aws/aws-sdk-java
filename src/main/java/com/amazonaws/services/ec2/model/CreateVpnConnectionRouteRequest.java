@@ -22,7 +22,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createVpnConnectionRoute(CreateVpnConnectionRouteRequest)
  */
-public class CreateVpnConnectionRouteRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateVpnConnectionRouteRequest extends AmazonWebServiceRequest implements Serializable {
 
     private String vpnConnectionId;
 

@@ -22,7 +22,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#assignPrivateIpAddresses(AssignPrivateIpAddressesRequest)
  */
-public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest implements Serializable {
 
     private String networkInterfaceId;
 

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Provides details of the <code>ActivityTaskFailed</code> event.
  * </p>
  */
-public class ActivityTaskFailedEventAttributes  implements Serializable  {
+public class ActivityTaskFailedEventAttributes implements Serializable {
 
     /**
      * The reason provided for the failure (if any).
@@ -87,6 +87,9 @@ public class ActivityTaskFailedEventAttributes  implements Serializable  {
      * <b>Length: </b>0 - 256<br/>
      *
      * @param reason The reason provided for the failure (if any).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActivityTaskFailedEventAttributes withReason(String reason) {
         this.reason = reason;
@@ -127,6 +130,9 @@ public class ActivityTaskFailedEventAttributes  implements Serializable  {
      * <b>Length: </b>0 - 32768<br/>
      *
      * @param details The details of the failure (if any).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActivityTaskFailedEventAttributes withDetails(String details) {
         this.details = details;
@@ -176,6 +182,9 @@ public class ActivityTaskFailedEventAttributes  implements Serializable  {
      *         recorded when this activity task was scheduled. This information can
      *         be useful for diagnosing problems by tracing back the chain of events
      *         leading up to this event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActivityTaskFailedEventAttributes withScheduledEventId(Long scheduledEventId) {
         this.scheduledEventId = scheduledEventId;
@@ -225,6 +234,9 @@ public class ActivityTaskFailedEventAttributes  implements Serializable  {
      *         this activity task was started. This information can be useful for
      *         diagnosing problems by tracing back the chain of events leading up to
      *         this event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActivityTaskFailedEventAttributes withStartedEventId(Long startedEventId) {
         this.startedEventId = startedEventId;

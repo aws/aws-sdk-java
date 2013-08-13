@@ -149,7 +149,7 @@ public interface AmazonRedshift {
      * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      */
     public void setRegion(Region region) throws java.lang.IllegalArgumentException;
-	
+    
     /**
      * <p>
      * Removes the ability of the specified AWS customer account to restore

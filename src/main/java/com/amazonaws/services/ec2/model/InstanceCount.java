@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Instance Count
  */
-public class InstanceCount  implements Serializable  {
+public class InstanceCount implements Serializable {
 
     private String state;
 

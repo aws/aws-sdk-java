@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The <code>AutoScalingGroupsType</code> data type.
  * </p>
  */
-public class DescribeAutoScalingGroupsResult  implements Serializable  {
+public class DescribeAutoScalingGroupsResult implements Serializable {
 
     /**
      * A list of Auto Scaling groups.
@@ -70,6 +70,9 @@ public class DescribeAutoScalingGroupsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param autoScalingGroups A list of Auto Scaling groups.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeAutoScalingGroupsResult withAutoScalingGroups(AutoScalingGroup... autoScalingGroups) {
         if (getAutoScalingGroups() == null) setAutoScalingGroups(new java.util.ArrayList<AutoScalingGroup>(autoScalingGroups.length));
@@ -85,6 +88,9 @@ public class DescribeAutoScalingGroupsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param autoScalingGroups A list of Auto Scaling groups.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeAutoScalingGroupsResult withAutoScalingGroups(java.util.Collection<AutoScalingGroup> autoScalingGroups) {
         if (autoScalingGroups == null) {
@@ -131,6 +137,9 @@ public class DescribeAutoScalingGroupsResult  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param nextToken A string that marks the start of the next batch of returned results.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeAutoScalingGroupsResult withNextToken(String nextToken) {
         this.nextToken = nextToken;

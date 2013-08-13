@@ -22,7 +22,7 @@ import java.io.Serializable;
  * For example: "oldestDate": 1325376070.
  * </p>
  */
-public class ExecutionTimeFilter  implements Serializable  {
+public class ExecutionTimeFilter implements Serializable {
 
     /**
      * Specifies the oldest start or close date and time to return.
@@ -58,6 +58,9 @@ public class ExecutionTimeFilter  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param oldestDate Specifies the oldest start or close date and time to return.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ExecutionTimeFilter withOldestDate(java.util.Date oldestDate) {
         this.oldestDate = oldestDate;
@@ -89,6 +92,9 @@ public class ExecutionTimeFilter  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param latestDate Specifies the latest start or close date and time to return.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ExecutionTimeFilter withLatestDate(java.util.Date latestDate) {
         this.latestDate = latestDate;

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Result message wrapping a single description of an application version.
  * </p>
  */
-public class UpdateApplicationVersionResult  implements Serializable  {
+public class UpdateApplicationVersionResult implements Serializable {
 
     /**
      * The <a>ApplicationVersionDescription</a> of the application version.
@@ -51,6 +51,9 @@ public class UpdateApplicationVersionResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param applicationVersion The <a>ApplicationVersionDescription</a> of the application version.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateApplicationVersionResult withApplicationVersion(ApplicationVersionDescription applicationVersion) {
         this.applicationVersion = applicationVersion;

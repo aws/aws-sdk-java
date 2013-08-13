@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Describe Volume Status Result
  */
-public class DescribeVolumeStatusResult  implements Serializable  {
+public class DescribeVolumeStatusResult implements Serializable {
 
     private com.amazonaws.internal.ListWithAutoConstructFlag<VolumeStatusItem> volumeStatuses;
 

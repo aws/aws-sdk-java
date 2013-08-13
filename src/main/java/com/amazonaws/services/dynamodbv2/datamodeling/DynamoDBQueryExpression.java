@@ -137,6 +137,9 @@ public class DynamoDBQueryExpression <T> {
     /**
      * Sets the hash key value(s) for this query. All hash key attributes for
      * the table must be specified with this key object.
+     * 
+     * Note 1: Currently the DynamoDBMapper supports only one value per hash key.
+     * Note 2: Currently the Amazon DynamoDB supports only one hash key per table.   
      */
     public void setHashKeyValues(T hashKeyValues) {
         this.hashKeyValues = hashKeyValues;

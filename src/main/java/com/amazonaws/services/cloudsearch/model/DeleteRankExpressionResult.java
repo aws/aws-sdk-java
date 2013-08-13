@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A response message that contains the status of a deleted <code>RankExpression</code> .
  * </p>
  */
-public class DeleteRankExpressionResult  implements Serializable  {
+public class DeleteRankExpressionResult implements Serializable {
 
     /**
      * The value of a <code>RankExpression</code> and its current status.
@@ -51,6 +51,9 @@ public class DeleteRankExpressionResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param rankExpression The value of a <code>RankExpression</code> and its current status.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteRankExpressionResult withRankExpression(RankExpressionStatus rankExpression) {
         this.rankExpression = rankExpression;

@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.CreateSubnetRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -32,7 +34,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createSubnet(CreateSubnetRequest)
  */
-public class CreateSubnetRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateSubnetRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateSubnetRequest> {
 
     /**
      * The ID of the VPC to create the subnet in.
@@ -173,6 +175,18 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest  implements Ser
         return this;
     }
     
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<CreateSubnetRequest> getDryRunRequest() {
+        Request<CreateSubnetRequest> request = new CreateSubnetRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

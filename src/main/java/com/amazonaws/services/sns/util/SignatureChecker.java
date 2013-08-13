@@ -40,7 +40,7 @@ public class SignatureChecker {
 
     private final String NOTIFICATION_TYPE = "Notification";
     private final String SUBSCRIBE_TYPE = "SubscriptionConfirmation";
-    private final String UNSUBSCRIBE_TYPE = "UnsubscriptionConfirmation";
+    private final String UNSUBSCRIBE_TYPE = "UnsubscribeConfirmation";
 
     private final String TYPE = "Type";
     private final String SUBSCRIBE_URL = "SubscribeURL";
@@ -69,6 +69,7 @@ public class SignatureChecker {
      */
     public boolean verifyMessageSignature(String message, PublicKey publicKey) {
         boolean valid = false;
+        
         // extract the type and signature parameters
         Map<String, String> parsed = parseJSON(message);
         String version = parsed.get(SIGNATURE_VERSION);
@@ -95,9 +96,12 @@ public class SignatureChecker {
      * Does the actual Java cryptographic verification of the signature. This
      * method does no handling of the many rare exceptions it is required to
      * catch.
+     * 
+     * This can also be used to verify the signature from the x-amz-sns-signature http header 
      *
      * @param message
-     *            Exact string that was signed
+     *            Exact string that was signed.  In the case of the x-amz-sns-signature header the
+     *            signing string is the entire post body
      * @param signature
      *            Base64-encoded signature of the message
      * @return
@@ -141,7 +145,22 @@ public class SignatureChecker {
             while (parser.nextToken() != JsonToken.END_OBJECT) {
                 String fieldname = parser.getCurrentName();
                 parser.nextToken(); // move to value, or START_OBJECT/START_ARRAY
-                String value = parser.getText();
+                String value;
+                if (parser.getCurrentToken() == JsonToken.START_ARRAY)
+                {
+                    value = "";
+                    boolean first = true;
+                    while (parser.nextToken() != JsonToken.END_ARRAY)
+                    {
+                        if (!first) value += ",";
+                        first = false;
+                        value += parser.getText();
+                    }
+                }
+                else
+                {
+                    value = parser.getText();
+                }
                 parsed.put(fieldname, value);
             }
         } catch (JsonParseException e) {

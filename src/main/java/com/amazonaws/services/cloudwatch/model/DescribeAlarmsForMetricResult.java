@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The output for the DescribeAlarmsForMetric action.
  * </p>
  */
-public class DescribeAlarmsForMetricResult  implements Serializable  {
+public class DescribeAlarmsForMetricResult implements Serializable {
 
     /**
      * A list of information for each alarm with the specified metric.
@@ -62,6 +62,9 @@ public class DescribeAlarmsForMetricResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param metricAlarms A list of information for each alarm with the specified metric.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeAlarmsForMetricResult withMetricAlarms(MetricAlarm... metricAlarms) {
         if (getMetricAlarms() == null) setMetricAlarms(new java.util.ArrayList<MetricAlarm>(metricAlarms.length));
@@ -77,6 +80,9 @@ public class DescribeAlarmsForMetricResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param metricAlarms A list of information for each alarm with the specified metric.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeAlarmsForMetricResult withMetricAlarms(java.util.Collection<MetricAlarm> metricAlarms) {
         if (metricAlarms == null) {

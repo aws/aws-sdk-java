@@ -43,6 +43,9 @@ public class PublishRequestMarshaller implements Marshaller<Request<PublishReque
         if (publishRequest.getTopicArn() != null) {
             request.addParameter("TopicArn", StringUtils.fromString(publishRequest.getTopicArn()));
         }
+        if (publishRequest.getTargetArn() != null) {
+            request.addParameter("TargetArn", StringUtils.fromString(publishRequest.getTargetArn()));
+        }
         if (publishRequest.getMessage() != null) {
             request.addParameter("Message", StringUtils.fromString(publishRequest.getMessage()));
         }

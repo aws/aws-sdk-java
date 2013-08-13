@@ -115,7 +115,7 @@ public interface AmazonGlacier {
      * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      */
     public void setRegion(Region region) throws java.lang.IllegalArgumentException;
-	
+    
     /**
      * <p>
      * This operation lists all vaults owned by the calling user's account.

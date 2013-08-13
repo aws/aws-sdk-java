@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.DescribeSnapshotAttributeRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -24,7 +26,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeSnapshotAttribute(DescribeSnapshotAttributeRequest)
  */
-public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeSnapshotAttributeRequest> {
 
     /**
      * The ID of the EBS snapshot whose attribute is being described.
@@ -205,6 +207,18 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest  i
     public DescribeSnapshotAttributeRequest withAttribute(SnapshotAttributeName attribute) {
         this.attribute = attribute.toString();
         return this;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<DescribeSnapshotAttributeRequest> getDryRunRequest() {
+        Request<DescribeSnapshotAttributeRequest> request = new DescribeSnapshotAttributeRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

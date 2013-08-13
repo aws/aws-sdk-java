@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the Amazon Glacier response to your request.
  * </p>
  */
-public class CreateVaultResult  implements Serializable  {
+public class CreateVaultResult implements Serializable {
 
     /**
      * The URI of the vault that was created.
@@ -51,6 +51,9 @@ public class CreateVaultResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param location The URI of the vault that was created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateVaultResult withLocation(String location) {
         this.location = location;

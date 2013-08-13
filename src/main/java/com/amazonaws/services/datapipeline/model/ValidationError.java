@@ -21,7 +21,7 @@ import java.io.Serializable;
  * validation errors that can be returned are defined by AWS Data Pipeline.
  * </p>
  */
-public class ValidationError  implements Serializable  {
+public class ValidationError implements Serializable {
 
     /**
      * The identifier of the object that contains the validation error.
@@ -73,6 +73,9 @@ public class ValidationError  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param id The identifier of the object that contains the validation error.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ValidationError withId(String id) {
         this.id = id;
@@ -115,6 +118,9 @@ public class ValidationError  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param errors A description of the validation error.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ValidationError withErrors(String... errors) {
         if (getErrors() == null) setErrors(new java.util.ArrayList<String>(errors.length));
@@ -130,6 +136,9 @@ public class ValidationError  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param errors A description of the validation error.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ValidationError withErrors(java.util.Collection<String> errors) {
         if (errors == null) {

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * When you update a pipeline, Elastic Transcoder returns the values that you specified in the request.
  * </p>
  */
-public class UpdatePipelineResult  implements Serializable  {
+public class UpdatePipelineResult implements Serializable {
 
     /**
      * The pipeline (queue) that is used to manage jobs.
@@ -51,6 +51,9 @@ public class UpdatePipelineResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param pipeline The pipeline (queue) that is used to manage jobs.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdatePipelineResult withPipeline(Pipeline pipeline) {
         this.pipeline = pipeline;

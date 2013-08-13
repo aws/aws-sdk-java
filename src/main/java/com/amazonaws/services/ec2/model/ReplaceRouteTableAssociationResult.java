@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Replace Route Table Association Result
  */
-public class ReplaceRouteTableAssociationResult  implements Serializable  {
+public class ReplaceRouteTableAssociationResult implements Serializable {
 
     private String newAssociationId;
 

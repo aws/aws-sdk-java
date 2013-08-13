@@ -26,7 +26,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#resetClusterParameterGroup(ResetClusterParameterGroupRequest)
  */
-public class ResetClusterParameterGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ResetClusterParameterGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the cluster parameter group to be reset.
@@ -71,6 +71,9 @@ public class ResetClusterParameterGroupRequest extends AmazonWebServiceRequest  
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameterGroupName The name of the cluster parameter group to be reset.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ResetClusterParameterGroupRequest withParameterGroupName(String parameterGroupName) {
         this.parameterGroupName = parameterGroupName;
@@ -108,6 +111,9 @@ public class ResetClusterParameterGroupRequest extends AmazonWebServiceRequest  
      *
      * @param resetAllParameters If <code>true</code>, all parameters in the specified parameter group
      *         will be reset to their default values. <p>Default: <code>true</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ResetClusterParameterGroupRequest withResetAllParameters(Boolean resetAllParameters) {
         this.resetAllParameters = resetAllParameters;
@@ -179,6 +185,9 @@ public class ResetClusterParameterGroupRequest extends AmazonWebServiceRequest  
      *         <i>ResetAllParameters</i> option is not used, then at least one
      *         parameter name must be supplied. <p>Constraints: A maximum of 20
      *         parameters can be reset in a single request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ResetClusterParameterGroupRequest withParameters(Parameter... parameters) {
         if (getParameters() == null) setParameters(new java.util.ArrayList<Parameter>(parameters.length));
@@ -200,6 +209,9 @@ public class ResetClusterParameterGroupRequest extends AmazonWebServiceRequest  
      *         <i>ResetAllParameters</i> option is not used, then at least one
      *         parameter name must be supplied. <p>Constraints: A maximum of 20
      *         parameters can be reset in a single request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ResetClusterParameterGroupRequest withParameters(java.util.Collection<Parameter> parameters) {
         if (parameters == null) {

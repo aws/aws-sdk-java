@@ -35,7 +35,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#createDeployment(CreateDeploymentRequest)
  */
-public class CreateDeploymentRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateDeploymentRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The stack ID.
@@ -99,6 +99,9 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackId The stack ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateDeploymentRequest withStackId(String stackId) {
         this.stackId = stackId;
@@ -136,6 +139,9 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest  implements
      *
      * @param appId The app ID. This parameter is required for app deployments, but not
      *         for other deployment commands.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateDeploymentRequest withAppId(String appId) {
         this.appId = appId;
@@ -178,6 +184,9 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceIds The instance IDs for the deployment targets.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateDeploymentRequest withInstanceIds(String... instanceIds) {
         if (getInstanceIds() == null) setInstanceIds(new java.util.ArrayList<String>(instanceIds.length));
@@ -193,6 +202,9 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceIds The instance IDs for the deployment targets.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateDeploymentRequest withInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
@@ -236,6 +248,9 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest  implements
      *
      * @param command A <code>DeploymentCommand</code> object that specifies the deployment
      *         command and any associated arguments.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateDeploymentRequest withCommand(DeploymentCommand command) {
         this.command = command;
@@ -267,6 +282,9 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param comment A user-defined comment.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateDeploymentRequest withComment(String comment) {
         this.comment = comment;
@@ -334,6 +352,9 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest  implements
      *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      *         Custom JSON to Modify the Stack Configuration JSON</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateDeploymentRequest withCustomJson(String customJson) {
         this.customJson = customJson;

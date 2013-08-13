@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Provides details of the <code>WorkflowExecutionCanceled</code> event.
  * </p>
  */
-public class WorkflowExecutionCanceledEventAttributes  implements Serializable  {
+public class WorkflowExecutionCanceledEventAttributes implements Serializable {
 
     /**
      * Details for the cancellation (if any).
@@ -72,6 +72,9 @@ public class WorkflowExecutionCanceledEventAttributes  implements Serializable  
      * <b>Length: </b>0 - 32768<br/>
      *
      * @param details Details for the cancellation (if any).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionCanceledEventAttributes withDetails(String details) {
         this.details = details;
@@ -127,6 +130,9 @@ public class WorkflowExecutionCanceledEventAttributes  implements Serializable  
      *         <code>CancelWorkflowExecution</code> decision for this cancellation
      *         request. This information can be useful for diagnosing problems by
      *         tracing back the cause of events.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionCanceledEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
         this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;

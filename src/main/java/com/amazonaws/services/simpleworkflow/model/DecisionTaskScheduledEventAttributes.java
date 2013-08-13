@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Provides details of the <code>DecisionTaskScheduled</code> event.
  * </p>
  */
-public class DecisionTaskScheduledEventAttributes  implements Serializable  {
+public class DecisionTaskScheduledEventAttributes implements Serializable {
 
     /**
      * The name of the task list in which the decision task was scheduled.
@@ -63,6 +63,9 @@ public class DecisionTaskScheduledEventAttributes  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param taskList The name of the task list in which the decision task was scheduled.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DecisionTaskScheduledEventAttributes withTaskList(TaskList taskList) {
         this.taskList = taskList;
@@ -127,6 +130,9 @@ public class DecisionTaskScheduledEventAttributes  implements Serializable  {
      *         values are integers greater than or equal to <code>0</code>. An
      *         integer value can be used to specify the duration in seconds while
      *         <code>NONE</code> can be used to specify unlimited duration.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DecisionTaskScheduledEventAttributes withStartToCloseTimeout(String startToCloseTimeout) {
         this.startToCloseTimeout = startToCloseTimeout;

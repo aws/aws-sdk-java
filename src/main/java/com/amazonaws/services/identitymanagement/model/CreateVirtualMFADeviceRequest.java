@@ -38,7 +38,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createVirtualMFADevice(CreateVirtualMFADeviceRequest)
  */
-public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The path for the virtual MFA device. For more information about paths,
@@ -130,6 +130,9 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest  impl
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>. <p>This parameter is optional. If
      *         it is not included, it defaults to a slash (/).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateVirtualMFADeviceRequest withPath(String path) {
         this.path = path;
@@ -179,6 +182,9 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest  impl
      *
      * @param virtualMFADeviceName The name of the virtual MFA device. Use with path to uniquely identify
      *         a virtual MFA device.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateVirtualMFADeviceRequest withVirtualMFADeviceName(String virtualMFADeviceName) {
         this.virtualMFADeviceName = virtualMFADeviceName;

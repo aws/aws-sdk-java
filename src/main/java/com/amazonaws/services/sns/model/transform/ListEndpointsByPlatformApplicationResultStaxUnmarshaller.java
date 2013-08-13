@@ -13,14 +13,14 @@
  * permissions and limitations under the License.
  */
 
-package com.amazonaws.services.elasticmapreduce.model.transform;
+package com.amazonaws.services.sns.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
 
-import com.amazonaws.services.elasticmapreduce.model.*;
+import com.amazonaws.services.sns.model.*;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.transform.MapEntry;
 import com.amazonaws.transform.StaxUnmarshallerContext;
@@ -28,12 +28,12 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 
 /**
- * Step Detail StAX Unmarshaller
+ * List Endpoints By Platform Application Result StAX Unmarshaller
  */
-public class StepDetailStaxUnmarshaller implements Unmarshaller<StepDetail, StaxUnmarshallerContext> {
+public class ListEndpointsByPlatformApplicationResultStaxUnmarshaller implements Unmarshaller<ListEndpointsByPlatformApplicationResult, StaxUnmarshallerContext> {
 
-    public StepDetail unmarshall(StaxUnmarshallerContext context) throws Exception {
-        StepDetail stepDetail = new StepDetail();
+    public ListEndpointsByPlatformApplicationResult unmarshall(StaxUnmarshallerContext context) throws Exception {
+        ListEndpointsByPlatformApplicationResult listEndpointsByPlatformApplicationResult = new ListEndpointsByPlatformApplicationResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -43,28 +43,28 @@ public class StepDetailStaxUnmarshaller implements Unmarshaller<StepDetail, Stax
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return stepDetail;
+            if (xmlEvent.isEndDocument()) return listEndpointsByPlatformApplicationResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-                if (context.testExpression("StepConfig", targetDepth)) {
-                    stepDetail.setStepConfig(StepConfigStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("Endpoints/member", targetDepth)) {
+                    listEndpointsByPlatformApplicationResult.getEndpoints().add(EndpointStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("ExecutionStatusDetail", targetDepth)) {
-                    stepDetail.setExecutionStatusDetail(StepExecutionStatusDetailStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("NextToken", targetDepth)) {
+                    listEndpointsByPlatformApplicationResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
-                    return stepDetail;
+                    return listEndpointsByPlatformApplicationResult;
                 }
             }
         }
     }
 
-    private static StepDetailStaxUnmarshaller instance;
-    public static StepDetailStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new StepDetailStaxUnmarshaller();
+    private static ListEndpointsByPlatformApplicationResultStaxUnmarshaller instance;
+    public static ListEndpointsByPlatformApplicationResultStaxUnmarshaller getInstance() {
+        if (instance == null) instance = new ListEndpointsByPlatformApplicationResultStaxUnmarshaller();
         return instance;
     }
 }

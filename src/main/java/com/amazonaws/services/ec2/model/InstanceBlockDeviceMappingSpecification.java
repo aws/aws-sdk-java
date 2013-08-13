@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Specifies how an instance's block devices should be mapped on a running instance.
  * </p>
  */
-public class InstanceBlockDeviceMappingSpecification  implements Serializable  {
+public class InstanceBlockDeviceMappingSpecification implements Serializable {
 
     /**
      * The device name (e.g., <code>/dev/sdh</code>) at which the block

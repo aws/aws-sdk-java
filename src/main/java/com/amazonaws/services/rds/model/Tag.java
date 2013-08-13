@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Metadata assigned to a DB Instance consisting of a key-value pair.
  * </p>
  */
-public class Tag  implements Serializable  {
+public class Tag implements Serializable {
 
     /**
      * A key is the required name of the tag. The string value can be from 1
@@ -88,6 +88,9 @@ public class Tag  implements Serializable  {
      *         "aws:". The string may only contain only the set of Unicode letters,
      *         digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex:
      *         "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Tag withKey(String key) {
         this.key = key;
@@ -143,6 +146,9 @@ public class Tag  implements Serializable  {
      *         "aws:". The string may only contain only the set of Unicode letters,
      *         digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex:
      *         "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Tag withValue(String value) {
         this.value = value;

@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Domain Metadata Result
  */
-public class DomainMetadataResult  implements Serializable  {
+public class DomainMetadataResult implements Serializable {
 
     /**
      * The number of all items in the domain.
@@ -80,6 +80,9 @@ public class DomainMetadataResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param itemCount The number of all items in the domain.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DomainMetadataResult withItemCount(Integer itemCount) {
         this.itemCount = itemCount;
@@ -111,6 +114,9 @@ public class DomainMetadataResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param itemNamesSizeBytes The total size of all item names in the domain, in bytes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DomainMetadataResult withItemNamesSizeBytes(Long itemNamesSizeBytes) {
         this.itemNamesSizeBytes = itemNamesSizeBytes;
@@ -142,6 +148,9 @@ public class DomainMetadataResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributeNameCount The number of unique attribute names in the domain.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DomainMetadataResult withAttributeNameCount(Integer attributeNameCount) {
         this.attributeNameCount = attributeNameCount;
@@ -173,6 +182,9 @@ public class DomainMetadataResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributeNamesSizeBytes The total size of all unique attribute names in the domain, in bytes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DomainMetadataResult withAttributeNamesSizeBytes(Long attributeNamesSizeBytes) {
         this.attributeNamesSizeBytes = attributeNamesSizeBytes;
@@ -204,6 +216,9 @@ public class DomainMetadataResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributeValueCount The number of all attribute name/value pairs in the domain.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DomainMetadataResult withAttributeValueCount(Integer attributeValueCount) {
         this.attributeValueCount = attributeValueCount;
@@ -235,6 +250,9 @@ public class DomainMetadataResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributeValuesSizeBytes The total size of all attribute values in the domain, in bytes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DomainMetadataResult withAttributeValuesSizeBytes(Long attributeValuesSizeBytes) {
         this.attributeValuesSizeBytes = attributeValuesSizeBytes;
@@ -272,6 +290,9 @@ public class DomainMetadataResult  implements Serializable  {
      *
      * @param timestamp The data and time when metadata was calculated, in Epoch (UNIX)
      *         seconds.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DomainMetadataResult withTimestamp(Integer timestamp) {
         this.timestamp = timestamp;

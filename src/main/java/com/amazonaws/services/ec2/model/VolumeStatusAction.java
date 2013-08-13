@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Volume Status Action
  */
-public class VolumeStatusAction  implements Serializable  {
+public class VolumeStatusAction implements Serializable {
 
     private String code;
 

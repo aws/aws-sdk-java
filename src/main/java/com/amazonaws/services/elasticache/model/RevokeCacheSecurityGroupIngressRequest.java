@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#revokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest)
  */
-public class RevokeCacheSecurityGroupIngressRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class RevokeCacheSecurityGroupIngressRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the Cache Security Group to revoke ingress from.
@@ -96,6 +96,9 @@ public class RevokeCacheSecurityGroupIngressRequest extends AmazonWebServiceRequ
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheSecurityGroupName The name of the Cache Security Group to revoke ingress from.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RevokeCacheSecurityGroupIngressRequest withCacheSecurityGroupName(String cacheSecurityGroupName) {
         this.cacheSecurityGroupName = cacheSecurityGroupName;
@@ -127,6 +130,9 @@ public class RevokeCacheSecurityGroupIngressRequest extends AmazonWebServiceRequ
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eC2SecurityGroupName The name of the EC2 Security Group to revoke access from.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RevokeCacheSecurityGroupIngressRequest withEC2SecurityGroupName(String eC2SecurityGroupName) {
         this.eC2SecurityGroupName = eC2SecurityGroupName;
@@ -170,6 +176,9 @@ public class RevokeCacheSecurityGroupIngressRequest extends AmazonWebServiceRequ
      * @param eC2SecurityGroupOwnerId The AWS Account Number of the owner of the security group specified in
      *         the <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is
      *         not an acceptable value.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RevokeCacheSecurityGroupIngressRequest withEC2SecurityGroupOwnerId(String eC2SecurityGroupOwnerId) {
         this.eC2SecurityGroupOwnerId = eC2SecurityGroupOwnerId;

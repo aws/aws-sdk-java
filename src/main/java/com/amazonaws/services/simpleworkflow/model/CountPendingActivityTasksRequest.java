@@ -43,7 +43,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#countPendingActivityTasks(CountPendingActivityTasksRequest)
  */
-public class CountPendingActivityTasksRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CountPendingActivityTasksRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the domain that contains the task list.
@@ -91,6 +91,9 @@ public class CountPendingActivityTasksRequest extends AmazonWebServiceRequest  i
      * <b>Length: </b>1 - 256<br/>
      *
      * @param domain The name of the domain that contains the task list.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CountPendingActivityTasksRequest withDomain(String domain) {
         this.domain = domain;
@@ -122,6 +125,9 @@ public class CountPendingActivityTasksRequest extends AmazonWebServiceRequest  i
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param taskList The name of the task list.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CountPendingActivityTasksRequest withTaskList(TaskList taskList) {
         this.taskList = taskList;

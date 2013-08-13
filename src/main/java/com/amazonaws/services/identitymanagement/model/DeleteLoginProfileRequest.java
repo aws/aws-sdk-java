@@ -29,7 +29,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteLoginProfile(DeleteLoginProfileRequest)
  */
-public class DeleteLoginProfileRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteLoginProfileRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the user whose password you want to delete.
@@ -97,6 +97,9 @@ public class DeleteLoginProfileRequest extends AmazonWebServiceRequest  implemen
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param userName Name of the user whose password you want to delete.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteLoginProfileRequest withUserName(String userName) {
         this.userName = userName;

@@ -28,7 +28,7 @@ import java.io.Serializable;
  * 
  * </ul>
  */
-public class DBSecurityGroupMembership  implements Serializable  {
+public class DBSecurityGroupMembership implements Serializable {
 
     /**
      * The name of the DB Security Group.
@@ -70,6 +70,9 @@ public class DBSecurityGroupMembership  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBSecurityGroupName The name of the DB Security Group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBSecurityGroupMembership withDBSecurityGroupName(String dBSecurityGroupName) {
         this.dBSecurityGroupName = dBSecurityGroupName;
@@ -101,6 +104,9 @@ public class DBSecurityGroupMembership  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param status The status of the DB Security Group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBSecurityGroupMembership withStatus(String status) {
         this.status = status;

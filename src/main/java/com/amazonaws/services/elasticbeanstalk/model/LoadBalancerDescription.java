@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes the details of a LoadBalancer.
  * </p>
  */
-public class LoadBalancerDescription  implements Serializable  {
+public class LoadBalancerDescription implements Serializable {
 
     /**
      * The name of the LoadBalancer.
@@ -61,6 +61,9 @@ public class LoadBalancerDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param loadBalancerName The name of the LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LoadBalancerDescription withLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
@@ -92,6 +95,9 @@ public class LoadBalancerDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param domain The domain name of the LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LoadBalancerDescription withDomain(String domain) {
         this.domain = domain;
@@ -134,6 +140,9 @@ public class LoadBalancerDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param listeners A list of Listeners used by the LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LoadBalancerDescription withListeners(Listener... listeners) {
         if (getListeners() == null) setListeners(new java.util.ArrayList<Listener>(listeners.length));
@@ -149,6 +158,9 @@ public class LoadBalancerDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param listeners A list of Listeners used by the LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LoadBalancerDescription withListeners(java.util.Collection<Listener> listeners) {
         if (listeners == null) {

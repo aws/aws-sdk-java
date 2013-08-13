@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A response message that contains the status of an updated default search field.
  * </p>
  */
-public class UpdateDefaultSearchFieldResult  implements Serializable  {
+public class UpdateDefaultSearchFieldResult implements Serializable {
 
     /**
      * The value of the <code>DefaultSearchField</code> configured for this
@@ -58,6 +58,9 @@ public class UpdateDefaultSearchFieldResult  implements Serializable  {
      *
      * @param defaultSearchField The value of the <code>DefaultSearchField</code> configured for this
      *         search domain and its current status.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateDefaultSearchFieldResult withDefaultSearchField(DefaultSearchFieldStatus defaultSearchField) {
         this.defaultSearchField = defaultSearchField;

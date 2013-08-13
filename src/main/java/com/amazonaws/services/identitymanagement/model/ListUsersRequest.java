@@ -27,7 +27,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listUsers(ListUsersRequest)
  */
-public class ListUsersRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ListUsersRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The path prefix for filtering the results. For example:
@@ -138,6 +138,9 @@ public class ListUsersRequest extends AmazonWebServiceRequest  implements Serial
      *         <code>/division_abc/subdivision_xyz/</code>. <p>This parameter is
      *         optional. If it is not included, it defaults to a slash (/), listing
      *         all user names.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListUsersRequest withPathPrefix(String pathPrefix) {
         this.pathPrefix = pathPrefix;
@@ -199,6 +202,9 @@ public class ListUsersRequest extends AmazonWebServiceRequest  implements Serial
      *         subsequent request after you've received a response where the results
      *         are truncated. Set it to the value of the <code>Marker</code> element
      *         in the response you just received.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListUsersRequest withMarker(String marker) {
         this.marker = marker;
@@ -257,6 +263,9 @@ public class ListUsersRequest extends AmazonWebServiceRequest  implements Serial
      *         maximum number of user names you want in the response. If there are
      *         additional user names beyond the maximum you specify, the
      *         <code>IsTruncated</code> response element is <code>true</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListUsersRequest withMaxItems(Integer maxItems) {
         this.maxItems = maxItems;

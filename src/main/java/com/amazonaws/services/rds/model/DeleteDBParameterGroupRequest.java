@@ -27,7 +27,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteDBParameterGroup(DeleteDBParameterGroupRequest)
  */
-public class DeleteDBParameterGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteDBParameterGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
@@ -103,6 +103,9 @@ public class DeleteDBParameterGroupRequest extends AmazonWebServiceRequest  impl
      *         the name of an existing DB Parameter Group</li> <li>You cannot delete
      *         a default DB Parameter Group</li> <li>Cannot be associated with any DB
      *         Instances</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteDBParameterGroupRequest withDBParameterGroupName(String dBParameterGroupName) {
         this.dBParameterGroupName = dBParameterGroupName;

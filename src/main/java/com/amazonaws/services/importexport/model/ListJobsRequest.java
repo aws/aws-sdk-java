@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.importexport.AmazonImportExport#listJobs(ListJobsRequest)
  */
-public class ListJobsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ListJobsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Sets the maximum number of jobs returned in the response. If there are
@@ -84,6 +84,9 @@ public class ListJobsRequest extends AmazonWebServiceRequest  implements Seriali
      *         additional jobs that were not returned because MaxJobs was exceeded,
      *         the response contains <IsTruncated>true</IsTruncated>. To return the
      *         additional jobs, see Marker.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListJobsRequest withMaxJobs(Integer maxJobs) {
         this.maxJobs = maxJobs;
@@ -127,6 +130,9 @@ public class ListJobsRequest extends AmazonWebServiceRequest  implements Seriali
      * @param marker Specifies the JOBID to start after when listing the jobs created with
      *         your account. AWS Import/Export lists your jobs in reverse
      *         chronological order. See MaxJobs.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListJobsRequest withMarker(String marker) {
         this.marker = marker;

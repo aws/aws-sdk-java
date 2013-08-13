@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The Subnet data type.
  * </p>
  */
-public class Subnet  implements Serializable  {
+public class Subnet implements Serializable {
 
     /**
      * Specifies the ID of the subnet.

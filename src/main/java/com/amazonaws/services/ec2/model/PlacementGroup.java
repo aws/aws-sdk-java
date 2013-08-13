@@ -21,7 +21,7 @@ import java.io.Serializable;
  * physically located close enough to support HPC features, such as higher IO network connections between instances in the group.
  * </p>
  */
-public class PlacementGroup  implements Serializable  {
+public class PlacementGroup implements Serializable {
 
     /**
      * The name of this <code>PlacementGroup</code>.

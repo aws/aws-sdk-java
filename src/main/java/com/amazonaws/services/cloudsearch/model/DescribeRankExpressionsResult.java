@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A response message that contains the rank expressions for a search domain.
  * </p>
  */
-public class DescribeRankExpressionsResult  implements Serializable  {
+public class DescribeRankExpressionsResult implements Serializable {
 
     /**
      * The rank expressions configured for the domain.
@@ -62,6 +62,9 @@ public class DescribeRankExpressionsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param rankExpressions The rank expressions configured for the domain.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeRankExpressionsResult withRankExpressions(RankExpressionStatus... rankExpressions) {
         if (getRankExpressions() == null) setRankExpressions(new java.util.ArrayList<RankExpressionStatus>(rankExpressions.length));
@@ -77,6 +80,9 @@ public class DescribeRankExpressionsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param rankExpressions The rank expressions configured for the domain.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeRankExpressionsResult withRankExpressions(java.util.Collection<RankExpressionStatus> rankExpressions) {
         if (rankExpressions == null) {

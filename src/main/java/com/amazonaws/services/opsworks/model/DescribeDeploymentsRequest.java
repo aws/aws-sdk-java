@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeDeployments(DescribeDeploymentsRequest)
  */
-public class DescribeDeploymentsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeDeploymentsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The stack ID. If you include this parameter,
@@ -84,6 +84,9 @@ public class DescribeDeploymentsRequest extends AmazonWebServiceRequest  impleme
      * @param stackId The stack ID. If you include this parameter,
      *         <code>DescribeDeployments</code> returns a description of the commands
      *         associated with the specified stack.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeDeploymentsRequest withStackId(String stackId) {
         this.stackId = stackId;
@@ -127,6 +130,9 @@ public class DescribeDeploymentsRequest extends AmazonWebServiceRequest  impleme
      * @param appId The app ID. If you include this parameter,
      *         <code>DescribeDeployments</code> returns a description of the commands
      *         associated with the specified app.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeDeploymentsRequest withAppId(String appId) {
         this.appId = appId;
@@ -187,6 +193,9 @@ public class DescribeDeploymentsRequest extends AmazonWebServiceRequest  impleme
      *         parameter, <code>DescribeDeployments</code> returns a description of
      *         the specified deployments. Otherwise, it returns a description of
      *         every deployment.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeDeploymentsRequest withDeploymentIds(String... deploymentIds) {
         if (getDeploymentIds() == null) setDeploymentIds(new java.util.ArrayList<String>(deploymentIds.length));
@@ -208,6 +217,9 @@ public class DescribeDeploymentsRequest extends AmazonWebServiceRequest  impleme
      *         parameter, <code>DescribeDeployments</code> returns a description of
      *         the specified deployments. Otherwise, it returns a description of
      *         every deployment.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeDeploymentsRequest withDeploymentIds(java.util.Collection<String> deploymentIds) {
         if (deploymentIds == null) {

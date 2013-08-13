@@ -23,7 +23,7 @@ import java.io.Serializable;
  * This element contains an ID that you use when performing a GetChange action to get detailed information about the change.
  * </p>
  */
-public class ChangeInfo  implements Serializable  {
+public class ChangeInfo implements Serializable {
 
     /**
      * The ID of the request. Use this ID to track when the change has
@@ -162,6 +162,9 @@ public class ChangeInfo  implements Serializable  {
      *
      * @param id The ID of the request. Use this ID to track when the change has
      *         completed across all Amazon Route 53 DNS servers.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChangeInfo withId(String id) {
         this.id = id;
@@ -219,6 +222,9 @@ public class ChangeInfo  implements Serializable  {
      *         this request has not yet been applied to all Amazon Route 53 DNS
      *         servers. <p>Valid Values: <code>PENDING</code> | <code>INSYNC</code>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ChangeStatus
      */
     public ChangeInfo withStatus(String status) {
@@ -258,6 +264,9 @@ public class ChangeInfo  implements Serializable  {
      * @param status The current state of the request. <code>PENDING</code> indicates that
      *         this request has not yet been applied to all Amazon Route 53 DNS
      *         servers. <p>Valid Values: <code>PENDING</code> | <code>INSYNC</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see ChangeStatus
      */
@@ -320,6 +329,9 @@ public class ChangeInfo  implements Serializable  {
      *         the time indicates that the time is listed in Coordinated Universal
      *         Time (UTC), which is synonymous with Greenwich Mean Time in this
      *         context.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChangeInfo withSubmittedAt(java.util.Date submittedAt) {
         this.submittedAt = submittedAt;
@@ -378,6 +390,9 @@ public class ChangeInfo  implements Serializable  {
      *         your hosted zone. <p>This element contains an ID that you use when
      *         performing a <a>GetChange</a> action to get detailed information about
      *         the change.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChangeInfo withComment(String comment) {
         this.comment = comment;

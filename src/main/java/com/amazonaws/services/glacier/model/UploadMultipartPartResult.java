@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the Amazon Glacier response to your request.
  * </p>
  */
-public class UploadMultipartPartResult  implements Serializable  {
+public class UploadMultipartPartResult implements Serializable {
 
     /**
      * The SHA256 tree hash that Amazon Glacier computed for the uploaded
@@ -58,6 +58,9 @@ public class UploadMultipartPartResult  implements Serializable  {
      *
      * @param checksum The SHA256 tree hash that Amazon Glacier computed for the uploaded
      *         part.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UploadMultipartPartResult withChecksum(String checksum) {
         this.checksum = checksum;

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The RequestSpotInstancesResult data type.
  * </p>
  */
-public class RequestSpotInstancesResult  implements Serializable  {
+public class RequestSpotInstancesResult implements Serializable {
 
     /**
      * Contains a list of Spot Instance requests.

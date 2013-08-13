@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the output from the DescribePipelines action.
  * </p>
  */
-public class DescribePipelinesResult  implements Serializable  {
+public class DescribePipelinesResult implements Serializable {
 
     /**
      * An array of descriptions returned for the specified pipelines.
@@ -62,6 +62,9 @@ public class DescribePipelinesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param pipelineDescriptionList An array of descriptions returned for the specified pipelines.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribePipelinesResult withPipelineDescriptionList(PipelineDescription... pipelineDescriptionList) {
         if (getPipelineDescriptionList() == null) setPipelineDescriptionList(new java.util.ArrayList<PipelineDescription>(pipelineDescriptionList.length));
@@ -77,6 +80,9 @@ public class DescribePipelinesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param pipelineDescriptionList An array of descriptions returned for the specified pipelines.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribePipelinesResult withPipelineDescriptionList(java.util.Collection<PipelineDescription> pipelineDescriptionList) {
         if (pipelineDescriptionList == null) {

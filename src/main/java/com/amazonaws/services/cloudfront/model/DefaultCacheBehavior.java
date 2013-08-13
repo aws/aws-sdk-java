@@ -21,7 +21,7 @@ import java.io.Serializable;
  * PathPattern in CacheBehavior elements.You must create exactly one default cache behavior.
  * </p>
  */
-public class DefaultCacheBehavior  implements Serializable  {
+public class DefaultCacheBehavior implements Serializable {
 
     /**
      * The value of ID for the origin that you want CloudFront to route
@@ -109,6 +109,9 @@ public class DefaultCacheBehavior  implements Serializable  {
      * @param targetOriginId The value of ID for the origin that you want CloudFront to route
      *         requests to when a request matches the path pattern either for a cache
      *         behavior or for the default cache behavior.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DefaultCacheBehavior withTargetOriginId(String targetOriginId) {
         this.targetOriginId = targetOriginId;
@@ -146,6 +149,9 @@ public class DefaultCacheBehavior  implements Serializable  {
      *
      * @param forwardedValues A complex type that specifies how CloudFront handles query strings and
      *         cookies.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DefaultCacheBehavior withForwardedValues(ForwardedValues forwardedValues) {
         this.forwardedValues = forwardedValues;
@@ -249,6 +255,9 @@ public class DefaultCacheBehavior  implements Serializable  {
      *         currently false), change Quantity as applicable, and specify all of
      *         the trusted signers that you want to include in the updated
      *         distribution.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DefaultCacheBehavior withTrustedSigners(TrustedSigners trustedSigners) {
         this.trustedSigners = trustedSigners;
@@ -318,6 +327,9 @@ public class DefaultCacheBehavior  implements Serializable  {
      *         allow end users to use any available protocol, specify allow-all. If
      *         you want CloudFront to require HTTPS, specify https.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ViewerProtocolPolicy
      */
     public DefaultCacheBehavior withViewerProtocolPolicy(String viewerProtocolPolicy) {
@@ -365,6 +377,9 @@ public class DefaultCacheBehavior  implements Serializable  {
      *         matches the path pattern in PathPattern. If you want CloudFront to
      *         allow end users to use any available protocol, specify allow-all. If
      *         you want CloudFront to require HTTPS, specify https.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see ViewerProtocolPolicy
      */
@@ -415,6 +430,9 @@ public class DefaultCacheBehavior  implements Serializable  {
      *         caches before CloudFront queries your origin to see whether the object
      *         has been updated.You can specify a value from 0 to 3,153,600,000
      *         seconds (100 years).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DefaultCacheBehavior withMinTTL(Long minTTL) {
         this.minTTL = minTTL;

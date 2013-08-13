@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The source attribute name and an optional default value to use if a document doesn't have an attribute of that name.
  * </p>
  */
-public class SourceData  implements Serializable  {
+public class SourceData implements Serializable {
 
     /**
      * The name of the document source field to add to this
@@ -82,6 +82,9 @@ public class SourceData  implements Serializable  {
      *
      * @param sourceName The name of the document source field to add to this
      *         <code>IndexField</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SourceData withSourceName(String sourceName) {
         this.sourceName = sourceName;
@@ -122,6 +125,9 @@ public class SourceData  implements Serializable  {
      * <b>Length: </b>0 - 1024<br/>
      *
      * @param defaultValue The value of a field or source document attribute.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SourceData withDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;

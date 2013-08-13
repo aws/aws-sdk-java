@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the Amazon Glacier response to your request.
  * </p>
  */
-public class InitiateJobResult  implements Serializable  {
+public class InitiateJobResult implements Serializable {
 
     /**
      * The relative URI path of the job.
@@ -56,6 +56,9 @@ public class InitiateJobResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param location The relative URI path of the job.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InitiateJobResult withLocation(String location) {
         this.location = location;
@@ -87,6 +90,9 @@ public class InitiateJobResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param jobId The ID of the job.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InitiateJobResult withJobId(String jobId) {
         this.jobId = jobId;

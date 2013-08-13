@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Provides details of the <code>StartChildWorkflowExecutionInitiated</code> event.
  * </p>
  */
-public class StartChildWorkflowExecutionInitiatedEventAttributes  implements Serializable  {
+public class StartChildWorkflowExecutionInitiatedEventAttributes implements Serializable {
 
     /**
      * The <code>workflowId</code> of the child workflow execution.
@@ -151,6 +151,9 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes  implements Ser
      * <b>Length: </b>1 - 256<br/>
      *
      * @param workflowId The <code>workflowId</code> of the child workflow execution.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StartChildWorkflowExecutionInitiatedEventAttributes withWorkflowId(String workflowId) {
         this.workflowId = workflowId;
@@ -182,6 +185,9 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param workflowType The type of the child workflow execution.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StartChildWorkflowExecutionInitiatedEventAttributes withWorkflowType(WorkflowType workflowType) {
         this.workflowType = workflowType;
@@ -228,6 +234,9 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes  implements Ser
      *
      * @param control Optional data attached to the event that can be used by the decider in
      *         subsequent decision tasks. This data is not sent to the activity.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StartChildWorkflowExecutionInitiatedEventAttributes withControl(String control) {
         this.control = control;
@@ -268,6 +277,9 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes  implements Ser
      * <b>Length: </b>0 - 32768<br/>
      *
      * @param input The inputs provided to the child workflow execution (if any).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StartChildWorkflowExecutionInitiatedEventAttributes withInput(String input) {
         this.input = input;
@@ -338,6 +350,9 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes  implements Ser
      *         equal to <code>0</code>. An integer value can be used to specify the
      *         duration in seconds while <code>NONE</code> can be used to specify
      *         unlimited duration.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StartChildWorkflowExecutionInitiatedEventAttributes withExecutionStartToCloseTimeout(String executionStartToCloseTimeout) {
         this.executionStartToCloseTimeout = executionStartToCloseTimeout;
@@ -375,6 +390,9 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes  implements Ser
      *
      * @param taskList The name of the task list used for the decision tasks of the child
      *         workflow execution.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StartChildWorkflowExecutionInitiatedEventAttributes withTaskList(TaskList taskList) {
         this.taskList = taskList;
@@ -430,6 +448,9 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes  implements Ser
      *         <code>StartChildWorkflowExecution</code> <a>Decision</a> to request
      *         this child workflow execution. This information can be useful for
      *         diagnosing problems by tracing back the cause of events.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StartChildWorkflowExecutionInitiatedEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
         this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;
@@ -535,6 +556,9 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes  implements Ser
      *         <li><b>ABANDON:</b> no action will be taken. The child executions will
      *         continue to run.</li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ChildPolicy
      */
     public StartChildWorkflowExecutionInitiatedEventAttributes withChildPolicy(String childPolicy) {
@@ -607,6 +631,9 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes  implements Ser
      *         <li><b>ABANDON:</b> no action will be taken. The child executions will
      *         continue to run.</li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ChildPolicy
      */
     public StartChildWorkflowExecutionInitiatedEventAttributes withChildPolicy(ChildPolicy childPolicy) {
@@ -671,6 +698,9 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes  implements Ser
      *         <code>0</code>. An integer value can be used to specify the duration
      *         in seconds while <code>NONE</code> can be used to specify unlimited
      *         duration.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StartChildWorkflowExecutionInitiatedEventAttributes withTaskStartToCloseTimeout(String taskStartToCloseTimeout) {
         this.taskStartToCloseTimeout = taskStartToCloseTimeout;
@@ -722,6 +752,9 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes  implements Ser
      * <b>Length: </b>0 - 5<br/>
      *
      * @param tagList The list of tags to associated with the child workflow execution.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StartChildWorkflowExecutionInitiatedEventAttributes withTagList(String... tagList) {
         if (getTagList() == null) setTagList(new java.util.ArrayList<String>(tagList.length));
@@ -740,6 +773,9 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes  implements Ser
      * <b>Length: </b>0 - 5<br/>
      *
      * @param tagList The list of tags to associated with the child workflow execution.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StartChildWorkflowExecutionInitiatedEventAttributes withTagList(java.util.Collection<String> tagList) {
         if (tagList == null) {

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Provides details of the <code>ChildWorkflowExecutionStarted</code> event.
  * </p>
  */
-public class ChildWorkflowExecutionStartedEventAttributes  implements Serializable  {
+public class ChildWorkflowExecutionStartedEventAttributes implements Serializable {
 
     /**
      * The child workflow execution that was started.
@@ -65,6 +65,9 @@ public class ChildWorkflowExecutionStartedEventAttributes  implements Serializab
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param workflowExecution The child workflow execution that was started.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChildWorkflowExecutionStartedEventAttributes withWorkflowExecution(WorkflowExecution workflowExecution) {
         this.workflowExecution = workflowExecution;
@@ -96,6 +99,9 @@ public class ChildWorkflowExecutionStartedEventAttributes  implements Serializab
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param workflowType The type of the child workflow execution.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChildWorkflowExecutionStartedEventAttributes withWorkflowType(WorkflowType workflowType) {
         this.workflowType = workflowType;
@@ -151,6 +157,9 @@ public class ChildWorkflowExecutionStartedEventAttributes  implements Serializab
      *         <a>Decision</a> to start this child workflow execution. This
      *         information can be useful for diagnosing problems by tracing back the
      *         chain of events leading up to this event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChildWorkflowExecutionStartedEventAttributes withInitiatedEventId(Long initiatedEventId) {
         this.initiatedEventId = initiatedEventId;

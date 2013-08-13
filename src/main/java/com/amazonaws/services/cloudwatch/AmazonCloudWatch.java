@@ -107,7 +107,7 @@ public interface AmazonCloudWatch {
      * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      */
     public void setRegion(Region region) throws java.lang.IllegalArgumentException;
-	
+    
     /**
      * <p>
      * Creates or updates an alarm and associates it with the specified

@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#createDBSecurityGroup(CreateDBSecurityGroupRequest)
  */
-public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name for the DB Security Group. This value is stored as a
@@ -108,6 +108,9 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest  imple
      *         lowercase string. <p>Constraints: Must contain no more than 255
      *         alphanumeric characters or hyphens. Must not be "Default". <p>Example:
      *         <code>mysecuritygroup</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateDBSecurityGroupRequest withDBSecurityGroupName(String dBSecurityGroupName) {
         this.dBSecurityGroupName = dBSecurityGroupName;
@@ -139,6 +142,9 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest  imple
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBSecurityGroupDescription The description for the DB Security Group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateDBSecurityGroupRequest withDBSecurityGroupDescription(String dBSecurityGroupDescription) {
         this.dBSecurityGroupDescription = dBSecurityGroupDescription;

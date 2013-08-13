@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeTerminationPolicyTypes(DescribeTerminationPolicyTypesRequest)
  */
-public class DescribeTerminationPolicyTypesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeTerminationPolicyTypesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Returns a string representation of this object; useful for testing and

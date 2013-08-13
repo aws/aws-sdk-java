@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Provides details of the <code>TimerFired</code> event.
  * </p>
  */
-public class TimerFiredEventAttributes  implements Serializable  {
+public class TimerFiredEventAttributes implements Serializable {
 
     /**
      * The unique Id of the timer that fired.
@@ -70,6 +70,9 @@ public class TimerFiredEventAttributes  implements Serializable  {
      * <b>Length: </b>1 - 256<br/>
      *
      * @param timerId The unique Id of the timer that fired.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public TimerFiredEventAttributes withTimerId(String timerId) {
         this.timerId = timerId;
@@ -113,6 +116,9 @@ public class TimerFiredEventAttributes  implements Serializable  {
      * @param startedEventId The id of the <code>TimerStarted</code> event that was recorded when
      *         this timer was started. This information can be useful for diagnosing
      *         problems by tracing back the chain of events leading up to this event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public TimerFiredEventAttributes withStartedEventId(Long startedEventId) {
         this.startedEventId = startedEventId;

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * An EBS volume backed block device.
  * </p>
  */
-public class EbsBlockDevice  implements Serializable  {
+public class EbsBlockDevice implements Serializable {
 
     /**
      * The ID of the snapshot from which the volume will be created.

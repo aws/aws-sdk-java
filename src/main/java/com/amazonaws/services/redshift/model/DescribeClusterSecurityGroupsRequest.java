@@ -29,7 +29,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeClusterSecurityGroups(DescribeClusterSecurityGroupsRequest)
  */
-public class DescribeClusterSecurityGroupsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeClusterSecurityGroupsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of a cluster security group for which you are requesting
@@ -100,6 +100,9 @@ public class DescribeClusterSecurityGroupsRequest extends AmazonWebServiceReques
      *         details. You can specify either the <b>Marker</b> parameter or a
      *         <b>ClusterSecurityGroupName</b> parameter, but not both. <p> Example:
      *         <code>securitygroup1</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterSecurityGroupsRequest withClusterSecurityGroupName(String clusterSecurityGroupName) {
         this.clusterSecurityGroupName = clusterSecurityGroupName;
@@ -161,6 +164,9 @@ public class DescribeClusterSecurityGroupsRequest extends AmazonWebServiceReques
      *         <a>DescribeClusterSecurityGroups</a> request. <p>Default:
      *         <code>100</code> <p>Constraints: Value must be at least 20 and no more
      *         than 100.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterSecurityGroupsRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -216,6 +222,9 @@ public class DescribeClusterSecurityGroupsRequest extends AmazonWebServiceReques
      *         security group that the current request will return. You can specify
      *         either the <b>Marker</b> parameter or a
      *         <b>ClusterSecurityGroupName</b> parameter, but not both.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterSecurityGroupsRequest withMarker(String marker) {
         this.marker = marker;

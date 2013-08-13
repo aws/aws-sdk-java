@@ -20,7 +20,7 @@ import java.io.Serializable;
  * An Auto Scaling process that has been suspended. For more information, see ProcessType.
  * </p>
  */
-public class SuspendedProcess  implements Serializable  {
+public class SuspendedProcess implements Serializable {
 
     /**
      * The name of the suspended process.
@@ -76,6 +76,9 @@ public class SuspendedProcess  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param processName The name of the suspended process.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SuspendedProcess withProcessName(String processName) {
         this.processName = processName;
@@ -119,6 +122,9 @@ public class SuspendedProcess  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param suspensionReason The reason that the process was suspended.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SuspendedProcess withSuspensionReason(String suspensionReason) {
         this.suspensionReason = suspensionReason;

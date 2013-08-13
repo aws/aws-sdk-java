@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Spot Instance State Fault
  */
-public class SpotInstanceStateFault  implements Serializable  {
+public class SpotInstanceStateFault implements Serializable {
 
     private String code;
 

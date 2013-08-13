@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Copy Snapshot Result
  */
-public class CopySnapshotResult  implements Serializable  {
+public class CopySnapshotResult implements Serializable {
 
     private String snapshotId;
 

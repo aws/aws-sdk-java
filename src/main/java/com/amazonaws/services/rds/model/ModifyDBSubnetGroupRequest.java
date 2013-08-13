@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#modifyDBSubnetGroup(ModifyDBSubnetGroupRequest)
  */
-public class ModifyDBSubnetGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ModifyDBSubnetGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name for the DB Subnet Group. This value is stored as a lowercase
@@ -86,6 +86,9 @@ public class ModifyDBSubnetGroupRequest extends AmazonWebServiceRequest  impleme
      *         string. <p>Constraints: Must contain no more than 255 alphanumeric
      *         characters or hyphens. Must not be "Default". <p>Example:
      *         <code>mySubnetgroup</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ModifyDBSubnetGroupRequest withDBSubnetGroupName(String dBSubnetGroupName) {
         this.dBSubnetGroupName = dBSubnetGroupName;
@@ -117,6 +120,9 @@ public class ModifyDBSubnetGroupRequest extends AmazonWebServiceRequest  impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBSubnetGroupDescription The description for the DB Subnet Group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ModifyDBSubnetGroupRequest withDBSubnetGroupDescription(String dBSubnetGroupDescription) {
         this.dBSubnetGroupDescription = dBSubnetGroupDescription;
@@ -159,6 +165,9 @@ public class ModifyDBSubnetGroupRequest extends AmazonWebServiceRequest  impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnetIds The EC2 Subnet IDs for the DB Subnet Group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ModifyDBSubnetGroupRequest withSubnetIds(String... subnetIds) {
         if (getSubnetIds() == null) setSubnetIds(new java.util.ArrayList<String>(subnetIds.length));
@@ -174,6 +183,9 @@ public class ModifyDBSubnetGroupRequest extends AmazonWebServiceRequest  impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnetIds The EC2 Subnet IDs for the DB Subnet Group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ModifyDBSubnetGroupRequest withSubnetIds(java.util.Collection<String> subnetIds) {
         if (subnetIds == null) {

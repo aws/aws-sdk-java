@@ -27,7 +27,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteDBSecurityGroup(DeleteDBSecurityGroupRequest)
  */
-public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the DB Security Group to delete. <note>You cannot delete
@@ -111,6 +111,9 @@ public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest  imple
      *         be 1 to 255 alphanumeric characters</li> <li>First character must be a
      *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
      *         hyphens</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteDBSecurityGroupRequest withDBSecurityGroupName(String dBSecurityGroupName) {
         this.dBSecurityGroupName = dBSecurityGroupName;

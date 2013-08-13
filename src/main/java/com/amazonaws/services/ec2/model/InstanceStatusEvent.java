@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents an event that affects the status of an Amazon EC2 instance.
  * </p>
  */
-public class InstanceStatusEvent  implements Serializable  {
+public class InstanceStatusEvent implements Serializable {
 
     /**
      * The associated code of the event. Valid values: instance-reboot,

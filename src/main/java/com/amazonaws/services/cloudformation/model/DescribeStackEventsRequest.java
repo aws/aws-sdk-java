@@ -29,7 +29,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#describeStackEvents(DescribeStackEventsRequest)
  */
-public class DescribeStackEventsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeStackEventsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name or the unique identifier associated with the stack.
@@ -76,6 +76,9 @@ public class DescribeStackEventsRequest extends AmazonWebServiceRequest  impleme
      *
      * @param stackName The name or the unique identifier associated with the stack.
      *         <p>Default: There is no default value.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeStackEventsRequest withStackName(String stackName) {
         this.stackName = stackName;
@@ -122,6 +125,9 @@ public class DescribeStackEventsRequest extends AmazonWebServiceRequest  impleme
      *
      * @param nextToken String that identifies the start of the next list of events, if there
      *         is one. <p>Default: There is no default value.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeStackEventsRequest withNextToken(String nextToken) {
         this.nextToken = nextToken;

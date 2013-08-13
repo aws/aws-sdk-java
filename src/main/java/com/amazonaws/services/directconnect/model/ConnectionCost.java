@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Cost description.
  * </p>
  */
-public class ConnectionCost  implements Serializable  {
+public class ConnectionCost implements Serializable {
 
     /**
      * The name of the cost item. <p>Example: Inbound data transfer
@@ -67,6 +67,9 @@ public class ConnectionCost  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The name of the cost item. <p>Example: Inbound data transfer
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ConnectionCost withName(String name) {
         this.name = name;
@@ -104,6 +107,9 @@ public class ConnectionCost  implements Serializable  {
      *
      * @param unit The unit used in cost calculation. <p>Example: "Gbps," if the price is
      *         calculated based on Gbps.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ConnectionCost withUnit(String unit) {
         this.unit = unit;
@@ -135,6 +141,9 @@ public class ConnectionCost  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param currencyCode Currency code based on ISO 4217. <p>Example: "USD" for US dollar.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ConnectionCost withCurrencyCode(String currencyCode) {
         this.currencyCode = currencyCode;
@@ -166,6 +175,9 @@ public class ConnectionCost  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param amount The amount of charge per unit. <p>Example: 0.01
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ConnectionCost withAmount(String amount) {
         this.amount = amount;

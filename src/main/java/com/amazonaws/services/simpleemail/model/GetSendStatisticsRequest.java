@@ -27,7 +27,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#getSendStatistics(GetSendStatisticsRequest)
  */
-public class GetSendStatisticsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class GetSendStatisticsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Returns a string representation of this object; useful for testing and

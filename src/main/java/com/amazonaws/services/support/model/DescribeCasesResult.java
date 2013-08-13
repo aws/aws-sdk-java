@@ -21,7 +21,7 @@ import java.io.Serializable;
  * <i>NextToken</i> that defines a point for pagination in the result set.
  * </p>
  */
-public class DescribeCasesResult  implements Serializable  {
+public class DescribeCasesResult implements Serializable {
 
     /**
      * Array of <a
@@ -82,6 +82,9 @@ public class DescribeCasesResult  implements Serializable  {
      * @param cases Array of <a
      *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html"
      *         title="CaseDetails">CaseDetails</a> objects.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCasesResult withCases(CaseDetails... cases) {
         if (getCases() == null) setCases(new java.util.ArrayList<CaseDetails>(cases.length));
@@ -101,6 +104,9 @@ public class DescribeCasesResult  implements Serializable  {
      * @param cases Array of <a
      *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html"
      *         title="CaseDetails">CaseDetails</a> objects.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCasesResult withCases(java.util.Collection<CaseDetails> cases) {
         if (cases == null) {
@@ -138,6 +144,9 @@ public class DescribeCasesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nextToken Defines a resumption point for pagination.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCasesResult withNextToken(String nextToken) {
         this.nextToken = nextToken;

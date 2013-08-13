@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#createDBSnapshot(CreateDBSnapshotRequest)
  */
-public class CreateDBSnapshotRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateDBSnapshotRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The identifier for the DB Snapshot. <p>Constraints: <ul> <li>Cannot be
@@ -125,6 +125,9 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest  implements
      *         characters or hyphens</li> <li>First character must be a letter</li>
      *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      *         </ul> <p>Example: <code>my-snapshot-id</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateDBSnapshotRequest withDBSnapshotIdentifier(String dBSnapshotIdentifier) {
         this.dBSnapshotIdentifier = dBSnapshotIdentifier;
@@ -180,6 +183,9 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest  implements
      *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
      *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
      *         or contain two consecutive hyphens</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateDBSnapshotRequest withDBInstanceIdentifier(String dBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;

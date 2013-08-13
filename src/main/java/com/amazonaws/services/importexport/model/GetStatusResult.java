@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Output structure for the GetStatus operation.
  * </p>
  */
-public class GetStatusResult  implements Serializable  {
+public class GetStatusResult implements Serializable {
 
     /**
      * A unique identifier which refers to a particular job.
@@ -142,6 +142,9 @@ public class GetStatusResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param jobId A unique identifier which refers to a particular job.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetStatusResult withJobId(String jobId) {
         this.jobId = jobId;
@@ -187,6 +190,9 @@ public class GetStatusResult  implements Serializable  {
      *
      * @param jobType Specifies whether the job to initiate is an import or export job.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see JobType
      */
     public GetStatusResult withJobType(String jobType) {
@@ -219,6 +225,9 @@ public class GetStatusResult  implements Serializable  {
      *
      * @param jobType Specifies whether the job to initiate is an import or export job.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see JobType
      */
     public GetStatusResult withJobType(JobType jobType) {
@@ -250,6 +259,9 @@ public class GetStatusResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param awsShippingAddress Address you ship your storage device to.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetStatusResult withAwsShippingAddress(String awsShippingAddress) {
         this.awsShippingAddress = awsShippingAddress;
@@ -287,6 +299,9 @@ public class GetStatusResult  implements Serializable  {
      *
      * @param locationCode A token representing the location of the storage device, such as
      *         "AtAWS".
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetStatusResult withLocationCode(String locationCode) {
         this.locationCode = locationCode;
@@ -324,6 +339,9 @@ public class GetStatusResult  implements Serializable  {
      *
      * @param locationMessage A more human readable form of the physical location of the storage
      *         device.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetStatusResult withLocationMessage(String locationMessage) {
         this.locationMessage = locationMessage;
@@ -355,6 +373,9 @@ public class GetStatusResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param progressCode A token representing the state of the job, such as "Started".
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetStatusResult withProgressCode(String progressCode) {
         this.progressCode = progressCode;
@@ -386,6 +407,9 @@ public class GetStatusResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param progressMessage A more human readable form of the job status.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetStatusResult withProgressMessage(String progressMessage) {
         this.progressMessage = progressMessage;
@@ -423,6 +447,9 @@ public class GetStatusResult  implements Serializable  {
      *
      * @param carrier Name of the shipping company. This value is included when the
      *         LocationCode is "Returned".
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetStatusResult withCarrier(String carrier) {
         this.carrier = carrier;
@@ -466,6 +493,9 @@ public class GetStatusResult  implements Serializable  {
      * @param trackingNumber The shipping tracking number assigned by AWS Import/Export to the
      *         storage device when it's returned to you. We return this value when
      *         the LocationCode is "Returned".
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetStatusResult withTrackingNumber(String trackingNumber) {
         this.trackingNumber = trackingNumber;
@@ -497,6 +527,9 @@ public class GetStatusResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param logBucket Amazon S3 bucket for user logs.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetStatusResult withLogBucket(String logBucket) {
         this.logBucket = logBucket;
@@ -528,6 +561,9 @@ public class GetStatusResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param logKey The key where the user logs were stored.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetStatusResult withLogKey(String logKey) {
         this.logKey = logKey;
@@ -565,6 +601,9 @@ public class GetStatusResult  implements Serializable  {
      *
      * @param errorCount Number of errors. We return this value when the ProgressCode is
      *         Success or SuccessWithErrors.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetStatusResult withErrorCount(Integer errorCount) {
         this.errorCount = errorCount;
@@ -614,6 +653,9 @@ public class GetStatusResult  implements Serializable  {
      *         example, "DV+TpDfx1/TdSE9ktyK9k/bDTVI=". Only use this value is you
      *         want to create the signature file yourself. Generally you should use
      *         the SignatureFileContents value.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetStatusResult withSignature(String signature) {
         this.signature = signature;
@@ -663,6 +705,9 @@ public class GetStatusResult  implements Serializable  {
      *         example, "DV+TpDfx1/TdSE9ktyK9k/bDTVI=". Only use this value is you
      *         want to create the signature file yourself. Generally you should use
      *         the SignatureFileContents value.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetStatusResult withSignatureFileContents(String signatureFileContents) {
         this.signatureFileContents = signatureFileContents;
@@ -694,6 +739,9 @@ public class GetStatusResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param currentManifest The last manifest submitted, which will be used to process the job.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetStatusResult withCurrentManifest(String currentManifest) {
         this.currentManifest = currentManifest;
@@ -731,6 +779,9 @@ public class GetStatusResult  implements Serializable  {
      *
      * @param creationDate Timestamp of the CreateJob request in ISO8601 date format. For example
      *         "2010-03-28T20:27:35Z".
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetStatusResult withCreationDate(java.util.Date creationDate) {
         this.creationDate = creationDate;

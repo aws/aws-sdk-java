@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Network Acl Association
  */
-public class NetworkAclAssociation  implements Serializable  {
+public class NetworkAclAssociation implements Serializable {
 
     private String networkAclAssociationId;
 

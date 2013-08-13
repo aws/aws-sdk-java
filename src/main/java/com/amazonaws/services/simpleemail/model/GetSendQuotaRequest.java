@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#getSendQuota(GetSendQuotaRequest)
  */
-public class GetSendQuotaRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class GetSendQuotaRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Returns a string representation of this object; useful for testing and

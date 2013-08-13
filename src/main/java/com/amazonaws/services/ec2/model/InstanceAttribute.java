@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents an attribute of an Amazon EC2 instance.
  * </p>
  */
-public class InstanceAttribute  implements Serializable  {
+public class InstanceAttribute implements Serializable {
 
     /**
      * The ID of the associated instance.

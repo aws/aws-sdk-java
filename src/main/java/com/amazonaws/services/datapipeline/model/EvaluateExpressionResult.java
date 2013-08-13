@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the output from the EvaluateExpression action.
  * </p>
  */
-public class EvaluateExpressionResult  implements Serializable  {
+public class EvaluateExpressionResult implements Serializable {
 
     /**
      * The evaluated expression.
@@ -67,6 +67,9 @@ public class EvaluateExpressionResult  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param evaluatedExpression The evaluated expression.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EvaluateExpressionResult withEvaluatedExpression(String evaluatedExpression) {
         this.evaluatedExpression = evaluatedExpression;

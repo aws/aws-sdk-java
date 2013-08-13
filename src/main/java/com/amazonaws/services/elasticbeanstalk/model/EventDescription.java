@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes an event.
  * </p>
  */
-public class EventDescription  implements Serializable  {
+public class EventDescription implements Serializable {
 
     /**
      * The date when the event occurred.
@@ -108,6 +108,9 @@ public class EventDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eventDate The date when the event occurred.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EventDescription withEventDate(java.util.Date eventDate) {
         this.eventDate = eventDate;
@@ -139,6 +142,9 @@ public class EventDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param message The event message.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EventDescription withMessage(String message) {
         this.message = message;
@@ -179,6 +185,9 @@ public class EventDescription  implements Serializable  {
      * <b>Length: </b>1 - 100<br/>
      *
      * @param applicationName The application associated with the event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EventDescription withApplicationName(String applicationName) {
         this.applicationName = applicationName;
@@ -225,6 +234,9 @@ public class EventDescription  implements Serializable  {
      *
      * @param versionLabel The release label for the application version associated with this
      *         event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EventDescription withVersionLabel(String versionLabel) {
         this.versionLabel = versionLabel;
@@ -265,6 +277,9 @@ public class EventDescription  implements Serializable  {
      * <b>Length: </b>1 - 100<br/>
      *
      * @param templateName The name of the configuration associated with this event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EventDescription withTemplateName(String templateName) {
         this.templateName = templateName;
@@ -305,6 +320,9 @@ public class EventDescription  implements Serializable  {
      * <b>Length: </b>4 - 23<br/>
      *
      * @param environmentName The name of the environment associated with this event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EventDescription withEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
@@ -336,6 +354,9 @@ public class EventDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param requestId The web service request ID for the activity of this event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EventDescription withRequestId(String requestId) {
         this.requestId = requestId;
@@ -381,6 +402,9 @@ public class EventDescription  implements Serializable  {
      *
      * @param severity The severity level of this event.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see EventSeverity
      */
     public EventDescription withSeverity(String severity) {
@@ -412,6 +436,9 @@ public class EventDescription  implements Serializable  {
      * <b>Allowed Values: </b>TRACE, DEBUG, INFO, WARN, ERROR, FATAL
      *
      * @param severity The severity level of this event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see EventSeverity
      */

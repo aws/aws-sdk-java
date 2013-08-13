@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A complex type that lists the active CloudFront key pairs, if any, that are associated with AwsAccountNumber.
  * </p>
  */
-public class KeyPairIds  implements Serializable  {
+public class KeyPairIds implements Serializable {
 
     /**
      * The number of active CloudFront key pairs for AwsAccountNumber.
@@ -57,6 +57,9 @@ public class KeyPairIds  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param quantity The number of active CloudFront key pairs for AwsAccountNumber.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public KeyPairIds withQuantity(Integer quantity) {
         this.quantity = quantity;
@@ -105,6 +108,9 @@ public class KeyPairIds  implements Serializable  {
      *
      * @param items A complex type that lists the active CloudFront key pairs, if any,
      *         that are associated with AwsAccountNumber.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public KeyPairIds withItems(String... items) {
         if (getItems() == null) setItems(new java.util.ArrayList<String>(items.length));
@@ -122,6 +128,9 @@ public class KeyPairIds  implements Serializable  {
      *
      * @param items A complex type that lists the active CloudFront key pairs, if any,
      *         that are associated with AwsAccountNumber.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public KeyPairIds withItems(java.util.Collection<String> items) {
         if (items == null) {

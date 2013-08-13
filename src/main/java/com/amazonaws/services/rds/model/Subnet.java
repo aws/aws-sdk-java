@@ -20,7 +20,7 @@ import java.io.Serializable;
  * This data type is used as a response element in the DescribeDBSubnetGroups action.
  * </p>
  */
-public class Subnet  implements Serializable  {
+public class Subnet implements Serializable {
 
     /**
      * Specifies the identifier of the subnet.
@@ -63,6 +63,9 @@ public class Subnet  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnetIdentifier Specifies the identifier of the subnet.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Subnet withSubnetIdentifier(String subnetIdentifier) {
         this.subnetIdentifier = subnetIdentifier;
@@ -106,6 +109,9 @@ public class Subnet  implements Serializable  {
      * @param subnetAvailabilityZone Contains Availability Zone information. <p> This data type is used as
      *         an element in the following data type: <ul>
      *         <li><a>OrderableDBInstanceOption</a></li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Subnet withSubnetAvailabilityZone(AvailabilityZone subnetAvailabilityZone) {
         this.subnetAvailabilityZone = subnetAvailabilityZone;
@@ -137,6 +143,9 @@ public class Subnet  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnetStatus Specifies the status of the subnet.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Subnet withSubnetStatus(String subnetStatus) {
         this.subnetStatus = subnetStatus;

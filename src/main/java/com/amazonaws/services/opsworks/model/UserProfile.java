@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes a user's SSH information.
  * </p>
  */
-public class UserProfile  implements Serializable  {
+public class UserProfile implements Serializable {
 
     /**
      * The user IAM ARN.
@@ -66,6 +66,9 @@ public class UserProfile  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param iamUserArn The user IAM ARN.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UserProfile withIamUserArn(String iamUserArn) {
         this.iamUserArn = iamUserArn;
@@ -97,6 +100,9 @@ public class UserProfile  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The user name.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UserProfile withName(String name) {
         this.name = name;
@@ -128,6 +134,9 @@ public class UserProfile  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sshUsername The user's SSH user name.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UserProfile withSshUsername(String sshUsername) {
         this.sshUsername = sshUsername;
@@ -159,6 +168,9 @@ public class UserProfile  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sshPublicKey The user's SSH public key.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UserProfile withSshPublicKey(String sshPublicKey) {
         this.sshPublicKey = sshPublicKey;

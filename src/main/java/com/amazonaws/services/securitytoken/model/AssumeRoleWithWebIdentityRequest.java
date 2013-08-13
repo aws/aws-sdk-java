@@ -61,7 +61,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.securitytoken.AWSSecurityTokenService#assumeRoleWithWebIdentity(AssumeRoleWithWebIdentityRequest)
  */
-public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The Amazon Resource Name (ARN) of the role that the caller is
@@ -174,6 +174,9 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest  i
      *
      * @param roleArn The Amazon Resource Name (ARN) of the role that the caller is
      *         assuming.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AssumeRoleWithWebIdentityRequest withRoleArn(String roleArn) {
         this.roleArn = roleArn;
@@ -247,6 +250,9 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest  i
      *         application will use are associated with that user. This session name
      *         is included as part of the ARN and assumed role ID in the
      *         <code>AssumedRoleUser</code> response element.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AssumeRoleWithWebIdentityRequest withRoleSessionName(String roleSessionName) {
         this.roleSessionName = roleSessionName;
@@ -311,6 +317,9 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest  i
      *         authenticating the user who is using your application with a web
      *         identity provider before the application makes an
      *         <code>AssumeRoleWithWebIdentity</code> call.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AssumeRoleWithWebIdentityRequest withWebIdentityToken(String webIdentityToken) {
         this.webIdentityToken = webIdentityToken;
@@ -381,6 +390,9 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest  i
      *         <code>accounts.google.com</code>. Do not include URL schemes and port
      *         numbers. Currently, <code>www.amazon.com</code> and
      *         <code>graph.facebook.com</code> are supported.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AssumeRoleWithWebIdentityRequest withProviderId(String providerId) {
         this.providerId = providerId;
@@ -454,6 +466,9 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest  i
      *         intersection of this policy and the access policy that is associated
      *         with the role. Use this policy to further restrict the permissions of
      *         the temporary security credentials.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AssumeRoleWithWebIdentityRequest withPolicy(String policy) {
         this.policy = policy;
@@ -506,6 +521,9 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest  i
      * @param durationSeconds The duration, in seconds, of the role session. The value can range
      *         from 900 seconds (15 minutes) to 3600 seconds (1 hour). By default,
      *         the value is set to 3600 seconds.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AssumeRoleWithWebIdentityRequest withDurationSeconds(Integer durationSeconds) {
         this.durationSeconds = durationSeconds;

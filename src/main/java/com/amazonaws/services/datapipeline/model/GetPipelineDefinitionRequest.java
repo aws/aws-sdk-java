@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#getPipelineDefinition(GetPipelineDefinitionRequest)
  */
-public class GetPipelineDefinitionRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class GetPipelineDefinitionRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The identifier of the pipeline.
@@ -85,6 +85,9 @@ public class GetPipelineDefinitionRequest extends AmazonWebServiceRequest  imple
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param pipelineId The identifier of the pipeline.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetPipelineDefinitionRequest withPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
@@ -152,6 +155,9 @@ public class GetPipelineDefinitionRequest extends AmazonWebServiceRequest  imple
      *         <code>active</code>. Where <code>latest</code> indicates the last
      *         definition saved to the pipeline and <code>active</code> indicates the
      *         last definition of the pipeline that was activated.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetPipelineDefinitionRequest withVersion(String version) {
         this.version = version;

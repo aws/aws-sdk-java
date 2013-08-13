@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The AppCookieStickinessPolicy data type.
  * </p>
  */
-public class AppCookieStickinessPolicy  implements Serializable  {
+public class AppCookieStickinessPolicy implements Serializable {
 
     /**
      * The mnemonic name for the policy being created. The name must be
@@ -88,6 +88,9 @@ public class AppCookieStickinessPolicy  implements Serializable  {
      *
      * @param policyName The mnemonic name for the policy being created. The name must be
      *         unique within a set of policies for this LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AppCookieStickinessPolicy withPolicyName(String policyName) {
         this.policyName = policyName;
@@ -119,6 +122,9 @@ public class AppCookieStickinessPolicy  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cookieName The name of the application cookie used for stickiness.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AppCookieStickinessPolicy withCookieName(String cookieName) {
         this.cookieName = cookieName;

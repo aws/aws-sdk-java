@@ -43,7 +43,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#listWorkflowTypes(ListWorkflowTypesRequest)
  */
-public class ListWorkflowTypesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ListWorkflowTypesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the domain in which the workflow types have been
@@ -140,6 +140,9 @@ public class ListWorkflowTypesRequest extends AmazonWebServiceRequest  implement
      *
      * @param domain The name of the domain in which the workflow types have been
      *         registered.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListWorkflowTypesRequest withDomain(String domain) {
         this.domain = domain;
@@ -180,6 +183,9 @@ public class ListWorkflowTypesRequest extends AmazonWebServiceRequest  implement
      * <b>Length: </b>1 - 256<br/>
      *
      * @param name If specified, lists the workflow type with this name.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListWorkflowTypesRequest withName(String name) {
         this.name = name;
@@ -225,6 +231,9 @@ public class ListWorkflowTypesRequest extends AmazonWebServiceRequest  implement
      *
      * @param registrationStatus Specifies the registration status of the workflow types to list.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see RegistrationStatus
      */
     public ListWorkflowTypesRequest withRegistrationStatus(String registrationStatus) {
@@ -256,6 +265,9 @@ public class ListWorkflowTypesRequest extends AmazonWebServiceRequest  implement
      * <b>Allowed Values: </b>REGISTERED, DEPRECATED
      *
      * @param registrationStatus Specifies the registration status of the workflow types to list.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see RegistrationStatus
      */
@@ -315,6 +327,9 @@ public class ListWorkflowTypesRequest extends AmazonWebServiceRequest  implement
      *         returned, the results are being paginated. To get the next page of
      *         results, repeat the call with the returned token and all other
      *         arguments unchanged.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListWorkflowTypesRequest withNextPageToken(String nextPageToken) {
         this.nextPageToken = nextPageToken;
@@ -385,6 +400,9 @@ public class ListWorkflowTypesRequest extends AmazonWebServiceRequest  implement
      *         greater than 100. Note that the number of types may be less than the
      *         maxiumum page size, in which case, the returned page will have fewer
      *         results than the maximumPageSize specified.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListWorkflowTypesRequest withMaximumPageSize(Integer maximumPageSize) {
         this.maximumPageSize = maximumPageSize;
@@ -428,6 +446,9 @@ public class ListWorkflowTypesRequest extends AmazonWebServiceRequest  implement
      * @param reverseOrder When set to <code>true</code>, returns the results in reverse order.
      *         By default the results are returned in ascending alphabetical order of
      *         the <code>name</code> of the workflow types.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListWorkflowTypesRequest withReverseOrder(Boolean reverseOrder) {
         this.reverseOrder = reverseOrder;

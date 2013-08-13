@@ -101,7 +101,7 @@ public interface AmazonAutoScaling {
      * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      */
     public void setRegion(Region region) throws java.lang.IllegalArgumentException;
-	
+    
     /**
      * <p>
      * Returns a full description of each Auto Scaling group in the given

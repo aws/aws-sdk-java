@@ -28,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeEventSubscriptions(DescribeEventSubscriptionsRequest)
  */
-public class DescribeEventSubscriptionsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeEventSubscriptionsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the RDS event notification subscription you want to
@@ -83,6 +83,9 @@ public class DescribeEventSubscriptionsRequest extends AmazonWebServiceRequest  
      *
      * @param subscriptionName The name of the RDS event notification subscription you want to
      *         describe.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEventSubscriptionsRequest withSubscriptionName(String subscriptionName) {
         this.subscriptionName = subscriptionName;
@@ -138,6 +141,9 @@ public class DescribeEventSubscriptionsRequest extends AmazonWebServiceRequest  
      *         pagination token called a marker is included in the response so that
      *         the remaining results can be retrieved. <p>Default: 100
      *         <p>Constraints: minimum 20, maximum 100
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEventSubscriptionsRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -187,6 +193,9 @@ public class DescribeEventSubscriptionsRequest extends AmazonWebServiceRequest  
      *         DescribeOrderableDBInstanceOptions request. If this parameter is
      *         specified, the response includes only records beyond the marker, up to
      *         the value specified by <code>MaxRecords</code> .
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEventSubscriptionsRequest withMarker(String marker) {
         this.marker = marker;

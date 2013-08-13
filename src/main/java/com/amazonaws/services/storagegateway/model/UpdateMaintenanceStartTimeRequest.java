@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#updateMaintenanceStartTime(UpdateMaintenanceStartTimeRequest)
  */
-public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -110,6 +110,9 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest  
      * @param gatewayARN The Amazon Resource Name (ARN) of the gateway. Use the
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateMaintenanceStartTimeRequest withGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
@@ -162,6 +165,9 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest  
      * @param hourOfDay The hour component of the maintenance start time represented as
      *         <emphasis>hh</emphasis>, where <i>hh</i> is the hour (00 to 23). The
      *         hour of the day is in the time zone of the gateway.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateMaintenanceStartTimeRequest withHourOfDay(Integer hourOfDay) {
         this.hourOfDay = hourOfDay;
@@ -214,6 +220,9 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest  
      * @param minuteOfHour The minute component of the maintenance start time represented as
      *         <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute of the
      *         hour is in the time zone of the gateway.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateMaintenanceStartTimeRequest withMinuteOfHour(Integer minuteOfHour) {
         this.minuteOfHour = minuteOfHour;
@@ -254,6 +263,9 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest  
      * <b>Range: </b>0 - 6<br/>
      *
      * @param dayOfWeek The maintenance start time day of the week.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateMaintenanceStartTimeRequest withDayOfWeek(Integer dayOfWeek) {
         this.dayOfWeek = dayOfWeek;

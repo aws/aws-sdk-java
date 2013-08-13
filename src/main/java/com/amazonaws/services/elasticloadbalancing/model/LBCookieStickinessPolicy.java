@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The LBCookieStickinessPolicy data type.
  * </p>
  */
-public class LBCookieStickinessPolicy  implements Serializable  {
+public class LBCookieStickinessPolicy implements Serializable {
 
     /**
      * The name for the policy being created. The name must be unique within
@@ -92,6 +92,9 @@ public class LBCookieStickinessPolicy  implements Serializable  {
      *
      * @param policyName The name for the policy being created. The name must be unique within
      *         the set of policies for this LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LBCookieStickinessPolicy withPolicyName(String policyName) {
         this.policyName = policyName;
@@ -135,6 +138,9 @@ public class LBCookieStickinessPolicy  implements Serializable  {
      * @param cookieExpirationPeriod The time period in seconds after which the cookie should be considered
      *         stale. Not specifying this parameter indicates that the stickiness
      *         session will last for the duration of the browser session.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LBCookieStickinessPolicy withCookieExpirationPeriod(Long cookieExpirationPeriod) {
         this.cookieExpirationPeriod = cookieExpirationPeriod;

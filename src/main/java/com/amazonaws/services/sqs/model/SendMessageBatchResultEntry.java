@@ -16,40 +16,58 @@ package com.amazonaws.services.sqs.model;
 import java.io.Serializable;
 
 /**
- * Send Message Batch Result Entry
+ * <p>
+ * Encloses a message ID for successfully enqueued message of a SendMessageBatch.
+ * </p>
  */
-public class SendMessageBatchResultEntry  implements Serializable  {
+public class SendMessageBatchResultEntry implements Serializable {
 
+    /**
+     * An identifier for the message in this batch.
+     */
     private String id;
 
+    /**
+     * An identifier for the message.
+     */
     private String messageId;
 
+    /**
+     * An MD5 digest of the non-URL-encoded message body string. This can be
+     * used to verify that SQS received the message correctly. SQS first URL
+     * decodes the message before creating the MD5 digest. For information
+     * about MD5, go to <a
+     * href="http://faqs.org/rfcs/rfc1321.html">http://faqs.org/rfcs/rfc1321.html</a>.
+     */
     private String mD5OfMessageBody;
 
     /**
-     * Returns the value of the Id property for this object.
+     * An identifier for the message in this batch.
      *
-     * @return The value of the Id property for this object.
+     * @return An identifier for the message in this batch.
      */
     public String getId() {
         return id;
     }
     
     /**
-     * Sets the value of the Id property for this object.
+     * An identifier for the message in this batch.
      *
-     * @param id The new value for the Id property for this object.
+     * @param id An identifier for the message in this batch.
      */
     public void setId(String id) {
         this.id = id;
     }
     
     /**
-     * Sets the value of the Id property for this object.
+     * An identifier for the message in this batch.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param id The new value for the Id property for this object.
+     * @param id An identifier for the message in this batch.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SendMessageBatchResultEntry withId(String id) {
         this.id = id;
@@ -58,29 +76,32 @@ public class SendMessageBatchResultEntry  implements Serializable  {
     
     
     /**
-     * Returns the value of the MessageId property for this object.
+     * An identifier for the message.
      *
-     * @return The value of the MessageId property for this object.
+     * @return An identifier for the message.
      */
     public String getMessageId() {
         return messageId;
     }
     
     /**
-     * Sets the value of the MessageId property for this object.
+     * An identifier for the message.
      *
-     * @param messageId The new value for the MessageId property for this object.
+     * @param messageId An identifier for the message.
      */
     public void setMessageId(String messageId) {
         this.messageId = messageId;
     }
     
     /**
-     * Sets the value of the MessageId property for this object.
+     * An identifier for the message.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param messageId The new value for the MessageId property for this object.
+     * @param messageId An identifier for the message.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SendMessageBatchResultEntry withMessageId(String messageId) {
         this.messageId = messageId;
@@ -89,29 +110,56 @@ public class SendMessageBatchResultEntry  implements Serializable  {
     
     
     /**
-     * Returns the value of the MD5OfMessageBody property for this object.
+     * An MD5 digest of the non-URL-encoded message body string. This can be
+     * used to verify that SQS received the message correctly. SQS first URL
+     * decodes the message before creating the MD5 digest. For information
+     * about MD5, go to <a
+     * href="http://faqs.org/rfcs/rfc1321.html">http://faqs.org/rfcs/rfc1321.html</a>.
      *
-     * @return The value of the MD5OfMessageBody property for this object.
+     * @return An MD5 digest of the non-URL-encoded message body string. This can be
+     *         used to verify that SQS received the message correctly. SQS first URL
+     *         decodes the message before creating the MD5 digest. For information
+     *         about MD5, go to <a
+     *         href="http://faqs.org/rfcs/rfc1321.html">http://faqs.org/rfcs/rfc1321.html</a>.
      */
     public String getMD5OfMessageBody() {
         return mD5OfMessageBody;
     }
     
     /**
-     * Sets the value of the MD5OfMessageBody property for this object.
+     * An MD5 digest of the non-URL-encoded message body string. This can be
+     * used to verify that SQS received the message correctly. SQS first URL
+     * decodes the message before creating the MD5 digest. For information
+     * about MD5, go to <a
+     * href="http://faqs.org/rfcs/rfc1321.html">http://faqs.org/rfcs/rfc1321.html</a>.
      *
-     * @param mD5OfMessageBody The new value for the MD5OfMessageBody property for this object.
+     * @param mD5OfMessageBody An MD5 digest of the non-URL-encoded message body string. This can be
+     *         used to verify that SQS received the message correctly. SQS first URL
+     *         decodes the message before creating the MD5 digest. For information
+     *         about MD5, go to <a
+     *         href="http://faqs.org/rfcs/rfc1321.html">http://faqs.org/rfcs/rfc1321.html</a>.
      */
     public void setMD5OfMessageBody(String mD5OfMessageBody) {
         this.mD5OfMessageBody = mD5OfMessageBody;
     }
     
     /**
-     * Sets the value of the MD5OfMessageBody property for this object.
+     * An MD5 digest of the non-URL-encoded message body string. This can be
+     * used to verify that SQS received the message correctly. SQS first URL
+     * decodes the message before creating the MD5 digest. For information
+     * about MD5, go to <a
+     * href="http://faqs.org/rfcs/rfc1321.html">http://faqs.org/rfcs/rfc1321.html</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param mD5OfMessageBody The new value for the MD5OfMessageBody property for this object.
+     * @param mD5OfMessageBody An MD5 digest of the non-URL-encoded message body string. This can be
+     *         used to verify that SQS received the message correctly. SQS first URL
+     *         decodes the message before creating the MD5 digest. For information
+     *         about MD5, go to <a
+     *         href="http://faqs.org/rfcs/rfc1321.html">http://faqs.org/rfcs/rfc1321.html</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SendMessageBatchResultEntry withMD5OfMessageBody(String mD5OfMessageBody) {
         this.mD5OfMessageBody = mD5OfMessageBody;

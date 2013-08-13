@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the output from the ReportTaskProgress action.
  * </p>
  */
-public class ReportTaskProgressResult  implements Serializable  {
+public class ReportTaskProgressResult implements Serializable {
 
     /**
      * If <code>True</code>, the calling task runner should cancel processing
@@ -65,6 +65,9 @@ public class ReportTaskProgressResult  implements Serializable  {
      * @param canceled If <code>True</code>, the calling task runner should cancel processing
      *         of the task. The task runner does not need to call
      *         <a>SetTaskStatus</a> for canceled tasks.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ReportTaskProgressResult withCanceled(Boolean canceled) {
         this.canceled = canceled;

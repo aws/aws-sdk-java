@@ -91,7 +91,7 @@ public interface AmazonElastiCache {
      * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      */
     public void setRegion(Region region) throws java.lang.IllegalArgumentException;
-	
+    
     /**
      * <p>
      * Authorizes ingress to a CacheSecurityGroup using EC2 Security Groups

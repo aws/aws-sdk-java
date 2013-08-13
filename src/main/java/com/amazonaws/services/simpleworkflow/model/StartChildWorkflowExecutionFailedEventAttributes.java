@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Provides details of the <code>StartChildWorkflowExecutionFailed</code> event.
  * </p>
  */
-public class StartChildWorkflowExecutionFailedEventAttributes  implements Serializable  {
+public class StartChildWorkflowExecutionFailedEventAttributes implements Serializable {
 
     /**
      * The workflow type provided in the
@@ -100,6 +100,9 @@ public class StartChildWorkflowExecutionFailedEventAttributes  implements Serial
      *
      * @param workflowType The workflow type provided in the
      *         <code>StartChildWorkflowExecution</code> <a>Decision</a> that failed.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StartChildWorkflowExecutionFailedEventAttributes withWorkflowType(WorkflowType workflowType) {
         this.workflowType = workflowType;
@@ -181,6 +184,9 @@ public class StartChildWorkflowExecutionFailedEventAttributes  implements Serial
      *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see StartChildWorkflowExecutionFailedCause
      */
     public StartChildWorkflowExecutionFailedEventAttributes withCause(String cause) {
@@ -237,6 +243,9 @@ public class StartChildWorkflowExecutionFailedEventAttributes  implements Serial
      *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see StartChildWorkflowExecutionFailedCause
      */
     public StartChildWorkflowExecutionFailedEventAttributes withCause(StartChildWorkflowExecutionFailedCause cause) {
@@ -277,6 +286,9 @@ public class StartChildWorkflowExecutionFailedEventAttributes  implements Serial
      * <b>Length: </b>1 - 256<br/>
      *
      * @param workflowId The <code>workflowId</code> of the child workflow execution.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StartChildWorkflowExecutionFailedEventAttributes withWorkflowId(String workflowId) {
         this.workflowId = workflowId;
@@ -332,6 +344,9 @@ public class StartChildWorkflowExecutionFailedEventAttributes  implements Serial
      *         <a>Decision</a> to start this child workflow execution. This
      *         information can be useful for diagnosing problems by tracing back the
      *         chain of events leading up to this event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StartChildWorkflowExecutionFailedEventAttributes withInitiatedEventId(Long initiatedEventId) {
         this.initiatedEventId = initiatedEventId;
@@ -387,6 +402,9 @@ public class StartChildWorkflowExecutionFailedEventAttributes  implements Serial
      *         <code>StartChildWorkflowExecution</code> <a>Decision</a> to request
      *         this child workflow execution. This information can be useful for
      *         diagnosing problems by tracing back the cause of events.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StartChildWorkflowExecutionFailedEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
         this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;
@@ -427,6 +445,9 @@ public class StartChildWorkflowExecutionFailedEventAttributes  implements Serial
      * <b>Length: </b>0 - 32768<br/>
      *
      * @param control The new value for the Control property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StartChildWorkflowExecutionFailedEventAttributes withControl(String control) {
         this.control = control;

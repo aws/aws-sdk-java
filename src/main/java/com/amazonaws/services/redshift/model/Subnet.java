@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes a subnet.
  * </p>
  */
-public class Subnet  implements Serializable  {
+public class Subnet implements Serializable {
 
     /**
      * The identifier of the subnet.
@@ -61,6 +61,9 @@ public class Subnet  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnetIdentifier The identifier of the subnet.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Subnet withSubnetIdentifier(String subnetIdentifier) {
         this.subnetIdentifier = subnetIdentifier;
@@ -92,6 +95,9 @@ public class Subnet  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnetAvailabilityZone Describes an availability zone.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Subnet withSubnetAvailabilityZone(AvailabilityZone subnetAvailabilityZone) {
         this.subnetAvailabilityZone = subnetAvailabilityZone;
@@ -123,6 +129,9 @@ public class Subnet  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnetStatus The status of the subnet.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Subnet withSubnetStatus(String subnetStatus) {
         this.subnetStatus = subnetStatus;

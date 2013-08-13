@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Empty response for the request.
  * </p>
  */
-public class DeleteHealthCheckResult  implements Serializable  {
+public class DeleteHealthCheckResult implements Serializable {
 
     /**
      * Returns a string representation of this object; useful for testing and

@@ -14,51 +14,116 @@
  */
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
-import java.util.HashMap;
-import java.util.List;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.OutputStreamWriter;
+import java.io.StringWriter;
+import java.io.Writer;
 import java.util.Map;
+import java.util.List;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
+import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
+import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.StringInputStream;
+import com.amazonaws.util.json.*;
 
 /**
  * Modify Instance Groups Request Marshaller
  */
 public class ModifyInstanceGroupsRequestMarshaller implements Marshaller<Request<ModifyInstanceGroupsRequest>, ModifyInstanceGroupsRequest> {
 
-    public Request<ModifyInstanceGroupsRequest> marshall(ModifyInstanceGroupsRequest modifyInstanceGroupsRequest) {
+    
 
-        if (modifyInstanceGroupsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+    public Request<ModifyInstanceGroupsRequest> marshall(ModifyInstanceGroupsRequest modifyInstanceGroupsRequest) {
+    if (modifyInstanceGroupsRequest == null) {
+        throw new AmazonClientException("Invalid argument passed to marshall(...)");
+    }
 
         Request<ModifyInstanceGroupsRequest> request = new DefaultRequest<ModifyInstanceGroupsRequest>(modifyInstanceGroupsRequest, "AmazonElasticMapReduce");
-        request.addParameter("Action", "ModifyInstanceGroups");
-        request.addParameter("Version", "2009-03-31");
+        String target = "ElasticMapReduce.ModifyInstanceGroups";
+        request.addHeader("X-Amz-Target", target);
+        request.addHeader("Content-Type", "application/x-amz-json-1.1");
+
+        
+        request.setHttpMethod(HttpMethodName.POST);
 
 
-        java.util.List<InstanceGroupModifyConfig> instanceGroupsList = modifyInstanceGroupsRequest.getInstanceGroups();
-        int instanceGroupsListIndex = 1;
+        String uriResourcePath = ""; 
 
-        for (InstanceGroupModifyConfig instanceGroupsListValue : instanceGroupsList) {
-            InstanceGroupModifyConfig instanceGroupModifyConfigMember = instanceGroupsListValue;
-            if (instanceGroupModifyConfigMember != null) {
-                if (instanceGroupModifyConfigMember.getInstanceGroupId() != null) {
-                    request.addParameter("InstanceGroups.member." + instanceGroupsListIndex + ".InstanceGroupId", StringUtils.fromString(instanceGroupModifyConfigMember.getInstanceGroupId()));
-                }
-                if (instanceGroupModifyConfigMember.getInstanceCount() != null) {
-                    request.addParameter("InstanceGroups.member." + instanceGroupsListIndex + ".InstanceCount", StringUtils.fromInteger(instanceGroupModifyConfigMember.getInstanceCount()));
+        uriResourcePath = uriResourcePath.replaceAll("//", "/");
+
+        if (uriResourcePath.contains("?")) {
+            String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
+            uriResourcePath    = uriResourcePath.substring(0, uriResourcePath.indexOf("?"));
+
+            for (String s : queryString.split("[;&]")) {
+                String[] nameValuePair = s.split("=");
+                if (nameValuePair.length == 2) {
+                    request.addParameter(nameValuePair[0], nameValuePair[1]);
+                } else {
+                    request.addParameter(s, null);
                 }
             }
-
-            instanceGroupsListIndex++;
         }
 
+        request.setResourcePath(uriResourcePath);
+
+
+        
+        try {
+          StringWriter stringWriter = new StringWriter();
+          JSONWriter jsonWriter = new JSONWriter(stringWriter);
+
+          
+            
+          jsonWriter.object();
+          
+
+            com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupModifyConfig> instanceGroupsList = (com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupModifyConfig>)(modifyInstanceGroupsRequest.getInstanceGroups());
+            if (instanceGroupsList != null && !(instanceGroupsList.isAutoConstruct() && instanceGroupsList.isEmpty())) {
+
+                jsonWriter.key("InstanceGroups");
+                jsonWriter.array();
+
+                for (InstanceGroupModifyConfig instanceGroupsListValue : instanceGroupsList) {
+                    if (instanceGroupsListValue != null) {
+                        jsonWriter.object();
+                        if (instanceGroupsListValue.getInstanceGroupId() != null) {
+                            jsonWriter.key("InstanceGroupId").value(instanceGroupsListValue.getInstanceGroupId());
+                        }
+                        if (instanceGroupsListValue.getInstanceCount() != null) {
+                            jsonWriter.key("InstanceCount").value(instanceGroupsListValue.getInstanceCount());
+                        }
+                        jsonWriter.endObject();
+                    }
+                }
+                jsonWriter.endArray();
+            }
+
+          jsonWriter.endObject();
+          
+
+          String snippet = stringWriter.toString();
+          byte[] content = snippet.getBytes("UTF-8");
+          request.setContent(new StringInputStream(snippet));
+          request.addHeader("Content-Length", Integer.toString(content.length));
+        } catch(Throwable t) {
+          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+        }
+        
 
         return request;
+    }
+
+    private String getString(String s) {
+        if (s == null) return "";
+        return s;
     }
 }

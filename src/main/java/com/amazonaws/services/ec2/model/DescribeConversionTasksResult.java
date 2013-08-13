@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Describe Conversion Tasks Result
  */
-public class DescribeConversionTasksResult  implements Serializable  {
+public class DescribeConversionTasksResult implements Serializable {
 
     private com.amazonaws.internal.ListWithAutoConstructFlag<ConversionTask> conversionTasks;
 

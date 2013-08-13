@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The result of creating a new EBS volume.
  * </p>
  */
-public class CreateVolumeResult  implements Serializable  {
+public class CreateVolumeResult implements Serializable {
 
     /**
      * The newly created EBS volume.

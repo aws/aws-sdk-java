@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getServerCertificate(GetServerCertificateRequest)
  */
-public class GetServerCertificateRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class GetServerCertificateRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the server certificate you want to retrieve information
@@ -100,6 +100,9 @@ public class GetServerCertificateRequest extends AmazonWebServiceRequest  implem
      *
      * @param serverCertificateName The name of the server certificate you want to retrieve information
      *         about.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetServerCertificateRequest withServerCertificateName(String serverCertificateName) {
         this.serverCertificateName = serverCertificateName;

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Provides details of the <code>ChildWorkflowExecutionTimedOut</code> event.
  * </p>
  */
-public class ChildWorkflowExecutionTimedOutEventAttributes  implements Serializable  {
+public class ChildWorkflowExecutionTimedOutEventAttributes implements Serializable {
 
     /**
      * The child workflow execution that timed out.
@@ -82,6 +82,9 @@ public class ChildWorkflowExecutionTimedOutEventAttributes  implements Serializa
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param workflowExecution The child workflow execution that timed out.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChildWorkflowExecutionTimedOutEventAttributes withWorkflowExecution(WorkflowExecution workflowExecution) {
         this.workflowExecution = workflowExecution;
@@ -113,6 +116,9 @@ public class ChildWorkflowExecutionTimedOutEventAttributes  implements Serializa
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param workflowType The type of the child workflow execution.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChildWorkflowExecutionTimedOutEventAttributes withWorkflowType(WorkflowType workflowType) {
         this.workflowType = workflowType;
@@ -164,6 +170,9 @@ public class ChildWorkflowExecutionTimedOutEventAttributes  implements Serializa
      * @param timeoutType The type of the timeout that caused the child workflow execution to
      *         time out.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see WorkflowExecutionTimeoutType
      */
     public ChildWorkflowExecutionTimedOutEventAttributes withTimeoutType(String timeoutType) {
@@ -199,6 +208,9 @@ public class ChildWorkflowExecutionTimedOutEventAttributes  implements Serializa
      *
      * @param timeoutType The type of the timeout that caused the child workflow execution to
      *         time out.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see WorkflowExecutionTimeoutType
      */
@@ -255,6 +267,9 @@ public class ChildWorkflowExecutionTimedOutEventAttributes  implements Serializa
      *         <a>Decision</a> to start this child workflow execution. This
      *         information can be useful for diagnosing problems by tracing back the
      *         chain of events leading up to this event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChildWorkflowExecutionTimedOutEventAttributes withInitiatedEventId(Long initiatedEventId) {
         this.initiatedEventId = initiatedEventId;
@@ -304,6 +319,9 @@ public class ChildWorkflowExecutionTimedOutEventAttributes  implements Serializa
      *         recorded when this child workflow execution was started. This
      *         information can be useful for diagnosing problems by tracing back the
      *         chain of events leading up to this event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChildWorkflowExecutionTimedOutEventAttributes withStartedEventId(Long startedEventId) {
         this.startedEventId = startedEventId;

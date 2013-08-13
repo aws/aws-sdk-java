@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The response body contains a JSON object. If the job is successfully canceled, the value of <code>Success</code> is <code>true</code> .
  * </p>
  */
-public class CancelJobResult  implements Serializable  {
+public class CancelJobResult implements Serializable {
 
     /**
      * Returns a string representation of this object; useful for testing and

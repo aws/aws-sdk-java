@@ -22,7 +22,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createInstanceExportTask(CreateInstanceExportTaskRequest)
  */
-public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest implements Serializable {
 
     private String description;
 

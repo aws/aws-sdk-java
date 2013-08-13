@@ -29,7 +29,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeAutoScalingGroups(DescribeAutoScalingGroupsRequest)
  */
-public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * A list of Auto Scaling group names.
@@ -87,6 +87,9 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest  i
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param autoScalingGroupNames A list of Auto Scaling group names.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeAutoScalingGroupsRequest withAutoScalingGroupNames(String... autoScalingGroupNames) {
         if (getAutoScalingGroupNames() == null) setAutoScalingGroupNames(new java.util.ArrayList<String>(autoScalingGroupNames.length));
@@ -102,6 +105,9 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest  i
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param autoScalingGroupNames A list of Auto Scaling group names.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeAutoScalingGroupsRequest withAutoScalingGroupNames(java.util.Collection<String> autoScalingGroupNames) {
         if (autoScalingGroupNames == null) {
@@ -148,6 +154,9 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest  i
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param nextToken A string that marks the start of the next batch of returned results.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeAutoScalingGroupsRequest withNextToken(String nextToken) {
         this.nextToken = nextToken;
@@ -188,6 +197,9 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest  i
      * <b>Range: </b>1 - 50<br/>
      *
      * @param maxRecords The maximum number of records to return.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeAutoScalingGroupsRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;

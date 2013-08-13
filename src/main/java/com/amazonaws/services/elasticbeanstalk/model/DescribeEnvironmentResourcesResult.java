@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Result message containing a list of environment resource descriptions.
  * </p>
  */
-public class DescribeEnvironmentResourcesResult  implements Serializable  {
+public class DescribeEnvironmentResourcesResult implements Serializable {
 
     /**
      * A list of <a>EnvironmentResourceDescription</a>.
@@ -51,6 +51,9 @@ public class DescribeEnvironmentResourcesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param environmentResources A list of <a>EnvironmentResourceDescription</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEnvironmentResourcesResult withEnvironmentResources(EnvironmentResourceDescription environmentResources) {
         this.environmentResources = environmentResources;

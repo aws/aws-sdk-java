@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The <code>Instance</code> data type.
  * </p>
  */
-public class Instance  implements Serializable  {
+public class Instance implements Serializable {
 
     /**
      * Specifies the ID of the Amazon EC2 instance.
@@ -102,6 +102,9 @@ public class Instance  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param instanceId Specifies the ID of the Amazon EC2 instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -145,6 +148,9 @@ public class Instance  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param availabilityZone Availability Zones associated with this instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -190,6 +196,9 @@ public class Instance  implements Serializable  {
      *
      * @param lifecycleState Contains a description of the current <i>lifecycle</i> state.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see LifecycleState
      */
     public Instance withLifecycleState(String lifecycleState) {
@@ -221,6 +230,9 @@ public class Instance  implements Serializable  {
      * <b>Allowed Values: </b>Pending, Quarantined, InService, Terminating, Terminated
      *
      * @param lifecycleState Contains a description of the current <i>lifecycle</i> state.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see LifecycleState
      */
@@ -265,6 +277,9 @@ public class Instance  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param healthStatus The instance's health status.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withHealthStatus(String healthStatus) {
         this.healthStatus = healthStatus;
@@ -308,6 +323,9 @@ public class Instance  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param launchConfigurationName The launch configuration associated with this instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withLaunchConfigurationName(String launchConfigurationName) {
         this.launchConfigurationName = launchConfigurationName;

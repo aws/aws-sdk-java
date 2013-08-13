@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.DescribeSubnetsRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -32,7 +34,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeSubnets(DescribeSubnetsRequest)
  */
-public class DescribeSubnetsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeSubnetsRequest> {
 
     /**
      * A set of one or more subnet IDs.
@@ -207,6 +209,18 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest  implements 
         }
 
         return this;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<DescribeSubnetsRequest> getDryRunRequest() {
+        Request<DescribeSubnetsRequest> request = new DescribeSubnetsRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

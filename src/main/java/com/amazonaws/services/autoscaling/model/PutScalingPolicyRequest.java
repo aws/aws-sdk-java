@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#putScalingPolicy(PutScalingPolicyRequest)
  */
-public class PutScalingPolicyRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name or ARN of the Auto Scaling group.
@@ -119,6 +119,9 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest  implements
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param autoScalingGroupName The name or ARN of the Auto Scaling group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PutScalingPolicyRequest withAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
@@ -162,6 +165,9 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest  implements
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param policyName The name of the policy you want to create or update.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PutScalingPolicyRequest withPolicyName(String policyName) {
         this.policyName = policyName;
@@ -217,6 +223,9 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest  implements
      *         number or as a percentage of the existing Auto Scaling group size). A
      *         positive increment adds to the current capacity and a negative value
      *         removes from the current capacity.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PutScalingPolicyRequest withScalingAdjustment(Integer scalingAdjustment) {
         this.scalingAdjustment = scalingAdjustment;
@@ -278,6 +287,9 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest  implements
      *         number or a percentage of the current capacity. Valid values are
      *         <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
      *         <code>PercentChangeInCapacity</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PutScalingPolicyRequest withAdjustmentType(String adjustmentType) {
         this.adjustmentType = adjustmentType;
@@ -315,6 +327,9 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest  implements
      *
      * @param cooldown The amount of time, in seconds, after a scaling activity completes
      *         before any further trigger-related scaling activities can start.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PutScalingPolicyRequest withCooldown(Integer cooldown) {
         this.cooldown = cooldown;
@@ -382,6 +397,9 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest  implements
      *         <code>ValidationError</code> if you use <code>MinAdjustmentStep</code>
      *         on a policy with an <code>AdjustmentType</code> other than
      *         <code>PercentChangeInCapacity</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PutScalingPolicyRequest withMinAdjustmentStep(Integer minAdjustmentStep) {
         this.minAdjustmentStep = minAdjustmentStep;

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The VpnConnection data type.
  * </p>
  */
-public class VpnConnection  implements Serializable  {
+public class VpnConnection implements Serializable {
 
     /**
      * Specifies the ID of the VPN gateway at the VPC end of the VPN

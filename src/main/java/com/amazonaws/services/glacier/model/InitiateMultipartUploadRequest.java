@@ -55,7 +55,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.glacier.AmazonGlacier#initiateMultipartUpload(InitiateMultipartUploadRequest)
  */
-public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The <code>AccountId</code> is the AWS Account ID. You can specify
@@ -194,6 +194,9 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest  imp
      *         Glacier uses the AWS Account ID associated with the credentials used
      *         to sign the request. If you specify your Account ID, do not include
      *         hyphens in it.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InitiateMultipartUploadRequest withAccountId(String accountId) {
         this.accountId = accountId;
@@ -225,6 +228,9 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vaultName The name of the vault.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InitiateMultipartUploadRequest withVaultName(String vaultName) {
         this.vaultName = vaultName;
@@ -280,6 +286,9 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest  imp
      *         example, 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8
      *         MB), and so on. The minimum allowable part size is 1 MB, and the
      *         maximum is 4 GB (4096 MB).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InitiateMultipartUploadRequest withArchiveDescription(String archiveDescription) {
         this.archiveDescription = archiveDescription;
@@ -317,6 +326,9 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest  imp
      *
      * @param partSize The size of each part except the last, in bytes. The last part can be
      *         smaller than this part size.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InitiateMultipartUploadRequest withPartSize(String partSize) {
         this.partSize = partSize;

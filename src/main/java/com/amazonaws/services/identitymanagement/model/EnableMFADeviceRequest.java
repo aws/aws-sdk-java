@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#enableMFADevice(EnableMFADeviceRequest)
  */
-public class EnableMFADeviceRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the user for whom you want to enable the MFA device.
@@ -131,6 +131,9 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest  implements 
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param userName Name of the user for whom you want to enable the MFA device.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EnableMFADeviceRequest withUserName(String userName) {
         this.userName = userName;
@@ -180,6 +183,9 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest  implements 
      *
      * @param serialNumber The serial number that uniquely identifies the MFA device. For virtual
      *         MFA devices, the serial number is the device ARN.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EnableMFADeviceRequest withSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
@@ -223,6 +229,9 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest  implements 
      * <b>Pattern: </b>[\d]*<br/>
      *
      * @param authenticationCode1 An authentication code emitted by the device.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EnableMFADeviceRequest withAuthenticationCode1(String authenticationCode1) {
         this.authenticationCode1 = authenticationCode1;
@@ -266,6 +275,9 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest  implements 
      * <b>Pattern: </b>[\d]*<br/>
      *
      * @param authenticationCode2 A subsequent authentication code emitted by the device.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EnableMFADeviceRequest withAuthenticationCode2(String authenticationCode2) {
         this.authenticationCode2 = authenticationCode2;

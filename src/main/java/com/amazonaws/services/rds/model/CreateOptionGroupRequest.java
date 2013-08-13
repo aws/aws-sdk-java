@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#createOptionGroup(CreateOptionGroupRequest)
  */
-public class CreateOptionGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateOptionGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Specifies the name of the option group to be created. <p> Constraints:
@@ -100,6 +100,9 @@ public class CreateOptionGroupRequest extends AmazonWebServiceRequest  implement
      *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
      *         or contain two consecutive hyphens</li> </ul> <p>Example:
      *         <code>myOptiongroup</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateOptionGroupRequest withOptionGroupName(String optionGroupName) {
         this.optionGroupName = optionGroupName;
@@ -137,6 +140,9 @@ public class CreateOptionGroupRequest extends AmazonWebServiceRequest  implement
      *
      * @param engineName Specifies the name of the engine that this option group should be
      *         associated with.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateOptionGroupRequest withEngineName(String engineName) {
         this.engineName = engineName;
@@ -174,6 +180,9 @@ public class CreateOptionGroupRequest extends AmazonWebServiceRequest  implement
      *
      * @param majorEngineVersion Specifies the major version of the engine that this option group
      *         should be associated with.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateOptionGroupRequest withMajorEngineVersion(String majorEngineVersion) {
         this.majorEngineVersion = majorEngineVersion;
@@ -205,6 +214,9 @@ public class CreateOptionGroupRequest extends AmazonWebServiceRequest  implement
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionGroupDescription The description of the option group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateOptionGroupRequest withOptionGroupDescription(String optionGroupDescription) {
         this.optionGroupDescription = optionGroupDescription;

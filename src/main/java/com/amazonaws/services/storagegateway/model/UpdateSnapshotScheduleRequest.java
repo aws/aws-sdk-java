@@ -32,7 +32,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#updateSnapshotSchedule(UpdateSnapshotScheduleRequest)
  */
-public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The Amazon Resource Name (ARN) of the volume. Use the
@@ -109,6 +109,9 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest  impl
      *
      * @param volumeARN The Amazon Resource Name (ARN) of the volume. Use the
      *         <a>ListVolumes</a> operation to return a list of gateway volumes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateSnapshotScheduleRequest withVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
@@ -161,6 +164,9 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest  impl
      * @param startAt The hour of the day at which the snapshot schedule begins represented
      *         as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the
      *         day is in the time zone of the gateway.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateSnapshotScheduleRequest withStartAt(Integer startAt) {
         this.startAt = startAt;
@@ -201,6 +207,9 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest  impl
      * <b>Range: </b>1 - 24<br/>
      *
      * @param recurrenceInHours Frequency of snapshots. Specify the number of hours between snapshots.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateSnapshotScheduleRequest withRecurrenceInHours(Integer recurrenceInHours) {
         this.recurrenceInHours = recurrenceInHours;
@@ -247,6 +256,9 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest  impl
      *
      * @param description Optional description of the snapshot that overwrites the existing
      *         description.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateSnapshotScheduleRequest withDescription(String description) {
         this.description = description;

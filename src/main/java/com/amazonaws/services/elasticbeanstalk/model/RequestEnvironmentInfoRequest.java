@@ -36,7 +36,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#requestEnvironmentInfo(RequestEnvironmentInfoRequest)
  */
-public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The ID of the environment of the requested data. <p> If no such
@@ -155,6 +155,9 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest  impl
      *         specify either this or an EnvironmentName, or both. If you do not
      *         specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RequestEnvironmentInfoRequest withEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
@@ -225,6 +228,9 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest  impl
      *         specify either this or an EnvironmentId, or both. If you do not
      *         specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RequestEnvironmentInfoRequest withEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
@@ -270,6 +276,9 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest  impl
      *
      * @param infoType The type of information to request.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see EnvironmentInfoType
      */
     public RequestEnvironmentInfoRequest withInfoType(String infoType) {
@@ -301,6 +310,9 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest  impl
      * <b>Allowed Values: </b>tail
      *
      * @param infoType The type of information to request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see EnvironmentInfoType
      */

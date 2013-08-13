@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the output from the DescribeClusterParameters action.
  * </p>
  */
-public class DescribeClusterParametersResult  implements Serializable  {
+public class DescribeClusterParametersResult implements Serializable {
 
     /**
      * A list of <a>Parameter</a> instances. Each instance lists the
@@ -77,6 +77,9 @@ public class DescribeClusterParametersResult  implements Serializable  {
      *
      * @param parameters A list of <a>Parameter</a> instances. Each instance lists the
      *         parameters of one cluster parameter group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterParametersResult withParameters(Parameter... parameters) {
         if (getParameters() == null) setParameters(new java.util.ArrayList<Parameter>(parameters.length));
@@ -94,6 +97,9 @@ public class DescribeClusterParametersResult  implements Serializable  {
      *
      * @param parameters A list of <a>Parameter</a> instances. Each instance lists the
      *         parameters of one cluster parameter group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterParametersResult withParameters(java.util.Collection<Parameter> parameters) {
         if (parameters == null) {
@@ -149,6 +155,9 @@ public class DescribeClusterParametersResult  implements Serializable  {
      *         <a>DescribeClusterParameterGroups</a> request will return. The
      *         response returns a marker only if there are more parameter groups
      *         details to list than the current response can return.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterParametersResult withMarker(String marker) {
         this.marker = marker;

@@ -23,7 +23,7 @@ import java.io.Serializable;
  * The public key portion is stored by Amazon EC2 and the private key is returned only once, in this type, when the key is initially created.
  * </p>
  */
-public class KeyPair  implements Serializable  {
+public class KeyPair implements Serializable {
 
     /**
      * The name of the key pair.

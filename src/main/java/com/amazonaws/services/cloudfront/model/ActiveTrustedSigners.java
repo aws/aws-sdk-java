@@ -21,7 +21,7 @@ import java.io.Serializable;
  * the other cache behaviors for this distribution. These are accounts that you want to allow to create signed URLs for private content.
  * </p>
  */
-public class ActiveTrustedSigners  implements Serializable  {
+public class ActiveTrustedSigners implements Serializable {
 
     /**
      * Each active trusted signer.
@@ -91,6 +91,9 @@ public class ActiveTrustedSigners  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param enabled Each active trusted signer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActiveTrustedSigners withEnabled(Boolean enabled) {
         this.enabled = enabled;
@@ -143,6 +146,9 @@ public class ActiveTrustedSigners  implements Serializable  {
      * @param quantity The number of unique trusted signers included in all cache behaviors.
      *         For example, if three cache behaviors all list the same three AWS
      *         accounts, the value of Quantity for ActiveTrustedSigners will be 3.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActiveTrustedSigners withQuantity(Integer quantity) {
         this.quantity = quantity;
@@ -203,6 +209,9 @@ public class ActiveTrustedSigners  implements Serializable  {
      *         trusted signer that is specified in the TrustedSigners complex type,
      *         including trusted signers in the default cache behavior and in all of
      *         the other cache behaviors.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActiveTrustedSigners withItems(Signer... items) {
         if (getItems() == null) setItems(new java.util.ArrayList<Signer>(items.length));
@@ -224,6 +233,9 @@ public class ActiveTrustedSigners  implements Serializable  {
      *         trusted signer that is specified in the TrustedSigners complex type,
      *         including trusted signers in the default cache behavior and in all of
      *         the other cache behaviors.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActiveTrustedSigners withItems(java.util.Collection<Signer> items) {
         if (items == null) {

@@ -34,7 +34,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateSigningCertificate(UpdateSigningCertificateRequest)
  */
-public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the user the signing certificate belongs to.
@@ -142,6 +142,9 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest  im
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param userName Name of the user the signing certificate belongs to.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateSigningCertificateRequest withUserName(String userName) {
         this.userName = userName;
@@ -185,6 +188,9 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest  im
      * <b>Pattern: </b>[\w]*<br/>
      *
      * @param certificateId The ID of the signing certificate you want to update.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateSigningCertificateRequest withCertificateId(String certificateId) {
         this.certificateId = certificateId;
@@ -242,6 +248,9 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest  im
      *         means the certificate can be used for API calls to AWS, while
      *         <code>Inactive</code> means the certificate cannot be used.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see StatusType
      */
     public UpdateSigningCertificateRequest withStatus(String status) {
@@ -281,6 +290,9 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest  im
      * @param status The status you want to assign to the certificate. <code>Active</code>
      *         means the certificate can be used for API calls to AWS, while
      *         <code>Inactive</code> means the certificate cannot be used.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see StatusType
      */

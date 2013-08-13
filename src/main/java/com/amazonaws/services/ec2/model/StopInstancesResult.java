@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The result of calling the StopInstances operation. Contains details on how the specified instances are changing state.
  * </p>
  */
-public class StopInstancesResult  implements Serializable  {
+public class StopInstancesResult implements Serializable {
 
     /**
      * The list of the stopping instances and details on how their state has

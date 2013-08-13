@@ -21,7 +21,7 @@ import java.io.Serializable;
  * instances.
  * </p>
  */
-public class AutoScalingThresholds  implements Serializable  {
+public class AutoScalingThresholds implements Serializable {
 
     /**
      * The number of instances to add or remove when the load exceeds a
@@ -102,6 +102,9 @@ public class AutoScalingThresholds  implements Serializable  {
      *
      * @param instanceCount The number of instances to add or remove when the load exceeds a
      *         threshold.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AutoScalingThresholds withInstanceCount(Integer instanceCount) {
         this.instanceCount = instanceCount;
@@ -148,6 +151,9 @@ public class AutoScalingThresholds  implements Serializable  {
      *
      * @param thresholdsWaitTime The amount of time, in minutes, that the load must exceed a threshold
      *         before more instances are added or removed.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AutoScalingThresholds withThresholdsWaitTime(Integer thresholdsWaitTime) {
         this.thresholdsWaitTime = thresholdsWaitTime;
@@ -236,6 +242,9 @@ public class AutoScalingThresholds  implements Serializable  {
      *         several minutes. <code>IgnoreMetricsTime</code> allows you to direct
      *         AWS OpsWorks to not raise any scaling events long enough to get the
      *         new instances online.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AutoScalingThresholds withIgnoreMetricsTime(Integer ignoreMetricsTime) {
         this.ignoreMetricsTime = ignoreMetricsTime;
@@ -267,6 +276,9 @@ public class AutoScalingThresholds  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cpuThreshold The CPU utilization threshold, as a percent of the available CPU.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AutoScalingThresholds withCpuThreshold(Double cpuThreshold) {
         this.cpuThreshold = cpuThreshold;
@@ -304,6 +316,9 @@ public class AutoScalingThresholds  implements Serializable  {
      *
      * @param memoryThreshold The memory utilization threshold, as a percent of the available
      *         memory.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AutoScalingThresholds withMemoryThreshold(Double memoryThreshold) {
         this.memoryThreshold = memoryThreshold;
@@ -347,6 +362,9 @@ public class AutoScalingThresholds  implements Serializable  {
      * @param loadThreshold The load threshold. For more information about how load is computed,
      *         see <a href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
      *         (computing)</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AutoScalingThresholds withLoadThreshold(Double loadThreshold) {
         this.loadThreshold = loadThreshold;

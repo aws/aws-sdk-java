@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The <code>DeletePresetResponse</code> structure.
  * </p>
  */
-public class DeletePresetResult  implements Serializable  {
+public class DeletePresetResult implements Serializable {
 
     /**
      * Returns a string representation of this object; useful for testing and

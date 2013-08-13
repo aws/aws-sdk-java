@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A response message that contains the status of a deleted index field.
  * </p>
  */
-public class DeleteIndexFieldResult  implements Serializable  {
+public class DeleteIndexFieldResult implements Serializable {
 
     /**
      * The value of an <code>IndexField</code> and its current status.
@@ -51,6 +51,9 @@ public class DeleteIndexFieldResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param indexField The value of an <code>IndexField</code> and its current status.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteIndexFieldResult withIndexField(IndexFieldStatus indexField) {
         this.indexField = indexField;

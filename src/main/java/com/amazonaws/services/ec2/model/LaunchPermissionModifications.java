@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Launch Permission Modifications
  */
-public class LaunchPermissionModifications  implements Serializable  {
+public class LaunchPermissionModifications implements Serializable {
 
     private com.amazonaws.internal.ListWithAutoConstructFlag<LaunchPermission> add;
 

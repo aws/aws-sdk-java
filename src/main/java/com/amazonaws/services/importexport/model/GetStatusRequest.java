@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.importexport.AmazonImportExport#getStatus(GetStatusRequest)
  */
-public class GetStatusRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class GetStatusRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * A unique identifier which refers to a particular job.
@@ -56,6 +56,9 @@ public class GetStatusRequest extends AmazonWebServiceRequest  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param jobId A unique identifier which refers to a particular job.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetStatusRequest withJobId(String jobId) {
         this.jobId = jobId;

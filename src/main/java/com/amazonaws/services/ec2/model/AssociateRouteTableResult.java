@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Associate Route Table Result
  */
-public class AssociateRouteTableResult  implements Serializable  {
+public class AssociateRouteTableResult implements Serializable {
 
     private String associationId;
 

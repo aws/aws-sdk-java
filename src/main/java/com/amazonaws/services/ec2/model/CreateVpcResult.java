@@ -20,7 +20,7 @@ import java.io.Serializable;
  * 
  * </p>
  */
-public class CreateVpcResult  implements Serializable  {
+public class CreateVpcResult implements Serializable {
 
     /**
      * Information about the VPC.

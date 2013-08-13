@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A list of the pipelines associated with the current AWS account.
  * </p>
  */
-public class ListPipelinesResult  implements Serializable  {
+public class ListPipelinesResult implements Serializable {
 
     /**
      * An array of <code>Pipeline</code> objects.
@@ -62,6 +62,9 @@ public class ListPipelinesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param pipelines An array of <code>Pipeline</code> objects.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListPipelinesResult withPipelines(Pipeline... pipelines) {
         if (getPipelines() == null) setPipelines(new java.util.ArrayList<Pipeline>(pipelines.length));
@@ -77,6 +80,9 @@ public class ListPipelinesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param pipelines An array of <code>Pipeline</code> objects.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListPipelinesResult withPipelines(java.util.Collection<Pipeline> pipelines) {
         if (pipelines == null) {

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * An invalidation.
  * </p>
  */
-public class Invalidation  implements Serializable  {
+public class Invalidation implements Serializable {
 
     /**
      * The identifier for the invalidation request. For example:
@@ -80,6 +80,9 @@ public class Invalidation  implements Serializable  {
      *
      * @param id The identifier for the invalidation request. For example:
      *         IDFDVBD632BHDS5.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Invalidation withId(String id) {
         this.id = id;
@@ -117,6 +120,9 @@ public class Invalidation  implements Serializable  {
      *
      * @param status The status of the invalidation request. When the invalidation batch is
      *         finished, the status is Completed.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Invalidation withStatus(String status) {
         this.status = status;
@@ -148,6 +154,9 @@ public class Invalidation  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param createTime The date and time the invalidation request was first made.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Invalidation withCreateTime(java.util.Date createTime) {
         this.createTime = createTime;
@@ -179,6 +188,9 @@ public class Invalidation  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param invalidationBatch The current invalidation information for the batch request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Invalidation withInvalidationBatch(InvalidationBatch invalidationBatch) {
         this.invalidationBatch = invalidationBatch;

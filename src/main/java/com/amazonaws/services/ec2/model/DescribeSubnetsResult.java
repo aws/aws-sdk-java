@@ -20,7 +20,7 @@ import java.io.Serializable;
  * 
  * </p>
  */
-public class DescribeSubnetsResult  implements Serializable  {
+public class DescribeSubnetsResult implements Serializable {
 
     /**
      * Contains a set of one or more <a>Subnet</a> instances.

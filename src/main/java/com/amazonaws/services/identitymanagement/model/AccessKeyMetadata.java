@@ -23,7 +23,7 @@ import java.io.Serializable;
  * This data type is used as a response element in the action ListAccessKeys.
  * </p>
  */
-public class AccessKeyMetadata  implements Serializable  {
+public class AccessKeyMetadata implements Serializable {
 
     /**
      * Name of the user the key is associated with.
@@ -99,6 +99,9 @@ public class AccessKeyMetadata  implements Serializable  {
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param userName Name of the user the key is associated with.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AccessKeyMetadata withUserName(String userName) {
         this.userName = userName;
@@ -142,6 +145,9 @@ public class AccessKeyMetadata  implements Serializable  {
      * <b>Pattern: </b>[\w]*<br/>
      *
      * @param accessKeyId The ID for this access key.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AccessKeyMetadata withAccessKeyId(String accessKeyId) {
         this.accessKeyId = accessKeyId;
@@ -193,6 +199,9 @@ public class AccessKeyMetadata  implements Serializable  {
      * @param status The status of the access key. <code>Active</code> means the key is
      *         valid for API calls, while <code>Inactive</code> means it is not.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see StatusType
      */
     public AccessKeyMetadata withStatus(String status) {
@@ -229,6 +238,9 @@ public class AccessKeyMetadata  implements Serializable  {
      * @param status The status of the access key. <code>Active</code> means the key is
      *         valid for API calls, while <code>Inactive</code> means it is not.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see StatusType
      */
     public AccessKeyMetadata withStatus(StatusType status) {
@@ -260,6 +272,9 @@ public class AccessKeyMetadata  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param createDate The date when the access key was created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AccessKeyMetadata withCreateDate(java.util.Date createDate) {
         this.createDate = createDate;

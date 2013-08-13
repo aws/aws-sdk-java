@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The result of describing an instance's attribute.
  * </p>
  */
-public class DescribeInstanceAttributeResult  implements Serializable  {
+public class DescribeInstanceAttributeResult implements Serializable {
 
     /**
      * The described instance attribute.

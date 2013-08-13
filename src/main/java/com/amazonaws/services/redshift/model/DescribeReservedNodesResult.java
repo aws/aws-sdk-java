@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the output from the DescribeReservedNodes action.
  * </p>
  */
-public class DescribeReservedNodesResult  implements Serializable  {
+public class DescribeReservedNodesResult implements Serializable {
 
     /**
      * A marker that can be used to retrieve paginated results.
@@ -56,6 +56,9 @@ public class DescribeReservedNodesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param marker A marker that can be used to retrieve paginated results.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedNodesResult withMarker(String marker) {
         this.marker = marker;
@@ -98,6 +101,9 @@ public class DescribeReservedNodesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedNodes The list of reserved nodes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedNodesResult withReservedNodes(ReservedNode... reservedNodes) {
         if (getReservedNodes() == null) setReservedNodes(new java.util.ArrayList<ReservedNode>(reservedNodes.length));
@@ -113,6 +119,9 @@ public class DescribeReservedNodesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedNodes The list of reserved nodes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedNodesResult withReservedNodes(java.util.Collection<ReservedNode> reservedNodes) {
         if (reservedNodes == null) {

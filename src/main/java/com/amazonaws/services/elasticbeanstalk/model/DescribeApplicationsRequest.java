@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#describeApplications(DescribeApplicationsRequest)
  */
-public class DescribeApplicationsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeApplicationsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * If specified, AWS Elastic Beanstalk restricts the returned
@@ -79,6 +79,9 @@ public class DescribeApplicationsRequest extends AmazonWebServiceRequest  implem
      *
      * @param applicationNames If specified, AWS Elastic Beanstalk restricts the returned
      *         descriptions to only include those with the specified names.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeApplicationsRequest withApplicationNames(String... applicationNames) {
         if (getApplicationNames() == null) setApplicationNames(new java.util.ArrayList<String>(applicationNames.length));
@@ -96,6 +99,9 @@ public class DescribeApplicationsRequest extends AmazonWebServiceRequest  implem
      *
      * @param applicationNames If specified, AWS Elastic Beanstalk restricts the returned
      *         descriptions to only include those with the specified names.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeApplicationsRequest withApplicationNames(java.util.Collection<String> applicationNames) {
         if (applicationNames == null) {

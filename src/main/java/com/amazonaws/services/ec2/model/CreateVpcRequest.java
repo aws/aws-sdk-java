@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.CreateVpcRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -30,7 +32,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createVpc(CreateVpcRequest)
  */
-public class CreateVpcRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateVpcRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateVpcRequest> {
 
     /**
      * A valid CIDR block.
@@ -144,6 +146,18 @@ public class CreateVpcRequest extends AmazonWebServiceRequest  implements Serial
         return this;
     }
     
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<CreateVpcRequest> getDryRunRequest() {
+        Request<CreateVpcRequest> request = new CreateVpcRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

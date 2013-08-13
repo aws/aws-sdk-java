@@ -79,6 +79,9 @@ public class ListTopicsRequest extends AmazonWebServiceRequest  implements Seria
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nextToken Token returned by the previous <code>ListTopics</code> request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
      */
     public ListTopicsRequest withNextToken(String nextToken) {
         this.nextToken = nextToken;

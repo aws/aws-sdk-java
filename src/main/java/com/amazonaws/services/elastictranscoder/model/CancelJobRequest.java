@@ -28,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#cancelJob(CancelJobRequest)
  */
-public class CancelJobRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CancelJobRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The identifier of the job that you want to cancel. <p>To get a list of
@@ -85,6 +85,9 @@ public class CancelJobRequest extends AmazonWebServiceRequest  implements Serial
      * @param id The identifier of the job that you want to cancel. <p>To get a list of
      *         the jobs (including their <code>jobId</code>) that have a status of
      *         <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CancelJobRequest withId(String id) {
         this.id = id;

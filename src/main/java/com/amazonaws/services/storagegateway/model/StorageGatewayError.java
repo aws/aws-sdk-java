@@ -21,7 +21,7 @@ import java.io.Serializable;
  * <code>errorCode</code> and <code>errorDetails</code> members for more information about the error.
  * </p>
  */
-public class StorageGatewayError  implements Serializable  {
+public class StorageGatewayError implements Serializable {
 
     /**
      * Additional information about the error.
@@ -74,6 +74,9 @@ public class StorageGatewayError  implements Serializable  {
      *
      * @param errorCode Additional information about the error.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ErrorCode
      */
     public StorageGatewayError withErrorCode(String errorCode) {
@@ -105,6 +108,9 @@ public class StorageGatewayError  implements Serializable  {
      * <b>Allowed Values: </b>ActivationKeyExpired, ActivationKeyInvalid, ActivationKeyNotFound, GatewayInternalError, GatewayNotConnected, GatewayNotFound, GatewayProxyNetworkConnectionBusy, AuthenticationFailure, BandwidthThrottleScheduleNotFound, Blocked, CannotExportSnapshot, ChapCredentialNotFound, DiskAlreadyAllocated, DiskDoesNotExist, DiskSizeGreaterThanVolumeMaxSize, DiskSizeLessThanVolumeSize, DiskSizeNotGigAligned, DuplicateCertificateInfo, DuplicateSchedule, EndpointNotFound, IAMNotSupported, InitiatorInvalid, InitiatorNotFound, InternalError, InvalidGateway, InvalidEndpoint, InvalidParameters, InvalidSchedule, LocalStorageLimitExceeded, LunAlreadyAllocated , LunInvalid, MaximumContentLengthExceeded, MaximumVolumeCountExceeded, NetworkConfigurationChanged, NoDisksAvailable, NotImplemented, NotSupported, OperationAborted, OutdatedGateway, ParametersNotImplemented, RegionInvalid, RequestTimeout, ServiceUnavailable, SnapshotDeleted, SnapshotIdInvalid, SnapshotInProgress, SnapshotNotFound, SnapshotScheduleNotFound, StagingAreaFull, StorageFailure, TargetAlreadyExists, TargetInvalid, TargetNotFound, UnauthorizedOperation, VolumeAlreadyExists, VolumeIdInvalid, VolumeInUse, VolumeNotFound, VolumeNotReady
      *
      * @param errorCode Additional information about the error.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see ErrorCode
      */
@@ -141,6 +147,9 @@ public class StorageGatewayError  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param errorDetails Human-readable text that provides detail about the error that occured.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StorageGatewayError withErrorDetails(java.util.Map<String,String> errorDetails) {
         setErrorDetails(errorDetails);

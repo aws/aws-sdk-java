@@ -17,7 +17,9 @@ package com.amazonaws.services.sqs.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AmazonSQS exception
+ * <p>
+ * The receipt handle is not valid for the current version.
+ * </p>
  */        
 public class InvalidIdFormatException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

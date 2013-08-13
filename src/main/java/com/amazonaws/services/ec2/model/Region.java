@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents an Amazon EC2 region. EC2 regions are completely isolated from each other.
  * </p>
  */
-public class Region  implements Serializable  {
+public class Region implements Serializable {
 
     /**
      * Name of the region.

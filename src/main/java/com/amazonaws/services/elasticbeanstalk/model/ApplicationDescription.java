@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes the properties of an application.
  * </p>
  */
-public class ApplicationDescription  implements Serializable  {
+public class ApplicationDescription implements Serializable {
 
     /**
      * The name of the application.
@@ -98,6 +98,9 @@ public class ApplicationDescription  implements Serializable  {
      * <b>Length: </b>1 - 100<br/>
      *
      * @param applicationName The name of the application.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ApplicationDescription withApplicationName(String applicationName) {
         this.applicationName = applicationName;
@@ -138,6 +141,9 @@ public class ApplicationDescription  implements Serializable  {
      * <b>Length: </b>0 - 200<br/>
      *
      * @param description User-defined description of the application.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ApplicationDescription withDescription(String description) {
         this.description = description;
@@ -169,6 +175,9 @@ public class ApplicationDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dateCreated The date when the application was created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ApplicationDescription withDateCreated(java.util.Date dateCreated) {
         this.dateCreated = dateCreated;
@@ -200,6 +209,9 @@ public class ApplicationDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dateUpdated The date when the application was last modified.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ApplicationDescription withDateUpdated(java.util.Date dateUpdated) {
         this.dateUpdated = dateUpdated;
@@ -242,6 +254,9 @@ public class ApplicationDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param versions The names of the versions for this application.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ApplicationDescription withVersions(String... versions) {
         if (getVersions() == null) setVersions(new java.util.ArrayList<String>(versions.length));
@@ -257,6 +272,9 @@ public class ApplicationDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param versions The names of the versions for this application.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ApplicationDescription withVersions(java.util.Collection<String> versions) {
         if (versions == null) {
@@ -311,6 +329,9 @@ public class ApplicationDescription  implements Serializable  {
      *
      * @param configurationTemplates The names of the configuration templates associated with this
      *         application.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ApplicationDescription withConfigurationTemplates(String... configurationTemplates) {
         if (getConfigurationTemplates() == null) setConfigurationTemplates(new java.util.ArrayList<String>(configurationTemplates.length));
@@ -328,6 +349,9 @@ public class ApplicationDescription  implements Serializable  {
      *
      * @param configurationTemplates The names of the configuration templates associated with this
      *         application.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ApplicationDescription withConfigurationTemplates(java.util.Collection<String> configurationTemplates) {
         if (configurationTemplates == null) {

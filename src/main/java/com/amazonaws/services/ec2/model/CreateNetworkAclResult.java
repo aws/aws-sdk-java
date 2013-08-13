@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Create Network Acl Result
  */
-public class CreateNetworkAclResult  implements Serializable  {
+public class CreateNetworkAclResult implements Serializable {
 
     private NetworkAcl networkAcl;
 

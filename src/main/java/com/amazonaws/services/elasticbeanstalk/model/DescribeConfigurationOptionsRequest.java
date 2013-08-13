@@ -26,7 +26,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#describeConfigurationOptions(DescribeConfigurationOptionsRequest)
  */
-public class DescribeConfigurationOptionsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeConfigurationOptionsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the application associated with the configuration template
@@ -129,6 +129,9 @@ public class DescribeConfigurationOptionsRequest extends AmazonWebServiceRequest
      *         or environment. Only needed if you want to describe the configuration
      *         options associated with either the configuration template or
      *         environment.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeConfigurationOptionsRequest withApplicationName(String applicationName) {
         this.applicationName = applicationName;
@@ -175,6 +178,9 @@ public class DescribeConfigurationOptionsRequest extends AmazonWebServiceRequest
      *
      * @param templateName The name of the configuration template whose configuration options you
      *         want to describe.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeConfigurationOptionsRequest withTemplateName(String templateName) {
         this.templateName = templateName;
@@ -221,6 +227,9 @@ public class DescribeConfigurationOptionsRequest extends AmazonWebServiceRequest
      *
      * @param environmentName The name of the environment whose configuration options you want to
      *         describe.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeConfigurationOptionsRequest withEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
@@ -267,6 +276,9 @@ public class DescribeConfigurationOptionsRequest extends AmazonWebServiceRequest
      *
      * @param solutionStackName The name of the solution stack whose configuration options you want to
      *         describe.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeConfigurationOptionsRequest withSolutionStackName(String solutionStackName) {
         this.solutionStackName = solutionStackName;
@@ -315,6 +327,9 @@ public class DescribeConfigurationOptionsRequest extends AmazonWebServiceRequest
      *
      * @param options If specified, restricts the descriptions to only the specified
      *         options.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeConfigurationOptionsRequest withOptions(OptionSpecification... options) {
         if (getOptions() == null) setOptions(new java.util.ArrayList<OptionSpecification>(options.length));
@@ -332,6 +347,9 @@ public class DescribeConfigurationOptionsRequest extends AmazonWebServiceRequest
      *
      * @param options If specified, restricts the descriptions to only the specified
      *         options.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeConfigurationOptionsRequest withOptions(java.util.Collection<OptionSpecification> options) {
         if (options == null) {

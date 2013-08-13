@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Describe Instance Status Result
  */
-public class DescribeInstanceStatusResult  implements Serializable  {
+public class DescribeInstanceStatusResult implements Serializable {
 
     /**
      * Collection of instance statuses describing the state of the requested

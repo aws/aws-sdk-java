@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeReservedNodes(DescribeReservedNodesRequest)
  */
-public class DescribeReservedNodesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeReservedNodesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Identifier for the node reservation.
@@ -71,6 +71,9 @@ public class DescribeReservedNodesRequest extends AmazonWebServiceRequest  imple
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedNodeId Identifier for the node reservation.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedNodesRequest withReservedNodeId(String reservedNodeId) {
         this.reservedNodeId = reservedNodeId;
@@ -126,6 +129,9 @@ public class DescribeReservedNodesRequest extends AmazonWebServiceRequest  imple
      *         marker is included in the response so that the remaining results may
      *         be retrieved. <p>Default: <code>100</code> <p>Constraints: minimum 20,
      *         maximum 100.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedNodesRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -169,6 +175,9 @@ public class DescribeReservedNodesRequest extends AmazonWebServiceRequest  imple
      * @param marker An optional marker returned by a previous <a>DescribeReservedNodes</a>
      *         request to indicate the first parameter group that the current request
      *         will return.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedNodesRequest withMarker(String marker) {
         this.marker = marker;

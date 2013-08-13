@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeNotificationConfigurations(DescribeNotificationConfigurationsRequest)
  */
-public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the Auto Scaling group.
@@ -83,6 +83,9 @@ public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceR
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param autoScalingGroupNames The name of the Auto Scaling group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeNotificationConfigurationsRequest withAutoScalingGroupNames(String... autoScalingGroupNames) {
         if (getAutoScalingGroupNames() == null) setAutoScalingGroupNames(new java.util.ArrayList<String>(autoScalingGroupNames.length));
@@ -98,6 +101,9 @@ public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceR
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param autoScalingGroupNames The name of the Auto Scaling group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeNotificationConfigurationsRequest withAutoScalingGroupNames(java.util.Collection<String> autoScalingGroupNames) {
         if (autoScalingGroupNames == null) {
@@ -150,6 +156,9 @@ public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceR
      *
      * @param nextToken A string that is used to mark the start of the next batch of returned
      *         results for pagination.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeNotificationConfigurationsRequest withNextToken(String nextToken) {
         this.nextToken = nextToken;
@@ -190,6 +199,9 @@ public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceR
      * <b>Range: </b>1 - 50<br/>
      *
      * @param maxRecords Maximum number of records to be returned.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeNotificationConfigurationsRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;

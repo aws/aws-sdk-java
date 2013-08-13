@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.ResetInstanceAttributeRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -24,7 +26,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#resetInstanceAttribute(ResetInstanceAttributeRequest)
  */
-public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ResetInstanceAttributeRequest> {
 
     /**
      * The ID of the Amazon EC2 instance whose attribute is being reset.
@@ -205,6 +207,18 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest  impl
     public ResetInstanceAttributeRequest withAttribute(InstanceAttributeName attribute) {
         this.attribute = attribute.toString();
         return this;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<ResetInstanceAttributeRequest> getDryRunRequest() {
+        Request<ResetInstanceAttributeRequest> request = new ResetInstanceAttributeRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

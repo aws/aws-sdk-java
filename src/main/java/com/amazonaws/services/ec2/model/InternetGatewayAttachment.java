@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Internet Gateway Attachment
  */
-public class InternetGatewayAttachment  implements Serializable  {
+public class InternetGatewayAttachment implements Serializable {
 
     private String vpcId;
 

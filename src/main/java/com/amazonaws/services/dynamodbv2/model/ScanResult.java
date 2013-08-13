@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents the output of a <i>Scan</i> operation.
  * </p>
  */
-public class ScanResult  implements Serializable  {
+public class ScanResult implements Serializable {
 
     /**
      * An array of item attributes that match the scan criteria. Each element
@@ -108,6 +108,9 @@ public class ScanResult  implements Serializable  {
      * @param items An array of item attributes that match the scan criteria. Each element
      *         in this array consists of an attribute name and the value for that
      *         attribute.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ScanResult withItems(java.util.Map<String,AttributeValue>... items) {
         if (getItems() == null) setItems(new java.util.ArrayList<java.util.Map<String,AttributeValue>>(items.length));
@@ -127,6 +130,9 @@ public class ScanResult  implements Serializable  {
      * @param items An array of item attributes that match the scan criteria. Each element
      *         in this array consists of an attribute name and the value for that
      *         attribute.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ScanResult withItems(java.util.Collection<java.util.Map<String,AttributeValue>> items) {
         if (items == null) {
@@ -164,6 +170,9 @@ public class ScanResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param count The number of items in the response.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ScanResult withCount(Integer count) {
         this.count = count;
@@ -225,6 +234,9 @@ public class ScanResult  implements Serializable  {
      *         For more information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count
      *         and ScannedCount</a> in the Amazon DynamoDB Developer Guide.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ScanResult withScannedCount(Integer scannedCount) {
         this.scannedCount = scannedCount;
@@ -293,6 +305,9 @@ public class ScanResult  implements Serializable  {
      *         operation processed the "last page" of results). <p>If there are no
      *         remaining table or segment items to be scanned,
      *         <i>LastEvaluatedKey</i> is returned as null.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ScanResult withLastEvaluatedKey(java.util.Map<String,AttributeValue> lastEvaluatedKey) {
         setLastEvaluatedKey(lastEvaluatedKey);
@@ -390,6 +405,9 @@ public class ScanResult  implements Serializable  {
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
      *         Throughput</a> in the Amazon DynamoDB Developer Guide.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ScanResult withConsumedCapacity(ConsumedCapacity consumedCapacity) {
         this.consumedCapacity = consumedCapacity;

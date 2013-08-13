@@ -39,7 +39,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#createSnapshotFromVolumeRecoveryPoint(CreateSnapshotFromVolumeRecoveryPointRequest)
  */
-public class CreateSnapshotFromVolumeRecoveryPointRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateSnapshotFromVolumeRecoveryPointRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The Amazon Resource Name (ARN) of the volume. Use the
@@ -101,6 +101,9 @@ public class CreateSnapshotFromVolumeRecoveryPointRequest extends AmazonWebServi
      *
      * @param volumeARN The Amazon Resource Name (ARN) of the volume. Use the
      *         <a>ListVolumes</a> operation to return a list of gateway volumes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateSnapshotFromVolumeRecoveryPointRequest withVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
@@ -165,6 +168,9 @@ public class CreateSnapshotFromVolumeRecoveryPointRequest extends AmazonWebServi
      *         field, and in the AWS Storage Gateway snapshot <b>Details</b> pane,
      *         <b>Description</b> field. <p><i>Length</i>: Minimum length of 1.
      *         Maximum length of 255.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateSnapshotFromVolumeRecoveryPointRequest withSnapshotDescription(String snapshotDescription) {
         this.snapshotDescription = snapshotDescription;

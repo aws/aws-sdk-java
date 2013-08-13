@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A structure that represents a decision task. Decision tasks are sent to deciders in order for them to make decisions.
  * </p>
  */
-public class DecisionTask  implements Serializable  {
+public class DecisionTask implements Serializable {
 
     /**
      * The opaque string used as a handle on the task. This token is used by
@@ -118,6 +118,9 @@ public class DecisionTask  implements Serializable  {
      * @param taskToken The opaque string used as a handle on the task. This token is used by
      *         workers to communicate progress and response information back to the
      *         system about the task.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DecisionTask withTaskToken(String taskToken) {
         this.taskToken = taskToken;
@@ -155,6 +158,9 @@ public class DecisionTask  implements Serializable  {
      *
      * @param startedEventId The id of the <code>DecisionTaskStarted</code> event recorded in the
      *         history.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DecisionTask withStartedEventId(Long startedEventId) {
         this.startedEventId = startedEventId;
@@ -186,6 +192,9 @@ public class DecisionTask  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param workflowExecution The workflow execution for which this decision task was created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DecisionTask withWorkflowExecution(WorkflowExecution workflowExecution) {
         this.workflowExecution = workflowExecution;
@@ -223,6 +232,9 @@ public class DecisionTask  implements Serializable  {
      *
      * @param workflowType The type of the workflow execution for which this decision task was
      *         created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DecisionTask withWorkflowType(WorkflowType workflowType) {
         this.workflowType = workflowType;
@@ -271,6 +283,9 @@ public class DecisionTask  implements Serializable  {
      *
      * @param events A paginated list of history events of the workflow execution. The
      *         decider uses this during the processing of the decision task.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DecisionTask withEvents(HistoryEvent... events) {
         if (getEvents() == null) setEvents(new java.util.ArrayList<HistoryEvent>(events.length));
@@ -288,6 +303,9 @@ public class DecisionTask  implements Serializable  {
      *
      * @param events A paginated list of history events of the workflow execution. The
      *         decider uses this during the processing of the decision task.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DecisionTask withEvents(java.util.Collection<HistoryEvent> events) {
         if (events == null) {
@@ -346,6 +364,9 @@ public class DecisionTask  implements Serializable  {
      * @param nextPageToken Returns a value if the results are paginated. To get the next page of
      *         results, repeat the request specifying this token and all other
      *         arguments unchanged.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DecisionTask withNextPageToken(String nextPageToken) {
         this.nextPageToken = nextPageToken;
@@ -395,6 +416,9 @@ public class DecisionTask  implements Serializable  {
      *         of this workflow execution that was processed by the decider. This can
      *         be used to determine the events in the history new since the last
      *         decision task received by the decider.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DecisionTask withPreviousStartedEventId(Long previousStartedEventId) {
         this.previousStartedEventId = previousStartedEventId;

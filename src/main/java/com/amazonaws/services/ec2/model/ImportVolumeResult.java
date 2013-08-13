@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Import Volume Result
  */
-public class ImportVolumeResult  implements Serializable  {
+public class ImportVolumeResult implements Serializable {
 
     private ConversionTask conversionTask;
 

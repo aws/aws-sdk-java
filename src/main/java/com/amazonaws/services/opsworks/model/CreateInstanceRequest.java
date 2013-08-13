@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#createInstance(CreateInstanceRequest)
  */
-public class CreateInstanceRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateInstanceRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The stack ID.
@@ -166,6 +166,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackId The stack ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateInstanceRequest withStackId(String stackId) {
         this.stackId = stackId;
@@ -208,6 +211,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param layerIds An array that contains the instance layer IDs.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateInstanceRequest withLayerIds(String... layerIds) {
         if (getLayerIds() == null) setLayerIds(new java.util.ArrayList<String>(layerIds.length));
@@ -223,6 +229,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param layerIds An array that contains the instance layer IDs.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateInstanceRequest withLayerIds(java.util.Collection<String> layerIds) {
         if (layerIds == null) {
@@ -296,6 +305,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest  implements S
      *         Families and Types</a>. The parameter values that you use to specify
      *         the various types are in the API Name column of the Available Instance
      *         Types table.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateInstanceRequest withInstanceType(String instanceType) {
         this.instanceType = instanceType;
@@ -395,6 +407,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest  implements S
      *         for the instance layer and configure the thresholds by calling
      *         <a>SetLoadBasedAutoScaling</a>.</li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see AutoScalingType
      */
     public CreateInstanceRequest withAutoScalingType(String autoScalingType) {
@@ -463,6 +478,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest  implements S
      *         for the instance layer and configure the thresholds by calling
      *         <a>SetLoadBasedAutoScaling</a>.</li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see AutoScalingType
      */
     public CreateInstanceRequest withAutoScalingType(AutoScalingType autoScalingType) {
@@ -494,6 +512,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param hostname The instance host name.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateInstanceRequest withHostname(String hostname) {
         this.hostname = hostname;
@@ -597,6 +618,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest  implements S
      *         OpsWorks, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      *         Custom AMIs</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateInstanceRequest withOs(String os) {
         this.os = os;
@@ -646,6 +670,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest  implements S
      *         based on one of the standard AWS OpsWorks APIs: Amazon Linux or Ubuntu
      *         12.04 LTS. For more information, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateInstanceRequest withAmiId(String amiId) {
         this.amiId = amiId;
@@ -677,6 +704,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sshKeyName The instance SSH key name.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateInstanceRequest withSshKeyName(String sshKeyName) {
         this.sshKeyName = sshKeyName;
@@ -720,6 +750,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest  implements S
      * @param availabilityZone The instance Availability Zone. For more information, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      *         and Endpoints</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateInstanceRequest withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -789,6 +822,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest  implements S
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      *         Families and Types</a>.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see Architecture
      */
     public CreateInstanceRequest withArchitecture(String architecture) {
@@ -836,6 +872,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest  implements S
      *         by the different instance types, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      *         Families and Types</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see Architecture
      */
@@ -894,6 +933,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest  implements S
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      *         for the Root Device</a>.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see RootDeviceType
      */
     public CreateInstanceRequest withRootDeviceType(String rootDeviceType) {
@@ -933,6 +975,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest  implements S
      * @param rootDeviceType The instance root device type. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      *         for the Root Device</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see RootDeviceType
      */
@@ -1013,6 +1058,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest  implements S
      *         <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
      *         recommend using the default value of <code>true</code>, to ensure that
      *         your instances have the latest security updates.</note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateInstanceRequest withInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
         this.installUpdatesOnBoot = installUpdatesOnBoot;

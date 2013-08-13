@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.ReplaceRouteRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -26,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#replaceRoute(ReplaceRouteRequest)
  */
-public class ReplaceRouteRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ReplaceRouteRequest> {
 
     /**
      * The ID of the route table where the route will be replaced.
@@ -233,6 +235,18 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest  implements Ser
         return this;
     }
     
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<ReplaceRouteRequest> getDryRunRequest() {
+        Request<ReplaceRouteRequest> request = new ReplaceRouteRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.DescribeReservedInstancesOfferingsRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -26,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeReservedInstancesOfferings(DescribeReservedInstancesOfferingsRequest)
  */
-public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeReservedInstancesOfferingsRequest> {
 
     /**
      * An optional list of the unique IDs of the Reserved Instance offerings
@@ -92,9 +94,6 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      */
     private Long maxDuration;
 
-    /**
-     * Maximum number of instances to filter when searching for offerings.
-     */
     private Integer maxInstanceCount;
 
     /**
@@ -686,29 +685,29 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     
     
     /**
-     * Maximum number of instances to filter when searching for offerings.
+     * Returns the value of the MaxInstanceCount property for this object.
      *
-     * @return Maximum number of instances to filter when searching for offerings.
+     * @return The value of the MaxInstanceCount property for this object.
      */
     public Integer getMaxInstanceCount() {
         return maxInstanceCount;
     }
     
     /**
-     * Maximum number of instances to filter when searching for offerings.
+     * Sets the value of the MaxInstanceCount property for this object.
      *
-     * @param maxInstanceCount Maximum number of instances to filter when searching for offerings.
+     * @param maxInstanceCount The new value for the MaxInstanceCount property for this object.
      */
     public void setMaxInstanceCount(Integer maxInstanceCount) {
         this.maxInstanceCount = maxInstanceCount;
     }
     
     /**
-     * Maximum number of instances to filter when searching for offerings.
+     * Sets the value of the MaxInstanceCount property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param maxInstanceCount Maximum number of instances to filter when searching for offerings.
+     * @param maxInstanceCount The new value for the MaxInstanceCount property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -718,6 +717,18 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
         return this;
     }
     
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<DescribeReservedInstancesOfferingsRequest> getDryRunRequest() {
+        Request<DescribeReservedInstancesOfferingsRequest> request = new DescribeReservedInstancesOfferingsRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

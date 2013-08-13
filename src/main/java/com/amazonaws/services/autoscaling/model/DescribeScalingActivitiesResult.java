@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The output for the DescribeScalingActivities action.
  * </p>
  */
-public class DescribeScalingActivitiesResult  implements Serializable  {
+public class DescribeScalingActivitiesResult implements Serializable {
 
     /**
      * A list of the requested scaling activities.
@@ -72,6 +72,9 @@ public class DescribeScalingActivitiesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param activities A list of the requested scaling activities.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeScalingActivitiesResult withActivities(Activity... activities) {
         if (getActivities() == null) setActivities(new java.util.ArrayList<Activity>(activities.length));
@@ -87,6 +90,9 @@ public class DescribeScalingActivitiesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param activities A list of the requested scaling activities.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeScalingActivitiesResult withActivities(java.util.Collection<Activity> activities) {
         if (activities == null) {
@@ -145,6 +151,9 @@ public class DescribeScalingActivitiesResult  implements Serializable  {
      * @param nextToken Acts as a paging mechanism for large result sets. Set to a non-empty
      *         string if there are additional results waiting to be returned. Pass
      *         this in to subsequent calls to return additional results.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeScalingActivitiesResult withNextToken(String nextToken) {
         this.nextToken = nextToken;

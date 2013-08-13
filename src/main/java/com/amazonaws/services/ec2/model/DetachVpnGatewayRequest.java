@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.DetachVpnGatewayRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -28,7 +30,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#detachVpnGateway(DetachVpnGatewayRequest)
  */
-public class DetachVpnGatewayRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DetachVpnGatewayRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DetachVpnGatewayRequest> {
 
     /**
      * The ID of the VPN gateway to detach from the VPC.
@@ -130,6 +132,18 @@ public class DetachVpnGatewayRequest extends AmazonWebServiceRequest  implements
         return this;
     }
     
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<DetachVpnGatewayRequest> getDryRunRequest() {
+        Request<DetachVpnGatewayRequest> request = new DetachVpnGatewayRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

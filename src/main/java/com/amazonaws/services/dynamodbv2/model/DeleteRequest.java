@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents a request to perform a <i>DeleteItem</i> operation on an item.
  * </p>
  */
-public class DeleteRequest  implements Serializable  {
+public class DeleteRequest implements Serializable {
 
     /**
      * A map of attribute name to attribute values, representing the primary
@@ -30,6 +30,30 @@ public class DeleteRequest  implements Serializable  {
      */
     private java.util.Map<String,AttributeValue> key;
 
+    /**
+     * Default constructor for a new DeleteRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DeleteRequest() {}
+    
+
+
+    /**
+     * Constructs a new DeleteRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param key A map of attribute name to attribute values, representing
+     * the primary key of the item to delete. All of the table's primary key
+     * attributes must be specified, and their data types must match those of
+     * the table's key schema.
+     */
+    public DeleteRequest(java.util.Map<String,AttributeValue> key) {
+        setKey(key);
+    }
+
+    
+    
     /**
      * A map of attribute name to attribute values, representing the primary
      * key of the item to delete. All of the table's primary key attributes
@@ -73,6 +97,9 @@ public class DeleteRequest  implements Serializable  {
      *         key of the item to delete. All of the table's primary key attributes
      *         must be specified, and their data types must match those of the
      *         table's key schema.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteRequest withKey(java.util.Map<String,AttributeValue> key) {
         setKey(key);

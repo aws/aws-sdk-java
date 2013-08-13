@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Internet Gateway
  */
-public class InternetGateway  implements Serializable  {
+public class InternetGateway implements Serializable {
 
     private String internetGatewayId;
 

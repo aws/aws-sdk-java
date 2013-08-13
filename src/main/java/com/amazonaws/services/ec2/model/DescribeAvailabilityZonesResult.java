@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The result of describing the Amazon EC2 availability zones in the current region.
  * </p>
  */
-public class DescribeAvailabilityZonesResult  implements Serializable  {
+public class DescribeAvailabilityZonesResult implements Serializable {
 
     /**
      * The list of described Amazon EC2 availability zones.

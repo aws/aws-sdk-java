@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The returned result of the corresponding request.
  * </p>
  */
-public class ListInvalidationsResult  implements Serializable  {
+public class ListInvalidationsResult implements Serializable {
 
     /**
      * Information about invalidation batches.
@@ -51,6 +51,9 @@ public class ListInvalidationsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param invalidationList Information about invalidation batches.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListInvalidationsResult withInvalidationList(InvalidationList invalidationList) {
         this.invalidationList = invalidationList;

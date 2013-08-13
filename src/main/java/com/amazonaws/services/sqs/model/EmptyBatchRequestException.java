@@ -17,7 +17,9 @@ package com.amazonaws.services.sqs.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AmazonSQS exception
+ * <p>
+ * Batch request does not contain an entry.
+ * </p>
  */        
 public class EmptyBatchRequestException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

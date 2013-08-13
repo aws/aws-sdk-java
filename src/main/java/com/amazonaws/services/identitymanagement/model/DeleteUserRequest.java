@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteUser(DeleteUserRequest)
  */
-public class DeleteUserRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteUserRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the user to delete.
@@ -92,6 +92,9 @@ public class DeleteUserRequest extends AmazonWebServiceRequest  implements Seria
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param userName Name of the user to delete.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteUserRequest withUserName(String userName) {
         this.userName = userName;

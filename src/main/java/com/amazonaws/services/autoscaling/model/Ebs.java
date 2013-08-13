@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The Ebs data type.
  * </p>
  */
-public class Ebs  implements Serializable  {
+public class Ebs implements Serializable {
 
     /**
      * The snapshot ID.
@@ -75,6 +75,9 @@ public class Ebs  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param snapshotId The snapshot ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Ebs withSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
@@ -115,6 +118,9 @@ public class Ebs  implements Serializable  {
      * <b>Range: </b>1 - 1024<br/>
      *
      * @param volumeSize The volume size, in gigabytes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Ebs withVolumeSize(Integer volumeSize) {
         this.volumeSize = volumeSize;

@@ -28,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#authorizeCacheSecurityGroupIngress(AuthorizeCacheSecurityGroupIngressRequest)
  */
-public class AuthorizeCacheSecurityGroupIngressRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class AuthorizeCacheSecurityGroupIngressRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the Cache Security Group to authorize.
@@ -100,6 +100,9 @@ public class AuthorizeCacheSecurityGroupIngressRequest extends AmazonWebServiceR
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheSecurityGroupName The name of the Cache Security Group to authorize.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AuthorizeCacheSecurityGroupIngressRequest withCacheSecurityGroupName(String cacheSecurityGroupName) {
         this.cacheSecurityGroupName = cacheSecurityGroupName;
@@ -131,6 +134,9 @@ public class AuthorizeCacheSecurityGroupIngressRequest extends AmazonWebServiceR
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eC2SecurityGroupName Name of the EC2 Security Group to include in the authorization.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AuthorizeCacheSecurityGroupIngressRequest withEC2SecurityGroupName(String eC2SecurityGroupName) {
         this.eC2SecurityGroupName = eC2SecurityGroupName;
@@ -174,6 +180,9 @@ public class AuthorizeCacheSecurityGroupIngressRequest extends AmazonWebServiceR
      * @param eC2SecurityGroupOwnerId AWS Account Number of the owner of the security group specified in the
      *         EC2SecurityGroupName parameter. The AWS Access Key ID is not an
      *         acceptable value.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AuthorizeCacheSecurityGroupIngressRequest withEC2SecurityGroupOwnerId(String eC2SecurityGroupOwnerId) {
         this.eC2SecurityGroupOwnerId = eC2SecurityGroupOwnerId;

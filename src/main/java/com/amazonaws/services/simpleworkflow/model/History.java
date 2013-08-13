@@ -21,7 +21,7 @@ import java.io.Serializable;
  * related to all tasks and events in the life of the workflow execution.
  * </p>
  */
-public class History  implements Serializable  {
+public class History implements Serializable {
 
     /**
      * The list of history events.
@@ -73,6 +73,9 @@ public class History  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param events The list of history events.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public History withEvents(HistoryEvent... events) {
         if (getEvents() == null) setEvents(new java.util.ArrayList<HistoryEvent>(events.length));
@@ -88,6 +91,9 @@ public class History  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param events The list of history events.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public History withEvents(java.util.Collection<HistoryEvent> events) {
         if (events == null) {
@@ -146,6 +152,9 @@ public class History  implements Serializable  {
      * @param nextPageToken The token for the next page. If set, the history consists of more than
      *         one page and the next page can be retrieved by repeating the request
      *         with this token and all other arguments unchanged.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public History withNextPageToken(String nextPageToken) {
         this.nextPageToken = nextPageToken;

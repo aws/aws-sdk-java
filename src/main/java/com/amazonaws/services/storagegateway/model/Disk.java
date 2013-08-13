@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes a gateway local disk.
  * </p>
  */
-public class Disk  implements Serializable  {
+public class Disk implements Serializable {
 
     /**
      * The unique device ID or other distinguishing data that identify the
@@ -103,6 +103,9 @@ public class Disk  implements Serializable  {
      *
      * @param diskId The unique device ID or other distinguishing data that identify the
      *         local disk.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Disk withDiskId(String diskId) {
         this.diskId = diskId;
@@ -134,6 +137,9 @@ public class Disk  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param diskPath The path of the local disk in the gateway virtual machine (VM).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Disk withDiskPath(String diskPath) {
         this.diskPath = diskPath;
@@ -171,6 +177,9 @@ public class Disk  implements Serializable  {
      *
      * @param diskNode The device node of the local disk as assigned by the virtualization
      *         environment.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Disk withDiskNode(String diskNode) {
         this.diskNode = diskNode;
@@ -202,6 +211,9 @@ public class Disk  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param diskSizeInBytes The local disk size in bytes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Disk withDiskSizeInBytes(Long diskSizeInBytes) {
         this.diskSizeInBytes = diskSizeInBytes;
@@ -253,6 +265,9 @@ public class Disk  implements Serializable  {
      * @param diskAllocationType One of the <a>DiskAllocationType</a> enumeration values that
      *         identifies how the local disk is used.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see DiskAllocationType
      */
     public Disk withDiskAllocationType(String diskAllocationType) {
@@ -288,6 +303,9 @@ public class Disk  implements Serializable  {
      *
      * @param diskAllocationType One of the <a>DiskAllocationType</a> enumeration values that
      *         identifies how the local disk is used.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see DiskAllocationType
      */
@@ -338,6 +356,9 @@ public class Disk  implements Serializable  {
      *         field is not included in the response if the local disk is not defined
      *         as an iSCSI target. The format of this field is
      *         <i>targetIqn::LUNNumber::region-volumeId</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Disk withDiskAllocationResource(String diskAllocationResource) {
         this.diskAllocationResource = diskAllocationResource;

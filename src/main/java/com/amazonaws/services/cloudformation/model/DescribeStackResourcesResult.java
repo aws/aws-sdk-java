@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The output for a DescribeStackResources action.
  * </p>
  */
-public class DescribeStackResourcesResult  implements Serializable  {
+public class DescribeStackResourcesResult implements Serializable {
 
     /**
      * A list of <code>StackResource</code> structures.
@@ -62,6 +62,9 @@ public class DescribeStackResourcesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackResources A list of <code>StackResource</code> structures.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeStackResourcesResult withStackResources(StackResource... stackResources) {
         if (getStackResources() == null) setStackResources(new java.util.ArrayList<StackResource>(stackResources.length));
@@ -77,6 +80,9 @@ public class DescribeStackResourcesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackResources A list of <code>StackResource</code> structures.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeStackResourcesResult withStackResources(java.util.Collection<StackResource> stackResources) {
         if (stackResources == null) {

@@ -16,16 +16,19 @@ package com.amazonaws.services.sqs.model;
 import java.io.Serializable;
 
 /**
- * Get Queue Attributes Result
+ * 
  */
-public class GetQueueAttributesResult  implements Serializable  {
+public class GetQueueAttributesResult implements Serializable {
 
+    /**
+     * A map of attributes to the respective values.
+     */
     private java.util.Map<String,String> attributes;
 
     /**
-     * Returns the value of the Attributes property for this object.
+     * A map of attributes to the respective values.
      *
-     * @return The value of the Attributes property for this object.
+     * @return A map of attributes to the respective values.
      */
     public java.util.Map<String,String> getAttributes() {
         
@@ -36,20 +39,23 @@ public class GetQueueAttributesResult  implements Serializable  {
     }
     
     /**
-     * Sets the value of the Attributes property for this object.
+     * A map of attributes to the respective values.
      *
-     * @param attributes The new value for the Attributes property for this object.
+     * @param attributes A map of attributes to the respective values.
      */
     public void setAttributes(java.util.Map<String,String> attributes) {
         this.attributes = attributes;
     }
     
     /**
-     * Sets the value of the Attributes property for this object.
+     * A map of attributes to the respective values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributes The new value for the Attributes property for this object.
+     * @param attributes A map of attributes to the respective values.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetQueueAttributesResult withAttributes(java.util.Map<String,String> attributes) {
         setAttributes(attributes);
@@ -58,7 +64,7 @@ public class GetQueueAttributesResult  implements Serializable  {
     
    	
     /**
-     * Sets the value of the Attributes property for this object.
+     * A map of attributes to the respective values.
      * <p>
      * The method adds a new key-value pair into Attributes parameter, and
      * returns a reference to this object so that method calls can be chained

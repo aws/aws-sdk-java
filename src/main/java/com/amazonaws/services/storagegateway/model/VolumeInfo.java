@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes a storage volume.
  * </p>
  */
-public class VolumeInfo  implements Serializable  {
+public class VolumeInfo implements Serializable {
 
     /**
      * The Amazon Resource Name (ARN) for the storage volume. For example,
@@ -100,6 +100,9 @@ public class VolumeInfo  implements Serializable  {
      *         <code>arn:aws:storagegateway:us-east-1:111122223333:gateway/mygateway/volume/vol-1122AABB</code>
      *         <p><i>Valid Values</i>: 50 to 500 lowercase letters, numbers, periods
      *         (.), and hyphens (-).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VolumeInfo withVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
@@ -151,6 +154,9 @@ public class VolumeInfo  implements Serializable  {
      * @param volumeType One of the VolumeType values that indicates the configuration of the
      *         storage volume, for example as a storage volume.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see VolumeType
      */
     public VolumeInfo withVolumeType(String volumeType) {
@@ -186,6 +192,9 @@ public class VolumeInfo  implements Serializable  {
      *
      * @param volumeType One of the VolumeType values that indicates the configuration of the
      *         storage volume, for example as a storage volume.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see VolumeType
      */

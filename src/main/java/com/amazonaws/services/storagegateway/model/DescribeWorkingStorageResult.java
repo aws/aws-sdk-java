@@ -28,7 +28,7 @@ import java.io.Serializable;
  * 
  * </ul>
  */
-public class DescribeWorkingStorageResult  implements Serializable  {
+public class DescribeWorkingStorageResult implements Serializable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -105,6 +105,9 @@ public class DescribeWorkingStorageResult  implements Serializable  {
      * @param gatewayARN The Amazon Resource Name (ARN) of the gateway. Use the
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeWorkingStorageResult withGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
@@ -165,6 +168,9 @@ public class DescribeWorkingStorageResult  implements Serializable  {
      *         working storage. Each local disk ID is specified as a string (minimum
      *         length of 1 and maximum length of 300). If no local disks are
      *         configured as working storage, then the DiskIds array is empty.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeWorkingStorageResult withDiskIds(String... diskIds) {
         if (getDiskIds() == null) setDiskIds(new java.util.ArrayList<String>(diskIds.length));
@@ -186,6 +192,9 @@ public class DescribeWorkingStorageResult  implements Serializable  {
      *         working storage. Each local disk ID is specified as a string (minimum
      *         length of 1 and maximum length of 300). If no local disks are
      *         configured as working storage, then the DiskIds array is empty.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeWorkingStorageResult withDiskIds(java.util.Collection<String> diskIds) {
         if (diskIds == null) {
@@ -229,6 +238,9 @@ public class DescribeWorkingStorageResult  implements Serializable  {
      *
      * @param workingStorageUsedInBytes The total working storage in bytes in use by the gateway. If no
      *         working storage is configured for the gateway, this field returns 0.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeWorkingStorageResult withWorkingStorageUsedInBytes(Long workingStorageUsedInBytes) {
         this.workingStorageUsedInBytes = workingStorageUsedInBytes;
@@ -266,6 +278,9 @@ public class DescribeWorkingStorageResult  implements Serializable  {
      *
      * @param workingStorageAllocatedInBytes The total working storage in bytes allocated for the gateway. If no
      *         working storage is configured for the gateway, this field returns 0.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeWorkingStorageResult withWorkingStorageAllocatedInBytes(Long workingStorageAllocatedInBytes) {
         this.workingStorageAllocatedInBytes = workingStorageAllocatedInBytes;

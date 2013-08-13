@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Result message containing a list of application descriptions.
  * </p>
  */
-public class DescribeApplicationsResult  implements Serializable  {
+public class DescribeApplicationsResult implements Serializable {
 
     /**
      * This parameter contains a list of <a>ApplicationDescription</a>.
@@ -62,6 +62,9 @@ public class DescribeApplicationsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param applications This parameter contains a list of <a>ApplicationDescription</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeApplicationsResult withApplications(ApplicationDescription... applications) {
         if (getApplications() == null) setApplications(new java.util.ArrayList<ApplicationDescription>(applications.length));
@@ -77,6 +80,9 @@ public class DescribeApplicationsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param applications This parameter contains a list of <a>ApplicationDescription</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeApplicationsResult withApplications(java.util.Collection<ApplicationDescription> applications) {
         if (applications == null) {

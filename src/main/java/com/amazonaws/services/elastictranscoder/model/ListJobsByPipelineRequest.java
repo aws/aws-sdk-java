@@ -28,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#listJobsByPipeline(ListJobsByPipelineRequest)
  */
-public class ListJobsByPipelineRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ListJobsByPipelineRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The ID of the pipeline for which you want to get job information.
@@ -91,6 +91,9 @@ public class ListJobsByPipelineRequest extends AmazonWebServiceRequest  implemen
      * <b>Pattern: </b>^\d{13}-\w{6}$<br/>
      *
      * @param pipelineId The ID of the pipeline for which you want to get job information.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListJobsByPipelineRequest withPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
@@ -143,6 +146,9 @@ public class ListJobsByPipelineRequest extends AmazonWebServiceRequest  implemen
      * @param ascending To list jobs in chronological order by the date and time that they
      *         were submitted, enter <code>true</code>. To list jobs in reverse
      *         chronological order, enter <code>false</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListJobsByPipelineRequest withAscending(String ascending) {
         this.ascending = ascending;
@@ -195,6 +201,9 @@ public class ListJobsByPipelineRequest extends AmazonWebServiceRequest  implemen
      * @param pageToken When Elastic Transcoder returns more than one page of results, use
      *         <code>pageToken</code> in subsequent <code>GET</code> requests to get
      *         each successive page of results.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListJobsByPipelineRequest withPageToken(String pageToken) {
         this.pageToken = pageToken;

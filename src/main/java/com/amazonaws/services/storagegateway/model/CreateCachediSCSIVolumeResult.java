@@ -26,7 +26,7 @@ import java.io.Serializable;
  * 
  * </ul>
  */
-public class CreateCachediSCSIVolumeResult  implements Serializable  {
+public class CreateCachediSCSIVolumeResult implements Serializable {
 
     /**
      * The ARN of the configured volume.
@@ -78,6 +78,9 @@ public class CreateCachediSCSIVolumeResult  implements Serializable  {
      * <b>Length: </b>50 - 500<br/>
      *
      * @param volumeARN The ARN of the configured volume.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateCachediSCSIVolumeResult withVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
@@ -124,6 +127,9 @@ public class CreateCachediSCSIVolumeResult  implements Serializable  {
      *
      * @param targetARN The ARN of the volume target that includes the iSCSI name that
      *         initiators can use to connect to the target.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateCachediSCSIVolumeResult withTargetARN(String targetARN) {
         this.targetARN = targetARN;

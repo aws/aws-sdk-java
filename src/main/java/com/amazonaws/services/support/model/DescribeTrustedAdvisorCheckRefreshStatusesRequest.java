@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.support.AWSSupport#describeTrustedAdvisorCheckRefreshStatuses(DescribeTrustedAdvisorCheckRefreshStatusesRequest)
  */
-public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * List of the <i>CheckId</i> values for the Trusted Advisor checks for
@@ -95,6 +95,9 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends AmazonWeb
      *         values by calling <a
      *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
      *         title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeTrustedAdvisorCheckRefreshStatusesRequest withCheckIds(String... checkIds) {
         if (getCheckIds() == null) setCheckIds(new java.util.ArrayList<String>(checkIds.length));
@@ -118,6 +121,9 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends AmazonWeb
      *         values by calling <a
      *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
      *         title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeTrustedAdvisorCheckRefreshStatusesRequest withCheckIds(java.util.Collection<String> checkIds) {
         if (checkIds == null) {

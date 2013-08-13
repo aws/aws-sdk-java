@@ -41,7 +41,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#describeStackResources(DescribeStackResourcesRequest)
  */
-public class DescribeStackResourcesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeStackResourcesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name or the unique identifier associated with the stack.
@@ -120,6 +120,9 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest  impl
      *         <code>StackName</code>, you must specify
      *         <code>PhysicalResourceId</code>. <p>Default: There is no default
      *         value.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeStackResourcesRequest withStackName(String stackName) {
         this.stackName = stackName;
@@ -157,6 +160,9 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest  impl
      *
      * @param logicalResourceId The logical name of the resource as specified in the template.
      *         <p>Default: There is no default value.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeStackResourcesRequest withLogicalResourceId(String logicalResourceId) {
         this.logicalResourceId = logicalResourceId;
@@ -242,6 +248,9 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest  impl
      *         <p>Required: Conditional. If you do not specify
      *         <code>PhysicalResourceId</code>, you must specify
      *         <code>StackName</code>. <p>Default: There is no default value.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeStackResourcesRequest withPhysicalResourceId(String physicalResourceId) {
         this.physicalResourceId = physicalResourceId;

@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Conversion Task
  */
-public class ConversionTask  implements Serializable  {
+public class ConversionTask implements Serializable {
 
     private String conversionTaskId;
 

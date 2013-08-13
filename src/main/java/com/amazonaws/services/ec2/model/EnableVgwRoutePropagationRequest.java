@@ -22,7 +22,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#enableVgwRoutePropagation(EnableVgwRoutePropagationRequest)
  */
-public class EnableVgwRoutePropagationRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class EnableVgwRoutePropagationRequest extends AmazonWebServiceRequest implements Serializable {
 
     private String routeTableId;
 

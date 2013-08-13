@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes an Amazon EBS volume configuration.
  * </p>
  */
-public class VolumeConfiguration  implements Serializable  {
+public class VolumeConfiguration implements Serializable {
 
     /**
      * The volume mount point. For example "/dev/sdh".
@@ -68,6 +68,9 @@ public class VolumeConfiguration  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param mountPoint The volume mount point. For example "/dev/sdh".
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VolumeConfiguration withMountPoint(String mountPoint) {
         this.mountPoint = mountPoint;
@@ -111,6 +114,9 @@ public class VolumeConfiguration  implements Serializable  {
      * @param raidLevel The volume <a
      *         href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID
      *         level</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VolumeConfiguration withRaidLevel(Integer raidLevel) {
         this.raidLevel = raidLevel;
@@ -142,6 +148,9 @@ public class VolumeConfiguration  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param numberOfDisks The number of disks in the volume.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VolumeConfiguration withNumberOfDisks(Integer numberOfDisks) {
         this.numberOfDisks = numberOfDisks;
@@ -173,6 +182,9 @@ public class VolumeConfiguration  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param size The volume size.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VolumeConfiguration withSize(Integer size) {
         this.size = size;

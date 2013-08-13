@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The Stack data type.
  * </p>
  */
-public class Stack  implements Serializable  {
+public class Stack implements Serializable {
 
     /**
      * Unique identifier of the stack.
@@ -129,6 +129,9 @@ public class Stack  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackId Unique identifier of the stack.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Stack withStackId(String stackId) {
         this.stackId = stackId;
@@ -160,6 +163,9 @@ public class Stack  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackName The name associated with the stack.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Stack withStackName(String stackName) {
         this.stackName = stackName;
@@ -191,6 +197,9 @@ public class Stack  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description User defined description associated with the stack.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Stack withDescription(String description) {
         this.description = description;
@@ -233,6 +242,9 @@ public class Stack  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameters A list of <code>Parameter</code> structures.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Stack withParameters(Parameter... parameters) {
         if (getParameters() == null) setParameters(new java.util.ArrayList<Parameter>(parameters.length));
@@ -248,6 +260,9 @@ public class Stack  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameters A list of <code>Parameter</code> structures.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Stack withParameters(java.util.Collection<Parameter> parameters) {
         if (parameters == null) {
@@ -285,6 +300,9 @@ public class Stack  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param creationTime Time at which the stack was created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Stack withCreationTime(java.util.Date creationTime) {
         this.creationTime = creationTime;
@@ -322,6 +340,9 @@ public class Stack  implements Serializable  {
      *
      * @param lastUpdatedTime The time the stack was last updated. This field will only be returned
      *         if the stack has been updated at least once.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Stack withLastUpdatedTime(java.util.Date lastUpdatedTime) {
         this.lastUpdatedTime = lastUpdatedTime;
@@ -367,6 +388,9 @@ public class Stack  implements Serializable  {
      *
      * @param stackStatus Current status of the stack.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see StackStatus
      */
     public Stack withStackStatus(String stackStatus) {
@@ -399,6 +423,9 @@ public class Stack  implements Serializable  {
      *
      * @param stackStatus Current status of the stack.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see StackStatus
      */
     public Stack withStackStatus(StackStatus stackStatus) {
@@ -430,6 +457,9 @@ public class Stack  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackStatusReason Success/failure message associated with the stack status.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Stack withStackStatusReason(String stackStatusReason) {
         this.stackStatusReason = stackStatusReason;
@@ -473,6 +503,9 @@ public class Stack  implements Serializable  {
      * @param disableRollback Boolean to enable or disable rollback on stack creation failures: <p>
      *         <ul> <li><code>true</code>: disable rollback</li>
      *         <li><code>false</code>: enable rollback</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Stack withDisableRollback(Boolean disableRollback) {
         this.disableRollback = disableRollback;
@@ -537,6 +570,9 @@ public class Stack  implements Serializable  {
      * <b>Length: </b>0 - 5<br/>
      *
      * @param notificationARNs SNS topic ARNs to which stack related events are published.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Stack withNotificationARNs(String... notificationARNs) {
         if (getNotificationARNs() == null) setNotificationARNs(new java.util.ArrayList<String>(notificationARNs.length));
@@ -555,6 +591,9 @@ public class Stack  implements Serializable  {
      * <b>Length: </b>0 - 5<br/>
      *
      * @param notificationARNs SNS topic ARNs to which stack related events are published.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Stack withNotificationARNs(java.util.Collection<String> notificationARNs) {
         if (notificationARNs == null) {
@@ -601,6 +640,9 @@ public class Stack  implements Serializable  {
      * <b>Range: </b>1 - <br/>
      *
      * @param timeoutInMinutes The amount of time within which stack creation should complete.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Stack withTimeoutInMinutes(Integer timeoutInMinutes) {
         this.timeoutInMinutes = timeoutInMinutes;
@@ -643,6 +685,9 @@ public class Stack  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param capabilities The capabilities allowed in the stack.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Stack withCapabilities(String... capabilities) {
         if (getCapabilities() == null) setCapabilities(new java.util.ArrayList<String>(capabilities.length));
@@ -658,6 +703,9 @@ public class Stack  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param capabilities The capabilities allowed in the stack.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Stack withCapabilities(java.util.Collection<String> capabilities) {
         if (capabilities == null) {
@@ -706,6 +754,9 @@ public class Stack  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param outputs A list of output structures.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Stack withOutputs(Output... outputs) {
         if (getOutputs() == null) setOutputs(new java.util.ArrayList<Output>(outputs.length));
@@ -721,6 +772,9 @@ public class Stack  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param outputs A list of output structures.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Stack withOutputs(java.util.Collection<Output> outputs) {
         if (outputs == null) {
@@ -775,6 +829,9 @@ public class Stack  implements Serializable  {
      *
      * @param tags A list of <code>Tag</code>s that specify cost allocation information
      *         for the stack.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Stack withTags(Tag... tags) {
         if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
@@ -792,6 +849,9 @@ public class Stack  implements Serializable  {
      *
      * @param tags A list of <code>Tag</code>s that specify cost allocation information
      *         for the stack.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Stack withTags(java.util.Collection<Tag> tags) {
         if (tags == null) {

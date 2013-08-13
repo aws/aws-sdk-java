@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The <code>AutoScalingNotificationTypes</code> data type.
  * </p>
  */
-public class DescribeAutoScalingNotificationTypesResult  implements Serializable  {
+public class DescribeAutoScalingNotificationTypesResult implements Serializable {
 
     /**
      * Notification types supported by Auto Scaling. They are:
@@ -97,6 +97,9 @@ public class DescribeAutoScalingNotificationTypesResult  implements Serializable
      *         autoscaling:EC2_INSTANCE_TERMINATE,
      *         autoscaling:EC2_INSTANCE_TERMINATE_ERROR,
      *         autoscaling:TEST_NOTIFICATION
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeAutoScalingNotificationTypesResult withAutoScalingNotificationTypes(String... autoScalingNotificationTypes) {
         if (getAutoScalingNotificationTypes() == null) setAutoScalingNotificationTypes(new java.util.ArrayList<String>(autoScalingNotificationTypes.length));
@@ -122,6 +125,9 @@ public class DescribeAutoScalingNotificationTypesResult  implements Serializable
      *         autoscaling:EC2_INSTANCE_TERMINATE,
      *         autoscaling:EC2_INSTANCE_TERMINATE_ERROR,
      *         autoscaling:TEST_NOTIFICATION
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeAutoScalingNotificationTypesResult withAutoScalingNotificationTypes(java.util.Collection<String> autoScalingNotificationTypes) {
         if (autoScalingNotificationTypes == null) {

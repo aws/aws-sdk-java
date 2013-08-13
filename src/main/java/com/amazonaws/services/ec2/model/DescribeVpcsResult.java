@@ -20,7 +20,7 @@ import java.io.Serializable;
  * 
  * </p>
  */
-public class DescribeVpcsResult  implements Serializable  {
+public class DescribeVpcsResult implements Serializable {
 
     /**
      * 

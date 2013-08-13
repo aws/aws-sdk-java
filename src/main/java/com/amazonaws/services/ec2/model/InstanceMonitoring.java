@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents the monitoring state of an EC2 instance.
  * </p>
  */
-public class InstanceMonitoring  implements Serializable  {
+public class InstanceMonitoring implements Serializable {
 
     /**
      * Instance ID.

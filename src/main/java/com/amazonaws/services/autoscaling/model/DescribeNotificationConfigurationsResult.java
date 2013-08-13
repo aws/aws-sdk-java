@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The output of the DescribeNotificationConfigurations action.
  * </p>
  */
-public class DescribeNotificationConfigurationsResult  implements Serializable  {
+public class DescribeNotificationConfigurationsResult implements Serializable {
 
     /**
      * The list of notification configurations.
@@ -71,6 +71,9 @@ public class DescribeNotificationConfigurationsResult  implements Serializable  
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param notificationConfigurations The list of notification configurations.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeNotificationConfigurationsResult withNotificationConfigurations(NotificationConfiguration... notificationConfigurations) {
         if (getNotificationConfigurations() == null) setNotificationConfigurations(new java.util.ArrayList<NotificationConfiguration>(notificationConfigurations.length));
@@ -86,6 +89,9 @@ public class DescribeNotificationConfigurationsResult  implements Serializable  
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param notificationConfigurations The list of notification configurations.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeNotificationConfigurationsResult withNotificationConfigurations(java.util.Collection<NotificationConfiguration> notificationConfigurations) {
         if (notificationConfigurations == null) {
@@ -138,6 +144,9 @@ public class DescribeNotificationConfigurationsResult  implements Serializable  
      *
      * @param nextToken A string that is used to mark the start of the next batch of returned
      *         results for pagination.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeNotificationConfigurationsResult withNextToken(String nextToken) {
         this.nextToken = nextToken;

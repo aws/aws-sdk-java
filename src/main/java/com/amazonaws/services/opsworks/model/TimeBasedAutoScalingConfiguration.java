@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes an instance's time-based auto scaling configuration.
  * </p>
  */
-public class TimeBasedAutoScalingConfiguration  implements Serializable  {
+public class TimeBasedAutoScalingConfiguration implements Serializable {
 
     /**
      * The instance ID.
@@ -57,6 +57,9 @@ public class TimeBasedAutoScalingConfiguration  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId The instance ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public TimeBasedAutoScalingConfiguration withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -94,6 +97,9 @@ public class TimeBasedAutoScalingConfiguration  implements Serializable  {
      *
      * @param autoScalingSchedule A <code>WeeklyAutoScalingSchedule</code> object with the instance
      *         schedule.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public TimeBasedAutoScalingConfiguration withAutoScalingSchedule(WeeklyAutoScalingSchedule autoScalingSchedule) {
         this.autoScalingSchedule = autoScalingSchedule;

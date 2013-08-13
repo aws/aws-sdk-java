@@ -30,7 +30,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#createDBParameterGroup(CreateDBParameterGroupRequest)
  */
-public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the DB Parameter Group. <p> Constraints: <ul> <li>Must be
@@ -135,6 +135,9 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest  impl
      *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
      *         hyphens</li> </ul> <note>This value is stored as a lower-case
      *         string.</note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateDBParameterGroupRequest withDBParameterGroupName(String dBParameterGroupName) {
         this.dBParameterGroupName = dBParameterGroupName;
@@ -184,6 +187,9 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest  impl
      *         associated with one and only one DB Parameter Group Family, and can be
      *         applied only to a DB Instance running a database engine and engine
      *         version compatible with that DB Parameter Group Family.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateDBParameterGroupRequest withDBParameterGroupFamily(String dBParameterGroupFamily) {
         this.dBParameterGroupFamily = dBParameterGroupFamily;
@@ -215,6 +221,9 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description The description for the DB Parameter Group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateDBParameterGroupRequest withDescription(String description) {
         this.description = description;

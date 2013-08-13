@@ -21,7 +21,7 @@ import java.io.Serializable;
  * enabled.
  * </p>
  */
-public class IdentityNotificationAttributes  implements Serializable  {
+public class IdentityNotificationAttributes implements Serializable {
 
     /**
      * The Amazon Resource Name (ARN) of the Amazon Simple Notification
@@ -81,6 +81,9 @@ public class IdentityNotificationAttributes  implements Serializable  {
      * @param bounceTopic The Amazon Resource Name (ARN) of the Amazon Simple Notification
      *         Service (SNS) topic where Amazon SES will publish bounce
      *         notifications.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public IdentityNotificationAttributes withBounceTopic(String bounceTopic) {
         this.bounceTopic = bounceTopic;
@@ -124,6 +127,9 @@ public class IdentityNotificationAttributes  implements Serializable  {
      * @param complaintTopic The Amazon Resource Name (ARN) of the Amazon Simple Notification
      *         Service (SNS) topic where Amazon SES will publish complaint
      *         notifications.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public IdentityNotificationAttributes withComplaintTopic(String complaintTopic) {
         this.complaintTopic = complaintTopic;
@@ -173,6 +179,9 @@ public class IdentityNotificationAttributes  implements Serializable  {
      *         <code>true</code> indicates that Amazon SES will forward feedback as
      *         email, while <code>false</code> indicates that feedback will be
      *         published only to the specified Bounce and Complaint topics.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public IdentityNotificationAttributes withForwardingEnabled(Boolean forwardingEnabled) {
         this.forwardingEnabled = forwardingEnabled;

@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Propagating Vgw
  */
-public class PropagatingVgw  implements Serializable  {
+public class PropagatingVgw implements Serializable {
 
     private String gatewayId;
 

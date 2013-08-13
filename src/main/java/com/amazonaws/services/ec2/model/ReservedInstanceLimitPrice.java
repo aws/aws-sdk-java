@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Reserved Instance Limit Price
  */
-public class ReservedInstanceLimitPrice  implements Serializable  {
+public class ReservedInstanceLimitPrice implements Serializable {
 
     private Double amount;
 

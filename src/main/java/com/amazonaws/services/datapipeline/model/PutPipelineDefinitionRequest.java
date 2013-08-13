@@ -35,7 +35,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#putPipelineDefinition(PutPipelineDefinitionRequest)
  */
-public class PutPipelineDefinitionRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class PutPipelineDefinitionRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The identifier of the pipeline to be configured.
@@ -88,6 +88,9 @@ public class PutPipelineDefinitionRequest extends AmazonWebServiceRequest  imple
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param pipelineId The identifier of the pipeline to be configured.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PutPipelineDefinitionRequest withPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
@@ -136,6 +139,9 @@ public class PutPipelineDefinitionRequest extends AmazonWebServiceRequest  imple
      *
      * @param pipelineObjects The objects that define the pipeline. These will overwrite the
      *         existing pipeline definition.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PutPipelineDefinitionRequest withPipelineObjects(PipelineObject... pipelineObjects) {
         if (getPipelineObjects() == null) setPipelineObjects(new java.util.ArrayList<PipelineObject>(pipelineObjects.length));
@@ -153,6 +159,9 @@ public class PutPipelineDefinitionRequest extends AmazonWebServiceRequest  imple
      *
      * @param pipelineObjects The objects that define the pipeline. These will overwrite the
      *         existing pipeline definition.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PutPipelineDefinitionRequest withPipelineObjects(java.util.Collection<PipelineObject> pipelineObjects) {
         if (pipelineObjects == null) {

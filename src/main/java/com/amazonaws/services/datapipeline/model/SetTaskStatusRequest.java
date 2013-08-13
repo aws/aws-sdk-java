@@ -26,7 +26,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#setTaskStatus(SetTaskStatusRequest)
  */
-public class SetTaskStatusRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class SetTaskStatusRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Identifies the task assigned to the task runner. This value is set in
@@ -129,6 +129,9 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest  implements Se
      * @param taskId Identifies the task assigned to the task runner. This value is set in
      *         the <a>TaskObject</a> that is returned by the <a>PollForTask</a>
      *         action.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SetTaskStatusRequest withTaskId(String taskId) {
         this.taskId = taskId;
@@ -186,6 +189,9 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest  implements Se
      *         <code>FAILED</code> the task ended unsuccessfully. The
      *         <code>FALSE</code> value is used by preconditions.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see TaskStatus
      */
     public SetTaskStatusRequest withTaskStatus(String taskStatus) {
@@ -225,6 +231,9 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest  implements Se
      * @param taskStatus If <code>FINISHED</code>, the task successfully completed. If
      *         <code>FAILED</code> the task ended unsuccessfully. The
      *         <code>FALSE</code> value is used by preconditions.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see TaskStatus
      */
@@ -287,6 +296,9 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest  implements Se
      *         that represents the error. This value is set on the physical attempt
      *         object. It is used to display error information to the user. It should
      *         not start with string "Service_" which is reserved by the system.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SetTaskStatusRequest withErrorId(String errorId) {
         this.errorId = errorId;
@@ -336,6 +348,9 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest  implements Se
      *         description of the error. This value is set on the physical attempt
      *         object. It is used to display error information to the user. The web
      *         service does not parse this value.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SetTaskStatusRequest withErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
@@ -397,6 +412,9 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest  implements Se
      *         trace associated with the error. This value is set on the physical
      *         attempt object. It is used to display error information to the user.
      *         The web service does not parse this value.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SetTaskStatusRequest withErrorStackTrace(String errorStackTrace) {
         this.errorStackTrace = errorStackTrace;

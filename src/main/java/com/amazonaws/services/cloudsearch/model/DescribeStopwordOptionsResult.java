@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A response message that contains the stopword options for a search domain.
  * </p>
  */
-public class DescribeStopwordOptionsResult  implements Serializable  {
+public class DescribeStopwordOptionsResult implements Serializable {
 
     /**
      * The stopword options configured for this search domain and the current
@@ -58,6 +58,9 @@ public class DescribeStopwordOptionsResult  implements Serializable  {
      *
      * @param stopwords The stopword options configured for this search domain and the current
      *         status of those options.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeStopwordOptionsResult withStopwords(StopwordOptionsStatus stopwords) {
         this.stopwords = stopwords;

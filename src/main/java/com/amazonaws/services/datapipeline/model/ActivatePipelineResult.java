@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the output from the ActivatePipeline action.
  * </p>
  */
-public class ActivatePipelineResult  implements Serializable  {
+public class ActivatePipelineResult implements Serializable {
 
     /**
      * Returns a string representation of this object; useful for testing and

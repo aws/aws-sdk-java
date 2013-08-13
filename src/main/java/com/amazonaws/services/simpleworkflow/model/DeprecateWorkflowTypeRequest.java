@@ -52,7 +52,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#deprecateWorkflowType(DeprecateWorkflowTypeRequest)
  */
-public class DeprecateWorkflowTypeRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeprecateWorkflowTypeRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the domain in which the workflow type is registered.
@@ -100,6 +100,9 @@ public class DeprecateWorkflowTypeRequest extends AmazonWebServiceRequest  imple
      * <b>Length: </b>1 - 256<br/>
      *
      * @param domain The name of the domain in which the workflow type is registered.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeprecateWorkflowTypeRequest withDomain(String domain) {
         this.domain = domain;
@@ -131,6 +134,9 @@ public class DeprecateWorkflowTypeRequest extends AmazonWebServiceRequest  imple
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param workflowType The workflow type to deprecate.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeprecateWorkflowTypeRequest withWorkflowType(WorkflowType workflowType) {
         this.workflowType = workflowType;

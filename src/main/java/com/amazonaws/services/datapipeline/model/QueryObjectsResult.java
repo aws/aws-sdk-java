@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the output from the QueryObjects action.
  * </p>
  */
-public class QueryObjectsResult  implements Serializable  {
+public class QueryObjectsResult implements Serializable {
 
     /**
      * A list of identifiers that match the query selectors.
@@ -80,6 +80,9 @@ public class QueryObjectsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ids A list of identifiers that match the query selectors.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public QueryObjectsResult withIds(String... ids) {
         if (getIds() == null) setIds(new java.util.ArrayList<String>(ids.length));
@@ -95,6 +98,9 @@ public class QueryObjectsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ids A list of identifiers that match the query selectors.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public QueryObjectsResult withIds(java.util.Collection<String> ids) {
         if (ids == null) {
@@ -162,6 +168,9 @@ public class QueryObjectsResult  implements Serializable  {
      *         action returns <code>HasMoreResults</code> as <code>True</code>, you
      *         can call <a>QueryObjects</a> again and pass the marker value from the
      *         response to retrieve the next set of results.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public QueryObjectsResult withMarker(String marker) {
         this.marker = marker;
@@ -199,6 +208,9 @@ public class QueryObjectsResult  implements Serializable  {
      *
      * @param hasMoreResults If <code>True</code>, there are more results that can be obtained by a
      *         subsequent call to <a>QueryObjects</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public QueryObjectsResult withHasMoreResults(Boolean hasMoreResults) {
         this.hasMoreResults = hasMoreResults;

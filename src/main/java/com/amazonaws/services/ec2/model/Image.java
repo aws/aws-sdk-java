@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents an <i>Amazon Machine Image</i> (AMI) that can be run on an Amazon EC2 instance.
  * </p>
  */
-public class Image  implements Serializable  {
+public class Image implements Serializable {
 
     /**
      * The unique ID of the AMI.

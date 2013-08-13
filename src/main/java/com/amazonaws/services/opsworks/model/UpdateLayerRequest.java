@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#updateLayer(UpdateLayerRequest)
  */
-public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class UpdateLayerRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The layer ID.
@@ -130,6 +130,9 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param layerId The layer ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateLayerRequest withLayerId(String layerId) {
         this.layerId = layerId;
@@ -161,6 +164,9 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The layer name, which is used by the console.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateLayerRequest withName(String name) {
         this.name = name;
@@ -210,6 +216,9 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
      *         Chef. The short name is also used as the name for the directory where
      *         your app files are installed. It can have a maximum of 200 characters
      *         and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateLayerRequest withShortname(String shortname) {
         this.shortname = shortname;
@@ -251,6 +260,9 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param attributes One or more user-defined key/value pairs to be added to the stack
      *         attributes bag.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateLayerRequest withAttributes(java.util.Map<String,String> attributes) {
         setAttributes(attributes);
@@ -331,6 +343,9 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
      *         instances. For more information about IAM ARNs, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateLayerRequest withCustomInstanceProfileArn(String customInstanceProfileArn) {
         this.customInstanceProfileArn = customInstanceProfileArn;
@@ -373,6 +388,9 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param customSecurityGroupIds An array containing the layer's custom security group IDs.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateLayerRequest withCustomSecurityGroupIds(String... customSecurityGroupIds) {
         if (getCustomSecurityGroupIds() == null) setCustomSecurityGroupIds(new java.util.ArrayList<String>(customSecurityGroupIds.length));
@@ -388,6 +406,9 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param customSecurityGroupIds An array containing the layer's custom security group IDs.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateLayerRequest withCustomSecurityGroupIds(java.util.Collection<String> customSecurityGroupIds) {
         if (customSecurityGroupIds == null) {
@@ -442,6 +463,9 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param packages An array of <code>Package</code> objects that describe the layer's
      *         packages.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateLayerRequest withPackages(String... packages) {
         if (getPackages() == null) setPackages(new java.util.ArrayList<String>(packages.length));
@@ -459,6 +483,9 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param packages An array of <code>Package</code> objects that describe the layer's
      *         packages.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateLayerRequest withPackages(java.util.Collection<String> packages) {
         if (packages == null) {
@@ -513,6 +540,9 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param volumeConfigurations A <code>VolumeConfigurations</code> object that describes the layer's
      *         Amazon EBS volumes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateLayerRequest withVolumeConfigurations(VolumeConfiguration... volumeConfigurations) {
         if (getVolumeConfigurations() == null) setVolumeConfigurations(new java.util.ArrayList<VolumeConfiguration>(volumeConfigurations.length));
@@ -530,6 +560,9 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param volumeConfigurations A <code>VolumeConfigurations</code> object that describes the layer's
      *         Amazon EBS volumes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateLayerRequest withVolumeConfigurations(java.util.Collection<VolumeConfiguration> volumeConfigurations) {
         if (volumeConfigurations == null) {
@@ -567,6 +600,9 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param enableAutoHealing Whether to disable auto healing for the layer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateLayerRequest withEnableAutoHealing(Boolean enableAutoHealing) {
         this.enableAutoHealing = enableAutoHealing;
@@ -619,6 +655,9 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
      * @param autoAssignElasticIps Whether to automatically assign an <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      *         IP address</a> to the layer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateLayerRequest withAutoAssignElasticIps(Boolean autoAssignElasticIps) {
         this.autoAssignElasticIps = autoAssignElasticIps;
@@ -669,6 +708,9 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param customRecipes A <code>LayerCustomRecipes</code> object that specifies the layer's
      *         custom recipes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateLayerRequest withCustomRecipes(Recipes customRecipes) {
         this.customRecipes = customRecipes;
@@ -748,6 +790,9 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
      *         <code>apt-get</code> (Ubuntu) on the instances. <note>We strongly
      *         recommend using the default value of <code>true</code>, to ensure that
      *         your instances have the latest security updates.</note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateLayerRequest withInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
         this.installUpdatesOnBoot = installUpdatesOnBoot;

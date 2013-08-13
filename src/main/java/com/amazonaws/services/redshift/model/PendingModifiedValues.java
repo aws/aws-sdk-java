@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes cluster attributes that are in a pending state. A change to one or more the attributes was requested and is in progress or will be applied.
  * </p>
  */
-public class PendingModifiedValues  implements Serializable  {
+public class PendingModifiedValues implements Serializable {
 
     /**
      * The pending or in-progress change of the master credentials for the
@@ -84,6 +84,9 @@ public class PendingModifiedValues  implements Serializable  {
      *
      * @param masterUserPassword The pending or in-progress change of the master credentials for the
      *         cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PendingModifiedValues withMasterUserPassword(String masterUserPassword) {
         this.masterUserPassword = masterUserPassword;
@@ -115,6 +118,9 @@ public class PendingModifiedValues  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nodeType The pending or in-progress change of the cluster's node type.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PendingModifiedValues withNodeType(String nodeType) {
         this.nodeType = nodeType;
@@ -146,6 +152,9 @@ public class PendingModifiedValues  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param numberOfNodes The pending or in-progress change of the number nodes in the cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PendingModifiedValues withNumberOfNodes(Integer numberOfNodes) {
         this.numberOfNodes = numberOfNodes;
@@ -177,6 +186,9 @@ public class PendingModifiedValues  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clusterType The pending or in-progress change of the cluster type.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PendingModifiedValues withClusterType(String clusterType) {
         this.clusterType = clusterType;
@@ -208,6 +220,9 @@ public class PendingModifiedValues  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clusterVersion The pending or in-progress change of the service version.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PendingModifiedValues withClusterVersion(String clusterVersion) {
         this.clusterVersion = clusterVersion;
@@ -245,6 +260,9 @@ public class PendingModifiedValues  implements Serializable  {
      *
      * @param automatedSnapshotRetentionPeriod The pending or in-progress change of the automated snapshot retention
      *         period.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PendingModifiedValues withAutomatedSnapshotRetentionPeriod(Integer automatedSnapshotRetentionPeriod) {
         this.automatedSnapshotRetentionPeriod = automatedSnapshotRetentionPeriod;

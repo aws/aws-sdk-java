@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Describe Account Attributes Result
  */
-public class DescribeAccountAttributesResult  implements Serializable  {
+public class DescribeAccountAttributesResult implements Serializable {
 
     private com.amazonaws.internal.ListWithAutoConstructFlag<AccountAttribute> accountAttributes;
 

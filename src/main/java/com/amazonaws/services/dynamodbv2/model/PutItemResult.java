@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents the output of a <i>PutItem</i> operation.
  * </p>
  */
-public class PutItemResult  implements Serializable  {
+public class PutItemResult implements Serializable {
 
     /**
      * The attribute values as they appeared before the <i>PutItem</i>
@@ -102,6 +102,9 @@ public class PutItemResult  implements Serializable  {
      *         operation, but only if <i>ReturnValues</i> is specified as
      *         <code>ALL_OLD</code> in the request. Each element consists of an
      *         attribute name and an attribute value.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PutItemResult withAttributes(java.util.Map<String,AttributeValue> attributes) {
         setAttributes(attributes);
@@ -196,6 +199,9 @@ public class PutItemResult  implements Serializable  {
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
      *         Throughput</a> in the Amazon DynamoDB Developer Guide.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PutItemResult withConsumedCapacity(ConsumedCapacity consumedCapacity) {
         this.consumedCapacity = consumedCapacity;
@@ -311,6 +317,9 @@ public class PutItemResult  implements Serializable  {
      *         estimate to measure whether a secondary index is approaching its size
      *         limit. <p>The estimate is subject to change over time; therefore, do
      *         not rely on the precision or accuracy of the estimate. </li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PutItemResult withItemCollectionMetrics(ItemCollectionMetrics itemCollectionMetrics) {
         this.itemCollectionMetrics = itemCollectionMetrics;

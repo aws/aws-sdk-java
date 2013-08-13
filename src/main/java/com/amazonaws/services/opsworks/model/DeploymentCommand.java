@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Used to specify a deployment operation.
  * </p>
  */
-public class DeploymentCommand  implements Serializable  {
+public class DeploymentCommand implements Serializable {
 
     /**
      * Specifies the deployment operation. You can specify only one command.
@@ -194,6 +194,9 @@ public class DeploymentCommand  implements Serializable  {
      *         Restart the app's web or application server.</li>
      *         <li><code>undeploy</code>: Undeploy the app.</li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see DeploymentCommandName
      */
     public DeploymentCommand withName(String name) {
@@ -294,6 +297,9 @@ public class DeploymentCommand  implements Serializable  {
      *         Restart the app's web or application server.</li>
      *         <li><code>undeploy</code>: Undeploy the app.</li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see DeploymentCommandName
      */
     public DeploymentCommand withName(DeploymentCommandName name) {
@@ -341,6 +347,9 @@ public class DeploymentCommand  implements Serializable  {
      * @param args An array of command arguments. This parameter is currently used only
      *         to specify the list of recipes to be executed by the
      *         <code>ExecuteRecipes</code> command.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeploymentCommand withArgs(java.util.Map<String,java.util.List<String>> args) {
         setArgs(args);

@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#createPrivateVirtualInterface(CreatePrivateVirtualInterfaceRequest)
  */
-public class CreatePrivateVirtualInterfaceRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreatePrivateVirtualInterfaceRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * ID of the connection. <p>Example: dxcon-fg5678gh <p>Default: None
@@ -62,6 +62,9 @@ public class CreatePrivateVirtualInterfaceRequest extends AmazonWebServiceReques
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param connectionId ID of the connection. <p>Example: dxcon-fg5678gh <p>Default: None
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreatePrivateVirtualInterfaceRequest withConnectionId(String connectionId) {
         this.connectionId = connectionId;
@@ -99,6 +102,9 @@ public class CreatePrivateVirtualInterfaceRequest extends AmazonWebServiceReques
      *
      * @param newPrivateVirtualInterface Detailed information of the private virtual interface to be created.
      *         <p>Default: None
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreatePrivateVirtualInterfaceRequest withNewPrivateVirtualInterface(NewPrivateVirtualInterface newPrivateVirtualInterface) {
         this.newPrivateVirtualInterface = newPrivateVirtualInterface;

@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#describeStorediSCSIVolumes(DescribeStorediSCSIVolumesRequest)
  */
-public class DescribeStorediSCSIVolumesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeStorediSCSIVolumesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * An array of strings where each string represents the Amazon Resource
@@ -88,6 +88,9 @@ public class DescribeStorediSCSIVolumesRequest extends AmazonWebServiceRequest  
      *         Name (ARN) of a stored volume. All of the specified stored volumes
      *         must from the same gateway. Use <a>ListVolumes</a> to get volume ARNs
      *         for a gateway.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeStorediSCSIVolumesRequest withVolumeARNs(String... volumeARNs) {
         if (getVolumeARNs() == null) setVolumeARNs(new java.util.ArrayList<String>(volumeARNs.length));
@@ -109,6 +112,9 @@ public class DescribeStorediSCSIVolumesRequest extends AmazonWebServiceRequest  
      *         Name (ARN) of a stored volume. All of the specified stored volumes
      *         must from the same gateway. Use <a>ListVolumes</a> to get volume ARNs
      *         for a gateway.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeStorediSCSIVolumesRequest withVolumeARNs(java.util.Collection<String> volumeARNs) {
         if (volumeARNs == null) {

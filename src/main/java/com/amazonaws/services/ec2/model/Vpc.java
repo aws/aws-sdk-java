@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The Vpc data type.
  * </p>
  */
-public class Vpc  implements Serializable  {
+public class Vpc implements Serializable {
 
     /**
      * Specifies the ID of the VPC.

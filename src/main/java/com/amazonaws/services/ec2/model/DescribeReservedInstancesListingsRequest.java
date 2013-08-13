@@ -22,7 +22,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeReservedInstancesListings(DescribeReservedInstancesListingsRequest)
  */
-public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRequest implements Serializable {
 
     private String reservedInstancesId;
 

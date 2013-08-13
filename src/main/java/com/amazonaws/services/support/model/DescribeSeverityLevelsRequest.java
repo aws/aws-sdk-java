@@ -26,7 +26,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.support.AWSSupport#describeSeverityLevels(DescribeSeverityLevelsRequest)
  */
-public class DescribeSeverityLevelsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeSeverityLevelsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Specifies the ISO 639-1 code for the language in which AWS provides
@@ -78,6 +78,9 @@ public class DescribeSeverityLevelsRequest extends AmazonWebServiceRequest  impl
      *         support. AWS Support currently supports English and Japanese, for
      *         which the codes are <i>en</i> and <i>ja</i>, respectively. Language
      *         parameters must be passed explicitly for operations that take them.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeSeverityLevelsRequest withLanguage(String language) {
         this.language = language;

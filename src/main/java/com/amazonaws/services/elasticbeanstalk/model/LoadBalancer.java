@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes a LoadBalancer.
  * </p>
  */
-public class LoadBalancer  implements Serializable  {
+public class LoadBalancer implements Serializable {
 
     /**
      * The name of the LoadBalancer.
@@ -57,6 +57,9 @@ public class LoadBalancer  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The name of the LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LoadBalancer withName(String name) {
         this.name = name;

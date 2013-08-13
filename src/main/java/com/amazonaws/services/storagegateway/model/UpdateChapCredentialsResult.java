@@ -25,7 +25,7 @@ import java.io.Serializable;
  * UpdateChapCredentialsOutput$TargetARN
  * </ul>
  */
-public class UpdateChapCredentialsResult  implements Serializable  {
+public class UpdateChapCredentialsResult implements Serializable {
 
     /**
      * The Amazon Resource Name (ARN) of the target. This is the same target
@@ -85,6 +85,9 @@ public class UpdateChapCredentialsResult  implements Serializable  {
      *
      * @param targetARN The Amazon Resource Name (ARN) of the target. This is the same target
      *         specified in the request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateChapCredentialsResult withTargetARN(String targetARN) {
         this.targetARN = targetARN;
@@ -134,6 +137,9 @@ public class UpdateChapCredentialsResult  implements Serializable  {
      *
      * @param initiatorName The iSCSI initiator that connects to the target. This is the same
      *         initiator name specified in the request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateChapCredentialsResult withInitiatorName(String initiatorName) {
         this.initiatorName = initiatorName;

@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.DescribeVolumeAttributeRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -22,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVolumeAttribute(DescribeVolumeAttributeRequest)
  */
-public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeVolumeAttributeRequest> {
 
     private String volumeId;
 
@@ -143,6 +145,18 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest  imp
     public DescribeVolumeAttributeRequest withAttribute(VolumeAttributeName attribute) {
         this.attribute = attribute.toString();
         return this;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<DescribeVolumeAttributeRequest> getDryRunRequest() {
+        Request<DescribeVolumeAttributeRequest> request = new DescribeVolumeAttributeRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

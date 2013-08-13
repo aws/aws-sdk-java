@@ -27,7 +27,7 @@ import java.io.Serializable;
  * 
  * </ul>
  */
-public class ListVolumesResult  implements Serializable  {
+public class ListVolumesResult implements Serializable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -101,6 +101,9 @@ public class ListVolumesResult  implements Serializable  {
      * @param gatewayARN The Amazon Resource Name (ARN) of the gateway. Use the
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListVolumesResult withGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
@@ -153,6 +156,9 @@ public class ListVolumesResult  implements Serializable  {
      * @param marker Use the marker in your next request to continue pagination of iSCSI
      *         volumes. If there are no more volumes to list, this field does not
      *         appear in the response body.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListVolumesResult withMarker(String marker) {
         this.marker = marker;
@@ -207,6 +213,9 @@ public class ListVolumesResult  implements Serializable  {
      * @param volumeInfos An array of <a>VolumeInfo</a> objects, where each object describes an
      *         iSCSI volume. If no volumes are defined for the gateway, then
      *         <code>VolumeInfos</code> is an empty array "[]".
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListVolumesResult withVolumeInfos(VolumeInfo... volumeInfos) {
         if (getVolumeInfos() == null) setVolumeInfos(new java.util.ArrayList<VolumeInfo>(volumeInfos.length));
@@ -226,6 +235,9 @@ public class ListVolumesResult  implements Serializable  {
      * @param volumeInfos An array of <a>VolumeInfo</a> objects, where each object describes an
      *         iSCSI volume. If no volumes are defined for the gateway, then
      *         <code>VolumeInfos</code> is an empty array "[]".
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListVolumesResult withVolumeInfos(java.util.Collection<VolumeInfo> volumeInfos) {
         if (volumeInfos == null) {

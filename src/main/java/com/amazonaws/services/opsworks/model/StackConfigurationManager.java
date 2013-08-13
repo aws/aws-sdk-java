@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes the configuration manager.
  * </p>
  */
-public class StackConfigurationManager  implements Serializable  {
+public class StackConfigurationManager implements Serializable {
 
     /**
      * The name. This parameter must be set to "Chef".
@@ -58,6 +58,9 @@ public class StackConfigurationManager  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The name. This parameter must be set to "Chef".
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StackConfigurationManager withName(String name) {
         this.name = name;
@@ -101,6 +104,9 @@ public class StackConfigurationManager  implements Serializable  {
      * @param version The Chef version. This parameter must be set to "0.9" or "11.4". The
      *         default value is "0.9". However, we expect to change the default value
      *         to "11.4" in late August 2013.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StackConfigurationManager withVersion(String version) {
         this.version = version;

@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.AssociateAddressRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -28,7 +30,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#associateAddress(AssociateAddressRequest)
  */
-public class AssociateAddressRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class AssociateAddressRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<AssociateAddressRequest> {
 
     /**
      * The instance to associate with the IP address.
@@ -292,6 +294,18 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest  implements
      */
     public Boolean getAllowReassociation() {
         return allowReassociation;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<AssociateAddressRequest> getDryRunRequest() {
+        Request<AssociateAddressRequest> request = new AssociateAddressRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

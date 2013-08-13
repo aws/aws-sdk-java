@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A comparision that is used to determine whether a query should return this object.
  * </p>
  */
-public class Selector  implements Serializable  {
+public class Selector implements Serializable {
 
     /**
      * The name of the field that the operator will be applied to. The field
@@ -94,6 +94,9 @@ public class Selector  implements Serializable  {
      *         name is the "key" portion of the field definition in the pipeline
      *         definition syntax that is used by the AWS Data Pipeline API. If the
      *         field is not set on the object, the condition fails.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Selector withFieldName(String fieldName) {
         this.fieldName = fieldName;
@@ -131,6 +134,9 @@ public class Selector  implements Serializable  {
      *
      * @param operator Contains a logical operation for comparing the value of a field with a
      *         specified value.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Selector withOperator(Operator operator) {
         this.operator = operator;

@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#deleteLoadBalancerPolicy(DeleteLoadBalancerPolicyRequest)
  */
-public class DeleteLoadBalancerPolicyRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteLoadBalancerPolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The mnemonic name associated with the LoadBalancer. The name must be
@@ -91,6 +91,9 @@ public class DeleteLoadBalancerPolicyRequest extends AmazonWebServiceRequest  im
      *
      * @param loadBalancerName The mnemonic name associated with the LoadBalancer. The name must be
      *         unique within your AWS account.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteLoadBalancerPolicyRequest withLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
@@ -122,6 +125,9 @@ public class DeleteLoadBalancerPolicyRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param policyName The mnemonic name for the policy being deleted.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteLoadBalancerPolicyRequest withPolicyName(String policyName) {
         this.policyName = policyName;

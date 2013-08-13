@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#addSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest)
  */
-public class AddSourceIdentifierToSubscriptionRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class AddSourceIdentifierToSubscriptionRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the RDS event notification subscription you want to add a
@@ -75,6 +75,9 @@ public class AddSourceIdentifierToSubscriptionRequest extends AmazonWebServiceRe
      *
      * @param subscriptionName The name of the RDS event notification subscription you want to add a
      *         source identifier to.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AddSourceIdentifierToSubscriptionRequest withSubscriptionName(String subscriptionName) {
         this.subscriptionName = subscriptionName;
@@ -154,6 +157,9 @@ public class AddSourceIdentifierToSubscriptionRequest extends AmazonWebServiceRe
      *         supplied.</li> <li>If the source type is a DB parameter group, a
      *         DBParameterGroupName must be supplied.</li> <li>If the source type is
      *         a DB Snapshot, a DBSnapshotIdentifier must be supplied.</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AddSourceIdentifierToSubscriptionRequest withSourceIdentifier(String sourceIdentifier) {
         this.sourceIdentifier = sourceIdentifier;

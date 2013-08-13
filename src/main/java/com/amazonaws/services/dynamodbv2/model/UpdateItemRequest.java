@@ -29,7 +29,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#updateItem(UpdateItemRequest)
  */
-public class UpdateItemRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class UpdateItemRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the table containing the item to update.
@@ -333,6 +333,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
      * @param tableName The name of the table containing the item to update.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateItemRequest withTableName(String tableName) {
         this.tableName = tableName;
@@ -371,6 +374,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      *
      * @param key The primary key that defines the item. Each element consists of an
      *         attribute name and a value for that attribute.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateItemRequest withKey(java.util.Map<String,AttributeValue> key) {
         setKey(key);
@@ -899,6 +905,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      *         <p>If you specify any attributes that are part of an index key, then
      *         the data types for those attributes must match those of the schema in
      *         the table's attribute definition.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateItemRequest withAttributeUpdates(java.util.Map<String,AttributeValueUpdate> attributeUpdates) {
         setAttributeUpdates(attributeUpdates);
@@ -1224,6 +1233,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      *         specify more than one condition for <i>Exists</i>, then all of the
      *         conditions must evaluate to true. (In other words, the conditions are
      *         ANDed together.) Otherwise, the conditional operation will fail.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateItemRequest withExpected(java.util.Map<String,ExpectedAttributeValue> expected) {
         setExpected(expected);
@@ -1403,6 +1415,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      *         <p><code>UPDATED_NEW</code> - The new versions of only the updated
      *         attributes are returned. </li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ReturnValue
      */
     public UpdateItemRequest withReturnValues(String returnValues) {
@@ -1483,6 +1498,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      *         <p><code>UPDATED_NEW</code> - The new versions of only the updated
      *         attributes are returned. </li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ReturnValue
      */
     public UpdateItemRequest withReturnValues(ReturnValue returnValues) {
@@ -1540,6 +1558,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      *         the response; if set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ReturnConsumedCapacity
      */
     public UpdateItemRequest withReturnConsumedCapacity(String returnConsumedCapacity) {
@@ -1579,6 +1600,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
      *         the response; if set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see ReturnConsumedCapacity
      */
@@ -1643,6 +1667,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      *         response. If set to <code>NONE</code> (the default), no statistics are
      *         returned..
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ReturnItemCollectionMetrics
      */
     public UpdateItemRequest withReturnItemCollectionMetrics(String returnItemCollectionMetrics) {
@@ -1686,6 +1713,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      *         any, that were modified during the operation are returned in the
      *         response. If set to <code>NONE</code> (the default), no statistics are
      *         returned..
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see ReturnItemCollectionMetrics
      */

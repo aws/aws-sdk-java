@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#describeChapCredentials(DescribeChapCredentialsRequest)
  */
-public class DescribeChapCredentialsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeChapCredentialsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The Amazon Resource Name (ARN) of the iSCSI volume target. Use the
@@ -82,6 +82,9 @@ public class DescribeChapCredentialsRequest extends AmazonWebServiceRequest  imp
      * @param targetARN The Amazon Resource Name (ARN) of the iSCSI volume target. Use the
      *         <a>DescribeStorediSCSIVolumes</a> operation to return to retrieve the
      *         TargetARN for specified VolumeARN.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeChapCredentialsRequest withTargetARN(String targetARN) {
         this.targetARN = targetARN;

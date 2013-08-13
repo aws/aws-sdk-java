@@ -24,7 +24,7 @@ import java.io.Serializable;
  * also specify a character set. Examples include UTF-8, ISO-8859-1, and Shift_JIS.
  * </p>
  */
-public class Content  implements Serializable  {
+public class Content implements Serializable {
 
     /**
      * The textual data of the content.
@@ -81,6 +81,9 @@ public class Content  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param data The textual data of the content.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Content withData(String data) {
         this.data = data;
@@ -112,6 +115,9 @@ public class Content  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param charset The character set of the content.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Content withCharset(String charset) {
         this.charset = charset;

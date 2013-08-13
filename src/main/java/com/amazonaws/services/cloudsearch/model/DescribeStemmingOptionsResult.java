@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A response message that contains the stemming options for a search domain.
  * </p>
  */
-public class DescribeStemmingOptionsResult  implements Serializable  {
+public class DescribeStemmingOptionsResult implements Serializable {
 
     /**
      * The stemming options configured for this search domain and the current
@@ -58,6 +58,9 @@ public class DescribeStemmingOptionsResult  implements Serializable  {
      *
      * @param stems The stemming options configured for this search domain and the current
      *         status of those options.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeStemmingOptionsResult withStems(StemmingOptionsStatus stems) {
         this.stems = stems;

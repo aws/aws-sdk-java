@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin, use the CustomOriginConfig element instead.
  * </p>
  */
-public class S3OriginConfig  implements Serializable  {
+public class S3OriginConfig implements Serializable {
 
     /**
      * The CloudFront origin access identity to associate with the origin.
@@ -114,6 +114,9 @@ public class S3OriginConfig  implements Serializable  {
      *         and include an empty OriginAccessIdentity element. To replace the
      *         origin access identity, update the distribution configuration and
      *         specify the new origin access identity.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public S3OriginConfig withOriginAccessIdentity(String originAccessIdentity) {
         this.originAccessIdentity = originAccessIdentity;

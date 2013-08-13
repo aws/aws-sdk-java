@@ -20,7 +20,7 @@ import java.io.Serializable;
  * This data type is used as a response element in the DescribeLoadBalancers action to describe the configuration of the back-end server.
  * </p>
  */
-public class BackendServerDescription  implements Serializable  {
+public class BackendServerDescription implements Serializable {
 
     /**
      * Provides the port on which the back-end server is listening.
@@ -68,6 +68,9 @@ public class BackendServerDescription  implements Serializable  {
      * <b>Range: </b>1 - 65535<br/>
      *
      * @param instancePort Provides the port on which the back-end server is listening.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public BackendServerDescription withInstancePort(Integer instancePort) {
         this.instancePort = instancePort;
@@ -110,6 +113,9 @@ public class BackendServerDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param policyNames Provides a list of policy names enabled for the back-end server.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public BackendServerDescription withPolicyNames(String... policyNames) {
         if (getPolicyNames() == null) setPolicyNames(new java.util.ArrayList<String>(policyNames.length));
@@ -125,6 +131,9 @@ public class BackendServerDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param policyNames Provides a list of policy names enabled for the back-end server.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public BackendServerDescription withPolicyNames(java.util.Collection<String> policyNames) {
         if (policyNames == null) {

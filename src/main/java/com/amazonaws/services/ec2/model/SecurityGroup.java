@@ -20,7 +20,7 @@ import java.io.Serializable;
  * An Amazon EC2 security group, describing how EC2 instances in this group can receive network traffic.
  * </p>
  */
-public class SecurityGroup  implements Serializable  {
+public class SecurityGroup implements Serializable {
 
     /**
      * The AWS Access Key ID of the owner of the security group.

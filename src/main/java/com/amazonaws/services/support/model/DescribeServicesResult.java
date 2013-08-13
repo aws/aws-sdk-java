@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Returns the objects or data listed below if successful. Otherwise, returns an error.
  * </p>
  */
-public class DescribeServicesResult  implements Serializable  {
+public class DescribeServicesResult implements Serializable {
 
     /**
      * JSON-formatted list of AWS services.
@@ -62,6 +62,9 @@ public class DescribeServicesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param services JSON-formatted list of AWS services.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeServicesResult withServices(Service... services) {
         if (getServices() == null) setServices(new java.util.ArrayList<Service>(services.length));
@@ -77,6 +80,9 @@ public class DescribeServicesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param services JSON-formatted list of AWS services.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeServicesResult withServices(java.util.Collection<Service> services) {
         if (services == null) {

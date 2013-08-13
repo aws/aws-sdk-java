@@ -22,7 +22,7 @@ import java.io.Serializable;
  * master playlists in a job is 30.
  * </p>
  */
-public class Playlist  implements Serializable  {
+public class Playlist implements Serializable {
 
     /**
      * The name that you want Elastic Transcoder to assign to the master
@@ -142,6 +142,9 @@ public class Playlist  implements Serializable  {
      *         unique. <b>Note</b>: Elastic Transcoder automatically appends .m3u8 to
      *         the file name. If you include .m3u8 in <code>Name</code>, it will
      *         appear twice in the file name.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Playlist withName(String name) {
         this.name = name;
@@ -182,6 +185,9 @@ public class Playlist  implements Serializable  {
      * <b>Pattern: </b>(^HLSv3$)<br/>
      *
      * @param format This value must currently be <code>HLSv3</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Playlist withFormat(String format) {
         this.format = format;
@@ -251,6 +257,9 @@ public class Playlist  implements Serializable  {
      *         playlist, the value of the Outputs:Key object. If you include more
      *         than one output in a playlist, the value of
      *         <code>SegmentDuration</code> for all of the outputs must be the same.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Playlist withOutputKeys(String... outputKeys) {
         if (getOutputKeys() == null) setOutputKeys(new java.util.ArrayList<String>(outputKeys.length));
@@ -275,6 +284,9 @@ public class Playlist  implements Serializable  {
      *         playlist, the value of the Outputs:Key object. If you include more
      *         than one output in a playlist, the value of
      *         <code>SegmentDuration</code> for all of the outputs must be the same.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Playlist withOutputKeys(java.util.Collection<String> outputKeys) {
         if (outputKeys == null) {
@@ -321,6 +333,9 @@ public class Playlist  implements Serializable  {
      * <b>Pattern: </b>(^Submitted$)|(^Progressing$)|(^Complete$)|(^Canceled$)|(^Error$)<br/>
      *
      * @param status The status of the job with which the playlist is associated.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Playlist withStatus(String status) {
         this.status = status;
@@ -361,6 +376,9 @@ public class Playlist  implements Serializable  {
      * <b>Length: </b>0 - 255<br/>
      *
      * @param statusDetail Information that further explains the status.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Playlist withStatusDetail(String statusDetail) {
         this.statusDetail = statusDetail;

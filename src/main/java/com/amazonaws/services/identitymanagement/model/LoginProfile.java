@@ -23,7 +23,7 @@ import java.io.Serializable;
  * This data type is used as a response element in the actions CreateLoginProfile and GetLoginProfile.
  * </p>
  */
-public class LoginProfile  implements Serializable  {
+public class LoginProfile implements Serializable {
 
     /**
      * The name of the user, which can be used for signing into the AWS
@@ -106,6 +106,9 @@ public class LoginProfile  implements Serializable  {
      *
      * @param userName The name of the user, which can be used for signing into the AWS
      *         Management Console.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LoginProfile withUserName(String userName) {
         this.userName = userName;
@@ -137,6 +140,9 @@ public class LoginProfile  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param createDate The date when the password for the user was created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LoginProfile withCreateDate(java.util.Date createDate) {
         this.createDate = createDate;

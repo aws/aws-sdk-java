@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Volume Status Info
  */
-public class VolumeStatusInfo  implements Serializable  {
+public class VolumeStatusInfo implements Serializable {
 
     private String status;
 

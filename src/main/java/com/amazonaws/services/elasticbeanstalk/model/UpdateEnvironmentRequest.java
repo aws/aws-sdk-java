@@ -33,7 +33,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#updateEnvironment(UpdateEnvironmentRequest)
  */
-public class UpdateEnvironmentRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The ID of the environment to update. <p> If no environment with this
@@ -161,6 +161,9 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest  implement
      *         specify either this or an EnvironmentName, or both. If you do not
      *         specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateEnvironmentRequest withEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
@@ -231,6 +234,9 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest  implement
      *         specify either this or an EnvironmentId, or both. If you do not
      *         specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateEnvironmentRequest withEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
@@ -283,6 +289,9 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest  implement
      * @param versionLabel If this parameter is specified, AWS Elastic Beanstalk deploys the
      *         named application version to the environment. If no such application
      *         version is found, returns an <code>InvalidParameterValue</code> error.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateEnvironmentRequest withVersionLabel(String versionLabel) {
         this.versionLabel = versionLabel;
@@ -341,6 +350,9 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest  implement
      *         configuration template to the environment. If no such configuration
      *         template is found, AWS Elastic Beanstalk returns an
      *         <code>InvalidParameterValue</code> error.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateEnvironmentRequest withTemplateName(String templateName) {
         this.templateName = templateName;
@@ -387,6 +399,9 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest  implement
      *
      * @param description If this parameter is specified, AWS Elastic Beanstalk updates the
      *         description of this environment.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateEnvironmentRequest withDescription(String description) {
         this.description = description;
@@ -441,6 +456,9 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest  implement
      * @param optionSettings If specified, AWS Elastic Beanstalk updates the configuration set
      *         associated with the running environment and sets the specified
      *         configuration options to the requested value.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateEnvironmentRequest withOptionSettings(ConfigurationOptionSetting... optionSettings) {
         if (getOptionSettings() == null) setOptionSettings(new java.util.ArrayList<ConfigurationOptionSetting>(optionSettings.length));
@@ -460,6 +478,9 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest  implement
      * @param optionSettings If specified, AWS Elastic Beanstalk updates the configuration set
      *         associated with the running environment and sets the specified
      *         configuration options to the requested value.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateEnvironmentRequest withOptionSettings(java.util.Collection<ConfigurationOptionSetting> optionSettings) {
         if (optionSettings == null) {
@@ -514,6 +535,9 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest  implement
      *
      * @param optionsToRemove A list of custom user-defined configuration options to remove from the
      *         configuration set for this environment.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateEnvironmentRequest withOptionsToRemove(OptionSpecification... optionsToRemove) {
         if (getOptionsToRemove() == null) setOptionsToRemove(new java.util.ArrayList<OptionSpecification>(optionsToRemove.length));
@@ -531,6 +555,9 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest  implement
      *
      * @param optionsToRemove A list of custom user-defined configuration options to remove from the
      *         configuration set for this environment.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateEnvironmentRequest withOptionsToRemove(java.util.Collection<OptionSpecification> optionsToRemove) {
         if (optionsToRemove == null) {

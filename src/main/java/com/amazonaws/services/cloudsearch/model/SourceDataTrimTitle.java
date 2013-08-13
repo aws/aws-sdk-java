@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Specifies how to trim common words from the beginning of a field to enable title sorting by that field.
  * </p>
  */
-public class SourceDataTrimTitle  implements Serializable  {
+public class SourceDataTrimTitle implements Serializable {
 
     /**
      * The name of the document source field to add to this
@@ -97,6 +97,9 @@ public class SourceDataTrimTitle  implements Serializable  {
      *
      * @param sourceName The name of the document source field to add to this
      *         <code>IndexField</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SourceDataTrimTitle withSourceName(String sourceName) {
         this.sourceName = sourceName;
@@ -137,6 +140,9 @@ public class SourceDataTrimTitle  implements Serializable  {
      * <b>Length: </b>0 - 1024<br/>
      *
      * @param defaultValue The value of a field or source document attribute.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SourceDataTrimTitle withDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
@@ -168,6 +174,9 @@ public class SourceDataTrimTitle  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param separator The separator that follows the text to trim.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SourceDataTrimTitle withSeparator(String separator) {
         this.separator = separator;
@@ -220,6 +229,9 @@ public class SourceDataTrimTitle  implements Serializable  {
      * @param language An <a href="http://tools.ietf.org/html/rfc4646">IETF RFC 4646</a>
      *         language code. Only the primary language is considered. English (en)
      *         is currently the only supported language.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SourceDataTrimTitle withLanguage(String language) {
         this.language = language;

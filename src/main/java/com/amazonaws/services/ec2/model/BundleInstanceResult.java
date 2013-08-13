@@ -20,7 +20,7 @@ import java.io.Serializable;
  * 
  * </p>
  */
-public class BundleInstanceResult  implements Serializable  {
+public class BundleInstanceResult implements Serializable {
 
     /**
      * 

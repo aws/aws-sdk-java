@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A complex type that contains information about the current resource record set.
  * </p>
  */
-public class ResourceRecordSet  implements Serializable  {
+public class ResourceRecordSet implements Serializable {
 
     /**
      * The domain name of the current resource record set.
@@ -195,6 +195,9 @@ public class ResourceRecordSet  implements Serializable  {
      * <b>Length: </b>0 - 1024<br/>
      *
      * @param name The domain name of the current resource record set.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ResourceRecordSet withName(String name) {
         this.name = name;
@@ -240,6 +243,9 @@ public class ResourceRecordSet  implements Serializable  {
      *
      * @param type The type of the current resource record set.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see RRType
      */
     public ResourceRecordSet withType(String type) {
@@ -271,6 +277,9 @@ public class ResourceRecordSet  implements Serializable  {
      * <b>Allowed Values: </b>SOA, A, TXT, NS, CNAME, MX, PTR, SRV, SPF, AAAA
      *
      * @param type The type of the current resource record set.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see RRType
      */
@@ -324,6 +333,9 @@ public class ResourceRecordSet  implements Serializable  {
      * @param setIdentifier <i>Weighted, Regional, and Failover resource record sets only:</i> An
      *         identifier that differentiates among multiple resource record sets
      *         that have the same combination of DNS name and type.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ResourceRecordSet withSetIdentifier(String setIdentifier) {
         this.setIdentifier = setIdentifier;
@@ -382,6 +394,9 @@ public class ResourceRecordSet  implements Serializable  {
      *         that have the same combination of DNS name and type, a value that
      *         determines what portion of traffic for the current resource record set
      *         is routed to the associated location.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ResourceRecordSet withWeight(Long weight) {
         this.weight = weight;
@@ -442,6 +457,9 @@ public class ResourceRecordSet  implements Serializable  {
      *         that have the same combination of DNS name and type, a value that
      *         specifies the AWS region for the current resource record set.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ResourceRecordSetRegion
      */
     public ResourceRecordSet withRegion(String region) {
@@ -483,6 +501,9 @@ public class ResourceRecordSet  implements Serializable  {
      * @param region <i>Regional resource record sets only:</i> Among resource record sets
      *         that have the same combination of DNS name and type, a value that
      *         specifies the AWS region for the current resource record set.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see ResourceRecordSetRegion
      */
@@ -619,6 +640,9 @@ public class ResourceRecordSet  implements Serializable  {
      *         primary resource record set. <p>Valid values: <code>PRIMARY</code> |
      *         <code>SECONDARY</code>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ResourceRecordSetFailover
      */
     public ResourceRecordSet withFailover(String failover) {
@@ -711,6 +735,9 @@ public class ResourceRecordSet  implements Serializable  {
      *         primary resource record set. <p>Valid values: <code>PRIMARY</code> |
      *         <code>SECONDARY</code>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ResourceRecordSetFailover
      */
     public ResourceRecordSet withFailover(ResourceRecordSetFailover failover) {
@@ -751,6 +778,9 @@ public class ResourceRecordSet  implements Serializable  {
      * <b>Range: </b>0 - 2147483647<br/>
      *
      * @param tTL The cache time to live for the current resource record set.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ResourceRecordSet withTTL(Long tTL) {
         this.tTL = tTL;
@@ -808,6 +838,9 @@ public class ResourceRecordSet  implements Serializable  {
      *
      * @param resourceRecords A complex type that contains the resource records for the current
      *         resource record set.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ResourceRecordSet withResourceRecords(ResourceRecord... resourceRecords) {
         if (getResourceRecords() == null) setResourceRecords(new java.util.ArrayList<ResourceRecord>(resourceRecords.length));
@@ -828,6 +861,9 @@ public class ResourceRecordSet  implements Serializable  {
      *
      * @param resourceRecords A complex type that contains the resource records for the current
      *         resource record set.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ResourceRecordSet withResourceRecords(java.util.Collection<ResourceRecord> resourceRecords) {
         if (resourceRecords == null) {
@@ -871,6 +907,9 @@ public class ResourceRecordSet  implements Serializable  {
      *
      * @param aliasTarget <i>Alias resource record sets only:</i> Information about the AWS
      *         resource to which you are redirecting traffic.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ResourceRecordSet withAliasTarget(AliasTarget aliasTarget) {
         this.aliasTarget = aliasTarget;
@@ -923,6 +962,9 @@ public class ResourceRecordSet  implements Serializable  {
      * @param healthCheckId <i>Health Check resource record sets only, not required for alias
      *         resource record sets:</i> An identifier that is used to identify
      *         health check associated with the resource record set.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ResourceRecordSet withHealthCheckId(String healthCheckId) {
         this.healthCheckId = healthCheckId;

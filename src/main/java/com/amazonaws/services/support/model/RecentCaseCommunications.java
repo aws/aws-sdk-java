@@ -20,7 +20,7 @@ import java.io.Serializable;
  * List of <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"> Commmunication </a> objects.
  * </p>
  */
-public class RecentCaseCommunications  implements Serializable  {
+public class RecentCaseCommunications implements Serializable {
 
     /**
      * List of <a
@@ -81,6 +81,9 @@ public class RecentCaseCommunications  implements Serializable  {
      * @param communications List of <a
      *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
      *         title="Communication">Commmunication</a> objects.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RecentCaseCommunications withCommunications(Communication... communications) {
         if (getCommunications() == null) setCommunications(new java.util.ArrayList<Communication>(communications.length));
@@ -100,6 +103,9 @@ public class RecentCaseCommunications  implements Serializable  {
      * @param communications List of <a
      *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
      *         title="Communication">Commmunication</a> objects.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RecentCaseCommunications withCommunications(java.util.Collection<Communication> communications) {
         if (communications == null) {
@@ -137,6 +143,9 @@ public class RecentCaseCommunications  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nextToken Defines a resumption point for pagination.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RecentCaseCommunications withNextToken(String nextToken) {
         this.nextToken = nextToken;

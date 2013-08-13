@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the ListRoles action.
  * </p>
  */
-public class ListRolesResult  implements Serializable  {
+public class ListRolesResult implements Serializable {
 
     /**
      * A list of roles.
@@ -81,6 +81,9 @@ public class ListRolesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param roles A list of roles.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListRolesResult withRoles(Role... roles) {
         if (getRoles() == null) setRoles(new java.util.ArrayList<Role>(roles.length));
@@ -96,6 +99,9 @@ public class ListRolesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param roles A list of roles.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListRolesResult withRoles(java.util.Collection<Role> roles) {
         if (roles == null) {
@@ -151,6 +157,9 @@ public class ListRolesResult  implements Serializable  {
      *         results were truncated, you can make a subsequent pagination request
      *         using the <code>Marker</code> request parameter to retrieve more roles
      *         in the list.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListRolesResult withIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
@@ -221,6 +230,9 @@ public class ListRolesResult  implements Serializable  {
      * @param marker If <code>IsTruncated</code> is <code>true</code>, this element is
      *         present and contains the value to use for the <code>Marker</code>
      *         parameter in a subsequent pagination request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListRolesResult withMarker(String marker) {
         this.marker = marker;

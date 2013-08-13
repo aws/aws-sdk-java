@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes the properties of an environment.
  * </p>
  */
-public class CreateEnvironmentResult  implements Serializable  {
+public class CreateEnvironmentResult implements Serializable {
 
     /**
      * The name of this environment.
@@ -179,6 +179,9 @@ public class CreateEnvironmentResult  implements Serializable  {
      * <b>Length: </b>4 - 23<br/>
      *
      * @param environmentName The name of this environment.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateEnvironmentResult withEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
@@ -210,6 +213,9 @@ public class CreateEnvironmentResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param environmentId The ID of this environment.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateEnvironmentResult withEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
@@ -250,6 +256,9 @@ public class CreateEnvironmentResult  implements Serializable  {
      * <b>Length: </b>1 - 100<br/>
      *
      * @param applicationName The name of the application associated with this environment.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateEnvironmentResult withApplicationName(String applicationName) {
         this.applicationName = applicationName;
@@ -290,6 +299,9 @@ public class CreateEnvironmentResult  implements Serializable  {
      * <b>Length: </b>1 - 100<br/>
      *
      * @param versionLabel The application version deployed in this environment.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateEnvironmentResult withVersionLabel(String versionLabel) {
         this.versionLabel = versionLabel;
@@ -336,6 +348,9 @@ public class CreateEnvironmentResult  implements Serializable  {
      *
      * @param solutionStackName The name of the <code>SolutionStack</code> deployed with this
      *         environment.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateEnvironmentResult withSolutionStackName(String solutionStackName) {
         this.solutionStackName = solutionStackName;
@@ -382,6 +397,9 @@ public class CreateEnvironmentResult  implements Serializable  {
      *
      * @param templateName The name of the configuration template used to originally launch this
      *         environment.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateEnvironmentResult withTemplateName(String templateName) {
         this.templateName = templateName;
@@ -422,6 +440,9 @@ public class CreateEnvironmentResult  implements Serializable  {
      * <b>Length: </b>0 - 200<br/>
      *
      * @param description Describes this environment.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateEnvironmentResult withDescription(String description) {
         this.description = description;
@@ -453,6 +474,9 @@ public class CreateEnvironmentResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param endpointURL The URL to the LoadBalancer for this environment.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateEnvironmentResult withEndpointURL(String endpointURL) {
         this.endpointURL = endpointURL;
@@ -493,6 +517,9 @@ public class CreateEnvironmentResult  implements Serializable  {
      * <b>Length: </b>1 - 255<br/>
      *
      * @param cNAME The URL to the CNAME for this environment.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateEnvironmentResult withCNAME(String cNAME) {
         this.cNAME = cNAME;
@@ -524,6 +551,9 @@ public class CreateEnvironmentResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dateCreated The creation date for this environment.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateEnvironmentResult withDateCreated(java.util.Date dateCreated) {
         this.dateCreated = dateCreated;
@@ -555,6 +585,9 @@ public class CreateEnvironmentResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dateUpdated The last modified date for this environment.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateEnvironmentResult withDateUpdated(java.util.Date dateUpdated) {
         this.dateUpdated = dateUpdated;
@@ -648,6 +681,9 @@ public class CreateEnvironmentResult  implements Serializable  {
      *         </li> <li> <code>Terminated</code>: Environment is not running. </li>
      *         </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see EnvironmentStatus
      */
     public CreateEnvironmentResult withStatus(String status) {
@@ -711,6 +747,9 @@ public class CreateEnvironmentResult  implements Serializable  {
      *         <code>Terminating</code>: Environment is in the shut-down process.
      *         </li> <li> <code>Terminated</code>: Environment is not running. </li>
      *         </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see EnvironmentStatus
      */
@@ -859,6 +898,9 @@ public class CreateEnvironmentResult  implements Serializable  {
      *         <code>UpdateEnvironment</code> or <code>RestartEnvironement</code>
      *         request. </li> </ul> <p> Default: <code>Grey</code>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see EnvironmentHealth
      */
     public CreateEnvironmentResult withHealth(String health) {
@@ -959,6 +1001,9 @@ public class CreateEnvironmentResult  implements Serializable  {
      *         <code>UpdateEnvironment</code> or <code>RestartEnvironement</code>
      *         request. </li> </ul> <p> Default: <code>Grey</code>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see EnvironmentHealth
      */
     public CreateEnvironmentResult withHealth(EnvironmentHealth health) {
@@ -990,6 +1035,9 @@ public class CreateEnvironmentResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param resources The description of the AWS resources used by this environment.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateEnvironmentResult withResources(EnvironmentResourcesDescription resources) {
         this.resources = resources;

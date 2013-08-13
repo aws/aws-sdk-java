@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents a list of all verified identities for the AWS Account.
  * </p>
  */
-public class ListIdentitiesResult  implements Serializable  {
+public class ListIdentitiesResult implements Serializable {
 
     /**
      * A list of identities.
@@ -67,6 +67,9 @@ public class ListIdentitiesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param identities A list of identities.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListIdentitiesResult withIdentities(String... identities) {
         if (getIdentities() == null) setIdentities(new java.util.ArrayList<String>(identities.length));
@@ -82,6 +85,9 @@ public class ListIdentitiesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param identities A list of identities.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListIdentitiesResult withIdentities(java.util.Collection<String> identities) {
         if (identities == null) {
@@ -119,6 +125,9 @@ public class ListIdentitiesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nextToken The token used for pagination.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListIdentitiesResult withNextToken(String nextToken) {
         this.nextToken = nextToken;

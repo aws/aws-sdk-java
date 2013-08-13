@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Provides details of the <code>ActivityTaskCompleted</code> event.
  * </p>
  */
-public class ActivityTaskCompletedEventAttributes  implements Serializable  {
+public class ActivityTaskCompletedEventAttributes implements Serializable {
 
     /**
      * The results of the activity task (if any).
@@ -79,6 +79,9 @@ public class ActivityTaskCompletedEventAttributes  implements Serializable  {
      * <b>Length: </b>0 - 32768<br/>
      *
      * @param result The results of the activity task (if any).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActivityTaskCompletedEventAttributes withResult(String result) {
         this.result = result;
@@ -128,6 +131,9 @@ public class ActivityTaskCompletedEventAttributes  implements Serializable  {
      *         recorded when this activity task was scheduled. This information can
      *         be useful for diagnosing problems by tracing back the chain of events
      *         leading up to this event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActivityTaskCompletedEventAttributes withScheduledEventId(Long scheduledEventId) {
         this.scheduledEventId = scheduledEventId;
@@ -177,6 +183,9 @@ public class ActivityTaskCompletedEventAttributes  implements Serializable  {
      *         this activity task was started. This information can be useful for
      *         diagnosing problems by tracing back the chain of events leading up to
      *         this event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActivityTaskCompletedEventAttributes withStartedEventId(Long startedEventId) {
         this.startedEventId = startedEventId;

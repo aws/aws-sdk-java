@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the ListAccountAliases action.
  * </p>
  */
-public class ListAccountAliasesResult  implements Serializable  {
+public class ListAccountAliasesResult implements Serializable {
 
     /**
      * A list of aliases associated with the account.
@@ -82,6 +82,9 @@ public class ListAccountAliasesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param accountAliases A list of aliases associated with the account.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListAccountAliasesResult withAccountAliases(String... accountAliases) {
         if (getAccountAliases() == null) setAccountAliases(new java.util.ArrayList<String>(accountAliases.length));
@@ -97,6 +100,9 @@ public class ListAccountAliasesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param accountAliases A list of aliases associated with the account.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListAccountAliasesResult withAccountAliases(java.util.Collection<String> accountAliases) {
         if (accountAliases == null) {
@@ -152,6 +158,9 @@ public class ListAccountAliasesResult  implements Serializable  {
      *         If your results were truncated, you can make a subsequent pagination
      *         request using the <code>Marker</code> request parameter to retrieve
      *         more account aliases in the list.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListAccountAliasesResult withIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
@@ -228,6 +237,9 @@ public class ListAccountAliasesResult  implements Serializable  {
      *         request after you've received a response where the results are
      *         truncated. Set it to the value of the <code>Marker</code> element in
      *         the response you just received.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListAccountAliasesResult withMarker(String marker) {
         this.marker = marker;

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the DescribeDBSnapshots action.
  * </p>
  */
-public class DescribeDBSnapshotsResult  implements Serializable  {
+public class DescribeDBSnapshotsResult implements Serializable {
 
     /**
      * An optional pagination token provided by a previous request. If this
@@ -70,6 +70,9 @@ public class DescribeDBSnapshotsResult  implements Serializable  {
      * @param marker An optional pagination token provided by a previous request. If this
      *         parameter is specified, the response includes only records beyond the
      *         marker, up to the value specified by <code>MaxRecords</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeDBSnapshotsResult withMarker(String marker) {
         this.marker = marker;
@@ -112,6 +115,9 @@ public class DescribeDBSnapshotsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBSnapshots A list of <a>DBSnapshot</a> instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeDBSnapshotsResult withDBSnapshots(DBSnapshot... dBSnapshots) {
         if (getDBSnapshots() == null) setDBSnapshots(new java.util.ArrayList<DBSnapshot>(dBSnapshots.length));
@@ -127,6 +133,9 @@ public class DescribeDBSnapshotsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBSnapshots A list of <a>DBSnapshot</a> instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeDBSnapshotsResult withDBSnapshots(java.util.Collection<DBSnapshot> dBSnapshots) {
         if (dBSnapshots == null) {

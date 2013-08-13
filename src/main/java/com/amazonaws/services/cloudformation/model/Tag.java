@@ -21,7 +21,7 @@ import java.io.Serializable;
  * store information related to cost allocation for an AWS CloudFormation stack.
  * </p>
  */
-public class Tag  implements Serializable  {
+public class Tag implements Serializable {
 
     /**
      * <i>Required</i>. A string used to identify this tag. You can specify a
@@ -72,6 +72,9 @@ public class Tag  implements Serializable  {
      * @param key <i>Required</i>. A string used to identify this tag. You can specify a
      *         maximum of 128 characters for a tag key. Tags owned by Amazon Web
      *         Services (AWS) have the reserved prefix: <code>aws:</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Tag withKey(String key) {
         this.key = key;
@@ -109,6 +112,9 @@ public class Tag  implements Serializable  {
      *
      * @param value <i>Required</i>. A string containing the value for this tag. You can
      *         specify a maximum of 256 characters for a tag value.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Tag withValue(String value) {
         this.value = value;

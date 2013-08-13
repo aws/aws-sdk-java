@@ -20,7 +20,7 @@ import java.io.Serializable;
  * 
  * </p>
  */
-public class DescribeTagsResult  implements Serializable  {
+public class DescribeTagsResult implements Serializable {
 
     /**
      * The list of tags.
@@ -70,6 +70,9 @@ public class DescribeTagsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags The list of tags.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeTagsResult withTags(TagDescription... tags) {
         if (getTags() == null) setTags(new java.util.ArrayList<TagDescription>(tags.length));
@@ -85,6 +88,9 @@ public class DescribeTagsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags The list of tags.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeTagsResult withTags(java.util.Collection<TagDescription> tags) {
         if (tags == null) {
@@ -131,6 +137,9 @@ public class DescribeTagsResult  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param nextToken A string used to mark the start of the next batch of returned results.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeTagsResult withNextToken(String nextToken) {
         this.nextToken = nextToken;

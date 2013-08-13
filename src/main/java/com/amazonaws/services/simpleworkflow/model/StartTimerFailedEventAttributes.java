@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Provides details of the <code>StartTimerFailed</code> event.
  * </p>
  */
-public class StartTimerFailedEventAttributes  implements Serializable  {
+public class StartTimerFailedEventAttributes implements Serializable {
 
     /**
      * The timerId provided in the <code>StartTimer</code> decision that
@@ -92,6 +92,9 @@ public class StartTimerFailedEventAttributes  implements Serializable  {
      *
      * @param timerId The timerId provided in the <code>StartTimer</code> decision that
      *         failed.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StartTimerFailedEventAttributes withTimerId(String timerId) {
         this.timerId = timerId;
@@ -173,6 +176,9 @@ public class StartTimerFailedEventAttributes  implements Serializable  {
      *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see StartTimerFailedCause
      */
     public StartTimerFailedEventAttributes withCause(String cause) {
@@ -229,6 +235,9 @@ public class StartTimerFailedEventAttributes  implements Serializable  {
      *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see StartTimerFailedCause
      */
     public StartTimerFailedEventAttributes withCause(StartTimerFailedCause cause) {
@@ -278,6 +287,9 @@ public class StartTimerFailedEventAttributes  implements Serializable  {
      *         to the decision task that resulted in the <code>StartTimer</code>
      *         decision for this activity task. This information can be useful for
      *         diagnosing problems by tracing back the cause of events.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StartTimerFailedEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
         this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;

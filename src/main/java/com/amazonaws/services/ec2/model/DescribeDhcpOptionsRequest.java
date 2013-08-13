@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.DescribeDhcpOptionsRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -31,7 +33,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeDhcpOptions(DescribeDhcpOptionsRequest)
  */
-public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeDhcpOptionsRequest> {
 
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> dhcpOptionsIds;
 
@@ -212,6 +214,18 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest  impleme
         }
 
         return this;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<DescribeDhcpOptionsRequest> getDryRunRequest() {
+        Request<DescribeDhcpOptionsRequest> request = new DescribeDhcpOptionsRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

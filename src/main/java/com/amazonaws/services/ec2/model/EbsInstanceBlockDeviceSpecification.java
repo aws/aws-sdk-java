@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Specifies how an EBS volume should be mapped as part of a block device mapping specification when launching a new instance.
  * </p>
  */
-public class EbsInstanceBlockDeviceSpecification  implements Serializable  {
+public class EbsInstanceBlockDeviceSpecification implements Serializable {
 
     /**
      * The ID of the EBS volume that should be mounted as a block device on

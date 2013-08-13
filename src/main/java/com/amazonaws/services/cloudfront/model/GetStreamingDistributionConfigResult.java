@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The returned result of the corresponding request.
  * </p>
  */
-public class GetStreamingDistributionConfigResult  implements Serializable  {
+public class GetStreamingDistributionConfigResult implements Serializable {
 
     /**
      * The streaming distribution's configuration information.
@@ -56,6 +56,9 @@ public class GetStreamingDistributionConfigResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param streamingDistributionConfig The streaming distribution's configuration information.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetStreamingDistributionConfigResult withStreamingDistributionConfig(StreamingDistributionConfig streamingDistributionConfig) {
         this.streamingDistributionConfig = streamingDistributionConfig;
@@ -87,6 +90,9 @@ public class GetStreamingDistributionConfigResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eTag The current version of the configuration. For example: E2QWRUHAPOMQZL.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetStreamingDistributionConfigResult withETag(String eTag) {
         this.eTag = eTag;

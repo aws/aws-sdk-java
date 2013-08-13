@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Returns the objects or data listed below if successful. Otherwise, returns an error.
  * </p>
  */
-public class DescribeTrustedAdvisorCheckResultResult  implements Serializable  {
+public class DescribeTrustedAdvisorCheckResultResult implements Serializable {
 
     /**
      * Returns a <a
@@ -72,6 +72,9 @@ public class DescribeTrustedAdvisorCheckResultResult  implements Serializable  {
      *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckResult.html"
      *         title="TrustedAdvisorCheckResult">TrustedAdvisorCheckResult</a>
      *         object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeTrustedAdvisorCheckResultResult withResult(TrustedAdvisorCheckResult result) {
         this.result = result;

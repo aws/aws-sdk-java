@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The results from a request to change the configuration settings of an environment.
  * </p>
  */
-public class DescribeConfigurationSettingsResult  implements Serializable  {
+public class DescribeConfigurationSettingsResult implements Serializable {
 
     /**
      * A list of <a>ConfigurationSettingsDescription</a>.
@@ -62,6 +62,9 @@ public class DescribeConfigurationSettingsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param configurationSettings A list of <a>ConfigurationSettingsDescription</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeConfigurationSettingsResult withConfigurationSettings(ConfigurationSettingsDescription... configurationSettings) {
         if (getConfigurationSettings() == null) setConfigurationSettings(new java.util.ArrayList<ConfigurationSettingsDescription>(configurationSettings.length));
@@ -77,6 +80,9 @@ public class DescribeConfigurationSettingsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param configurationSettings A list of <a>ConfigurationSettingsDescription</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeConfigurationSettingsResult withConfigurationSettings(java.util.Collection<ConfigurationSettingsDescription> configurationSettings) {
         if (configurationSettings == null) {

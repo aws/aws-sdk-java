@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the output from the DescribeClusterVersions action.
  * </p>
  */
-public class DescribeClusterVersionsResult  implements Serializable  {
+public class DescribeClusterVersionsResult implements Serializable {
 
     /**
      * The identifier returned to allow retrieval of paginated results.
@@ -56,6 +56,9 @@ public class DescribeClusterVersionsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param marker The identifier returned to allow retrieval of paginated results.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterVersionsResult withMarker(String marker) {
         this.marker = marker;
@@ -98,6 +101,9 @@ public class DescribeClusterVersionsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clusterVersions A list of <code>Version</code> elements.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterVersionsResult withClusterVersions(ClusterVersion... clusterVersions) {
         if (getClusterVersions() == null) setClusterVersions(new java.util.ArrayList<ClusterVersion>(clusterVersions.length));
@@ -113,6 +119,9 @@ public class DescribeClusterVersionsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clusterVersions A list of <code>Version</code> elements.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterVersionsResult withClusterVersions(java.util.Collection<ClusterVersion> clusterVersions) {
         if (clusterVersions == null) {

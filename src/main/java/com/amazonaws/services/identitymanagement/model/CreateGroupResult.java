@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the CreateGroup action.
  * </p>
  */
-public class CreateGroupResult  implements Serializable  {
+public class CreateGroupResult implements Serializable {
 
     /**
      * Information about the group.
@@ -51,6 +51,9 @@ public class CreateGroupResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param group Information about the group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateGroupResult withGroup(Group group) {
         this.group = group;

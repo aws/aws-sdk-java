@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Import Instance Volume Detail Item
  */
-public class ImportInstanceVolumeDetailItem  implements Serializable  {
+public class ImportInstanceVolumeDetailItem implements Serializable {
 
     private Long bytesConverted;
 

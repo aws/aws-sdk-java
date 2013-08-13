@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A complex type that contains the response for the request.
  * </p>
  */
-public class ListHostedZonesResult  implements Serializable  {
+public class ListHostedZonesResult implements Serializable {
 
     /**
      * A complex type that contains information about the hosted zones
@@ -112,6 +112,9 @@ public class ListHostedZonesResult  implements Serializable  {
      *
      * @param hostedZones A complex type that contains information about the hosted zones
      *         associated with the current AWS account.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListHostedZonesResult withHostedZones(HostedZone... hostedZones) {
         if (getHostedZones() == null) setHostedZones(new java.util.ArrayList<HostedZone>(hostedZones.length));
@@ -129,6 +132,9 @@ public class ListHostedZonesResult  implements Serializable  {
      *
      * @param hostedZones A complex type that contains information about the hosted zones
      *         associated with the current AWS account.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListHostedZonesResult withHostedZones(java.util.Collection<HostedZone> hostedZones) {
         if (hostedZones == null) {
@@ -193,6 +199,9 @@ public class ListHostedZonesResult  implements Serializable  {
      *         request and specify the value of <code>NextMarker</code> from the last
      *         response in the <code>marker</code> parameter to get the next page of
      *         results.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListHostedZonesResult withMarker(String marker) {
         this.marker = marker;
@@ -242,6 +251,9 @@ public class ListHostedZonesResult  implements Serializable  {
      *         your results were truncated, you can make a follow-up request for the
      *         next page of results by using the <code>Marker</code> element.
      *         <p>Valid Values: <code>true</code> | <code>false</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListHostedZonesResult withIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
@@ -321,6 +333,9 @@ public class ListHostedZonesResult  implements Serializable  {
      *         another request to <code>ListHostedZones</code> and include the value
      *         of the <code>NextMarker</code> element in the <code>Marker</code>
      *         element to get the next page of results.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListHostedZonesResult withNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
@@ -394,6 +409,9 @@ public class ListHostedZonesResult  implements Serializable  {
      *         the value of <a>ListHostedZonesResponse$NextMarker</a> in the
      *         <a>ListHostedZonesRequest$Marker</a> element to get the next page of
      *         results.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListHostedZonesResult withMaxItems(String maxItems) {
         this.maxItems = maxItems;

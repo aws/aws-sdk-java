@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeClusterSubnetGroups(DescribeClusterSubnetGroupsRequest)
  */
-public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the cluster subnet group for which information is
@@ -81,6 +81,9 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest 
      *
      * @param clusterSubnetGroupName The name of the cluster subnet group for which information is
      *         requested.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterSubnetGroupsRequest withClusterSubnetGroupName(String clusterSubnetGroupName) {
         this.clusterSubnetGroupName = clusterSubnetGroupName;
@@ -148,6 +151,9 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest 
      *         order to retrieve the next set of cluster subnet group records.
      *         <p>Default: 100 <p>Constraints: Must be at least 20 and no more than
      *         100.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterSubnetGroupsRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -191,6 +197,9 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest 
      * @param marker An optional marker returned by a previous
      *         <a>DescribeClusterSubnetGroups</a> request to indicate the first
      *         cluster subnet group that the current request will return.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterSubnetGroupsRequest withMarker(String marker) {
         this.marker = marker;

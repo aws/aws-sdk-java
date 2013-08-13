@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.DescribeVpcsRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -32,7 +34,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVpcs(DescribeVpcsRequest)
  */
-public class DescribeVpcsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeVpcsRequest> {
 
     /**
      * The ID of a VPC you want information about.
@@ -207,6 +209,18 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest  implements Ser
         }
 
         return this;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<DescribeVpcsRequest> getDryRunRequest() {
+        Request<DescribeVpcsRequest> request = new DescribeVpcsRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

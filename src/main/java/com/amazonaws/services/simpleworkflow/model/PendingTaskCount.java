@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the count of tasks in a task list.
  * </p>
  */
-public class PendingTaskCount  implements Serializable  {
+public class PendingTaskCount implements Serializable {
 
     /**
      * The number of tasks in the task list.
@@ -70,6 +70,9 @@ public class PendingTaskCount  implements Serializable  {
      * <b>Range: </b>0 - <br/>
      *
      * @param count The number of tasks in the task list.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PendingTaskCount withCount(Integer count) {
         this.count = count;
@@ -113,6 +116,9 @@ public class PendingTaskCount  implements Serializable  {
      * @param truncated If set to true, indicates that the actual count was more than the
      *         maximum supported by this API and the count returned is the truncated
      *         value.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PendingTaskCount withTruncated(Boolean truncated) {
         this.truncated = truncated;

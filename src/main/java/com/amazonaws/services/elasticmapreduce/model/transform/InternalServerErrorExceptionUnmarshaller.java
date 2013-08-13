@@ -14,28 +14,27 @@
  */
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
-import org.w3c.dom.Node;
-
 import com.amazonaws.AmazonServiceException;
-import com.amazonaws.util.XpathUtils;
-import com.amazonaws.transform.StandardErrorUnmarshaller;
+import com.amazonaws.transform.JsonErrorUnmarshaller;
+import com.amazonaws.util.json.JSONObject;
 
 import com.amazonaws.services.elasticmapreduce.model.InternalServerErrorException;
 
-public class InternalServerErrorExceptionUnmarshaller extends StandardErrorUnmarshaller {
+public class InternalServerErrorExceptionUnmarshaller extends JsonErrorUnmarshaller {
 
     public InternalServerErrorExceptionUnmarshaller() {
         super(InternalServerErrorException.class);
     }
 
-    public AmazonServiceException unmarshall(Node node) throws Exception {
+    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
         // Bail out if this isn't the right error code that this
         // marshaller understands.
-        String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("InternalFailure"))
+        String errorCode = parseErrorCode(json);
+        if (errorCode == null || !errorCode.equals("InternalServerError"))
             return null;
 
-        InternalServerErrorException e = (InternalServerErrorException)super.unmarshall(node);
+        InternalServerErrorException e = (InternalServerErrorException)super.unmarshall(json);
+        
         
         return e;
     }

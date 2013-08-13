@@ -29,7 +29,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listAccountAliases(ListAccountAliasesRequest)
  */
-public class ListAccountAliasesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ListAccountAliasesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Use this only when paginating results, and only in a subsequent
@@ -114,6 +114,9 @@ public class ListAccountAliasesRequest extends AmazonWebServiceRequest  implemen
      *         request after you've received a response where the results are
      *         truncated. Set it to the value of the <code>Marker</code> element in
      *         the response you just received.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListAccountAliasesRequest withMarker(String marker) {
         this.marker = marker;
@@ -172,6 +175,9 @@ public class ListAccountAliasesRequest extends AmazonWebServiceRequest  implemen
      *         of account aliases you want in the response. If there are additional
      *         account aliases beyond the maximum you specify, the
      *         <code>IsTruncated</code> response element is <code>true</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListAccountAliasesRequest withMaxItems(Integer maxItems) {
         this.maxItems = maxItems;

@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.cloudfront.AmazonCloudFront#createCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest)
  */
-public class CreateCloudFrontOriginAccessIdentityRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateCloudFrontOriginAccessIdentityRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The origin access identity's configuration information.
@@ -77,6 +77,9 @@ public class CreateCloudFrontOriginAccessIdentityRequest extends AmazonWebServic
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cloudFrontOriginAccessIdentityConfig The origin access identity's configuration information.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateCloudFrontOriginAccessIdentityRequest withCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig) {
         this.cloudFrontOriginAccessIdentityConfig = cloudFrontOriginAccessIdentityConfig;

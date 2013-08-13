@@ -26,7 +26,7 @@ import java.io.Serializable;
  * 
  * </ul>
  */
-public class ListGatewaysResult  implements Serializable  {
+public class ListGatewaysResult implements Serializable {
 
     /**
      * An array of <a>GatewayInfo</a> objects.
@@ -78,6 +78,9 @@ public class ListGatewaysResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param gateways An array of <a>GatewayInfo</a> objects.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListGatewaysResult withGateways(GatewayInfo... gateways) {
         if (getGateways() == null) setGateways(new java.util.ArrayList<GatewayInfo>(gateways.length));
@@ -93,6 +96,9 @@ public class ListGatewaysResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param gateways An array of <a>GatewayInfo</a> objects.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListGatewaysResult withGateways(java.util.Collection<GatewayInfo> gateways) {
         if (gateways == null) {
@@ -151,6 +157,9 @@ public class ListGatewaysResult  implements Serializable  {
      * @param marker Use the marker in your next request to fetch the next set of gateways
      *         in the list. If there are no more gateways to list, this field does
      *         not appear in the response.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListGatewaysResult withMarker(String marker) {
         this.marker = marker;

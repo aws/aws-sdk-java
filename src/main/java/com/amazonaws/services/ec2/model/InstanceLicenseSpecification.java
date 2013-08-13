@@ -21,7 +21,7 @@ import java.io.Serializable;
  * instance.
  * </p>
  */
-public class InstanceLicenseSpecification  implements Serializable  {
+public class InstanceLicenseSpecification implements Serializable {
 
     /**
      * The license pool from which to take a license when starting Amazon EC2

@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Create Security Group Result
  */
-public class CreateSecurityGroupResult  implements Serializable  {
+public class CreateSecurityGroupResult implements Serializable {
 
     private String groupId;
 

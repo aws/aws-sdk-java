@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#cloneStack(CloneStackRequest)
  */
-public class CloneStackRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CloneStackRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The source stack ID.
@@ -200,6 +200,9 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceStackId The source stack ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CloneStackRequest withSourceStackId(String sourceStackId) {
         this.sourceStackId = sourceStackId;
@@ -231,6 +234,9 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The cloned stack name.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CloneStackRequest withName(String name) {
         this.name = name;
@@ -280,6 +286,9 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      *         about AWS regions, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      *         and Endpoints</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CloneStackRequest withRegion(String region) {
         this.region = region;
@@ -321,6 +330,9 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      *
      * @param attributes A list of stack attributes and values as key/value pairs to be added
      *         to the cloned stack.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CloneStackRequest withAttributes(java.util.Map<String,String> attributes) {
         setAttributes(attributes);
@@ -449,6 +461,9 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      *         role ARN or the action will fail; there is no default value. You can
      *         specify the source stack's service role ARN, if you prefer, but you
      *         must do so explicitly.</note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CloneStackRequest withServiceRoleArn(String serviceRoleArn) {
         this.serviceRoleArn = serviceRoleArn;
@@ -498,6 +513,9 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      *         stack's EC2 instances. For more information about IAM ARNs, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CloneStackRequest withDefaultInstanceProfileArn(String defaultInstanceProfileArn) {
         this.defaultInstanceProfileArn = defaultInstanceProfileArn;
@@ -601,6 +619,9 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      *         OpsWorks, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      *         Custom AMIs</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CloneStackRequest withDefaultOs(String defaultOs) {
         this.defaultOs = defaultOs;
@@ -692,6 +713,9 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      *         <li>Wild_Cats</li> </ul> <p>To obtain a generated host name, call
      *         <code>GetHostNameSuggestion</code>, which returns a host name based on
      *         the current theme.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CloneStackRequest withHostnameTheme(String hostnameTheme) {
         this.hostnameTheme = hostnameTheme;
@@ -735,6 +759,9 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      * @param defaultAvailabilityZone The cloned stack's Availability Zone. For more information, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      *         and Endpoints</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CloneStackRequest withDefaultAvailabilityZone(String defaultAvailabilityZone) {
         this.defaultAvailabilityZone = defaultAvailabilityZone;
@@ -802,6 +829,9 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      *         Custom JSON to Modify the Stack Configuration JSON</a>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CloneStackRequest withCustomJson(String customJson) {
         this.customJson = customJson;
@@ -851,6 +881,9 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      *         you use the configuration manager to specify the Chef version, 0.9 or
      *         11.4. The default value is currently 0.9. However, we expect to change
      *         the default value to 11.4 in late August 2013.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CloneStackRequest withConfigurationManager(StackConfigurationManager configurationManager) {
         this.configurationManager = configurationManager;
@@ -882,6 +915,9 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param useCustomCookbooks Whether to use custom cookbooks.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CloneStackRequest withUseCustomCookbooks(Boolean useCustomCookbooks) {
         this.useCustomCookbooks = useCustomCookbooks;
@@ -952,6 +988,9 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      *         Apps</a> or <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom
      *         Recipes and Cookbooks</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CloneStackRequest withCustomCookbooksSource(Source customCookbooksSource) {
         this.customCookbooksSource = customCookbooksSource;
@@ -989,6 +1028,9 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      *
      * @param defaultSshKeyName A default SSH key for the stack instances. You can override this value
      *         when you create or update an instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CloneStackRequest withDefaultSshKeyName(String defaultSshKeyName) {
         this.defaultSshKeyName = defaultSshKeyName;
@@ -1020,6 +1062,9 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clonePermissions Whether to clone the source stack's permissions.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CloneStackRequest withClonePermissions(Boolean clonePermissions) {
         this.clonePermissions = clonePermissions;
@@ -1071,6 +1116,9 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cloneAppIds A list of source stack app IDs to be included in the cloned stack.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CloneStackRequest withCloneAppIds(String... cloneAppIds) {
         if (getCloneAppIds() == null) setCloneAppIds(new java.util.ArrayList<String>(cloneAppIds.length));
@@ -1086,6 +1134,9 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cloneAppIds A list of source stack app IDs to be included in the cloned stack.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CloneStackRequest withCloneAppIds(java.util.Collection<String> cloneAppIds) {
         if (cloneAppIds == null) {
@@ -1161,6 +1212,9 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      *         for the Root Device</a>.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see RootDeviceType
      */
     public CloneStackRequest withDefaultRootDeviceType(String defaultRootDeviceType) {
@@ -1208,6 +1262,9 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      *         an instance. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      *         for the Root Device</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see RootDeviceType
      */

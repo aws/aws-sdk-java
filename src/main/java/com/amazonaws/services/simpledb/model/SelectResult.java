@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Select Result
  */
-public class SelectResult  implements Serializable  {
+public class SelectResult implements Serializable {
 
     /**
      * A list of items that match the select expression.
@@ -67,6 +67,9 @@ public class SelectResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param items A list of items that match the select expression.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SelectResult withItems(Item... items) {
         if (getItems() == null) setItems(new java.util.ArrayList<Item>(items.length));
@@ -82,6 +85,9 @@ public class SelectResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param items A list of items that match the select expression.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SelectResult withItems(java.util.Collection<Item> items) {
         if (items == null) {
@@ -131,6 +137,9 @@ public class SelectResult  implements Serializable  {
      * @param nextToken An opaque token indicating that more items than
      *         <code>MaxNumberOfItems</code> were matched, the response size exceeded
      *         1 megabyte, or the execution time exceeded 5 seconds.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SelectResult withNextToken(String nextToken) {
         this.nextToken = nextToken;

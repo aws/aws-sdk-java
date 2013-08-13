@@ -82,7 +82,7 @@ public interface AmazonElasticTranscoder {
      * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      */
     public void setRegion(Region region) throws java.lang.IllegalArgumentException;
-	
+    
     /**
      * <p>
      * The UpdatePipelineStatus operation pauses or reactivates a pipeline,

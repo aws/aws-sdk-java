@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeLayers(DescribeLayersRequest)
  */
-public class DescribeLayersRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeLayersRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The stack ID.
@@ -62,6 +62,9 @@ public class DescribeLayersRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackId The stack ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeLayersRequest withStackId(String stackId) {
         this.stackId = stackId;
@@ -116,6 +119,9 @@ public class DescribeLayersRequest extends AmazonWebServiceRequest  implements S
      * @param layerIds An array of layer IDs that specify the layers to be described. If you
      *         omit this parameter, <code>DescribeLayers</code> returns a description
      *         of every layer in the specified stack.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeLayersRequest withLayerIds(String... layerIds) {
         if (getLayerIds() == null) setLayerIds(new java.util.ArrayList<String>(layerIds.length));
@@ -135,6 +141,9 @@ public class DescribeLayersRequest extends AmazonWebServiceRequest  implements S
      * @param layerIds An array of layer IDs that specify the layers to be described. If you
      *         omit this parameter, <code>DescribeLayers</code> returns a description
      *         of every layer in the specified stack.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeLayersRequest withLayerIds(java.util.Collection<String> layerIds) {
         if (layerIds == null) {

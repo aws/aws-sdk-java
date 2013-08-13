@@ -26,7 +26,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#reportTaskRunnerHeartbeat(ReportTaskRunnerHeartbeatRequest)
  */
-public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The identifier of the task runner. This value should be unique across
@@ -132,6 +132,9 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest  i
      *         provides a unique identifier when it launches the application. If you
      *         have written a custom task runner, you should assign a unique
      *         identifier for the task runner.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ReportTaskRunnerHeartbeatRequest withTaskrunnerId(String taskrunnerId) {
         this.taskrunnerId = taskrunnerId;
@@ -211,6 +214,9 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest  i
      *         <a>ReportTaskRunnerHeartbeat</a>. There are no wildcard values
      *         permitted in <code>workerGroup</code>, the string must be an exact,
      *         case-sensitive, match.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ReportTaskRunnerHeartbeatRequest withWorkerGroup(String workerGroup) {
         this.workerGroup = workerGroup;
@@ -254,6 +260,9 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest  i
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param hostname The public DNS name of the calling task runner.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ReportTaskRunnerHeartbeatRequest withHostname(String hostname) {
         this.hostname = hostname;

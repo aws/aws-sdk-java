@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Used to filter workflow execution query results by type. Each parameter, if specified, defines a rule that must be satisfied by each returned result.
  * </p>
  */
-public class WorkflowTypeFilter  implements Serializable  {
+public class WorkflowTypeFilter implements Serializable {
 
     /**
      * Name of the workflow type. This field is required.
@@ -71,6 +71,9 @@ public class WorkflowTypeFilter  implements Serializable  {
      * <b>Length: </b>1 - 256<br/>
      *
      * @param name Name of the workflow type. This field is required.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowTypeFilter withName(String name) {
         this.name = name;
@@ -111,6 +114,9 @@ public class WorkflowTypeFilter  implements Serializable  {
      * <b>Length: </b>0 - 64<br/>
      *
      * @param version Version of the workflow type.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowTypeFilter withVersion(String version) {
         this.version = version;

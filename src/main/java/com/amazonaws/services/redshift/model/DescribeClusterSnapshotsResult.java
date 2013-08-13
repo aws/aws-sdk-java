@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the output from the DescribeClusterSnapshots action.
  * </p>
  */
-public class DescribeClusterSnapshotsResult  implements Serializable  {
+public class DescribeClusterSnapshotsResult implements Serializable {
 
     /**
      * A marker that indicates the first snapshot that a subsequent
@@ -77,6 +77,9 @@ public class DescribeClusterSnapshotsResult  implements Serializable  {
      *         <a>DescribeClusterSnapshots</a> request will return. The response
      *         returns a marker only if there are more snapshots to list than the
      *         current response can return.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterSnapshotsResult withMarker(String marker) {
         this.marker = marker;
@@ -119,6 +122,9 @@ public class DescribeClusterSnapshotsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param snapshots A list of <a>Snapshot</a> instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterSnapshotsResult withSnapshots(Snapshot... snapshots) {
         if (getSnapshots() == null) setSnapshots(new java.util.ArrayList<Snapshot>(snapshots.length));
@@ -134,6 +140,9 @@ public class DescribeClusterSnapshotsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param snapshots A list of <a>Snapshot</a> instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterSnapshotsResult withSnapshots(java.util.Collection<Snapshot> snapshots) {
         if (snapshots == null) {

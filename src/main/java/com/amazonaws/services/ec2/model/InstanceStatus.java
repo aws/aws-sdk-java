@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents the status of an Amazon EC2 instance.
  * </p>
  */
-public class InstanceStatus  implements Serializable  {
+public class InstanceStatus implements Serializable {
 
     /**
      * The ID of the Amazon EC2 instance.

@@ -28,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeDBSubnetGroups(DescribeDBSubnetGroupsRequest)
  */
-public class DescribeDBSubnetGroupsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeDBSubnetGroupsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the DB Subnet Group to return details for.
@@ -76,6 +76,9 @@ public class DescribeDBSubnetGroupsRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBSubnetGroupName The name of the DB Subnet Group to return details for.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeDBSubnetGroupsRequest withDBSubnetGroupName(String dBSubnetGroupName) {
         this.dBSubnetGroupName = dBSubnetGroupName;
@@ -131,6 +134,9 @@ public class DescribeDBSubnetGroupsRequest extends AmazonWebServiceRequest  impl
      *         pagination token called a marker is included in the response so that
      *         the remaining results may be retrieved. <p>Default: 100
      *         <p>Constraints: minimum 20, maximum 100
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeDBSubnetGroupsRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -180,6 +186,9 @@ public class DescribeDBSubnetGroupsRequest extends AmazonWebServiceRequest  impl
      *         DescribeDBSubnetGroups request. If this parameter is specified, the
      *         response includes only records beyond the marker, up to the value
      *         specified by <code>MaxRecords</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeDBSubnetGroupsRequest withMarker(String marker) {
         this.marker = marker;

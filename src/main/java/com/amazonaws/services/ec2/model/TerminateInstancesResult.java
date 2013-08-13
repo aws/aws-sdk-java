@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The result of calling the TerminateInstances operation. Contains details on how the specified instances are changing state.
  * </p>
  */
-public class TerminateInstancesResult  implements Serializable  {
+public class TerminateInstancesResult implements Serializable {
 
     /**
      * The list of the terminating instances and details on how their state

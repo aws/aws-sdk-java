@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#restartAppServer(RestartAppServerRequest)
  */
-public class RestartAppServerRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class RestartAppServerRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The ID of the environment to restart the server for. <p> Condition:
@@ -93,6 +93,9 @@ public class RestartAppServerRequest extends AmazonWebServiceRequest  implements
      *         You must specify either this or an EnvironmentName, or both. If you do
      *         not specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestartAppServerRequest withEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
@@ -151,6 +154,9 @@ public class RestartAppServerRequest extends AmazonWebServiceRequest  implements
      *         You must specify either this or an EnvironmentId, or both. If you do
      *         not specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestartAppServerRequest withEnvironmentName(String environmentName) {
         this.environmentName = environmentName;

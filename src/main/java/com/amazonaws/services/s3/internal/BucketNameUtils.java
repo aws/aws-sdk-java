@@ -14,14 +14,14 @@
  */
 package com.amazonaws.services.s3.internal;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 /**
  * Utilities for working with Amazon S3 bucket names, such as validation and
  * checked to see if they are compatible with DNS addressing.
  */
 public class BucketNameUtils {
+
+    private static final int MIN_BUCKET_NAME_LENGTH = 3;
+    private static final int MAX_BUCKET_NAME_LENGTH = 63;
 
     /**
      * Validates that the specified bucket name is valid for Amazon S3 V2 naming
@@ -39,59 +39,8 @@ public class BucketNameUtils {
      *             If the specified bucket name doesn't follow Amazon S3's
      *             guidelines.
      */
-    public void validateBucketName(String bucketName) throws IllegalArgumentException {
-        /*
-         * From the Amazon S3 bucket naming guidelines in the Amazon S3 Developer Guide
-         *
-         * To conform with DNS requirements:
-         *  - Bucket names should not contain underscores (_)
-         *  - Bucket names should be between 3 and 63 characters long
-         *  - Bucket names should not end with a dash or a period
-         *  - Bucket names cannot contain two, adjacent periods
-         *  - Bucket names cannot contain dashes next to periods
-         *     - (e.g., "my-.bucket.com" and "my.-bucket" are invalid)
-         */
-
-        if (bucketName == null)
-            throw new IllegalArgumentException("Bucket name cannot be null");
-
-        if (!bucketName.toLowerCase().equals(bucketName))
-            throw new IllegalArgumentException("Bucket name should not contain uppercase characters");
-
-        if (bucketName.contains("_"))
-            throw new IllegalArgumentException("Bucket name should not contain '_'");
-
-        if (bucketName.contains("!") || bucketName.contains("@") || bucketName.contains("#"))
-            throw new IllegalArgumentException("Bucket name contains illegal characters");
-
-        if (bucketName.length() < 3 || bucketName.length() > 63)
-            throw new IllegalArgumentException("Bucket name should be between 3 and 63 characters long");
-
-        if (bucketName.endsWith("-") || bucketName.endsWith("."))
-            throw new IllegalArgumentException("Bucket name should not end with '-' or '.'");
-
-        if (bucketName.contains(".."))
-            throw new IllegalArgumentException("Bucket name should not contain two adjacent periods");
-
-        if ( bucketName.contains("-.") ||
-             bucketName.contains(".-") )
-            throw new IllegalArgumentException("Bucket name should not contain dashes next to periods");
-
-        if ( bucketName.contains(":") ||
-             bucketName.contains(":;") )
-            throw new IllegalArgumentException("Bucket name should not contain colons or semicolons");
-
-        if ( bucketName.contains("\\")) {
-            throw new IllegalArgumentException("Bucket name should not contain '\\'");
-        }
-
-        // Check whether there is white space in the bucket name.
-        if (bucketName.matches("(.*\\s+.*)+") ) {
-            throw new IllegalArgumentException("Bucket name should not contain white space");
-        }
-
-        if (bucketName.contains("/"))
-            throw new IllegalArgumentException("Bucket name should not contain '/'");
+    public void validateBucketName(final String bucketName) {
+        isValidV2BucketName(bucketName, true);
     }
 
     /**
@@ -107,14 +56,7 @@ public class BucketNameUtils {
      *         addressing is required.
      */
     public boolean isValidV2BucketName(String bucketName) {
-        if (bucketName == null) return false;
-
-        try {
-            validateBucketName(bucketName);
-            return true;
-        } catch (IllegalArgumentException e) {
-            return false;
-        }
+        return isValidV2BucketName(bucketName, false);
     }
 
     /**
@@ -122,5 +64,107 @@ public class BucketNameUtils {
      */
     public boolean isDNSBucketName(String bucketName) {
         return isValidV2BucketName( bucketName );
+    }
+
+    /**
+     * Validate whether the given input is a valid bucket name. If throwOnError
+     * is true, throw an IllegalArgumentException if validation fails. If
+     * false, simply return 'false'.
+     *
+     * @param bucketName the name of the bucket
+     * @param throwOnError true to throw exceptions on failure
+     * @return true if the name is valid, false if not
+     */
+    private boolean isValidV2BucketName(final String bucketName,
+                                        final boolean throwOnError) {
+
+        if (bucketName == null) {
+            return exception(throwOnError, "Bucket name cannot be null");
+        }
+
+        if (bucketName.length() < MIN_BUCKET_NAME_LENGTH ||
+            bucketName.length() > MAX_BUCKET_NAME_LENGTH) {
+
+            return exception(
+                throwOnError,
+                "Bucket name should be between 3 and 63 characters long"
+            );
+        }
+
+        char previous = '\0';
+
+        for (int i = 0; i < bucketName.length(); ++i) {
+            char next = bucketName.charAt(i);
+
+            if (next >= 'A' && next <= 'Z') {
+                return exception(
+                    throwOnError,
+                    "Bucket name should not contain uppercase characters"
+                );
+            }
+
+            if (next == ' ' || next == '\t' || next == '\r' || next == '\n') {
+                return exception(
+                    throwOnError,
+                    "Bucket name should not contain white space"
+                );
+            }
+
+            if (next == '.') {
+                if (previous == '.') {
+                    return exception(
+                        throwOnError,
+                        "Bucket name should not contain two adjacent periods"
+                    );
+                }
+                if (previous == '-') {
+                    return exception(
+                        throwOnError,
+                        "Bucket name should not contain dashes next to periods"
+                    );
+                }
+            } else if (next == '-') {
+                if (previous == '.') {
+                    return exception(
+                        throwOnError,
+                        "Bucket name should not contain dashes next to periods"
+                    );
+                }
+            } else if ((next < '0')
+                       || (next > '9' && next < 'a')
+                       || (next > 'z')) {
+
+                return exception(
+                     throwOnError,
+                    "Bucket name should not contain '" + next + "'"
+                );
+            }
+
+            previous = next;
+        }
+
+        if (previous == '.' || previous == '-') {
+            return exception(
+                throwOnError,
+                "Bucket name should not end with '-' or '.'"
+            );
+        }
+
+        return true;
+    }
+
+    /**
+     * If 'exception' is true, throw an IllegalArgumentException with the given
+     * message. Otherwise, silently return false.
+     *
+     * @param exception true to throw an exception
+     * @param message the message for the exception
+     * @return false if 'exception' is false
+     */
+    private boolean exception(final boolean exception, final String message) {
+        if (exception) {
+            throw new IllegalArgumentException(message);
+        }
+        return false;
     }
 }

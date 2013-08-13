@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Describe Spot Price History Result
  */
-public class DescribeSpotPriceHistoryResult  implements Serializable  {
+public class DescribeSpotPriceHistoryResult implements Serializable {
 
     private com.amazonaws.internal.ListWithAutoConstructFlag<SpotPrice> spotPriceHistory;
 

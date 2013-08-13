@@ -30,7 +30,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#setLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest)
  */
-public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The layer ID.
@@ -82,6 +82,9 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param layerId The layer ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SetLoadBasedAutoScalingRequest withLayerId(String layerId) {
         this.layerId = layerId;
@@ -113,6 +116,9 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param enable Enables load-based auto scaling for the layer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SetLoadBasedAutoScalingRequest withEnable(Boolean enable) {
         this.enable = enable;
@@ -171,6 +177,9 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest  imp
      *         threshold configuration. If the load exceeds these thresholds for a
      *         specified amount of time, AWS OpsWorks starts a specified number of
      *         instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SetLoadBasedAutoScalingRequest withUpScaling(AutoScalingThresholds upScaling) {
         this.upScaling = upScaling;
@@ -220,6 +229,9 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest  imp
      *         threshold configuration. If the load falls below these thresholds for
      *         a specified amount of time, AWS OpsWorks stops a specified number of
      *         instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SetLoadBasedAutoScalingRequest withDownScaling(AutoScalingThresholds downScaling) {
         this.downScaling = downScaling;

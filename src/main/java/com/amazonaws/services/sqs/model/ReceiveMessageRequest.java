@@ -18,20 +18,58 @@ import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#receiveMessage(ReceiveMessageRequest) ReceiveMessage operation}.
- * 
+ * <p>
+ * Retrieves one or more messages from the specified queue, including the message body and message ID of each message. Messages returned by this action
+ * stay in the queue until you delete them. However, once a message is returned to a <code>ReceiveMessage</code> request, it is not returned on
+ * subsequent <code>ReceiveMessage</code> requests for the duration of the <code>VisibilityTimeout</code> . If you do not specify a
+ * <code>VisibilityTimeout</code> in the request, the overall visibility timeout for the queue is used for the returned messages.
+ * </p>
+ * <p>
+ * If a message is available in the queue, the call will return immediately. Otherwise, it will wait up to <code>WaitTimeSeconds</code> for a message to
+ * arrive. If you do not specify <code>WaitTimeSeconds</code> in the request, the queue attribute ReceiveMessageWaitTimeSeconds is used to determine how
+ * long to wait.
+ * </p>
+ * <p>
+ * You could ask for additional information about each message through the attributes. Attributes that can be requested are <code>[SenderId,
+ * ApproximateFirstReceiveTimestamp, ApproximateReceiveCount, SentTimestamp]</code> .
+ * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#receiveMessage(ReceiveMessageRequest)
  */
-public class ReceiveMessageRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ReceiveMessageRequest extends AmazonWebServiceRequest implements Serializable {
 
+    /**
+     * The URL of the SQS queue to take action on.
+     */
     private String queueUrl;
 
+    /**
+     * A list of attributes that need to be returned along with each message.
+     * The set of valid attributes are [SenderId,
+     * ApproximateFirstReceiveTimestamp, ApproximateReceiveCount,
+     * SentTimestamp].
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> attributeNames;
 
+    /**
+     * The maximum number of messages to return. Amazon SQS never returns
+     * more messages than this value but may return fewer. <p>All of the
+     * messages are not necessarily returned.
+     */
     private Integer maxNumberOfMessages;
 
+    /**
+     * The duration (in seconds) that the received messages are hidden from
+     * subsequent retrieve requests after being retrieved by a
+     * <code>ReceiveMessage</code> request.
+     */
     private Integer visibilityTimeout;
 
+    /**
+     * The duration (in seconds) for which the call will wait for a message
+     * to arrive in the queue before returning. If a message is available,
+     * the call will return sooner than WaitTimeSeconds.
+     */
     private Integer waitTimeSeconds;
 
     /**
@@ -47,7 +85,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest  implements S
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param queueUrl
+     * @param queueUrl The URL of the SQS queue to take action on.
      */
     public ReceiveMessageRequest(String queueUrl) {
         setQueueUrl(queueUrl);
@@ -56,29 +94,32 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest  implements S
     
     
     /**
-     * Returns the value of the QueueUrl property for this object.
+     * The URL of the SQS queue to take action on.
      *
-     * @return The value of the QueueUrl property for this object.
+     * @return The URL of the SQS queue to take action on.
      */
     public String getQueueUrl() {
         return queueUrl;
     }
     
     /**
-     * Sets the value of the QueueUrl property for this object.
+     * The URL of the SQS queue to take action on.
      *
-     * @param queueUrl The new value for the QueueUrl property for this object.
+     * @param queueUrl The URL of the SQS queue to take action on.
      */
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
     
     /**
-     * Sets the value of the QueueUrl property for this object.
+     * The URL of the SQS queue to take action on.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queueUrl The new value for the QueueUrl property for this object.
+     * @param queueUrl The URL of the SQS queue to take action on.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ReceiveMessageRequest withQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
@@ -87,9 +128,15 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest  implements S
     
     
     /**
-     * Returns the value of the AttributeNames property for this object.
+     * A list of attributes that need to be returned along with each message.
+     * The set of valid attributes are [SenderId,
+     * ApproximateFirstReceiveTimestamp, ApproximateReceiveCount,
+     * SentTimestamp].
      *
-     * @return The value of the AttributeNames property for this object.
+     * @return A list of attributes that need to be returned along with each message.
+     *         The set of valid attributes are [SenderId,
+     *         ApproximateFirstReceiveTimestamp, ApproximateReceiveCount,
+     *         SentTimestamp].
      */
     public java.util.List<String> getAttributeNames() {
         
@@ -101,9 +148,15 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest  implements S
     }
     
     /**
-     * Sets the value of the AttributeNames property for this object.
+     * A list of attributes that need to be returned along with each message.
+     * The set of valid attributes are [SenderId,
+     * ApproximateFirstReceiveTimestamp, ApproximateReceiveCount,
+     * SentTimestamp].
      *
-     * @param attributeNames The new value for the AttributeNames property for this object.
+     * @param attributeNames A list of attributes that need to be returned along with each message.
+     *         The set of valid attributes are [SenderId,
+     *         ApproximateFirstReceiveTimestamp, ApproximateReceiveCount,
+     *         SentTimestamp].
      */
     public void setAttributeNames(java.util.Collection<String> attributeNames) {
         if (attributeNames == null) {
@@ -116,11 +169,20 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest  implements S
     }
     
     /**
-     * Sets the value of the AttributeNames property for this object.
+     * A list of attributes that need to be returned along with each message.
+     * The set of valid attributes are [SenderId,
+     * ApproximateFirstReceiveTimestamp, ApproximateReceiveCount,
+     * SentTimestamp].
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributeNames The new value for the AttributeNames property for this object.
+     * @param attributeNames A list of attributes that need to be returned along with each message.
+     *         The set of valid attributes are [SenderId,
+     *         ApproximateFirstReceiveTimestamp, ApproximateReceiveCount,
+     *         SentTimestamp].
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ReceiveMessageRequest withAttributeNames(String... attributeNames) {
         if (getAttributeNames() == null) setAttributeNames(new java.util.ArrayList<String>(attributeNames.length));
@@ -131,11 +193,20 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest  implements S
     }
     
     /**
-     * Sets the value of the AttributeNames property for this object.
+     * A list of attributes that need to be returned along with each message.
+     * The set of valid attributes are [SenderId,
+     * ApproximateFirstReceiveTimestamp, ApproximateReceiveCount,
+     * SentTimestamp].
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributeNames The new value for the AttributeNames property for this object.
+     * @param attributeNames A list of attributes that need to be returned along with each message.
+     *         The set of valid attributes are [SenderId,
+     *         ApproximateFirstReceiveTimestamp, ApproximateReceiveCount,
+     *         SentTimestamp].
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ReceiveMessageRequest withAttributeNames(java.util.Collection<String> attributeNames) {
         if (attributeNames == null) {
@@ -150,29 +221,44 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest  implements S
     }
     
     /**
-     * Returns the value of the MaxNumberOfMessages property for this object.
+     * The maximum number of messages to return. Amazon SQS never returns
+     * more messages than this value but may return fewer. <p>All of the
+     * messages are not necessarily returned.
      *
-     * @return The value of the MaxNumberOfMessages property for this object.
+     * @return The maximum number of messages to return. Amazon SQS never returns
+     *         more messages than this value but may return fewer. <p>All of the
+     *         messages are not necessarily returned.
      */
     public Integer getMaxNumberOfMessages() {
         return maxNumberOfMessages;
     }
     
     /**
-     * Sets the value of the MaxNumberOfMessages property for this object.
+     * The maximum number of messages to return. Amazon SQS never returns
+     * more messages than this value but may return fewer. <p>All of the
+     * messages are not necessarily returned.
      *
-     * @param maxNumberOfMessages The new value for the MaxNumberOfMessages property for this object.
+     * @param maxNumberOfMessages The maximum number of messages to return. Amazon SQS never returns
+     *         more messages than this value but may return fewer. <p>All of the
+     *         messages are not necessarily returned.
      */
     public void setMaxNumberOfMessages(Integer maxNumberOfMessages) {
         this.maxNumberOfMessages = maxNumberOfMessages;
     }
     
     /**
-     * Sets the value of the MaxNumberOfMessages property for this object.
+     * The maximum number of messages to return. Amazon SQS never returns
+     * more messages than this value but may return fewer. <p>All of the
+     * messages are not necessarily returned.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param maxNumberOfMessages The new value for the MaxNumberOfMessages property for this object.
+     * @param maxNumberOfMessages The maximum number of messages to return. Amazon SQS never returns
+     *         more messages than this value but may return fewer. <p>All of the
+     *         messages are not necessarily returned.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ReceiveMessageRequest withMaxNumberOfMessages(Integer maxNumberOfMessages) {
         this.maxNumberOfMessages = maxNumberOfMessages;
@@ -181,29 +267,44 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest  implements S
     
     
     /**
-     * Returns the value of the VisibilityTimeout property for this object.
+     * The duration (in seconds) that the received messages are hidden from
+     * subsequent retrieve requests after being retrieved by a
+     * <code>ReceiveMessage</code> request.
      *
-     * @return The value of the VisibilityTimeout property for this object.
+     * @return The duration (in seconds) that the received messages are hidden from
+     *         subsequent retrieve requests after being retrieved by a
+     *         <code>ReceiveMessage</code> request.
      */
     public Integer getVisibilityTimeout() {
         return visibilityTimeout;
     }
     
     /**
-     * Sets the value of the VisibilityTimeout property for this object.
+     * The duration (in seconds) that the received messages are hidden from
+     * subsequent retrieve requests after being retrieved by a
+     * <code>ReceiveMessage</code> request.
      *
-     * @param visibilityTimeout The new value for the VisibilityTimeout property for this object.
+     * @param visibilityTimeout The duration (in seconds) that the received messages are hidden from
+     *         subsequent retrieve requests after being retrieved by a
+     *         <code>ReceiveMessage</code> request.
      */
     public void setVisibilityTimeout(Integer visibilityTimeout) {
         this.visibilityTimeout = visibilityTimeout;
     }
     
     /**
-     * Sets the value of the VisibilityTimeout property for this object.
+     * The duration (in seconds) that the received messages are hidden from
+     * subsequent retrieve requests after being retrieved by a
+     * <code>ReceiveMessage</code> request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param visibilityTimeout The new value for the VisibilityTimeout property for this object.
+     * @param visibilityTimeout The duration (in seconds) that the received messages are hidden from
+     *         subsequent retrieve requests after being retrieved by a
+     *         <code>ReceiveMessage</code> request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ReceiveMessageRequest withVisibilityTimeout(Integer visibilityTimeout) {
         this.visibilityTimeout = visibilityTimeout;
@@ -212,29 +313,44 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest  implements S
     
     
     /**
-     * Returns the value of the WaitTimeSeconds property for this object.
+     * The duration (in seconds) for which the call will wait for a message
+     * to arrive in the queue before returning. If a message is available,
+     * the call will return sooner than WaitTimeSeconds.
      *
-     * @return The value of the WaitTimeSeconds property for this object.
+     * @return The duration (in seconds) for which the call will wait for a message
+     *         to arrive in the queue before returning. If a message is available,
+     *         the call will return sooner than WaitTimeSeconds.
      */
     public Integer getWaitTimeSeconds() {
         return waitTimeSeconds;
     }
     
     /**
-     * Sets the value of the WaitTimeSeconds property for this object.
+     * The duration (in seconds) for which the call will wait for a message
+     * to arrive in the queue before returning. If a message is available,
+     * the call will return sooner than WaitTimeSeconds.
      *
-     * @param waitTimeSeconds The new value for the WaitTimeSeconds property for this object.
+     * @param waitTimeSeconds The duration (in seconds) for which the call will wait for a message
+     *         to arrive in the queue before returning. If a message is available,
+     *         the call will return sooner than WaitTimeSeconds.
      */
     public void setWaitTimeSeconds(Integer waitTimeSeconds) {
         this.waitTimeSeconds = waitTimeSeconds;
     }
     
     /**
-     * Sets the value of the WaitTimeSeconds property for this object.
+     * The duration (in seconds) for which the call will wait for a message
+     * to arrive in the queue before returning. If a message is available,
+     * the call will return sooner than WaitTimeSeconds.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param waitTimeSeconds The new value for the WaitTimeSeconds property for this object.
+     * @param waitTimeSeconds The duration (in seconds) for which the call will wait for a message
+     *         to arrive in the queue before returning. If a message is available,
+     *         the call will return sooner than WaitTimeSeconds.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ReceiveMessageRequest withWaitTimeSeconds(Integer waitTimeSeconds) {
         this.waitTimeSeconds = waitTimeSeconds;

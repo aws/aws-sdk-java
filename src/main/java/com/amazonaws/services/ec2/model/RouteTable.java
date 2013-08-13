@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Route Table
  */
-public class RouteTable  implements Serializable  {
+public class RouteTable implements Serializable {
 
     private String routeTableId;
 

@@ -53,7 +53,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#listClosedWorkflowExecutions(ListClosedWorkflowExecutionsRequest)
  */
-public class ListClosedWorkflowExecutionsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ListClosedWorkflowExecutionsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the domain that contains the workflow executions to list.
@@ -185,6 +185,9 @@ public class ListClosedWorkflowExecutionsRequest extends AmazonWebServiceRequest
      * <b>Length: </b>1 - 256<br/>
      *
      * @param domain The name of the domain that contains the workflow executions to list.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListClosedWorkflowExecutionsRequest withDomain(String domain) {
         this.domain = domain;
@@ -252,6 +255,9 @@ public class ListClosedWorkflowExecutionsRequest extends AmazonWebServiceRequest
      *         <note><code>startTimeFilter</code> and <code>closeTimeFilter</code>
      *         are mutually exclusive. You must specify one of these in a request but
      *         not both.</note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListClosedWorkflowExecutionsRequest withStartTimeFilter(ExecutionTimeFilter startTimeFilter) {
         this.startTimeFilter = startTimeFilter;
@@ -319,6 +325,9 @@ public class ListClosedWorkflowExecutionsRequest extends AmazonWebServiceRequest
      *         <note><code>startTimeFilter</code> and <code>closeTimeFilter</code>
      *         are mutually exclusive. You must specify one of these in a request but
      *         not both.</note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListClosedWorkflowExecutionsRequest withCloseTimeFilter(ExecutionTimeFilter closeTimeFilter) {
         this.closeTimeFilter = closeTimeFilter;
@@ -374,6 +383,9 @@ public class ListClosedWorkflowExecutionsRequest extends AmazonWebServiceRequest
      *         <note><code>closeStatusFilter</code>, <code>executionFilter</code>,
      *         <code>typeFilter</code> and <code>tagFilter</code> are mutually
      *         exclusive. You can specify at most one of these in a request.</note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListClosedWorkflowExecutionsRequest withExecutionFilter(WorkflowExecutionFilter executionFilter) {
         this.executionFilter = executionFilter;
@@ -435,6 +447,9 @@ public class ListClosedWorkflowExecutionsRequest extends AmazonWebServiceRequest
      *         <note><code>closeStatusFilter</code>, <code>executionFilter</code>,
      *         <code>typeFilter</code> and <code>tagFilter</code> are mutually
      *         exclusive. You can specify at most one of these in a request.</note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListClosedWorkflowExecutionsRequest withCloseStatusFilter(CloseStatusFilter closeStatusFilter) {
         this.closeStatusFilter = closeStatusFilter;
@@ -490,6 +505,9 @@ public class ListClosedWorkflowExecutionsRequest extends AmazonWebServiceRequest
      *         <code>executionFilter</code>, <code>typeFilter</code> and
      *         <code>tagFilter</code> are mutually exclusive. You can specify at most
      *         one of these in a request.</note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListClosedWorkflowExecutionsRequest withTypeFilter(WorkflowTypeFilter typeFilter) {
         this.typeFilter = typeFilter;
@@ -539,6 +557,9 @@ public class ListClosedWorkflowExecutionsRequest extends AmazonWebServiceRequest
      *         <note><code>closeStatusFilter</code>, <code>executionFilter</code>,
      *         <code>typeFilter</code> and <code>tagFilter</code> are mutually
      *         exclusive. You can specify at most one of these in a request.</note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListClosedWorkflowExecutionsRequest withTagFilter(TagFilter tagFilter) {
         this.tagFilter = tagFilter;
@@ -597,6 +618,9 @@ public class ListClosedWorkflowExecutionsRequest extends AmazonWebServiceRequest
      *         returned, the results are being paginated. To get the next page of
      *         results, repeat the call with the returned token and all other
      *         arguments unchanged.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListClosedWorkflowExecutionsRequest withNextPageToken(String nextPageToken) {
         this.nextPageToken = nextPageToken;
@@ -667,6 +691,9 @@ public class ListClosedWorkflowExecutionsRequest extends AmazonWebServiceRequest
      *         greater than 100. Note that the number of executions may be less than
      *         the maxiumum page size, in which case, the returned page will have
      *         fewer results than the maximumPageSize specified.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListClosedWorkflowExecutionsRequest withMaximumPageSize(Integer maximumPageSize) {
         this.maximumPageSize = maximumPageSize;
@@ -710,6 +737,9 @@ public class ListClosedWorkflowExecutionsRequest extends AmazonWebServiceRequest
      * @param reverseOrder When set to <code>true</code>, returns the results in reverse order.
      *         By default the results are returned in descending order of the start
      *         or the close time of the executions.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListClosedWorkflowExecutionsRequest withReverseOrder(Boolean reverseOrder) {
         this.reverseOrder = reverseOrder;

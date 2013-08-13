@@ -25,7 +25,7 @@ import java.io.Serializable;
  * href="http://docs.amazonwebservices.com/amazonglacier/latest/dev/working-with-archives.html"> Working with Archives in Amazon Glacier </a> .
  * </p>
  */
-public class UploadArchiveResult  implements Serializable  {
+public class UploadArchiveResult implements Serializable {
 
     /**
      * The relative URI path of the newly added archive resource.
@@ -67,6 +67,9 @@ public class UploadArchiveResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param location The relative URI path of the newly added archive resource.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UploadArchiveResult withLocation(String location) {
         this.location = location;
@@ -98,6 +101,9 @@ public class UploadArchiveResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param checksum The checksum of the archive computed by Amazon Glacier.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UploadArchiveResult withChecksum(String checksum) {
         this.checksum = checksum;
@@ -135,6 +141,9 @@ public class UploadArchiveResult  implements Serializable  {
      *
      * @param archiveId The ID of the archive. This value is also included as part of the
      *         location.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UploadArchiveResult withArchiveId(String archiveId) {
         this.archiveId = archiveId;

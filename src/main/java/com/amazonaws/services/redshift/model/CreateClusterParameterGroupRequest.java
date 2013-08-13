@@ -34,7 +34,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#createClusterParameterGroup(CreateClusterParameterGroupRequest)
  */
-public class CreateClusterParameterGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateClusterParameterGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the cluster parameter group. <p> Constraints: <ul>
@@ -118,6 +118,9 @@ public class CreateClusterParameterGroupRequest extends AmazonWebServiceRequest 
      *         contain two consecutive hyphens.</li> <li>Must be unique withing your
      *         AWS account.</li> </ul> <note>This value is stored as a lower-case
      *         string.</note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateClusterParameterGroupRequest withParameterGroupName(String parameterGroupName) {
         this.parameterGroupName = parameterGroupName;
@@ -197,6 +200,9 @@ public class CreateClusterParameterGroupRequest extends AmazonWebServiceRequest 
      *         Amazon Redshift engine version. The parameter group family names
      *         associated with the default parameter groups provide you the valid
      *         values. For example, a valid family name is "redshift-1.0".
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateClusterParameterGroupRequest withParameterGroupFamily(String parameterGroupFamily) {
         this.parameterGroupFamily = parameterGroupFamily;
@@ -228,6 +234,9 @@ public class CreateClusterParameterGroupRequest extends AmazonWebServiceRequest 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description A description of the parameter group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateClusterParameterGroupRequest withDescription(String description) {
         this.description = description;

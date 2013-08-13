@@ -26,7 +26,7 @@ import java.io.Serializable;
  * 
  * </ul>
  */
-public class ListLocalDisksResult  implements Serializable  {
+public class ListLocalDisksResult implements Serializable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -88,6 +88,9 @@ public class ListLocalDisksResult  implements Serializable  {
      * @param gatewayARN The Amazon Resource Name (ARN) of the gateway. Use the
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListLocalDisksResult withGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
@@ -130,6 +133,9 @@ public class ListLocalDisksResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param disks An array of <a>Disk</a> objects.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListLocalDisksResult withDisks(Disk... disks) {
         if (getDisks() == null) setDisks(new java.util.ArrayList<Disk>(disks.length));
@@ -145,6 +151,9 @@ public class ListLocalDisksResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param disks An array of <a>Disk</a> objects.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListLocalDisksResult withDisks(java.util.Collection<Disk> disks) {
         if (disks == null) {

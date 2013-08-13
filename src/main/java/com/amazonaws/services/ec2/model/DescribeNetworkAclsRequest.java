@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.DescribeNetworkAclsRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -37,7 +39,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeNetworkAcls(DescribeNetworkAclsRequest)
  */
-public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeNetworkAclsRequest> {
 
     /**
      * One or more network ACL IDs.
@@ -221,6 +223,18 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest  impleme
         }
 
         return this;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<DescribeNetworkAclsRequest> getDryRunRequest() {
+        Request<DescribeNetworkAclsRequest> request = new DescribeNetworkAclsRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

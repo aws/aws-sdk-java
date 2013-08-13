@@ -21,7 +21,7 @@ import java.io.Serializable;
  * request.
  * </p>
  */
-public class MonitorInstancesResult  implements Serializable  {
+public class MonitorInstancesResult implements Serializable {
 
     /**
      * A list of updated monitoring information for the instances specified

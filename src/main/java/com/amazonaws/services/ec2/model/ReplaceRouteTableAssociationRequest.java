@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.ReplaceRouteTableAssociationRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -31,7 +33,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#replaceRouteTableAssociation(ReplaceRouteTableAssociationRequest)
  */
-public class ReplaceRouteTableAssociationRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ReplaceRouteTableAssociationRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ReplaceRouteTableAssociationRequest> {
 
     /**
      * The ID representing the current association between the original route
@@ -117,6 +119,18 @@ public class ReplaceRouteTableAssociationRequest extends AmazonWebServiceRequest
         return this;
     }
     
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<ReplaceRouteTableAssociationRequest> getDryRunRequest() {
+        Request<ReplaceRouteTableAssociationRequest> request = new ReplaceRouteTableAssociationRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

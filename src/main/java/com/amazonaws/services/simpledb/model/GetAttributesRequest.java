@@ -32,7 +32,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.simpledb.AmazonSimpleDB#getAttributes(GetAttributesRequest)
  */
-public class GetAttributesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class GetAttributesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the domain in which to perform the operation.
@@ -106,6 +106,9 @@ public class GetAttributesRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param domainName The name of the domain in which to perform the operation.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetAttributesRequest withDomainName(String domainName) {
         this.domainName = domainName;
@@ -137,6 +140,9 @@ public class GetAttributesRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param itemName The name of the item.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetAttributesRequest withItemName(String itemName) {
         this.itemName = itemName;
@@ -179,6 +185,9 @@ public class GetAttributesRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributeNames The names of the attributes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetAttributesRequest withAttributeNames(String... attributeNames) {
         if (getAttributeNames() == null) setAttributeNames(new java.util.ArrayList<String>(attributeNames.length));
@@ -194,6 +203,9 @@ public class GetAttributesRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributeNames The names of the attributes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetAttributesRequest withAttributeNames(java.util.Collection<String> attributeNames) {
         if (attributeNames == null) {
@@ -255,6 +267,9 @@ public class GetAttributesRequest extends AmazonWebServiceRequest  implements Se
      *         written to SimpleDB will be returned. Otherwise, results will be
      *         consistent eventually, and the client may not see data that was
      *         written immediately before your read.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetAttributesRequest withConsistentRead(Boolean consistentRead) {
         this.consistentRead = consistentRead;

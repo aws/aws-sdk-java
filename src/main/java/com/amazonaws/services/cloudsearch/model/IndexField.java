@@ -21,7 +21,7 @@ import java.io.Serializable;
  * will be present. It is invalid to specify options for a type other than the <code>IndexFieldType</code> .
  * </p>
  */
-public class IndexField  implements Serializable  {
+public class IndexField implements Serializable {
 
     /**
      * The name of a field in the search index. Field names must begin with a
@@ -135,6 +135,9 @@ public class IndexField  implements Serializable  {
      *         and _ (underscore). Uppercase letters and hyphens are not allowed. The
      *         names "body", "docid", and "text_relevance" are reserved and cannot be
      *         specified as field or rank expression names.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public IndexField withIndexFieldName(String indexFieldName) {
         this.indexFieldName = indexFieldName;
@@ -192,6 +195,9 @@ public class IndexField  implements Serializable  {
      *         <a>UIntOptions</a>, <a>LiteralOptions</a> or <a>TextOptions</a> must
      *         be present.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see IndexFieldType
      */
     public IndexField withIndexFieldType(String indexFieldType) {
@@ -231,6 +237,9 @@ public class IndexField  implements Serializable  {
      * @param indexFieldType The type of field. Based on this type, exactly one of the
      *         <a>UIntOptions</a>, <a>LiteralOptions</a> or <a>TextOptions</a> must
      *         be present.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see IndexFieldType
      */
@@ -275,6 +284,9 @@ public class IndexField  implements Serializable  {
      * @param uIntOptions Options for an unsigned integer field. Present if
      *         <code>IndexFieldType</code> specifies the field is of type unsigned
      *         integer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public IndexField withUIntOptions(UIntOptions uIntOptions) {
         this.uIntOptions = uIntOptions;
@@ -312,6 +324,9 @@ public class IndexField  implements Serializable  {
      *
      * @param literalOptions Options for literal field. Present if <code>IndexFieldType</code>
      *         specifies the field is of type literal.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public IndexField withLiteralOptions(LiteralOptions literalOptions) {
         this.literalOptions = literalOptions;
@@ -349,6 +364,9 @@ public class IndexField  implements Serializable  {
      *
      * @param textOptions Options for text field. Present if <code>IndexFieldType</code>
      *         specifies the field is of type text.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public IndexField withTextOptions(TextOptions textOptions) {
         this.textOptions = textOptions;
@@ -421,6 +439,9 @@ public class IndexField  implements Serializable  {
      *         source attributes are specified, an optional data transformation can
      *         be applied to the source data when populating the index field. You can
      *         configure a maximum of 20 sources for an <code>IndexField</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public IndexField withSourceAttributes(SourceAttribute... sourceAttributes) {
         if (getSourceAttributes() == null) setSourceAttributes(new java.util.ArrayList<SourceAttribute>(sourceAttributes.length));
@@ -446,6 +467,9 @@ public class IndexField  implements Serializable  {
      *         source attributes are specified, an optional data transformation can
      *         be applied to the source data when populating the index field. You can
      *         configure a maximum of 20 sources for an <code>IndexField</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public IndexField withSourceAttributes(java.util.Collection<SourceAttribute> sourceAttributes) {
         if (sourceAttributes == null) {

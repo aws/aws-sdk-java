@@ -111,6 +111,9 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param topicArn The ARN of the topic whose access control policy you wish to modify.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
      */
     public AddPermissionRequest withTopicArn(String topicArn) {
         this.topicArn = topicArn;
@@ -142,6 +145,9 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param label A unique identifier for the new policy statement.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
      */
     public AddPermissionRequest withLabel(String label) {
         this.label = label;
@@ -214,6 +220,9 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
      *         locating the AWS account identification, see <a
      *         href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/index.html?AWSCredentials.html">Your
      *         AWS Identifiers</aulink> in the &service; Developer Guide.-->
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
      */
     public AddPermissionRequest withAWSAccountIds(String... aWSAccountIds) {
         if (getAWSAccountIds() == null) setAWSAccountIds(new java.util.ArrayList<String>(aWSAccountIds.length));
@@ -239,6 +248,9 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
      *         locating the AWS account identification, see <a
      *         href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/index.html?AWSCredentials.html">Your
      *         AWS Identifiers</aulink> in the &service; Developer Guide.-->
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
      */
     public AddPermissionRequest withAWSAccountIds(java.util.Collection<String> aWSAccountIds) {
         if (aWSAccountIds == null) {
@@ -293,6 +305,9 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
      *
      * @param actionNames The action you want to allow for the specified principal(s). <p>Valid
      *         values: any Amazon SNS action name.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
      */
     public AddPermissionRequest withActionNames(String... actionNames) {
         if (getActionNames() == null) setActionNames(new java.util.ArrayList<String>(actionNames.length));
@@ -310,6 +325,9 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
      *
      * @param actionNames The action you want to allow for the specified principal(s). <p>Valid
      *         values: any Amazon SNS action name.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
      */
     public AddPermissionRequest withActionNames(java.util.Collection<String> actionNames) {
         if (actionNames == null) {

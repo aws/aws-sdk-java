@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteEventSubscription(DeleteEventSubscriptionRequest)
  */
-public class DeleteEventSubscriptionRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteEventSubscriptionRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the RDS event notification subscription you want to
@@ -62,6 +62,9 @@ public class DeleteEventSubscriptionRequest extends AmazonWebServiceRequest  imp
      *
      * @param subscriptionName The name of the RDS event notification subscription you want to
      *         delete.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteEventSubscriptionRequest withSubscriptionName(String subscriptionName) {
         this.subscriptionName = subscriptionName;

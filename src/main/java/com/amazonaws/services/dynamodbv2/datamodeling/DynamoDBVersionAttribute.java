@@ -28,6 +28,11 @@ import java.lang.annotation.Target;
  * version properties. On a save() operation, the {@link DynamoDBMapper} will
  * attempt to increment the version property and assert that the service's value
  * matches the client's. New objects will be assigned a version of 1 when saved.
+ * <p>
+ * Note that for batchWrite, and by extension batchSave and batchDelete, <b>no
+ * version checks are performed</b>, as required by the
+ * {@link com.amazonaws.services.dynamodbv2.AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)}
+ * API.
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes the settings for a configuration set.
  * </p>
  */
-public class UpdateConfigurationTemplateResult  implements Serializable  {
+public class UpdateConfigurationTemplateResult implements Serializable {
 
     /**
      * The name of the solution stack this configuration set uses.
@@ -139,6 +139,9 @@ public class UpdateConfigurationTemplateResult  implements Serializable  {
      * <b>Length: </b>0 - 100<br/>
      *
      * @param solutionStackName The name of the solution stack this configuration set uses.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateConfigurationTemplateResult withSolutionStackName(String solutionStackName) {
         this.solutionStackName = solutionStackName;
@@ -179,6 +182,9 @@ public class UpdateConfigurationTemplateResult  implements Serializable  {
      * <b>Length: </b>1 - 100<br/>
      *
      * @param applicationName The name of the application associated with this configuration set.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateConfigurationTemplateResult withApplicationName(String applicationName) {
         this.applicationName = applicationName;
@@ -225,6 +231,9 @@ public class UpdateConfigurationTemplateResult  implements Serializable  {
      *
      * @param templateName If not <code>null</code>, the name of the configuration template for
      *         this configuration set.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateConfigurationTemplateResult withTemplateName(String templateName) {
         this.templateName = templateName;
@@ -265,6 +274,9 @@ public class UpdateConfigurationTemplateResult  implements Serializable  {
      * <b>Length: </b>0 - 200<br/>
      *
      * @param description Describes this configuration set.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateConfigurationTemplateResult withDescription(String description) {
         this.description = description;
@@ -311,6 +323,9 @@ public class UpdateConfigurationTemplateResult  implements Serializable  {
      *
      * @param environmentName If not <code>null</code>, the name of the environment for this
      *         configuration set.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateConfigurationTemplateResult withEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
@@ -464,6 +479,9 @@ public class UpdateConfigurationTemplateResult  implements Serializable  {
      *         </li> <li> <code>failed</code>: This is a draft configuration that
      *         failed to successfully deploy. </li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ConfigurationDeploymentStatus
      */
     public UpdateConfigurationTemplateResult withDeploymentStatus(String deploymentStatus) {
@@ -568,6 +586,9 @@ public class UpdateConfigurationTemplateResult  implements Serializable  {
      *         </li> <li> <code>failed</code>: This is a draft configuration that
      *         failed to successfully deploy. </li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ConfigurationDeploymentStatus
      */
     public UpdateConfigurationTemplateResult withDeploymentStatus(ConfigurationDeploymentStatus deploymentStatus) {
@@ -599,6 +620,9 @@ public class UpdateConfigurationTemplateResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dateCreated The date (in UTC time) when this configuration set was created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateConfigurationTemplateResult withDateCreated(java.util.Date dateCreated) {
         this.dateCreated = dateCreated;
@@ -630,6 +654,9 @@ public class UpdateConfigurationTemplateResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dateUpdated The date (in UTC time) when this configuration set was last modified.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateConfigurationTemplateResult withDateUpdated(java.util.Date dateUpdated) {
         this.dateUpdated = dateUpdated;
@@ -678,6 +705,9 @@ public class UpdateConfigurationTemplateResult  implements Serializable  {
      *
      * @param optionSettings A list of the configuration options and their values in this
      *         configuration set.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateConfigurationTemplateResult withOptionSettings(ConfigurationOptionSetting... optionSettings) {
         if (getOptionSettings() == null) setOptionSettings(new java.util.ArrayList<ConfigurationOptionSetting>(optionSettings.length));
@@ -695,6 +725,9 @@ public class UpdateConfigurationTemplateResult  implements Serializable  {
      *
      * @param optionSettings A list of the configuration options and their values in this
      *         configuration set.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateConfigurationTemplateResult withOptionSettings(java.util.Collection<ConfigurationOptionSetting> optionSettings) {
         if (optionSettings == null) {

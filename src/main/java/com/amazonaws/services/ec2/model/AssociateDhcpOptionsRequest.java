@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.AssociateDhcpOptionsRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -27,7 +29,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#associateDhcpOptions(AssociateDhcpOptionsRequest)
  */
-public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<AssociateDhcpOptionsRequest> {
 
     /**
      * The ID of the DHCP options to associate with the VPC. Specify
@@ -134,6 +136,18 @@ public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest  implem
         return this;
     }
     
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<AssociateDhcpOptionsRequest> getDryRunRequest() {
+        Request<AssociateDhcpOptionsRequest> request = new AssociateDhcpOptionsRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

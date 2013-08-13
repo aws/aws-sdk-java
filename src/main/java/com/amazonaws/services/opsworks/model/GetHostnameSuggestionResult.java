@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the response to a <code>GetHostnameSuggestion</code> request.
  * </p>
  */
-public class GetHostnameSuggestionResult  implements Serializable  {
+public class GetHostnameSuggestionResult implements Serializable {
 
     /**
      * The layer ID.
@@ -56,6 +56,9 @@ public class GetHostnameSuggestionResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param layerId The layer ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetHostnameSuggestionResult withLayerId(String layerId) {
         this.layerId = layerId;
@@ -87,6 +90,9 @@ public class GetHostnameSuggestionResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param hostname The generated host name.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetHostnameSuggestionResult withHostname(String hostname) {
         this.hostname = hostname;

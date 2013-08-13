@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.CancelConversionTaskRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -22,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#cancelConversionTask(CancelConversionTaskRequest)
  */
-public class CancelConversionTaskRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CancelConversionTaskRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CancelConversionTaskRequest> {
 
     private String conversionTaskId;
 
@@ -95,6 +97,18 @@ public class CancelConversionTaskRequest extends AmazonWebServiceRequest  implem
         return this;
     }
     
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<CancelConversionTaskRequest> getDryRunRequest() {
+        Request<CancelConversionTaskRequest> request = new CancelConversionTaskRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

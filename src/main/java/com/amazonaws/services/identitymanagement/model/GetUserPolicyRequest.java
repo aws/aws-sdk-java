@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getUserPolicy(GetUserPolicyRequest)
  */
-public class GetUserPolicyRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class GetUserPolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the user who the policy is associated with.
@@ -104,6 +104,9 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest  implements Se
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param userName Name of the user who the policy is associated with.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetUserPolicyRequest withUserName(String userName) {
         this.userName = userName;
@@ -147,6 +150,9 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest  implements Se
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param policyName Name of the policy document to get.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetUserPolicyRequest withPolicyName(String policyName) {
         this.policyName = policyName;

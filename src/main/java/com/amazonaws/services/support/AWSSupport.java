@@ -134,7 +134,7 @@ public interface AWSSupport {
      * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      */
     public void setRegion(Region region) throws java.lang.IllegalArgumentException;
-	
+    
     /**
      * <p>
      * This action returns a list of cases that you specify by passing one or

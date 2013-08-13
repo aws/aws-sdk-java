@@ -26,7 +26,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeEvents(DescribeEventsRequest)
  */
-public class DescribeEventsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeEventsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The identifier of the event source for which events will be returned.
@@ -179,6 +179,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      *         must be supplied.</li> <li>If the source type is DBSnapshot, a
      *         DBSnapshotIdentifier must be supplied.</li> <li>Cannot end with a
      *         hyphen or contain two consecutive hyphens.</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEventsRequest withSourceIdentifier(String sourceIdentifier) {
         this.sourceIdentifier = sourceIdentifier;
@@ -230,6 +233,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      * @param sourceType The event source to retrieve events for. If no value is specified, all
      *         events are returned.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see SourceType
      */
     public DescribeEventsRequest withSourceType(String sourceType) {
@@ -265,6 +271,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      *
      * @param sourceType The event source to retrieve events for. If no value is specified, all
      *         events are returned.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see SourceType
      */
@@ -315,6 +324,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      *         in ISO 8601 format. For more information about ISO 8601, go to the <a
      *         href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
      *         page.</a> <p>Example: 2009-07-08T18:00Z
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEventsRequest withStartTime(java.util.Date startTime) {
         this.startTime = startTime;
@@ -364,6 +376,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      *         in ISO 8601 format. For more information about ISO 8601, go to the <a
      *         href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
      *         page.</a> <p>Example: 2009-07-08T18:00Z
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEventsRequest withEndTime(java.util.Date endTime) {
         this.endTime = endTime;
@@ -395,6 +410,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param duration The number of minutes to retrieve events for. <p>Default: 60
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEventsRequest withDuration(Integer duration) {
         this.duration = duration;
@@ -443,6 +461,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      *
      * @param eventCategories A list of event categories that trigger notifications for a event
      *         notification subscription.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEventsRequest withEventCategories(String... eventCategories) {
         if (getEventCategories() == null) setEventCategories(new java.util.ArrayList<String>(eventCategories.length));
@@ -460,6 +481,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      *
      * @param eventCategories A list of event categories that trigger notifications for a event
      *         notification subscription.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEventsRequest withEventCategories(java.util.Collection<String> eventCategories) {
         if (eventCategories == null) {
@@ -521,6 +545,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      *         pagination token called a marker is included in the response so that
      *         the remaining results may be retrieved. <p>Default: 100
      *         <p>Constraints: minimum 20, maximum 100
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEventsRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -570,6 +597,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      *         request. If this parameter is specified, the response includes only
      *         records beyond the marker, up to the value specified by
      *         <code>MaxRecords</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEventsRequest withMarker(String marker) {
         this.marker = marker;

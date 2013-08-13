@@ -27,7 +27,7 @@ import java.io.Serializable;
  * 
  * </p>
  */
-public class Filter  implements Serializable  {
+public class Filter implements Serializable {
 
     /**
      * Specifies the name of the filter.

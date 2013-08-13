@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents the output of a <i>Query</i> operation.
  * </p>
  */
-public class QueryResult  implements Serializable  {
+public class QueryResult implements Serializable {
 
     /**
      * An array of item attributes that match the query criteria. Each
@@ -96,6 +96,9 @@ public class QueryResult  implements Serializable  {
      * @param items An array of item attributes that match the query criteria. Each
      *         element in this array consists of an attribute name and the value for
      *         that attribute.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public QueryResult withItems(java.util.Map<String,AttributeValue>... items) {
         if (getItems() == null) setItems(new java.util.ArrayList<java.util.Map<String,AttributeValue>>(items.length));
@@ -115,6 +118,9 @@ public class QueryResult  implements Serializable  {
      * @param items An array of item attributes that match the query criteria. Each
      *         element in this array consists of an attribute name and the value for
      *         that attribute.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public QueryResult withItems(java.util.Collection<java.util.Map<String,AttributeValue>> items) {
         if (items == null) {
@@ -152,6 +158,9 @@ public class QueryResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param count The number of items in the response.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public QueryResult withCount(Integer count) {
         this.count = count;
@@ -208,6 +217,9 @@ public class QueryResult  implements Serializable  {
      *         excluding this value in the new request. <p><i>LastEvaluatedKey</i> is
      *         null when the entire result set is complete (in other words, when the
      *         operation processed the "last page" of results).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public QueryResult withLastEvaluatedKey(java.util.Map<String,AttributeValue> lastEvaluatedKey) {
         setLastEvaluatedKey(lastEvaluatedKey);
@@ -303,6 +315,9 @@ public class QueryResult  implements Serializable  {
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
      *         Throughput</a> in the Amazon DynamoDB Developer Guide.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public QueryResult withConsumedCapacity(ConsumedCapacity consumedCapacity) {
         this.consumedCapacity = consumedCapacity;

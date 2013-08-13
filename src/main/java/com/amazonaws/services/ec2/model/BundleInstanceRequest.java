@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.BundleInstanceRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -25,7 +27,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#bundleInstance(BundleInstanceRequest)
  */
-public class BundleInstanceRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class BundleInstanceRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<BundleInstanceRequest> {
 
     /**
      * The ID of the instance to bundle.
@@ -127,6 +129,18 @@ public class BundleInstanceRequest extends AmazonWebServiceRequest  implements S
         return this;
     }
     
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<BundleInstanceRequest> getDryRunRequest() {
+        Request<BundleInstanceRequest> request = new BundleInstanceRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

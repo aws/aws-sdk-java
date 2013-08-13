@@ -28,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#createOrUpdateTags(CreateOrUpdateTagsRequest)
  */
-public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The tag to be created or updated. Each tag should be defined by its
@@ -175,6 +175,9 @@ public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest  implemen
      *         will continue to have the older tag. <p>When you create a tag and a
      *         tag of the same name already exists, the operation overwrites the
      *         previous tag definition, but you will not get an error message.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateOrUpdateTagsRequest withTags(Tag... tags) {
         if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
@@ -220,6 +223,9 @@ public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest  implemen
      *         will continue to have the older tag. <p>When you create a tag and a
      *         tag of the same name already exists, the operation overwrites the
      *         previous tag definition, but you will not get an error message.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateOrUpdateTagsRequest withTags(java.util.Collection<Tag> tags) {
         if (tags == null) {

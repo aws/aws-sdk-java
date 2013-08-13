@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The returned result of the corresponding request.
  * </p>
  */
-public class CreateCloudFrontOriginAccessIdentityResult  implements Serializable  {
+public class CreateCloudFrontOriginAccessIdentityResult implements Serializable {
 
     /**
      * The origin access identity's information.
@@ -63,6 +63,9 @@ public class CreateCloudFrontOriginAccessIdentityResult  implements Serializable
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cloudFrontOriginAccessIdentity The origin access identity's information.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateCloudFrontOriginAccessIdentityResult withCloudFrontOriginAccessIdentity(CloudFrontOriginAccessIdentity cloudFrontOriginAccessIdentity) {
         this.cloudFrontOriginAccessIdentity = cloudFrontOriginAccessIdentity;
@@ -106,6 +109,9 @@ public class CreateCloudFrontOriginAccessIdentityResult  implements Serializable
      * @param location The fully qualified URI of the new origin access identity just
      *         created. For example:
      *         https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateCloudFrontOriginAccessIdentityResult withLocation(String location) {
         this.location = location;
@@ -137,6 +143,9 @@ public class CreateCloudFrontOriginAccessIdentityResult  implements Serializable
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eTag The current version of the origin access identity created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateCloudFrontOriginAccessIdentityResult withETag(String eTag) {
         this.eTag = eTag;

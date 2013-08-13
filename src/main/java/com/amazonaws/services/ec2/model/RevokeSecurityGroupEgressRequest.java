@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.RevokeSecurityGroupEgressRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -36,7 +38,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#revokeSecurityGroupEgress(RevokeSecurityGroupEgressRequest)
  */
-public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<RevokeSecurityGroupEgressRequest> {
 
     /**
      * ID of the VPC security group to modify.
@@ -401,6 +403,18 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest  i
         }
 
         return this;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<RevokeSecurityGroupEgressRequest> getDryRunRequest() {
+        Request<RevokeSecurityGroupEgressRequest> request = new RevokeSecurityGroupEgressRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

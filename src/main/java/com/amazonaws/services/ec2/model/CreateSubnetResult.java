@@ -20,7 +20,7 @@ import java.io.Serializable;
  * 
  * </p>
  */
-public class CreateSubnetResult  implements Serializable  {
+public class CreateSubnetResult implements Serializable {
 
     /**
      * 

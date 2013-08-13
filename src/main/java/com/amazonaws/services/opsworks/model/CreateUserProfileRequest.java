@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#createUserProfile(CreateUserProfileRequest)
  */
-public class CreateUserProfileRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateUserProfileRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The user's IAM ARN.
@@ -65,6 +65,9 @@ public class CreateUserProfileRequest extends AmazonWebServiceRequest  implement
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param iamUserArn The user's IAM ARN.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateUserProfileRequest withIamUserArn(String iamUserArn) {
         this.iamUserArn = iamUserArn;
@@ -96,6 +99,9 @@ public class CreateUserProfileRequest extends AmazonWebServiceRequest  implement
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sshUsername The user's SSH user name.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateUserProfileRequest withSshUsername(String sshUsername) {
         this.sshUsername = sshUsername;
@@ -127,6 +133,9 @@ public class CreateUserProfileRequest extends AmazonWebServiceRequest  implement
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sshPublicKey The user's public SSH key.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateUserProfileRequest withSshPublicKey(String sshPublicKey) {
         this.sshPublicKey = sshPublicKey;

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the GetSessionToken action.
  * </p>
  */
-public class GetSessionTokenResult  implements Serializable  {
+public class GetSessionTokenResult implements Serializable {
 
     /**
      * The session credentials for API authentication.
@@ -51,6 +51,9 @@ public class GetSessionTokenResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param credentials The session credentials for API authentication.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetSessionTokenResult withCredentials(Credentials credentials) {
         this.credentials = credentials;

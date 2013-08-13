@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeScalingProcessTypes(DescribeScalingProcessTypesRequest)
  */
-public class DescribeScalingProcessTypesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeScalingProcessTypesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Returns a string representation of this object; useful for testing and

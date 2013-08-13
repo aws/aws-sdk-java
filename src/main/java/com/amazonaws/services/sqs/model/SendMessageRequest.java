@@ -18,16 +18,27 @@ import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#sendMessage(SendMessageRequest) SendMessage operation}.
- * 
+ * <p>
+ * The <code>SendMessage</code> action delivers a message to the specified queue.
+ * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#sendMessage(SendMessageRequest)
  */
-public class SendMessageRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class SendMessageRequest extends AmazonWebServiceRequest implements Serializable {
 
+    /**
+     * The URL of the SQS queue to take action on.
+     */
     private String queueUrl;
 
+    /**
+     * The message to send.
+     */
     private String messageBody;
 
+    /**
+     * The number of seconds the message has to be delayed.
+     */
     private Integer delaySeconds;
 
     /**
@@ -43,8 +54,8 @@ public class SendMessageRequest extends AmazonWebServiceRequest  implements Seri
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param queueUrl
-     * @param messageBody
+     * @param queueUrl The URL of the SQS queue to take action on.
+     * @param messageBody The message to send.
      */
     public SendMessageRequest(String queueUrl, String messageBody) {
         setQueueUrl(queueUrl);
@@ -54,29 +65,32 @@ public class SendMessageRequest extends AmazonWebServiceRequest  implements Seri
     
     
     /**
-     * Returns the value of the QueueUrl property for this object.
+     * The URL of the SQS queue to take action on.
      *
-     * @return The value of the QueueUrl property for this object.
+     * @return The URL of the SQS queue to take action on.
      */
     public String getQueueUrl() {
         return queueUrl;
     }
     
     /**
-     * Sets the value of the QueueUrl property for this object.
+     * The URL of the SQS queue to take action on.
      *
-     * @param queueUrl The new value for the QueueUrl property for this object.
+     * @param queueUrl The URL of the SQS queue to take action on.
      */
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
     
     /**
-     * Sets the value of the QueueUrl property for this object.
+     * The URL of the SQS queue to take action on.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queueUrl The new value for the QueueUrl property for this object.
+     * @param queueUrl The URL of the SQS queue to take action on.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SendMessageRequest withQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
@@ -85,29 +99,32 @@ public class SendMessageRequest extends AmazonWebServiceRequest  implements Seri
     
     
     /**
-     * Returns the value of the MessageBody property for this object.
+     * The message to send.
      *
-     * @return The value of the MessageBody property for this object.
+     * @return The message to send.
      */
     public String getMessageBody() {
         return messageBody;
     }
     
     /**
-     * Sets the value of the MessageBody property for this object.
+     * The message to send.
      *
-     * @param messageBody The new value for the MessageBody property for this object.
+     * @param messageBody The message to send.
      */
     public void setMessageBody(String messageBody) {
         this.messageBody = messageBody;
     }
     
     /**
-     * Sets the value of the MessageBody property for this object.
+     * The message to send.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param messageBody The new value for the MessageBody property for this object.
+     * @param messageBody The message to send.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SendMessageRequest withMessageBody(String messageBody) {
         this.messageBody = messageBody;
@@ -116,29 +133,32 @@ public class SendMessageRequest extends AmazonWebServiceRequest  implements Seri
     
     
     /**
-     * Returns the value of the DelaySeconds property for this object.
+     * The number of seconds the message has to be delayed.
      *
-     * @return The value of the DelaySeconds property for this object.
+     * @return The number of seconds the message has to be delayed.
      */
     public Integer getDelaySeconds() {
         return delaySeconds;
     }
     
     /**
-     * Sets the value of the DelaySeconds property for this object.
+     * The number of seconds the message has to be delayed.
      *
-     * @param delaySeconds The new value for the DelaySeconds property for this object.
+     * @param delaySeconds The number of seconds the message has to be delayed.
      */
     public void setDelaySeconds(Integer delaySeconds) {
         this.delaySeconds = delaySeconds;
     }
     
     /**
-     * Sets the value of the DelaySeconds property for this object.
+     * The number of seconds the message has to be delayed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param delaySeconds The new value for the DelaySeconds property for this object.
+     * @param delaySeconds The number of seconds the message has to be delayed.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SendMessageRequest withDelaySeconds(Integer delaySeconds) {
         this.delaySeconds = delaySeconds;

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The value of an <code>IndexField</code> and its current status.
  * </p>
  */
-public class IndexFieldStatus  implements Serializable  {
+public class IndexFieldStatus implements Serializable {
 
     /**
      * Defines a field in the index, including its name, type, and the source
@@ -78,6 +78,9 @@ public class IndexFieldStatus  implements Serializable  {
      *         of its data. The <code>IndexFieldType</code> indicates which of the
      *         options will be present. It is invalid to specify options for a type
      *         other than the <code>IndexFieldType</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public IndexFieldStatus withOptions(IndexField options) {
         this.options = options;
@@ -115,6 +118,9 @@ public class IndexFieldStatus  implements Serializable  {
      *
      * @param status The status of an option, including when it was last updated and
      *         whether it is actively in use for searches.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public IndexFieldStatus withStatus(OptionStatus status) {
         this.status = status;

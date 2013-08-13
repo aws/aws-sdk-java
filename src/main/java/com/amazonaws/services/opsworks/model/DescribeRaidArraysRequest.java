@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeRaidArrays(DescribeRaidArraysRequest)
  */
-public class DescribeRaidArraysRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeRaidArraysRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The instance ID. If you use this parameter,
@@ -76,6 +76,9 @@ public class DescribeRaidArraysRequest extends AmazonWebServiceRequest  implemen
      * @param instanceId The instance ID. If you use this parameter,
      *         <code>DescribeRaidArrays</code> returns descriptions of the RAID
      *         arrays associated with the specified instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeRaidArraysRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -130,6 +133,9 @@ public class DescribeRaidArraysRequest extends AmazonWebServiceRequest  implemen
      * @param raidArrayIds An array of RAID array IDs. If you use this parameter,
      *         <code>DescribeRaidArrays</code> returns descriptions of the specified
      *         arrays. Otherwise, it returns a description of every array.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeRaidArraysRequest withRaidArrayIds(String... raidArrayIds) {
         if (getRaidArrayIds() == null) setRaidArrayIds(new java.util.ArrayList<String>(raidArrayIds.length));
@@ -149,6 +155,9 @@ public class DescribeRaidArraysRequest extends AmazonWebServiceRequest  implemen
      * @param raidArrayIds An array of RAID array IDs. If you use this parameter,
      *         <code>DescribeRaidArrays</code> returns descriptions of the specified
      *         arrays. Otherwise, it returns a description of every array.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeRaidArraysRequest withRaidArrayIds(java.util.Collection<String> raidArrayIds) {
         if (raidArrayIds == null) {

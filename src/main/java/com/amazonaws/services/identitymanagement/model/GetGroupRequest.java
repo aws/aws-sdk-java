@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getGroup(GetGroupRequest)
  */
-public class GetGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class GetGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the group.
@@ -116,6 +116,9 @@ public class GetGroupRequest extends AmazonWebServiceRequest  implements Seriali
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param groupName Name of the group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetGroupRequest withGroupName(String groupName) {
         this.groupName = groupName;
@@ -177,6 +180,9 @@ public class GetGroupRequest extends AmazonWebServiceRequest  implements Seriali
      *         request after you've received a response where the results are
      *         truncated. Set it to the value of the <code>Marker</code> element in
      *         the response you just received.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetGroupRequest withMarker(String marker) {
         this.marker = marker;
@@ -235,6 +241,9 @@ public class GetGroupRequest extends AmazonWebServiceRequest  implements Seriali
      *         of user names you want in the response. If there are additional user
      *         names beyond the maximum you specify, the <code>IsTruncated</code>
      *         response element is <code>true</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetGroupRequest withMaxItems(Integer maxItems) {
         this.maxItems = maxItems;

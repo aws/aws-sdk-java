@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Account Attribute Value
  */
-public class AccountAttributeValue  implements Serializable  {
+public class AccountAttributeValue implements Serializable {
 
     private String attributeValue;
 

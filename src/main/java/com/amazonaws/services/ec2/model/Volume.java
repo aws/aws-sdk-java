@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents an Amazon <i>Elastic Block Storage</i> (EBS) volume.
  * </p>
  */
-public class Volume  implements Serializable  {
+public class Volume implements Serializable {
 
     /**
      * The unique ID of this volume.

@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Reserved Instances Listing
  */
-public class ReservedInstancesListing  implements Serializable  {
+public class ReservedInstancesListing implements Serializable {
 
     private String reservedInstancesListingId;
 

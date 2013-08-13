@@ -33,7 +33,7 @@ import java.io.Serializable;
  * 
  * </ul>
  */
-public class DBParameterGroupStatus  implements Serializable  {
+public class DBParameterGroupStatus implements Serializable {
 
     /**
      * The name of the DP Parameter Group.
@@ -75,6 +75,9 @@ public class DBParameterGroupStatus  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBParameterGroupName The name of the DP Parameter Group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBParameterGroupStatus withDBParameterGroupName(String dBParameterGroupName) {
         this.dBParameterGroupName = dBParameterGroupName;
@@ -106,6 +109,9 @@ public class DBParameterGroupStatus  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameterApplyStatus The status of parameter updates.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBParameterGroupStatus withParameterApplyStatus(String parameterApplyStatus) {
         this.parameterApplyStatus = parameterApplyStatus;

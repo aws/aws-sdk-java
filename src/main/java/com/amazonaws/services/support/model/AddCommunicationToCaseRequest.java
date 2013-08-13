@@ -32,7 +32,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.support.AWSSupport#addCommunicationToCase(AddCommunicationToCaseRequest)
  */
-public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * String that indicates the AWS Support caseID requested or returned in
@@ -95,6 +95,9 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest  impl
      * @param caseId String that indicates the AWS Support caseID requested or returned in
      *         the call. The caseID is an alphanumeric string formatted as shown in
      *         this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AddCommunicationToCaseRequest withCaseId(String caseId) {
         this.caseId = caseId;
@@ -141,6 +144,9 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest  impl
      *
      * @param communicationBody Represents the body of an email communication added to the support
      *         case.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AddCommunicationToCaseRequest withCommunicationBody(String communicationBody) {
         this.communicationBody = communicationBody;
@@ -198,6 +204,9 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest  impl
      *
      * @param ccEmailAddresses Represents any email addresses contained in the CC line of an email
      *         added to the support case.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AddCommunicationToCaseRequest withCcEmailAddresses(String... ccEmailAddresses) {
         if (getCcEmailAddresses() == null) setCcEmailAddresses(new java.util.ArrayList<String>(ccEmailAddresses.length));
@@ -218,6 +227,9 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest  impl
      *
      * @param ccEmailAddresses Represents any email addresses contained in the CC line of an email
      *         added to the support case.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AddCommunicationToCaseRequest withCcEmailAddresses(java.util.Collection<String> ccEmailAddresses) {
         if (ccEmailAddresses == null) {

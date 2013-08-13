@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A JSON object containing the UpdateSnapshotScheduleOutput$VolumeARN of the updated storage volume.
  * </p>
  */
-public class UpdateSnapshotScheduleResult  implements Serializable  {
+public class UpdateSnapshotScheduleResult implements Serializable {
 
     /**
      * The <a>UpdateSnapshotScheduleOutput$VolumeARN</a> of the storage
@@ -77,6 +77,9 @@ public class UpdateSnapshotScheduleResult  implements Serializable  {
      * @param volumeARN The <a>UpdateSnapshotScheduleOutput$VolumeARN</a> of the storage
      *         volume whose snapshot schedule was updated. It is the same value you
      *         provided in your request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateSnapshotScheduleResult withVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;

@@ -60,7 +60,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.simpledb.AmazonSimpleDB#putAttributes(PutAttributesRequest)
  */
-public class PutAttributesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class PutAttributesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the domain in which to perform the operation.
@@ -160,6 +160,9 @@ public class PutAttributesRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param domainName The name of the domain in which to perform the operation.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PutAttributesRequest withDomainName(String domainName) {
         this.domainName = domainName;
@@ -191,6 +194,9 @@ public class PutAttributesRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param itemName The name of the item.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PutAttributesRequest withItemName(String itemName) {
         this.itemName = itemName;
@@ -233,6 +239,9 @@ public class PutAttributesRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributes The list of attributes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PutAttributesRequest withAttributes(ReplaceableAttribute... attributes) {
         if (getAttributes() == null) setAttributes(new java.util.ArrayList<ReplaceableAttribute>(attributes.length));
@@ -248,6 +257,9 @@ public class PutAttributesRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributes The list of attributes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PutAttributesRequest withAttributes(java.util.Collection<ReplaceableAttribute> attributes) {
         if (attributes == null) {
@@ -303,6 +315,9 @@ public class PutAttributesRequest extends AmazonWebServiceRequest  implements Se
      *         specified attributes will be updated or not. The update condition must
      *         be satisfied in order for this request to be processed and the
      *         attributes to be updated.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PutAttributesRequest withExpected(UpdateCondition expected) {
         this.expected = expected;

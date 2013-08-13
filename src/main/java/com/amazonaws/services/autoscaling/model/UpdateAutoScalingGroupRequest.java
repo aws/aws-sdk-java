@@ -40,7 +40,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#updateAutoScalingGroup(UpdateAutoScalingGroupRequest)
  */
-public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the Auto Scaling group.
@@ -178,6 +178,9 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param autoScalingGroupName The name of the Auto Scaling group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateAutoScalingGroupRequest withAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
@@ -221,6 +224,9 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param launchConfigurationName The name of the launch configuration.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateAutoScalingGroupRequest withLaunchConfigurationName(String launchConfigurationName) {
         this.launchConfigurationName = launchConfigurationName;
@@ -252,6 +258,9 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param minSize The minimum size of the Auto Scaling group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateAutoScalingGroupRequest withMinSize(Integer minSize) {
         this.minSize = minSize;
@@ -283,6 +292,9 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxSize The maximum size of the Auto Scaling group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateAutoScalingGroupRequest withMaxSize(Integer maxSize) {
         this.maxSize = maxSize;
@@ -314,6 +326,9 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param desiredCapacity The desired capacity for the Auto Scaling group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateAutoScalingGroupRequest withDesiredCapacity(Integer desiredCapacity) {
         this.desiredCapacity = desiredCapacity;
@@ -351,6 +366,9 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      *
      * @param defaultCooldown The amount of time, in seconds, after a scaling activity completes
      *         before any further trigger-related scaling activities can start.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateAutoScalingGroupRequest withDefaultCooldown(Integer defaultCooldown) {
         this.defaultCooldown = defaultCooldown;
@@ -402,6 +420,9 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      * <b>Length: </b>1 - <br/>
      *
      * @param availabilityZones Availability Zones for the group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateAutoScalingGroupRequest withAvailabilityZones(String... availabilityZones) {
         if (getAvailabilityZones() == null) setAvailabilityZones(new java.util.ArrayList<String>(availabilityZones.length));
@@ -420,6 +441,9 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      * <b>Length: </b>1 - <br/>
      *
      * @param availabilityZones Availability Zones for the group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateAutoScalingGroupRequest withAvailabilityZones(java.util.Collection<String> availabilityZones) {
         if (availabilityZones == null) {
@@ -475,6 +499,9 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      *
      * @param healthCheckType The service of interest for the health status check, either "EC2" for
      *         Amazon EC2 or "ELB" for Elastic Load Balancing.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateAutoScalingGroupRequest withHealthCheckType(String healthCheckType) {
         this.healthCheckType = healthCheckType;
@@ -518,6 +545,9 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      * @param healthCheckGracePeriod The length of time that Auto Scaling waits before checking an
      *         instance's health status. The grace period begins when an instance
      *         comes into service.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateAutoScalingGroupRequest withHealthCheckGracePeriod(Integer healthCheckGracePeriod) {
         this.healthCheckGracePeriod = healthCheckGracePeriod;
@@ -579,6 +609,9 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      *         information, go to <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
      *         Using Cluster Instances</a> in the Amazon EC2 User Guide.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateAutoScalingGroupRequest withPlacementGroup(String placementGroup) {
         this.placementGroup = placementGroup;
@@ -646,6 +679,9 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      *         you specify <code>VPCZoneIdentifier</code> with
      *         <code>AvailabilityZones</code>, ensure that the subnets' Availability
      *         Zones match the values you specify for <code>AvailabilityZones</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateAutoScalingGroupRequest withVPCZoneIdentifier(String vPCZoneIdentifier) {
         this.vPCZoneIdentifier = vPCZoneIdentifier;
@@ -724,6 +760,9 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      *         href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
      *         Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      *         Scaling Developer Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateAutoScalingGroupRequest withTerminationPolicies(String... terminationPolicies) {
         if (getTerminationPolicies() == null) setTerminationPolicies(new java.util.ArrayList<String>(terminationPolicies.length));
@@ -751,6 +790,9 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      *         href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
      *         Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      *         Scaling Developer Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateAutoScalingGroupRequest withTerminationPolicies(java.util.Collection<String> terminationPolicies) {
         if (terminationPolicies == null) {

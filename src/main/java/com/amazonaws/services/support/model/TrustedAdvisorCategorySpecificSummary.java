@@ -21,7 +21,7 @@ import java.io.Serializable;
  * TrustedAdvisorCheckResult </a> objects.
  * </p>
  */
-public class TrustedAdvisorCategorySpecificSummary  implements Serializable  {
+public class TrustedAdvisorCategorySpecificSummary implements Serializable {
 
     /**
      * Corresponds to the <i>Cost Optimizing</i> tab on the AWS Support
@@ -66,6 +66,9 @@ public class TrustedAdvisorCategorySpecificSummary  implements Serializable  {
      * @param costOptimizing Corresponds to the <i>Cost Optimizing</i> tab on the AWS Support
      *         Center Trusted Advisor page. This field is only available to checks in
      *         the Cost Optimizing category.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public TrustedAdvisorCategorySpecificSummary withCostOptimizing(TrustedAdvisorCostOptimizingSummary costOptimizing) {
         this.costOptimizing = costOptimizing;

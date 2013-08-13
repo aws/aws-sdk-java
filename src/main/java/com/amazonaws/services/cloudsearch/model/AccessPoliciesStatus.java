@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A <code>PolicyDocument</code> that specifies access policies for the search domain's services, and the current status of those policies.
  * </p>
  */
-public class AccessPoliciesStatus  implements Serializable  {
+public class AccessPoliciesStatus implements Serializable {
 
     /**
      * An IAM access policy as described in <a
@@ -127,6 +127,9 @@ public class AccessPoliciesStatus  implements Serializable  {
      *         {"Effect":"Allow", "Action": "*", "Resource":
      *         "arn:aws:cs:us-east-1:1234567890:documents/movies", "Condition": {
      *         "IpAddress": { aws:SourceIp": ["203.0.113.1/32"] } }} ] }</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AccessPoliciesStatus withOptions(String options) {
         this.options = options;
@@ -164,6 +167,9 @@ public class AccessPoliciesStatus  implements Serializable  {
      *
      * @param status The status of an option, including when it was last updated and
      *         whether it is actively in use for searches.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AccessPoliciesStatus withStatus(OptionStatus status) {
         this.status = status;

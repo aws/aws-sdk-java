@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes Challenge-Handshake Authentication Protocol (CHAP) information that supports authentication between your gateway and iSCSI initiators.
  * </p>
  */
-public class ChapInfo  implements Serializable  {
+public class ChapInfo implements Serializable {
 
     /**
      * The Amazon Resource Name (ARN) of the volume. <p><i>Valid Values</i>:
@@ -97,6 +97,9 @@ public class ChapInfo  implements Serializable  {
      *
      * @param targetARN The Amazon Resource Name (ARN) of the volume. <p><i>Valid Values</i>:
      *         50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChapInfo withTargetARN(String targetARN) {
         this.targetARN = targetARN;
@@ -143,6 +146,9 @@ public class ChapInfo  implements Serializable  {
      *
      * @param secretToAuthenticateInitiator The secret key that the initiator (e.g. Windows client) must provide
      *         to participate in mutual CHAP with the target.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChapInfo withSecretToAuthenticateInitiator(String secretToAuthenticateInitiator) {
         this.secretToAuthenticateInitiator = secretToAuthenticateInitiator;
@@ -186,6 +192,9 @@ public class ChapInfo  implements Serializable  {
      * <b>Pattern: </b>[0-9a-z:.-]+<br/>
      *
      * @param initiatorName The iSCSI initiator that connects to the target.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChapInfo withInitiatorName(String initiatorName) {
         this.initiatorName = initiatorName;
@@ -232,6 +241,9 @@ public class ChapInfo  implements Serializable  {
      *
      * @param secretToAuthenticateTarget The secret key that the target must provide to participate in mutual
      *         CHAP with the initiator (e.g. Windows client).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChapInfo withSecretToAuthenticateTarget(String secretToAuthenticateTarget) {
         this.secretToAuthenticateTarget = secretToAuthenticateTarget;

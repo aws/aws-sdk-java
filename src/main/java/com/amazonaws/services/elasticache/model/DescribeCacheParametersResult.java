@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains a list of Parametes and CacheNodeTypeSpecificParameters.
  * </p>
  */
-public class DescribeCacheParametersResult  implements Serializable  {
+public class DescribeCacheParametersResult implements Serializable {
 
     /**
      * The marker obtained from a previous operation response.
@@ -61,6 +61,9 @@ public class DescribeCacheParametersResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param marker The marker obtained from a previous operation response.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCacheParametersResult withMarker(String marker) {
         this.marker = marker;
@@ -103,6 +106,9 @@ public class DescribeCacheParametersResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameters A list of <a>Parameter</a> instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCacheParametersResult withParameters(Parameter... parameters) {
         if (getParameters() == null) setParameters(new java.util.ArrayList<Parameter>(parameters.length));
@@ -118,6 +124,9 @@ public class DescribeCacheParametersResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameters A list of <a>Parameter</a> instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCacheParametersResult withParameters(java.util.Collection<Parameter> parameters) {
         if (parameters == null) {
@@ -166,6 +175,9 @@ public class DescribeCacheParametersResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheNodeTypeSpecificParameters A list of <a>CacheNodeTypeSpecificParameter</a> instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCacheParametersResult withCacheNodeTypeSpecificParameters(CacheNodeTypeSpecificParameter... cacheNodeTypeSpecificParameters) {
         if (getCacheNodeTypeSpecificParameters() == null) setCacheNodeTypeSpecificParameters(new java.util.ArrayList<CacheNodeTypeSpecificParameter>(cacheNodeTypeSpecificParameters.length));
@@ -181,6 +193,9 @@ public class DescribeCacheParametersResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheNodeTypeSpecificParameters A list of <a>CacheNodeTypeSpecificParameter</a> instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCacheParametersResult withCacheNodeTypeSpecificParameters(java.util.Collection<CacheNodeTypeSpecificParameter> cacheNodeTypeSpecificParameters) {
         if (cacheNodeTypeSpecificParameters == null) {

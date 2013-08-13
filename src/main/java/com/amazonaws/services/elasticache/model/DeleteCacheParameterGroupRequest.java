@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#deleteCacheParameterGroup(DeleteCacheParameterGroupRequest)
  */
-public class DeleteCacheParameterGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteCacheParameterGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the Cache Parameter Group to delete. <note> The specified
@@ -92,6 +92,9 @@ public class DeleteCacheParameterGroupRequest extends AmazonWebServiceRequest  i
      * @param cacheParameterGroupName The name of the Cache Parameter Group to delete. <note> The specified
      *         cache security group must not be associated with any Cache clusters.
      *         </note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteCacheParameterGroupRequest withCacheParameterGroupName(String cacheParameterGroupName) {
         this.cacheParameterGroupName = cacheParameterGroupName;

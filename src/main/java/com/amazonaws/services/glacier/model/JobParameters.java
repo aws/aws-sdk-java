@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Provides options for defining a job.
  * </p>
  */
-public class JobParameters  implements Serializable  {
+public class JobParameters implements Serializable {
 
     /**
      * When initiating a job to retrieve a vault inventory, you can
@@ -151,6 +151,9 @@ public class JobParameters  implements Serializable  {
      *         format. If you are initiating an inventory job and do not specify a
      *         Format field, JSON is the default format. Valid Values are "CSV" and
      *         "JSON".
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public JobParameters withFormat(String format) {
         this.format = format;
@@ -194,6 +197,9 @@ public class JobParameters  implements Serializable  {
      * @param type The job type. You can initiate a job to retrieve an archive or get an
      *         inventory of a vault. Valid Values are "archive-retrieval" and
      *         "inventory-retrieval".
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public JobParameters withType(String type) {
         this.type = type;
@@ -243,6 +249,9 @@ public class JobParameters  implements Serializable  {
      *         required only if <code>Type</code> is set to archive-retrieval. An
      *         error occurs if you specify this request parameter for an inventory
      *         retrieval job request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public JobParameters withArchiveId(String archiveId) {
         this.archiveId = archiveId;
@@ -292,6 +301,9 @@ public class JobParameters  implements Serializable  {
      *         than or equal to 1,024 bytes. The allowable characters are 7-bit ASCII
      *         without control codes���specifically, ASCII values 32���126 decimal or
      *         0x20���0x7E hexadecimal.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public JobParameters withDescription(String description) {
         this.description = description;
@@ -341,6 +353,9 @@ public class JobParameters  implements Serializable  {
      *         when the job is completed and the output is ready for you to download.
      *         The specified topic publishes the notification to its subscribers. The
      *         SNS topic must exist.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public JobParameters withSNSTopic(String sNSTopic) {
         this.sNSTopic = sNSTopic;
@@ -372,6 +387,9 @@ public class JobParameters  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param retrievalByteRange The new value for the RetrievalByteRange property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public JobParameters withRetrievalByteRange(String retrievalByteRange) {
         this.retrievalByteRange = retrievalByteRange;

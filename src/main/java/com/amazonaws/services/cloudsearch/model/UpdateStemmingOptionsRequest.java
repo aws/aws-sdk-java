@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#updateStemmingOptions(UpdateStemmingOptionsRequest)
  */
-public class UpdateStemmingOptionsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class UpdateStemmingOptionsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * A string that represents the name of a domain. Domain names must be
@@ -109,6 +109,9 @@ public class UpdateStemmingOptionsRequest extends AmazonWebServiceRequest  imple
      *         Domain names must start with a letter or number and can contain the
      *         following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase
      *         letters and underscores are not allowed.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateStemmingOptionsRequest withDomainName(String domainName) {
         this.domainName = domainName;
@@ -164,6 +167,9 @@ public class UpdateStemmingOptionsRequest extends AmazonWebServiceRequest  imple
      *         mapping terms to their stems. The maximum size of a stemming document
      *         is 500KB. Example: <code>{ "stems": {"people": "person", "walking":
      *         "walk"} }</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateStemmingOptionsRequest withStems(String stems) {
         this.stems = stems;

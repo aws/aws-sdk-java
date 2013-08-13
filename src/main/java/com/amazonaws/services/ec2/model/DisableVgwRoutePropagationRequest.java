@@ -22,7 +22,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#disableVgwRoutePropagation(DisableVgwRoutePropagationRequest)
  */
-public class DisableVgwRoutePropagationRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DisableVgwRoutePropagationRequest extends AmazonWebServiceRequest implements Serializable {
 
     private String routeTableId;
 

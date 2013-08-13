@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The result of calling the ConfirmProductInstance operation.
  * </p>
  */
-public class ConfirmProductInstanceResult  implements Serializable  {
+public class ConfirmProductInstanceResult implements Serializable {
 
     /**
      * The instance owner's account ID. Only present if the product code is

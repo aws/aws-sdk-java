@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A route filter prefix that the customer can advertise through Border Gateway Protocol (BGP) over a public virtual interface.
  * </p>
  */
-public class RouteFilterPrefix  implements Serializable  {
+public class RouteFilterPrefix implements Serializable {
 
     /**
      * CIDR notation for the advertised route. Multiple routes are separated
@@ -58,6 +58,9 @@ public class RouteFilterPrefix  implements Serializable  {
      *
      * @param cidr CIDR notation for the advertised route. Multiple routes are separated
      *         by commas <p>Example: 10.10.10.0/24,10.10.11.0/24
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RouteFilterPrefix withCidr(String cidr) {
         this.cidr = cidr;

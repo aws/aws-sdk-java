@@ -23,7 +23,7 @@ import java.io.Serializable;
  * DynamoDB Developer Guide.
  * </p>
  */
-public class ConsumedCapacity  implements Serializable  {
+public class ConsumedCapacity implements Serializable {
 
     /**
      * The table that consumed the provisioned throughput.
@@ -75,6 +75,9 @@ public class ConsumedCapacity  implements Serializable  {
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
      * @param tableName The table that consumed the provisioned throughput.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ConsumedCapacity withTableName(String tableName) {
         this.tableName = tableName;
@@ -106,6 +109,9 @@ public class ConsumedCapacity  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param capacityUnits The total number of capacity units consumed.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ConsumedCapacity withCapacityUnits(Double capacityUnits) {
         this.capacityUnits = capacityUnits;

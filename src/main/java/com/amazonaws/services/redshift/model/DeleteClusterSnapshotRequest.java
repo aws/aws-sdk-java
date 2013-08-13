@@ -29,7 +29,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#deleteClusterSnapshot(DeleteClusterSnapshotRequest)
  */
-public class DeleteClusterSnapshotRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteClusterSnapshotRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The unique identifier of the manual snapshot to be deleted.
@@ -74,6 +74,9 @@ public class DeleteClusterSnapshotRequest extends AmazonWebServiceRequest  imple
      * @param snapshotIdentifier The unique identifier of the manual snapshot to be deleted.
      *         <p>Constraints: Must be the name of an existing snapshot that is in
      *         the <code>available</code> state.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteClusterSnapshotRequest withSnapshotIdentifier(String snapshotIdentifier) {
         this.snapshotIdentifier = snapshotIdentifier;

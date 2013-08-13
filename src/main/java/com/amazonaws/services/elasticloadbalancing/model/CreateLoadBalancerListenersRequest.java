@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#createLoadBalancerListeners(CreateLoadBalancerListenersRequest)
  */
-public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the new LoadBalancer. The name must be unique within your
@@ -95,6 +95,9 @@ public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest 
      *
      * @param loadBalancerName The name of the new LoadBalancer. The name must be unique within your
      *         AWS account.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateLoadBalancerListenersRequest withLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
@@ -143,6 +146,9 @@ public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest 
      *
      * @param listeners A list of <code>LoadBalancerPort</code>, <code>InstancePort</code>,
      *         <code>Protocol</code>, and <code>SSLCertificateId</code> items.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateLoadBalancerListenersRequest withListeners(Listener... listeners) {
         if (getListeners() == null) setListeners(new java.util.ArrayList<Listener>(listeners.length));
@@ -160,6 +166,9 @@ public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest 
      *
      * @param listeners A list of <code>LoadBalancerPort</code>, <code>InstancePort</code>,
      *         <code>Protocol</code>, and <code>SSLCertificateId</code> items.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateLoadBalancerListenersRequest withListeners(java.util.Collection<Listener> listeners) {
         if (listeners == null) {

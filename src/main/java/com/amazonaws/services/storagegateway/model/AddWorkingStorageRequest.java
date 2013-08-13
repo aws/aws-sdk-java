@@ -33,7 +33,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#addWorkingStorage(AddWorkingStorageRequest)
  */
-public class AddWorkingStorageRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class AddWorkingStorageRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -98,6 +98,9 @@ public class AddWorkingStorageRequest extends AmazonWebServiceRequest  implement
      * @param gatewayARN The Amazon Resource Name (ARN) of the gateway. Use the
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AddWorkingStorageRequest withGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
@@ -158,6 +161,9 @@ public class AddWorkingStorageRequest extends AmazonWebServiceRequest  implement
      *         working storage. Each string have a minimum length of 1 and maximum
      *         length of 300. You can get the disk IDs from the <a>ListLocalDisks</a>
      *         API.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AddWorkingStorageRequest withDiskIds(String... diskIds) {
         if (getDiskIds() == null) setDiskIds(new java.util.ArrayList<String>(diskIds.length));
@@ -179,6 +185,9 @@ public class AddWorkingStorageRequest extends AmazonWebServiceRequest  implement
      *         working storage. Each string have a minimum length of 1 and maximum
      *         length of 300. You can get the disk IDs from the <a>ListLocalDisks</a>
      *         API.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AddWorkingStorageRequest withDiskIds(java.util.Collection<String> diskIds) {
         if (diskIds == null) {

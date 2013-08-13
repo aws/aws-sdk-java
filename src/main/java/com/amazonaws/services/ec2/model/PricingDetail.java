@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Pricing Detail
  */
-public class PricingDetail  implements Serializable  {
+public class PricingDetail implements Serializable {
 
     private Double price;
 

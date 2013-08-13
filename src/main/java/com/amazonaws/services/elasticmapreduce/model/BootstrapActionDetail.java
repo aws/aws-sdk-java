@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Reports the configuration of a bootstrap action in a job flow.
  * </p>
  */
-public class BootstrapActionDetail  implements Serializable  {
+public class BootstrapActionDetail implements Serializable {
 
     /**
      * A description of the bootstrap action.
@@ -72,6 +72,9 @@ public class BootstrapActionDetail  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param bootstrapActionConfig A description of the bootstrap action.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public BootstrapActionDetail withBootstrapActionConfig(BootstrapActionConfig bootstrapActionConfig) {
         this.bootstrapActionConfig = bootstrapActionConfig;

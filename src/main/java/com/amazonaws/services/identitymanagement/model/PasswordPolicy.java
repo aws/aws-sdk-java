@@ -23,7 +23,7 @@ import java.io.Serializable;
  * This data type is used as a response element in the action GetAccountPasswordPolicy.
  * </p>
  */
-public class PasswordPolicy  implements Serializable  {
+public class PasswordPolicy implements Serializable {
 
     /**
      * Minimum length to require for IAM user passwords.
@@ -93,6 +93,9 @@ public class PasswordPolicy  implements Serializable  {
      * <b>Range: </b>6 - 128<br/>
      *
      * @param minimumPasswordLength Minimum length to require for IAM user passwords.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PasswordPolicy withMinimumPasswordLength(Integer minimumPasswordLength) {
         this.minimumPasswordLength = minimumPasswordLength;
@@ -124,6 +127,9 @@ public class PasswordPolicy  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param requireSymbols Specifies whether to require symbols for IAM user passwords.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PasswordPolicy withRequireSymbols(Boolean requireSymbols) {
         this.requireSymbols = requireSymbols;
@@ -164,6 +170,9 @@ public class PasswordPolicy  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param requireNumbers Specifies whether to require numbers for IAM user passwords.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PasswordPolicy withRequireNumbers(Boolean requireNumbers) {
         this.requireNumbers = requireNumbers;
@@ -210,6 +219,9 @@ public class PasswordPolicy  implements Serializable  {
      *
      * @param requireUppercaseCharacters Specifies whether to require uppercase characters for IAM user
      *         passwords.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PasswordPolicy withRequireUppercaseCharacters(Boolean requireUppercaseCharacters) {
         this.requireUppercaseCharacters = requireUppercaseCharacters;
@@ -258,6 +270,9 @@ public class PasswordPolicy  implements Serializable  {
      *
      * @param requireLowercaseCharacters Specifies whether to require lowercase characters for IAM user
      *         passwords.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PasswordPolicy withRequireLowercaseCharacters(Boolean requireLowercaseCharacters) {
         this.requireLowercaseCharacters = requireLowercaseCharacters;
@@ -300,6 +315,9 @@ public class PasswordPolicy  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param allowUsersToChangePassword Specifies whether to allow IAM users to change their own password.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PasswordPolicy withAllowUsersToChangePassword(Boolean allowUsersToChangePassword) {
         this.allowUsersToChangePassword = allowUsersToChangePassword;

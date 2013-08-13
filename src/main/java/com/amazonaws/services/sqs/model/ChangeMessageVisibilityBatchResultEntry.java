@@ -16,36 +16,51 @@ package com.amazonaws.services.sqs.model;
 import java.io.Serializable;
 
 /**
- * Change Message Visibility Batch Result Entry
+ * <p>
+ * Encloses the id of an entry in ChangeMessageVisibilityBatch.
+ * </p>
  */
-public class ChangeMessageVisibilityBatchResultEntry  implements Serializable  {
+public class ChangeMessageVisibilityBatchResultEntry implements Serializable {
 
+    /**
+     * Represents a message whose visibility timeout has been changed
+     * successfully.
+     */
     private String id;
 
     /**
-     * Returns the value of the Id property for this object.
+     * Represents a message whose visibility timeout has been changed
+     * successfully.
      *
-     * @return The value of the Id property for this object.
+     * @return Represents a message whose visibility timeout has been changed
+     *         successfully.
      */
     public String getId() {
         return id;
     }
     
     /**
-     * Sets the value of the Id property for this object.
+     * Represents a message whose visibility timeout has been changed
+     * successfully.
      *
-     * @param id The new value for the Id property for this object.
+     * @param id Represents a message whose visibility timeout has been changed
+     *         successfully.
      */
     public void setId(String id) {
         this.id = id;
     }
     
     /**
-     * Sets the value of the Id property for this object.
+     * Represents a message whose visibility timeout has been changed
+     * successfully.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param id The new value for the Id property for this object.
+     * @param id Represents a message whose visibility timeout has been changed
+     *         successfully.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChangeMessageVisibilityBatchResultEntry withId(String id) {
         this.id = id;

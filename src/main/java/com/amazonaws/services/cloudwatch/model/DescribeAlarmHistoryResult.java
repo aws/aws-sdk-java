@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The output for the DescribeAlarmHistory action.
  * </p>
  */
-public class DescribeAlarmHistoryResult  implements Serializable  {
+public class DescribeAlarmHistoryResult implements Serializable {
 
     /**
      * A list of alarm histories in JSON format.
@@ -67,6 +67,9 @@ public class DescribeAlarmHistoryResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param alarmHistoryItems A list of alarm histories in JSON format.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeAlarmHistoryResult withAlarmHistoryItems(AlarmHistoryItem... alarmHistoryItems) {
         if (getAlarmHistoryItems() == null) setAlarmHistoryItems(new java.util.ArrayList<AlarmHistoryItem>(alarmHistoryItems.length));
@@ -82,6 +85,9 @@ public class DescribeAlarmHistoryResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param alarmHistoryItems A list of alarm histories in JSON format.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeAlarmHistoryResult withAlarmHistoryItems(java.util.Collection<AlarmHistoryItem> alarmHistoryItems) {
         if (alarmHistoryItems == null) {
@@ -119,6 +125,9 @@ public class DescribeAlarmHistoryResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nextToken A string that marks the start of the next batch of returned results.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeAlarmHistoryResult withNextToken(String nextToken) {
         this.nextToken = nextToken;

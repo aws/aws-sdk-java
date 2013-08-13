@@ -29,7 +29,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#describeVirtualGateways(DescribeVirtualGatewaysRequest)
  */
-public class DescribeVirtualGatewaysRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeVirtualGatewaysRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Returns a string representation of this object; useful for testing and

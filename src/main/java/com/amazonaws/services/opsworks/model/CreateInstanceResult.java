@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the response to a <code>CreateInstance</code> request.
  * </p>
  */
-public class CreateInstanceResult  implements Serializable  {
+public class CreateInstanceResult implements Serializable {
 
     /**
      * The instance ID.
@@ -51,6 +51,9 @@ public class CreateInstanceResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId The instance ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateInstanceResult withInstanceId(String instanceId) {
         this.instanceId = instanceId;

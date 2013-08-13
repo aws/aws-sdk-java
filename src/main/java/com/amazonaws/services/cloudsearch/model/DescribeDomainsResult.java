@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A response message that contains the status of one or more domains.
  * </p>
  */
-public class DescribeDomainsResult  implements Serializable  {
+public class DescribeDomainsResult implements Serializable {
 
     /**
      * The current status of all of your search domains.
@@ -62,6 +62,9 @@ public class DescribeDomainsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param domainStatusList The current status of all of your search domains.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeDomainsResult withDomainStatusList(DomainStatus... domainStatusList) {
         if (getDomainStatusList() == null) setDomainStatusList(new java.util.ArrayList<DomainStatus>(domainStatusList.length));
@@ -77,6 +80,9 @@ public class DescribeDomainsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param domainStatusList The current status of all of your search domains.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeDomainsResult withDomainStatusList(java.util.Collection<DomainStatus> domainStatusList) {
         if (domainStatusList == null) {

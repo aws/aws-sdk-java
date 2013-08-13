@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The out for the ApplySecurityGroupsToLoadBalancer action.
  * </p>
  */
-public class ApplySecurityGroupsToLoadBalancerResult  implements Serializable  {
+public class ApplySecurityGroupsToLoadBalancerResult implements Serializable {
 
     /**
      * A list of security group IDs associated with your LoadBalancer.
@@ -62,6 +62,9 @@ public class ApplySecurityGroupsToLoadBalancerResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param securityGroups A list of security group IDs associated with your LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ApplySecurityGroupsToLoadBalancerResult withSecurityGroups(String... securityGroups) {
         if (getSecurityGroups() == null) setSecurityGroups(new java.util.ArrayList<String>(securityGroups.length));
@@ -77,6 +80,9 @@ public class ApplySecurityGroupsToLoadBalancerResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param securityGroups A list of security group IDs associated with your LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ApplySecurityGroupsToLoadBalancerResult withSecurityGroups(java.util.Collection<String> securityGroups) {
         if (securityGroups == null) {

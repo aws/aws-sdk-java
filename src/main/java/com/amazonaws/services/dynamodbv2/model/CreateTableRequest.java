@@ -37,7 +37,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#createTable(CreateTableRequest)
  */
-public class CreateTableRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateTableRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * An array of attributes that describe the key schema for the table and
@@ -195,6 +195,9 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param attributeDefinitions An array of attributes that describe the key schema for the table and
      *         indexes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateTableRequest withAttributeDefinitions(AttributeDefinition... attributeDefinitions) {
         if (getAttributeDefinitions() == null) setAttributeDefinitions(new java.util.ArrayList<AttributeDefinition>(attributeDefinitions.length));
@@ -212,6 +215,9 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param attributeDefinitions An array of attributes that describe the key schema for the table and
      *         indexes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateTableRequest withAttributeDefinitions(java.util.Collection<AttributeDefinition> attributeDefinitions) {
         if (attributeDefinitions == null) {
@@ -261,6 +267,9 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
      * @param tableName The name of the table to create.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateTableRequest withTableName(String tableName) {
         this.tableName = tableName;
@@ -410,6 +419,9 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#WorkingWithDDTables.primary.key">Specifying
      *         the Primary Key</a> in the Amazon DynamoDB Developer Guide.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateTableRequest withKeySchema(KeySchemaElement... keySchema) {
         if (getKeySchema() == null) setKeySchema(new java.util.ArrayList<KeySchemaElement>(keySchema.length));
@@ -462,6 +474,9 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#WorkingWithDDTables.primary.key">Specifying
      *         the Primary Key</a> in the Amazon DynamoDB Developer Guide.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateTableRequest withKeySchema(java.util.Collection<KeySchemaElement> keySchema) {
         if (keySchema == null) {
@@ -650,6 +665,9 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      *         indexes, must not exceed 20. If you project the same attribute into
      *         two different indexes, this counts as two distinct attributes when
      *         determining the total. </li> </ul> </li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateTableRequest withLocalSecondaryIndexes(LocalSecondaryIndex... localSecondaryIndexes) {
         if (getLocalSecondaryIndexes() == null) setLocalSecondaryIndexes(new java.util.ArrayList<LocalSecondaryIndex>(localSecondaryIndexes.length));
@@ -713,6 +731,9 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      *         indexes, must not exceed 20. If you project the same attribute into
      *         two different indexes, this counts as two distinct attributes when
      *         determining the total. </li> </ul> </li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateTableRequest withLocalSecondaryIndexes(java.util.Collection<LocalSecondaryIndex> localSecondaryIndexes) {
         if (localSecondaryIndexes == null) {
@@ -780,6 +801,9 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      *         in the Amazon DynamoDB Developer Guide.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateTableRequest withProvisionedThroughput(ProvisionedThroughput provisionedThroughput) {
         this.provisionedThroughput = provisionedThroughput;

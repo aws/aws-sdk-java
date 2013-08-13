@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#terminateEnvironment(TerminateEnvironmentRequest)
  */
-public class TerminateEnvironmentRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class TerminateEnvironmentRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The ID of the environment to terminate. <p> Condition: You must
@@ -113,6 +113,9 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest  implem
      *         specify either this or an EnvironmentName, or both. If you do not
      *         specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public TerminateEnvironmentRequest withEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
@@ -171,6 +174,9 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest  implem
      *         specify either this or an EnvironmentId, or both. If you do not
      *         specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public TerminateEnvironmentRequest withEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
@@ -292,6 +298,9 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest  implem
      *         href="http://docs.amazonwebservices.com/elasticbeanstalk/latest/ug/">
      *         AWS Elastic Beanstalk User Guide. </a> <p> Default: <code>true</code>
      *         <p> Valid Values: <code>true</code> | <code>false</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public TerminateEnvironmentRequest withTerminateResources(Boolean terminateResources) {
         this.terminateResources = terminateResources;

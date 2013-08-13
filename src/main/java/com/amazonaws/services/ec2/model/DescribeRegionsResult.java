@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The result of describing the available Amazon EC2 regions.
  * </p>
  */
-public class DescribeRegionsResult  implements Serializable  {
+public class DescribeRegionsResult implements Serializable {
 
     /**
      * The list of described Amazon EC2 regions.

@@ -31,7 +31,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#deleteHealthCheck(DeleteHealthCheckRequest)
  */
-public class DeleteHealthCheckRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteHealthCheckRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The ID of the health check to delete.
@@ -74,6 +74,9 @@ public class DeleteHealthCheckRequest extends AmazonWebServiceRequest  implement
      * <b>Length: </b>0 - 64<br/>
      *
      * @param healthCheckId The ID of the health check to delete.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteHealthCheckRequest withHealthCheckId(String healthCheckId) {
         this.healthCheckId = healthCheckId;

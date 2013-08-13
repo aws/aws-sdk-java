@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The <code>ListPresetsResponse</code> structure.
  * </p>
  */
-public class ListPresetsResult  implements Serializable  {
+public class ListPresetsResult implements Serializable {
 
     /**
      * An array of <code>Preset</code> objects.
@@ -62,6 +62,9 @@ public class ListPresetsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param presets An array of <code>Preset</code> objects.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListPresetsResult withPresets(Preset... presets) {
         if (getPresets() == null) setPresets(new java.util.ArrayList<Preset>(presets.length));
@@ -77,6 +80,9 @@ public class ListPresetsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param presets An array of <code>Preset</code> objects.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListPresetsResult withPresets(java.util.Collection<Preset> presets) {
         if (presets == null) {

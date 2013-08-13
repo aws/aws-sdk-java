@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#deleteRankExpression(DeleteRankExpressionRequest)
  */
-public class DeleteRankExpressionRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteRankExpressionRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * A string that represents the name of a domain. Domain names must be
@@ -108,6 +108,9 @@ public class DeleteRankExpressionRequest extends AmazonWebServiceRequest  implem
      *         Domain names must start with a letter or number and can contain the
      *         following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase
      *         letters and underscores are not allowed.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteRankExpressionRequest withDomainName(String domainName) {
         this.domainName = domainName;
@@ -151,6 +154,9 @@ public class DeleteRankExpressionRequest extends AmazonWebServiceRequest  implem
      * <b>Pattern: </b>[a-z][a-z0-9_]*<br/>
      *
      * @param rankName The name of the <code>RankExpression</code> to delete.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteRankExpressionRequest withRankName(String rankName) {
         this.rankName = rankName;

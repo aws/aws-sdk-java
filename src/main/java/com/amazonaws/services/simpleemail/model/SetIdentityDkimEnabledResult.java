@@ -20,7 +20,7 @@ import java.io.Serializable;
  * An empty element. Receiving this element indicates that the request completed successfully.
  * </p>
  */
-public class SetIdentityDkimEnabledResult  implements Serializable  {
+public class SetIdentityDkimEnabledResult implements Serializable {
 
     /**
      * Returns a string representation of this object; useful for testing and

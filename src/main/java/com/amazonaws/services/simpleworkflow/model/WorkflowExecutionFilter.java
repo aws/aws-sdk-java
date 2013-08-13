@@ -21,7 +21,7 @@ import java.io.Serializable;
  * 
  * </p>
  */
-public class WorkflowExecutionFilter  implements Serializable  {
+public class WorkflowExecutionFilter implements Serializable {
 
     /**
      * The workflowId to pass of match the criteria of this filter.
@@ -64,6 +64,9 @@ public class WorkflowExecutionFilter  implements Serializable  {
      * <b>Length: </b>1 - 256<br/>
      *
      * @param workflowId The workflowId to pass of match the criteria of this filter.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionFilter withWorkflowId(String workflowId) {
         this.workflowId = workflowId;

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The output for ListStacks action.
  * </p>
  */
-public class ListStacksResult  implements Serializable  {
+public class ListStacksResult implements Serializable {
 
     /**
      * A list of <code>StackSummary</code> structures containing information
@@ -78,6 +78,9 @@ public class ListStacksResult  implements Serializable  {
      *
      * @param stackSummaries A list of <code>StackSummary</code> structures containing information
      *         about the specified stacks.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListStacksResult withStackSummaries(StackSummary... stackSummaries) {
         if (getStackSummaries() == null) setStackSummaries(new java.util.ArrayList<StackSummary>(stackSummaries.length));
@@ -95,6 +98,9 @@ public class ListStacksResult  implements Serializable  {
      *
      * @param stackSummaries A list of <code>StackSummary</code> structures containing information
      *         about the specified stacks.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListStacksResult withStackSummaries(java.util.Collection<StackSummary> stackSummaries) {
         if (stackSummaries == null) {
@@ -147,6 +153,9 @@ public class ListStacksResult  implements Serializable  {
      *
      * @param nextToken String that identifies the start of the next list of stacks, if there
      *         is one.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListStacksResult withNextToken(String nextToken) {
         this.nextToken = nextToken;

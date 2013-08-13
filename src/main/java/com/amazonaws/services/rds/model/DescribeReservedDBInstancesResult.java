@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the DescribeReservedDBInstances action.
  * </p>
  */
-public class DescribeReservedDBInstancesResult  implements Serializable  {
+public class DescribeReservedDBInstancesResult implements Serializable {
 
     /**
      * An optional pagination token provided by a previous request. If this
@@ -70,6 +70,9 @@ public class DescribeReservedDBInstancesResult  implements Serializable  {
      * @param marker An optional pagination token provided by a previous request. If this
      *         parameter is specified, the response includes only records beyond the
      *         marker, up to the value specified by <code>MaxRecords</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedDBInstancesResult withMarker(String marker) {
         this.marker = marker;
@@ -112,6 +115,9 @@ public class DescribeReservedDBInstancesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedDBInstances A list of of reserved DB Instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedDBInstancesResult withReservedDBInstances(ReservedDBInstance... reservedDBInstances) {
         if (getReservedDBInstances() == null) setReservedDBInstances(new java.util.ArrayList<ReservedDBInstance>(reservedDBInstances.length));
@@ -127,6 +133,9 @@ public class DescribeReservedDBInstancesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedDBInstances A list of of reserved DB Instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedDBInstancesResult withReservedDBInstances(java.util.Collection<ReservedDBInstance> reservedDBInstances) {
         if (reservedDBInstances == null) {

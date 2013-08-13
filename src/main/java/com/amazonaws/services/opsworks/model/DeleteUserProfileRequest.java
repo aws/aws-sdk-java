@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#deleteUserProfile(DeleteUserProfileRequest)
  */
-public class DeleteUserProfileRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteUserProfileRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The user's IAM ARN.
@@ -55,6 +55,9 @@ public class DeleteUserProfileRequest extends AmazonWebServiceRequest  implement
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param iamUserArn The user's IAM ARN.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteUserProfileRequest withIamUserArn(String iamUserArn) {
         this.iamUserArn = iamUserArn;

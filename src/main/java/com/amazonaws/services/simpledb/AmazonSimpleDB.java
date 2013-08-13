@@ -93,7 +93,7 @@ public interface AmazonSimpleDB {
      * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      */
     public void setRegion(Region region) throws java.lang.IllegalArgumentException;
-	
+    
     /**
      * <p>
      * The <code>Select</code> operation returns a set of attributes for

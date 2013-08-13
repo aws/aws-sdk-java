@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The output of the DescribeScalingProcessTypes action.
  * </p>
  */
-public class DescribeScalingProcessTypesResult  implements Serializable  {
+public class DescribeScalingProcessTypesResult implements Serializable {
 
     /**
      * A list of <a>ProcessType</a> names.
@@ -62,6 +62,9 @@ public class DescribeScalingProcessTypesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param processes A list of <a>ProcessType</a> names.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeScalingProcessTypesResult withProcesses(ProcessType... processes) {
         if (getProcesses() == null) setProcesses(new java.util.ArrayList<ProcessType>(processes.length));
@@ -77,6 +80,9 @@ public class DescribeScalingProcessTypesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param processes A list of <a>ProcessType</a> names.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeScalingProcessTypesResult withProcesses(java.util.Collection<ProcessType> processes) {
         if (processes == null) {

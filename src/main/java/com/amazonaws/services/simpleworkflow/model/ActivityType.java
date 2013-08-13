@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents an activity type.
  * </p>
  */
-public class ActivityType  implements Serializable  {
+public class ActivityType implements Serializable {
 
     /**
      * The name of this activity. <note>The combination of activity type name
@@ -79,6 +79,9 @@ public class ActivityType  implements Serializable  {
      *
      * @param name The name of this activity. <note>The combination of activity type name
      *         and version must be unique within a domain.</note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActivityType withName(String name) {
         this.name = name;
@@ -125,6 +128,9 @@ public class ActivityType  implements Serializable  {
      *
      * @param version The version of this activity. <note>The combination of activity type
      *         name and version must be unique with in a domain.</note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActivityType withVersion(String version) {
         this.version = version;

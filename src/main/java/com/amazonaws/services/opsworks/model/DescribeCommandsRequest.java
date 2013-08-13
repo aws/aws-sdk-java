@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeCommands(DescribeCommandsRequest)
  */
-public class DescribeCommandsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeCommandsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The deployment ID. If you include this parameter,
@@ -83,6 +83,9 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest  implements
      * @param deploymentId The deployment ID. If you include this parameter,
      *         <code>DescribeCommands</code> returns a description of the commands
      *         associated with the specified deployment.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCommandsRequest withDeploymentId(String deploymentId) {
         this.deploymentId = deploymentId;
@@ -126,6 +129,9 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest  implements
      * @param instanceId The instance ID. If you include this parameter,
      *         <code>DescribeCommands</code> returns a description of the commands
      *         associated with the specified instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCommandsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -180,6 +186,9 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest  implements
      * @param commandIds An array of command IDs. If you include this parameter,
      *         <code>DescribeCommands</code> returns a description of the specified
      *         commands. Otherwise, it returns a description of every command.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCommandsRequest withCommandIds(String... commandIds) {
         if (getCommandIds() == null) setCommandIds(new java.util.ArrayList<String>(commandIds.length));
@@ -199,6 +208,9 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest  implements
      * @param commandIds An array of command IDs. If you include this parameter,
      *         <code>DescribeCommands</code> returns a description of the specified
      *         commands. Otherwise, it returns a description of every command.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCommandsRequest withCommandIds(java.util.Collection<String> commandIds) {
         if (commandIds == null) {

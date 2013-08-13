@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The returned result of the corresponding request.
  * </p>
  */
-public class GetCloudFrontOriginAccessIdentityResult  implements Serializable  {
+public class GetCloudFrontOriginAccessIdentityResult implements Serializable {
 
     /**
      * The origin access identity's information.
@@ -57,6 +57,9 @@ public class GetCloudFrontOriginAccessIdentityResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cloudFrontOriginAccessIdentity The origin access identity's information.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetCloudFrontOriginAccessIdentityResult withCloudFrontOriginAccessIdentity(CloudFrontOriginAccessIdentity cloudFrontOriginAccessIdentity) {
         this.cloudFrontOriginAccessIdentity = cloudFrontOriginAccessIdentity;
@@ -94,6 +97,9 @@ public class GetCloudFrontOriginAccessIdentityResult  implements Serializable  {
      *
      * @param eTag The current version of the origin access identity's information. For
      *         example: E2QWRUHAPOMQZL.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetCloudFrontOriginAccessIdentityResult withETag(String eTag) {
         this.eTag = eTag;

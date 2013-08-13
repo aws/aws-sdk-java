@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#rebuildEnvironment(RebuildEnvironmentRequest)
  */
-public class RebuildEnvironmentRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class RebuildEnvironmentRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The ID of the environment to rebuild. <p> Condition: You must specify
@@ -94,6 +94,9 @@ public class RebuildEnvironmentRequest extends AmazonWebServiceRequest  implemen
      *         either this or an EnvironmentName, or both. If you do not specify
      *         either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RebuildEnvironmentRequest withEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
@@ -152,6 +155,9 @@ public class RebuildEnvironmentRequest extends AmazonWebServiceRequest  implemen
      *         specify either this or an EnvironmentId, or both. If you do not
      *         specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RebuildEnvironmentRequest withEnvironmentName(String environmentName) {
         this.environmentName = environmentName;

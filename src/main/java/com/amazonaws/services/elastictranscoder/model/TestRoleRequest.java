@@ -29,7 +29,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#testRole(TestRoleRequest)
  */
-public class TestRoleRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class TestRoleRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The IAM Amazon Resource Name (ARN) for the role that you want Elastic
@@ -106,6 +106,9 @@ public class TestRoleRequest extends AmazonWebServiceRequest  implements Seriali
      *
      * @param role The IAM Amazon Resource Name (ARN) for the role that you want Elastic
      *         Transcoder to test.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public TestRoleRequest withRole(String role) {
         this.role = role;
@@ -152,6 +155,9 @@ public class TestRoleRequest extends AmazonWebServiceRequest  implements Seriali
      *
      * @param inputBucket The Amazon S3 bucket that contains media files to be transcoded. The
      *         action attempts to read from this bucket.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public TestRoleRequest withInputBucket(String inputBucket) {
         this.inputBucket = inputBucket;
@@ -198,6 +204,9 @@ public class TestRoleRequest extends AmazonWebServiceRequest  implements Seriali
      *
      * @param outputBucket The Amazon S3 bucket that Elastic Transcoder will write transcoded
      *         media files to. The action attempts to read from this bucket.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public TestRoleRequest withOutputBucket(String outputBucket) {
         this.outputBucket = outputBucket;
@@ -255,6 +264,9 @@ public class TestRoleRequest extends AmazonWebServiceRequest  implements Seriali
      *
      * @param topics The ARNs of one or more Amazon Simple Notification Service (Amazon
      *         SNS) topics that you want the action to send a test notification to.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public TestRoleRequest withTopics(String... topics) {
         if (getTopics() == null) setTopics(new java.util.ArrayList<String>(topics.length));
@@ -275,6 +287,9 @@ public class TestRoleRequest extends AmazonWebServiceRequest  implements Seriali
      *
      * @param topics The ARNs of one or more Amazon Simple Notification Service (Amazon
      *         SNS) topics that you want the action to send a test notification to.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public TestRoleRequest withTopics(java.util.Collection<String> topics) {
         if (topics == null) {

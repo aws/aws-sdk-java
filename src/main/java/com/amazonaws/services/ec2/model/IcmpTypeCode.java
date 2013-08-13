@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class IcmpTypeCode  implements Serializable  {
+public class IcmpTypeCode implements Serializable {
 
     /**
      * For the ICMP protocol, the ICMP type. A value of <code>-1</code> is a

@@ -31,7 +31,7 @@ import java.io.Serializable;
  * This data type is used as a response element in the DescribeDBSubnetGroups action.
  * </p>
  */
-public class DBSubnetGroup  implements Serializable  {
+public class DBSubnetGroup implements Serializable {
 
     /**
      * Specifies the name of the DB Subnet Group.
@@ -82,6 +82,9 @@ public class DBSubnetGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBSubnetGroupName Specifies the name of the DB Subnet Group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBSubnetGroup withDBSubnetGroupName(String dBSubnetGroupName) {
         this.dBSubnetGroupName = dBSubnetGroupName;
@@ -113,6 +116,9 @@ public class DBSubnetGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBSubnetGroupDescription Provides the description of the DB Subnet Group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBSubnetGroup withDBSubnetGroupDescription(String dBSubnetGroupDescription) {
         this.dBSubnetGroupDescription = dBSubnetGroupDescription;
@@ -144,6 +150,9 @@ public class DBSubnetGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcId Provides the VpcId of the DB Subnet Group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBSubnetGroup withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -175,6 +184,9 @@ public class DBSubnetGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnetGroupStatus Provides the status of the DB Subnet Group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBSubnetGroup withSubnetGroupStatus(String subnetGroupStatus) {
         this.subnetGroupStatus = subnetGroupStatus;
@@ -217,6 +229,9 @@ public class DBSubnetGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnets Contains a list of <a>Subnet</a> elements.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBSubnetGroup withSubnets(Subnet... subnets) {
         if (getSubnets() == null) setSubnets(new java.util.ArrayList<Subnet>(subnets.length));
@@ -232,6 +247,9 @@ public class DBSubnetGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnets Contains a list of <a>Subnet</a> elements.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBSubnetGroup withSubnets(java.util.Collection<Subnet> subnets) {
         if (subnets == null) {

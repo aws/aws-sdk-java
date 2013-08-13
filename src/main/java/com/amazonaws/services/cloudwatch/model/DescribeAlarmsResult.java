@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The output for the DescribeAlarms action.
  * </p>
  */
-public class DescribeAlarmsResult  implements Serializable  {
+public class DescribeAlarmsResult implements Serializable {
 
     /**
      * A list of information for the specified alarms.
@@ -67,6 +67,9 @@ public class DescribeAlarmsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param metricAlarms A list of information for the specified alarms.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeAlarmsResult withMetricAlarms(MetricAlarm... metricAlarms) {
         if (getMetricAlarms() == null) setMetricAlarms(new java.util.ArrayList<MetricAlarm>(metricAlarms.length));
@@ -82,6 +85,9 @@ public class DescribeAlarmsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param metricAlarms A list of information for the specified alarms.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeAlarmsResult withMetricAlarms(java.util.Collection<MetricAlarm> metricAlarms) {
         if (metricAlarms == null) {
@@ -119,6 +125,9 @@ public class DescribeAlarmsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nextToken A string that marks the start of the next batch of returned results.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeAlarmsResult withNextToken(String nextToken) {
         this.nextToken = nextToken;

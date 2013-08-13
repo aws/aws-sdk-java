@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The result of describing an AMI attribute.
  * </p>
  */
-public class DescribeImageAttributeResult  implements Serializable  {
+public class DescribeImageAttributeResult implements Serializable {
 
     /**
      * The described image attribute of the associated AMI.

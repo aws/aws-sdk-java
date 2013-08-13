@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.cloudwatch.AmazonCloudWatch#disableAlarmActions(DisableAlarmActionsRequest)
  */
-public class DisableAlarmActionsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DisableAlarmActionsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The names of the alarms to disable actions for.
@@ -79,6 +79,9 @@ public class DisableAlarmActionsRequest extends AmazonWebServiceRequest  impleme
      * <b>Length: </b>0 - 100<br/>
      *
      * @param alarmNames The names of the alarms to disable actions for.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DisableAlarmActionsRequest withAlarmNames(String... alarmNames) {
         if (getAlarmNames() == null) setAlarmNames(new java.util.ArrayList<String>(alarmNames.length));
@@ -97,6 +100,9 @@ public class DisableAlarmActionsRequest extends AmazonWebServiceRequest  impleme
      * <b>Length: </b>0 - 100<br/>
      *
      * @param alarmNames The names of the alarms to disable actions for.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DisableAlarmActionsRequest withAlarmNames(java.util.Collection<String> alarmNames) {
         if (alarmNames == null) {

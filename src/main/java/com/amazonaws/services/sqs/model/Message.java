@@ -16,18 +16,33 @@ package com.amazonaws.services.sqs.model;
 import java.io.Serializable;
 
 /**
- * Message
+ * 
  */
-public class Message  implements Serializable  {
+public class Message implements Serializable {
 
+    /**
+     * 
+     */
     private String messageId;
 
+    /**
+     * 
+     */
     private String receiptHandle;
 
+    /**
+     * 
+     */
     private String mD5OfBody;
 
+    /**
+     * 
+     */
     private String body;
 
+    /**
+     * 
+     */
     private java.util.Map<String,String> attributes;
 
     /**
@@ -37,29 +52,32 @@ public class Message  implements Serializable  {
     public Message() {}
     
     /**
-     * Returns the value of the MessageId property for this object.
+     * 
      *
-     * @return The value of the MessageId property for this object.
+     * @return 
      */
     public String getMessageId() {
         return messageId;
     }
     
     /**
-     * Sets the value of the MessageId property for this object.
+     * 
      *
-     * @param messageId The new value for the MessageId property for this object.
+     * @param messageId 
      */
     public void setMessageId(String messageId) {
         this.messageId = messageId;
     }
     
     /**
-     * Sets the value of the MessageId property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param messageId The new value for the MessageId property for this object.
+     * @param messageId 
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Message withMessageId(String messageId) {
         this.messageId = messageId;
@@ -68,29 +86,32 @@ public class Message  implements Serializable  {
     
     
     /**
-     * Returns the value of the ReceiptHandle property for this object.
+     * 
      *
-     * @return The value of the ReceiptHandle property for this object.
+     * @return 
      */
     public String getReceiptHandle() {
         return receiptHandle;
     }
     
     /**
-     * Sets the value of the ReceiptHandle property for this object.
+     * 
      *
-     * @param receiptHandle The new value for the ReceiptHandle property for this object.
+     * @param receiptHandle 
      */
     public void setReceiptHandle(String receiptHandle) {
         this.receiptHandle = receiptHandle;
     }
     
     /**
-     * Sets the value of the ReceiptHandle property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param receiptHandle The new value for the ReceiptHandle property for this object.
+     * @param receiptHandle 
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Message withReceiptHandle(String receiptHandle) {
         this.receiptHandle = receiptHandle;
@@ -99,29 +120,32 @@ public class Message  implements Serializable  {
     
     
     /**
-     * Returns the value of the MD5OfBody property for this object.
+     * 
      *
-     * @return The value of the MD5OfBody property for this object.
+     * @return 
      */
     public String getMD5OfBody() {
         return mD5OfBody;
     }
     
     /**
-     * Sets the value of the MD5OfBody property for this object.
+     * 
      *
-     * @param mD5OfBody The new value for the MD5OfBody property for this object.
+     * @param mD5OfBody 
      */
     public void setMD5OfBody(String mD5OfBody) {
         this.mD5OfBody = mD5OfBody;
     }
     
     /**
-     * Sets the value of the MD5OfBody property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param mD5OfBody The new value for the MD5OfBody property for this object.
+     * @param mD5OfBody 
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Message withMD5OfBody(String mD5OfBody) {
         this.mD5OfBody = mD5OfBody;
@@ -130,29 +154,32 @@ public class Message  implements Serializable  {
     
     
     /**
-     * Returns the value of the Body property for this object.
+     * 
      *
-     * @return The value of the Body property for this object.
+     * @return 
      */
     public String getBody() {
         return body;
     }
     
     /**
-     * Sets the value of the Body property for this object.
+     * 
      *
-     * @param body The new value for the Body property for this object.
+     * @param body 
      */
     public void setBody(String body) {
         this.body = body;
     }
     
     /**
-     * Sets the value of the Body property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param body The new value for the Body property for this object.
+     * @param body 
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Message withBody(String body) {
         this.body = body;
@@ -161,9 +188,9 @@ public class Message  implements Serializable  {
     
     
     /**
-     * Returns the value of the Attributes property for this object.
+     * 
      *
-     * @return The value of the Attributes property for this object.
+     * @return 
      */
     public java.util.Map<String,String> getAttributes() {
         
@@ -174,20 +201,23 @@ public class Message  implements Serializable  {
     }
     
     /**
-     * Sets the value of the Attributes property for this object.
+     * 
      *
-     * @param attributes The new value for the Attributes property for this object.
+     * @param attributes 
      */
     public void setAttributes(java.util.Map<String,String> attributes) {
         this.attributes = attributes;
     }
     
     /**
-     * Sets the value of the Attributes property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributes The new value for the Attributes property for this object.
+     * @param attributes 
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Message withAttributes(java.util.Map<String,String> attributes) {
         setAttributes(attributes);
@@ -196,7 +226,7 @@ public class Message  implements Serializable  {
     
    	
     /**
-     * Sets the value of the Attributes property for this object.
+     * 
      * <p>
      * The method adds a new key-value pair into Attributes parameter, and
      * returns a reference to this object so that method calls can be chained

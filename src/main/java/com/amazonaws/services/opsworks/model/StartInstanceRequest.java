@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#startInstance(StartInstanceRequest)
  */
-public class StartInstanceRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class StartInstanceRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The instance ID.
@@ -56,6 +56,9 @@ public class StartInstanceRequest extends AmazonWebServiceRequest  implements Se
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId The instance ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StartInstanceRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;

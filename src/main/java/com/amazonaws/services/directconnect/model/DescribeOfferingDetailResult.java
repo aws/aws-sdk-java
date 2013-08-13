@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A structure containing detailed information about an offering.
  * </p>
  */
-public class DescribeOfferingDetailResult  implements Serializable  {
+public class DescribeOfferingDetailResult implements Serializable {
 
     /**
      * The ID of the offering. <p>Example: us-west-1_EqSV5_1G <p>Default:
@@ -93,6 +93,9 @@ public class DescribeOfferingDetailResult  implements Serializable  {
      *
      * @param offeringId The ID of the offering. <p>Example: us-west-1_EqSV5_1G <p>Default:
      *         None
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeOfferingDetailResult withOfferingId(String offeringId) {
         this.offeringId = offeringId;
@@ -130,6 +133,9 @@ public class DescribeOfferingDetailResult  implements Serializable  {
      *
      * @param region The AWS region where the offering is located. <p>Example: us-east-1
      *         <p>Default: None
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeOfferingDetailResult withRegion(String region) {
         this.region = region;
@@ -167,6 +173,9 @@ public class DescribeOfferingDetailResult  implements Serializable  {
      *
      * @param location Where the AWS Direct Connect offering is located. <p>Example: EqSV5
      *         <p>Default: None
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeOfferingDetailResult withLocation(String location) {
         this.location = location;
@@ -198,6 +207,9 @@ public class DescribeOfferingDetailResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param offeringName The new value for the OfferingName property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeOfferingDetailResult withOfferingName(String offeringName) {
         this.offeringName = offeringName;
@@ -235,6 +247,9 @@ public class DescribeOfferingDetailResult  implements Serializable  {
      *
      * @param description Description of the offering. <p>Example: "<i>1Gbps Cross Connect in
      *         us-east-1 via Equinix</i>" <p>Default: None
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeOfferingDetailResult withDescription(String description) {
         this.description = description;
@@ -266,6 +281,9 @@ public class DescribeOfferingDetailResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param bandwidth Bandwidth of the connection. <p>Example: 1Gbps <p>Default: None
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeOfferingDetailResult withBandwidth(String bandwidth) {
         this.bandwidth = bandwidth;
@@ -308,6 +326,9 @@ public class DescribeOfferingDetailResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param connectionCosts A list of connection costs.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeOfferingDetailResult withConnectionCosts(ConnectionCost... connectionCosts) {
         if (getConnectionCosts() == null) setConnectionCosts(new java.util.ArrayList<ConnectionCost>(connectionCosts.length));
@@ -323,6 +344,9 @@ public class DescribeOfferingDetailResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param connectionCosts A list of connection costs.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeOfferingDetailResult withConnectionCosts(java.util.Collection<ConnectionCost> connectionCosts) {
         if (connectionCosts == null) {
@@ -371,6 +395,9 @@ public class DescribeOfferingDetailResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param orderSteps A list of offering order steps.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeOfferingDetailResult withOrderSteps(OfferingOrderStep... orderSteps) {
         if (getOrderSteps() == null) setOrderSteps(new java.util.ArrayList<OfferingOrderStep>(orderSteps.length));
@@ -386,6 +413,9 @@ public class DescribeOfferingDetailResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param orderSteps A list of offering order steps.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeOfferingDetailResult withOrderSteps(java.util.Collection<OfferingOrderStep> orderSteps) {
         if (orderSteps == null) {

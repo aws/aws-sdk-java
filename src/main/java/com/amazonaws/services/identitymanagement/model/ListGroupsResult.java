@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the ListGroups action.
  * </p>
  */
-public class ListGroupsResult  implements Serializable  {
+public class ListGroupsResult implements Serializable {
 
     /**
      * A list of groups.
@@ -81,6 +81,9 @@ public class ListGroupsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groups A list of groups.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListGroupsResult withGroups(Group... groups) {
         if (getGroups() == null) setGroups(new java.util.ArrayList<Group>(groups.length));
@@ -96,6 +99,9 @@ public class ListGroupsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groups A list of groups.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListGroupsResult withGroups(java.util.Collection<Group> groups) {
         if (groups == null) {
@@ -151,6 +157,9 @@ public class ListGroupsResult  implements Serializable  {
      *         results were truncated, you can make a subsequent pagination request
      *         using the <code>Marker</code> request parameter to retrieve more
      *         groups in the list.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListGroupsResult withIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
@@ -221,6 +230,9 @@ public class ListGroupsResult  implements Serializable  {
      * @param marker If <code>IsTruncated</code> is <code>true</code>, this element is
      *         present and contains the value to use for the <code>Marker</code>
      *         parameter in a subsequent pagination request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListGroupsResult withMarker(String marker) {
         this.marker = marker;

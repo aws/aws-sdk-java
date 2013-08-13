@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.ImportKeyPairRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -40,7 +42,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#importKeyPair(ImportKeyPairRequest)
  */
-public class ImportKeyPairRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ImportKeyPairRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ImportKeyPairRequest> {
 
     /**
      * The unique name for the key pair.
@@ -143,6 +145,18 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest  implements Se
         return this;
     }
     
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<ImportKeyPairRequest> getDryRunRequest() {
+        Request<ImportKeyPairRequest> request = new ImportKeyPairRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

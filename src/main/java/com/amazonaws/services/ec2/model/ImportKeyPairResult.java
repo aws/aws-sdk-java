@@ -19,7 +19,7 @@ import java.io.Serializable;
  * <p>
  * </p>
  */
-public class ImportKeyPairResult  implements Serializable  {
+public class ImportKeyPairResult implements Serializable {
 
     /**
      * The specified unique key pair name.

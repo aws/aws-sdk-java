@@ -29,7 +29,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#updateChapCredentials(UpdateChapCredentialsRequest)
  */
-public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The Amazon Resource Name (ARN) of the iSCSI volume target. Use the
@@ -113,6 +113,9 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest  imple
      * @param targetARN The Amazon Resource Name (ARN) of the iSCSI volume target. Use the
      *         <a>DescribeStorediSCSIVolumes</a> operation to return to retrieve the
      *         TargetARN for specified VolumeARN.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateChapCredentialsRequest withTargetARN(String targetARN) {
         this.targetARN = targetARN;
@@ -159,6 +162,9 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest  imple
      *
      * @param secretToAuthenticateInitiator The secret key that the initiator (e.g. Windows client) must provide
      *         to participate in mutual CHAP with the target.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateChapCredentialsRequest withSecretToAuthenticateInitiator(String secretToAuthenticateInitiator) {
         this.secretToAuthenticateInitiator = secretToAuthenticateInitiator;
@@ -202,6 +208,9 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest  imple
      * <b>Pattern: </b>[0-9a-z:.-]+<br/>
      *
      * @param initiatorName The iSCSI initiator that connects to the target.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateChapCredentialsRequest withInitiatorName(String initiatorName) {
         this.initiatorName = initiatorName;
@@ -248,6 +257,9 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest  imple
      *
      * @param secretToAuthenticateTarget The secret key that the target must provide to participate in mutual
      *         CHAP with the initiator (e.g. Windows client).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateChapCredentialsRequest withSecretToAuthenticateTarget(String secretToAuthenticateTarget) {
         this.secretToAuthenticateTarget = secretToAuthenticateTarget;

@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#deleteClusterSubnetGroup(DeleteClusterSubnetGroupRequest)
  */
-public class DeleteClusterSubnetGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteClusterSubnetGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the cluster subnet group name to be deleted.
@@ -55,6 +55,9 @@ public class DeleteClusterSubnetGroupRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clusterSubnetGroupName The name of the cluster subnet group name to be deleted.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteClusterSubnetGroupRequest withClusterSubnetGroupName(String clusterSubnetGroupName) {
         this.clusterSubnetGroupName = clusterSubnetGroupName;

@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeMetricCollectionTypes(DescribeMetricCollectionTypesRequest)
  */
-public class DescribeMetricCollectionTypesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeMetricCollectionTypesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Returns a string representation of this object; useful for testing and

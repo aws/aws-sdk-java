@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The <code>VirtualMFADevice</code> data type contains information about a virtual MFA device.
  * </p>
  */
-public class VirtualMFADevice  implements Serializable  {
+public class VirtualMFADevice implements Serializable {
 
     /**
      * The serial number associated with <code>VirtualMFADevice</code>.
@@ -95,6 +95,9 @@ public class VirtualMFADevice  implements Serializable  {
      * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
      *
      * @param serialNumber The serial number associated with <code>VirtualMFADevice</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VirtualMFADevice withSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
@@ -144,6 +147,9 @@ public class VirtualMFADevice  implements Serializable  {
      *         href="http://www.ietf.org/rfc/rfc3548.txt"
      *         target="_blank">RFC3548</a>. The <code>Base32StringSeed</code> is
      *         Base64-encoded.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VirtualMFADevice withBase32StringSeed(java.nio.ByteBuffer base32StringSeed) {
         this.base32StringSeed = base32StringSeed;
@@ -205,6 +211,9 @@ public class VirtualMFADevice  implements Serializable  {
      *         create call arguments, AccountName is the user name if set (accountId
      *         otherwise), and Base32String is the seed in Base32 format. The
      *         <code>Base32String</code> is Base64-encoded.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VirtualMFADevice withQRCodePNG(java.nio.ByteBuffer qRCodePNG) {
         this.qRCodePNG = qRCodePNG;
@@ -254,6 +263,9 @@ public class VirtualMFADevice  implements Serializable  {
      *         type is used as a response element in the following actions: <ul>
      *         <li><p><a>CreateUser</a></li> <li><p><a>GetUser</a></li>
      *         <li><p><a>ListUsers</a></li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VirtualMFADevice withUser(User user) {
         this.user = user;
@@ -285,6 +297,9 @@ public class VirtualMFADevice  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param enableDate The new value for the EnableDate property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public VirtualMFADevice withEnableDate(java.util.Date enableDate) {
         this.enableDate = enableDate;

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the Amazon Glacier response to your request.
  * </p>
  */
-public class InitiateMultipartUploadResult  implements Serializable  {
+public class InitiateMultipartUploadResult implements Serializable {
 
     /**
      * The relative URI path of the multipart upload ID Amazon Glacier
@@ -64,6 +64,9 @@ public class InitiateMultipartUploadResult  implements Serializable  {
      *
      * @param location The relative URI path of the multipart upload ID Amazon Glacier
      *         created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InitiateMultipartUploadResult withLocation(String location) {
         this.location = location;
@@ -101,6 +104,9 @@ public class InitiateMultipartUploadResult  implements Serializable  {
      *
      * @param uploadId The ID of the multipart upload. This value is also included as part of
      *         the location.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InitiateMultipartUploadResult withUploadId(String uploadId) {
         this.uploadId = uploadId;

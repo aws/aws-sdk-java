@@ -104,7 +104,7 @@ public interface AmazonElasticLoadBalancing {
      * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      */
     public void setRegion(Region region) throws java.lang.IllegalArgumentException;
-	
+    
     /**
      * <p>
      * Returns meta-information on the specified LoadBalancer policies

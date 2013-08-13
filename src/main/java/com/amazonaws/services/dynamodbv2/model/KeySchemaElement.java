@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents a key schema. Specifies the attributes that make up the primary key of a table, or the key attributes of a secondary index.
  * </p>
  */
-public class KeySchemaElement  implements Serializable  {
+public class KeySchemaElement implements Serializable {
 
     /**
      * Represents the name of a key attribute.
@@ -44,6 +44,38 @@ public class KeySchemaElement  implements Serializable  {
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
     public KeySchemaElement() {}
+    
+
+
+    /**
+     * Constructs a new KeySchemaElement object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param attributeName Represents the name of a key attribute.
+     * @param keyType Represents the attribute data, consisting of the data
+     * type and the attribute value itself.
+     */
+    public KeySchemaElement(String attributeName, String keyType) {
+        setAttributeName(attributeName);
+        setKeyType(keyType);
+    }
+
+    
+    
+    /**
+     * Constructs a new KeySchemaElement object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param attributeName Represents the name of a key attribute.
+     * @param keyType Represents the attribute data, consisting of the data
+     * type and the attribute value itself.
+     */
+    public KeySchemaElement(String attributeName, KeyType keyType) {
+        this.attributeName = attributeName;
+        this.keyType = keyType.toString();
+    }
     
     /**
      * Represents the name of a key attribute.
@@ -78,6 +110,9 @@ public class KeySchemaElement  implements Serializable  {
      * <b>Length: </b>1 - 255<br/>
      *
      * @param attributeName Represents the name of a key attribute.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public KeySchemaElement withAttributeName(String attributeName) {
         this.attributeName = attributeName;
@@ -129,6 +164,9 @@ public class KeySchemaElement  implements Serializable  {
      * @param keyType Represents the attribute data, consisting of the data type and the
      *         attribute value itself.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see KeyType
      */
     public KeySchemaElement withKeyType(String keyType) {
@@ -164,6 +202,9 @@ public class KeySchemaElement  implements Serializable  {
      *
      * @param keyType Represents the attribute data, consisting of the data type and the
      *         attribute value itself.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see KeyType
      */

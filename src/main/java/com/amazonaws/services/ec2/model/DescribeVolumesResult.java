@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The result of describing your EBS volumes.
  * </p>
  */
-public class DescribeVolumesResult  implements Serializable  {
+public class DescribeVolumesResult implements Serializable {
 
     /**
      * The list of described EBS volumes.

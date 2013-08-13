@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A software license that can be associated with an Amazon EC2 instance when launched (ex. a Microsoft Windows license).
  * </p>
  */
-public class License  implements Serializable  {
+public class License implements Serializable {
 
     /**
      * The unique ID identifying the license.

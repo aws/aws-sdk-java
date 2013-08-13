@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A complex type that contains the value of the <code>Value</code> element for the current resource record set.
  * </p>
  */
-public class ResourceRecord  implements Serializable  {
+public class ResourceRecord implements Serializable {
 
     /**
      * The value of the <code>Value</code> element for the current resource
@@ -92,6 +92,9 @@ public class ResourceRecord  implements Serializable  {
      *
      * @param value The value of the <code>Value</code> element for the current resource
      *         record set.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ResourceRecord withValue(String value) {
         this.value = value;

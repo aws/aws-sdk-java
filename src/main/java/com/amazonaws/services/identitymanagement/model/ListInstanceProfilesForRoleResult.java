@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the ListInstanceProfilesForRole action.
  * </p>
  */
-public class ListInstanceProfilesForRoleResult  implements Serializable  {
+public class ListInstanceProfilesForRoleResult implements Serializable {
 
     /**
      * A list of instance profiles.
@@ -81,6 +81,9 @@ public class ListInstanceProfilesForRoleResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceProfiles A list of instance profiles.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListInstanceProfilesForRoleResult withInstanceProfiles(InstanceProfile... instanceProfiles) {
         if (getInstanceProfiles() == null) setInstanceProfiles(new java.util.ArrayList<InstanceProfile>(instanceProfiles.length));
@@ -96,6 +99,9 @@ public class ListInstanceProfilesForRoleResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceProfiles A list of instance profiles.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListInstanceProfilesForRoleResult withInstanceProfiles(java.util.Collection<InstanceProfile> instanceProfiles) {
         if (instanceProfiles == null) {
@@ -151,6 +157,9 @@ public class ListInstanceProfilesForRoleResult  implements Serializable  {
      *         list. If your results were truncated, you can make a subsequent
      *         pagination request using the <code>Marker</code> request parameter to
      *         retrieve more instance profiles in the list.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListInstanceProfilesForRoleResult withIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
@@ -221,6 +230,9 @@ public class ListInstanceProfilesForRoleResult  implements Serializable  {
      * @param marker If <code>IsTruncated</code> is <code>true</code>, this element is
      *         present and contains the value to use for the <code>Marker</code>
      *         parameter in a subsequent pagination request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListInstanceProfilesForRoleResult withMarker(String marker) {
         this.marker = marker;

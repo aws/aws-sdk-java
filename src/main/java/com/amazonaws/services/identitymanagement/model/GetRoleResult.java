@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the GetRole action.
  * </p>
  */
-public class GetRoleResult  implements Serializable  {
+public class GetRoleResult implements Serializable {
 
     /**
      * Information about the role.
@@ -51,6 +51,9 @@ public class GetRoleResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param role Information about the role.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetRoleResult withRole(Role role) {
         this.role = role;

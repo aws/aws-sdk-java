@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The output of the DescribeAdjustmentTypes action.
  * </p>
  */
-public class DescribeAdjustmentTypesResult  implements Serializable  {
+public class DescribeAdjustmentTypesResult implements Serializable {
 
     /**
      * A list of specific policy adjustment types.
@@ -62,6 +62,9 @@ public class DescribeAdjustmentTypesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param adjustmentTypes A list of specific policy adjustment types.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeAdjustmentTypesResult withAdjustmentTypes(AdjustmentType... adjustmentTypes) {
         if (getAdjustmentTypes() == null) setAdjustmentTypes(new java.util.ArrayList<AdjustmentType>(adjustmentTypes.length));
@@ -77,6 +80,9 @@ public class DescribeAdjustmentTypesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param adjustmentTypes A list of specific policy adjustment types.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeAdjustmentTypesResult withAdjustmentTypes(java.util.Collection<AdjustmentType> adjustmentTypes) {
         if (adjustmentTypes == null) {

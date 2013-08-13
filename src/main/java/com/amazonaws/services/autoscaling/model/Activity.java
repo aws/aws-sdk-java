@@ -21,7 +21,7 @@ import java.io.Serializable;
  * be a process to replace an instance, or a process to perform any other long-running operations supported by the API.
  * </p>
  */
-public class Activity  implements Serializable  {
+public class Activity implements Serializable {
 
     /**
      * Specifies the ID of the activity.
@@ -131,6 +131,9 @@ public class Activity  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param activityId Specifies the ID of the activity.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Activity withActivityId(String activityId) {
         this.activityId = activityId;
@@ -174,6 +177,9 @@ public class Activity  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param autoScalingGroupName The name of the Auto Scaling group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Activity withAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
@@ -214,6 +220,9 @@ public class Activity  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param description Contains a friendly, more verbose description of the scaling activity.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Activity withDescription(String description) {
         this.description = description;
@@ -257,6 +266,9 @@ public class Activity  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param cause Contains the reason the activity was begun.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Activity withCause(String cause) {
         this.cause = cause;
@@ -288,6 +300,9 @@ public class Activity  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param startTime Provides the start time of this activity.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Activity withStartTime(java.util.Date startTime) {
         this.startTime = startTime;
@@ -319,6 +334,9 @@ public class Activity  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param endTime Provides the end time of this activity.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Activity withEndTime(java.util.Date endTime) {
         this.endTime = endTime;
@@ -364,6 +382,9 @@ public class Activity  implements Serializable  {
      *
      * @param statusCode Contains the current status of the activity.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ScalingActivityStatusCode
      */
     public Activity withStatusCode(String statusCode) {
@@ -395,6 +416,9 @@ public class Activity  implements Serializable  {
      * <b>Allowed Values: </b>WaitingForSpotInstanceRequestId, WaitingForSpotInstanceId, WaitingForInstanceId, PreInService, InProgress, Successful, Failed, Cancelled
      *
      * @param statusCode Contains the current status of the activity.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see ScalingActivityStatusCode
      */
@@ -439,6 +463,9 @@ public class Activity  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param statusMessage Contains a friendly, more verbose description of the activity status.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Activity withStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
@@ -476,6 +503,9 @@ public class Activity  implements Serializable  {
      *
      * @param progress Specifies a value between 0 and 100 that indicates the progress of the
      *         activity.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Activity withProgress(Integer progress) {
         this.progress = progress;
@@ -516,6 +546,9 @@ public class Activity  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param details Contains details of the scaling activity.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Activity withDetails(String details) {
         this.details = details;

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the GetServerCertificate action.
  * </p>
  */
-public class GetServerCertificateResult  implements Serializable  {
+public class GetServerCertificateResult implements Serializable {
 
     /**
      * Information about the server certificate.
@@ -51,6 +51,9 @@ public class GetServerCertificateResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param serverCertificate Information about the server certificate.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetServerCertificateResult withServerCertificate(ServerCertificate serverCertificate) {
         this.serverCertificate = serverCertificate;

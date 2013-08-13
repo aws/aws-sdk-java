@@ -18,14 +18,22 @@ import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#getQueueUrl(GetQueueUrlRequest) GetQueueUrl operation}.
- * 
+ * <p>
+ * The <code>GetQueueUrl</code> action returns the URL of an existing queue.
+ * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#getQueueUrl(GetQueueUrlRequest)
  */
-public class GetQueueUrlRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class GetQueueUrlRequest extends AmazonWebServiceRequest implements Serializable {
 
+    /**
+     * The name of the queue whose URL must be fetched.
+     */
     private String queueName;
 
+    /**
+     * The AWS account number of the queue's owner.
+     */
     private String queueOwnerAWSAccountId;
 
     /**
@@ -41,7 +49,7 @@ public class GetQueueUrlRequest extends AmazonWebServiceRequest  implements Seri
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param queueName
+     * @param queueName The name of the queue whose URL must be fetched.
      */
     public GetQueueUrlRequest(String queueName) {
         setQueueName(queueName);
@@ -50,29 +58,32 @@ public class GetQueueUrlRequest extends AmazonWebServiceRequest  implements Seri
     
     
     /**
-     * Returns the value of the QueueName property for this object.
+     * The name of the queue whose URL must be fetched.
      *
-     * @return The value of the QueueName property for this object.
+     * @return The name of the queue whose URL must be fetched.
      */
     public String getQueueName() {
         return queueName;
     }
     
     /**
-     * Sets the value of the QueueName property for this object.
+     * The name of the queue whose URL must be fetched.
      *
-     * @param queueName The new value for the QueueName property for this object.
+     * @param queueName The name of the queue whose URL must be fetched.
      */
     public void setQueueName(String queueName) {
         this.queueName = queueName;
     }
     
     /**
-     * Sets the value of the QueueName property for this object.
+     * The name of the queue whose URL must be fetched.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queueName The new value for the QueueName property for this object.
+     * @param queueName The name of the queue whose URL must be fetched.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetQueueUrlRequest withQueueName(String queueName) {
         this.queueName = queueName;
@@ -81,30 +92,32 @@ public class GetQueueUrlRequest extends AmazonWebServiceRequest  implements Seri
     
     
     /**
-     * Returns the value of the QueueOwnerAWSAccountId property for this
-     * object.
+     * The AWS account number of the queue's owner.
      *
-     * @return The value of the QueueOwnerAWSAccountId property for this object.
+     * @return The AWS account number of the queue's owner.
      */
     public String getQueueOwnerAWSAccountId() {
         return queueOwnerAWSAccountId;
     }
     
     /**
-     * Sets the value of the QueueOwnerAWSAccountId property for this object.
+     * The AWS account number of the queue's owner.
      *
-     * @param queueOwnerAWSAccountId The new value for the QueueOwnerAWSAccountId property for this object.
+     * @param queueOwnerAWSAccountId The AWS account number of the queue's owner.
      */
     public void setQueueOwnerAWSAccountId(String queueOwnerAWSAccountId) {
         this.queueOwnerAWSAccountId = queueOwnerAWSAccountId;
     }
     
     /**
-     * Sets the value of the QueueOwnerAWSAccountId property for this object.
+     * The AWS account number of the queue's owner.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queueOwnerAWSAccountId The new value for the QueueOwnerAWSAccountId property for this object.
+     * @param queueOwnerAWSAccountId The AWS account number of the queue's owner.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetQueueUrlRequest withQueueOwnerAWSAccountId(String queueOwnerAWSAccountId) {
         this.queueOwnerAWSAccountId = queueOwnerAWSAccountId;

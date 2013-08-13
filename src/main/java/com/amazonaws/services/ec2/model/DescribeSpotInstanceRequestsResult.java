@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Describe Spot Instance Requests Result
  */
-public class DescribeSpotInstanceRequestsResult  implements Serializable  {
+public class DescribeSpotInstanceRequestsResult implements Serializable {
 
     private com.amazonaws.internal.ListWithAutoConstructFlag<SpotInstanceRequest> spotInstanceRequests;
 

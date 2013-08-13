@@ -20,7 +20,7 @@ import java.io.Serializable;
  * An Amazon EC2 reservation of requested EC2 instances.
  * </p>
  */
-public class Reservation  implements Serializable  {
+public class Reservation implements Serializable {
 
     /**
      * The unique ID of this reservation.

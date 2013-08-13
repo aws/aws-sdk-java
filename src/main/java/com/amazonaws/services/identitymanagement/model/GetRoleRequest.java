@@ -30,7 +30,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getRole(GetRoleRequest)
  */
-public class GetRoleRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class GetRoleRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the role to get information about.
@@ -77,6 +77,9 @@ public class GetRoleRequest extends AmazonWebServiceRequest  implements Serializ
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param roleName Name of the role to get information about.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetRoleRequest withRoleName(String roleName) {
         this.roleName = roleName;

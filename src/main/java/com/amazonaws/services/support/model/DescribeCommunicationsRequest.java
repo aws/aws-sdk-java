@@ -29,7 +29,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.support.AWSSupport#describeCommunications(DescribeCommunicationsRequest)
  */
-public class DescribeCommunicationsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeCommunicationsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * String that indicates the AWS Support caseID requested or returned in
@@ -98,6 +98,9 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest  impl
      * @param caseId String that indicates the AWS Support caseID requested or returned in
      *         the call. The caseID is an alphanumeric string formatted as shown in
      *         this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCommunicationsRequest withCaseId(String caseId) {
         this.caseId = caseId;
@@ -129,6 +132,9 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param beforeTime End date for a filtered date search on support case communications.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCommunicationsRequest withBeforeTime(String beforeTime) {
         this.beforeTime = beforeTime;
@@ -160,6 +166,9 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param afterTime Start date for a filtered date search on support case communications.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCommunicationsRequest withAfterTime(String afterTime) {
         this.afterTime = afterTime;
@@ -191,6 +200,9 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nextToken Defines a resumption point for pagination.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCommunicationsRequest withNextToken(String nextToken) {
         this.nextToken = nextToken;
@@ -237,6 +249,9 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest  impl
      *
      * @param maxResults Integer that sets the maximum number of results to return before
      *         paginating.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCommunicationsRequest withMaxResults(Integer maxResults) {
         this.maxResults = maxResults;

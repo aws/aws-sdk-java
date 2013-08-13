@@ -16,7 +16,9 @@ package com.amazonaws.services.sns.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Response for ConfirmSubscriptions action.
+ * </p>
  */
 public class ConfirmSubscriptionResult  implements Serializable  {
 
@@ -49,6 +51,9 @@ public class ConfirmSubscriptionResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subscriptionArn The ARN of the created subscription.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
      */
     public ConfirmSubscriptionResult withSubscriptionArn(String subscriptionArn) {
         this.subscriptionArn = subscriptionArn;

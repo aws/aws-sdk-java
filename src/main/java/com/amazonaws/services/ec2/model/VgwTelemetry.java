@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Vgw Telemetry
  */
-public class VgwTelemetry  implements Serializable  {
+public class VgwTelemetry implements Serializable {
 
     private String outsideIpAddress;
 

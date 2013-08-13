@@ -54,7 +54,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.securitytoken.AWSSecurityTokenService#decodeAuthorizationMessage(DecodeAuthorizationMessageRequest)
  */
-public class DecodeAuthorizationMessageRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DecodeAuthorizationMessageRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The encoded message that was returned with the response.
@@ -97,6 +97,9 @@ public class DecodeAuthorizationMessageRequest extends AmazonWebServiceRequest  
      * <b>Length: </b>1 - 10240<br/>
      *
      * @param encodedMessage The encoded message that was returned with the response.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DecodeAuthorizationMessageRequest withEncodedMessage(String encodedMessage) {
         this.encodedMessage = encodedMessage;

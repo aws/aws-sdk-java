@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Output from an AddInstanceGroups call.
  * </p>
  */
-public class AddInstanceGroupsResult  implements Serializable  {
+public class AddInstanceGroupsResult implements Serializable {
 
     /**
      * The job flow ID in which the instance groups are added.
@@ -72,6 +72,9 @@ public class AddInstanceGroupsResult  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param jobFlowId The job flow ID in which the instance groups are added.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AddInstanceGroupsResult withJobFlowId(String jobFlowId) {
         this.jobFlowId = jobFlowId;
@@ -114,6 +117,9 @@ public class AddInstanceGroupsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceGroupIds Instance group IDs of the newly created instance groups.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AddInstanceGroupsResult withInstanceGroupIds(String... instanceGroupIds) {
         if (getInstanceGroupIds() == null) setInstanceGroupIds(new java.util.ArrayList<String>(instanceGroupIds.length));
@@ -129,6 +135,9 @@ public class AddInstanceGroupsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceGroupIds Instance group IDs of the newly created instance groups.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AddInstanceGroupsResult withInstanceGroupIds(java.util.Collection<String> instanceGroupIds) {
         if (instanceGroupIds == null) {

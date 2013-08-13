@@ -28,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#createApplicationVersion(CreateApplicationVersionRequest)
  */
-public class CreateApplicationVersionRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateApplicationVersionRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the application. If no application is found with this
@@ -162,6 +162,9 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest  im
      * @param applicationName The name of the application. If no application is found with this
      *         name, and <code>AutoCreateApplication</code> is <code>false</code>,
      *         returns an <code>InvalidParameterValue</code> error.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateApplicationVersionRequest withApplicationName(String applicationName) {
         this.applicationName = applicationName;
@@ -220,6 +223,9 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest  im
      *         application. If an application version already exists with this label
      *         for the specified application, AWS Elastic Beanstalk returns an
      *         <code>InvalidParameterValue</code> error.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateApplicationVersionRequest withVersionLabel(String versionLabel) {
         this.versionLabel = versionLabel;
@@ -260,6 +266,9 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest  im
      * <b>Length: </b>0 - 200<br/>
      *
      * @param description Describes this version.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateApplicationVersionRequest withDescription(String description) {
         this.description = description;
@@ -333,6 +342,9 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest  im
      *         only partially specified (for example, a bucket is provided but not
      *         the key) or if no data is found at the Amazon S3 location, AWS Elastic
      *         Beanstalk returns an <code>InvalidParameterCombination</code> error.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateApplicationVersionRequest withSourceBundle(S3Location sourceBundle) {
         this.sourceBundle = sourceBundle;
@@ -436,6 +448,9 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest  im
      *         the specified application for this release does not already exist.
      *         </li> </ul> <p> Default: <code>false</code> <p> Valid Values:
      *         <code>true</code> | <code>false</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateApplicationVersionRequest withAutoCreateApplication(Boolean autoCreateApplication) {
         this.autoCreateApplication = autoCreateApplication;

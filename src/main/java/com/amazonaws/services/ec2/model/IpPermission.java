@@ -20,7 +20,7 @@ import java.io.Serializable;
  * An IP permission describing allowed incoming IP traffic to an Amazon EC2 security group.
  * </p>
  */
-public class IpPermission  implements Serializable  {
+public class IpPermission implements Serializable {
 
     /**
      * The IP protocol of this permission. <p> Valid protocol values:

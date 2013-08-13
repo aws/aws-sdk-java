@@ -28,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteSigningCertificate(DeleteSigningCertificateRequest)
  */
-public class DeleteSigningCertificateRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteSigningCertificateRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the user the signing certificate belongs to.
@@ -105,6 +105,9 @@ public class DeleteSigningCertificateRequest extends AmazonWebServiceRequest  im
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param userName Name of the user the signing certificate belongs to.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteSigningCertificateRequest withUserName(String userName) {
         this.userName = userName;
@@ -148,6 +151,9 @@ public class DeleteSigningCertificateRequest extends AmazonWebServiceRequest  im
      * <b>Pattern: </b>[\w]*<br/>
      *
      * @param certificateId ID of the signing certificate to delete.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteSigningCertificateRequest withCertificateId(String certificateId) {
         this.certificateId = certificateId;

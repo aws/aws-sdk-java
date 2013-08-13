@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describePermissions(DescribePermissionsRequest)
  */
-public class DescribePermissionsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribePermissionsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The user's IAM ARN. For more information about IAM ARNs, see <a
@@ -74,6 +74,9 @@ public class DescribePermissionsRequest extends AmazonWebServiceRequest  impleme
      * @param iamUserArn The user's IAM ARN. For more information about IAM ARNs, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribePermissionsRequest withIamUserArn(String iamUserArn) {
         this.iamUserArn = iamUserArn;
@@ -105,6 +108,9 @@ public class DescribePermissionsRequest extends AmazonWebServiceRequest  impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackId The stack ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribePermissionsRequest withStackId(String stackId) {
         this.stackId = stackId;

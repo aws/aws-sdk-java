@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Import Instance Result
  */
-public class ImportInstanceResult  implements Serializable  {
+public class ImportInstanceResult implements Serializable {
 
     private ConversionTask conversionTask;
 

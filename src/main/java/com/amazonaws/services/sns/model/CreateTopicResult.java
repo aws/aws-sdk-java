@@ -16,7 +16,9 @@ package com.amazonaws.services.sns.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Response from CreateTopic action.
+ * </p>
  */
 public class CreateTopicResult  implements Serializable  {
 
@@ -49,6 +51,9 @@ public class CreateTopicResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param topicArn The Amazon Resource Name (ARN) assigned to the created topic.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
      */
     public CreateTopicResult withTopicArn(String topicArn) {
         this.topicArn = topicArn;

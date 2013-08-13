@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeCacheParameterGroups(DescribeCacheParameterGroupsRequest)
  */
-public class DescribeCacheParameterGroupsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeCacheParameterGroupsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of a specific cache parameter group to return details for.
@@ -94,6 +94,9 @@ public class DescribeCacheParameterGroupsRequest extends AmazonWebServiceRequest
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheParameterGroupName The name of a specific cache parameter group to return details for.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCacheParameterGroupsRequest withCacheParameterGroupName(String cacheParameterGroupName) {
         this.cacheParameterGroupName = cacheParameterGroupName;
@@ -143,6 +146,9 @@ public class DescribeCacheParameterGroupsRequest extends AmazonWebServiceRequest
      *         records exist than the specified <i>MaxRecords</i> value, a marker is
      *         included in the response so that the remaining results may be
      *         retrieved.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCacheParameterGroupsRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -192,6 +198,9 @@ public class DescribeCacheParameterGroupsRequest extends AmazonWebServiceRequest
      *         DescribeCacheParameterGroups request. If this parameter is specified,
      *         the response includes only records beyond the marker, up to the value
      *         specified by <i>MaxRecords</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCacheParameterGroupsRequest withMarker(String marker) {
         this.marker = marker;

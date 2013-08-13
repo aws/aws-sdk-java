@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Create Spot Datafeed Subscription Result
  */
-public class CreateSpotDatafeedSubscriptionResult  implements Serializable  {
+public class CreateSpotDatafeedSubscriptionResult implements Serializable {
 
     /**
      * The SpotDatafeedSubscriptionType data type.

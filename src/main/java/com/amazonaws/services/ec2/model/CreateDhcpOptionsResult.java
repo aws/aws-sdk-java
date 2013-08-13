@@ -20,7 +20,7 @@ import java.io.Serializable;
  * 
  * </p>
  */
-public class CreateDhcpOptionsResult  implements Serializable  {
+public class CreateDhcpOptionsResult implements Serializable {
 
     /**
      * A set of one or more DHCP options.

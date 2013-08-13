@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#purchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest)
  */
-public class PurchaseReservedCacheNodesOfferingRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class PurchaseReservedCacheNodesOfferingRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The ID of the Reserved Cache Node offering to purchase. <p>Example:
@@ -73,6 +73,9 @@ public class PurchaseReservedCacheNodesOfferingRequest extends AmazonWebServiceR
      *
      * @param reservedCacheNodesOfferingId The ID of the Reserved Cache Node offering to purchase. <p>Example:
      *         438012d3-4052-4cc7-b2e3-8d3372e0e706
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PurchaseReservedCacheNodesOfferingRequest withReservedCacheNodesOfferingId(String reservedCacheNodesOfferingId) {
         this.reservedCacheNodesOfferingId = reservedCacheNodesOfferingId;
@@ -110,6 +113,9 @@ public class PurchaseReservedCacheNodesOfferingRequest extends AmazonWebServiceR
      *
      * @param reservedCacheNodeId Customer-specified identifier to track this reservation. <p>Example:
      *         myreservationID
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PurchaseReservedCacheNodesOfferingRequest withReservedCacheNodeId(String reservedCacheNodeId) {
         this.reservedCacheNodeId = reservedCacheNodeId;
@@ -141,6 +147,9 @@ public class PurchaseReservedCacheNodesOfferingRequest extends AmazonWebServiceR
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheNodeCount The number of instances to reserve. <p>Default: <code>1</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PurchaseReservedCacheNodesOfferingRequest withCacheNodeCount(Integer cacheNodeCount) {
         this.cacheNodeCount = cacheNodeCount;

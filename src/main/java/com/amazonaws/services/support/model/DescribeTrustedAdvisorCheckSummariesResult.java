@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Returns the objects or data listed below if successful. Otherwise, returns an error.
  * </p>
  */
-public class DescribeTrustedAdvisorCheckSummariesResult  implements Serializable  {
+public class DescribeTrustedAdvisorCheckSummariesResult implements Serializable {
 
     /**
      * List of <a
@@ -104,6 +104,9 @@ public class DescribeTrustedAdvisorCheckSummariesResult  implements Serializable
      *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
      *         title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>
      *         request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeTrustedAdvisorCheckSummariesResult withSummaries(TrustedAdvisorCheckSummary... summaries) {
         if (getSummaries() == null) setSummaries(new java.util.ArrayList<TrustedAdvisorCheckSummary>(summaries.length));
@@ -131,6 +134,9 @@ public class DescribeTrustedAdvisorCheckSummariesResult  implements Serializable
      *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
      *         title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>
      *         request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeTrustedAdvisorCheckSummariesResult withSummaries(java.util.Collection<TrustedAdvisorCheckSummary> summaries) {
         if (summaries == null) {

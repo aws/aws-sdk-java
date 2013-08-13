@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The <code>AutoScalingInstanceDetails</code> data type.
  * </p>
  */
-public class AutoScalingInstanceDetails  implements Serializable  {
+public class AutoScalingInstanceDetails implements Serializable {
 
     /**
      * The instance ID of the Amazon EC2 instance.
@@ -114,6 +114,9 @@ public class AutoScalingInstanceDetails  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param instanceId The instance ID of the Amazon EC2 instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AutoScalingInstanceDetails withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -157,6 +160,9 @@ public class AutoScalingInstanceDetails  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param autoScalingGroupName The name of the Auto Scaling group associated with this instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AutoScalingInstanceDetails withAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
@@ -200,6 +206,9 @@ public class AutoScalingInstanceDetails  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param availabilityZone The Availability Zone in which this instance resides.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AutoScalingInstanceDetails withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -243,6 +252,9 @@ public class AutoScalingInstanceDetails  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param lifecycleState The life cycle state of this instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AutoScalingInstanceDetails withLifecycleState(String lifecycleState) {
         this.lifecycleState = lifecycleState;
@@ -298,6 +310,9 @@ public class AutoScalingInstanceDetails  implements Serializable  {
      * @param healthStatus The health status of this instance. "Healthy" means that the instance
      *         is healthy and should remain in service. "Unhealthy" means that the
      *         instance is unhealthy. Auto Scaling should terminate and replace it.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AutoScalingInstanceDetails withHealthStatus(String healthStatus) {
         this.healthStatus = healthStatus;
@@ -341,6 +356,9 @@ public class AutoScalingInstanceDetails  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param launchConfigurationName The launch configuration associated with this instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AutoScalingInstanceDetails withLaunchConfigurationName(String launchConfigurationName) {
         this.launchConfigurationName = launchConfigurationName;

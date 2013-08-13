@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A complex type that contains information about the resource record sets that are returned by the request and information about the response.
  * </p>
  */
-public class ListResourceRecordSetsResult  implements Serializable  {
+public class ListResourceRecordSetsResult implements Serializable {
 
     /**
      * A complex type that contains information about the resource record
@@ -115,6 +115,9 @@ public class ListResourceRecordSetsResult  implements Serializable  {
      *
      * @param resourceRecordSets A complex type that contains information about the resource record
      *         sets that are returned by the request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListResourceRecordSetsResult withResourceRecordSets(ResourceRecordSet... resourceRecordSets) {
         if (getResourceRecordSets() == null) setResourceRecordSets(new java.util.ArrayList<ResourceRecordSet>(resourceRecordSets.length));
@@ -132,6 +135,9 @@ public class ListResourceRecordSetsResult  implements Serializable  {
      *
      * @param resourceRecordSets A complex type that contains information about the resource record
      *         sets that are returned by the request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListResourceRecordSetsResult withResourceRecordSets(java.util.Collection<ResourceRecordSet> resourceRecordSets) {
         if (resourceRecordSets == null) {
@@ -193,6 +199,9 @@ public class ListResourceRecordSetsResult  implements Serializable  {
      *         request for the next page of results by using the
      *         <a>ListResourceRecordSetsResponse$NextRecordName</a> element. <p>Valid
      *         Values: <code>true</code> | <code>false</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListResourceRecordSetsResult withIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
@@ -262,6 +271,9 @@ public class ListResourceRecordSetsResult  implements Serializable  {
      * @param nextRecordName If the results were truncated, the name of the next record in the
      *         list. This element is present only if
      *         <a>ListResourceRecordSetsResponse$IsTruncated</a> is true.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListResourceRecordSetsResult withNextRecordName(String nextRecordName) {
         this.nextRecordName = nextRecordName;
@@ -319,6 +331,9 @@ public class ListResourceRecordSetsResult  implements Serializable  {
      *         list. This element is present only if
      *         <a>ListResourceRecordSetsResponse$IsTruncated</a> is true.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see RRType
      */
     public ListResourceRecordSetsResult withNextRecordType(String nextRecordType) {
@@ -358,6 +373,9 @@ public class ListResourceRecordSetsResult  implements Serializable  {
      * @param nextRecordType If the results were truncated, the type of the next record in the
      *         list. This element is present only if
      *         <a>ListResourceRecordSetsResponse$IsTruncated</a> is true.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see RRType
      */
@@ -417,6 +435,9 @@ public class ListResourceRecordSetsResult  implements Serializable  {
      *         for a given DNS name and type, the value of <code>SetIdentifier</code>
      *         for the next resource record set that has the current DNS name and
      *         type.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListResourceRecordSetsResult withNextRecordIdentifier(String nextRecordIdentifier) {
         this.nextRecordIdentifier = nextRecordIdentifier;
@@ -454,6 +475,9 @@ public class ListResourceRecordSetsResult  implements Serializable  {
      *
      * @param maxItems The maximum number of records you requested. The maximum value of
      *         <code>MaxItems</code> is 100.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListResourceRecordSetsResult withMaxItems(String maxItems) {
         this.maxItems = maxItems;

@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#deleteVirtualInterface(DeleteVirtualInterfaceRequest)
  */
-public class DeleteVirtualInterfaceRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteVirtualInterfaceRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * ID of the virtual interface. <p>Example: dxvif-123dfg56 <p>Default:
@@ -62,6 +62,9 @@ public class DeleteVirtualInterfaceRequest extends AmazonWebServiceRequest  impl
      *
      * @param virtualInterfaceId ID of the virtual interface. <p>Example: dxvif-123dfg56 <p>Default:
      *         None
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteVirtualInterfaceRequest withVirtualInterfaceId(String virtualInterfaceId) {
         this.virtualInterfaceId = virtualInterfaceId;

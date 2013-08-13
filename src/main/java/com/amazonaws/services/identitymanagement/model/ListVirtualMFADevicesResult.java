@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the ListVirtualMFADevices action.
  * </p>
  */
-public class ListVirtualMFADevicesResult  implements Serializable  {
+public class ListVirtualMFADevicesResult implements Serializable {
 
     private com.amazonaws.internal.ListWithAutoConstructFlag<VirtualMFADevice> virtualMFADevices;
 
@@ -78,6 +78,9 @@ public class ListVirtualMFADevicesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param virtualMFADevices The new value for the VirtualMFADevices property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListVirtualMFADevicesResult withVirtualMFADevices(VirtualMFADevice... virtualMFADevices) {
         if (getVirtualMFADevices() == null) setVirtualMFADevices(new java.util.ArrayList<VirtualMFADevice>(virtualMFADevices.length));
@@ -93,6 +96,9 @@ public class ListVirtualMFADevicesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param virtualMFADevices The new value for the VirtualMFADevices property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListVirtualMFADevicesResult withVirtualMFADevices(java.util.Collection<VirtualMFADevice> virtualMFADevices) {
         if (virtualMFADevices == null) {
@@ -148,6 +154,9 @@ public class ListVirtualMFADevicesResult  implements Serializable  {
      *         results were truncated, you can make a subsequent pagination request
      *         using the <code>Marker</code> request parameter to retrieve more items
      *         the list.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListVirtualMFADevicesResult withIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
@@ -218,6 +227,9 @@ public class ListVirtualMFADevicesResult  implements Serializable  {
      * @param marker If <code>IsTruncated</code> is <code>true</code>, this element is
      *         present and contains the value to use for the <code>Marker</code>
      *         parameter in a subsequent pagination request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListVirtualMFADevicesResult withMarker(String marker) {
         this.marker = marker;

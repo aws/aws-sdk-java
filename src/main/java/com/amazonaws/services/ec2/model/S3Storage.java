@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes the S3 storage destination for a BundleTask when bundling a Windows instance.
  * </p>
  */
-public class S3Storage  implements Serializable  {
+public class S3Storage implements Serializable {
 
     /**
      * The bucket in which to store the AMI. You can specify a bucket that

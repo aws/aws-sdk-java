@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes a recurring charge.
  * </p>
  */
-public class RecurringCharge  implements Serializable  {
+public class RecurringCharge implements Serializable {
 
     /**
      * The amount charged per the period of time specified by the recurring
@@ -63,6 +63,9 @@ public class RecurringCharge  implements Serializable  {
      *
      * @param recurringChargeAmount The amount charged per the period of time specified by the recurring
      *         charge frequency.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RecurringCharge withRecurringChargeAmount(Double recurringChargeAmount) {
         this.recurringChargeAmount = recurringChargeAmount;
@@ -94,6 +97,9 @@ public class RecurringCharge  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param recurringChargeFrequency The frequency at which the recurring charge amount is applied.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RecurringCharge withRecurringChargeFrequency(String recurringChargeFrequency) {
         this.recurringChargeFrequency = recurringChargeFrequency;

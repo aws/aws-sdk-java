@@ -57,7 +57,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#pollForDecisionTask(PollForDecisionTaskRequest)
  */
-public class PollForDecisionTaskRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class PollForDecisionTaskRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the domain containing the task lists to poll.
@@ -157,6 +157,9 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest  impleme
      * <b>Length: </b>1 - 256<br/>
      *
      * @param domain The name of the domain containing the task lists to poll.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PollForDecisionTaskRequest withDomain(String domain) {
         this.domain = domain;
@@ -212,6 +215,9 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest  impleme
      *         <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
      *         (vertical bar), or any control characters (\u0000-\u001f | \u007f -
      *         \u009f). Also, it must not contain the literal string "arn".
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PollForDecisionTaskRequest withTaskList(TaskList taskList) {
         this.taskList = taskList;
@@ -270,6 +276,9 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest  impleme
      *         DecisionTaskStarted event in the workflow history. This enables
      *         diagnostic tracing when problems arise. The form of this identity is
      *         user defined.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PollForDecisionTaskRequest withIdentity(String identity) {
         this.identity = identity;
@@ -364,6 +373,9 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest  impleme
      *         history records. Calling <a>PollForDecisionTask</a> with a
      *         <code>nextPageToken</code> will not return a new decision
      *         task.</note>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PollForDecisionTaskRequest withNextPageToken(String nextPageToken) {
         this.nextPageToken = nextPageToken;
@@ -434,6 +446,9 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest  impleme
      *         greater than 100. Note that the number of events may be less than the
      *         maxiumum page size, in which case, the returned page will have fewer
      *         results than the maximumPageSize specified.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PollForDecisionTaskRequest withMaximumPageSize(Integer maximumPageSize) {
         this.maximumPageSize = maximumPageSize;
@@ -477,6 +492,9 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest  impleme
      * @param reverseOrder When set to <code>true</code>, returns the events in reverse order. By
      *         default the results are returned in ascending order of the
      *         <code>eventTimestamp</code> of the events.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PollForDecisionTaskRequest withReverseOrder(Boolean reverseOrder) {
         this.reverseOrder = reverseOrder;

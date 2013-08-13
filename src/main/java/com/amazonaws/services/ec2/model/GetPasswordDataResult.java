@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The result of the GetPasswordData operation.
  * </p>
  */
-public class GetPasswordDataResult  implements Serializable  {
+public class GetPasswordDataResult implements Serializable {
 
     /**
      * The ID of the instance whose Windows administrator password was

@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.AssociateRouteTableRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -30,7 +32,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#associateRouteTable(AssociateRouteTableRequest)
  */
-public class AssociateRouteTableRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class AssociateRouteTableRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<AssociateRouteTableRequest> {
 
     /**
      * The ID of the subnet.
@@ -109,6 +111,18 @@ public class AssociateRouteTableRequest extends AmazonWebServiceRequest  impleme
         return this;
     }
     
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<AssociateRouteTableRequest> getDryRunRequest() {
+        Request<AssociateRouteTableRequest> request = new AssociateRouteTableRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

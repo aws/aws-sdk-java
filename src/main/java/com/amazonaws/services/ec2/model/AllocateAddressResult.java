@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Result returned from allocating an Elastic IP.
  * </p>
  */
-public class AllocateAddressResult  implements Serializable  {
+public class AllocateAddressResult implements Serializable {
 
     /**
      * IP address for use with your account.

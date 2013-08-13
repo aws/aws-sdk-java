@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Describe Dhcp Options Result
  */
-public class DescribeDhcpOptionsResult  implements Serializable  {
+public class DescribeDhcpOptionsResult implements Serializable {
 
     private com.amazonaws.internal.ListWithAutoConstructFlag<DhcpOptions> dhcpOptions;
 

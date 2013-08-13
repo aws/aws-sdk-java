@@ -39,7 +39,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#authorizeClusterSecurityGroupIngress(AuthorizeClusterSecurityGroupIngressRequest)
  */
-public class AuthorizeClusterSecurityGroupIngressRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class AuthorizeClusterSecurityGroupIngressRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the security group to which the ingress rule is added.
@@ -87,6 +87,9 @@ public class AuthorizeClusterSecurityGroupIngressRequest extends AmazonWebServic
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clusterSecurityGroupName The name of the security group to which the ingress rule is added.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AuthorizeClusterSecurityGroupIngressRequest withClusterSecurityGroupName(String clusterSecurityGroupName) {
         this.clusterSecurityGroupName = clusterSecurityGroupName;
@@ -118,6 +121,9 @@ public class AuthorizeClusterSecurityGroupIngressRequest extends AmazonWebServic
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cIDRIP The IP range to be added the Amazon Redshift security group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AuthorizeClusterSecurityGroupIngressRequest withCIDRIP(String cIDRIP) {
         this.cIDRIP = cIDRIP;
@@ -149,6 +155,9 @@ public class AuthorizeClusterSecurityGroupIngressRequest extends AmazonWebServic
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eC2SecurityGroupName The EC2 security group to be added the Amazon Redshift security group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AuthorizeClusterSecurityGroupIngressRequest withEC2SecurityGroupName(String eC2SecurityGroupName) {
         this.eC2SecurityGroupName = eC2SecurityGroupName;
@@ -192,6 +201,9 @@ public class AuthorizeClusterSecurityGroupIngressRequest extends AmazonWebServic
      * @param eC2SecurityGroupOwnerId The AWS account number of the owner of the security group specified by
      *         the <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is
      *         not an acceptable value. <p> Example: <code>111122223333</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AuthorizeClusterSecurityGroupIngressRequest withEC2SecurityGroupOwnerId(String eC2SecurityGroupOwnerId) {
         this.eC2SecurityGroupOwnerId = eC2SecurityGroupOwnerId;

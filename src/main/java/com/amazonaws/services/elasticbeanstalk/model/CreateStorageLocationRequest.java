@@ -27,7 +27,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#createStorageLocation(CreateStorageLocationRequest)
  */
-public class CreateStorageLocationRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateStorageLocationRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Returns a string representation of this object; useful for testing and

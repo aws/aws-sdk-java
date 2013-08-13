@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribeLayers</code> request.
  * </p>
  */
-public class DescribeLayersResult  implements Serializable  {
+public class DescribeLayersResult implements Serializable {
 
     /**
      * An array of <code>Layer</code> objects that describe the layers.
@@ -62,6 +62,9 @@ public class DescribeLayersResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param layers An array of <code>Layer</code> objects that describe the layers.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeLayersResult withLayers(Layer... layers) {
         if (getLayers() == null) setLayers(new java.util.ArrayList<Layer>(layers.length));
@@ -77,6 +80,9 @@ public class DescribeLayersResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param layers An array of <code>Layer</code> objects that describe the layers.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeLayersResult withLayers(java.util.Collection<Layer> layers) {
         if (layers == null) {

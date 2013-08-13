@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the output from the ListPipelines action.
  * </p>
  */
-public class ListPipelinesResult  implements Serializable  {
+public class ListPipelinesResult implements Serializable {
 
     /**
      * A list of all the pipeline identifiers that your account has
@@ -100,6 +100,9 @@ public class ListPipelinesResult  implements Serializable  {
      *         permission to access. If you require additional information about the
      *         pipelines, you can use these identifiers to call
      *         <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListPipelinesResult withPipelineIdList(PipelineIdName... pipelineIdList) {
         if (getPipelineIdList() == null) setPipelineIdList(new java.util.ArrayList<PipelineIdName>(pipelineIdList.length));
@@ -121,6 +124,9 @@ public class ListPipelinesResult  implements Serializable  {
      *         permission to access. If you require additional information about the
      *         pipelines, you can use these identifiers to call
      *         <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListPipelinesResult withPipelineIdList(java.util.Collection<PipelineIdName> pipelineIdList) {
         if (pipelineIdList == null) {
@@ -182,6 +188,9 @@ public class ListPipelinesResult  implements Serializable  {
      * @param marker If not null, indicates the starting point for the set of pipeline
      *         identifiers that the next call to <a>ListPipelines</a> will retrieve.
      *         If null, there are no more pipeline identifiers.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListPipelinesResult withMarker(String marker) {
         this.marker = marker;
@@ -219,6 +228,9 @@ public class ListPipelinesResult  implements Serializable  {
      *
      * @param hasMoreResults If <code>True</code>, there are more results that can be obtained by a
      *         subsequent call to <a>ListPipelines</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListPipelinesResult withHasMoreResults(Boolean hasMoreResults) {
         this.hasMoreResults = hasMoreResults;

@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Spot Instance Request
  */
-public class SpotInstanceRequest  implements Serializable  {
+public class SpotInstanceRequest implements Serializable {
 
     private String spotInstanceRequestId;
 

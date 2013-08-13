@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Export Task
  */
-public class ExportTask  implements Serializable  {
+public class ExportTask implements Serializable {
 
     private String exportTaskId;
 

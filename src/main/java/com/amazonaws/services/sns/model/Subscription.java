@@ -77,6 +77,9 @@ public class Subscription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subscriptionArn The subscription's ARN.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
      */
     public Subscription withSubscriptionArn(String subscriptionArn) {
         this.subscriptionArn = subscriptionArn;
@@ -108,6 +111,9 @@ public class Subscription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param owner The subscription's owner.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
      */
     public Subscription withOwner(String owner) {
         this.owner = owner;
@@ -139,6 +145,9 @@ public class Subscription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param protocol The subscription's protocol.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
      */
     public Subscription withProtocol(String protocol) {
         this.protocol = protocol;
@@ -170,6 +179,9 @@ public class Subscription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param endpoint The subscription's endpoint (format depends on the protocol).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
      */
     public Subscription withEndpoint(String endpoint) {
         this.endpoint = endpoint;
@@ -201,6 +213,9 @@ public class Subscription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param topicArn The ARN of the subscription's topic.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
      */
     public Subscription withTopicArn(String topicArn) {
         this.topicArn = topicArn;

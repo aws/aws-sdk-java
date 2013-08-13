@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Provides details of <code>WorkflowExecutionStarted</code> event.
  * </p>
  */
-public class WorkflowExecutionStartedEventAttributes  implements Serializable  {
+public class WorkflowExecutionStartedEventAttributes implements Serializable {
 
     /**
      * The input provided to the workflow execution (if any).
@@ -151,6 +151,9 @@ public class WorkflowExecutionStartedEventAttributes  implements Serializable  {
      * <b>Length: </b>0 - 32768<br/>
      *
      * @param input The input provided to the workflow execution (if any).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionStartedEventAttributes withInput(String input) {
         this.input = input;
@@ -209,6 +212,9 @@ public class WorkflowExecutionStartedEventAttributes  implements Serializable  {
      *         are integers greater than or equal to <code>0</code>. An integer value
      *         can be used to specify the duration in seconds while <code>NONE</code>
      *         can be used to specify unlimited duration.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionStartedEventAttributes withExecutionStartToCloseTimeout(String executionStartToCloseTimeout) {
         this.executionStartToCloseTimeout = executionStartToCloseTimeout;
@@ -267,6 +273,9 @@ public class WorkflowExecutionStartedEventAttributes  implements Serializable  {
      *         valid values are integers greater than or equal to <code>0</code>. An
      *         integer value can be used to specify the duration in seconds while
      *         <code>NONE</code> can be used to specify unlimited duration.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionStartedEventAttributes withTaskStartToCloseTimeout(String taskStartToCloseTimeout) {
         this.taskStartToCloseTimeout = taskStartToCloseTimeout;
@@ -372,6 +381,9 @@ public class WorkflowExecutionStartedEventAttributes  implements Serializable  {
      *         execution history with this event. </li> <li><b>ABANDON:</b> no action
      *         will be taken. The child executions will continue to run.</li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ChildPolicy
      */
     public WorkflowExecutionStartedEventAttributes withChildPolicy(String childPolicy) {
@@ -444,6 +456,9 @@ public class WorkflowExecutionStartedEventAttributes  implements Serializable  {
      *         execution history with this event. </li> <li><b>ABANDON:</b> no action
      *         will be taken. The child executions will continue to run.</li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ChildPolicy
      */
     public WorkflowExecutionStartedEventAttributes withChildPolicy(ChildPolicy childPolicy) {
@@ -481,6 +496,9 @@ public class WorkflowExecutionStartedEventAttributes  implements Serializable  {
      *
      * @param taskList The name of the task list for scheduling the decision tasks for this
      *         workflow execution.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionStartedEventAttributes withTaskList(TaskList taskList) {
         this.taskList = taskList;
@@ -512,6 +530,9 @@ public class WorkflowExecutionStartedEventAttributes  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param workflowType The workflow type of this execution.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionStartedEventAttributes withWorkflowType(WorkflowType workflowType) {
         this.workflowType = workflowType;
@@ -569,6 +590,9 @@ public class WorkflowExecutionStartedEventAttributes  implements Serializable  {
      *
      * @param tagList The list of tags associated with this workflow execution. An execution
      *         can have up to 5 tags.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionStartedEventAttributes withTagList(String... tagList) {
         if (getTagList() == null) setTagList(new java.util.ArrayList<String>(tagList.length));
@@ -589,6 +613,9 @@ public class WorkflowExecutionStartedEventAttributes  implements Serializable  {
      *
      * @param tagList The list of tags associated with this workflow execution. An execution
      *         can have up to 5 tags.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionStartedEventAttributes withTagList(java.util.Collection<String> tagList) {
         if (tagList == null) {
@@ -653,6 +680,9 @@ public class WorkflowExecutionStartedEventAttributes  implements Serializable  {
      *         <code>ContinueAsNewWorkflowExecution</code> decision, then it contains
      *         the <code>runId</code> of the previous workflow execution that was
      *         closed and continued as this execution.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionStartedEventAttributes withContinuedExecutionRunId(String continuedExecutionRunId) {
         this.continuedExecutionRunId = continuedExecutionRunId;
@@ -696,6 +726,9 @@ public class WorkflowExecutionStartedEventAttributes  implements Serializable  {
      * @param parentWorkflowExecution The source workflow execution that started this workflow execution.
      *         The member is not set if the workflow execution was not started by a
      *         workflow.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionStartedEventAttributes withParentWorkflowExecution(WorkflowExecution parentWorkflowExecution) {
         this.parentWorkflowExecution = parentWorkflowExecution;
@@ -757,6 +790,9 @@ public class WorkflowExecutionStartedEventAttributes  implements Serializable  {
      *         with this Id can be found in the history of the source workflow
      *         execution. This information can be useful for diagnosing problems by
      *         tracing back the chain of events leading up to this event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionStartedEventAttributes withParentInitiatedEventId(Long parentInitiatedEventId) {
         this.parentInitiatedEventId = parentInitiatedEventId;

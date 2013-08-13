@@ -28,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#deletePipeline(DeletePipelineRequest)
  */
-public class DeletePipelineRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeletePipelineRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The identifier of the pipeline that you want to delete.
@@ -71,6 +71,9 @@ public class DeletePipelineRequest extends AmazonWebServiceRequest  implements S
      * <b>Pattern: </b>^\d{13}-\w{6}$<br/>
      *
      * @param id The identifier of the pipeline that you want to delete.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeletePipelineRequest withId(String id) {
         this.id = id;

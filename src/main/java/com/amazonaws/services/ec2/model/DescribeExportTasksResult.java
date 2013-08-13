@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Describe Export Tasks Result
  */
-public class DescribeExportTasksResult  implements Serializable  {
+public class DescribeExportTasksResult implements Serializable {
 
     private com.amazonaws.internal.ListWithAutoConstructFlag<ExportTask> exportTasks;
 

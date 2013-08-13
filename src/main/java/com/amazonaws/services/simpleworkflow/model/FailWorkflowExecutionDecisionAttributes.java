@@ -38,7 +38,7 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a> .
  * </p>
  */
-public class FailWorkflowExecutionDecisionAttributes  implements Serializable  {
+public class FailWorkflowExecutionDecisionAttributes implements Serializable {
 
     /**
      * A descriptive reason for the failure that may help in diagnostics.
@@ -89,6 +89,9 @@ public class FailWorkflowExecutionDecisionAttributes  implements Serializable  {
      * <b>Length: </b>0 - 256<br/>
      *
      * @param reason A descriptive reason for the failure that may help in diagnostics.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public FailWorkflowExecutionDecisionAttributes withReason(String reason) {
         this.reason = reason;
@@ -129,6 +132,9 @@ public class FailWorkflowExecutionDecisionAttributes  implements Serializable  {
      * <b>Length: </b>0 - 32768<br/>
      *
      * @param details Optional details of the failure.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public FailWorkflowExecutionDecisionAttributes withDetails(String details) {
         this.details = details;

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes a cached storage volume.
  * </p>
  */
-public class CachediSCSIVolume  implements Serializable  {
+public class CachediSCSIVolume implements Serializable {
 
     /**
      * The Amazon Resource Name (ARN) of the storage volume.
@@ -116,6 +116,9 @@ public class CachediSCSIVolume  implements Serializable  {
      * <b>Length: </b>50 - 500<br/>
      *
      * @param volumeARN The Amazon Resource Name (ARN) of the storage volume.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CachediSCSIVolume withVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
@@ -156,6 +159,9 @@ public class CachediSCSIVolume  implements Serializable  {
      * <b>Length: </b>12 - 30<br/>
      *
      * @param volumeId The unique identifier of the storage volume, e.g. vol-1122AABB.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CachediSCSIVolume withVolumeId(String volumeId) {
         this.volumeId = volumeId;
@@ -201,6 +207,9 @@ public class CachediSCSIVolume  implements Serializable  {
      *
      * @param volumeType A value describing the type of volume.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see VolumeType
      */
     public CachediSCSIVolume withVolumeType(String volumeType) {
@@ -232,6 +241,9 @@ public class CachediSCSIVolume  implements Serializable  {
      * <b>Allowed Values: </b>STORED iSCSI, CACHED iSCSI
      *
      * @param volumeType A value describing the type of volume.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see VolumeType
      */
@@ -278,6 +290,9 @@ public class CachediSCSIVolume  implements Serializable  {
      *
      * @param volumeStatus A value that indicates the state of the volume.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see VolumeStatus
      */
     public CachediSCSIVolume withVolumeStatus(String volumeStatus) {
@@ -309,6 +324,9 @@ public class CachediSCSIVolume  implements Serializable  {
      * <b>Allowed Values: </b>CREATING, AVAILABLE, RESTORING, BOOTSTRAPPING, IRRECOVERABLE, PASS THROUGH, RESTORE AND PASS THROUGH, DELETED, WORKING STORAGE NOT CONFIGURED, UPLOAD BUFFER NOT CONFIGURED
      *
      * @param volumeStatus A value that indicates the state of the volume.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see VolumeStatus
      */
@@ -347,6 +365,9 @@ public class CachediSCSIVolume  implements Serializable  {
      *
      * @param volumeSizeInBytes The size of the volume in bytes that was specified in the
      *         <a>API_CreateCachediSCSIVolume</a> operation.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CachediSCSIVolume withVolumeSizeInBytes(Long volumeSizeInBytes) {
         this.volumeSizeInBytes = volumeSizeInBytes;
@@ -396,6 +417,9 @@ public class CachediSCSIVolume  implements Serializable  {
      *         that represents the percent of data transferred. This field does not
      *         appear in the response if the stored volume is not restoring or
      *         bootstrapping.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CachediSCSIVolume withVolumeProgress(Double volumeProgress) {
         this.volumeProgress = volumeProgress;
@@ -448,6 +472,9 @@ public class CachediSCSIVolume  implements Serializable  {
      * @param sourceSnapshotId If the cached volume was created from a snapshot, this field contains
      *         the snapshot ID used, e.g. snap-1122aabb. Otherwise, this field is not
      *         included.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CachediSCSIVolume withSourceSnapshotId(String sourceSnapshotId) {
         this.sourceSnapshotId = sourceSnapshotId;
@@ -479,6 +506,9 @@ public class CachediSCSIVolume  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeiSCSIAttributes Lists iSCSI information about a volume.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CachediSCSIVolume withVolumeiSCSIAttributes(VolumeiSCSIAttributes volumeiSCSIAttributes) {
         this.volumeiSCSIAttributes = volumeiSCSIAttributes;

@@ -29,7 +29,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#createHealthCheck(CreateHealthCheckRequest)
  */
-public class CreateHealthCheckRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateHealthCheckRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * A unique string that identifies the request and that allows failed
@@ -126,6 +126,9 @@ public class CreateHealthCheckRequest extends AmazonWebServiceRequest  implement
      *         might choose to use a string that identifies your project. <p>Valid
      *         characters are any Unicode code points that are legal in an XML 1.0
      *         document. The UTF-8 encoding of the value must be less than 128 bytes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateHealthCheckRequest withCallerReference(String callerReference) {
         this.callerReference = callerReference;
@@ -157,6 +160,9 @@ public class CreateHealthCheckRequest extends AmazonWebServiceRequest  implement
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param healthCheckConfig A complex type that contains health check configuration.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateHealthCheckRequest withHealthCheckConfig(HealthCheckConfig healthCheckConfig) {
         this.healthCheckConfig = healthCheckConfig;

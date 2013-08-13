@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#checkDNSAvailability(CheckDNSAvailabilityRequest)
  */
-public class CheckDNSAvailabilityRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CheckDNSAvailabilityRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The prefix used when this CNAME is reserved.
@@ -88,6 +88,9 @@ public class CheckDNSAvailabilityRequest extends AmazonWebServiceRequest  implem
      * <b>Length: </b>4 - 63<br/>
      *
      * @param cNAMEPrefix The prefix used when this CNAME is reserved.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CheckDNSAvailabilityRequest withCNAMEPrefix(String cNAMEPrefix) {
         this.cNAMEPrefix = cNAMEPrefix;

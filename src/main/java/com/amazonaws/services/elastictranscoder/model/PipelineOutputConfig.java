@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The <code>PipelineOutputConfig</code> structure.
  * </p>
  */
-public class PipelineOutputConfig  implements Serializable  {
+public class PipelineOutputConfig implements Serializable {
 
     /**
      * The Amazon S3 bucket in which you want Elastic Transcoder to save the
@@ -185,6 +185,9 @@ public class PipelineOutputConfig  implements Serializable  {
      *         permissions the users have, or change the Amazon S3 storage class,
      *         omit OutputBucket and specify values for <code>ContentConfig</code>
      *         and <code>ThumbnailConfig</code> instead.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PipelineOutputConfig withBucket(String bucket) {
         this.bucket = bucket;
@@ -243,6 +246,9 @@ public class PipelineOutputConfig  implements Serializable  {
      *         <code>ReducedRedundancy</code>, that you want Elastic Transcoder to
      *         assign to the video files and playlists that it stores in your Amazon
      *         S3 bucket.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PipelineOutputConfig withStorageClass(String storageClass) {
         this.storageClass = storageClass;
@@ -366,6 +372,9 @@ public class PipelineOutputConfig  implements Serializable  {
      *         grants full control over the transcoded files and playlists to the
      *         owner of the role specified by <code>Role</code>, and grants no other
      *         permissions to any other user or group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PipelineOutputConfig withPermissions(Permission... permissions) {
         if (getPermissions() == null) setPermissions(new java.util.ArrayList<Permission>(permissions.length));
@@ -408,6 +417,9 @@ public class PipelineOutputConfig  implements Serializable  {
      *         grants full control over the transcoded files and playlists to the
      *         owner of the role specified by <code>Role</code>, and grants no other
      *         permissions to any other user or group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PipelineOutputConfig withPermissions(java.util.Collection<Permission> permissions) {
         if (permissions == null) {

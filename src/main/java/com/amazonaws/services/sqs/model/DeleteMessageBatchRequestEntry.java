@@ -16,12 +16,22 @@ package com.amazonaws.services.sqs.model;
 import java.io.Serializable;
 
 /**
- * Delete Message Batch Request Entry
+ * <p>
+ * Encloses a receipt handle and an identifier for it.
+ * </p>
  */
-public class DeleteMessageBatchRequestEntry  implements Serializable  {
+public class DeleteMessageBatchRequestEntry implements Serializable {
 
+    /**
+     * An identifier for this particular receipt handle. This is used to
+     * communicate the result. Note that the <code>Id</code>s of a batch
+     * request need to be unique within the request.
+     */
     private String id;
 
+    /**
+     * A receipt handle.
+     */
     private String receiptHandle;
 
     /**
@@ -37,8 +47,10 @@ public class DeleteMessageBatchRequestEntry  implements Serializable  {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param id
-     * @param receiptHandle
+     * @param id An identifier for this particular receipt handle. This is
+     * used to communicate the result. Note that the <code>Id</code>s of a
+     * batch request need to be unique within the request.
+     * @param receiptHandle A receipt handle.
      */
     public DeleteMessageBatchRequestEntry(String id, String receiptHandle) {
         setId(id);
@@ -48,29 +60,44 @@ public class DeleteMessageBatchRequestEntry  implements Serializable  {
     
     
     /**
-     * Returns the value of the Id property for this object.
+     * An identifier for this particular receipt handle. This is used to
+     * communicate the result. Note that the <code>Id</code>s of a batch
+     * request need to be unique within the request.
      *
-     * @return The value of the Id property for this object.
+     * @return An identifier for this particular receipt handle. This is used to
+     *         communicate the result. Note that the <code>Id</code>s of a batch
+     *         request need to be unique within the request.
      */
     public String getId() {
         return id;
     }
     
     /**
-     * Sets the value of the Id property for this object.
+     * An identifier for this particular receipt handle. This is used to
+     * communicate the result. Note that the <code>Id</code>s of a batch
+     * request need to be unique within the request.
      *
-     * @param id The new value for the Id property for this object.
+     * @param id An identifier for this particular receipt handle. This is used to
+     *         communicate the result. Note that the <code>Id</code>s of a batch
+     *         request need to be unique within the request.
      */
     public void setId(String id) {
         this.id = id;
     }
     
     /**
-     * Sets the value of the Id property for this object.
+     * An identifier for this particular receipt handle. This is used to
+     * communicate the result. Note that the <code>Id</code>s of a batch
+     * request need to be unique within the request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param id The new value for the Id property for this object.
+     * @param id An identifier for this particular receipt handle. This is used to
+     *         communicate the result. Note that the <code>Id</code>s of a batch
+     *         request need to be unique within the request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteMessageBatchRequestEntry withId(String id) {
         this.id = id;
@@ -79,29 +106,32 @@ public class DeleteMessageBatchRequestEntry  implements Serializable  {
     
     
     /**
-     * Returns the value of the ReceiptHandle property for this object.
+     * A receipt handle.
      *
-     * @return The value of the ReceiptHandle property for this object.
+     * @return A receipt handle.
      */
     public String getReceiptHandle() {
         return receiptHandle;
     }
     
     /**
-     * Sets the value of the ReceiptHandle property for this object.
+     * A receipt handle.
      *
-     * @param receiptHandle The new value for the ReceiptHandle property for this object.
+     * @param receiptHandle A receipt handle.
      */
     public void setReceiptHandle(String receiptHandle) {
         this.receiptHandle = receiptHandle;
     }
     
     /**
-     * Sets the value of the ReceiptHandle property for this object.
+     * A receipt handle.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param receiptHandle The new value for the ReceiptHandle property for this object.
+     * @param receiptHandle A receipt handle.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteMessageBatchRequestEntry withReceiptHandle(String receiptHandle) {
         this.receiptHandle = receiptHandle;

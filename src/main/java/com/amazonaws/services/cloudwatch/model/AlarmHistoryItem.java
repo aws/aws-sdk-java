@@ -21,7 +21,7 @@ import java.io.Serializable;
  * Amazon CloudWatch returns this data type as part of the DescribeAlarmHistoryResult data type.
  * </p>
  */
-public class AlarmHistoryItem  implements Serializable  {
+public class AlarmHistoryItem implements Serializable {
 
     /**
      * The descriptive name for the alarm.
@@ -93,6 +93,9 @@ public class AlarmHistoryItem  implements Serializable  {
      * <b>Length: </b>1 - 255<br/>
      *
      * @param alarmName The descriptive name for the alarm.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AlarmHistoryItem withAlarmName(String alarmName) {
         this.alarmName = alarmName;
@@ -124,6 +127,9 @@ public class AlarmHistoryItem  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param timestamp The time stamp for the alarm history item.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AlarmHistoryItem withTimestamp(java.util.Date timestamp) {
         this.timestamp = timestamp;
@@ -169,6 +175,9 @@ public class AlarmHistoryItem  implements Serializable  {
      *
      * @param historyItemType The type of alarm history item.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see HistoryItemType
      */
     public AlarmHistoryItem withHistoryItemType(String historyItemType) {
@@ -200,6 +209,9 @@ public class AlarmHistoryItem  implements Serializable  {
      * <b>Allowed Values: </b>ConfigurationUpdate, StateUpdate, Action
      *
      * @param historyItemType The type of alarm history item.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see HistoryItemType
      */
@@ -241,6 +253,9 @@ public class AlarmHistoryItem  implements Serializable  {
      * <b>Length: </b>1 - 255<br/>
      *
      * @param historySummary A human-readable summary of the alarm history.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AlarmHistoryItem withHistorySummary(String historySummary) {
         this.historySummary = historySummary;
@@ -281,6 +296,9 @@ public class AlarmHistoryItem  implements Serializable  {
      * <b>Length: </b>1 - 4095<br/>
      *
      * @param historyData Machine-readable data about the alarm in JSON format.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AlarmHistoryItem withHistoryData(String historyData) {
         this.historyData = historyData;

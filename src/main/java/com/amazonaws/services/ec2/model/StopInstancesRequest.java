@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.StopInstancesRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -31,7 +33,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#stopInstances(StopInstancesRequest)
  */
-public class StopInstancesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class StopInstancesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<StopInstancesRequest> {
 
     /**
      * The list of Amazon EC2 instances to stop.
@@ -201,6 +203,18 @@ public class StopInstancesRequest extends AmazonWebServiceRequest  implements Se
      */
     public Boolean getForce() {
         return force;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<StopInstancesRequest> getDryRunRequest() {
+        Request<StopInstancesRequest> request = new StopInstancesRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains a paginated collection of DomainInfo structures.
  * </p>
  */
-public class DomainInfos  implements Serializable  {
+public class DomainInfos implements Serializable {
 
     /**
      * A list of DomainInfo structures.
@@ -72,6 +72,9 @@ public class DomainInfos  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param domainInfos A list of DomainInfo structures.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DomainInfos withDomainInfos(DomainInfo... domainInfos) {
         if (getDomainInfos() == null) setDomainInfos(new java.util.ArrayList<DomainInfo>(domainInfos.length));
@@ -87,6 +90,9 @@ public class DomainInfos  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param domainInfos A list of DomainInfo structures.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DomainInfos withDomainInfos(java.util.Collection<DomainInfo> domainInfos) {
         if (domainInfos == null) {
@@ -145,6 +151,9 @@ public class DomainInfos  implements Serializable  {
      * @param nextPageToken Returns a value if the results are paginated. To get the next page of
      *         results, repeat the request specifying this token and all other
      *         arguments unchanged.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DomainInfos withNextPageToken(String nextPageToken) {
         this.nextPageToken = nextPageToken;

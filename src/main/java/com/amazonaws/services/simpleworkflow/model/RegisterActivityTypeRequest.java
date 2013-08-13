@@ -53,7 +53,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#registerActivityType(RegisterActivityTypeRequest)
  */
-public class RegisterActivityTypeRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class RegisterActivityTypeRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the domain in which this activity is to be registered.
@@ -201,6 +201,9 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest  implem
      * <b>Length: </b>1 - 256<br/>
      *
      * @param domain The name of the domain in which this activity is to be registered.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RegisterActivityTypeRequest withDomain(String domain) {
         this.domain = domain;
@@ -265,6 +268,9 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest  implem
      *         <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
      *         (vertical bar), or any control characters (\u0000-\u001f | \u007f -
      *         \u009f). Also, it must not contain the literal string "arn".
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RegisterActivityTypeRequest withName(String name) {
         this.name = name;
@@ -341,6 +347,9 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest  implem
      *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control
      *         characters (\u0000-\u001f | \u007f - \u009f). Also, it must not
      *         contain the literal string "arn".
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RegisterActivityTypeRequest withVersion(String version) {
         this.version = version;
@@ -381,6 +390,9 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest  implem
      * <b>Length: </b>0 - 1024<br/>
      *
      * @param description A textual description of the activity type.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RegisterActivityTypeRequest withDescription(String description) {
         this.description = description;
@@ -457,6 +469,9 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest  implem
      *         are integers greater than or equal to <code>0</code>. An integer value
      *         can be used to specify the duration in seconds while <code>NONE</code>
      *         can be used to specify unlimited duration.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RegisterActivityTypeRequest withDefaultTaskStartToCloseTimeout(String defaultTaskStartToCloseTimeout) {
         this.defaultTaskStartToCloseTimeout = defaultTaskStartToCloseTimeout;
@@ -575,6 +590,9 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest  implem
      *         <code>0</code>. An integer value can be used to specify the duration
      *         in seconds while <code>NONE</code> can be used to specify unlimited
      *         duration.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RegisterActivityTypeRequest withDefaultTaskHeartbeatTimeout(String defaultTaskHeartbeatTimeout) {
         this.defaultTaskHeartbeatTimeout = defaultTaskHeartbeatTimeout;
@@ -624,6 +642,9 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest  implem
      *         this activity type. This default task list is used if a task list is
      *         not provided when a task is scheduled through the
      *         <code>ScheduleActivityTask</code> <a>Decision</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RegisterActivityTypeRequest withDefaultTaskList(TaskList defaultTaskList) {
         this.defaultTaskList = defaultTaskList;
@@ -700,6 +721,9 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest  implem
      *         are integers greater than or equal to <code>0</code>. An integer value
      *         can be used to specify the duration in seconds while <code>NONE</code>
      *         can be used to specify unlimited duration.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RegisterActivityTypeRequest withDefaultTaskScheduleToStartTimeout(String defaultTaskScheduleToStartTimeout) {
         this.defaultTaskScheduleToStartTimeout = defaultTaskScheduleToStartTimeout;
@@ -776,6 +800,9 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest  implem
      *         equal to <code>0</code>. An integer value can be used to specify the
      *         duration in seconds while <code>NONE</code> can be used to specify
      *         unlimited duration.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RegisterActivityTypeRequest withDefaultTaskScheduleToCloseTimeout(String defaultTaskScheduleToCloseTimeout) {
         this.defaultTaskScheduleToCloseTimeout = defaultTaskScheduleToCloseTimeout;

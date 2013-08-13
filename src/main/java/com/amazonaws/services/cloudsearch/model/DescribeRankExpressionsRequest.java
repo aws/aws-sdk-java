@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#describeRankExpressions(DescribeRankExpressionsRequest)
  */
-public class DescribeRankExpressionsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeRankExpressionsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * A string that represents the name of a domain. Domain names must be
@@ -106,6 +106,9 @@ public class DescribeRankExpressionsRequest extends AmazonWebServiceRequest  imp
      *         Domain names must start with a letter or number and can contain the
      *         following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase
      *         letters and underscores are not allowed.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeRankExpressionsRequest withDomainName(String domainName) {
         this.domainName = domainName;
@@ -154,6 +157,9 @@ public class DescribeRankExpressionsRequest extends AmazonWebServiceRequest  imp
      *
      * @param rankNames Limits the <code>DescribeRankExpressions</code> response to the
      *         specified fields.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeRankExpressionsRequest withRankNames(String... rankNames) {
         if (getRankNames() == null) setRankNames(new java.util.ArrayList<String>(rankNames.length));
@@ -171,6 +177,9 @@ public class DescribeRankExpressionsRequest extends AmazonWebServiceRequest  imp
      *
      * @param rankNames Limits the <code>DescribeRankExpressions</code> response to the
      *         specified fields.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeRankExpressionsRequest withRankNames(java.util.Collection<String> rankNames) {
         if (rankNames == null) {

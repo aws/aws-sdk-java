@@ -21,7 +21,7 @@ import java.io.Serializable;
  * any.
  * </p>
  */
-public class Signer  implements Serializable  {
+public class Signer implements Serializable {
 
     /**
      * Specifies an AWS account that can create signed URLs. Values: self,
@@ -85,6 +85,9 @@ public class Signer  implements Serializable  {
      *         which indicates that the AWS account that was used to create the
      *         distribution can created signed URLs, or an AWS account number. Omit
      *         the dashes in the account number.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Signer withAwsAccountNumber(String awsAccountNumber) {
         this.awsAccountNumber = awsAccountNumber;
@@ -122,6 +125,9 @@ public class Signer  implements Serializable  {
      *
      * @param keyPairIds A complex type that lists the active CloudFront key pairs, if any,
      *         that are associated with AwsAccountNumber.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Signer withKeyPairIds(KeyPairIds keyPairIds) {
         this.keyPairIds = keyPairIds;

@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Availability Zone Message
  */
-public class AvailabilityZoneMessage  implements Serializable  {
+public class AvailabilityZoneMessage implements Serializable {
 
     private String message;
 

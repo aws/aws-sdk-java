@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents a local secondary index.
  * </p>
  */
-public class LocalSecondaryIndex  implements Serializable  {
+public class LocalSecondaryIndex implements Serializable {
 
     /**
      * Represents the name of the secondary index. The name must be unique
@@ -91,6 +91,9 @@ public class LocalSecondaryIndex  implements Serializable  {
      *
      * @param indexName Represents the name of the secondary index. The name must be unique
      *         among all other indexes on this table.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LocalSecondaryIndex withIndexName(String indexName) {
         this.indexName = indexName;
@@ -150,6 +153,9 @@ public class LocalSecondaryIndex  implements Serializable  {
      * @param keySchema Represents the complete index key schema, which consists of one or
      *         more pairs of attribute names and key types (<code>HASH</code> or
      *         <code>RANGE</code>).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LocalSecondaryIndex withKeySchema(KeySchemaElement... keySchema) {
         if (getKeySchema() == null) setKeySchema(new java.util.ArrayList<KeySchemaElement>(keySchema.length));
@@ -172,6 +178,9 @@ public class LocalSecondaryIndex  implements Serializable  {
      * @param keySchema Represents the complete index key schema, which consists of one or
      *         more pairs of attribute names and key types (<code>HASH</code> or
      *         <code>RANGE</code>).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LocalSecondaryIndex withKeySchema(java.util.Collection<KeySchemaElement> keySchema) {
         if (keySchema == null) {
@@ -221,6 +230,9 @@ public class LocalSecondaryIndex  implements Serializable  {
      * @param projection Represents attributes that are copied (projected) from the table into
      *         the index. These are in addition to the primary key attributes and
      *         index key attributes, which are automatically projected.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LocalSecondaryIndex withProjection(Projection projection) {
         this.projection = projection;

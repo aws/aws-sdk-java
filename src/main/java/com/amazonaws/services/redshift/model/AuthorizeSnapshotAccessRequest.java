@@ -28,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#authorizeSnapshotAccess(AuthorizeSnapshotAccessRequest)
  */
-public class AuthorizeSnapshotAccessRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class AuthorizeSnapshotAccessRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The identifier of the snapshot the account is authorized to restore.
@@ -65,6 +65,9 @@ public class AuthorizeSnapshotAccessRequest extends AmazonWebServiceRequest  imp
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param snapshotIdentifier The identifier of the snapshot the account is authorized to restore.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AuthorizeSnapshotAccessRequest withSnapshotIdentifier(String snapshotIdentifier) {
         this.snapshotIdentifier = snapshotIdentifier;
@@ -102,6 +105,9 @@ public class AuthorizeSnapshotAccessRequest extends AmazonWebServiceRequest  imp
      *
      * @param accountWithRestoreAccess The identifier of the AWS customer account authorized to restore the
      *         specified snapshot.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AuthorizeSnapshotAccessRequest withAccountWithRestoreAccess(String accountWithRestoreAccess) {
         this.accountWithRestoreAccess = accountWithRestoreAccess;

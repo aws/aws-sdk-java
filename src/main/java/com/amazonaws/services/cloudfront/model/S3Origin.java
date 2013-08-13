@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.
  * </p>
  */
-public class S3Origin  implements Serializable  {
+public class S3Origin implements Serializable {
 
     /**
      * The DNS name of the S3 origin.
@@ -94,6 +94,9 @@ public class S3Origin  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param domainName The DNS name of the S3 origin.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public S3Origin withDomainName(String domainName) {
         this.domainName = domainName;
@@ -125,6 +128,9 @@ public class S3Origin  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param originAccessIdentity Your S3 origin's origin access identity.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public S3Origin withOriginAccessIdentity(String originAccessIdentity) {
         this.originAccessIdentity = originAccessIdentity;

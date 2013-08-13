@@ -17,7 +17,9 @@ package com.amazonaws.services.sqs.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AmazonSQS exception
+ * <p>
+ * Batch request contains more number of entries than permissible.
+ * </p>
  */        
 public class TooManyEntriesInBatchRequestException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

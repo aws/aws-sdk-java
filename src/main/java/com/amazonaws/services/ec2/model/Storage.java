@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes the storage destination for a BundleTask when bundling a Windows instance.
  * </p>
  */
-public class Storage  implements Serializable  {
+public class Storage implements Serializable {
 
     /**
      * The details of S3 storage for bundling a Windows instance.

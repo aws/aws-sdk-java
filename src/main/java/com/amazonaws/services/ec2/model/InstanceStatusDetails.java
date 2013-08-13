@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Instance Status Details
  */
-public class InstanceStatusDetails  implements Serializable  {
+public class InstanceStatusDetails implements Serializable {
 
     private String name;
 

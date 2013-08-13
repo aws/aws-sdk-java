@@ -50,7 +50,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#signalWorkflowExecution(SignalWorkflowExecutionRequest)
  */
-public class SignalWorkflowExecutionRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class SignalWorkflowExecutionRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the domain containing the workflow execution to signal.
@@ -127,6 +127,9 @@ public class SignalWorkflowExecutionRequest extends AmazonWebServiceRequest  imp
      * <b>Length: </b>1 - 256<br/>
      *
      * @param domain The name of the domain containing the workflow execution to signal.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SignalWorkflowExecutionRequest withDomain(String domain) {
         this.domain = domain;
@@ -167,6 +170,9 @@ public class SignalWorkflowExecutionRequest extends AmazonWebServiceRequest  imp
      * <b>Length: </b>1 - 256<br/>
      *
      * @param workflowId The workflowId of the workflow execution to signal.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SignalWorkflowExecutionRequest withWorkflowId(String workflowId) {
         this.workflowId = workflowId;
@@ -207,6 +213,9 @@ public class SignalWorkflowExecutionRequest extends AmazonWebServiceRequest  imp
      * <b>Length: </b>0 - 64<br/>
      *
      * @param runId The runId of the workflow execution to signal.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SignalWorkflowExecutionRequest withRunId(String runId) {
         this.runId = runId;
@@ -253,6 +262,9 @@ public class SignalWorkflowExecutionRequest extends AmazonWebServiceRequest  imp
      *
      * @param signalName The name of the signal. This name must be meaningful to the target
      *         workflow.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SignalWorkflowExecutionRequest withSignalName(String signalName) {
         this.signalName = signalName;
@@ -299,6 +311,9 @@ public class SignalWorkflowExecutionRequest extends AmazonWebServiceRequest  imp
      *
      * @param input Data to attach to the <code>WorkflowExecutionSignaled</code> event in
      *         the target workflow execution's history.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SignalWorkflowExecutionRequest withInput(String input) {
         this.input = input;

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The status of the Cache Parameter Group.
  * </p>
  */
-public class CacheParameterGroupStatus  implements Serializable  {
+public class CacheParameterGroupStatus implements Serializable {
 
     /**
      * The name of the Cache Parameter Group.
@@ -68,6 +68,9 @@ public class CacheParameterGroupStatus  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheParameterGroupName The name of the Cache Parameter Group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheParameterGroupStatus withCacheParameterGroupName(String cacheParameterGroupName) {
         this.cacheParameterGroupName = cacheParameterGroupName;
@@ -99,6 +102,9 @@ public class CacheParameterGroupStatus  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameterApplyStatus The status of parameter updates.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheParameterGroupStatus withParameterApplyStatus(String parameterApplyStatus) {
         this.parameterApplyStatus = parameterApplyStatus;
@@ -147,6 +153,9 @@ public class CacheParameterGroupStatus  implements Serializable  {
      *
      * @param cacheNodeIdsToReboot A list of the Cache Node Ids which need to be rebooted for parameter
      *         changes to be applied.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheParameterGroupStatus withCacheNodeIdsToReboot(String... cacheNodeIdsToReboot) {
         if (getCacheNodeIdsToReboot() == null) setCacheNodeIdsToReboot(new java.util.ArrayList<String>(cacheNodeIdsToReboot.length));
@@ -164,6 +173,9 @@ public class CacheParameterGroupStatus  implements Serializable  {
      *
      * @param cacheNodeIdsToReboot A list of the Cache Node Ids which need to be rebooted for parameter
      *         changes to be applied.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheParameterGroupStatus withCacheNodeIdsToReboot(java.util.Collection<String> cacheNodeIdsToReboot) {
         if (cacheNodeIdsToReboot == null) {

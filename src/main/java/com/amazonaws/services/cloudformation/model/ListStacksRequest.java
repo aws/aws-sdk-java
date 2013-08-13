@@ -26,7 +26,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#listStacks(ListStacksRequest)
  */
-public class ListStacksRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ListStacksRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * String that identifies the start of the next list of stacks, if there
@@ -84,6 +84,9 @@ public class ListStacksRequest extends AmazonWebServiceRequest  implements Seria
      *
      * @param nextToken String that identifies the start of the next list of stacks, if there
      *         is one. <p>Default: There is no default value.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListStacksRequest withNextToken(String nextToken) {
         this.nextToken = nextToken;
@@ -144,6 +147,9 @@ public class ListStacksRequest extends AmazonWebServiceRequest  implements Seria
      *         codes to list only stacks with the specified status codes. For a
      *         complete list of stack status codes, see the <code>StackStatus</code>
      *         parameter of the <a>Stack</a> data type.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListStacksRequest withStackStatusFilters(String... stackStatusFilters) {
         if (getStackStatusFilters() == null) setStackStatusFilters(new java.util.ArrayList<String>(stackStatusFilters.length));
@@ -165,6 +171,9 @@ public class ListStacksRequest extends AmazonWebServiceRequest  implements Seria
      *         codes to list only stacks with the specified status codes. For a
      *         complete list of stack status codes, see the <code>StackStatus</code>
      *         parameter of the <a>Stack</a> data type.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListStacksRequest withStackStatusFilters(java.util.Collection<String> stackStatusFilters) {
         if (stackStatusFilters == null) {

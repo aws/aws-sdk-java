@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#getHostnameSuggestion(GetHostnameSuggestionRequest)
  */
-public class GetHostnameSuggestionRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class GetHostnameSuggestionRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The layer ID.
@@ -55,6 +55,9 @@ public class GetHostnameSuggestionRequest extends AmazonWebServiceRequest  imple
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param layerId The layer ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetHostnameSuggestionRequest withLayerId(String layerId) {
         this.layerId = layerId;

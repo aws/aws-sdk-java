@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A complex type containing the response information for the new health check.
  * </p>
  */
-public class CreateHealthCheckResult  implements Serializable  {
+public class CreateHealthCheckResult implements Serializable {
 
     /**
      * A complex type that contains identifying information about the health
@@ -66,6 +66,9 @@ public class CreateHealthCheckResult  implements Serializable  {
      *
      * @param healthCheck A complex type that contains identifying information about the health
      *         check.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateHealthCheckResult withHealthCheck(HealthCheck healthCheck) {
         this.healthCheck = healthCheck;
@@ -106,6 +109,9 @@ public class CreateHealthCheckResult  implements Serializable  {
      * <b>Length: </b>0 - 1024<br/>
      *
      * @param location The unique URL representing the new health check.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateHealthCheckResult withLocation(String location) {
         this.location = location;

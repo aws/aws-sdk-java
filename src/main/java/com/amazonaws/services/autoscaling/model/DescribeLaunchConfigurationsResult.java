@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The <code>LaunchConfigurationsType</code> data type.
  * </p>
  */
-public class DescribeLaunchConfigurationsResult  implements Serializable  {
+public class DescribeLaunchConfigurationsResult implements Serializable {
 
     /**
      * A list of launch configurations.
@@ -70,6 +70,9 @@ public class DescribeLaunchConfigurationsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param launchConfigurations A list of launch configurations.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeLaunchConfigurationsResult withLaunchConfigurations(LaunchConfiguration... launchConfigurations) {
         if (getLaunchConfigurations() == null) setLaunchConfigurations(new java.util.ArrayList<LaunchConfiguration>(launchConfigurations.length));
@@ -85,6 +88,9 @@ public class DescribeLaunchConfigurationsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param launchConfigurations A list of launch configurations.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeLaunchConfigurationsResult withLaunchConfigurations(java.util.Collection<LaunchConfiguration> launchConfigurations) {
         if (launchConfigurations == null) {
@@ -131,6 +137,9 @@ public class DescribeLaunchConfigurationsResult  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param nextToken A string that marks the start of the next batch of returned results.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeLaunchConfigurationsResult withNextToken(String nextToken) {
         this.nextToken = nextToken;

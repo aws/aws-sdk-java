@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#setInstanceHealth(SetInstanceHealthRequest)
  */
-public class SetInstanceHealthRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class SetInstanceHealthRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The identifier of the Amazon EC2 instance.
@@ -88,6 +88,9 @@ public class SetInstanceHealthRequest extends AmazonWebServiceRequest  implement
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param instanceId The identifier of the Amazon EC2 instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SetInstanceHealthRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -143,6 +146,9 @@ public class SetInstanceHealthRequest extends AmazonWebServiceRequest  implement
      * @param healthStatus The health status of the instance. "Healthy" means that the instance
      *         is healthy and should remain in service. "Unhealthy" means that the
      *         instance is unhealthy. Auto Scaling should terminate and replace it.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SetInstanceHealthRequest withHealthStatus(String healthStatus) {
         this.healthStatus = healthStatus;
@@ -180,6 +186,9 @@ public class SetInstanceHealthRequest extends AmazonWebServiceRequest  implement
      *
      * @param shouldRespectGracePeriod If True, this call should respect the grace period associated with the
      *         group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SetInstanceHealthRequest withShouldRespectGracePeriod(Boolean shouldRespectGracePeriod) {
         this.shouldRespectGracePeriod = shouldRespectGracePeriod;

@@ -16,14 +16,27 @@ package com.amazonaws.services.sqs.model;
 import java.io.Serializable;
 
 /**
- * Change Message Visibility Batch Request Entry
+ * <p>
+ * Encloses a receipt handle and an entry id for each message in ChangeMessageVisibilityBatch.
+ * </p>
  */
-public class ChangeMessageVisibilityBatchRequestEntry  implements Serializable  {
+public class ChangeMessageVisibilityBatchRequestEntry implements Serializable {
 
+    /**
+     * An identifier for this particular receipt handle. This is used to
+     * communicate the result. Note that the <code>Id</code>s of a batch
+     * request need to be unique within the request.
+     */
     private String id;
 
+    /**
+     * A receipt handle.
+     */
     private String receiptHandle;
 
+    /**
+     * The new value (in seconds) for the message's visibility timeout.
+     */
     private Integer visibilityTimeout;
 
     /**
@@ -39,8 +52,10 @@ public class ChangeMessageVisibilityBatchRequestEntry  implements Serializable  
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param id
-     * @param receiptHandle
+     * @param id An identifier for this particular receipt handle. This is
+     * used to communicate the result. Note that the <code>Id</code>s of a
+     * batch request need to be unique within the request.
+     * @param receiptHandle A receipt handle.
      */
     public ChangeMessageVisibilityBatchRequestEntry(String id, String receiptHandle) {
         setId(id);
@@ -50,29 +65,44 @@ public class ChangeMessageVisibilityBatchRequestEntry  implements Serializable  
     
     
     /**
-     * Returns the value of the Id property for this object.
+     * An identifier for this particular receipt handle. This is used to
+     * communicate the result. Note that the <code>Id</code>s of a batch
+     * request need to be unique within the request.
      *
-     * @return The value of the Id property for this object.
+     * @return An identifier for this particular receipt handle. This is used to
+     *         communicate the result. Note that the <code>Id</code>s of a batch
+     *         request need to be unique within the request.
      */
     public String getId() {
         return id;
     }
     
     /**
-     * Sets the value of the Id property for this object.
+     * An identifier for this particular receipt handle. This is used to
+     * communicate the result. Note that the <code>Id</code>s of a batch
+     * request need to be unique within the request.
      *
-     * @param id The new value for the Id property for this object.
+     * @param id An identifier for this particular receipt handle. This is used to
+     *         communicate the result. Note that the <code>Id</code>s of a batch
+     *         request need to be unique within the request.
      */
     public void setId(String id) {
         this.id = id;
     }
     
     /**
-     * Sets the value of the Id property for this object.
+     * An identifier for this particular receipt handle. This is used to
+     * communicate the result. Note that the <code>Id</code>s of a batch
+     * request need to be unique within the request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param id The new value for the Id property for this object.
+     * @param id An identifier for this particular receipt handle. This is used to
+     *         communicate the result. Note that the <code>Id</code>s of a batch
+     *         request need to be unique within the request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChangeMessageVisibilityBatchRequestEntry withId(String id) {
         this.id = id;
@@ -81,29 +111,32 @@ public class ChangeMessageVisibilityBatchRequestEntry  implements Serializable  
     
     
     /**
-     * Returns the value of the ReceiptHandle property for this object.
+     * A receipt handle.
      *
-     * @return The value of the ReceiptHandle property for this object.
+     * @return A receipt handle.
      */
     public String getReceiptHandle() {
         return receiptHandle;
     }
     
     /**
-     * Sets the value of the ReceiptHandle property for this object.
+     * A receipt handle.
      *
-     * @param receiptHandle The new value for the ReceiptHandle property for this object.
+     * @param receiptHandle A receipt handle.
      */
     public void setReceiptHandle(String receiptHandle) {
         this.receiptHandle = receiptHandle;
     }
     
     /**
-     * Sets the value of the ReceiptHandle property for this object.
+     * A receipt handle.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param receiptHandle The new value for the ReceiptHandle property for this object.
+     * @param receiptHandle A receipt handle.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChangeMessageVisibilityBatchRequestEntry withReceiptHandle(String receiptHandle) {
         this.receiptHandle = receiptHandle;
@@ -112,29 +145,32 @@ public class ChangeMessageVisibilityBatchRequestEntry  implements Serializable  
     
     
     /**
-     * Returns the value of the VisibilityTimeout property for this object.
+     * The new value (in seconds) for the message's visibility timeout.
      *
-     * @return The value of the VisibilityTimeout property for this object.
+     * @return The new value (in seconds) for the message's visibility timeout.
      */
     public Integer getVisibilityTimeout() {
         return visibilityTimeout;
     }
     
     /**
-     * Sets the value of the VisibilityTimeout property for this object.
+     * The new value (in seconds) for the message's visibility timeout.
      *
-     * @param visibilityTimeout The new value for the VisibilityTimeout property for this object.
+     * @param visibilityTimeout The new value (in seconds) for the message's visibility timeout.
      */
     public void setVisibilityTimeout(Integer visibilityTimeout) {
         this.visibilityTimeout = visibilityTimeout;
     }
     
     /**
-     * Sets the value of the VisibilityTimeout property for this object.
+     * The new value (in seconds) for the message's visibility timeout.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param visibilityTimeout The new value for the VisibilityTimeout property for this object.
+     * @param visibilityTimeout The new value (in seconds) for the message's visibility timeout.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChangeMessageVisibilityBatchRequestEntry withVisibilityTimeout(Integer visibilityTimeout) {
         this.visibilityTimeout = visibilityTimeout;

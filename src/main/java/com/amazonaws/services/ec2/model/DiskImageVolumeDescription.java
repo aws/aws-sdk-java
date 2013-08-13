@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Disk Image Volume Description
  */
-public class DiskImageVolumeDescription  implements Serializable  {
+public class DiskImageVolumeDescription implements Serializable {
 
     private Long size;
 

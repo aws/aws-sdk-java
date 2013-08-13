@@ -34,7 +34,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#restoreFromClusterSnapshot(RestoreFromClusterSnapshotRequest)
  */
-public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The identifier of the cluster that will be created from restoring the
@@ -148,6 +148,9 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest  
      *         must be lowercase.</li> <li>First character must be a letter.</li>
      *         <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
      *         <li>Must be unique for all clusters within an AWS account.</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreFromClusterSnapshotRequest withClusterIdentifier(String clusterIdentifier) {
         this.clusterIdentifier = clusterIdentifier;
@@ -191,6 +194,9 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest  
      * @param snapshotIdentifier The name of the snapshot from which to create the new cluster. This
      *         parameter isn't case sensitive. <p>Example:
      *         <code>my-snapshot-id</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreFromClusterSnapshotRequest withSnapshotIdentifier(String snapshotIdentifier) {
         this.snapshotIdentifier = snapshotIdentifier;
@@ -234,6 +240,9 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest  
      * @param port The port number on which the cluster accepts connections. <p>Default:
      *         The same port as the original cluster. <p>Constraints: Must be between
      *         <code>1115</code> and <code>65535</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreFromClusterSnapshotRequest withPort(Integer port) {
         this.port = port;
@@ -277,6 +286,9 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest  
      * @param availabilityZone The Amazon EC2 Availability Zone in which to restore the cluster.
      *         <p>Default: A random, system-chosen Availability Zone. <p>Example:
      *         <code>us-east-1a</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreFromClusterSnapshotRequest withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -320,6 +332,9 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest  
      * @param allowVersionUpgrade If <code>true</code>, upgrades can be applied during the maintenance
      *         window to the Amazon Redshift engine that is running on the cluster.
      *         <p>Default: <code>true</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreFromClusterSnapshotRequest withAllowVersionUpgrade(Boolean allowVersionUpgrade) {
         this.allowVersionUpgrade = allowVersionUpgrade;
@@ -376,6 +391,9 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest  
      * @param clusterSubnetGroupName The name of the subnet group where you want to cluster restored. <p> A
      *         snapshot of cluster in VPC can be restored only in VPC. Therefore, you
      *         must provide subnet group name where you want the cluster restored.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreFromClusterSnapshotRequest withClusterSubnetGroupName(String clusterSubnetGroupName) {
         this.clusterSubnetGroupName = clusterSubnetGroupName;
@@ -413,6 +431,9 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest  
      *
      * @param publiclyAccessible If <code>true</code>, the cluster can be accessed from a public
      *         network.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreFromClusterSnapshotRequest withPubliclyAccessible(Boolean publiclyAccessible) {
         this.publiclyAccessible = publiclyAccessible;
@@ -467,6 +488,9 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest  
      * @param ownerAccount The AWS customer account used to create or copy the snapshot. Required
      *         if you are restoring a snapshot you do not own, optional if you own
      *         the snapshot.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RestoreFromClusterSnapshotRequest withOwnerAccount(String ownerAccount) {
         this.ownerAccount = ownerAccount;

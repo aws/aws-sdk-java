@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Indicates if the specified CNAME is available.
  * </p>
  */
-public class CheckDNSAvailabilityResult  implements Serializable  {
+public class CheckDNSAvailabilityResult implements Serializable {
 
     /**
      * Indicates if the specified CNAME is available: <enumValues> <value
@@ -95,6 +95,9 @@ public class CheckDNSAvailabilityResult  implements Serializable  {
      *         available. </value> </enumValues> <p> <ul> <li> <code>true</code> :
      *         The CNAME is available. </li> <li> <code>false</code> : The CNAME is
      *         not available. </li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CheckDNSAvailabilityResult withAvailable(Boolean available) {
         this.available = available;
@@ -160,6 +163,9 @@ public class CheckDNSAvailabilityResult  implements Serializable  {
      *
      * @param fullyQualifiedCNAME The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is
      *         called with the provided prefix.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CheckDNSAvailabilityResult withFullyQualifiedCNAME(String fullyQualifiedCNAME) {
         this.fullyQualifiedCNAME = fullyQualifiedCNAME;

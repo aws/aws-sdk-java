@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#updateStopwordOptions(UpdateStopwordOptionsRequest)
  */
-public class UpdateStopwordOptionsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class UpdateStopwordOptionsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * A string that represents the name of a domain. Domain names must be
@@ -108,6 +108,9 @@ public class UpdateStopwordOptionsRequest extends AmazonWebServiceRequest  imple
      *         Domain names must start with a letter or number and can contain the
      *         following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase
      *         letters and underscores are not allowed.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateStopwordOptionsRequest withDomainName(String domainName) {
         this.domainName = domainName;
@@ -157,6 +160,9 @@ public class UpdateStopwordOptionsRequest extends AmazonWebServiceRequest  imple
      *         single object with one property "stopwords" whose value is an array of
      *         strings. The maximum size of a stopwords document is 10KB. Example:
      *         <code>{ "stopwords": ["a", "an", "the", "of"] }</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateStopwordOptionsRequest withStopwords(String stopwords) {
         this.stopwords = stopwords;

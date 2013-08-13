@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the CreateVirtualMFADevice action.
  * </p>
  */
-public class CreateVirtualMFADeviceResult  implements Serializable  {
+public class CreateVirtualMFADeviceResult implements Serializable {
 
     /**
      * A newly created virtual MFA device.
@@ -51,6 +51,9 @@ public class CreateVirtualMFADeviceResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param virtualMFADevice A newly created virtual MFA device.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateVirtualMFADeviceResult withVirtualMFADevice(VirtualMFADevice virtualMFADevice) {
         this.virtualMFADevice = virtualMFADevice;

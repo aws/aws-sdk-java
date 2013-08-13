@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Configuration defining a new instance group.
  * </p>
  */
-public class InstanceGroupConfig  implements Serializable  {
+public class InstanceGroupConfig implements Serializable {
 
     /**
      * Friendly name given to the instance group.
@@ -151,6 +151,9 @@ public class InstanceGroupConfig  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param name Friendly name given to the instance group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceGroupConfig withName(String name) {
         this.name = name;
@@ -196,6 +199,9 @@ public class InstanceGroupConfig  implements Serializable  {
      *
      * @param market Market type of the Amazon EC2 instances used to create a cluster node.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see MarketType
      */
     public InstanceGroupConfig withMarket(String market) {
@@ -227,6 +233,9 @@ public class InstanceGroupConfig  implements Serializable  {
      * <b>Allowed Values: </b>ON_DEMAND, SPOT
      *
      * @param market Market type of the Amazon EC2 instances used to create a cluster node.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see MarketType
      */
@@ -273,6 +282,9 @@ public class InstanceGroupConfig  implements Serializable  {
      *
      * @param instanceRole The role of the instance group in the cluster.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see InstanceRoleType
      */
     public InstanceGroupConfig withInstanceRole(String instanceRole) {
@@ -304,6 +316,9 @@ public class InstanceGroupConfig  implements Serializable  {
      * <b>Allowed Values: </b>MASTER, CORE, TASK
      *
      * @param instanceRole The role of the instance group in the cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see InstanceRoleType
      */
@@ -354,6 +369,9 @@ public class InstanceGroupConfig  implements Serializable  {
      *
      * @param bidPrice Bid price for each Amazon EC2 instance in the instance group when
      *         launching nodes as Spot Instances, expressed in USD.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceGroupConfig withBidPrice(String bidPrice) {
         this.bidPrice = bidPrice;
@@ -397,6 +415,9 @@ public class InstanceGroupConfig  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param instanceType The Amazon EC2 instance type for all instances in the instance group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceGroupConfig withInstanceType(String instanceType) {
         this.instanceType = instanceType;
@@ -428,6 +449,9 @@ public class InstanceGroupConfig  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceCount Target number of instances for the instance group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public InstanceGroupConfig withInstanceCount(Integer instanceCount) {
         this.instanceCount = instanceCount;

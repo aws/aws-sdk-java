@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The status of an option, including when it was last updated and whether it is actively in use for searches.
  * </p>
  */
-public class OptionStatus  implements Serializable  {
+public class OptionStatus implements Serializable {
 
     /**
      * A timestamp for when this option was created.
@@ -80,6 +80,9 @@ public class OptionStatus  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param creationDate A timestamp for when this option was created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public OptionStatus withCreationDate(java.util.Date creationDate) {
         this.creationDate = creationDate;
@@ -111,6 +114,9 @@ public class OptionStatus  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param updateDate A timestamp for when this option was last updated.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public OptionStatus withUpdateDate(java.util.Date updateDate) {
         this.updateDate = updateDate;
@@ -151,6 +157,9 @@ public class OptionStatus  implements Serializable  {
      * <b>Range: </b>0 - <br/>
      *
      * @param updateVersion A unique integer that indicates when this option was last updated.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public OptionStatus withUpdateVersion(Integer updateVersion) {
         this.updateVersion = updateVersion;
@@ -244,6 +253,9 @@ public class OptionStatus  implements Serializable  {
      *         generated during processing are provided in
      *         <code>Diagnostics</code>.</li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see OptionState
      */
     public OptionStatus withState(String state) {
@@ -307,6 +319,9 @@ public class OptionStatus  implements Serializable  {
      *         option's latest value is completely visible. Any warnings or messages
      *         generated during processing are provided in
      *         <code>Diagnostics</code>.</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see OptionState
      */

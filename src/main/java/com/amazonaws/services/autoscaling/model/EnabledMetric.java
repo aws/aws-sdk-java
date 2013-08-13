@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The <code>EnabledMetric</code> data type.
  * </p>
  */
-public class EnabledMetric  implements Serializable  {
+public class EnabledMetric implements Serializable {
 
     /**
      * The name of the enabled metric.
@@ -76,6 +76,9 @@ public class EnabledMetric  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param metric The name of the enabled metric.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EnabledMetric withMetric(String metric) {
         this.metric = metric;
@@ -119,6 +122,9 @@ public class EnabledMetric  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param granularity The granularity of the enabled metric.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EnabledMetric withGranularity(String granularity) {
         this.granularity = granularity;

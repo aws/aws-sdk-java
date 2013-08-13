@@ -21,7 +21,7 @@ import java.io.Serializable;
  * decreases.
  * </p>
  */
-public class ProvisionedThroughputDescription  implements Serializable  {
+public class ProvisionedThroughputDescription implements Serializable {
 
     /**
      * The date and time of the last provisioned throughput increase for this
@@ -99,6 +99,9 @@ public class ProvisionedThroughputDescription  implements Serializable  {
      *
      * @param lastIncreaseDateTime The date and time of the last provisioned throughput increase for this
      *         table.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ProvisionedThroughputDescription withLastIncreaseDateTime(java.util.Date lastIncreaseDateTime) {
         this.lastIncreaseDateTime = lastIncreaseDateTime;
@@ -136,6 +139,9 @@ public class ProvisionedThroughputDescription  implements Serializable  {
      *
      * @param lastDecreaseDateTime The date and time of the last provisioned throughput decrease for this
      *         table.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ProvisionedThroughputDescription withLastDecreaseDateTime(java.util.Date lastDecreaseDateTime) {
         this.lastDecreaseDateTime = lastDecreaseDateTime;
@@ -200,6 +206,9 @@ public class ProvisionedThroughputDescription  implements Serializable  {
      *         decreases, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      *         in the Amazon DynamoDB Developer Guide.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ProvisionedThroughputDescription withNumberOfDecreasesToday(Long numberOfDecreasesToday) {
         this.numberOfDecreasesToday = numberOfDecreasesToday;
@@ -270,6 +279,9 @@ public class ProvisionedThroughputDescription  implements Serializable  {
      *         consistent reads, so a setting of 50 <i>ReadCapacityUnits</i> per
      *         second provides 100 eventually consistent <i>ReadCapacityUnits</i> per
      *         second.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ProvisionedThroughputDescription withReadCapacityUnits(Long readCapacityUnits) {
         this.readCapacityUnits = readCapacityUnits;
@@ -316,6 +328,9 @@ public class ProvisionedThroughputDescription  implements Serializable  {
      *
      * @param writeCapacityUnits The maximum number of writes consumed per second before Amazon
      *         DynamoDB returns a <i>ThrottlingException</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ProvisionedThroughputDescription withWriteCapacityUnits(Long writeCapacityUnits) {
         this.writeCapacityUnits = writeCapacityUnits;

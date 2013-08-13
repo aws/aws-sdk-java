@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * 
  */
-public class DecodeAuthorizationMessageResult  implements Serializable  {
+public class DecodeAuthorizationMessageResult implements Serializable {
 
     /**
      * An XML document that contains the decoded message.
@@ -49,6 +49,9 @@ public class DecodeAuthorizationMessageResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param decodedMessage An XML document that contains the decoded message.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DecodeAuthorizationMessageResult withDecodedMessage(String decodedMessage) {
         this.decodedMessage = decodedMessage;

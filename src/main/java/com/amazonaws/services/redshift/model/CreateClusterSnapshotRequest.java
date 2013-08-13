@@ -28,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#createClusterSnapshot(CreateClusterSnapshotRequest)
  */
-public class CreateClusterSnapshotRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateClusterSnapshotRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * A unique identifier for the snapshot that you are requesting. This
@@ -106,6 +106,9 @@ public class CreateClusterSnapshotRequest extends AmazonWebServiceRequest  imple
      *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
      *         or contain two consecutive hyphens</li> </ul> <p>Example:
      *         <code>my-snapshot-id</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateClusterSnapshotRequest withSnapshotIdentifier(String snapshotIdentifier) {
         this.snapshotIdentifier = snapshotIdentifier;
@@ -137,6 +140,9 @@ public class CreateClusterSnapshotRequest extends AmazonWebServiceRequest  imple
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clusterIdentifier The cluster identifier for which you want a snapshot.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateClusterSnapshotRequest withClusterIdentifier(String clusterIdentifier) {
         this.clusterIdentifier = clusterIdentifier;

@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#createStack(CreateStackRequest)
  */
-public class CreateStackRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateStackRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The stack name.
@@ -179,6 +179,9 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The stack name.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateStackRequest withName(String name) {
         this.name = name;
@@ -228,6 +231,9 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         Amazon regions, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      *         and Endpoints</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateStackRequest withRegion(String region) {
         this.region = region;
@@ -269,6 +275,9 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param attributes One or more user-defined key/value pairs to be added to the stack
      *         attributes bag.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateStackRequest withAttributes(java.util.Map<String,String> attributes) {
         setAttributes(attributes);
@@ -361,6 +370,9 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         role. For more information about IAM ARNs, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateStackRequest withServiceRoleArn(String serviceRoleArn) {
         this.serviceRoleArn = serviceRoleArn;
@@ -410,6 +422,9 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         stack's EC2 instances. For more information about IAM ARNs, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateStackRequest withDefaultInstanceProfileArn(String defaultInstanceProfileArn) {
         this.defaultInstanceProfileArn = defaultInstanceProfileArn;
@@ -513,6 +528,9 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         OpsWorks, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      *         Custom AMIs</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateStackRequest withDefaultOs(String defaultOs) {
         this.defaultOs = defaultOs;
@@ -604,6 +622,9 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         <li>Wild_Cats</li> </ul> <p>To obtain a generated host name, call
      *         <code>GetHostNameSuggestion</code>, which returns a host name based on
      *         the current theme.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateStackRequest withHostnameTheme(String hostnameTheme) {
         this.hostnameTheme = hostnameTheme;
@@ -647,6 +668,9 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      * @param defaultAvailabilityZone The stack default Availability Zone. For more information, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      *         and Endpoints</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateStackRequest withDefaultAvailabilityZone(String defaultAvailabilityZone) {
         this.defaultAvailabilityZone = defaultAvailabilityZone;
@@ -714,6 +738,9 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      *         Custom JSON to Modify the Stack Configuration JSON</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateStackRequest withCustomJson(String customJson) {
         this.customJson = customJson;
@@ -763,6 +790,9 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         you use the configuration manager to specify the Chef version, 0.9 or
      *         11.4. The default value is currently 0.9. However, we expect to change
      *         the default value to 11.4 in late August 2013.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateStackRequest withConfigurationManager(StackConfigurationManager configurationManager) {
         this.configurationManager = configurationManager;
@@ -794,6 +824,9 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param useCustomCookbooks Whether the stack uses custom cookbooks.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateStackRequest withUseCustomCookbooks(Boolean useCustomCookbooks) {
         this.useCustomCookbooks = useCustomCookbooks;
@@ -864,6 +897,9 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         Apps</a> or <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Custom
      *         Recipes and Cookbooks</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateStackRequest withCustomCookbooksSource(Source customCookbooksSource) {
         this.customCookbooksSource = customCookbooksSource;
@@ -901,6 +937,9 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param defaultSshKeyName A default SSH key for the stack instances. You can override this value
      *         when you create or update an instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateStackRequest withDefaultSshKeyName(String defaultSshKeyName) {
         this.defaultSshKeyName = defaultSshKeyName;
@@ -970,6 +1009,9 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      *         for the Root Device</a>.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see RootDeviceType
      */
     public CreateStackRequest withDefaultRootDeviceType(String defaultRootDeviceType) {
@@ -1017,6 +1059,9 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         an instance. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      *         for the Root Device</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see RootDeviceType
      */

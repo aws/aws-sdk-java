@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Create Reserved Instances Listing Result
  */
-public class CreateReservedInstancesListingResult  implements Serializable  {
+public class CreateReservedInstancesListingResult implements Serializable {
 
     private com.amazonaws.internal.ListWithAutoConstructFlag<ReservedInstancesListing> reservedInstancesListings;
 

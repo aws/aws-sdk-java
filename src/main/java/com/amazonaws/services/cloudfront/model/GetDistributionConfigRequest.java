@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.cloudfront.AmazonCloudFront#getDistributionConfig(GetDistributionConfigRequest)
  */
-public class GetDistributionConfigRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class GetDistributionConfigRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The distribution's id.
@@ -76,6 +76,9 @@ public class GetDistributionConfigRequest extends AmazonWebServiceRequest  imple
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param id The distribution's id.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetDistributionConfigRequest withId(String id) {
         this.id = id;

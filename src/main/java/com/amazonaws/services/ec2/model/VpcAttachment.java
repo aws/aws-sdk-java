@@ -20,7 +20,7 @@ import java.io.Serializable;
  * 
  * </p>
  */
-public class VpcAttachment  implements Serializable  {
+public class VpcAttachment implements Serializable {
 
     /**
      * 

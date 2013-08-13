@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes a permission allowing either a user or group to create a new EBS volume from a snapshot.
  * </p>
  */
-public class CreateVolumePermission  implements Serializable  {
+public class CreateVolumePermission implements Serializable {
 
     /**
      * The user ID of the user that can create volumes from the snapshot.

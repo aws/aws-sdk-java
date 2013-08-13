@@ -87,7 +87,7 @@ public interface AmazonElasticMapReduce {
      * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      */
     public void setRegion(Region region) throws java.lang.IllegalArgumentException;
-	
+    
     /**
      * <p>
      * Sets whether all AWS Identity and Access Management (IAM) users under

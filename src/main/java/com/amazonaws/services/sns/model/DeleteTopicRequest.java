@@ -165,6 +165,9 @@ public class DeleteTopicRequest extends AmazonWebServiceRequest  implements Seri
      *         <RequestId>fba800b9-3765-11df-8cf3-c58c53254dfb</RequestId>
      *         </ResponseMetadata> </DeleteTopicResponse> </queryresponse>
      *         </examples>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
      */
     public DeleteTopicRequest withTopicArn(String topicArn) {
         this.topicArn = topicArn;

@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteGroupPolicy(DeleteGroupPolicyRequest)
  */
-public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the group the policy is associated with.
@@ -103,6 +103,9 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest  implement
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param groupName Name of the group the policy is associated with.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteGroupPolicyRequest withGroupName(String groupName) {
         this.groupName = groupName;
@@ -146,6 +149,9 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest  implement
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param policyName Name of the policy document to delete.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteGroupPolicyRequest withPolicyName(String policyName) {
         this.policyName = policyName;

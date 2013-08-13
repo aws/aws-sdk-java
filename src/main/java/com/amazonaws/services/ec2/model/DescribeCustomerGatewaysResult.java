@@ -20,7 +20,7 @@ import java.io.Serializable;
  * 
  * </p>
  */
-public class DescribeCustomerGatewaysResult  implements Serializable  {
+public class DescribeCustomerGatewaysResult implements Serializable {
 
     /**
      * 

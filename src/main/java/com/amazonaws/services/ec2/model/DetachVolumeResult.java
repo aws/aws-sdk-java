@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The result of detaching an EBS volume from an instance.
  * </p>
  */
-public class DetachVolumeResult  implements Serializable  {
+public class DetachVolumeResult implements Serializable {
 
     /**
      * The updated EBS volume attachment information after trying to detach

@@ -51,6 +51,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.AWSCredentialsProviderChain;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 import com.amazonaws.auth.EnvironmentVariableCredentialsProvider;
 import com.amazonaws.auth.InstanceProfileCredentialsProvider;
 import com.amazonaws.auth.Signer;
@@ -61,6 +62,7 @@ import com.amazonaws.http.ExecutionContext;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.HttpResponseHandler;
 import com.amazonaws.internal.StaticCredentialsProvider;
+import com.amazonaws.regions.RegionUtils;
 import com.amazonaws.services.s3.internal.BucketNameUtils;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.DeleteObjectsResponse;
@@ -333,6 +335,53 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         init();
     }
 
+	/**
+	 * Constructs a new client using the specified client configuration to
+	 * access Amazon S3. A credentials provider chain will be used that searches
+	 * for credentials in this order:
+	 * <ul>
+	 * <li>Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY</li>
+	 * <li>Java System Properties - aws.accessKeyId and aws.secretKey</li>
+	 * <li>Instance Profile Credentials - delivered through the Amazon EC2
+	 * metadata service</li>
+	 * </ul>
+	 * 
+	 * <p>
+	 * If no credentials are found in the chain, this client will attempt to
+	 * work in an anonymous mode where requests aren't signed. Only a subset of
+	 * the Amazon S3 API will work with anonymous <i>(i.e. unsigned)</i>
+	 * requests, but this can prove useful in some situations. For example:
+	 * <ul>
+	 * <li>If an Amazon S3 bucket has {@link Permission#Read} permission for the
+	 * {@link GroupGrantee#AllUsers} group, anonymous clients can call
+	 * {@link #listObjects(String)} to see what objects are stored in a bucket.</li>
+	 * <li>If an object has {@link Permission#Read} permission for the
+	 * {@link GroupGrantee#AllUsers} group, anonymous clients can call
+	 * {@link #getObject(String, String)} and
+	 * {@link #getObjectMetadata(String, String)} to pull object content and
+	 * metadata.</li>
+	 * <li>If a bucket has {@link Permission#Write} permission for the
+	 * {@link GroupGrantee#AllUsers} group, anonymous clients can upload objects
+	 * to the bucket.</li>
+	 * </ul>
+	 * </p>
+	 * <p>
+	 * You can force the client to operate in an anonymous mode, and skip the
+	 * credentials provider chain, by passing in <code>null</code> for the
+	 * credentials.
+	 * </p>
+	 * 
+	 * @param clientConfiguration
+     *            The client configuration options controlling how this client
+     *            connects to Amazon S3 (e.g. proxy settings, retry counts, etc).
+     *            
+	 * @see AmazonS3Client#AmazonS3Client(AWSCredentials)
+	 * @see AmazonS3Client#AmazonS3Client(AWSCredentials, ClientConfiguration)
+	 */
+	public AmazonS3Client(ClientConfiguration clientConfiguration) {
+		this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+	}   
+    
     private void init() {
         // Because of S3's virtual host style addressing, we need to change the
         // default, strict hostname verification to be more lenient.
@@ -613,25 +662,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
          * *must* specify a location constraint. Try to derive the region from
          * the endpoint.
          */
-        if ( region == null ) {
-            String endpoint = this.endpoint.getHost();
-            if ( endpoint.contains(Region.US_West.toString()) ) {
-                region = Region.US_West.toString();
-            } else if ( endpoint.contains(Region.US_West_2.toString()) ) {
-                region = Region.US_West_2.toString();
-            } else if (endpoint.contains("us-gov-west-1")){
-            	region = Region.US_GovCloud.toString();
-            } else if ( endpoint.contains("eu-west-1") ) {
-                region = Region.EU_Ireland.toString();
-            } else if ( endpoint.contains(Region.AP_Singapore.toString()) ) {
-                region = Region.AP_Singapore.toString();
-            } else if ( endpoint.contains(Region.AP_Sydney.toString()) ) {
-                region = Region.AP_Sydney.toString();
-            }else if ( endpoint.contains(Region.AP_Tokyo.toString()) ) {
-                region = Region.AP_Tokyo.toString();
-            } else if ( endpoint.contains(Region.SA_SaoPaulo.toString()) ) {
-                region = Region.SA_SaoPaulo.toString();
-            }
+		if (!(this.endpoint.getHost().equals(Constants.S3_HOSTNAME))
+				&& (region == null || region.isEmpty())) {
+
+			region = RegionUtils.getRegionByEndpoint(this.endpoint.getHost())
+					.getName();            
+            
         }
 
         /*

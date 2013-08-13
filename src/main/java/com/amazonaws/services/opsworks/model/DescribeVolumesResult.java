@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribeVolumes</code> request.
  * </p>
  */
-public class DescribeVolumesResult  implements Serializable  {
+public class DescribeVolumesResult implements Serializable {
 
     /**
      * An array of volume IDs.
@@ -62,6 +62,9 @@ public class DescribeVolumesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumes An array of volume IDs.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeVolumesResult withVolumes(Volume... volumes) {
         if (getVolumes() == null) setVolumes(new java.util.ArrayList<Volume>(volumes.length));
@@ -77,6 +80,9 @@ public class DescribeVolumesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumes An array of volume IDs.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeVolumesResult withVolumes(java.util.Collection<Volume> volumes) {
         if (volumes == null) {

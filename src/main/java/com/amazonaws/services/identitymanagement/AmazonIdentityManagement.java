@@ -94,7 +94,7 @@ public interface AmazonIdentityManagement {
      * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      */
     public void setRegion(Region region) throws java.lang.IllegalArgumentException;
-	
+    
     /**
      * <p>
      * Deletes the specified AWS account alias. For information about using

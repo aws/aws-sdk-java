@@ -20,7 +20,7 @@ import java.io.Serializable;
  * An AWS DevPay product code.
  * </p>
  */
-public class ProductCode  implements Serializable  {
+public class ProductCode implements Serializable {
 
     /**
      * The unique ID of an AWS DevPay product code.

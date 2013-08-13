@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The result of describing the purchased Reserved Instances for your account.
  * </p>
  */
-public class DescribeReservedInstancesResult  implements Serializable  {
+public class DescribeReservedInstancesResult implements Serializable {
 
     /**
      * The list of described Reserved Instances.

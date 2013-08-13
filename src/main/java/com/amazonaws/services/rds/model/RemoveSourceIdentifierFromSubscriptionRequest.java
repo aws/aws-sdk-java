@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#removeSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest)
  */
-public class RemoveSourceIdentifierFromSubscriptionRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class RemoveSourceIdentifierFromSubscriptionRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the RDS event notification subscription you want to remove
@@ -69,6 +69,9 @@ public class RemoveSourceIdentifierFromSubscriptionRequest extends AmazonWebServ
      *
      * @param subscriptionName The name of the RDS event notification subscription you want to remove
      *         a source identifier from.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RemoveSourceIdentifierFromSubscriptionRequest withSubscriptionName(String subscriptionName) {
         this.subscriptionName = subscriptionName;
@@ -112,6 +115,9 @@ public class RemoveSourceIdentifierFromSubscriptionRequest extends AmazonWebServ
      * @param sourceIdentifier The source identifier to be removed from the subscription, such as the
      *         <b>DB instance identifier</b> for a DB instance or the name of a
      *         security group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RemoveSourceIdentifierFromSubscriptionRequest withSourceIdentifier(String sourceIdentifier) {
         this.sourceIdentifier = sourceIdentifier;

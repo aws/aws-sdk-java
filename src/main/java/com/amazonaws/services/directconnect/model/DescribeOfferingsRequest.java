@@ -27,7 +27,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#describeOfferings(DescribeOfferingsRequest)
  */
-public class DescribeOfferingsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeOfferingsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Returns a string representation of this object; useful for testing and

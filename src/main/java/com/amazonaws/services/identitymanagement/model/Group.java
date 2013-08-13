@@ -30,7 +30,7 @@ import java.io.Serializable;
  * 
  * </ul>
  */
-public class Group  implements Serializable  {
+public class Group implements Serializable {
 
     /**
      * Path to the group. For more information about paths, see <a
@@ -178,6 +178,9 @@ public class Group  implements Serializable  {
      *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Group withPath(String path) {
         this.path = path;
@@ -221,6 +224,9 @@ public class Group  implements Serializable  {
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param groupName The name that identifies the group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Group withGroupName(String groupName) {
         this.groupName = groupName;
@@ -288,6 +294,9 @@ public class Group  implements Serializable  {
      *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Group withGroupId(String groupId) {
         this.groupId = groupId;
@@ -352,6 +361,9 @@ public class Group  implements Serializable  {
      *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Group withArn(String arn) {
         this.arn = arn;
@@ -383,6 +395,9 @@ public class Group  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param createDate The date when the group was created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Group withCreateDate(java.util.Date createDate) {
         this.createDate = createDate;

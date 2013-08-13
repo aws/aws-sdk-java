@@ -27,7 +27,7 @@ import java.io.Serializable;
  * 
  * </ul>
  */
-public class Endpoint  implements Serializable  {
+public class Endpoint implements Serializable {
 
     /**
      * Specifies the DNS address of the DB Instance.
@@ -69,6 +69,9 @@ public class Endpoint  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param address Specifies the DNS address of the DB Instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Endpoint withAddress(String address) {
         this.address = address;
@@ -100,6 +103,9 @@ public class Endpoint  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param port Specifies the port that the database engine is listening on.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Endpoint withPort(Integer port) {
         this.port = port;

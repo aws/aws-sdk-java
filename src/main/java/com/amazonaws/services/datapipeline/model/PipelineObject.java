@@ -21,7 +21,7 @@ import java.io.Serializable;
  * a pipeline defines the pipeline.
  * </p>
  */
-public class PipelineObject  implements Serializable  {
+public class PipelineObject implements Serializable {
 
     /**
      * Identifier of the object.
@@ -82,6 +82,9 @@ public class PipelineObject  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param id Identifier of the object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PipelineObject withId(String id) {
         this.id = id;
@@ -125,6 +128,9 @@ public class PipelineObject  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param name Name of the object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PipelineObject withName(String name) {
         this.name = name;
@@ -167,6 +173,9 @@ public class PipelineObject  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param fields Key-value pairs that define the properties of the object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PipelineObject withFields(Field... fields) {
         if (getFields() == null) setFields(new java.util.ArrayList<Field>(fields.length));
@@ -182,6 +191,9 @@ public class PipelineObject  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param fields Key-value pairs that define the properties of the object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PipelineObject withFields(java.util.Collection<Field> fields) {
         if (fields == null) {

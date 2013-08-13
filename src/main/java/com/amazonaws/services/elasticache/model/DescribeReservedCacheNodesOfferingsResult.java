@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the DescribeReservedCacheNodesOfferings action.
  * </p>
  */
-public class DescribeReservedCacheNodesOfferingsResult  implements Serializable  {
+public class DescribeReservedCacheNodesOfferingsResult implements Serializable {
 
     /**
      * A marker provided for paginated results.
@@ -56,6 +56,9 @@ public class DescribeReservedCacheNodesOfferingsResult  implements Serializable 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param marker A marker provided for paginated results.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedCacheNodesOfferingsResult withMarker(String marker) {
         this.marker = marker;
@@ -98,6 +101,9 @@ public class DescribeReservedCacheNodesOfferingsResult  implements Serializable 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedCacheNodesOfferings A list of reserved Cache Node offerings.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedCacheNodesOfferingsResult withReservedCacheNodesOfferings(ReservedCacheNodesOffering... reservedCacheNodesOfferings) {
         if (getReservedCacheNodesOfferings() == null) setReservedCacheNodesOfferings(new java.util.ArrayList<ReservedCacheNodesOffering>(reservedCacheNodesOfferings.length));
@@ -113,6 +119,9 @@ public class DescribeReservedCacheNodesOfferingsResult  implements Serializable 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedCacheNodesOfferings A list of reserved Cache Node offerings.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedCacheNodesOfferingsResult withReservedCacheNodesOfferings(java.util.Collection<ReservedCacheNodesOffering> reservedCacheNodesOfferings) {
         if (reservedCacheNodesOfferings == null) {

@@ -22,7 +22,7 @@ import java.io.Serializable;
  * the attribute exists and has a particular value before updating it.
  * </p>
  */
-public class ExpectedAttributeValue  implements Serializable  {
+public class ExpectedAttributeValue implements Serializable {
 
     /**
      * Represents the data for an attribute. You can set one, and only one,
@@ -148,6 +148,9 @@ public class ExpectedAttributeValue  implements Serializable  {
      *
      * @param value Represents the data for an attribute. You can set one, and only one,
      *         of the elements.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ExpectedAttributeValue withValue(AttributeValue value) {
         this.value = value;
@@ -317,6 +320,9 @@ public class ExpectedAttributeValue  implements Serializable  {
      *         than one condition for <i>Exists</i>, then all of the conditions must
      *         evaluate to true. (In other words, the conditions are ANDed together.)
      *         Otherwise, the conditional operation will fail.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ExpectedAttributeValue withExists(Boolean exists) {
         this.exists = exists;

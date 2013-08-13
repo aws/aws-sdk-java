@@ -16,16 +16,19 @@ package com.amazonaws.services.sqs.model;
 import java.io.Serializable;
 
 /**
- * Receive Message Result
+ * 
  */
-public class ReceiveMessageResult  implements Serializable  {
+public class ReceiveMessageResult implements Serializable {
 
+    /**
+     * A list of messages.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Message> messages;
 
     /**
-     * Returns the value of the Messages property for this object.
+     * A list of messages.
      *
-     * @return The value of the Messages property for this object.
+     * @return A list of messages.
      */
     public java.util.List<Message> getMessages() {
         
@@ -37,9 +40,9 @@ public class ReceiveMessageResult  implements Serializable  {
     }
     
     /**
-     * Sets the value of the Messages property for this object.
+     * A list of messages.
      *
-     * @param messages The new value for the Messages property for this object.
+     * @param messages A list of messages.
      */
     public void setMessages(java.util.Collection<Message> messages) {
         if (messages == null) {
@@ -52,11 +55,14 @@ public class ReceiveMessageResult  implements Serializable  {
     }
     
     /**
-     * Sets the value of the Messages property for this object.
+     * A list of messages.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param messages The new value for the Messages property for this object.
+     * @param messages A list of messages.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ReceiveMessageResult withMessages(Message... messages) {
         if (getMessages() == null) setMessages(new java.util.ArrayList<Message>(messages.length));
@@ -67,11 +73,14 @@ public class ReceiveMessageResult  implements Serializable  {
     }
     
     /**
-     * Sets the value of the Messages property for this object.
+     * A list of messages.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param messages The new value for the Messages property for this object.
+     * @param messages A list of messages.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ReceiveMessageResult withMessages(java.util.Collection<Message> messages) {
         if (messages == null) {

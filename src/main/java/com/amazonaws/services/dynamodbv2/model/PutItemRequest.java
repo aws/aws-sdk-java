@@ -46,7 +46,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#putItem(PutItemRequest)
  */
-public class PutItemRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class PutItemRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the table to contain the item.
@@ -212,6 +212,9 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
      * @param tableName The name of the table to contain the item.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PutItemRequest withTableName(String tableName) {
         this.tableName = tableName;
@@ -298,6 +301,9 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      *         Key</a> in the Amazon DynamoDB Developer Guide. <p>Each element in the
      *         <i>Item</i> map is an <i>AttributeValue</i> object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PutItemRequest withItem(java.util.Map<String,AttributeValue> item) {
         setItem(item);
@@ -561,6 +567,9 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      *         specify more than one condition for <i>Exists</i>, then all of the
      *         conditions must evaluate to true. (In other words, the conditions are
      *         ANDed together.) Otherwise, the conditional operation will fail.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PutItemRequest withExpected(java.util.Map<String,ExpectedAttributeValue> expected) {
         setExpected(expected);
@@ -710,6 +719,9 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      *         <i>PutItem</i> overwrote an attribute name-value pair, then the
      *         content of the old item is returned. </li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ReturnValue
      */
     public PutItemRequest withReturnValues(String returnValues) {
@@ -770,6 +782,9 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      *         <i>PutItem</i> overwrote an attribute name-value pair, then the
      *         content of the old item is returned. </li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ReturnValue
      */
     public PutItemRequest withReturnValues(ReturnValue returnValues) {
@@ -827,6 +842,9 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      *         the response; if set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ReturnConsumedCapacity
      */
     public PutItemRequest withReturnConsumedCapacity(String returnConsumedCapacity) {
@@ -866,6 +884,9 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
      *         the response; if set to <code>NONE</code> (the default),
      *         <i>ConsumedCapacity</i> is not included.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see ReturnConsumedCapacity
      */
@@ -930,6 +951,9 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      *         response. If set to <code>NONE</code> (the default), no statistics are
      *         returned..
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ReturnItemCollectionMetrics
      */
     public PutItemRequest withReturnItemCollectionMetrics(String returnItemCollectionMetrics) {
@@ -973,6 +997,9 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      *         any, that were modified during the operation are returned in the
      *         response. If set to <code>NONE</code> (the default), no statistics are
      *         returned..
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see ReturnItemCollectionMetrics
      */

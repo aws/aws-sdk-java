@@ -27,7 +27,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#describeConnections(DescribeConnectionsRequest)
  */
-public class DescribeConnectionsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeConnectionsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * ID of the connection. <p>Example: dxcon-fg5678gh <p>Default: None
@@ -58,6 +58,9 @@ public class DescribeConnectionsRequest extends AmazonWebServiceRequest  impleme
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param connectionId ID of the connection. <p>Example: dxcon-fg5678gh <p>Default: None
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeConnectionsRequest withConnectionId(String connectionId) {
         this.connectionId = connectionId;

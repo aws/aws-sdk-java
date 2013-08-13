@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The policies data type.
  * </p>
  */
-public class Policies  implements Serializable  {
+public class Policies implements Serializable {
 
     /**
      * A list of the <a>AppCookieStickinessPolicy</a> objects created with
@@ -86,6 +86,9 @@ public class Policies  implements Serializable  {
      *
      * @param appCookieStickinessPolicies A list of the <a>AppCookieStickinessPolicy</a> objects created with
      *         <a>CreateAppCookieStickinessPolicy</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Policies withAppCookieStickinessPolicies(AppCookieStickinessPolicy... appCookieStickinessPolicies) {
         if (getAppCookieStickinessPolicies() == null) setAppCookieStickinessPolicies(new java.util.ArrayList<AppCookieStickinessPolicy>(appCookieStickinessPolicies.length));
@@ -103,6 +106,9 @@ public class Policies  implements Serializable  {
      *
      * @param appCookieStickinessPolicies A list of the <a>AppCookieStickinessPolicy</a> objects created with
      *         <a>CreateAppCookieStickinessPolicy</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Policies withAppCookieStickinessPolicies(java.util.Collection<AppCookieStickinessPolicy> appCookieStickinessPolicies) {
         if (appCookieStickinessPolicies == null) {
@@ -157,6 +163,9 @@ public class Policies  implements Serializable  {
      *
      * @param lBCookieStickinessPolicies A list of <a>LBCookieStickinessPolicy</a> objects created with
      *         <a>CreateAppCookieStickinessPolicy</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Policies withLBCookieStickinessPolicies(LBCookieStickinessPolicy... lBCookieStickinessPolicies) {
         if (getLBCookieStickinessPolicies() == null) setLBCookieStickinessPolicies(new java.util.ArrayList<LBCookieStickinessPolicy>(lBCookieStickinessPolicies.length));
@@ -174,6 +183,9 @@ public class Policies  implements Serializable  {
      *
      * @param lBCookieStickinessPolicies A list of <a>LBCookieStickinessPolicy</a> objects created with
      *         <a>CreateAppCookieStickinessPolicy</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Policies withLBCookieStickinessPolicies(java.util.Collection<LBCookieStickinessPolicy> lBCookieStickinessPolicies) {
         if (lBCookieStickinessPolicies == null) {
@@ -222,6 +234,9 @@ public class Policies  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param otherPolicies A list of policy names other than the stickiness policies.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Policies withOtherPolicies(String... otherPolicies) {
         if (getOtherPolicies() == null) setOtherPolicies(new java.util.ArrayList<String>(otherPolicies.length));
@@ -237,6 +252,9 @@ public class Policies  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param otherPolicies A list of policy names other than the stickiness policies.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Policies withOtherPolicies(java.util.Collection<String> otherPolicies) {
         if (otherPolicies == null) {

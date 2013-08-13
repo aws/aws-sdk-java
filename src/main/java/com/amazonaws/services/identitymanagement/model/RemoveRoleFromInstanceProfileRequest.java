@@ -33,7 +33,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#removeRoleFromInstanceProfile(RemoveRoleFromInstanceProfileRequest)
  */
-public class RemoveRoleFromInstanceProfileRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class RemoveRoleFromInstanceProfileRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the instance profile to update.
@@ -89,6 +89,9 @@ public class RemoveRoleFromInstanceProfileRequest extends AmazonWebServiceReques
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param instanceProfileName Name of the instance profile to update.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RemoveRoleFromInstanceProfileRequest withInstanceProfileName(String instanceProfileName) {
         this.instanceProfileName = instanceProfileName;
@@ -132,6 +135,9 @@ public class RemoveRoleFromInstanceProfileRequest extends AmazonWebServiceReques
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param roleName Name of the role to remove.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RemoveRoleFromInstanceProfileRequest withRoleName(String roleName) {
         this.roleName = roleName;

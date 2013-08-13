@@ -53,7 +53,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#listOpenWorkflowExecutions(ListOpenWorkflowExecutionsRequest)
  */
-public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the domain that contains the workflow executions to list.
@@ -159,6 +159,9 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest  
      * <b>Length: </b>1 - 256<br/>
      *
      * @param domain The name of the domain that contains the workflow executions to list.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListOpenWorkflowExecutionsRequest withDomain(String domain) {
         this.domain = domain;
@@ -202,6 +205,9 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest  
      * @param startTimeFilter Workflow executions are included in the returned results based on
      *         whether their start times are within the range specified by this
      *         filter.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListOpenWorkflowExecutionsRequest withStartTimeFilter(ExecutionTimeFilter startTimeFilter) {
         this.startTimeFilter = startTimeFilter;
@@ -251,6 +257,9 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest  
      *         returned. <note><code>executionFilter</code>, <code>typeFilter</code>
      *         and <code>tagFilter</code> are mutually exclusive. You can specify at
      *         most one of these in a request.</note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListOpenWorkflowExecutionsRequest withTypeFilter(WorkflowTypeFilter typeFilter) {
         this.typeFilter = typeFilter;
@@ -300,6 +309,9 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest  
      *         <note><code>executionFilter</code>, <code>typeFilter</code> and
      *         <code>tagFilter</code> are mutually exclusive. You can specify at most
      *         one of these in a request.</note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListOpenWorkflowExecutionsRequest withTagFilter(TagFilter tagFilter) {
         this.tagFilter = tagFilter;
@@ -358,6 +370,9 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest  
      *         returned, the results are being paginated. To get the next page of
      *         results, repeat the call with the returned token and all other
      *         arguments unchanged.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListOpenWorkflowExecutionsRequest withNextPageToken(String nextPageToken) {
         this.nextPageToken = nextPageToken;
@@ -428,6 +443,9 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest  
      *         greater than 100. Note that the number of executions may be less than
      *         the maxiumum page size, in which case, the returned page will have
      *         fewer results than the maximumPageSize specified.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListOpenWorkflowExecutionsRequest withMaximumPageSize(Integer maximumPageSize) {
         this.maximumPageSize = maximumPageSize;
@@ -471,6 +489,9 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest  
      * @param reverseOrder When set to <code>true</code>, returns the results in reverse order.
      *         By default the results are returned in descending order of the start
      *         time of the executions.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListOpenWorkflowExecutionsRequest withReverseOrder(Boolean reverseOrder) {
         this.reverseOrder = reverseOrder;
@@ -539,6 +560,9 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest  
      *         <note><code>executionFilter</code>, <code>typeFilter</code> and
      *         <code>tagFilter</code> are mutually exclusive. You can specify at most
      *         one of these in a request.</note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListOpenWorkflowExecutionsRequest withExecutionFilter(WorkflowExecutionFilter executionFilter) {
         this.executionFilter = executionFilter;

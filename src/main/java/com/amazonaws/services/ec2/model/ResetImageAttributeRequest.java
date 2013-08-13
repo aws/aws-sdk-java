@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.ResetImageAttributeRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -27,7 +29,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#resetImageAttribute(ResetImageAttributeRequest)
  */
-public class ResetImageAttributeRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ResetImageAttributeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ResetImageAttributeRequest> {
 
     /**
      * The ID of the AMI whose attribute is being reset.
@@ -137,6 +139,18 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest  impleme
         return this;
     }
     
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<ResetImageAttributeRequest> getDryRunRequest() {
+        Request<ResetImageAttributeRequest> request = new ResetImageAttributeRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

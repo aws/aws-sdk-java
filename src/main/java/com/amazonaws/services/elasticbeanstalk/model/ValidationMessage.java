@@ -20,7 +20,7 @@ import java.io.Serializable;
  * An error or warning for a desired configuration option value.
  * </p>
  */
-public class ValidationMessage  implements Serializable  {
+public class ValidationMessage implements Serializable {
 
     /**
      * A message describing the error or warning.
@@ -82,6 +82,9 @@ public class ValidationMessage  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param message A message describing the error or warning.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ValidationMessage withMessage(String message) {
         this.message = message;
@@ -169,6 +172,9 @@ public class ValidationMessage  implements Serializable  {
      *         warning: This message is providing information you should take into
      *         account. </li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ValidationSeverity
      */
     public ValidationMessage withSeverity(String severity) {
@@ -229,6 +235,9 @@ public class ValidationMessage  implements Serializable  {
      *         warning: This message is providing information you should take into
      *         account. </li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ValidationSeverity
      */
     public ValidationMessage withSeverity(ValidationSeverity severity) {
@@ -260,6 +269,9 @@ public class ValidationMessage  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param namespace 
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ValidationMessage withNamespace(String namespace) {
         this.namespace = namespace;
@@ -291,6 +303,9 @@ public class ValidationMessage  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionName 
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ValidationMessage withOptionName(String optionName) {
         this.optionName = optionName;

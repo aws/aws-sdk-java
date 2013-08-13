@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Provides details of the <code>WorkflowExecutionTerminated</code> event.
  * </p>
  */
-public class WorkflowExecutionTerminatedEventAttributes  implements Serializable  {
+public class WorkflowExecutionTerminatedEventAttributes implements Serializable {
 
     /**
      * The reason provided for the termination (if any).
@@ -98,6 +98,9 @@ public class WorkflowExecutionTerminatedEventAttributes  implements Serializable
      * <b>Length: </b>0 - 256<br/>
      *
      * @param reason The reason provided for the termination (if any).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionTerminatedEventAttributes withReason(String reason) {
         this.reason = reason;
@@ -138,6 +141,9 @@ public class WorkflowExecutionTerminatedEventAttributes  implements Serializable
      * <b>Length: </b>0 - 32768<br/>
      *
      * @param details The details provided for the termination (if any).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowExecutionTerminatedEventAttributes withDetails(String details) {
         this.details = details;
@@ -231,6 +237,9 @@ public class WorkflowExecutionTerminatedEventAttributes  implements Serializable
      *         execution history with this event. </li> <li><b>ABANDON:</b> no action
      *         will be taken. The child executions will continue to run.</li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ChildPolicy
      */
     public WorkflowExecutionTerminatedEventAttributes withChildPolicy(String childPolicy) {
@@ -295,6 +304,9 @@ public class WorkflowExecutionTerminatedEventAttributes  implements Serializable
      *         execution history with this event. </li> <li><b>ABANDON:</b> no action
      *         will be taken. The child executions will continue to run.</li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ChildPolicy
      */
     public WorkflowExecutionTerminatedEventAttributes withChildPolicy(ChildPolicy childPolicy) {
@@ -358,6 +370,9 @@ public class WorkflowExecutionTerminatedEventAttributes  implements Serializable
      *         workflow execution times out or is terminated and the child policy is
      *         set to terminate child executions.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see WorkflowExecutionTerminatedCause
      */
     public WorkflowExecutionTerminatedEventAttributes withCause(String cause) {
@@ -401,6 +416,9 @@ public class WorkflowExecutionTerminatedEventAttributes  implements Serializable
      *         terminated, and specifies the cause. This happens if the parent
      *         workflow execution times out or is terminated and the child policy is
      *         set to terminate child executions.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see WorkflowExecutionTerminatedCause
      */

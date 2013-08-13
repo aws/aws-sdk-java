@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A complex type that contains the response for the request.
  * </p>
  */
-public class ListHealthChecksResult  implements Serializable  {
+public class ListHealthChecksResult implements Serializable {
 
     /**
      * A complex type that contains information about the health checks
@@ -112,6 +112,9 @@ public class ListHealthChecksResult  implements Serializable  {
      *
      * @param healthChecks A complex type that contains information about the health checks
      *         associated with the current AWS account.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListHealthChecksResult withHealthChecks(HealthCheck... healthChecks) {
         if (getHealthChecks() == null) setHealthChecks(new java.util.ArrayList<HealthCheck>(healthChecks.length));
@@ -129,6 +132,9 @@ public class ListHealthChecksResult  implements Serializable  {
      *
      * @param healthChecks A complex type that contains information about the health checks
      *         associated with the current AWS account.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListHealthChecksResult withHealthChecks(java.util.Collection<HealthCheck> healthChecks) {
         if (healthChecks == null) {
@@ -193,6 +199,9 @@ public class ListHealthChecksResult  implements Serializable  {
      *         request and specify the value of <code>NextMarker</code> from the last
      *         response in the <code>marker</code> parameter to get the next page of
      *         results.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListHealthChecksResult withMarker(String marker) {
         this.marker = marker;
@@ -242,6 +251,9 @@ public class ListHealthChecksResult  implements Serializable  {
      *         If your results were truncated, you can make a follow-up request for
      *         the next page of results by using the <code>Marker</code> element.
      *         <p>Valid Values: <code>true</code> | <code>false</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListHealthChecksResult withIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
@@ -321,6 +333,9 @@ public class ListHealthChecksResult  implements Serializable  {
      *         another request to <code>ListHealthChecks</code> and include the value
      *         of the <code>NextMarker</code> element in the <code>Marker</code>
      *         element to get the next page of results.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListHealthChecksResult withNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
@@ -394,6 +409,9 @@ public class ListHealthChecksResult  implements Serializable  {
      *         specify the value of <a>ListHealthChecksResponse$NextMarker</a> in the
      *         <a>ListHostedZonesRequest$Marker</a> element to get the next page of
      *         results.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListHealthChecksResult withMaxItems(String maxItems) {
         this.maxItems = maxItems;

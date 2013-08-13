@@ -44,7 +44,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.glacier.AmazonGlacier#listParts(ListPartsRequest)
  */
-public class ListPartsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ListPartsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The <code>AccountId</code> is the AWS Account ID. You can specify
@@ -175,6 +175,9 @@ public class ListPartsRequest extends AmazonWebServiceRequest  implements Serial
      *         Glacier uses the AWS Account ID associated with the credentials used
      *         to sign the request. If you specify your Account ID, do not include
      *         hyphens in it.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListPartsRequest withAccountId(String accountId) {
         this.accountId = accountId;
@@ -206,6 +209,9 @@ public class ListPartsRequest extends AmazonWebServiceRequest  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vaultName The name of the vault.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListPartsRequest withVaultName(String vaultName) {
         this.vaultName = vaultName;
@@ -237,6 +243,9 @@ public class ListPartsRequest extends AmazonWebServiceRequest  implements Serial
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param uploadId The upload ID of the multipart upload.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListPartsRequest withUploadId(String uploadId) {
         this.uploadId = uploadId;
@@ -292,6 +301,9 @@ public class ListPartsRequest extends AmazonWebServiceRequest  implements Serial
      *         response of a previous List Parts response. You need only include the
      *         marker if you are continuing the pagination of results started in a
      *         previous List Parts request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListPartsRequest withMarker(String marker) {
         this.marker = marker;
@@ -335,6 +347,9 @@ public class ListPartsRequest extends AmazonWebServiceRequest  implements Serial
      * @param limit Specifies the maximum number of parts returned in the response body.
      *         If this value is not specified, the List Parts operation returns up to
      *         1,000 uploads.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListPartsRequest withLimit(String limit) {
         this.limit = limit;

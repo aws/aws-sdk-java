@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.DeleteInternetGatewayRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -25,7 +27,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteInternetGateway(DeleteInternetGatewayRequest)
  */
-public class DeleteInternetGatewayRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteInternetGatewayRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DeleteInternetGatewayRequest> {
 
     /**
      * The ID of the Internet gateway to be deleted.
@@ -65,6 +67,18 @@ public class DeleteInternetGatewayRequest extends AmazonWebServiceRequest  imple
         return this;
     }
     
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<DeleteInternetGatewayRequest> getDryRunRequest() {
+        Request<DeleteInternetGatewayRequest> request = new DeleteInternetGatewayRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

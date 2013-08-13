@@ -27,7 +27,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#describeStackResource(DescribeStackResourceRequest)
  */
-public class DescribeStackResourceRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeStackResourceRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name or the unique identifier associated with the stack.
@@ -71,6 +71,9 @@ public class DescribeStackResourceRequest extends AmazonWebServiceRequest  imple
      *
      * @param stackName The name or the unique identifier associated with the stack.
      *         <p>Default: There is no default value.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeStackResourceRequest withStackName(String stackName) {
         this.stackName = stackName;
@@ -108,6 +111,9 @@ public class DescribeStackResourceRequest extends AmazonWebServiceRequest  imple
      *
      * @param logicalResourceId The logical name of the resource as specified in the template.
      *         <p>Default: There is no default value.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeStackResourceRequest withLogicalResourceId(String logicalResourceId) {
         this.logicalResourceId = logicalResourceId;

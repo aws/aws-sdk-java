@@ -30,7 +30,7 @@ import java.io.Serializable;
  * without the .rb extension. For example: phpapp2::dbsetup specifies the dbsetup.rb recipe in the repository's phpapp2 folder.
  * </p>
  */
-public class Recipes  implements Serializable  {
+public class Recipes implements Serializable {
 
     /**
      * An array of custom recipe names to be run following a
@@ -103,6 +103,9 @@ public class Recipes  implements Serializable  {
      *
      * @param setup An array of custom recipe names to be run following a
      *         <code>setup</code> event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Recipes withSetup(String... setup) {
         if (getSetup() == null) setSetup(new java.util.ArrayList<String>(setup.length));
@@ -120,6 +123,9 @@ public class Recipes  implements Serializable  {
      *
      * @param setup An array of custom recipe names to be run following a
      *         <code>setup</code> event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Recipes withSetup(java.util.Collection<String> setup) {
         if (setup == null) {
@@ -174,6 +180,9 @@ public class Recipes  implements Serializable  {
      *
      * @param configure An array of custom recipe names to be run following a
      *         <code>configure</code> event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Recipes withConfigure(String... configure) {
         if (getConfigure() == null) setConfigure(new java.util.ArrayList<String>(configure.length));
@@ -191,6 +200,9 @@ public class Recipes  implements Serializable  {
      *
      * @param configure An array of custom recipe names to be run following a
      *         <code>configure</code> event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Recipes withConfigure(java.util.Collection<String> configure) {
         if (configure == null) {
@@ -245,6 +257,9 @@ public class Recipes  implements Serializable  {
      *
      * @param deploy An array of custom recipe names to be run following a
      *         <code>deploy</code> event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Recipes withDeploy(String... deploy) {
         if (getDeploy() == null) setDeploy(new java.util.ArrayList<String>(deploy.length));
@@ -262,6 +277,9 @@ public class Recipes  implements Serializable  {
      *
      * @param deploy An array of custom recipe names to be run following a
      *         <code>deploy</code> event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Recipes withDeploy(java.util.Collection<String> deploy) {
         if (deploy == null) {
@@ -316,6 +334,9 @@ public class Recipes  implements Serializable  {
      *
      * @param undeploy An array of custom recipe names to be run following a
      *         <code>undeploy</code> event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Recipes withUndeploy(String... undeploy) {
         if (getUndeploy() == null) setUndeploy(new java.util.ArrayList<String>(undeploy.length));
@@ -333,6 +354,9 @@ public class Recipes  implements Serializable  {
      *
      * @param undeploy An array of custom recipe names to be run following a
      *         <code>undeploy</code> event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Recipes withUndeploy(java.util.Collection<String> undeploy) {
         if (undeploy == null) {
@@ -387,6 +411,9 @@ public class Recipes  implements Serializable  {
      *
      * @param shutdown An array of custom recipe names to be run following a
      *         <code>shutdown</code> event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Recipes withShutdown(String... shutdown) {
         if (getShutdown() == null) setShutdown(new java.util.ArrayList<String>(shutdown.length));
@@ -404,6 +431,9 @@ public class Recipes  implements Serializable  {
      *
      * @param shutdown An array of custom recipe names to be run following a
      *         <code>shutdown</code> event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Recipes withShutdown(java.util.Collection<String> shutdown) {
         if (shutdown == null) {

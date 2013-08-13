@@ -21,7 +21,7 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"> DescribeServices </a> action.
  * </p>
  */
-public class Service  implements Serializable  {
+public class Service implements Serializable {
 
     /**
      * JSON-formatted string that represents a code for an AWS service
@@ -96,6 +96,9 @@ public class Service  implements Serializable  {
      *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"
      *         title="DescribeServices">DescribeServices</a> response. Has a
      *         corrsponding name represented by a service.name string.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Service withCode(String code) {
         this.code = code;
@@ -133,6 +136,9 @@ public class Service  implements Serializable  {
      *
      * @param name JSON-formatted string that represents the friendly name for an AWS
      *         service. Has a corresponding code reprsented by a Service.code string.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Service withName(String name) {
         this.name = name;
@@ -205,6 +211,9 @@ public class Service  implements Serializable  {
      *         to AWS Support when you call <a
      *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"
      *         title="CreateCase">CreateCase</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Service withCategories(Category... categories) {
         if (getCategories() == null) setCategories(new java.util.ArrayList<Category>(categories.length));
@@ -230,6 +239,9 @@ public class Service  implements Serializable  {
      *         to AWS Support when you call <a
      *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"
      *         title="CreateCase">CreateCase</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Service withCategories(java.util.Collection<Category> categories) {
         if (categories == null) {

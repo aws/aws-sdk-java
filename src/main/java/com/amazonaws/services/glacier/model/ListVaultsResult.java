@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the Amazon Glacier response to your request.
  * </p>
  */
-public class ListVaultsResult  implements Serializable  {
+public class ListVaultsResult implements Serializable {
 
     /**
      * List of vaults.
@@ -69,6 +69,9 @@ public class ListVaultsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vaultList List of vaults.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListVaultsResult withVaultList(DescribeVaultOutput... vaultList) {
         if (getVaultList() == null) setVaultList(new java.util.ArrayList<DescribeVaultOutput>(vaultList.length));
@@ -84,6 +87,9 @@ public class ListVaultsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vaultList List of vaults.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListVaultsResult withVaultList(java.util.Collection<DescribeVaultOutput> vaultList) {
         if (vaultList == null) {
@@ -133,6 +139,9 @@ public class ListVaultsResult  implements Serializable  {
      * @param marker The vault ARN at which to continue pagination of the results. You use
      *         the marker in another List Vaults request to obtain more vaults in the
      *         list.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListVaultsResult withMarker(String marker) {
         this.marker = marker;

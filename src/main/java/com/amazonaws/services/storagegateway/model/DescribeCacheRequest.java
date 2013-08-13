@@ -27,7 +27,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#describeCache(DescribeCacheRequest)
  */
-public class DescribeCacheRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeCacheRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -84,6 +84,9 @@ public class DescribeCacheRequest extends AmazonWebServiceRequest  implements Se
      * @param gatewayARN The Amazon Resource Name (ARN) of the gateway. Use the
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCacheRequest withGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents one or more Cache Security Groups to which a Cache Cluster belongs.
  * </p>
  */
-public class SecurityGroupMembership  implements Serializable  {
+public class SecurityGroupMembership implements Serializable {
 
     /**
      * The identifier of the Cache Security Group.
@@ -58,6 +58,9 @@ public class SecurityGroupMembership  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param securityGroupId The identifier of the Cache Security Group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SecurityGroupMembership withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
@@ -101,6 +104,9 @@ public class SecurityGroupMembership  implements Serializable  {
      * @param status The status of the Cache Security Group membership. The status changes
      *         whenever a Cache Security Group is modified, or when the Cache
      *         Security Groups assigned to a Cache Cluster are modified.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SecurityGroupMembership withStatus(String status) {
         this.status = status;

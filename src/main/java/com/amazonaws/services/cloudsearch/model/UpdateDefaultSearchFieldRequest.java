@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#updateDefaultSearchField(UpdateDefaultSearchFieldRequest)
  */
-public class UpdateDefaultSearchFieldRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class UpdateDefaultSearchFieldRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * A string that represents the name of a domain. Domain names must be
@@ -107,6 +107,9 @@ public class UpdateDefaultSearchFieldRequest extends AmazonWebServiceRequest  im
      *         Domain names must start with a letter or number and can contain the
      *         following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase
      *         letters and underscores are not allowed.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateDefaultSearchFieldRequest withDomainName(String domainName) {
         this.domainName = domainName;
@@ -150,6 +153,9 @@ public class UpdateDefaultSearchFieldRequest extends AmazonWebServiceRequest  im
      * @param defaultSearchField The <code>IndexField</code> to use for search requests issued with the
      *         <code>q</code> parameter. The default is an empty string, which
      *         automatically searches all text fields.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateDefaultSearchFieldRequest withDefaultSearchField(String defaultSearchField) {
         this.defaultSearchField = defaultSearchField;

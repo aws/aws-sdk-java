@@ -50,7 +50,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.glacier.AmazonGlacier#listMultipartUploads(ListMultipartUploadsRequest)
  */
-public class ListMultipartUploadsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ListMultipartUploadsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The <code>AccountId</code> is the AWS Account ID. You can specify
@@ -172,6 +172,9 @@ public class ListMultipartUploadsRequest extends AmazonWebServiceRequest  implem
      *         Glacier uses the AWS Account ID associated with the credentials used
      *         to sign the request. If you specify your Account ID, do not include
      *         hyphens in it.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListMultipartUploadsRequest withAccountId(String accountId) {
         this.accountId = accountId;
@@ -203,6 +206,9 @@ public class ListMultipartUploadsRequest extends AmazonWebServiceRequest  implem
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vaultName The name of the vault.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListMultipartUploadsRequest withVaultName(String vaultName) {
         this.vaultName = vaultName;
@@ -258,6 +264,9 @@ public class ListMultipartUploadsRequest extends AmazonWebServiceRequest  implem
      *         from a previous List Uploads response. You need only include the
      *         marker if you are continuing the pagination of results started in a
      *         previous List Uploads request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListMultipartUploadsRequest withUploadIdMarker(String uploadIdMarker) {
         this.uploadIdMarker = uploadIdMarker;
@@ -301,6 +310,9 @@ public class ListMultipartUploadsRequest extends AmazonWebServiceRequest  implem
      * @param limit Specifies the maximum number of uploads returned in the response body.
      *         If this value is not specified, the List Uploads operation returns up
      *         to 1,000 uploads.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListMultipartUploadsRequest withLimit(String limit) {
         this.limit = limit;

@@ -31,7 +31,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeClusterParameterGroups(DescribeClusterParameterGroupsRequest)
  */
-public class DescribeClusterParameterGroupsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeClusterParameterGroupsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of a specific parameter group for which to return details. By
@@ -93,6 +93,9 @@ public class DescribeClusterParameterGroupsRequest extends AmazonWebServiceReque
      * @param parameterGroupName The name of a specific parameter group for which to return details. By
      *         default, details about all parameter groups and the default parameter
      *         group are returned.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterParameterGroupsRequest withParameterGroupName(String parameterGroupName) {
         this.parameterGroupName = parameterGroupName;
@@ -154,6 +157,9 @@ public class DescribeClusterParameterGroupsRequest extends AmazonWebServiceReque
      *         can use in a subsequent <a>DescribeClusterParameterGroups</a> request
      *         to retrieve the next set of records. <p>Default: <code>100</code>
      *         <p>Constraints: Value must be at least 20 and no more than 100.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterParameterGroupsRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -197,6 +203,9 @@ public class DescribeClusterParameterGroupsRequest extends AmazonWebServiceReque
      * @param marker An optional marker returned by a previous
      *         <a>DescribeClusterParameterGroups</a> request to indicate the first
      *         parameter group that the current request will return.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterParameterGroupsRequest withMarker(String marker) {
         this.marker = marker;

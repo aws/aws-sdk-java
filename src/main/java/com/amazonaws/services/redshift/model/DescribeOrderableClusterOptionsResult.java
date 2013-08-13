@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the output from the DescribeOrderableClusterOptions action.
  * </p>
  */
-public class DescribeOrderableClusterOptionsResult  implements Serializable  {
+public class DescribeOrderableClusterOptionsResult implements Serializable {
 
     /**
      * An <a>OrderableClusterOption</a> structure containing information
@@ -74,6 +74,9 @@ public class DescribeOrderableClusterOptionsResult  implements Serializable  {
      *
      * @param orderableClusterOptions An <a>OrderableClusterOption</a> structure containing information
      *         about orderable options for the Cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeOrderableClusterOptionsResult withOrderableClusterOptions(OrderableClusterOption... orderableClusterOptions) {
         if (getOrderableClusterOptions() == null) setOrderableClusterOptions(new java.util.ArrayList<OrderableClusterOption>(orderableClusterOptions.length));
@@ -91,6 +94,9 @@ public class DescribeOrderableClusterOptionsResult  implements Serializable  {
      *
      * @param orderableClusterOptions An <a>OrderableClusterOption</a> structure containing information
      *         about orderable options for the Cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeOrderableClusterOptionsResult withOrderableClusterOptions(java.util.Collection<OrderableClusterOption> orderableClusterOptions) {
         if (orderableClusterOptions == null) {
@@ -128,6 +134,9 @@ public class DescribeOrderableClusterOptionsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param marker A marker that can be used to retrieve paginated results.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeOrderableClusterOptionsResult withMarker(String marker) {
         this.marker = marker;

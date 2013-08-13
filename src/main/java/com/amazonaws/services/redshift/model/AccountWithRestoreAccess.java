@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes an AWS customer account authorized to restore a snapshot.
  * </p>
  */
-public class AccountWithRestoreAccess  implements Serializable  {
+public class AccountWithRestoreAccess implements Serializable {
 
     /**
      * The identifier of an AWS customer account authorized to restore a
@@ -58,6 +58,9 @@ public class AccountWithRestoreAccess  implements Serializable  {
      *
      * @param accountId The identifier of an AWS customer account authorized to restore a
      *         snapshot.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AccountWithRestoreAccess withAccountId(String accountId) {
         this.accountId = accountId;

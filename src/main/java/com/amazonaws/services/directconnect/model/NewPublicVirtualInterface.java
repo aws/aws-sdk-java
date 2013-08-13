@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A structure containing information about a new public virtual interface.
  * </p>
  */
-public class NewPublicVirtualInterface  implements Serializable  {
+public class NewPublicVirtualInterface implements Serializable {
 
     /**
      * The name of the virtual interface assigned by the customer <p>Example:
@@ -86,6 +86,9 @@ public class NewPublicVirtualInterface  implements Serializable  {
      *
      * @param virtualInterfaceName The name of the virtual interface assigned by the customer <p>Example:
      *         "Dev VPC"
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NewPublicVirtualInterface withVirtualInterfaceName(String virtualInterfaceName) {
         this.virtualInterfaceName = virtualInterfaceName;
@@ -117,6 +120,9 @@ public class NewPublicVirtualInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vlan VLAN ID <p>Example: 101
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NewPublicVirtualInterface withVlan(Integer vlan) {
         this.vlan = vlan;
@@ -154,6 +160,9 @@ public class NewPublicVirtualInterface  implements Serializable  {
      *
      * @param asn Autonomous system (AS) number for Border Gateway Protocol (BGP)
      *         configuration <p>Example: 65000
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NewPublicVirtualInterface withAsn(Integer asn) {
         this.asn = asn;
@@ -185,6 +194,9 @@ public class NewPublicVirtualInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param authKey Authentication key for BGP configuration <p>Example: asdf34example
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NewPublicVirtualInterface withAuthKey(String authKey) {
         this.authKey = authKey;
@@ -216,6 +228,9 @@ public class NewPublicVirtualInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param amazonAddress IP address assigned to the Amazon interface. <p>Example: 192.168.1.1
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NewPublicVirtualInterface withAmazonAddress(String amazonAddress) {
         this.amazonAddress = amazonAddress;
@@ -247,6 +262,9 @@ public class NewPublicVirtualInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param customerAddress The new value for the CustomerAddress property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NewPublicVirtualInterface withCustomerAddress(String customerAddress) {
         this.customerAddress = customerAddress;
@@ -289,6 +307,9 @@ public class NewPublicVirtualInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param routeFilterPrefixes A list of route filter prefixes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NewPublicVirtualInterface withRouteFilterPrefixes(RouteFilterPrefix... routeFilterPrefixes) {
         if (getRouteFilterPrefixes() == null) setRouteFilterPrefixes(new java.util.ArrayList<RouteFilterPrefix>(routeFilterPrefixes.length));
@@ -304,6 +325,9 @@ public class NewPublicVirtualInterface  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param routeFilterPrefixes A list of route filter prefixes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NewPublicVirtualInterface withRouteFilterPrefixes(java.util.Collection<RouteFilterPrefix> routeFilterPrefixes) {
         if (routeFilterPrefixes == null) {

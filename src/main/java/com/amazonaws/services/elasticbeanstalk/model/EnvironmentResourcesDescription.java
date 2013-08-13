@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes the AWS resources in use by this environment. This data is not live data.
  * </p>
  */
-public class EnvironmentResourcesDescription  implements Serializable  {
+public class EnvironmentResourcesDescription implements Serializable {
 
     /**
      * Describes the LoadBalancer.
@@ -51,6 +51,9 @@ public class EnvironmentResourcesDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param loadBalancer Describes the LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EnvironmentResourcesDescription withLoadBalancer(LoadBalancerDescription loadBalancer) {
         this.loadBalancer = loadBalancer;

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the ListAccessKeys action.
  * </p>
  */
-public class ListAccessKeysResult  implements Serializable  {
+public class ListAccessKeysResult implements Serializable {
 
     /**
      * A list of access key metadata.
@@ -81,6 +81,9 @@ public class ListAccessKeysResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param accessKeyMetadata A list of access key metadata.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListAccessKeysResult withAccessKeyMetadata(AccessKeyMetadata... accessKeyMetadata) {
         if (getAccessKeyMetadata() == null) setAccessKeyMetadata(new java.util.ArrayList<AccessKeyMetadata>(accessKeyMetadata.length));
@@ -96,6 +99,9 @@ public class ListAccessKeysResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param accessKeyMetadata A list of access key metadata.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListAccessKeysResult withAccessKeyMetadata(java.util.Collection<AccessKeyMetadata> accessKeyMetadata) {
         if (accessKeyMetadata == null) {
@@ -151,6 +157,9 @@ public class ListAccessKeysResult  implements Serializable  {
      *         results were truncated, you can make a subsequent pagination request
      *         using the <code>Marker</code> request parameter to retrieve more keys
      *         in the list.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListAccessKeysResult withIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
@@ -221,6 +230,9 @@ public class ListAccessKeysResult  implements Serializable  {
      * @param marker If <code>IsTruncated</code> is <code>true</code>, this element is
      *         present and contains the value to use for the <code>Marker</code>
      *         parameter in a subsequent pagination request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListAccessKeysResult withMarker(String marker) {
         this.marker = marker;

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Provides a list of status information for a DB instance.
  * </p>
  */
-public class DBInstanceStatusInfo  implements Serializable  {
+public class DBInstanceStatusInfo implements Serializable {
 
     /**
      * This value is currently "read replication."
@@ -69,6 +69,9 @@ public class DBInstanceStatusInfo  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param statusType This value is currently "read replication."
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBInstanceStatusInfo withStatusType(String statusType) {
         this.statusType = statusType;
@@ -106,6 +109,9 @@ public class DBInstanceStatusInfo  implements Serializable  {
      *
      * @param normal Boolean value that is true if the instance is operating normally, or
      *         false if the instance is in an error state.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBInstanceStatusInfo withNormal(Boolean normal) {
         this.normal = normal;
@@ -154,6 +160,9 @@ public class DBInstanceStatusInfo  implements Serializable  {
      *
      * @param status Status of the DB instance. For a StatusType of Read Replica, the
      *         values can be replicating, error, stopped, or terminated.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBInstanceStatusInfo withStatus(String status) {
         this.status = status;
@@ -191,6 +200,9 @@ public class DBInstanceStatusInfo  implements Serializable  {
      *
      * @param message Details of the error if there is an error for the instance. If the
      *         instance is not in an error state, this value is blank.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBInstanceStatusInfo withMessage(String message) {
         this.message = message;

@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#startStack(StartStackRequest)
  */
-public class StartStackRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class StartStackRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The stack ID.
@@ -55,6 +55,9 @@ public class StartStackRequest extends AmazonWebServiceRequest  implements Seria
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackId The stack ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StartStackRequest withStackId(String stackId) {
         this.stackId = stackId;

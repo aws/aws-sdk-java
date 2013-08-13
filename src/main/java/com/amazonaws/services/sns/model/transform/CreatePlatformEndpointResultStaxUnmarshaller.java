@@ -13,14 +13,14 @@
  * permissions and limitations under the License.
  */
 
-package com.amazonaws.services.elasticmapreduce.model.transform;
+package com.amazonaws.services.sns.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
 
-import com.amazonaws.services.elasticmapreduce.model.*;
+import com.amazonaws.services.sns.model.*;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.transform.MapEntry;
 import com.amazonaws.transform.StaxUnmarshallerContext;
@@ -28,12 +28,12 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 
 /**
- * Script Bootstrap Action Config StAX Unmarshaller
+ * Create Platform Endpoint Result StAX Unmarshaller
  */
-public class ScriptBootstrapActionConfigStaxUnmarshaller implements Unmarshaller<ScriptBootstrapActionConfig, StaxUnmarshallerContext> {
+public class CreatePlatformEndpointResultStaxUnmarshaller implements Unmarshaller<CreatePlatformEndpointResult, StaxUnmarshallerContext> {
 
-    public ScriptBootstrapActionConfig unmarshall(StaxUnmarshallerContext context) throws Exception {
-        ScriptBootstrapActionConfig scriptBootstrapActionConfig = new ScriptBootstrapActionConfig();
+    public CreatePlatformEndpointResult unmarshall(StaxUnmarshallerContext context) throws Exception {
+        CreatePlatformEndpointResult createPlatformEndpointResult = new CreatePlatformEndpointResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -43,28 +43,24 @@ public class ScriptBootstrapActionConfigStaxUnmarshaller implements Unmarshaller
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return scriptBootstrapActionConfig;
+            if (xmlEvent.isEndDocument()) return createPlatformEndpointResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-                if (context.testExpression("Path", targetDepth)) {
-                    scriptBootstrapActionConfig.setPath(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-                if (context.testExpression("Args/member", targetDepth)) {
-                    scriptBootstrapActionConfig.getArgs().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("EndpointArn", targetDepth)) {
+                    createPlatformEndpointResult.setEndpointArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
-                    return scriptBootstrapActionConfig;
+                    return createPlatformEndpointResult;
                 }
             }
         }
     }
 
-    private static ScriptBootstrapActionConfigStaxUnmarshaller instance;
-    public static ScriptBootstrapActionConfigStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new ScriptBootstrapActionConfigStaxUnmarshaller();
+    private static CreatePlatformEndpointResultStaxUnmarshaller instance;
+    public static CreatePlatformEndpointResultStaxUnmarshaller getInstance() {
+        if (instance == null) instance = new CreatePlatformEndpointResultStaxUnmarshaller();
         return instance;
     }
 }

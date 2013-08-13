@@ -91,12 +91,13 @@ public class S3Signer extends AbstractAWSSigner {
 
         AWSCredentials sanitizedCredentials = sanitizeCredentials(credentials);
         if ( sanitizedCredentials instanceof AWSSessionCredentials ) {
-        	addSessionCredentials(request, (AWSSessionCredentials) sanitizedCredentials);
+            addSessionCredentials(request, (AWSSessionCredentials) sanitizedCredentials);
         }
 
         String encodedResourcePath = HttpUtils.urlEncode(resourcePath, true);
-
-        Date date = getSignatureDate(request.getTimeOffset());
+        
+        int timeOffset = getTimeOffset(request);
+        Date date = getSignatureDate(timeOffset);
         request.addHeader(Headers.DATE, ServiceUtils.formatRfc822Date(date));
         String canonicalString = RestUtils.makeS3CanonicalString(
                 httpVerb, encodedResourcePath, request, null);

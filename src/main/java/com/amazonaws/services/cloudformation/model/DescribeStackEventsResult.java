@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The output for a DescribeStackEvents action.
  * </p>
  */
-public class DescribeStackEventsResult  implements Serializable  {
+public class DescribeStackEventsResult implements Serializable {
 
     /**
      * A list of <code>StackEvents</code> structures.
@@ -71,6 +71,9 @@ public class DescribeStackEventsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackEvents A list of <code>StackEvents</code> structures.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeStackEventsResult withStackEvents(StackEvent... stackEvents) {
         if (getStackEvents() == null) setStackEvents(new java.util.ArrayList<StackEvent>(stackEvents.length));
@@ -86,6 +89,9 @@ public class DescribeStackEventsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackEvents A list of <code>StackEvents</code> structures.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeStackEventsResult withStackEvents(java.util.Collection<StackEvent> stackEvents) {
         if (stackEvents == null) {
@@ -138,6 +144,9 @@ public class DescribeStackEventsResult  implements Serializable  {
      *
      * @param nextToken String that identifies the start of the next list of events, if there
      *         is one.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeStackEventsResult withNextToken(String nextToken) {
         this.nextToken = nextToken;

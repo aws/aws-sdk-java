@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Disk Image Detail
  */
-public class DiskImageDetail  implements Serializable  {
+public class DiskImageDetail implements Serializable {
 
     private String format;
 

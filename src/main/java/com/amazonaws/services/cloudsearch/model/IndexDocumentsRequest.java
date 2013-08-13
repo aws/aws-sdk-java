@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#indexDocuments(IndexDocumentsRequest)
  */
-public class IndexDocumentsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class IndexDocumentsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * A string that represents the name of a domain. Domain names must be
@@ -100,6 +100,9 @@ public class IndexDocumentsRequest extends AmazonWebServiceRequest  implements S
      *         Domain names must start with a letter or number and can contain the
      *         following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase
      *         letters and underscores are not allowed.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public IndexDocumentsRequest withDomainName(String domainName) {
         this.domainName = domainName;

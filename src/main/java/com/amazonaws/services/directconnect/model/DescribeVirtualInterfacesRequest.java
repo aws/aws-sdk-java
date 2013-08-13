@@ -28,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#describeVirtualInterfaces(DescribeVirtualInterfacesRequest)
  */
-public class DescribeVirtualInterfacesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeVirtualInterfacesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * ID of the connection. <p>Example: dxcon-fg5678gh <p>Default: None
@@ -65,6 +65,9 @@ public class DescribeVirtualInterfacesRequest extends AmazonWebServiceRequest  i
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param connectionId ID of the connection. <p>Example: dxcon-fg5678gh <p>Default: None
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeVirtualInterfacesRequest withConnectionId(String connectionId) {
         this.connectionId = connectionId;
@@ -102,6 +105,9 @@ public class DescribeVirtualInterfacesRequest extends AmazonWebServiceRequest  i
      *
      * @param virtualInterfaceId ID of the virtual interface. <p>Example: dxvif-123dfg56 <p>Default:
      *         None
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeVirtualInterfacesRequest withVirtualInterfaceId(String virtualInterfaceId) {
         this.virtualInterfaceId = virtualInterfaceId;

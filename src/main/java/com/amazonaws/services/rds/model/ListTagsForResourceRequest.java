@@ -28,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#listTagsForResource(ListTagsForResourceRequest)
  */
-public class ListTagsForResourceRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ListTagsForResourceRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The DB Instance with tags to be listed. This value is an Amazon
@@ -80,6 +80,9 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest  impleme
      *         Resource Name (ARN). For information about creating an ARN, see <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      *         Constructing an RDS Amazon Resource Name (ARN)</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListTagsForResourceRequest withResourceName(String resourceName) {
         this.resourceName = resourceName;

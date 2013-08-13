@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#createPipeline(CreatePipelineRequest)
  */
-public class CreatePipelineRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreatePipelineRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the pipeline. We recommend that the name be unique within
@@ -258,6 +258,9 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest  implements S
      * @param name The name of the pipeline. We recommend that the name be unique within
      *         the AWS account, but uniqueness is not enforced. <p>Constraints:
      *         Maximum 40 characters.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreatePipelineRequest withName(String name) {
         this.name = name;
@@ -304,6 +307,9 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest  implements S
      *
      * @param inputBucket The Amazon S3 bucket in which you saved the media files that you want
      *         to transcode.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreatePipelineRequest withInputBucket(String inputBucket) {
         this.inputBucket = inputBucket;
@@ -452,6 +458,9 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest  implements S
      *         users have, or change the Amazon S3 storage class, omit
      *         <code>OutputBucket</code> and specify values for
      *         <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreatePipelineRequest withOutputBucket(String outputBucket) {
         this.outputBucket = outputBucket;
@@ -498,6 +507,9 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest  implements S
      *
      * @param role The IAM Amazon Resource Name (ARN) for the role that you want Elastic
      *         Transcoder to use to create the pipeline.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreatePipelineRequest withRole(String role) {
         this.role = role;
@@ -643,6 +655,9 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest  implements S
      *         topic that you want to notify when Elastic Transcoder encounters an
      *         error condition while processing a job in this pipeline. This is the
      *         ARN that Amazon SNS returned when you created the topic.</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreatePipelineRequest withNotifications(Notifications notifications) {
         this.notifications = notifications;
@@ -986,6 +1001,9 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest  implements S
      *         <code>Standard</code> or <code>ReducedRedundancy</code>, that you want
      *         Elastic Transcoder to assign to the video files and playlists that it
      *         stores in your Amazon S3 bucket.</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreatePipelineRequest withContentConfig(PipelineOutputConfig contentConfig) {
         this.contentConfig = contentConfig;
@@ -1299,6 +1317,9 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest  implements S
      *         <code>ReducedRedundancy</code>, that you want Elastic Transcoder to
      *         assign to the thumbnails that it stores in your Amazon S3 bucket.</li>
      *         </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreatePipelineRequest withThumbnailConfig(PipelineOutputConfig thumbnailConfig) {
         this.thumbnailConfig = thumbnailConfig;

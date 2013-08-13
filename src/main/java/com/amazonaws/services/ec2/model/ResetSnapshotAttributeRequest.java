@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.ResetSnapshotAttributeRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -24,7 +26,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#resetSnapshotAttribute(ResetSnapshotAttributeRequest)
  */
-public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ResetSnapshotAttributeRequest> {
 
     /**
      * The ID of the snapshot whose attribute is being reset.
@@ -205,6 +207,18 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest  impl
     public ResetSnapshotAttributeRequest withAttribute(SnapshotAttributeName attribute) {
         this.attribute = attribute.toString();
         return this;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<ResetSnapshotAttributeRequest> getDryRunRequest() {
+        Request<ResetSnapshotAttributeRequest> request = new ResetSnapshotAttributeRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

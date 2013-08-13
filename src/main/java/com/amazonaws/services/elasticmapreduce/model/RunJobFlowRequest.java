@@ -44,7 +44,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#runJobFlow(RunJobFlowRequest)
  */
-public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the job flow.
@@ -125,6 +125,24 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      * <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li> </ul>
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> supportedProducts;
+
+    /**
+     * A list of strings that indicates third-party software to use with the
+     * job flow that accepts a user argument list. EMR accepts and forwards
+     * the argument list to the corresponding installation script as
+     * bootstrap action arguments. For more information, see <a
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch
+     * a Job Flow on the MapR Distribution for Hadoop</a>. Currently
+     * supported values are: <ul> <li>"karmasphere-enterprise-utility" - tag
+     * the job flow for management by <a
+     * href="http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
+     * <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
+     * <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li>
+     * <li>"mapr" with the user arguments specifying "--edition,m3" or
+     * "--edition,m5" - launch the job flow using MapR M3 or M5 Edition
+     * respectively.</li> </ul>
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<SupportedProductConfig> newSupportedProducts;
 
     /**
      * Whether the job flow is visible to all IAM users of the AWS account
@@ -208,6 +226,9 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param name The name of the job flow.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunJobFlowRequest withName(String name) {
         this.name = name;
@@ -257,6 +278,9 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      *
      * @param logUri Specifies the location in Amazon S3 to write the log files of the job
      *         flow. If a value is not provided, logs are not created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunJobFlowRequest withLogUri(String logUri) {
         this.logUri = logUri;
@@ -300,6 +324,9 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param additionalInfo A JSON string for selecting additional features.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunJobFlowRequest withAdditionalInfo(String additionalInfo) {
         this.additionalInfo = additionalInfo;
@@ -421,6 +448,9 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      *         Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      *         MapReduce Developer's Guide.</i>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunJobFlowRequest withAmiVersion(String amiVersion) {
         this.amiVersion = amiVersion;
@@ -458,6 +488,9 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      *
      * @param instances A specification of the number and type of Amazon EC2 instances on
      *         which to run the job flow.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunJobFlowRequest withInstances(JobFlowInstancesConfig instances) {
         this.instances = instances;
@@ -500,6 +533,9 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param steps A list of steps to be executed by the job flow.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunJobFlowRequest withSteps(StepConfig... steps) {
         if (getSteps() == null) setSteps(new java.util.ArrayList<StepConfig>(steps.length));
@@ -515,6 +551,9 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param steps A list of steps to be executed by the job flow.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunJobFlowRequest withSteps(java.util.Collection<StepConfig> steps) {
         if (steps == null) {
@@ -569,6 +608,9 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      *
      * @param bootstrapActions A list of bootstrap actions that will be run before Hadoop is started
      *         on the cluster nodes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunJobFlowRequest withBootstrapActions(BootstrapActionConfig... bootstrapActions) {
         if (getBootstrapActions() == null) setBootstrapActions(new java.util.ArrayList<BootstrapActionConfig>(bootstrapActions.length));
@@ -586,6 +628,9 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      *
      * @param bootstrapActions A list of bootstrap actions that will be run before Hadoop is started
      *         on the cluster nodes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunJobFlowRequest withBootstrapActions(java.util.Collection<BootstrapActionConfig> bootstrapActions) {
         if (bootstrapActions == null) {
@@ -682,6 +727,9 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      *         href="http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
      *         <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
      *         <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunJobFlowRequest withSupportedProducts(String... supportedProducts) {
         if (getSupportedProducts() == null) setSupportedProducts(new java.util.ArrayList<String>(supportedProducts.length));
@@ -713,6 +761,9 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      *         href="http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
      *         <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
      *         <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunJobFlowRequest withSupportedProducts(java.util.Collection<String> supportedProducts) {
         if (supportedProducts == null) {
@@ -721,6 +772,179 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
             com.amazonaws.internal.ListWithAutoConstructFlag<String> supportedProductsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(supportedProducts.size());
             supportedProductsCopy.addAll(supportedProducts);
             this.supportedProducts = supportedProductsCopy;
+        }
+
+        return this;
+    }
+    
+    /**
+     * A list of strings that indicates third-party software to use with the
+     * job flow that accepts a user argument list. EMR accepts and forwards
+     * the argument list to the corresponding installation script as
+     * bootstrap action arguments. For more information, see <a
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch
+     * a Job Flow on the MapR Distribution for Hadoop</a>. Currently
+     * supported values are: <ul> <li>"karmasphere-enterprise-utility" - tag
+     * the job flow for management by <a
+     * href="http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
+     * <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
+     * <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li>
+     * <li>"mapr" with the user arguments specifying "--edition,m3" or
+     * "--edition,m5" - launch the job flow using MapR M3 or M5 Edition
+     * respectively.</li> </ul>
+     *
+     * @return A list of strings that indicates third-party software to use with the
+     *         job flow that accepts a user argument list. EMR accepts and forwards
+     *         the argument list to the corresponding installation script as
+     *         bootstrap action arguments. For more information, see <a
+     *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch
+     *         a Job Flow on the MapR Distribution for Hadoop</a>. Currently
+     *         supported values are: <ul> <li>"karmasphere-enterprise-utility" - tag
+     *         the job flow for management by <a
+     *         href="http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
+     *         <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
+     *         <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li>
+     *         <li>"mapr" with the user arguments specifying "--edition,m3" or
+     *         "--edition,m5" - launch the job flow using MapR M3 or M5 Edition
+     *         respectively.</li> </ul>
+     */
+    public java.util.List<SupportedProductConfig> getNewSupportedProducts() {
+        
+        if (newSupportedProducts == null) {
+              newSupportedProducts = new com.amazonaws.internal.ListWithAutoConstructFlag<SupportedProductConfig>();
+              newSupportedProducts.setAutoConstruct(true);
+        }
+        return newSupportedProducts;
+    }
+    
+    /**
+     * A list of strings that indicates third-party software to use with the
+     * job flow that accepts a user argument list. EMR accepts and forwards
+     * the argument list to the corresponding installation script as
+     * bootstrap action arguments. For more information, see <a
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch
+     * a Job Flow on the MapR Distribution for Hadoop</a>. Currently
+     * supported values are: <ul> <li>"karmasphere-enterprise-utility" - tag
+     * the job flow for management by <a
+     * href="http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
+     * <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
+     * <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li>
+     * <li>"mapr" with the user arguments specifying "--edition,m3" or
+     * "--edition,m5" - launch the job flow using MapR M3 or M5 Edition
+     * respectively.</li> </ul>
+     *
+     * @param newSupportedProducts A list of strings that indicates third-party software to use with the
+     *         job flow that accepts a user argument list. EMR accepts and forwards
+     *         the argument list to the corresponding installation script as
+     *         bootstrap action arguments. For more information, see <a
+     *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch
+     *         a Job Flow on the MapR Distribution for Hadoop</a>. Currently
+     *         supported values are: <ul> <li>"karmasphere-enterprise-utility" - tag
+     *         the job flow for management by <a
+     *         href="http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
+     *         <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
+     *         <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li>
+     *         <li>"mapr" with the user arguments specifying "--edition,m3" or
+     *         "--edition,m5" - launch the job flow using MapR M3 or M5 Edition
+     *         respectively.</li> </ul>
+     */
+    public void setNewSupportedProducts(java.util.Collection<SupportedProductConfig> newSupportedProducts) {
+        if (newSupportedProducts == null) {
+            this.newSupportedProducts = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<SupportedProductConfig> newSupportedProductsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<SupportedProductConfig>(newSupportedProducts.size());
+        newSupportedProductsCopy.addAll(newSupportedProducts);
+        this.newSupportedProducts = newSupportedProductsCopy;
+    }
+    
+    /**
+     * A list of strings that indicates third-party software to use with the
+     * job flow that accepts a user argument list. EMR accepts and forwards
+     * the argument list to the corresponding installation script as
+     * bootstrap action arguments. For more information, see <a
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch
+     * a Job Flow on the MapR Distribution for Hadoop</a>. Currently
+     * supported values are: <ul> <li>"karmasphere-enterprise-utility" - tag
+     * the job flow for management by <a
+     * href="http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
+     * <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
+     * <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li>
+     * <li>"mapr" with the user arguments specifying "--edition,m3" or
+     * "--edition,m5" - launch the job flow using MapR M3 or M5 Edition
+     * respectively.</li> </ul>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param newSupportedProducts A list of strings that indicates third-party software to use with the
+     *         job flow that accepts a user argument list. EMR accepts and forwards
+     *         the argument list to the corresponding installation script as
+     *         bootstrap action arguments. For more information, see <a
+     *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch
+     *         a Job Flow on the MapR Distribution for Hadoop</a>. Currently
+     *         supported values are: <ul> <li>"karmasphere-enterprise-utility" - tag
+     *         the job flow for management by <a
+     *         href="http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
+     *         <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
+     *         <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li>
+     *         <li>"mapr" with the user arguments specifying "--edition,m3" or
+     *         "--edition,m5" - launch the job flow using MapR M3 or M5 Edition
+     *         respectively.</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public RunJobFlowRequest withNewSupportedProducts(SupportedProductConfig... newSupportedProducts) {
+        if (getNewSupportedProducts() == null) setNewSupportedProducts(new java.util.ArrayList<SupportedProductConfig>(newSupportedProducts.length));
+        for (SupportedProductConfig value : newSupportedProducts) {
+            getNewSupportedProducts().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of strings that indicates third-party software to use with the
+     * job flow that accepts a user argument list. EMR accepts and forwards
+     * the argument list to the corresponding installation script as
+     * bootstrap action arguments. For more information, see <a
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch
+     * a Job Flow on the MapR Distribution for Hadoop</a>. Currently
+     * supported values are: <ul> <li>"karmasphere-enterprise-utility" - tag
+     * the job flow for management by <a
+     * href="http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
+     * <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
+     * <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li>
+     * <li>"mapr" with the user arguments specifying "--edition,m3" or
+     * "--edition,m5" - launch the job flow using MapR M3 or M5 Edition
+     * respectively.</li> </ul>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param newSupportedProducts A list of strings that indicates third-party software to use with the
+     *         job flow that accepts a user argument list. EMR accepts and forwards
+     *         the argument list to the corresponding installation script as
+     *         bootstrap action arguments. For more information, see <a
+     *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch
+     *         a Job Flow on the MapR Distribution for Hadoop</a>. Currently
+     *         supported values are: <ul> <li>"karmasphere-enterprise-utility" - tag
+     *         the job flow for management by <a
+     *         href="http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
+     *         <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
+     *         <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li>
+     *         <li>"mapr" with the user arguments specifying "--edition,m3" or
+     *         "--edition,m5" - launch the job flow using MapR M3 or M5 Edition
+     *         respectively.</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public RunJobFlowRequest withNewSupportedProducts(java.util.Collection<SupportedProductConfig> newSupportedProducts) {
+        if (newSupportedProducts == null) {
+            this.newSupportedProducts = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<SupportedProductConfig> newSupportedProductsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<SupportedProductConfig>(newSupportedProducts.size());
+            newSupportedProductsCopy.addAll(newSupportedProducts);
+            this.newSupportedProducts = newSupportedProductsCopy;
         }
 
         return this;
@@ -780,6 +1004,9 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      *         they have the proper policy permissions set) manage the job flow. If
      *         it is set to <code>false</code>, only the IAM user that created the
      *         job flow can view and manage it.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunJobFlowRequest withVisibleToAllUsers(Boolean visibleToAllUsers) {
         this.visibleToAllUsers = visibleToAllUsers;
@@ -860,6 +1087,9 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      *         this role. The default role is <code>EMRJobflowDefault</code>. In
      *         order to use the default role, you must have already created it using
      *         the CLI.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RunJobFlowRequest withJobFlowRole(String jobFlowRole) {
         this.jobFlowRole = jobFlowRole;
@@ -887,6 +1117,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
         if (getSteps() != null) sb.append("Steps: " + getSteps() + ",");
         if (getBootstrapActions() != null) sb.append("BootstrapActions: " + getBootstrapActions() + ",");
         if (getSupportedProducts() != null) sb.append("SupportedProducts: " + getSupportedProducts() + ",");
+        if (getNewSupportedProducts() != null) sb.append("NewSupportedProducts: " + getNewSupportedProducts() + ",");
         if (isVisibleToAllUsers() != null) sb.append("VisibleToAllUsers: " + isVisibleToAllUsers() + ",");
         if (getJobFlowRole() != null) sb.append("JobFlowRole: " + getJobFlowRole() );
         sb.append("}");
@@ -906,6 +1137,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
         hashCode = prime * hashCode + ((getSteps() == null) ? 0 : getSteps().hashCode()); 
         hashCode = prime * hashCode + ((getBootstrapActions() == null) ? 0 : getBootstrapActions().hashCode()); 
         hashCode = prime * hashCode + ((getSupportedProducts() == null) ? 0 : getSupportedProducts().hashCode()); 
+        hashCode = prime * hashCode + ((getNewSupportedProducts() == null) ? 0 : getNewSupportedProducts().hashCode()); 
         hashCode = prime * hashCode + ((isVisibleToAllUsers() == null) ? 0 : isVisibleToAllUsers().hashCode()); 
         hashCode = prime * hashCode + ((getJobFlowRole() == null) ? 0 : getJobFlowRole().hashCode()); 
         return hashCode;
@@ -935,6 +1167,8 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
         if (other.getBootstrapActions() != null && other.getBootstrapActions().equals(this.getBootstrapActions()) == false) return false; 
         if (other.getSupportedProducts() == null ^ this.getSupportedProducts() == null) return false;
         if (other.getSupportedProducts() != null && other.getSupportedProducts().equals(this.getSupportedProducts()) == false) return false; 
+        if (other.getNewSupportedProducts() == null ^ this.getNewSupportedProducts() == null) return false;
+        if (other.getNewSupportedProducts() != null && other.getNewSupportedProducts().equals(this.getNewSupportedProducts()) == false) return false; 
         if (other.isVisibleToAllUsers() == null ^ this.isVisibleToAllUsers() == null) return false;
         if (other.isVisibleToAllUsers() != null && other.isVisibleToAllUsers().equals(this.isVisibleToAllUsers()) == false) return false; 
         if (other.getJobFlowRole() == null ^ this.getJobFlowRole() == null) return false;

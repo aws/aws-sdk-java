@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents the verification attributes for a list of identities.
  * </p>
  */
-public class GetIdentityVerificationAttributesResult  implements Serializable  {
+public class GetIdentityVerificationAttributesResult implements Serializable {
 
     /**
      * A map of Identities to IdentityVerificationAttributes objects.
@@ -55,6 +55,9 @@ public class GetIdentityVerificationAttributesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param verificationAttributes A map of Identities to IdentityVerificationAttributes objects.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetIdentityVerificationAttributesResult withVerificationAttributes(java.util.Map<String,IdentityVerificationAttributes> verificationAttributes) {
         setVerificationAttributes(verificationAttributes);

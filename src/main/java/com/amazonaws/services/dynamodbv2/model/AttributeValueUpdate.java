@@ -28,7 +28,7 @@ import java.io.Serializable;
  * Requests with empty values will be rejected with a <i>ValidationException</i> .
  * </p>
  */
-public class AttributeValueUpdate  implements Serializable  {
+public class AttributeValueUpdate implements Serializable {
 
     /**
      * Represents the data for an attribute. You can set one, and only one,
@@ -277,6 +277,9 @@ public class AttributeValueUpdate  implements Serializable  {
      *
      * @param value Represents the data for an attribute. You can set one, and only one,
      *         of the elements.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AttributeValueUpdate withValue(AttributeValue value) {
         this.value = value;
@@ -652,6 +655,9 @@ public class AttributeValueUpdate  implements Serializable  {
      *         the attribute value. The only data types allowed are number and number
      *         set; no other data types can be specified. </li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see AttributeAction
      */
     public AttributeValueUpdate withAction(String action) {
@@ -903,6 +909,9 @@ public class AttributeValueUpdate  implements Serializable  {
      *         item with the supplied primary key and number (or set of numbers) for
      *         the attribute value. The only data types allowed are number and number
      *         set; no other data types can be specified. </li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see AttributeAction
      */

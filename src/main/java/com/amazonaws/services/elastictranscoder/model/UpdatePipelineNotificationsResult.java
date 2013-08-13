@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The <code>UpdatePipelineNotificationsResponse</code> structure.
  * </p>
  */
-public class UpdatePipelineNotificationsResult  implements Serializable  {
+public class UpdatePipelineNotificationsResult implements Serializable {
 
     /**
      * A section of the response body that provides information about the
@@ -58,6 +58,9 @@ public class UpdatePipelineNotificationsResult  implements Serializable  {
      *
      * @param pipeline A section of the response body that provides information about the
      *         pipeline.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdatePipelineNotificationsResult withPipeline(Pipeline pipeline) {
         this.pipeline = pipeline;

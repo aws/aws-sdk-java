@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A value that applies only to a certain Cache Node Type.
  * </p>
  */
-public class CacheNodeTypeSpecificValue  implements Serializable  {
+public class CacheNodeTypeSpecificValue implements Serializable {
 
     /**
      * Specifies the Cache Node type for which this value applies.
@@ -62,6 +62,9 @@ public class CacheNodeTypeSpecificValue  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheNodeType Specifies the Cache Node type for which this value applies.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheNodeTypeSpecificValue withCacheNodeType(String cacheNodeType) {
         this.cacheNodeType = cacheNodeType;
@@ -93,6 +96,9 @@ public class CacheNodeTypeSpecificValue  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param value Specifies the value for the Cache Node type.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheNodeTypeSpecificValue withValue(String value) {
         this.value = value;

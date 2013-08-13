@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes where an Amazon EC2 instance is running within an Amazon EC2 region.
  * </p>
  */
-public class Placement  implements Serializable  {
+public class Placement implements Serializable {
 
     /**
      * The availability zone in which an Amazon EC2 instance runs.

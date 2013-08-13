@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#createPipeline(CreatePipelineRequest)
  */
-public class CreatePipelineRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreatePipelineRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the new pipeline. You can use the same name for multiple
@@ -115,6 +115,9 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest  implements S
      * @param name The name of the new pipeline. You can use the same name for multiple
      *         pipelines associated with your AWS account, because AWS Data Pipeline
      *         assigns each new pipeline a unique pipeline identifier.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreatePipelineRequest withName(String name) {
         this.name = name;
@@ -230,6 +233,9 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest  implements S
      *         receive the pipeline identifier from the previous attempt. The
      *         uniqueness of the name and unique identifier combination is scoped to
      *         the AWS account or IAM user credentials.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreatePipelineRequest withUniqueId(String uniqueId) {
         this.uniqueId = uniqueId;
@@ -273,6 +279,9 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest  implements S
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param description The description of the new pipeline.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreatePipelineRequest withDescription(String description) {
         this.description = description;

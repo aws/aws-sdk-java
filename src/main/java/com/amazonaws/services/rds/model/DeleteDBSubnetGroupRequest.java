@@ -27,7 +27,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteDBSubnetGroup(DeleteDBSubnetGroupRequest)
  */
-public class DeleteDBSubnetGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteDBSubnetGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the database subnet group to delete. <note>You cannot
@@ -86,6 +86,9 @@ public class DeleteDBSubnetGroupRequest extends AmazonWebServiceRequest  impleme
      *         be 1 to 255 alphanumeric characters</li> <li>First character must be a
      *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
      *         hyphens</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteDBSubnetGroupRequest withDBSubnetGroupName(String dBSubnetGroupName) {
         this.dBSubnetGroupName = dBSubnetGroupName;

@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.DescribeRegionsRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -24,7 +26,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeRegions(DescribeRegionsRequest)
  */
-public class DescribeRegionsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeRegionsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeRegionsRequest> {
 
     /**
      * The optional list of regions to describe.
@@ -199,6 +201,18 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest  implements 
         }
 
         return this;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<DescribeRegionsRequest> getDryRunRequest() {
+        Request<DescribeRegionsRequest> request = new DescribeRegionsRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

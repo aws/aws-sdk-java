@@ -20,7 +20,7 @@ import java.io.Serializable;
  * 
  * </p>
  */
-public class GroupIdentifier  implements Serializable  {
+public class GroupIdentifier implements Serializable {
 
     /**
      * 

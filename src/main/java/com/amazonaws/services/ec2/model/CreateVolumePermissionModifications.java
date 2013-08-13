@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Create Volume Permission Modifications
  */
-public class CreateVolumePermissionModifications  implements Serializable  {
+public class CreateVolumePermissionModifications implements Serializable {
 
     private com.amazonaws.internal.ListWithAutoConstructFlag<CreateVolumePermission> add;
 

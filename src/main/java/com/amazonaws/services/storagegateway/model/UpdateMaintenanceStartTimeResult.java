@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A JSON object containing the GatewayARN of the gateway whose maintenance start time is updated.
  * </p>
  */
-public class UpdateMaintenanceStartTimeResult  implements Serializable  {
+public class UpdateMaintenanceStartTimeResult implements Serializable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -77,6 +77,9 @@ public class UpdateMaintenanceStartTimeResult  implements Serializable  {
      * @param gatewayARN The Amazon Resource Name (ARN) of the gateway. Use the
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateMaintenanceStartTimeResult withGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;

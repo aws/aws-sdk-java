@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the DescribeEngineDefaultParameters action.
  * </p>
  */
-public class EngineDefaults  implements Serializable  {
+public class EngineDefaults implements Serializable {
 
     /**
      * Specifies the name of the DB Parameter Group Family which the engine
@@ -71,6 +71,9 @@ public class EngineDefaults  implements Serializable  {
      *
      * @param dBParameterGroupFamily Specifies the name of the DB Parameter Group Family which the engine
      *         default parameters apply to.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EngineDefaults withDBParameterGroupFamily(String dBParameterGroupFamily) {
         this.dBParameterGroupFamily = dBParameterGroupFamily;
@@ -120,6 +123,9 @@ public class EngineDefaults  implements Serializable  {
      *         request. If this parameter is specified, the response includes only
      *         records beyond the marker, up to the value specified by
      *         <code>MaxRecords</code> .
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EngineDefaults withMarker(String marker) {
         this.marker = marker;
@@ -162,6 +168,9 @@ public class EngineDefaults  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameters Contains a list of engine default parameters.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EngineDefaults withParameters(Parameter... parameters) {
         if (getParameters() == null) setParameters(new java.util.ArrayList<Parameter>(parameters.length));
@@ -177,6 +186,9 @@ public class EngineDefaults  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameters Contains a list of engine default parameters.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EngineDefaults withParameters(java.util.Collection<Parameter> parameters) {
         if (parameters == null) {

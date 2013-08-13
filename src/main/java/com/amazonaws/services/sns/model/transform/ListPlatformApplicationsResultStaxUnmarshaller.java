@@ -13,14 +13,14 @@
  * permissions and limitations under the License.
  */
 
-package com.amazonaws.services.elasticmapreduce.model.transform;
+package com.amazonaws.services.sns.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
 
-import com.amazonaws.services.elasticmapreduce.model.*;
+import com.amazonaws.services.sns.model.*;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.transform.MapEntry;
 import com.amazonaws.transform.StaxUnmarshallerContext;
@@ -28,12 +28,12 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 
 /**
- * Add Instance Groups Result StAX Unmarshaller
+ * List Platform Applications Result StAX Unmarshaller
  */
-public class AddInstanceGroupsResultStaxUnmarshaller implements Unmarshaller<AddInstanceGroupsResult, StaxUnmarshallerContext> {
+public class ListPlatformApplicationsResultStaxUnmarshaller implements Unmarshaller<ListPlatformApplicationsResult, StaxUnmarshallerContext> {
 
-    public AddInstanceGroupsResult unmarshall(StaxUnmarshallerContext context) throws Exception {
-        AddInstanceGroupsResult addInstanceGroupsResult = new AddInstanceGroupsResult();
+    public ListPlatformApplicationsResult unmarshall(StaxUnmarshallerContext context) throws Exception {
+        ListPlatformApplicationsResult listPlatformApplicationsResult = new ListPlatformApplicationsResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -43,28 +43,28 @@ public class AddInstanceGroupsResultStaxUnmarshaller implements Unmarshaller<Add
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return addInstanceGroupsResult;
+            if (xmlEvent.isEndDocument()) return listPlatformApplicationsResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-                if (context.testExpression("JobFlowId", targetDepth)) {
-                    addInstanceGroupsResult.setJobFlowId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("PlatformApplications/member", targetDepth)) {
+                    listPlatformApplicationsResult.getPlatformApplications().add(PlatformApplicationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("InstanceGroupIds/member", targetDepth)) {
-                    addInstanceGroupsResult.getInstanceGroupIds().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("NextToken", targetDepth)) {
+                    listPlatformApplicationsResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
-                    return addInstanceGroupsResult;
+                    return listPlatformApplicationsResult;
                 }
             }
         }
     }
 
-    private static AddInstanceGroupsResultStaxUnmarshaller instance;
-    public static AddInstanceGroupsResultStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new AddInstanceGroupsResultStaxUnmarshaller();
+    private static ListPlatformApplicationsResultStaxUnmarshaller instance;
+    public static ListPlatformApplicationsResultStaxUnmarshaller getInstance() {
+        if (instance == null) instance = new ListPlatformApplicationsResultStaxUnmarshaller();
         return instance;
     }
 }

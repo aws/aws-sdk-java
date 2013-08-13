@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A complex type containing the response for the request.
  * </p>
  */
-public class ChangeResourceRecordSetsResult  implements Serializable  {
+public class ChangeResourceRecordSetsResult implements Serializable {
 
     /**
      * A complex type that contains information about changes made to your
@@ -72,6 +72,9 @@ public class ChangeResourceRecordSetsResult  implements Serializable  {
      *         hosted zone. <p>This element contains an ID that you use when
      *         performing a <a>GetChange</a> action to get detailed information about
      *         the change.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChangeResourceRecordSetsResult withChangeInfo(ChangeInfo changeInfo) {
         this.changeInfo = changeInfo;

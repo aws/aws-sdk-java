@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Provides details of the <code>ActivityTaskStarted</code> event.
  * </p>
  */
-public class ActivityTaskStartedEventAttributes  implements Serializable  {
+public class ActivityTaskStartedEventAttributes implements Serializable {
 
     /**
      * Identity of the worker that was assigned this task. This aids
@@ -85,6 +85,9 @@ public class ActivityTaskStartedEventAttributes  implements Serializable  {
      * @param identity Identity of the worker that was assigned this task. This aids
      *         diagnostics when problems arise. The form of this identity is user
      *         defined.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActivityTaskStartedEventAttributes withIdentity(String identity) {
         this.identity = identity;
@@ -134,6 +137,9 @@ public class ActivityTaskStartedEventAttributes  implements Serializable  {
      *         recorded when this activity task was scheduled. This information can
      *         be useful for diagnosing problems by tracing back the chain of events
      *         leading up to this event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActivityTaskStartedEventAttributes withScheduledEventId(Long scheduledEventId) {
         this.scheduledEventId = scheduledEventId;

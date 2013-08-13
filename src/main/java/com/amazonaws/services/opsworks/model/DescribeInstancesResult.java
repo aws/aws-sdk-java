@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribeInstances</code> request.
  * </p>
  */
-public class DescribeInstancesResult  implements Serializable  {
+public class DescribeInstancesResult implements Serializable {
 
     /**
      * An array of <code>Instance</code> objects that describe the instances.
@@ -62,6 +62,9 @@ public class DescribeInstancesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instances An array of <code>Instance</code> objects that describe the instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeInstancesResult withInstances(Instance... instances) {
         if (getInstances() == null) setInstances(new java.util.ArrayList<Instance>(instances.length));
@@ -77,6 +80,9 @@ public class DescribeInstancesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instances An array of <code>Instance</code> objects that describe the instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeInstancesResult withInstances(java.util.Collection<Instance> instances) {
         if (instances == null) {

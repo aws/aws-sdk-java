@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeCacheSubnetGroups(DescribeCacheSubnetGroupsRequest)
  */
-public class DescribeCacheSubnetGroupsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeCacheSubnetGroupsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the Cache Subnet Group to return details for.
@@ -72,6 +72,9 @@ public class DescribeCacheSubnetGroupsRequest extends AmazonWebServiceRequest  i
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheSubnetGroupName The name of the Cache Subnet Group to return details for.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCacheSubnetGroupsRequest withCacheSubnetGroupName(String cacheSubnetGroupName) {
         this.cacheSubnetGroupName = cacheSubnetGroupName;
@@ -121,6 +124,9 @@ public class DescribeCacheSubnetGroupsRequest extends AmazonWebServiceRequest  i
      *         records exist than the specified <code>MaxRecords</code> value, a
      *         marker is included in the response so that the remaining results may
      *         be retrieved. <p>Default: 100 <p>Constraints: minimum 20, maximum 100
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCacheSubnetGroupsRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -170,6 +176,9 @@ public class DescribeCacheSubnetGroupsRequest extends AmazonWebServiceRequest  i
      *         request. If this parameter is specified, the response includes only
      *         records beyond the marker, up to the value specified by
      *         <code>MaxRecords</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCacheSubnetGroupsRequest withMarker(String marker) {
         this.marker = marker;

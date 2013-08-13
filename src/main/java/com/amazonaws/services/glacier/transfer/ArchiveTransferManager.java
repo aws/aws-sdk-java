@@ -24,6 +24,9 @@ import java.security.NoSuchAlgorithmException;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.ClientConfiguration;
@@ -85,6 +88,8 @@ public class ArchiveTransferManager {
     private final AmazonSQSClient sqs;
 
     private final AmazonSNSClient sns;
+    
+    private static final Log log = LogFactory.getLog(ArchiveTransferManager.class);
 
     /**
      * Constructs a new ArchiveTransferManager, using the specified AWS
@@ -447,9 +452,15 @@ public class ArchiveTransferManager {
 
                 appendToFile(output, input);
 
-                // Checksum does not match
-                if (!input.getTreeHash().equalsIgnoreCase(jobOutputResult.getChecksum())) {
-                    throw new IOException("Client side computed hash doesn't match server side hash; possible data corruption");
+                // Only do tree-hash check when the output checksum is returned from Glacier
+                if (null != jobOutputResult.getChecksum()) {
+                    // Checksum does not match
+                    if (!input.getTreeHash().equalsIgnoreCase(jobOutputResult.getChecksum())) {
+                        throw new IOException("Client side computed hash doesn't match server side hash; possible data corruption");
+                    }
+                } else {
+                    log.warn("Cannot validate the downloaded output since no tree-hash checksum is returned from Glacier. "
+                            + "Make sure the InitiateJob and GetJobOutput requests use tree-hash-aligned ranges.");
                 }
 
                 // Successfully download

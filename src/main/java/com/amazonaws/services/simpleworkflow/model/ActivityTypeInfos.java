@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains a paginated list of activity type information structures.
  * </p>
  */
-public class ActivityTypeInfos  implements Serializable  {
+public class ActivityTypeInfos implements Serializable {
 
     /**
      * List of activity type information.
@@ -72,6 +72,9 @@ public class ActivityTypeInfos  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param typeInfos List of activity type information.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActivityTypeInfos withTypeInfos(ActivityTypeInfo... typeInfos) {
         if (getTypeInfos() == null) setTypeInfos(new java.util.ArrayList<ActivityTypeInfo>(typeInfos.length));
@@ -87,6 +90,9 @@ public class ActivityTypeInfos  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param typeInfos List of activity type information.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActivityTypeInfos withTypeInfos(java.util.Collection<ActivityTypeInfo> typeInfos) {
         if (typeInfos == null) {
@@ -145,6 +151,9 @@ public class ActivityTypeInfos  implements Serializable  {
      * @param nextPageToken Returns a value if the results are paginated. To get the next page of
      *         results, repeat the request specifying this token and all other
      *         arguments unchanged.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActivityTypeInfos withNextPageToken(String nextPageToken) {
         this.nextPageToken = nextPageToken;

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A named expression that can be evaluated at search time and used for ranking or thresholding in a search query.
  * </p>
  */
-public class NamedRankExpression  implements Serializable  {
+public class NamedRankExpression implements Serializable {
 
     /**
      * The name of a rank expression. Rank expression names must begin with a
@@ -136,6 +136,9 @@ public class NamedRankExpression  implements Serializable  {
      *         and _ (underscore). Uppercase letters and hyphens are not allowed. The
      *         names "body", "docid", and "text_relevance" are reserved and cannot be
      *         specified as field or rank expression names.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NamedRankExpression withRankName(String rankName) {
         this.rankName = rankName;
@@ -374,6 +377,9 @@ public class NamedRankExpression  implements Serializable  {
      *         other in each matching <code>IndexField</code> in the document. <p>For
      *         more information about using rank expressions to customize ranking,
      *         see the Amazon CloudSearch Developer Guide.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NamedRankExpression withRankExpression(String rankExpression) {
         this.rankExpression = rankExpression;

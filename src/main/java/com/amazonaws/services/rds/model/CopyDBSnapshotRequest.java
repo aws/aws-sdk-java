@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#copyDBSnapshot(CopyDBSnapshotRequest)
  */
-public class CopyDBSnapshotRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The identifier for the source DB snapshot. <p>Constraints: <ul>
@@ -85,6 +85,9 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest  implements S
      *         <li>Must be the identifier for a valid system snapshot in the
      *         "available" state.</li> </ul> <p>Example:
      *         <code>rds:mydb-2012-04-02-00-01</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CopyDBSnapshotRequest withSourceDBSnapshotIdentifier(String sourceDBSnapshotIdentifier) {
         this.sourceDBSnapshotIdentifier = sourceDBSnapshotIdentifier;
@@ -140,6 +143,9 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest  implements S
      *         255 alphanumeric characters or hyphens</li> <li>First character must
      *         be a letter</li> <li>Cannot end with a hyphen or contain two
      *         consecutive hyphens</li> </ul> <p>Example: <code>my-db-snapshot</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CopyDBSnapshotRequest withTargetDBSnapshotIdentifier(String targetDBSnapshotIdentifier) {
         this.targetDBSnapshotIdentifier = targetDBSnapshotIdentifier;

@@ -39,7 +39,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#createHostedZone(CreateHostedZoneRequest)
  */
-public class CreateHostedZoneRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the domain. This must be a fully-specified domain, for
@@ -199,6 +199,9 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest  implements
      *         registrar to change the authoritative name servers for your domain to
      *         the set of <code>NameServers</code> elements returned in
      *         <code>DelegationSet</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateHostedZoneRequest withName(String name) {
         this.name = name;
@@ -287,6 +290,9 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest  implements
      *         <code>DNSMigration_01</code>. <p>Valid characters are any Unicode code
      *         points that are legal in an XML 1.0 document. The UTF-8 encoding of
      *         the value must be less than 128 bytes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateHostedZoneRequest withCallerReference(String callerReference) {
         this.callerReference = callerReference;
@@ -324,6 +330,9 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest  implements
      *
      * @param hostedZoneConfig A complex type that contains an optional comment about your hosted
      *         zone.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateHostedZoneRequest withHostedZoneConfig(HostedZoneConfig hostedZoneConfig) {
         this.hostedZoneConfig = hostedZoneConfig;

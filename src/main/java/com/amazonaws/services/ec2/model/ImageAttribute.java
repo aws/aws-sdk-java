@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents an attribute of an <i>Amazon Machine Image</i> (AMI).
  * </p>
  */
-public class ImageAttribute  implements Serializable  {
+public class ImageAttribute implements Serializable {
 
     /**
      * The ID of the associated AMI.

@@ -22,7 +22,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#modifyVpcAttribute(ModifyVpcAttributeRequest)
  */
-public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest implements Serializable {
 
     private String vpcId;
 

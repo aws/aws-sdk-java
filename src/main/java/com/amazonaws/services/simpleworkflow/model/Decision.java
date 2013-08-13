@@ -131,7 +131,7 @@ import java.io.Serializable;
  * 
  * </ul>
  */
-public class Decision  implements Serializable  {
+public class Decision implements Serializable {
 
     /**
      * Specifies the type of the decision.
@@ -252,6 +252,9 @@ public class Decision  implements Serializable  {
      *
      * @param decisionType Specifies the type of the decision.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see DecisionType
      */
     public Decision withDecisionType(String decisionType) {
@@ -283,6 +286,9 @@ public class Decision  implements Serializable  {
      * <b>Allowed Values: </b>ScheduleActivityTask, RequestCancelActivityTask, CompleteWorkflowExecution, FailWorkflowExecution, CancelWorkflowExecution, ContinueAsNewWorkflowExecution, RecordMarker, StartTimer, CancelTimer, SignalExternalWorkflowExecution, RequestCancelExternalWorkflowExecution, StartChildWorkflowExecution
      *
      * @param decisionType Specifies the type of the decision.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see DecisionType
      */
@@ -321,6 +327,9 @@ public class Decision  implements Serializable  {
      *
      * @param scheduleActivityTaskDecisionAttributes Provides details of the <code>ScheduleActivityTask</code> decision. It
      *         is not set for other decision types.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Decision withScheduleActivityTaskDecisionAttributes(ScheduleActivityTaskDecisionAttributes scheduleActivityTaskDecisionAttributes) {
         this.scheduleActivityTaskDecisionAttributes = scheduleActivityTaskDecisionAttributes;
@@ -358,6 +367,9 @@ public class Decision  implements Serializable  {
      *
      * @param requestCancelActivityTaskDecisionAttributes Provides details of the <code>RequestCancelActivityTask</code>
      *         decision. It is not set for other decision types.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Decision withRequestCancelActivityTaskDecisionAttributes(RequestCancelActivityTaskDecisionAttributes requestCancelActivityTaskDecisionAttributes) {
         this.requestCancelActivityTaskDecisionAttributes = requestCancelActivityTaskDecisionAttributes;
@@ -395,6 +407,9 @@ public class Decision  implements Serializable  {
      *
      * @param completeWorkflowExecutionDecisionAttributes Provides details of the <code>CompleteWorkflowExecution</code>
      *         decision. It is not set for other decision types.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Decision withCompleteWorkflowExecutionDecisionAttributes(CompleteWorkflowExecutionDecisionAttributes completeWorkflowExecutionDecisionAttributes) {
         this.completeWorkflowExecutionDecisionAttributes = completeWorkflowExecutionDecisionAttributes;
@@ -432,6 +447,9 @@ public class Decision  implements Serializable  {
      *
      * @param failWorkflowExecutionDecisionAttributes Provides details of the <code>FailWorkflowExecution</code> decision.
      *         It is not set for other decision types.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Decision withFailWorkflowExecutionDecisionAttributes(FailWorkflowExecutionDecisionAttributes failWorkflowExecutionDecisionAttributes) {
         this.failWorkflowExecutionDecisionAttributes = failWorkflowExecutionDecisionAttributes;
@@ -469,6 +487,9 @@ public class Decision  implements Serializable  {
      *
      * @param cancelWorkflowExecutionDecisionAttributes Provides details of the <code>CancelWorkflowExecution</code> decision.
      *         It is not set for other decision types.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Decision withCancelWorkflowExecutionDecisionAttributes(CancelWorkflowExecutionDecisionAttributes cancelWorkflowExecutionDecisionAttributes) {
         this.cancelWorkflowExecutionDecisionAttributes = cancelWorkflowExecutionDecisionAttributes;
@@ -506,6 +527,9 @@ public class Decision  implements Serializable  {
      *
      * @param continueAsNewWorkflowExecutionDecisionAttributes Provides details of the <code>ContinueAsNewWorkflowExecution</code>
      *         decision. It is not set for other decision types.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Decision withContinueAsNewWorkflowExecutionDecisionAttributes(ContinueAsNewWorkflowExecutionDecisionAttributes continueAsNewWorkflowExecutionDecisionAttributes) {
         this.continueAsNewWorkflowExecutionDecisionAttributes = continueAsNewWorkflowExecutionDecisionAttributes;
@@ -543,6 +567,9 @@ public class Decision  implements Serializable  {
      *
      * @param recordMarkerDecisionAttributes Provides details of the <code>RecordMarker</code> decision. It is not
      *         set for other decision types.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Decision withRecordMarkerDecisionAttributes(RecordMarkerDecisionAttributes recordMarkerDecisionAttributes) {
         this.recordMarkerDecisionAttributes = recordMarkerDecisionAttributes;
@@ -580,6 +607,9 @@ public class Decision  implements Serializable  {
      *
      * @param startTimerDecisionAttributes Provides details of the <code>StartTimer</code> decision. It is not
      *         set for other decision types.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Decision withStartTimerDecisionAttributes(StartTimerDecisionAttributes startTimerDecisionAttributes) {
         this.startTimerDecisionAttributes = startTimerDecisionAttributes;
@@ -617,6 +647,9 @@ public class Decision  implements Serializable  {
      *
      * @param cancelTimerDecisionAttributes Provides details of the <code>CancelTimer</code> decision. It is not
      *         set for other decision types.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Decision withCancelTimerDecisionAttributes(CancelTimerDecisionAttributes cancelTimerDecisionAttributes) {
         this.cancelTimerDecisionAttributes = cancelTimerDecisionAttributes;
@@ -654,6 +687,9 @@ public class Decision  implements Serializable  {
      *
      * @param signalExternalWorkflowExecutionDecisionAttributes Provides details of the <code>SignalExternalWorkflowExecution</code>
      *         decision. It is not set for other decision types.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Decision withSignalExternalWorkflowExecutionDecisionAttributes(SignalExternalWorkflowExecutionDecisionAttributes signalExternalWorkflowExecutionDecisionAttributes) {
         this.signalExternalWorkflowExecutionDecisionAttributes = signalExternalWorkflowExecutionDecisionAttributes;
@@ -697,6 +733,9 @@ public class Decision  implements Serializable  {
      * @param requestCancelExternalWorkflowExecutionDecisionAttributes Provides details of the
      *         <code>RequestCancelExternalWorkflowExecution</code> decision. It is
      *         not set for other decision types.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Decision withRequestCancelExternalWorkflowExecutionDecisionAttributes(RequestCancelExternalWorkflowExecutionDecisionAttributes requestCancelExternalWorkflowExecutionDecisionAttributes) {
         this.requestCancelExternalWorkflowExecutionDecisionAttributes = requestCancelExternalWorkflowExecutionDecisionAttributes;
@@ -734,6 +773,9 @@ public class Decision  implements Serializable  {
      *
      * @param startChildWorkflowExecutionDecisionAttributes Provides details of the <code>StartChildWorkflowExecution</code>
      *         decision. It is not set for other decision types.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Decision withStartChildWorkflowExecutionDecisionAttributes(StartChildWorkflowExecutionDecisionAttributes startChildWorkflowExecutionDecisionAttributes) {
         this.startChildWorkflowExecutionDecisionAttributes = startChildWorkflowExecutionDecisionAttributes;

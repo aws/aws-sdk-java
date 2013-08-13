@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.cloudfront.AmazonCloudFront#deleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest)
  */
-public class DeleteCloudFrontOriginAccessIdentityRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteCloudFrontOriginAccessIdentityRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The origin access identity's id.
@@ -85,6 +85,9 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends AmazonWebServic
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param id The origin access identity's id.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteCloudFrontOriginAccessIdentityRequest withId(String id) {
         this.id = id;
@@ -122,6 +125,9 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends AmazonWebServic
      *
      * @param ifMatch The value of the ETag header you received from a previous GET or PUT
      *         request. For example: E2QWRUHAPOMQZL.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteCloudFrontOriginAccessIdentityRequest withIfMatch(String ifMatch) {
         this.ifMatch = ifMatch;

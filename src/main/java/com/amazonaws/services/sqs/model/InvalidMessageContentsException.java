@@ -17,7 +17,9 @@ package com.amazonaws.services.sqs.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AmazonSQS exception
+ * <p>
+ * The message contains characters outside the allowed set.
+ * </p>
  */        
 public class InvalidMessageContentsException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

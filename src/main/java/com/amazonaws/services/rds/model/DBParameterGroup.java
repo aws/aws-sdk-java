@@ -24,7 +24,7 @@ import java.io.Serializable;
  * action.
  * </p>
  */
-public class DBParameterGroup  implements Serializable  {
+public class DBParameterGroup implements Serializable {
 
     /**
      * Provides the name of the DB Parameter Group.
@@ -67,6 +67,9 @@ public class DBParameterGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBParameterGroupName Provides the name of the DB Parameter Group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBParameterGroup withDBParameterGroupName(String dBParameterGroupName) {
         this.dBParameterGroupName = dBParameterGroupName;
@@ -104,6 +107,9 @@ public class DBParameterGroup  implements Serializable  {
      *
      * @param dBParameterGroupFamily Provides the name of the DB Parameter Group Family that this DB
      *         Parameter Group is compatible with.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBParameterGroup withDBParameterGroupFamily(String dBParameterGroupFamily) {
         this.dBParameterGroupFamily = dBParameterGroupFamily;
@@ -141,6 +147,9 @@ public class DBParameterGroup  implements Serializable  {
      *
      * @param description Provides the customer-specified description for this DB Parameter
      *         Group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBParameterGroup withDescription(String description) {
         this.description = description;

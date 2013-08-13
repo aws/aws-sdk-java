@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Output structure for the CancelJob operation.
  * </p>
  */
-public class CancelJobResult  implements Serializable  {
+public class CancelJobResult implements Serializable {
 
     /**
      * Specifies whether (true) or not (false) AWS Import/Export updated your
@@ -58,6 +58,9 @@ public class CancelJobResult  implements Serializable  {
      *
      * @param success Specifies whether (true) or not (false) AWS Import/Export updated your
      *         job.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CancelJobResult withSuccess(Boolean success) {
         this.success = success;

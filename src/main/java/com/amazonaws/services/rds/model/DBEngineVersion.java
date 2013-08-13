@@ -20,7 +20,7 @@ import java.io.Serializable;
  * This data type is used as a response element in the action DescribeDBEngineVersions.
  * </p>
  */
-public class DBEngineVersion  implements Serializable  {
+public class DBEngineVersion implements Serializable {
 
     /**
      * The name of the database engine.
@@ -90,6 +90,9 @@ public class DBEngineVersion  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param engine The name of the database engine.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBEngineVersion withEngine(String engine) {
         this.engine = engine;
@@ -121,6 +124,9 @@ public class DBEngineVersion  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param engineVersion The version number of the database engine.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBEngineVersion withEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
@@ -152,6 +158,9 @@ public class DBEngineVersion  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBParameterGroupFamily The name of the DBParameterGroupFamily for the database engine.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBEngineVersion withDBParameterGroupFamily(String dBParameterGroupFamily) {
         this.dBParameterGroupFamily = dBParameterGroupFamily;
@@ -183,6 +192,9 @@ public class DBEngineVersion  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBEngineDescription The description of the database engine.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBEngineVersion withDBEngineDescription(String dBEngineDescription) {
         this.dBEngineDescription = dBEngineDescription;
@@ -214,6 +226,9 @@ public class DBEngineVersion  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBEngineVersionDescription The description of the database engine version.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBEngineVersion withDBEngineVersionDescription(String dBEngineVersionDescription) {
         this.dBEngineVersionDescription = dBEngineVersionDescription;
@@ -257,6 +272,9 @@ public class DBEngineVersion  implements Serializable  {
      * @param defaultCharacterSet The default character set for new instances of this engine version, if
      *         the <code>CharacterSetName</code> parameter of the CreateDBInstance
      *         API is not specified.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBEngineVersion withDefaultCharacterSet(CharacterSet defaultCharacterSet) {
         this.defaultCharacterSet = defaultCharacterSet;
@@ -305,6 +323,9 @@ public class DBEngineVersion  implements Serializable  {
      *
      * @param supportedCharacterSets A list of the character sets supported by this engine for the
      *         <code>CharacterSetName</code> parameter of the CreateDBInstance API.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBEngineVersion withSupportedCharacterSets(CharacterSet... supportedCharacterSets) {
         if (getSupportedCharacterSets() == null) setSupportedCharacterSets(new java.util.ArrayList<CharacterSet>(supportedCharacterSets.length));
@@ -322,6 +343,9 @@ public class DBEngineVersion  implements Serializable  {
      *
      * @param supportedCharacterSets A list of the character sets supported by this engine for the
      *         <code>CharacterSetName</code> parameter of the CreateDBInstance API.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DBEngineVersion withSupportedCharacterSets(java.util.Collection<CharacterSet> supportedCharacterSets) {
         if (supportedCharacterSets == null) {

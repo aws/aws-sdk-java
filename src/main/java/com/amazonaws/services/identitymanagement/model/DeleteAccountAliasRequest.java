@@ -26,7 +26,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteAccountAlias(DeleteAccountAliasRequest)
  */
-public class DeleteAccountAliasRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteAccountAliasRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the account alias to delete.
@@ -94,6 +94,9 @@ public class DeleteAccountAliasRequest extends AmazonWebServiceRequest  implemen
      * <b>Pattern: </b>^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$<br/>
      *
      * @param accountAlias Name of the account alias to delete.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteAccountAliasRequest withAccountAlias(String accountAlias) {
         this.accountAlias = accountAlias;

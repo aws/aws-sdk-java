@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Route
  */
-public class Route  implements Serializable  {
+public class Route implements Serializable {
 
     private String destinationCidrBlock;
 

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribeServiceErrors</code> request.
  * </p>
  */
-public class DescribeServiceErrorsResult  implements Serializable  {
+public class DescribeServiceErrorsResult implements Serializable {
 
     /**
      * An array of <code>ServiceError</code> objects that describe the
@@ -69,6 +69,9 @@ public class DescribeServiceErrorsResult  implements Serializable  {
      *
      * @param serviceErrors An array of <code>ServiceError</code> objects that describe the
      *         specified service errors.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeServiceErrorsResult withServiceErrors(ServiceError... serviceErrors) {
         if (getServiceErrors() == null) setServiceErrors(new java.util.ArrayList<ServiceError>(serviceErrors.length));
@@ -86,6 +89,9 @@ public class DescribeServiceErrorsResult  implements Serializable  {
      *
      * @param serviceErrors An array of <code>ServiceError</code> objects that describe the
      *         specified service errors.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeServiceErrorsResult withServiceErrors(java.util.Collection<ServiceError> serviceErrors) {
         if (serviceErrors == null) {

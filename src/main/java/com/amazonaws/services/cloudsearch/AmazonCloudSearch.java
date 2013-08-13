@@ -83,7 +83,7 @@ public interface AmazonCloudSearch {
      * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      */
     public void setRegion(Region region) throws java.lang.IllegalArgumentException;
-	
+    
     /**
      * <p>
      * Configures the default search field for the search domain. The default

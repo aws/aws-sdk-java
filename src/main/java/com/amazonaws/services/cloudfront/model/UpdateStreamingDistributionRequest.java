@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.cloudfront.AmazonCloudFront#updateStreamingDistribution(UpdateStreamingDistributionRequest)
  */
-public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The streaming distribution's configuration information.
@@ -94,6 +94,9 @@ public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param streamingDistributionConfig The streaming distribution's configuration information.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateStreamingDistributionRequest withStreamingDistributionConfig(StreamingDistributionConfig streamingDistributionConfig) {
         this.streamingDistributionConfig = streamingDistributionConfig;
@@ -125,6 +128,9 @@ public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param id The streaming distribution's id.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateStreamingDistributionRequest withId(String id) {
         this.id = id;
@@ -162,6 +168,9 @@ public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest 
      *
      * @param ifMatch The value of the ETag header you received when retrieving the
      *         streaming distribution's configuration. For example: E2QWRUHAPOMQZL.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateStreamingDistributionRequest withIfMatch(String ifMatch) {
         this.ifMatch = ifMatch;

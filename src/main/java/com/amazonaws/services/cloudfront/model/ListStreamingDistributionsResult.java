@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The returned result of the corresponding request.
  * </p>
  */
-public class ListStreamingDistributionsResult  implements Serializable  {
+public class ListStreamingDistributionsResult implements Serializable {
 
     /**
      * The StreamingDistributionList type.
@@ -51,6 +51,9 @@ public class ListStreamingDistributionsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param streamingDistributionList The StreamingDistributionList type.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListStreamingDistributionsResult withStreamingDistributionList(StreamingDistributionList streamingDistributionList) {
         this.streamingDistributionList = streamingDistributionList;

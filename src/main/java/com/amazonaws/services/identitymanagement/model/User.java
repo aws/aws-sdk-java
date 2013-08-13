@@ -39,7 +39,7 @@ import java.io.Serializable;
  * 
  * </ul>
  */
-public class User  implements Serializable  {
+public class User implements Serializable {
 
     /**
      * Path to the user. For more information about paths, see <a
@@ -186,6 +186,9 @@ public class User  implements Serializable  {
      *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public User withPath(String path) {
         this.path = path;
@@ -229,6 +232,9 @@ public class User  implements Serializable  {
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param userName The name identifying the user.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public User withUserName(String userName) {
         this.userName = userName;
@@ -296,6 +302,9 @@ public class User  implements Serializable  {
      *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public User withUserId(String userId) {
         this.userId = userId;
@@ -360,6 +369,9 @@ public class User  implements Serializable  {
      *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public User withArn(String arn) {
         this.arn = arn;
@@ -391,6 +403,9 @@ public class User  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param createDate The date when the user was created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public User withCreateDate(java.util.Date createDate) {
         this.createDate = createDate;

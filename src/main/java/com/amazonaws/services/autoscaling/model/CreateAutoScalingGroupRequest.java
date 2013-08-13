@@ -29,7 +29,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#createAutoScalingGroup(CreateAutoScalingGroupRequest)
  */
-public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the Auto Scaling group.
@@ -180,6 +180,9 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param autoScalingGroupName The name of the Auto Scaling group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateAutoScalingGroupRequest withAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
@@ -229,6 +232,9 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      *
      * @param launchConfigurationName The name of the launch configuration to use with the Auto Scaling
      *         group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateAutoScalingGroupRequest withLaunchConfigurationName(String launchConfigurationName) {
         this.launchConfigurationName = launchConfigurationName;
@@ -260,6 +266,9 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param minSize The minimum size of the Auto Scaling group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateAutoScalingGroupRequest withMinSize(Integer minSize) {
         this.minSize = minSize;
@@ -291,6 +300,9 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxSize The maximum size of the Auto Scaling group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateAutoScalingGroupRequest withMaxSize(Integer maxSize) {
         this.maxSize = maxSize;
@@ -328,6 +340,9 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      *
      * @param desiredCapacity The number of Amazon EC2 instances that should be running in the
      *         group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateAutoScalingGroupRequest withDesiredCapacity(Integer desiredCapacity) {
         this.desiredCapacity = desiredCapacity;
@@ -365,6 +380,9 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      *
      * @param defaultCooldown The amount of time, in seconds, after a scaling activity completes
      *         before any further trigger-related scaling activities can start.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateAutoScalingGroupRequest withDefaultCooldown(Integer defaultCooldown) {
         this.defaultCooldown = defaultCooldown;
@@ -416,6 +434,9 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      * <b>Length: </b>1 - <br/>
      *
      * @param availabilityZones A list of Availability Zones for the Auto Scaling group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateAutoScalingGroupRequest withAvailabilityZones(String... availabilityZones) {
         if (getAvailabilityZones() == null) setAvailabilityZones(new java.util.ArrayList<String>(availabilityZones.length));
@@ -434,6 +455,9 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      * <b>Length: </b>1 - <br/>
      *
      * @param availabilityZones A list of Availability Zones for the Auto Scaling group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateAutoScalingGroupRequest withAvailabilityZones(java.util.Collection<String> availabilityZones) {
         if (availabilityZones == null) {
@@ -482,6 +506,9 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param loadBalancerNames A list of load balancers to use.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateAutoScalingGroupRequest withLoadBalancerNames(String... loadBalancerNames) {
         if (getLoadBalancerNames() == null) setLoadBalancerNames(new java.util.ArrayList<String>(loadBalancerNames.length));
@@ -497,6 +524,9 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param loadBalancerNames A list of load balancers to use.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateAutoScalingGroupRequest withLoadBalancerNames(java.util.Collection<String> loadBalancerNames) {
         if (loadBalancerNames == null) {
@@ -552,6 +582,9 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      *
      * @param healthCheckType The service you want the health status from, Amazon EC2 or Elastic
      *         Load Balancer. Valid values are <code>EC2</code> or <code>ELB</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateAutoScalingGroupRequest withHealthCheckType(String healthCheckType) {
         this.healthCheckType = healthCheckType;
@@ -589,6 +622,9 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      *
      * @param healthCheckGracePeriod Length of time in seconds after a new Amazon EC2 instance comes into
      *         service that Auto Scaling starts checking its health.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateAutoScalingGroupRequest withHealthCheckGracePeriod(Integer healthCheckGracePeriod) {
         this.healthCheckGracePeriod = healthCheckGracePeriod;
@@ -650,6 +686,9 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      *         EC2. For more information about cluster placement group, see <a
      *         href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Using
      *         Cluster Instances</a>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateAutoScalingGroupRequest withPlacementGroup(String placementGroup) {
         this.placementGroup = placementGroup;
@@ -711,6 +750,9 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      *         Clouds (Amazon VPCs). <p>When you specify subnets and Availability
      *         Zones with this call, ensure that the subnets' Availability Zones
      *         match the Availability Zones specified.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateAutoScalingGroupRequest withVPCZoneIdentifier(String vPCZoneIdentifier) {
         this.vPCZoneIdentifier = vPCZoneIdentifier;
@@ -789,6 +831,9 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      *         href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
      *         Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      *         Scaling Developer Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateAutoScalingGroupRequest withTerminationPolicies(String... terminationPolicies) {
         if (getTerminationPolicies() == null) setTerminationPolicies(new java.util.ArrayList<String>(terminationPolicies.length));
@@ -816,6 +861,9 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      *         href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
      *         Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      *         Scaling Developer Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateAutoScalingGroupRequest withTerminationPolicies(java.util.Collection<String> terminationPolicies) {
         if (terminationPolicies == null) {
@@ -882,6 +930,9 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      *         resource type, resource ID, key, value, and a propagate flag. Valid
      *         values: key=<i>value</i>, value=<i>value</i>, propagate=<i>true</i> or
      *         <i>false</i>. Value and propagate are optional parameters.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateAutoScalingGroupRequest withTags(Tag... tags) {
         if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
@@ -903,6 +954,9 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      *         resource type, resource ID, key, value, and a propagate flag. Valid
      *         values: key=<i>value</i>, value=<i>value</i>, propagate=<i>true</i> or
      *         <i>false</i>. Value and propagate are optional parameters.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateAutoScalingGroupRequest withTags(java.util.Collection<Tag> tags) {
         if (tags == null) {

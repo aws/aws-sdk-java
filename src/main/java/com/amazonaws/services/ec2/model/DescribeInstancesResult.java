@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The result of describing Amazon EC2 instances.
  * </p>
  */
-public class DescribeInstancesResult  implements Serializable  {
+public class DescribeInstancesResult implements Serializable {
 
     /**
      * The list of reservations containing the describes instances.

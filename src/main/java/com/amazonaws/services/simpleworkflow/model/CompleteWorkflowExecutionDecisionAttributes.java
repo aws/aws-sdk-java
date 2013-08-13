@@ -38,7 +38,7 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a> .
  * </p>
  */
-public class CompleteWorkflowExecutionDecisionAttributes  implements Serializable  {
+public class CompleteWorkflowExecutionDecisionAttributes implements Serializable {
 
     /**
      * The result of the workflow execution. The form of the result is
@@ -88,6 +88,9 @@ public class CompleteWorkflowExecutionDecisionAttributes  implements Serializabl
      *
      * @param result The result of the workflow execution. The form of the result is
      *         implementation defined.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CompleteWorkflowExecutionDecisionAttributes withResult(String result) {
         this.result = result;

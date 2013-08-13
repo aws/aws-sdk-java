@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#setStatus(SetStatusRequest)
  */
-public class SetStatusRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class SetStatusRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Identifies the pipeline that contains the objects.
@@ -91,6 +91,9 @@ public class SetStatusRequest extends AmazonWebServiceRequest  implements Serial
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param pipelineId Identifies the pipeline that contains the objects.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SetStatusRequest withPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
@@ -139,6 +142,9 @@ public class SetStatusRequest extends AmazonWebServiceRequest  implements Serial
      *
      * @param objectIds Identifies an array of objects. The corresponding objects can be
      *         either physical or components, but not a mix of both types.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SetStatusRequest withObjectIds(String... objectIds) {
         if (getObjectIds() == null) setObjectIds(new java.util.ArrayList<String>(objectIds.length));
@@ -156,6 +162,9 @@ public class SetStatusRequest extends AmazonWebServiceRequest  implements Serial
      *
      * @param objectIds Identifies an array of objects. The corresponding objects can be
      *         either physical or components, but not a mix of both types.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SetStatusRequest withObjectIds(java.util.Collection<String> objectIds) {
         if (objectIds == null) {
@@ -229,6 +238,9 @@ public class SetStatusRequest extends AmazonWebServiceRequest  implements Serial
      *         <code>PAUSE</code> or <code>RESUME</code>. For instances, this can be
      *         either <code>CANCEL</code>, <code>RERUN</code>, or
      *         <code>MARK_FINISHED</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SetStatusRequest withStatus(String status) {
         this.status = status;

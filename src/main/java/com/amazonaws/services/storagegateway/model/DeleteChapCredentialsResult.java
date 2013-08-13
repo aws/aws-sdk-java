@@ -26,7 +26,7 @@ import java.io.Serializable;
  * 
  * </ul>
  */
-public class DeleteChapCredentialsResult  implements Serializable  {
+public class DeleteChapCredentialsResult implements Serializable {
 
     /**
      * The Amazon Resource Name (ARN) of the target.
@@ -78,6 +78,9 @@ public class DeleteChapCredentialsResult  implements Serializable  {
      * <b>Length: </b>50 - 800<br/>
      *
      * @param targetARN The Amazon Resource Name (ARN) of the target.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteChapCredentialsResult withTargetARN(String targetARN) {
         this.targetARN = targetARN;
@@ -121,6 +124,9 @@ public class DeleteChapCredentialsResult  implements Serializable  {
      * <b>Pattern: </b>[0-9a-z:.-]+<br/>
      *
      * @param initiatorName The iSCSI initiator that connects to the target.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteChapCredentialsResult withInitiatorName(String initiatorName) {
         this.initiatorName = initiatorName;

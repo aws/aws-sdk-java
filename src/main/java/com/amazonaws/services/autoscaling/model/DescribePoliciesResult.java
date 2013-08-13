@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The <code>PoliciesType</code> data type.
  * </p>
  */
-public class DescribePoliciesResult  implements Serializable  {
+public class DescribePoliciesResult implements Serializable {
 
     /**
      * A list of scaling policies.
@@ -70,6 +70,9 @@ public class DescribePoliciesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param scalingPolicies A list of scaling policies.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribePoliciesResult withScalingPolicies(ScalingPolicy... scalingPolicies) {
         if (getScalingPolicies() == null) setScalingPolicies(new java.util.ArrayList<ScalingPolicy>(scalingPolicies.length));
@@ -85,6 +88,9 @@ public class DescribePoliciesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param scalingPolicies A list of scaling policies.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribePoliciesResult withScalingPolicies(java.util.Collection<ScalingPolicy> scalingPolicies) {
         if (scalingPolicies == null) {
@@ -131,6 +137,9 @@ public class DescribePoliciesResult  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param nextToken A string that marks the start of the next batch of returned results.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribePoliciesResult withNextToken(String nextToken) {
         this.nextToken = nextToken;

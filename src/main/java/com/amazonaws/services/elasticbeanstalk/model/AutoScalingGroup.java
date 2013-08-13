@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes an Auto Scaling launch configuration.
  * </p>
  */
-public class AutoScalingGroup  implements Serializable  {
+public class AutoScalingGroup implements Serializable {
 
     /**
      * The name of the <code>AutoScalingGroup</code> .
@@ -57,6 +57,9 @@ public class AutoScalingGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The name of the <code>AutoScalingGroup</code> .
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AutoScalingGroup withName(String name) {
         this.name = name;

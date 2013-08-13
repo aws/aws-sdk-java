@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.DescribeInstanceAttributeRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -24,7 +26,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeInstanceAttribute(DescribeInstanceAttributeRequest)
  */
-public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeInstanceAttributeRequest> {
 
     /**
      * The ID of the instance whose instance attribute is being described.
@@ -246,6 +248,18 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest  i
     public DescribeInstanceAttributeRequest withAttribute(InstanceAttributeName attribute) {
         this.attribute = attribute.toString();
         return this;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<DescribeInstanceAttributeRequest> getDryRunRequest() {
+        Request<DescribeInstanceAttributeRequest> request = new DescribeInstanceAttributeRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

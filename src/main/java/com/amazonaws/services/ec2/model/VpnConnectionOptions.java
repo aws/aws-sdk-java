@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Vpn Connection Options
  */
-public class VpnConnectionOptions  implements Serializable  {
+public class VpnConnectionOptions implements Serializable {
 
     private Boolean staticRoutesOnly;
 

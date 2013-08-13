@@ -42,7 +42,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.simpledb.AmazonSimpleDB#batchDeleteAttributes(BatchDeleteAttributesRequest)
  */
-public class BatchDeleteAttributesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class BatchDeleteAttributesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the domain in which the attributes are being deleted.
@@ -102,6 +102,9 @@ public class BatchDeleteAttributesRequest extends AmazonWebServiceRequest  imple
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param domainName The name of the domain in which the attributes are being deleted.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public BatchDeleteAttributesRequest withDomainName(String domainName) {
         this.domainName = domainName;
@@ -144,6 +147,9 @@ public class BatchDeleteAttributesRequest extends AmazonWebServiceRequest  imple
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param items A list of items on which to perform the operation.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public BatchDeleteAttributesRequest withItems(DeletableItem... items) {
         if (getItems() == null) setItems(new java.util.ArrayList<DeletableItem>(items.length));
@@ -159,6 +165,9 @@ public class BatchDeleteAttributesRequest extends AmazonWebServiceRequest  imple
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param items A list of items on which to perform the operation.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public BatchDeleteAttributesRequest withItems(java.util.Collection<DeletableItem> items) {
         if (items == null) {

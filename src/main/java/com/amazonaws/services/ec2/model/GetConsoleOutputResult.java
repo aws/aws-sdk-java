@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The result of the GetConsoleOutput operation.
  * </p>
  */
-public class GetConsoleOutputResult  implements Serializable  {
+public class GetConsoleOutputResult implements Serializable {
 
     /**
      * The ID of the instance whose console output was requested.

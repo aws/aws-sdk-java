@@ -39,7 +39,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createAccessKey(CreateAccessKeyRequest)
  */
-public class CreateAccessKeyRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateAccessKeyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The user name that the new key will belong to.
@@ -92,6 +92,9 @@ public class CreateAccessKeyRequest extends AmazonWebServiceRequest  implements 
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param userName The user name that the new key will belong to.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateAccessKeyRequest withUserName(String userName) {
         this.userName = userName;

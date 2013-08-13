@@ -84,7 +84,7 @@ public interface AmazonImportExport {
      * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      */
     public void setRegion(Region region) throws java.lang.IllegalArgumentException;
-	
+    
     /**
      * <p>
      * This operation initiates the process of scheduling an upload or

@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#modifyClusterSubnetGroup(ModifyClusterSubnetGroupRequest)
  */
-public class ModifyClusterSubnetGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ModifyClusterSubnetGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the subnet group to be modified.
@@ -67,6 +67,9 @@ public class ModifyClusterSubnetGroupRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param clusterSubnetGroupName The name of the subnet group to be modified.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ModifyClusterSubnetGroupRequest withClusterSubnetGroupName(String clusterSubnetGroupName) {
         this.clusterSubnetGroupName = clusterSubnetGroupName;
@@ -98,6 +101,9 @@ public class ModifyClusterSubnetGroupRequest extends AmazonWebServiceRequest  im
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description A text description of the subnet group to be modified.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ModifyClusterSubnetGroupRequest withDescription(String description) {
         this.description = description;
@@ -146,6 +152,9 @@ public class ModifyClusterSubnetGroupRequest extends AmazonWebServiceRequest  im
      *
      * @param subnetIds An array of VPC subnet IDs. A maximum of 20 subnets can be modified in
      *         a single request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ModifyClusterSubnetGroupRequest withSubnetIds(String... subnetIds) {
         if (getSubnetIds() == null) setSubnetIds(new java.util.ArrayList<String>(subnetIds.length));
@@ -163,6 +172,9 @@ public class ModifyClusterSubnetGroupRequest extends AmazonWebServiceRequest  im
      *
      * @param subnetIds An array of VPC subnet IDs. A maximum of 20 subnets can be modified in
      *         a single request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ModifyClusterSubnetGroupRequest withSubnetIds(java.util.Collection<String> subnetIds) {
         if (subnetIds == null) {

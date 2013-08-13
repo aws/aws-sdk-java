@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The result of describing an EBS snapshot attribute.
  * </p>
  */
-public class DescribeSnapshotAttributeResult  implements Serializable  {
+public class DescribeSnapshotAttributeResult implements Serializable {
 
     /**
      * The ID of the snapshot whose attribute is being described.

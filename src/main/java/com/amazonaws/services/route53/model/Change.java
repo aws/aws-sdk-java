@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A complex type that contains the information for each change in a change batch request.
  * </p>
  */
-public class Change  implements Serializable  {
+public class Change implements Serializable {
 
     /**
      * The action to perform. <p>Valid values: <code>CREATE</code> |
@@ -120,6 +120,9 @@ public class Change  implements Serializable  {
      * @param action The action to perform. <p>Valid values: <code>CREATE</code> |
      *         <code>DELETE</code>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ChangeAction
      */
     public Change withAction(String action) {
@@ -156,6 +159,9 @@ public class Change  implements Serializable  {
      * @param action The action to perform. <p>Valid values: <code>CREATE</code> |
      *         <code>DELETE</code>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ChangeAction
      */
     public Change withAction(ChangeAction action) {
@@ -187,6 +193,9 @@ public class Change  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param resourceRecordSet Information about the resource record set to create or delete.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Change withResourceRecordSet(ResourceRecordSet resourceRecordSet) {
         this.resourceRecordSet = resourceRecordSet;

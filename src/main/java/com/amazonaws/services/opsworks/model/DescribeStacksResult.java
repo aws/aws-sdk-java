@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the response to a <code>DescribeStacks</code> request.
  * </p>
  */
-public class DescribeStacksResult  implements Serializable  {
+public class DescribeStacksResult implements Serializable {
 
     /**
      * An array of <code>Stack</code> objects that describe the stacks.
@@ -62,6 +62,9 @@ public class DescribeStacksResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stacks An array of <code>Stack</code> objects that describe the stacks.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeStacksResult withStacks(Stack... stacks) {
         if (getStacks() == null) setStacks(new java.util.ArrayList<Stack>(stacks.length));
@@ -77,6 +80,9 @@ public class DescribeStacksResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stacks An array of <code>Stack</code> objects that describe the stacks.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeStacksResult withStacks(java.util.Collection<Stack> stacks) {
         if (stacks == null) {

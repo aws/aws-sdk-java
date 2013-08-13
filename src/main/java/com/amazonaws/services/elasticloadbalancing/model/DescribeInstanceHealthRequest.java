@@ -29,7 +29,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#describeInstanceHealth(DescribeInstanceHealthRequest)
  */
-public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name associated with the LoadBalancer. The name must be unique
@@ -94,6 +94,9 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest  impl
      *
      * @param loadBalancerName The name associated with the LoadBalancer. The name must be unique
      *         within the client AWS account.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeInstanceHealthRequest withLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
@@ -136,6 +139,9 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instances A list of instance IDs whose states are being queried.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeInstanceHealthRequest withInstances(Instance... instances) {
         if (getInstances() == null) setInstances(new java.util.ArrayList<Instance>(instances.length));
@@ -151,6 +157,9 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest  impl
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instances A list of instance IDs whose states are being queried.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeInstanceHealthRequest withInstances(java.util.Collection<Instance> instances) {
         if (instances == null) {

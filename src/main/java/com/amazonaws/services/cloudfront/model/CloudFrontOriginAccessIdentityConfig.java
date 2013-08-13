@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Origin access identity configuration.
  * </p>
  */
-public class CloudFrontOriginAccessIdentityConfig  implements Serializable  {
+public class CloudFrontOriginAccessIdentityConfig implements Serializable {
 
     /**
      * A unique number that ensures the request can't be replayed. If the
@@ -165,6 +165,9 @@ public class CloudFrontOriginAccessIdentityConfig  implements Serializable  {
      *         identity but the content of the CloudFrontOriginAccessIdentityConfig
      *         is different from the original request, CloudFront returns a
      *         CloudFrontOriginAccessIdentityAlreadyExists error.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CloudFrontOriginAccessIdentityConfig withCallerReference(String callerReference) {
         this.callerReference = callerReference;
@@ -196,6 +199,9 @@ public class CloudFrontOriginAccessIdentityConfig  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param comment Any comments you want to include about the origin access identity.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CloudFrontOriginAccessIdentityConfig withComment(String comment) {
         this.comment = comment;

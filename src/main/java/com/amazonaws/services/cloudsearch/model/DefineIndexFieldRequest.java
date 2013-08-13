@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#defineIndexField(DefineIndexFieldRequest)
  */
-public class DefineIndexFieldRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DefineIndexFieldRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * A string that represents the name of a domain. Domain names must be
@@ -108,6 +108,9 @@ public class DefineIndexFieldRequest extends AmazonWebServiceRequest  implements
      *         Domain names must start with a letter or number and can contain the
      *         following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase
      *         letters and underscores are not allowed.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DefineIndexFieldRequest withDomainName(String domainName) {
         this.domainName = domainName;
@@ -157,6 +160,9 @@ public class DefineIndexFieldRequest extends AmazonWebServiceRequest  implements
      *         of its data. The <code>IndexFieldType</code> indicates which of the
      *         options will be present. It is invalid to specify options for a type
      *         other than the <code>IndexFieldType</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DefineIndexFieldRequest withIndexField(IndexField indexField) {
         this.indexField = indexField;

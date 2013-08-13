@@ -50,7 +50,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#pollForActivityTask(PollForActivityTaskRequest)
  */
-public class PollForActivityTaskRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class PollForActivityTaskRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the domain that contains the task lists being polled.
@@ -113,6 +113,9 @@ public class PollForActivityTaskRequest extends AmazonWebServiceRequest  impleme
      * <b>Length: </b>1 - 256<br/>
      *
      * @param domain The name of the domain that contains the task lists being polled.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PollForActivityTaskRequest withDomain(String domain) {
         this.domain = domain;
@@ -168,6 +171,9 @@ public class PollForActivityTaskRequest extends AmazonWebServiceRequest  impleme
      *         <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
      *         (vertical bar), or any control characters (\u0000-\u001f | \u007f -
      *         \u009f). Also, it must not contain the literal string "arn".
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PollForActivityTaskRequest withTaskList(TaskList taskList) {
         this.taskList = taskList;
@@ -226,6 +232,9 @@ public class PollForActivityTaskRequest extends AmazonWebServiceRequest  impleme
      *         <code>ActivityTaskStarted</code> event in the workflow history. This
      *         enables diagnostic tracing when problems arise. The form of this
      *         identity is user defined.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PollForActivityTaskRequest withIdentity(String identity) {
         this.identity = identity;

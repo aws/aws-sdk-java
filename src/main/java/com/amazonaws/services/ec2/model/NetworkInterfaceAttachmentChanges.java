@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Network Interface Attachment Changes
  */
-public class NetworkInterfaceAttachmentChanges  implements Serializable  {
+public class NetworkInterfaceAttachmentChanges implements Serializable {
 
     private String attachmentId;
 

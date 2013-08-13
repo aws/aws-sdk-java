@@ -14,6 +14,10 @@
  */
 package com.amazonaws.services.s3.model;
 
+import java.util.Arrays;
+import java.util.List;
+
+
 /**
  * Specifies constants that define Amazon S3 Regions.
  * <p>
@@ -42,7 +46,7 @@ public enum Region {
      * provides eventual consistency for all requests.
      * </p>
      */
-    US_Standard(null),
+	US_Standard(null),
 
     /**
      * The US-West (Northern California) Amazon S3 Region. This region uses Amazon S3
@@ -88,8 +92,8 @@ public enum Region {
      * consistency for overwrite PUTS and DELETES.
      * </p>
      */
-    EU_Ireland("EU"),
-
+    EU_Ireland("eu-west-1","EU"),
+    
     /**
      * The Asia Pacific (Singapore) Region. This region uses Amazon S3 servers located
      * in Singapore.
@@ -139,25 +143,27 @@ public enum Region {
     SA_SaoPaulo("sa-east-1");
     
 
-    /** The unique ID representing each region. */
-    private final String regionId;
+    /** The list of ID's representing each region. */
+    private final List<String> regionIds;
 
     /**
-     * Constructs a new region with the specified region ID.
+     * Constructs a new region with the specified region ID's.
      *
-     * @param regionId
-     *            The unique ID representing the S3 region.
+     * @param regionIds
+     *            The list of ID's representing the S3 region.
      */
-    private Region(String regionId) {
-        this.regionId = regionId;
-    }
+	private Region(String... regionIds) {
+		this.regionIds = regionIds != null ? Arrays.asList(regionIds) : null;
+	}
 
     /* (non-Javadoc)
      * @see java.lang.Enum#toString()
      */
     @Override
     public String toString() {
-        return regionId;
+		if (this.regionIds != null)
+			return this.regionIds.get(0);
+		return null;
     }
 
     /**
@@ -176,10 +182,15 @@ public enum Region {
      *             Amazon S3 regions.
      */
     public static Region fromValue(String s3RegionString) throws IllegalArgumentException {
+    	
+		if (s3RegionString != null && s3RegionString.equals("US"))
+			return Region.US_Standard;
         for (Region region : Region.values()) {
-            String regionString = region.toString();
-            if (regionString == null && s3RegionString == null) return region;
-            if (regionString != null && regionString.equals(s3RegionString)) return region;
+                        
+            List<String> regionIds = region.regionIds;
+            
+            if (regionIds == null && s3RegionString == null) return region;
+            if (regionIds != null && regionIds.contains(s3RegionString)) return region;
         }
 
         throw new IllegalArgumentException(

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains general information about a domain.
  * </p>
  */
-public class DomainInfo  implements Serializable  {
+public class DomainInfo implements Serializable {
 
     /**
      * The name of the domain. This name is unique within the account.
@@ -84,6 +84,9 @@ public class DomainInfo  implements Serializable  {
      * <b>Length: </b>1 - 256<br/>
      *
      * @param name The name of the domain. This name is unique within the account.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DomainInfo withName(String name) {
         this.name = name;
@@ -159,6 +162,9 @@ public class DomainInfo  implements Serializable  {
      *         <a>DeprecateDomain</a>, but is still in use. You should not create new
      *         workflow executions in this domain. </li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see RegistrationStatus
      */
     public DomainInfo withStatus(String status) {
@@ -211,6 +217,9 @@ public class DomainInfo  implements Serializable  {
      *         <a>DeprecateDomain</a>, but is still in use. You should not create new
      *         workflow executions in this domain. </li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see RegistrationStatus
      */
     public DomainInfo withStatus(RegistrationStatus status) {
@@ -251,6 +260,9 @@ public class DomainInfo  implements Serializable  {
      * <b>Length: </b>0 - 1024<br/>
      *
      * @param description The description of the domain provided through <a>RegisterDomain</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DomainInfo withDescription(String description) {
         this.description = description;

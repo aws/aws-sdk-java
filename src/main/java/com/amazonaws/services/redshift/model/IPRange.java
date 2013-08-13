@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes an IP range used in a security group.
  * </p>
  */
-public class IPRange  implements Serializable  {
+public class IPRange implements Serializable {
 
     /**
      * The status of the IP range, for example, "authorized".
@@ -56,6 +56,9 @@ public class IPRange  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param status The status of the IP range, for example, "authorized".
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public IPRange withStatus(String status) {
         this.status = status;
@@ -87,6 +90,9 @@ public class IPRange  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cIDRIP The IP range in Classless Inter-Domain Routing (CIDR) notation.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public IPRange withCIDRIP(String cIDRIP) {
         this.cIDRIP = cIDRIP;

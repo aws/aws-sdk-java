@@ -30,7 +30,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createInstanceProfile(CreateInstanceProfileRequest)
  */
-public class CreateInstanceProfileRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the instance profile to create.
@@ -91,6 +91,9 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest  imple
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param instanceProfileName Name of the instance profile to create.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateInstanceProfileRequest withInstanceProfileName(String instanceProfileName) {
         this.instanceProfileName = instanceProfileName;
@@ -164,6 +167,9 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest  imple
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>. <p>This parameter is optional. If
      *         it is not included, it defaults to a slash (/).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreateInstanceProfileRequest withPath(String path) {
         this.path = path;

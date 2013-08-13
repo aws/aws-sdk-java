@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#describeDomains(DescribeDomainsRequest)
  */
-public class DescribeDomainsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeDomainsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Limits the DescribeDomains response to the specified search domains.
@@ -66,6 +66,9 @@ public class DescribeDomainsRequest extends AmazonWebServiceRequest  implements 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param domainNames Limits the DescribeDomains response to the specified search domains.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeDomainsRequest withDomainNames(String... domainNames) {
         if (getDomainNames() == null) setDomainNames(new java.util.ArrayList<String>(domainNames.length));
@@ -81,6 +84,9 @@ public class DescribeDomainsRequest extends AmazonWebServiceRequest  implements 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param domainNames Limits the DescribeDomains response to the specified search domains.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeDomainsRequest withDomainNames(java.util.Collection<String> domainNames) {
         if (domainNames == null) {

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * When you create a pipeline, Elastic Transcoder returns the values that you specified in the request.
  * </p>
  */
-public class CreatePipelineResult  implements Serializable  {
+public class CreatePipelineResult implements Serializable {
 
     /**
      * A section of the response body that provides information about the
@@ -58,6 +58,9 @@ public class CreatePipelineResult  implements Serializable  {
      *
      * @param pipeline A section of the response body that provides information about the
      *         pipeline that is created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CreatePipelineResult withPipeline(Pipeline pipeline) {
         this.pipeline = pipeline;

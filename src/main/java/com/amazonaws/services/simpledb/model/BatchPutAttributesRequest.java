@@ -70,7 +70,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.simpledb.AmazonSimpleDB#batchPutAttributes(BatchPutAttributesRequest)
  */
-public class BatchPutAttributesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class BatchPutAttributesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the domain in which the attributes are being stored.
@@ -130,6 +130,9 @@ public class BatchPutAttributesRequest extends AmazonWebServiceRequest  implemen
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param domainName The name of the domain in which the attributes are being stored.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public BatchPutAttributesRequest withDomainName(String domainName) {
         this.domainName = domainName;
@@ -172,6 +175,9 @@ public class BatchPutAttributesRequest extends AmazonWebServiceRequest  implemen
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param items A list of items on which to perform the operation.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public BatchPutAttributesRequest withItems(ReplaceableItem... items) {
         if (getItems() == null) setItems(new java.util.ArrayList<ReplaceableItem>(items.length));
@@ -187,6 +193,9 @@ public class BatchPutAttributesRequest extends AmazonWebServiceRequest  implemen
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param items A list of items on which to perform the operation.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public BatchPutAttributesRequest withItems(java.util.Collection<ReplaceableItem> items) {
         if (items == null) {

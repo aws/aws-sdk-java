@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Copy Image Result
  */
-public class CopyImageResult  implements Serializable  {
+public class CopyImageResult implements Serializable {
 
     private String imageId;
 

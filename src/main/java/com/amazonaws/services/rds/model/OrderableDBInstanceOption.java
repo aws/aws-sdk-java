@@ -23,7 +23,7 @@ import java.io.Serializable;
  * This data type is used as a response element in the DescribeOrderableDBInstanceOptions action.
  * </p>
  */
-public class OrderableDBInstanceOption  implements Serializable  {
+public class OrderableDBInstanceOption implements Serializable {
 
     /**
      * The engine type of the orderable DB Instance.
@@ -89,6 +89,9 @@ public class OrderableDBInstanceOption  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param engine The engine type of the orderable DB Instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public OrderableDBInstanceOption withEngine(String engine) {
         this.engine = engine;
@@ -120,6 +123,9 @@ public class OrderableDBInstanceOption  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param engineVersion The engine version of the orderable DB Instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public OrderableDBInstanceOption withEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
@@ -151,6 +157,9 @@ public class OrderableDBInstanceOption  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBInstanceClass The DB Instance Class for the orderable DB Instance
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public OrderableDBInstanceOption withDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
@@ -182,6 +191,9 @@ public class OrderableDBInstanceOption  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param licenseModel The license model for the orderable DB Instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public OrderableDBInstanceOption withLicenseModel(String licenseModel) {
         this.licenseModel = licenseModel;
@@ -224,6 +236,9 @@ public class OrderableDBInstanceOption  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZones A list of availability zones for the orderable DB Instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public OrderableDBInstanceOption withAvailabilityZones(AvailabilityZone... availabilityZones) {
         if (getAvailabilityZones() == null) setAvailabilityZones(new java.util.ArrayList<AvailabilityZone>(availabilityZones.length));
@@ -239,6 +254,9 @@ public class OrderableDBInstanceOption  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZones A list of availability zones for the orderable DB Instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public OrderableDBInstanceOption withAvailabilityZones(java.util.Collection<AvailabilityZone> availabilityZones) {
         if (availabilityZones == null) {
@@ -276,6 +294,9 @@ public class OrderableDBInstanceOption  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param multiAZCapable Indicates whether this orderable DB Instance is multi-AZ capable.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public OrderableDBInstanceOption withMultiAZCapable(Boolean multiAZCapable) {
         this.multiAZCapable = multiAZCapable;
@@ -316,6 +337,9 @@ public class OrderableDBInstanceOption  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param readReplicaCapable Indicates whether this orderable DB Instance can have a read replica.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public OrderableDBInstanceOption withReadReplicaCapable(Boolean readReplicaCapable) {
         this.readReplicaCapable = readReplicaCapable;
@@ -356,6 +380,9 @@ public class OrderableDBInstanceOption  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpc Indicates whether this is a VPC orderable DB Instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public OrderableDBInstanceOption withVpc(Boolean vpc) {
         this.vpc = vpc;

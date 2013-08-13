@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Network Acl Entry
  */
-public class NetworkAclEntry  implements Serializable  {
+public class NetworkAclEntry implements Serializable {
 
     private Integer ruleNumber;
 

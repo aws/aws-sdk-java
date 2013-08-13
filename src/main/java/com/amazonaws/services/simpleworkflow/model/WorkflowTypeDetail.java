@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains details about a workflow type.
  * </p>
  */
-public class WorkflowTypeDetail  implements Serializable  {
+public class WorkflowTypeDetail implements Serializable {
 
     /**
      * General information about the workflow type. <p> The status of the
@@ -106,6 +106,9 @@ public class WorkflowTypeDetail  implements Serializable  {
      *         <a>DeprecateWorkflowType</a>, but is still in use. You should keep
      *         workers supporting this type running. You cannot create new workflow
      *         executions of this type. </li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowTypeDetail withTypeInfo(WorkflowTypeInfo typeInfo) {
         this.typeInfo = typeInfo;
@@ -143,6 +146,9 @@ public class WorkflowTypeDetail  implements Serializable  {
      *
      * @param configuration Configuration settings of the workflow type registered through
      *         <a>RegisterWorkflowType</a>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowTypeDetail withConfiguration(WorkflowTypeConfiguration configuration) {
         this.configuration = configuration;

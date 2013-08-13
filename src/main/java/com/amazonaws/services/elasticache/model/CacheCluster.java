@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains information about a Cache Cluster.
  * </p>
  */
-public class CacheCluster  implements Serializable  {
+public class CacheCluster implements Serializable {
 
     /**
      * Specifies a user-supplied identifier. This is the unique key that
@@ -161,6 +161,9 @@ public class CacheCluster  implements Serializable  {
      *
      * @param cacheClusterId Specifies a user-supplied identifier. This is the unique key that
      *         identifies a Cache Cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheCluster withCacheClusterId(String cacheClusterId) {
         this.cacheClusterId = cacheClusterId;
@@ -198,6 +201,9 @@ public class CacheCluster  implements Serializable  {
      *
      * @param configurationEndpoint Specifies a user-supplied identifier. This is the unique key that
      *         identifies a Cache Cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheCluster withConfigurationEndpoint(Endpoint configurationEndpoint) {
         this.configurationEndpoint = configurationEndpoint;
@@ -235,6 +241,9 @@ public class CacheCluster  implements Serializable  {
      *
      * @param clientDownloadLandingPage Provides the landing page to download the latest ElastiCache client
      *         library.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheCluster withClientDownloadLandingPage(String clientDownloadLandingPage) {
         this.clientDownloadLandingPage = clientDownloadLandingPage;
@@ -272,6 +281,9 @@ public class CacheCluster  implements Serializable  {
      *
      * @param cacheNodeType Specifies the name of the compute and memory capacity node type for
      *         the Cache Cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheCluster withCacheNodeType(String cacheNodeType) {
         this.cacheNodeType = cacheNodeType;
@@ -309,6 +321,9 @@ public class CacheCluster  implements Serializable  {
      *
      * @param engine Provides the name of the cache engine to be used for this Cache
      *         Cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheCluster withEngine(String engine) {
         this.engine = engine;
@@ -346,6 +361,9 @@ public class CacheCluster  implements Serializable  {
      *
      * @param engineVersion Provides the cache engine version of the cache engine to be used for
      *         this Cache Cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheCluster withEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
@@ -377,6 +395,9 @@ public class CacheCluster  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheClusterStatus Specifies the current state of this Cache Cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheCluster withCacheClusterStatus(String cacheClusterStatus) {
         this.cacheClusterStatus = cacheClusterStatus;
@@ -408,6 +429,9 @@ public class CacheCluster  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param numCacheNodes Specifies the number of Cache Nodes the Cache Cluster contains.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheCluster withNumCacheNodes(Integer numCacheNodes) {
         this.numCacheNodes = numCacheNodes;
@@ -445,6 +469,9 @@ public class CacheCluster  implements Serializable  {
      *
      * @param preferredAvailabilityZone Specifies the name of the Availability Zone the Cache Cluster is
      *         located in.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheCluster withPreferredAvailabilityZone(String preferredAvailabilityZone) {
         this.preferredAvailabilityZone = preferredAvailabilityZone;
@@ -476,6 +503,9 @@ public class CacheCluster  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheClusterCreateTime Provides the date and time the Cache Cluster was created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheCluster withCacheClusterCreateTime(java.util.Date cacheClusterCreateTime) {
         this.cacheClusterCreateTime = cacheClusterCreateTime;
@@ -513,6 +543,9 @@ public class CacheCluster  implements Serializable  {
      *
      * @param preferredMaintenanceWindow Specifies the weekly time range (in UTC) during which system
      *         maintenance can occur.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheCluster withPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
         this.preferredMaintenanceWindow = preferredMaintenanceWindow;
@@ -556,6 +589,9 @@ public class CacheCluster  implements Serializable  {
      * @param pendingModifiedValues Specifies that changes to the Cache Cluster are pending. This element
      *         is only included when changes are pending. Specific changes are
      *         identified by sub-elements.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheCluster withPendingModifiedValues(PendingModifiedValues pendingModifiedValues) {
         this.pendingModifiedValues = pendingModifiedValues;
@@ -587,6 +623,9 @@ public class CacheCluster  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param notificationConfiguration Specifies the notification details the Cache Cluster contains.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheCluster withNotificationConfiguration(NotificationConfiguration notificationConfiguration) {
         this.notificationConfiguration = notificationConfiguration;
@@ -641,6 +680,9 @@ public class CacheCluster  implements Serializable  {
      * @param cacheSecurityGroups Provides the list of Cache Security Group elements containing
      *         <i>CacheSecurityGroup.Name</i> and <i>CacheSecurityGroup.Status</i>
      *         sub-elements.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheCluster withCacheSecurityGroups(CacheSecurityGroupMembership... cacheSecurityGroups) {
         if (getCacheSecurityGroups() == null) setCacheSecurityGroups(new java.util.ArrayList<CacheSecurityGroupMembership>(cacheSecurityGroups.length));
@@ -660,6 +702,9 @@ public class CacheCluster  implements Serializable  {
      * @param cacheSecurityGroups Provides the list of Cache Security Group elements containing
      *         <i>CacheSecurityGroup.Name</i> and <i>CacheSecurityGroup.Status</i>
      *         sub-elements.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheCluster withCacheSecurityGroups(java.util.Collection<CacheSecurityGroupMembership> cacheSecurityGroups) {
         if (cacheSecurityGroups == null) {
@@ -703,6 +748,9 @@ public class CacheCluster  implements Serializable  {
      *
      * @param cacheParameterGroup Provides the status of the Cache Parameter Group assigned to the Cache
      *         Cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheCluster withCacheParameterGroup(CacheParameterGroupStatus cacheParameterGroup) {
         this.cacheParameterGroup = cacheParameterGroup;
@@ -740,6 +788,9 @@ public class CacheCluster  implements Serializable  {
      *
      * @param cacheSubnetGroupName Specifies the name of the Cache Subnet Group associated with the Cache
      *         Cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheCluster withCacheSubnetGroupName(String cacheSubnetGroupName) {
         this.cacheSubnetGroupName = cacheSubnetGroupName;
@@ -782,6 +833,9 @@ public class CacheCluster  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheNodes Specifies the list of Cache Nodes the Cache Cluster contains.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheCluster withCacheNodes(CacheNode... cacheNodes) {
         if (getCacheNodes() == null) setCacheNodes(new java.util.ArrayList<CacheNode>(cacheNodes.length));
@@ -797,6 +851,9 @@ public class CacheCluster  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheNodes Specifies the list of Cache Nodes the Cache Cluster contains.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheCluster withCacheNodes(java.util.Collection<CacheNode> cacheNodes) {
         if (cacheNodes == null) {
@@ -834,6 +891,9 @@ public class CacheCluster  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param autoMinorVersionUpgrade Indicates that minor version patches are applied automatically.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheCluster withAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
         this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
@@ -885,6 +945,9 @@ public class CacheCluster  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param securityGroups Specifies the VPC Security Groups associated with the Cache Cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheCluster withSecurityGroups(SecurityGroupMembership... securityGroups) {
         if (getSecurityGroups() == null) setSecurityGroups(new java.util.ArrayList<SecurityGroupMembership>(securityGroups.length));
@@ -900,6 +963,9 @@ public class CacheCluster  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param securityGroups Specifies the VPC Security Groups associated with the Cache Cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheCluster withSecurityGroups(java.util.Collection<SecurityGroupMembership> securityGroups) {
         if (securityGroups == null) {

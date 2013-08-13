@@ -27,7 +27,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getUser(GetUserRequest)
  */
-public class GetUserRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class GetUserRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the user to get information about. <p>This parameter is
@@ -94,6 +94,9 @@ public class GetUserRequest extends AmazonWebServiceRequest  implements Serializ
      * @param userName Name of the user to get information about. <p>This parameter is
      *         optional. If it is not included, it defaults to the user making the
      *         request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetUserRequest withUserName(String userName) {
         this.userName = userName;

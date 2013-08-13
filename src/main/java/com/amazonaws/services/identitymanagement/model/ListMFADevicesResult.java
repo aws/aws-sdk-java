@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the ListMFADevices action.
  * </p>
  */
-public class ListMFADevicesResult  implements Serializable  {
+public class ListMFADevicesResult implements Serializable {
 
     /**
      * A list of MFA devices.
@@ -81,6 +81,9 @@ public class ListMFADevicesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param mFADevices A list of MFA devices.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListMFADevicesResult withMFADevices(MFADevice... mFADevices) {
         if (getMFADevices() == null) setMFADevices(new java.util.ArrayList<MFADevice>(mFADevices.length));
@@ -96,6 +99,9 @@ public class ListMFADevicesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param mFADevices A list of MFA devices.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListMFADevicesResult withMFADevices(java.util.Collection<MFADevice> mFADevices) {
         if (mFADevices == null) {
@@ -151,6 +157,9 @@ public class ListMFADevicesResult  implements Serializable  {
      *         your results were truncated, you can make a subsequent pagination
      *         request using the <code>Marker</code> request parameter to retrieve
      *         more MFA devices in the list.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListMFADevicesResult withIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
@@ -221,6 +230,9 @@ public class ListMFADevicesResult  implements Serializable  {
      * @param marker If <code>IsTruncated</code> is <code>true</code>, this element is
      *         present and contains the value to use for the <code>Marker</code>
      *         parameter in a subsequent pagination request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListMFADevicesResult withMarker(String marker) {
         this.marker = marker;

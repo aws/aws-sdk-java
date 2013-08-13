@@ -27,7 +27,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.simpledb.AmazonSimpleDB#listDomains(ListDomainsRequest)
  */
-public class ListDomainsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ListDomainsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The maximum number of domain names you want returned. The range is 1
@@ -77,6 +77,9 @@ public class ListDomainsRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param maxNumberOfDomains The maximum number of domain names you want returned. The range is 1
      *         to 100. The default setting is 100.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListDomainsRequest withMaxNumberOfDomains(Integer maxNumberOfDomains) {
         this.maxNumberOfDomains = maxNumberOfDomains;
@@ -114,6 +117,9 @@ public class ListDomainsRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param nextToken A string informing Amazon SimpleDB where to start the next list of
      *         domain names.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ListDomainsRequest withNextToken(String nextToken) {
         this.nextToken = nextToken;

@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Import Instance Task Details
  */
-public class ImportInstanceTaskDetails  implements Serializable  {
+public class ImportInstanceTaskDetails implements Serializable {
 
     private com.amazonaws.internal.ListWithAutoConstructFlag<ImportInstanceVolumeDetailItem> volumes;
 

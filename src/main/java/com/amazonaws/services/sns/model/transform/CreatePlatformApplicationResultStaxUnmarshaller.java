@@ -13,14 +13,14 @@
  * permissions and limitations under the License.
  */
 
-package com.amazonaws.services.elasticmapreduce.model.transform;
+package com.amazonaws.services.sns.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
 
-import com.amazonaws.services.elasticmapreduce.model.*;
+import com.amazonaws.services.sns.model.*;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.transform.MapEntry;
 import com.amazonaws.transform.StaxUnmarshallerContext;
@@ -28,12 +28,12 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 
 /**
- * Bootstrap Action Detail StAX Unmarshaller
+ * Create Platform Application Result StAX Unmarshaller
  */
-public class BootstrapActionDetailStaxUnmarshaller implements Unmarshaller<BootstrapActionDetail, StaxUnmarshallerContext> {
+public class CreatePlatformApplicationResultStaxUnmarshaller implements Unmarshaller<CreatePlatformApplicationResult, StaxUnmarshallerContext> {
 
-    public BootstrapActionDetail unmarshall(StaxUnmarshallerContext context) throws Exception {
-        BootstrapActionDetail bootstrapActionDetail = new BootstrapActionDetail();
+    public CreatePlatformApplicationResult unmarshall(StaxUnmarshallerContext context) throws Exception {
+        CreatePlatformApplicationResult createPlatformApplicationResult = new CreatePlatformApplicationResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -43,24 +43,24 @@ public class BootstrapActionDetailStaxUnmarshaller implements Unmarshaller<Boots
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return bootstrapActionDetail;
+            if (xmlEvent.isEndDocument()) return createPlatformApplicationResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-                if (context.testExpression("BootstrapActionConfig", targetDepth)) {
-                    bootstrapActionDetail.setBootstrapActionConfig(BootstrapActionConfigStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("PlatformApplicationArn", targetDepth)) {
+                    createPlatformApplicationResult.setPlatformApplicationArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
-                    return bootstrapActionDetail;
+                    return createPlatformApplicationResult;
                 }
             }
         }
     }
 
-    private static BootstrapActionDetailStaxUnmarshaller instance;
-    public static BootstrapActionDetailStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new BootstrapActionDetailStaxUnmarshaller();
+    private static CreatePlatformApplicationResultStaxUnmarshaller instance;
+    public static CreatePlatformApplicationResultStaxUnmarshaller getInstance() {
+        if (instance == null) instance = new CreatePlatformApplicationResultStaxUnmarshaller();
         return instance;
     }
 }

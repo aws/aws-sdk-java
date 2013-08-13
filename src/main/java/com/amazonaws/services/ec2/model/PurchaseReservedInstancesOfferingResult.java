@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The result of purchasing a Reserved Instances offering. Contains the new, unique ID of the Reserved Instances purchased for your account.
  * </p>
  */
-public class PurchaseReservedInstancesOfferingResult  implements Serializable  {
+public class PurchaseReservedInstancesOfferingResult implements Serializable {
 
     /**
      * The unique ID of the Reserved Instances purchased for your account.

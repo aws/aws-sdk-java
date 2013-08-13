@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The DhcpConfiguration data type
  * </p>
  */
-public class DhcpConfiguration  implements Serializable  {
+public class DhcpConfiguration implements Serializable {
 
     /**
      * Contains the name of a DHCP option.

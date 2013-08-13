@@ -39,7 +39,7 @@ import com.amazonaws.services.sns.model.*;
  * Amazon Simple Notification Service (Amazon SNS) is a web service that enables you to build distributed web-enabled applications. Applications can use
  * Amazon SNS to easily push real-time notification messages to interested subscribers over multiple delivery protocols. For more information about this
  * product see <a href="http://aws.amazon.com/sns/"> http://aws.amazon.com/sns </a> . For detailed information about Amazon SNS features and their
- * associated API calls, see the <a href="http://docs.aws.amazon.com/sns/latest/gsg/"> Amazon SNS Getting Started Guide </a> .
+ * associated API calls, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/"> Amazon SNS Developer Guide </a> .
  * </p>
  * <p>
  * We also provide SDKs that enable you to access Amazon SNS from your preferred programming language. The SDKs contain functionality that automatically
@@ -361,6 +361,113 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient
     
     /**
      * <p>
+     * The <code>CreatePlatformApplication</code> action creates a platform
+     * application object for one of the supported push notification
+     * services, such as APNS and GCM, to which devices and mobile apps may
+     * register. You must specify PlatformPrincipal and PlatformCredential
+     * attributes when using the <code>CreatePlatformApplication</code>
+     * action. The PlatformPrincipal is received from the notification
+     * service. For APNS/APNS_SANDBOX, PlatformPrincipal is "SSL
+     * certificate". For GCM, PlatformPrincipal is not applicable. For ADM,
+     * PlatformPrincipal is "client id". The PlatformCredential is also
+     * received from the notification service. For APNS/APNS_SANDBOX,
+     * PlatformCredential is "private key". For GCM, PlatformCredential is
+     * "API key". For ADM, PlatformCredential is "client secret". The
+     * PlatformApplicationArn that is returned when using
+     * <code>CreatePlatformApplication</code> is then used as an attribute
+     * for the <code>CreatePlatformEndpoint</code> action. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
+     * Using Amazon SNS Mobile Push Notifications </a> .
+     * </p>
+     *
+     * @param createPlatformApplicationRequest Container for the necessary
+     *           parameters to execute the CreatePlatformApplication operation on
+     *           AmazonSNS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreatePlatformApplication service method, as returned by AmazonSNS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreatePlatformApplicationResult> createPlatformApplicationAsync(final CreatePlatformApplicationRequest createPlatformApplicationRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreatePlatformApplicationResult>() {
+            public CreatePlatformApplicationResult call() throws Exception {
+                return createPlatformApplication(createPlatformApplicationRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * The <code>CreatePlatformApplication</code> action creates a platform
+     * application object for one of the supported push notification
+     * services, such as APNS and GCM, to which devices and mobile apps may
+     * register. You must specify PlatformPrincipal and PlatformCredential
+     * attributes when using the <code>CreatePlatformApplication</code>
+     * action. The PlatformPrincipal is received from the notification
+     * service. For APNS/APNS_SANDBOX, PlatformPrincipal is "SSL
+     * certificate". For GCM, PlatformPrincipal is not applicable. For ADM,
+     * PlatformPrincipal is "client id". The PlatformCredential is also
+     * received from the notification service. For APNS/APNS_SANDBOX,
+     * PlatformCredential is "private key". For GCM, PlatformCredential is
+     * "API key". For ADM, PlatformCredential is "client secret". The
+     * PlatformApplicationArn that is returned when using
+     * <code>CreatePlatformApplication</code> is then used as an attribute
+     * for the <code>CreatePlatformEndpoint</code> action. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
+     * Using Amazon SNS Mobile Push Notifications </a> .
+     * </p>
+     *
+     * @param createPlatformApplicationRequest Container for the necessary
+     *           parameters to execute the CreatePlatformApplication operation on
+     *           AmazonSNS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreatePlatformApplication service method, as returned by AmazonSNS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreatePlatformApplicationResult> createPlatformApplicationAsync(
+            final CreatePlatformApplicationRequest createPlatformApplicationRequest,
+            final AsyncHandler<CreatePlatformApplicationRequest, CreatePlatformApplicationResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreatePlatformApplicationResult>() {
+            public CreatePlatformApplicationResult call() throws Exception {
+            	CreatePlatformApplicationResult result;
+                try {
+            		result = createPlatformApplication(createPlatformApplicationRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(createPlatformApplicationRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
      * The <code>GetTopicAttributes</code> action returns all of the
      * properties of a topic. Topic properties returned might differ based on
      * the authorization of the user.
@@ -509,6 +616,83 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient
             	}
             	asyncHandler.onSuccess(subscribeRequest, result);
                	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * The <code>DeleteEndpoint</code> action, which is idempotent, deletes
+     * the endpoint from SNS. For more information, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
+     * Using Amazon SNS Mobile Push Notifications </a> .
+     * </p>
+     *
+     * @param deleteEndpointRequest Container for the necessary parameters to
+     *           execute the DeleteEndpoint operation on AmazonSNS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteEndpoint service method, as returned by AmazonSNS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteEndpointAsync(final DeleteEndpointRequest deleteEndpointRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deleteEndpoint(deleteEndpointRequest);
+                return null;
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * The <code>DeleteEndpoint</code> action, which is idempotent, deletes
+     * the endpoint from SNS. For more information, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
+     * Using Amazon SNS Mobile Push Notifications </a> .
+     * </p>
+     *
+     * @param deleteEndpointRequest Container for the necessary parameters to
+     *           execute the DeleteEndpoint operation on AmazonSNS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteEndpoint service method, as returned by AmazonSNS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteEndpointAsync(
+            final DeleteEndpointRequest deleteEndpointRequest,
+            final AsyncHandler<DeleteEndpointRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+            	try {
+            		deleteEndpoint(deleteEndpointRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(deleteEndpointRequest, null);
+               	return null;
 		    }
 		});
     }
@@ -740,12 +924,176 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient
     
     /**
      * <p>
+     * The <code>GetEndpointAttributes</code> retrieves the endpoint
+     * attributes for a device on one of the supported push notification
+     * services, such as GCM and APNS. For more information, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
+     * Using Amazon SNS Mobile Push Notifications </a> .
+     * </p>
+     *
+     * @param getEndpointAttributesRequest Container for the necessary
+     *           parameters to execute the GetEndpointAttributes operation on
+     *           AmazonSNS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetEndpointAttributes service method, as returned by AmazonSNS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetEndpointAttributesResult> getEndpointAttributesAsync(final GetEndpointAttributesRequest getEndpointAttributesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetEndpointAttributesResult>() {
+            public GetEndpointAttributesResult call() throws Exception {
+                return getEndpointAttributes(getEndpointAttributesRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * The <code>GetEndpointAttributes</code> retrieves the endpoint
+     * attributes for a device on one of the supported push notification
+     * services, such as GCM and APNS. For more information, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
+     * Using Amazon SNS Mobile Push Notifications </a> .
+     * </p>
+     *
+     * @param getEndpointAttributesRequest Container for the necessary
+     *           parameters to execute the GetEndpointAttributes operation on
+     *           AmazonSNS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetEndpointAttributes service method, as returned by AmazonSNS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetEndpointAttributesResult> getEndpointAttributesAsync(
+            final GetEndpointAttributesRequest getEndpointAttributesRequest,
+            final AsyncHandler<GetEndpointAttributesRequest, GetEndpointAttributesResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetEndpointAttributesResult>() {
+            public GetEndpointAttributesResult call() throws Exception {
+            	GetEndpointAttributesResult result;
+                try {
+            		result = getEndpointAttributes(getEndpointAttributesRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(getEndpointAttributesRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * The <code>GetPlatformApplicationAttributes</code> action retrieves the
+     * attributes of the platform application object for the supported push
+     * notification services, such as APNS and GCM. For more information, see
+     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
+     * Using Amazon SNS Mobile Push Notifications </a> .
+     * </p>
+     *
+     * @param getPlatformApplicationAttributesRequest Container for the
+     *           necessary parameters to execute the GetPlatformApplicationAttributes
+     *           operation on AmazonSNS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetPlatformApplicationAttributes service method, as returned by
+     *         AmazonSNS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetPlatformApplicationAttributesResult> getPlatformApplicationAttributesAsync(final GetPlatformApplicationAttributesRequest getPlatformApplicationAttributesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetPlatformApplicationAttributesResult>() {
+            public GetPlatformApplicationAttributesResult call() throws Exception {
+                return getPlatformApplicationAttributes(getPlatformApplicationAttributesRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * The <code>GetPlatformApplicationAttributes</code> action retrieves the
+     * attributes of the platform application object for the supported push
+     * notification services, such as APNS and GCM. For more information, see
+     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
+     * Using Amazon SNS Mobile Push Notifications </a> .
+     * </p>
+     *
+     * @param getPlatformApplicationAttributesRequest Container for the
+     *           necessary parameters to execute the GetPlatformApplicationAttributes
+     *           operation on AmazonSNS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetPlatformApplicationAttributes service method, as returned by
+     *         AmazonSNS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetPlatformApplicationAttributesResult> getPlatformApplicationAttributesAsync(
+            final GetPlatformApplicationAttributesRequest getPlatformApplicationAttributesRequest,
+            final AsyncHandler<GetPlatformApplicationAttributesRequest, GetPlatformApplicationAttributesResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetPlatformApplicationAttributesResult>() {
+            public GetPlatformApplicationAttributesResult call() throws Exception {
+            	GetPlatformApplicationAttributesResult result;
+                try {
+            		result = getPlatformApplicationAttributes(getPlatformApplicationAttributesRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(getPlatformApplicationAttributesRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
      * The <code>ListSubscriptions</code> action returns a list of the
      * requester's subscriptions. Each call returns a limited list of
      * subscriptions, up to 100. If there are more subscriptions, a
      * <code>NextToken</code> is also returned. Use the
-     * <code>NextToken</code> parameter in a new ListSubscriptions call to
-     * get further results.
+     * <code>NextToken</code> parameter in a new
+     * <code>ListSubscriptions</code> call to get further results.
      * </p>
      *
      * @param listSubscriptionsRequest Container for the necessary parameters
@@ -778,8 +1126,8 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient
      * requester's subscriptions. Each call returns a limited list of
      * subscriptions, up to 100. If there are more subscriptions, a
      * <code>NextToken</code> is also returned. Use the
-     * <code>NextToken</code> parameter in a new ListSubscriptions call to
-     * get further results.
+     * <code>NextToken</code> parameter in a new
+     * <code>ListSubscriptions</code> call to get further results.
      * </p>
      *
      * @param listSubscriptionsRequest Container for the necessary parameters
@@ -896,6 +1244,182 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient
     
     /**
      * <p>
+     * The <code>SetPlatformApplicationAttributes</code> action sets the
+     * attributes of the platform application object for the supported push
+     * notification services, such as APNS and GCM. For more information, see
+     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
+     * Using Amazon SNS Mobile Push Notifications </a> .
+     * </p>
+     *
+     * @param setPlatformApplicationAttributesRequest Container for the
+     *           necessary parameters to execute the SetPlatformApplicationAttributes
+     *           operation on AmazonSNS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SetPlatformApplicationAttributes service method, as returned by
+     *         AmazonSNS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> setPlatformApplicationAttributesAsync(final SetPlatformApplicationAttributesRequest setPlatformApplicationAttributesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                setPlatformApplicationAttributes(setPlatformApplicationAttributesRequest);
+                return null;
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * The <code>SetPlatformApplicationAttributes</code> action sets the
+     * attributes of the platform application object for the supported push
+     * notification services, such as APNS and GCM. For more information, see
+     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
+     * Using Amazon SNS Mobile Push Notifications </a> .
+     * </p>
+     *
+     * @param setPlatformApplicationAttributesRequest Container for the
+     *           necessary parameters to execute the SetPlatformApplicationAttributes
+     *           operation on AmazonSNS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SetPlatformApplicationAttributes service method, as returned by
+     *         AmazonSNS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> setPlatformApplicationAttributesAsync(
+            final SetPlatformApplicationAttributesRequest setPlatformApplicationAttributesRequest,
+            final AsyncHandler<SetPlatformApplicationAttributesRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+            	try {
+            		setPlatformApplicationAttributes(setPlatformApplicationAttributesRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(setPlatformApplicationAttributesRequest, null);
+               	return null;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * The <code>CreatePlatformEndpoint</code> creates an endpoint for a
+     * device and mobile app on one of the supported push notification
+     * services, such as GCM and APNS. <code>CreatePlatformEndpoint</code>
+     * requires the PlatformApplicationArn that is returned from
+     * <code>CreatePlatformApplication</code> . The EndpointArn that is
+     * returned when using <code>CreatePlatformEndpoint</code> can then be
+     * used by the <code>Publish</code> action to send a message to a mobile
+     * app or by the <code>Subscribe</code> action for subscription to a
+     * topic. For more information, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
+     * Using Amazon SNS Mobile Push Notifications </a> .
+     * </p>
+     *
+     * @param createPlatformEndpointRequest Container for the necessary
+     *           parameters to execute the CreatePlatformEndpoint operation on
+     *           AmazonSNS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreatePlatformEndpoint service method, as returned by AmazonSNS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreatePlatformEndpointResult> createPlatformEndpointAsync(final CreatePlatformEndpointRequest createPlatformEndpointRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreatePlatformEndpointResult>() {
+            public CreatePlatformEndpointResult call() throws Exception {
+                return createPlatformEndpoint(createPlatformEndpointRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * The <code>CreatePlatformEndpoint</code> creates an endpoint for a
+     * device and mobile app on one of the supported push notification
+     * services, such as GCM and APNS. <code>CreatePlatformEndpoint</code>
+     * requires the PlatformApplicationArn that is returned from
+     * <code>CreatePlatformApplication</code> . The EndpointArn that is
+     * returned when using <code>CreatePlatformEndpoint</code> can then be
+     * used by the <code>Publish</code> action to send a message to a mobile
+     * app or by the <code>Subscribe</code> action for subscription to a
+     * topic. For more information, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
+     * Using Amazon SNS Mobile Push Notifications </a> .
+     * </p>
+     *
+     * @param createPlatformEndpointRequest Container for the necessary
+     *           parameters to execute the CreatePlatformEndpoint operation on
+     *           AmazonSNS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreatePlatformEndpoint service method, as returned by AmazonSNS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreatePlatformEndpointResult> createPlatformEndpointAsync(
+            final CreatePlatformEndpointRequest createPlatformEndpointRequest,
+            final AsyncHandler<CreatePlatformEndpointRequest, CreatePlatformEndpointResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreatePlatformEndpointResult>() {
+            public CreatePlatformEndpointResult call() throws Exception {
+            	CreatePlatformEndpointResult result;
+                try {
+            		result = createPlatformEndpoint(createPlatformEndpointRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(createPlatformEndpointRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
      * The <code>AddPermission</code> action adds a statement to a topic's
      * access control policy, granting access for the specified AWS accounts
      * to the specified actions.
@@ -965,6 +1489,81 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient
             	}
             	asyncHandler.onSuccess(addPermissionRequest, null);
                	return null;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * The <code>GetSubscriptionAttribtues</code> action returns all of the
+     * properties of a subscription.
+     * </p>
+     *
+     * @param getSubscriptionAttributesRequest Container for the necessary
+     *           parameters to execute the GetSubscriptionAttributes operation on
+     *           AmazonSNS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetSubscriptionAttributes service method, as returned by AmazonSNS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetSubscriptionAttributesResult> getSubscriptionAttributesAsync(final GetSubscriptionAttributesRequest getSubscriptionAttributesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetSubscriptionAttributesResult>() {
+            public GetSubscriptionAttributesResult call() throws Exception {
+                return getSubscriptionAttributes(getSubscriptionAttributesRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * The <code>GetSubscriptionAttribtues</code> action returns all of the
+     * properties of a subscription.
+     * </p>
+     *
+     * @param getSubscriptionAttributesRequest Container for the necessary
+     *           parameters to execute the GetSubscriptionAttributes operation on
+     *           AmazonSNS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetSubscriptionAttributes service method, as returned by AmazonSNS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetSubscriptionAttributesResult> getSubscriptionAttributesAsync(
+            final GetSubscriptionAttributesRequest getSubscriptionAttributesRequest,
+            final AsyncHandler<GetSubscriptionAttributesRequest, GetSubscriptionAttributesResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetSubscriptionAttributesResult>() {
+            public GetSubscriptionAttributesResult call() throws Exception {
+            	GetSubscriptionAttributesResult result;
+                try {
+            		result = getSubscriptionAttributes(getSubscriptionAttributesRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(getSubscriptionAttributesRequest, result);
+               	return result;
 		    }
 		});
     }
@@ -1052,81 +1651,6 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient
     
     /**
      * <p>
-     * The <code>GetSubscriptionAttribtues</code> action returns all of the
-     * properties of a subscription.
-     * </p>
-     *
-     * @param getSubscriptionAttributesRequest Container for the necessary
-     *           parameters to execute the GetSubscriptionAttributes operation on
-     *           AmazonSNS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetSubscriptionAttributes service method, as returned by AmazonSNS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetSubscriptionAttributesResult> getSubscriptionAttributesAsync(final GetSubscriptionAttributesRequest getSubscriptionAttributesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetSubscriptionAttributesResult>() {
-            public GetSubscriptionAttributesResult call() throws Exception {
-                return getSubscriptionAttributes(getSubscriptionAttributesRequest);
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * The <code>GetSubscriptionAttribtues</code> action returns all of the
-     * properties of a subscription.
-     * </p>
-     *
-     * @param getSubscriptionAttributesRequest Container for the necessary
-     *           parameters to execute the GetSubscriptionAttributes operation on
-     *           AmazonSNS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetSubscriptionAttributes service method, as returned by AmazonSNS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetSubscriptionAttributesResult> getSubscriptionAttributesAsync(
-            final GetSubscriptionAttributesRequest getSubscriptionAttributesRequest,
-            final AsyncHandler<GetSubscriptionAttributesRequest, GetSubscriptionAttributesResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetSubscriptionAttributesResult>() {
-            public GetSubscriptionAttributesResult call() throws Exception {
-            	GetSubscriptionAttributesResult result;
-                try {
-            		result = getSubscriptionAttributes(getSubscriptionAttributesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(getSubscriptionAttributesRequest, result);
-               	return result;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
      * The <code>ListTopics</code> action returns a list of the requester's
      * topics. Each call returns a limited list of topics, up to 100. If
      * there are more topics, a <code>NextToken</code> is also returned. Use
@@ -1206,9 +1730,363 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient
     
     /**
      * <p>
+     * The <code>ListEndpointsByPlatformApplication</code> action lists the
+     * endpoints and endpoint attributes for devices in a supported push
+     * notification service, such as GCM and APNS. The results for
+     * <code>ListEndpointsByPlatformApplication</code> are paginated and
+     * return a limited list of endpoints, up to 100. If additional records
+     * are available after the first page results, then a NextToken string
+     * will be returned. To receive the next page, you call
+     * <code>ListEndpointsByPlatformApplication</code> again using the
+     * NextToken string received from the previous call. When there are no
+     * more records to return, NextToken will be null. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
+     * Using Amazon SNS Mobile Push Notifications </a> .
+     * </p>
+     *
+     * @param listEndpointsByPlatformApplicationRequest Container for the
+     *           necessary parameters to execute the ListEndpointsByPlatformApplication
+     *           operation on AmazonSNS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListEndpointsByPlatformApplication service method, as returned by
+     *         AmazonSNS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListEndpointsByPlatformApplicationResult> listEndpointsByPlatformApplicationAsync(final ListEndpointsByPlatformApplicationRequest listEndpointsByPlatformApplicationRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListEndpointsByPlatformApplicationResult>() {
+            public ListEndpointsByPlatformApplicationResult call() throws Exception {
+                return listEndpointsByPlatformApplication(listEndpointsByPlatformApplicationRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * The <code>ListEndpointsByPlatformApplication</code> action lists the
+     * endpoints and endpoint attributes for devices in a supported push
+     * notification service, such as GCM and APNS. The results for
+     * <code>ListEndpointsByPlatformApplication</code> are paginated and
+     * return a limited list of endpoints, up to 100. If additional records
+     * are available after the first page results, then a NextToken string
+     * will be returned. To receive the next page, you call
+     * <code>ListEndpointsByPlatformApplication</code> again using the
+     * NextToken string received from the previous call. When there are no
+     * more records to return, NextToken will be null. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
+     * Using Amazon SNS Mobile Push Notifications </a> .
+     * </p>
+     *
+     * @param listEndpointsByPlatformApplicationRequest Container for the
+     *           necessary parameters to execute the ListEndpointsByPlatformApplication
+     *           operation on AmazonSNS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListEndpointsByPlatformApplication service method, as returned by
+     *         AmazonSNS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListEndpointsByPlatformApplicationResult> listEndpointsByPlatformApplicationAsync(
+            final ListEndpointsByPlatformApplicationRequest listEndpointsByPlatformApplicationRequest,
+            final AsyncHandler<ListEndpointsByPlatformApplicationRequest, ListEndpointsByPlatformApplicationResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListEndpointsByPlatformApplicationResult>() {
+            public ListEndpointsByPlatformApplicationResult call() throws Exception {
+            	ListEndpointsByPlatformApplicationResult result;
+                try {
+            		result = listEndpointsByPlatformApplication(listEndpointsByPlatformApplicationRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(listEndpointsByPlatformApplicationRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * The <code>DeletePlatformApplication</code> action deletes a platform
+     * application object for one of the supported push notification
+     * services, such as APNS and GCM. For more information, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
+     * Using Amazon SNS Mobile Push Notifications </a> .
+     * </p>
+     *
+     * @param deletePlatformApplicationRequest Container for the necessary
+     *           parameters to execute the DeletePlatformApplication operation on
+     *           AmazonSNS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeletePlatformApplication service method, as returned by AmazonSNS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deletePlatformApplicationAsync(final DeletePlatformApplicationRequest deletePlatformApplicationRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deletePlatformApplication(deletePlatformApplicationRequest);
+                return null;
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * The <code>DeletePlatformApplication</code> action deletes a platform
+     * application object for one of the supported push notification
+     * services, such as APNS and GCM. For more information, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
+     * Using Amazon SNS Mobile Push Notifications </a> .
+     * </p>
+     *
+     * @param deletePlatformApplicationRequest Container for the necessary
+     *           parameters to execute the DeletePlatformApplication operation on
+     *           AmazonSNS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeletePlatformApplication service method, as returned by AmazonSNS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deletePlatformApplicationAsync(
+            final DeletePlatformApplicationRequest deletePlatformApplicationRequest,
+            final AsyncHandler<DeletePlatformApplicationRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+            	try {
+            		deletePlatformApplication(deletePlatformApplicationRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(deletePlatformApplicationRequest, null);
+               	return null;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * The <code>ListPlatformApplications</code> action lists the platform
+     * application objects for the supported push notification services, such
+     * as APNS and GCM. The results for <code>ListPlatformApplications</code>
+     * are paginated and return a limited list of applications, up to 100. If
+     * additional records are available after the first page results, then a
+     * NextToken string will be returned. To receive the next page, you call
+     * <code>ListPlatformApplications</code> using the NextToken string
+     * received from the previous call. When there are no more records to
+     * return, NextToken will be null. For more information, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
+     * Using Amazon SNS Mobile Push Notifications </a> .
+     * </p>
+     *
+     * @param listPlatformApplicationsRequest Container for the necessary
+     *           parameters to execute the ListPlatformApplications operation on
+     *           AmazonSNS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListPlatformApplications service method, as returned by AmazonSNS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListPlatformApplicationsResult> listPlatformApplicationsAsync(final ListPlatformApplicationsRequest listPlatformApplicationsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListPlatformApplicationsResult>() {
+            public ListPlatformApplicationsResult call() throws Exception {
+                return listPlatformApplications(listPlatformApplicationsRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * The <code>ListPlatformApplications</code> action lists the platform
+     * application objects for the supported push notification services, such
+     * as APNS and GCM. The results for <code>ListPlatformApplications</code>
+     * are paginated and return a limited list of applications, up to 100. If
+     * additional records are available after the first page results, then a
+     * NextToken string will be returned. To receive the next page, you call
+     * <code>ListPlatformApplications</code> using the NextToken string
+     * received from the previous call. When there are no more records to
+     * return, NextToken will be null. For more information, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
+     * Using Amazon SNS Mobile Push Notifications </a> .
+     * </p>
+     *
+     * @param listPlatformApplicationsRequest Container for the necessary
+     *           parameters to execute the ListPlatformApplications operation on
+     *           AmazonSNS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListPlatformApplications service method, as returned by AmazonSNS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListPlatformApplicationsResult> listPlatformApplicationsAsync(
+            final ListPlatformApplicationsRequest listPlatformApplicationsRequest,
+            final AsyncHandler<ListPlatformApplicationsRequest, ListPlatformApplicationsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListPlatformApplicationsResult>() {
+            public ListPlatformApplicationsResult call() throws Exception {
+            	ListPlatformApplicationsResult result;
+                try {
+            		result = listPlatformApplications(listPlatformApplicationsRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(listPlatformApplicationsRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * The <code>SetEndpointAttributes</code> action sets the attributes for
+     * an endpoint for a device on one of the supported push notification
+     * services, such as GCM and APNS. For more information, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
+     * Using Amazon SNS Mobile Push Notifications </a> .
+     * </p>
+     *
+     * @param setEndpointAttributesRequest Container for the necessary
+     *           parameters to execute the SetEndpointAttributes operation on
+     *           AmazonSNS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SetEndpointAttributes service method, as returned by AmazonSNS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> setEndpointAttributesAsync(final SetEndpointAttributesRequest setEndpointAttributesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                setEndpointAttributes(setEndpointAttributesRequest);
+                return null;
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * The <code>SetEndpointAttributes</code> action sets the attributes for
+     * an endpoint for a device on one of the supported push notification
+     * services, such as GCM and APNS. For more information, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
+     * Using Amazon SNS Mobile Push Notifications </a> .
+     * </p>
+     *
+     * @param setEndpointAttributesRequest Container for the necessary
+     *           parameters to execute the SetEndpointAttributes operation on
+     *           AmazonSNS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SetEndpointAttributes service method, as returned by AmazonSNS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> setEndpointAttributesAsync(
+            final SetEndpointAttributesRequest setEndpointAttributesRequest,
+            final AsyncHandler<SetEndpointAttributesRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+            	try {
+            		setEndpointAttributes(setEndpointAttributesRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(setEndpointAttributesRequest, null);
+               	return null;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
      * The <code>Unsubscribe</code> action deletes a subscription. If the
      * subscription requires authentication for deletion, only the owner of
-     * the subscription or the its topic's owner can unsubscribe, and an AWS
+     * the subscription or the topic's owner can unsubscribe, and an AWS
      * signature is required. If the <code>Unsubscribe</code> call does not
      * require authentication and the requester is not the subscription
      * owner, a final cancellation message is delivered to the endpoint, so
@@ -1245,7 +2123,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient
      * <p>
      * The <code>Unsubscribe</code> action deletes a subscription. If the
      * subscription requires authentication for deletion, only the owner of
-     * the subscription or the its topic's owner can unsubscribe, and an AWS
+     * the subscription or the topic's owner can unsubscribe, and an AWS
      * signature is required. If the <code>Unsubscribe</code> call does not
      * require authentication and the requester is not the subscription
      * owner, a final cancellation message is delivered to the endpoint, so
@@ -1381,6 +2259,14 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient
      * each subscribed endpoint depends on the notification protocol
      * selected.
      * </p>
+     * <p>
+     * To use the <code>Publish</code> action for sending a message to a
+     * mobile endpoint, such as an app on a Kindle device or mobile phone,
+     * you must specify the EndpointArn. The EndpointArn is returned when
+     * making a call with the <code>CreatePlatformEndpoint</code> action. The
+     * second example below shows a request and response for publishing to a
+     * mobile endpoint.
+     * </p>
      *
      * @param publishRequest Container for the necessary parameters to
      *           execute the Publish operation on AmazonSNS.
@@ -1414,6 +2300,14 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient
      * the topic's subscribers shortly. The format of the outgoing message to
      * each subscribed endpoint depends on the notification protocol
      * selected.
+     * </p>
+     * <p>
+     * To use the <code>Publish</code> action for sending a message to a
+     * mobile endpoint, such as an app on a Kindle device or mobile phone,
+     * you must specify the EndpointArn. The EndpointArn is returned when
+     * making a call with the <code>CreatePlatformEndpoint</code> action. The
+     * second example below shows a request and response for publishing to a
+     * mobile endpoint.
      * </p>
      *
      * @param publishRequest Container for the necessary parameters to

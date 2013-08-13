@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeDBInstances(DescribeDBInstancesRequest)
  */
-public class DescribeDBInstancesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeDBInstancesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The user-supplied instance identifier. If this parameter is specified,
@@ -113,6 +113,9 @@ public class DescribeDBInstancesRequest extends AmazonWebServiceRequest  impleme
      *         from 1 to 63 alphanumeric characters or hyphens</li> <li>First
      *         character must be a letter</li> <li>Cannot end with a hyphen or
      *         contain two consecutive hyphens</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeDBInstancesRequest withDBInstanceIdentifier(String dBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -168,6 +171,9 @@ public class DescribeDBInstancesRequest extends AmazonWebServiceRequest  impleme
      *         pagination token called a marker is included in the response so that
      *         the remaining results may be retrieved. <p>Default: 100
      *         <p>Constraints: minimum 20, maximum 100
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeDBInstancesRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -217,6 +223,9 @@ public class DescribeDBInstancesRequest extends AmazonWebServiceRequest  impleme
      *         DescribeDBInstances request. If this parameter is specified, the
      *         response includes only records beyond the marker, up to the value
      *         specified by <code>MaxRecords</code> .
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeDBInstancesRequest withMarker(String marker) {
         this.marker = marker;

@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Associate Address Result
  */
-public class AssociateAddressResult  implements Serializable  {
+public class AssociateAddressResult implements Serializable {
 
     private String associationId;
 

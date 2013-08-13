@@ -21,7 +21,7 @@ import java.io.Serializable;
  * describes a specific metric.
  * </p>
  */
-public class StatisticSet  implements Serializable  {
+public class StatisticSet implements Serializable {
 
     /**
      * The number of samples used for the statistic set.
@@ -67,6 +67,9 @@ public class StatisticSet  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sampleCount The number of samples used for the statistic set.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StatisticSet withSampleCount(Double sampleCount) {
         this.sampleCount = sampleCount;
@@ -98,6 +101,9 @@ public class StatisticSet  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sum The sum of values for the sample set.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StatisticSet withSum(Double sum) {
         this.sum = sum;
@@ -129,6 +135,9 @@ public class StatisticSet  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param minimum The minimum value of the sample set.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StatisticSet withMinimum(Double minimum) {
         this.minimum = minimum;
@@ -160,6 +169,9 @@ public class StatisticSet  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maximum The maximum value of the sample set.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StatisticSet withMaximum(Double maximum) {
         this.maximum = maximum;

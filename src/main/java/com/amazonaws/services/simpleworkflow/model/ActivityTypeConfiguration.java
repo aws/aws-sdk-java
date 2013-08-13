@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Configuration settings registered with the activity type.
  * </p>
  */
-public class ActivityTypeConfiguration  implements Serializable  {
+public class ActivityTypeConfiguration implements Serializable {
 
     /**
      * The optional default maximum duration for tasks of an activity type
@@ -164,6 +164,9 @@ public class ActivityTypeConfiguration  implements Serializable  {
      *         are integers greater than or equal to <code>0</code>. An integer value
      *         can be used to specify the duration in seconds while <code>NONE</code>
      *         can be used to specify unlimited duration.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActivityTypeConfiguration withDefaultTaskStartToCloseTimeout(String defaultTaskStartToCloseTimeout) {
         this.defaultTaskStartToCloseTimeout = defaultTaskStartToCloseTimeout;
@@ -276,6 +279,9 @@ public class ActivityTypeConfiguration  implements Serializable  {
      *         <code>0</code>. An integer value can be used to specify the duration
      *         in seconds while <code>NONE</code> can be used to specify unlimited
      *         duration.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActivityTypeConfiguration withDefaultTaskHeartbeatTimeout(String defaultTaskHeartbeatTimeout) {
         this.defaultTaskHeartbeatTimeout = defaultTaskHeartbeatTimeout;
@@ -337,6 +343,9 @@ public class ActivityTypeConfiguration  implements Serializable  {
      *         <code>ScheduleActivityTask</code> <a>Decision</a>. You can override
      *         this default when scheduling a task through the
      *         <code>ScheduleActivityTask</code> <a>Decision</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActivityTypeConfiguration withDefaultTaskList(TaskList defaultTaskList) {
         this.defaultTaskList = defaultTaskList;
@@ -419,6 +428,9 @@ public class ActivityTypeConfiguration  implements Serializable  {
      *         <code>0</code>. An integer value can be used to specify the duration
      *         in seconds while <code>NONE</code> can be used to specify unlimited
      *         duration.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActivityTypeConfiguration withDefaultTaskScheduleToStartTimeout(String defaultTaskScheduleToStartTimeout) {
         this.defaultTaskScheduleToStartTimeout = defaultTaskScheduleToStartTimeout;
@@ -495,6 +507,9 @@ public class ActivityTypeConfiguration  implements Serializable  {
      *         are integers greater than or equal to <code>0</code>. An integer value
      *         can be used to specify the duration in seconds while <code>NONE</code>
      *         can be used to specify unlimited duration.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActivityTypeConfiguration withDefaultTaskScheduleToCloseTimeout(String defaultTaskScheduleToCloseTimeout) {
         this.defaultTaskScheduleToCloseTimeout = defaultTaskScheduleToCloseTimeout;

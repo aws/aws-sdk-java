@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The output of the DescribeMetricCollectionTypes action.
  * </p>
  */
-public class DescribeMetricCollectionTypesResult  implements Serializable  {
+public class DescribeMetricCollectionTypesResult implements Serializable {
 
     /**
      * The list of Metrics collected.The following metrics are supported:
@@ -102,6 +102,9 @@ public class DescribeMetricCollectionTypesResult  implements Serializable  {
      *         <li><p>GroupPendingInstances</li>
      *         <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
      *         </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeMetricCollectionTypesResult withMetrics(MetricCollectionType... metrics) {
         if (getMetrics() == null) setMetrics(new java.util.ArrayList<MetricCollectionType>(metrics.length));
@@ -127,6 +130,9 @@ public class DescribeMetricCollectionTypesResult  implements Serializable  {
      *         <li><p>GroupPendingInstances</li>
      *         <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
      *         </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeMetricCollectionTypesResult withMetrics(java.util.Collection<MetricCollectionType> metrics) {
         if (metrics == null) {
@@ -175,6 +181,9 @@ public class DescribeMetricCollectionTypesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param granularities A list of granularities for the listed Metrics.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeMetricCollectionTypesResult withGranularities(MetricGranularityType... granularities) {
         if (getGranularities() == null) setGranularities(new java.util.ArrayList<MetricGranularityType>(granularities.length));
@@ -190,6 +199,9 @@ public class DescribeMetricCollectionTypesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param granularities A list of granularities for the listed Metrics.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeMetricCollectionTypesResult withGranularities(java.util.Collection<MetricGranularityType> granularities) {
         if (granularities == null) {

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains pair of Topic and Topic Status.
  * </p>
  */
-public class NotificationConfiguration  implements Serializable  {
+public class NotificationConfiguration implements Serializable {
 
     /**
      * Specifies the topic Amazon Resource Name (ARN), identifying this
@@ -69,6 +69,9 @@ public class NotificationConfiguration  implements Serializable  {
      *
      * @param topicArn Specifies the topic Amazon Resource Name (ARN), identifying this
      *         resource.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NotificationConfiguration withTopicArn(String topicArn) {
         this.topicArn = topicArn;
@@ -100,6 +103,9 @@ public class NotificationConfiguration  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param topicStatus Specifies the current state of this topic.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public NotificationConfiguration withTopicStatus(String topicStatus) {
         this.topicStatus = topicStatus;

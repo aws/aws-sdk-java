@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A complex type that contains identifying information about the health check.
  * </p>
  */
-public class HealthCheck  implements Serializable  {
+public class HealthCheck implements Serializable {
 
     /**
      * The ID of the specified health check.
@@ -77,6 +77,9 @@ public class HealthCheck  implements Serializable  {
      * <b>Length: </b>0 - 64<br/>
      *
      * @param id The ID of the specified health check.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public HealthCheck withId(String id) {
         this.id = id;
@@ -123,6 +126,9 @@ public class HealthCheck  implements Serializable  {
      *
      * @param callerReference A unique string that identifies the request to create the health
      *         check.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public HealthCheck withCallerReference(String callerReference) {
         this.callerReference = callerReference;
@@ -154,6 +160,9 @@ public class HealthCheck  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param healthCheckConfig A complex type that contains the health check configuration.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public HealthCheck withHealthCheckConfig(HealthCheckConfig healthCheckConfig) {
         this.healthCheckConfig = healthCheckConfig;

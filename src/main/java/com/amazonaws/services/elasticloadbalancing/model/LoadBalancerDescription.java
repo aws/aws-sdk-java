@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of DescribeLoadBalancers.
  * </p>
  */
-public class LoadBalancerDescription  implements Serializable  {
+public class LoadBalancerDescription implements Serializable {
 
     /**
      * Specifies the name associated with the LoadBalancer.
@@ -154,6 +154,9 @@ public class LoadBalancerDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param loadBalancerName Specifies the name associated with the LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LoadBalancerDescription withLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
@@ -185,6 +188,9 @@ public class LoadBalancerDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dNSName Specifies the external DNS name associated with the LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LoadBalancerDescription withDNSName(String dNSName) {
         this.dNSName = dNSName;
@@ -246,6 +252,9 @@ public class LoadBalancerDescription  implements Serializable  {
      *         href="http://docs.amazonwebservices.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
      *         Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
      *         Balancing Developer Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LoadBalancerDescription withCanonicalHostedZoneName(String canonicalHostedZoneName) {
         this.canonicalHostedZoneName = canonicalHostedZoneName;
@@ -307,6 +316,9 @@ public class LoadBalancerDescription  implements Serializable  {
      *         href="http://docs.amazonwebservices.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
      *         Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
      *         Balancing Developer Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LoadBalancerDescription withCanonicalHostedZoneNameID(String canonicalHostedZoneNameID) {
         this.canonicalHostedZoneNameID = canonicalHostedZoneNameID;
@@ -361,6 +373,9 @@ public class LoadBalancerDescription  implements Serializable  {
      * @param listenerDescriptions LoadBalancerPort, InstancePort, Protocol, InstanceProtocol, and
      *         PolicyNames are returned in a list of tuples in the
      *         ListenerDescriptions element.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LoadBalancerDescription withListenerDescriptions(ListenerDescription... listenerDescriptions) {
         if (getListenerDescriptions() == null) setListenerDescriptions(new java.util.ArrayList<ListenerDescription>(listenerDescriptions.length));
@@ -380,6 +395,9 @@ public class LoadBalancerDescription  implements Serializable  {
      * @param listenerDescriptions LoadBalancerPort, InstancePort, Protocol, InstanceProtocol, and
      *         PolicyNames are returned in a list of tuples in the
      *         ListenerDescriptions element.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LoadBalancerDescription withListenerDescriptions(java.util.Collection<ListenerDescription> listenerDescriptions) {
         if (listenerDescriptions == null) {
@@ -417,6 +435,9 @@ public class LoadBalancerDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param policies Provides a list of policies defined for the LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LoadBalancerDescription withPolicies(Policies policies) {
         this.policies = policies;
@@ -459,6 +480,9 @@ public class LoadBalancerDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param backendServerDescriptions Contains a list of back-end server descriptions.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LoadBalancerDescription withBackendServerDescriptions(BackendServerDescription... backendServerDescriptions) {
         if (getBackendServerDescriptions() == null) setBackendServerDescriptions(new java.util.ArrayList<BackendServerDescription>(backendServerDescriptions.length));
@@ -474,6 +498,9 @@ public class LoadBalancerDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param backendServerDescriptions Contains a list of back-end server descriptions.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LoadBalancerDescription withBackendServerDescriptions(java.util.Collection<BackendServerDescription> backendServerDescriptions) {
         if (backendServerDescriptions == null) {
@@ -522,6 +549,9 @@ public class LoadBalancerDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZones Specifies a list of Availability Zones.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LoadBalancerDescription withAvailabilityZones(String... availabilityZones) {
         if (getAvailabilityZones() == null) setAvailabilityZones(new java.util.ArrayList<String>(availabilityZones.length));
@@ -537,6 +567,9 @@ public class LoadBalancerDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZones Specifies a list of Availability Zones.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LoadBalancerDescription withAvailabilityZones(java.util.Collection<String> availabilityZones) {
         if (availabilityZones == null) {
@@ -585,6 +618,9 @@ public class LoadBalancerDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnets Provides a list of VPC subnet IDs for the LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LoadBalancerDescription withSubnets(String... subnets) {
         if (getSubnets() == null) setSubnets(new java.util.ArrayList<String>(subnets.length));
@@ -600,6 +636,9 @@ public class LoadBalancerDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnets Provides a list of VPC subnet IDs for the LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LoadBalancerDescription withSubnets(java.util.Collection<String> subnets) {
         if (subnets == null) {
@@ -637,6 +676,9 @@ public class LoadBalancerDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vPCId Provides the ID of the VPC attached to the LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LoadBalancerDescription withVPCId(String vPCId) {
         this.vPCId = vPCId;
@@ -679,6 +721,9 @@ public class LoadBalancerDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instances Provides a list of EC2 instance IDs for the LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LoadBalancerDescription withInstances(Instance... instances) {
         if (getInstances() == null) setInstances(new java.util.ArrayList<Instance>(instances.length));
@@ -694,6 +739,9 @@ public class LoadBalancerDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instances Provides a list of EC2 instance IDs for the LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LoadBalancerDescription withInstances(java.util.Collection<Instance> instances) {
         if (instances == null) {
@@ -737,6 +785,9 @@ public class LoadBalancerDescription  implements Serializable  {
      *
      * @param healthCheck Specifies information regarding the various health probes conducted on
      *         the LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LoadBalancerDescription withHealthCheck(HealthCheck healthCheck) {
         this.healthCheck = healthCheck;
@@ -792,6 +843,9 @@ public class LoadBalancerDescription  implements Serializable  {
      *         allow traffic from LoadBalancers, add a security group rule to your
      *         back end instance that specifies this source security group as the
      *         inbound source.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LoadBalancerDescription withSourceSecurityGroup(SourceSecurityGroup sourceSecurityGroup) {
         this.sourceSecurityGroup = sourceSecurityGroup;
@@ -834,6 +888,9 @@ public class LoadBalancerDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param securityGroups The security groups the LoadBalancer is a member of (VPC only).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LoadBalancerDescription withSecurityGroups(String... securityGroups) {
         if (getSecurityGroups() == null) setSecurityGroups(new java.util.ArrayList<String>(securityGroups.length));
@@ -849,6 +906,9 @@ public class LoadBalancerDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param securityGroups The security groups the LoadBalancer is a member of (VPC only).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LoadBalancerDescription withSecurityGroups(java.util.Collection<String> securityGroups) {
         if (securityGroups == null) {
@@ -886,6 +946,9 @@ public class LoadBalancerDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param createdTime Provides the date and time the LoadBalancer was created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LoadBalancerDescription withCreatedTime(java.util.Date createdTime) {
         this.createdTime = createdTime;
@@ -947,6 +1010,9 @@ public class LoadBalancerDescription  implements Serializable  {
      *         <i>internal</i>, the load balancer has a publicly resolvable DNS name
      *         that resolves to private IP addresses. This option is only available
      *         for load balancers attached to a VPC.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LoadBalancerDescription withScheme(String scheme) {
         this.scheme = scheme;

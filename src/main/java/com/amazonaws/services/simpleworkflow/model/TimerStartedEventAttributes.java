@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Provides details of the <code>TimerStarted</code> event.
  * </p>
  */
-public class TimerStartedEventAttributes  implements Serializable  {
+public class TimerStartedEventAttributes implements Serializable {
 
     /**
      * The unique Id of the timer that was started.
@@ -90,6 +90,9 @@ public class TimerStartedEventAttributes  implements Serializable  {
      * <b>Length: </b>1 - 256<br/>
      *
      * @param timerId The unique Id of the timer that was started.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public TimerStartedEventAttributes withTimerId(String timerId) {
         this.timerId = timerId;
@@ -136,6 +139,9 @@ public class TimerStartedEventAttributes  implements Serializable  {
      *
      * @param control Optional data attached to the event that can be used by the decider in
      *         subsequent workflow tasks.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public TimerStartedEventAttributes withControl(String control) {
         this.control = control;
@@ -188,6 +194,9 @@ public class TimerStartedEventAttributes  implements Serializable  {
      * @param startToFireTimeout The duration of time after which the timer will fire. <p>The duration
      *         is specified in seconds. The valid values are integers greater than or
      *         equal to 0.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public TimerStartedEventAttributes withStartToFireTimeout(String startToFireTimeout) {
         this.startToFireTimeout = startToFireTimeout;
@@ -237,6 +246,9 @@ public class TimerStartedEventAttributes  implements Serializable  {
      *         to the decision task that resulted in the <code>StartTimer</code>
      *         decision for this activity task. This information can be useful for
      *         diagnosing problems by tracing back the cause of events.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public TimerStartedEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
         this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;

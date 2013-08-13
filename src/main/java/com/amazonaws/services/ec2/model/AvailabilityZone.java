@@ -20,7 +20,7 @@ import java.io.Serializable;
  * An EC2 availability zone, separate and fault tolerant from other availability zones.
  * </p>
  */
-public class AvailabilityZone  implements Serializable  {
+public class AvailabilityZone implements Serializable {
 
     /**
      * Name of the Availability Zone.

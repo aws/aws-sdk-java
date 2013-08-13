@@ -21,7 +21,7 @@ import java.io.Serializable;
  * the request. If the table does not have any secondary indexes, this information is not returned in the response.
  * </p>
  */
-public class ItemCollectionMetrics  implements Serializable  {
+public class ItemCollectionMetrics implements Serializable {
 
     /**
      * The hash key value of the item collection. This is the same as the
@@ -72,6 +72,9 @@ public class ItemCollectionMetrics  implements Serializable  {
      *
      * @param itemCollectionKey The hash key value of the item collection. This is the same as the
      *         hash key of the item.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ItemCollectionMetrics withItemCollectionKey(java.util.Map<String,AttributeValue> itemCollectionKey) {
         setItemCollectionKey(itemCollectionKey);
@@ -183,6 +186,9 @@ public class ItemCollectionMetrics  implements Serializable  {
      *         a secondary index is approaching its size limit. <p>The estimate is
      *         subject to change over time; therefore, do not rely on the precision
      *         or accuracy of the estimate.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ItemCollectionMetrics withSizeEstimateRangeGB(Double... sizeEstimateRangeGB) {
         if (getSizeEstimateRangeGB() == null) setSizeEstimateRangeGB(new java.util.ArrayList<Double>(sizeEstimateRangeGB.length));
@@ -212,6 +218,9 @@ public class ItemCollectionMetrics  implements Serializable  {
      *         a secondary index is approaching its size limit. <p>The estimate is
      *         subject to change over time; therefore, do not rely on the precision
      *         or accuracy of the estimate.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ItemCollectionMetrics withSizeEstimateRangeGB(java.util.Collection<Double> sizeEstimateRangeGB) {
         if (sizeEstimateRangeGB == null) {

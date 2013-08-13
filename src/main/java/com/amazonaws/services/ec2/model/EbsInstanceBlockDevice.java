@@ -20,7 +20,7 @@ import java.io.Serializable;
  * An EBS volume backed block device which is attached to an instance.
  * </p>
  */
-public class EbsInstanceBlockDevice  implements Serializable  {
+public class EbsInstanceBlockDevice implements Serializable {
 
     /**
      * The ID of the EBS volume.

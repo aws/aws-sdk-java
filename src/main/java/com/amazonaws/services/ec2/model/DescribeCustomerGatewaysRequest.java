@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.DescribeCustomerGatewaysRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -28,7 +30,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeCustomerGateways(DescribeCustomerGatewaysRequest)
  */
-public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeCustomerGatewaysRequest> {
 
     /**
      * A set of one or more customer gateway IDs.
@@ -212,6 +214,18 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest  im
         }
 
         return this;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<DescribeCustomerGatewaysRequest> getDryRunRequest() {
+        Request<DescribeCustomerGatewaysRequest> request = new DescribeCustomerGatewaysRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

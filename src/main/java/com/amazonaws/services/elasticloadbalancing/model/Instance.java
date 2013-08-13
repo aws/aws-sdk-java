@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The Instance data type.
  * </p>
  */
-public class Instance  implements Serializable  {
+public class Instance implements Serializable {
 
     /**
      * Provides an EC2 instance ID.
@@ -72,6 +72,9 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId Provides an EC2 instance ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withInstanceId(String instanceId) {
         this.instanceId = instanceId;

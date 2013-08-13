@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Identifiers for the federated user that is associated with the credentials.
  * </p>
  */
-public class FederatedUser  implements Serializable  {
+public class FederatedUser implements Serializable {
 
     /**
      * The string that identifies the federated user associated with the
@@ -115,6 +115,9 @@ public class FederatedUser  implements Serializable  {
      *
      * @param federatedUserId The string that identifies the federated user associated with the
      *         credentials, similar to the unique ID of an IAM user.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public FederatedUser withFederatedUserId(String federatedUserId) {
         this.federatedUserId = federatedUserId;
@@ -179,6 +182,9 @@ public class FederatedUser  implements Serializable  {
      *         policies, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using IAM</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public FederatedUser withArn(String arn) {
         this.arn = arn;

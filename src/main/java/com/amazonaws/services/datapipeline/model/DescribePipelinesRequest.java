@@ -29,7 +29,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#describePipelines(DescribePipelinesRequest)
  */
-public class DescribePipelinesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribePipelinesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Identifiers of the pipelines to describe. You can pass as many as 25
@@ -85,6 +85,9 @@ public class DescribePipelinesRequest extends AmazonWebServiceRequest  implement
      * @param pipelineIds Identifiers of the pipelines to describe. You can pass as many as 25
      *         identifiers in a single call to <a>DescribePipelines</a>. You can
      *         obtain pipeline identifiers by calling <a>ListPipelines</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribePipelinesRequest withPipelineIds(String... pipelineIds) {
         if (getPipelineIds() == null) setPipelineIds(new java.util.ArrayList<String>(pipelineIds.length));
@@ -104,6 +107,9 @@ public class DescribePipelinesRequest extends AmazonWebServiceRequest  implement
      * @param pipelineIds Identifiers of the pipelines to describe. You can pass as many as 25
      *         identifiers in a single call to <a>DescribePipelines</a>. You can
      *         obtain pipeline identifiers by calling <a>ListPipelines</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribePipelinesRequest withPipelineIds(java.util.Collection<String> pipelineIds) {
         if (pipelineIds == null) {

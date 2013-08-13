@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Output structure for the UpateJob operation.
  * </p>
  */
-public class UpdateJobResult  implements Serializable  {
+public class UpdateJobResult implements Serializable {
 
     /**
      * Specifies whether (true) or not (false) AWS Import/Export updated your
@@ -64,6 +64,9 @@ public class UpdateJobResult  implements Serializable  {
      *
      * @param success Specifies whether (true) or not (false) AWS Import/Export updated your
      *         job.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateJobResult withSuccess(Boolean success) {
         this.success = success;
@@ -112,6 +115,9 @@ public class UpdateJobResult  implements Serializable  {
      *
      * @param warningMessage An optional message notifying you of non-fatal issues with the job,
      *         such as use of an incompatible Amazon S3 bucket name.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateJobResult withWarningMessage(String warningMessage) {
         this.warningMessage = warningMessage;

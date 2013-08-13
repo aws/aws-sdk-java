@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The Output data type.
  * </p>
  */
-public class Output  implements Serializable  {
+public class Output implements Serializable {
 
     /**
      * The key associated with the output.
@@ -61,6 +61,9 @@ public class Output  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param outputKey The key associated with the output.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Output withOutputKey(String outputKey) {
         this.outputKey = outputKey;
@@ -92,6 +95,9 @@ public class Output  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param outputValue The value associated with the output.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Output withOutputValue(String outputValue) {
         this.outputValue = outputValue;
@@ -123,6 +129,9 @@ public class Output  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description User defined description associated with the output.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Output withDescription(String description) {
         this.description = description;

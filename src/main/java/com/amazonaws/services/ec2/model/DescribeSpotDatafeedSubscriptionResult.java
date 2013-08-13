@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Describe Spot Datafeed Subscription Result
  */
-public class DescribeSpotDatafeedSubscriptionResult  implements Serializable  {
+public class DescribeSpotDatafeedSubscriptionResult implements Serializable {
 
     /**
      * The Spot Instance datafeed subscription.

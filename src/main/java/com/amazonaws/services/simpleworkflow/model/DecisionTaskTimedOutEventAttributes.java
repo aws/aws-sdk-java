@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Provides details of the <code>DecisionTaskTimedOut</code> event.
  * </p>
  */
-public class DecisionTaskTimedOutEventAttributes  implements Serializable  {
+public class DecisionTaskTimedOutEventAttributes implements Serializable {
 
     /**
      * The type of timeout that expired before the decision task could be
@@ -91,6 +91,9 @@ public class DecisionTaskTimedOutEventAttributes  implements Serializable  {
      * @param timeoutType The type of timeout that expired before the decision task could be
      *         completed.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see DecisionTaskTimeoutType
      */
     public DecisionTaskTimedOutEventAttributes withTimeoutType(String timeoutType) {
@@ -126,6 +129,9 @@ public class DecisionTaskTimedOutEventAttributes  implements Serializable  {
      *
      * @param timeoutType The type of timeout that expired before the decision task could be
      *         completed.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see DecisionTaskTimeoutType
      */
@@ -176,6 +182,9 @@ public class DecisionTaskTimedOutEventAttributes  implements Serializable  {
      *         recorded when this decision task was scheduled. This information can
      *         be useful for diagnosing problems by tracing back the chain of events
      *         leading up to this event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DecisionTaskTimedOutEventAttributes withScheduledEventId(Long scheduledEventId) {
         this.scheduledEventId = scheduledEventId;
@@ -225,6 +234,9 @@ public class DecisionTaskTimedOutEventAttributes  implements Serializable  {
      *         this decision task was started. This information can be useful for
      *         diagnosing problems by tracing back the chain of events leading up to
      *         this event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DecisionTaskTimedOutEventAttributes withStartedEventId(Long startedEventId) {
         this.startedEventId = startedEventId;

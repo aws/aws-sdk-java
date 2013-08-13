@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Price Schedule
  */
-public class PriceSchedule  implements Serializable  {
+public class PriceSchedule implements Serializable {
 
     private Long term;
 

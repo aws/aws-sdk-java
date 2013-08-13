@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.DescribeSnapshotsRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -26,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeSnapshots(DescribeSnapshotsRequest)
  */
-public class DescribeSnapshotsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeSnapshotsRequest> {
 
     /**
      * The optional list of EBS snapshot IDs to describe.
@@ -35,10 +37,11 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest  implement
 
     /**
      * An optional list of owners by which to scope the described EBS
-     * snapshots. Valid values are: <ul> <code>self</code> : Snapshots owned
-     * by you <i>AWS account ID</i> : Snapshots owned by this account ID
-     * <code>amazon</code> : Snapshots owned by Amazon </ul> <p> The values
-     * <code>self</code> and <code>amazon</code> are literals.
+     * snapshots. Valid values are: <ul> <li> <code>self</code> : Snapshots
+     * owned by you </li> <li> <i>AWS account ID</i> : Snapshots owned by
+     * this account ID </li> <li> <code>amazon</code> : Snapshots owned by
+     * Amazon </li> </ul> <p> The values <code>self</code> and
+     * <code>amazon</code> are literals.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> ownerIds;
 
@@ -128,16 +131,18 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest  implement
     
     /**
      * An optional list of owners by which to scope the described EBS
-     * snapshots. Valid values are: <ul> <code>self</code> : Snapshots owned
-     * by you <i>AWS account ID</i> : Snapshots owned by this account ID
-     * <code>amazon</code> : Snapshots owned by Amazon </ul> <p> The values
-     * <code>self</code> and <code>amazon</code> are literals.
+     * snapshots. Valid values are: <ul> <li> <code>self</code> : Snapshots
+     * owned by you </li> <li> <i>AWS account ID</i> : Snapshots owned by
+     * this account ID </li> <li> <code>amazon</code> : Snapshots owned by
+     * Amazon </li> </ul> <p> The values <code>self</code> and
+     * <code>amazon</code> are literals.
      *
      * @return An optional list of owners by which to scope the described EBS
-     *         snapshots. Valid values are: <ul> <code>self</code> : Snapshots owned
-     *         by you <i>AWS account ID</i> : Snapshots owned by this account ID
-     *         <code>amazon</code> : Snapshots owned by Amazon </ul> <p> The values
-     *         <code>self</code> and <code>amazon</code> are literals.
+     *         snapshots. Valid values are: <ul> <li> <code>self</code> : Snapshots
+     *         owned by you </li> <li> <i>AWS account ID</i> : Snapshots owned by
+     *         this account ID </li> <li> <code>amazon</code> : Snapshots owned by
+     *         Amazon </li> </ul> <p> The values <code>self</code> and
+     *         <code>amazon</code> are literals.
      */
     public java.util.List<String> getOwnerIds() {
         
@@ -150,16 +155,18 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest  implement
     
     /**
      * An optional list of owners by which to scope the described EBS
-     * snapshots. Valid values are: <ul> <code>self</code> : Snapshots owned
-     * by you <i>AWS account ID</i> : Snapshots owned by this account ID
-     * <code>amazon</code> : Snapshots owned by Amazon </ul> <p> The values
-     * <code>self</code> and <code>amazon</code> are literals.
+     * snapshots. Valid values are: <ul> <li> <code>self</code> : Snapshots
+     * owned by you </li> <li> <i>AWS account ID</i> : Snapshots owned by
+     * this account ID </li> <li> <code>amazon</code> : Snapshots owned by
+     * Amazon </li> </ul> <p> The values <code>self</code> and
+     * <code>amazon</code> are literals.
      *
      * @param ownerIds An optional list of owners by which to scope the described EBS
-     *         snapshots. Valid values are: <ul> <code>self</code> : Snapshots owned
-     *         by you <i>AWS account ID</i> : Snapshots owned by this account ID
-     *         <code>amazon</code> : Snapshots owned by Amazon </ul> <p> The values
-     *         <code>self</code> and <code>amazon</code> are literals.
+     *         snapshots. Valid values are: <ul> <li> <code>self</code> : Snapshots
+     *         owned by you </li> <li> <i>AWS account ID</i> : Snapshots owned by
+     *         this account ID </li> <li> <code>amazon</code> : Snapshots owned by
+     *         Amazon </li> </ul> <p> The values <code>self</code> and
+     *         <code>amazon</code> are literals.
      */
     public void setOwnerIds(java.util.Collection<String> ownerIds) {
         if (ownerIds == null) {
@@ -173,18 +180,20 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest  implement
     
     /**
      * An optional list of owners by which to scope the described EBS
-     * snapshots. Valid values are: <ul> <code>self</code> : Snapshots owned
-     * by you <i>AWS account ID</i> : Snapshots owned by this account ID
-     * <code>amazon</code> : Snapshots owned by Amazon </ul> <p> The values
-     * <code>self</code> and <code>amazon</code> are literals.
+     * snapshots. Valid values are: <ul> <li> <code>self</code> : Snapshots
+     * owned by you </li> <li> <i>AWS account ID</i> : Snapshots owned by
+     * this account ID </li> <li> <code>amazon</code> : Snapshots owned by
+     * Amazon </li> </ul> <p> The values <code>self</code> and
+     * <code>amazon</code> are literals.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ownerIds An optional list of owners by which to scope the described EBS
-     *         snapshots. Valid values are: <ul> <code>self</code> : Snapshots owned
-     *         by you <i>AWS account ID</i> : Snapshots owned by this account ID
-     *         <code>amazon</code> : Snapshots owned by Amazon </ul> <p> The values
-     *         <code>self</code> and <code>amazon</code> are literals.
+     *         snapshots. Valid values are: <ul> <li> <code>self</code> : Snapshots
+     *         owned by you </li> <li> <i>AWS account ID</i> : Snapshots owned by
+     *         this account ID </li> <li> <code>amazon</code> : Snapshots owned by
+     *         Amazon </li> </ul> <p> The values <code>self</code> and
+     *         <code>amazon</code> are literals.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -199,18 +208,20 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest  implement
     
     /**
      * An optional list of owners by which to scope the described EBS
-     * snapshots. Valid values are: <ul> <code>self</code> : Snapshots owned
-     * by you <i>AWS account ID</i> : Snapshots owned by this account ID
-     * <code>amazon</code> : Snapshots owned by Amazon </ul> <p> The values
-     * <code>self</code> and <code>amazon</code> are literals.
+     * snapshots. Valid values are: <ul> <li> <code>self</code> : Snapshots
+     * owned by you </li> <li> <i>AWS account ID</i> : Snapshots owned by
+     * this account ID </li> <li> <code>amazon</code> : Snapshots owned by
+     * Amazon </li> </ul> <p> The values <code>self</code> and
+     * <code>amazon</code> are literals.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ownerIds An optional list of owners by which to scope the described EBS
-     *         snapshots. Valid values are: <ul> <code>self</code> : Snapshots owned
-     *         by you <i>AWS account ID</i> : Snapshots owned by this account ID
-     *         <code>amazon</code> : Snapshots owned by Amazon </ul> <p> The values
-     *         <code>self</code> and <code>amazon</code> are literals.
+     *         snapshots. Valid values are: <ul> <li> <code>self</code> : Snapshots
+     *         owned by you </li> <li> <i>AWS account ID</i> : Snapshots owned by
+     *         this account ID </li> <li> <code>amazon</code> : Snapshots owned by
+     *         Amazon </li> </ul> <p> The values <code>self</code> and
+     *         <code>amazon</code> are literals.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -403,6 +414,18 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest  implement
         }
 
         return this;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<DescribeSnapshotsRequest> getDryRunRequest() {
+        Request<DescribeSnapshotsRequest> request = new DescribeSnapshotsRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

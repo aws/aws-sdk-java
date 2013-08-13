@@ -20,7 +20,7 @@ import java.io.Serializable;
  * An offer to create a new connection for a specific price and terms.
  * </p>
  */
-public class Offering  implements Serializable  {
+public class Offering implements Serializable {
 
     /**
      * The ID of the offering. <p>Example: us-west-1_EqSV5_1G <p>Default:
@@ -92,6 +92,9 @@ public class Offering  implements Serializable  {
      *
      * @param offeringId The ID of the offering. <p>Example: us-west-1_EqSV5_1G <p>Default:
      *         None
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Offering withOfferingId(String offeringId) {
         this.offeringId = offeringId;
@@ -129,6 +132,9 @@ public class Offering  implements Serializable  {
      *
      * @param region The AWS region where the offering is located. <p>Example: us-east-1
      *         <p>Default: None
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Offering withRegion(String region) {
         this.region = region;
@@ -166,6 +172,9 @@ public class Offering  implements Serializable  {
      *
      * @param location Where the AWS Direct Connect offering is located. <p>Example: EqSV5
      *         <p>Default: None
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Offering withLocation(String location) {
         this.location = location;
@@ -203,6 +212,9 @@ public class Offering  implements Serializable  {
      *
      * @param offeringName Name of the offering. <p>Example: "<i>1Gbps Cross Connect in us-east-1
      *         via Equinix</i>" <p>Default: None
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Offering withOfferingName(String offeringName) {
         this.offeringName = offeringName;
@@ -240,6 +252,9 @@ public class Offering  implements Serializable  {
      *
      * @param description Description of the offering. <p>Example: "<i>1Gbps Cross Connect in
      *         us-east-1 via Equinix</i>" <p>Default: None
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Offering withDescription(String description) {
         this.description = description;
@@ -271,6 +286,9 @@ public class Offering  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param bandwidth Bandwidth of the connection. <p>Example: 1Gbps <p>Default: None
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Offering withBandwidth(String bandwidth) {
         this.bandwidth = bandwidth;
@@ -313,6 +331,9 @@ public class Offering  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param connectionCosts A list of connection costs.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Offering withConnectionCosts(ConnectionCost... connectionCosts) {
         if (getConnectionCosts() == null) setConnectionCosts(new java.util.ArrayList<ConnectionCost>(connectionCosts.length));
@@ -328,6 +349,9 @@ public class Offering  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param connectionCosts A list of connection costs.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Offering withConnectionCosts(java.util.Collection<ConnectionCost> connectionCosts) {
         if (connectionCosts == null) {

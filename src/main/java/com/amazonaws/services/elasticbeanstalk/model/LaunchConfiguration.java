@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes an Auto Scaling launch configuration.
  * </p>
  */
-public class LaunchConfiguration  implements Serializable  {
+public class LaunchConfiguration implements Serializable {
 
     /**
      * The name of the launch configuration.
@@ -57,6 +57,9 @@ public class LaunchConfiguration  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The name of the launch configuration.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LaunchConfiguration withName(String name) {
         this.name = name;

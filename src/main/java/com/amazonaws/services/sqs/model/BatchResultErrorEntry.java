@@ -16,42 +16,59 @@ package com.amazonaws.services.sqs.model;
 import java.io.Serializable;
 
 /**
- * Batch Result Error Entry
+ * <p>
+ * This is used in the responses of batch API to give a detailed description of the result of an operation on each entry in the request.
+ * </p>
  */
-public class BatchResultErrorEntry  implements Serializable  {
+public class BatchResultErrorEntry implements Serializable {
 
+    /**
+     * The id of an entry in a batch request.
+     */
     private String id;
 
+    /**
+     * Whether the error happened due to the sender's fault.
+     */
     private Boolean senderFault;
 
+    /**
+     * An error code representing why the operation failed on this entry.
+     */
     private String code;
 
+    /**
+     * A message explaining why the operation failed on this entry.
+     */
     private String message;
 
     /**
-     * Returns the value of the Id property for this object.
+     * The id of an entry in a batch request.
      *
-     * @return The value of the Id property for this object.
+     * @return The id of an entry in a batch request.
      */
     public String getId() {
         return id;
     }
     
     /**
-     * Sets the value of the Id property for this object.
+     * The id of an entry in a batch request.
      *
-     * @param id The new value for the Id property for this object.
+     * @param id The id of an entry in a batch request.
      */
     public void setId(String id) {
         this.id = id;
     }
     
     /**
-     * Sets the value of the Id property for this object.
+     * The id of an entry in a batch request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param id The new value for the Id property for this object.
+     * @param id The id of an entry in a batch request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public BatchResultErrorEntry withId(String id) {
         this.id = id;
@@ -60,29 +77,32 @@ public class BatchResultErrorEntry  implements Serializable  {
     
     
     /**
-     * Returns the value of the SenderFault property for this object.
+     * Whether the error happened due to the sender's fault.
      *
-     * @return The value of the SenderFault property for this object.
+     * @return Whether the error happened due to the sender's fault.
      */
     public Boolean isSenderFault() {
         return senderFault;
     }
     
     /**
-     * Sets the value of the SenderFault property for this object.
+     * Whether the error happened due to the sender's fault.
      *
-     * @param senderFault The new value for the SenderFault property for this object.
+     * @param senderFault Whether the error happened due to the sender's fault.
      */
     public void setSenderFault(Boolean senderFault) {
         this.senderFault = senderFault;
     }
     
     /**
-     * Sets the value of the SenderFault property for this object.
+     * Whether the error happened due to the sender's fault.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param senderFault The new value for the SenderFault property for this object.
+     * @param senderFault Whether the error happened due to the sender's fault.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public BatchResultErrorEntry withSenderFault(Boolean senderFault) {
         this.senderFault = senderFault;
@@ -91,38 +111,41 @@ public class BatchResultErrorEntry  implements Serializable  {
     
     
     /**
-     * Returns the value of the SenderFault property for this object.
+     * Whether the error happened due to the sender's fault.
      *
-     * @return The value of the SenderFault property for this object.
+     * @return Whether the error happened due to the sender's fault.
      */
     public Boolean getSenderFault() {
         return senderFault;
     }
     
     /**
-     * Returns the value of the Code property for this object.
+     * An error code representing why the operation failed on this entry.
      *
-     * @return The value of the Code property for this object.
+     * @return An error code representing why the operation failed on this entry.
      */
     public String getCode() {
         return code;
     }
     
     /**
-     * Sets the value of the Code property for this object.
+     * An error code representing why the operation failed on this entry.
      *
-     * @param code The new value for the Code property for this object.
+     * @param code An error code representing why the operation failed on this entry.
      */
     public void setCode(String code) {
         this.code = code;
     }
     
     /**
-     * Sets the value of the Code property for this object.
+     * An error code representing why the operation failed on this entry.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param code The new value for the Code property for this object.
+     * @param code An error code representing why the operation failed on this entry.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public BatchResultErrorEntry withCode(String code) {
         this.code = code;
@@ -131,29 +154,32 @@ public class BatchResultErrorEntry  implements Serializable  {
     
     
     /**
-     * Returns the value of the Message property for this object.
+     * A message explaining why the operation failed on this entry.
      *
-     * @return The value of the Message property for this object.
+     * @return A message explaining why the operation failed on this entry.
      */
     public String getMessage() {
         return message;
     }
     
     /**
-     * Sets the value of the Message property for this object.
+     * A message explaining why the operation failed on this entry.
      *
-     * @param message The new value for the Message property for this object.
+     * @param message A message explaining why the operation failed on this entry.
      */
     public void setMessage(String message) {
         this.message = message;
     }
     
     /**
-     * Sets the value of the Message property for this object.
+     * A message explaining why the operation failed on this entry.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param message The new value for the Message property for this object.
+     * @param message A message explaining why the operation failed on this entry.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public BatchResultErrorEntry withMessage(String message) {
         this.message = message;

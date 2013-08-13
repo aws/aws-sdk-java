@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A complex type that contains information about viewer certificates for this distribution.
  * </p>
  */
-public class ViewerCertificate  implements Serializable  {
+public class ViewerCertificate implements Serializable {
 
     /**
      * The IAM certificate identifier of the custom viewer certificate for
@@ -65,6 +65,9 @@ public class ViewerCertificate  implements Serializable  {
      *
      * @param iAMCertificateId The IAM certificate identifier of the custom viewer certificate for
      *         this distribution.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ViewerCertificate withIAMCertificateId(String iAMCertificateId) {
         this.iAMCertificateId = iAMCertificateId;
@@ -108,6 +111,9 @@ public class ViewerCertificate  implements Serializable  {
      * @param cloudFrontDefaultCertificate Set to true if you want to use the default *.cloudfront.net viewer
      *         certificate for this distribution. Omit this value if you are setting
      *         an IAMCertificateId.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ViewerCertificate withCloudFrontDefaultCertificate(Boolean cloudFrontDefaultCertificate) {
         this.cloudFrontDefaultCertificate = cloudFrontDefaultCertificate;

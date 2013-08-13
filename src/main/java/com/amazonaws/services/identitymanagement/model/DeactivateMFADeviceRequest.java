@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deactivateMFADevice(DeactivateMFADeviceRequest)
  */
-public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the user whose MFA device you want to deactivate.
@@ -106,6 +106,9 @@ public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest  impleme
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param userName Name of the user whose MFA device you want to deactivate.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeactivateMFADeviceRequest withUserName(String userName) {
         this.userName = userName;
@@ -155,6 +158,9 @@ public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest  impleme
      *
      * @param serialNumber The serial number that uniquely identifies the MFA device. For virtual
      *         MFA devices, the serial number is the device ARN.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeactivateMFADeviceRequest withSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;

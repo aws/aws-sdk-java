@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Specifies the Amazon EC2 location for the job flow.
  * </p>
  */
-public class PlacementType  implements Serializable  {
+public class PlacementType implements Serializable {
 
     /**
      * The Amazon EC2 Availability Zone for the job flow.
@@ -89,6 +89,9 @@ public class PlacementType  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param availabilityZone The Amazon EC2 Availability Zone for the job flow.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PlacementType withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;

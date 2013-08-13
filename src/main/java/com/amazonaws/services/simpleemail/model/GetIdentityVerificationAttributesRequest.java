@@ -25,7 +25,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#getIdentityVerificationAttributes(GetIdentityVerificationAttributesRequest)
  */
-public class GetIdentityVerificationAttributesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class GetIdentityVerificationAttributesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * A list of identities.
@@ -67,6 +67,9 @@ public class GetIdentityVerificationAttributesRequest extends AmazonWebServiceRe
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param identities A list of identities.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetIdentityVerificationAttributesRequest withIdentities(String... identities) {
         if (getIdentities() == null) setIdentities(new java.util.ArrayList<String>(identities.length));
@@ -82,6 +85,9 @@ public class GetIdentityVerificationAttributesRequest extends AmazonWebServiceRe
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param identities A list of identities.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetIdentityVerificationAttributesRequest withIdentities(java.util.Collection<String> identities) {
         if (identities == null) {

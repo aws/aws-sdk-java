@@ -44,7 +44,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#shutdownGateway(ShutdownGatewayRequest)
  */
-public class ShutdownGatewayRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ShutdownGatewayRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -101,6 +101,9 @@ public class ShutdownGatewayRequest extends AmazonWebServiceRequest  implements 
      * @param gatewayARN The Amazon Resource Name (ARN) of the gateway. Use the
      *         <a>ListGateways</a> operation to return a list of gateways for your
      *         account and region.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ShutdownGatewayRequest withGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;

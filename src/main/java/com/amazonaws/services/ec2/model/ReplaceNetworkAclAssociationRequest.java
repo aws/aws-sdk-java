@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.ReplaceNetworkAclAssociationRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -25,7 +27,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#replaceNetworkAclAssociation(ReplaceNetworkAclAssociationRequest)
  */
-public class ReplaceNetworkAclAssociationRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ReplaceNetworkAclAssociationRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<ReplaceNetworkAclAssociationRequest> {
 
     /**
      * The ID representing the current association between the original
@@ -111,6 +113,18 @@ public class ReplaceNetworkAclAssociationRequest extends AmazonWebServiceRequest
         return this;
     }
     
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<ReplaceNetworkAclAssociationRequest> getDryRunRequest() {
+        Request<ReplaceNetworkAclAssociationRequest> request = new ReplaceNetworkAclAssociationRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#listAvailableSolutionStacks(ListAvailableSolutionStacksRequest)
  */
-public class ListAvailableSolutionStacksRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ListAvailableSolutionStacksRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Returns a string representation of this object; useful for testing and

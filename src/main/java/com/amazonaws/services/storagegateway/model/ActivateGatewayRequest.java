@@ -31,7 +31,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#activateGateway(ActivateGatewayRequest)
  */
-public class ActivateGatewayRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ActivateGatewayRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Your gateway activation key. You can obtain the activation key by
@@ -171,6 +171,9 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest  implements 
      *         activation-related parameters, however, these are merely defaults --
      *         the arguments you pass to the <code>ActivateGateway</code> API call
      *         determine the actual configuration of your gateway.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActivateGatewayRequest withActivationKey(String activationKey) {
         this.activationKey = activationKey;
@@ -226,6 +229,9 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest  implements 
      * @param gatewayName A unique identifier for your gateway. This name becomes part of the
      *         gateway Amazon Resources Name (ARN) which is what you use as an input
      *         to other operations.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActivateGatewayRequest withGatewayName(String gatewayName) {
         this.gatewayName = gatewayName;
@@ -283,6 +289,9 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest  implements 
      *         gateway. The time zone is used, for example, for scheduling snapshots
      *         and your gateway's maintenance schedule.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see GatewayTimezone
      */
     public ActivateGatewayRequest withGatewayTimezone(String gatewayTimezone) {
@@ -322,6 +331,9 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest  implements 
      * @param gatewayTimezone One of the values that indicates the time zone you want to set for the
      *         gateway. The time zone is used, for example, for scheduling snapshots
      *         and your gateway's maintenance schedule.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see GatewayTimezone
      */
@@ -411,6 +423,9 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest  implements 
      *         and Endpoints</a> in the <b>Amazon Web Services Glossary</b>.
      *         <p><i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
      *         "eu-west-1", "ap-northeast-1", "ap-southest-1", "sa-east-1"
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActivateGatewayRequest withGatewayRegion(String gatewayRegion) {
         this.gatewayRegion = gatewayRegion;
@@ -474,6 +489,9 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest  implements 
      *         cannot be changed after activation. The default value is
      *         <code>STORED</code>.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see GatewayType
      */
     public ActivateGatewayRequest withGatewayType(String gatewayType) {
@@ -517,6 +535,9 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest  implements 
      *         type specified is critical to all later functions of the gateway and
      *         cannot be changed after activation. The default value is
      *         <code>STORED</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see GatewayType
      */

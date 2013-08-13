@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.CreateImageRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -25,7 +27,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createImage(CreateImageRequest)
  */
-public class CreateImageRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateImageRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreateImageRequest> {
 
     /**
      * The ID of the instance from which to create the new image.
@@ -330,6 +332,18 @@ public class CreateImageRequest extends AmazonWebServiceRequest  implements Seri
         }
 
         return this;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<CreateImageRequest> getDryRunRequest() {
+        Request<CreateImageRequest> request = new CreateImageRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

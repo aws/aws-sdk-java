@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.DescribeConversionTasksRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -22,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeConversionTasks(DescribeConversionTasksRequest)
  */
-public class DescribeConversionTasksRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeConversionTasksRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeConversionTasksRequest> {
 
     private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
@@ -164,6 +166,18 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest  imp
         }
 
         return this;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<DescribeConversionTasksRequest> getDryRunRequest() {
+        Request<DescribeConversionTasksRequest> request = new DescribeConversionTasksRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

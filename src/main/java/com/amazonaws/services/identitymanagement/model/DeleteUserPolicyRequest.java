@@ -24,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteUserPolicy(DeleteUserPolicyRequest)
  */
-public class DeleteUserPolicyRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteUserPolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the user the policy is associated with.
@@ -103,6 +103,9 @@ public class DeleteUserPolicyRequest extends AmazonWebServiceRequest  implements
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param userName Name of the user the policy is associated with.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteUserPolicyRequest withUserName(String userName) {
         this.userName = userName;
@@ -146,6 +149,9 @@ public class DeleteUserPolicyRequest extends AmazonWebServiceRequest  implements
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param policyName Name of the policy document to delete.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteUserPolicyRequest withPolicyName(String policyName) {
         this.policyName = policyName;

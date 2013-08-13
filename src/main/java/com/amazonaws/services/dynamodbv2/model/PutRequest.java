@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Represents a request to perform a <i>PutItem</i> operation on an item.
  * </p>
  */
-public class PutRequest  implements Serializable  {
+public class PutRequest implements Serializable {
 
     /**
      * A map of attribute name to attribute values, representing the primary
@@ -32,6 +32,32 @@ public class PutRequest  implements Serializable  {
      */
     private java.util.Map<String,AttributeValue> item;
 
+    /**
+     * Default constructor for a new PutRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public PutRequest() {}
+    
+
+
+    /**
+     * Constructs a new PutRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param item A map of attribute name to attribute values, representing
+     * the primary key of an item to be processed by <i>PutItem</i>. All of
+     * the table's primary key attributes must be specified, and their data
+     * types must match those of the table's key schema. If any attributes
+     * are present in the item which are part of an index key schema for the
+     * table, their types must match the index key schema.
+     */
+    public PutRequest(java.util.Map<String,AttributeValue> item) {
+        setItem(item);
+    }
+
+    
+    
     /**
      * A map of attribute name to attribute values, representing the primary
      * key of an item to be processed by <i>PutItem</i>. All of the table's
@@ -87,6 +113,9 @@ public class PutRequest  implements Serializable  {
      *         match those of the table's key schema. If any attributes are present
      *         in the item which are part of an index key schema for the table, their
      *         types must match the index key schema.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PutRequest withItem(java.util.Map<String,AttributeValue> item) {
         setItem(item);

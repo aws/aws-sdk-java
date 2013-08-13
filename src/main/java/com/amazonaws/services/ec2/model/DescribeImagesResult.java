@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The result of describing <i>Amazon Machine Images</i> (AMIs).
  * </p>
  */
-public class DescribeImagesResult  implements Serializable  {
+public class DescribeImagesResult implements Serializable {
 
     /**
      * The list of the described AMIs.

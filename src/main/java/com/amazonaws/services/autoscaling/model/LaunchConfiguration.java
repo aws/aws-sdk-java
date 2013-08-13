@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The <code>LaunchConfiguration</code> data type.
  * </p>
  */
-public class LaunchConfiguration  implements Serializable  {
+public class LaunchConfiguration implements Serializable {
 
     /**
      * Specifies the name of the launch configuration.
@@ -175,6 +175,9 @@ public class LaunchConfiguration  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param launchConfigurationName Specifies the name of the launch configuration.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LaunchConfiguration withLaunchConfigurationName(String launchConfigurationName) {
         this.launchConfigurationName = launchConfigurationName;
@@ -218,6 +221,9 @@ public class LaunchConfiguration  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param launchConfigurationARN The launch configuration's Amazon Resource Name (ARN).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LaunchConfiguration withLaunchConfigurationARN(String launchConfigurationARN) {
         this.launchConfigurationARN = launchConfigurationARN;
@@ -267,6 +273,9 @@ public class LaunchConfiguration  implements Serializable  {
      *
      * @param imageId Provides the unique ID of the <i>Amazon Machine Image</i> (AMI) that
      *         was assigned during registration.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LaunchConfiguration withImageId(String imageId) {
         this.imageId = imageId;
@@ -310,6 +319,9 @@ public class LaunchConfiguration  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param keyName Provides the name of the Amazon EC2 key pair.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LaunchConfiguration withKeyName(String keyName) {
         this.keyName = keyName;
@@ -358,6 +370,9 @@ public class LaunchConfiguration  implements Serializable  {
      *
      * @param securityGroups A description of the security groups to associate with the Amazon EC2
      *         instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LaunchConfiguration withSecurityGroups(String... securityGroups) {
         if (getSecurityGroups() == null) setSecurityGroups(new java.util.ArrayList<String>(securityGroups.length));
@@ -375,6 +390,9 @@ public class LaunchConfiguration  implements Serializable  {
      *
      * @param securityGroups A description of the security groups to associate with the Amazon EC2
      *         instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LaunchConfiguration withSecurityGroups(java.util.Collection<String> securityGroups) {
         if (securityGroups == null) {
@@ -424,6 +442,9 @@ public class LaunchConfiguration  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param userData The user data available to the launched Amazon EC2 instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LaunchConfiguration withUserData(String userData) {
         this.userData = userData;
@@ -467,6 +488,9 @@ public class LaunchConfiguration  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param instanceType Specifies the instance type of the Amazon EC2 instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LaunchConfiguration withInstanceType(String instanceType) {
         this.instanceType = instanceType;
@@ -510,6 +534,9 @@ public class LaunchConfiguration  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param kernelId Provides the ID of the kernel associated with the Amazon EC2 AMI.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LaunchConfiguration withKernelId(String kernelId) {
         this.kernelId = kernelId;
@@ -553,6 +580,9 @@ public class LaunchConfiguration  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param ramdiskId Provides ID of the RAM disk associated with the Amazon EC2 AMI.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LaunchConfiguration withRamdiskId(String ramdiskId) {
         this.ramdiskId = ramdiskId;
@@ -601,6 +631,9 @@ public class LaunchConfiguration  implements Serializable  {
      *
      * @param blockDeviceMappings Specifies how block devices are exposed to the instance. Each mapping
      *         is made up of a <i>virtualName</i> and a <i>deviceName</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LaunchConfiguration withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
         if (getBlockDeviceMappings() == null) setBlockDeviceMappings(new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.length));
@@ -618,6 +651,9 @@ public class LaunchConfiguration  implements Serializable  {
      *
      * @param blockDeviceMappings Specifies how block devices are exposed to the instance. Each mapping
      *         is made up of a <i>virtualName</i> and a <i>deviceName</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LaunchConfiguration withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
@@ -661,6 +697,9 @@ public class LaunchConfiguration  implements Serializable  {
      *
      * @param instanceMonitoring Controls whether instances in this group are launched with detailed
      *         monitoring or not.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LaunchConfiguration withInstanceMonitoring(InstanceMonitoring instanceMonitoring) {
         this.instanceMonitoring = instanceMonitoring;
@@ -701,6 +740,9 @@ public class LaunchConfiguration  implements Serializable  {
      * <b>Length: </b>1 - 255<br/>
      *
      * @param spotPrice Specifies the price to bid when launching Spot Instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LaunchConfiguration withSpotPrice(String spotPrice) {
         this.spotPrice = spotPrice;
@@ -756,6 +798,9 @@ public class LaunchConfiguration  implements Serializable  {
      * @param iamInstanceProfile Provides the name or the Amazon Resource Name (ARN) of the instance
      *         profile associated with the IAM role for the instance. The instance
      *         profile contains the IAM role.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LaunchConfiguration withIamInstanceProfile(String iamInstanceProfile) {
         this.iamInstanceProfile = iamInstanceProfile;
@@ -787,6 +832,9 @@ public class LaunchConfiguration  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param createdTime Provides the creation date and time for this launch configuration.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LaunchConfiguration withCreatedTime(java.util.Date createdTime) {
         this.createdTime = createdTime;
@@ -818,6 +866,9 @@ public class LaunchConfiguration  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ebsOptimized The new value for the EbsOptimized property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public LaunchConfiguration withEbsOptimized(Boolean ebsOptimized) {
         this.ebsOptimized = ebsOptimized;

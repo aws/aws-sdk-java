@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The <code>PolicyDescription</code> data type.
  * </p>
  */
-public class PolicyDescription  implements Serializable  {
+public class PolicyDescription implements Serializable {
 
     /**
      * The name mof the policy associated with the LoadBalancer.
@@ -61,6 +61,9 @@ public class PolicyDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param policyName The name mof the policy associated with the LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PolicyDescription withPolicyName(String policyName) {
         this.policyName = policyName;
@@ -92,6 +95,9 @@ public class PolicyDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param policyTypeName The name of the policy type associated with the LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PolicyDescription withPolicyTypeName(String policyTypeName) {
         this.policyTypeName = policyTypeName;
@@ -134,6 +140,9 @@ public class PolicyDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param policyAttributeDescriptions A list of policy attribute description structures.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PolicyDescription withPolicyAttributeDescriptions(PolicyAttributeDescription... policyAttributeDescriptions) {
         if (getPolicyAttributeDescriptions() == null) setPolicyAttributeDescriptions(new java.util.ArrayList<PolicyAttributeDescription>(policyAttributeDescriptions.length));
@@ -149,6 +158,9 @@ public class PolicyDescription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param policyAttributeDescriptions A list of policy attribute description structures.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public PolicyDescription withPolicyAttributeDescriptions(java.util.Collection<PolicyAttributeDescription> policyAttributeDescriptions) {
         if (policyAttributeDescriptions == null) {

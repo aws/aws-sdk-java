@@ -82,7 +82,7 @@ public interface AmazonDynamoDB {
      * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      */
     public void setRegion(Region region) throws java.lang.IllegalArgumentException;
-	
+    
     /**
      * <p>
      * The <i>Scan</i> operation returns one or more items and item

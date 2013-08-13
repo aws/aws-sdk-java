@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the result of a successful invocation of the DescribeReservedCacheNodes action.
  * </p>
  */
-public class DescribeReservedCacheNodesResult  implements Serializable  {
+public class DescribeReservedCacheNodesResult implements Serializable {
 
     /**
      * The marker provided for paginated results.
@@ -56,6 +56,9 @@ public class DescribeReservedCacheNodesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param marker The marker provided for paginated results.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedCacheNodesResult withMarker(String marker) {
         this.marker = marker;
@@ -98,6 +101,9 @@ public class DescribeReservedCacheNodesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedCacheNodes A list of of reserved Cache Nodes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedCacheNodesResult withReservedCacheNodes(ReservedCacheNode... reservedCacheNodes) {
         if (getReservedCacheNodes() == null) setReservedCacheNodes(new java.util.ArrayList<ReservedCacheNode>(reservedCacheNodes.length));
@@ -113,6 +119,9 @@ public class DescribeReservedCacheNodesResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedCacheNodes A list of of reserved Cache Nodes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedCacheNodesResult withReservedCacheNodes(java.util.Collection<ReservedCacheNode> reservedCacheNodes) {
         if (reservedCacheNodes == null) {

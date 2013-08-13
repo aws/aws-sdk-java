@@ -27,7 +27,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#deleteApplication(DeleteApplicationRequest)
  */
-public class DeleteApplicationRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteApplicationRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the application to delete.
@@ -91,6 +91,9 @@ public class DeleteApplicationRequest extends AmazonWebServiceRequest  implement
      * <b>Length: </b>1 - 100<br/>
      *
      * @param applicationName The name of the application to delete.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeleteApplicationRequest withApplicationName(String applicationName) {
         this.applicationName = applicationName;

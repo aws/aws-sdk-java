@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Provides details of the <code>ActivityTaskTimedOut</code> event.
  * </p>
  */
-public class ActivityTaskTimedOutEventAttributes  implements Serializable  {
+public class ActivityTaskTimedOutEventAttributes implements Serializable {
 
     /**
      * The type of the timeout that caused this event.
@@ -94,6 +94,9 @@ public class ActivityTaskTimedOutEventAttributes  implements Serializable  {
      *
      * @param timeoutType The type of the timeout that caused this event.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ActivityTaskTimeoutType
      */
     public ActivityTaskTimedOutEventAttributes withTimeoutType(String timeoutType) {
@@ -125,6 +128,9 @@ public class ActivityTaskTimedOutEventAttributes  implements Serializable  {
      * <b>Allowed Values: </b>START_TO_CLOSE, SCHEDULE_TO_START, SCHEDULE_TO_CLOSE, HEARTBEAT
      *
      * @param timeoutType The type of the timeout that caused this event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see ActivityTaskTimeoutType
      */
@@ -175,6 +181,9 @@ public class ActivityTaskTimedOutEventAttributes  implements Serializable  {
      *         recorded when this activity task was scheduled. This information can
      *         be useful for diagnosing problems by tracing back the chain of events
      *         leading up to this event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActivityTaskTimedOutEventAttributes withScheduledEventId(Long scheduledEventId) {
         this.scheduledEventId = scheduledEventId;
@@ -224,6 +233,9 @@ public class ActivityTaskTimedOutEventAttributes  implements Serializable  {
      *         this activity task was started. This information can be useful for
      *         diagnosing problems by tracing back the chain of events leading up to
      *         this event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActivityTaskTimedOutEventAttributes withStartedEventId(Long startedEventId) {
         this.startedEventId = startedEventId;
@@ -276,6 +288,9 @@ public class ActivityTaskTimedOutEventAttributes  implements Serializable  {
      * @param details Contains the content of the <code>details</code> parameter for the
      *         last call made by the activity to
      *         <code>RecordActivityTaskHeartbeat</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ActivityTaskTimedOutEventAttributes withDetails(String details) {
         this.details = details;

@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the results of a successful invocation of the DescribeEventSubscriptions action.
  * </p>
  */
-public class EventSubscription  implements Serializable  {
+public class EventSubscription implements Serializable {
 
     /**
      * The AWS customer account associated with the RDS event notification
@@ -105,6 +105,9 @@ public class EventSubscription  implements Serializable  {
      *
      * @param customerAwsId The AWS customer account associated with the RDS event notification
      *         subscription.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EventSubscription withCustomerAwsId(String customerAwsId) {
         this.customerAwsId = customerAwsId;
@@ -136,6 +139,9 @@ public class EventSubscription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param custSubscriptionId The RDS event notification subscription Id.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EventSubscription withCustSubscriptionId(String custSubscriptionId) {
         this.custSubscriptionId = custSubscriptionId;
@@ -167,6 +173,9 @@ public class EventSubscription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param snsTopicArn The topic ARN of the RDS event notification subscription.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EventSubscription withSnsTopicArn(String snsTopicArn) {
         this.snsTopicArn = snsTopicArn;
@@ -228,6 +237,9 @@ public class EventSubscription  implements Serializable  {
      *         indicates that RDS no longer has permission to post to the SNS topic.
      *         The status "topic-not-exist" indicates that the topic was deleted
      *         after the subscription was created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EventSubscription withStatus(String status) {
         this.status = status;
@@ -259,6 +271,9 @@ public class EventSubscription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subscriptionCreationTime The time the RDS event notification subscription was created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EventSubscription withSubscriptionCreationTime(String subscriptionCreationTime) {
         this.subscriptionCreationTime = subscriptionCreationTime;
@@ -290,6 +305,9 @@ public class EventSubscription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceType The source type for the RDS event notification subscription.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EventSubscription withSourceType(String sourceType) {
         this.sourceType = sourceType;
@@ -332,6 +350,9 @@ public class EventSubscription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceIdsList A list of source Ids for the RDS event notification subscription.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EventSubscription withSourceIdsList(String... sourceIdsList) {
         if (getSourceIdsList() == null) setSourceIdsList(new java.util.ArrayList<String>(sourceIdsList.length));
@@ -347,6 +368,9 @@ public class EventSubscription  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceIdsList A list of source Ids for the RDS event notification subscription.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EventSubscription withSourceIdsList(java.util.Collection<String> sourceIdsList) {
         if (sourceIdsList == null) {
@@ -401,6 +425,9 @@ public class EventSubscription  implements Serializable  {
      *
      * @param eventCategoriesList A list of event categories for the RDS event notification
      *         subscription.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EventSubscription withEventCategoriesList(String... eventCategoriesList) {
         if (getEventCategoriesList() == null) setEventCategoriesList(new java.util.ArrayList<String>(eventCategoriesList.length));
@@ -418,6 +445,9 @@ public class EventSubscription  implements Serializable  {
      *
      * @param eventCategoriesList A list of event categories for the RDS event notification
      *         subscription.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EventSubscription withEventCategoriesList(java.util.Collection<String> eventCategoriesList) {
         if (eventCategoriesList == null) {
@@ -461,6 +491,9 @@ public class EventSubscription  implements Serializable  {
      *
      * @param enabled A Boolean value indicating if the subscription is enabled. True
      *         indicates the subscription is enabled.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public EventSubscription withEnabled(Boolean enabled) {
         this.enabled = enabled;

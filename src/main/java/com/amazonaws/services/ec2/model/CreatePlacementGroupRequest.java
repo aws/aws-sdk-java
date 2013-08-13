@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.CreatePlacementGroupRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -25,7 +27,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createPlacementGroup(CreatePlacementGroupRequest)
  */
-public class CreatePlacementGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreatePlacementGroupRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CreatePlacementGroupRequest> {
 
     /**
      * The name of the <code>PlacementGroup</code>.
@@ -191,6 +193,18 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest  implem
     public CreatePlacementGroupRequest withStrategy(PlacementStrategy strategy) {
         this.strategy = strategy.toString();
         return this;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<CreatePlacementGroupRequest> getDryRunRequest() {
+        Request<CreatePlacementGroupRequest> request = new CreatePlacementGroupRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

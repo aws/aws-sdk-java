@@ -44,7 +44,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#describeJobFlows(DescribeJobFlowsRequest)
  */
-public class DescribeJobFlowsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Return only job flows created after this date and time.
@@ -112,6 +112,9 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param createdAfter Return only job flows created after this date and time.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeJobFlowsRequest withCreatedAfter(java.util.Date createdAfter) {
         this.createdAfter = createdAfter;
@@ -143,6 +146,9 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param createdBefore Return only job flows created before this date and time.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeJobFlowsRequest withCreatedBefore(java.util.Date createdBefore) {
         this.createdBefore = createdBefore;
@@ -185,6 +191,9 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param jobFlowIds Return only job flows whose job flow ID is contained in this list.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeJobFlowsRequest withJobFlowIds(String... jobFlowIds) {
         if (getJobFlowIds() == null) setJobFlowIds(new java.util.ArrayList<String>(jobFlowIds.length));
@@ -200,6 +209,9 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param jobFlowIds Return only job flows whose job flow ID is contained in this list.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeJobFlowsRequest withJobFlowIds(java.util.Collection<String> jobFlowIds) {
         if (jobFlowIds == null) {
@@ -248,6 +260,9 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param jobFlowStates Return only job flows whose state is contained in this list.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeJobFlowsRequest withJobFlowStates(String... jobFlowStates) {
         if (getJobFlowStates() == null) setJobFlowStates(new java.util.ArrayList<String>(jobFlowStates.length));
@@ -263,6 +278,9 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest  implements
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param jobFlowStates Return only job flows whose state is contained in this list.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeJobFlowsRequest withJobFlowStates(java.util.Collection<String> jobFlowStates) {
         if (jobFlowStates == null) {

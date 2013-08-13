@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A complex type that specifies the cookie preferences associated with this cache behavior.
  * </p>
  */
-public class CookiePreference  implements Serializable  {
+public class CookiePreference implements Serializable {
 
     /**
      * Use this element to specify whether you want CloudFront to forward
@@ -96,6 +96,9 @@ public class CookiePreference  implements Serializable  {
      *         can specify all, none or whitelist. If you choose All, CloudFront
      *         forwards all cookies regardless of how many your application uses.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ItemSelection
      */
     public CookiePreference withForward(String forward) {
@@ -140,6 +143,9 @@ public class CookiePreference  implements Serializable  {
      *         can specify all, none or whitelist. If you choose All, CloudFront
      *         forwards all cookies regardless of how many your application uses.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ItemSelection
      */
     public CookiePreference withForward(ItemSelection forward) {
@@ -183,6 +189,9 @@ public class CookiePreference  implements Serializable  {
      * @param whitelistedNames A complex type that specifies the whitelisted cookies, if any, that
      *         you want CloudFront to forward to your origin that is associated with
      *         this cache behavior.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CookiePreference withWhitelistedNames(CookieNames whitelistedNames) {
         this.whitelistedNames = whitelistedNames;

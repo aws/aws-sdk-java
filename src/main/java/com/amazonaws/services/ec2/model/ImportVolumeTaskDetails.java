@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Import Volume Task Details
  */
-public class ImportVolumeTaskDetails  implements Serializable  {
+public class ImportVolumeTaskDetails implements Serializable {
 
     private Long bytesConverted;
 

@@ -38,7 +38,7 @@ import java.io.Serializable;
  * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a> .
  * </p>
  */
-public class RequestCancelActivityTaskDecisionAttributes  implements Serializable  {
+public class RequestCancelActivityTaskDecisionAttributes implements Serializable {
 
     /**
      * The <code>activityId</code> of the activity task to be canceled.
@@ -81,6 +81,9 @@ public class RequestCancelActivityTaskDecisionAttributes  implements Serializabl
      * <b>Length: </b>1 - 256<br/>
      *
      * @param activityId The <code>activityId</code> of the activity task to be canceled.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RequestCancelActivityTaskDecisionAttributes withActivityId(String activityId) {
         this.activityId = activityId;

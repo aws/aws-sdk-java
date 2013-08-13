@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.CopySnapshotRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -22,7 +24,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#copySnapshot(CopySnapshotRequest)
  */
-public class CopySnapshotRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CopySnapshotRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<CopySnapshotRequest> {
 
     private String sourceRegion;
 
@@ -131,6 +133,18 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest  implements Ser
         return this;
     }
     
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<CopySnapshotRequest> getDryRunRequest() {
+        Request<CopySnapshotRequest> request = new CopySnapshotRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

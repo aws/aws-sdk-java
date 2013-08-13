@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Options that define a <code>uint</code> field in the search index.
  * </p>
  */
-public class UIntOptions  implements Serializable  {
+public class UIntOptions implements Serializable {
 
     /**
      * The default value for an unsigned integer field.
@@ -63,6 +63,9 @@ public class UIntOptions  implements Serializable  {
      * <b>Range: </b>0 - <br/>
      *
      * @param defaultValue The default value for an unsigned integer field.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UIntOptions withDefaultValue(Integer defaultValue) {
         this.defaultValue = defaultValue;

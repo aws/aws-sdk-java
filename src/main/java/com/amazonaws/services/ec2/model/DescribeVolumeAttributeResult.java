@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Describe Volume Attribute Result
  */
-public class DescribeVolumeAttributeResult  implements Serializable  {
+public class DescribeVolumeAttributeResult implements Serializable {
 
     private String volumeId;
 

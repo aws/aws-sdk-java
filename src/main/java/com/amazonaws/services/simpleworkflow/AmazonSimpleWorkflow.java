@@ -371,7 +371,7 @@ public interface AmazonSimpleWorkflow {
      * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      */
     public void setRegion(Region region) throws java.lang.IllegalArgumentException;
-	
+    
     /**
      * <p>
      * Deprecates the specified <i>workflow type</i> . After a workflow type

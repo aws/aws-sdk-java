@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The stopword options configured for this search domain and the current status of those options.
  * </p>
  */
-public class StopwordOptionsStatus  implements Serializable  {
+public class StopwordOptionsStatus implements Serializable {
 
     /**
      * Lists stopwords serialized as a JSON document. The document has a
@@ -78,6 +78,9 @@ public class StopwordOptionsStatus  implements Serializable  {
      *         single object with one property "stopwords" whose value is an array of
      *         strings. The maximum size of a stopwords document is 10KB. Example:
      *         <code>{ "stopwords": ["a", "an", "the", "of"] }</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StopwordOptionsStatus withOptions(String options) {
         this.options = options;
@@ -115,6 +118,9 @@ public class StopwordOptionsStatus  implements Serializable  {
      *
      * @param status The status of an option, including when it was last updated and
      *         whether it is actively in use for searches.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public StopwordOptionsStatus withStatus(OptionStatus status) {
         this.status = status;

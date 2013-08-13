@@ -22,7 +22,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#cancelReservedInstancesListing(CancelReservedInstancesListingRequest)
  */
-public class CancelReservedInstancesListingRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CancelReservedInstancesListingRequest extends AmazonWebServiceRequest implements Serializable {
 
     private String reservedInstancesListingId;
 

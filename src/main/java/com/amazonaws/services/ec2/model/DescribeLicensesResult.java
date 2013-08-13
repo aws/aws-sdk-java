@@ -19,7 +19,7 @@ import java.io.Serializable;
  * <p>
  * </p>
  */
-public class DescribeLicensesResult  implements Serializable  {
+public class DescribeLicensesResult implements Serializable {
 
     /**
      * Specifies active licenses in use and attached to an Amazon EC2

@@ -32,7 +32,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.support.AWSSupport#describeServices(DescribeServicesRequest)
  */
-public class DescribeServicesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeServicesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * List in JSON format of service codes available for AWS services.
@@ -94,6 +94,9 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest  implements
      * <b>Length: </b>0 - 100<br/>
      *
      * @param serviceCodeList List in JSON format of service codes available for AWS services.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeServicesRequest withServiceCodeList(String... serviceCodeList) {
         if (getServiceCodeList() == null) setServiceCodeList(new java.util.ArrayList<String>(serviceCodeList.length));
@@ -112,6 +115,9 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest  implements
      * <b>Length: </b>0 - 100<br/>
      *
      * @param serviceCodeList List in JSON format of service codes available for AWS services.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeServicesRequest withServiceCodeList(java.util.Collection<String> serviceCodeList) {
         if (serviceCodeList == null) {
@@ -167,6 +173,9 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest  implements
      *         support. AWS Support currently supports English and Japanese, for
      *         which the codes are <i>en</i> and <i>ja</i>, respectively. Language
      *         parameters must be passed explicitly for operations that take them.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeServicesRequest withLanguage(String language) {
         this.language = language;

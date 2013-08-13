@@ -23,7 +23,7 @@ import java.io.Serializable;
  * 
  * </p>
  */
-public class SourceSecurityGroup  implements Serializable  {
+public class SourceSecurityGroup implements Serializable {
 
     /**
      * Owner of the source security group. Use this value for the
@@ -83,6 +83,9 @@ public class SourceSecurityGroup  implements Serializable  {
      *         <code>--source-group-user</code> parameter of the
      *         <code>ec2-authorize</code> command in the Amazon EC2 command line
      *         tool.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SourceSecurityGroup withOwnerAlias(String ownerAlias) {
         this.ownerAlias = ownerAlias;
@@ -132,6 +135,9 @@ public class SourceSecurityGroup  implements Serializable  {
      *         <code>--source-group</code> parameter of the
      *         <code>ec2-authorize</code> command in the Amazon EC2 command line
      *         tool.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public SourceSecurityGroup withGroupName(String groupName) {
         this.groupName = groupName;

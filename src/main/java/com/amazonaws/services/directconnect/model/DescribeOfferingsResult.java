@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A structure containing a list of offerings.
  * </p>
  */
-public class DescribeOfferingsResult  implements Serializable  {
+public class DescribeOfferingsResult implements Serializable {
 
     /**
      * A list of offerings.
@@ -62,6 +62,9 @@ public class DescribeOfferingsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param offerings A list of offerings.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeOfferingsResult withOfferings(Offering... offerings) {
         if (getOfferings() == null) setOfferings(new java.util.ArrayList<Offering>(offerings.length));
@@ -77,6 +80,9 @@ public class DescribeOfferingsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param offerings A list of offerings.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeOfferingsResult withOfferings(java.util.Collection<Offering> offerings) {
         if (offerings == null) {

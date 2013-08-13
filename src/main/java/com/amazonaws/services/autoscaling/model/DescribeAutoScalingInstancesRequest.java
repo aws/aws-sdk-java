@@ -29,7 +29,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeAutoScalingInstances(DescribeAutoScalingInstancesRequest)
  */
-public class DescribeAutoScalingInstancesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeAutoScalingInstancesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The list of Auto Scaling instances to describe. If this list is
@@ -110,6 +110,9 @@ public class DescribeAutoScalingInstancesRequest extends AmazonWebServiceRequest
      *         omitted, all auto scaling instances are described. The list of
      *         requested instances cannot contain more than 50 items. If unknown
      *         instances are requested, they are ignored with no error.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeAutoScalingInstancesRequest withInstanceIds(String... instanceIds) {
         if (getInstanceIds() == null) setInstanceIds(new java.util.ArrayList<String>(instanceIds.length));
@@ -131,6 +134,9 @@ public class DescribeAutoScalingInstancesRequest extends AmazonWebServiceRequest
      *         omitted, all auto scaling instances are described. The list of
      *         requested instances cannot contain more than 50 items. If unknown
      *         instances are requested, they are ignored with no error.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeAutoScalingInstancesRequest withInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
@@ -183,6 +189,9 @@ public class DescribeAutoScalingInstancesRequest extends AmazonWebServiceRequest
      *
      * @param maxRecords The maximum number of Auto Scaling instances to be described with each
      *         call.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeAutoScalingInstancesRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -229,6 +238,9 @@ public class DescribeAutoScalingInstancesRequest extends AmazonWebServiceRequest
      *
      * @param nextToken The token returned by a previous call to indicate that there is more
      *         data available.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeAutoScalingInstancesRequest withNextToken(String nextToken) {
         this.nextToken = nextToken;

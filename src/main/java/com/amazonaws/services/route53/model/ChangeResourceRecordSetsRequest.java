@@ -52,7 +52,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#changeResourceRecordSets(ChangeResourceRecordSetsRequest)
  */
-public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * <i>Alias resource record sets only:</i> The value of the hosted zone
@@ -166,6 +166,9 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest  im
      *         href="http://docs.amazonwebservices.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      *         Alias Resource Record Sets for Elastic Load Balancing</a> in the
      *         <i>Amazon Route 53 Developer Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChangeResourceRecordSetsRequest withHostedZoneId(String hostedZoneId) {
         this.hostedZoneId = hostedZoneId;
@@ -203,6 +206,9 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest  im
      *
      * @param changeBatch A complex type that contains an optional comment and the
      *         <code>Changes</code> element.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public ChangeResourceRecordSetsRequest withChangeBatch(ChangeBatch changeBatch) {
         this.changeBatch = changeBatch;

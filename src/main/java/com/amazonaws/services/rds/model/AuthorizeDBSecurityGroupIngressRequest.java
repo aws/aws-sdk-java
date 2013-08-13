@@ -34,7 +34,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#authorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest)
  */
-public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the DB Security Group to add authorization to.
@@ -118,6 +118,9 @@ public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequ
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBSecurityGroupName The name of the DB Security Group to add authorization to.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AuthorizeDBSecurityGroupIngressRequest withDBSecurityGroupName(String dBSecurityGroupName) {
         this.dBSecurityGroupName = dBSecurityGroupName;
@@ -149,6 +152,9 @@ public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequ
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cIDRIP The IP range to authorize.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AuthorizeDBSecurityGroupIngressRequest withCIDRIP(String cIDRIP) {
         this.cIDRIP = cIDRIP;
@@ -198,6 +204,9 @@ public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequ
      *         Groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
      *         EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
      *         or <code>EC2SecurityGroupId</code> must be provided.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AuthorizeDBSecurityGroupIngressRequest withEC2SecurityGroupName(String eC2SecurityGroupName) {
         this.eC2SecurityGroupName = eC2SecurityGroupName;
@@ -247,6 +256,9 @@ public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequ
      *         <code>EC2SecurityGroupId</code> must be provided. Otherwise,
      *         EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
      *         or <code>EC2SecurityGroupId</code> must be provided.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AuthorizeDBSecurityGroupIngressRequest withEC2SecurityGroupId(String eC2SecurityGroupId) {
         this.eC2SecurityGroupId = eC2SecurityGroupId;
@@ -308,6 +320,9 @@ public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequ
      *         <code>EC2SecurityGroupId</code> must be provided. Otherwise,
      *         EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
      *         or <code>EC2SecurityGroupId</code> must be provided.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public AuthorizeDBSecurityGroupIngressRequest withEC2SecurityGroupOwnerId(String eC2SecurityGroupOwnerId) {
         this.eC2SecurityGroupOwnerId = eC2SecurityGroupOwnerId;

@@ -31,7 +31,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#getChange(GetChangeRequest)
  */
-public class GetChangeRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class GetChangeRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The ID of the change batch request. The value that you specify here is
@@ -111,6 +111,9 @@ public class GetChangeRequest extends AmazonWebServiceRequest  implements Serial
      * @param id The ID of the change batch request. The value that you specify here is
      *         the value that <code>ChangeResourceRecordSets</code> returned in the
      *         Id element when you submitted the request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetChangeRequest withId(String id) {
         this.id = id;

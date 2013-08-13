@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Describe Vpc Attribute Result
  */
-public class DescribeVpcAttributeResult  implements Serializable  {
+public class DescribeVpcAttributeResult implements Serializable {
 
     private String vpcId;
 

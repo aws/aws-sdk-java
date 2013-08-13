@@ -102,7 +102,7 @@ public interface AmazonDirectConnect {
      * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      */
     public void setRegion(Region region) throws java.lang.IllegalArgumentException;
-	
+    
     /**
      * <p>
      * Displays all virtual interfaces for an AWS account. Virtual interfaces

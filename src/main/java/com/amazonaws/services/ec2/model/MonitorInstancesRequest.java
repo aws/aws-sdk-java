@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.MonitorInstancesRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -24,7 +26,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#monitorInstances(MonitorInstancesRequest)
  */
-public class MonitorInstancesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class MonitorInstancesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<MonitorInstancesRequest> {
 
     /**
      * The list of Amazon EC2 instances on which to enable monitoring.
@@ -120,6 +122,18 @@ public class MonitorInstancesRequest extends AmazonWebServiceRequest  implements
         }
 
         return this;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<MonitorInstancesRequest> getDryRunRequest() {
+        Request<MonitorInstancesRequest> request = new MonitorInstancesRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

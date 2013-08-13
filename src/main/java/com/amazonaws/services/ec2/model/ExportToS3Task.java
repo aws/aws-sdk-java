@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Export To S3 Task
  */
-public class ExportToS3Task  implements Serializable  {
+public class ExportToS3Task implements Serializable {
 
     private String diskImageFormat;
 

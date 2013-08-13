@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the configuration settings of a domain.
  * </p>
  */
-public class DomainConfiguration  implements Serializable  {
+public class DomainConfiguration implements Serializable {
 
     /**
      * The retention period for workflow executions in this domain.
@@ -63,6 +63,9 @@ public class DomainConfiguration  implements Serializable  {
      * <b>Length: </b>1 - 8<br/>
      *
      * @param workflowExecutionRetentionPeriodInDays The retention period for workflow executions in this domain.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DomainConfiguration withWorkflowExecutionRetentionPeriodInDays(String workflowExecutionRetentionPeriodInDays) {
         this.workflowExecutionRetentionPeriodInDays = workflowExecutionRetentionPeriodInDays;

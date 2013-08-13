@@ -20,7 +20,7 @@ import java.io.Serializable;
  * A description of the app.
  * </p>
  */
-public class App  implements Serializable  {
+public class App implements Serializable {
 
     /**
      * The app ID.
@@ -110,6 +110,9 @@ public class App  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param appId The app ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public App withAppId(String appId) {
         this.appId = appId;
@@ -141,6 +144,9 @@ public class App  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackId The app stack ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public App withStackId(String stackId) {
         this.stackId = stackId;
@@ -172,6 +178,9 @@ public class App  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param shortname The app's short name.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public App withShortname(String shortname) {
         this.shortname = shortname;
@@ -203,6 +212,9 @@ public class App  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The app name.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public App withName(String name) {
         this.name = name;
@@ -234,6 +246,9 @@ public class App  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param description A description of the app.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public App withDescription(String description) {
         this.description = description;
@@ -279,6 +294,9 @@ public class App  implements Serializable  {
      *
      * @param type The app type.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see AppType
      */
     public App withType(String type) {
@@ -311,6 +329,9 @@ public class App  implements Serializable  {
      *
      * @param type The app type.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see AppType
      */
     public App withType(AppType type) {
@@ -342,6 +363,9 @@ public class App  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param appSource A <code>Source</code> object that describes the app repository.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public App withAppSource(Source appSource) {
         this.appSource = appSource;
@@ -390,6 +414,9 @@ public class App  implements Serializable  {
      *
      * @param domains The app vhost settings, with multiple domains separated by commas. For
      *         example: <code>'www.example.com, example.com'</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public App withDomains(String... domains) {
         if (getDomains() == null) setDomains(new java.util.ArrayList<String>(domains.length));
@@ -407,6 +434,9 @@ public class App  implements Serializable  {
      *
      * @param domains The app vhost settings, with multiple domains separated by commas. For
      *         example: <code>'www.example.com, example.com'</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public App withDomains(java.util.Collection<String> domains) {
         if (domains == null) {
@@ -444,6 +474,9 @@ public class App  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param enableSsl Whether to enable SSL for the app.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public App withEnableSsl(Boolean enableSsl) {
         this.enableSsl = enableSsl;
@@ -484,6 +517,9 @@ public class App  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sslConfiguration An <code>SslConfiguration</code> object with the SSL configuration.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public App withSslConfiguration(SslConfiguration sslConfiguration) {
         this.sslConfiguration = sslConfiguration;
@@ -519,6 +555,9 @@ public class App  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributes The contents of the stack attributes bag.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public App withAttributes(java.util.Map<String,String> attributes) {
         setAttributes(attributes);
@@ -580,6 +619,9 @@ public class App  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param createdAt When the app was created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public App withCreatedAt(String createdAt) {
         this.createdAt = createdAt;

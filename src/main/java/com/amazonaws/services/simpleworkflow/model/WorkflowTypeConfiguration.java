@@ -20,7 +20,7 @@ import java.io.Serializable;
  * The configuration settings of a workflow type.
  * </p>
  */
-public class WorkflowTypeConfiguration  implements Serializable  {
+public class WorkflowTypeConfiguration implements Serializable {
 
     /**
      * The optional default maximum duration, specified when registering the
@@ -185,6 +185,9 @@ public class WorkflowTypeConfiguration  implements Serializable  {
      *         values are integers greater than or equal to <code>0</code>. An
      *         integer value can be used to specify the duration in seconds while
      *         <code>NONE</code> can be used to specify unlimited duration.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowTypeConfiguration withDefaultTaskStartToCloseTimeout(String defaultTaskStartToCloseTimeout) {
         this.defaultTaskStartToCloseTimeout = defaultTaskStartToCloseTimeout;
@@ -267,6 +270,9 @@ public class WorkflowTypeConfiguration  implements Serializable  {
      *         values are integers greater than or equal to <code>0</code>. An
      *         integer value can be used to specify the duration in seconds while
      *         <code>NONE</code> can be used to specify unlimited duration.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowTypeConfiguration withDefaultExecutionStartToCloseTimeout(String defaultExecutionStartToCloseTimeout) {
         this.defaultExecutionStartToCloseTimeout = defaultExecutionStartToCloseTimeout;
@@ -322,6 +328,9 @@ public class WorkflowTypeConfiguration  implements Serializable  {
      *         of this type. This default can be overridden when starting a workflow
      *         execution using the <a>StartWorkflowExecution</a> action or the
      *         <code>StartChildWorkflowExecution</code> <a>Decision</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public WorkflowTypeConfiguration withDefaultTaskList(TaskList defaultTaskList) {
         this.defaultTaskList = defaultTaskList;
@@ -445,6 +454,9 @@ public class WorkflowTypeConfiguration  implements Serializable  {
      *         <li><b>ABANDON:</b> no action will be taken. The child executions will
      *         continue to run.</li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see ChildPolicy
      */
     public WorkflowTypeConfiguration withDefaultChildPolicy(String defaultChildPolicy) {
@@ -528,6 +540,9 @@ public class WorkflowTypeConfiguration  implements Serializable  {
      *         receives an execution history with this event. </li>
      *         <li><b>ABANDON:</b> no action will be taken. The child executions will
      *         continue to run.</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see ChildPolicy
      */

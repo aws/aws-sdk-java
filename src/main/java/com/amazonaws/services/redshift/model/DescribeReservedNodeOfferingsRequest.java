@@ -34,7 +34,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeReservedNodeOfferings(DescribeReservedNodeOfferingsRequest)
  */
-public class DescribeReservedNodeOfferingsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeReservedNodeOfferingsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The unique identifier for the offering.
@@ -83,6 +83,9 @@ public class DescribeReservedNodeOfferingsRequest extends AmazonWebServiceReques
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedNodeOfferingId The unique identifier for the offering.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedNodeOfferingsRequest withReservedNodeOfferingId(String reservedNodeOfferingId) {
         this.reservedNodeOfferingId = reservedNodeOfferingId;
@@ -138,6 +141,9 @@ public class DescribeReservedNodeOfferingsRequest extends AmazonWebServiceReques
      *         marker is included in the response so that the remaining results may
      *         be retrieved. <p>Default: <code>100</code> <p>Constraints: minimum 20,
      *         maximum 100.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedNodeOfferingsRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -193,6 +199,9 @@ public class DescribeReservedNodeOfferingsRequest extends AmazonWebServiceReques
      *         offering that the request will return. <p>You can specify either a
      *         <b>Marker</b> parameter or a <b>ClusterIdentifier</b> parameter in a
      *         <a>DescribeClusters</a> request, but not both.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeReservedNodeOfferingsRequest withMarker(String marker) {
         this.marker = marker;

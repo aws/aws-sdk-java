@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Describes an instance.
  * </p>
  */
-public class Instance  implements Serializable  {
+public class Instance implements Serializable {
 
     /**
      * The instance ID.
@@ -226,6 +226,9 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceId The instance ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -257,6 +260,9 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param ec2InstanceId The ID of the associated Amazon EC2 instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withEc2InstanceId(String ec2InstanceId) {
         this.ec2InstanceId = ec2InstanceId;
@@ -288,6 +294,9 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param hostname The instance host name.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withHostname(String hostname) {
         this.hostname = hostname;
@@ -319,6 +328,9 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackId The stack ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withStackId(String stackId) {
         this.stackId = stackId;
@@ -361,6 +373,9 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param layerIds An array containing the instance layer IDs.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withLayerIds(String... layerIds) {
         if (getLayerIds() == null) setLayerIds(new java.util.ArrayList<String>(layerIds.length));
@@ -376,6 +391,9 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param layerIds An array containing the instance layer IDs.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withLayerIds(java.util.Collection<String> layerIds) {
         if (layerIds == null) {
@@ -424,6 +442,9 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param securityGroupIds An array containing the instance security group IDs.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withSecurityGroupIds(String... securityGroupIds) {
         if (getSecurityGroupIds() == null) setSecurityGroupIds(new java.util.ArrayList<String>(securityGroupIds.length));
@@ -439,6 +460,9 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param securityGroupIds An array containing the instance security group IDs.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
         if (securityGroupIds == null) {
@@ -512,6 +536,9 @@ public class Instance  implements Serializable  {
      *         Families and Types</a>. The parameter values that specify the various
      *         types are in the API Name column of the Available Instance Types
      *         table.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withInstanceType(String instanceType) {
         this.instanceType = instanceType;
@@ -561,6 +588,9 @@ public class Instance  implements Serializable  {
      *         ARNs, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withInstanceProfileArn(String instanceProfileArn) {
         this.instanceProfileArn = instanceProfileArn;
@@ -610,6 +640,9 @@ public class Instance  implements Serializable  {
      *         <li>running_setup</li> <li>online</li> <li>setup_failed</li>
      *         <li>start_failed</li> <li>terminating</li> <li>terminated</li>
      *         <li>stopped</li> <li>connection_lost</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withStatus(String status) {
         this.status = status;
@@ -641,6 +674,9 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param os The instance operating system.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withOs(String os) {
         this.os = os;
@@ -690,6 +726,9 @@ public class Instance  implements Serializable  {
      *         based on one of the standard AWS OpsWorks APIs: Amazon Linux or Ubuntu
      *         12.04 LTS. For more information, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances.html">Instances</a>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withAmiId(String amiId) {
         this.amiId = amiId;
@@ -733,6 +772,9 @@ public class Instance  implements Serializable  {
      * @param availabilityZone The instance Availability Zone. For more information, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      *         and Endpoints</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -764,6 +806,9 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param publicDns The instance public DNS name.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withPublicDns(String publicDns) {
         this.publicDns = publicDns;
@@ -795,6 +840,9 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateDns The instance private DNS name.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withPrivateDns(String privateDns) {
         this.privateDns = privateDns;
@@ -826,6 +874,9 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param publicIp The instance public IP address.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withPublicIp(String publicIp) {
         this.publicIp = publicIp;
@@ -857,6 +908,9 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param privateIp The instance private IP address.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withPrivateIp(String privateIp) {
         this.privateIp = privateIp;
@@ -900,6 +954,9 @@ public class Instance  implements Serializable  {
      * @param elasticIp The instance <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      *         IP address </a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withElasticIp(String elasticIp) {
         this.elasticIp = elasticIp;
@@ -981,6 +1038,9 @@ public class Instance  implements Serializable  {
      *         auto scaling instance, which is started and stopped based on load
      *         metrics.</li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see AutoScalingType
      */
     public Instance withAutoScalingType(String autoScalingType) {
@@ -1037,6 +1097,9 @@ public class Instance  implements Serializable  {
      *         auto scaling instance, which is started and stopped based on load
      *         metrics.</li> </ul>
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see AutoScalingType
      */
     public Instance withAutoScalingType(AutoScalingType autoScalingType) {
@@ -1068,6 +1131,9 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sshKeyName The instance SSH key name.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withSshKeyName(String sshKeyName) {
         this.sshKeyName = sshKeyName;
@@ -1099,6 +1165,9 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sshHostRsaKeyFingerprint The SSH key's RSA fingerprint.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withSshHostRsaKeyFingerprint(String sshHostRsaKeyFingerprint) {
         this.sshHostRsaKeyFingerprint = sshHostRsaKeyFingerprint;
@@ -1130,6 +1199,9 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sshHostDsaKeyFingerprint The SSH key's DSA fingerprint.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withSshHostDsaKeyFingerprint(String sshHostDsaKeyFingerprint) {
         this.sshHostDsaKeyFingerprint = sshHostDsaKeyFingerprint;
@@ -1161,6 +1233,9 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param createdAt The time that the instance was created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
@@ -1198,6 +1273,9 @@ public class Instance  implements Serializable  {
      *
      * @param lastServiceErrorId The ID of the last service error. For more information, call
      *         <a>DescribeServiceErrors</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withLastServiceErrorId(String lastServiceErrorId) {
         this.lastServiceErrorId = lastServiceErrorId;
@@ -1243,6 +1321,9 @@ public class Instance  implements Serializable  {
      *
      * @param architecture The instance architecture, "i386" or "x86_64".
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see Architecture
      */
     public Instance withArchitecture(String architecture) {
@@ -1274,6 +1355,9 @@ public class Instance  implements Serializable  {
      * <b>Allowed Values: </b>x86_64, i386
      *
      * @param architecture The instance architecture, "i386" or "x86_64".
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see Architecture
      */
@@ -1332,6 +1416,9 @@ public class Instance  implements Serializable  {
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      *         for the Root Device</a>.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see RootDeviceType
      */
     public Instance withRootDeviceType(String rootDeviceType) {
@@ -1372,6 +1459,9 @@ public class Instance  implements Serializable  {
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
      *         for the Root Device</a>.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see RootDeviceType
      */
     public Instance withRootDeviceType(RootDeviceType rootDeviceType) {
@@ -1403,6 +1493,9 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param rootDeviceVolumeId The root device volume ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withRootDeviceVolumeId(String rootDeviceVolumeId) {
         this.rootDeviceVolumeId = rootDeviceVolumeId;
@@ -1482,6 +1575,9 @@ public class Instance  implements Serializable  {
      *         the instances. <note>We strongly recommend using the default value of
      *         <code>true</code>, to ensure that your instances have the latest
      *         security updates.</note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public Instance withInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
         this.installUpdatesOnBoot = installUpdatesOnBoot;

@@ -27,7 +27,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getInstanceProfile(GetInstanceProfileRequest)
  */
-public class GetInstanceProfileRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class GetInstanceProfileRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Name of the instance profile to get information about.
@@ -74,6 +74,9 @@ public class GetInstanceProfileRequest extends AmazonWebServiceRequest  implemen
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param instanceProfileName Name of the instance profile to get information about.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public GetInstanceProfileRequest withInstanceProfileName(String instanceProfileName) {
         this.instanceProfileName = instanceProfileName;

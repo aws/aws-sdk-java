@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.DescribeRouteTablesRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -37,7 +39,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeRouteTables(DescribeRouteTablesRequest)
  */
-public class DescribeRouteTablesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<DescribeRouteTablesRequest> {
 
     /**
      * One or more route table IDs.
@@ -221,6 +223,18 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest  impleme
         }
 
         return this;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<DescribeRouteTablesRequest> getDryRunRequest() {
+        Request<DescribeRouteTablesRequest> request = new DescribeRouteTablesRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

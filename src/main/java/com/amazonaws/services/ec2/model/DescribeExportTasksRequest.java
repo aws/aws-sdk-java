@@ -22,7 +22,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeExportTasks(DescribeExportTasksRequest)
  */
-public class DescribeExportTasksRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeExportTasksRequest extends AmazonWebServiceRequest implements Serializable {
 
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> exportTaskIds;
 

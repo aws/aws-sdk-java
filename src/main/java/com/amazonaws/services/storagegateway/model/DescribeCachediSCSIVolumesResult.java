@@ -25,7 +25,7 @@ import java.io.Serializable;
  * 
  * </ul>
  */
-public class DescribeCachediSCSIVolumesResult  implements Serializable  {
+public class DescribeCachediSCSIVolumesResult implements Serializable {
 
     /**
      * An array of <a>CachediSCSIVolume</a> objects where each object
@@ -74,6 +74,9 @@ public class DescribeCachediSCSIVolumesResult  implements Serializable  {
      *
      * @param cachediSCSIVolumes An array of <a>CachediSCSIVolume</a> objects where each object
      *         contains metadata about one cached volume.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCachediSCSIVolumesResult withCachediSCSIVolumes(CachediSCSIVolume... cachediSCSIVolumes) {
         if (getCachediSCSIVolumes() == null) setCachediSCSIVolumes(new java.util.ArrayList<CachediSCSIVolume>(cachediSCSIVolumes.length));
@@ -91,6 +94,9 @@ public class DescribeCachediSCSIVolumesResult  implements Serializable  {
      *
      * @param cachediSCSIVolumes An array of <a>CachediSCSIVolume</a> objects where each object
      *         contains metadata about one cached volume.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCachediSCSIVolumesResult withCachediSCSIVolumes(java.util.Collection<CachediSCSIVolume> cachediSCSIVolumes) {
         if (cachediSCSIVolumes == null) {

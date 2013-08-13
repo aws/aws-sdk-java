@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Instance Status Summary
  */
-public class InstanceStatusSummary  implements Serializable  {
+public class InstanceStatusSummary implements Serializable {
 
     private String status;
 

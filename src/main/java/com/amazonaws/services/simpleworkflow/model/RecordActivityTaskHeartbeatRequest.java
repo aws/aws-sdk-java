@@ -65,7 +65,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#recordActivityTaskHeartbeat(RecordActivityTaskHeartbeatRequest)
  */
-public class RecordActivityTaskHeartbeatRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class RecordActivityTaskHeartbeatRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The <code>taskToken</code> of the <a>ActivityTask</a>. <important> The
@@ -144,6 +144,9 @@ public class RecordActivityTaskHeartbeatRequest extends AmazonWebServiceRequest 
      *         treated as an opaque value. If the task is passed to another process,
      *         its <code>taskToken</code> must also be passed. This enables it to
      *         provide its progress and respond with results. </important>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RecordActivityTaskHeartbeatRequest withTaskToken(String taskToken) {
         this.taskToken = taskToken;
@@ -184,6 +187,9 @@ public class RecordActivityTaskHeartbeatRequest extends AmazonWebServiceRequest 
      * <b>Length: </b>0 - 2048<br/>
      *
      * @param details If specified, contains details about the progress of the task.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public RecordActivityTaskHeartbeatRequest withDetails(String details) {
         this.details = details;

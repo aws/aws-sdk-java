@@ -18,7 +18,7 @@ import java.io.Serializable;
 /**
  * Iam Instance Profile
  */
-public class IamInstanceProfile  implements Serializable  {
+public class IamInstanceProfile implements Serializable {
 
     private String arn;
 

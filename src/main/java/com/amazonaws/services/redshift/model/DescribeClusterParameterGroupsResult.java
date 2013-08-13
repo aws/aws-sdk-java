@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Contains the output from the DescribeClusterParameterGroups action.
  * </p>
  */
-public class DescribeClusterParameterGroupsResult  implements Serializable  {
+public class DescribeClusterParameterGroupsResult implements Serializable {
 
     /**
      * A marker at which to continue listing cluster parameter groups in a
@@ -71,6 +71,9 @@ public class DescribeClusterParameterGroupsResult  implements Serializable  {
      * @param marker A marker at which to continue listing cluster parameter groups in a
      *         new request. The response returns a marker if there are more parameter
      *         groups to list than returned in the response.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterParameterGroupsResult withMarker(String marker) {
         this.marker = marker;
@@ -119,6 +122,9 @@ public class DescribeClusterParameterGroupsResult  implements Serializable  {
      *
      * @param parameterGroups A list of <a>ClusterParameterGroup</a> instances. Each instance
      *         describes one cluster parameter group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterParameterGroupsResult withParameterGroups(ClusterParameterGroup... parameterGroups) {
         if (getParameterGroups() == null) setParameterGroups(new java.util.ArrayList<ClusterParameterGroup>(parameterGroups.length));
@@ -136,6 +142,9 @@ public class DescribeClusterParameterGroupsResult  implements Serializable  {
      *
      * @param parameterGroups A list of <a>ClusterParameterGroup</a> instances. Each instance
      *         describes one cluster parameter group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeClusterParameterGroupsResult withParameterGroups(java.util.Collection<ClusterParameterGroup> parameterGroups) {
         if (parameterGroups == null) {

@@ -21,7 +21,7 @@ import java.io.Serializable;
  * condition is satisfied. For example, if an attribute with a specific name and value exists, or if a specific attribute doesn't exist.
  * </p>
  */
-public class UpdateCondition  implements Serializable  {
+public class UpdateCondition implements Serializable {
 
     /**
      * The name of the attribute involved in the condition.
@@ -100,6 +100,9 @@ public class UpdateCondition  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The name of the attribute involved in the condition.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateCondition withName(String name) {
         this.name = name;
@@ -137,6 +140,9 @@ public class UpdateCondition  implements Serializable  {
      *
      * @param value The value of an attribute. This value can only be specified when the
      *         <code>Exists</code> parameter is equal to <code>true</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateCondition withValue(String value) {
         this.value = value;
@@ -198,6 +204,9 @@ public class UpdateCondition  implements Serializable  {
      *         the update condition to be satisfied. Specify <code>false</code> if
      *         the attribute should not exist in order for the update condition to be
      *         satisfied.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public UpdateCondition withExists(Boolean exists) {
         this.exists = exists;

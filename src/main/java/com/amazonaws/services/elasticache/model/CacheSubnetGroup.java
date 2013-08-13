@@ -31,7 +31,7 @@ import java.io.Serializable;
  * This data type is used as a response element in the DescribeCacheSubnetGroups action.
  * </p>
  */
-public class CacheSubnetGroup  implements Serializable  {
+public class CacheSubnetGroup implements Serializable {
 
     /**
      * Specifies the name of the Cache Subnet Group.
@@ -77,6 +77,9 @@ public class CacheSubnetGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheSubnetGroupName Specifies the name of the Cache Subnet Group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheSubnetGroup withCacheSubnetGroupName(String cacheSubnetGroupName) {
         this.cacheSubnetGroupName = cacheSubnetGroupName;
@@ -108,6 +111,9 @@ public class CacheSubnetGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheSubnetGroupDescription Provides the description of the Cache Subnet Group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheSubnetGroup withCacheSubnetGroupDescription(String cacheSubnetGroupDescription) {
         this.cacheSubnetGroupDescription = cacheSubnetGroupDescription;
@@ -139,6 +145,9 @@ public class CacheSubnetGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param vpcId Provides the VPC ID of the Cache Subnet Group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheSubnetGroup withVpcId(String vpcId) {
         this.vpcId = vpcId;
@@ -181,6 +190,9 @@ public class CacheSubnetGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnets Contains a list of subnets for this group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheSubnetGroup withSubnets(Subnet... subnets) {
         if (getSubnets() == null) setSubnets(new java.util.ArrayList<Subnet>(subnets.length));
@@ -196,6 +208,9 @@ public class CacheSubnetGroup  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param subnets Contains a list of subnets for this group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public CacheSubnetGroup withSubnets(java.util.Collection<Subnet> subnets) {
         if (subnets == null) {

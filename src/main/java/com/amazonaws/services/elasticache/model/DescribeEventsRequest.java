@@ -26,7 +26,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeEvents(DescribeEventsRequest)
  */
-public class DescribeEventsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DescribeEventsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The identifier of the event source for which events will be returned.
@@ -112,6 +112,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      *
      * @param sourceIdentifier The identifier of the event source for which events will be returned.
      *         If not specified, then all sources are included in the response.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEventsRequest withSourceIdentifier(String sourceIdentifier) {
         this.sourceIdentifier = sourceIdentifier;
@@ -163,6 +166,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      * @param sourceType The event source to retrieve events for. If no value is specified, all
      *         events are returned.
      *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
      * @see SourceType
      */
     public DescribeEventsRequest withSourceType(String sourceType) {
@@ -198,6 +204,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      *
      * @param sourceType The event source to retrieve events for. If no value is specified, all
      *         events are returned.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      *
      * @see SourceType
      */
@@ -236,6 +245,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      *
      * @param startTime The beginning of the time interval to retrieve events for, specified
      *         in ISO 8601 format.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEventsRequest withStartTime(java.util.Date startTime) {
         this.startTime = startTime;
@@ -273,6 +285,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      *
      * @param endTime The end of the time interval for which to retrieve events, specified
      *         in ISO 8601 format.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEventsRequest withEndTime(java.util.Date endTime) {
         this.endTime = endTime;
@@ -304,6 +319,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param duration The number of minutes to retrieve events for.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEventsRequest withDuration(Integer duration) {
         this.duration = duration;
@@ -353,6 +371,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      *         records exist than the specified <i>MaxRecords</i> value, a marker is
      *         included in the response so that the remaining results may be
      *         retrieved.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEventsRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -402,6 +423,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
      *         request. If this parameter is specified, the response includes only
      *         records beyond the marker, up to the value specified by
      *         <i>MaxRecords</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeEventsRequest withMarker(String marker) {
         this.marker = marker;

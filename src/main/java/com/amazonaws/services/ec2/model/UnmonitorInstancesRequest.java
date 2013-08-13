@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.UnmonitorInstancesRequestMarshaller;
 import java.io.Serializable;
 
 /**
@@ -24,7 +26,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#unmonitorInstances(UnmonitorInstancesRequest)
  */
-public class UnmonitorInstancesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class UnmonitorInstancesRequest extends AmazonWebServiceRequest implements Serializable, DryRunSupportedRequest<UnmonitorInstancesRequest> {
 
     /**
      * The list of Amazon EC2 instances on which to disable monitoring.
@@ -120,6 +122,18 @@ public class UnmonitorInstancesRequest extends AmazonWebServiceRequest  implemen
         }
 
         return this;
+    }
+    
+    /**
+     * This method is intended for internal use only.
+     * Returns the marshaled request configured with additional parameters to
+     * enable operation dry-run.
+     */
+    @Override
+    public Request<UnmonitorInstancesRequest> getDryRunRequest() {
+        Request<UnmonitorInstancesRequest> request = new UnmonitorInstancesRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
     }
     
     /**

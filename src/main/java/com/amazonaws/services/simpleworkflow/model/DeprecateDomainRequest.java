@@ -47,7 +47,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#deprecateDomain(DeprecateDomainRequest)
  */
-public class DeprecateDomainRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeprecateDomainRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the domain to deprecate.
@@ -90,6 +90,9 @@ public class DeprecateDomainRequest extends AmazonWebServiceRequest  implements 
      * <b>Length: </b>1 - 256<br/>
      *
      * @param name The name of the domain to deprecate.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DeprecateDomainRequest withName(String name) {
         this.name = name;

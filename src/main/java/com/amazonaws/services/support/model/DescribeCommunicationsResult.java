@@ -20,7 +20,7 @@ import java.io.Serializable;
  * Returns the objects or data listed below if successful. Otherwise, returns an error.
  * </p>
  */
-public class DescribeCommunicationsResult  implements Serializable  {
+public class DescribeCommunicationsResult implements Serializable {
 
     /**
      * Contains a list of <a
@@ -81,6 +81,9 @@ public class DescribeCommunicationsResult  implements Serializable  {
      * @param communications Contains a list of <a
      *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
      *         title="Communication">Communications</a> objects.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCommunicationsResult withCommunications(Communication... communications) {
         if (getCommunications() == null) setCommunications(new java.util.ArrayList<Communication>(communications.length));
@@ -100,6 +103,9 @@ public class DescribeCommunicationsResult  implements Serializable  {
      * @param communications Contains a list of <a
      *         href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
      *         title="Communication">Communications</a> objects.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCommunicationsResult withCommunications(java.util.Collection<Communication> communications) {
         if (communications == null) {
@@ -137,6 +143,9 @@ public class DescribeCommunicationsResult  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param nextToken Defines a resumption point for pagination.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
      */
     public DescribeCommunicationsResult withNextToken(String nextToken) {
         this.nextToken = nextToken;
