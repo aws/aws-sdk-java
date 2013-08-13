@@ -14,6 +14,7 @@
  */
 package com.amazonaws.http;
 
+import com.amazonaws.ClientConfiguration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -65,7 +66,9 @@ public class IdleConnectionReaper extends Thread {
     }
 
     public static synchronized void registerConnectionManager(ClientConnectionManager connectionManager) {
-        if (instance == null) instance = new IdleConnectionReaper();
+        if (instance == null) {
+            instance = new IdleConnectionReaper();
+        }
         connectionManagers.add(connectionManager);
     }
 
