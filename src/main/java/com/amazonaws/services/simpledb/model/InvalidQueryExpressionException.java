@@ -35,6 +35,17 @@ public class InvalidQueryExpressionException extends AmazonServiceException {
     public InvalidQueryExpressionException(String message) {
         super(message);
     }
+
+    /**
+     * Constructs a new InvalidQueryExpressionException with the specified error
+     * message and exception indicating the root cause.
+     *
+     * @param message Describes the error encountered.
+     * @param cause The root exception that caused this exception to be thrown.
+     */
+    public InvalidQueryExpressionException(String message, Exception cause) {
+        super(message, cause);
+    }
     
     /**
      * Returns the value of the BoxUsage property for this object.
