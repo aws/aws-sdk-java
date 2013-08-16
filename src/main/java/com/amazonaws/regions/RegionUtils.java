@@ -174,8 +174,7 @@ public class RegionUtils {
      * the SDK, in case it cannot be fetched from the remote source.
      */
     private static void initSDKRegions() {
-        ClassLoader classLoader = RegionUtils.class.getClassLoader();
-        InputStream inputStream = classLoader.getResourceAsStream("/etc/regions.xml");
+        InputStream inputStream = RegionUtils.class.getResourceAsStream("/etc/regions.xml");
         initRegions(inputStream);
     }
 
