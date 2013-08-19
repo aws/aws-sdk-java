@@ -100,6 +100,7 @@ public class AWS3Signer extends AbstractAWSSigner {
                 throw new AmazonClientException("Unable to serialize string to bytes: " + e.getMessage(), e);
             }
         } else {
+            String path = HttpUtils.appendUri(request.getEndpoint().getPath(), request.getResourcePath());
             /*
              * AWS3 requires all query params to be listed on the third line of
              * the string to sign, even if those query params will be sent in
@@ -107,7 +108,7 @@ public class AWS3Signer extends AbstractAWSSigner {
              * params should *NOT* be included in the request payload.
              */
             stringToSign = request.getHttpMethod().toString() + "\n"
-                    + getCanonicalizedResourcePath(request.getResourcePath()) + "\n"
+                    + getCanonicalizedResourcePath(path) + "\n"
                     + getCanonicalizedQueryString(request.getParameters()) + "\n"
                     + getCanonicalizedHeadersForStringToSign(request) + "\n"
                     + getRequestPayloadWithoutQueryParams(request);
