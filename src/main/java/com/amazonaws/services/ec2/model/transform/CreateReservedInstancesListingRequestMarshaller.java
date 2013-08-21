@@ -38,7 +38,7 @@ public class CreateReservedInstancesListingRequestMarshaller implements Marshall
 
         Request<CreateReservedInstancesListingRequest> request = new DefaultRequest<CreateReservedInstancesListingRequest>(createReservedInstancesListingRequest, "AmazonEC2");
         request.addParameter("Action", "CreateReservedInstancesListing");
-        request.addParameter("Version", "2013-06-15");
+        request.addParameter("Version", "2013-07-15");
 
         if (createReservedInstancesListingRequest.getReservedInstancesId() != null) {
             request.addParameter("ReservedInstancesId", StringUtils.fromString(createReservedInstancesListingRequest.getReservedInstancesId()));

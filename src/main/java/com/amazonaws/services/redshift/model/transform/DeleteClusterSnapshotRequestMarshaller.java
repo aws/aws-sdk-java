@@ -43,6 +43,9 @@ public class DeleteClusterSnapshotRequestMarshaller implements Marshaller<Reques
         if (deleteClusterSnapshotRequest.getSnapshotIdentifier() != null) {
             request.addParameter("SnapshotIdentifier", StringUtils.fromString(deleteClusterSnapshotRequest.getSnapshotIdentifier()));
         }
+        if (deleteClusterSnapshotRequest.getSnapshotClusterIdentifier() != null) {
+            request.addParameter("SnapshotClusterIdentifier", StringUtils.fromString(deleteClusterSnapshotRequest.getSnapshotClusterIdentifier()));
+        }
 
 
         return request;

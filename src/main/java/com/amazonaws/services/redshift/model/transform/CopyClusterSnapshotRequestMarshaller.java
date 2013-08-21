@@ -43,6 +43,9 @@ public class CopyClusterSnapshotRequestMarshaller implements Marshaller<Request<
         if (copyClusterSnapshotRequest.getSourceSnapshotIdentifier() != null) {
             request.addParameter("SourceSnapshotIdentifier", StringUtils.fromString(copyClusterSnapshotRequest.getSourceSnapshotIdentifier()));
         }
+        if (copyClusterSnapshotRequest.getSourceSnapshotClusterIdentifier() != null) {
+            request.addParameter("SourceSnapshotClusterIdentifier", StringUtils.fromString(copyClusterSnapshotRequest.getSourceSnapshotClusterIdentifier()));
+        }
         if (copyClusterSnapshotRequest.getTargetSnapshotIdentifier() != null) {
             request.addParameter("TargetSnapshotIdentifier", StringUtils.fromString(copyClusterSnapshotRequest.getTargetSnapshotIdentifier()));
         }

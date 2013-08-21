@@ -38,7 +38,7 @@ public class AttachNetworkInterfaceRequestMarshaller implements Marshaller<Reque
 
         Request<AttachNetworkInterfaceRequest> request = new DefaultRequest<AttachNetworkInterfaceRequest>(attachNetworkInterfaceRequest, "AmazonEC2");
         request.addParameter("Action", "AttachNetworkInterface");
-        request.addParameter("Version", "2013-06-15");
+        request.addParameter("Version", "2013-07-15");
 
         if (attachNetworkInterfaceRequest.getNetworkInterfaceId() != null) {
             request.addParameter("NetworkInterfaceId", StringUtils.fromString(attachNetworkInterfaceRequest.getNetworkInterfaceId()));

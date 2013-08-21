@@ -37,6 +37,14 @@ public class RevokeSnapshotAccessRequest extends AmazonWebServiceRequest impleme
     private String snapshotIdentifier;
 
     /**
+     * The identifier of the cluster the snapshot was created from. This
+     * parameter is required if your IAM user has a policy containing a
+     * snapshot resource element that specifies anything other than * for the
+     * cluster name.
+     */
+    private String snapshotClusterIdentifier;
+
+    /**
      * The identifier of the AWS customer account that can no longer restore
      * the specified snapshot.
      */
@@ -72,6 +80,58 @@ public class RevokeSnapshotAccessRequest extends AmazonWebServiceRequest impleme
      */
     public RevokeSnapshotAccessRequest withSnapshotIdentifier(String snapshotIdentifier) {
         this.snapshotIdentifier = snapshotIdentifier;
+        return this;
+    }
+    
+    
+    /**
+     * The identifier of the cluster the snapshot was created from. This
+     * parameter is required if your IAM user has a policy containing a
+     * snapshot resource element that specifies anything other than * for the
+     * cluster name.
+     *
+     * @return The identifier of the cluster the snapshot was created from. This
+     *         parameter is required if your IAM user has a policy containing a
+     *         snapshot resource element that specifies anything other than * for the
+     *         cluster name.
+     */
+    public String getSnapshotClusterIdentifier() {
+        return snapshotClusterIdentifier;
+    }
+    
+    /**
+     * The identifier of the cluster the snapshot was created from. This
+     * parameter is required if your IAM user has a policy containing a
+     * snapshot resource element that specifies anything other than * for the
+     * cluster name.
+     *
+     * @param snapshotClusterIdentifier The identifier of the cluster the snapshot was created from. This
+     *         parameter is required if your IAM user has a policy containing a
+     *         snapshot resource element that specifies anything other than * for the
+     *         cluster name.
+     */
+    public void setSnapshotClusterIdentifier(String snapshotClusterIdentifier) {
+        this.snapshotClusterIdentifier = snapshotClusterIdentifier;
+    }
+    
+    /**
+     * The identifier of the cluster the snapshot was created from. This
+     * parameter is required if your IAM user has a policy containing a
+     * snapshot resource element that specifies anything other than * for the
+     * cluster name.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param snapshotClusterIdentifier The identifier of the cluster the snapshot was created from. This
+     *         parameter is required if your IAM user has a policy containing a
+     *         snapshot resource element that specifies anything other than * for the
+     *         cluster name.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public RevokeSnapshotAccessRequest withSnapshotClusterIdentifier(String snapshotClusterIdentifier) {
+        this.snapshotClusterIdentifier = snapshotClusterIdentifier;
         return this;
     }
     
@@ -129,6 +189,7 @@ public class RevokeSnapshotAccessRequest extends AmazonWebServiceRequest impleme
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSnapshotIdentifier() != null) sb.append("SnapshotIdentifier: " + getSnapshotIdentifier() + ",");
+        if (getSnapshotClusterIdentifier() != null) sb.append("SnapshotClusterIdentifier: " + getSnapshotClusterIdentifier() + ",");
         if (getAccountWithRestoreAccess() != null) sb.append("AccountWithRestoreAccess: " + getAccountWithRestoreAccess() );
         sb.append("}");
         return sb.toString();
@@ -140,6 +201,7 @@ public class RevokeSnapshotAccessRequest extends AmazonWebServiceRequest impleme
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getSnapshotIdentifier() == null) ? 0 : getSnapshotIdentifier().hashCode()); 
+        hashCode = prime * hashCode + ((getSnapshotClusterIdentifier() == null) ? 0 : getSnapshotClusterIdentifier().hashCode()); 
         hashCode = prime * hashCode + ((getAccountWithRestoreAccess() == null) ? 0 : getAccountWithRestoreAccess().hashCode()); 
         return hashCode;
     }
@@ -154,6 +216,8 @@ public class RevokeSnapshotAccessRequest extends AmazonWebServiceRequest impleme
         
         if (other.getSnapshotIdentifier() == null ^ this.getSnapshotIdentifier() == null) return false;
         if (other.getSnapshotIdentifier() != null && other.getSnapshotIdentifier().equals(this.getSnapshotIdentifier()) == false) return false; 
+        if (other.getSnapshotClusterIdentifier() == null ^ this.getSnapshotClusterIdentifier() == null) return false;
+        if (other.getSnapshotClusterIdentifier() != null && other.getSnapshotClusterIdentifier().equals(this.getSnapshotClusterIdentifier()) == false) return false; 
         if (other.getAccountWithRestoreAccess() == null ^ this.getAccountWithRestoreAccess() == null) return false;
         if (other.getAccountWithRestoreAccess() != null && other.getAccountWithRestoreAccess().equals(this.getAccountWithRestoreAccess()) == false) return false; 
         return true;

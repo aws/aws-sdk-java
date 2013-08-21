@@ -16,7 +16,9 @@ package com.amazonaws.services.ec2.model;
 import java.io.Serializable;
 
 /**
- * Network Interface
+ * <p>
+ * Specifies the characteristics of a network interface.
+ * </p>
  */
 public class NetworkInterface implements Serializable {
 

@@ -39,6 +39,14 @@ public class DeleteClusterSnapshotRequest extends AmazonWebServiceRequest implem
     private String snapshotIdentifier;
 
     /**
+     * The unique identifier of the cluster the snapshot was created from.
+     * This parameter is required if your IAM user has a policy containing a
+     * snapshot resource element that specifies anything other than * for the
+     * cluster name. <p>Constraints: Must be the name of valid cluster.
+     */
+    private String snapshotClusterIdentifier;
+
+    /**
      * The unique identifier of the manual snapshot to be deleted.
      * <p>Constraints: Must be the name of an existing snapshot that is in
      * the <code>available</code> state.
@@ -85,6 +93,58 @@ public class DeleteClusterSnapshotRequest extends AmazonWebServiceRequest implem
     
     
     /**
+     * The unique identifier of the cluster the snapshot was created from.
+     * This parameter is required if your IAM user has a policy containing a
+     * snapshot resource element that specifies anything other than * for the
+     * cluster name. <p>Constraints: Must be the name of valid cluster.
+     *
+     * @return The unique identifier of the cluster the snapshot was created from.
+     *         This parameter is required if your IAM user has a policy containing a
+     *         snapshot resource element that specifies anything other than * for the
+     *         cluster name. <p>Constraints: Must be the name of valid cluster.
+     */
+    public String getSnapshotClusterIdentifier() {
+        return snapshotClusterIdentifier;
+    }
+    
+    /**
+     * The unique identifier of the cluster the snapshot was created from.
+     * This parameter is required if your IAM user has a policy containing a
+     * snapshot resource element that specifies anything other than * for the
+     * cluster name. <p>Constraints: Must be the name of valid cluster.
+     *
+     * @param snapshotClusterIdentifier The unique identifier of the cluster the snapshot was created from.
+     *         This parameter is required if your IAM user has a policy containing a
+     *         snapshot resource element that specifies anything other than * for the
+     *         cluster name. <p>Constraints: Must be the name of valid cluster.
+     */
+    public void setSnapshotClusterIdentifier(String snapshotClusterIdentifier) {
+        this.snapshotClusterIdentifier = snapshotClusterIdentifier;
+    }
+    
+    /**
+     * The unique identifier of the cluster the snapshot was created from.
+     * This parameter is required if your IAM user has a policy containing a
+     * snapshot resource element that specifies anything other than * for the
+     * cluster name. <p>Constraints: Must be the name of valid cluster.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param snapshotClusterIdentifier The unique identifier of the cluster the snapshot was created from.
+     *         This parameter is required if your IAM user has a policy containing a
+     *         snapshot resource element that specifies anything other than * for the
+     *         cluster name. <p>Constraints: Must be the name of valid cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public DeleteClusterSnapshotRequest withSnapshotClusterIdentifier(String snapshotClusterIdentifier) {
+        this.snapshotClusterIdentifier = snapshotClusterIdentifier;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -96,7 +156,8 @@ public class DeleteClusterSnapshotRequest extends AmazonWebServiceRequest implem
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSnapshotIdentifier() != null) sb.append("SnapshotIdentifier: " + getSnapshotIdentifier() );
+        if (getSnapshotIdentifier() != null) sb.append("SnapshotIdentifier: " + getSnapshotIdentifier() + ",");
+        if (getSnapshotClusterIdentifier() != null) sb.append("SnapshotClusterIdentifier: " + getSnapshotClusterIdentifier() );
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +168,7 @@ public class DeleteClusterSnapshotRequest extends AmazonWebServiceRequest implem
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getSnapshotIdentifier() == null) ? 0 : getSnapshotIdentifier().hashCode()); 
+        hashCode = prime * hashCode + ((getSnapshotClusterIdentifier() == null) ? 0 : getSnapshotClusterIdentifier().hashCode()); 
         return hashCode;
     }
     
@@ -120,6 +182,8 @@ public class DeleteClusterSnapshotRequest extends AmazonWebServiceRequest implem
         
         if (other.getSnapshotIdentifier() == null ^ this.getSnapshotIdentifier() == null) return false;
         if (other.getSnapshotIdentifier() != null && other.getSnapshotIdentifier().equals(this.getSnapshotIdentifier()) == false) return false; 
+        if (other.getSnapshotClusterIdentifier() == null ^ this.getSnapshotClusterIdentifier() == null) return false;
+        if (other.getSnapshotClusterIdentifier() != null && other.getSnapshotClusterIdentifier().equals(this.getSnapshotClusterIdentifier()) == false) return false; 
         return true;
     }
     

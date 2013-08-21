@@ -38,7 +38,7 @@ public class ReplaceRouteTableAssociationRequestMarshaller implements Marshaller
 
         Request<ReplaceRouteTableAssociationRequest> request = new DefaultRequest<ReplaceRouteTableAssociationRequest>(replaceRouteTableAssociationRequest, "AmazonEC2");
         request.addParameter("Action", "ReplaceRouteTableAssociation");
-        request.addParameter("Version", "2013-06-15");
+        request.addParameter("Version", "2013-07-15");
 
         if (replaceRouteTableAssociationRequest.getAssociationId() != null) {
             request.addParameter("AssociationId", StringUtils.fromString(replaceRouteTableAssociationRequest.getAssociationId()));

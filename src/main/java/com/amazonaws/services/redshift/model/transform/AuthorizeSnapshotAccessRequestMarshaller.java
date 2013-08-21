@@ -43,6 +43,9 @@ public class AuthorizeSnapshotAccessRequestMarshaller implements Marshaller<Requ
         if (authorizeSnapshotAccessRequest.getSnapshotIdentifier() != null) {
             request.addParameter("SnapshotIdentifier", StringUtils.fromString(authorizeSnapshotAccessRequest.getSnapshotIdentifier()));
         }
+        if (authorizeSnapshotAccessRequest.getSnapshotClusterIdentifier() != null) {
+            request.addParameter("SnapshotClusterIdentifier", StringUtils.fromString(authorizeSnapshotAccessRequest.getSnapshotClusterIdentifier()));
+        }
         if (authorizeSnapshotAccessRequest.getAccountWithRestoreAccess() != null) {
             request.addParameter("AccountWithRestoreAccess", StringUtils.fromString(authorizeSnapshotAccessRequest.getAccountWithRestoreAccess()));
         }

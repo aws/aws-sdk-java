@@ -38,7 +38,7 @@ public class DescribeNetworkInterfaceAttributeRequestMarshaller implements Marsh
 
         Request<DescribeNetworkInterfaceAttributeRequest> request = new DefaultRequest<DescribeNetworkInterfaceAttributeRequest>(describeNetworkInterfaceAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeNetworkInterfaceAttribute");
-        request.addParameter("Version", "2013-06-15");
+        request.addParameter("Version", "2013-07-15");
 
         if (describeNetworkInterfaceAttributeRequest.getNetworkInterfaceId() != null) {
             request.addParameter("NetworkInterfaceId", StringUtils.fromString(describeNetworkInterfaceAttributeRequest.getNetworkInterfaceId()));

@@ -155,6 +155,12 @@ public class Cluster implements Serializable {
     private Boolean encrypted;
 
     /**
+     * Describes the status of a cluster restore action. Returns null if the
+     * cluster was not created by restoring a snapshot.
+     */
+    private RestoreStatus restoreStatus;
+
+    /**
      * The unique identifier of the cluster.
      *
      * @return The unique identifier of the cluster.
@@ -1189,6 +1195,46 @@ public class Cluster implements Serializable {
     }
     
     /**
+     * Describes the status of a cluster restore action. Returns null if the
+     * cluster was not created by restoring a snapshot.
+     *
+     * @return Describes the status of a cluster restore action. Returns null if the
+     *         cluster was not created by restoring a snapshot.
+     */
+    public RestoreStatus getRestoreStatus() {
+        return restoreStatus;
+    }
+    
+    /**
+     * Describes the status of a cluster restore action. Returns null if the
+     * cluster was not created by restoring a snapshot.
+     *
+     * @param restoreStatus Describes the status of a cluster restore action. Returns null if the
+     *         cluster was not created by restoring a snapshot.
+     */
+    public void setRestoreStatus(RestoreStatus restoreStatus) {
+        this.restoreStatus = restoreStatus;
+    }
+    
+    /**
+     * Describes the status of a cluster restore action. Returns null if the
+     * cluster was not created by restoring a snapshot.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param restoreStatus Describes the status of a cluster restore action. Returns null if the
+     *         cluster was not created by restoring a snapshot.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public Cluster withRestoreStatus(RestoreStatus restoreStatus) {
+        this.restoreStatus = restoreStatus;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1221,7 +1267,8 @@ public class Cluster implements Serializable {
         if (isAllowVersionUpgrade() != null) sb.append("AllowVersionUpgrade: " + isAllowVersionUpgrade() + ",");
         if (getNumberOfNodes() != null) sb.append("NumberOfNodes: " + getNumberOfNodes() + ",");
         if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() + ",");
-        if (isEncrypted() != null) sb.append("Encrypted: " + isEncrypted() );
+        if (isEncrypted() != null) sb.append("Encrypted: " + isEncrypted() + ",");
+        if (getRestoreStatus() != null) sb.append("RestoreStatus: " + getRestoreStatus() );
         sb.append("}");
         return sb.toString();
     }
@@ -1253,6 +1300,7 @@ public class Cluster implements Serializable {
         hashCode = prime * hashCode + ((getNumberOfNodes() == null) ? 0 : getNumberOfNodes().hashCode()); 
         hashCode = prime * hashCode + ((isPubliclyAccessible() == null) ? 0 : isPubliclyAccessible().hashCode()); 
         hashCode = prime * hashCode + ((isEncrypted() == null) ? 0 : isEncrypted().hashCode()); 
+        hashCode = prime * hashCode + ((getRestoreStatus() == null) ? 0 : getRestoreStatus().hashCode()); 
         return hashCode;
     }
     
@@ -1308,6 +1356,8 @@ public class Cluster implements Serializable {
         if (other.isPubliclyAccessible() != null && other.isPubliclyAccessible().equals(this.isPubliclyAccessible()) == false) return false; 
         if (other.isEncrypted() == null ^ this.isEncrypted() == null) return false;
         if (other.isEncrypted() != null && other.isEncrypted().equals(this.isEncrypted()) == false) return false; 
+        if (other.getRestoreStatus() == null ^ this.getRestoreStatus() == null) return false;
+        if (other.getRestoreStatus() != null && other.getRestoreStatus().equals(this.getRestoreStatus()) == false) return false; 
         return true;
     }
     

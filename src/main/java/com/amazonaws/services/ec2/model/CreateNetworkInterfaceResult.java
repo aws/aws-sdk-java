@@ -20,32 +20,35 @@ import java.io.Serializable;
  */
 public class CreateNetworkInterfaceResult implements Serializable {
 
+    /**
+     * Specifies the characteristics of a network interface.
+     */
     private NetworkInterface networkInterface;
 
     /**
-     * Returns the value of the NetworkInterface property for this object.
+     * Specifies the characteristics of a network interface.
      *
-     * @return The value of the NetworkInterface property for this object.
+     * @return Specifies the characteristics of a network interface.
      */
     public NetworkInterface getNetworkInterface() {
         return networkInterface;
     }
     
     /**
-     * Sets the value of the NetworkInterface property for this object.
+     * Specifies the characteristics of a network interface.
      *
-     * @param networkInterface The new value for the NetworkInterface property for this object.
+     * @param networkInterface Specifies the characteristics of a network interface.
      */
     public void setNetworkInterface(NetworkInterface networkInterface) {
         this.networkInterface = networkInterface;
     }
     
     /**
-     * Sets the value of the NetworkInterface property for this object.
+     * Specifies the characteristics of a network interface.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param networkInterface The new value for the NetworkInterface property for this object.
+     * @param networkInterface Specifies the characteristics of a network interface.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

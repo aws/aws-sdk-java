@@ -50,7 +50,7 @@ public class RegionUtils {
 
     // Use the same logger as the http client
     private static final Log log = LogFactory.getLog("com.amazonaws.request");
-    
+
     /**
      * Returns a list of the available AWS regions.
      */
@@ -64,7 +64,7 @@ public class RegionUtils {
 
     /**
      * Returns a list of the regions that support the service given.
-     * 
+     *
      * @see ServiceAbbreviations
      */
     public synchronized static List<Region> getRegionsForService(String serviceAbbreviation) {
@@ -95,7 +95,7 @@ public class RegionUtils {
      * Searches through all known regions to find one with any service at the
      * specified endpoint. If no region is found with a service at that
      * endpoint, an exception is thrown.
-     * 
+     *
      * @param endpoint
      *            The endpoint for any service residing in the desired region.
      * @return The region containing any service running at the specified
@@ -108,20 +108,18 @@ public class RegionUtils {
     public static Region getRegionByEndpoint(String endpoint) {
     	URI targetEndpointUri = getUriByEndpoint(endpoint);
     	String targetHost = targetEndpointUri.getHost();
-    	
+
         for ( Region region : getRegions() ) {
             for ( String serviceEndpoint : region.getServiceEndpoints().values() ) {
                 URI serviceEndpointUrl = getUriByEndpoint(serviceEndpoint);
                 
-				if ( serviceEndpointUrl.getHost().equals(targetHost) )
+                if ( serviceEndpointUrl.getHost().equals(targetHost) )
                     return region;
             }
         }
 
         throw new RuntimeException("No region found with any service for endpoint " + endpoint);
     }
-    
-    
 
     /**
      * Fetches the most recent version of the regions file from the remote

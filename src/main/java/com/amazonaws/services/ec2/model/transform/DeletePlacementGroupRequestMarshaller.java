@@ -38,7 +38,7 @@ public class DeletePlacementGroupRequestMarshaller implements Marshaller<Request
 
         Request<DeletePlacementGroupRequest> request = new DefaultRequest<DeletePlacementGroupRequest>(deletePlacementGroupRequest, "AmazonEC2");
         request.addParameter("Action", "DeletePlacementGroup");
-        request.addParameter("Version", "2013-06-15");
+        request.addParameter("Version", "2013-07-15");
 
         if (deletePlacementGroupRequest.getGroupName() != null) {
             request.addParameter("GroupName", StringUtils.fromString(deletePlacementGroupRequest.getGroupName()));

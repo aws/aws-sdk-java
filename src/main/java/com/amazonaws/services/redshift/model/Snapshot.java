@@ -125,7 +125,7 @@ public class Snapshot implements Serializable {
 
     /**
      * The size of the complete set of backup data that would be used to
-     * restore the instance.
+     * restore the cluster.
      */
     private Double totalBackupSizeInMegaBytes;
 
@@ -882,10 +882,10 @@ public class Snapshot implements Serializable {
     
     /**
      * The size of the complete set of backup data that would be used to
-     * restore the instance.
+     * restore the cluster.
      *
      * @return The size of the complete set of backup data that would be used to
-     *         restore the instance.
+     *         restore the cluster.
      */
     public Double getTotalBackupSizeInMegaBytes() {
         return totalBackupSizeInMegaBytes;
@@ -893,10 +893,10 @@ public class Snapshot implements Serializable {
     
     /**
      * The size of the complete set of backup data that would be used to
-     * restore the instance.
+     * restore the cluster.
      *
      * @param totalBackupSizeInMegaBytes The size of the complete set of backup data that would be used to
-     *         restore the instance.
+     *         restore the cluster.
      */
     public void setTotalBackupSizeInMegaBytes(Double totalBackupSizeInMegaBytes) {
         this.totalBackupSizeInMegaBytes = totalBackupSizeInMegaBytes;
@@ -904,12 +904,12 @@ public class Snapshot implements Serializable {
     
     /**
      * The size of the complete set of backup data that would be used to
-     * restore the instance.
+     * restore the cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param totalBackupSizeInMegaBytes The size of the complete set of backup data that would be used to
-     *         restore the instance.
+     *         restore the cluster.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

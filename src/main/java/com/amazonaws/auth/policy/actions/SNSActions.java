@@ -146,5 +146,4 @@ public enum SNSActions implements Action {
     public String getActionName() {
         return this.action;
     }
-
 }

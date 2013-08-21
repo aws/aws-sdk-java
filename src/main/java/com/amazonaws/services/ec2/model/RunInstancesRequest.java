@@ -179,6 +179,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      */
     private String additionalInfo;
 
+    /**
+     * List of network interfaces associated with the instance.
+     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceNetworkInterfaceSpecification> networkInterfaces;
 
     private IamInstanceProfileSpecification iamInstanceProfile;
@@ -1196,9 +1199,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     
     
     /**
-     * Returns the value of the NetworkInterfaces property for this object.
+     * List of network interfaces associated with the instance.
      *
-     * @return The value of the NetworkInterfaces property for this object.
+     * @return List of network interfaces associated with the instance.
      */
     public java.util.List<InstanceNetworkInterfaceSpecification> getNetworkInterfaces() {
         
@@ -1210,9 +1213,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * Sets the value of the NetworkInterfaces property for this object.
+     * List of network interfaces associated with the instance.
      *
-     * @param networkInterfaces The new value for the NetworkInterfaces property for this object.
+     * @param networkInterfaces List of network interfaces associated with the instance.
      */
     public void setNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
         if (networkInterfaces == null) {
@@ -1225,11 +1228,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * Sets the value of the NetworkInterfaces property for this object.
+     * List of network interfaces associated with the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param networkInterfaces The new value for the NetworkInterfaces property for this object.
+     * @param networkInterfaces List of network interfaces associated with the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -1243,11 +1246,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     }
     
     /**
-     * Sets the value of the NetworkInterfaces property for this object.
+     * List of network interfaces associated with the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param networkInterfaces The new value for the NetworkInterfaces property for this object.
+     * @param networkInterfaces List of network interfaces associated with the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

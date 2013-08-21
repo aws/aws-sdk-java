@@ -54,6 +54,14 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
     private String snapshotIdentifier;
 
     /**
+     * The name of the cluster the source snapshot was created from. This
+     * parameter is required if your IAM user has a policy containing a
+     * snapshot resource element that specifies anything other than * for the
+     * cluster name.
+     */
+    private String snapshotClusterIdentifier;
+
+    /**
      * The port number on which the cluster accepts connections. <p>Default:
      * The same port as the original cluster. <p>Constraints: Must be between
      * <code>1115</code> and <code>65535</code>.
@@ -200,6 +208,58 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
      */
     public RestoreFromClusterSnapshotRequest withSnapshotIdentifier(String snapshotIdentifier) {
         this.snapshotIdentifier = snapshotIdentifier;
+        return this;
+    }
+    
+    
+    /**
+     * The name of the cluster the source snapshot was created from. This
+     * parameter is required if your IAM user has a policy containing a
+     * snapshot resource element that specifies anything other than * for the
+     * cluster name.
+     *
+     * @return The name of the cluster the source snapshot was created from. This
+     *         parameter is required if your IAM user has a policy containing a
+     *         snapshot resource element that specifies anything other than * for the
+     *         cluster name.
+     */
+    public String getSnapshotClusterIdentifier() {
+        return snapshotClusterIdentifier;
+    }
+    
+    /**
+     * The name of the cluster the source snapshot was created from. This
+     * parameter is required if your IAM user has a policy containing a
+     * snapshot resource element that specifies anything other than * for the
+     * cluster name.
+     *
+     * @param snapshotClusterIdentifier The name of the cluster the source snapshot was created from. This
+     *         parameter is required if your IAM user has a policy containing a
+     *         snapshot resource element that specifies anything other than * for the
+     *         cluster name.
+     */
+    public void setSnapshotClusterIdentifier(String snapshotClusterIdentifier) {
+        this.snapshotClusterIdentifier = snapshotClusterIdentifier;
+    }
+    
+    /**
+     * The name of the cluster the source snapshot was created from. This
+     * parameter is required if your IAM user has a policy containing a
+     * snapshot resource element that specifies anything other than * for the
+     * cluster name.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param snapshotClusterIdentifier The name of the cluster the source snapshot was created from. This
+     *         parameter is required if your IAM user has a policy containing a
+     *         snapshot resource element that specifies anything other than * for the
+     *         cluster name.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public RestoreFromClusterSnapshotRequest withSnapshotClusterIdentifier(String snapshotClusterIdentifier) {
+        this.snapshotClusterIdentifier = snapshotClusterIdentifier;
         return this;
     }
     
@@ -512,6 +572,7 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
         sb.append("{");
         if (getClusterIdentifier() != null) sb.append("ClusterIdentifier: " + getClusterIdentifier() + ",");
         if (getSnapshotIdentifier() != null) sb.append("SnapshotIdentifier: " + getSnapshotIdentifier() + ",");
+        if (getSnapshotClusterIdentifier() != null) sb.append("SnapshotClusterIdentifier: " + getSnapshotClusterIdentifier() + ",");
         if (getPort() != null) sb.append("Port: " + getPort() + ",");
         if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
         if (isAllowVersionUpgrade() != null) sb.append("AllowVersionUpgrade: " + isAllowVersionUpgrade() + ",");
@@ -529,6 +590,7 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
         
         hashCode = prime * hashCode + ((getClusterIdentifier() == null) ? 0 : getClusterIdentifier().hashCode()); 
         hashCode = prime * hashCode + ((getSnapshotIdentifier() == null) ? 0 : getSnapshotIdentifier().hashCode()); 
+        hashCode = prime * hashCode + ((getSnapshotClusterIdentifier() == null) ? 0 : getSnapshotClusterIdentifier().hashCode()); 
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode()); 
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode()); 
         hashCode = prime * hashCode + ((isAllowVersionUpgrade() == null) ? 0 : isAllowVersionUpgrade().hashCode()); 
@@ -550,6 +612,8 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
         if (other.getClusterIdentifier() != null && other.getClusterIdentifier().equals(this.getClusterIdentifier()) == false) return false; 
         if (other.getSnapshotIdentifier() == null ^ this.getSnapshotIdentifier() == null) return false;
         if (other.getSnapshotIdentifier() != null && other.getSnapshotIdentifier().equals(this.getSnapshotIdentifier()) == false) return false; 
+        if (other.getSnapshotClusterIdentifier() == null ^ this.getSnapshotClusterIdentifier() == null) return false;
+        if (other.getSnapshotClusterIdentifier() != null && other.getSnapshotClusterIdentifier().equals(this.getSnapshotClusterIdentifier()) == false) return false; 
         if (other.getPort() == null ^ this.getPort() == null) return false;
         if (other.getPort() != null && other.getPort().equals(this.getPort()) == false) return false; 
         if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null) return false;
