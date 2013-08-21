@@ -33,32 +33,52 @@ import java.util.SimpleTimeZone;
 public class DateUtils {
 
     /** ISO 8601 format */
-    protected final SimpleDateFormat iso8601DateFormat =
-        new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+    protected final ThreadLocal<SimpleDateFormat> localIso8601DateFormat = new ThreadLocal<SimpleDateFormat>() {
+        @Override
+        protected SimpleDateFormat initialValue() {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+            dateFormat.setTimeZone(new SimpleTimeZone(0, "GMT"));
+            return dateFormat;
+        }
+    };
 
     /** Alternate ISO 8601 format without fractional seconds */
-    protected final SimpleDateFormat alternateIso8601DateFormat =
-        new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+    protected final ThreadLocal<SimpleDateFormat> localAlternateIso8601DateFormat = new ThreadLocal<SimpleDateFormat>() {
+        @Override
+        protected SimpleDateFormat initialValue() {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+            dateFormat.setTimeZone(new SimpleTimeZone(0, "GMT"));
+            return dateFormat;
+        }
+    };
 
     /** RFC 822 format */
-    protected final SimpleDateFormat rfc822DateFormat =
-        new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z", Locale.US);
+    protected final ThreadLocal<SimpleDateFormat> localRfc822DateFormat = new ThreadLocal<SimpleDateFormat>() {
+        @Override
+        protected SimpleDateFormat initialValue() {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z", Locale.US);
+            dateFormat.setTimeZone(new SimpleTimeZone(0, "GMT"));
+            return dateFormat;
+        }
+    };
 
     /**
      * This is another ISO 8601 format that's used in clock skew error response
      */
-    protected final SimpleDateFormat compressedIso8601DateFormat =
-        new SimpleDateFormat("yyyyMMdd'T'HHmmss'Z'");
+    protected final ThreadLocal<SimpleDateFormat> localCompressedIso8601DateFormat = new ThreadLocal<SimpleDateFormat>() {
+        @Override
+        protected SimpleDateFormat initialValue() {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd'T'HHmmss'Z'");
+            dateFormat.setTimeZone(new SimpleTimeZone(0, "GMT"));
+            return dateFormat;
+        }
+    };
+
 
     /**
      * Constructs a new DateUtils object, ready to parse/format dates.
      */
-    public DateUtils() {
-        iso8601DateFormat.setTimeZone(new SimpleTimeZone(0, "GMT"));
-        rfc822DateFormat.setTimeZone(new SimpleTimeZone(0, "GMT"));
-        alternateIso8601DateFormat.setTimeZone(new SimpleTimeZone(0, "GMT"));
-        compressedIso8601DateFormat.setTimeZone(new SimpleTimeZone(0, "GMT"));
-    }
+    public DateUtils() {}
 
     /**
      * Parses the specified date string as an ISO 8601 date and returns the Date
@@ -74,15 +94,11 @@ public class DateUtils {
      */
     public Date parseIso8601Date(String dateString) throws ParseException {
         try {
-            synchronized (iso8601DateFormat) {
-                return iso8601DateFormat.parse(dateString);
-            }
+            return localIso8601DateFormat.get().parse(dateString);
         } catch (ParseException e) {
             // If the first ISO 8601 parser didn't work, try the alternate
             // version which doesn't include fractional seconds
-            synchronized (alternateIso8601DateFormat) {
-                return alternateIso8601DateFormat.parse(dateString);
-            }
+            return localAlternateIso8601DateFormat.get().parse(dateString);
         }
     }
 
@@ -95,9 +111,7 @@ public class DateUtils {
      * @return The ISO 8601 string representing the specified date.
      */
     public String formatIso8601Date(Date date) {
-        synchronized (iso8601DateFormat) {
-            return iso8601DateFormat.format(date);
-        }
+        return localIso8601DateFormat.get().format(date);
     }
 
     /**
@@ -113,9 +127,7 @@ public class DateUtils {
      *             If the date string could not be parsed.
      */
     public Date parseRfc822Date(String dateString) throws ParseException {
-        synchronized (rfc822DateFormat) {
-            return rfc822DateFormat.parse(dateString);
-        }
+        return localRfc822DateFormat.get().parse(dateString);
     }
 
     /**
@@ -127,9 +139,7 @@ public class DateUtils {
      * @return The RFC 822 string representing the specified date.
      */
     public String formatRfc822Date(Date date) {
-        synchronized (rfc822DateFormat) {
-            return rfc822DateFormat.format(date);
-        }
+        return localRfc822DateFormat.get().format(date);
     }
 
     /**
@@ -145,8 +155,6 @@ public class DateUtils {
      *             If the date string could not be parsed.
      */
     public Date parseCompressedIso8601Date(String dateString) throws ParseException {
-        synchronized (compressedIso8601DateFormat) {
-            return compressedIso8601DateFormat.parse(dateString);
-        }
+	return localCompressedIso8601DateFormat.get().parse(dateString);
     }
 }
