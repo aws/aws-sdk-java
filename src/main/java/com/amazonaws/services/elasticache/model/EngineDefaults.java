@@ -17,14 +17,14 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The default Parameters and CacheNodeTypeSpecificParameters for a CacheParameterGroupFamily.
+ * Represents the output of a <i>DescribeEngineDefaultParameters</i> operation.
  * </p>
  */
 public class EngineDefaults implements Serializable {
 
     /**
-     * Specifies the name of the Cache Parameter Group Family which the
-     * engine default parameters apply to.
+     * Specifies the name of the cache parameter group family to which the
+     * engine default parameters apply.
      */
     private String cacheParameterGroupFamily;
 
@@ -39,40 +39,41 @@ public class EngineDefaults implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parameters;
 
     /**
-     * A list of <a>CacheNodeTypeSpecificParameter</a> instances.
+     * A list of parameters specific to a particular cache node type. Each
+     * element in the list contains detailed information about one parameter.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<CacheNodeTypeSpecificParameter> cacheNodeTypeSpecificParameters;
 
     /**
-     * Specifies the name of the Cache Parameter Group Family which the
-     * engine default parameters apply to.
+     * Specifies the name of the cache parameter group family to which the
+     * engine default parameters apply.
      *
-     * @return Specifies the name of the Cache Parameter Group Family which the
-     *         engine default parameters apply to.
+     * @return Specifies the name of the cache parameter group family to which the
+     *         engine default parameters apply.
      */
     public String getCacheParameterGroupFamily() {
         return cacheParameterGroupFamily;
     }
     
     /**
-     * Specifies the name of the Cache Parameter Group Family which the
-     * engine default parameters apply to.
+     * Specifies the name of the cache parameter group family to which the
+     * engine default parameters apply.
      *
-     * @param cacheParameterGroupFamily Specifies the name of the Cache Parameter Group Family which the
-     *         engine default parameters apply to.
+     * @param cacheParameterGroupFamily Specifies the name of the cache parameter group family to which the
+     *         engine default parameters apply.
      */
     public void setCacheParameterGroupFamily(String cacheParameterGroupFamily) {
         this.cacheParameterGroupFamily = cacheParameterGroupFamily;
     }
     
     /**
-     * Specifies the name of the Cache Parameter Group Family which the
-     * engine default parameters apply to.
+     * Specifies the name of the cache parameter group family to which the
+     * engine default parameters apply.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheParameterGroupFamily Specifies the name of the Cache Parameter Group Family which the
-     *         engine default parameters apply to.
+     * @param cacheParameterGroupFamily Specifies the name of the cache parameter group family to which the
+     *         engine default parameters apply.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -187,9 +188,11 @@ public class EngineDefaults implements Serializable {
     }
     
     /**
-     * A list of <a>CacheNodeTypeSpecificParameter</a> instances.
+     * A list of parameters specific to a particular cache node type. Each
+     * element in the list contains detailed information about one parameter.
      *
-     * @return A list of <a>CacheNodeTypeSpecificParameter</a> instances.
+     * @return A list of parameters specific to a particular cache node type. Each
+     *         element in the list contains detailed information about one parameter.
      */
     public java.util.List<CacheNodeTypeSpecificParameter> getCacheNodeTypeSpecificParameters() {
         
@@ -201,9 +204,11 @@ public class EngineDefaults implements Serializable {
     }
     
     /**
-     * A list of <a>CacheNodeTypeSpecificParameter</a> instances.
+     * A list of parameters specific to a particular cache node type. Each
+     * element in the list contains detailed information about one parameter.
      *
-     * @param cacheNodeTypeSpecificParameters A list of <a>CacheNodeTypeSpecificParameter</a> instances.
+     * @param cacheNodeTypeSpecificParameters A list of parameters specific to a particular cache node type. Each
+     *         element in the list contains detailed information about one parameter.
      */
     public void setCacheNodeTypeSpecificParameters(java.util.Collection<CacheNodeTypeSpecificParameter> cacheNodeTypeSpecificParameters) {
         if (cacheNodeTypeSpecificParameters == null) {
@@ -216,11 +221,13 @@ public class EngineDefaults implements Serializable {
     }
     
     /**
-     * A list of <a>CacheNodeTypeSpecificParameter</a> instances.
+     * A list of parameters specific to a particular cache node type. Each
+     * element in the list contains detailed information about one parameter.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheNodeTypeSpecificParameters A list of <a>CacheNodeTypeSpecificParameter</a> instances.
+     * @param cacheNodeTypeSpecificParameters A list of parameters specific to a particular cache node type. Each
+     *         element in the list contains detailed information about one parameter.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -234,11 +241,13 @@ public class EngineDefaults implements Serializable {
     }
     
     /**
-     * A list of <a>CacheNodeTypeSpecificParameter</a> instances.
+     * A list of parameters specific to a particular cache node type. Each
+     * element in the list contains detailed information about one parameter.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheNodeTypeSpecificParameters A list of <a>CacheNodeTypeSpecificParameter</a> instances.
+     * @param cacheNodeTypeSpecificParameters A list of parameters specific to a particular cache node type. Each
+     *         element in the list contains detailed information about one parameter.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

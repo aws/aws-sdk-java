@@ -17,13 +17,13 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The status of the Cache Parameter Group.
+ * The status of the cache parameter group.
  * </p>
  */
 public class CacheParameterGroupStatus implements Serializable {
 
     /**
-     * The name of the Cache Parameter Group.
+     * The name of the cache parameter group.
      */
     private String cacheParameterGroupName;
 
@@ -33,8 +33,9 @@ public class CacheParameterGroupStatus implements Serializable {
     private String parameterApplyStatus;
 
     /**
-     * A list of the Cache Node Ids which need to be rebooted for parameter
-     * changes to be applied.
+     * A list of the cache node IDs which need to be rebooted for parameter
+     * changes to be applied. A node ID is a numeric identifier (0001, 0002,
+     * etc.).
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> cacheNodeIdsToReboot;
 
@@ -45,29 +46,29 @@ public class CacheParameterGroupStatus implements Serializable {
     public CacheParameterGroupStatus() {}
     
     /**
-     * The name of the Cache Parameter Group.
+     * The name of the cache parameter group.
      *
-     * @return The name of the Cache Parameter Group.
+     * @return The name of the cache parameter group.
      */
     public String getCacheParameterGroupName() {
         return cacheParameterGroupName;
     }
     
     /**
-     * The name of the Cache Parameter Group.
+     * The name of the cache parameter group.
      *
-     * @param cacheParameterGroupName The name of the Cache Parameter Group.
+     * @param cacheParameterGroupName The name of the cache parameter group.
      */
     public void setCacheParameterGroupName(String cacheParameterGroupName) {
         this.cacheParameterGroupName = cacheParameterGroupName;
     }
     
     /**
-     * The name of the Cache Parameter Group.
+     * The name of the cache parameter group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheParameterGroupName The name of the Cache Parameter Group.
+     * @param cacheParameterGroupName The name of the cache parameter group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -113,11 +114,13 @@ public class CacheParameterGroupStatus implements Serializable {
     
     
     /**
-     * A list of the Cache Node Ids which need to be rebooted for parameter
-     * changes to be applied.
+     * A list of the cache node IDs which need to be rebooted for parameter
+     * changes to be applied. A node ID is a numeric identifier (0001, 0002,
+     * etc.).
      *
-     * @return A list of the Cache Node Ids which need to be rebooted for parameter
-     *         changes to be applied.
+     * @return A list of the cache node IDs which need to be rebooted for parameter
+     *         changes to be applied. A node ID is a numeric identifier (0001, 0002,
+     *         etc.).
      */
     public java.util.List<String> getCacheNodeIdsToReboot() {
         
@@ -129,11 +132,13 @@ public class CacheParameterGroupStatus implements Serializable {
     }
     
     /**
-     * A list of the Cache Node Ids which need to be rebooted for parameter
-     * changes to be applied.
+     * A list of the cache node IDs which need to be rebooted for parameter
+     * changes to be applied. A node ID is a numeric identifier (0001, 0002,
+     * etc.).
      *
-     * @param cacheNodeIdsToReboot A list of the Cache Node Ids which need to be rebooted for parameter
-     *         changes to be applied.
+     * @param cacheNodeIdsToReboot A list of the cache node IDs which need to be rebooted for parameter
+     *         changes to be applied. A node ID is a numeric identifier (0001, 0002,
+     *         etc.).
      */
     public void setCacheNodeIdsToReboot(java.util.Collection<String> cacheNodeIdsToReboot) {
         if (cacheNodeIdsToReboot == null) {
@@ -146,13 +151,15 @@ public class CacheParameterGroupStatus implements Serializable {
     }
     
     /**
-     * A list of the Cache Node Ids which need to be rebooted for parameter
-     * changes to be applied.
+     * A list of the cache node IDs which need to be rebooted for parameter
+     * changes to be applied. A node ID is a numeric identifier (0001, 0002,
+     * etc.).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheNodeIdsToReboot A list of the Cache Node Ids which need to be rebooted for parameter
-     *         changes to be applied.
+     * @param cacheNodeIdsToReboot A list of the cache node IDs which need to be rebooted for parameter
+     *         changes to be applied. A node ID is a numeric identifier (0001, 0002,
+     *         etc.).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -166,13 +173,15 @@ public class CacheParameterGroupStatus implements Serializable {
     }
     
     /**
-     * A list of the Cache Node Ids which need to be rebooted for parameter
-     * changes to be applied.
+     * A list of the cache node IDs which need to be rebooted for parameter
+     * changes to be applied. A node ID is a numeric identifier (0001, 0002,
+     * etc.).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheNodeIdsToReboot A list of the Cache Node Ids which need to be rebooted for parameter
-     *         changes to be applied.
+     * @param cacheNodeIdsToReboot A list of the cache node IDs which need to be rebooted for parameter
+     *         changes to be applied. A node ID is a numeric identifier (0001, 0002,
+     *         etc.).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

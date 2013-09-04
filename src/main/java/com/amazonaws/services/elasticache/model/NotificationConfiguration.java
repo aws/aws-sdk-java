@@ -17,19 +17,19 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains pair of Topic and Topic Status.
+ * Describes a notification topic and its status. Notification topics are used for publishing ElastiCache events to subscribers using Amazon Simple
+ * Notification Service (SNS).
  * </p>
  */
 public class NotificationConfiguration implements Serializable {
 
     /**
-     * Specifies the topic Amazon Resource Name (ARN), identifying this
-     * resource.
+     * The Amazon Resource Name (ARN) that identifies the topic.
      */
     private String topicArn;
 
     /**
-     * Specifies the current state of this topic.
+     * The current state of the topic.
      */
     private String topicStatus;
 
@@ -40,35 +40,29 @@ public class NotificationConfiguration implements Serializable {
     public NotificationConfiguration() {}
     
     /**
-     * Specifies the topic Amazon Resource Name (ARN), identifying this
-     * resource.
+     * The Amazon Resource Name (ARN) that identifies the topic.
      *
-     * @return Specifies the topic Amazon Resource Name (ARN), identifying this
-     *         resource.
+     * @return The Amazon Resource Name (ARN) that identifies the topic.
      */
     public String getTopicArn() {
         return topicArn;
     }
     
     /**
-     * Specifies the topic Amazon Resource Name (ARN), identifying this
-     * resource.
+     * The Amazon Resource Name (ARN) that identifies the topic.
      *
-     * @param topicArn Specifies the topic Amazon Resource Name (ARN), identifying this
-     *         resource.
+     * @param topicArn The Amazon Resource Name (ARN) that identifies the topic.
      */
     public void setTopicArn(String topicArn) {
         this.topicArn = topicArn;
     }
     
     /**
-     * Specifies the topic Amazon Resource Name (ARN), identifying this
-     * resource.
+     * The Amazon Resource Name (ARN) that identifies the topic.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param topicArn Specifies the topic Amazon Resource Name (ARN), identifying this
-     *         resource.
+     * @param topicArn The Amazon Resource Name (ARN) that identifies the topic.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -80,29 +74,29 @@ public class NotificationConfiguration implements Serializable {
     
     
     /**
-     * Specifies the current state of this topic.
+     * The current state of the topic.
      *
-     * @return Specifies the current state of this topic.
+     * @return The current state of the topic.
      */
     public String getTopicStatus() {
         return topicStatus;
     }
     
     /**
-     * Specifies the current state of this topic.
+     * The current state of the topic.
      *
-     * @param topicStatus Specifies the current state of this topic.
+     * @param topicStatus The current state of the topic.
      */
     public void setTopicStatus(String topicStatus) {
         this.topicStatus = topicStatus;
     }
     
     /**
-     * Specifies the current state of this topic.
+     * The current state of the topic.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param topicStatus Specifies the current state of this topic.
+     * @param topicStatus The current state of the topic.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

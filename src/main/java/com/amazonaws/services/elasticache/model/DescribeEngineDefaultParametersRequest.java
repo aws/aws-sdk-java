@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest) DescribeEngineDefaultParameters operation}.
  * <p>
- * Returns the default engine and system parameter information for the specified cache engine.
+ * The <i>DescribeEngineDefaultParameters</i> operation returns the default engine and system parameter information for the specified cache engine.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest)
@@ -27,25 +27,24 @@ import java.io.Serializable;
 public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name of the Cache Parameter Group Family. <note>Currently,
-     * <i>memcached1.4</i> is the only cache parameter group family supported
-     * by the service.</note>
+     * The name of the cache parameter group family. Valid values are:
+     * <code>memcached1.4</code> | <code>redis2.6</code>
      */
     private String cacheParameterGroupFamily;
 
     /**
      * The maximum number of records to include in the response. If more
-     * records exist than the specified <i>MaxRecords</i> value, a marker is
-     * included in the response so that the remaining results may be
-     * retrieved.
+     * records exist than the specified <code>MaxRecords</code> value, a
+     * marker is included in the response so that the remaining results can
+     * be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      */
     private Integer maxRecords;
 
     /**
-     * An optional marker provided in the previous DescribeCacheClusters
-     * request. If this parameter is specified, the response includes only
-     * records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this operation. If this parameter is
+     * specified, the response includes only records beyond the marker, up to
+     * the value specified by <i>MaxRecords</i>.
      */
     private String marker;
 
@@ -62,9 +61,9 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param cacheParameterGroupFamily The name of the Cache Parameter Group
-     * Family. <note>Currently, <i>memcached1.4</i> is the only cache
-     * parameter group family supported by the service.</note>
+     * @param cacheParameterGroupFamily The name of the cache parameter group
+     * family. Valid values are: <code>memcached1.4</code> |
+     * <code>redis2.6</code>
      */
     public DescribeEngineDefaultParametersRequest(String cacheParameterGroupFamily) {
         setCacheParameterGroupFamily(cacheParameterGroupFamily);
@@ -73,41 +72,35 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
     
     
     /**
-     * The name of the Cache Parameter Group Family. <note>Currently,
-     * <i>memcached1.4</i> is the only cache parameter group family supported
-     * by the service.</note>
+     * The name of the cache parameter group family. Valid values are:
+     * <code>memcached1.4</code> | <code>redis2.6</code>
      *
-     * @return The name of the Cache Parameter Group Family. <note>Currently,
-     *         <i>memcached1.4</i> is the only cache parameter group family supported
-     *         by the service.</note>
+     * @return The name of the cache parameter group family. Valid values are:
+     *         <code>memcached1.4</code> | <code>redis2.6</code>
      */
     public String getCacheParameterGroupFamily() {
         return cacheParameterGroupFamily;
     }
     
     /**
-     * The name of the Cache Parameter Group Family. <note>Currently,
-     * <i>memcached1.4</i> is the only cache parameter group family supported
-     * by the service.</note>
+     * The name of the cache parameter group family. Valid values are:
+     * <code>memcached1.4</code> | <code>redis2.6</code>
      *
-     * @param cacheParameterGroupFamily The name of the Cache Parameter Group Family. <note>Currently,
-     *         <i>memcached1.4</i> is the only cache parameter group family supported
-     *         by the service.</note>
+     * @param cacheParameterGroupFamily The name of the cache parameter group family. Valid values are:
+     *         <code>memcached1.4</code> | <code>redis2.6</code>
      */
     public void setCacheParameterGroupFamily(String cacheParameterGroupFamily) {
         this.cacheParameterGroupFamily = cacheParameterGroupFamily;
     }
     
     /**
-     * The name of the Cache Parameter Group Family. <note>Currently,
-     * <i>memcached1.4</i> is the only cache parameter group family supported
-     * by the service.</note>
+     * The name of the cache parameter group family. Valid values are:
+     * <code>memcached1.4</code> | <code>redis2.6</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheParameterGroupFamily The name of the Cache Parameter Group Family. <note>Currently,
-     *         <i>memcached1.4</i> is the only cache parameter group family supported
-     *         by the service.</note>
+     * @param cacheParameterGroupFamily The name of the cache parameter group family. Valid values are:
+     *         <code>memcached1.4</code> | <code>redis2.6</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -120,14 +113,14 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
     
     /**
      * The maximum number of records to include in the response. If more
-     * records exist than the specified <i>MaxRecords</i> value, a marker is
-     * included in the response so that the remaining results may be
-     * retrieved.
+     * records exist than the specified <code>MaxRecords</code> value, a
+     * marker is included in the response so that the remaining results can
+     * be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      *
      * @return The maximum number of records to include in the response. If more
-     *         records exist than the specified <i>MaxRecords</i> value, a marker is
-     *         included in the response so that the remaining results may be
-     *         retrieved.
+     *         records exist than the specified <code>MaxRecords</code> value, a
+     *         marker is included in the response so that the remaining results can
+     *         be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      */
     public Integer getMaxRecords() {
         return maxRecords;
@@ -135,14 +128,14 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
     
     /**
      * The maximum number of records to include in the response. If more
-     * records exist than the specified <i>MaxRecords</i> value, a marker is
-     * included in the response so that the remaining results may be
-     * retrieved.
+     * records exist than the specified <code>MaxRecords</code> value, a
+     * marker is included in the response so that the remaining results can
+     * be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      *
      * @param maxRecords The maximum number of records to include in the response. If more
-     *         records exist than the specified <i>MaxRecords</i> value, a marker is
-     *         included in the response so that the remaining results may be
-     *         retrieved.
+     *         records exist than the specified <code>MaxRecords</code> value, a
+     *         marker is included in the response so that the remaining results can
+     *         be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      */
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -150,16 +143,16 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
     
     /**
      * The maximum number of records to include in the response. If more
-     * records exist than the specified <i>MaxRecords</i> value, a marker is
-     * included in the response so that the remaining results may be
-     * retrieved.
+     * records exist than the specified <code>MaxRecords</code> value, a
+     * marker is included in the response so that the remaining results can
+     * be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxRecords The maximum number of records to include in the response. If more
-     *         records exist than the specified <i>MaxRecords</i> value, a marker is
-     *         included in the response so that the remaining results may be
-     *         retrieved.
+     *         records exist than the specified <code>MaxRecords</code> value, a
+     *         marker is included in the response so that the remaining results can
+     *         be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -171,47 +164,47 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
     
     
     /**
-     * An optional marker provided in the previous DescribeCacheClusters
-     * request. If this parameter is specified, the response includes only
-     * records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this operation. If this parameter is
+     * specified, the response includes only records beyond the marker, up to
+     * the value specified by <i>MaxRecords</i>.
      *
-     * @return An optional marker provided in the previous DescribeCacheClusters
-     *         request. If this parameter is specified, the response includes only
-     *         records beyond the marker, up to the value specified by
-     *         <i>MaxRecords</i>.
+     * @return An optional marker returned from a prior request. Use this marker for
+     *         pagination of results from this operation. If this parameter is
+     *         specified, the response includes only records beyond the marker, up to
+     *         the value specified by <i>MaxRecords</i>.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * An optional marker provided in the previous DescribeCacheClusters
-     * request. If this parameter is specified, the response includes only
-     * records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this operation. If this parameter is
+     * specified, the response includes only records beyond the marker, up to
+     * the value specified by <i>MaxRecords</i>.
      *
-     * @param marker An optional marker provided in the previous DescribeCacheClusters
-     *         request. If this parameter is specified, the response includes only
-     *         records beyond the marker, up to the value specified by
-     *         <i>MaxRecords</i>.
+     * @param marker An optional marker returned from a prior request. Use this marker for
+     *         pagination of results from this operation. If this parameter is
+     *         specified, the response includes only records beyond the marker, up to
+     *         the value specified by <i>MaxRecords</i>.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * An optional marker provided in the previous DescribeCacheClusters
-     * request. If this parameter is specified, the response includes only
-     * records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this operation. If this parameter is
+     * specified, the response includes only records beyond the marker, up to
+     * the value specified by <i>MaxRecords</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker An optional marker provided in the previous DescribeCacheClusters
-     *         request. If this parameter is specified, the response includes only
-     *         records beyond the marker, up to the value specified by
-     *         <i>MaxRecords</i>.
+     * @param marker An optional marker returned from a prior request. Use this marker for
+     *         pagination of results from this operation. If this parameter is
+     *         specified, the response includes only records beyond the marker, up to
+     *         the value specified by <i>MaxRecords</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

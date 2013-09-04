@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * <i>CacheClusterId</i> does not refer to an existing Cache Cluster.
+ * The requested cache cluster ID does not refer to an existing cache cluster.
  * </p>
  */        
 public class CacheClusterNotFoundException extends AmazonServiceException {

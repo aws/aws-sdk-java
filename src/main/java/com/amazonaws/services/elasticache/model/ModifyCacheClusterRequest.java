@@ -19,8 +19,8 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#modifyCacheCluster(ModifyCacheClusterRequest) ModifyCacheCluster operation}.
  * <p>
- * Modifies the Cache Cluster settings. You can change one or more Cache Cluster configuration parameters by specifying the parameters and the new
- * values in the request.
+ * The <i>ModifyCacheCluster</i> operation modifies the settings for a cache cluster. You can use this operation to change one or more cluster
+ * configuration parameters by specifying the parameters and the new values.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#modifyCacheCluster(ModifyCacheClusterRequest)
@@ -28,33 +28,35 @@ import java.io.Serializable;
 public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The Cache Cluster identifier. This value is stored as a lowercase
+     * The cache cluster identifier. This value is stored as a lowercase
      * string.
      */
     private String cacheClusterId;
 
     /**
-     * The number of Cache Nodes the Cache Cluster should have. If
-     * NumCacheNodes is greater than the existing number of Cache Nodes,
-     * Cache Nodes will be added. If NumCacheNodes is less than the existing
-     * number of Cache Nodes, Cache Nodes will be removed. When removing
-     * Cache Nodes, the Ids of the specific Cache Nodes to be removed must be
-     * supplied using the CacheNodeIdsToRemove parameter.
+     * The number of cache nodes that the cache cluster should have. If the
+     * value for <i>NumCacheNodes</i> is greater than the existing number of
+     * cache nodes, then more nodes will be added. If the value is less than
+     * the existing number of cache nodes, then cache nodes will be removed.
+     * <p>If you are removing cache nodes, you must use the
+     * <i>CacheNodeIdsToRemove</i> parameter to provide the IDs of the
+     * specific cache nodes to be removed.
      */
     private Integer numCacheNodes;
 
     /**
-     * The list of Cache Node IDs to be removed. This parameter is only valid
-     * when NumCacheNodes is less than the existing number of Cache Nodes.
-     * The number of Cache Node Ids supplied in this parameter must match the
-     * difference between the existing number of Cache Nodes in the cluster
-     * and the new NumCacheNodes requested.
+     * A list of cache node IDs to be removed. A node ID is a numeric
+     * identifier (0001, 0002, etc.). This parameter is only valid when
+     * NumCacheNodes is less than the existing number of cache nodes. The
+     * number of cache node IDs supplied in this parameter must match the
+     * difference between the existing number of cache nodes in the cluster
+     * and the value of <i>NumCacheNodes</i> in the request.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> cacheNodeIdsToRemove;
 
     /**
-     * A list of Cache Security Group Names to authorize on this Cache
-     * Cluster. This change is asynchronously applied as soon as possible.
+     * A list of cache security group names to authorize on this cache
+     * cluster. This change is asynchronously applied as soon as possible.
      * <p>This parameter can be used only with clusters that are created
      * outside of an Amazon Virtual Private Cloud (VPC). <p>Constraints: Must
      * contain no more than 255 alphanumeric characters. Must not be
@@ -63,7 +65,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> cacheSecurityGroupNames;
 
     /**
-     * Specifies the VPC Security Groups associated with the Cache Cluster.
+     * Specifies the VPC Security Groups associated with the cache cluster.
      * <p>This parameter can be used only with clusters that are created in
      * an Amazon Virtual Private Cloud (VPC).
      */
@@ -71,22 +73,22 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
 
     /**
      * The weekly time range (in UTC) during which system maintenance can
-     * occur, which may result in an outage. This change is made immediately.
-     * If moving this window to the current time, there must be at least 120
-     * minutes between the current time and end of the window to ensure
-     * pending changes are applied.
+     * occur. Note that system maintenance may result in an outage. This
+     * change is made immediately. If you are moving this window to the
+     * current time, there must be at least 120 minutes between the current
+     * time and end of the window to ensure that pending changes are applied.
      */
     private String preferredMaintenanceWindow;
 
     /**
      * The Amazon Resource Name (ARN) of the SNS topic to which notifications
-     * will be sent. <note> The SNS topic owner must be same as the Cache
-     * Cluster owner. </note>
+     * will be sent. <note> The SNS topic owner must be same as the cache
+     * cluster owner. </note>
      */
     private String notificationTopicArn;
 
     /**
-     * The name of the Cache Parameter Group to apply to this Cache Cluster.
+     * The name of the cache parameter group to apply to this cache cluster.
      * This change is asynchronously applied as soon as possible for
      * parameters when the <i>ApplyImmediately</i> parameter is specified as
      * <i>true</i> for this request.
@@ -94,31 +96,34 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     private String cacheParameterGroupName;
 
     /**
-     * The status of the Amazon SNS notification topic. The value can be
-     * <i>active</i> or <i>inactive</i>. Notifications are sent only if the
-     * status is <i>active</i>.
+     * The status of the Amazon SNS notification topic. Notifications are
+     * sent only if the status is <i>active</i>. <p>Valid values:
+     * <code>active</code> | <code>inactive</code>
      */
     private String notificationTopicStatus;
 
     /**
-     * Specifies whether or not the modifications in this request and any
-     * pending modifications are asynchronously applied as soon as possible,
-     * regardless of the <i>PreferredMaintenanceWindow</i> setting for the
-     * Cache Cluster. <p> If this parameter is passed as <code>false</code>,
-     * changes to the Cache Cluster are applied on the next maintenance
-     * reboot, or the next failure reboot, whichever occurs first. <p>
-     * Default: <code>false</code>
+     * If <code>true</code>, this parameter causes the modifications in this
+     * request and any pending modifications to be applied, asynchronously
+     * and as soon as possible, regardless of the
+     * <i>PreferredMaintenanceWindow</i> setting for the cache cluster. <p>If
+     * <code>false</code>, then changes to the cache cluster are applied on
+     * the next maintenance reboot, or the next failure reboot, whichever
+     * occurs first. <p>Valid values: <code>true</code> | <code>false</code>
+     * <p>Default: <code>false</code>
      */
     private Boolean applyImmediately;
 
     /**
-     * The version of the cache engine to upgrade this cluster to.
+     * The upgraded version of the cache engine to be run on the cache
+     * cluster nodes.
      */
     private String engineVersion;
 
     /**
-     * Indicates that minor engine upgrades will be applied automatically to
-     * the Cache Cluster during the maintenance window. <p>Default:
+     * If <code>true</code>, then minor engine upgrades will be applied
+     * automatically to the cache cluster during the maintenance window.
+     * <p>Valid values: <code>true</code> | <code>false</code> <p>Default:
      * <code>true</code>
      */
     private Boolean autoMinorVersionUpgrade;
@@ -136,7 +141,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param cacheClusterId The Cache Cluster identifier. This value is
+     * @param cacheClusterId The cache cluster identifier. This value is
      * stored as a lowercase string.
      */
     public ModifyCacheClusterRequest(String cacheClusterId) {
@@ -146,10 +151,10 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     
     
     /**
-     * The Cache Cluster identifier. This value is stored as a lowercase
+     * The cache cluster identifier. This value is stored as a lowercase
      * string.
      *
-     * @return The Cache Cluster identifier. This value is stored as a lowercase
+     * @return The cache cluster identifier. This value is stored as a lowercase
      *         string.
      */
     public String getCacheClusterId() {
@@ -157,10 +162,10 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * The Cache Cluster identifier. This value is stored as a lowercase
+     * The cache cluster identifier. This value is stored as a lowercase
      * string.
      *
-     * @param cacheClusterId The Cache Cluster identifier. This value is stored as a lowercase
+     * @param cacheClusterId The cache cluster identifier. This value is stored as a lowercase
      *         string.
      */
     public void setCacheClusterId(String cacheClusterId) {
@@ -168,12 +173,12 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * The Cache Cluster identifier. This value is stored as a lowercase
+     * The cache cluster identifier. This value is stored as a lowercase
      * string.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheClusterId The Cache Cluster identifier. This value is stored as a lowercase
+     * @param cacheClusterId The cache cluster identifier. This value is stored as a lowercase
      *         string.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -186,59 +191,65 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     
     
     /**
-     * The number of Cache Nodes the Cache Cluster should have. If
-     * NumCacheNodes is greater than the existing number of Cache Nodes,
-     * Cache Nodes will be added. If NumCacheNodes is less than the existing
-     * number of Cache Nodes, Cache Nodes will be removed. When removing
-     * Cache Nodes, the Ids of the specific Cache Nodes to be removed must be
-     * supplied using the CacheNodeIdsToRemove parameter.
+     * The number of cache nodes that the cache cluster should have. If the
+     * value for <i>NumCacheNodes</i> is greater than the existing number of
+     * cache nodes, then more nodes will be added. If the value is less than
+     * the existing number of cache nodes, then cache nodes will be removed.
+     * <p>If you are removing cache nodes, you must use the
+     * <i>CacheNodeIdsToRemove</i> parameter to provide the IDs of the
+     * specific cache nodes to be removed.
      *
-     * @return The number of Cache Nodes the Cache Cluster should have. If
-     *         NumCacheNodes is greater than the existing number of Cache Nodes,
-     *         Cache Nodes will be added. If NumCacheNodes is less than the existing
-     *         number of Cache Nodes, Cache Nodes will be removed. When removing
-     *         Cache Nodes, the Ids of the specific Cache Nodes to be removed must be
-     *         supplied using the CacheNodeIdsToRemove parameter.
+     * @return The number of cache nodes that the cache cluster should have. If the
+     *         value for <i>NumCacheNodes</i> is greater than the existing number of
+     *         cache nodes, then more nodes will be added. If the value is less than
+     *         the existing number of cache nodes, then cache nodes will be removed.
+     *         <p>If you are removing cache nodes, you must use the
+     *         <i>CacheNodeIdsToRemove</i> parameter to provide the IDs of the
+     *         specific cache nodes to be removed.
      */
     public Integer getNumCacheNodes() {
         return numCacheNodes;
     }
     
     /**
-     * The number of Cache Nodes the Cache Cluster should have. If
-     * NumCacheNodes is greater than the existing number of Cache Nodes,
-     * Cache Nodes will be added. If NumCacheNodes is less than the existing
-     * number of Cache Nodes, Cache Nodes will be removed. When removing
-     * Cache Nodes, the Ids of the specific Cache Nodes to be removed must be
-     * supplied using the CacheNodeIdsToRemove parameter.
+     * The number of cache nodes that the cache cluster should have. If the
+     * value for <i>NumCacheNodes</i> is greater than the existing number of
+     * cache nodes, then more nodes will be added. If the value is less than
+     * the existing number of cache nodes, then cache nodes will be removed.
+     * <p>If you are removing cache nodes, you must use the
+     * <i>CacheNodeIdsToRemove</i> parameter to provide the IDs of the
+     * specific cache nodes to be removed.
      *
-     * @param numCacheNodes The number of Cache Nodes the Cache Cluster should have. If
-     *         NumCacheNodes is greater than the existing number of Cache Nodes,
-     *         Cache Nodes will be added. If NumCacheNodes is less than the existing
-     *         number of Cache Nodes, Cache Nodes will be removed. When removing
-     *         Cache Nodes, the Ids of the specific Cache Nodes to be removed must be
-     *         supplied using the CacheNodeIdsToRemove parameter.
+     * @param numCacheNodes The number of cache nodes that the cache cluster should have. If the
+     *         value for <i>NumCacheNodes</i> is greater than the existing number of
+     *         cache nodes, then more nodes will be added. If the value is less than
+     *         the existing number of cache nodes, then cache nodes will be removed.
+     *         <p>If you are removing cache nodes, you must use the
+     *         <i>CacheNodeIdsToRemove</i> parameter to provide the IDs of the
+     *         specific cache nodes to be removed.
      */
     public void setNumCacheNodes(Integer numCacheNodes) {
         this.numCacheNodes = numCacheNodes;
     }
     
     /**
-     * The number of Cache Nodes the Cache Cluster should have. If
-     * NumCacheNodes is greater than the existing number of Cache Nodes,
-     * Cache Nodes will be added. If NumCacheNodes is less than the existing
-     * number of Cache Nodes, Cache Nodes will be removed. When removing
-     * Cache Nodes, the Ids of the specific Cache Nodes to be removed must be
-     * supplied using the CacheNodeIdsToRemove parameter.
+     * The number of cache nodes that the cache cluster should have. If the
+     * value for <i>NumCacheNodes</i> is greater than the existing number of
+     * cache nodes, then more nodes will be added. If the value is less than
+     * the existing number of cache nodes, then cache nodes will be removed.
+     * <p>If you are removing cache nodes, you must use the
+     * <i>CacheNodeIdsToRemove</i> parameter to provide the IDs of the
+     * specific cache nodes to be removed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param numCacheNodes The number of Cache Nodes the Cache Cluster should have. If
-     *         NumCacheNodes is greater than the existing number of Cache Nodes,
-     *         Cache Nodes will be added. If NumCacheNodes is less than the existing
-     *         number of Cache Nodes, Cache Nodes will be removed. When removing
-     *         Cache Nodes, the Ids of the specific Cache Nodes to be removed must be
-     *         supplied using the CacheNodeIdsToRemove parameter.
+     * @param numCacheNodes The number of cache nodes that the cache cluster should have. If the
+     *         value for <i>NumCacheNodes</i> is greater than the existing number of
+     *         cache nodes, then more nodes will be added. If the value is less than
+     *         the existing number of cache nodes, then cache nodes will be removed.
+     *         <p>If you are removing cache nodes, you must use the
+     *         <i>CacheNodeIdsToRemove</i> parameter to provide the IDs of the
+     *         specific cache nodes to be removed.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -250,17 +261,19 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     
     
     /**
-     * The list of Cache Node IDs to be removed. This parameter is only valid
-     * when NumCacheNodes is less than the existing number of Cache Nodes.
-     * The number of Cache Node Ids supplied in this parameter must match the
-     * difference between the existing number of Cache Nodes in the cluster
-     * and the new NumCacheNodes requested.
+     * A list of cache node IDs to be removed. A node ID is a numeric
+     * identifier (0001, 0002, etc.). This parameter is only valid when
+     * NumCacheNodes is less than the existing number of cache nodes. The
+     * number of cache node IDs supplied in this parameter must match the
+     * difference between the existing number of cache nodes in the cluster
+     * and the value of <i>NumCacheNodes</i> in the request.
      *
-     * @return The list of Cache Node IDs to be removed. This parameter is only valid
-     *         when NumCacheNodes is less than the existing number of Cache Nodes.
-     *         The number of Cache Node Ids supplied in this parameter must match the
-     *         difference between the existing number of Cache Nodes in the cluster
-     *         and the new NumCacheNodes requested.
+     * @return A list of cache node IDs to be removed. A node ID is a numeric
+     *         identifier (0001, 0002, etc.). This parameter is only valid when
+     *         NumCacheNodes is less than the existing number of cache nodes. The
+     *         number of cache node IDs supplied in this parameter must match the
+     *         difference between the existing number of cache nodes in the cluster
+     *         and the value of <i>NumCacheNodes</i> in the request.
      */
     public java.util.List<String> getCacheNodeIdsToRemove() {
         
@@ -272,17 +285,19 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * The list of Cache Node IDs to be removed. This parameter is only valid
-     * when NumCacheNodes is less than the existing number of Cache Nodes.
-     * The number of Cache Node Ids supplied in this parameter must match the
-     * difference between the existing number of Cache Nodes in the cluster
-     * and the new NumCacheNodes requested.
+     * A list of cache node IDs to be removed. A node ID is a numeric
+     * identifier (0001, 0002, etc.). This parameter is only valid when
+     * NumCacheNodes is less than the existing number of cache nodes. The
+     * number of cache node IDs supplied in this parameter must match the
+     * difference between the existing number of cache nodes in the cluster
+     * and the value of <i>NumCacheNodes</i> in the request.
      *
-     * @param cacheNodeIdsToRemove The list of Cache Node IDs to be removed. This parameter is only valid
-     *         when NumCacheNodes is less than the existing number of Cache Nodes.
-     *         The number of Cache Node Ids supplied in this parameter must match the
-     *         difference between the existing number of Cache Nodes in the cluster
-     *         and the new NumCacheNodes requested.
+     * @param cacheNodeIdsToRemove A list of cache node IDs to be removed. A node ID is a numeric
+     *         identifier (0001, 0002, etc.). This parameter is only valid when
+     *         NumCacheNodes is less than the existing number of cache nodes. The
+     *         number of cache node IDs supplied in this parameter must match the
+     *         difference between the existing number of cache nodes in the cluster
+     *         and the value of <i>NumCacheNodes</i> in the request.
      */
     public void setCacheNodeIdsToRemove(java.util.Collection<String> cacheNodeIdsToRemove) {
         if (cacheNodeIdsToRemove == null) {
@@ -295,19 +310,21 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * The list of Cache Node IDs to be removed. This parameter is only valid
-     * when NumCacheNodes is less than the existing number of Cache Nodes.
-     * The number of Cache Node Ids supplied in this parameter must match the
-     * difference between the existing number of Cache Nodes in the cluster
-     * and the new NumCacheNodes requested.
+     * A list of cache node IDs to be removed. A node ID is a numeric
+     * identifier (0001, 0002, etc.). This parameter is only valid when
+     * NumCacheNodes is less than the existing number of cache nodes. The
+     * number of cache node IDs supplied in this parameter must match the
+     * difference between the existing number of cache nodes in the cluster
+     * and the value of <i>NumCacheNodes</i> in the request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheNodeIdsToRemove The list of Cache Node IDs to be removed. This parameter is only valid
-     *         when NumCacheNodes is less than the existing number of Cache Nodes.
-     *         The number of Cache Node Ids supplied in this parameter must match the
-     *         difference between the existing number of Cache Nodes in the cluster
-     *         and the new NumCacheNodes requested.
+     * @param cacheNodeIdsToRemove A list of cache node IDs to be removed. A node ID is a numeric
+     *         identifier (0001, 0002, etc.). This parameter is only valid when
+     *         NumCacheNodes is less than the existing number of cache nodes. The
+     *         number of cache node IDs supplied in this parameter must match the
+     *         difference between the existing number of cache nodes in the cluster
+     *         and the value of <i>NumCacheNodes</i> in the request.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -321,19 +338,21 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * The list of Cache Node IDs to be removed. This parameter is only valid
-     * when NumCacheNodes is less than the existing number of Cache Nodes.
-     * The number of Cache Node Ids supplied in this parameter must match the
-     * difference between the existing number of Cache Nodes in the cluster
-     * and the new NumCacheNodes requested.
+     * A list of cache node IDs to be removed. A node ID is a numeric
+     * identifier (0001, 0002, etc.). This parameter is only valid when
+     * NumCacheNodes is less than the existing number of cache nodes. The
+     * number of cache node IDs supplied in this parameter must match the
+     * difference between the existing number of cache nodes in the cluster
+     * and the value of <i>NumCacheNodes</i> in the request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheNodeIdsToRemove The list of Cache Node IDs to be removed. This parameter is only valid
-     *         when NumCacheNodes is less than the existing number of Cache Nodes.
-     *         The number of Cache Node Ids supplied in this parameter must match the
-     *         difference between the existing number of Cache Nodes in the cluster
-     *         and the new NumCacheNodes requested.
+     * @param cacheNodeIdsToRemove A list of cache node IDs to be removed. A node ID is a numeric
+     *         identifier (0001, 0002, etc.). This parameter is only valid when
+     *         NumCacheNodes is less than the existing number of cache nodes. The
+     *         number of cache node IDs supplied in this parameter must match the
+     *         difference between the existing number of cache nodes in the cluster
+     *         and the value of <i>NumCacheNodes</i> in the request.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -351,15 +370,15 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * A list of Cache Security Group Names to authorize on this Cache
-     * Cluster. This change is asynchronously applied as soon as possible.
+     * A list of cache security group names to authorize on this cache
+     * cluster. This change is asynchronously applied as soon as possible.
      * <p>This parameter can be used only with clusters that are created
      * outside of an Amazon Virtual Private Cloud (VPC). <p>Constraints: Must
      * contain no more than 255 alphanumeric characters. Must not be
      * "Default".
      *
-     * @return A list of Cache Security Group Names to authorize on this Cache
-     *         Cluster. This change is asynchronously applied as soon as possible.
+     * @return A list of cache security group names to authorize on this cache
+     *         cluster. This change is asynchronously applied as soon as possible.
      *         <p>This parameter can be used only with clusters that are created
      *         outside of an Amazon Virtual Private Cloud (VPC). <p>Constraints: Must
      *         contain no more than 255 alphanumeric characters. Must not be
@@ -375,15 +394,15 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * A list of Cache Security Group Names to authorize on this Cache
-     * Cluster. This change is asynchronously applied as soon as possible.
+     * A list of cache security group names to authorize on this cache
+     * cluster. This change is asynchronously applied as soon as possible.
      * <p>This parameter can be used only with clusters that are created
      * outside of an Amazon Virtual Private Cloud (VPC). <p>Constraints: Must
      * contain no more than 255 alphanumeric characters. Must not be
      * "Default".
      *
-     * @param cacheSecurityGroupNames A list of Cache Security Group Names to authorize on this Cache
-     *         Cluster. This change is asynchronously applied as soon as possible.
+     * @param cacheSecurityGroupNames A list of cache security group names to authorize on this cache
+     *         cluster. This change is asynchronously applied as soon as possible.
      *         <p>This parameter can be used only with clusters that are created
      *         outside of an Amazon Virtual Private Cloud (VPC). <p>Constraints: Must
      *         contain no more than 255 alphanumeric characters. Must not be
@@ -400,8 +419,8 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * A list of Cache Security Group Names to authorize on this Cache
-     * Cluster. This change is asynchronously applied as soon as possible.
+     * A list of cache security group names to authorize on this cache
+     * cluster. This change is asynchronously applied as soon as possible.
      * <p>This parameter can be used only with clusters that are created
      * outside of an Amazon Virtual Private Cloud (VPC). <p>Constraints: Must
      * contain no more than 255 alphanumeric characters. Must not be
@@ -409,8 +428,8 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheSecurityGroupNames A list of Cache Security Group Names to authorize on this Cache
-     *         Cluster. This change is asynchronously applied as soon as possible.
+     * @param cacheSecurityGroupNames A list of cache security group names to authorize on this cache
+     *         cluster. This change is asynchronously applied as soon as possible.
      *         <p>This parameter can be used only with clusters that are created
      *         outside of an Amazon Virtual Private Cloud (VPC). <p>Constraints: Must
      *         contain no more than 255 alphanumeric characters. Must not be
@@ -428,8 +447,8 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * A list of Cache Security Group Names to authorize on this Cache
-     * Cluster. This change is asynchronously applied as soon as possible.
+     * A list of cache security group names to authorize on this cache
+     * cluster. This change is asynchronously applied as soon as possible.
      * <p>This parameter can be used only with clusters that are created
      * outside of an Amazon Virtual Private Cloud (VPC). <p>Constraints: Must
      * contain no more than 255 alphanumeric characters. Must not be
@@ -437,8 +456,8 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheSecurityGroupNames A list of Cache Security Group Names to authorize on this Cache
-     *         Cluster. This change is asynchronously applied as soon as possible.
+     * @param cacheSecurityGroupNames A list of cache security group names to authorize on this cache
+     *         cluster. This change is asynchronously applied as soon as possible.
      *         <p>This parameter can be used only with clusters that are created
      *         outside of an Amazon Virtual Private Cloud (VPC). <p>Constraints: Must
      *         contain no more than 255 alphanumeric characters. Must not be
@@ -460,11 +479,11 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * Specifies the VPC Security Groups associated with the Cache Cluster.
+     * Specifies the VPC Security Groups associated with the cache cluster.
      * <p>This parameter can be used only with clusters that are created in
      * an Amazon Virtual Private Cloud (VPC).
      *
-     * @return Specifies the VPC Security Groups associated with the Cache Cluster.
+     * @return Specifies the VPC Security Groups associated with the cache cluster.
      *         <p>This parameter can be used only with clusters that are created in
      *         an Amazon Virtual Private Cloud (VPC).
      */
@@ -478,11 +497,11 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * Specifies the VPC Security Groups associated with the Cache Cluster.
+     * Specifies the VPC Security Groups associated with the cache cluster.
      * <p>This parameter can be used only with clusters that are created in
      * an Amazon Virtual Private Cloud (VPC).
      *
-     * @param securityGroupIds Specifies the VPC Security Groups associated with the Cache Cluster.
+     * @param securityGroupIds Specifies the VPC Security Groups associated with the cache cluster.
      *         <p>This parameter can be used only with clusters that are created in
      *         an Amazon Virtual Private Cloud (VPC).
      */
@@ -497,13 +516,13 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * Specifies the VPC Security Groups associated with the Cache Cluster.
+     * Specifies the VPC Security Groups associated with the cache cluster.
      * <p>This parameter can be used only with clusters that are created in
      * an Amazon Virtual Private Cloud (VPC).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param securityGroupIds Specifies the VPC Security Groups associated with the Cache Cluster.
+     * @param securityGroupIds Specifies the VPC Security Groups associated with the cache cluster.
      *         <p>This parameter can be used only with clusters that are created in
      *         an Amazon Virtual Private Cloud (VPC).
      *
@@ -519,13 +538,13 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * Specifies the VPC Security Groups associated with the Cache Cluster.
+     * Specifies the VPC Security Groups associated with the cache cluster.
      * <p>This parameter can be used only with clusters that are created in
      * an Amazon Virtual Private Cloud (VPC).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param securityGroupIds Specifies the VPC Security Groups associated with the Cache Cluster.
+     * @param securityGroupIds Specifies the VPC Security Groups associated with the cache cluster.
      *         <p>This parameter can be used only with clusters that are created in
      *         an Amazon Virtual Private Cloud (VPC).
      *
@@ -546,16 +565,16 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     
     /**
      * The weekly time range (in UTC) during which system maintenance can
-     * occur, which may result in an outage. This change is made immediately.
-     * If moving this window to the current time, there must be at least 120
-     * minutes between the current time and end of the window to ensure
-     * pending changes are applied.
+     * occur. Note that system maintenance may result in an outage. This
+     * change is made immediately. If you are moving this window to the
+     * current time, there must be at least 120 minutes between the current
+     * time and end of the window to ensure that pending changes are applied.
      *
      * @return The weekly time range (in UTC) during which system maintenance can
-     *         occur, which may result in an outage. This change is made immediately.
-     *         If moving this window to the current time, there must be at least 120
-     *         minutes between the current time and end of the window to ensure
-     *         pending changes are applied.
+     *         occur. Note that system maintenance may result in an outage. This
+     *         change is made immediately. If you are moving this window to the
+     *         current time, there must be at least 120 minutes between the current
+     *         time and end of the window to ensure that pending changes are applied.
      */
     public String getPreferredMaintenanceWindow() {
         return preferredMaintenanceWindow;
@@ -563,16 +582,16 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     
     /**
      * The weekly time range (in UTC) during which system maintenance can
-     * occur, which may result in an outage. This change is made immediately.
-     * If moving this window to the current time, there must be at least 120
-     * minutes between the current time and end of the window to ensure
-     * pending changes are applied.
+     * occur. Note that system maintenance may result in an outage. This
+     * change is made immediately. If you are moving this window to the
+     * current time, there must be at least 120 minutes between the current
+     * time and end of the window to ensure that pending changes are applied.
      *
      * @param preferredMaintenanceWindow The weekly time range (in UTC) during which system maintenance can
-     *         occur, which may result in an outage. This change is made immediately.
-     *         If moving this window to the current time, there must be at least 120
-     *         minutes between the current time and end of the window to ensure
-     *         pending changes are applied.
+     *         occur. Note that system maintenance may result in an outage. This
+     *         change is made immediately. If you are moving this window to the
+     *         current time, there must be at least 120 minutes between the current
+     *         time and end of the window to ensure that pending changes are applied.
      */
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
         this.preferredMaintenanceWindow = preferredMaintenanceWindow;
@@ -580,18 +599,18 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     
     /**
      * The weekly time range (in UTC) during which system maintenance can
-     * occur, which may result in an outage. This change is made immediately.
-     * If moving this window to the current time, there must be at least 120
-     * minutes between the current time and end of the window to ensure
-     * pending changes are applied.
+     * occur. Note that system maintenance may result in an outage. This
+     * change is made immediately. If you are moving this window to the
+     * current time, there must be at least 120 minutes between the current
+     * time and end of the window to ensure that pending changes are applied.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param preferredMaintenanceWindow The weekly time range (in UTC) during which system maintenance can
-     *         occur, which may result in an outage. This change is made immediately.
-     *         If moving this window to the current time, there must be at least 120
-     *         minutes between the current time and end of the window to ensure
-     *         pending changes are applied.
+     *         occur. Note that system maintenance may result in an outage. This
+     *         change is made immediately. If you are moving this window to the
+     *         current time, there must be at least 120 minutes between the current
+     *         time and end of the window to ensure that pending changes are applied.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -604,12 +623,12 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     
     /**
      * The Amazon Resource Name (ARN) of the SNS topic to which notifications
-     * will be sent. <note> The SNS topic owner must be same as the Cache
-     * Cluster owner. </note>
+     * will be sent. <note> The SNS topic owner must be same as the cache
+     * cluster owner. </note>
      *
      * @return The Amazon Resource Name (ARN) of the SNS topic to which notifications
-     *         will be sent. <note> The SNS topic owner must be same as the Cache
-     *         Cluster owner. </note>
+     *         will be sent. <note> The SNS topic owner must be same as the cache
+     *         cluster owner. </note>
      */
     public String getNotificationTopicArn() {
         return notificationTopicArn;
@@ -617,12 +636,12 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     
     /**
      * The Amazon Resource Name (ARN) of the SNS topic to which notifications
-     * will be sent. <note> The SNS topic owner must be same as the Cache
-     * Cluster owner. </note>
+     * will be sent. <note> The SNS topic owner must be same as the cache
+     * cluster owner. </note>
      *
      * @param notificationTopicArn The Amazon Resource Name (ARN) of the SNS topic to which notifications
-     *         will be sent. <note> The SNS topic owner must be same as the Cache
-     *         Cluster owner. </note>
+     *         will be sent. <note> The SNS topic owner must be same as the cache
+     *         cluster owner. </note>
      */
     public void setNotificationTopicArn(String notificationTopicArn) {
         this.notificationTopicArn = notificationTopicArn;
@@ -630,14 +649,14 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     
     /**
      * The Amazon Resource Name (ARN) of the SNS topic to which notifications
-     * will be sent. <note> The SNS topic owner must be same as the Cache
-     * Cluster owner. </note>
+     * will be sent. <note> The SNS topic owner must be same as the cache
+     * cluster owner. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param notificationTopicArn The Amazon Resource Name (ARN) of the SNS topic to which notifications
-     *         will be sent. <note> The SNS topic owner must be same as the Cache
-     *         Cluster owner. </note>
+     *         will be sent. <note> The SNS topic owner must be same as the cache
+     *         cluster owner. </note>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -649,12 +668,12 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     
     
     /**
-     * The name of the Cache Parameter Group to apply to this Cache Cluster.
+     * The name of the cache parameter group to apply to this cache cluster.
      * This change is asynchronously applied as soon as possible for
      * parameters when the <i>ApplyImmediately</i> parameter is specified as
      * <i>true</i> for this request.
      *
-     * @return The name of the Cache Parameter Group to apply to this Cache Cluster.
+     * @return The name of the cache parameter group to apply to this cache cluster.
      *         This change is asynchronously applied as soon as possible for
      *         parameters when the <i>ApplyImmediately</i> parameter is specified as
      *         <i>true</i> for this request.
@@ -664,12 +683,12 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * The name of the Cache Parameter Group to apply to this Cache Cluster.
+     * The name of the cache parameter group to apply to this cache cluster.
      * This change is asynchronously applied as soon as possible for
      * parameters when the <i>ApplyImmediately</i> parameter is specified as
      * <i>true</i> for this request.
      *
-     * @param cacheParameterGroupName The name of the Cache Parameter Group to apply to this Cache Cluster.
+     * @param cacheParameterGroupName The name of the cache parameter group to apply to this cache cluster.
      *         This change is asynchronously applied as soon as possible for
      *         parameters when the <i>ApplyImmediately</i> parameter is specified as
      *         <i>true</i> for this request.
@@ -679,14 +698,14 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * The name of the Cache Parameter Group to apply to this Cache Cluster.
+     * The name of the cache parameter group to apply to this cache cluster.
      * This change is asynchronously applied as soon as possible for
      * parameters when the <i>ApplyImmediately</i> parameter is specified as
      * <i>true</i> for this request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheParameterGroupName The name of the Cache Parameter Group to apply to this Cache Cluster.
+     * @param cacheParameterGroupName The name of the cache parameter group to apply to this cache cluster.
      *         This change is asynchronously applied as soon as possible for
      *         parameters when the <i>ApplyImmediately</i> parameter is specified as
      *         <i>true</i> for this request.
@@ -701,41 +720,41 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     
     
     /**
-     * The status of the Amazon SNS notification topic. The value can be
-     * <i>active</i> or <i>inactive</i>. Notifications are sent only if the
-     * status is <i>active</i>.
+     * The status of the Amazon SNS notification topic. Notifications are
+     * sent only if the status is <i>active</i>. <p>Valid values:
+     * <code>active</code> | <code>inactive</code>
      *
-     * @return The status of the Amazon SNS notification topic. The value can be
-     *         <i>active</i> or <i>inactive</i>. Notifications are sent only if the
-     *         status is <i>active</i>.
+     * @return The status of the Amazon SNS notification topic. Notifications are
+     *         sent only if the status is <i>active</i>. <p>Valid values:
+     *         <code>active</code> | <code>inactive</code>
      */
     public String getNotificationTopicStatus() {
         return notificationTopicStatus;
     }
     
     /**
-     * The status of the Amazon SNS notification topic. The value can be
-     * <i>active</i> or <i>inactive</i>. Notifications are sent only if the
-     * status is <i>active</i>.
+     * The status of the Amazon SNS notification topic. Notifications are
+     * sent only if the status is <i>active</i>. <p>Valid values:
+     * <code>active</code> | <code>inactive</code>
      *
-     * @param notificationTopicStatus The status of the Amazon SNS notification topic. The value can be
-     *         <i>active</i> or <i>inactive</i>. Notifications are sent only if the
-     *         status is <i>active</i>.
+     * @param notificationTopicStatus The status of the Amazon SNS notification topic. Notifications are
+     *         sent only if the status is <i>active</i>. <p>Valid values:
+     *         <code>active</code> | <code>inactive</code>
      */
     public void setNotificationTopicStatus(String notificationTopicStatus) {
         this.notificationTopicStatus = notificationTopicStatus;
     }
     
     /**
-     * The status of the Amazon SNS notification topic. The value can be
-     * <i>active</i> or <i>inactive</i>. Notifications are sent only if the
-     * status is <i>active</i>.
+     * The status of the Amazon SNS notification topic. Notifications are
+     * sent only if the status is <i>active</i>. <p>Valid values:
+     * <code>active</code> | <code>inactive</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param notificationTopicStatus The status of the Amazon SNS notification topic. The value can be
-     *         <i>active</i> or <i>inactive</i>. Notifications are sent only if the
-     *         status is <i>active</i>.
+     * @param notificationTopicStatus The status of the Amazon SNS notification topic. Notifications are
+     *         sent only if the status is <i>active</i>. <p>Valid values:
+     *         <code>active</code> | <code>inactive</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -747,65 +766,71 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     
     
     /**
-     * Specifies whether or not the modifications in this request and any
-     * pending modifications are asynchronously applied as soon as possible,
-     * regardless of the <i>PreferredMaintenanceWindow</i> setting for the
-     * Cache Cluster. <p> If this parameter is passed as <code>false</code>,
-     * changes to the Cache Cluster are applied on the next maintenance
-     * reboot, or the next failure reboot, whichever occurs first. <p>
-     * Default: <code>false</code>
+     * If <code>true</code>, this parameter causes the modifications in this
+     * request and any pending modifications to be applied, asynchronously
+     * and as soon as possible, regardless of the
+     * <i>PreferredMaintenanceWindow</i> setting for the cache cluster. <p>If
+     * <code>false</code>, then changes to the cache cluster are applied on
+     * the next maintenance reboot, or the next failure reboot, whichever
+     * occurs first. <p>Valid values: <code>true</code> | <code>false</code>
+     * <p>Default: <code>false</code>
      *
-     * @return Specifies whether or not the modifications in this request and any
-     *         pending modifications are asynchronously applied as soon as possible,
-     *         regardless of the <i>PreferredMaintenanceWindow</i> setting for the
-     *         Cache Cluster. <p> If this parameter is passed as <code>false</code>,
-     *         changes to the Cache Cluster are applied on the next maintenance
-     *         reboot, or the next failure reboot, whichever occurs first. <p>
-     *         Default: <code>false</code>
+     * @return If <code>true</code>, this parameter causes the modifications in this
+     *         request and any pending modifications to be applied, asynchronously
+     *         and as soon as possible, regardless of the
+     *         <i>PreferredMaintenanceWindow</i> setting for the cache cluster. <p>If
+     *         <code>false</code>, then changes to the cache cluster are applied on
+     *         the next maintenance reboot, or the next failure reboot, whichever
+     *         occurs first. <p>Valid values: <code>true</code> | <code>false</code>
+     *         <p>Default: <code>false</code>
      */
     public Boolean isApplyImmediately() {
         return applyImmediately;
     }
     
     /**
-     * Specifies whether or not the modifications in this request and any
-     * pending modifications are asynchronously applied as soon as possible,
-     * regardless of the <i>PreferredMaintenanceWindow</i> setting for the
-     * Cache Cluster. <p> If this parameter is passed as <code>false</code>,
-     * changes to the Cache Cluster are applied on the next maintenance
-     * reboot, or the next failure reboot, whichever occurs first. <p>
-     * Default: <code>false</code>
+     * If <code>true</code>, this parameter causes the modifications in this
+     * request and any pending modifications to be applied, asynchronously
+     * and as soon as possible, regardless of the
+     * <i>PreferredMaintenanceWindow</i> setting for the cache cluster. <p>If
+     * <code>false</code>, then changes to the cache cluster are applied on
+     * the next maintenance reboot, or the next failure reboot, whichever
+     * occurs first. <p>Valid values: <code>true</code> | <code>false</code>
+     * <p>Default: <code>false</code>
      *
-     * @param applyImmediately Specifies whether or not the modifications in this request and any
-     *         pending modifications are asynchronously applied as soon as possible,
-     *         regardless of the <i>PreferredMaintenanceWindow</i> setting for the
-     *         Cache Cluster. <p> If this parameter is passed as <code>false</code>,
-     *         changes to the Cache Cluster are applied on the next maintenance
-     *         reboot, or the next failure reboot, whichever occurs first. <p>
-     *         Default: <code>false</code>
+     * @param applyImmediately If <code>true</code>, this parameter causes the modifications in this
+     *         request and any pending modifications to be applied, asynchronously
+     *         and as soon as possible, regardless of the
+     *         <i>PreferredMaintenanceWindow</i> setting for the cache cluster. <p>If
+     *         <code>false</code>, then changes to the cache cluster are applied on
+     *         the next maintenance reboot, or the next failure reboot, whichever
+     *         occurs first. <p>Valid values: <code>true</code> | <code>false</code>
+     *         <p>Default: <code>false</code>
      */
     public void setApplyImmediately(Boolean applyImmediately) {
         this.applyImmediately = applyImmediately;
     }
     
     /**
-     * Specifies whether or not the modifications in this request and any
-     * pending modifications are asynchronously applied as soon as possible,
-     * regardless of the <i>PreferredMaintenanceWindow</i> setting for the
-     * Cache Cluster. <p> If this parameter is passed as <code>false</code>,
-     * changes to the Cache Cluster are applied on the next maintenance
-     * reboot, or the next failure reboot, whichever occurs first. <p>
-     * Default: <code>false</code>
+     * If <code>true</code>, this parameter causes the modifications in this
+     * request and any pending modifications to be applied, asynchronously
+     * and as soon as possible, regardless of the
+     * <i>PreferredMaintenanceWindow</i> setting for the cache cluster. <p>If
+     * <code>false</code>, then changes to the cache cluster are applied on
+     * the next maintenance reboot, or the next failure reboot, whichever
+     * occurs first. <p>Valid values: <code>true</code> | <code>false</code>
+     * <p>Default: <code>false</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param applyImmediately Specifies whether or not the modifications in this request and any
-     *         pending modifications are asynchronously applied as soon as possible,
-     *         regardless of the <i>PreferredMaintenanceWindow</i> setting for the
-     *         Cache Cluster. <p> If this parameter is passed as <code>false</code>,
-     *         changes to the Cache Cluster are applied on the next maintenance
-     *         reboot, or the next failure reboot, whichever occurs first. <p>
-     *         Default: <code>false</code>
+     * @param applyImmediately If <code>true</code>, this parameter causes the modifications in this
+     *         request and any pending modifications to be applied, asynchronously
+     *         and as soon as possible, regardless of the
+     *         <i>PreferredMaintenanceWindow</i> setting for the cache cluster. <p>If
+     *         <code>false</code>, then changes to the cache cluster are applied on
+     *         the next maintenance reboot, or the next failure reboot, whichever
+     *         occurs first. <p>Valid values: <code>true</code> | <code>false</code>
+     *         <p>Default: <code>false</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -817,50 +842,58 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     
     
     /**
-     * Specifies whether or not the modifications in this request and any
-     * pending modifications are asynchronously applied as soon as possible,
-     * regardless of the <i>PreferredMaintenanceWindow</i> setting for the
-     * Cache Cluster. <p> If this parameter is passed as <code>false</code>,
-     * changes to the Cache Cluster are applied on the next maintenance
-     * reboot, or the next failure reboot, whichever occurs first. <p>
-     * Default: <code>false</code>
+     * If <code>true</code>, this parameter causes the modifications in this
+     * request and any pending modifications to be applied, asynchronously
+     * and as soon as possible, regardless of the
+     * <i>PreferredMaintenanceWindow</i> setting for the cache cluster. <p>If
+     * <code>false</code>, then changes to the cache cluster are applied on
+     * the next maintenance reboot, or the next failure reboot, whichever
+     * occurs first. <p>Valid values: <code>true</code> | <code>false</code>
+     * <p>Default: <code>false</code>
      *
-     * @return Specifies whether or not the modifications in this request and any
-     *         pending modifications are asynchronously applied as soon as possible,
-     *         regardless of the <i>PreferredMaintenanceWindow</i> setting for the
-     *         Cache Cluster. <p> If this parameter is passed as <code>false</code>,
-     *         changes to the Cache Cluster are applied on the next maintenance
-     *         reboot, or the next failure reboot, whichever occurs first. <p>
-     *         Default: <code>false</code>
+     * @return If <code>true</code>, this parameter causes the modifications in this
+     *         request and any pending modifications to be applied, asynchronously
+     *         and as soon as possible, regardless of the
+     *         <i>PreferredMaintenanceWindow</i> setting for the cache cluster. <p>If
+     *         <code>false</code>, then changes to the cache cluster are applied on
+     *         the next maintenance reboot, or the next failure reboot, whichever
+     *         occurs first. <p>Valid values: <code>true</code> | <code>false</code>
+     *         <p>Default: <code>false</code>
      */
     public Boolean getApplyImmediately() {
         return applyImmediately;
     }
     
     /**
-     * The version of the cache engine to upgrade this cluster to.
+     * The upgraded version of the cache engine to be run on the cache
+     * cluster nodes.
      *
-     * @return The version of the cache engine to upgrade this cluster to.
+     * @return The upgraded version of the cache engine to be run on the cache
+     *         cluster nodes.
      */
     public String getEngineVersion() {
         return engineVersion;
     }
     
     /**
-     * The version of the cache engine to upgrade this cluster to.
+     * The upgraded version of the cache engine to be run on the cache
+     * cluster nodes.
      *
-     * @param engineVersion The version of the cache engine to upgrade this cluster to.
+     * @param engineVersion The upgraded version of the cache engine to be run on the cache
+     *         cluster nodes.
      */
     public void setEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
     }
     
     /**
-     * The version of the cache engine to upgrade this cluster to.
+     * The upgraded version of the cache engine to be run on the cache
+     * cluster nodes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param engineVersion The version of the cache engine to upgrade this cluster to.
+     * @param engineVersion The upgraded version of the cache engine to be run on the cache
+     *         cluster nodes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -872,12 +905,14 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     
     
     /**
-     * Indicates that minor engine upgrades will be applied automatically to
-     * the Cache Cluster during the maintenance window. <p>Default:
+     * If <code>true</code>, then minor engine upgrades will be applied
+     * automatically to the cache cluster during the maintenance window.
+     * <p>Valid values: <code>true</code> | <code>false</code> <p>Default:
      * <code>true</code>
      *
-     * @return Indicates that minor engine upgrades will be applied automatically to
-     *         the Cache Cluster during the maintenance window. <p>Default:
+     * @return If <code>true</code>, then minor engine upgrades will be applied
+     *         automatically to the cache cluster during the maintenance window.
+     *         <p>Valid values: <code>true</code> | <code>false</code> <p>Default:
      *         <code>true</code>
      */
     public Boolean isAutoMinorVersionUpgrade() {
@@ -885,12 +920,14 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * Indicates that minor engine upgrades will be applied automatically to
-     * the Cache Cluster during the maintenance window. <p>Default:
+     * If <code>true</code>, then minor engine upgrades will be applied
+     * automatically to the cache cluster during the maintenance window.
+     * <p>Valid values: <code>true</code> | <code>false</code> <p>Default:
      * <code>true</code>
      *
-     * @param autoMinorVersionUpgrade Indicates that minor engine upgrades will be applied automatically to
-     *         the Cache Cluster during the maintenance window. <p>Default:
+     * @param autoMinorVersionUpgrade If <code>true</code>, then minor engine upgrades will be applied
+     *         automatically to the cache cluster during the maintenance window.
+     *         <p>Valid values: <code>true</code> | <code>false</code> <p>Default:
      *         <code>true</code>
      */
     public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
@@ -898,14 +935,16 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * Indicates that minor engine upgrades will be applied automatically to
-     * the Cache Cluster during the maintenance window. <p>Default:
+     * If <code>true</code>, then minor engine upgrades will be applied
+     * automatically to the cache cluster during the maintenance window.
+     * <p>Valid values: <code>true</code> | <code>false</code> <p>Default:
      * <code>true</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param autoMinorVersionUpgrade Indicates that minor engine upgrades will be applied automatically to
-     *         the Cache Cluster during the maintenance window. <p>Default:
+     * @param autoMinorVersionUpgrade If <code>true</code>, then minor engine upgrades will be applied
+     *         automatically to the cache cluster during the maintenance window.
+     *         <p>Valid values: <code>true</code> | <code>false</code> <p>Default:
      *         <code>true</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -918,12 +957,14 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest implement
     
     
     /**
-     * Indicates that minor engine upgrades will be applied automatically to
-     * the Cache Cluster during the maintenance window. <p>Default:
+     * If <code>true</code>, then minor engine upgrades will be applied
+     * automatically to the cache cluster during the maintenance window.
+     * <p>Valid values: <code>true</code> | <code>false</code> <p>Default:
      * <code>true</code>
      *
-     * @return Indicates that minor engine upgrades will be applied automatically to
-     *         the Cache Cluster during the maintenance window. <p>Default:
+     * @return If <code>true</code>, then minor engine upgrades will be applied
+     *         automatically to the cache cluster during the maintenance window.
+     *         <p>Valid values: <code>true</code> | <code>false</code> <p>Default:
      *         <code>true</code>
      */
     public Boolean getAutoMinorVersionUpgrade() {

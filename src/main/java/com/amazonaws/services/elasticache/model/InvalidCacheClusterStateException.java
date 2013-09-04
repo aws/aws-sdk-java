@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The specified Cache Cluster is not in the <i>available</i> state.
+ * The requested cache cluster is not in the <i>available</i> state.
  * </p>
  */        
 public class InvalidCacheClusterStateException extends AmazonServiceException {

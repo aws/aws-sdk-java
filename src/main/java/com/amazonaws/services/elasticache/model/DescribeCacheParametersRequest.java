@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#describeCacheParameters(DescribeCacheParametersRequest) DescribeCacheParameters operation}.
  * <p>
- * Returns the detailed parameter list for a particular CacheParameterGroup.
+ * The <i>DescribeCacheParameters</i> operation returns the detailed parameter list for a particular cache parameter group.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeCacheParameters(DescribeCacheParametersRequest)
@@ -32,24 +32,24 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest impl
     private String cacheParameterGroupName;
 
     /**
-     * The parameter types to return. <p> Valid values: <code>user</code> |
+     * The parameter types to return. <p>Valid values: <code>user</code> |
      * <code>system</code> | <code>engine-default</code>
      */
     private String source;
 
     /**
      * The maximum number of records to include in the response. If more
-     * records exist than the specified <i>MaxRecords</i> value, a marker is
-     * included in the response so that the remaining results may be
-     * retrieved.
+     * records exist than the specified <code>MaxRecords</code> value, a
+     * marker is included in the response so that the remaining results can
+     * be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      */
     private Integer maxRecords;
 
     /**
-     * An optional marker provided in the previous DescribeCacheClusters
-     * request. If this parameter is specified, the response includes only
-     * records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this operation. If this parameter is
+     * specified, the response includes only records beyond the marker, up to
+     * the value specified by <i>MaxRecords</i>.
      */
     private String marker;
 
@@ -110,10 +110,10 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest impl
     
     
     /**
-     * The parameter types to return. <p> Valid values: <code>user</code> |
+     * The parameter types to return. <p>Valid values: <code>user</code> |
      * <code>system</code> | <code>engine-default</code>
      *
-     * @return The parameter types to return. <p> Valid values: <code>user</code> |
+     * @return The parameter types to return. <p>Valid values: <code>user</code> |
      *         <code>system</code> | <code>engine-default</code>
      */
     public String getSource() {
@@ -121,10 +121,10 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * The parameter types to return. <p> Valid values: <code>user</code> |
+     * The parameter types to return. <p>Valid values: <code>user</code> |
      * <code>system</code> | <code>engine-default</code>
      *
-     * @param source The parameter types to return. <p> Valid values: <code>user</code> |
+     * @param source The parameter types to return. <p>Valid values: <code>user</code> |
      *         <code>system</code> | <code>engine-default</code>
      */
     public void setSource(String source) {
@@ -132,12 +132,12 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest impl
     }
     
     /**
-     * The parameter types to return. <p> Valid values: <code>user</code> |
+     * The parameter types to return. <p>Valid values: <code>user</code> |
      * <code>system</code> | <code>engine-default</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param source The parameter types to return. <p> Valid values: <code>user</code> |
+     * @param source The parameter types to return. <p>Valid values: <code>user</code> |
      *         <code>system</code> | <code>engine-default</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -151,14 +151,14 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest impl
     
     /**
      * The maximum number of records to include in the response. If more
-     * records exist than the specified <i>MaxRecords</i> value, a marker is
-     * included in the response so that the remaining results may be
-     * retrieved.
+     * records exist than the specified <code>MaxRecords</code> value, a
+     * marker is included in the response so that the remaining results can
+     * be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      *
      * @return The maximum number of records to include in the response. If more
-     *         records exist than the specified <i>MaxRecords</i> value, a marker is
-     *         included in the response so that the remaining results may be
-     *         retrieved.
+     *         records exist than the specified <code>MaxRecords</code> value, a
+     *         marker is included in the response so that the remaining results can
+     *         be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      */
     public Integer getMaxRecords() {
         return maxRecords;
@@ -166,14 +166,14 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest impl
     
     /**
      * The maximum number of records to include in the response. If more
-     * records exist than the specified <i>MaxRecords</i> value, a marker is
-     * included in the response so that the remaining results may be
-     * retrieved.
+     * records exist than the specified <code>MaxRecords</code> value, a
+     * marker is included in the response so that the remaining results can
+     * be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      *
      * @param maxRecords The maximum number of records to include in the response. If more
-     *         records exist than the specified <i>MaxRecords</i> value, a marker is
-     *         included in the response so that the remaining results may be
-     *         retrieved.
+     *         records exist than the specified <code>MaxRecords</code> value, a
+     *         marker is included in the response so that the remaining results can
+     *         be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      */
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -181,16 +181,16 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest impl
     
     /**
      * The maximum number of records to include in the response. If more
-     * records exist than the specified <i>MaxRecords</i> value, a marker is
-     * included in the response so that the remaining results may be
-     * retrieved.
+     * records exist than the specified <code>MaxRecords</code> value, a
+     * marker is included in the response so that the remaining results can
+     * be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxRecords The maximum number of records to include in the response. If more
-     *         records exist than the specified <i>MaxRecords</i> value, a marker is
-     *         included in the response so that the remaining results may be
-     *         retrieved.
+     *         records exist than the specified <code>MaxRecords</code> value, a
+     *         marker is included in the response so that the remaining results can
+     *         be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -202,47 +202,47 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest impl
     
     
     /**
-     * An optional marker provided in the previous DescribeCacheClusters
-     * request. If this parameter is specified, the response includes only
-     * records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this operation. If this parameter is
+     * specified, the response includes only records beyond the marker, up to
+     * the value specified by <i>MaxRecords</i>.
      *
-     * @return An optional marker provided in the previous DescribeCacheClusters
-     *         request. If this parameter is specified, the response includes only
-     *         records beyond the marker, up to the value specified by
-     *         <i>MaxRecords</i>.
+     * @return An optional marker returned from a prior request. Use this marker for
+     *         pagination of results from this operation. If this parameter is
+     *         specified, the response includes only records beyond the marker, up to
+     *         the value specified by <i>MaxRecords</i>.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * An optional marker provided in the previous DescribeCacheClusters
-     * request. If this parameter is specified, the response includes only
-     * records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this operation. If this parameter is
+     * specified, the response includes only records beyond the marker, up to
+     * the value specified by <i>MaxRecords</i>.
      *
-     * @param marker An optional marker provided in the previous DescribeCacheClusters
-     *         request. If this parameter is specified, the response includes only
-     *         records beyond the marker, up to the value specified by
-     *         <i>MaxRecords</i>.
+     * @param marker An optional marker returned from a prior request. Use this marker for
+     *         pagination of results from this operation. If this parameter is
+     *         specified, the response includes only records beyond the marker, up to
+     *         the value specified by <i>MaxRecords</i>.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * An optional marker provided in the previous DescribeCacheClusters
-     * request. If this parameter is specified, the response includes only
-     * records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this operation. If this parameter is
+     * specified, the response includes only records beyond the marker, up to
+     * the value specified by <i>MaxRecords</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker An optional marker provided in the previous DescribeCacheClusters
-     *         request. If this parameter is specified, the response includes only
-     *         records beyond the marker, up to the value specified by
-     *         <i>MaxRecords</i>.
+     * @param marker An optional marker returned from a prior request. Use this marker for
+     *         pagination of results from this operation. If this parameter is
+     *         specified, the response includes only records beyond the marker, up to
+     *         the value specified by <i>MaxRecords</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

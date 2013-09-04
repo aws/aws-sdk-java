@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#purchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest) PurchaseReservedCacheNodesOffering operation}.
  * <p>
- * Purchases a reserved Cache Node offering.
+ * The <i>PurchaseReservedCacheNodesOffering</i> operation allows you to purchase a reserved cache node offering.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#purchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest)
@@ -27,27 +27,28 @@ import java.io.Serializable;
 public class PurchaseReservedCacheNodesOfferingRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The ID of the Reserved Cache Node offering to purchase. <p>Example:
+     * The ID of the reserved cache node offering to purchase. <p>Example:
      * 438012d3-4052-4cc7-b2e3-8d3372e0e706
      */
     private String reservedCacheNodesOfferingId;
 
     /**
-     * Customer-specified identifier to track this reservation. <p>Example:
+     * A customer-specified identifier to track this reservation. <p>Example:
      * myreservationID
      */
     private String reservedCacheNodeId;
 
     /**
-     * The number of instances to reserve. <p>Default: <code>1</code>
+     * The number of cache node instances to reserve. <p>Default:
+     * <code>1</code>
      */
     private Integer cacheNodeCount;
 
     /**
-     * The ID of the Reserved Cache Node offering to purchase. <p>Example:
+     * The ID of the reserved cache node offering to purchase. <p>Example:
      * 438012d3-4052-4cc7-b2e3-8d3372e0e706
      *
-     * @return The ID of the Reserved Cache Node offering to purchase. <p>Example:
+     * @return The ID of the reserved cache node offering to purchase. <p>Example:
      *         438012d3-4052-4cc7-b2e3-8d3372e0e706
      */
     public String getReservedCacheNodesOfferingId() {
@@ -55,10 +56,10 @@ public class PurchaseReservedCacheNodesOfferingRequest extends AmazonWebServiceR
     }
     
     /**
-     * The ID of the Reserved Cache Node offering to purchase. <p>Example:
+     * The ID of the reserved cache node offering to purchase. <p>Example:
      * 438012d3-4052-4cc7-b2e3-8d3372e0e706
      *
-     * @param reservedCacheNodesOfferingId The ID of the Reserved Cache Node offering to purchase. <p>Example:
+     * @param reservedCacheNodesOfferingId The ID of the reserved cache node offering to purchase. <p>Example:
      *         438012d3-4052-4cc7-b2e3-8d3372e0e706
      */
     public void setReservedCacheNodesOfferingId(String reservedCacheNodesOfferingId) {
@@ -66,12 +67,12 @@ public class PurchaseReservedCacheNodesOfferingRequest extends AmazonWebServiceR
     }
     
     /**
-     * The ID of the Reserved Cache Node offering to purchase. <p>Example:
+     * The ID of the reserved cache node offering to purchase. <p>Example:
      * 438012d3-4052-4cc7-b2e3-8d3372e0e706
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedCacheNodesOfferingId The ID of the Reserved Cache Node offering to purchase. <p>Example:
+     * @param reservedCacheNodesOfferingId The ID of the reserved cache node offering to purchase. <p>Example:
      *         438012d3-4052-4cc7-b2e3-8d3372e0e706
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -84,10 +85,10 @@ public class PurchaseReservedCacheNodesOfferingRequest extends AmazonWebServiceR
     
     
     /**
-     * Customer-specified identifier to track this reservation. <p>Example:
+     * A customer-specified identifier to track this reservation. <p>Example:
      * myreservationID
      *
-     * @return Customer-specified identifier to track this reservation. <p>Example:
+     * @return A customer-specified identifier to track this reservation. <p>Example:
      *         myreservationID
      */
     public String getReservedCacheNodeId() {
@@ -95,10 +96,10 @@ public class PurchaseReservedCacheNodesOfferingRequest extends AmazonWebServiceR
     }
     
     /**
-     * Customer-specified identifier to track this reservation. <p>Example:
+     * A customer-specified identifier to track this reservation. <p>Example:
      * myreservationID
      *
-     * @param reservedCacheNodeId Customer-specified identifier to track this reservation. <p>Example:
+     * @param reservedCacheNodeId A customer-specified identifier to track this reservation. <p>Example:
      *         myreservationID
      */
     public void setReservedCacheNodeId(String reservedCacheNodeId) {
@@ -106,12 +107,12 @@ public class PurchaseReservedCacheNodesOfferingRequest extends AmazonWebServiceR
     }
     
     /**
-     * Customer-specified identifier to track this reservation. <p>Example:
+     * A customer-specified identifier to track this reservation. <p>Example:
      * myreservationID
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedCacheNodeId Customer-specified identifier to track this reservation. <p>Example:
+     * @param reservedCacheNodeId A customer-specified identifier to track this reservation. <p>Example:
      *         myreservationID
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -124,29 +125,35 @@ public class PurchaseReservedCacheNodesOfferingRequest extends AmazonWebServiceR
     
     
     /**
-     * The number of instances to reserve. <p>Default: <code>1</code>
+     * The number of cache node instances to reserve. <p>Default:
+     * <code>1</code>
      *
-     * @return The number of instances to reserve. <p>Default: <code>1</code>
+     * @return The number of cache node instances to reserve. <p>Default:
+     *         <code>1</code>
      */
     public Integer getCacheNodeCount() {
         return cacheNodeCount;
     }
     
     /**
-     * The number of instances to reserve. <p>Default: <code>1</code>
+     * The number of cache node instances to reserve. <p>Default:
+     * <code>1</code>
      *
-     * @param cacheNodeCount The number of instances to reserve. <p>Default: <code>1</code>
+     * @param cacheNodeCount The number of cache node instances to reserve. <p>Default:
+     *         <code>1</code>
      */
     public void setCacheNodeCount(Integer cacheNodeCount) {
         this.cacheNodeCount = cacheNodeCount;
     }
     
     /**
-     * The number of instances to reserve. <p>Default: <code>1</code>
+     * The number of cache node instances to reserve. <p>Default:
+     * <code>1</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheNodeCount The number of instances to reserve. <p>Default: <code>1</code>
+     * @param cacheNodeCount The number of cache node instances to reserve. <p>Default:
+     *         <code>1</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -66,6 +66,10 @@ public class CacheNodeStaxUnmarshaller implements Unmarshaller<CacheNode, StaxUn
                     cacheNode.setParameterGroupStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("SourceCacheNodeId", targetDepth)) {
+                    cacheNode.setSourceCacheNodeId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return cacheNode;

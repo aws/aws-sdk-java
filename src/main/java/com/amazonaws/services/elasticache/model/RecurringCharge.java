@@ -17,13 +17,13 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This data type is used as a response element in the DescribeReservedCacheNodes and DescribeReservedCacheNodesOfferings actions.
+ * Contains the specific price and frequency of a recurring charges for a reserved cache node, or for a reserved cache node offering.
  * </p>
  */
 public class RecurringCharge implements Serializable {
 
     /**
-     * The amount of the recurring charge.
+     * The monetary amount of the recurring charge.
      */
     private Double recurringChargeAmount;
 
@@ -33,29 +33,29 @@ public class RecurringCharge implements Serializable {
     private String recurringChargeFrequency;
 
     /**
-     * The amount of the recurring charge.
+     * The monetary amount of the recurring charge.
      *
-     * @return The amount of the recurring charge.
+     * @return The monetary amount of the recurring charge.
      */
     public Double getRecurringChargeAmount() {
         return recurringChargeAmount;
     }
     
     /**
-     * The amount of the recurring charge.
+     * The monetary amount of the recurring charge.
      *
-     * @param recurringChargeAmount The amount of the recurring charge.
+     * @param recurringChargeAmount The monetary amount of the recurring charge.
      */
     public void setRecurringChargeAmount(Double recurringChargeAmount) {
         this.recurringChargeAmount = recurringChargeAmount;
     }
     
     /**
-     * The amount of the recurring charge.
+     * The monetary amount of the recurring charge.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param recurringChargeAmount The amount of the recurring charge.
+     * @param recurringChargeAmount The monetary amount of the recurring charge.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

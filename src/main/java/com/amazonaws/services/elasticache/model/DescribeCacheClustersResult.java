@@ -17,45 +17,46 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains one or more Cache Clusters.
+ * Represents the output of a <i>DescribeCacheClusters</i> operation.
  * </p>
  */
 public class DescribeCacheClustersResult implements Serializable {
 
     /**
-     * The marker obtained from a previous operation response.
+     * Provides an identifier to allow retrieval of paginated results.
      */
     private String marker;
 
     /**
-     * A list of CacheClusters.
+     * A list of cache clusters. Each item in the list contains detailed
+     * information about one cache cluster.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<CacheCluster> cacheClusters;
 
     /**
-     * The marker obtained from a previous operation response.
+     * Provides an identifier to allow retrieval of paginated results.
      *
-     * @return The marker obtained from a previous operation response.
+     * @return Provides an identifier to allow retrieval of paginated results.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * The marker obtained from a previous operation response.
+     * Provides an identifier to allow retrieval of paginated results.
      *
-     * @param marker The marker obtained from a previous operation response.
+     * @param marker Provides an identifier to allow retrieval of paginated results.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * The marker obtained from a previous operation response.
+     * Provides an identifier to allow retrieval of paginated results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker The marker obtained from a previous operation response.
+     * @param marker Provides an identifier to allow retrieval of paginated results.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -67,9 +68,11 @@ public class DescribeCacheClustersResult implements Serializable {
     
     
     /**
-     * A list of CacheClusters.
+     * A list of cache clusters. Each item in the list contains detailed
+     * information about one cache cluster.
      *
-     * @return A list of CacheClusters.
+     * @return A list of cache clusters. Each item in the list contains detailed
+     *         information about one cache cluster.
      */
     public java.util.List<CacheCluster> getCacheClusters() {
         
@@ -81,9 +84,11 @@ public class DescribeCacheClustersResult implements Serializable {
     }
     
     /**
-     * A list of CacheClusters.
+     * A list of cache clusters. Each item in the list contains detailed
+     * information about one cache cluster.
      *
-     * @param cacheClusters A list of CacheClusters.
+     * @param cacheClusters A list of cache clusters. Each item in the list contains detailed
+     *         information about one cache cluster.
      */
     public void setCacheClusters(java.util.Collection<CacheCluster> cacheClusters) {
         if (cacheClusters == null) {
@@ -96,11 +101,13 @@ public class DescribeCacheClustersResult implements Serializable {
     }
     
     /**
-     * A list of CacheClusters.
+     * A list of cache clusters. Each item in the list contains detailed
+     * information about one cache cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheClusters A list of CacheClusters.
+     * @param cacheClusters A list of cache clusters. Each item in the list contains detailed
+     *         information about one cache cluster.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -114,11 +121,13 @@ public class DescribeCacheClustersResult implements Serializable {
     }
     
     /**
-     * A list of CacheClusters.
+     * A list of cache clusters. Each item in the list contains detailed
+     * information about one cache cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheClusters A list of CacheClusters.
+     * @param cacheClusters A list of cache clusters. Each item in the list contains detailed
+     *         information about one cache cluster.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

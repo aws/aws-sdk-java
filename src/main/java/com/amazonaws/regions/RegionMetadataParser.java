@@ -44,7 +44,7 @@ public class RegionMetadataParser {
     
     /**
      * Parses the specified input stream and returns a list of the regions
-     * declared in it.
+     * declared in it. By default, verification on the region endpoints is disabled.
      * 
      * @param input
      *            The stream containing the region metadata to parse.
@@ -52,6 +52,20 @@ public class RegionMetadataParser {
      * @return The list of parsed regions.
      */
     public List<Region> parseRegionMetadata(InputStream input) throws IOException {
+        return parseRegionMetadata(input, false);
+    }
+    /**
+     * Parses the specified input stream and optionally verifies all the region endpoints.
+     * Returns a list of all the declared regions.
+     * 
+     * @param input
+     *            The stream containing the region metadata to parse.
+     * @param endpointVerification
+     *            Whether to verify each region endpoint
+     * 
+     * @return The list of parsed regions.
+     */
+    public List<Region> parseRegionMetadata(InputStream input, boolean endpointVerification) throws IOException {
         Document document;
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -69,30 +83,33 @@ public class RegionMetadataParser {
             Node node = regionNodes.item(i);
             if (node.getNodeType() == Node.ELEMENT_NODE) {
                 Element element = (Element)node;
-                regions.add(parseRegionElement(element));
+                regions.add(parseRegionElement(element, endpointVerification));
             }
         }
         
         return regions;
     }
 
-    private Region parseRegionElement(Element regionElement) {
+    private Region parseRegionElement(Element regionElement, boolean endpointVerification) {
         String name = getChildElementValue(REGION_ID_TAG, regionElement);
         Region region = new Region(name);
 
         NodeList endpointNodes = regionElement.getElementsByTagName(ENDPOINT_TAG);
         for (int i = 0; i < endpointNodes.getLength(); i++) {
-            addRegionEndpoint(region, (Element) endpointNodes.item(i));
+            addRegionEndpoint(region, (Element) endpointNodes.item(i), endpointVerification);
         }
         
         return region;
     }
     
-    private void addRegionEndpoint(Region region, Element endpointElement) {
+    private void addRegionEndpoint(Region region, Element endpointElement, boolean endpointVerification) {
         String serviceName = getChildElementValue(SERVICE_TAG, endpointElement);
         String hostname = getChildElementValue(HOSTNAME_TAG, endpointElement);
         String http = getChildElementValue(HTTP_TAG, endpointElement);
         String https = getChildElementValue(HTTPS_TAG, endpointElement);
+        if ( endpointVerification && !verifyEndpoint(hostname) ) {
+            throw new RuntimeException("Invalid service endpoint (" + hostname + ") is detected.");
+        }
         region.getServiceEndpoints().put(serviceName, hostname);
         region.getHttpSupport().put(serviceName, "true".equals(http));
         region.getHttpsSupport().put(serviceName, "true".equals(https));
@@ -106,5 +123,12 @@ public class RegionMetadataParser {
         Node node = (Node)nodes.item(0); 
      
         return node.getNodeValue();    
+    }
+    
+    /** Returns whether the provided endpoint is a valid AWS service endpoint.
+     * TODO We might want to do more complicated verification in the future.
+     */
+    private static boolean verifyEndpoint(String endpoint) {
+        return endpoint.endsWith(".amazonaws.com");
     }
 }

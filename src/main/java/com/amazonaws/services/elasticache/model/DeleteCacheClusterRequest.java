@@ -19,8 +19,9 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#deleteCacheCluster(DeleteCacheClusterRequest) DeleteCacheCluster operation}.
  * <p>
- * Deletes a previously provisioned Cache Cluster. A successful response from the web service indicates the request was received correctly. This action
- * cannot be canceled or reverted. DeleteCacheCluster deletes all associated Cache Nodes, node endpoints and the Cache Cluster itself.
+ * The <i>DeleteCacheCluster</i> operation deletes a previously provisioned cache cluster. <i>DeleteCacheCluster</i> deletes all associated cache nodes,
+ * node endpoints and the cache cluster itself. When you receive a successful response from this operation, Amazon ElastiCache immediately begins
+ * deleting the cache cluster; you cannot cancel or revert this operation.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#deleteCacheCluster(DeleteCacheClusterRequest)
@@ -28,8 +29,8 @@ import java.io.Serializable;
 public class DeleteCacheClusterRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The Cache Cluster identifier for the Cache Cluster to be deleted. This
-     * parameter isn't case sensitive.
+     * The cache cluster identifier for the cluster to be deleted. This
+     * parameter is not case sensitive.
      */
     private String cacheClusterId;
 
@@ -46,8 +47,8 @@ public class DeleteCacheClusterRequest extends AmazonWebServiceRequest implement
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param cacheClusterId The Cache Cluster identifier for the Cache
-     * Cluster to be deleted. This parameter isn't case sensitive.
+     * @param cacheClusterId The cache cluster identifier for the cluster to
+     * be deleted. This parameter is not case sensitive.
      */
     public DeleteCacheClusterRequest(String cacheClusterId) {
         setCacheClusterId(cacheClusterId);
@@ -56,35 +57,35 @@ public class DeleteCacheClusterRequest extends AmazonWebServiceRequest implement
     
     
     /**
-     * The Cache Cluster identifier for the Cache Cluster to be deleted. This
-     * parameter isn't case sensitive.
+     * The cache cluster identifier for the cluster to be deleted. This
+     * parameter is not case sensitive.
      *
-     * @return The Cache Cluster identifier for the Cache Cluster to be deleted. This
-     *         parameter isn't case sensitive.
+     * @return The cache cluster identifier for the cluster to be deleted. This
+     *         parameter is not case sensitive.
      */
     public String getCacheClusterId() {
         return cacheClusterId;
     }
     
     /**
-     * The Cache Cluster identifier for the Cache Cluster to be deleted. This
-     * parameter isn't case sensitive.
+     * The cache cluster identifier for the cluster to be deleted. This
+     * parameter is not case sensitive.
      *
-     * @param cacheClusterId The Cache Cluster identifier for the Cache Cluster to be deleted. This
-     *         parameter isn't case sensitive.
+     * @param cacheClusterId The cache cluster identifier for the cluster to be deleted. This
+     *         parameter is not case sensitive.
      */
     public void setCacheClusterId(String cacheClusterId) {
         this.cacheClusterId = cacheClusterId;
     }
     
     /**
-     * The Cache Cluster identifier for the Cache Cluster to be deleted. This
-     * parameter isn't case sensitive.
+     * The cache cluster identifier for the cluster to be deleted. This
+     * parameter is not case sensitive.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheClusterId The Cache Cluster identifier for the Cache Cluster to be deleted. This
-     *         parameter isn't case sensitive.
+     * @param cacheClusterId The cache cluster identifier for the cluster to be deleted. This
+     *         parameter is not case sensitive.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

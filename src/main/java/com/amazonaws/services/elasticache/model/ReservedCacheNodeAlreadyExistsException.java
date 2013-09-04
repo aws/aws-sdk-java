@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * User already has a reservation with the given identifier.
+ * This user already has a reservation with the given identifier.
  * </p>
  */        
 public class ReservedCacheNodeAlreadyExistsException extends AmazonServiceException {

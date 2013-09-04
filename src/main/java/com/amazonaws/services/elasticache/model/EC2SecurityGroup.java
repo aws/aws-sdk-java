@@ -17,24 +17,23 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Specifies the current state of this Cache Node.
+ * Provides ownership and status information for an Amazon EC2 security group.
  * </p>
  */
 public class EC2SecurityGroup implements Serializable {
 
     /**
-     * Provides the status of the EC2 Security Group.
+     * The status of the Amazon EC2 security group.
      */
     private String status;
 
     /**
-     * Specifies the name of the EC2 Security Group.
+     * The name of the Amazon EC2 security group.
      */
     private String eC2SecurityGroupName;
 
     /**
-     * Specifies the AWS ID of the owner of the EC2 Security Group specified
-     * in the <i>EC2SecurityGroupName</i> field.
+     * The AWS account ID of the Amazon EC2 security group owner.
      */
     private String eC2SecurityGroupOwnerId;
 
@@ -45,29 +44,29 @@ public class EC2SecurityGroup implements Serializable {
     public EC2SecurityGroup() {}
     
     /**
-     * Provides the status of the EC2 Security Group.
+     * The status of the Amazon EC2 security group.
      *
-     * @return Provides the status of the EC2 Security Group.
+     * @return The status of the Amazon EC2 security group.
      */
     public String getStatus() {
         return status;
     }
     
     /**
-     * Provides the status of the EC2 Security Group.
+     * The status of the Amazon EC2 security group.
      *
-     * @param status Provides the status of the EC2 Security Group.
+     * @param status The status of the Amazon EC2 security group.
      */
     public void setStatus(String status) {
         this.status = status;
     }
     
     /**
-     * Provides the status of the EC2 Security Group.
+     * The status of the Amazon EC2 security group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param status Provides the status of the EC2 Security Group.
+     * @param status The status of the Amazon EC2 security group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -79,29 +78,29 @@ public class EC2SecurityGroup implements Serializable {
     
     
     /**
-     * Specifies the name of the EC2 Security Group.
+     * The name of the Amazon EC2 security group.
      *
-     * @return Specifies the name of the EC2 Security Group.
+     * @return The name of the Amazon EC2 security group.
      */
     public String getEC2SecurityGroupName() {
         return eC2SecurityGroupName;
     }
     
     /**
-     * Specifies the name of the EC2 Security Group.
+     * The name of the Amazon EC2 security group.
      *
-     * @param eC2SecurityGroupName Specifies the name of the EC2 Security Group.
+     * @param eC2SecurityGroupName The name of the Amazon EC2 security group.
      */
     public void setEC2SecurityGroupName(String eC2SecurityGroupName) {
         this.eC2SecurityGroupName = eC2SecurityGroupName;
     }
     
     /**
-     * Specifies the name of the EC2 Security Group.
+     * The name of the Amazon EC2 security group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param eC2SecurityGroupName Specifies the name of the EC2 Security Group.
+     * @param eC2SecurityGroupName The name of the Amazon EC2 security group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -113,35 +112,29 @@ public class EC2SecurityGroup implements Serializable {
     
     
     /**
-     * Specifies the AWS ID of the owner of the EC2 Security Group specified
-     * in the <i>EC2SecurityGroupName</i> field.
+     * The AWS account ID of the Amazon EC2 security group owner.
      *
-     * @return Specifies the AWS ID of the owner of the EC2 Security Group specified
-     *         in the <i>EC2SecurityGroupName</i> field.
+     * @return The AWS account ID of the Amazon EC2 security group owner.
      */
     public String getEC2SecurityGroupOwnerId() {
         return eC2SecurityGroupOwnerId;
     }
     
     /**
-     * Specifies the AWS ID of the owner of the EC2 Security Group specified
-     * in the <i>EC2SecurityGroupName</i> field.
+     * The AWS account ID of the Amazon EC2 security group owner.
      *
-     * @param eC2SecurityGroupOwnerId Specifies the AWS ID of the owner of the EC2 Security Group specified
-     *         in the <i>EC2SecurityGroupName</i> field.
+     * @param eC2SecurityGroupOwnerId The AWS account ID of the Amazon EC2 security group owner.
      */
     public void setEC2SecurityGroupOwnerId(String eC2SecurityGroupOwnerId) {
         this.eC2SecurityGroupOwnerId = eC2SecurityGroupOwnerId;
     }
     
     /**
-     * Specifies the AWS ID of the owner of the EC2 Security Group specified
-     * in the <i>EC2SecurityGroupName</i> field.
+     * The AWS account ID of the Amazon EC2 security group owner.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param eC2SecurityGroupOwnerId Specifies the AWS ID of the owner of the EC2 Security Group specified
-     *         in the <i>EC2SecurityGroupName</i> field.
+     * @param eC2SecurityGroupOwnerId The AWS account ID of the Amazon EC2 security group owner.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

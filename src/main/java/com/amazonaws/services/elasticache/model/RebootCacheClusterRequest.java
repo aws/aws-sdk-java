@@ -19,10 +19,15 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#rebootCacheCluster(RebootCacheClusterRequest) RebootCacheCluster operation}.
  * <p>
- * Reboots some (or all) of the cache cluster nodes within a previously provisioned ElastiCache cluster. This API results in the application of modified
- * CacheParameterGroup parameters to the cache cluster. This action is taken as soon as possible, and results in a momentary outage to the cache cluster
- * during which the cache cluster status is set to rebooting. During that momentary outage, the contents of the cache (for each cache cluster node being
- * rebooted) are lost. A CacheCluster event is created when the reboot is completed.
+ * The <i>RebootCacheCluster</i> operation reboots some, or all, of the cache cluster nodes within a provisioned cache cluster. This API will apply any
+ * modified cache parameter groups to the cache cluster. The reboot action takes place as soon as possible, and results in a momentary outage to the
+ * cache cluster. During the reboot, the cache cluster status is set to REBOOTING.
+ * </p>
+ * <p>
+ * The reboot causes the contents of the cache (for each cache cluster node being rebooted) to be lost.
+ * </p>
+ * <p>
+ * When the reboot is complete, a cache cluster event is created.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#rebootCacheCluster(RebootCacheClusterRequest)
@@ -30,14 +35,15 @@ import java.io.Serializable;
 public class RebootCacheClusterRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The Cache Cluster identifier. This parameter is stored as a lowercase
+     * The cache cluster identifier. This parameter is stored as a lowercase
      * string.
      */
     private String cacheClusterId;
 
     /**
-     * A list of Cache Cluster Node Ids to reboot. To reboot an entire cache
-     * cluster, specify all cache cluster node Ids.
+     * A list of cache cluster node IDs to reboot. A node ID is a numeric
+     * identifier (0001, 0002, etc.). To reboot an entire cache cluster,
+     * specify all of the cache cluster node IDs.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> cacheNodeIdsToReboot;
 
@@ -54,11 +60,12 @@ public class RebootCacheClusterRequest extends AmazonWebServiceRequest implement
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param cacheClusterId The Cache Cluster identifier. This parameter is
+     * @param cacheClusterId The cache cluster identifier. This parameter is
      * stored as a lowercase string.
-     * @param cacheNodeIdsToReboot A list of Cache Cluster Node Ids to
-     * reboot. To reboot an entire cache cluster, specify all cache cluster
-     * node Ids.
+     * @param cacheNodeIdsToReboot A list of cache cluster node IDs to
+     * reboot. A node ID is a numeric identifier (0001, 0002, etc.). To
+     * reboot an entire cache cluster, specify all of the cache cluster node
+     * IDs.
      */
     public RebootCacheClusterRequest(String cacheClusterId, java.util.List<String> cacheNodeIdsToReboot) {
         setCacheClusterId(cacheClusterId);
@@ -68,10 +75,10 @@ public class RebootCacheClusterRequest extends AmazonWebServiceRequest implement
     
     
     /**
-     * The Cache Cluster identifier. This parameter is stored as a lowercase
+     * The cache cluster identifier. This parameter is stored as a lowercase
      * string.
      *
-     * @return The Cache Cluster identifier. This parameter is stored as a lowercase
+     * @return The cache cluster identifier. This parameter is stored as a lowercase
      *         string.
      */
     public String getCacheClusterId() {
@@ -79,10 +86,10 @@ public class RebootCacheClusterRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * The Cache Cluster identifier. This parameter is stored as a lowercase
+     * The cache cluster identifier. This parameter is stored as a lowercase
      * string.
      *
-     * @param cacheClusterId The Cache Cluster identifier. This parameter is stored as a lowercase
+     * @param cacheClusterId The cache cluster identifier. This parameter is stored as a lowercase
      *         string.
      */
     public void setCacheClusterId(String cacheClusterId) {
@@ -90,12 +97,12 @@ public class RebootCacheClusterRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * The Cache Cluster identifier. This parameter is stored as a lowercase
+     * The cache cluster identifier. This parameter is stored as a lowercase
      * string.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheClusterId The Cache Cluster identifier. This parameter is stored as a lowercase
+     * @param cacheClusterId The cache cluster identifier. This parameter is stored as a lowercase
      *         string.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -108,11 +115,13 @@ public class RebootCacheClusterRequest extends AmazonWebServiceRequest implement
     
     
     /**
-     * A list of Cache Cluster Node Ids to reboot. To reboot an entire cache
-     * cluster, specify all cache cluster node Ids.
+     * A list of cache cluster node IDs to reboot. A node ID is a numeric
+     * identifier (0001, 0002, etc.). To reboot an entire cache cluster,
+     * specify all of the cache cluster node IDs.
      *
-     * @return A list of Cache Cluster Node Ids to reboot. To reboot an entire cache
-     *         cluster, specify all cache cluster node Ids.
+     * @return A list of cache cluster node IDs to reboot. A node ID is a numeric
+     *         identifier (0001, 0002, etc.). To reboot an entire cache cluster,
+     *         specify all of the cache cluster node IDs.
      */
     public java.util.List<String> getCacheNodeIdsToReboot() {
         
@@ -124,11 +133,13 @@ public class RebootCacheClusterRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * A list of Cache Cluster Node Ids to reboot. To reboot an entire cache
-     * cluster, specify all cache cluster node Ids.
+     * A list of cache cluster node IDs to reboot. A node ID is a numeric
+     * identifier (0001, 0002, etc.). To reboot an entire cache cluster,
+     * specify all of the cache cluster node IDs.
      *
-     * @param cacheNodeIdsToReboot A list of Cache Cluster Node Ids to reboot. To reboot an entire cache
-     *         cluster, specify all cache cluster node Ids.
+     * @param cacheNodeIdsToReboot A list of cache cluster node IDs to reboot. A node ID is a numeric
+     *         identifier (0001, 0002, etc.). To reboot an entire cache cluster,
+     *         specify all of the cache cluster node IDs.
      */
     public void setCacheNodeIdsToReboot(java.util.Collection<String> cacheNodeIdsToReboot) {
         if (cacheNodeIdsToReboot == null) {
@@ -141,13 +152,15 @@ public class RebootCacheClusterRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * A list of Cache Cluster Node Ids to reboot. To reboot an entire cache
-     * cluster, specify all cache cluster node Ids.
+     * A list of cache cluster node IDs to reboot. A node ID is a numeric
+     * identifier (0001, 0002, etc.). To reboot an entire cache cluster,
+     * specify all of the cache cluster node IDs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheNodeIdsToReboot A list of Cache Cluster Node Ids to reboot. To reboot an entire cache
-     *         cluster, specify all cache cluster node Ids.
+     * @param cacheNodeIdsToReboot A list of cache cluster node IDs to reboot. A node ID is a numeric
+     *         identifier (0001, 0002, etc.). To reboot an entire cache cluster,
+     *         specify all of the cache cluster node IDs.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -161,13 +174,15 @@ public class RebootCacheClusterRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * A list of Cache Cluster Node Ids to reboot. To reboot an entire cache
-     * cluster, specify all cache cluster node Ids.
+     * A list of cache cluster node IDs to reboot. A node ID is a numeric
+     * identifier (0001, 0002, etc.). To reboot an entire cache cluster,
+     * specify all of the cache cluster node IDs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheNodeIdsToReboot A list of Cache Cluster Node Ids to reboot. To reboot an entire cache
-     *         cluster, specify all cache cluster node Ids.
+     * @param cacheNodeIdsToReboot A list of cache cluster node IDs to reboot. A node ID is a numeric
+     *         identifier (0001, 0002, etc.). To reboot an entire cache cluster,
+     *         specify all of the cache cluster node IDs.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

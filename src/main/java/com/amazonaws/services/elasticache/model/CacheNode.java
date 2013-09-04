@@ -17,37 +17,45 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A Cache Cluster is made up of one or more Cache Nodes. Each Cache Node is an separate endpoint servicing the memcached protocol.
+ * Represents an individual cache node within a cache cluster. Each cache node runs its own instance of the cluster's protocol-compliant caching software
+ * - either Memcached or Redis.
  * </p>
  */
 public class CacheNode implements Serializable {
 
     /**
-     * Specifies a Cache Node identifier. This is the unique key that
-     * identifies a Cache Node per Customer (AWS account).
+     * The cache node identifier. A node ID is a numeric identifier (0001,
+     * 0002, etc.). The combination of cluster ID and node ID uniquely
+     * identifies every cache node used in a customer's AWS account.
      */
     private String cacheNodeId;
 
     /**
-     * Specifies the current state of this Cache Node.
+     * The current state of this cache node.
      */
     private String cacheNodeStatus;
 
     /**
-     * Provides the date and time the Cache Node was created.
+     * The date and time the cache node was created.
      */
     private java.util.Date cacheNodeCreateTime;
 
     /**
-     * Specifies the endpoint details for a Cache Node.
+     * The hostname and IP address for connecting to this cache node.
      */
     private Endpoint endpoint;
 
     /**
-     * Specifies the status of the parameter group applied to this Cache
-     * Node.
+     * The status of the parameter group applied to this cache node.
      */
     private String parameterGroupStatus;
+
+    /**
+     * The ID of the primary node to which this read replica node is
+     * synchronized. If this field is empty, then this node is not associated
+     * with a primary cache cluster.
+     */
+    private String sourceCacheNodeId;
 
     /**
      * Default constructor for a new CacheNode object.  Callers should use the
@@ -56,35 +64,41 @@ public class CacheNode implements Serializable {
     public CacheNode() {}
     
     /**
-     * Specifies a Cache Node identifier. This is the unique key that
-     * identifies a Cache Node per Customer (AWS account).
+     * The cache node identifier. A node ID is a numeric identifier (0001,
+     * 0002, etc.). The combination of cluster ID and node ID uniquely
+     * identifies every cache node used in a customer's AWS account.
      *
-     * @return Specifies a Cache Node identifier. This is the unique key that
-     *         identifies a Cache Node per Customer (AWS account).
+     * @return The cache node identifier. A node ID is a numeric identifier (0001,
+     *         0002, etc.). The combination of cluster ID and node ID uniquely
+     *         identifies every cache node used in a customer's AWS account.
      */
     public String getCacheNodeId() {
         return cacheNodeId;
     }
     
     /**
-     * Specifies a Cache Node identifier. This is the unique key that
-     * identifies a Cache Node per Customer (AWS account).
+     * The cache node identifier. A node ID is a numeric identifier (0001,
+     * 0002, etc.). The combination of cluster ID and node ID uniquely
+     * identifies every cache node used in a customer's AWS account.
      *
-     * @param cacheNodeId Specifies a Cache Node identifier. This is the unique key that
-     *         identifies a Cache Node per Customer (AWS account).
+     * @param cacheNodeId The cache node identifier. A node ID is a numeric identifier (0001,
+     *         0002, etc.). The combination of cluster ID and node ID uniquely
+     *         identifies every cache node used in a customer's AWS account.
      */
     public void setCacheNodeId(String cacheNodeId) {
         this.cacheNodeId = cacheNodeId;
     }
     
     /**
-     * Specifies a Cache Node identifier. This is the unique key that
-     * identifies a Cache Node per Customer (AWS account).
+     * The cache node identifier. A node ID is a numeric identifier (0001,
+     * 0002, etc.). The combination of cluster ID and node ID uniquely
+     * identifies every cache node used in a customer's AWS account.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheNodeId Specifies a Cache Node identifier. This is the unique key that
-     *         identifies a Cache Node per Customer (AWS account).
+     * @param cacheNodeId The cache node identifier. A node ID is a numeric identifier (0001,
+     *         0002, etc.). The combination of cluster ID and node ID uniquely
+     *         identifies every cache node used in a customer's AWS account.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -96,29 +110,29 @@ public class CacheNode implements Serializable {
     
     
     /**
-     * Specifies the current state of this Cache Node.
+     * The current state of this cache node.
      *
-     * @return Specifies the current state of this Cache Node.
+     * @return The current state of this cache node.
      */
     public String getCacheNodeStatus() {
         return cacheNodeStatus;
     }
     
     /**
-     * Specifies the current state of this Cache Node.
+     * The current state of this cache node.
      *
-     * @param cacheNodeStatus Specifies the current state of this Cache Node.
+     * @param cacheNodeStatus The current state of this cache node.
      */
     public void setCacheNodeStatus(String cacheNodeStatus) {
         this.cacheNodeStatus = cacheNodeStatus;
     }
     
     /**
-     * Specifies the current state of this Cache Node.
+     * The current state of this cache node.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheNodeStatus Specifies the current state of this Cache Node.
+     * @param cacheNodeStatus The current state of this cache node.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -130,29 +144,29 @@ public class CacheNode implements Serializable {
     
     
     /**
-     * Provides the date and time the Cache Node was created.
+     * The date and time the cache node was created.
      *
-     * @return Provides the date and time the Cache Node was created.
+     * @return The date and time the cache node was created.
      */
     public java.util.Date getCacheNodeCreateTime() {
         return cacheNodeCreateTime;
     }
     
     /**
-     * Provides the date and time the Cache Node was created.
+     * The date and time the cache node was created.
      *
-     * @param cacheNodeCreateTime Provides the date and time the Cache Node was created.
+     * @param cacheNodeCreateTime The date and time the cache node was created.
      */
     public void setCacheNodeCreateTime(java.util.Date cacheNodeCreateTime) {
         this.cacheNodeCreateTime = cacheNodeCreateTime;
     }
     
     /**
-     * Provides the date and time the Cache Node was created.
+     * The date and time the cache node was created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheNodeCreateTime Provides the date and time the Cache Node was created.
+     * @param cacheNodeCreateTime The date and time the cache node was created.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -164,29 +178,29 @@ public class CacheNode implements Serializable {
     
     
     /**
-     * Specifies the endpoint details for a Cache Node.
+     * The hostname and IP address for connecting to this cache node.
      *
-     * @return Specifies the endpoint details for a Cache Node.
+     * @return The hostname and IP address for connecting to this cache node.
      */
     public Endpoint getEndpoint() {
         return endpoint;
     }
     
     /**
-     * Specifies the endpoint details for a Cache Node.
+     * The hostname and IP address for connecting to this cache node.
      *
-     * @param endpoint Specifies the endpoint details for a Cache Node.
+     * @param endpoint The hostname and IP address for connecting to this cache node.
      */
     public void setEndpoint(Endpoint endpoint) {
         this.endpoint = endpoint;
     }
     
     /**
-     * Specifies the endpoint details for a Cache Node.
+     * The hostname and IP address for connecting to this cache node.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param endpoint Specifies the endpoint details for a Cache Node.
+     * @param endpoint The hostname and IP address for connecting to this cache node.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -198,41 +212,81 @@ public class CacheNode implements Serializable {
     
     
     /**
-     * Specifies the status of the parameter group applied to this Cache
-     * Node.
+     * The status of the parameter group applied to this cache node.
      *
-     * @return Specifies the status of the parameter group applied to this Cache
-     *         Node.
+     * @return The status of the parameter group applied to this cache node.
      */
     public String getParameterGroupStatus() {
         return parameterGroupStatus;
     }
     
     /**
-     * Specifies the status of the parameter group applied to this Cache
-     * Node.
+     * The status of the parameter group applied to this cache node.
      *
-     * @param parameterGroupStatus Specifies the status of the parameter group applied to this Cache
-     *         Node.
+     * @param parameterGroupStatus The status of the parameter group applied to this cache node.
      */
     public void setParameterGroupStatus(String parameterGroupStatus) {
         this.parameterGroupStatus = parameterGroupStatus;
     }
     
     /**
-     * Specifies the status of the parameter group applied to this Cache
-     * Node.
+     * The status of the parameter group applied to this cache node.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param parameterGroupStatus Specifies the status of the parameter group applied to this Cache
-     *         Node.
+     * @param parameterGroupStatus The status of the parameter group applied to this cache node.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public CacheNode withParameterGroupStatus(String parameterGroupStatus) {
         this.parameterGroupStatus = parameterGroupStatus;
+        return this;
+    }
+    
+    
+    /**
+     * The ID of the primary node to which this read replica node is
+     * synchronized. If this field is empty, then this node is not associated
+     * with a primary cache cluster.
+     *
+     * @return The ID of the primary node to which this read replica node is
+     *         synchronized. If this field is empty, then this node is not associated
+     *         with a primary cache cluster.
+     */
+    public String getSourceCacheNodeId() {
+        return sourceCacheNodeId;
+    }
+    
+    /**
+     * The ID of the primary node to which this read replica node is
+     * synchronized. If this field is empty, then this node is not associated
+     * with a primary cache cluster.
+     *
+     * @param sourceCacheNodeId The ID of the primary node to which this read replica node is
+     *         synchronized. If this field is empty, then this node is not associated
+     *         with a primary cache cluster.
+     */
+    public void setSourceCacheNodeId(String sourceCacheNodeId) {
+        this.sourceCacheNodeId = sourceCacheNodeId;
+    }
+    
+    /**
+     * The ID of the primary node to which this read replica node is
+     * synchronized. If this field is empty, then this node is not associated
+     * with a primary cache cluster.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param sourceCacheNodeId The ID of the primary node to which this read replica node is
+     *         synchronized. If this field is empty, then this node is not associated
+     *         with a primary cache cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CacheNode withSourceCacheNodeId(String sourceCacheNodeId) {
+        this.sourceCacheNodeId = sourceCacheNodeId;
         return this;
     }
     
@@ -253,7 +307,8 @@ public class CacheNode implements Serializable {
         if (getCacheNodeStatus() != null) sb.append("CacheNodeStatus: " + getCacheNodeStatus() + ",");
         if (getCacheNodeCreateTime() != null) sb.append("CacheNodeCreateTime: " + getCacheNodeCreateTime() + ",");
         if (getEndpoint() != null) sb.append("Endpoint: " + getEndpoint() + ",");
-        if (getParameterGroupStatus() != null) sb.append("ParameterGroupStatus: " + getParameterGroupStatus() );
+        if (getParameterGroupStatus() != null) sb.append("ParameterGroupStatus: " + getParameterGroupStatus() + ",");
+        if (getSourceCacheNodeId() != null) sb.append("SourceCacheNodeId: " + getSourceCacheNodeId() );
         sb.append("}");
         return sb.toString();
     }
@@ -268,6 +323,7 @@ public class CacheNode implements Serializable {
         hashCode = prime * hashCode + ((getCacheNodeCreateTime() == null) ? 0 : getCacheNodeCreateTime().hashCode()); 
         hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode()); 
         hashCode = prime * hashCode + ((getParameterGroupStatus() == null) ? 0 : getParameterGroupStatus().hashCode()); 
+        hashCode = prime * hashCode + ((getSourceCacheNodeId() == null) ? 0 : getSourceCacheNodeId().hashCode()); 
         return hashCode;
     }
     
@@ -289,6 +345,8 @@ public class CacheNode implements Serializable {
         if (other.getEndpoint() != null && other.getEndpoint().equals(this.getEndpoint()) == false) return false; 
         if (other.getParameterGroupStatus() == null ^ this.getParameterGroupStatus() == null) return false;
         if (other.getParameterGroupStatus() != null && other.getParameterGroupStatus().equals(this.getParameterGroupStatus()) == false) return false; 
+        if (other.getSourceCacheNodeId() == null ^ this.getSourceCacheNodeId() == null) return false;
+        if (other.getSourceCacheNodeId() != null && other.getSourceCacheNodeId().equals(this.getSourceCacheNodeId()) == false) return false; 
         return true;
     }
     

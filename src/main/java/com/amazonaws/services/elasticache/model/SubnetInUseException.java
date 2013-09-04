@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Request subnet is currently in use.
+ * The requested subnet is being used by another cache subnet group.
  * </p>
  */        
 public class SubnetInUseException extends AmazonServiceException {

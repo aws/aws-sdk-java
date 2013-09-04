@@ -19,11 +19,11 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#authorizeCacheSecurityGroupIngress(AuthorizeCacheSecurityGroupIngressRequest) AuthorizeCacheSecurityGroupIngress operation}.
  * <p>
- * Authorizes ingress to a CacheSecurityGroup using EC2 Security Groups as authorization (therefore the application using the cache must be running on
- * EC2 clusters). This API requires the following parameters: EC2SecurityGroupName and EC2SecurityGroupOwnerId.
+ * The <i>AuthorizeCacheSecurityGroupIngress</i> operation allows network ingress to a cache security group. Applications using ElastiCache must be
+ * running on Amazon EC2, and Amazon EC2 security groups are used as the authorization mechanism.
  * </p>
  * <p>
- * <b>NOTE:</b> You cannot authorize ingress from an EC2 security group in one Region to an Amazon Cache Cluster in another.
+ * <b>NOTE:</b> You cannot authorize ingress from an Amazon EC2 security group in one Region to an ElastiCache cluster in another Region.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#authorizeCacheSecurityGroupIngress(AuthorizeCacheSecurityGroupIngressRequest)
@@ -31,19 +31,20 @@ import java.io.Serializable;
 public class AuthorizeCacheSecurityGroupIngressRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name of the Cache Security Group to authorize.
+     * The cache security group which will allow network ingress.
      */
     private String cacheSecurityGroupName;
 
     /**
-     * Name of the EC2 Security Group to include in the authorization.
+     * The Amazon EC2 security group to be authorized for ingress to the
+     * cache security group.
      */
     private String eC2SecurityGroupName;
 
     /**
-     * AWS Account Number of the owner of the security group specified in the
-     * EC2SecurityGroupName parameter. The AWS Access Key ID is not an
-     * acceptable value.
+     * The AWS account number of the Amazon EC2 security group owner. Note
+     * that this is not the same thing as an AWS access key ID - you must
+     * provide a valid AWS account number for this parameter.
      */
     private String eC2SecurityGroupOwnerId;
 
@@ -60,13 +61,14 @@ public class AuthorizeCacheSecurityGroupIngressRequest extends AmazonWebServiceR
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param cacheSecurityGroupName The name of the Cache Security Group to
-     * authorize.
-     * @param eC2SecurityGroupName Name of the EC2 Security Group to include
-     * in the authorization.
-     * @param eC2SecurityGroupOwnerId AWS Account Number of the owner of the
-     * security group specified in the EC2SecurityGroupName parameter. The
-     * AWS Access Key ID is not an acceptable value.
+     * @param cacheSecurityGroupName The cache security group which will
+     * allow network ingress.
+     * @param eC2SecurityGroupName The Amazon EC2 security group to be
+     * authorized for ingress to the cache security group.
+     * @param eC2SecurityGroupOwnerId The AWS account number of the Amazon
+     * EC2 security group owner. Note that this is not the same thing as an
+     * AWS access key ID - you must provide a valid AWS account number for
+     * this parameter.
      */
     public AuthorizeCacheSecurityGroupIngressRequest(String cacheSecurityGroupName, String eC2SecurityGroupName, String eC2SecurityGroupOwnerId) {
         setCacheSecurityGroupName(cacheSecurityGroupName);
@@ -77,29 +79,29 @@ public class AuthorizeCacheSecurityGroupIngressRequest extends AmazonWebServiceR
     
     
     /**
-     * The name of the Cache Security Group to authorize.
+     * The cache security group which will allow network ingress.
      *
-     * @return The name of the Cache Security Group to authorize.
+     * @return The cache security group which will allow network ingress.
      */
     public String getCacheSecurityGroupName() {
         return cacheSecurityGroupName;
     }
     
     /**
-     * The name of the Cache Security Group to authorize.
+     * The cache security group which will allow network ingress.
      *
-     * @param cacheSecurityGroupName The name of the Cache Security Group to authorize.
+     * @param cacheSecurityGroupName The cache security group which will allow network ingress.
      */
     public void setCacheSecurityGroupName(String cacheSecurityGroupName) {
         this.cacheSecurityGroupName = cacheSecurityGroupName;
     }
     
     /**
-     * The name of the Cache Security Group to authorize.
+     * The cache security group which will allow network ingress.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheSecurityGroupName The name of the Cache Security Group to authorize.
+     * @param cacheSecurityGroupName The cache security group which will allow network ingress.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -111,29 +113,35 @@ public class AuthorizeCacheSecurityGroupIngressRequest extends AmazonWebServiceR
     
     
     /**
-     * Name of the EC2 Security Group to include in the authorization.
+     * The Amazon EC2 security group to be authorized for ingress to the
+     * cache security group.
      *
-     * @return Name of the EC2 Security Group to include in the authorization.
+     * @return The Amazon EC2 security group to be authorized for ingress to the
+     *         cache security group.
      */
     public String getEC2SecurityGroupName() {
         return eC2SecurityGroupName;
     }
     
     /**
-     * Name of the EC2 Security Group to include in the authorization.
+     * The Amazon EC2 security group to be authorized for ingress to the
+     * cache security group.
      *
-     * @param eC2SecurityGroupName Name of the EC2 Security Group to include in the authorization.
+     * @param eC2SecurityGroupName The Amazon EC2 security group to be authorized for ingress to the
+     *         cache security group.
      */
     public void setEC2SecurityGroupName(String eC2SecurityGroupName) {
         this.eC2SecurityGroupName = eC2SecurityGroupName;
     }
     
     /**
-     * Name of the EC2 Security Group to include in the authorization.
+     * The Amazon EC2 security group to be authorized for ingress to the
+     * cache security group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param eC2SecurityGroupName Name of the EC2 Security Group to include in the authorization.
+     * @param eC2SecurityGroupName The Amazon EC2 security group to be authorized for ingress to the
+     *         cache security group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -145,41 +153,41 @@ public class AuthorizeCacheSecurityGroupIngressRequest extends AmazonWebServiceR
     
     
     /**
-     * AWS Account Number of the owner of the security group specified in the
-     * EC2SecurityGroupName parameter. The AWS Access Key ID is not an
-     * acceptable value.
+     * The AWS account number of the Amazon EC2 security group owner. Note
+     * that this is not the same thing as an AWS access key ID - you must
+     * provide a valid AWS account number for this parameter.
      *
-     * @return AWS Account Number of the owner of the security group specified in the
-     *         EC2SecurityGroupName parameter. The AWS Access Key ID is not an
-     *         acceptable value.
+     * @return The AWS account number of the Amazon EC2 security group owner. Note
+     *         that this is not the same thing as an AWS access key ID - you must
+     *         provide a valid AWS account number for this parameter.
      */
     public String getEC2SecurityGroupOwnerId() {
         return eC2SecurityGroupOwnerId;
     }
     
     /**
-     * AWS Account Number of the owner of the security group specified in the
-     * EC2SecurityGroupName parameter. The AWS Access Key ID is not an
-     * acceptable value.
+     * The AWS account number of the Amazon EC2 security group owner. Note
+     * that this is not the same thing as an AWS access key ID - you must
+     * provide a valid AWS account number for this parameter.
      *
-     * @param eC2SecurityGroupOwnerId AWS Account Number of the owner of the security group specified in the
-     *         EC2SecurityGroupName parameter. The AWS Access Key ID is not an
-     *         acceptable value.
+     * @param eC2SecurityGroupOwnerId The AWS account number of the Amazon EC2 security group owner. Note
+     *         that this is not the same thing as an AWS access key ID - you must
+     *         provide a valid AWS account number for this parameter.
      */
     public void setEC2SecurityGroupOwnerId(String eC2SecurityGroupOwnerId) {
         this.eC2SecurityGroupOwnerId = eC2SecurityGroupOwnerId;
     }
     
     /**
-     * AWS Account Number of the owner of the security group specified in the
-     * EC2SecurityGroupName parameter. The AWS Access Key ID is not an
-     * acceptable value.
+     * The AWS account number of the Amazon EC2 security group owner. Note
+     * that this is not the same thing as an AWS access key ID - you must
+     * provide a valid AWS account number for this parameter.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param eC2SecurityGroupOwnerId AWS Account Number of the owner of the security group specified in the
-     *         EC2SecurityGroupName parameter. The AWS Access Key ID is not an
-     *         acceptable value.
+     * @param eC2SecurityGroupOwnerId The AWS account number of the Amazon EC2 security group owner. Note
+     *         that this is not the same thing as an AWS access key ID - you must
+     *         provide a valid AWS account number for this parameter.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

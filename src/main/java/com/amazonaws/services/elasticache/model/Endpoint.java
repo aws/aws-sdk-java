@@ -17,18 +17,18 @@ import java.io.Serializable;
 
 /**
  * <p>
- * An endpoint completely specifies enough information to connect to a Cache Node.
+ * Represents the information required for client programs to connect to a cache node.
  * </p>
  */
 public class Endpoint implements Serializable {
 
     /**
-     * Specifies the DNS address of the Cache Node.
+     * The DNS hostname of the cache node.
      */
     private String address;
 
     /**
-     * Specifies the port that the cache engine is listening on.
+     * The port number that the cache engine is listening on.
      */
     private Integer port;
 
@@ -39,29 +39,29 @@ public class Endpoint implements Serializable {
     public Endpoint() {}
     
     /**
-     * Specifies the DNS address of the Cache Node.
+     * The DNS hostname of the cache node.
      *
-     * @return Specifies the DNS address of the Cache Node.
+     * @return The DNS hostname of the cache node.
      */
     public String getAddress() {
         return address;
     }
     
     /**
-     * Specifies the DNS address of the Cache Node.
+     * The DNS hostname of the cache node.
      *
-     * @param address Specifies the DNS address of the Cache Node.
+     * @param address The DNS hostname of the cache node.
      */
     public void setAddress(String address) {
         this.address = address;
     }
     
     /**
-     * Specifies the DNS address of the Cache Node.
+     * The DNS hostname of the cache node.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param address Specifies the DNS address of the Cache Node.
+     * @param address The DNS hostname of the cache node.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -73,29 +73,29 @@ public class Endpoint implements Serializable {
     
     
     /**
-     * Specifies the port that the cache engine is listening on.
+     * The port number that the cache engine is listening on.
      *
-     * @return Specifies the port that the cache engine is listening on.
+     * @return The port number that the cache engine is listening on.
      */
     public Integer getPort() {
         return port;
     }
     
     /**
-     * Specifies the port that the cache engine is listening on.
+     * The port number that the cache engine is listening on.
      *
-     * @param port Specifies the port that the cache engine is listening on.
+     * @param port The port number that the cache engine is listening on.
      */
     public void setPort(Integer port) {
         this.port = port;
     }
     
     /**
-     * Specifies the port that the cache engine is listening on.
+     * The port number that the cache engine is listening on.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param port Specifies the port that the cache engine is listening on.
+     * @param port The port number that the cache engine is listening on.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -17,7 +17,9 @@ package com.amazonaws.services.elasticache.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AmazonElastiCache exception
+ * <p>
+ * Two or more incompatible parameters were specified.
+ * </p>
  */        
 public class InvalidParameterCombinationException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

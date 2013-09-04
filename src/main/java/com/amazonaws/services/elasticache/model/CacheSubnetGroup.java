@@ -17,66 +17,62 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the following actions:
+ * Represents the output of one of the following operations:
  * </p>
  * 
  * <ul>
- * <li> CreateCacheSubnetGroup </li>
- * <li> ModifyCacheSubnetGroup </li>
- * <li> DescribeCacheSubnetGroups </li>
- * <li> DeleteCacheSubnetGroup </li>
+ * <li> <i>CreateCacheSubnetGroup</i> </li>
+ * <li> <i>ModifyCacheSubnetGroup</i> </li>
  * 
  * </ul>
- * <p>
- * This data type is used as a response element in the DescribeCacheSubnetGroups action.
- * </p>
  */
 public class CacheSubnetGroup implements Serializable {
 
     /**
-     * Specifies the name of the Cache Subnet Group.
+     * The name of the cache subnet group.
      */
     private String cacheSubnetGroupName;
 
     /**
-     * Provides the description of the Cache Subnet Group.
+     * The description of the cache subnet group.
      */
     private String cacheSubnetGroupDescription;
 
     /**
-     * Provides the VPC ID of the Cache Subnet Group.
+     * The Amazon Virtual Private Cloud identifier (VPC ID) of the cache
+     * subnet group.
      */
     private String vpcId;
 
     /**
-     * Contains a list of subnets for this group.
+     * A list of subnets associated with the cache subnet group.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Subnet> subnets;
 
     /**
-     * Specifies the name of the Cache Subnet Group.
+     * The name of the cache subnet group.
      *
-     * @return Specifies the name of the Cache Subnet Group.
+     * @return The name of the cache subnet group.
      */
     public String getCacheSubnetGroupName() {
         return cacheSubnetGroupName;
     }
     
     /**
-     * Specifies the name of the Cache Subnet Group.
+     * The name of the cache subnet group.
      *
-     * @param cacheSubnetGroupName Specifies the name of the Cache Subnet Group.
+     * @param cacheSubnetGroupName The name of the cache subnet group.
      */
     public void setCacheSubnetGroupName(String cacheSubnetGroupName) {
         this.cacheSubnetGroupName = cacheSubnetGroupName;
     }
     
     /**
-     * Specifies the name of the Cache Subnet Group.
+     * The name of the cache subnet group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheSubnetGroupName Specifies the name of the Cache Subnet Group.
+     * @param cacheSubnetGroupName The name of the cache subnet group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -88,29 +84,29 @@ public class CacheSubnetGroup implements Serializable {
     
     
     /**
-     * Provides the description of the Cache Subnet Group.
+     * The description of the cache subnet group.
      *
-     * @return Provides the description of the Cache Subnet Group.
+     * @return The description of the cache subnet group.
      */
     public String getCacheSubnetGroupDescription() {
         return cacheSubnetGroupDescription;
     }
     
     /**
-     * Provides the description of the Cache Subnet Group.
+     * The description of the cache subnet group.
      *
-     * @param cacheSubnetGroupDescription Provides the description of the Cache Subnet Group.
+     * @param cacheSubnetGroupDescription The description of the cache subnet group.
      */
     public void setCacheSubnetGroupDescription(String cacheSubnetGroupDescription) {
         this.cacheSubnetGroupDescription = cacheSubnetGroupDescription;
     }
     
     /**
-     * Provides the description of the Cache Subnet Group.
+     * The description of the cache subnet group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheSubnetGroupDescription Provides the description of the Cache Subnet Group.
+     * @param cacheSubnetGroupDescription The description of the cache subnet group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -122,29 +118,35 @@ public class CacheSubnetGroup implements Serializable {
     
     
     /**
-     * Provides the VPC ID of the Cache Subnet Group.
+     * The Amazon Virtual Private Cloud identifier (VPC ID) of the cache
+     * subnet group.
      *
-     * @return Provides the VPC ID of the Cache Subnet Group.
+     * @return The Amazon Virtual Private Cloud identifier (VPC ID) of the cache
+     *         subnet group.
      */
     public String getVpcId() {
         return vpcId;
     }
     
     /**
-     * Provides the VPC ID of the Cache Subnet Group.
+     * The Amazon Virtual Private Cloud identifier (VPC ID) of the cache
+     * subnet group.
      *
-     * @param vpcId Provides the VPC ID of the Cache Subnet Group.
+     * @param vpcId The Amazon Virtual Private Cloud identifier (VPC ID) of the cache
+     *         subnet group.
      */
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
     
     /**
-     * Provides the VPC ID of the Cache Subnet Group.
+     * The Amazon Virtual Private Cloud identifier (VPC ID) of the cache
+     * subnet group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcId Provides the VPC ID of the Cache Subnet Group.
+     * @param vpcId The Amazon Virtual Private Cloud identifier (VPC ID) of the cache
+     *         subnet group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -156,9 +158,9 @@ public class CacheSubnetGroup implements Serializable {
     
     
     /**
-     * Contains a list of subnets for this group.
+     * A list of subnets associated with the cache subnet group.
      *
-     * @return Contains a list of subnets for this group.
+     * @return A list of subnets associated with the cache subnet group.
      */
     public java.util.List<Subnet> getSubnets() {
         
@@ -170,9 +172,9 @@ public class CacheSubnetGroup implements Serializable {
     }
     
     /**
-     * Contains a list of subnets for this group.
+     * A list of subnets associated with the cache subnet group.
      *
-     * @param subnets Contains a list of subnets for this group.
+     * @param subnets A list of subnets associated with the cache subnet group.
      */
     public void setSubnets(java.util.Collection<Subnet> subnets) {
         if (subnets == null) {
@@ -185,11 +187,11 @@ public class CacheSubnetGroup implements Serializable {
     }
     
     /**
-     * Contains a list of subnets for this group.
+     * A list of subnets associated with the cache subnet group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnets Contains a list of subnets for this group.
+     * @param subnets A list of subnets associated with the cache subnet group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -203,11 +205,11 @@ public class CacheSubnetGroup implements Serializable {
     }
     
     /**
-     * Contains a list of subnets for this group.
+     * A list of subnets associated with the cache subnet group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnets Contains a list of subnets for this group.
+     * @param subnets A list of subnets associated with the cache subnet group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

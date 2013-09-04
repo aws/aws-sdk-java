@@ -17,55 +17,63 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Defines a set of EC2 Security groups that are allowed to access a Cache Cluster.
+ * Represents the output of one of the following operations:
  * </p>
+ * 
+ * <ul>
+ * <li> <i>AuthorizeCacheSecurityGroupIngress</i> </li>
+ * <li> <i>CreateCacheSecurityGroup</i> </li>
+ * <li> <i>RevokeCacheSecurityGroupIngress</i> </li>
+ * 
+ * </ul>
  */
 public class CacheSecurityGroup implements Serializable {
 
     /**
-     * Provides the AWS ID of the owner of a specific Cache Security Group.
+     * The AWS account ID of the cache security group owner.
      */
     private String ownerId;
 
     /**
-     * Specifies the name of the Cache Security Group.
+     * The name of the cache security group.
      */
     private String cacheSecurityGroupName;
 
     /**
-     * Provides the description of the Cache Security Group.
+     * The description of the cache security group.
      */
     private String description;
 
     /**
-     * Contains a list of <a>EC2SecurityGroup</a> elements.
+     * A list of Amazon EC2 security groups that are associated with this
+     * cache security group.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<EC2SecurityGroup> eC2SecurityGroups;
 
     /**
-     * Provides the AWS ID of the owner of a specific Cache Security Group.
+     * The AWS account ID of the cache security group owner.
      *
-     * @return Provides the AWS ID of the owner of a specific Cache Security Group.
+     * @return The AWS account ID of the cache security group owner.
      */
     public String getOwnerId() {
         return ownerId;
     }
     
     /**
-     * Provides the AWS ID of the owner of a specific Cache Security Group.
+     * The AWS account ID of the cache security group owner.
      *
-     * @param ownerId Provides the AWS ID of the owner of a specific Cache Security Group.
+     * @param ownerId The AWS account ID of the cache security group owner.
      */
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
     
     /**
-     * Provides the AWS ID of the owner of a specific Cache Security Group.
+     * The AWS account ID of the cache security group owner.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ownerId Provides the AWS ID of the owner of a specific Cache Security Group.
+     * @param ownerId The AWS account ID of the cache security group owner.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -77,29 +85,29 @@ public class CacheSecurityGroup implements Serializable {
     
     
     /**
-     * Specifies the name of the Cache Security Group.
+     * The name of the cache security group.
      *
-     * @return Specifies the name of the Cache Security Group.
+     * @return The name of the cache security group.
      */
     public String getCacheSecurityGroupName() {
         return cacheSecurityGroupName;
     }
     
     /**
-     * Specifies the name of the Cache Security Group.
+     * The name of the cache security group.
      *
-     * @param cacheSecurityGroupName Specifies the name of the Cache Security Group.
+     * @param cacheSecurityGroupName The name of the cache security group.
      */
     public void setCacheSecurityGroupName(String cacheSecurityGroupName) {
         this.cacheSecurityGroupName = cacheSecurityGroupName;
     }
     
     /**
-     * Specifies the name of the Cache Security Group.
+     * The name of the cache security group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheSecurityGroupName Specifies the name of the Cache Security Group.
+     * @param cacheSecurityGroupName The name of the cache security group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -111,29 +119,29 @@ public class CacheSecurityGroup implements Serializable {
     
     
     /**
-     * Provides the description of the Cache Security Group.
+     * The description of the cache security group.
      *
-     * @return Provides the description of the Cache Security Group.
+     * @return The description of the cache security group.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * Provides the description of the Cache Security Group.
+     * The description of the cache security group.
      *
-     * @param description Provides the description of the Cache Security Group.
+     * @param description The description of the cache security group.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * Provides the description of the Cache Security Group.
+     * The description of the cache security group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description Provides the description of the Cache Security Group.
+     * @param description The description of the cache security group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -145,9 +153,11 @@ public class CacheSecurityGroup implements Serializable {
     
     
     /**
-     * Contains a list of <a>EC2SecurityGroup</a> elements.
+     * A list of Amazon EC2 security groups that are associated with this
+     * cache security group.
      *
-     * @return Contains a list of <a>EC2SecurityGroup</a> elements.
+     * @return A list of Amazon EC2 security groups that are associated with this
+     *         cache security group.
      */
     public java.util.List<EC2SecurityGroup> getEC2SecurityGroups() {
         
@@ -159,9 +169,11 @@ public class CacheSecurityGroup implements Serializable {
     }
     
     /**
-     * Contains a list of <a>EC2SecurityGroup</a> elements.
+     * A list of Amazon EC2 security groups that are associated with this
+     * cache security group.
      *
-     * @param eC2SecurityGroups Contains a list of <a>EC2SecurityGroup</a> elements.
+     * @param eC2SecurityGroups A list of Amazon EC2 security groups that are associated with this
+     *         cache security group.
      */
     public void setEC2SecurityGroups(java.util.Collection<EC2SecurityGroup> eC2SecurityGroups) {
         if (eC2SecurityGroups == null) {
@@ -174,11 +186,13 @@ public class CacheSecurityGroup implements Serializable {
     }
     
     /**
-     * Contains a list of <a>EC2SecurityGroup</a> elements.
+     * A list of Amazon EC2 security groups that are associated with this
+     * cache security group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param eC2SecurityGroups Contains a list of <a>EC2SecurityGroup</a> elements.
+     * @param eC2SecurityGroups A list of Amazon EC2 security groups that are associated with this
+     *         cache security group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -192,11 +206,13 @@ public class CacheSecurityGroup implements Serializable {
     }
     
     /**
-     * Contains a list of <a>EC2SecurityGroup</a> elements.
+     * A list of Amazon EC2 security groups that are associated with this
+     * cache security group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param eC2SecurityGroups Contains a list of <a>EC2SecurityGroup</a> elements.
+     * @param eC2SecurityGroups A list of Amazon EC2 security groups that are associated with this
+     *         cache security group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

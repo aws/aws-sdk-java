@@ -19,8 +19,8 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#modifyCacheParameterGroup(ModifyCacheParameterGroupRequest) ModifyCacheParameterGroup operation}.
  * <p>
- * Modifies the parameters of a CacheParameterGroup. To modify more than one parameter, submit a list of ParameterName and ParameterValue parameters. A
- * maximum of 20 parameters can be modified in a single request.
+ * The <i>ModifyCacheParameterGroup</i> operation modifies the parameters of a cache parameter group. You can modify up to 20 parameters in a single
+ * request by submitting a list parameter name and value pairs.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#modifyCacheParameterGroup(ModifyCacheParameterGroupRequest)
@@ -33,10 +33,10 @@ public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest im
     private String cacheParameterGroupName;
 
     /**
-     * An array of parameter names and values for the parameter update. At
-     * least one parameter name and value must be supplied; subsequent
-     * arguments are optional. A maximum of 20 parameters may be modified in
-     * a single request.
+     * An array of parameter names and values for the parameter update. You
+     * must supply at least one parameter name and value; subsequent
+     * arguments are optional. A maximum of 20 parameters may be modified per
+     * request.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ParameterNameValue> parameterNameValues;
 
@@ -56,9 +56,9 @@ public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest im
      * @param cacheParameterGroupName The name of the cache parameter group
      * to modify.
      * @param parameterNameValues An array of parameter names and values for
-     * the parameter update. At least one parameter name and value must be
-     * supplied; subsequent arguments are optional. A maximum of 20
-     * parameters may be modified in a single request.
+     * the parameter update. You must supply at least one parameter name and
+     * value; subsequent arguments are optional. A maximum of 20 parameters
+     * may be modified per request.
      */
     public ModifyCacheParameterGroupRequest(String cacheParameterGroupName, java.util.List<ParameterNameValue> parameterNameValues) {
         setCacheParameterGroupName(cacheParameterGroupName);
@@ -102,15 +102,15 @@ public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest im
     
     
     /**
-     * An array of parameter names and values for the parameter update. At
-     * least one parameter name and value must be supplied; subsequent
-     * arguments are optional. A maximum of 20 parameters may be modified in
-     * a single request.
+     * An array of parameter names and values for the parameter update. You
+     * must supply at least one parameter name and value; subsequent
+     * arguments are optional. A maximum of 20 parameters may be modified per
+     * request.
      *
-     * @return An array of parameter names and values for the parameter update. At
-     *         least one parameter name and value must be supplied; subsequent
-     *         arguments are optional. A maximum of 20 parameters may be modified in
-     *         a single request.
+     * @return An array of parameter names and values for the parameter update. You
+     *         must supply at least one parameter name and value; subsequent
+     *         arguments are optional. A maximum of 20 parameters may be modified per
+     *         request.
      */
     public java.util.List<ParameterNameValue> getParameterNameValues() {
         
@@ -122,15 +122,15 @@ public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * An array of parameter names and values for the parameter update. At
-     * least one parameter name and value must be supplied; subsequent
-     * arguments are optional. A maximum of 20 parameters may be modified in
-     * a single request.
+     * An array of parameter names and values for the parameter update. You
+     * must supply at least one parameter name and value; subsequent
+     * arguments are optional. A maximum of 20 parameters may be modified per
+     * request.
      *
-     * @param parameterNameValues An array of parameter names and values for the parameter update. At
-     *         least one parameter name and value must be supplied; subsequent
-     *         arguments are optional. A maximum of 20 parameters may be modified in
-     *         a single request.
+     * @param parameterNameValues An array of parameter names and values for the parameter update. You
+     *         must supply at least one parameter name and value; subsequent
+     *         arguments are optional. A maximum of 20 parameters may be modified per
+     *         request.
      */
     public void setParameterNameValues(java.util.Collection<ParameterNameValue> parameterNameValues) {
         if (parameterNameValues == null) {
@@ -143,17 +143,17 @@ public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * An array of parameter names and values for the parameter update. At
-     * least one parameter name and value must be supplied; subsequent
-     * arguments are optional. A maximum of 20 parameters may be modified in
-     * a single request.
+     * An array of parameter names and values for the parameter update. You
+     * must supply at least one parameter name and value; subsequent
+     * arguments are optional. A maximum of 20 parameters may be modified per
+     * request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param parameterNameValues An array of parameter names and values for the parameter update. At
-     *         least one parameter name and value must be supplied; subsequent
-     *         arguments are optional. A maximum of 20 parameters may be modified in
-     *         a single request.
+     * @param parameterNameValues An array of parameter names and values for the parameter update. You
+     *         must supply at least one parameter name and value; subsequent
+     *         arguments are optional. A maximum of 20 parameters may be modified per
+     *         request.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -167,17 +167,17 @@ public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * An array of parameter names and values for the parameter update. At
-     * least one parameter name and value must be supplied; subsequent
-     * arguments are optional. A maximum of 20 parameters may be modified in
-     * a single request.
+     * An array of parameter names and values for the parameter update. You
+     * must supply at least one parameter name and value; subsequent
+     * arguments are optional. A maximum of 20 parameters may be modified per
+     * request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param parameterNameValues An array of parameter names and values for the parameter update. At
-     *         least one parameter name and value must be supplied; subsequent
-     *         arguments are optional. A maximum of 20 parameters may be modified in
-     *         a single request.
+     * @param parameterNameValues An array of parameter names and values for the parameter update. You
+     *         must supply at least one parameter name and value; subsequent
+     *         arguments are optional. A maximum of 20 parameters may be modified per
+     *         request.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

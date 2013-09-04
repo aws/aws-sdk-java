@@ -17,38 +17,38 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A setting controlling some apsect of the service's behavior.
+ * Describes an individual setting that controls some aspect of ElastiCache behavior.
  * </p>
  */
 public class Parameter implements Serializable {
 
     /**
-     * Specifies the name of the parameter.
+     * The name of the parameter.
      */
     private String parameterName;
 
     /**
-     * Specifies the value of the parameter.
+     * The value of the parameter.
      */
     private String parameterValue;
 
     /**
-     * Provides a description of the parameter.
+     * A description of the parameter.
      */
     private String description;
 
     /**
-     * Indicates the source of the parameter value.
+     * The source of the parameter.
      */
     private String source;
 
     /**
-     * Specifies the valid data type for the parameter.
+     * The valid data type for the parameter.
      */
     private String dataType;
 
     /**
-     * Specifies the valid range of values for the parameter.
+     * The valid range of values for the parameter.
      */
     private String allowedValues;
 
@@ -60,7 +60,7 @@ public class Parameter implements Serializable {
     private Boolean isModifiable;
 
     /**
-     * The earliest engine version to which the parameter can apply.
+     * The earliest cache engine version to which the parameter can apply.
      */
     private String minimumEngineVersion;
 
@@ -71,29 +71,29 @@ public class Parameter implements Serializable {
     public Parameter() {}
     
     /**
-     * Specifies the name of the parameter.
+     * The name of the parameter.
      *
-     * @return Specifies the name of the parameter.
+     * @return The name of the parameter.
      */
     public String getParameterName() {
         return parameterName;
     }
     
     /**
-     * Specifies the name of the parameter.
+     * The name of the parameter.
      *
-     * @param parameterName Specifies the name of the parameter.
+     * @param parameterName The name of the parameter.
      */
     public void setParameterName(String parameterName) {
         this.parameterName = parameterName;
     }
     
     /**
-     * Specifies the name of the parameter.
+     * The name of the parameter.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param parameterName Specifies the name of the parameter.
+     * @param parameterName The name of the parameter.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -105,29 +105,29 @@ public class Parameter implements Serializable {
     
     
     /**
-     * Specifies the value of the parameter.
+     * The value of the parameter.
      *
-     * @return Specifies the value of the parameter.
+     * @return The value of the parameter.
      */
     public String getParameterValue() {
         return parameterValue;
     }
     
     /**
-     * Specifies the value of the parameter.
+     * The value of the parameter.
      *
-     * @param parameterValue Specifies the value of the parameter.
+     * @param parameterValue The value of the parameter.
      */
     public void setParameterValue(String parameterValue) {
         this.parameterValue = parameterValue;
     }
     
     /**
-     * Specifies the value of the parameter.
+     * The value of the parameter.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param parameterValue Specifies the value of the parameter.
+     * @param parameterValue The value of the parameter.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -139,29 +139,29 @@ public class Parameter implements Serializable {
     
     
     /**
-     * Provides a description of the parameter.
+     * A description of the parameter.
      *
-     * @return Provides a description of the parameter.
+     * @return A description of the parameter.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * Provides a description of the parameter.
+     * A description of the parameter.
      *
-     * @param description Provides a description of the parameter.
+     * @param description A description of the parameter.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * Provides a description of the parameter.
+     * A description of the parameter.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description Provides a description of the parameter.
+     * @param description A description of the parameter.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -173,29 +173,29 @@ public class Parameter implements Serializable {
     
     
     /**
-     * Indicates the source of the parameter value.
+     * The source of the parameter.
      *
-     * @return Indicates the source of the parameter value.
+     * @return The source of the parameter.
      */
     public String getSource() {
         return source;
     }
     
     /**
-     * Indicates the source of the parameter value.
+     * The source of the parameter.
      *
-     * @param source Indicates the source of the parameter value.
+     * @param source The source of the parameter.
      */
     public void setSource(String source) {
         this.source = source;
     }
     
     /**
-     * Indicates the source of the parameter value.
+     * The source of the parameter.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param source Indicates the source of the parameter value.
+     * @param source The source of the parameter.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -207,29 +207,29 @@ public class Parameter implements Serializable {
     
     
     /**
-     * Specifies the valid data type for the parameter.
+     * The valid data type for the parameter.
      *
-     * @return Specifies the valid data type for the parameter.
+     * @return The valid data type for the parameter.
      */
     public String getDataType() {
         return dataType;
     }
     
     /**
-     * Specifies the valid data type for the parameter.
+     * The valid data type for the parameter.
      *
-     * @param dataType Specifies the valid data type for the parameter.
+     * @param dataType The valid data type for the parameter.
      */
     public void setDataType(String dataType) {
         this.dataType = dataType;
     }
     
     /**
-     * Specifies the valid data type for the parameter.
+     * The valid data type for the parameter.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dataType Specifies the valid data type for the parameter.
+     * @param dataType The valid data type for the parameter.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -241,29 +241,29 @@ public class Parameter implements Serializable {
     
     
     /**
-     * Specifies the valid range of values for the parameter.
+     * The valid range of values for the parameter.
      *
-     * @return Specifies the valid range of values for the parameter.
+     * @return The valid range of values for the parameter.
      */
     public String getAllowedValues() {
         return allowedValues;
     }
     
     /**
-     * Specifies the valid range of values for the parameter.
+     * The valid range of values for the parameter.
      *
-     * @param allowedValues Specifies the valid range of values for the parameter.
+     * @param allowedValues The valid range of values for the parameter.
      */
     public void setAllowedValues(String allowedValues) {
         this.allowedValues = allowedValues;
     }
     
     /**
-     * Specifies the valid range of values for the parameter.
+     * The valid range of values for the parameter.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param allowedValues Specifies the valid range of values for the parameter.
+     * @param allowedValues The valid range of values for the parameter.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -334,29 +334,29 @@ public class Parameter implements Serializable {
     }
     
     /**
-     * The earliest engine version to which the parameter can apply.
+     * The earliest cache engine version to which the parameter can apply.
      *
-     * @return The earliest engine version to which the parameter can apply.
+     * @return The earliest cache engine version to which the parameter can apply.
      */
     public String getMinimumEngineVersion() {
         return minimumEngineVersion;
     }
     
     /**
-     * The earliest engine version to which the parameter can apply.
+     * The earliest cache engine version to which the parameter can apply.
      *
-     * @param minimumEngineVersion The earliest engine version to which the parameter can apply.
+     * @param minimumEngineVersion The earliest cache engine version to which the parameter can apply.
      */
     public void setMinimumEngineVersion(String minimumEngineVersion) {
         this.minimumEngineVersion = minimumEngineVersion;
     }
     
     /**
-     * The earliest engine version to which the parameter can apply.
+     * The earliest cache engine version to which the parameter can apply.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param minimumEngineVersion The earliest engine version to which the parameter can apply.
+     * @param minimumEngineVersion The earliest cache engine version to which the parameter can apply.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

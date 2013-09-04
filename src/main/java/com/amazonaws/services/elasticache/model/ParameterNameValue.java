@@ -17,18 +17,18 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A name and value pair used to update the value of a Parameter.
+ * Describes a name-value pair that is used to update the value of a parameter.
  * </p>
  */
 public class ParameterNameValue implements Serializable {
 
     /**
-     * Specifies the name of the parameter.
+     * The name of the parameter.
      */
     private String parameterName;
 
     /**
-     * Specifies the value of the parameter.
+     * The value of the parameter.
      */
     private String parameterValue;
 
@@ -45,7 +45,7 @@ public class ParameterNameValue implements Serializable {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param parameterName Specifies the name of the parameter.
+     * @param parameterName The name of the parameter.
      */
     public ParameterNameValue(String parameterName) {
         setParameterName(parameterName);
@@ -60,8 +60,8 @@ public class ParameterNameValue implements Serializable {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param parameterName Specifies the name of the parameter.
-     * @param parameterValue Specifies the value of the parameter.
+     * @param parameterName The name of the parameter.
+     * @param parameterValue The value of the parameter.
      */
     public ParameterNameValue(String parameterName, String parameterValue) {
         setParameterName(parameterName);
@@ -71,29 +71,29 @@ public class ParameterNameValue implements Serializable {
     
     
     /**
-     * Specifies the name of the parameter.
+     * The name of the parameter.
      *
-     * @return Specifies the name of the parameter.
+     * @return The name of the parameter.
      */
     public String getParameterName() {
         return parameterName;
     }
     
     /**
-     * Specifies the name of the parameter.
+     * The name of the parameter.
      *
-     * @param parameterName Specifies the name of the parameter.
+     * @param parameterName The name of the parameter.
      */
     public void setParameterName(String parameterName) {
         this.parameterName = parameterName;
     }
     
     /**
-     * Specifies the name of the parameter.
+     * The name of the parameter.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param parameterName Specifies the name of the parameter.
+     * @param parameterName The name of the parameter.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -105,29 +105,29 @@ public class ParameterNameValue implements Serializable {
     
     
     /**
-     * Specifies the value of the parameter.
+     * The value of the parameter.
      *
-     * @return Specifies the value of the parameter.
+     * @return The value of the parameter.
      */
     public String getParameterValue() {
         return parameterValue;
     }
     
     /**
-     * Specifies the value of the parameter.
+     * The value of the parameter.
      *
-     * @param parameterValue Specifies the value of the parameter.
+     * @param parameterValue The value of the parameter.
      */
     public void setParameterValue(String parameterValue) {
         this.parameterValue = parameterValue;
     }
     
     /**
-     * Specifies the value of the parameter.
+     * The value of the parameter.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param parameterValue Specifies the value of the parameter.
+     * @param parameterValue The value of the parameter.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

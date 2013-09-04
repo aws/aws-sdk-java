@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Request would result in user exceeding the allowed number of Cache Nodes per customer.
+ * The request cannot be processed because it would exceed the allowed number of cache nodes per customer.
  * </p>
  */        
 public class NodeQuotaForCustomerExceededException extends AmazonServiceException {

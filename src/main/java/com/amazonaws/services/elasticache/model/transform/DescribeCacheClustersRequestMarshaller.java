@@ -38,7 +38,7 @@ public class DescribeCacheClustersRequestMarshaller implements Marshaller<Reques
 
         Request<DescribeCacheClustersRequest> request = new DefaultRequest<DescribeCacheClustersRequest>(describeCacheClustersRequest, "AmazonElastiCache");
         request.addParameter("Action", "DescribeCacheClusters");
-        request.addParameter("Version", "2012-11-15");
+        request.addParameter("Version", "2013-06-15");
 
         if (describeCacheClustersRequest.getCacheClusterId() != null) {
             request.addParameter("CacheClusterId", StringUtils.fromString(describeCacheClustersRequest.getCacheClusterId()));

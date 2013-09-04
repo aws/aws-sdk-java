@@ -17,26 +17,25 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains values that will be applied to the Cache Cluster in the future.
+ * A group of settings that will be applied to the cache cluster in the future, or that are currently being applied.
  * </p>
  */
 public class PendingModifiedValues implements Serializable {
 
     /**
-     * Contains the new <i>NumCacheNodes</i> for the Cache Cluster that will
-     * be applied or is in progress.
+     * The new number of cache nodes for the cache cluster.
      */
     private Integer numCacheNodes;
 
     /**
-     * Contains the list of node Ids to remove from the Cache Cluster that
-     * will be applied or is in progress.
+     * A list of cache node IDs that are being removed (or will be removed)
+     * from the cache cluster. A node ID is a numeric identifier (0001, 0002,
+     * etc.).
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> cacheNodeIdsToRemove;
 
     /**
-     * Contains the new version of the Cache Engine the Cache Cluster will be
-     * upgraded to.
+     * The new cache engine version that the cache cluster will run.
      */
     private String engineVersion;
 
@@ -47,35 +46,29 @@ public class PendingModifiedValues implements Serializable {
     public PendingModifiedValues() {}
     
     /**
-     * Contains the new <i>NumCacheNodes</i> for the Cache Cluster that will
-     * be applied or is in progress.
+     * The new number of cache nodes for the cache cluster.
      *
-     * @return Contains the new <i>NumCacheNodes</i> for the Cache Cluster that will
-     *         be applied or is in progress.
+     * @return The new number of cache nodes for the cache cluster.
      */
     public Integer getNumCacheNodes() {
         return numCacheNodes;
     }
     
     /**
-     * Contains the new <i>NumCacheNodes</i> for the Cache Cluster that will
-     * be applied or is in progress.
+     * The new number of cache nodes for the cache cluster.
      *
-     * @param numCacheNodes Contains the new <i>NumCacheNodes</i> for the Cache Cluster that will
-     *         be applied or is in progress.
+     * @param numCacheNodes The new number of cache nodes for the cache cluster.
      */
     public void setNumCacheNodes(Integer numCacheNodes) {
         this.numCacheNodes = numCacheNodes;
     }
     
     /**
-     * Contains the new <i>NumCacheNodes</i> for the Cache Cluster that will
-     * be applied or is in progress.
+     * The new number of cache nodes for the cache cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param numCacheNodes Contains the new <i>NumCacheNodes</i> for the Cache Cluster that will
-     *         be applied or is in progress.
+     * @param numCacheNodes The new number of cache nodes for the cache cluster.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -87,11 +80,13 @@ public class PendingModifiedValues implements Serializable {
     
     
     /**
-     * Contains the list of node Ids to remove from the Cache Cluster that
-     * will be applied or is in progress.
+     * A list of cache node IDs that are being removed (or will be removed)
+     * from the cache cluster. A node ID is a numeric identifier (0001, 0002,
+     * etc.).
      *
-     * @return Contains the list of node Ids to remove from the Cache Cluster that
-     *         will be applied or is in progress.
+     * @return A list of cache node IDs that are being removed (or will be removed)
+     *         from the cache cluster. A node ID is a numeric identifier (0001, 0002,
+     *         etc.).
      */
     public java.util.List<String> getCacheNodeIdsToRemove() {
         
@@ -103,11 +98,13 @@ public class PendingModifiedValues implements Serializable {
     }
     
     /**
-     * Contains the list of node Ids to remove from the Cache Cluster that
-     * will be applied or is in progress.
+     * A list of cache node IDs that are being removed (or will be removed)
+     * from the cache cluster. A node ID is a numeric identifier (0001, 0002,
+     * etc.).
      *
-     * @param cacheNodeIdsToRemove Contains the list of node Ids to remove from the Cache Cluster that
-     *         will be applied or is in progress.
+     * @param cacheNodeIdsToRemove A list of cache node IDs that are being removed (or will be removed)
+     *         from the cache cluster. A node ID is a numeric identifier (0001, 0002,
+     *         etc.).
      */
     public void setCacheNodeIdsToRemove(java.util.Collection<String> cacheNodeIdsToRemove) {
         if (cacheNodeIdsToRemove == null) {
@@ -120,13 +117,15 @@ public class PendingModifiedValues implements Serializable {
     }
     
     /**
-     * Contains the list of node Ids to remove from the Cache Cluster that
-     * will be applied or is in progress.
+     * A list of cache node IDs that are being removed (or will be removed)
+     * from the cache cluster. A node ID is a numeric identifier (0001, 0002,
+     * etc.).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheNodeIdsToRemove Contains the list of node Ids to remove from the Cache Cluster that
-     *         will be applied or is in progress.
+     * @param cacheNodeIdsToRemove A list of cache node IDs that are being removed (or will be removed)
+     *         from the cache cluster. A node ID is a numeric identifier (0001, 0002,
+     *         etc.).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -140,13 +139,15 @@ public class PendingModifiedValues implements Serializable {
     }
     
     /**
-     * Contains the list of node Ids to remove from the Cache Cluster that
-     * will be applied or is in progress.
+     * A list of cache node IDs that are being removed (or will be removed)
+     * from the cache cluster. A node ID is a numeric identifier (0001, 0002,
+     * etc.).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheNodeIdsToRemove Contains the list of node Ids to remove from the Cache Cluster that
-     *         will be applied or is in progress.
+     * @param cacheNodeIdsToRemove A list of cache node IDs that are being removed (or will be removed)
+     *         from the cache cluster. A node ID is a numeric identifier (0001, 0002,
+     *         etc.).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -164,35 +165,29 @@ public class PendingModifiedValues implements Serializable {
     }
     
     /**
-     * Contains the new version of the Cache Engine the Cache Cluster will be
-     * upgraded to.
+     * The new cache engine version that the cache cluster will run.
      *
-     * @return Contains the new version of the Cache Engine the Cache Cluster will be
-     *         upgraded to.
+     * @return The new cache engine version that the cache cluster will run.
      */
     public String getEngineVersion() {
         return engineVersion;
     }
     
     /**
-     * Contains the new version of the Cache Engine the Cache Cluster will be
-     * upgraded to.
+     * The new cache engine version that the cache cluster will run.
      *
-     * @param engineVersion Contains the new version of the Cache Engine the Cache Cluster will be
-     *         upgraded to.
+     * @param engineVersion The new cache engine version that the cache cluster will run.
      */
     public void setEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
     }
     
     /**
-     * Contains the new version of the Cache Engine the Cache Cluster will be
-     * upgraded to.
+     * The new cache engine version that the cache cluster will run.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param engineVersion Contains the new version of the Cache Engine the Cache Cluster will be
-     *         upgraded to.
+     * @param engineVersion The new cache engine version that the cache cluster will run.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

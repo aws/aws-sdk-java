@@ -17,45 +17,46 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains a list of CacheSecurityGroups.
+ * Represents the output of a <i>DescribeCacheSecurityGroups</i> operation.
  * </p>
  */
 public class DescribeCacheSecurityGroupsResult implements Serializable {
 
     /**
-     * The marker obtained from a previous operation response.
+     * Provides an identifier to allow retrieval of paginated results.
      */
     private String marker;
 
     /**
-     * A list of <a>CacheSecurityGroup</a> instances.
+     * A list of cache security groups. Each element in the list contains
+     * detailed information about one group.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<CacheSecurityGroup> cacheSecurityGroups;
 
     /**
-     * The marker obtained from a previous operation response.
+     * Provides an identifier to allow retrieval of paginated results.
      *
-     * @return The marker obtained from a previous operation response.
+     * @return Provides an identifier to allow retrieval of paginated results.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * The marker obtained from a previous operation response.
+     * Provides an identifier to allow retrieval of paginated results.
      *
-     * @param marker The marker obtained from a previous operation response.
+     * @param marker Provides an identifier to allow retrieval of paginated results.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * The marker obtained from a previous operation response.
+     * Provides an identifier to allow retrieval of paginated results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker The marker obtained from a previous operation response.
+     * @param marker Provides an identifier to allow retrieval of paginated results.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -67,9 +68,11 @@ public class DescribeCacheSecurityGroupsResult implements Serializable {
     
     
     /**
-     * A list of <a>CacheSecurityGroup</a> instances.
+     * A list of cache security groups. Each element in the list contains
+     * detailed information about one group.
      *
-     * @return A list of <a>CacheSecurityGroup</a> instances.
+     * @return A list of cache security groups. Each element in the list contains
+     *         detailed information about one group.
      */
     public java.util.List<CacheSecurityGroup> getCacheSecurityGroups() {
         
@@ -81,9 +84,11 @@ public class DescribeCacheSecurityGroupsResult implements Serializable {
     }
     
     /**
-     * A list of <a>CacheSecurityGroup</a> instances.
+     * A list of cache security groups. Each element in the list contains
+     * detailed information about one group.
      *
-     * @param cacheSecurityGroups A list of <a>CacheSecurityGroup</a> instances.
+     * @param cacheSecurityGroups A list of cache security groups. Each element in the list contains
+     *         detailed information about one group.
      */
     public void setCacheSecurityGroups(java.util.Collection<CacheSecurityGroup> cacheSecurityGroups) {
         if (cacheSecurityGroups == null) {
@@ -96,11 +101,13 @@ public class DescribeCacheSecurityGroupsResult implements Serializable {
     }
     
     /**
-     * A list of <a>CacheSecurityGroup</a> instances.
+     * A list of cache security groups. Each element in the list contains
+     * detailed information about one group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheSecurityGroups A list of <a>CacheSecurityGroup</a> instances.
+     * @param cacheSecurityGroups A list of cache security groups. Each element in the list contains
+     *         detailed information about one group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -114,11 +121,13 @@ public class DescribeCacheSecurityGroupsResult implements Serializable {
     }
     
     /**
-     * A list of <a>CacheSecurityGroup</a> instances.
+     * A list of cache security groups. Each element in the list contains
+     * detailed information about one group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheSecurityGroups A list of <a>CacheSecurityGroup</a> instances.
+     * @param cacheSecurityGroups A list of cache security groups. Each element in the list contains
+     *         detailed information about one group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

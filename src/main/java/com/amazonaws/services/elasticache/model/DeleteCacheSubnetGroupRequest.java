@@ -19,10 +19,10 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#deleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest) DeleteCacheSubnetGroup operation}.
  * <p>
- * Deletes a Cache Subnet Group.
+ * The <i>DeleteCacheSubnetGroup</i> operation deletes a cache subnet group.
  * </p>
  * <p>
- * <b>NOTE:</b>The specified Cache Subnet Group must not be associated with any Cache Clusters.
+ * <b>NOTE:</b>You cannot delete a cache subnet group if it is associated with any cache clusters.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#deleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest)
@@ -30,16 +30,16 @@ import java.io.Serializable;
 public class DeleteCacheSubnetGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name of the Cache Subnet Group to delete. <p>Constraints: Must
+     * The name of the cache subnet group to delete. <p>Constraints: Must
      * contain no more than 255 alphanumeric characters or hyphens.
      */
     private String cacheSubnetGroupName;
 
     /**
-     * The name of the Cache Subnet Group to delete. <p>Constraints: Must
+     * The name of the cache subnet group to delete. <p>Constraints: Must
      * contain no more than 255 alphanumeric characters or hyphens.
      *
-     * @return The name of the Cache Subnet Group to delete. <p>Constraints: Must
+     * @return The name of the cache subnet group to delete. <p>Constraints: Must
      *         contain no more than 255 alphanumeric characters or hyphens.
      */
     public String getCacheSubnetGroupName() {
@@ -47,10 +47,10 @@ public class DeleteCacheSubnetGroupRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The name of the Cache Subnet Group to delete. <p>Constraints: Must
+     * The name of the cache subnet group to delete. <p>Constraints: Must
      * contain no more than 255 alphanumeric characters or hyphens.
      *
-     * @param cacheSubnetGroupName The name of the Cache Subnet Group to delete. <p>Constraints: Must
+     * @param cacheSubnetGroupName The name of the cache subnet group to delete. <p>Constraints: Must
      *         contain no more than 255 alphanumeric characters or hyphens.
      */
     public void setCacheSubnetGroupName(String cacheSubnetGroupName) {
@@ -58,12 +58,12 @@ public class DeleteCacheSubnetGroupRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The name of the Cache Subnet Group to delete. <p>Constraints: Must
+     * The name of the cache subnet group to delete. <p>Constraints: Must
      * contain no more than 255 alphanumeric characters or hyphens.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheSubnetGroupName The name of the Cache Subnet Group to delete. <p>Constraints: Must
+     * @param cacheSubnetGroupName The name of the cache subnet group to delete. <p>Constraints: Must
      *         contain no more than 255 alphanumeric characters or hyphens.
      *
      * @return A reference to this updated object so that method calls can be chained 

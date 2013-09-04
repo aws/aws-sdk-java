@@ -19,7 +19,8 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#revokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest) RevokeCacheSecurityGroupIngress operation}.
  * <p>
- * Revokes ingress from a CacheSecurityGroup for previously authorized EC2 Security Groups.
+ * The <i>RevokeCacheSecurityGroupIngress</i> operation revokes ingress from a cache security group. Use this operation to disallow access from an Amazon
+ * EC2 security group that had been previously authorized.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#revokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest)
@@ -27,19 +28,19 @@ import java.io.Serializable;
 public class RevokeCacheSecurityGroupIngressRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name of the Cache Security Group to revoke ingress from.
+     * The name of the cache security group to revoke ingress from.
      */
     private String cacheSecurityGroupName;
 
     /**
-     * The name of the EC2 Security Group to revoke access from.
+     * The name of the Amazon EC2 security group to revoke access from.
      */
     private String eC2SecurityGroupName;
 
     /**
-     * The AWS Account Number of the owner of the security group specified in
-     * the <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is
-     * not an acceptable value.
+     * The AWS account number of the Amazon EC2 security group owner. Note
+     * that this is not the same thing as an AWS access key ID - you must
+     * provide a valid AWS account number for this parameter.
      */
     private String eC2SecurityGroupOwnerId;
 
@@ -56,13 +57,14 @@ public class RevokeCacheSecurityGroupIngressRequest extends AmazonWebServiceRequ
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param cacheSecurityGroupName The name of the Cache Security Group to
+     * @param cacheSecurityGroupName The name of the cache security group to
      * revoke ingress from.
-     * @param eC2SecurityGroupName The name of the EC2 Security Group to
-     * revoke access from.
-     * @param eC2SecurityGroupOwnerId The AWS Account Number of the owner of
-     * the security group specified in the <i>EC2SecurityGroupName</i>
-     * parameter. The AWS Access Key ID is not an acceptable value.
+     * @param eC2SecurityGroupName The name of the Amazon EC2 security group
+     * to revoke access from.
+     * @param eC2SecurityGroupOwnerId The AWS account number of the Amazon
+     * EC2 security group owner. Note that this is not the same thing as an
+     * AWS access key ID - you must provide a valid AWS account number for
+     * this parameter.
      */
     public RevokeCacheSecurityGroupIngressRequest(String cacheSecurityGroupName, String eC2SecurityGroupName, String eC2SecurityGroupOwnerId) {
         setCacheSecurityGroupName(cacheSecurityGroupName);
@@ -73,29 +75,29 @@ public class RevokeCacheSecurityGroupIngressRequest extends AmazonWebServiceRequ
     
     
     /**
-     * The name of the Cache Security Group to revoke ingress from.
+     * The name of the cache security group to revoke ingress from.
      *
-     * @return The name of the Cache Security Group to revoke ingress from.
+     * @return The name of the cache security group to revoke ingress from.
      */
     public String getCacheSecurityGroupName() {
         return cacheSecurityGroupName;
     }
     
     /**
-     * The name of the Cache Security Group to revoke ingress from.
+     * The name of the cache security group to revoke ingress from.
      *
-     * @param cacheSecurityGroupName The name of the Cache Security Group to revoke ingress from.
+     * @param cacheSecurityGroupName The name of the cache security group to revoke ingress from.
      */
     public void setCacheSecurityGroupName(String cacheSecurityGroupName) {
         this.cacheSecurityGroupName = cacheSecurityGroupName;
     }
     
     /**
-     * The name of the Cache Security Group to revoke ingress from.
+     * The name of the cache security group to revoke ingress from.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheSecurityGroupName The name of the Cache Security Group to revoke ingress from.
+     * @param cacheSecurityGroupName The name of the cache security group to revoke ingress from.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -107,29 +109,29 @@ public class RevokeCacheSecurityGroupIngressRequest extends AmazonWebServiceRequ
     
     
     /**
-     * The name of the EC2 Security Group to revoke access from.
+     * The name of the Amazon EC2 security group to revoke access from.
      *
-     * @return The name of the EC2 Security Group to revoke access from.
+     * @return The name of the Amazon EC2 security group to revoke access from.
      */
     public String getEC2SecurityGroupName() {
         return eC2SecurityGroupName;
     }
     
     /**
-     * The name of the EC2 Security Group to revoke access from.
+     * The name of the Amazon EC2 security group to revoke access from.
      *
-     * @param eC2SecurityGroupName The name of the EC2 Security Group to revoke access from.
+     * @param eC2SecurityGroupName The name of the Amazon EC2 security group to revoke access from.
      */
     public void setEC2SecurityGroupName(String eC2SecurityGroupName) {
         this.eC2SecurityGroupName = eC2SecurityGroupName;
     }
     
     /**
-     * The name of the EC2 Security Group to revoke access from.
+     * The name of the Amazon EC2 security group to revoke access from.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param eC2SecurityGroupName The name of the EC2 Security Group to revoke access from.
+     * @param eC2SecurityGroupName The name of the Amazon EC2 security group to revoke access from.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -141,41 +143,41 @@ public class RevokeCacheSecurityGroupIngressRequest extends AmazonWebServiceRequ
     
     
     /**
-     * The AWS Account Number of the owner of the security group specified in
-     * the <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is
-     * not an acceptable value.
+     * The AWS account number of the Amazon EC2 security group owner. Note
+     * that this is not the same thing as an AWS access key ID - you must
+     * provide a valid AWS account number for this parameter.
      *
-     * @return The AWS Account Number of the owner of the security group specified in
-     *         the <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is
-     *         not an acceptable value.
+     * @return The AWS account number of the Amazon EC2 security group owner. Note
+     *         that this is not the same thing as an AWS access key ID - you must
+     *         provide a valid AWS account number for this parameter.
      */
     public String getEC2SecurityGroupOwnerId() {
         return eC2SecurityGroupOwnerId;
     }
     
     /**
-     * The AWS Account Number of the owner of the security group specified in
-     * the <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is
-     * not an acceptable value.
+     * The AWS account number of the Amazon EC2 security group owner. Note
+     * that this is not the same thing as an AWS access key ID - you must
+     * provide a valid AWS account number for this parameter.
      *
-     * @param eC2SecurityGroupOwnerId The AWS Account Number of the owner of the security group specified in
-     *         the <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is
-     *         not an acceptable value.
+     * @param eC2SecurityGroupOwnerId The AWS account number of the Amazon EC2 security group owner. Note
+     *         that this is not the same thing as an AWS access key ID - you must
+     *         provide a valid AWS account number for this parameter.
      */
     public void setEC2SecurityGroupOwnerId(String eC2SecurityGroupOwnerId) {
         this.eC2SecurityGroupOwnerId = eC2SecurityGroupOwnerId;
     }
     
     /**
-     * The AWS Account Number of the owner of the security group specified in
-     * the <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is
-     * not an acceptable value.
+     * The AWS account number of the Amazon EC2 security group owner. Note
+     * that this is not the same thing as an AWS access key ID - you must
+     * provide a valid AWS account number for this parameter.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param eC2SecurityGroupOwnerId The AWS Account Number of the owner of the security group specified in
-     *         the <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is
-     *         not an acceptable value.
+     * @param eC2SecurityGroupOwnerId The AWS account number of the Amazon EC2 security group owner. Note
+     *         that this is not the same thing as an AWS access key ID - you must
+     *         provide a valid AWS account number for this parameter.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

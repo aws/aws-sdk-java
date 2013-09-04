@@ -17,23 +17,23 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This data type is used as a response element in the DescribeReservedCacheNodesOfferings action.
+ * Describes all of the attributes of a reserved cache node offering.
  * </p>
  */
 public class ReservedCacheNodesOffering implements Serializable {
 
     /**
-     * The offering identifier.
+     * A unique identifier for the reserved cache node offering.
      */
     private String reservedCacheNodesOfferingId;
 
     /**
-     * The Cache Node type for the reserved Cache Node.
+     * The cache node type for the reserved cache node.
      */
     private String cacheNodeType;
 
     /**
-     * The duration of the offering in seconds.
+     * The duration of the offering. in seconds.
      */
     private Integer duration;
 
@@ -58,34 +58,34 @@ public class ReservedCacheNodesOffering implements Serializable {
     private String offeringType;
 
     /**
-     * The recurring price charged to run this reserved Cache Node.
+     * The recurring price charged to run this reserved cache node.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<RecurringCharge> recurringCharges;
 
     /**
-     * The offering identifier.
+     * A unique identifier for the reserved cache node offering.
      *
-     * @return The offering identifier.
+     * @return A unique identifier for the reserved cache node offering.
      */
     public String getReservedCacheNodesOfferingId() {
         return reservedCacheNodesOfferingId;
     }
     
     /**
-     * The offering identifier.
+     * A unique identifier for the reserved cache node offering.
      *
-     * @param reservedCacheNodesOfferingId The offering identifier.
+     * @param reservedCacheNodesOfferingId A unique identifier for the reserved cache node offering.
      */
     public void setReservedCacheNodesOfferingId(String reservedCacheNodesOfferingId) {
         this.reservedCacheNodesOfferingId = reservedCacheNodesOfferingId;
     }
     
     /**
-     * The offering identifier.
+     * A unique identifier for the reserved cache node offering.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedCacheNodesOfferingId The offering identifier.
+     * @param reservedCacheNodesOfferingId A unique identifier for the reserved cache node offering.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -97,29 +97,29 @@ public class ReservedCacheNodesOffering implements Serializable {
     
     
     /**
-     * The Cache Node type for the reserved Cache Node.
+     * The cache node type for the reserved cache node.
      *
-     * @return The Cache Node type for the reserved Cache Node.
+     * @return The cache node type for the reserved cache node.
      */
     public String getCacheNodeType() {
         return cacheNodeType;
     }
     
     /**
-     * The Cache Node type for the reserved Cache Node.
+     * The cache node type for the reserved cache node.
      *
-     * @param cacheNodeType The Cache Node type for the reserved Cache Node.
+     * @param cacheNodeType The cache node type for the reserved cache node.
      */
     public void setCacheNodeType(String cacheNodeType) {
         this.cacheNodeType = cacheNodeType;
     }
     
     /**
-     * The Cache Node type for the reserved Cache Node.
+     * The cache node type for the reserved cache node.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheNodeType The Cache Node type for the reserved Cache Node.
+     * @param cacheNodeType The cache node type for the reserved cache node.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -131,29 +131,29 @@ public class ReservedCacheNodesOffering implements Serializable {
     
     
     /**
-     * The duration of the offering in seconds.
+     * The duration of the offering. in seconds.
      *
-     * @return The duration of the offering in seconds.
+     * @return The duration of the offering. in seconds.
      */
     public Integer getDuration() {
         return duration;
     }
     
     /**
-     * The duration of the offering in seconds.
+     * The duration of the offering. in seconds.
      *
-     * @param duration The duration of the offering in seconds.
+     * @param duration The duration of the offering. in seconds.
      */
     public void setDuration(Integer duration) {
         this.duration = duration;
     }
     
     /**
-     * The duration of the offering in seconds.
+     * The duration of the offering. in seconds.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param duration The duration of the offering in seconds.
+     * @param duration The duration of the offering. in seconds.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -301,9 +301,9 @@ public class ReservedCacheNodesOffering implements Serializable {
     
     
     /**
-     * The recurring price charged to run this reserved Cache Node.
+     * The recurring price charged to run this reserved cache node.
      *
-     * @return The recurring price charged to run this reserved Cache Node.
+     * @return The recurring price charged to run this reserved cache node.
      */
     public java.util.List<RecurringCharge> getRecurringCharges() {
         
@@ -315,9 +315,9 @@ public class ReservedCacheNodesOffering implements Serializable {
     }
     
     /**
-     * The recurring price charged to run this reserved Cache Node.
+     * The recurring price charged to run this reserved cache node.
      *
-     * @param recurringCharges The recurring price charged to run this reserved Cache Node.
+     * @param recurringCharges The recurring price charged to run this reserved cache node.
      */
     public void setRecurringCharges(java.util.Collection<RecurringCharge> recurringCharges) {
         if (recurringCharges == null) {
@@ -330,11 +330,11 @@ public class ReservedCacheNodesOffering implements Serializable {
     }
     
     /**
-     * The recurring price charged to run this reserved Cache Node.
+     * The recurring price charged to run this reserved cache node.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param recurringCharges The recurring price charged to run this reserved Cache Node.
+     * @param recurringCharges The recurring price charged to run this reserved cache node.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -348,11 +348,11 @@ public class ReservedCacheNodesOffering implements Serializable {
     }
     
     /**
-     * The recurring price charged to run this reserved Cache Node.
+     * The recurring price charged to run this reserved cache node.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param recurringCharges The recurring price charged to run this reserved Cache Node.
+     * @param recurringCharges The recurring price charged to run this reserved cache node.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

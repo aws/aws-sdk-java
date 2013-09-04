@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#modifyCacheSubnetGroup(ModifyCacheSubnetGroupRequest) ModifyCacheSubnetGroup operation}.
  * <p>
- * Modifies an existing Cache Subnet Group.
+ * The <i>ModifyCacheSubnetGroup</i> operation modifies an existing cache subnet group.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#modifyCacheSubnetGroup(ModifyCacheSubnetGroupRequest)
@@ -27,7 +27,7 @@ import java.io.Serializable;
 public class ModifyCacheSubnetGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name for the Cache Subnet Group. This value is stored as a
+     * The name for the cache subnet group. This value is stored as a
      * lowercase string. <p>Constraints: Must contain no more than 255
      * alphanumeric characters or hyphens. <p>Example:
      * <code>mysubnetgroup</code>
@@ -35,22 +35,22 @@ public class ModifyCacheSubnetGroupRequest extends AmazonWebServiceRequest imple
     private String cacheSubnetGroupName;
 
     /**
-     * The description for the Cache Subnet Group.
+     * A description for the cache subnet group.
      */
     private String cacheSubnetGroupDescription;
 
     /**
-     * The EC2 Subnet IDs for the Cache Subnet Group.
+     * The EC2 subnet IDs for the cache subnet group.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> subnetIds;
 
     /**
-     * The name for the Cache Subnet Group. This value is stored as a
+     * The name for the cache subnet group. This value is stored as a
      * lowercase string. <p>Constraints: Must contain no more than 255
      * alphanumeric characters or hyphens. <p>Example:
      * <code>mysubnetgroup</code>
      *
-     * @return The name for the Cache Subnet Group. This value is stored as a
+     * @return The name for the cache subnet group. This value is stored as a
      *         lowercase string. <p>Constraints: Must contain no more than 255
      *         alphanumeric characters or hyphens. <p>Example:
      *         <code>mysubnetgroup</code>
@@ -60,12 +60,12 @@ public class ModifyCacheSubnetGroupRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The name for the Cache Subnet Group. This value is stored as a
+     * The name for the cache subnet group. This value is stored as a
      * lowercase string. <p>Constraints: Must contain no more than 255
      * alphanumeric characters or hyphens. <p>Example:
      * <code>mysubnetgroup</code>
      *
-     * @param cacheSubnetGroupName The name for the Cache Subnet Group. This value is stored as a
+     * @param cacheSubnetGroupName The name for the cache subnet group. This value is stored as a
      *         lowercase string. <p>Constraints: Must contain no more than 255
      *         alphanumeric characters or hyphens. <p>Example:
      *         <code>mysubnetgroup</code>
@@ -75,14 +75,14 @@ public class ModifyCacheSubnetGroupRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The name for the Cache Subnet Group. This value is stored as a
+     * The name for the cache subnet group. This value is stored as a
      * lowercase string. <p>Constraints: Must contain no more than 255
      * alphanumeric characters or hyphens. <p>Example:
      * <code>mysubnetgroup</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheSubnetGroupName The name for the Cache Subnet Group. This value is stored as a
+     * @param cacheSubnetGroupName The name for the cache subnet group. This value is stored as a
      *         lowercase string. <p>Constraints: Must contain no more than 255
      *         alphanumeric characters or hyphens. <p>Example:
      *         <code>mysubnetgroup</code>
@@ -97,29 +97,29 @@ public class ModifyCacheSubnetGroupRequest extends AmazonWebServiceRequest imple
     
     
     /**
-     * The description for the Cache Subnet Group.
+     * A description for the cache subnet group.
      *
-     * @return The description for the Cache Subnet Group.
+     * @return A description for the cache subnet group.
      */
     public String getCacheSubnetGroupDescription() {
         return cacheSubnetGroupDescription;
     }
     
     /**
-     * The description for the Cache Subnet Group.
+     * A description for the cache subnet group.
      *
-     * @param cacheSubnetGroupDescription The description for the Cache Subnet Group.
+     * @param cacheSubnetGroupDescription A description for the cache subnet group.
      */
     public void setCacheSubnetGroupDescription(String cacheSubnetGroupDescription) {
         this.cacheSubnetGroupDescription = cacheSubnetGroupDescription;
     }
     
     /**
-     * The description for the Cache Subnet Group.
+     * A description for the cache subnet group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheSubnetGroupDescription The description for the Cache Subnet Group.
+     * @param cacheSubnetGroupDescription A description for the cache subnet group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -131,9 +131,9 @@ public class ModifyCacheSubnetGroupRequest extends AmazonWebServiceRequest imple
     
     
     /**
-     * The EC2 Subnet IDs for the Cache Subnet Group.
+     * The EC2 subnet IDs for the cache subnet group.
      *
-     * @return The EC2 Subnet IDs for the Cache Subnet Group.
+     * @return The EC2 subnet IDs for the cache subnet group.
      */
     public java.util.List<String> getSubnetIds() {
         
@@ -145,9 +145,9 @@ public class ModifyCacheSubnetGroupRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The EC2 Subnet IDs for the Cache Subnet Group.
+     * The EC2 subnet IDs for the cache subnet group.
      *
-     * @param subnetIds The EC2 Subnet IDs for the Cache Subnet Group.
+     * @param subnetIds The EC2 subnet IDs for the cache subnet group.
      */
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
         if (subnetIds == null) {
@@ -160,11 +160,11 @@ public class ModifyCacheSubnetGroupRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The EC2 Subnet IDs for the Cache Subnet Group.
+     * The EC2 subnet IDs for the cache subnet group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnetIds The EC2 Subnet IDs for the Cache Subnet Group.
+     * @param subnetIds The EC2 subnet IDs for the cache subnet group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -178,11 +178,11 @@ public class ModifyCacheSubnetGroupRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The EC2 Subnet IDs for the Cache Subnet Group.
+     * The EC2 subnet IDs for the cache subnet group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnetIds The EC2 Subnet IDs for the Cache Subnet Group.
+     * @param subnetIds The EC2 subnet IDs for the cache subnet group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

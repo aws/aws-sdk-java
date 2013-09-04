@@ -21,7 +21,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class TimingInfo {
-    
+
     private final long startTime;
     private long endTime;
     private final Map<String, List<TimingInfo>> subMeasurementsByName = new HashMap<String, List<TimingInfo>>();
@@ -42,7 +42,7 @@ public class TimingInfo {
 
     /**
      * Returns the time, in epoch milliseconds, at which this timing period started.
-     * 
+     *
      * @return the time, in epoch milliseconds, at which this timing period started.
      */
     public long getStartTime() {
@@ -52,14 +52,14 @@ public class TimingInfo {
     public long getEndTime() {
         return endTime;
     }
-    
+
     /**
      *  Returns the difference between endTime and startTime in milli-seconds
      */
     public double getTimeTakenMillis() {
-        return TimeUnit.NANOSECONDS.toMicros(endTime - startTime)/1000.0 /* do double math */;
+        return TimeUnit.NANOSECONDS.toMicros(endTime - startTime) /* do double math */;
     }
-    
+
     @Override
     public String toString() {
         return String.valueOf(getTimeTakenMillis());
@@ -94,18 +94,18 @@ public class TimingInfo {
 
         return timings.get(index);
     }
-    
+
     public TimingInfo getLastSubMeasurement(String subMeasurementName) {
-        
+
         if (subMeasurementsByName == null || subMeasurementsByName.size() == 0) {
             return null;
         }
-        
+
         List<TimingInfo> timings = subMeasurementsByName.get(subMeasurementName);
         if (timings == null || timings.size() == 0) {
             return null;
         }
-        
+
         return timings.get(timings.size() - 1);
     }
 
@@ -124,7 +124,7 @@ public class TimingInfo {
     public Map<String, Number> getAllCounters() {
         return countersByName;
     }
-    
+
     public void setCounter(String key, long count) {
         countersByName.put(key, count);
     }

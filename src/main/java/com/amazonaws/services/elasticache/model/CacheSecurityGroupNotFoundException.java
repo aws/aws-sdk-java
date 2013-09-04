@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * <i>CacheSecurityGroupName</i> does not refer to an existing Cache Security Group.
+ * The requested cache security group name does not refer to an existing cache security group.
  * </p>
  */        
 public class CacheSecurityGroupNotFoundException extends AmazonServiceException {

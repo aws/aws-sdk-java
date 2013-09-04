@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Specified offering does not exist.
+ * The requested cache node offering does not exist.
  * </p>
  */        
 public class ReservedCacheNodesOfferingNotFoundException extends AmazonServiceException {

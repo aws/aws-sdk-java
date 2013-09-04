@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The specified reserved Cache Node not found.
+ * The requested reserved cache node was not found.
  * </p>
  */        
 public class ReservedCacheNodeNotFoundException extends AmazonServiceException {

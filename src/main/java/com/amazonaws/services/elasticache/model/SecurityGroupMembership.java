@@ -17,47 +17,47 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents one or more Cache Security Groups to which a Cache Cluster belongs.
+ * Represents a single cache security group and its status..
  * </p>
  */
 public class SecurityGroupMembership implements Serializable {
 
     /**
-     * The identifier of the Cache Security Group.
+     * The identifier of the cache security group.
      */
     private String securityGroupId;
 
     /**
-     * The status of the Cache Security Group membership. The status changes
-     * whenever a Cache Security Group is modified, or when the Cache
-     * Security Groups assigned to a Cache Cluster are modified.
+     * The status of the cache security group membership. The status changes
+     * whenever a cache security group is modified, or when the cache
+     * security groups assigned to a cache cluster are modified.
      */
     private String status;
 
     /**
-     * The identifier of the Cache Security Group.
+     * The identifier of the cache security group.
      *
-     * @return The identifier of the Cache Security Group.
+     * @return The identifier of the cache security group.
      */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
     
     /**
-     * The identifier of the Cache Security Group.
+     * The identifier of the cache security group.
      *
-     * @param securityGroupId The identifier of the Cache Security Group.
+     * @param securityGroupId The identifier of the cache security group.
      */
     public void setSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
     }
     
     /**
-     * The identifier of the Cache Security Group.
+     * The identifier of the cache security group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param securityGroupId The identifier of the Cache Security Group.
+     * @param securityGroupId The identifier of the cache security group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -69,41 +69,41 @@ public class SecurityGroupMembership implements Serializable {
     
     
     /**
-     * The status of the Cache Security Group membership. The status changes
-     * whenever a Cache Security Group is modified, or when the Cache
-     * Security Groups assigned to a Cache Cluster are modified.
+     * The status of the cache security group membership. The status changes
+     * whenever a cache security group is modified, or when the cache
+     * security groups assigned to a cache cluster are modified.
      *
-     * @return The status of the Cache Security Group membership. The status changes
-     *         whenever a Cache Security Group is modified, or when the Cache
-     *         Security Groups assigned to a Cache Cluster are modified.
+     * @return The status of the cache security group membership. The status changes
+     *         whenever a cache security group is modified, or when the cache
+     *         security groups assigned to a cache cluster are modified.
      */
     public String getStatus() {
         return status;
     }
     
     /**
-     * The status of the Cache Security Group membership. The status changes
-     * whenever a Cache Security Group is modified, or when the Cache
-     * Security Groups assigned to a Cache Cluster are modified.
+     * The status of the cache security group membership. The status changes
+     * whenever a cache security group is modified, or when the cache
+     * security groups assigned to a cache cluster are modified.
      *
-     * @param status The status of the Cache Security Group membership. The status changes
-     *         whenever a Cache Security Group is modified, or when the Cache
-     *         Security Groups assigned to a Cache Cluster are modified.
+     * @param status The status of the cache security group membership. The status changes
+     *         whenever a cache security group is modified, or when the cache
+     *         security groups assigned to a cache cluster are modified.
      */
     public void setStatus(String status) {
         this.status = status;
     }
     
     /**
-     * The status of the Cache Security Group membership. The status changes
-     * whenever a Cache Security Group is modified, or when the Cache
-     * Security Groups assigned to a Cache Cluster are modified.
+     * The status of the cache security group membership. The status changes
+     * whenever a cache security group is modified, or when the cache
+     * security groups assigned to a cache cluster are modified.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param status The status of the Cache Security Group membership. The status changes
-     *         whenever a Cache Security Group is modified, or when the Cache
-     *         Security Groups assigned to a Cache Cluster are modified.
+     * @param status The status of the cache security group membership. The status changes
+     *         whenever a cache security group is modified, or when the cache
+     *         security groups assigned to a cache cluster are modified.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

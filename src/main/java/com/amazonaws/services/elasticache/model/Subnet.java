@@ -17,45 +17,46 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Network Subnet associated with a Cache Cluster
+ * Represents the subnet associated with a cache cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud (Amazon VPC) and used
+ * with ElastiCache.
  * </p>
  */
 public class Subnet implements Serializable {
 
     /**
-     * Specifies the unique identifier for the Subnet
+     * The unique identifier for the subnet
      */
     private String subnetIdentifier;
 
     /**
-     * Specifies the Availability Zone associated with the Subnet
+     * The Availability Zone associated with the subnet
      */
     private AvailabilityZone subnetAvailabilityZone;
 
     /**
-     * Specifies the unique identifier for the Subnet
+     * The unique identifier for the subnet
      *
-     * @return Specifies the unique identifier for the Subnet
+     * @return The unique identifier for the subnet
      */
     public String getSubnetIdentifier() {
         return subnetIdentifier;
     }
     
     /**
-     * Specifies the unique identifier for the Subnet
+     * The unique identifier for the subnet
      *
-     * @param subnetIdentifier Specifies the unique identifier for the Subnet
+     * @param subnetIdentifier The unique identifier for the subnet
      */
     public void setSubnetIdentifier(String subnetIdentifier) {
         this.subnetIdentifier = subnetIdentifier;
     }
     
     /**
-     * Specifies the unique identifier for the Subnet
+     * The unique identifier for the subnet
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnetIdentifier Specifies the unique identifier for the Subnet
+     * @param subnetIdentifier The unique identifier for the subnet
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -67,29 +68,29 @@ public class Subnet implements Serializable {
     
     
     /**
-     * Specifies the Availability Zone associated with the Subnet
+     * The Availability Zone associated with the subnet
      *
-     * @return Specifies the Availability Zone associated with the Subnet
+     * @return The Availability Zone associated with the subnet
      */
     public AvailabilityZone getSubnetAvailabilityZone() {
         return subnetAvailabilityZone;
     }
     
     /**
-     * Specifies the Availability Zone associated with the Subnet
+     * The Availability Zone associated with the subnet
      *
-     * @param subnetAvailabilityZone Specifies the Availability Zone associated with the Subnet
+     * @param subnetAvailabilityZone The Availability Zone associated with the subnet
      */
     public void setSubnetAvailabilityZone(AvailabilityZone subnetAvailabilityZone) {
         this.subnetAvailabilityZone = subnetAvailabilityZone;
     }
     
     /**
-     * Specifies the Availability Zone associated with the Subnet
+     * The Availability Zone associated with the subnet
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnetAvailabilityZone Specifies the Availability Zone associated with the Subnet
+     * @param subnetAvailabilityZone The Availability Zone associated with the subnet
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

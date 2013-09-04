@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#describeReservedCacheNodesOfferings(DescribeReservedCacheNodesOfferingsRequest) DescribeReservedCacheNodesOfferings operation}.
  * <p>
- * Lists available reserved Cache Node offerings.
+ * The <i>DescribeReservedCacheNodesOfferings</i> operation lists available reserved cache node offerings.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeReservedCacheNodesOfferings(DescribeReservedCacheNodesOfferingsRequest)
@@ -27,63 +27,64 @@ import java.io.Serializable;
 public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The offering identifier filter value. Specify this parameter to show
-     * only the available offering that matches the specified reservation
+     * The offering identifier filter value. Use this parameter to show only
+     * the available offering that matches the specified reservation
      * identifier. <p>Example:
      * <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code>
      */
     private String reservedCacheNodesOfferingId;
 
     /**
-     * The Cache Node type filter value. Specify this parameter to show only
-     * the available offerings matching the specified Cache Node type.
+     * The cache node type filter value. Use this parameter to show only the
+     * available offerings matching the specified cache node type.
      */
     private String cacheNodeType;
 
     /**
-     * Duration filter value, specified in years or seconds. Specify this
-     * parameter to show only reservations for this duration. <p>Valid
+     * Duration filter value, specified in years or seconds. Use this
+     * parameter to show only reservations for a given duration. <p>Valid
      * Values: <code>1 | 3 | 31536000 | 94608000</code>
      */
     private String duration;
 
     /**
-     * Product description filter value. Specify this parameter to show only
+     * The product description filter value. Use this parameter to show only
      * the available offerings matching the specified product description.
      */
     private String productDescription;
 
     /**
-     * The offering type filter value. Specify this parameter to show only
-     * the available offerings matching the specified offering type. <p>Valid
+     * The offering type filter value. Use this parameter to show only the
+     * available offerings matching the specified offering type. <p>Valid
      * Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
      * Utilization" </code>
      */
     private String offeringType;
 
     /**
-     * The maximum number of records to include in the response. If more than
-     * the <code>MaxRecords</code> value is available, a marker is included
-     * in the response so that the following results can be retrieved.
-     * <p>Default: 100 <p>Constraints: minimum 20, maximum 100
+     * The maximum number of records to include in the response. If more
+     * records exist than the specified <code>MaxRecords</code> value, a
+     * marker is included in the response so that the remaining results can
+     * be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      */
     private Integer maxRecords;
 
     /**
-     * The marker provided in the previous request. If this parameter is
-     * specified, the response includes records beyond the marker only, up to
-     * <code>MaxRecords</code>.
+     * An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this operation. If this parameter is
+     * specified, the response includes only records beyond the marker, up to
+     * the value specified by <i>MaxRecords</i>.
      */
     private String marker;
 
     /**
-     * The offering identifier filter value. Specify this parameter to show
-     * only the available offering that matches the specified reservation
+     * The offering identifier filter value. Use this parameter to show only
+     * the available offering that matches the specified reservation
      * identifier. <p>Example:
      * <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code>
      *
-     * @return The offering identifier filter value. Specify this parameter to show
-     *         only the available offering that matches the specified reservation
+     * @return The offering identifier filter value. Use this parameter to show only
+     *         the available offering that matches the specified reservation
      *         identifier. <p>Example:
      *         <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code>
      */
@@ -92,13 +93,13 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
     }
     
     /**
-     * The offering identifier filter value. Specify this parameter to show
-     * only the available offering that matches the specified reservation
+     * The offering identifier filter value. Use this parameter to show only
+     * the available offering that matches the specified reservation
      * identifier. <p>Example:
      * <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code>
      *
-     * @param reservedCacheNodesOfferingId The offering identifier filter value. Specify this parameter to show
-     *         only the available offering that matches the specified reservation
+     * @param reservedCacheNodesOfferingId The offering identifier filter value. Use this parameter to show only
+     *         the available offering that matches the specified reservation
      *         identifier. <p>Example:
      *         <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code>
      */
@@ -107,15 +108,15 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
     }
     
     /**
-     * The offering identifier filter value. Specify this parameter to show
-     * only the available offering that matches the specified reservation
+     * The offering identifier filter value. Use this parameter to show only
+     * the available offering that matches the specified reservation
      * identifier. <p>Example:
      * <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedCacheNodesOfferingId The offering identifier filter value. Specify this parameter to show
-     *         only the available offering that matches the specified reservation
+     * @param reservedCacheNodesOfferingId The offering identifier filter value. Use this parameter to show only
+     *         the available offering that matches the specified reservation
      *         identifier. <p>Example:
      *         <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code>
      *
@@ -129,35 +130,35 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
     
     
     /**
-     * The Cache Node type filter value. Specify this parameter to show only
-     * the available offerings matching the specified Cache Node type.
+     * The cache node type filter value. Use this parameter to show only the
+     * available offerings matching the specified cache node type.
      *
-     * @return The Cache Node type filter value. Specify this parameter to show only
-     *         the available offerings matching the specified Cache Node type.
+     * @return The cache node type filter value. Use this parameter to show only the
+     *         available offerings matching the specified cache node type.
      */
     public String getCacheNodeType() {
         return cacheNodeType;
     }
     
     /**
-     * The Cache Node type filter value. Specify this parameter to show only
-     * the available offerings matching the specified Cache Node type.
+     * The cache node type filter value. Use this parameter to show only the
+     * available offerings matching the specified cache node type.
      *
-     * @param cacheNodeType The Cache Node type filter value. Specify this parameter to show only
-     *         the available offerings matching the specified Cache Node type.
+     * @param cacheNodeType The cache node type filter value. Use this parameter to show only the
+     *         available offerings matching the specified cache node type.
      */
     public void setCacheNodeType(String cacheNodeType) {
         this.cacheNodeType = cacheNodeType;
     }
     
     /**
-     * The Cache Node type filter value. Specify this parameter to show only
-     * the available offerings matching the specified Cache Node type.
+     * The cache node type filter value. Use this parameter to show only the
+     * available offerings matching the specified cache node type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheNodeType The Cache Node type filter value. Specify this parameter to show only
-     *         the available offerings matching the specified Cache Node type.
+     * @param cacheNodeType The cache node type filter value. Use this parameter to show only the
+     *         available offerings matching the specified cache node type.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -169,12 +170,12 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
     
     
     /**
-     * Duration filter value, specified in years or seconds. Specify this
-     * parameter to show only reservations for this duration. <p>Valid
+     * Duration filter value, specified in years or seconds. Use this
+     * parameter to show only reservations for a given duration. <p>Valid
      * Values: <code>1 | 3 | 31536000 | 94608000</code>
      *
-     * @return Duration filter value, specified in years or seconds. Specify this
-     *         parameter to show only reservations for this duration. <p>Valid
+     * @return Duration filter value, specified in years or seconds. Use this
+     *         parameter to show only reservations for a given duration. <p>Valid
      *         Values: <code>1 | 3 | 31536000 | 94608000</code>
      */
     public String getDuration() {
@@ -182,12 +183,12 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
     }
     
     /**
-     * Duration filter value, specified in years or seconds. Specify this
-     * parameter to show only reservations for this duration. <p>Valid
+     * Duration filter value, specified in years or seconds. Use this
+     * parameter to show only reservations for a given duration. <p>Valid
      * Values: <code>1 | 3 | 31536000 | 94608000</code>
      *
-     * @param duration Duration filter value, specified in years or seconds. Specify this
-     *         parameter to show only reservations for this duration. <p>Valid
+     * @param duration Duration filter value, specified in years or seconds. Use this
+     *         parameter to show only reservations for a given duration. <p>Valid
      *         Values: <code>1 | 3 | 31536000 | 94608000</code>
      */
     public void setDuration(String duration) {
@@ -195,14 +196,14 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
     }
     
     /**
-     * Duration filter value, specified in years or seconds. Specify this
-     * parameter to show only reservations for this duration. <p>Valid
+     * Duration filter value, specified in years or seconds. Use this
+     * parameter to show only reservations for a given duration. <p>Valid
      * Values: <code>1 | 3 | 31536000 | 94608000</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param duration Duration filter value, specified in years or seconds. Specify this
-     *         parameter to show only reservations for this duration. <p>Valid
+     * @param duration Duration filter value, specified in years or seconds. Use this
+     *         parameter to show only reservations for a given duration. <p>Valid
      *         Values: <code>1 | 3 | 31536000 | 94608000</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -215,10 +216,10 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
     
     
     /**
-     * Product description filter value. Specify this parameter to show only
+     * The product description filter value. Use this parameter to show only
      * the available offerings matching the specified product description.
      *
-     * @return Product description filter value. Specify this parameter to show only
+     * @return The product description filter value. Use this parameter to show only
      *         the available offerings matching the specified product description.
      */
     public String getProductDescription() {
@@ -226,10 +227,10 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
     }
     
     /**
-     * Product description filter value. Specify this parameter to show only
+     * The product description filter value. Use this parameter to show only
      * the available offerings matching the specified product description.
      *
-     * @param productDescription Product description filter value. Specify this parameter to show only
+     * @param productDescription The product description filter value. Use this parameter to show only
      *         the available offerings matching the specified product description.
      */
     public void setProductDescription(String productDescription) {
@@ -237,12 +238,12 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
     }
     
     /**
-     * Product description filter value. Specify this parameter to show only
+     * The product description filter value. Use this parameter to show only
      * the available offerings matching the specified product description.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param productDescription Product description filter value. Specify this parameter to show only
+     * @param productDescription The product description filter value. Use this parameter to show only
      *         the available offerings matching the specified product description.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -255,13 +256,13 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
     
     
     /**
-     * The offering type filter value. Specify this parameter to show only
-     * the available offerings matching the specified offering type. <p>Valid
+     * The offering type filter value. Use this parameter to show only the
+     * available offerings matching the specified offering type. <p>Valid
      * Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
      * Utilization" </code>
      *
-     * @return The offering type filter value. Specify this parameter to show only
-     *         the available offerings matching the specified offering type. <p>Valid
+     * @return The offering type filter value. Use this parameter to show only the
+     *         available offerings matching the specified offering type. <p>Valid
      *         Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
      *         Utilization" </code>
      */
@@ -270,13 +271,13 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
     }
     
     /**
-     * The offering type filter value. Specify this parameter to show only
-     * the available offerings matching the specified offering type. <p>Valid
+     * The offering type filter value. Use this parameter to show only the
+     * available offerings matching the specified offering type. <p>Valid
      * Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
      * Utilization" </code>
      *
-     * @param offeringType The offering type filter value. Specify this parameter to show only
-     *         the available offerings matching the specified offering type. <p>Valid
+     * @param offeringType The offering type filter value. Use this parameter to show only the
+     *         available offerings matching the specified offering type. <p>Valid
      *         Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
      *         Utilization" </code>
      */
@@ -285,15 +286,15 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
     }
     
     /**
-     * The offering type filter value. Specify this parameter to show only
-     * the available offerings matching the specified offering type. <p>Valid
+     * The offering type filter value. Use this parameter to show only the
+     * available offerings matching the specified offering type. <p>Valid
      * Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
      * Utilization" </code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param offeringType The offering type filter value. Specify this parameter to show only
-     *         the available offerings matching the specified offering type. <p>Valid
+     * @param offeringType The offering type filter value. Use this parameter to show only the
+     *         available offerings matching the specified offering type. <p>Valid
      *         Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
      *         Utilization" </code>
      *
@@ -307,47 +308,47 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
     
     
     /**
-     * The maximum number of records to include in the response. If more than
-     * the <code>MaxRecords</code> value is available, a marker is included
-     * in the response so that the following results can be retrieved.
-     * <p>Default: 100 <p>Constraints: minimum 20, maximum 100
+     * The maximum number of records to include in the response. If more
+     * records exist than the specified <code>MaxRecords</code> value, a
+     * marker is included in the response so that the remaining results can
+     * be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      *
-     * @return The maximum number of records to include in the response. If more than
-     *         the <code>MaxRecords</code> value is available, a marker is included
-     *         in the response so that the following results can be retrieved.
-     *         <p>Default: 100 <p>Constraints: minimum 20, maximum 100
+     * @return The maximum number of records to include in the response. If more
+     *         records exist than the specified <code>MaxRecords</code> value, a
+     *         marker is included in the response so that the remaining results can
+     *         be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      */
     public Integer getMaxRecords() {
         return maxRecords;
     }
     
     /**
-     * The maximum number of records to include in the response. If more than
-     * the <code>MaxRecords</code> value is available, a marker is included
-     * in the response so that the following results can be retrieved.
-     * <p>Default: 100 <p>Constraints: minimum 20, maximum 100
+     * The maximum number of records to include in the response. If more
+     * records exist than the specified <code>MaxRecords</code> value, a
+     * marker is included in the response so that the remaining results can
+     * be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      *
-     * @param maxRecords The maximum number of records to include in the response. If more than
-     *         the <code>MaxRecords</code> value is available, a marker is included
-     *         in the response so that the following results can be retrieved.
-     *         <p>Default: 100 <p>Constraints: minimum 20, maximum 100
+     * @param maxRecords The maximum number of records to include in the response. If more
+     *         records exist than the specified <code>MaxRecords</code> value, a
+     *         marker is included in the response so that the remaining results can
+     *         be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      */
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
     }
     
     /**
-     * The maximum number of records to include in the response. If more than
-     * the <code>MaxRecords</code> value is available, a marker is included
-     * in the response so that the following results can be retrieved.
-     * <p>Default: 100 <p>Constraints: minimum 20, maximum 100
+     * The maximum number of records to include in the response. If more
+     * records exist than the specified <code>MaxRecords</code> value, a
+     * marker is included in the response so that the remaining results can
+     * be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param maxRecords The maximum number of records to include in the response. If more than
-     *         the <code>MaxRecords</code> value is available, a marker is included
-     *         in the response so that the following results can be retrieved.
-     *         <p>Default: 100 <p>Constraints: minimum 20, maximum 100
+     * @param maxRecords The maximum number of records to include in the response. If more
+     *         records exist than the specified <code>MaxRecords</code> value, a
+     *         marker is included in the response so that the remaining results can
+     *         be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -359,41 +360,47 @@ public class DescribeReservedCacheNodesOfferingsRequest extends AmazonWebService
     
     
     /**
-     * The marker provided in the previous request. If this parameter is
-     * specified, the response includes records beyond the marker only, up to
-     * <code>MaxRecords</code>.
+     * An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this operation. If this parameter is
+     * specified, the response includes only records beyond the marker, up to
+     * the value specified by <i>MaxRecords</i>.
      *
-     * @return The marker provided in the previous request. If this parameter is
-     *         specified, the response includes records beyond the marker only, up to
-     *         <code>MaxRecords</code>.
+     * @return An optional marker returned from a prior request. Use this marker for
+     *         pagination of results from this operation. If this parameter is
+     *         specified, the response includes only records beyond the marker, up to
+     *         the value specified by <i>MaxRecords</i>.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * The marker provided in the previous request. If this parameter is
-     * specified, the response includes records beyond the marker only, up to
-     * <code>MaxRecords</code>.
+     * An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this operation. If this parameter is
+     * specified, the response includes only records beyond the marker, up to
+     * the value specified by <i>MaxRecords</i>.
      *
-     * @param marker The marker provided in the previous request. If this parameter is
-     *         specified, the response includes records beyond the marker only, up to
-     *         <code>MaxRecords</code>.
+     * @param marker An optional marker returned from a prior request. Use this marker for
+     *         pagination of results from this operation. If this parameter is
+     *         specified, the response includes only records beyond the marker, up to
+     *         the value specified by <i>MaxRecords</i>.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * The marker provided in the previous request. If this parameter is
-     * specified, the response includes records beyond the marker only, up to
-     * <code>MaxRecords</code>.
+     * An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this operation. If this parameter is
+     * specified, the response includes only records beyond the marker, up to
+     * the value specified by <i>MaxRecords</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker The marker provided in the previous request. If this parameter is
-     *         specified, the response includes records beyond the marker only, up to
-     *         <code>MaxRecords</code>.
+     * @param marker An optional marker returned from a prior request. Use this marker for
+     *         pagination of results from this operation. If this parameter is
+     *         specified, the response includes only records beyond the marker, up to
+     *         the value specified by <i>MaxRecords</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

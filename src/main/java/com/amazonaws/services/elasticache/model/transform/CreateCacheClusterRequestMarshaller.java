@@ -38,10 +38,13 @@ public class CreateCacheClusterRequestMarshaller implements Marshaller<Request<C
 
         Request<CreateCacheClusterRequest> request = new DefaultRequest<CreateCacheClusterRequest>(createCacheClusterRequest, "AmazonElastiCache");
         request.addParameter("Action", "CreateCacheCluster");
-        request.addParameter("Version", "2012-11-15");
+        request.addParameter("Version", "2013-06-15");
 
         if (createCacheClusterRequest.getCacheClusterId() != null) {
             request.addParameter("CacheClusterId", StringUtils.fromString(createCacheClusterRequest.getCacheClusterId()));
+        }
+        if (createCacheClusterRequest.getReplicationGroupId() != null) {
+            request.addParameter("ReplicationGroupId", StringUtils.fromString(createCacheClusterRequest.getReplicationGroupId()));
         }
         if (createCacheClusterRequest.getNumCacheNodes() != null) {
             request.addParameter("NumCacheNodes", StringUtils.fromInteger(createCacheClusterRequest.getNumCacheNodes()));
@@ -82,6 +85,17 @@ public class CreateCacheClusterRequestMarshaller implements Marshaller<Request<C
             }
 
             securityGroupIdsListIndex++;
+        }
+
+        java.util.List<String> snapshotArnsList = createCacheClusterRequest.getSnapshotArns();
+        int snapshotArnsListIndex = 1;
+
+        for (String snapshotArnsListValue : snapshotArnsList) {
+            if (snapshotArnsListValue != null) {
+                request.addParameter("SnapshotArns.SnapshotArn." + snapshotArnsListIndex, StringUtils.fromString(snapshotArnsListValue));
+            }
+
+            snapshotArnsListIndex++;
         }
         if (createCacheClusterRequest.getPreferredAvailabilityZone() != null) {
             request.addParameter("PreferredAvailabilityZone", StringUtils.fromString(createCacheClusterRequest.getPreferredAvailabilityZone()));

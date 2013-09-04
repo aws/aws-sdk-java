@@ -19,7 +19,8 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#deleteCacheParameterGroup(DeleteCacheParameterGroupRequest) DeleteCacheParameterGroup operation}.
  * <p>
- * Deletes the specified CacheParameterGroup. The CacheParameterGroup cannot be deleted if it is associated with any cache clusters.
+ * The <i>DeleteCacheParameterGroup</i> operation deletes the specified cache parameter group. You cannot delete a cache parameter group if it is
+ * associated with any cache clusters.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#deleteCacheParameterGroup(DeleteCacheParameterGroupRequest)
@@ -27,8 +28,8 @@ import java.io.Serializable;
 public class DeleteCacheParameterGroupRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name of the Cache Parameter Group to delete. <note> The specified
-     * cache security group must not be associated with any Cache clusters.
+     * The name of the cache parameter group to delete. <note> The specified
+     * cache security group must not be associated with any cache clusters.
      * </note>
      */
     private String cacheParameterGroupName;
@@ -46,9 +47,9 @@ public class DeleteCacheParameterGroupRequest extends AmazonWebServiceRequest im
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param cacheParameterGroupName The name of the Cache Parameter Group
+     * @param cacheParameterGroupName The name of the cache parameter group
      * to delete. <note> The specified cache security group must not be
-     * associated with any Cache clusters. </note>
+     * associated with any cache clusters. </note>
      */
     public DeleteCacheParameterGroupRequest(String cacheParameterGroupName) {
         setCacheParameterGroupName(cacheParameterGroupName);
@@ -57,12 +58,12 @@ public class DeleteCacheParameterGroupRequest extends AmazonWebServiceRequest im
     
     
     /**
-     * The name of the Cache Parameter Group to delete. <note> The specified
-     * cache security group must not be associated with any Cache clusters.
+     * The name of the cache parameter group to delete. <note> The specified
+     * cache security group must not be associated with any cache clusters.
      * </note>
      *
-     * @return The name of the Cache Parameter Group to delete. <note> The specified
-     *         cache security group must not be associated with any Cache clusters.
+     * @return The name of the cache parameter group to delete. <note> The specified
+     *         cache security group must not be associated with any cache clusters.
      *         </note>
      */
     public String getCacheParameterGroupName() {
@@ -70,12 +71,12 @@ public class DeleteCacheParameterGroupRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * The name of the Cache Parameter Group to delete. <note> The specified
-     * cache security group must not be associated with any Cache clusters.
+     * The name of the cache parameter group to delete. <note> The specified
+     * cache security group must not be associated with any cache clusters.
      * </note>
      *
-     * @param cacheParameterGroupName The name of the Cache Parameter Group to delete. <note> The specified
-     *         cache security group must not be associated with any Cache clusters.
+     * @param cacheParameterGroupName The name of the cache parameter group to delete. <note> The specified
+     *         cache security group must not be associated with any cache clusters.
      *         </note>
      */
     public void setCacheParameterGroupName(String cacheParameterGroupName) {
@@ -83,14 +84,14 @@ public class DeleteCacheParameterGroupRequest extends AmazonWebServiceRequest im
     }
     
     /**
-     * The name of the Cache Parameter Group to delete. <note> The specified
-     * cache security group must not be associated with any Cache clusters.
+     * The name of the cache parameter group to delete. <note> The specified
+     * cache security group must not be associated with any cache clusters.
      * </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheParameterGroupName The name of the Cache Parameter Group to delete. <note> The specified
-     *         cache security group must not be associated with any Cache clusters.
+     * @param cacheParameterGroupName The name of the cache parameter group to delete. <note> The specified
+     *         cache security group must not be associated with any cache clusters.
      *         </note>
      *
      * @return A reference to this updated object so that method calls can be chained 

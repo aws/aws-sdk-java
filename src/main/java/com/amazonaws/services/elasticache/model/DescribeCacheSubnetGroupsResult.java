@@ -17,45 +17,46 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output from a DescribeCacheSubnetGroups action.
+ * Represents the output of a <i>DescribeCacheSubnetGroups</i> operation.
  * </p>
  */
 public class DescribeCacheSubnetGroupsResult implements Serializable {
 
     /**
-     * The marker obtained from a previous operation response.
+     * Provides an identifier to allow retrieval of paginated results.
      */
     private String marker;
 
     /**
-     * One or more Cache Subnet Groups.
+     * A list of cache subnet groups. Each element in the list contains
+     * detailed information about one group.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<CacheSubnetGroup> cacheSubnetGroups;
 
     /**
-     * The marker obtained from a previous operation response.
+     * Provides an identifier to allow retrieval of paginated results.
      *
-     * @return The marker obtained from a previous operation response.
+     * @return Provides an identifier to allow retrieval of paginated results.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * The marker obtained from a previous operation response.
+     * Provides an identifier to allow retrieval of paginated results.
      *
-     * @param marker The marker obtained from a previous operation response.
+     * @param marker Provides an identifier to allow retrieval of paginated results.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * The marker obtained from a previous operation response.
+     * Provides an identifier to allow retrieval of paginated results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker The marker obtained from a previous operation response.
+     * @param marker Provides an identifier to allow retrieval of paginated results.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -67,9 +68,11 @@ public class DescribeCacheSubnetGroupsResult implements Serializable {
     
     
     /**
-     * One or more Cache Subnet Groups.
+     * A list of cache subnet groups. Each element in the list contains
+     * detailed information about one group.
      *
-     * @return One or more Cache Subnet Groups.
+     * @return A list of cache subnet groups. Each element in the list contains
+     *         detailed information about one group.
      */
     public java.util.List<CacheSubnetGroup> getCacheSubnetGroups() {
         
@@ -81,9 +84,11 @@ public class DescribeCacheSubnetGroupsResult implements Serializable {
     }
     
     /**
-     * One or more Cache Subnet Groups.
+     * A list of cache subnet groups. Each element in the list contains
+     * detailed information about one group.
      *
-     * @param cacheSubnetGroups One or more Cache Subnet Groups.
+     * @param cacheSubnetGroups A list of cache subnet groups. Each element in the list contains
+     *         detailed information about one group.
      */
     public void setCacheSubnetGroups(java.util.Collection<CacheSubnetGroup> cacheSubnetGroups) {
         if (cacheSubnetGroups == null) {
@@ -96,11 +101,13 @@ public class DescribeCacheSubnetGroupsResult implements Serializable {
     }
     
     /**
-     * One or more Cache Subnet Groups.
+     * A list of cache subnet groups. Each element in the list contains
+     * detailed information about one group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheSubnetGroups One or more Cache Subnet Groups.
+     * @param cacheSubnetGroups A list of cache subnet groups. Each element in the list contains
+     *         detailed information about one group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -114,11 +121,13 @@ public class DescribeCacheSubnetGroupsResult implements Serializable {
     }
     
     /**
-     * One or more Cache Subnet Groups.
+     * A list of cache subnet groups. Each element in the list contains
+     * detailed information about one group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheSubnetGroups One or more Cache Subnet Groups.
+     * @param cacheSubnetGroups A list of cache subnet groups. Each element in the list contains
+     *         detailed information about one group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

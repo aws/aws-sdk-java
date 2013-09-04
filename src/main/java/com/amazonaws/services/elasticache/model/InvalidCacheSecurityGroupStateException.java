@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The state of the Cache Security Group does not allow deletion.
+ * The current state of the cache security group does not allow deletion.
  * </p>
  */        
 public class InvalidCacheSecurityGroupStateException extends AmazonServiceException {

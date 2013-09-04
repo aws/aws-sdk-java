@@ -17,150 +17,158 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains information about a Cache Cluster.
+ * Contains all of the attributes of a specific cache cluster.
  * </p>
  */
 public class CacheCluster implements Serializable {
 
     /**
-     * Specifies a user-supplied identifier. This is the unique key that
-     * identifies a Cache Cluster.
+     * The user-supplied identifier of the cache cluster. This is a unique
+     * key that identifies a cache cluster.
      */
     private String cacheClusterId;
 
     /**
-     * Specifies a user-supplied identifier. This is the unique key that
-     * identifies a Cache Cluster.
+     * Represents the information required for client programs to connect to
+     * a cache node.
      */
     private Endpoint configurationEndpoint;
 
     /**
-     * Provides the landing page to download the latest ElastiCache client
-     * library.
+     * The URL of the web page where you can download the latest ElastiCache
+     * client library.
      */
     private String clientDownloadLandingPage;
 
     /**
-     * Specifies the name of the compute and memory capacity node type for
-     * the Cache Cluster.
+     * The name of the compute and memory capacity node type for the cache
+     * cluster.
      */
     private String cacheNodeType;
 
     /**
-     * Provides the name of the cache engine to be used for this Cache
-     * Cluster.
+     * The name of the cache engine (<i>memcached</i> or <i>redis</i>) to be
+     * used for this cache cluster.
      */
     private String engine;
 
     /**
-     * Provides the cache engine version of the cache engine to be used for
-     * this Cache Cluster.
+     * The version of the cache engine version that is used in this cache
+     * cluster.
      */
     private String engineVersion;
 
     /**
-     * Specifies the current state of this Cache Cluster.
+     * The current state of this cache cluster - <i>creating</i>,
+     * <i>available</i>, etc.
      */
     private String cacheClusterStatus;
 
     /**
-     * Specifies the number of Cache Nodes the Cache Cluster contains.
+     * The number of cache nodes in the cache cluster.
      */
     private Integer numCacheNodes;
 
     /**
-     * Specifies the name of the Availability Zone the Cache Cluster is
-     * located in.
+     * The name of the Availability Zone in which the cache cluster is
+     * located.
      */
     private String preferredAvailabilityZone;
 
     /**
-     * Provides the date and time the Cache Cluster was created.
+     * The date and time the cache cluster was created.
      */
     private java.util.Date cacheClusterCreateTime;
 
     /**
-     * Specifies the weekly time range (in UTC) during which system
-     * maintenance can occur.
+     * The time range (in UTC) during which weekly system maintenance can
+     * occur.
      */
     private String preferredMaintenanceWindow;
 
     /**
-     * Specifies that changes to the Cache Cluster are pending. This element
-     * is only included when changes are pending. Specific changes are
-     * identified by sub-elements.
+     * A group of settings that will be applied to the cache cluster in the
+     * future, or that are currently being applied.
      */
     private PendingModifiedValues pendingModifiedValues;
 
     /**
-     * Specifies the notification details the Cache Cluster contains.
+     * Describes a notification topic and its status. Notification topics are
+     * used for publishing ElastiCache events to subscribers using Amazon
+     * Simple Notification Service (SNS).
      */
     private NotificationConfiguration notificationConfiguration;
 
     /**
-     * Provides the list of Cache Security Group elements containing
-     * <i>CacheSecurityGroup.Name</i> and <i>CacheSecurityGroup.Status</i>
+     * A list of cache security group elements, composed of name and status
      * sub-elements.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<CacheSecurityGroupMembership> cacheSecurityGroups;
 
     /**
-     * Provides the status of the Cache Parameter Group assigned to the Cache
-     * Cluster.
+     * The status of the cache parameter group.
      */
     private CacheParameterGroupStatus cacheParameterGroup;
 
     /**
-     * Specifies the name of the Cache Subnet Group associated with the Cache
-     * Cluster.
+     * The name of the cache subnet group associated with the cache cluster.
      */
     private String cacheSubnetGroupName;
 
     /**
-     * Specifies the list of Cache Nodes the Cache Cluster contains.
+     * A list of cache nodes that are members of the cache cluster.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<CacheNode> cacheNodes;
 
     /**
-     * Indicates that minor version patches are applied automatically.
+     * If <code>true</code>, then minor version patches are applied
+     * automatically; if <code>false</code>, then automatic minor version
+     * patches are disabled.
      */
     private Boolean autoMinorVersionUpgrade;
 
     /**
-     * Specifies the VPC Security Groups associated with the Cache Cluster.
+     * A list of VPC Security Groups associated with the cache cluster.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<SecurityGroupMembership> securityGroups;
 
     /**
-     * Specifies a user-supplied identifier. This is the unique key that
-     * identifies a Cache Cluster.
+     * The replication group to which this cache cluster belongs. If this
+     * field is empty, the cache cluster is not associated with any
+     * replication group.
+     */
+    private String replicationGroupId;
+
+    /**
+     * The user-supplied identifier of the cache cluster. This is a unique
+     * key that identifies a cache cluster.
      *
-     * @return Specifies a user-supplied identifier. This is the unique key that
-     *         identifies a Cache Cluster.
+     * @return The user-supplied identifier of the cache cluster. This is a unique
+     *         key that identifies a cache cluster.
      */
     public String getCacheClusterId() {
         return cacheClusterId;
     }
     
     /**
-     * Specifies a user-supplied identifier. This is the unique key that
-     * identifies a Cache Cluster.
+     * The user-supplied identifier of the cache cluster. This is a unique
+     * key that identifies a cache cluster.
      *
-     * @param cacheClusterId Specifies a user-supplied identifier. This is the unique key that
-     *         identifies a Cache Cluster.
+     * @param cacheClusterId The user-supplied identifier of the cache cluster. This is a unique
+     *         key that identifies a cache cluster.
      */
     public void setCacheClusterId(String cacheClusterId) {
         this.cacheClusterId = cacheClusterId;
     }
     
     /**
-     * Specifies a user-supplied identifier. This is the unique key that
-     * identifies a Cache Cluster.
+     * The user-supplied identifier of the cache cluster. This is a unique
+     * key that identifies a cache cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheClusterId Specifies a user-supplied identifier. This is the unique key that
-     *         identifies a Cache Cluster.
+     * @param cacheClusterId The user-supplied identifier of the cache cluster. This is a unique
+     *         key that identifies a cache cluster.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -172,35 +180,35 @@ public class CacheCluster implements Serializable {
     
     
     /**
-     * Specifies a user-supplied identifier. This is the unique key that
-     * identifies a Cache Cluster.
+     * Represents the information required for client programs to connect to
+     * a cache node.
      *
-     * @return Specifies a user-supplied identifier. This is the unique key that
-     *         identifies a Cache Cluster.
+     * @return Represents the information required for client programs to connect to
+     *         a cache node.
      */
     public Endpoint getConfigurationEndpoint() {
         return configurationEndpoint;
     }
     
     /**
-     * Specifies a user-supplied identifier. This is the unique key that
-     * identifies a Cache Cluster.
+     * Represents the information required for client programs to connect to
+     * a cache node.
      *
-     * @param configurationEndpoint Specifies a user-supplied identifier. This is the unique key that
-     *         identifies a Cache Cluster.
+     * @param configurationEndpoint Represents the information required for client programs to connect to
+     *         a cache node.
      */
     public void setConfigurationEndpoint(Endpoint configurationEndpoint) {
         this.configurationEndpoint = configurationEndpoint;
     }
     
     /**
-     * Specifies a user-supplied identifier. This is the unique key that
-     * identifies a Cache Cluster.
+     * Represents the information required for client programs to connect to
+     * a cache node.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param configurationEndpoint Specifies a user-supplied identifier. This is the unique key that
-     *         identifies a Cache Cluster.
+     * @param configurationEndpoint Represents the information required for client programs to connect to
+     *         a cache node.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -212,35 +220,35 @@ public class CacheCluster implements Serializable {
     
     
     /**
-     * Provides the landing page to download the latest ElastiCache client
-     * library.
+     * The URL of the web page where you can download the latest ElastiCache
+     * client library.
      *
-     * @return Provides the landing page to download the latest ElastiCache client
-     *         library.
+     * @return The URL of the web page where you can download the latest ElastiCache
+     *         client library.
      */
     public String getClientDownloadLandingPage() {
         return clientDownloadLandingPage;
     }
     
     /**
-     * Provides the landing page to download the latest ElastiCache client
-     * library.
+     * The URL of the web page where you can download the latest ElastiCache
+     * client library.
      *
-     * @param clientDownloadLandingPage Provides the landing page to download the latest ElastiCache client
-     *         library.
+     * @param clientDownloadLandingPage The URL of the web page where you can download the latest ElastiCache
+     *         client library.
      */
     public void setClientDownloadLandingPage(String clientDownloadLandingPage) {
         this.clientDownloadLandingPage = clientDownloadLandingPage;
     }
     
     /**
-     * Provides the landing page to download the latest ElastiCache client
-     * library.
+     * The URL of the web page where you can download the latest ElastiCache
+     * client library.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param clientDownloadLandingPage Provides the landing page to download the latest ElastiCache client
-     *         library.
+     * @param clientDownloadLandingPage The URL of the web page where you can download the latest ElastiCache
+     *         client library.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -252,35 +260,35 @@ public class CacheCluster implements Serializable {
     
     
     /**
-     * Specifies the name of the compute and memory capacity node type for
-     * the Cache Cluster.
+     * The name of the compute and memory capacity node type for the cache
+     * cluster.
      *
-     * @return Specifies the name of the compute and memory capacity node type for
-     *         the Cache Cluster.
+     * @return The name of the compute and memory capacity node type for the cache
+     *         cluster.
      */
     public String getCacheNodeType() {
         return cacheNodeType;
     }
     
     /**
-     * Specifies the name of the compute and memory capacity node type for
-     * the Cache Cluster.
+     * The name of the compute and memory capacity node type for the cache
+     * cluster.
      *
-     * @param cacheNodeType Specifies the name of the compute and memory capacity node type for
-     *         the Cache Cluster.
+     * @param cacheNodeType The name of the compute and memory capacity node type for the cache
+     *         cluster.
      */
     public void setCacheNodeType(String cacheNodeType) {
         this.cacheNodeType = cacheNodeType;
     }
     
     /**
-     * Specifies the name of the compute and memory capacity node type for
-     * the Cache Cluster.
+     * The name of the compute and memory capacity node type for the cache
+     * cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheNodeType Specifies the name of the compute and memory capacity node type for
-     *         the Cache Cluster.
+     * @param cacheNodeType The name of the compute and memory capacity node type for the cache
+     *         cluster.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -292,35 +300,35 @@ public class CacheCluster implements Serializable {
     
     
     /**
-     * Provides the name of the cache engine to be used for this Cache
-     * Cluster.
+     * The name of the cache engine (<i>memcached</i> or <i>redis</i>) to be
+     * used for this cache cluster.
      *
-     * @return Provides the name of the cache engine to be used for this Cache
-     *         Cluster.
+     * @return The name of the cache engine (<i>memcached</i> or <i>redis</i>) to be
+     *         used for this cache cluster.
      */
     public String getEngine() {
         return engine;
     }
     
     /**
-     * Provides the name of the cache engine to be used for this Cache
-     * Cluster.
+     * The name of the cache engine (<i>memcached</i> or <i>redis</i>) to be
+     * used for this cache cluster.
      *
-     * @param engine Provides the name of the cache engine to be used for this Cache
-     *         Cluster.
+     * @param engine The name of the cache engine (<i>memcached</i> or <i>redis</i>) to be
+     *         used for this cache cluster.
      */
     public void setEngine(String engine) {
         this.engine = engine;
     }
     
     /**
-     * Provides the name of the cache engine to be used for this Cache
-     * Cluster.
+     * The name of the cache engine (<i>memcached</i> or <i>redis</i>) to be
+     * used for this cache cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param engine Provides the name of the cache engine to be used for this Cache
-     *         Cluster.
+     * @param engine The name of the cache engine (<i>memcached</i> or <i>redis</i>) to be
+     *         used for this cache cluster.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -332,35 +340,35 @@ public class CacheCluster implements Serializable {
     
     
     /**
-     * Provides the cache engine version of the cache engine to be used for
-     * this Cache Cluster.
+     * The version of the cache engine version that is used in this cache
+     * cluster.
      *
-     * @return Provides the cache engine version of the cache engine to be used for
-     *         this Cache Cluster.
+     * @return The version of the cache engine version that is used in this cache
+     *         cluster.
      */
     public String getEngineVersion() {
         return engineVersion;
     }
     
     /**
-     * Provides the cache engine version of the cache engine to be used for
-     * this Cache Cluster.
+     * The version of the cache engine version that is used in this cache
+     * cluster.
      *
-     * @param engineVersion Provides the cache engine version of the cache engine to be used for
-     *         this Cache Cluster.
+     * @param engineVersion The version of the cache engine version that is used in this cache
+     *         cluster.
      */
     public void setEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
     }
     
     /**
-     * Provides the cache engine version of the cache engine to be used for
-     * this Cache Cluster.
+     * The version of the cache engine version that is used in this cache
+     * cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param engineVersion Provides the cache engine version of the cache engine to be used for
-     *         this Cache Cluster.
+     * @param engineVersion The version of the cache engine version that is used in this cache
+     *         cluster.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -372,29 +380,35 @@ public class CacheCluster implements Serializable {
     
     
     /**
-     * Specifies the current state of this Cache Cluster.
+     * The current state of this cache cluster - <i>creating</i>,
+     * <i>available</i>, etc.
      *
-     * @return Specifies the current state of this Cache Cluster.
+     * @return The current state of this cache cluster - <i>creating</i>,
+     *         <i>available</i>, etc.
      */
     public String getCacheClusterStatus() {
         return cacheClusterStatus;
     }
     
     /**
-     * Specifies the current state of this Cache Cluster.
+     * The current state of this cache cluster - <i>creating</i>,
+     * <i>available</i>, etc.
      *
-     * @param cacheClusterStatus Specifies the current state of this Cache Cluster.
+     * @param cacheClusterStatus The current state of this cache cluster - <i>creating</i>,
+     *         <i>available</i>, etc.
      */
     public void setCacheClusterStatus(String cacheClusterStatus) {
         this.cacheClusterStatus = cacheClusterStatus;
     }
     
     /**
-     * Specifies the current state of this Cache Cluster.
+     * The current state of this cache cluster - <i>creating</i>,
+     * <i>available</i>, etc.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheClusterStatus Specifies the current state of this Cache Cluster.
+     * @param cacheClusterStatus The current state of this cache cluster - <i>creating</i>,
+     *         <i>available</i>, etc.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -406,29 +420,29 @@ public class CacheCluster implements Serializable {
     
     
     /**
-     * Specifies the number of Cache Nodes the Cache Cluster contains.
+     * The number of cache nodes in the cache cluster.
      *
-     * @return Specifies the number of Cache Nodes the Cache Cluster contains.
+     * @return The number of cache nodes in the cache cluster.
      */
     public Integer getNumCacheNodes() {
         return numCacheNodes;
     }
     
     /**
-     * Specifies the number of Cache Nodes the Cache Cluster contains.
+     * The number of cache nodes in the cache cluster.
      *
-     * @param numCacheNodes Specifies the number of Cache Nodes the Cache Cluster contains.
+     * @param numCacheNodes The number of cache nodes in the cache cluster.
      */
     public void setNumCacheNodes(Integer numCacheNodes) {
         this.numCacheNodes = numCacheNodes;
     }
     
     /**
-     * Specifies the number of Cache Nodes the Cache Cluster contains.
+     * The number of cache nodes in the cache cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param numCacheNodes Specifies the number of Cache Nodes the Cache Cluster contains.
+     * @param numCacheNodes The number of cache nodes in the cache cluster.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -440,35 +454,35 @@ public class CacheCluster implements Serializable {
     
     
     /**
-     * Specifies the name of the Availability Zone the Cache Cluster is
-     * located in.
+     * The name of the Availability Zone in which the cache cluster is
+     * located.
      *
-     * @return Specifies the name of the Availability Zone the Cache Cluster is
-     *         located in.
+     * @return The name of the Availability Zone in which the cache cluster is
+     *         located.
      */
     public String getPreferredAvailabilityZone() {
         return preferredAvailabilityZone;
     }
     
     /**
-     * Specifies the name of the Availability Zone the Cache Cluster is
-     * located in.
+     * The name of the Availability Zone in which the cache cluster is
+     * located.
      *
-     * @param preferredAvailabilityZone Specifies the name of the Availability Zone the Cache Cluster is
-     *         located in.
+     * @param preferredAvailabilityZone The name of the Availability Zone in which the cache cluster is
+     *         located.
      */
     public void setPreferredAvailabilityZone(String preferredAvailabilityZone) {
         this.preferredAvailabilityZone = preferredAvailabilityZone;
     }
     
     /**
-     * Specifies the name of the Availability Zone the Cache Cluster is
-     * located in.
+     * The name of the Availability Zone in which the cache cluster is
+     * located.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param preferredAvailabilityZone Specifies the name of the Availability Zone the Cache Cluster is
-     *         located in.
+     * @param preferredAvailabilityZone The name of the Availability Zone in which the cache cluster is
+     *         located.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -480,29 +494,29 @@ public class CacheCluster implements Serializable {
     
     
     /**
-     * Provides the date and time the Cache Cluster was created.
+     * The date and time the cache cluster was created.
      *
-     * @return Provides the date and time the Cache Cluster was created.
+     * @return The date and time the cache cluster was created.
      */
     public java.util.Date getCacheClusterCreateTime() {
         return cacheClusterCreateTime;
     }
     
     /**
-     * Provides the date and time the Cache Cluster was created.
+     * The date and time the cache cluster was created.
      *
-     * @param cacheClusterCreateTime Provides the date and time the Cache Cluster was created.
+     * @param cacheClusterCreateTime The date and time the cache cluster was created.
      */
     public void setCacheClusterCreateTime(java.util.Date cacheClusterCreateTime) {
         this.cacheClusterCreateTime = cacheClusterCreateTime;
     }
     
     /**
-     * Provides the date and time the Cache Cluster was created.
+     * The date and time the cache cluster was created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheClusterCreateTime Provides the date and time the Cache Cluster was created.
+     * @param cacheClusterCreateTime The date and time the cache cluster was created.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -514,35 +528,35 @@ public class CacheCluster implements Serializable {
     
     
     /**
-     * Specifies the weekly time range (in UTC) during which system
-     * maintenance can occur.
+     * The time range (in UTC) during which weekly system maintenance can
+     * occur.
      *
-     * @return Specifies the weekly time range (in UTC) during which system
-     *         maintenance can occur.
+     * @return The time range (in UTC) during which weekly system maintenance can
+     *         occur.
      */
     public String getPreferredMaintenanceWindow() {
         return preferredMaintenanceWindow;
     }
     
     /**
-     * Specifies the weekly time range (in UTC) during which system
-     * maintenance can occur.
+     * The time range (in UTC) during which weekly system maintenance can
+     * occur.
      *
-     * @param preferredMaintenanceWindow Specifies the weekly time range (in UTC) during which system
-     *         maintenance can occur.
+     * @param preferredMaintenanceWindow The time range (in UTC) during which weekly system maintenance can
+     *         occur.
      */
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
         this.preferredMaintenanceWindow = preferredMaintenanceWindow;
     }
     
     /**
-     * Specifies the weekly time range (in UTC) during which system
-     * maintenance can occur.
+     * The time range (in UTC) during which weekly system maintenance can
+     * occur.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param preferredMaintenanceWindow Specifies the weekly time range (in UTC) during which system
-     *         maintenance can occur.
+     * @param preferredMaintenanceWindow The time range (in UTC) during which weekly system maintenance can
+     *         occur.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -554,41 +568,35 @@ public class CacheCluster implements Serializable {
     
     
     /**
-     * Specifies that changes to the Cache Cluster are pending. This element
-     * is only included when changes are pending. Specific changes are
-     * identified by sub-elements.
+     * A group of settings that will be applied to the cache cluster in the
+     * future, or that are currently being applied.
      *
-     * @return Specifies that changes to the Cache Cluster are pending. This element
-     *         is only included when changes are pending. Specific changes are
-     *         identified by sub-elements.
+     * @return A group of settings that will be applied to the cache cluster in the
+     *         future, or that are currently being applied.
      */
     public PendingModifiedValues getPendingModifiedValues() {
         return pendingModifiedValues;
     }
     
     /**
-     * Specifies that changes to the Cache Cluster are pending. This element
-     * is only included when changes are pending. Specific changes are
-     * identified by sub-elements.
+     * A group of settings that will be applied to the cache cluster in the
+     * future, or that are currently being applied.
      *
-     * @param pendingModifiedValues Specifies that changes to the Cache Cluster are pending. This element
-     *         is only included when changes are pending. Specific changes are
-     *         identified by sub-elements.
+     * @param pendingModifiedValues A group of settings that will be applied to the cache cluster in the
+     *         future, or that are currently being applied.
      */
     public void setPendingModifiedValues(PendingModifiedValues pendingModifiedValues) {
         this.pendingModifiedValues = pendingModifiedValues;
     }
     
     /**
-     * Specifies that changes to the Cache Cluster are pending. This element
-     * is only included when changes are pending. Specific changes are
-     * identified by sub-elements.
+     * A group of settings that will be applied to the cache cluster in the
+     * future, or that are currently being applied.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param pendingModifiedValues Specifies that changes to the Cache Cluster are pending. This element
-     *         is only included when changes are pending. Specific changes are
-     *         identified by sub-elements.
+     * @param pendingModifiedValues A group of settings that will be applied to the cache cluster in the
+     *         future, or that are currently being applied.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -600,29 +608,41 @@ public class CacheCluster implements Serializable {
     
     
     /**
-     * Specifies the notification details the Cache Cluster contains.
+     * Describes a notification topic and its status. Notification topics are
+     * used for publishing ElastiCache events to subscribers using Amazon
+     * Simple Notification Service (SNS).
      *
-     * @return Specifies the notification details the Cache Cluster contains.
+     * @return Describes a notification topic and its status. Notification topics are
+     *         used for publishing ElastiCache events to subscribers using Amazon
+     *         Simple Notification Service (SNS).
      */
     public NotificationConfiguration getNotificationConfiguration() {
         return notificationConfiguration;
     }
     
     /**
-     * Specifies the notification details the Cache Cluster contains.
+     * Describes a notification topic and its status. Notification topics are
+     * used for publishing ElastiCache events to subscribers using Amazon
+     * Simple Notification Service (SNS).
      *
-     * @param notificationConfiguration Specifies the notification details the Cache Cluster contains.
+     * @param notificationConfiguration Describes a notification topic and its status. Notification topics are
+     *         used for publishing ElastiCache events to subscribers using Amazon
+     *         Simple Notification Service (SNS).
      */
     public void setNotificationConfiguration(NotificationConfiguration notificationConfiguration) {
         this.notificationConfiguration = notificationConfiguration;
     }
     
     /**
-     * Specifies the notification details the Cache Cluster contains.
+     * Describes a notification topic and its status. Notification topics are
+     * used for publishing ElastiCache events to subscribers using Amazon
+     * Simple Notification Service (SNS).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param notificationConfiguration Specifies the notification details the Cache Cluster contains.
+     * @param notificationConfiguration Describes a notification topic and its status. Notification topics are
+     *         used for publishing ElastiCache events to subscribers using Amazon
+     *         Simple Notification Service (SNS).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -634,12 +654,10 @@ public class CacheCluster implements Serializable {
     
     
     /**
-     * Provides the list of Cache Security Group elements containing
-     * <i>CacheSecurityGroup.Name</i> and <i>CacheSecurityGroup.Status</i>
+     * A list of cache security group elements, composed of name and status
      * sub-elements.
      *
-     * @return Provides the list of Cache Security Group elements containing
-     *         <i>CacheSecurityGroup.Name</i> and <i>CacheSecurityGroup.Status</i>
+     * @return A list of cache security group elements, composed of name and status
      *         sub-elements.
      */
     public java.util.List<CacheSecurityGroupMembership> getCacheSecurityGroups() {
@@ -652,12 +670,10 @@ public class CacheCluster implements Serializable {
     }
     
     /**
-     * Provides the list of Cache Security Group elements containing
-     * <i>CacheSecurityGroup.Name</i> and <i>CacheSecurityGroup.Status</i>
+     * A list of cache security group elements, composed of name and status
      * sub-elements.
      *
-     * @param cacheSecurityGroups Provides the list of Cache Security Group elements containing
-     *         <i>CacheSecurityGroup.Name</i> and <i>CacheSecurityGroup.Status</i>
+     * @param cacheSecurityGroups A list of cache security group elements, composed of name and status
      *         sub-elements.
      */
     public void setCacheSecurityGroups(java.util.Collection<CacheSecurityGroupMembership> cacheSecurityGroups) {
@@ -671,14 +687,12 @@ public class CacheCluster implements Serializable {
     }
     
     /**
-     * Provides the list of Cache Security Group elements containing
-     * <i>CacheSecurityGroup.Name</i> and <i>CacheSecurityGroup.Status</i>
+     * A list of cache security group elements, composed of name and status
      * sub-elements.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheSecurityGroups Provides the list of Cache Security Group elements containing
-     *         <i>CacheSecurityGroup.Name</i> and <i>CacheSecurityGroup.Status</i>
+     * @param cacheSecurityGroups A list of cache security group elements, composed of name and status
      *         sub-elements.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -693,14 +707,12 @@ public class CacheCluster implements Serializable {
     }
     
     /**
-     * Provides the list of Cache Security Group elements containing
-     * <i>CacheSecurityGroup.Name</i> and <i>CacheSecurityGroup.Status</i>
+     * A list of cache security group elements, composed of name and status
      * sub-elements.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheSecurityGroups Provides the list of Cache Security Group elements containing
-     *         <i>CacheSecurityGroup.Name</i> and <i>CacheSecurityGroup.Status</i>
+     * @param cacheSecurityGroups A list of cache security group elements, composed of name and status
      *         sub-elements.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -719,35 +731,29 @@ public class CacheCluster implements Serializable {
     }
     
     /**
-     * Provides the status of the Cache Parameter Group assigned to the Cache
-     * Cluster.
+     * The status of the cache parameter group.
      *
-     * @return Provides the status of the Cache Parameter Group assigned to the Cache
-     *         Cluster.
+     * @return The status of the cache parameter group.
      */
     public CacheParameterGroupStatus getCacheParameterGroup() {
         return cacheParameterGroup;
     }
     
     /**
-     * Provides the status of the Cache Parameter Group assigned to the Cache
-     * Cluster.
+     * The status of the cache parameter group.
      *
-     * @param cacheParameterGroup Provides the status of the Cache Parameter Group assigned to the Cache
-     *         Cluster.
+     * @param cacheParameterGroup The status of the cache parameter group.
      */
     public void setCacheParameterGroup(CacheParameterGroupStatus cacheParameterGroup) {
         this.cacheParameterGroup = cacheParameterGroup;
     }
     
     /**
-     * Provides the status of the Cache Parameter Group assigned to the Cache
-     * Cluster.
+     * The status of the cache parameter group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheParameterGroup Provides the status of the Cache Parameter Group assigned to the Cache
-     *         Cluster.
+     * @param cacheParameterGroup The status of the cache parameter group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -759,35 +765,29 @@ public class CacheCluster implements Serializable {
     
     
     /**
-     * Specifies the name of the Cache Subnet Group associated with the Cache
-     * Cluster.
+     * The name of the cache subnet group associated with the cache cluster.
      *
-     * @return Specifies the name of the Cache Subnet Group associated with the Cache
-     *         Cluster.
+     * @return The name of the cache subnet group associated with the cache cluster.
      */
     public String getCacheSubnetGroupName() {
         return cacheSubnetGroupName;
     }
     
     /**
-     * Specifies the name of the Cache Subnet Group associated with the Cache
-     * Cluster.
+     * The name of the cache subnet group associated with the cache cluster.
      *
-     * @param cacheSubnetGroupName Specifies the name of the Cache Subnet Group associated with the Cache
-     *         Cluster.
+     * @param cacheSubnetGroupName The name of the cache subnet group associated with the cache cluster.
      */
     public void setCacheSubnetGroupName(String cacheSubnetGroupName) {
         this.cacheSubnetGroupName = cacheSubnetGroupName;
     }
     
     /**
-     * Specifies the name of the Cache Subnet Group associated with the Cache
-     * Cluster.
+     * The name of the cache subnet group associated with the cache cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheSubnetGroupName Specifies the name of the Cache Subnet Group associated with the Cache
-     *         Cluster.
+     * @param cacheSubnetGroupName The name of the cache subnet group associated with the cache cluster.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -799,9 +799,9 @@ public class CacheCluster implements Serializable {
     
     
     /**
-     * Specifies the list of Cache Nodes the Cache Cluster contains.
+     * A list of cache nodes that are members of the cache cluster.
      *
-     * @return Specifies the list of Cache Nodes the Cache Cluster contains.
+     * @return A list of cache nodes that are members of the cache cluster.
      */
     public java.util.List<CacheNode> getCacheNodes() {
         
@@ -813,9 +813,9 @@ public class CacheCluster implements Serializable {
     }
     
     /**
-     * Specifies the list of Cache Nodes the Cache Cluster contains.
+     * A list of cache nodes that are members of the cache cluster.
      *
-     * @param cacheNodes Specifies the list of Cache Nodes the Cache Cluster contains.
+     * @param cacheNodes A list of cache nodes that are members of the cache cluster.
      */
     public void setCacheNodes(java.util.Collection<CacheNode> cacheNodes) {
         if (cacheNodes == null) {
@@ -828,11 +828,11 @@ public class CacheCluster implements Serializable {
     }
     
     /**
-     * Specifies the list of Cache Nodes the Cache Cluster contains.
+     * A list of cache nodes that are members of the cache cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheNodes Specifies the list of Cache Nodes the Cache Cluster contains.
+     * @param cacheNodes A list of cache nodes that are members of the cache cluster.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -846,11 +846,11 @@ public class CacheCluster implements Serializable {
     }
     
     /**
-     * Specifies the list of Cache Nodes the Cache Cluster contains.
+     * A list of cache nodes that are members of the cache cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheNodes Specifies the list of Cache Nodes the Cache Cluster contains.
+     * @param cacheNodes A list of cache nodes that are members of the cache cluster.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -868,29 +868,41 @@ public class CacheCluster implements Serializable {
     }
     
     /**
-     * Indicates that minor version patches are applied automatically.
+     * If <code>true</code>, then minor version patches are applied
+     * automatically; if <code>false</code>, then automatic minor version
+     * patches are disabled.
      *
-     * @return Indicates that minor version patches are applied automatically.
+     * @return If <code>true</code>, then minor version patches are applied
+     *         automatically; if <code>false</code>, then automatic minor version
+     *         patches are disabled.
      */
     public Boolean isAutoMinorVersionUpgrade() {
         return autoMinorVersionUpgrade;
     }
     
     /**
-     * Indicates that minor version patches are applied automatically.
+     * If <code>true</code>, then minor version patches are applied
+     * automatically; if <code>false</code>, then automatic minor version
+     * patches are disabled.
      *
-     * @param autoMinorVersionUpgrade Indicates that minor version patches are applied automatically.
+     * @param autoMinorVersionUpgrade If <code>true</code>, then minor version patches are applied
+     *         automatically; if <code>false</code>, then automatic minor version
+     *         patches are disabled.
      */
     public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
         this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
     }
     
     /**
-     * Indicates that minor version patches are applied automatically.
+     * If <code>true</code>, then minor version patches are applied
+     * automatically; if <code>false</code>, then automatic minor version
+     * patches are disabled.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param autoMinorVersionUpgrade Indicates that minor version patches are applied automatically.
+     * @param autoMinorVersionUpgrade If <code>true</code>, then minor version patches are applied
+     *         automatically; if <code>false</code>, then automatic minor version
+     *         patches are disabled.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -902,18 +914,22 @@ public class CacheCluster implements Serializable {
     
     
     /**
-     * Indicates that minor version patches are applied automatically.
+     * If <code>true</code>, then minor version patches are applied
+     * automatically; if <code>false</code>, then automatic minor version
+     * patches are disabled.
      *
-     * @return Indicates that minor version patches are applied automatically.
+     * @return If <code>true</code>, then minor version patches are applied
+     *         automatically; if <code>false</code>, then automatic minor version
+     *         patches are disabled.
      */
     public Boolean getAutoMinorVersionUpgrade() {
         return autoMinorVersionUpgrade;
     }
     
     /**
-     * Specifies the VPC Security Groups associated with the Cache Cluster.
+     * A list of VPC Security Groups associated with the cache cluster.
      *
-     * @return Specifies the VPC Security Groups associated with the Cache Cluster.
+     * @return A list of VPC Security Groups associated with the cache cluster.
      */
     public java.util.List<SecurityGroupMembership> getSecurityGroups() {
         
@@ -925,9 +941,9 @@ public class CacheCluster implements Serializable {
     }
     
     /**
-     * Specifies the VPC Security Groups associated with the Cache Cluster.
+     * A list of VPC Security Groups associated with the cache cluster.
      *
-     * @param securityGroups Specifies the VPC Security Groups associated with the Cache Cluster.
+     * @param securityGroups A list of VPC Security Groups associated with the cache cluster.
      */
     public void setSecurityGroups(java.util.Collection<SecurityGroupMembership> securityGroups) {
         if (securityGroups == null) {
@@ -940,11 +956,11 @@ public class CacheCluster implements Serializable {
     }
     
     /**
-     * Specifies the VPC Security Groups associated with the Cache Cluster.
+     * A list of VPC Security Groups associated with the cache cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param securityGroups Specifies the VPC Security Groups associated with the Cache Cluster.
+     * @param securityGroups A list of VPC Security Groups associated with the cache cluster.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -958,11 +974,11 @@ public class CacheCluster implements Serializable {
     }
     
     /**
-     * Specifies the VPC Security Groups associated with the Cache Cluster.
+     * A list of VPC Security Groups associated with the cache cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param securityGroups Specifies the VPC Security Groups associated with the Cache Cluster.
+     * @param securityGroups A list of VPC Security Groups associated with the cache cluster.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -978,6 +994,52 @@ public class CacheCluster implements Serializable {
 
         return this;
     }
+    
+    /**
+     * The replication group to which this cache cluster belongs. If this
+     * field is empty, the cache cluster is not associated with any
+     * replication group.
+     *
+     * @return The replication group to which this cache cluster belongs. If this
+     *         field is empty, the cache cluster is not associated with any
+     *         replication group.
+     */
+    public String getReplicationGroupId() {
+        return replicationGroupId;
+    }
+    
+    /**
+     * The replication group to which this cache cluster belongs. If this
+     * field is empty, the cache cluster is not associated with any
+     * replication group.
+     *
+     * @param replicationGroupId The replication group to which this cache cluster belongs. If this
+     *         field is empty, the cache cluster is not associated with any
+     *         replication group.
+     */
+    public void setReplicationGroupId(String replicationGroupId) {
+        this.replicationGroupId = replicationGroupId;
+    }
+    
+    /**
+     * The replication group to which this cache cluster belongs. If this
+     * field is empty, the cache cluster is not associated with any
+     * replication group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param replicationGroupId The replication group to which this cache cluster belongs. If this
+     *         field is empty, the cache cluster is not associated with any
+     *         replication group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CacheCluster withReplicationGroupId(String replicationGroupId) {
+        this.replicationGroupId = replicationGroupId;
+        return this;
+    }
+    
     
     /**
      * Returns a string representation of this object; useful for testing and
@@ -1009,7 +1071,8 @@ public class CacheCluster implements Serializable {
         if (getCacheSubnetGroupName() != null) sb.append("CacheSubnetGroupName: " + getCacheSubnetGroupName() + ",");
         if (getCacheNodes() != null) sb.append("CacheNodes: " + getCacheNodes() + ",");
         if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ",");
-        if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() );
+        if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ",");
+        if (getReplicationGroupId() != null) sb.append("ReplicationGroupId: " + getReplicationGroupId() );
         sb.append("}");
         return sb.toString();
     }
@@ -1038,6 +1101,7 @@ public class CacheCluster implements Serializable {
         hashCode = prime * hashCode + ((getCacheNodes() == null) ? 0 : getCacheNodes().hashCode()); 
         hashCode = prime * hashCode + ((isAutoMinorVersionUpgrade() == null) ? 0 : isAutoMinorVersionUpgrade().hashCode()); 
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode()); 
+        hashCode = prime * hashCode + ((getReplicationGroupId() == null) ? 0 : getReplicationGroupId().hashCode()); 
         return hashCode;
     }
     
@@ -1087,6 +1151,8 @@ public class CacheCluster implements Serializable {
         if (other.isAutoMinorVersionUpgrade() != null && other.isAutoMinorVersionUpgrade().equals(this.isAutoMinorVersionUpgrade()) == false) return false; 
         if (other.getSecurityGroups() == null ^ this.getSecurityGroups() == null) return false;
         if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false) return false; 
+        if (other.getReplicationGroupId() == null ^ this.getReplicationGroupId() == null) return false;
+        if (other.getReplicationGroupId() != null && other.getReplicationGroupId().equals(this.getReplicationGroupId()) == false) return false; 
         return true;
     }
     

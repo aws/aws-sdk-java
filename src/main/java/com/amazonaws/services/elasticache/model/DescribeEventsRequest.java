@@ -19,9 +19,11 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#describeEvents(DescribeEventsRequest) DescribeEvents operation}.
  * <p>
- * Returns events related to Cache Clusters, Cache Security Groups, and Cache Parameter Groups for the past 14 days. Events specific to a particular
- * Cache Cluster, Cache Security Group, or Cache Parameter Group can be obtained by providing the name as a parameter. By default, the past hour of
- * events are returned.
+ * The <i>DescribeEvents</i> operation returns events related to cache clusters, cache security groups, and cache parameter groups. You can obtain events
+ * specific to a particular cache cluster, cache security group, or cache parameter group by providing the name as a parameter.
+ * </p>
+ * <p>
+ * By default, only the events occurring within the last hour are returned; however, you can retrieve up to 14 days' worth of events if necessary.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeEvents(DescribeEventsRequest)
@@ -36,7 +38,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * The event source to retrieve events for. If no value is specified, all
-     * events are returned.
+     * events are returned. <p>Valid values are: <code>cache-cluster</code> |
+     * <code>cache-parameter-group</code> | <code>cache-security-group</code>
+     * | <code>cache-subnet-group</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>cache-cluster, cache-parameter-group, cache-security-group, cache-subnet-group
@@ -56,23 +60,23 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
     private java.util.Date endTime;
 
     /**
-     * The number of minutes to retrieve events for.
+     * The number of minutes' worth of events to retrieve.
      */
     private Integer duration;
 
     /**
      * The maximum number of records to include in the response. If more
-     * records exist than the specified <i>MaxRecords</i> value, a marker is
-     * included in the response so that the remaining results may be
-     * retrieved.
+     * records exist than the specified <code>MaxRecords</code> value, a
+     * marker is included in the response so that the remaining results can
+     * be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      */
     private Integer maxRecords;
 
     /**
-     * An optional marker provided in the previous DescribeCacheClusters
-     * request. If this parameter is specified, the response includes only
-     * records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this operation. If this parameter is
+     * specified, the response includes only records beyond the marker, up to
+     * the value specified by <i>MaxRecords</i>.
      */
     private String marker;
 
@@ -124,13 +128,17 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * The event source to retrieve events for. If no value is specified, all
-     * events are returned.
+     * events are returned. <p>Valid values are: <code>cache-cluster</code> |
+     * <code>cache-parameter-group</code> | <code>cache-security-group</code>
+     * | <code>cache-subnet-group</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>cache-cluster, cache-parameter-group, cache-security-group, cache-subnet-group
      *
      * @return The event source to retrieve events for. If no value is specified, all
-     *         events are returned.
+     *         events are returned. <p>Valid values are: <code>cache-cluster</code> |
+     *         <code>cache-parameter-group</code> | <code>cache-security-group</code>
+     *         | <code>cache-subnet-group</code>
      *
      * @see SourceType
      */
@@ -140,13 +148,17 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * The event source to retrieve events for. If no value is specified, all
-     * events are returned.
+     * events are returned. <p>Valid values are: <code>cache-cluster</code> |
+     * <code>cache-parameter-group</code> | <code>cache-security-group</code>
+     * | <code>cache-subnet-group</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>cache-cluster, cache-parameter-group, cache-security-group, cache-subnet-group
      *
      * @param sourceType The event source to retrieve events for. If no value is specified, all
-     *         events are returned.
+     *         events are returned. <p>Valid values are: <code>cache-cluster</code> |
+     *         <code>cache-parameter-group</code> | <code>cache-security-group</code>
+     *         | <code>cache-subnet-group</code>
      *
      * @see SourceType
      */
@@ -156,7 +168,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * The event source to retrieve events for. If no value is specified, all
-     * events are returned.
+     * events are returned. <p>Valid values are: <code>cache-cluster</code> |
+     * <code>cache-parameter-group</code> | <code>cache-security-group</code>
+     * | <code>cache-subnet-group</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -164,7 +178,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
      * <b>Allowed Values: </b>cache-cluster, cache-parameter-group, cache-security-group, cache-subnet-group
      *
      * @param sourceType The event source to retrieve events for. If no value is specified, all
-     *         events are returned.
+     *         events are returned. <p>Valid values are: <code>cache-cluster</code> |
+     *         <code>cache-parameter-group</code> | <code>cache-security-group</code>
+     *         | <code>cache-subnet-group</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -179,13 +195,17 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * The event source to retrieve events for. If no value is specified, all
-     * events are returned.
+     * events are returned. <p>Valid values are: <code>cache-cluster</code> |
+     * <code>cache-parameter-group</code> | <code>cache-security-group</code>
+     * | <code>cache-subnet-group</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>cache-cluster, cache-parameter-group, cache-security-group, cache-subnet-group
      *
      * @param sourceType The event source to retrieve events for. If no value is specified, all
-     *         events are returned.
+     *         events are returned. <p>Valid values are: <code>cache-cluster</code> |
+     *         <code>cache-parameter-group</code> | <code>cache-security-group</code>
+     *         | <code>cache-subnet-group</code>
      *
      * @see SourceType
      */
@@ -195,7 +215,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * The event source to retrieve events for. If no value is specified, all
-     * events are returned.
+     * events are returned. <p>Valid values are: <code>cache-cluster</code> |
+     * <code>cache-parameter-group</code> | <code>cache-security-group</code>
+     * | <code>cache-subnet-group</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -203,7 +225,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
      * <b>Allowed Values: </b>cache-cluster, cache-parameter-group, cache-security-group, cache-subnet-group
      *
      * @param sourceType The event source to retrieve events for. If no value is specified, all
-     *         events are returned.
+     *         events are returned. <p>Valid values are: <code>cache-cluster</code> |
+     *         <code>cache-parameter-group</code> | <code>cache-security-group</code>
+     *         | <code>cache-subnet-group</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -296,29 +320,29 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
     
     
     /**
-     * The number of minutes to retrieve events for.
+     * The number of minutes' worth of events to retrieve.
      *
-     * @return The number of minutes to retrieve events for.
+     * @return The number of minutes' worth of events to retrieve.
      */
     public Integer getDuration() {
         return duration;
     }
     
     /**
-     * The number of minutes to retrieve events for.
+     * The number of minutes' worth of events to retrieve.
      *
-     * @param duration The number of minutes to retrieve events for.
+     * @param duration The number of minutes' worth of events to retrieve.
      */
     public void setDuration(Integer duration) {
         this.duration = duration;
     }
     
     /**
-     * The number of minutes to retrieve events for.
+     * The number of minutes' worth of events to retrieve.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param duration The number of minutes to retrieve events for.
+     * @param duration The number of minutes' worth of events to retrieve.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -331,14 +355,14 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * The maximum number of records to include in the response. If more
-     * records exist than the specified <i>MaxRecords</i> value, a marker is
-     * included in the response so that the remaining results may be
-     * retrieved.
+     * records exist than the specified <code>MaxRecords</code> value, a
+     * marker is included in the response so that the remaining results can
+     * be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      *
      * @return The maximum number of records to include in the response. If more
-     *         records exist than the specified <i>MaxRecords</i> value, a marker is
-     *         included in the response so that the remaining results may be
-     *         retrieved.
+     *         records exist than the specified <code>MaxRecords</code> value, a
+     *         marker is included in the response so that the remaining results can
+     *         be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      */
     public Integer getMaxRecords() {
         return maxRecords;
@@ -346,14 +370,14 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * The maximum number of records to include in the response. If more
-     * records exist than the specified <i>MaxRecords</i> value, a marker is
-     * included in the response so that the remaining results may be
-     * retrieved.
+     * records exist than the specified <code>MaxRecords</code> value, a
+     * marker is included in the response so that the remaining results can
+     * be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      *
      * @param maxRecords The maximum number of records to include in the response. If more
-     *         records exist than the specified <i>MaxRecords</i> value, a marker is
-     *         included in the response so that the remaining results may be
-     *         retrieved.
+     *         records exist than the specified <code>MaxRecords</code> value, a
+     *         marker is included in the response so that the remaining results can
+     *         be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      */
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -361,16 +385,16 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
     
     /**
      * The maximum number of records to include in the response. If more
-     * records exist than the specified <i>MaxRecords</i> value, a marker is
-     * included in the response so that the remaining results may be
-     * retrieved.
+     * records exist than the specified <code>MaxRecords</code> value, a
+     * marker is included in the response so that the remaining results can
+     * be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxRecords The maximum number of records to include in the response. If more
-     *         records exist than the specified <i>MaxRecords</i> value, a marker is
-     *         included in the response so that the remaining results may be
-     *         retrieved.
+     *         records exist than the specified <code>MaxRecords</code> value, a
+     *         marker is included in the response so that the remaining results can
+     *         be retrieved. <p>Default: 100<p>Constraints: minimum 20; maximum 100.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -382,47 +406,47 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
     
     
     /**
-     * An optional marker provided in the previous DescribeCacheClusters
-     * request. If this parameter is specified, the response includes only
-     * records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this operation. If this parameter is
+     * specified, the response includes only records beyond the marker, up to
+     * the value specified by <i>MaxRecords</i>.
      *
-     * @return An optional marker provided in the previous DescribeCacheClusters
-     *         request. If this parameter is specified, the response includes only
-     *         records beyond the marker, up to the value specified by
-     *         <i>MaxRecords</i>.
+     * @return An optional marker returned from a prior request. Use this marker for
+     *         pagination of results from this operation. If this parameter is
+     *         specified, the response includes only records beyond the marker, up to
+     *         the value specified by <i>MaxRecords</i>.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * An optional marker provided in the previous DescribeCacheClusters
-     * request. If this parameter is specified, the response includes only
-     * records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this operation. If this parameter is
+     * specified, the response includes only records beyond the marker, up to
+     * the value specified by <i>MaxRecords</i>.
      *
-     * @param marker An optional marker provided in the previous DescribeCacheClusters
-     *         request. If this parameter is specified, the response includes only
-     *         records beyond the marker, up to the value specified by
-     *         <i>MaxRecords</i>.
+     * @param marker An optional marker returned from a prior request. Use this marker for
+     *         pagination of results from this operation. If this parameter is
+     *         specified, the response includes only records beyond the marker, up to
+     *         the value specified by <i>MaxRecords</i>.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * An optional marker provided in the previous DescribeCacheClusters
-     * request. If this parameter is specified, the response includes only
-     * records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this operation. If this parameter is
+     * specified, the response includes only records beyond the marker, up to
+     * the value specified by <i>MaxRecords</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker An optional marker provided in the previous DescribeCacheClusters
-     *         request. If this parameter is specified, the response includes only
-     *         records beyond the marker, up to the value specified by
-     *         <i>MaxRecords</i>.
+     * @param marker An optional marker returned from a prior request. Use this marker for
+     *         pagination of results from this operation. If this parameter is
+     *         specified, the response includes only records beyond the marker, up to
+     *         the value specified by <i>MaxRecords</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

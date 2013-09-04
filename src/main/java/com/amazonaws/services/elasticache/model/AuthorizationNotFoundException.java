@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Specified EC2 Security Group is not authorized for the specified Cache Security Group.
+ * The specified Amazon EC2 security group is not authorized for the specified cache security group.
  * </p>
  */        
 public class AuthorizationNotFoundException extends AmazonServiceException {

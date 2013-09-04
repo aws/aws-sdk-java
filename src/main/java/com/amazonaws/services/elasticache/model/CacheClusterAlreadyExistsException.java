@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * User already has a Cache Cluster with the given identifier.
+ * This user already has a cache cluster with the given identifier.
  * </p>
  */        
 public class CacheClusterAlreadyExistsException extends AmazonServiceException {

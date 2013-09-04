@@ -17,45 +17,46 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains a list of Events.
+ * Represents the output of a <i>DescribeEvents</i> operation.
  * </p>
  */
 public class DescribeEventsResult implements Serializable {
 
     /**
-     * The marker obtained from a previous operation response.
+     * Provides an identifier to allow retrieval of paginated results.
      */
     private String marker;
 
     /**
-     * A list of <a>Event</a> instances.
+     * A list of events. Each element in the list contains detailed
+     * information about one event.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Event> events;
 
     /**
-     * The marker obtained from a previous operation response.
+     * Provides an identifier to allow retrieval of paginated results.
      *
-     * @return The marker obtained from a previous operation response.
+     * @return Provides an identifier to allow retrieval of paginated results.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * The marker obtained from a previous operation response.
+     * Provides an identifier to allow retrieval of paginated results.
      *
-     * @param marker The marker obtained from a previous operation response.
+     * @param marker Provides an identifier to allow retrieval of paginated results.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * The marker obtained from a previous operation response.
+     * Provides an identifier to allow retrieval of paginated results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker The marker obtained from a previous operation response.
+     * @param marker Provides an identifier to allow retrieval of paginated results.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -67,9 +68,11 @@ public class DescribeEventsResult implements Serializable {
     
     
     /**
-     * A list of <a>Event</a> instances.
+     * A list of events. Each element in the list contains detailed
+     * information about one event.
      *
-     * @return A list of <a>Event</a> instances.
+     * @return A list of events. Each element in the list contains detailed
+     *         information about one event.
      */
     public java.util.List<Event> getEvents() {
         
@@ -81,9 +84,11 @@ public class DescribeEventsResult implements Serializable {
     }
     
     /**
-     * A list of <a>Event</a> instances.
+     * A list of events. Each element in the list contains detailed
+     * information about one event.
      *
-     * @param events A list of <a>Event</a> instances.
+     * @param events A list of events. Each element in the list contains detailed
+     *         information about one event.
      */
     public void setEvents(java.util.Collection<Event> events) {
         if (events == null) {
@@ -96,11 +101,13 @@ public class DescribeEventsResult implements Serializable {
     }
     
     /**
-     * A list of <a>Event</a> instances.
+     * A list of events. Each element in the list contains detailed
+     * information about one event.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param events A list of <a>Event</a> instances.
+     * @param events A list of events. Each element in the list contains detailed
+     *         information about one event.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -114,11 +121,13 @@ public class DescribeEventsResult implements Serializable {
     }
     
     /**
-     * A list of <a>Event</a> instances.
+     * A list of events. Each element in the list contains detailed
+     * information about one event.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param events A list of <a>Event</a> instances.
+     * @param events A list of events. Each element in the list contains detailed
+     *         information about one event.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

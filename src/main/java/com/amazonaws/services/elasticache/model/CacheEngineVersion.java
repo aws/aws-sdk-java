@@ -17,7 +17,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This data type is used as a response element in the action DescribeCacheEngineVersions.
+ * Provides all of the details about a particular cache engine version.
  * </p>
  */
 public class CacheEngineVersion implements Serializable {
@@ -33,7 +33,8 @@ public class CacheEngineVersion implements Serializable {
     private String engineVersion;
 
     /**
-     * The name of the CacheParameterGroupFamily for the cache engine.
+     * The name of the cache parameter group family associated with this
+     * cache engine.
      */
     private String cacheParameterGroupFamily;
 
@@ -116,29 +117,35 @@ public class CacheEngineVersion implements Serializable {
     
     
     /**
-     * The name of the CacheParameterGroupFamily for the cache engine.
+     * The name of the cache parameter group family associated with this
+     * cache engine.
      *
-     * @return The name of the CacheParameterGroupFamily for the cache engine.
+     * @return The name of the cache parameter group family associated with this
+     *         cache engine.
      */
     public String getCacheParameterGroupFamily() {
         return cacheParameterGroupFamily;
     }
     
     /**
-     * The name of the CacheParameterGroupFamily for the cache engine.
+     * The name of the cache parameter group family associated with this
+     * cache engine.
      *
-     * @param cacheParameterGroupFamily The name of the CacheParameterGroupFamily for the cache engine.
+     * @param cacheParameterGroupFamily The name of the cache parameter group family associated with this
+     *         cache engine.
      */
     public void setCacheParameterGroupFamily(String cacheParameterGroupFamily) {
         this.cacheParameterGroupFamily = cacheParameterGroupFamily;
     }
     
     /**
-     * The name of the CacheParameterGroupFamily for the cache engine.
+     * The name of the cache parameter group family associated with this
+     * cache engine.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheParameterGroupFamily The name of the CacheParameterGroupFamily for the cache engine.
+     * @param cacheParameterGroupFamily The name of the cache parameter group family associated with this
+     *         cache engine.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
