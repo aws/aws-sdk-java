@@ -129,7 +129,7 @@ public class XmlWriter {
                 escape = "&amp;";
                 break;
             case '"':
-                escape = "&quote;";
+                escape = "&quot;";
                 break;
             case '<':
                 escape = "&lt;";
