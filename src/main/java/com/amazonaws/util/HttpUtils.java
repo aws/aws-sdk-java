@@ -156,4 +156,32 @@ public class HttpUtils {
         return encodedParams;
     }
 
+    /**
+     * Append the given path to the given baseUri.
+     * 
+     * <p>This method will encode the given path but not the given
+     * baseUri.</p>
+     * 
+     * @param baseUri The URI to append to (required, may be relative)
+     * @param path The path to append (may be null or empty)
+     * @return The baseUri with the (encoded) path appended
+     */
+    public static String appendUri( final String baseUri,
+                                    final String path ) {
+      String resultUri = baseUri;
+      if (path != null && path.length() > 0) {
+        if (path.startsWith("/")) {
+          if (resultUri.endsWith("/")) {
+            resultUri = resultUri.substring(0, resultUri.length() - 1);
+          }
+        } else if (!resultUri.endsWith("/")) {
+          resultUri += "/";
+        }
+        resultUri += HttpUtils.urlEncode( path, true );
+      } else if (!resultUri.endsWith("/")) {
+        resultUri += "/";
+      }
+
+      return resultUri; 
+    }
 }

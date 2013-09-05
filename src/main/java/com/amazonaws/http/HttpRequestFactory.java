@@ -57,20 +57,7 @@ class HttpRequestFactory {
      */
     HttpRequestBase createHttpRequest(Request<?> request, ClientConfiguration clientConfiguration, HttpEntity previousEntity, ExecutionContext context) {
         URI endpoint = request.getEndpoint();
-        String uri = endpoint.toString();
-        if (request.getResourcePath() != null && request.getResourcePath().length() > 0) {
-            if (request.getResourcePath().startsWith("/")) {
-                if (uri.endsWith("/")) {
-                    uri = uri.substring(0, uri.length() - 1);
-                }
-            } else if (!uri.endsWith("/")) {
-                    uri += "/";
-            }
-            uri += HttpUtils.urlEncode(request.getResourcePath(), true);
-        } else if (!uri.endsWith("/")) {
-            uri += "/";
-        }
-
+        String uri = HttpUtils.appendUri(endpoint.toString(), request.getResourcePath());
         String encodedParams = HttpUtils.encodeParameters(request);
 
         /*

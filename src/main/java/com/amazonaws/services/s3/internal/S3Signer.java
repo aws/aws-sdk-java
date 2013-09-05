@@ -66,8 +66,6 @@ public class S3Signer extends AbstractAWSSigner {
      * Constructs a new S3Signer to sign requests based on the
      * AWS credentials, HTTP method and canonical S3 resource path.
      *
-     * @param credentials
-     *            The AWS credentials to use to sign the request.
      * @param httpVerb
      *            The HTTP verb (GET, PUT, POST, HEAD, DELETE) the request is
      *            using.
@@ -94,8 +92,8 @@ public class S3Signer extends AbstractAWSSigner {
             addSessionCredentials(request, (AWSSessionCredentials) sanitizedCredentials);
         }
 
-        String encodedResourcePath = HttpUtils.urlEncode(resourcePath, true);
-        
+        String encodedResourcePath = HttpUtils.appendUri(request.getEndpoint().getPath(), resourcePath);
+
         int timeOffset = getTimeOffset(request);
         Date date = getSignatureDate(timeOffset);
         request.addHeader(Headers.DATE, ServiceUtils.formatRfc822Date(date));
