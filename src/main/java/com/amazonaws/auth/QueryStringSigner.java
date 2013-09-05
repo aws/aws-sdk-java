@@ -154,6 +154,8 @@ public class QueryStringSigner extends AbstractAWSSigner implements Signer {
             }
 
             resourcePath += request.getResourcePath();
+        } else if ( !resourcePath.endsWith("/") ) {
+          resourcePath += "/";
         }
 
         if (!resourcePath.startsWith("/")) {
