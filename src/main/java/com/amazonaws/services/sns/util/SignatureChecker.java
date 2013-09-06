@@ -68,22 +68,39 @@ public class SignatureChecker {
      * @return True if the message was correctly validated, otherwise false.
      */
     public boolean verifyMessageSignature(String message, PublicKey publicKey) {
-        boolean valid = false;
-        
+
         // extract the type and signature parameters
         Map<String, String> parsed = parseJSON(message);
-        String version = parsed.get(SIGNATURE_VERSION);
+
+        return verifySignature(parsed, publicKey);
+    }
+
+    /**
+     * Validates the signature on a Simple Notification Service message. No
+     * Amazon-specific dependencies, just plain Java crypto
+     *
+     * @param parsedMessage
+     *            A map of Simple Notification Service message.
+     * @param publicKey
+     *            The Simple Notification Service public key, exactly as you'd
+     *            see it when retrieved from the cert.
+     *
+     * @return True if the message was correctly validated, otherwise false.
+     */
+    public boolean verifySignature(Map<String, String> parsedMessage, PublicKey publicKey) {
+        boolean valid = false;
+        String version = parsedMessage.get(SIGNATURE_VERSION);
         if (version.equals("1")) {
             // construct the canonical signed string
-            String type = parsed.get(TYPE);
-            String signature = parsed.get(SIGNATURE);
+            String type = parsedMessage.get(TYPE);
+            String signature = parsedMessage.get(SIGNATURE);
             String signed = "";
             if (type.equals(NOTIFICATION_TYPE)) {
-                signed = stringToSign(publishMessageValues(parsed));
+                signed = stringToSign(publishMessageValues(parsedMessage));
             } else if (type.equals(SUBSCRIBE_TYPE)) {
-                signed = stringToSign(subscribeMessageValues(parsed));
+                signed = stringToSign(subscribeMessageValues(parsedMessage));
             } else if (type.equals(UNSUBSCRIBE_TYPE)) {
-                signed = stringToSign(subscribeMessageValues(parsed)); // no difference, for now
+                signed = stringToSign(subscribeMessageValues(parsedMessage)); // no difference, for now
             } else {
                 throw new RuntimeException("Cannot process message of type " + type);
             }
