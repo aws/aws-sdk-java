@@ -22,7 +22,7 @@
  * </p>
  * <p>
  * When you call CreateStack, CloneStack, or UpdateStack we recommend you use the <code>ConfigurationManager</code> parameter to specify the Chef
- * version, 0.9 or 11.4. The default value is currently 0.9. However, we expect to change the default value to 11.4 in late August 2013.
+ * version, 0.9 or 11.4. The default value is currently 0.9. However, we expect to change the default value to 11.4 in September 2013.
  * </p>
  */
  package com.amazonaws.services.opsworks;

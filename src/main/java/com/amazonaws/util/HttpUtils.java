@@ -158,10 +158,10 @@ public class HttpUtils {
 
     /**
      * Append the given path to the given baseUri.
-     * 
+     *
      * <p>This method will encode the given path but not the given
      * baseUri.</p>
-     * 
+     *
      * @param baseUri The URI to append to (required, may be relative)
      * @param path The path to append (may be null or empty)
      * @return The baseUri with the (encoded) path appended
@@ -182,6 +182,6 @@ public class HttpUtils {
         resultUri += "/";
       }
 
-      return resultUri; 
+      return resultUri;
     }
 }

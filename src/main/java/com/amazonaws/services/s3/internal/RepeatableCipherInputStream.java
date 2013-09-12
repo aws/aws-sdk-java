@@ -64,7 +64,12 @@ public class RepeatableCipherInputStream extends AbstractRepeatableInputStream {
 
     @Override
     protected void reopenWrappedStream() throws IOException {
-        in.close();
+		// We don't need to call in.close() here, since what
+		// CipherInputStream.close() does is merely call close() of the
+		// underlying stream (which is the same object as the
+		// unencryptedDataStream).
+		// So this actually means we SHOULD NOT call in.close(), since we still
+		// need the unencryptedDataStream to be available for reset.
         unencryptedDataStream.reset();
         in = createCipherInputStream(unencryptedDataStream, cipherFactory);
     }

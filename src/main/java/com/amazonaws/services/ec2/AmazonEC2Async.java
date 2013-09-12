@@ -2754,6 +2754,106 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * The ModifyReservedInstances operation modifies the Availability Zone,
+     * instance count, or network platform (EC2-Classic or EC2-VPC) of your
+     * Reserved Instances.
+     * </p>
+     *
+     * @param modifyReservedInstancesRequest Container for the necessary
+     *           parameters to execute the ModifyReservedInstances operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ModifyReservedInstances service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ModifyReservedInstancesResult> modifyReservedInstancesAsync(ModifyReservedInstancesRequest modifyReservedInstancesRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * The ModifyReservedInstances operation modifies the Availability Zone,
+     * instance count, or network platform (EC2-Classic or EC2-VPC) of your
+     * Reserved Instances.
+     * </p>
+     *
+     * @param modifyReservedInstancesRequest Container for the necessary
+     *           parameters to execute the ModifyReservedInstances operation on
+     *           AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ModifyReservedInstances service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ModifyReservedInstancesResult> modifyReservedInstancesAsync(ModifyReservedInstancesRequest modifyReservedInstancesRequest,
+            AsyncHandler<ModifyReservedInstancesRequest, ModifyReservedInstancesResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     *
+     * @param unassignPrivateIpAddressesRequest Container for the necessary
+     *           parameters to execute the UnassignPrivateIpAddresses operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UnassignPrivateIpAddresses service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> unassignPrivateIpAddressesAsync(UnassignPrivateIpAddressesRequest unassignPrivateIpAddressesRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     *
+     * @param unassignPrivateIpAddressesRequest Container for the necessary
+     *           parameters to execute the UnassignPrivateIpAddresses operation on
+     *           AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UnassignPrivateIpAddresses service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> unassignPrivateIpAddressesAsync(UnassignPrivateIpAddressesRequest unassignPrivateIpAddressesRequest,
+            AsyncHandler<UnassignPrivateIpAddressesRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Gives you information about your VPCs. You can filter the results to
      * return information only about VPCs that match criteria you specify.
      * </p>
@@ -2825,51 +2925,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     public Future<DescribeVpcsResult> describeVpcsAsync(DescribeVpcsRequest describeVpcsRequest,
             AsyncHandler<DescribeVpcsRequest, DescribeVpcsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     *
-     * @param unassignPrivateIpAddressesRequest Container for the necessary
-     *           parameters to execute the UnassignPrivateIpAddresses operation on
-     *           AmazonEC2.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UnassignPrivateIpAddresses service method, as returned by AmazonEC2.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> unassignPrivateIpAddressesAsync(UnassignPrivateIpAddressesRequest unassignPrivateIpAddressesRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     *
-     * @param unassignPrivateIpAddressesRequest Container for the necessary
-     *           parameters to execute the UnassignPrivateIpAddresses operation on
-     *           AmazonEC2.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UnassignPrivateIpAddresses service method, as returned by AmazonEC2.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> unassignPrivateIpAddressesAsync(UnassignPrivateIpAddressesRequest unassignPrivateIpAddressesRequest,
-            AsyncHandler<UnassignPrivateIpAddressesRequest, Void> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -4694,6 +4749,59 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Returns information about one or more PlacementGroup instances in a
+     * user's account.
+     * </p>
+     *
+     * @param describePlacementGroupsRequest Container for the necessary
+     *           parameters to execute the DescribePlacementGroups operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribePlacementGroups service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribePlacementGroupsResult> describePlacementGroupsAsync(DescribePlacementGroupsRequest describePlacementGroupsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Returns information about one or more PlacementGroup instances in a
+     * user's account.
+     * </p>
+     *
+     * @param describePlacementGroupsRequest Container for the necessary
+     *           parameters to execute the DescribePlacementGroups operation on
+     *           AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribePlacementGroups service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribePlacementGroupsResult> describePlacementGroupsAsync(DescribePlacementGroupsRequest describePlacementGroupsRequest,
+            AsyncHandler<DescribePlacementGroupsRequest, DescribePlacementGroupsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Gives you information about your subnets. You can filter the results
      * to return information only about subnets that match criteria you
      * specify.
@@ -4914,59 +5022,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     public Future<RunInstancesResult> runInstancesAsync(RunInstancesRequest runInstancesRequest,
             AsyncHandler<RunInstancesRequest, RunInstancesResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns information about one or more PlacementGroup instances in a
-     * user's account.
-     * </p>
-     *
-     * @param describePlacementGroupsRequest Container for the necessary
-     *           parameters to execute the DescribePlacementGroups operation on
-     *           AmazonEC2.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribePlacementGroups service method, as returned by AmazonEC2.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribePlacementGroupsResult> describePlacementGroupsAsync(DescribePlacementGroupsRequest describePlacementGroupsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns information about one or more PlacementGroup instances in a
-     * user's account.
-     * </p>
-     *
-     * @param describePlacementGroupsRequest Container for the necessary
-     *           parameters to execute the DescribePlacementGroups operation on
-     *           AmazonEC2.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribePlacementGroups service method, as returned by AmazonEC2.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribePlacementGroupsResult> describePlacementGroupsAsync(DescribePlacementGroupsRequest describePlacementGroupsRequest,
-            AsyncHandler<DescribePlacementGroupsRequest, DescribePlacementGroupsResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -6855,6 +6910,61 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     public Future<Void> modifySnapshotAttributeAsync(ModifySnapshotAttributeRequest modifySnapshotAttributeRequest,
             AsyncHandler<ModifySnapshotAttributeRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * The DescribeReservedInstancesModifications operation describes
+     * modifications made to Reserved Instances in your account.
+     * </p>
+     *
+     * @param describeReservedInstancesModificationsRequest Container for the
+     *           necessary parameters to execute the
+     *           DescribeReservedInstancesModifications operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeReservedInstancesModifications service method, as returned by
+     *         AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeReservedInstancesModificationsResult> describeReservedInstancesModificationsAsync(DescribeReservedInstancesModificationsRequest describeReservedInstancesModificationsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * The DescribeReservedInstancesModifications operation describes
+     * modifications made to Reserved Instances in your account.
+     * </p>
+     *
+     * @param describeReservedInstancesModificationsRequest Container for the
+     *           necessary parameters to execute the
+     *           DescribeReservedInstancesModifications operation on AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeReservedInstancesModifications service method, as returned by
+     *         AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeReservedInstancesModificationsResult> describeReservedInstancesModificationsAsync(DescribeReservedInstancesModificationsRequest describeReservedInstancesModificationsRequest,
+            AsyncHandler<DescribeReservedInstancesModificationsRequest, DescribeReservedInstancesModificationsResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**

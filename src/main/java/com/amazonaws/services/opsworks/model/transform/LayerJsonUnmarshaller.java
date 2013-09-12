@@ -22,8 +22,8 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
-import org.codehaus.jackson.JsonToken;
-import static org.codehaus.jackson.JsonToken.*;
+import com.fasterxml.jackson.core.JsonToken;
+import static com.fasterxml.jackson.core.JsonToken.*;
 
 
 /**
@@ -96,6 +96,10 @@ public class LayerJsonUnmarshaller implements Unmarshaller<Layer, JsonUnmarshall
                 if (context.testExpression("AutoAssignElasticIps", targetDepth)) {
                     context.nextToken();
                     layer.setAutoAssignElasticIps(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AutoAssignPublicIps", targetDepth)) {
+                    context.nextToken();
+                    layer.setAutoAssignPublicIps(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DefaultRecipes", targetDepth)) {
                     context.nextToken();

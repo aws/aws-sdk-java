@@ -38,7 +38,7 @@ public class AllocateAddressRequestMarshaller implements Marshaller<Request<Allo
 
         Request<AllocateAddressRequest> request = new DefaultRequest<AllocateAddressRequest>(allocateAddressRequest, "AmazonEC2");
         request.addParameter("Action", "AllocateAddress");
-        request.addParameter("Version", "2013-07-15");
+        request.addParameter("Version", "2013-08-15");
 
         if (allocateAddressRequest.getDomain() != null) {
             request.addParameter("Domain", StringUtils.fromString(allocateAddressRequest.getDomain()));

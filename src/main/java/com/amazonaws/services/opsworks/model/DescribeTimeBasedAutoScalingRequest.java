@@ -21,6 +21,9 @@ import java.io.Serializable;
  * <p>
  * Describes time-based auto scaling configurations for specified instances.
  * </p>
+ * <p>
+ * <b>NOTE:</b>You must specify at least one of the parameters.
+ * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeTimeBasedAutoScaling(DescribeTimeBasedAutoScalingRequest)
  */

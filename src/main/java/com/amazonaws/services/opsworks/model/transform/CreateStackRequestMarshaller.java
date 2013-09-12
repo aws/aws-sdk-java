@@ -91,6 +91,9 @@ public class CreateStackRequestMarshaller implements Marshaller<Request<CreateSt
             if (createStackRequest.getRegion() != null) {
                 jsonWriter.key("Region").value(createStackRequest.getRegion());
             }
+            if (createStackRequest.getVpcId() != null) {
+                jsonWriter.key("VpcId").value(createStackRequest.getVpcId());
+            }
             if (createStackRequest.getAttributes() != null) {
                 jsonWriter.key("Attributes");
                 jsonWriter.object();
@@ -117,6 +120,9 @@ public class CreateStackRequestMarshaller implements Marshaller<Request<CreateSt
             }
             if (createStackRequest.getDefaultAvailabilityZone() != null) {
                 jsonWriter.key("DefaultAvailabilityZone").value(createStackRequest.getDefaultAvailabilityZone());
+            }
+            if (createStackRequest.getDefaultSubnetId() != null) {
+                jsonWriter.key("DefaultSubnetId").value(createStackRequest.getDefaultSubnetId());
             }
             if (createStackRequest.getCustomJson() != null) {
                 jsonWriter.key("CustomJson").value(createStackRequest.getCustomJson());

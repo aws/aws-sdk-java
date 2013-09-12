@@ -38,7 +38,7 @@ public class DisableVgwRoutePropagationRequestMarshaller implements Marshaller<R
 
         Request<DisableVgwRoutePropagationRequest> request = new DefaultRequest<DisableVgwRoutePropagationRequest>(disableVgwRoutePropagationRequest, "AmazonEC2");
         request.addParameter("Action", "DisableVgwRoutePropagation");
-        request.addParameter("Version", "2013-07-15");
+        request.addParameter("Version", "2013-08-15");
 
         if (disableVgwRoutePropagationRequest.getRouteTableId() != null) {
             request.addParameter("RouteTableId", StringUtils.fromString(disableVgwRoutePropagationRequest.getRouteTableId()));

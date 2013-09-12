@@ -21,6 +21,9 @@ import java.io.Serializable;
  * <p>
  * Describes a stack's Elastic Load Balancing instances.
  * </p>
+ * <p>
+ * <b>NOTE:</b>You must specify at least one of the parameters.
+ * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeElasticLoadBalancers(DescribeElasticLoadBalancersRequest)
  */

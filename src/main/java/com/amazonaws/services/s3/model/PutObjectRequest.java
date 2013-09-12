@@ -139,10 +139,10 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
     private String storageClass;
 
     /**
-     * The optional progress listener for receiving updates about object upload
+     * The optional progress listener for receiving updates about object download
      * status.
      */
-    private ProgressListener progressListener;
+    private com.amazonaws.util.ProgressListener generalProgressListener;
 
     /** The optional redirect location about an object */
     private String redirectLocation;
@@ -767,7 +767,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      *            The new progress listener.
      */
     public void setProgressListener(ProgressListener progressListener) {
-        this.progressListener = progressListener;
+        this.generalProgressListener = new LegacyS3ProgressListener(progressListener);
     }
 
     /**
@@ -777,8 +777,13 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * @return the optional progress listener for receiving updates about object
      *         upload status.
      */
+    @Deprecated
     public ProgressListener getProgressListener() {
-        return progressListener;
+         if (generalProgressListener instanceof LegacyS3ProgressListener) {
+             return ((LegacyS3ProgressListener)generalProgressListener).unwrap();
+         } else {
+              return null;
+         }
     }
 
     /**
@@ -791,8 +796,46 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      *
      * @return This updated PutObjectRequest object.
      */
+    @Deprecated
     public PutObjectRequest withProgressListener(ProgressListener progressListener) {
         setProgressListener(progressListener);
+        return this;
+    }
+
+    /**
+     * Sets the optional progress listener for receiving updates about object
+     * download status.
+     *
+     * @param generalProgressListener
+     *            The new progress listener.
+     */
+    public void setGeneralProgressListener(com.amazonaws.util.ProgressListener generalProgressListener) {
+        this.generalProgressListener = generalProgressListener;
+    }
+
+    /**
+     * Returns the optional progress listener for receiving updates about object
+     * download status.
+     *
+     * @return the optional progress listener for receiving updates about object
+     *          download status.
+     */
+    public com.amazonaws.util.ProgressListener getGeneralProgressListener() {
+        return generalProgressListener;
+    }
+
+    /**
+     * Sets the optional progress listener for receiving updates about object
+     * upload status, and returns this updated object so that additional method
+     * calls can be chained together.
+     *
+     * @param generalProgressListener
+     *            The new progress listener.
+     *
+     * @return This updated PutObjectRequest object.
+     */
+    public PutObjectRequest withGeneralProgressListener(com.amazonaws.util.ProgressListener generalProgressListener) {
+        setGeneralProgressListener(generalProgressListener);
         return this;
     }
 

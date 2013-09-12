@@ -514,8 +514,8 @@ public class DynamoDBMapper {
     /**
      * Saves an item in DynamoDB. The service method used is determined by the
      * {@link DynamoDBMapperConfig#getSaveBehavior()} value, to use either
-     * {@link AWSDynamoDB#putItem(PutItemRequest)} or
-     * {@link AWSDynamoDB#updateItem(UpdateItemRequest)}:
+     * {@link AmazonDynamoDB#putItem(PutItemRequest)} or
+     * {@link AmazonDynamoDB#updateItem(UpdateItemRequest)}:
      * <ul>
      * <li><b>UPDATE</b> (default) : UPDATE will not affect unmodeled attributes
      * on a save operation and a null value for the modeled attribute will
@@ -570,6 +570,8 @@ public class DynamoDBMapper {
                                     .withAction("PUT"));
                 }
 
+                /* Use default implementation of onNonKeyAttribute(...) */
+                
                 @Override
                 protected void onNullNonKeyAttribute(String attributeName) {
                     /* When doing a force put, we can safely ignore the null-valued attributes. */
@@ -594,14 +596,37 @@ public class DynamoDBMapper {
                     /* Put it in the key collection which is later used in the updateItem request. */
                     getKeyAttributeValues().put(attributeName, keyAttributeValue);
                 }
+                
+
+                @Override
+                protected void onNonKeyAttribute(String attributeName,
+                        AttributeValue currentValue) {
+                    /* If it's a set attribute and the mapper is configured with APPEND_SET,
+                     * we do an "ADD" update instead of the default "PUT".
+                     */
+                    if (getLocalSaveBehavior() == SaveBehavior.APPEND_SET) {
+                        if (currentValue.getBS() != null
+                                || currentValue.getNS() != null
+                                || currentValue.getSS() != null) {
+                            getAttributeValueUpdates().put(
+                                    attributeName,
+                                    new AttributeValueUpdate().withValue(
+                                            currentValue).withAction("ADD"));
+                            return;
+                        }
+                    }
+                    /* Otherwise, we do the default "PUT" update. */
+                    super.onNonKeyAttribute(attributeName, currentValue);
+                }
 
                 @Override
                 protected void onNullNonKeyAttribute(String attributeName) {
                     /*
-                     * If UPDATE_SKIP_NULL_ATTRIBUTES is configured, we don't
-                     * delete null value attributes.
+                     * If UPDATE_SKIP_NULL_ATTRIBUTES or APPEND_SET is
+                     * configured, we don't delete null value attributes.
                      */
-                    if (getLocalSaveBehavior() == SaveBehavior.UPDATE_SKIP_NULL_ATTRIBUTES) {
+                    if (getLocalSaveBehavior() == SaveBehavior.UPDATE_SKIP_NULL_ATTRIBUTES
+                            || getLocalSaveBehavior() == SaveBehavior.APPEND_SET) {
                         return;
                     }
                     
@@ -618,7 +643,12 @@ public class DynamoDBMapper {
                 protected void executeLowLevelRequest(boolean onlyKeyAttributeSpecified) {
                     /*
                      * Do a putItem when a key-only object is being saved with
-                     * UPDATE configuration.
+                     * UPDATE configuration. 
+                     * Here we only need to consider UPDATE configuration, since
+                     * only UPDATE could cause the problematic situation of
+                     * updating an existing primary key with "DELETE" action on
+                     * non-key attributes. See the javadoc of keyOnlyPut(...)
+                     * for more detail.
                      */
                     boolean doUpdateItem = true;
                     if (onlyKeyAttributeSpecified && getLocalSaveBehavior() == SaveBehavior.UPDATE) {
@@ -752,8 +782,7 @@ public class DynamoDBMapper {
                 else  {
                     AttributeValue currentValue = getSimpleAttributeValue(method, getterResult);
                     if ( currentValue != null ) {
-                        updateValues.put(attributeName, new AttributeValueUpdate().withValue(currentValue)
-                                .withAction("PUT"));
+                        onNonKeyAttribute(attributeName, currentValue);
                         nonKeyAttributePresent = true;
                     } else {
                         onNullNonKeyAttribute(attributeName);
@@ -767,9 +796,11 @@ public class DynamoDBMapper {
             executeLowLevelRequest(! nonKeyAttributePresent);
             
             /*
-             * Finally, after the service call has succeeded, update the in-memory
-             * object with new field values as appropriate.
-             */
+			 * Finally, after the service call has succeeded, update the
+			 * in-memory object with new field values as appropriate. This
+			 * currently takes into account of auto-generated keys and versioned
+			 * attributes.
+			 */
             for ( ValueUpdate update : inMemoryUpdates ) {
                 update.apply();
             }
@@ -788,7 +819,22 @@ public class DynamoDBMapper {
         protected abstract void onKeyAttributeValue(String attributeName, AttributeValue keyAttributeValue);
         
         /**
-         * Implement this method to do any additional operations when a non-key
+         * Implement this method for necessary operations when a non-key
+         * attribute is set a non-null value in the object.
+         * The default implementation simply adds a "PUT" update for the given attribute.
+         * 
+         * @param attributeName
+         *            The name of the non-key attribute.
+         * @param currentValue
+         *            The updated value of the given attribute.
+         */
+        protected void onNonKeyAttribute(String attributeName, AttributeValue currentValue) {
+            updateValues.put(attributeName, new AttributeValueUpdate()
+                    .withValue(currentValue).withAction("PUT"));
+        }
+        
+        /**
+         * Implement this method for necessary operations when a non-key
          * attribute is set null in the object.
          * 
          * @param attributeName
@@ -1328,7 +1374,8 @@ public class DynamoDBMapper {
      * their primary keys.
      * {@link AmazonDynamoDB#batchGetItem(BatchGetItemRequest)} API.
      *
-     * @see DynamoDBMapper#batchLoad(Map, List, DynamoDBMapperConfig)
+     * @see #batchLoad(List, DynamoDBMapperConfig)
+     * @see #batchLoad(Map, DynamoDBMapperConfig)
      */
     public Map<String, List<Object>> batchLoad(Map<Class<?>, List<KeyPair>> itemsToGet) {
         return batchLoad(itemsToGet, this.config);
@@ -1780,7 +1827,7 @@ public class DynamoDBMapper {
      *
      * @param clazz
      *            The class mapped to a DynamoDB table.
-     * @param scanExpression
+     * @param queryExpression
      *            The parameters for running the scan.
      * @param config
      *            The mapper configuration to use for the query, which overrides

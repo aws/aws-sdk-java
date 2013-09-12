@@ -94,11 +94,22 @@ public class Layer implements Serializable {
     private Boolean enableAutoHealing;
 
     /**
-     * Whether the layer has an automatically assigned <a
+     * Whether to automatically assign an <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-     * IP address</a>.
+     * IP address</a> to the layer's instances. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     * to Edit a Layer</a>.
      */
     private Boolean autoAssignElasticIps;
+
+    /**
+     * For stacks that are running in a VPC, whether to automatically assign
+     * a public IP address to the layer's instances. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     * to Edit a Layer</a>.
+     */
+    private Boolean autoAssignPublicIps;
 
     /**
      * AWS OpsWorks supports five lifecycle events, <b>setup</b>,
@@ -845,41 +856,53 @@ public class Layer implements Serializable {
     }
     
     /**
-     * Whether the layer has an automatically assigned <a
+     * Whether to automatically assign an <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-     * IP address</a>.
+     * IP address</a> to the layer's instances. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     * to Edit a Layer</a>.
      *
-     * @return Whether the layer has an automatically assigned <a
+     * @return Whether to automatically assign an <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-     *         IP address</a>.
+     *         IP address</a> to the layer's instances. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     *         to Edit a Layer</a>.
      */
     public Boolean isAutoAssignElasticIps() {
         return autoAssignElasticIps;
     }
     
     /**
-     * Whether the layer has an automatically assigned <a
+     * Whether to automatically assign an <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-     * IP address</a>.
+     * IP address</a> to the layer's instances. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     * to Edit a Layer</a>.
      *
-     * @param autoAssignElasticIps Whether the layer has an automatically assigned <a
+     * @param autoAssignElasticIps Whether to automatically assign an <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-     *         IP address</a>.
+     *         IP address</a> to the layer's instances. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     *         to Edit a Layer</a>.
      */
     public void setAutoAssignElasticIps(Boolean autoAssignElasticIps) {
         this.autoAssignElasticIps = autoAssignElasticIps;
     }
     
     /**
-     * Whether the layer has an automatically assigned <a
+     * Whether to automatically assign an <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-     * IP address</a>.
+     * IP address</a> to the layer's instances. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     * to Edit a Layer</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param autoAssignElasticIps Whether the layer has an automatically assigned <a
+     * @param autoAssignElasticIps Whether to automatically assign an <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-     *         IP address</a>.
+     *         IP address</a> to the layer's instances. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     *         to Edit a Layer</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -891,16 +914,95 @@ public class Layer implements Serializable {
     
     
     /**
-     * Whether the layer has an automatically assigned <a
+     * Whether to automatically assign an <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-     * IP address</a>.
+     * IP address</a> to the layer's instances. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     * to Edit a Layer</a>.
      *
-     * @return Whether the layer has an automatically assigned <a
+     * @return Whether to automatically assign an <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-     *         IP address</a>.
+     *         IP address</a> to the layer's instances. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     *         to Edit a Layer</a>.
      */
     public Boolean getAutoAssignElasticIps() {
         return autoAssignElasticIps;
+    }
+    
+    /**
+     * For stacks that are running in a VPC, whether to automatically assign
+     * a public IP address to the layer's instances. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     * to Edit a Layer</a>.
+     *
+     * @return For stacks that are running in a VPC, whether to automatically assign
+     *         a public IP address to the layer's instances. For more information,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     *         to Edit a Layer</a>.
+     */
+    public Boolean isAutoAssignPublicIps() {
+        return autoAssignPublicIps;
+    }
+    
+    /**
+     * For stacks that are running in a VPC, whether to automatically assign
+     * a public IP address to the layer's instances. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     * to Edit a Layer</a>.
+     *
+     * @param autoAssignPublicIps For stacks that are running in a VPC, whether to automatically assign
+     *         a public IP address to the layer's instances. For more information,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     *         to Edit a Layer</a>.
+     */
+    public void setAutoAssignPublicIps(Boolean autoAssignPublicIps) {
+        this.autoAssignPublicIps = autoAssignPublicIps;
+    }
+    
+    /**
+     * For stacks that are running in a VPC, whether to automatically assign
+     * a public IP address to the layer's instances. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     * to Edit a Layer</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param autoAssignPublicIps For stacks that are running in a VPC, whether to automatically assign
+     *         a public IP address to the layer's instances. For more information,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     *         to Edit a Layer</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public Layer withAutoAssignPublicIps(Boolean autoAssignPublicIps) {
+        this.autoAssignPublicIps = autoAssignPublicIps;
+        return this;
+    }
+    
+    
+    /**
+     * For stacks that are running in a VPC, whether to automatically assign
+     * a public IP address to the layer's instances. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     * to Edit a Layer</a>.
+     *
+     * @return For stacks that are running in a VPC, whether to automatically assign
+     *         a public IP address to the layer's instances. For more information,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     *         to Edit a Layer</a>.
+     */
+    public Boolean getAutoAssignPublicIps() {
+        return autoAssignPublicIps;
     }
     
     /**
@@ -1209,6 +1311,7 @@ public class Layer implements Serializable {
         if (getVolumeConfigurations() != null) sb.append("VolumeConfigurations: " + getVolumeConfigurations() + ",");
         if (isEnableAutoHealing() != null) sb.append("EnableAutoHealing: " + isEnableAutoHealing() + ",");
         if (isAutoAssignElasticIps() != null) sb.append("AutoAssignElasticIps: " + isAutoAssignElasticIps() + ",");
+        if (isAutoAssignPublicIps() != null) sb.append("AutoAssignPublicIps: " + isAutoAssignPublicIps() + ",");
         if (getDefaultRecipes() != null) sb.append("DefaultRecipes: " + getDefaultRecipes() + ",");
         if (getCustomRecipes() != null) sb.append("CustomRecipes: " + getCustomRecipes() + ",");
         if (getCreatedAt() != null) sb.append("CreatedAt: " + getCreatedAt() + ",");
@@ -1235,6 +1338,7 @@ public class Layer implements Serializable {
         hashCode = prime * hashCode + ((getVolumeConfigurations() == null) ? 0 : getVolumeConfigurations().hashCode()); 
         hashCode = prime * hashCode + ((isEnableAutoHealing() == null) ? 0 : isEnableAutoHealing().hashCode()); 
         hashCode = prime * hashCode + ((isAutoAssignElasticIps() == null) ? 0 : isAutoAssignElasticIps().hashCode()); 
+        hashCode = prime * hashCode + ((isAutoAssignPublicIps() == null) ? 0 : isAutoAssignPublicIps().hashCode()); 
         hashCode = prime * hashCode + ((getDefaultRecipes() == null) ? 0 : getDefaultRecipes().hashCode()); 
         hashCode = prime * hashCode + ((getCustomRecipes() == null) ? 0 : getCustomRecipes().hashCode()); 
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode()); 
@@ -1276,6 +1380,8 @@ public class Layer implements Serializable {
         if (other.isEnableAutoHealing() != null && other.isEnableAutoHealing().equals(this.isEnableAutoHealing()) == false) return false; 
         if (other.isAutoAssignElasticIps() == null ^ this.isAutoAssignElasticIps() == null) return false;
         if (other.isAutoAssignElasticIps() != null && other.isAutoAssignElasticIps().equals(this.isAutoAssignElasticIps()) == false) return false; 
+        if (other.isAutoAssignPublicIps() == null ^ this.isAutoAssignPublicIps() == null) return false;
+        if (other.isAutoAssignPublicIps() != null && other.isAutoAssignPublicIps().equals(this.isAutoAssignPublicIps()) == false) return false; 
         if (other.getDefaultRecipes() == null ^ this.getDefaultRecipes() == null) return false;
         if (other.getDefaultRecipes() != null && other.getDefaultRecipes().equals(this.getDefaultRecipes()) == false) return false; 
         if (other.getCustomRecipes() == null ^ this.getCustomRecipes() == null) return false;

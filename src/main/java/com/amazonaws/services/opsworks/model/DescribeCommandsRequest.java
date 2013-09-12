@@ -21,6 +21,9 @@ import java.io.Serializable;
  * <p>
  * Describes the results of specified commands.
  * </p>
+ * <p>
+ * <b>NOTE:</b>You must specify at least one of the parameters.
+ * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeCommands(DescribeCommandsRequest)
  */

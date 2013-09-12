@@ -38,7 +38,7 @@ public class AttachVolumeRequestMarshaller implements Marshaller<Request<AttachV
 
         Request<AttachVolumeRequest> request = new DefaultRequest<AttachVolumeRequest>(attachVolumeRequest, "AmazonEC2");
         request.addParameter("Action", "AttachVolume");
-        request.addParameter("Version", "2013-07-15");
+        request.addParameter("Version", "2013-08-15");
 
         if (attachVolumeRequest.getVolumeId() != null) {
             request.addParameter("VolumeId", StringUtils.fromString(attachVolumeRequest.getVolumeId()));

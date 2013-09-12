@@ -62,6 +62,10 @@ public class ReservedInstancesStaxUnmarshaller implements Unmarshaller<ReservedI
                     reservedInstances.setStart(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("end", targetDepth)) {
+                    reservedInstances.setEnd(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("duration", targetDepth)) {
                     reservedInstances.setDuration(LongStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

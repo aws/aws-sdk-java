@@ -192,7 +192,7 @@ public class DynamoDBQueryExpression <T> {
     /**
      * Sets one range key condition for this query, using the attribute name of
      * the range key. All range key attributes for the table must be specified
-     * by using {@link @DynamoDBRangeKey} or {@link @DynamoDBIndexRangeKey} annotations
+     * by using {@link DynamoDBRangeKey} or {@link DynamoDBIndexRangeKey} annotations
      * before executing the query.
      * 		<dl>
      * 			<dt>If the attribute is the primary range key</dt>
@@ -226,7 +226,7 @@ public class DynamoDBQueryExpression <T> {
 
     /**
      * Sets the name of the index to be used by this query. All index names must be specified by using
-     * {@link @DynamoDBIndexRangeKey} annotation on the getter method of the corresponding index range key
+     * {@link DynamoDBIndexRangeKey} annotation on the getter method of the corresponding index range key
      * before executing the query.
      */
     public void setIndexName(String indexName) {
@@ -235,7 +235,7 @@ public class DynamoDBQueryExpression <T> {
 
     /**
      * Sets the name of the index to be used by this query. All index names must be specified by using
-     * {@link @DynamoDBIndexRangeKey} annotation on the getter method of the corresponding index range key
+     * {@link DynamoDBIndexRangeKey} annotation on the getter method of the corresponding index range key
      * before executing the query.
      * <p>Returns a pointer to this object for method-chaining.
      */

@@ -22,8 +22,8 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
-import org.codehaus.jackson.JsonToken;
-import static org.codehaus.jackson.JsonToken.*;
+import com.fasterxml.jackson.core.JsonToken;
+import static com.fasterxml.jackson.core.JsonToken.*;
 
 
 /**
@@ -76,6 +76,9 @@ public class ElasticLoadBalancerJsonUnmarshaller implements Unmarshaller<Elastic
                 }
                 if (context.testExpression("AvailabilityZones", targetDepth)) {
                     elasticLoadBalancer.setAvailabilityZones(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("SubnetIds", targetDepth)) {
+                    elasticLoadBalancer.setSubnetIds(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("Ec2InstanceIds", targetDepth)) {
                     elasticLoadBalancer.setEc2InstanceIds(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));

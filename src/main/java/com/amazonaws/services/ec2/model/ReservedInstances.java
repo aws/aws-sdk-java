@@ -45,6 +45,8 @@ public class ReservedInstances implements Serializable {
      */
     private java.util.Date start;
 
+    private java.util.Date end;
+
     /**
      * The duration of the Reserved Instances, in seconds.
      */
@@ -283,6 +285,40 @@ public class ReservedInstances implements Serializable {
      */
     public ReservedInstances withStart(java.util.Date start) {
         this.start = start;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the End property for this object.
+     *
+     * @return The value of the End property for this object.
+     */
+    public java.util.Date getEnd() {
+        return end;
+    }
+    
+    /**
+     * Sets the value of the End property for this object.
+     *
+     * @param end The new value for the End property for this object.
+     */
+    public void setEnd(java.util.Date end) {
+        this.end = end;
+    }
+    
+    /**
+     * Sets the value of the End property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param end The new value for the End property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public ReservedInstances withEnd(java.util.Date end) {
+        this.end = end;
         return this;
     }
     
@@ -759,6 +795,7 @@ public class ReservedInstances implements Serializable {
         if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");
         if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
         if (getStart() != null) sb.append("Start: " + getStart() + ",");
+        if (getEnd() != null) sb.append("End: " + getEnd() + ",");
         if (getDuration() != null) sb.append("Duration: " + getDuration() + ",");
         if (getUsagePrice() != null) sb.append("UsagePrice: " + getUsagePrice() + ",");
         if (getFixedPrice() != null) sb.append("FixedPrice: " + getFixedPrice() + ",");
@@ -783,6 +820,7 @@ public class ReservedInstances implements Serializable {
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode()); 
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode()); 
         hashCode = prime * hashCode + ((getStart() == null) ? 0 : getStart().hashCode()); 
+        hashCode = prime * hashCode + ((getEnd() == null) ? 0 : getEnd().hashCode()); 
         hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode()); 
         hashCode = prime * hashCode + ((getUsagePrice() == null) ? 0 : getUsagePrice().hashCode()); 
         hashCode = prime * hashCode + ((getFixedPrice() == null) ? 0 : getFixedPrice().hashCode()); 
@@ -813,6 +851,8 @@ public class ReservedInstances implements Serializable {
         if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false) return false; 
         if (other.getStart() == null ^ this.getStart() == null) return false;
         if (other.getStart() != null && other.getStart().equals(this.getStart()) == false) return false; 
+        if (other.getEnd() == null ^ this.getEnd() == null) return false;
+        if (other.getEnd() != null && other.getEnd().equals(this.getEnd()) == false) return false; 
         if (other.getDuration() == null ^ this.getDuration() == null) return false;
         if (other.getDuration() != null && other.getDuration().equals(this.getDuration()) == false) return false; 
         if (other.getUsagePrice() == null ^ this.getUsagePrice() == null) return false;

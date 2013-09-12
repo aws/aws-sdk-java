@@ -78,10 +78,10 @@ public class UploadPartRequest extends AmazonWebServiceRequest {
     private long fileOffset;
 
     /**
-     * The optional progress listener for receiving updates about object upload
+     * The optional progress listener for receiving updates about object download
      * status.
      */
-    private ProgressListener progressListener;
+    private com.amazonaws.util.ProgressListener generalProgressListener;
 
 	/**
 	 * Allows the caller to indicate if this is the last part being uploaded in
@@ -459,7 +459,7 @@ public class UploadPartRequest extends AmazonWebServiceRequest {
      *            The new progress listener.
      */
     public void setProgressListener(ProgressListener progressListener) {
-        this.progressListener = progressListener;
+        this.generalProgressListener = new LegacyS3ProgressListener(progressListener);
     }
 
     /**
@@ -469,8 +469,13 @@ public class UploadPartRequest extends AmazonWebServiceRequest {
      * @return the optional progress listener for receiving updates about object
      *         upload status.
      */
+    @Deprecated
     public ProgressListener getProgressListener() {
-        return progressListener;
+        if (generalProgressListener instanceof LegacyS3ProgressListener) {
+            return ((LegacyS3ProgressListener)generalProgressListener).unwrap();
+        } else {
+             return null;
+        }
     }
 
     /**
@@ -483,6 +488,7 @@ public class UploadPartRequest extends AmazonWebServiceRequest {
      *
      * @return This updated UploadPartRequest object.
      */
+    @Deprecated
     public UploadPartRequest withProgressListener(ProgressListener progressListener) {
         setProgressListener(progressListener);
         return this;
@@ -526,4 +532,42 @@ public class UploadPartRequest extends AmazonWebServiceRequest {
 		setLastPart(isLastPart);
 		return this;
 	}
+
+    /**
+     * Sets the optional progress listener for receiving updates about object
+     * download status.
+     *
+     * @param generalProgressListener
+     *            The new progress listener.
+     */
+    public void setGeneralProgressListener(com.amazonaws.util.ProgressListener generalProgressListener) {
+        this.generalProgressListener = generalProgressListener;
+    }
+
+    /**
+     * Returns the optional progress listener for receiving updates about object
+     * download status.
+     *
+     * @return the optional progress listener for receiving updates about object
+     *          download status.
+     */
+    public com.amazonaws.util.ProgressListener getGeneralProgressListener() {
+        return generalProgressListener;
+    }
+
+    /**
+     * Sets the optional progress listener for receiving updates about object
+     * upload status, and returns this updated object so that additional method
+     * calls can be chained together.
+     *
+     * @param generalProgressListener
+     *            The new progress listener.
+     *
+     * @return This updated UploadPartRequest object.
+     */
+    @Deprecated
+    public UploadPartRequest withGeneralProgressListener(com.amazonaws.util.ProgressListener progressListener) {
+        setGeneralProgressListener(progressListener);
+        return this;
+    }
 }

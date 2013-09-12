@@ -16,13 +16,13 @@ package com.amazonaws.services.simpleworkflow.flow;
 
 import java.io.IOException;
 
-import org.codehaus.jackson.JsonGenerationException;
-import org.codehaus.jackson.JsonParseException;
-import org.codehaus.jackson.map.JsonMappingException;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.map.ObjectMapper.DefaultTyping;
-import org.codehaus.jackson.map.SerializationConfig;
-import org.codehaus.jackson.map.DeserializationConfig;
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectMapper.DefaultTyping;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 
 /**
  * Implements conversion through Jackson JSON processor. Consult its
@@ -50,8 +50,8 @@ public class JsonDataConverter extends DataConverter {
     public JsonDataConverter() {
         this(new ObjectMapper());
         // ignoring unknown properties makes us more robust to changes in the schema
-        mapper.configure(DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        mapper.configure(SerializationConfig.Feature.FAIL_ON_EMPTY_BEANS, false);
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
 
         // This will allow including type information all non-final types.  This allows correct 
         // serialization/deserialization of generic collections, for example List<MyType>. 

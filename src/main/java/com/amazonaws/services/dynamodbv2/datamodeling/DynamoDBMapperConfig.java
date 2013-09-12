@@ -66,7 +66,17 @@ public class DynamoDBMapperConfig {
          * ones, (delete and recreate) on save. Versioned field constraints will
          * also be disregarded.
          */
-        CLOBBER
+        CLOBBER,
+        
+        /**
+         * APPEND_SET treats scalar attributes (String, Number, Binary) the same
+         * as UPDATE_SKIP_NULL_ATTRIBUTES does. However, for set attributes, it
+         * will append to the existing attribute value, instead of overriding
+         * it. Caller needs to make sure that the modeled attribute type matches
+         * the existing set type, otherwise it would result in a service
+         * exception.
+         */
+        APPEND_SET
     };
 
     /**

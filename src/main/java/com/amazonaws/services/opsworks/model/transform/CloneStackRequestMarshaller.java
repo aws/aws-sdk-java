@@ -94,6 +94,9 @@ public class CloneStackRequestMarshaller implements Marshaller<Request<CloneStac
             if (cloneStackRequest.getRegion() != null) {
                 jsonWriter.key("Region").value(cloneStackRequest.getRegion());
             }
+            if (cloneStackRequest.getVpcId() != null) {
+                jsonWriter.key("VpcId").value(cloneStackRequest.getVpcId());
+            }
             if (cloneStackRequest.getAttributes() != null) {
                 jsonWriter.key("Attributes");
                 jsonWriter.object();
@@ -120,6 +123,9 @@ public class CloneStackRequestMarshaller implements Marshaller<Request<CloneStac
             }
             if (cloneStackRequest.getDefaultAvailabilityZone() != null) {
                 jsonWriter.key("DefaultAvailabilityZone").value(cloneStackRequest.getDefaultAvailabilityZone());
+            }
+            if (cloneStackRequest.getDefaultSubnetId() != null) {
+                jsonWriter.key("DefaultSubnetId").value(cloneStackRequest.getDefaultSubnetId());
             }
             if (cloneStackRequest.getCustomJson() != null) {
                 jsonWriter.key("CustomJson").value(cloneStackRequest.getCustomJson());

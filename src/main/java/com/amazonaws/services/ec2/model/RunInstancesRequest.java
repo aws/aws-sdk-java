@@ -93,6 +93,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * Specifies additional information to make available to the instance(s).
+     * This parameter must be passed as a Base64-encoded string.
      */
     private String userData;
 
@@ -526,8 +527,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     
     /**
      * Specifies additional information to make available to the instance(s).
+     * This parameter must be passed as a Base64-encoded string.
      *
      * @return Specifies additional information to make available to the instance(s).
+     *         This parameter must be passed as a Base64-encoded string.
      */
     public String getUserData() {
         return userData;
@@ -535,8 +538,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     
     /**
      * Specifies additional information to make available to the instance(s).
+     * This parameter must be passed as a Base64-encoded string.
      *
      * @param userData Specifies additional information to make available to the instance(s).
+     *         This parameter must be passed as a Base64-encoded string.
      */
     public void setUserData(String userData) {
         this.userData = userData;
@@ -544,10 +549,12 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     
     /**
      * Specifies additional information to make available to the instance(s).
+     * This parameter must be passed as a Base64-encoded string.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param userData Specifies additional information to make available to the instance(s).
+     *         This parameter must be passed as a Base64-encoded string.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

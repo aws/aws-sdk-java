@@ -66,7 +66,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonDynamoDBAsyncClient() {
         this(new DefaultAWSCredentialsProviderChain());
@@ -90,7 +90,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      *                       client connects to AmazonDynamoDB
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonDynamoDBAsyncClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());

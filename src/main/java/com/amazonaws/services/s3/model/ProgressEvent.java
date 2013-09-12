@@ -14,36 +14,21 @@
  */
 package com.amazonaws.services.s3.model;
 
+
 /**
  * Notification of a progress change on an Amazon S3 transfer. Typically this
  * means notice that another chunk of bytes was transferred, but it also signals
  * other types of progress events such as a transfer starting, or failing.
  */
-public class ProgressEvent {
-    // Single part event codes
-    public static final int STARTED_EVENT_CODE   = 1;
-    public static final int COMPLETED_EVENT_CODE = 2;
-    public static final int FAILED_EVENT_CODE    = 4;
-    public static final int CANCELED_EVENT_CODE  = 8;
+@Deprecated
+public class ProgressEvent extends com.amazonaws.event.ProgressEvent {
 
-    // Multipart event codes
-    public static final int PART_STARTED_EVENT_CODE   = 1024;
-    public static final int PART_COMPLETED_EVENT_CODE = 2048;
-    public static final int PART_FAILED_EVENT_CODE    = 4096;
-    
-
-    /** The number of bytes transferred since the last progress event. */
-    private int bytesTransferred;
-    
-    /**
-     * The unique event code that identifies what type of specific type of event
-     * this object represents.
-     */
-    private int eventCode;
-
-    
     public ProgressEvent(int bytesTransferred) {
-        this.bytesTransferred = bytesTransferred;
+        super(bytesTransferred);
+    }
+
+    public ProgressEvent(int eventCode, long bytesTransferred) {
+        super(eventCode, bytesTransferred);
     }
 
     /**
@@ -55,53 +40,11 @@ public class ProgressEvent {
     }
 
     /**
-     * Sets the number of bytes transferred since the last progress event.
-     * 
-     * @param bytesTransferred
-     *            The number of bytes transferred since the last progress event.
-     */
-    public void setBytesTransferred(int bytesTransferred) {
-        this.bytesTransferred = bytesTransferred;
-    }
-
-    /**
      * @deprecated Replaced by {@link #getBytesTransferred()}
      */
     @Deprecated
     public int getBytesTransfered() {
-        return getBytesTransferred();
-    }
-
-    /**
-     * Returns the number of bytes transferred since the last progress event.
-     * 
-     * @return The number of bytes transferred since the last progress event.
-     */
-    public int getBytesTransferred() {
-        return bytesTransferred;
-    }
-
-    /**
-     * Returns the unique event code that identifies what type of specific type
-     * of event this object represents.
-     * 
-     * @return The unique event code that identifies what type of specific type
-     *         of event this object represents.
-     */
-    public int getEventCode() {
-        return eventCode;
-    }
-
-    /**
-     * Sets the unique event code that identifies what type of specific type of
-     * event this object represents.
-     * 
-     * @param eventType
-     *            The unique event code that identifies what type of specific
-     *            type of event this object represents.
-     */
-    public void setEventCode(int eventType) {
-        this.eventCode = eventType;
+        return (int)getBytesTransferred();
     }
 
 }

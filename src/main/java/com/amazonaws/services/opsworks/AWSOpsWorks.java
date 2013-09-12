@@ -40,7 +40,7 @@ import com.amazonaws.services.opsworks.model.*;
  * </p>
  * <p>
  * When you call CreateStack, CloneStack, or UpdateStack we recommend you use the <code>ConfigurationManager</code> parameter to specify the Chef
- * version, 0.9 or 11.4. The default value is currently 0.9. However, we expect to change the default value to 11.4 in late August 2013.
+ * version, 0.9 or 11.4. The default value is currently 0.9. However, we expect to change the default value to 11.4 in September 2013.
  * </p>
  */
 public interface AWSOpsWorks {
@@ -200,8 +200,10 @@ public interface AWSOpsWorks {
 
     /**
      * <p>
-     * Requests a description of a set of instances associated with a
-     * specified ID or IDs.
+     * Requests a description of a set of instances.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>You must specify at least one of the parameters.
      * </p>
      *
      * @param describeInstancesRequest Container for the necessary parameters
@@ -454,6 +456,9 @@ public interface AWSOpsWorks {
      * <p>
      * Describes the results of specified commands.
      * </p>
+     * <p>
+     * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
      *
      * @param describeCommandsRequest Container for the necessary parameters
      *           to execute the DescribeCommands service method on AWSOpsWorks.
@@ -551,6 +556,9 @@ public interface AWSOpsWorks {
      * <p>
      * Describe an instance's RAID arrays.
      * </p>
+     * <p>
+     * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
      *
      * @param describeRaidArraysRequest Container for the necessary
      *           parameters to execute the DescribeRaidArrays service method on
@@ -577,6 +585,9 @@ public interface AWSOpsWorks {
      * <p>
      * Requests a description of one or more layers in a specified stack.
      * </p>
+     * <p>
+     * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
      *
      * @param describeLayersRequest Container for the necessary parameters to
      *           execute the DescribeLayers service method on AWSOpsWorks.
@@ -601,6 +612,9 @@ public interface AWSOpsWorks {
     /**
      * <p>
      * Describes load-based auto scaling configurations for specified layers.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>You must specify at least one of the parameters.
      * </p>
      *
      * @param describeLoadBasedAutoScalingRequest Container for the necessary
@@ -659,6 +673,9 @@ public interface AWSOpsWorks {
     /**
      * <p>
      * Describes a stack's Elastic Load Balancing instances.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>You must specify at least one of the parameters.
      * </p>
      *
      * @param describeElasticLoadBalancersRequest Container for the necessary
@@ -737,6 +754,9 @@ public interface AWSOpsWorks {
      * <p>
      * Describes an instance's Amazon EBS volumes.
      * </p>
+     * <p>
+     * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
      *
      * @param describeVolumesRequest Container for the necessary parameters
      *           to execute the DescribeVolumes service method on AWSOpsWorks.
@@ -789,6 +809,9 @@ public interface AWSOpsWorks {
      * <p>
      * Describes time-based auto scaling configurations for specified
      * instances.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>You must specify at least one of the parameters.
      * </p>
      *
      * @param describeTimeBasedAutoScalingRequest Container for the necessary
@@ -912,6 +935,9 @@ public interface AWSOpsWorks {
      * <p>
      * Requests a description of a specified set of deployments.
      * </p>
+     * <p>
+     * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
      *
      * @param describeDeploymentsRequest Container for the necessary
      *           parameters to execute the DescribeDeployments service method on
@@ -982,9 +1008,12 @@ public interface AWSOpsWorks {
 
     /**
      * <p>
-     * Describes an instance's <a
+     * Describes <a
      * aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">
      * Elastic IP addresses </a> .
+     * </p>
+     * <p>
+     * <b>NOTE:</b>You must specify at least one of the parameters.
      * </p>
      *
      * @param describeElasticIpsRequest Container for the necessary
@@ -1037,6 +1066,9 @@ public interface AWSOpsWorks {
      * <p>
      * Requests a description of a specified set of apps.
      * </p>
+     * <p>
+     * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
      *
      * @param describeAppsRequest Container for the necessary parameters to
      *           execute the DescribeApps service method on AWSOpsWorks.
@@ -1065,9 +1097,9 @@ public interface AWSOpsWorks {
      * How to Create a Layer </a> .
      * </p>
      * <p>
-     * <b>NOTE:</b>You should use CreateLayer for non-custom layer types such
+     * <b>NOTE:</b>You should use CreateLayer for noncustom layer types such
      * as PHP App Server only if the stack does not have an existing layer of
-     * that type. A stack can have at most one instance of each non-custom
+     * that type. A stack can have at most one instance of each noncustom
      * layer; if you attempt to create a second instance, CreateLayer fails.
      * A stack can have an arbitrary number of custom layers, so you can call
      * CreateLayer as many times as you like for that layer type.

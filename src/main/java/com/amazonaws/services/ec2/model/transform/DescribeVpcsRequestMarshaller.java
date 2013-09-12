@@ -38,7 +38,7 @@ public class DescribeVpcsRequestMarshaller implements Marshaller<Request<Describ
 
         Request<DescribeVpcsRequest> request = new DefaultRequest<DescribeVpcsRequest>(describeVpcsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeVpcs");
-        request.addParameter("Version", "2013-07-15");
+        request.addParameter("Version", "2013-08-15");
 
 
         java.util.List<String> vpcIdsList = describeVpcsRequest.getVpcIds();

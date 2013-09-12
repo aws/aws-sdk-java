@@ -22,8 +22,8 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
-import org.codehaus.jackson.JsonToken;
-import static org.codehaus.jackson.JsonToken.*;
+import com.fasterxml.jackson.core.JsonToken;
+import static com.fasterxml.jackson.core.JsonToken.*;
 
 
 /**
@@ -62,6 +62,10 @@ public class StackJsonUnmarshaller implements Unmarshaller<Stack, JsonUnmarshall
                     context.nextToken();
                     stack.setRegion(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("VpcId", targetDepth)) {
+                    context.nextToken();
+                    stack.setVpcId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Attributes", targetDepth)) {
                     stack.setAttributes(new MapUnmarshaller<String,String>(StringJsonUnmarshaller.getInstance(), StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
@@ -84,6 +88,10 @@ public class StackJsonUnmarshaller implements Unmarshaller<Stack, JsonUnmarshall
                 if (context.testExpression("DefaultAvailabilityZone", targetDepth)) {
                     context.nextToken();
                     stack.setDefaultAvailabilityZone(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DefaultSubnetId", targetDepth)) {
+                    context.nextToken();
+                    stack.setDefaultSubnetId(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CustomJson", targetDepth)) {
                     context.nextToken();

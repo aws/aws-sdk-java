@@ -21,6 +21,9 @@ import java.io.Serializable;
  * <p>
  * Requests a description of a specified set of apps.
  * </p>
+ * <p>
+ * <b>NOTE:</b>You must specify at least one of the parameters.
+ * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeApps(DescribeAppsRequest)
  */

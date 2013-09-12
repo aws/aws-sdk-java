@@ -129,6 +129,12 @@
         <Hostname>storagegateway.us-east-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>support</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>support.us-east-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>elasticloadbalancing</ServiceName>
         <Http>true</Http>
         <Https>true</Https>
@@ -190,6 +196,12 @@
         <Http>true</Http>
         <Https>true</Https>
         <Hostname>cloudfront.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>cloudsearch</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>cloudsearch.us-west-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>monitoring</ServiceName>
@@ -339,6 +351,12 @@
         <Hostname>cloudfront.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>cloudsearch</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>cloudsearch.us-west-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>monitoring</ServiceName>
         <Http>true</Http>
         <Https>true</Https>
@@ -465,6 +483,12 @@
         <Hostname>directconnect.us-west-2.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>redshift</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>redshift.us-west-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>elastictranscoder</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -484,6 +508,12 @@
         <Http>true</Http>
         <Https>true</Https>
         <Hostname>cloudfront.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>cloudsearch</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>cloudsearch.eu-west-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>monitoring</ServiceName>
@@ -610,6 +640,12 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>directconnect.eu-west-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>redshift</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>redshift.eu-west-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>elastictranscoder</ServiceName>
@@ -759,6 +795,12 @@
         <Hostname>directconnect.ap-northeast-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>redshift</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>redshift.ap-northeast-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>elastictranscoder</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -778,6 +820,12 @@
         <Http>true</Http>
         <Https>true</Https>
         <Hostname>cloudfront.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>cloudsearch</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>cloudsearch.ap-southeast-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>monitoring</ServiceName>
@@ -945,6 +993,12 @@
         <Hostname>elasticmapreduce.ap-southeast-2.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>elasticache</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>elasticache.ap-southeast-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>rds</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -955,6 +1009,12 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>route53.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>sdb</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>sdb.ap-southeast-2.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>sns</ServiceName>
@@ -1179,6 +1239,12 @@
     <Region>
       <Name>us-gov-west-1</Name>
       <Endpoint>
+        <ServiceName>cloudformation</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>cloudformation.us-gov-west-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>monitoring</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -1195,6 +1261,12 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>ec2.us-gov-west-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>elasticmapreduce</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>elasticmapreduce.us-gov-west-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>rds</ServiceName>
@@ -1233,10 +1305,22 @@
         <Hostname>iam.us-gov.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>sts</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>sts.us-gov-west-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>elasticloadbalancing</ServiceName>
         <Http>true</Http>
         <Https>true</Https>
         <Hostname>elasticloadbalancing.us-gov-west-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>swf</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>swf.us-gov-west-1.amazonaws.com</Hostname>
       </Endpoint>
     </Region>
   </Regions>
@@ -1252,6 +1336,7 @@
       <RegionName>ap-southeast-1</RegionName>
       <RegionName>ap-southeast-2</RegionName>
       <RegionName>sa-east-1</RegionName>
+      <RegionName>us-gov-west-1</RegionName>
     </Service>
     <Service>
       <Name>cloudfront</Name>
@@ -1269,6 +1354,10 @@
       <Name>cloudsearch</Name>
       <FullName>Amazon CloudSearch</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-west-1</RegionName>
+      <RegionName>us-west-2</RegionName>
+      <RegionName>eu-west-1</RegionName>
+      <RegionName>ap-southeast-1</RegionName>
     </Service>
     <Service>
       <Name>monitoring</Name>
@@ -1320,6 +1409,7 @@
       <RegionName>ap-southeast-1</RegionName>
       <RegionName>ap-southeast-2</RegionName>
       <RegionName>sa-east-1</RegionName>
+      <RegionName>us-gov-west-1</RegionName>
     </Service>
     <Service>
       <Name>elasticache</Name>
@@ -1330,6 +1420,7 @@
       <RegionName>eu-west-1</RegionName>
       <RegionName>ap-northeast-1</RegionName>
       <RegionName>ap-southeast-1</RegionName>
+      <RegionName>ap-southeast-2</RegionName>
       <RegionName>sa-east-1</RegionName>
     </Service>
     <Service>
@@ -1371,6 +1462,7 @@
       <RegionName>eu-west-1</RegionName>
       <RegionName>ap-northeast-1</RegionName>
       <RegionName>ap-southeast-1</RegionName>
+      <RegionName>ap-southeast-2</RegionName>
       <RegionName>sa-east-1</RegionName>
     </Service>
     <Service>
@@ -1473,6 +1565,7 @@
       <RegionName>ap-southeast-1</RegionName>
       <RegionName>ap-southeast-2</RegionName>
       <RegionName>sa-east-1</RegionName>
+      <RegionName>us-gov-west-1</RegionName>
     </Service>
     <Service>
       <Name>storagegateway</Name>
@@ -1485,6 +1578,11 @@
       <RegionName>ap-southeast-1</RegionName>
       <RegionName>ap-southeast-2</RegionName>
       <RegionName>sa-east-1</RegionName>
+    </Service>
+    <Service>
+      <Name>support</Name>
+      <FullName>AWS Support</FullName>
+      <RegionName>us-east-1</RegionName>
     </Service>
     <Service>
       <Name>elasticloadbalancing</Name>
@@ -1510,6 +1608,7 @@
       <RegionName>ap-southeast-1</RegionName>
       <RegionName>ap-southeast-2</RegionName>
       <RegionName>sa-east-1</RegionName>
+      <RegionName>us-gov-west-1</RegionName>
     </Service>
     <Service>
       <Name>glacier</Name>
@@ -1541,6 +1640,9 @@
       <Name>redshift</Name>
       <FullName>Amazon Redshift</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-west-2</RegionName>
+      <RegionName>eu-west-1</RegionName>
+      <RegionName>ap-northeast-1</RegionName>
     </Service>
     <Service>
       <Name>opsworks</Name>

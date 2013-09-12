@@ -64,19 +64,9 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
     private String defaultInstanceProfileArn;
 
     /**
-     * The stack default operating system, which must be set to one of the
-     * following. <ul> <li>Standard operating systems: <code>Amazon
-     * Linux</code> or <code>Ubuntu 12.04 LTS</code></li> <li>Custom AMIs:
-     * <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
-     * Linux</code>. If you set this parameter to <code>Custom</code>, you
-     * must use the <a>CreateInstance</a> action's AmiId parameter to specify
-     * the custom AMI that you want to use. For more information on the
-     * standard operating systems, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     * Systems</a>For more information on how to use custom AMIs with
-     * OpsWorks, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.
+     * The stack's default operating system, which must be set to
+     * <code>Amazon Linux</code> or <code>Ubuntu 12.04 LTS</code>. The
+     * default option is <code>Amazon Linux</code>.
      */
     private String defaultOs;
 
@@ -97,11 +87,23 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
     private String hostnameTheme;
 
     /**
-     * The stack new default Availability Zone. For more information, see <a
+     * The stack's default Availability Zone, which must be in the specified
+     * region. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     * and Endpoints</a>.
+     * and Endpoints</a>. If you also specify a value for
+     * <code>DefaultSubnetId</code>, the subnet must be in the same zone. For
+     * more information, see <a>CreateStack</a>.
      */
     private String defaultAvailabilityZone;
+
+    /**
+     * The stack's default subnet ID. All instances will be launched into
+     * this subnet unless you specify otherwise when you create the instance.
+     * If you also specify a value for <code>DefaultAvailabilityZone</code>,
+     * the subnet must be in that zone. For more information, see
+     * <a>CreateStack</a>.
+     */
+    private String defaultSubnetId;
 
     /**
      * A string that contains user-defined, custom JSON. It is used to
@@ -433,101 +435,41 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
     
     
     /**
-     * The stack default operating system, which must be set to one of the
-     * following. <ul> <li>Standard operating systems: <code>Amazon
-     * Linux</code> or <code>Ubuntu 12.04 LTS</code></li> <li>Custom AMIs:
-     * <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
-     * Linux</code>. If you set this parameter to <code>Custom</code>, you
-     * must use the <a>CreateInstance</a> action's AmiId parameter to specify
-     * the custom AMI that you want to use. For more information on the
-     * standard operating systems, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     * Systems</a>For more information on how to use custom AMIs with
-     * OpsWorks, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.
+     * The stack's default operating system, which must be set to
+     * <code>Amazon Linux</code> or <code>Ubuntu 12.04 LTS</code>. The
+     * default option is <code>Amazon Linux</code>.
      *
-     * @return The stack default operating system, which must be set to one of the
-     *         following. <ul> <li>Standard operating systems: <code>Amazon
-     *         Linux</code> or <code>Ubuntu 12.04 LTS</code></li> <li>Custom AMIs:
-     *         <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
-     *         Linux</code>. If you set this parameter to <code>Custom</code>, you
-     *         must use the <a>CreateInstance</a> action's AmiId parameter to specify
-     *         the custom AMI that you want to use. For more information on the
-     *         standard operating systems, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     *         Systems</a>For more information on how to use custom AMIs with
-     *         OpsWorks, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     *         Custom AMIs</a>.
+     * @return The stack's default operating system, which must be set to
+     *         <code>Amazon Linux</code> or <code>Ubuntu 12.04 LTS</code>. The
+     *         default option is <code>Amazon Linux</code>.
      */
     public String getDefaultOs() {
         return defaultOs;
     }
     
     /**
-     * The stack default operating system, which must be set to one of the
-     * following. <ul> <li>Standard operating systems: <code>Amazon
-     * Linux</code> or <code>Ubuntu 12.04 LTS</code></li> <li>Custom AMIs:
-     * <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
-     * Linux</code>. If you set this parameter to <code>Custom</code>, you
-     * must use the <a>CreateInstance</a> action's AmiId parameter to specify
-     * the custom AMI that you want to use. For more information on the
-     * standard operating systems, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     * Systems</a>For more information on how to use custom AMIs with
-     * OpsWorks, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.
+     * The stack's default operating system, which must be set to
+     * <code>Amazon Linux</code> or <code>Ubuntu 12.04 LTS</code>. The
+     * default option is <code>Amazon Linux</code>.
      *
-     * @param defaultOs The stack default operating system, which must be set to one of the
-     *         following. <ul> <li>Standard operating systems: <code>Amazon
-     *         Linux</code> or <code>Ubuntu 12.04 LTS</code></li> <li>Custom AMIs:
-     *         <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
-     *         Linux</code>. If you set this parameter to <code>Custom</code>, you
-     *         must use the <a>CreateInstance</a> action's AmiId parameter to specify
-     *         the custom AMI that you want to use. For more information on the
-     *         standard operating systems, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     *         Systems</a>For more information on how to use custom AMIs with
-     *         OpsWorks, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     *         Custom AMIs</a>.
+     * @param defaultOs The stack's default operating system, which must be set to
+     *         <code>Amazon Linux</code> or <code>Ubuntu 12.04 LTS</code>. The
+     *         default option is <code>Amazon Linux</code>.
      */
     public void setDefaultOs(String defaultOs) {
         this.defaultOs = defaultOs;
     }
     
     /**
-     * The stack default operating system, which must be set to one of the
-     * following. <ul> <li>Standard operating systems: <code>Amazon
-     * Linux</code> or <code>Ubuntu 12.04 LTS</code></li> <li>Custom AMIs:
-     * <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
-     * Linux</code>. If you set this parameter to <code>Custom</code>, you
-     * must use the <a>CreateInstance</a> action's AmiId parameter to specify
-     * the custom AMI that you want to use. For more information on the
-     * standard operating systems, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     * Systems</a>For more information on how to use custom AMIs with
-     * OpsWorks, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.
+     * The stack's default operating system, which must be set to
+     * <code>Amazon Linux</code> or <code>Ubuntu 12.04 LTS</code>. The
+     * default option is <code>Amazon Linux</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param defaultOs The stack default operating system, which must be set to one of the
-     *         following. <ul> <li>Standard operating systems: <code>Amazon
-     *         Linux</code> or <code>Ubuntu 12.04 LTS</code></li> <li>Custom AMIs:
-     *         <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
-     *         Linux</code>. If you set this parameter to <code>Custom</code>, you
-     *         must use the <a>CreateInstance</a> action's AmiId parameter to specify
-     *         the custom AMI that you want to use. For more information on the
-     *         standard operating systems, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     *         Systems</a>For more information on how to use custom AMIs with
-     *         OpsWorks, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     *         Custom AMIs</a>.
+     * @param defaultOs The stack's default operating system, which must be set to
+     *         <code>Amazon Linux</code> or <code>Ubuntu 12.04 LTS</code>. The
+     *         default option is <code>Amazon Linux</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -639,47 +581,123 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
     
     
     /**
-     * The stack new default Availability Zone. For more information, see <a
+     * The stack's default Availability Zone, which must be in the specified
+     * region. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     * and Endpoints</a>.
+     * and Endpoints</a>. If you also specify a value for
+     * <code>DefaultSubnetId</code>, the subnet must be in the same zone. For
+     * more information, see <a>CreateStack</a>.
      *
-     * @return The stack new default Availability Zone. For more information, see <a
+     * @return The stack's default Availability Zone, which must be in the specified
+     *         region. For more information, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     *         and Endpoints</a>.
+     *         and Endpoints</a>. If you also specify a value for
+     *         <code>DefaultSubnetId</code>, the subnet must be in the same zone. For
+     *         more information, see <a>CreateStack</a>.
      */
     public String getDefaultAvailabilityZone() {
         return defaultAvailabilityZone;
     }
     
     /**
-     * The stack new default Availability Zone. For more information, see <a
+     * The stack's default Availability Zone, which must be in the specified
+     * region. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     * and Endpoints</a>.
+     * and Endpoints</a>. If you also specify a value for
+     * <code>DefaultSubnetId</code>, the subnet must be in the same zone. For
+     * more information, see <a>CreateStack</a>.
      *
-     * @param defaultAvailabilityZone The stack new default Availability Zone. For more information, see <a
+     * @param defaultAvailabilityZone The stack's default Availability Zone, which must be in the specified
+     *         region. For more information, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     *         and Endpoints</a>.
+     *         and Endpoints</a>. If you also specify a value for
+     *         <code>DefaultSubnetId</code>, the subnet must be in the same zone. For
+     *         more information, see <a>CreateStack</a>.
      */
     public void setDefaultAvailabilityZone(String defaultAvailabilityZone) {
         this.defaultAvailabilityZone = defaultAvailabilityZone;
     }
     
     /**
-     * The stack new default Availability Zone. For more information, see <a
+     * The stack's default Availability Zone, which must be in the specified
+     * region. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     * and Endpoints</a>.
+     * and Endpoints</a>. If you also specify a value for
+     * <code>DefaultSubnetId</code>, the subnet must be in the same zone. For
+     * more information, see <a>CreateStack</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param defaultAvailabilityZone The stack new default Availability Zone. For more information, see <a
+     * @param defaultAvailabilityZone The stack's default Availability Zone, which must be in the specified
+     *         region. For more information, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     *         and Endpoints</a>.
+     *         and Endpoints</a>. If you also specify a value for
+     *         <code>DefaultSubnetId</code>, the subnet must be in the same zone. For
+     *         more information, see <a>CreateStack</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public UpdateStackRequest withDefaultAvailabilityZone(String defaultAvailabilityZone) {
         this.defaultAvailabilityZone = defaultAvailabilityZone;
+        return this;
+    }
+    
+    
+    /**
+     * The stack's default subnet ID. All instances will be launched into
+     * this subnet unless you specify otherwise when you create the instance.
+     * If you also specify a value for <code>DefaultAvailabilityZone</code>,
+     * the subnet must be in that zone. For more information, see
+     * <a>CreateStack</a>.
+     *
+     * @return The stack's default subnet ID. All instances will be launched into
+     *         this subnet unless you specify otherwise when you create the instance.
+     *         If you also specify a value for <code>DefaultAvailabilityZone</code>,
+     *         the subnet must be in that zone. For more information, see
+     *         <a>CreateStack</a>.
+     */
+    public String getDefaultSubnetId() {
+        return defaultSubnetId;
+    }
+    
+    /**
+     * The stack's default subnet ID. All instances will be launched into
+     * this subnet unless you specify otherwise when you create the instance.
+     * If you also specify a value for <code>DefaultAvailabilityZone</code>,
+     * the subnet must be in that zone. For more information, see
+     * <a>CreateStack</a>.
+     *
+     * @param defaultSubnetId The stack's default subnet ID. All instances will be launched into
+     *         this subnet unless you specify otherwise when you create the instance.
+     *         If you also specify a value for <code>DefaultAvailabilityZone</code>,
+     *         the subnet must be in that zone. For more information, see
+     *         <a>CreateStack</a>.
+     */
+    public void setDefaultSubnetId(String defaultSubnetId) {
+        this.defaultSubnetId = defaultSubnetId;
+    }
+    
+    /**
+     * The stack's default subnet ID. All instances will be launched into
+     * this subnet unless you specify otherwise when you create the instance.
+     * If you also specify a value for <code>DefaultAvailabilityZone</code>,
+     * the subnet must be in that zone. For more information, see
+     * <a>CreateStack</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param defaultSubnetId The stack's default subnet ID. All instances will be launched into
+     *         this subnet unless you specify otherwise when you create the instance.
+     *         If you also specify a value for <code>DefaultAvailabilityZone</code>,
+     *         the subnet must be in that zone. For more information, see
+     *         <a>CreateStack</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public UpdateStackRequest withDefaultSubnetId(String defaultSubnetId) {
+        this.defaultSubnetId = defaultSubnetId;
         return this;
     }
     
@@ -1096,6 +1114,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         if (getDefaultOs() != null) sb.append("DefaultOs: " + getDefaultOs() + ",");
         if (getHostnameTheme() != null) sb.append("HostnameTheme: " + getHostnameTheme() + ",");
         if (getDefaultAvailabilityZone() != null) sb.append("DefaultAvailabilityZone: " + getDefaultAvailabilityZone() + ",");
+        if (getDefaultSubnetId() != null) sb.append("DefaultSubnetId: " + getDefaultSubnetId() + ",");
         if (getCustomJson() != null) sb.append("CustomJson: " + getCustomJson() + ",");
         if (getConfigurationManager() != null) sb.append("ConfigurationManager: " + getConfigurationManager() + ",");
         if (isUseCustomCookbooks() != null) sb.append("UseCustomCookbooks: " + isUseCustomCookbooks() + ",");
@@ -1119,6 +1138,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         hashCode = prime * hashCode + ((getDefaultOs() == null) ? 0 : getDefaultOs().hashCode()); 
         hashCode = prime * hashCode + ((getHostnameTheme() == null) ? 0 : getHostnameTheme().hashCode()); 
         hashCode = prime * hashCode + ((getDefaultAvailabilityZone() == null) ? 0 : getDefaultAvailabilityZone().hashCode()); 
+        hashCode = prime * hashCode + ((getDefaultSubnetId() == null) ? 0 : getDefaultSubnetId().hashCode()); 
         hashCode = prime * hashCode + ((getCustomJson() == null) ? 0 : getCustomJson().hashCode()); 
         hashCode = prime * hashCode + ((getConfigurationManager() == null) ? 0 : getConfigurationManager().hashCode()); 
         hashCode = prime * hashCode + ((isUseCustomCookbooks() == null) ? 0 : isUseCustomCookbooks().hashCode()); 
@@ -1152,6 +1172,8 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         if (other.getHostnameTheme() != null && other.getHostnameTheme().equals(this.getHostnameTheme()) == false) return false; 
         if (other.getDefaultAvailabilityZone() == null ^ this.getDefaultAvailabilityZone() == null) return false;
         if (other.getDefaultAvailabilityZone() != null && other.getDefaultAvailabilityZone().equals(this.getDefaultAvailabilityZone()) == false) return false; 
+        if (other.getDefaultSubnetId() == null ^ this.getDefaultSubnetId() == null) return false;
+        if (other.getDefaultSubnetId() != null && other.getDefaultSubnetId().equals(this.getDefaultSubnetId()) == false) return false; 
         if (other.getCustomJson() == null ^ this.getCustomJson() == null) return false;
         if (other.getCustomJson() != null && other.getCustomJson().equals(this.getCustomJson()) == false) return false; 
         if (other.getConfigurationManager() == null ^ this.getConfigurationManager() == null) return false;

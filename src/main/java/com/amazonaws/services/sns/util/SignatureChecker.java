@@ -25,10 +25,10 @@ import java.util.TreeMap;
 import java.util.SortedMap;
 import java.util.Map;
 
-import org.codehaus.jackson.JsonFactory;
-import org.codehaus.jackson.JsonParseException;
-import org.codehaus.jackson.JsonParser;
-import org.codehaus.jackson.JsonToken;
+import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.JsonToken;
 import org.apache.commons.codec.binary.Base64;
 
 /**
@@ -113,8 +113,8 @@ public class SignatureChecker {
      * Does the actual Java cryptographic verification of the signature. This
      * method does no handling of the many rare exceptions it is required to
      * catch.
-     * 
-     * This can also be used to verify the signature from the x-amz-sns-signature http header 
+     *
+     * This can also be used to verify the signature from the x-amz-sns-signature http header
      *
      * @param message
      *            Exact string that was signed.  In the case of the x-amz-sns-signature header the

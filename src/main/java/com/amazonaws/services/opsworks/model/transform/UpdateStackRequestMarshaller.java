@@ -118,6 +118,9 @@ public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateSt
             if (updateStackRequest.getDefaultAvailabilityZone() != null) {
                 jsonWriter.key("DefaultAvailabilityZone").value(updateStackRequest.getDefaultAvailabilityZone());
             }
+            if (updateStackRequest.getDefaultSubnetId() != null) {
+                jsonWriter.key("DefaultSubnetId").value(updateStackRequest.getDefaultSubnetId());
+            }
             if (updateStackRequest.getCustomJson() != null) {
                 jsonWriter.key("CustomJson").value(updateStackRequest.getCustomJson());
             }

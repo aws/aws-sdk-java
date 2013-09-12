@@ -21,6 +21,9 @@ import java.io.Serializable;
  * <p>
  * Describes an instance's Amazon EBS volumes.
  * </p>
+ * <p>
+ * <b>NOTE:</b>You must specify at least one of the parameters.
+ * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeVolumes(DescribeVolumesRequest)
  */

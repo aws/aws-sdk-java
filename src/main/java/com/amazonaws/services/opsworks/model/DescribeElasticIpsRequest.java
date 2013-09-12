@@ -19,7 +19,10 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#describeElasticIps(DescribeElasticIpsRequest) DescribeElasticIps operation}.
  * <p>
- * Describes an instance's <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP addresses </a> .
+ * Describes <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"> Elastic IP addresses </a> .
+ * </p>
+ * <p>
+ * <b>NOTE:</b>You must specify at least one of the parameters.
  * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeElasticIps(DescribeElasticIpsRequest)

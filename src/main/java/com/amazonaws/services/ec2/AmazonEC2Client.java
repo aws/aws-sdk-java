@@ -1581,6 +1581,56 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * The ModifyReservedInstances operation modifies the Availability Zone,
+     * instance count, or network platform (EC2-Classic or EC2-VPC) of your
+     * Reserved Instances.
+     * </p>
+     *
+     * @param modifyReservedInstancesRequest Container for the necessary
+     *           parameters to execute the ModifyReservedInstances service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the ModifyReservedInstances service method,
+     *         as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ModifyReservedInstancesResult modifyReservedInstances(ModifyReservedInstancesRequest modifyReservedInstancesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<ModifyReservedInstancesRequest> request = new ModifyReservedInstancesRequestMarshaller().marshall(modifyReservedInstancesRequest);
+        return invoke(request, new ModifyReservedInstancesResultStaxUnmarshaller());
+    }
+    
+    /**
+     *
+     * @param unassignPrivateIpAddressesRequest Container for the necessary
+     *           parameters to execute the UnassignPrivateIpAddresses service method on
+     *           AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void unassignPrivateIpAddresses(UnassignPrivateIpAddressesRequest unassignPrivateIpAddressesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<UnassignPrivateIpAddressesRequest> request = new UnassignPrivateIpAddressesRequestMarshaller().marshall(unassignPrivateIpAddressesRequest);
+        invoke(request, null);
+    }
+    
+    /**
+     * <p>
      * Gives you information about your VPCs. You can filter the results to
      * return information only about VPCs that match criteria you specify.
      * </p>
@@ -1616,27 +1666,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeVpcsRequest> request = new DescribeVpcsRequestMarshaller().marshall(describeVpcsRequest);
         return invoke(request, new DescribeVpcsResultStaxUnmarshaller());
-    }
-    
-    /**
-     *
-     * @param unassignPrivateIpAddressesRequest Container for the necessary
-     *           parameters to execute the UnassignPrivateIpAddresses service method on
-     *           AmazonEC2.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void unassignPrivateIpAddresses(UnassignPrivateIpAddressesRequest unassignPrivateIpAddressesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<UnassignPrivateIpAddressesRequest> request = new UnassignPrivateIpAddressesRequestMarshaller().marshall(unassignPrivateIpAddressesRequest);
-        invoke(request, null);
     }
     
     /**
@@ -2568,6 +2597,34 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Returns information about one or more PlacementGroup instances in a
+     * user's account.
+     * </p>
+     *
+     * @param describePlacementGroupsRequest Container for the necessary
+     *           parameters to execute the DescribePlacementGroups service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the DescribePlacementGroups service method,
+     *         as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribePlacementGroupsResult describePlacementGroups(DescribePlacementGroupsRequest describePlacementGroupsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DescribePlacementGroupsRequest> request = new DescribePlacementGroupsRequestMarshaller().marshall(describePlacementGroupsRequest);
+        return invoke(request, new DescribePlacementGroupsResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
      * Gives you information about your subnets. You can filter the results
      * to return information only about subnets that match criteria you
      * specify.
@@ -2679,34 +2736,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             throws AmazonServiceException, AmazonClientException {
         Request<RunInstancesRequest> request = new RunInstancesRequestMarshaller().marshall(runInstancesRequest);
         return invoke(request, new RunInstancesResultStaxUnmarshaller());
-    }
-    
-    /**
-     * <p>
-     * Returns information about one or more PlacementGroup instances in a
-     * user's account.
-     * </p>
-     *
-     * @param describePlacementGroupsRequest Container for the necessary
-     *           parameters to execute the DescribePlacementGroups service method on
-     *           AmazonEC2.
-     * 
-     * @return The response from the DescribePlacementGroups service method,
-     *         as returned by AmazonEC2.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribePlacementGroupsResult describePlacementGroups(DescribePlacementGroupsRequest describePlacementGroupsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribePlacementGroupsRequest> request = new DescribePlacementGroupsRequestMarshaller().marshall(describePlacementGroupsRequest);
-        return invoke(request, new DescribePlacementGroupsResultStaxUnmarshaller());
     }
     
     /**
@@ -3654,6 +3683,34 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             throws AmazonServiceException, AmazonClientException {
         Request<ModifySnapshotAttributeRequest> request = new ModifySnapshotAttributeRequestMarshaller().marshall(modifySnapshotAttributeRequest);
         invoke(request, null);
+    }
+    
+    /**
+     * <p>
+     * The DescribeReservedInstancesModifications operation describes
+     * modifications made to Reserved Instances in your account.
+     * </p>
+     *
+     * @param describeReservedInstancesModificationsRequest Container for the
+     *           necessary parameters to execute the
+     *           DescribeReservedInstancesModifications service method on AmazonEC2.
+     * 
+     * @return The response from the DescribeReservedInstancesModifications
+     *         service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeReservedInstancesModificationsResult describeReservedInstancesModifications(DescribeReservedInstancesModificationsRequest describeReservedInstancesModificationsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DescribeReservedInstancesModificationsRequest> request = new DescribeReservedInstancesModificationsRequestMarshaller().marshall(describeReservedInstancesModificationsRequest);
+        return invoke(request, new DescribeReservedInstancesModificationsResultStaxUnmarshaller());
     }
     
     /**
@@ -5483,6 +5540,28 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Returns information about one or more PlacementGroup instances in a
+     * user's account.
+     * </p>
+     * 
+     * @return The response from the DescribePlacementGroups service method,
+     *         as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribePlacementGroupsResult describePlacementGroups() throws AmazonServiceException, AmazonClientException {
+        return describePlacementGroups(new DescribePlacementGroupsRequest());
+    }
+    
+    /**
+     * <p>
      * Gives you information about your subnets. You can filter the results
      * to return information only about subnets that match criteria you
      * specify.
@@ -5514,28 +5593,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      */
     public DescribeSubnetsResult describeSubnets() throws AmazonServiceException, AmazonClientException {
         return describeSubnets(new DescribeSubnetsRequest());
-    }
-    
-    /**
-     * <p>
-     * Returns information about one or more PlacementGroup instances in a
-     * user's account.
-     * </p>
-     * 
-     * @return The response from the DescribePlacementGroups service method,
-     *         as returned by AmazonEC2.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribePlacementGroupsResult describePlacementGroups() throws AmazonServiceException, AmazonClientException {
-        return describePlacementGroups(new DescribePlacementGroupsRequest());
     }
     
     /**
@@ -5777,6 +5834,28 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      */
     public DescribeTagsResult describeTags() throws AmazonServiceException, AmazonClientException {
         return describeTags(new DescribeTagsRequest());
+    }
+    
+    /**
+     * <p>
+     * The DescribeReservedInstancesModifications operation describes
+     * modifications made to Reserved Instances in your account.
+     * </p>
+     * 
+     * @return The response from the DescribeReservedInstancesModifications
+     *         service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeReservedInstancesModificationsResult describeReservedInstancesModifications() throws AmazonServiceException, AmazonClientException {
+        return describeReservedInstancesModifications(new DescribeReservedInstancesModificationsRequest());
     }
     
     /**

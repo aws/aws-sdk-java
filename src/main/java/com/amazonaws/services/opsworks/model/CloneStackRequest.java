@@ -46,6 +46,32 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
     private String region;
 
     /**
+     * The ID of the VPC that the cloned stack is to be launched into. It
+     * must be in the specified region. All instances will be launched into
+     * this VPC, and you cannot change the ID later. <ul> <li>If your account
+     * supports EC2 Classic, the default value is no VPC.</li> <li>If your
+     * account does not support EC2 Classic, the default value is the default
+     * VPC for the specified region.</li> </ul> <p>If the VPC ID corresponds
+     * to a default VPC and you have specified either the
+     * <code>DefaultAvailabilityZone</code> or the
+     * <code>DefaultSubnetId</code> parameter only, AWS OpsWorks infers the
+     * value of the other parameter. If you specify neither parameter, AWS
+     * OpsWorks sets these parameters to the first valid Availability Zone
+     * for the specified region and the corresponding default VPC subnet ID,
+     * respectively. <p>If you specify a nondefault VPC ID, note the
+     * following: <ul> <li>It must belong to a VPC in your account that is in
+     * the specified region.</li> <li>You must specify a value for
+     * <code>DefaultSubnetId</code>.</li> </ul> <p>For more information on
+     * how to use AWS OpsWorks with a VPC, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
+     * a Stack in a VPC</a>. For more information on default VPC and EC2
+     * Classic, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * Platforms</a>.
+     */
+    private String vpcId;
+
+    /**
      * A list of stack attributes and values as key/value pairs to be added
      * to the cloned stack.
      */
@@ -76,19 +102,9 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
     private String defaultInstanceProfileArn;
 
     /**
-     * The cloned stack default operating system, which must be set to one of
-     * the following. <ul> <li>Standard operating systems: <code>Amazon
-     * Linux</code> or <code>Ubuntu 12.04 LTS</code></li> <li>Custom AMIs:
-     * <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
-     * Linux</code>. If you set this parameter to <code>Custom</code>, you
-     * must use the <a>CreateInstance</a> action's AmiId parameter to specify
-     * the custom AMI that you want to use. For more information on the
-     * standard operating systems, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     * Systems</a>For more information on how to use custom AMIs with
-     * OpsWorks, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.
+     * The cloned stack's default operating system, which must be set to
+     * <code>Amazon Linux</code> or <code>Ubuntu 12.04 LTS</code>. The
+     * default option is <code>Amazon Linux</code>.
      */
     private String defaultOs;
 
@@ -108,11 +124,24 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
     private String hostnameTheme;
 
     /**
-     * The cloned stack's Availability Zone. For more information, see <a
+     * The cloned stack's default Availability Zone, which must be in the
+     * specified region. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     * and Endpoints</a>.
+     * and Endpoints</a>. If you also specify a value for
+     * <code>DefaultSubnetId</code>, the subnet must be in the same zone. For
+     * more information, see the <code>VpcId</code> parameter description.
      */
     private String defaultAvailabilityZone;
+
+    /**
+     * The stack's default subnet ID. All instances will be launched into
+     * this subnet unless you specify otherwise when you create the instance.
+     * If you also specify a value for <code>DefaultAvailabilityZone</code>,
+     * the subnet must be in the same zone. For information on default values
+     * and when this parameter is required, see the <code>VpcId</code>
+     * parameter description.
+     */
+    private String defaultSubnetId;
 
     /**
      * A string that contains user-defined, custom JSON. It is used to
@@ -129,7 +158,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      * The configuration manager. When you clone a stack we recommend that
      * you use the configuration manager to specify the Chef version, 0.9 or
      * 11.4. The default value is currently 0.9. However, we expect to change
-     * the default value to 11.4 in late August 2013.
+     * the default value to 11.4 in September 2013.
      */
     private StackConfigurationManager configurationManager;
 
@@ -292,6 +321,166 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      */
     public CloneStackRequest withRegion(String region) {
         this.region = region;
+        return this;
+    }
+    
+    
+    /**
+     * The ID of the VPC that the cloned stack is to be launched into. It
+     * must be in the specified region. All instances will be launched into
+     * this VPC, and you cannot change the ID later. <ul> <li>If your account
+     * supports EC2 Classic, the default value is no VPC.</li> <li>If your
+     * account does not support EC2 Classic, the default value is the default
+     * VPC for the specified region.</li> </ul> <p>If the VPC ID corresponds
+     * to a default VPC and you have specified either the
+     * <code>DefaultAvailabilityZone</code> or the
+     * <code>DefaultSubnetId</code> parameter only, AWS OpsWorks infers the
+     * value of the other parameter. If you specify neither parameter, AWS
+     * OpsWorks sets these parameters to the first valid Availability Zone
+     * for the specified region and the corresponding default VPC subnet ID,
+     * respectively. <p>If you specify a nondefault VPC ID, note the
+     * following: <ul> <li>It must belong to a VPC in your account that is in
+     * the specified region.</li> <li>You must specify a value for
+     * <code>DefaultSubnetId</code>.</li> </ul> <p>For more information on
+     * how to use AWS OpsWorks with a VPC, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
+     * a Stack in a VPC</a>. For more information on default VPC and EC2
+     * Classic, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * Platforms</a>.
+     *
+     * @return The ID of the VPC that the cloned stack is to be launched into. It
+     *         must be in the specified region. All instances will be launched into
+     *         this VPC, and you cannot change the ID later. <ul> <li>If your account
+     *         supports EC2 Classic, the default value is no VPC.</li> <li>If your
+     *         account does not support EC2 Classic, the default value is the default
+     *         VPC for the specified region.</li> </ul> <p>If the VPC ID corresponds
+     *         to a default VPC and you have specified either the
+     *         <code>DefaultAvailabilityZone</code> or the
+     *         <code>DefaultSubnetId</code> parameter only, AWS OpsWorks infers the
+     *         value of the other parameter. If you specify neither parameter, AWS
+     *         OpsWorks sets these parameters to the first valid Availability Zone
+     *         for the specified region and the corresponding default VPC subnet ID,
+     *         respectively. <p>If you specify a nondefault VPC ID, note the
+     *         following: <ul> <li>It must belong to a VPC in your account that is in
+     *         the specified region.</li> <li>You must specify a value for
+     *         <code>DefaultSubnetId</code>.</li> </ul> <p>For more information on
+     *         how to use AWS OpsWorks with a VPC, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
+     *         a Stack in a VPC</a>. For more information on default VPC and EC2
+     *         Classic, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     *         Platforms</a>.
+     */
+    public String getVpcId() {
+        return vpcId;
+    }
+    
+    /**
+     * The ID of the VPC that the cloned stack is to be launched into. It
+     * must be in the specified region. All instances will be launched into
+     * this VPC, and you cannot change the ID later. <ul> <li>If your account
+     * supports EC2 Classic, the default value is no VPC.</li> <li>If your
+     * account does not support EC2 Classic, the default value is the default
+     * VPC for the specified region.</li> </ul> <p>If the VPC ID corresponds
+     * to a default VPC and you have specified either the
+     * <code>DefaultAvailabilityZone</code> or the
+     * <code>DefaultSubnetId</code> parameter only, AWS OpsWorks infers the
+     * value of the other parameter. If you specify neither parameter, AWS
+     * OpsWorks sets these parameters to the first valid Availability Zone
+     * for the specified region and the corresponding default VPC subnet ID,
+     * respectively. <p>If you specify a nondefault VPC ID, note the
+     * following: <ul> <li>It must belong to a VPC in your account that is in
+     * the specified region.</li> <li>You must specify a value for
+     * <code>DefaultSubnetId</code>.</li> </ul> <p>For more information on
+     * how to use AWS OpsWorks with a VPC, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
+     * a Stack in a VPC</a>. For more information on default VPC and EC2
+     * Classic, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * Platforms</a>.
+     *
+     * @param vpcId The ID of the VPC that the cloned stack is to be launched into. It
+     *         must be in the specified region. All instances will be launched into
+     *         this VPC, and you cannot change the ID later. <ul> <li>If your account
+     *         supports EC2 Classic, the default value is no VPC.</li> <li>If your
+     *         account does not support EC2 Classic, the default value is the default
+     *         VPC for the specified region.</li> </ul> <p>If the VPC ID corresponds
+     *         to a default VPC and you have specified either the
+     *         <code>DefaultAvailabilityZone</code> or the
+     *         <code>DefaultSubnetId</code> parameter only, AWS OpsWorks infers the
+     *         value of the other parameter. If you specify neither parameter, AWS
+     *         OpsWorks sets these parameters to the first valid Availability Zone
+     *         for the specified region and the corresponding default VPC subnet ID,
+     *         respectively. <p>If you specify a nondefault VPC ID, note the
+     *         following: <ul> <li>It must belong to a VPC in your account that is in
+     *         the specified region.</li> <li>You must specify a value for
+     *         <code>DefaultSubnetId</code>.</li> </ul> <p>For more information on
+     *         how to use AWS OpsWorks with a VPC, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
+     *         a Stack in a VPC</a>. For more information on default VPC and EC2
+     *         Classic, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     *         Platforms</a>.
+     */
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+    
+    /**
+     * The ID of the VPC that the cloned stack is to be launched into. It
+     * must be in the specified region. All instances will be launched into
+     * this VPC, and you cannot change the ID later. <ul> <li>If your account
+     * supports EC2 Classic, the default value is no VPC.</li> <li>If your
+     * account does not support EC2 Classic, the default value is the default
+     * VPC for the specified region.</li> </ul> <p>If the VPC ID corresponds
+     * to a default VPC and you have specified either the
+     * <code>DefaultAvailabilityZone</code> or the
+     * <code>DefaultSubnetId</code> parameter only, AWS OpsWorks infers the
+     * value of the other parameter. If you specify neither parameter, AWS
+     * OpsWorks sets these parameters to the first valid Availability Zone
+     * for the specified region and the corresponding default VPC subnet ID,
+     * respectively. <p>If you specify a nondefault VPC ID, note the
+     * following: <ul> <li>It must belong to a VPC in your account that is in
+     * the specified region.</li> <li>You must specify a value for
+     * <code>DefaultSubnetId</code>.</li> </ul> <p>For more information on
+     * how to use AWS OpsWorks with a VPC, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
+     * a Stack in a VPC</a>. For more information on default VPC and EC2
+     * Classic, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * Platforms</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param vpcId The ID of the VPC that the cloned stack is to be launched into. It
+     *         must be in the specified region. All instances will be launched into
+     *         this VPC, and you cannot change the ID later. <ul> <li>If your account
+     *         supports EC2 Classic, the default value is no VPC.</li> <li>If your
+     *         account does not support EC2 Classic, the default value is the default
+     *         VPC for the specified region.</li> </ul> <p>If the VPC ID corresponds
+     *         to a default VPC and you have specified either the
+     *         <code>DefaultAvailabilityZone</code> or the
+     *         <code>DefaultSubnetId</code> parameter only, AWS OpsWorks infers the
+     *         value of the other parameter. If you specify neither parameter, AWS
+     *         OpsWorks sets these parameters to the first valid Availability Zone
+     *         for the specified region and the corresponding default VPC subnet ID,
+     *         respectively. <p>If you specify a nondefault VPC ID, note the
+     *         following: <ul> <li>It must belong to a VPC in your account that is in
+     *         the specified region.</li> <li>You must specify a value for
+     *         <code>DefaultSubnetId</code>.</li> </ul> <p>For more information on
+     *         how to use AWS OpsWorks with a VPC, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
+     *         a Stack in a VPC</a>. For more information on default VPC and EC2
+     *         Classic, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     *         Platforms</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CloneStackRequest withVpcId(String vpcId) {
+        this.vpcId = vpcId;
         return this;
     }
     
@@ -524,101 +713,41 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
     
     
     /**
-     * The cloned stack default operating system, which must be set to one of
-     * the following. <ul> <li>Standard operating systems: <code>Amazon
-     * Linux</code> or <code>Ubuntu 12.04 LTS</code></li> <li>Custom AMIs:
-     * <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
-     * Linux</code>. If you set this parameter to <code>Custom</code>, you
-     * must use the <a>CreateInstance</a> action's AmiId parameter to specify
-     * the custom AMI that you want to use. For more information on the
-     * standard operating systems, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     * Systems</a>For more information on how to use custom AMIs with
-     * OpsWorks, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.
+     * The cloned stack's default operating system, which must be set to
+     * <code>Amazon Linux</code> or <code>Ubuntu 12.04 LTS</code>. The
+     * default option is <code>Amazon Linux</code>.
      *
-     * @return The cloned stack default operating system, which must be set to one of
-     *         the following. <ul> <li>Standard operating systems: <code>Amazon
-     *         Linux</code> or <code>Ubuntu 12.04 LTS</code></li> <li>Custom AMIs:
-     *         <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
-     *         Linux</code>. If you set this parameter to <code>Custom</code>, you
-     *         must use the <a>CreateInstance</a> action's AmiId parameter to specify
-     *         the custom AMI that you want to use. For more information on the
-     *         standard operating systems, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     *         Systems</a>For more information on how to use custom AMIs with
-     *         OpsWorks, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     *         Custom AMIs</a>.
+     * @return The cloned stack's default operating system, which must be set to
+     *         <code>Amazon Linux</code> or <code>Ubuntu 12.04 LTS</code>. The
+     *         default option is <code>Amazon Linux</code>.
      */
     public String getDefaultOs() {
         return defaultOs;
     }
     
     /**
-     * The cloned stack default operating system, which must be set to one of
-     * the following. <ul> <li>Standard operating systems: <code>Amazon
-     * Linux</code> or <code>Ubuntu 12.04 LTS</code></li> <li>Custom AMIs:
-     * <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
-     * Linux</code>. If you set this parameter to <code>Custom</code>, you
-     * must use the <a>CreateInstance</a> action's AmiId parameter to specify
-     * the custom AMI that you want to use. For more information on the
-     * standard operating systems, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     * Systems</a>For more information on how to use custom AMIs with
-     * OpsWorks, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.
+     * The cloned stack's default operating system, which must be set to
+     * <code>Amazon Linux</code> or <code>Ubuntu 12.04 LTS</code>. The
+     * default option is <code>Amazon Linux</code>.
      *
-     * @param defaultOs The cloned stack default operating system, which must be set to one of
-     *         the following. <ul> <li>Standard operating systems: <code>Amazon
-     *         Linux</code> or <code>Ubuntu 12.04 LTS</code></li> <li>Custom AMIs:
-     *         <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
-     *         Linux</code>. If you set this parameter to <code>Custom</code>, you
-     *         must use the <a>CreateInstance</a> action's AmiId parameter to specify
-     *         the custom AMI that you want to use. For more information on the
-     *         standard operating systems, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     *         Systems</a>For more information on how to use custom AMIs with
-     *         OpsWorks, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     *         Custom AMIs</a>.
+     * @param defaultOs The cloned stack's default operating system, which must be set to
+     *         <code>Amazon Linux</code> or <code>Ubuntu 12.04 LTS</code>. The
+     *         default option is <code>Amazon Linux</code>.
      */
     public void setDefaultOs(String defaultOs) {
         this.defaultOs = defaultOs;
     }
     
     /**
-     * The cloned stack default operating system, which must be set to one of
-     * the following. <ul> <li>Standard operating systems: <code>Amazon
-     * Linux</code> or <code>Ubuntu 12.04 LTS</code></li> <li>Custom AMIs:
-     * <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
-     * Linux</code>. If you set this parameter to <code>Custom</code>, you
-     * must use the <a>CreateInstance</a> action's AmiId parameter to specify
-     * the custom AMI that you want to use. For more information on the
-     * standard operating systems, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     * Systems</a>For more information on how to use custom AMIs with
-     * OpsWorks, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.
+     * The cloned stack's default operating system, which must be set to
+     * <code>Amazon Linux</code> or <code>Ubuntu 12.04 LTS</code>. The
+     * default option is <code>Amazon Linux</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param defaultOs The cloned stack default operating system, which must be set to one of
-     *         the following. <ul> <li>Standard operating systems: <code>Amazon
-     *         Linux</code> or <code>Ubuntu 12.04 LTS</code></li> <li>Custom AMIs:
-     *         <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
-     *         Linux</code>. If you set this parameter to <code>Custom</code>, you
-     *         must use the <a>CreateInstance</a> action's AmiId parameter to specify
-     *         the custom AMI that you want to use. For more information on the
-     *         standard operating systems, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     *         Systems</a>For more information on how to use custom AMIs with
-     *         OpsWorks, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     *         Custom AMIs</a>.
+     * @param defaultOs The cloned stack's default operating system, which must be set to
+     *         <code>Amazon Linux</code> or <code>Ubuntu 12.04 LTS</code>. The
+     *         default option is <code>Amazon Linux</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -724,47 +853,129 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
     
     
     /**
-     * The cloned stack's Availability Zone. For more information, see <a
+     * The cloned stack's default Availability Zone, which must be in the
+     * specified region. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     * and Endpoints</a>.
+     * and Endpoints</a>. If you also specify a value for
+     * <code>DefaultSubnetId</code>, the subnet must be in the same zone. For
+     * more information, see the <code>VpcId</code> parameter description.
      *
-     * @return The cloned stack's Availability Zone. For more information, see <a
+     * @return The cloned stack's default Availability Zone, which must be in the
+     *         specified region. For more information, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     *         and Endpoints</a>.
+     *         and Endpoints</a>. If you also specify a value for
+     *         <code>DefaultSubnetId</code>, the subnet must be in the same zone. For
+     *         more information, see the <code>VpcId</code> parameter description.
      */
     public String getDefaultAvailabilityZone() {
         return defaultAvailabilityZone;
     }
     
     /**
-     * The cloned stack's Availability Zone. For more information, see <a
+     * The cloned stack's default Availability Zone, which must be in the
+     * specified region. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     * and Endpoints</a>.
+     * and Endpoints</a>. If you also specify a value for
+     * <code>DefaultSubnetId</code>, the subnet must be in the same zone. For
+     * more information, see the <code>VpcId</code> parameter description.
      *
-     * @param defaultAvailabilityZone The cloned stack's Availability Zone. For more information, see <a
+     * @param defaultAvailabilityZone The cloned stack's default Availability Zone, which must be in the
+     *         specified region. For more information, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     *         and Endpoints</a>.
+     *         and Endpoints</a>. If you also specify a value for
+     *         <code>DefaultSubnetId</code>, the subnet must be in the same zone. For
+     *         more information, see the <code>VpcId</code> parameter description.
      */
     public void setDefaultAvailabilityZone(String defaultAvailabilityZone) {
         this.defaultAvailabilityZone = defaultAvailabilityZone;
     }
     
     /**
-     * The cloned stack's Availability Zone. For more information, see <a
+     * The cloned stack's default Availability Zone, which must be in the
+     * specified region. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     * and Endpoints</a>.
+     * and Endpoints</a>. If you also specify a value for
+     * <code>DefaultSubnetId</code>, the subnet must be in the same zone. For
+     * more information, see the <code>VpcId</code> parameter description.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param defaultAvailabilityZone The cloned stack's Availability Zone. For more information, see <a
+     * @param defaultAvailabilityZone The cloned stack's default Availability Zone, which must be in the
+     *         specified region. For more information, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     *         and Endpoints</a>.
+     *         and Endpoints</a>. If you also specify a value for
+     *         <code>DefaultSubnetId</code>, the subnet must be in the same zone. For
+     *         more information, see the <code>VpcId</code> parameter description.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
     public CloneStackRequest withDefaultAvailabilityZone(String defaultAvailabilityZone) {
         this.defaultAvailabilityZone = defaultAvailabilityZone;
+        return this;
+    }
+    
+    
+    /**
+     * The stack's default subnet ID. All instances will be launched into
+     * this subnet unless you specify otherwise when you create the instance.
+     * If you also specify a value for <code>DefaultAvailabilityZone</code>,
+     * the subnet must be in the same zone. For information on default values
+     * and when this parameter is required, see the <code>VpcId</code>
+     * parameter description.
+     *
+     * @return The stack's default subnet ID. All instances will be launched into
+     *         this subnet unless you specify otherwise when you create the instance.
+     *         If you also specify a value for <code>DefaultAvailabilityZone</code>,
+     *         the subnet must be in the same zone. For information on default values
+     *         and when this parameter is required, see the <code>VpcId</code>
+     *         parameter description.
+     */
+    public String getDefaultSubnetId() {
+        return defaultSubnetId;
+    }
+    
+    /**
+     * The stack's default subnet ID. All instances will be launched into
+     * this subnet unless you specify otherwise when you create the instance.
+     * If you also specify a value for <code>DefaultAvailabilityZone</code>,
+     * the subnet must be in the same zone. For information on default values
+     * and when this parameter is required, see the <code>VpcId</code>
+     * parameter description.
+     *
+     * @param defaultSubnetId The stack's default subnet ID. All instances will be launched into
+     *         this subnet unless you specify otherwise when you create the instance.
+     *         If you also specify a value for <code>DefaultAvailabilityZone</code>,
+     *         the subnet must be in the same zone. For information on default values
+     *         and when this parameter is required, see the <code>VpcId</code>
+     *         parameter description.
+     */
+    public void setDefaultSubnetId(String defaultSubnetId) {
+        this.defaultSubnetId = defaultSubnetId;
+    }
+    
+    /**
+     * The stack's default subnet ID. All instances will be launched into
+     * this subnet unless you specify otherwise when you create the instance.
+     * If you also specify a value for <code>DefaultAvailabilityZone</code>,
+     * the subnet must be in the same zone. For information on default values
+     * and when this parameter is required, see the <code>VpcId</code>
+     * parameter description.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param defaultSubnetId The stack's default subnet ID. All instances will be launched into
+     *         this subnet unless you specify otherwise when you create the instance.
+     *         If you also specify a value for <code>DefaultAvailabilityZone</code>,
+     *         the subnet must be in the same zone. For information on default values
+     *         and when this parameter is required, see the <code>VpcId</code>
+     *         parameter description.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CloneStackRequest withDefaultSubnetId(String defaultSubnetId) {
+        this.defaultSubnetId = defaultSubnetId;
         return this;
     }
     
@@ -843,12 +1054,12 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      * The configuration manager. When you clone a stack we recommend that
      * you use the configuration manager to specify the Chef version, 0.9 or
      * 11.4. The default value is currently 0.9. However, we expect to change
-     * the default value to 11.4 in late August 2013.
+     * the default value to 11.4 in September 2013.
      *
      * @return The configuration manager. When you clone a stack we recommend that
      *         you use the configuration manager to specify the Chef version, 0.9 or
      *         11.4. The default value is currently 0.9. However, we expect to change
-     *         the default value to 11.4 in late August 2013.
+     *         the default value to 11.4 in September 2013.
      */
     public StackConfigurationManager getConfigurationManager() {
         return configurationManager;
@@ -858,12 +1069,12 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      * The configuration manager. When you clone a stack we recommend that
      * you use the configuration manager to specify the Chef version, 0.9 or
      * 11.4. The default value is currently 0.9. However, we expect to change
-     * the default value to 11.4 in late August 2013.
+     * the default value to 11.4 in September 2013.
      *
      * @param configurationManager The configuration manager. When you clone a stack we recommend that
      *         you use the configuration manager to specify the Chef version, 0.9 or
      *         11.4. The default value is currently 0.9. However, we expect to change
-     *         the default value to 11.4 in late August 2013.
+     *         the default value to 11.4 in September 2013.
      */
     public void setConfigurationManager(StackConfigurationManager configurationManager) {
         this.configurationManager = configurationManager;
@@ -873,14 +1084,14 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
      * The configuration manager. When you clone a stack we recommend that
      * you use the configuration manager to specify the Chef version, 0.9 or
      * 11.4. The default value is currently 0.9. However, we expect to change
-     * the default value to 11.4 in late August 2013.
+     * the default value to 11.4 in September 2013.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param configurationManager The configuration manager. When you clone a stack we recommend that
      *         you use the configuration manager to specify the Chef version, 0.9 or
      *         11.4. The default value is currently 0.9. However, we expect to change
-     *         the default value to 11.4 in late August 2013.
+     *         the default value to 11.4 in September 2013.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -1288,12 +1499,14 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
         if (getSourceStackId() != null) sb.append("SourceStackId: " + getSourceStackId() + ",");
         if (getName() != null) sb.append("Name: " + getName() + ",");
         if (getRegion() != null) sb.append("Region: " + getRegion() + ",");
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");
         if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ",");
         if (getServiceRoleArn() != null) sb.append("ServiceRoleArn: " + getServiceRoleArn() + ",");
         if (getDefaultInstanceProfileArn() != null) sb.append("DefaultInstanceProfileArn: " + getDefaultInstanceProfileArn() + ",");
         if (getDefaultOs() != null) sb.append("DefaultOs: " + getDefaultOs() + ",");
         if (getHostnameTheme() != null) sb.append("HostnameTheme: " + getHostnameTheme() + ",");
         if (getDefaultAvailabilityZone() != null) sb.append("DefaultAvailabilityZone: " + getDefaultAvailabilityZone() + ",");
+        if (getDefaultSubnetId() != null) sb.append("DefaultSubnetId: " + getDefaultSubnetId() + ",");
         if (getCustomJson() != null) sb.append("CustomJson: " + getCustomJson() + ",");
         if (getConfigurationManager() != null) sb.append("ConfigurationManager: " + getConfigurationManager() + ",");
         if (isUseCustomCookbooks() != null) sb.append("UseCustomCookbooks: " + isUseCustomCookbooks() + ",");
@@ -1314,12 +1527,14 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
         hashCode = prime * hashCode + ((getSourceStackId() == null) ? 0 : getSourceStackId().hashCode()); 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode()); 
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode()); 
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode()); 
         hashCode = prime * hashCode + ((getServiceRoleArn() == null) ? 0 : getServiceRoleArn().hashCode()); 
         hashCode = prime * hashCode + ((getDefaultInstanceProfileArn() == null) ? 0 : getDefaultInstanceProfileArn().hashCode()); 
         hashCode = prime * hashCode + ((getDefaultOs() == null) ? 0 : getDefaultOs().hashCode()); 
         hashCode = prime * hashCode + ((getHostnameTheme() == null) ? 0 : getHostnameTheme().hashCode()); 
         hashCode = prime * hashCode + ((getDefaultAvailabilityZone() == null) ? 0 : getDefaultAvailabilityZone().hashCode()); 
+        hashCode = prime * hashCode + ((getDefaultSubnetId() == null) ? 0 : getDefaultSubnetId().hashCode()); 
         hashCode = prime * hashCode + ((getCustomJson() == null) ? 0 : getCustomJson().hashCode()); 
         hashCode = prime * hashCode + ((getConfigurationManager() == null) ? 0 : getConfigurationManager().hashCode()); 
         hashCode = prime * hashCode + ((isUseCustomCookbooks() == null) ? 0 : isUseCustomCookbooks().hashCode()); 
@@ -1345,6 +1560,8 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
         if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
         if (other.getRegion() == null ^ this.getRegion() == null) return false;
         if (other.getRegion() != null && other.getRegion().equals(this.getRegion()) == false) return false; 
+        if (other.getVpcId() == null ^ this.getVpcId() == null) return false;
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false) return false; 
         if (other.getAttributes() == null ^ this.getAttributes() == null) return false;
         if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false) return false; 
         if (other.getServiceRoleArn() == null ^ this.getServiceRoleArn() == null) return false;
@@ -1357,6 +1574,8 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
         if (other.getHostnameTheme() != null && other.getHostnameTheme().equals(this.getHostnameTheme()) == false) return false; 
         if (other.getDefaultAvailabilityZone() == null ^ this.getDefaultAvailabilityZone() == null) return false;
         if (other.getDefaultAvailabilityZone() != null && other.getDefaultAvailabilityZone().equals(this.getDefaultAvailabilityZone()) == false) return false; 
+        if (other.getDefaultSubnetId() == null ^ this.getDefaultSubnetId() == null) return false;
+        if (other.getDefaultSubnetId() != null && other.getDefaultSubnetId().equals(this.getDefaultSubnetId()) == false) return false; 
         if (other.getCustomJson() == null ^ this.getCustomJson() == null) return false;
         if (other.getCustomJson() != null && other.getCustomJson().equals(this.getCustomJson()) == false) return false; 
         if (other.getConfigurationManager() == null ^ this.getConfigurationManager() == null) return false;

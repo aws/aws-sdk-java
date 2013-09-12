@@ -41,6 +41,11 @@ public class Stack implements Serializable {
     private String region;
 
     /**
+     * The VPC ID, if the stack is running in a VPC.
+     */
+    private String vpcId;
+
+    /**
      * The contents of the stack's attributes bag.
      */
     private java.util.Map<String,String> attributes;
@@ -59,19 +64,9 @@ public class Stack implements Serializable {
     private String defaultInstanceProfileArn;
 
     /**
-     * The stack default operating system, which must be set to one of the
-     * following. <ul> <li>Standard operating systems: <code>Amazon
-     * Linux</code> or <code>Ubuntu</code> 12.04 LTS"</li> <li>Custom AMIs:
-     * <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
-     * Linux</code>. If you set this parameter to <code>Custom</code>, you
-     * must use the <a>CreateInstance</a> action's AmiId parameter to specify
-     * the custom AMI that you want to use. For more information on the
-     * standard operating systems, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     * Systems</a>For more information on how to use custom AMIs with
-     * OpsWorks, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.
+     * The stack's default operating system, which must be set to
+     * <code>Amazon Linux</code> or <code>Ubuntu 12.04 LTS</code>. The
+     * default option is <code>Amazon Linux</code>.
      */
     private String defaultOs;
 
@@ -86,6 +81,11 @@ public class Stack implements Serializable {
      * and Endpoints</a>.
      */
     private String defaultAvailabilityZone;
+
+    /**
+     * The default subnet ID, if the stack is running in a VPC.
+     */
+    private String defaultSubnetId;
 
     /**
      * A string that contains user-defined, custom JSON. It is used to
@@ -262,6 +262,40 @@ public class Stack implements Serializable {
     
     
     /**
+     * The VPC ID, if the stack is running in a VPC.
+     *
+     * @return The VPC ID, if the stack is running in a VPC.
+     */
+    public String getVpcId() {
+        return vpcId;
+    }
+    
+    /**
+     * The VPC ID, if the stack is running in a VPC.
+     *
+     * @param vpcId The VPC ID, if the stack is running in a VPC.
+     */
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+    
+    /**
+     * The VPC ID, if the stack is running in a VPC.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param vpcId The VPC ID, if the stack is running in a VPC.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public Stack withVpcId(String vpcId) {
+        this.vpcId = vpcId;
+        return this;
+    }
+    
+    
+    /**
      * The contents of the stack's attributes bag.
      *
      * @return The contents of the stack's attributes bag.
@@ -416,101 +450,41 @@ public class Stack implements Serializable {
     
     
     /**
-     * The stack default operating system, which must be set to one of the
-     * following. <ul> <li>Standard operating systems: <code>Amazon
-     * Linux</code> or <code>Ubuntu</code> 12.04 LTS"</li> <li>Custom AMIs:
-     * <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
-     * Linux</code>. If you set this parameter to <code>Custom</code>, you
-     * must use the <a>CreateInstance</a> action's AmiId parameter to specify
-     * the custom AMI that you want to use. For more information on the
-     * standard operating systems, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     * Systems</a>For more information on how to use custom AMIs with
-     * OpsWorks, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.
+     * The stack's default operating system, which must be set to
+     * <code>Amazon Linux</code> or <code>Ubuntu 12.04 LTS</code>. The
+     * default option is <code>Amazon Linux</code>.
      *
-     * @return The stack default operating system, which must be set to one of the
-     *         following. <ul> <li>Standard operating systems: <code>Amazon
-     *         Linux</code> or <code>Ubuntu</code> 12.04 LTS"</li> <li>Custom AMIs:
-     *         <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
-     *         Linux</code>. If you set this parameter to <code>Custom</code>, you
-     *         must use the <a>CreateInstance</a> action's AmiId parameter to specify
-     *         the custom AMI that you want to use. For more information on the
-     *         standard operating systems, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     *         Systems</a>For more information on how to use custom AMIs with
-     *         OpsWorks, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     *         Custom AMIs</a>.
+     * @return The stack's default operating system, which must be set to
+     *         <code>Amazon Linux</code> or <code>Ubuntu 12.04 LTS</code>. The
+     *         default option is <code>Amazon Linux</code>.
      */
     public String getDefaultOs() {
         return defaultOs;
     }
     
     /**
-     * The stack default operating system, which must be set to one of the
-     * following. <ul> <li>Standard operating systems: <code>Amazon
-     * Linux</code> or <code>Ubuntu</code> 12.04 LTS"</li> <li>Custom AMIs:
-     * <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
-     * Linux</code>. If you set this parameter to <code>Custom</code>, you
-     * must use the <a>CreateInstance</a> action's AmiId parameter to specify
-     * the custom AMI that you want to use. For more information on the
-     * standard operating systems, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     * Systems</a>For more information on how to use custom AMIs with
-     * OpsWorks, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.
+     * The stack's default operating system, which must be set to
+     * <code>Amazon Linux</code> or <code>Ubuntu 12.04 LTS</code>. The
+     * default option is <code>Amazon Linux</code>.
      *
-     * @param defaultOs The stack default operating system, which must be set to one of the
-     *         following. <ul> <li>Standard operating systems: <code>Amazon
-     *         Linux</code> or <code>Ubuntu</code> 12.04 LTS"</li> <li>Custom AMIs:
-     *         <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
-     *         Linux</code>. If you set this parameter to <code>Custom</code>, you
-     *         must use the <a>CreateInstance</a> action's AmiId parameter to specify
-     *         the custom AMI that you want to use. For more information on the
-     *         standard operating systems, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     *         Systems</a>For more information on how to use custom AMIs with
-     *         OpsWorks, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     *         Custom AMIs</a>.
+     * @param defaultOs The stack's default operating system, which must be set to
+     *         <code>Amazon Linux</code> or <code>Ubuntu 12.04 LTS</code>. The
+     *         default option is <code>Amazon Linux</code>.
      */
     public void setDefaultOs(String defaultOs) {
         this.defaultOs = defaultOs;
     }
     
     /**
-     * The stack default operating system, which must be set to one of the
-     * following. <ul> <li>Standard operating systems: <code>Amazon
-     * Linux</code> or <code>Ubuntu</code> 12.04 LTS"</li> <li>Custom AMIs:
-     * <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
-     * Linux</code>. If you set this parameter to <code>Custom</code>, you
-     * must use the <a>CreateInstance</a> action's AmiId parameter to specify
-     * the custom AMI that you want to use. For more information on the
-     * standard operating systems, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     * Systems</a>For more information on how to use custom AMIs with
-     * OpsWorks, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     * Custom AMIs</a>.
+     * The stack's default operating system, which must be set to
+     * <code>Amazon Linux</code> or <code>Ubuntu 12.04 LTS</code>. The
+     * default option is <code>Amazon Linux</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param defaultOs The stack default operating system, which must be set to one of the
-     *         following. <ul> <li>Standard operating systems: <code>Amazon
-     *         Linux</code> or <code>Ubuntu</code> 12.04 LTS"</li> <li>Custom AMIs:
-     *         <code>Custom</code></li> </ul> <p>The default option is <code>Amazon
-     *         Linux</code>. If you set this parameter to <code>Custom</code>, you
-     *         must use the <a>CreateInstance</a> action's AmiId parameter to specify
-     *         the custom AMI that you want to use. For more information on the
-     *         standard operating systems, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     *         Systems</a>For more information on how to use custom AMIs with
-     *         OpsWorks, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-     *         Custom AMIs</a>.
+     * @param defaultOs The stack's default operating system, which must be set to
+     *         <code>Amazon Linux</code> or <code>Ubuntu 12.04 LTS</code>. The
+     *         default option is <code>Amazon Linux</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -597,6 +571,40 @@ public class Stack implements Serializable {
      */
     public Stack withDefaultAvailabilityZone(String defaultAvailabilityZone) {
         this.defaultAvailabilityZone = defaultAvailabilityZone;
+        return this;
+    }
+    
+    
+    /**
+     * The default subnet ID, if the stack is running in a VPC.
+     *
+     * @return The default subnet ID, if the stack is running in a VPC.
+     */
+    public String getDefaultSubnetId() {
+        return defaultSubnetId;
+    }
+    
+    /**
+     * The default subnet ID, if the stack is running in a VPC.
+     *
+     * @param defaultSubnetId The default subnet ID, if the stack is running in a VPC.
+     */
+    public void setDefaultSubnetId(String defaultSubnetId) {
+        this.defaultSubnetId = defaultSubnetId;
+    }
+    
+    /**
+     * The default subnet ID, if the stack is running in a VPC.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param defaultSubnetId The default subnet ID, if the stack is running in a VPC.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public Stack withDefaultSubnetId(String defaultSubnetId) {
+        this.defaultSubnetId = defaultSubnetId;
         return this;
     }
     
@@ -1024,12 +1032,14 @@ public class Stack implements Serializable {
         if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");
         if (getName() != null) sb.append("Name: " + getName() + ",");
         if (getRegion() != null) sb.append("Region: " + getRegion() + ",");
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");
         if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ",");
         if (getServiceRoleArn() != null) sb.append("ServiceRoleArn: " + getServiceRoleArn() + ",");
         if (getDefaultInstanceProfileArn() != null) sb.append("DefaultInstanceProfileArn: " + getDefaultInstanceProfileArn() + ",");
         if (getDefaultOs() != null) sb.append("DefaultOs: " + getDefaultOs() + ",");
         if (getHostnameTheme() != null) sb.append("HostnameTheme: " + getHostnameTheme() + ",");
         if (getDefaultAvailabilityZone() != null) sb.append("DefaultAvailabilityZone: " + getDefaultAvailabilityZone() + ",");
+        if (getDefaultSubnetId() != null) sb.append("DefaultSubnetId: " + getDefaultSubnetId() + ",");
         if (getCustomJson() != null) sb.append("CustomJson: " + getCustomJson() + ",");
         if (getConfigurationManager() != null) sb.append("ConfigurationManager: " + getConfigurationManager() + ",");
         if (isUseCustomCookbooks() != null) sb.append("UseCustomCookbooks: " + isUseCustomCookbooks() + ",");
@@ -1049,12 +1059,14 @@ public class Stack implements Serializable {
         hashCode = prime * hashCode + ((getStackId() == null) ? 0 : getStackId().hashCode()); 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode()); 
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode()); 
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode()); 
         hashCode = prime * hashCode + ((getServiceRoleArn() == null) ? 0 : getServiceRoleArn().hashCode()); 
         hashCode = prime * hashCode + ((getDefaultInstanceProfileArn() == null) ? 0 : getDefaultInstanceProfileArn().hashCode()); 
         hashCode = prime * hashCode + ((getDefaultOs() == null) ? 0 : getDefaultOs().hashCode()); 
         hashCode = prime * hashCode + ((getHostnameTheme() == null) ? 0 : getHostnameTheme().hashCode()); 
         hashCode = prime * hashCode + ((getDefaultAvailabilityZone() == null) ? 0 : getDefaultAvailabilityZone().hashCode()); 
+        hashCode = prime * hashCode + ((getDefaultSubnetId() == null) ? 0 : getDefaultSubnetId().hashCode()); 
         hashCode = prime * hashCode + ((getCustomJson() == null) ? 0 : getCustomJson().hashCode()); 
         hashCode = prime * hashCode + ((getConfigurationManager() == null) ? 0 : getConfigurationManager().hashCode()); 
         hashCode = prime * hashCode + ((isUseCustomCookbooks() == null) ? 0 : isUseCustomCookbooks().hashCode()); 
@@ -1079,6 +1091,8 @@ public class Stack implements Serializable {
         if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
         if (other.getRegion() == null ^ this.getRegion() == null) return false;
         if (other.getRegion() != null && other.getRegion().equals(this.getRegion()) == false) return false; 
+        if (other.getVpcId() == null ^ this.getVpcId() == null) return false;
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false) return false; 
         if (other.getAttributes() == null ^ this.getAttributes() == null) return false;
         if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false) return false; 
         if (other.getServiceRoleArn() == null ^ this.getServiceRoleArn() == null) return false;
@@ -1091,6 +1105,8 @@ public class Stack implements Serializable {
         if (other.getHostnameTheme() != null && other.getHostnameTheme().equals(this.getHostnameTheme()) == false) return false; 
         if (other.getDefaultAvailabilityZone() == null ^ this.getDefaultAvailabilityZone() == null) return false;
         if (other.getDefaultAvailabilityZone() != null && other.getDefaultAvailabilityZone().equals(this.getDefaultAvailabilityZone()) == false) return false; 
+        if (other.getDefaultSubnetId() == null ^ this.getDefaultSubnetId() == null) return false;
+        if (other.getDefaultSubnetId() != null && other.getDefaultSubnetId().equals(this.getDefaultSubnetId()) == false) return false; 
         if (other.getCustomJson() == null ^ this.getCustomJson() == null) return false;
         if (other.getCustomJson() != null && other.getCustomJson().equals(this.getCustomJson()) == false) return false; 
         if (other.getConfigurationManager() == null ^ this.getConfigurationManager() == null) return false;

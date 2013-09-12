@@ -14,13 +14,13 @@
  */
 package com.amazonaws.transform;
 
-import static org.codehaus.jackson.JsonToken.END_ARRAY;
-import static org.codehaus.jackson.JsonToken.END_OBJECT;
+import static com.fasterxml.jackson.core.JsonToken.END_ARRAY;
+import static com.fasterxml.jackson.core.JsonToken.END_OBJECT;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.codehaus.jackson.JsonToken;
+import com.fasterxml.jackson.core.JsonToken;
 
 public class ListUnmarshaller<T> implements Unmarshaller<List<T>, JsonUnmarshallerContext> {
 

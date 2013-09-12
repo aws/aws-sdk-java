@@ -376,8 +376,8 @@ public class DynamoDBMapper {
     /**
      * Saves an item in DynamoDB. The service method used is determined by the
      * {@link DynamoDBMapperConfig#getSaveBehavior()} value, to use either
-     * {@link AWSDynamoDB#putItem(PutItemRequest)} or
-     * {@link AWSDynamoDB#updateItem(UpdateItemRequest)}. For updates, a null
+     * {@link AmazonDynamoDB#putItem(PutItemRequest)} or
+     * {@link AmazonDynamoDB#updateItem(UpdateItemRequest)}. For updates, a null
      * value for an object property will remove it from that item in DynamoDB.
      * For puts, a null value will not be passed to the service. The effect is
      * therefore the same, except when the item in DynamoDB contains attributes
@@ -820,7 +820,7 @@ public class DynamoDBMapper {
      * their primary keys.
      * {@link AmazonDynamoDB#batchGetItem(BatchGetItemRequest)} API.
      *
-     * @see DynamoDBMapper#batchLoad(Map, List, DynamoDBMapperConfig)
+     * @see #batchLoad(Map, DynamoDBMapperConfig)
      */
     public Map<String, List<Object>> batchLoad(Map<Class<?>, List<KeyPair>> itemsToGet) {
         return batchLoad(itemsToGet, this.config);
@@ -835,7 +835,7 @@ public class DynamoDBMapper {
      * @param itemsToGet
      *            Container for the necessary parameters to execute the
      *            BatchGetItem service method on Amazon DynamoDB.
-     *            {@link AmazonDynamoDB#batchWriteItem(BatchGetItemRequest)}
+     *            {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)}
      *            API.
      * @param config
      *            Only {@link DynamoDBMapperConfig#getTableNameOverride()} is
@@ -1277,7 +1277,7 @@ public class DynamoDBMapper {
      *
      * @param clazz
      *            The class mapped to a DynamoDB table.
-     * @param scanExpression
+     * @param queryExpression
      *            The parameters for running the scan.
      * @param config
      *            The mapper configuration to use for the query, which overrides

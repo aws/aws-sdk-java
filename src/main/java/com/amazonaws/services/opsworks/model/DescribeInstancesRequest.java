@@ -19,7 +19,10 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#describeInstances(DescribeInstancesRequest) DescribeInstances operation}.
  * <p>
- * Requests a description of a set of instances associated with a specified ID or IDs.
+ * Requests a description of a set of instances.
+ * </p>
+ * <p>
+ * <b>NOTE:</b>You must specify at least one of the parameters.
  * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeInstances(DescribeInstancesRequest)

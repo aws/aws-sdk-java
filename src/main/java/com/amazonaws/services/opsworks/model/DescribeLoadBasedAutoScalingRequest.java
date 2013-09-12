@@ -21,6 +21,9 @@ import java.io.Serializable;
  * <p>
  * Describes load-based auto scaling configurations for specified layers.
  * </p>
+ * <p>
+ * <b>NOTE:</b>You must specify at least one of the parameters.
+ * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeLoadBasedAutoScaling(DescribeLoadBasedAutoScalingRequest)
  */

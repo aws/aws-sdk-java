@@ -26,9 +26,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeoutException;
 
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.map.DeserializationConfig.Feature;
-import org.codehaus.jackson.map.ObjectMapper.DefaultTyping;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper.DefaultTyping;
 
 import com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow;
 import com.amazonaws.services.simpleworkflow.model.CloseStatus;
@@ -589,7 +589,7 @@ public class WorkflowExecutionUtils {
         Throwable failure = null;
         try {
             ObjectMapper mapper = new ObjectMapper();
-            mapper.configure(Feature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+            mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
             mapper.enableDefaultTyping(DefaultTyping.NON_FINAL);
             
             failure = mapper.readValue(details, Throwable.class);

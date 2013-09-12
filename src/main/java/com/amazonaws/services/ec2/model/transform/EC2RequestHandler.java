@@ -28,6 +28,7 @@ import com.amazonaws.services.ec2.model.DescribeSpotInstanceRequestsResult;
 import com.amazonaws.services.ec2.model.GroupIdentifier;
 import com.amazonaws.services.ec2.model.ImportKeyPairRequest;
 import com.amazonaws.services.ec2.model.LaunchSpecification;
+import com.amazonaws.services.ec2.model.ModifyReservedInstancesRequest;
 import com.amazonaws.services.ec2.model.RequestSpotInstancesRequest;
 import com.amazonaws.services.ec2.model.RequestSpotInstancesResult;
 import com.amazonaws.services.ec2.model.Reservation;
@@ -86,6 +87,15 @@ public class EC2RequestHandler extends AbstractRequestHandler {
         else if (originalRequest instanceof RunInstancesRequest) {
             RunInstancesRequest runInstancesRequest = (RunInstancesRequest)originalRequest;
             if (runInstancesRequest.getClientToken() == null) {
+                request.getParameters().put("ClientToken", UUID.randomUUID().toString());
+            }
+        }
+
+        // If a ModifyReservedInstancesRequest doesn't specify a ClientToken, fill one in, otherwise
+        // retries could result in duplicate requests.
+        else if (originalRequest instanceof ModifyReservedInstancesRequest) {
+            ModifyReservedInstancesRequest modifyReservedInstancesRequest = (ModifyReservedInstancesRequest) originalRequest;
+            if (modifyReservedInstancesRequest.getClientToken() == null) {
                 request.getParameters().put("ClientToken", UUID.randomUUID().toString());
             }
         }

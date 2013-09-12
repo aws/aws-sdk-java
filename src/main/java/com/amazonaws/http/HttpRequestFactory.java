@@ -57,6 +57,7 @@ class HttpRequestFactory {
      */
     HttpRequestBase createHttpRequest(Request<?> request, ClientConfiguration clientConfiguration, HttpEntity previousEntity, ExecutionContext context) {
         URI endpoint = request.getEndpoint();
+
         String uri = HttpUtils.appendUri(endpoint.toString(), request.getResourcePath());
         String encodedParams = HttpUtils.encodeParameters(request);
 

@@ -21,6 +21,9 @@ import java.io.Serializable;
  * <p>
  * Requests a description of one or more layers in a specified stack.
  * </p>
+ * <p>
+ * <b>NOTE:</b>You must specify at least one of the parameters.
+ * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeLayers(DescribeLayersRequest)
  */
