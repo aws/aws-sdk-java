@@ -19,7 +19,7 @@ import com.amazonaws.AmazonClientException;
 /**
  * {@link AWSCredentialsProvider} implementation that provides credentials
  * by looking at the: <code>AWS_ACCESS_KEY_ID</code> (or <code>AWS_ACCESS_KEY</code>) and
- * <code>AWS_SECRET_ACCESS_KEY</code> (or <code>AWS_SECRET_KEY</code>) environment variables.
+ * <code>AWS_SECRET_KEY</code> (or <code>AWS_SECRET_ACCESS_KEY</code>) environment variables.
  */
 public class EnvironmentVariableCredentialsProvider implements AWSCredentialsProvider {
 
@@ -27,23 +27,23 @@ public class EnvironmentVariableCredentialsProvider implements AWSCredentialsPro
     private static final String ACCESS_KEY_ENV_VAR = "AWS_ACCESS_KEY_ID";
 
     /** Alternate environment variable name for the AWS access key ID */
-    private static final String ACCESS_KEY_ENV_VAR_2 = "AWS_ACCESS_KEY";
+    private static final String ALTERNATE_ACCESS_KEY_ENV_VAR = "AWS_ACCESS_KEY";
 
     /** Environment variable name for the AWS secret key */
-    private static final String SECRET_KEY_ENV_VAR = "AWS_SECRET_ACCESS_KEY";
+    private static final String SECRET_KEY_ENV_VAR = "AWS_SECRET_KEY";
 
     /** Alternate environment variable name for the AWS secret key */
-    private static final String SECRET_KEY_ENV_VAR_2 = "AWS_SECRET_KEY";
+    private static final String ALTERNATE_SECRET_KEY_ENV_VAR = "AWS_SECRET_ACCESS_KEY";
 
     public AWSCredentials getCredentials() {
         String accessKey = System.getenv(ACCESS_KEY_ENV_VAR);
         if (accessKey == null) {
-            accessKey = System.getenv(ACCESS_KEY_ENV_VAR_2);
+            accessKey = System.getenv(ALTERNATE_ACCESS_KEY_ENV_VAR);
         }
 
         String secretKey = System.getenv(SECRET_KEY_ENV_VAR);
         if (secretKey == null) {
-            secretKey = System.getenv(SECRET_KEY_ENV_VAR_2);
+            secretKey = System.getenv(ALTERNATE_SECRET_KEY_ENV_VAR);
         }
 
         if (accessKey != null && secretKey != null) {
@@ -52,8 +52,8 @@ public class EnvironmentVariableCredentialsProvider implements AWSCredentialsPro
 
         throw new AmazonClientException(
                 "Unable to load AWS credentials from environment variables " +
-                "(" + ACCESS_KEY_ENV_VAR + " (or " + ACCESS_KEY_ENV_VAR_2 + ") and " +
-                SECRET_KEY_ENV_VAR + " (or " + SECRET_KEY_ENV_VAR_2 + "))");
+                "(" + ACCESS_KEY_ENV_VAR + " (or " + ALTERNATE_ACCESS_KEY_ENV_VAR + ") and " +
+                SECRET_KEY_ENV_VAR + " (or " + ALTERNATE_SECRET_KEY_ENV_VAR + "))");
     }
 
     public void refresh() {}
