@@ -13,7 +13,9 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
+
 import java.io.Serializable;
+
 
 /**
  * <p>
@@ -137,7 +139,17 @@ public class LaunchConfiguration implements Serializable {
      */
     private java.util.Date createdTime;
 
+    /**
+     * Specifies whether the instance is optimized for EBS I/O (<i>true</i>)
+     * or not (<i>false</i>).
+     */
     private Boolean ebsOptimized;
+
+    /**
+     * Specifies whether the instance is associated with a public IP address
+     * (<code>true</code>) or not (<code>false</code>).
+     */
+    private Boolean associatePublicIpAddress;
 
     /**
      * Specifies the name of the launch configuration.
@@ -843,29 +855,35 @@ public class LaunchConfiguration implements Serializable {
     
     
     /**
-     * Returns the value of the EbsOptimized property for this object.
+     * Specifies whether the instance is optimized for EBS I/O (<i>true</i>)
+     * or not (<i>false</i>).
      *
-     * @return The value of the EbsOptimized property for this object.
+     * @return Specifies whether the instance is optimized for EBS I/O (<i>true</i>)
+     *         or not (<i>false</i>).
      */
     public Boolean isEbsOptimized() {
         return ebsOptimized;
     }
     
     /**
-     * Sets the value of the EbsOptimized property for this object.
+     * Specifies whether the instance is optimized for EBS I/O (<i>true</i>)
+     * or not (<i>false</i>).
      *
-     * @param ebsOptimized The new value for the EbsOptimized property for this object.
+     * @param ebsOptimized Specifies whether the instance is optimized for EBS I/O (<i>true</i>)
+     *         or not (<i>false</i>).
      */
     public void setEbsOptimized(Boolean ebsOptimized) {
         this.ebsOptimized = ebsOptimized;
     }
     
     /**
-     * Sets the value of the EbsOptimized property for this object.
+     * Specifies whether the instance is optimized for EBS I/O (<i>true</i>)
+     * or not (<i>false</i>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ebsOptimized The new value for the EbsOptimized property for this object.
+     * @param ebsOptimized Specifies whether the instance is optimized for EBS I/O (<i>true</i>)
+     *         or not (<i>false</i>).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -877,12 +895,65 @@ public class LaunchConfiguration implements Serializable {
     
     
     /**
-     * Returns the value of the EbsOptimized property for this object.
+     * Specifies whether the instance is optimized for EBS I/O (<i>true</i>)
+     * or not (<i>false</i>).
      *
-     * @return The value of the EbsOptimized property for this object.
+     * @return Specifies whether the instance is optimized for EBS I/O (<i>true</i>)
+     *         or not (<i>false</i>).
      */
     public Boolean getEbsOptimized() {
         return ebsOptimized;
+    }
+    
+    /**
+     * Specifies whether the instance is associated with a public IP address
+     * (<code>true</code>) or not (<code>false</code>).
+     *
+     * @return Specifies whether the instance is associated with a public IP address
+     *         (<code>true</code>) or not (<code>false</code>).
+     */
+    public Boolean isAssociatePublicIpAddress() {
+        return associatePublicIpAddress;
+    }
+    
+    /**
+     * Specifies whether the instance is associated with a public IP address
+     * (<code>true</code>) or not (<code>false</code>).
+     *
+     * @param associatePublicIpAddress Specifies whether the instance is associated with a public IP address
+     *         (<code>true</code>) or not (<code>false</code>).
+     */
+    public void setAssociatePublicIpAddress(Boolean associatePublicIpAddress) {
+        this.associatePublicIpAddress = associatePublicIpAddress;
+    }
+    
+    /**
+     * Specifies whether the instance is associated with a public IP address
+     * (<code>true</code>) or not (<code>false</code>).
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param associatePublicIpAddress Specifies whether the instance is associated with a public IP address
+     *         (<code>true</code>) or not (<code>false</code>).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public LaunchConfiguration withAssociatePublicIpAddress(Boolean associatePublicIpAddress) {
+        this.associatePublicIpAddress = associatePublicIpAddress;
+        return this;
+    }
+    
+    
+    /**
+     * Specifies whether the instance is associated with a public IP address
+     * (<code>true</code>) or not (<code>false</code>).
+     *
+     * @return Specifies whether the instance is associated with a public IP address
+     *         (<code>true</code>) or not (<code>false</code>).
+     */
+    public Boolean getAssociatePublicIpAddress() {
+        return associatePublicIpAddress;
     }
     
     /**
@@ -911,7 +982,8 @@ public class LaunchConfiguration implements Serializable {
         if (getSpotPrice() != null) sb.append("SpotPrice: " + getSpotPrice() + ",");
         if (getIamInstanceProfile() != null) sb.append("IamInstanceProfile: " + getIamInstanceProfile() + ",");
         if (getCreatedTime() != null) sb.append("CreatedTime: " + getCreatedTime() + ",");
-        if (isEbsOptimized() != null) sb.append("EbsOptimized: " + isEbsOptimized() );
+        if (isEbsOptimized() != null) sb.append("EbsOptimized: " + isEbsOptimized() + ",");
+        if (isAssociatePublicIpAddress() != null) sb.append("AssociatePublicIpAddress: " + isAssociatePublicIpAddress() );
         sb.append("}");
         return sb.toString();
     }
@@ -936,6 +1008,7 @@ public class LaunchConfiguration implements Serializable {
         hashCode = prime * hashCode + ((getIamInstanceProfile() == null) ? 0 : getIamInstanceProfile().hashCode()); 
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode()); 
         hashCode = prime * hashCode + ((isEbsOptimized() == null) ? 0 : isEbsOptimized().hashCode()); 
+        hashCode = prime * hashCode + ((isAssociatePublicIpAddress() == null) ? 0 : isAssociatePublicIpAddress().hashCode()); 
         return hashCode;
     }
     
@@ -977,6 +1050,8 @@ public class LaunchConfiguration implements Serializable {
         if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false) return false; 
         if (other.isEbsOptimized() == null ^ this.isEbsOptimized() == null) return false;
         if (other.isEbsOptimized() != null && other.isEbsOptimized().equals(this.isEbsOptimized()) == false) return false; 
+        if (other.isAssociatePublicIpAddress() == null ^ this.isAssociatePublicIpAddress() == null) return false;
+        if (other.isAssociatePublicIpAddress() != null && other.isAssociatePublicIpAddress().equals(this.isAssociatePublicIpAddress()) == false) return false; 
         return true;
     }
     

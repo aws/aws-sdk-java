@@ -13,8 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
-import com.amazonaws.AmazonWebServiceRequest;
+
 import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#enableMetricsCollection(EnableMetricsCollectionRequest) EnableMetricsCollection operation}.
@@ -23,7 +25,7 @@ import java.io.Serializable;
  * You can specify the list of enabled metrics with the <code>Metrics</code> parameter.
  * </p>
  * <p>
- * Auto scaling metrics collection can be turned on only if the <code>InstanceMonitoring</code> flag, in the Auto Scaling group's launch configuration,
+ * Auto Scaling metrics collection can be turned on only if the <code>InstanceMonitoring</code> flag, in the Auto Scaling group's launch configuration,
  * is set to <code>True</code> .
  * 
  * </p>

@@ -241,8 +241,11 @@ public class DefaultRequest<T> implements Request<T> {
         builder.append(getHttpMethod().toString() + " ");
         builder.append(getEndpoint().toString() + " ");
 
-        builder.append("/"
-                + (getResourcePath() != null ? getResourcePath() : "")
+        String resourcePath = getResourcePath();
+        if (resourcePath != null && !resourcePath.startsWith("/")) {
+            resourcePath = "/" + resourcePath;
+        }
+        builder.append((resourcePath != null ? resourcePath : "/")
                 + " ");
 
         if (!getParameters().isEmpty()) {

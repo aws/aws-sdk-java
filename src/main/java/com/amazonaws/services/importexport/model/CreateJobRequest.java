@@ -13,8 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.importexport.model;
-import com.amazonaws.AmazonWebServiceRequest;
+
 import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.importexport.AmazonImportExport#createJob(CreateJobRequest) CreateJob operation}.

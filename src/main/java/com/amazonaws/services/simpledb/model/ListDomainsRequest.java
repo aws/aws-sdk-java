@@ -13,8 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpledb.model;
-import com.amazonaws.AmazonWebServiceRequest;
+
 import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpledb.AmazonSimpleDB#listDomains(ListDomainsRequest) ListDomains operation}.

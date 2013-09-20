@@ -83,7 +83,7 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AWSSecurityTokenServiceAsyncClient() {
         this(new DefaultAWSCredentialsProviderChain());
@@ -107,7 +107,7 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
      *                       client connects to AWSSecurityTokenService
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AWSSecurityTokenServiceAsyncClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());

@@ -313,10 +313,14 @@ public abstract class AbstractAWSSigner implements Signer {
     }
 
     protected String getCanonicalizedResourcePath(String resourcePath) {
+        return getCanonicalizedResourcePath(resourcePath, true);
+    }
+
+    protected String getCanonicalizedResourcePath(String resourcePath, boolean urlEncode) {
         if (resourcePath == null || resourcePath.length() == 0) {
             return "/";
         } else {
-            String value = HttpUtils.urlEncode(resourcePath, true);
+            String value = urlEncode ? HttpUtils.urlEncode(resourcePath, true) : resourcePath;
             if (value.startsWith("/")) {
                 return value;
             } else {

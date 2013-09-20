@@ -84,7 +84,7 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonElasticLoadBalancingAsyncClient() {
         this(new DefaultAWSCredentialsProviderChain());
@@ -108,7 +108,7 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      *                       client connects to AmazonElasticLoadBalancing
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonElasticLoadBalancingAsyncClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());

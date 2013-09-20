@@ -349,7 +349,7 @@ public class XpathUtils {
     private static String evaluateAsString(String expression, Node node) throws XPathExpressionException {
         if (isEmpty(node)) return null;
 
-        if (expression != ".") {
+        if (!expression.equals(".")) {
             /*
              * If the expression being evaluated doesn't select a node, we want
              * to return null to distinguish between cases where a node isn't

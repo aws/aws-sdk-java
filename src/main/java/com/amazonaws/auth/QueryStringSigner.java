@@ -108,9 +108,9 @@ public class QueryStringSigner extends AbstractAWSSigner implements Signer {
             new TreeMap<String, String>(String.CASE_INSENSITIVE_ORDER);
         sorted.putAll(parameters);
 
-        for (String key : sorted.keySet()) {
-            data.append(key);
-            data.append(sorted.get(key));
+        for (Map.Entry<String, String> entry : sorted.entrySet()) {
+            data.append(entry.getKey());
+            data.append(entry.getValue());
         }
 
         return data.toString();

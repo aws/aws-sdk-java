@@ -13,7 +13,9 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.directconnect.model;
+
 import java.io.Serializable;
+
 
 /**
  * <p>

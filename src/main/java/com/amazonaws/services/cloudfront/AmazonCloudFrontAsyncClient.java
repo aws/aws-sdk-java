@@ -60,7 +60,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonCloudFrontAsyncClient() {
         this(new DefaultAWSCredentialsProviderChain());
@@ -84,7 +84,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      *                       client connects to AmazonCloudFront
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonCloudFrontAsyncClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());

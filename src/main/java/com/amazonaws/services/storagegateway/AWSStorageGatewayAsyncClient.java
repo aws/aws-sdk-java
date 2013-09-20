@@ -82,7 +82,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AWSStorageGatewayAsyncClient() {
         this(new DefaultAWSCredentialsProviderChain());
@@ -106,7 +106,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      *                       client connects to AWSStorageGateway
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AWSStorageGatewayAsyncClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());

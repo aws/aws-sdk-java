@@ -73,7 +73,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonEC2AsyncClient() {
         this(new DefaultAWSCredentialsProviderChain());
@@ -97,7 +97,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      *                       client connects to AmazonEC2
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonEC2AsyncClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());

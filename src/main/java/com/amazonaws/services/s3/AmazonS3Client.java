@@ -2986,6 +2986,15 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
              && bucketNameUtils.isDNSBucketName(bucketName)
              && !validIP(endpoint.getHost()) ) {
             request.setEndpoint(convertToVirtualHostEndpoint(bucketName));
+            /*
+             * If the key name starts with a slash character, in order to
+             * prevent it being treated as a path delimiter, we need to add
+             * another slash before the key name. 
+             * {@see com.amazonaws.http.HttpRequestFactory#createHttpRequest}
+             */
+            if (key != null && key.startsWith("/")) {
+                key = "/" + key;
+            }
             request.setResourcePath(key);
         } else {
             request.setEndpoint(endpoint);

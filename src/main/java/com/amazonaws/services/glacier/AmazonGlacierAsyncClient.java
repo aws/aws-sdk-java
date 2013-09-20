@@ -95,7 +95,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonGlacierAsyncClient() {
         this(new DefaultAWSCredentialsProviderChain());
@@ -119,7 +119,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient
      *                       client connects to AmazonGlacier
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonGlacierAsyncClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());

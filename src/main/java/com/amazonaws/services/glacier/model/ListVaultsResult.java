@@ -13,7 +13,9 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.glacier.model;
+
 import java.io.Serializable;
+
 
 /**
  * <p>

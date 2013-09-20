@@ -102,7 +102,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AWSOpsWorksClient() {
         this(new DefaultAWSCredentialsProviderChain(), new ClientConfiguration());
@@ -126,7 +126,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *                       client connects to AWSOpsWorks
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AWSOpsWorksClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);

@@ -86,7 +86,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public DataPipelineAsyncClient() {
         this(new DefaultAWSCredentialsProviderChain());
@@ -110,7 +110,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient
      *                       client connects to DataPipeline
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public DataPipelineAsyncClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());

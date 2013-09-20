@@ -26,13 +26,24 @@ import com.amazonaws.services.autoscaling.model.*;
  * Each asynchronous method will return a Java Future object, and users are also allowed
  * to provide a callback handler.
  * Auto Scaling <p>
- * This guide provides detailed information about Auto Scaling actions, data types, parameters, and errors. For detailed information about Auto Scaling
- * features and their associated API calls, go to the <a href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/"> Auto Scaling
- * Developer Guide </a> .
- * </p>
- * <p>
  * Auto Scaling is a web service designed to automatically launch or terminate Amazon Elastic Compute Cloud (Amazon EC2) instances based on user-defined
  * policies, schedules, and health checks. This service is used in conjunction with Amazon CloudWatch and Elastic Load Balancing services.
+ * </p>
+ * <p>
+ * Auto Scaling provides APIs that you can call by submitting a Query Request. Query requests are HTTP or HTTPS requests that use the HTTP verbs GET or
+ * POST and a Query parameter named <i>Action</i> or <i>Operation</i> that specifies the API you are calling. Action is used throughout this
+ * documentation, although Operation is also supported for backward compatibility with other Amazon Web Services (AWS) Query APIs.
+ * </p>
+ * <p>
+ * Calling the API using a Query request is the most direct way to access the web service, but requires that your application handle low-level details
+ * such as generating the hash to sign the request and error handling. The benefit of calling the service using a Query request is that you are assured
+ * of having access to the complete functionality of the API. For information about signing a a query request, see <a
+ * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/api_requests.html"> Use Query Requests to Call Auto Scaling APIs </a>
+ * </p>
+ * <p>
+ * This guide provides detailed information about Auto Scaling actions, data types, parameters, and errors. For detailed information about Auto Scaling
+ * features and their associated API actions, go to the <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/"> Auto Scaling Developer
+ * Guide </a> .
  * </p>
  * <p>
  * This reference is based on the current WSDL, which is available at:
@@ -44,7 +55,7 @@ import com.amazonaws.services.autoscaling.model.*;
  * <b>Endpoints</b>
  * </p>
  * <p>
- * For information about this product's regions and endpoints, go to <a href="http://docs.amazonwebservices.com/general/latest/gr/index.html?rande.html">
+ * For information about this product's regions and endpoints, go to <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">
  * Regions and Endpoints </a> in the Amazon Web Services General Reference.
  * </p> 
  */       
@@ -126,7 +137,7 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * <code>Metrics</code> parameter.
      * </p>
      * <p>
-     * Auto scaling metrics collection can be turned on only if the
+     * Auto Scaling metrics collection can be turned on only if the
      * <code>InstanceMonitoring</code> flag, in the Auto Scaling group's
      * launch configuration, is set to <code>True</code> .
      * 
@@ -159,7 +170,7 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * <code>Metrics</code> parameter.
      * </p>
      * <p>
-     * Auto scaling metrics collection can be turned on only if the
+     * Auto Scaling metrics collection can be turned on only if the
      * <code>InstanceMonitoring</code> flag, in the Auto Scaling group's
      * launch configuration, is set to <code>True</code> .
      * 
@@ -191,8 +202,11 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
 
     /**
      * <p>
-     * Resumes Auto Scaling processes for an Auto Scaling group. For more
-     * information, see SuspendProcesses and ProcessType.
+     * Resumes all suspended Auto Scaling processes for an Auto Scaling
+     * group. For information on suspending and resuming Auto Scaling
+     * process, see <a
+     * s.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">
+     * Suspend and Resume Auto Scaling Process </a> .
      * </p>
      *
      * @param resumeProcessesRequest Container for the necessary parameters
@@ -214,8 +228,11 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
 
     /**
      * <p>
-     * Resumes Auto Scaling processes for an Auto Scaling group. For more
-     * information, see SuspendProcesses and ProcessType.
+     * Resumes all suspended Auto Scaling processes for an Auto Scaling
+     * group. For information on suspending and resuming Auto Scaling
+     * process, see <a
+     * s.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">
+     * Suspend and Resume Auto Scaling Process </a> .
      * </p>
      *
      * @param resumeProcessesRequest Container for the necessary parameters
@@ -421,8 +438,7 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * <p>
      * <b>NOTE:</b> The Auto Scaling group name must be unique within the
-     * scope of your AWS account, and under the quota of Auto Scaling groups
-     * allowed for your account.
+     * scope of your AWS account.
      * </p>
      *
      * @param createAutoScalingGroupRequest Container for the necessary
@@ -452,8 +468,7 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * <p>
      * <b>NOTE:</b> The Auto Scaling group name must be unique within the
-     * scope of your AWS account, and under the quota of Auto Scaling groups
-     * allowed for your account.
+     * scope of your AWS account.
      * </p>
      *
      * @param createAutoScalingGroupRequest Container for the necessary
@@ -740,8 +755,7 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
 
     /**
      * <p>
-     * Runs the policy you create for your Auto Scaling group in
-     * PutScalingPolicy.
+     * Executes the specified policy.
      * </p>
      *
      * @param executePolicyRequest Container for the necessary parameters to
@@ -763,8 +777,7 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
 
     /**
      * <p>
-     * Runs the policy you create for your Auto Scaling group in
-     * PutScalingPolicy.
+     * Executes the specified policy.
      * </p>
      *
      * @param executePolicyRequest Container for the necessary parameters to
@@ -900,8 +913,13 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * events delivered to an endpoint such as a web server or email address.
      * </p>
      * <p>
-     * A new <code>PutNotificationConfiguration</code> overwrites an
-     * existing configuration.
+     * For more information see <a
+     * on.com/AutoScaling/latest/DeveloperGuide/ASGettingNotifications.html">
+     * Get Email Notifications When Your Auto Scaling Group Changes </a>
+     * </p>
+     * <p>
+     * A new <code>PutNotificationConfiguration</code> overwrites an existing
+     * configuration.
      * </p>
      *
      * @param putNotificationConfigurationRequest Container for the necessary
@@ -930,8 +948,13 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * events delivered to an endpoint such as a web server or email address.
      * </p>
      * <p>
-     * A new <code>PutNotificationConfiguration</code> overwrites an
-     * existing configuration.
+     * For more information see <a
+     * on.com/AutoScaling/latest/DeveloperGuide/ASGettingNotifications.html">
+     * Get Email Notifications When Your Auto Scaling Group Changes </a>
+     * </p>
+     * <p>
+     * A new <code>PutNotificationConfiguration</code> overwrites an existing
+     * configuration.
      * </p>
      *
      * @param putNotificationConfigurationRequest Container for the necessary
@@ -1117,7 +1140,13 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
 
     /**
      * <p>
-     * Sets the health status of an instance.
+     * Sets the health status of a specified instance that belongs to any of
+     * your Auto Scaling groups.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * .com/AutoScaling/latest/DeveloperGuide/as-configure-healthcheck.html">
+     * Configure Health Checks for Your Auto Scaling group </a> .
      * </p>
      *
      * @param setInstanceHealthRequest Container for the necessary parameters
@@ -1139,7 +1168,13 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
 
     /**
      * <p>
-     * Sets the health status of an instance.
+     * Sets the health status of a specified instance that belongs to any of
+     * your Auto Scaling groups.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * .com/AutoScaling/latest/DeveloperGuide/as-configure-healthcheck.html">
+     * Configure Health Checks for Your Auto Scaling group </a> .
      * </p>
      *
      * @param setInstanceHealthRequest Container for the necessary parameters
@@ -1229,6 +1264,11 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * flag are optional parameters. See the Request Parameters for more
      * information.
      * </p>
+     * <p>
+     * For information on creating tags for your Auto Scaling group, see <a
+     * docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">
+     * Tag Your Auto Scaling Groups and Amazon EC2 Instances </a> .
+     * </p>
      *
      * @param createOrUpdateTagsRequest Container for the necessary
      *           parameters to execute the CreateOrUpdateTags operation on
@@ -1257,6 +1297,11 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * type, key and value, and the propagate flag. Value and the propagate
      * flag are optional parameters. See the Request Parameters for more
      * information.
+     * </p>
+     * <p>
+     * For information on creating tags for your Auto Scaling group, see <a
+     * docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">
+     * Tag Your Auto Scaling Groups and Amazon EC2 Instances </a> .
      * </p>
      *
      * @param createOrUpdateTagsRequest Container for the necessary
@@ -1293,11 +1338,14 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * <p>
      * <b>IMPORTANT:</b> Suspending either of the two primary process types,
      * Launch or Terminate, can prevent other process types from functioning
-     * properly. For more information about processes and their dependencies,
-     * see ProcessType.
+     * properly.
      * </p>
      * <p>
-     * To resume processes that have been suspended, use ResumeProcesses.
+     * To resume processes that have been suspended, use ResumeProcesses For
+     * more information on suspending and resuming Auto Scaling process, see
+     * <a
+     * s.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">
+     * Suspend and Resume Auto Scaling Process </a> .
      * </p>
      *
      * @param suspendProcessesRequest Container for the necessary parameters
@@ -1328,11 +1376,14 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * <p>
      * <b>IMPORTANT:</b> Suspending either of the two primary process types,
      * Launch or Terminate, can prevent other process types from functioning
-     * properly. For more information about processes and their dependencies,
-     * see ProcessType.
+     * properly.
      * </p>
      * <p>
-     * To resume processes that have been suspended, use ResumeProcesses.
+     * To resume processes that have been suspended, use ResumeProcesses For
+     * more information on suspending and resuming Auto Scaling process, see
+     * <a
+     * s.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">
+     * Suspend and Resume Auto Scaling Process </a> .
      * </p>
      *
      * @param suspendProcessesRequest Container for the necessary parameters
@@ -1646,7 +1697,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * <p>
      * The new settings are registered upon the completion of this call. Any
      * launch configuration settings take effect on any triggers after this
-     * call returns. Triggers that are currently in progress aren't affected.
+     * call returns. Scaling activities that are currently in progress aren't
+     * affected.
      * </p>
      * <p>
      * <b>NOTE:</b> If a new value is specified for MinSize without
@@ -1694,7 +1746,8 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * <p>
      * The new settings are registered upon the completion of this call. Any
      * launch configuration settings take effect on any triggers after this
-     * call returns. Triggers that are currently in progress aren't affected.
+     * call returns. Scaling activities that are currently in progress aren't
+     * affected.
      * </p>
      * <p>
      * <b>NOTE:</b> If a new value is specified for MinSize without
@@ -1909,9 +1962,20 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
 
     /**
      * <p>
-     * Creates a scheduled scaling action for an Auto Scaling group. If you
-     * leave a parameter unspecified, the corresponding value remains
-     * unchanged in the affected Auto Scaling group.
+     * Creates or updates a scheduled scaling action for an Auto Scaling
+     * group. When updating a scheduled scaling action, if you leave a
+     * parameter unspecified, the corresponding value remains unchanged in
+     * the affected Auto Scaling group.
+     * </p>
+     * <p>
+     * For information on creating or updating a scheduled action for your
+     * Auto Scaling group, see <a
+     * .aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html">
+     * Scale Based on a Schedule </a> .
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Auto Scaling supports the date and time expressed in
+     * "YYYY-MM-DDThh:mm:ssZ" format in UTC/GMT only.
      * </p>
      *
      * @param putScheduledUpdateGroupActionRequest Container for the
@@ -1935,9 +1999,20 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
 
     /**
      * <p>
-     * Creates a scheduled scaling action for an Auto Scaling group. If you
-     * leave a parameter unspecified, the corresponding value remains
-     * unchanged in the affected Auto Scaling group.
+     * Creates or updates a scheduled scaling action for an Auto Scaling
+     * group. When updating a scheduled scaling action, if you leave a
+     * parameter unspecified, the corresponding value remains unchanged in
+     * the affected Auto Scaling group.
+     * </p>
+     * <p>
+     * For information on creating or updating a scheduled action for your
+     * Auto Scaling group, see <a
+     * .aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html">
+     * Scale Based on a Schedule </a> .
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Auto Scaling supports the date and time expressed in
+     * "YYYY-MM-DDThh:mm:ssZ" format in UTC/GMT only.
      * </p>
      *
      * @param putScheduledUpdateGroupActionRequest Container for the
@@ -2021,37 +2096,7 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
 
     /**
      * <p>
-     * Adjusts the desired size of the AutoScalingGroup by initiating
-     * scaling activities. When reducing the size of the group, it is not
-     * possible to define which Amazon EC2 instances will be terminated. This
-     * applies to any Auto Scaling decisions that might result in terminating
-     * instances.
-     * </p>
-     * <p>
-     * There are two common use cases for <code>SetDesiredCapacity</code> :
-     * one for users of the Auto Scaling triggering system, and
-     * another for developers who write their own triggering systems. Both
-     * use cases relate to the concept of cooldown.
-     * </p>
-     * <p>
-     * In the first case, if you use the Auto Scaling triggering system,
-     * <code>SetDesiredCapacity</code> changes the size of your Auto Scaling
-     * group without regard to the cooldown period. This could be useful, for
-     * example, if Auto Scaling did something unexpected for some reason. If
-     * your cooldown period is 10 minutes, Auto Scaling would normally reject
-     * requests to change the size of the group for that entire 10-minute
-     * period. The <code>SetDesiredCapacity</code> command allows you to
-     * circumvent this restriction and change the size of the group before
-     * the end of the cooldown period.
-     * </p>
-     * <p>
-     * In the second case, if you write your own triggering system, you can
-     * use <code>SetDesiredCapacity</code> to control the size of your Auto
-     * Scaling group. If you want the same cooldown functionality that Auto
-     * Scaling offers, you can configure <code>SetDesiredCapacity</code> to
-     * honor cooldown by setting the <code>HonorCooldown</code> parameter to
-     * <code>true</code> .
-     * 
+     * Sets the desired size of the specified AutoScalingGroup.
      * </p>
      *
      * @param setDesiredCapacityRequest Container for the necessary
@@ -2074,37 +2119,7 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
 
     /**
      * <p>
-     * Adjusts the desired size of the AutoScalingGroup by initiating
-     * scaling activities. When reducing the size of the group, it is not
-     * possible to define which Amazon EC2 instances will be terminated. This
-     * applies to any Auto Scaling decisions that might result in terminating
-     * instances.
-     * </p>
-     * <p>
-     * There are two common use cases for <code>SetDesiredCapacity</code> :
-     * one for users of the Auto Scaling triggering system, and
-     * another for developers who write their own triggering systems. Both
-     * use cases relate to the concept of cooldown.
-     * </p>
-     * <p>
-     * In the first case, if you use the Auto Scaling triggering system,
-     * <code>SetDesiredCapacity</code> changes the size of your Auto Scaling
-     * group without regard to the cooldown period. This could be useful, for
-     * example, if Auto Scaling did something unexpected for some reason. If
-     * your cooldown period is 10 minutes, Auto Scaling would normally reject
-     * requests to change the size of the group for that entire 10-minute
-     * period. The <code>SetDesiredCapacity</code> command allows you to
-     * circumvent this restriction and change the size of the group before
-     * the end of the cooldown period.
-     * </p>
-     * <p>
-     * In the second case, if you write your own triggering system, you can
-     * use <code>SetDesiredCapacity</code> to control the size of your Auto
-     * Scaling group. If you want the same cooldown functionality that Auto
-     * Scaling offers, you can configure <code>SetDesiredCapacity</code> to
-     * honor cooldown by setting the <code>HonorCooldown</code> parameter to
-     * <code>true</code> .
-     * 
+     * Sets the desired size of the specified AutoScalingGroup.
      * </p>
      *
      * @param setDesiredCapacityRequest Container for the necessary

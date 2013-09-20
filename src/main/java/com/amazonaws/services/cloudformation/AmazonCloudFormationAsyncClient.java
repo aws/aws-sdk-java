@@ -76,7 +76,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonCloudFormationAsyncClient() {
         this(new DefaultAWSCredentialsProviderChain());
@@ -100,7 +100,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      *                       client connects to AmazonCloudFormation
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonCloudFormationAsyncClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());

@@ -83,7 +83,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonElasticTranscoderClient() {
         this(new DefaultAWSCredentialsProviderChain(), new ClientConfiguration());
@@ -107,7 +107,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      *                       client connects to AmazonElasticTranscoder
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonElasticTranscoderClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);

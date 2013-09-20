@@ -60,7 +60,7 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonRoute53AsyncClient() {
         this(new DefaultAWSCredentialsProviderChain());
@@ -84,7 +84,7 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
      *                       client connects to AmazonRoute53
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonRoute53AsyncClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());

@@ -13,8 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
-import com.amazonaws.AmazonWebServiceRequest;
+
 import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#createOrUpdateTags(CreateOrUpdateTagsRequest) CreateOrUpdateTags operation}.
@@ -24,6 +26,10 @@ import java.io.Serializable;
  * <p>
  * <b>NOTE:</b> A tag's definition is composed of a resource ID, resource type, key and value, and the propagate flag. Value and the propagate flag are
  * optional parameters. See the Request Parameters for more information.
+ * </p>
+ * <p>
+ * For information on creating tags for your Auto Scaling group, see <a
+ * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html"> Tag Your Auto Scaling Groups and Amazon EC2 Instances </a> .
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#createOrUpdateTags(CreateOrUpdateTagsRequest)

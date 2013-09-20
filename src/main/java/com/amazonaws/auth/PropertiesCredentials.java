@@ -53,20 +53,34 @@ public class PropertiesCredentials implements AWSCredentials {
      */
     public PropertiesCredentials(File file) throws FileNotFoundException, IOException, IllegalArgumentException {
         if (!file.exists()) {
-            throw new FileNotFoundException("File doesn't exist:  " + file.getAbsolutePath());
+            throw new FileNotFoundException("File doesn't exist:  "
+                                            + file.getAbsolutePath());
         }
 
-        Properties accountProperties = new Properties();
-        accountProperties.load(new FileInputStream(file));
+        FileInputStream stream = new FileInputStream(file);
+        try {
 
-        if (accountProperties.getProperty("accessKey") == null ||
-            accountProperties.getProperty("secretKey") == null) {
-            throw new IllegalArgumentException("The specified file (" + file.getAbsolutePath() + ") " +
-                    "doesn't contain the expected properties 'accessKey' and 'secretKey'.");
+            Properties accountProperties = new Properties();
+            accountProperties.load(stream);
+
+            if (accountProperties.getProperty("accessKey") == null ||
+                accountProperties.getProperty("secretKey") == null) {
+                throw new IllegalArgumentException(
+                    "The specified file (" + file.getAbsolutePath()
+                    + ") doesn't contain the expected properties 'accessKey' "
+                    + "and 'secretKey'."
+                );
+            }
+
+            accessKey = accountProperties.getProperty("accessKey");
+            secretAccessKey = accountProperties.getProperty("secretKey");
+
+        } finally {
+            try {
+                stream.close();
+            } catch (IOException e) {
+            }
         }
-
-        accessKey = accountProperties.getProperty("accessKey");
-        secretAccessKey = accountProperties.getProperty("secretKey");
     }
 
     /**

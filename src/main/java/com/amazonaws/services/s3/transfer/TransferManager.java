@@ -243,7 +243,7 @@ public class TransferManager {
      * this can be very expensive, and should be avoided whenever possible.
      * </p>
      * <p>
-     * Use the returned <code>Upload<code> object to query the progress of the
+     * Use the returned <code>Upload</code> object to query the progress of the
      * transfer, add listeners for progress events, and wait for the upload to
      * complete.
      * </p>
@@ -265,7 +265,7 @@ public class TransferManager {
      *            including the size of the options, content type, additional
      *            custom user metadata, etc.
      *
-     * @return A new <code>Upload<code> object to use to check
+     * @return A new <code>Upload</code> object to use to check
      * 		   the state of the upload, listen for progress notifications,
      * 		   and otherwise manage the upload.
      *
@@ -324,7 +324,7 @@ public class TransferManager {
      * finished).
      * </p>
      * <p>
-     * Use the returned <code>Upload<code> object to query the progress of the
+     * Use the returned <code>Upload</code> object to query the progress of the
      * transfer, add listeners for progress events, and wait for the upload to
      * complete.
      * </p>
@@ -337,7 +337,7 @@ public class TransferManager {
      * @param putObjectRequest
      *            The request containing all the parameters for the upload.
      *
-     * @return A new <code>Upload<code> object to use to check
+     * @return A new <code>Upload</code> object to use to check
      * 		   the state of the upload, listen for progress notifications,
      * 		   and otherwise manage the upload.
      *

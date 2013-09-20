@@ -129,7 +129,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonRedshiftAsyncClient() {
         this(new DefaultAWSCredentialsProviderChain());
@@ -153,7 +153,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient
      *                       client connects to AmazonRedshift
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonRedshiftAsyncClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());

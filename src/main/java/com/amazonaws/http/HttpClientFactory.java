@@ -141,7 +141,9 @@ class HttpClientFactory {
      * less strict about the Location header to account for S3 not sending the Location
      * header with 301 responses.
      */
-    private final class LocationHeaderNotRequiredRedirectStrategy extends DefaultRedirectStrategy {
+    private static final class LocationHeaderNotRequiredRedirectStrategy
+            extends DefaultRedirectStrategy {
+
         @Override
         public boolean isRedirected(HttpRequest request,
                 HttpResponse response, HttpContext context) throws ProtocolException {

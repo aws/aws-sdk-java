@@ -13,7 +13,9 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
+
 import java.io.Serializable;
+
 
 /**
  * <p>
@@ -118,7 +120,7 @@ public class AutoScalingGroup implements Serializable {
     /**
      * The name of the cluster placement group, if applicable. For more
      * information, go to <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
      * Using Cluster Instances</a> in the Amazon EC2 User Guide.
      * <p>
      * <b>Constraints:</b><br/>
@@ -146,7 +148,8 @@ public class AutoScalingGroup implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<EnabledMetric> enabledMetrics;
 
     /**
-     * A list of status conditions for the Auto Scaling group.
+     * The current state of the Auto Scaling group when a
+     * <a>DeleteAutoScalingGroup</a> action is in progress.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -868,7 +871,7 @@ public class AutoScalingGroup implements Serializable {
     /**
      * The name of the cluster placement group, if applicable. For more
      * information, go to <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
      * Using Cluster Instances</a> in the Amazon EC2 User Guide.
      * <p>
      * <b>Constraints:</b><br/>
@@ -877,7 +880,7 @@ public class AutoScalingGroup implements Serializable {
      *
      * @return The name of the cluster placement group, if applicable. For more
      *         information, go to <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
      *         Using Cluster Instances</a> in the Amazon EC2 User Guide.
      */
     public String getPlacementGroup() {
@@ -887,7 +890,7 @@ public class AutoScalingGroup implements Serializable {
     /**
      * The name of the cluster placement group, if applicable. For more
      * information, go to <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
      * Using Cluster Instances</a> in the Amazon EC2 User Guide.
      * <p>
      * <b>Constraints:</b><br/>
@@ -896,7 +899,7 @@ public class AutoScalingGroup implements Serializable {
      *
      * @param placementGroup The name of the cluster placement group, if applicable. For more
      *         information, go to <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
      *         Using Cluster Instances</a> in the Amazon EC2 User Guide.
      */
     public void setPlacementGroup(String placementGroup) {
@@ -906,7 +909,7 @@ public class AutoScalingGroup implements Serializable {
     /**
      * The name of the cluster placement group, if applicable. For more
      * information, go to <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
      * Using Cluster Instances</a> in the Amazon EC2 User Guide.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -917,7 +920,7 @@ public class AutoScalingGroup implements Serializable {
      *
      * @param placementGroup The name of the cluster placement group, if applicable. For more
      *         information, go to <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
      *         Using Cluster Instances</a> in the Amazon EC2 User Guide.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -1069,33 +1072,38 @@ public class AutoScalingGroup implements Serializable {
     }
     
     /**
-     * A list of status conditions for the Auto Scaling group.
+     * The current state of the Auto Scaling group when a
+     * <a>DeleteAutoScalingGroup</a> action is in progress.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return A list of status conditions for the Auto Scaling group.
+     * @return The current state of the Auto Scaling group when a
+     *         <a>DeleteAutoScalingGroup</a> action is in progress.
      */
     public String getStatus() {
         return status;
     }
     
     /**
-     * A list of status conditions for the Auto Scaling group.
+     * The current state of the Auto Scaling group when a
+     * <a>DeleteAutoScalingGroup</a> action is in progress.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param status A list of status conditions for the Auto Scaling group.
+     * @param status The current state of the Auto Scaling group when a
+     *         <a>DeleteAutoScalingGroup</a> action is in progress.
      */
     public void setStatus(String status) {
         this.status = status;
     }
     
     /**
-     * A list of status conditions for the Auto Scaling group.
+     * The current state of the Auto Scaling group when a
+     * <a>DeleteAutoScalingGroup</a> action is in progress.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -1103,7 +1111,8 @@ public class AutoScalingGroup implements Serializable {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param status A list of status conditions for the Auto Scaling group.
+     * @param status The current state of the Auto Scaling group when a
+     *         <a>DeleteAutoScalingGroup</a> action is in progress.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.security.NoSuchAlgorithmException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -187,7 +188,6 @@ public class AmazonHttpClient {
             HttpResponseHandler<AmazonWebServiceResponse<T>> responseHandler,
             HttpResponseHandler<AmazonServiceException> errorResponseHandler,
             ExecutionContext executionContext) throws AmazonClientException, AmazonServiceException {
-        long startTime = System.currentTimeMillis();
 
         if (executionContext == null) throw new AmazonClientException("Internal SDK Error: No execution context parameter specified.");
         List<RequestHandler> requestHandlers = executionContext.getRequestHandlers();
@@ -387,7 +387,14 @@ public class AmazonHttpClient {
                  * up resources.
                  */
                 if (!leaveHttpConnectionOpen) {
-                    try {response.getEntity().getContent().close();} catch (Throwable t) {}
+                    try {
+                        if (response != null && response.getEntity() != null
+                                && response.getEntity().getContent() != null) {
+                            response.getEntity().getContent().close();
+                        }
+                    } catch (IOException e) {
+                        log.warn("Cannot close the response content.", e);
+                    }
                 }
             }
         } /* end while (true) */
@@ -829,6 +836,7 @@ public class AmazonHttpClient {
         Header[] responseDateHeader = response.getHeaders("Date");
         
         try {
+
             if(responseDateHeader.length == 0) {
                 // SQS doesn't return Date header
                 serverDateStr = getServerDateFromException(exception.getMessage());
@@ -837,9 +845,17 @@ public class AmazonHttpClient {
                 serverDateStr = responseDateHeader[0].getValue();
                 serverDate = dateUtils.parseRfc822Date(serverDateStr);
             }
-        }
-        catch(Exception e) {
-            log.warn("Unable to parse clock skew offset from response: " + serverDateStr, e);
+
+        } catch (ParseException e) {
+            log.warn("Unable to parse clock skew offset from response: "
+                     + serverDateStr,
+                     e);
+            return 0;
+        } catch (RuntimeException e) {
+            log.warn("Unable to parse clock skew offset from response: "
+                     + serverDateStr,
+                     e);
+            return 0;
         }
         
         long diff = deviceDate.getTime() - serverDate.getTime();

@@ -158,30 +158,43 @@ public class HttpUtils {
 
     /**
      * Append the given path to the given baseUri.
+     * By default, all slash characters in path will not be url-encoded.
+     */
+    public static String appendUri(String baseUri, String path) {
+        return appendUri(baseUri, path, false);
+    }
+    
+    /**
+     * Append the given path to the given baseUri.
      *
      * <p>This method will encode the given path but not the given
      * baseUri.</p>
      *
      * @param baseUri The URI to append to (required, may be relative)
      * @param path The path to append (may be null or empty)
+     * @param escapeDoubleSlash Whether double-slash in the path should be escaped to "/%2F"
      * @return The baseUri with the (encoded) path appended
      */
-    public static String appendUri( final String baseUri,
-                                    final String path ) {
-      String resultUri = baseUri;
-      if (path != null && path.length() > 0) {
-        if (path.startsWith("/")) {
-          if (resultUri.endsWith("/")) {
-            resultUri = resultUri.substring(0, resultUri.length() - 1);
-          }
+    public static String appendUri(final String baseUri, String path, final boolean escapeDoubleSlash ) {
+        String resultUri = baseUri;
+        if (path != null && path.length() > 0) {
+            if (path.startsWith("/")) {
+                // trim the trailing slash in baseUri, since the path already starts with a slash
+                if (resultUri.endsWith("/")) {
+                    resultUri = resultUri.substring(0, resultUri.length() - 1);
+                }
+            } else if (!resultUri.endsWith("/")) {
+                resultUri += "/";
+            }
+            String encodedPath = HttpUtils.urlEncode(path, true);
+            if (escapeDoubleSlash) {
+                encodedPath = encodedPath.replace("//", "/%2F");
+            }
+            resultUri += encodedPath;
         } else if (!resultUri.endsWith("/")) {
-          resultUri += "/";
+            resultUri += "/";
         }
-        resultUri += HttpUtils.urlEncode( path, true );
-      } else if (!resultUri.endsWith("/")) {
-        resultUri += "/";
-      }
 
-      return resultUri;
+        return resultUri;
     }
 }

@@ -74,7 +74,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonIdentityManagementAsyncClient() {
         this(new DefaultAWSCredentialsProviderChain());
@@ -98,7 +98,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
      *                       client connects to AmazonIdentityManagement
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonIdentityManagementAsyncClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());

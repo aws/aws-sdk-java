@@ -13,13 +13,16 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
-import com.amazonaws.AmazonWebServiceRequest;
+
 import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#resumeProcesses(ResumeProcessesRequest) ResumeProcesses operation}.
  * <p>
- * Resumes Auto Scaling processes for an Auto Scaling group. For more information, see SuspendProcesses and ProcessType.
+ * Resumes all suspended Auto Scaling processes for an Auto Scaling group. For information on suspending and resuming Auto Scaling process, see <a
+ * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html"> Suspend and Resume Auto Scaling Process </a> .
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#resumeProcesses(ResumeProcessesRequest)

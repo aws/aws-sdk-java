@@ -22,18 +22,22 @@ import java.util.List;
 
 import com.fasterxml.jackson.core.JsonToken;
 
-public class ListUnmarshaller<T> implements Unmarshaller<List<T>, JsonUnmarshallerContext> {
+public class ListUnmarshaller<T>
+        implements Unmarshaller<List<T>, JsonUnmarshallerContext> {
 
-	private final Unmarshaller<T, JsonUnmarshallerContext> itemUnmarshaller;
+    private final Unmarshaller<T, JsonUnmarshallerContext> itemUnmarshaller;
 
-	public ListUnmarshaller(Unmarshaller<T, JsonUnmarshallerContext> itemUnmarshaller) {
-		this.itemUnmarshaller = itemUnmarshaller;
-	}
+    public ListUnmarshaller(
+        Unmarshaller<T, JsonUnmarshallerContext> itemUnmarshaller
+    ) {
+        this.itemUnmarshaller = itemUnmarshaller;
+    }
 
-	public List<T> unmarshall(JsonUnmarshallerContext context) throws Exception {
-		List<T> list = new ArrayList<T>();
+    public List<T> unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
+
+        List<T> list = new ArrayList<T>();
         int originalDepth = context.getCurrentDepth();
-        int targetDepth = originalDepth + 1;
 
         while (true) {
             JsonToken token = context.nextToken();
@@ -44,8 +48,8 @@ public class ListUnmarshaller<T> implements Unmarshaller<List<T>, JsonUnmarshall
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() < originalDepth) return list;
             } else {
-            	list.add(itemUnmarshaller.unmarshall(context));
+                list.add(itemUnmarshaller.unmarshall(context));
             }
         }
-	}
+    }
 }

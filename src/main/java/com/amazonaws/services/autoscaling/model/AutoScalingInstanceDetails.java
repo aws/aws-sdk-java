@@ -13,7 +13,9 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
+
 import java.io.Serializable;
+
 
 /**
  * <p>
@@ -50,7 +52,9 @@ public class AutoScalingInstanceDetails implements Serializable {
     private String availabilityZone;
 
     /**
-     * The life cycle state of this instance.
+     * The life cycle state of this instance. for more information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#instance-lifecycle">Instance
+     * Lifecycle State</a> in the <i>Auto Scaling Developer Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 32<br/>
@@ -217,33 +221,43 @@ public class AutoScalingInstanceDetails implements Serializable {
     
     
     /**
-     * The life cycle state of this instance.
+     * The life cycle state of this instance. for more information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#instance-lifecycle">Instance
+     * Lifecycle State</a> in the <i>Auto Scaling Developer Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 32<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return The life cycle state of this instance.
+     * @return The life cycle state of this instance. for more information, see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#instance-lifecycle">Instance
+     *         Lifecycle State</a> in the <i>Auto Scaling Developer Guide</i>.
      */
     public String getLifecycleState() {
         return lifecycleState;
     }
     
     /**
-     * The life cycle state of this instance.
+     * The life cycle state of this instance. for more information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#instance-lifecycle">Instance
+     * Lifecycle State</a> in the <i>Auto Scaling Developer Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 32<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param lifecycleState The life cycle state of this instance.
+     * @param lifecycleState The life cycle state of this instance. for more information, see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#instance-lifecycle">Instance
+     *         Lifecycle State</a> in the <i>Auto Scaling Developer Guide</i>.
      */
     public void setLifecycleState(String lifecycleState) {
         this.lifecycleState = lifecycleState;
     }
     
     /**
-     * The life cycle state of this instance.
+     * The life cycle state of this instance. for more information, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#instance-lifecycle">Instance
+     * Lifecycle State</a> in the <i>Auto Scaling Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -251,7 +265,9 @@ public class AutoScalingInstanceDetails implements Serializable {
      * <b>Length: </b>1 - 32<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param lifecycleState The life cycle state of this instance.
+     * @param lifecycleState The life cycle state of this instance. for more information, see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#instance-lifecycle">Instance
+     *         Lifecycle State</a> in the <i>Auto Scaling Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

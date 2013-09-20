@@ -71,7 +71,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonElastiCacheAsyncClient() {
         this(new DefaultAWSCredentialsProviderChain());
@@ -95,7 +95,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient
      *                       client connects to AmazonElastiCache
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonElastiCacheAsyncClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());

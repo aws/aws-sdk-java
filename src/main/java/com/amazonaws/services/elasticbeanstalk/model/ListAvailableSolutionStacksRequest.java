@@ -13,8 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
-import com.amazonaws.AmazonWebServiceRequest;
+
 import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#listAvailableSolutionStacks(ListAvailableSolutionStacksRequest) ListAvailableSolutionStacks operation}.

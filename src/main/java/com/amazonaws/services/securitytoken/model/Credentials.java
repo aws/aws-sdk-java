@@ -13,7 +13,9 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.securitytoken.model;
+
 import java.io.Serializable;
+
 
 /**
  * <p>

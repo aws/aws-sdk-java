@@ -81,7 +81,7 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AWSOpsWorksAsyncClient() {
         this(new DefaultAWSCredentialsProviderChain());
@@ -105,7 +105,7 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient
      *                       client connects to AWSOpsWorks
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AWSOpsWorksAsyncClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());

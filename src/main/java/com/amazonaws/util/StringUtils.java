@@ -156,13 +156,13 @@ public class StringUtils {
      * @return
      */
     public static String join(String joiner, String... parts) {
-      StringBuilder builder = new StringBuilder();
-      for (int i = 0; i < parts.length; i++) {
-    			builder.append(parts[i].toString());
-    			if (i < parts.length - 1) {
-    				builder.append(joiner);
-    			}
-    		}
-      return builder.toString();
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < parts.length; i++) {
+            builder.append(parts[i]);
+            if (i < parts.length - 1) {
+                builder.append(joiner);
+            }
+        }
+        return builder.toString();
     }
 }

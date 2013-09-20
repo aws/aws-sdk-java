@@ -55,6 +55,34 @@ public class AWS4Signer extends AbstractAWSSigner {
 
     /** Date override for testing only */
     protected Date overriddenDate;
+    
+    /**
+     * Whether double url-encode the resource path when constructing the
+     * canonical request. By default, we enable double url-encoding.
+     * 
+     * TODO: Different sigv4 services seem to be inconsistent on this. So for
+     * services that want to suppress this, they should use new AWS4Signer(false).
+     */
+    protected boolean doubleUrlEncode;
+
+    /**
+     * Construct a new AWS4 signer instance.
+     * By default, enable double url-encoding.
+     */
+    public AWS4Signer() {
+        this(true);
+    }
+    
+    /**
+     * Construct a new AWS4 signer instance.
+     * 
+     * @param doubleUrlEncoding
+     *            Whether double url-encode the resource path when constructing
+     *            the canonical request.
+     */
+    public AWS4Signer(boolean doubleUrlEncoding) {
+        this.doubleUrlEncode = doubleUrlEncoding;
+    }
 
     protected ThreadLocal<SimpleDateFormat> dateTimeFormat = new ThreadLocal<SimpleDateFormat>() {
         @Override
@@ -205,11 +233,13 @@ public class AWS4Signer extends AbstractAWSSigner {
     }
 
     protected String getCanonicalRequest(Request<?> request, String contentSha256) {
+        /* This would url-encode the resource path for the first time */
         String path = HttpUtils.appendUri(request.getEndpoint().getPath(), request.getResourcePath());
 
         String canonicalRequest =
                 request.getHttpMethod().toString() + "\n" +
-                        getCanonicalizedResourcePath(path) + "\n" +
+        /* This would optionally double url-encode the resource path */
+                        getCanonicalizedResourcePath(path, doubleUrlEncode) + "\n" +
                         getCanonicalizedQueryString(request) + "\n" +
                         getCanonicalizedHeaderString(request) + "\n" +
                         getSignedHeadersString(request) + "\n" +
@@ -316,7 +346,7 @@ public class AWS4Signer extends AbstractAWSSigner {
         return;
     }
 
-    protected class HeaderSigningResult {
+    protected static class HeaderSigningResult {
 
         private String dateTime;
         private String scope;

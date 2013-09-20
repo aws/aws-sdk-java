@@ -13,13 +13,19 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
-import com.amazonaws.AmazonWebServiceRequest;
+
 import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#setInstanceHealth(SetInstanceHealthRequest) SetInstanceHealth operation}.
  * <p>
- * Sets the health status of an instance.
+ * Sets the health status of a specified instance that belongs to any of your Auto Scaling groups.
+ * </p>
+ * <p>
+ * For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-configure-healthcheck.html"> Configure Health
+ * Checks for Your Auto Scaling group </a> .
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#setInstanceHealth(SetInstanceHealthRequest)
@@ -36,9 +42,10 @@ public class SetInstanceHealthRequest extends AmazonWebServiceRequest implements
     private String instanceId;
 
     /**
-     * The health status of the instance. "Healthy" means that the instance
-     * is healthy and should remain in service. "Unhealthy" means that the
-     * instance is unhealthy. Auto Scaling should terminate and replace it.
+     * The health status of the instance. Set to <code>Healthy</code> if you
+     * want the instance to remain in service. Set to <code>Unhealthy</code>
+     * if you want the instance to be out of service. Auto Scaling will
+     * terminate and replace the unhealthy instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 32<br/>
@@ -47,8 +54,13 @@ public class SetInstanceHealthRequest extends AmazonWebServiceRequest implements
     private String healthStatus;
 
     /**
-     * If True, this call should respect the grace period associated with the
-     * group.
+     * If the Auto Scaling group of the specified instance has a
+     * <code>HealthCheckGracePeriod</code> specified for the group, by
+     * default, this call will respect the grace period. Set this to
+     * <code>False</code>, if you do not want the call to respect the grace
+     * period associated with the group. <p>For more information, see the
+     * <code>HealthCheckGracePeriod</code> parameter description in the
+     * <a>CreateAutoScalingGroup</a> action.
      */
     private Boolean shouldRespectGracePeriod;
 
@@ -99,43 +111,48 @@ public class SetInstanceHealthRequest extends AmazonWebServiceRequest implements
     
     
     /**
-     * The health status of the instance. "Healthy" means that the instance
-     * is healthy and should remain in service. "Unhealthy" means that the
-     * instance is unhealthy. Auto Scaling should terminate and replace it.
+     * The health status of the instance. Set to <code>Healthy</code> if you
+     * want the instance to remain in service. Set to <code>Unhealthy</code>
+     * if you want the instance to be out of service. Auto Scaling will
+     * terminate and replace the unhealthy instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 32<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return The health status of the instance. "Healthy" means that the instance
-     *         is healthy and should remain in service. "Unhealthy" means that the
-     *         instance is unhealthy. Auto Scaling should terminate and replace it.
+     * @return The health status of the instance. Set to <code>Healthy</code> if you
+     *         want the instance to remain in service. Set to <code>Unhealthy</code>
+     *         if you want the instance to be out of service. Auto Scaling will
+     *         terminate and replace the unhealthy instance.
      */
     public String getHealthStatus() {
         return healthStatus;
     }
     
     /**
-     * The health status of the instance. "Healthy" means that the instance
-     * is healthy and should remain in service. "Unhealthy" means that the
-     * instance is unhealthy. Auto Scaling should terminate and replace it.
+     * The health status of the instance. Set to <code>Healthy</code> if you
+     * want the instance to remain in service. Set to <code>Unhealthy</code>
+     * if you want the instance to be out of service. Auto Scaling will
+     * terminate and replace the unhealthy instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 32<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param healthStatus The health status of the instance. "Healthy" means that the instance
-     *         is healthy and should remain in service. "Unhealthy" means that the
-     *         instance is unhealthy. Auto Scaling should terminate and replace it.
+     * @param healthStatus The health status of the instance. Set to <code>Healthy</code> if you
+     *         want the instance to remain in service. Set to <code>Unhealthy</code>
+     *         if you want the instance to be out of service. Auto Scaling will
+     *         terminate and replace the unhealthy instance.
      */
     public void setHealthStatus(String healthStatus) {
         this.healthStatus = healthStatus;
     }
     
     /**
-     * The health status of the instance. "Healthy" means that the instance
-     * is healthy and should remain in service. "Unhealthy" means that the
-     * instance is unhealthy. Auto Scaling should terminate and replace it.
+     * The health status of the instance. Set to <code>Healthy</code> if you
+     * want the instance to remain in service. Set to <code>Unhealthy</code>
+     * if you want the instance to be out of service. Auto Scaling will
+     * terminate and replace the unhealthy instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -143,9 +160,10 @@ public class SetInstanceHealthRequest extends AmazonWebServiceRequest implements
      * <b>Length: </b>1 - 32<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param healthStatus The health status of the instance. "Healthy" means that the instance
-     *         is healthy and should remain in service. "Unhealthy" means that the
-     *         instance is unhealthy. Auto Scaling should terminate and replace it.
+     * @param healthStatus The health status of the instance. Set to <code>Healthy</code> if you
+     *         want the instance to remain in service. Set to <code>Unhealthy</code>
+     *         if you want the instance to be out of service. Auto Scaling will
+     *         terminate and replace the unhealthy instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -157,35 +175,65 @@ public class SetInstanceHealthRequest extends AmazonWebServiceRequest implements
     
     
     /**
-     * If True, this call should respect the grace period associated with the
-     * group.
+     * If the Auto Scaling group of the specified instance has a
+     * <code>HealthCheckGracePeriod</code> specified for the group, by
+     * default, this call will respect the grace period. Set this to
+     * <code>False</code>, if you do not want the call to respect the grace
+     * period associated with the group. <p>For more information, see the
+     * <code>HealthCheckGracePeriod</code> parameter description in the
+     * <a>CreateAutoScalingGroup</a> action.
      *
-     * @return If True, this call should respect the grace period associated with the
-     *         group.
+     * @return If the Auto Scaling group of the specified instance has a
+     *         <code>HealthCheckGracePeriod</code> specified for the group, by
+     *         default, this call will respect the grace period. Set this to
+     *         <code>False</code>, if you do not want the call to respect the grace
+     *         period associated with the group. <p>For more information, see the
+     *         <code>HealthCheckGracePeriod</code> parameter description in the
+     *         <a>CreateAutoScalingGroup</a> action.
      */
     public Boolean isShouldRespectGracePeriod() {
         return shouldRespectGracePeriod;
     }
     
     /**
-     * If True, this call should respect the grace period associated with the
-     * group.
+     * If the Auto Scaling group of the specified instance has a
+     * <code>HealthCheckGracePeriod</code> specified for the group, by
+     * default, this call will respect the grace period. Set this to
+     * <code>False</code>, if you do not want the call to respect the grace
+     * period associated with the group. <p>For more information, see the
+     * <code>HealthCheckGracePeriod</code> parameter description in the
+     * <a>CreateAutoScalingGroup</a> action.
      *
-     * @param shouldRespectGracePeriod If True, this call should respect the grace period associated with the
-     *         group.
+     * @param shouldRespectGracePeriod If the Auto Scaling group of the specified instance has a
+     *         <code>HealthCheckGracePeriod</code> specified for the group, by
+     *         default, this call will respect the grace period. Set this to
+     *         <code>False</code>, if you do not want the call to respect the grace
+     *         period associated with the group. <p>For more information, see the
+     *         <code>HealthCheckGracePeriod</code> parameter description in the
+     *         <a>CreateAutoScalingGroup</a> action.
      */
     public void setShouldRespectGracePeriod(Boolean shouldRespectGracePeriod) {
         this.shouldRespectGracePeriod = shouldRespectGracePeriod;
     }
     
     /**
-     * If True, this call should respect the grace period associated with the
-     * group.
+     * If the Auto Scaling group of the specified instance has a
+     * <code>HealthCheckGracePeriod</code> specified for the group, by
+     * default, this call will respect the grace period. Set this to
+     * <code>False</code>, if you do not want the call to respect the grace
+     * period associated with the group. <p>For more information, see the
+     * <code>HealthCheckGracePeriod</code> parameter description in the
+     * <a>CreateAutoScalingGroup</a> action.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param shouldRespectGracePeriod If True, this call should respect the grace period associated with the
-     *         group.
+     * @param shouldRespectGracePeriod If the Auto Scaling group of the specified instance has a
+     *         <code>HealthCheckGracePeriod</code> specified for the group, by
+     *         default, this call will respect the grace period. Set this to
+     *         <code>False</code>, if you do not want the call to respect the grace
+     *         period associated with the group. <p>For more information, see the
+     *         <code>HealthCheckGracePeriod</code> parameter description in the
+     *         <a>CreateAutoScalingGroup</a> action.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -197,11 +245,21 @@ public class SetInstanceHealthRequest extends AmazonWebServiceRequest implements
     
     
     /**
-     * If True, this call should respect the grace period associated with the
-     * group.
+     * If the Auto Scaling group of the specified instance has a
+     * <code>HealthCheckGracePeriod</code> specified for the group, by
+     * default, this call will respect the grace period. Set this to
+     * <code>False</code>, if you do not want the call to respect the grace
+     * period associated with the group. <p>For more information, see the
+     * <code>HealthCheckGracePeriod</code> parameter description in the
+     * <a>CreateAutoScalingGroup</a> action.
      *
-     * @return If True, this call should respect the grace period associated with the
-     *         group.
+     * @return If the Auto Scaling group of the specified instance has a
+     *         <code>HealthCheckGracePeriod</code> specified for the group, by
+     *         default, this call will respect the grace period. Set this to
+     *         <code>False</code>, if you do not want the call to respect the grace
+     *         period associated with the group. <p>For more information, see the
+     *         <code>HealthCheckGracePeriod</code> parameter description in the
+     *         <a>CreateAutoScalingGroup</a> action.
      */
     public Boolean getShouldRespectGracePeriod() {
         return shouldRespectGracePeriod;

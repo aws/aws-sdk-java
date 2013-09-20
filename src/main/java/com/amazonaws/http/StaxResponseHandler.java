@@ -20,6 +20,7 @@ import java.util.Map;
 
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
+import javax.xml.stream.XMLStreamException;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -47,7 +48,7 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
     private static final Log log = LogFactory.getLog("com.amazonaws.request");
 
     /** Shared factory for creating XML event readers */
-    private static XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
+    private static final XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
 
 
     /**
@@ -82,7 +83,12 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
         log.trace("Parsing service response XML");
         InputStream content = response.getContent();
         if (content == null) content = new ByteArrayInputStream("<eof/>".getBytes());
-        XMLEventReader eventReader = xmlInputFactory.createXMLEventReader(content);
+
+        XMLEventReader eventReader;
+        synchronized (xmlInputFactory) {
+            eventReader = xmlInputFactory.createXMLEventReader(content);
+        }
+
         try {
             AmazonWebServiceResponse<T> awsResponse = new AmazonWebServiceResponse<T>();
             StaxUnmarshallerContext unmarshallerContext = new StaxUnmarshallerContext(eventReader, response.getHeaders());
@@ -99,7 +105,11 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
             log.trace("Done parsing service response");
             return awsResponse;
         } finally {
-            try {eventReader.close();} catch (Exception e) {}
+            try {
+                eventReader.close();
+            } catch (XMLStreamException e) {
+                log.warn("Error closing xml parser", e);
+            }
         }
     }
 

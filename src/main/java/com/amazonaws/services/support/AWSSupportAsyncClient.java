@@ -114,7 +114,7 @@ public class AWSSupportAsyncClient extends AWSSupportClient
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AWSSupportAsyncClient() {
         this(new DefaultAWSCredentialsProviderChain());
@@ -138,7 +138,7 @@ public class AWSSupportAsyncClient extends AWSSupportClient
      *                       client connects to AWSSupport
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AWSSupportAsyncClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());

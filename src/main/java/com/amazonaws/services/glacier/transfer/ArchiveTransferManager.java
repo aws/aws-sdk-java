@@ -32,6 +32,7 @@ import com.amazonaws.AmazonServiceException;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.event.ProgressEvent;
 import com.amazonaws.internal.StaticCredentialsProvider;
 import com.amazonaws.services.glacier.AmazonGlacier;
 import com.amazonaws.services.glacier.AmazonGlacierClient;
@@ -57,6 +58,7 @@ import com.amazonaws.services.s3.internal.RepeatableFileInputStream;
 import com.amazonaws.services.sns.AmazonSNSClient;
 import com.amazonaws.services.sqs.AmazonSQSClient;
 import com.amazonaws.util.BinaryUtils;
+import com.amazonaws.util.ProgressListener;
 
 /**
  * Utilities for uploading and downloading data to and from AWS Glacier.
@@ -88,7 +90,7 @@ public class ArchiveTransferManager {
     private final AmazonSQSClient sqs;
 
     private final AmazonSNSClient sns;
-    
+
     private static final Log log = LogFactory.getLog(ArchiveTransferManager.class);
 
     /**
@@ -256,12 +258,56 @@ public class ArchiveTransferManager {
      */
     public UploadResult upload(final String accountId, final String vaultName, final String archiveDescription, final File file)
             throws AmazonServiceException, AmazonClientException, FileNotFoundException {
+        return upload(accountId, vaultName, archiveDescription, file, null);
+    }
+
+    /**
+     * Uploads the specified file to Amazon Glacier for archival storage in the
+     * specified vault in the specified user's account. For small archives, this
+     * method will upload the archive directly to Glacier. For larger archives,
+     * this method will use Glacier's multipart upload API to split the upload
+     * into multiple parts for better error recovery if any errors are
+     * encountered while streaming the data to Amazon Glacier. You can also add
+     * an optional progress listener for receiving updates about the upload
+     * status.
+     *
+     * @param accountId
+     *            The ID for the account which owns the Glacier vault being
+     *            uploaded to. To use the same account the developer is using to
+     *            make requests to AWS, the value <code>"-"</code> can be used
+     *            instead of the full account ID.
+     * @param vaultName
+     *            The name of the vault to upload to.
+     * @param archiveDescription
+     *            The description of the new archive being uploaded.
+     * @param file
+     *            The file to upload to Amazon Glacier.
+     * @param progressListener
+     *            The optional progress listener for receiving updates about
+     *            the upload status.
+     *
+     * @return The result of the upload, including the archive ID needed to
+     *         access the upload later.
+     *
+     * @throws AmazonServiceException
+     *             If any problems were encountered while communicating with
+     *             AWS.
+     * @throws AmazonClientException
+     *             If any problems were encountered inside the AWS SDK for Java
+     *             client code in making requests or processing responses from
+     *             AWS.
+     * @throws FileNotFoundException
+     *             If the specified file to upload doesn't exist.
+     */
+    public UploadResult upload(final String accountId, final String vaultName, final String archiveDescription, final File file, ProgressListener progressListener)
+            throws AmazonServiceException, AmazonClientException, FileNotFoundException {
         if (file.length() > MULTIPART_UPLOAD_SIZE_THRESHOLD) {
-            return uploadInMultipleParts(accountId, vaultName, archiveDescription, file);
+            return uploadInMultipleParts(accountId, vaultName, archiveDescription, file, progressListener);
         } else {
-            return uploadInSinglePart(accountId, vaultName, archiveDescription, file);
+            return uploadInSinglePart(accountId, vaultName, archiveDescription, file, progressListener);
         }
     }
+
 
     /**
      * Downloads an archive from Amazon Glacier in the specified vault for the
@@ -280,7 +326,7 @@ public class ArchiveTransferManager {
      * @param archiveId
      *            The unique ID of the archive to download.
      * @param file
-     *            The file save the archive to.
+     *            The file in which to save the archive.
      *
      * @throws AmazonServiceException
      *             If any problems were encountered while communicating with
@@ -314,7 +360,7 @@ public class ArchiveTransferManager {
      * @param archiveId
      *            The unique ID of the archive to download.
      * @param file
-     *            The file save the archive to.
+     *           The file in which to save the archive.
      *
      * @throws AmazonServiceException
      *             If any problems were encountered while communicating with
@@ -326,9 +372,49 @@ public class ArchiveTransferManager {
      */
     public void download(final String accountId, final String vaultName, final String archiveId, final File file)
             throws AmazonServiceException, AmazonClientException {
+        download(accountId, vaultName, archiveId, file, null);
+    }
+
+    /**
+     * Downloads an archive from Amazon Glacier in the specified vault in the
+     * specified user's account, and saves it to the specified file. Amazon
+     * Glacier is optimized for long term storage of data that isn't needed
+     * quickly. This method will first make a request to Amazon Glacier to
+     * prepare the archive to be downloaded. Once Glacier has finished preparing
+     * the archive to be downloaded, this method will start downloading the data
+     * and storing it in the specified file. You can also add an optional
+     * progress listener for receiving updates about the download status.
+     *
+     * @param accountId
+     *            The ID for the account which owns the Glacier vault where the
+     *            archive is being downloaded from. To use the same account the
+     *            developer is using to make requests to AWS, the value
+     *            <code>"-"</code> can be used instead of the full account ID.
+     * @param vaultName
+     *            The name of the vault to download the archive from.
+     * @param archiveId
+     *            The unique ID of the archive to download.
+     * @param file
+     *           The file in which to save the archive.
+     * @param progressListener
+     *            The optional progress listener for receiving updates about the
+     *            download status.
+     *
+     * @throws AmazonServiceException
+     *             If any problems were encountered while communicating with
+     *             AWS.
+     * @throws AmazonClientException
+     *             If any problems were encountered inside the AWS SDK for Java
+     *             client code in making requests or processing responses from
+     *             AWS.
+     */
+    public void download(final String accountId, final String vaultName, final String archiveId, final File file, ProgressListener progressListener)
+            throws AmazonServiceException, AmazonClientException {
 
         JobStatusMonitor jobStatusMonitor = null;
         String jobId = null;
+
+        fireProgressEvent(progressListener, ProgressEvent.PREPARING_EVENT_CODE);
 
         try {
             if (credentialsProvider != null && clientConfiguration != null) {
@@ -350,32 +436,63 @@ public class ArchiveTransferManager {
 
             jobStatusMonitor.waitForJobToComplete(jobId);
 
+        } catch (AmazonServiceException ace) {
+            fireProgressEvent(progressListener, ProgressEvent.FAILED_EVENT_CODE);
+            throw ace;
         } finally {
             if (jobStatusMonitor != null) {
                 jobStatusMonitor.shutdown();
             }
         }
 
-        downloadJobOutput(accountId, vaultName, jobId, file);
+        downloadJobOutput(accountId, vaultName, jobId, file, progressListener);
     }
 
     /**
-     * Downloads the job output for the specified job (which must be ready to
-     * download already), into the specified file. This method will request
-     * individual chunks of the data, one at a time, in order to handle any
-     * transient errors along the way.
-     *
-     * @param accountId
-     *            The account ID containing the job output to download (or null
-     *            if the current account shoudl be used).
-     * @param vaultName
-     *            The name of the vault from where the job was initiated.
-     * @param jobId
-     *            The ID of the job whose output is to be downloaded.
-     * @param file
-     *            The file to download the job output into.
-     */
+	 * Downloads the job output for the specified job (which must be ready to
+	 * download already, and must be a complete archive retrieval, not a partial
+	 * range retrieval), into the specified file. This method will request
+	 * individual chunks of the data, one at a time, in order to handle any
+	 * transient errors along the way.
+	 *
+	 * @param accountId
+	 *            The account ID containing the job output to download (or null
+	 *            if the current account should be used).
+	 * @param vaultName
+	 *            The name of the vault from where the job was initiated.
+	 * @param jobId
+	 *            The ID of the job whose output is to be downloaded. This job
+	 *            must be a complete archive retrieval, not a range retrieval.
+	 * @param file
+	 *            The file to download the job output into.
+	 */
     public void downloadJobOutput(String accountId, String vaultName, String jobId, File file) {
+        downloadJobOutput(accountId, vaultName, jobId, file, null);
+    }
+
+    /**
+	 * Downloads the job output for the specified job (which must be ready to
+	 * download already, and must be a complete archive retrieval, not a partial
+	 * range retrieval), into the specified file. This method will request
+	 * individual chunks of the data, one at a time, in order to handle any
+	 * transient errors along the way. You can also add an optional progress
+	 * listener for receiving updates about the download status.
+	 *
+	 * @param accountId
+	 *            The account ID containing the job output to download (or null
+	 *            if the current account shoudl be used).
+	 * @param vaultName
+	 *            The name of the vault from where the job was initiated.
+	 * @param jobId
+	 *            The ID of the job whose output is to be downloaded. This job
+	 *            must be a complete archive retrieval, not a range retrieval.
+	 * @param file
+	 *            The file to download the job output into.
+	 * @param progressListener
+	 *            The optional progress listener for receiving updates about the
+	 *            download status.
+	 */
+    public void downloadJobOutput(String accountId, String vaultName, String jobId, File file, ProgressListener progressListener) {
         long archiveSize = 0;
         long chunkSize = DEFAULT_DOWNLOAD_CHUNK_SIZE;
         long currentPosition = 0;
@@ -392,6 +509,7 @@ public class ArchiveTransferManager {
             try {
                 chunkSize = Long.parseLong(customizedChunkSize) * 1024 * 1024;
             } catch (NumberFormatException e) {
+                fireProgressEvent(progressListener, ProgressEvent.FAILED_EVENT_CODE);
                 throw new AmazonClientException("Invalid chunk size: " + e.getMessage());
             }
             validateChunkSize(chunkSize);
@@ -400,8 +518,11 @@ public class ArchiveTransferManager {
         try {
             output = new RandomAccessFile(file, "rw");
         } catch (IOException e) {
+            fireProgressEvent(progressListener, ProgressEvent.FAILED_EVENT_CODE);
             throw new AmazonClientException("Unable to open the output file " + file.getPath(), e);
         }
+
+        fireProgressEvent(progressListener, ProgressEvent.STARTED_EVENT_CODE);
 
         while (currentPosition < archiveSize) {
             if (currentPosition + chunkSize > archiveSize) {
@@ -411,11 +532,22 @@ public class ArchiveTransferManager {
             }
 
             // Download the chunk
+            try {
             downloadOneChunk(accountId, vaultName, jobId, output, currentPosition, endPosition);
+            } catch (AmazonServiceException ace) {
+                fireProgressEvent(progressListener, ProgressEvent.FAILED_EVENT_CODE);
+                throw ace;
+            }
+
+            if (progressListener != null) {
+                ProgressEvent event = new ProgressEvent(endPosition - currentPosition + 1);
+                progressListener.progressChanged(event);
+            }
 
             currentPosition += chunkSize;
         }
         try { output.close();} catch (Exception e) {};
+        fireProgressEvent(progressListener, ProgressEvent.COMPLETED_EVENT_CODE);
     }
 
     private void validateChunkSize(long chunkSize) {
@@ -530,15 +662,25 @@ public class ArchiveTransferManager {
         }
     }
 
-    private UploadResult uploadInMultipleParts(final String accountId, final String vaultName, final String archiveDescription, final File file) {
+    private UploadResult uploadInMultipleParts(final String accountId, final String vaultName, final String archiveDescription, final File file, ProgressListener progressListener) {
         long partSize = calculatePartSize(file.length());
         String partSizeString = Long.toString(partSize);
-        InitiateMultipartUploadResult initiateResult = glacier.initiateMultipartUpload(new InitiateMultipartUploadRequest()
-            .withAccountId(accountId)
-            .withArchiveDescription(archiveDescription)
-            .withVaultName(vaultName)
-            .withPartSize(partSizeString));
-        String uploadId = initiateResult.getUploadId();
+
+        fireProgressEvent(progressListener, ProgressEvent.PREPARING_EVENT_CODE);
+        String uploadId = null;
+        try {
+            InitiateMultipartUploadResult initiateResult = glacier.initiateMultipartUpload(new InitiateMultipartUploadRequest()
+                .withAccountId(accountId)
+                .withArchiveDescription(archiveDescription)
+                .withVaultName(vaultName)
+                .withPartSize(partSizeString));
+            uploadId = initiateResult.getUploadId();
+        } catch (AmazonServiceException ace) {
+            fireProgressEvent(progressListener, ProgressEvent.FAILED_EVENT_CODE);
+            throw ace;
+        }
+
+        fireProgressEvent(progressListener, ProgressEvent.STARTED_EVENT_CODE);
 
         try {
             List<byte[]> binaryChecksums = new LinkedList<byte[]>();
@@ -581,6 +723,11 @@ public class ArchiveTransferManager {
                     throw failedException;
                 }
 
+                if (progressListener != null) {
+                ProgressEvent event = new ProgressEvent(length);
+                progressListener.progressChanged(event);
+                }
+
                 currentPosition += partSize;
             }
 
@@ -596,19 +743,27 @@ public class ArchiveTransferManager {
                     .withUploadId(uploadId));
 
             String artifactId = completeMultipartUploadResult.getArchiveId();
+            fireProgressEvent(progressListener, ProgressEvent.COMPLETED_EVENT_CODE);
             return new UploadResult(artifactId);
         } catch (Exception e) {
+            fireProgressEvent(progressListener, ProgressEvent.FAILED_EVENT_CODE);
             glacier.abortMultipartUpload(new AbortMultipartUploadRequest(accountId, vaultName, uploadId));
             throw new AmazonClientException("Unable to finish the upload", e);
         }
     }
 
 
-    private UploadResult uploadInSinglePart(final String accountId, final String vaultName, final String archiveDescription, final File file)
+    private UploadResult uploadInSinglePart(final String accountId, final String vaultName, final String archiveDescription, final File file, ProgressListener progressListener)
             throws AmazonServiceException, AmazonClientException, FileNotFoundException {
         String checksum = TreeHashGenerator.calculateTreeHash(file);
 
-        RepeatableFileInputStream input = new RepeatableFileInputStream(file);
+        InputStream input = new RepeatableFileInputStream(file);
+
+        if (progressListener != null) {
+            input = new com.amazonaws.event.ProgressReportingInputStream(input, progressListener);
+            fireProgressEvent(progressListener, ProgressEvent.STARTED_EVENT_CODE);
+        }
+
         try {
             UploadArchiveResult uploadArchiveResult =
                 glacier.uploadArchive(new UploadArchiveRequest()
@@ -620,10 +775,21 @@ public class ArchiveTransferManager {
                     .withContentLength(file.length())
                     );
             String artifactId = uploadArchiveResult.getArchiveId();
+            fireProgressEvent(progressListener, ProgressEvent.COMPLETED_EVENT_CODE);
             return new UploadResult(artifactId);
+        } catch (AmazonClientException ace) {
+            fireProgressEvent(progressListener, ProgressEvent.FAILED_EVENT_CODE);
+            throw ace;
         } finally {
             try {input.close();} catch (Exception e) {}
         }
+    }
+
+    private void fireProgressEvent(ProgressListener listener, int eventType) {
+        if (listener == null) return;
+        ProgressEvent event = new ProgressEvent(0);
+        event.setEventCode(eventType);
+        listener.progressChanged(event);
     }
 
 }

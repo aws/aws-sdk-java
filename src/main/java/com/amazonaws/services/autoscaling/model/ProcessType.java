@@ -13,7 +13,9 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
+
 import java.io.Serializable;
+
 
 /**
  * <p>
@@ -38,11 +40,11 @@ import java.io.Serializable;
  * each process type is affected by a suspension of Launch or Terminate.
  * </p>
  * <p>
- * The <code>AddToLoadBalancer</code> process type adds instances to the the load balancer when the instances are launched. If you suspend this process,
+ * The <code>AddToLoadBalancer</code> process type adds instances to the load balancer when the instances are launched. If you suspend this process,
  * Auto Scaling will launch the instances but will not add them to the load balancer. If you resume the <code>AddToLoadBalancer</code> process, Auto
  * Scaling will also resume adding new instances to the load balancer when they are launched. However, Auto Scaling will not add running instances that
  * were launched while the process was suspended; those instances must be added manually using the the <a
- * href="http://docs.amazonwebservices.com/ElasticLoadBalancing/latest/APIReference/API_RegisterInstancesWithLoadBalancer.html">
+ * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_RegisterInstancesWithLoadBalancer.html">
  * RegisterInstancesWithLoadBalancer </a> call in the <i>Elastic Load Balancing API Reference</i> .
  * 
  * </p>

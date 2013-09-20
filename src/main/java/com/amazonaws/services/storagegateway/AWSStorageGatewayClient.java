@@ -103,7 +103,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AWSStorageGatewayClient() {
         this(new DefaultAWSCredentialsProviderChain(), new ClientConfiguration());
@@ -127,7 +127,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *                       client connects to AWSStorageGateway
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AWSStorageGatewayClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);

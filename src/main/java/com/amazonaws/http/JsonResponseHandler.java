@@ -14,6 +14,7 @@
  */
 package com.amazonaws.http;
 
+import java.io.IOException;
 import java.util.Map;
 
 import org.apache.commons.logging.Log;
@@ -28,6 +29,7 @@ import com.amazonaws.transform.JsonUnmarshallerContext;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.transform.VoidJsonUnmarshaller;
 import com.amazonaws.util.CRC32ChecksumCalculatingInputStream;
+
 /**
  * Default implementation of HttpResponseHandler that handles a successful
  * response from an AWS service and unmarshalls the result using a StAX
@@ -119,7 +121,11 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
             return awsResponse;
         } finally {
             if (!needsConnectionLeftOpen) {
-                try {jsonParser.close();} catch (Exception e) {}
+                try {
+                    jsonParser.close();
+                } catch (IOException e) {
+                    log.warn("Error closing json parser", e);
+                }
             }
         }
     }

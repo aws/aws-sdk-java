@@ -6,7 +6,7 @@
     <artifactId>aws-java-sdk</artifactId>
     <packaging>jar</packaging>
     <name>AWS SDK for Java</name>
-    <version>1.5.7</version>
+    <version>1.5.8</version>
     <description>The Amazon Web Services SDK for Java provides Java APIs for building software on AWS’ cost-effective, scalable, and reliable infrastructure products. The AWS Java SDK allows developers to code against APIs for all of Amazon's infrastructure web services (Amazon S3, Amazon EC2, Amazon SQS, Amazon Relational Database Service, Amazon AutoScaling, etc).</description>
     <url>https://aws.amazon.com/sdkforjava</url>
 
@@ -23,7 +23,7 @@
     </licenses>
 
     <properties>
-        <jackson.version>2.1.2</jackson.version>
+        <jackson.version>2.1.1</jackson.version>
         <spring.version>3.0.7.RELEASE</spring.version>
     </properties>
 
@@ -53,6 +53,13 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+            <type>jar</type>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
             <version>${jackson.version}</version>
             <type>jar</type>
             <scope>compile</scope>

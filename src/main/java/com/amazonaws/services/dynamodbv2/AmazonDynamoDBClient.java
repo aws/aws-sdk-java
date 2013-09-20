@@ -83,7 +83,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonDynamoDBClient() {
         this(new DefaultAWSCredentialsProviderChain(), new ClientConfiguration());
@@ -107,7 +107,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *                       client connects to AmazonDynamoDBv2
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonDynamoDBClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);

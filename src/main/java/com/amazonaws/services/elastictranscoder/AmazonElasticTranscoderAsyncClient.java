@@ -62,7 +62,7 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonElasticTranscoderAsyncClient() {
         this(new DefaultAWSCredentialsProviderChain());
@@ -86,7 +86,7 @@ public class AmazonElasticTranscoderAsyncClient extends AmazonElasticTranscoderC
      *                       client connects to AmazonElasticTranscoder
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonElasticTranscoderAsyncClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());

@@ -58,7 +58,12 @@ class HttpRequestFactory {
     HttpRequestBase createHttpRequest(Request<?> request, ClientConfiguration clientConfiguration, HttpEntity previousEntity, ExecutionContext context) {
         URI endpoint = request.getEndpoint();
 
-        String uri = HttpUtils.appendUri(endpoint.toString(), request.getResourcePath());
+        /*
+         * HttpClient cannot handle url in pattern of "http://host//path", so we
+         * have to escape the double-slash between endpoint and resource-path
+         * into "/%2F"
+         */
+        String uri = HttpUtils.appendUri(endpoint.toString(), request.getResourcePath(), true);
         String encodedParams = HttpUtils.encodeParameters(request);
 
         /*

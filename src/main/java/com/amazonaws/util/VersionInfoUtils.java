@@ -111,29 +111,49 @@ public class VersionInfoUtils {
         }
     }
 			
-   /**
+    /**
      * Loads the versionInfo.properties file from the AWS Java SDK and
      * stores the information so that the file doesn't have to be read the
      * next time the data is needed.
      */
-	private static void initializeUserAgent() {
-		StringBuilder buffer = new StringBuilder( 1024 );
-		buffer.append( "aws-sdk-" + VersionInfoUtils.getPlatform().toLowerCase() + "/" );
-		buffer.append( VersionInfoUtils.getVersion() );
-		buffer.append( " " );
-		buffer.append( System.getProperty( "os.name" ).replace( ' ', '_' ) + "/" + System.getProperty( "os.version" ).replace( ' ', '_' ) );
-		buffer.append( " " );
-		buffer.append( System.getProperty( "java.vm.name" ).replace( ' ', '_' ) + "/" + System.getProperty( "java.vm.version" ).replace( ' ', '_' ) );
-		
-		String region = "";
-		try {
-			region = " " + System.getProperty( "user.language" ).replace( ' ', '_' ) + "_" + System.getProperty( "user.region" ).replace( ' ', '_' );
-		}
-		catch ( Exception exception ) {
-		}
-		
-		buffer.append( region );
-	
-		userAgent = buffer.toString();
-	}
+    private static void initializeUserAgent() {
+        StringBuilder buffer = new StringBuilder(1024);
+
+        buffer.append("aws-sdk-");
+        buffer.append(VersionInfoUtils.getPlatform().toLowerCase());
+        buffer.append("/");
+
+        buffer.append(VersionInfoUtils.getVersion());
+        buffer.append(" ");
+        buffer.append(replaceSpaces(System.getProperty("os.name")));
+        buffer.append("/");
+        buffer.append(replaceSpaces(System.getProperty("os.version")));
+
+        buffer.append(" ");
+        buffer.append(replaceSpaces(System.getProperty("java.vm.name")));
+        buffer.append("/");
+        buffer.append(replaceSpaces(System.getProperty("java.vm.version")));
+
+        String language = System.getProperty("user.language");
+        String region = System.getProperty("user.region");
+
+        if (language != null && region != null) {
+            buffer.append(" ");
+            buffer.append(replaceSpaces(language));
+            buffer.append("_");
+            buffer.append(replaceSpaces(region));
+        }
+
+        userAgent = buffer.toString();
+    }
+
+    /**
+     * Replace any spaces in the input with underscores.
+     *
+     * @param input the input
+     * @return the input with spaces replaced by underscores
+     */
+    private static String replaceSpaces(final String input) {
+        return input.replace(' ', '_');
+    }
 }

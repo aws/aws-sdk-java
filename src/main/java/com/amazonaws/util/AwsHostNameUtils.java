@@ -48,8 +48,13 @@ public class AwsHostNameUtils {
     public static String parseServiceName(URI endpoint) {
         String host = endpoint.getHost();
 
-        // If we don't recognize the domain, just return the default
-        if (!host.endsWith(".amazonaws.com")) return "us-east-1";
+        // If we don't recognize the domain, throw an exception.
+        if (!host.endsWith(".amazonaws.com")) {
+            throw new IllegalArgumentException(
+                    "Cannot parse the service name by an unrecognized endpoint("
+                            + host
+                            + "). Please specify the service name by setEndpoint(String endpoint, String serviceName, String regionId).");
+        }
 
         String serviceAndRegion = host.substring(0, host.indexOf(".amazonaws.com"));
 

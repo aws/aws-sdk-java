@@ -250,7 +250,7 @@ public class JsonUnmarshallerContext {
      * Simple container for the details of a metadata expression this
      * unmarshaller context is looking for.
      */
-    private class MetadataExpression {
+    private static class MetadataExpression {
         public String expression;
         public int targetDepth;
         public String key;

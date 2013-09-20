@@ -77,7 +77,7 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonRDSAsyncClient() {
         this(new DefaultAWSCredentialsProviderChain());
@@ -101,7 +101,7 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *                       client connects to AmazonRDS
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonRDSAsyncClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());

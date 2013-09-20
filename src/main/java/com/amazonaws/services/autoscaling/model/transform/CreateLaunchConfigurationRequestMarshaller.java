@@ -113,6 +113,9 @@ public class CreateLaunchConfigurationRequestMarshaller implements Marshaller<Re
         if (createLaunchConfigurationRequest.isEbsOptimized() != null) {
             request.addParameter("EbsOptimized", StringUtils.fromBoolean(createLaunchConfigurationRequest.isEbsOptimized()));
         }
+        if (createLaunchConfigurationRequest.isAssociatePublicIpAddress() != null) {
+            request.addParameter("AssociatePublicIpAddress", StringUtils.fromBoolean(createLaunchConfigurationRequest.isAssociatePublicIpAddress()));
+        }
 
 
         return request;

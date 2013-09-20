@@ -88,7 +88,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonElasticMapReduceClient() {
         this(new DefaultAWSCredentialsProviderChain(), new ClientConfiguration());
@@ -112,7 +112,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *                       client connects to AmazonElasticMapReduce
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonElasticMapReduceClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);

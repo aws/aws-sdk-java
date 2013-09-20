@@ -308,7 +308,7 @@ public class JSONWriter {
      * @throws JSONException
      */
     public JSONWriter value(long l) throws JSONException {
-        return this.value(new Long(l));
+        return this.value(Long.valueOf(l));
     }
 
     /**
@@ -319,7 +319,7 @@ public class JSONWriter {
      * @throws JSONException
      */
     public JSONWriter value(Date date) throws JSONException {
-        return this.value(new Long(date.getTime() / 1000));
+        return this.value(Long.valueOf(date.getTime() / 1000));
     }
 
     /**

@@ -372,7 +372,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonSimpleWorkflowClient() {
         this(new DefaultAWSCredentialsProviderChain(), new ClientConfiguration());
@@ -396,7 +396,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
      *                       client connects to AmazonSimpleWorkflow
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonSimpleWorkflowClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);

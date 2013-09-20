@@ -40,7 +40,7 @@ import org.apache.http.conn.ClientConnectionManager;
  * stale connections (i.e. closed on the AWS side) are left in the connection
  * pool, and requests grab one of them to begin executing a request.
  */
-public class IdleConnectionReaper extends Thread {
+public final class IdleConnectionReaper extends Thread {
 
     /** The period between invocations of the idle connection reaper. */
     private static final int PERIOD_MILLISECONDS = 1000 * 60 * 1;

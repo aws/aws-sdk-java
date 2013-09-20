@@ -103,7 +103,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonDirectConnectClient() {
         this(new DefaultAWSCredentialsProviderChain(), new ClientConfiguration());
@@ -127,7 +127,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *                       client connects to AmazonDirectConnect
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonDirectConnectClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);

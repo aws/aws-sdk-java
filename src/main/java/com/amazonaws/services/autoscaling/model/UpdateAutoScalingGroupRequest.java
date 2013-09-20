@@ -13,8 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
-import com.amazonaws.AmazonWebServiceRequest;
+
 import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#updateAutoScalingGroup(UpdateAutoScalingGroupRequest) UpdateAutoScalingGroup operation}.
@@ -28,7 +30,7 @@ import java.io.Serializable;
  * </p>
  * <p>
  * The new settings are registered upon the completion of this call. Any launch configuration settings take effect on any triggers after this call
- * returns. Triggers that are currently in progress aren't affected.
+ * returns. Scaling activities that are currently in progress aren't affected.
  * </p>
  * <p>
  * <b>NOTE:</b> If a new value is specified for MinSize without specifying the value for DesiredCapacity, and if the new MinSize is larger than the
@@ -77,7 +79,10 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
 
     /**
      * The amount of time, in seconds, after a scaling activity completes
-     * before any further trigger-related scaling activities can start.
+     * before any further scaling activities can start. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown
+     * Period</a>.
      */
     private Integer defaultCooldown;
 
@@ -90,8 +95,9 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> availabilityZones;
 
     /**
-     * The service of interest for the health status check, either "EC2" for
-     * Amazon EC2 or "ELB" for Elastic Load Balancing.
+     * The type of health check for the instances in the Auto Scaling group.
+     * The health check type can either be <code>EC2</code> for Amazon EC2 or
+     * <code>ELB</code> for Elastic Load Balancing.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 32<br/>
@@ -109,7 +115,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
     /**
      * The name of the cluster placement group, if applicable. For more
      * information, go to <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
      * Using Cluster Instances</a> in the Amazon EC2 User Guide.
      * <p>
      * <b>Constraints:</b><br/>
@@ -124,6 +130,11 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * you specify <code>VPCZoneIdentifier</code> with
      * <code>AvailabilityZones</code>, ensure that the subnets' Availability
      * Zones match the values you specify for <code>AvailabilityZones</code>.
+     * <p> For more information on creating your Auto Scaling group in Amazon
+     * VPC by specifying subnets, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Launch
+     * Auto Scaling Instances into Amazon VPC</a> in the the <i>Auto Scaling
+     * Developer Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -136,7 +147,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * to select the instance to terminate. The policies are executed in the
      * order that they are listed. <p> For more information on creating a
      * termination policy for your Auto Scaling group, go to <a
-     * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
      * Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      * Scaling Developer Guide</i>.
      */
@@ -338,10 +349,16 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
     
     /**
      * The amount of time, in seconds, after a scaling activity completes
-     * before any further trigger-related scaling activities can start.
+     * before any further scaling activities can start. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown
+     * Period</a>.
      *
      * @return The amount of time, in seconds, after a scaling activity completes
-     *         before any further trigger-related scaling activities can start.
+     *         before any further scaling activities can start. For more information,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown
+     *         Period</a>.
      */
     public Integer getDefaultCooldown() {
         return defaultCooldown;
@@ -349,10 +366,16 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
     
     /**
      * The amount of time, in seconds, after a scaling activity completes
-     * before any further trigger-related scaling activities can start.
+     * before any further scaling activities can start. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown
+     * Period</a>.
      *
      * @param defaultCooldown The amount of time, in seconds, after a scaling activity completes
-     *         before any further trigger-related scaling activities can start.
+     *         before any further scaling activities can start. For more information,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown
+     *         Period</a>.
      */
     public void setDefaultCooldown(Integer defaultCooldown) {
         this.defaultCooldown = defaultCooldown;
@@ -360,12 +383,18 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
     
     /**
      * The amount of time, in seconds, after a scaling activity completes
-     * before any further trigger-related scaling activities can start.
+     * before any further scaling activities can start. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown
+     * Period</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param defaultCooldown The amount of time, in seconds, after a scaling activity completes
-     *         before any further trigger-related scaling activities can start.
+     *         before any further scaling activities can start. For more information,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown
+     *         Period</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -458,38 +487,43 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
     }
     
     /**
-     * The service of interest for the health status check, either "EC2" for
-     * Amazon EC2 or "ELB" for Elastic Load Balancing.
+     * The type of health check for the instances in the Auto Scaling group.
+     * The health check type can either be <code>EC2</code> for Amazon EC2 or
+     * <code>ELB</code> for Elastic Load Balancing.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 32<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return The service of interest for the health status check, either "EC2" for
-     *         Amazon EC2 or "ELB" for Elastic Load Balancing.
+     * @return The type of health check for the instances in the Auto Scaling group.
+     *         The health check type can either be <code>EC2</code> for Amazon EC2 or
+     *         <code>ELB</code> for Elastic Load Balancing.
      */
     public String getHealthCheckType() {
         return healthCheckType;
     }
     
     /**
-     * The service of interest for the health status check, either "EC2" for
-     * Amazon EC2 or "ELB" for Elastic Load Balancing.
+     * The type of health check for the instances in the Auto Scaling group.
+     * The health check type can either be <code>EC2</code> for Amazon EC2 or
+     * <code>ELB</code> for Elastic Load Balancing.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 32<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param healthCheckType The service of interest for the health status check, either "EC2" for
-     *         Amazon EC2 or "ELB" for Elastic Load Balancing.
+     * @param healthCheckType The type of health check for the instances in the Auto Scaling group.
+     *         The health check type can either be <code>EC2</code> for Amazon EC2 or
+     *         <code>ELB</code> for Elastic Load Balancing.
      */
     public void setHealthCheckType(String healthCheckType) {
         this.healthCheckType = healthCheckType;
     }
     
     /**
-     * The service of interest for the health status check, either "EC2" for
-     * Amazon EC2 or "ELB" for Elastic Load Balancing.
+     * The type of health check for the instances in the Auto Scaling group.
+     * The health check type can either be <code>EC2</code> for Amazon EC2 or
+     * <code>ELB</code> for Elastic Load Balancing.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -497,8 +531,9 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * <b>Length: </b>1 - 32<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param healthCheckType The service of interest for the health status check, either "EC2" for
-     *         Amazon EC2 or "ELB" for Elastic Load Balancing.
+     * @param healthCheckType The type of health check for the instances in the Auto Scaling group.
+     *         The health check type can either be <code>EC2</code> for Amazon EC2 or
+     *         <code>ELB</code> for Elastic Load Balancing.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -558,7 +593,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
     /**
      * The name of the cluster placement group, if applicable. For more
      * information, go to <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
      * Using Cluster Instances</a> in the Amazon EC2 User Guide.
      * <p>
      * <b>Constraints:</b><br/>
@@ -567,7 +602,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *
      * @return The name of the cluster placement group, if applicable. For more
      *         information, go to <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
      *         Using Cluster Instances</a> in the Amazon EC2 User Guide.
      */
     public String getPlacementGroup() {
@@ -577,7 +612,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
     /**
      * The name of the cluster placement group, if applicable. For more
      * information, go to <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
      * Using Cluster Instances</a> in the Amazon EC2 User Guide.
      * <p>
      * <b>Constraints:</b><br/>
@@ -586,7 +621,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *
      * @param placementGroup The name of the cluster placement group, if applicable. For more
      *         information, go to <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
      *         Using Cluster Instances</a> in the Amazon EC2 User Guide.
      */
     public void setPlacementGroup(String placementGroup) {
@@ -596,7 +631,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
     /**
      * The name of the cluster placement group, if applicable. For more
      * information, go to <a
-     * href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
      * Using Cluster Instances</a> in the Amazon EC2 User Guide.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -607,7 +642,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *
      * @param placementGroup The name of the cluster placement group, if applicable. For more
      *         information, go to <a
-     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
      *         Using Cluster Instances</a> in the Amazon EC2 User Guide.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -625,6 +660,11 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * you specify <code>VPCZoneIdentifier</code> with
      * <code>AvailabilityZones</code>, ensure that the subnets' Availability
      * Zones match the values you specify for <code>AvailabilityZones</code>.
+     * <p> For more information on creating your Auto Scaling group in Amazon
+     * VPC by specifying subnets, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Launch
+     * Auto Scaling Instances into Amazon VPC</a> in the the <i>Auto Scaling
+     * Developer Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -635,6 +675,11 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         you specify <code>VPCZoneIdentifier</code> with
      *         <code>AvailabilityZones</code>, ensure that the subnets' Availability
      *         Zones match the values you specify for <code>AvailabilityZones</code>.
+     *         <p> For more information on creating your Auto Scaling group in Amazon
+     *         VPC by specifying subnets, see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Launch
+     *         Auto Scaling Instances into Amazon VPC</a> in the the <i>Auto Scaling
+     *         Developer Guide</i>.
      */
     public String getVPCZoneIdentifier() {
         return vPCZoneIdentifier;
@@ -646,6 +691,11 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * you specify <code>VPCZoneIdentifier</code> with
      * <code>AvailabilityZones</code>, ensure that the subnets' Availability
      * Zones match the values you specify for <code>AvailabilityZones</code>.
+     * <p> For more information on creating your Auto Scaling group in Amazon
+     * VPC by specifying subnets, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Launch
+     * Auto Scaling Instances into Amazon VPC</a> in the the <i>Auto Scaling
+     * Developer Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -656,6 +706,11 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         you specify <code>VPCZoneIdentifier</code> with
      *         <code>AvailabilityZones</code>, ensure that the subnets' Availability
      *         Zones match the values you specify for <code>AvailabilityZones</code>.
+     *         <p> For more information on creating your Auto Scaling group in Amazon
+     *         VPC by specifying subnets, see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Launch
+     *         Auto Scaling Instances into Amazon VPC</a> in the the <i>Auto Scaling
+     *         Developer Guide</i>.
      */
     public void setVPCZoneIdentifier(String vPCZoneIdentifier) {
         this.vPCZoneIdentifier = vPCZoneIdentifier;
@@ -667,6 +722,11 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * you specify <code>VPCZoneIdentifier</code> with
      * <code>AvailabilityZones</code>, ensure that the subnets' Availability
      * Zones match the values you specify for <code>AvailabilityZones</code>.
+     * <p> For more information on creating your Auto Scaling group in Amazon
+     * VPC by specifying subnets, see <a
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Launch
+     * Auto Scaling Instances into Amazon VPC</a> in the the <i>Auto Scaling
+     * Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -679,6 +739,11 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         you specify <code>VPCZoneIdentifier</code> with
      *         <code>AvailabilityZones</code>, ensure that the subnets' Availability
      *         Zones match the values you specify for <code>AvailabilityZones</code>.
+     *         <p> For more information on creating your Auto Scaling group in Amazon
+     *         VPC by specifying subnets, see <a
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Launch
+     *         Auto Scaling Instances into Amazon VPC</a> in the the <i>Auto Scaling
+     *         Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -694,7 +759,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * to select the instance to terminate. The policies are executed in the
      * order that they are listed. <p> For more information on creating a
      * termination policy for your Auto Scaling group, go to <a
-     * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
      * Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      * Scaling Developer Guide</i>.
      *
@@ -702,7 +767,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         to select the instance to terminate. The policies are executed in the
      *         order that they are listed. <p> For more information on creating a
      *         termination policy for your Auto Scaling group, go to <a
-     *         href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
      *         Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      *         Scaling Developer Guide</i>.
      */
@@ -720,7 +785,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * to select the instance to terminate. The policies are executed in the
      * order that they are listed. <p> For more information on creating a
      * termination policy for your Auto Scaling group, go to <a
-     * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
      * Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      * Scaling Developer Guide</i>.
      *
@@ -728,7 +793,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         to select the instance to terminate. The policies are executed in the
      *         order that they are listed. <p> For more information on creating a
      *         termination policy for your Auto Scaling group, go to <a
-     *         href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
      *         Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      *         Scaling Developer Guide</i>.
      */
@@ -747,7 +812,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * to select the instance to terminate. The policies are executed in the
      * order that they are listed. <p> For more information on creating a
      * termination policy for your Auto Scaling group, go to <a
-     * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
      * Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      * Scaling Developer Guide</i>.
      * <p>
@@ -757,7 +822,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         to select the instance to terminate. The policies are executed in the
      *         order that they are listed. <p> For more information on creating a
      *         termination policy for your Auto Scaling group, go to <a
-     *         href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
      *         Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      *         Scaling Developer Guide</i>.
      *
@@ -777,7 +842,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * to select the instance to terminate. The policies are executed in the
      * order that they are listed. <p> For more information on creating a
      * termination policy for your Auto Scaling group, go to <a
-     * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
      * Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      * Scaling Developer Guide</i>.
      * <p>
@@ -787,7 +852,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         to select the instance to terminate. The policies are executed in the
      *         order that they are listed. <p> For more information on creating a
      *         termination policy for your Auto Scaling group, go to <a
-     *         href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     *         href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
      *         Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      *         Scaling Developer Guide</i>.
      *

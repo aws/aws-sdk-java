@@ -221,10 +221,11 @@ public class JsonPolicyReader {
     /**
      *  An auxiliary class to help instantiate the action object.
      */
-    private class NamedAction implements Action {
+    private static class NamedAction implements Action {
 
         private String actionName;
-        NamedAction(String actionName) {
+
+        public NamedAction(String actionName) {
             this.actionName = actionName;
         }
 

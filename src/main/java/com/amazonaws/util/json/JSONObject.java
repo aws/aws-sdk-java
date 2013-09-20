@@ -26,6 +26,7 @@ package com.amazonaws.util.json;
 import java.io.IOException;
 import java.io.Writer;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Collection;
@@ -92,7 +93,7 @@ public class JSONObject {
      * whilst Java's null is equivalent to the value that JavaScript calls
      * undefined.
      */
-     private static final class Null {
+    private static final class Null {
 
         /**
          * There is only intended to be a single instance of the NULL object,
@@ -105,7 +106,11 @@ public class JSONObject {
 
 
         /**
-         * A Null object is equal to the null value and to itself.
+         * A Null object is equal to the null value and to itself. This breaks
+         * the contract for Object.equals(), but fixing it would be a
+         * potentially-breaking change so we can't do so until the next major
+         * version bump.
+         *
          * @param object    An object to test for nullness.
          * @return true if the object parameter is the JSONObject.NULL object
          *  or null.
@@ -114,6 +119,14 @@ public class JSONObject {
             return object == null || object == this;
         }
 
+        /**
+         * Make this explicit to appease findbugs until we can fix equals().
+         *
+         * @return a hash code value for this object.
+         */
+        public int hashCode() {
+            return super.hashCode();
+        }
 
         /**
          * Get the "null" string value.
@@ -770,8 +783,11 @@ public class JSONObject {
     public double optDouble(String key, double defaultValue) {
         try {
             Object o = opt(key);
-            return o instanceof Number ? ((Number)o).doubleValue() :
-                new Double((String)o).doubleValue();
+            if (o instanceof Number) {
+                return ((Number) o).doubleValue();
+            } else {
+                return Double.parseDouble((String) o);
+            }
         } catch (Exception e) {
             return defaultValue;
         }
@@ -939,7 +955,10 @@ public class JSONObject {
                         map.put(key, wrap(result));
                     }
                 }
-            } catch (Exception ignore) {
+            } catch (IllegalAccessException ignore) {
+            } catch (InvocationTargetException ignore) {
+            } catch (RuntimeException ignore) {
+                // TODO: Should we at least be logging these somewhere?
             }
         }
     }
@@ -982,7 +1001,7 @@ public class JSONObject {
      * @throws JSONException If the key is null or if the number is invalid.
      */
     public JSONObject put(String key, double value) throws JSONException {
-        put(key, new Double(value));
+        put(key, Double.valueOf(value));
         return this;
     }
 
@@ -996,7 +1015,7 @@ public class JSONObject {
      * @throws JSONException If the key is null.
      */
     public JSONObject put(String key, int value) throws JSONException {
-        put(key, new Integer(value));
+        put(key, Integer.valueOf(value));
         return this;
     }
 
@@ -1010,7 +1029,7 @@ public class JSONObject {
      * @throws JSONException If the key is null.
      */
     public JSONObject put(String key, long value) throws JSONException {
-        put(key, new Long(value));
+        put(key, Long.valueOf(value));
         return this;
     }
 
@@ -1210,7 +1229,7 @@ public class JSONObject {
             if (b == '0' && s.length() > 2 &&
                         (s.charAt(1) == 'x' || s.charAt(1) == 'X')) {
                 try {
-                    return new Integer(Integer.parseInt(s.substring(2), 16));
+                    return Integer.valueOf(s.substring(2), 16);
                 } catch (Exception ignore) {
                 }
             }
@@ -1219,9 +1238,9 @@ public class JSONObject {
                 		s.indexOf('e') > -1 || s.indexOf('E') > -1) {
                     return Double.valueOf(s);
                 } else {
-                    Long myLong = new Long(s);
+                    Long myLong = Long.valueOf(s);
                     if (myLong.longValue() == myLong.intValue()) {
-                        return new Integer(myLong.intValue());
+                        return Integer.valueOf(myLong.intValue());
                     } else {
                         return myLong;
                     }
@@ -1404,7 +1423,7 @@ public class JSONObject {
      * @throws JSONException If the value is or contains an invalid number.
      */
     static String valueToString(Object value) throws JSONException {
-        if (value == null || value.equals(null)) {
+        if (value == null || value.equals(NULL)) {
             return "null";
         }
         if (value instanceof Number) {
@@ -1443,7 +1462,7 @@ public class JSONObject {
      */
      static String valueToString(Object value, int indentFactor, int indent)
             throws JSONException {
-        if (value == null || value.equals(null)) {
+        if (value == null || value.equals(NULL)) {
             return "null";
         }
         if (value instanceof Number) {

@@ -83,7 +83,7 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AWSElasticBeanstalkAsyncClient() {
         this(new DefaultAWSCredentialsProviderChain());
@@ -107,7 +107,7 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
      *                       client connects to AWSElasticBeanstalk
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AWSElasticBeanstalkAsyncClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());

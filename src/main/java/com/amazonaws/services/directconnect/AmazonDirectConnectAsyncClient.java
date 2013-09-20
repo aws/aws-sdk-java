@@ -82,7 +82,7 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonDirectConnectAsyncClient() {
         this(new DefaultAWSCredentialsProviderChain());
@@ -106,7 +106,7 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
      *                       client connects to AmazonDirectConnect
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonDirectConnectAsyncClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());

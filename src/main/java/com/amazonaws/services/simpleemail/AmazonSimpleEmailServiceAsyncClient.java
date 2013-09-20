@@ -70,7 +70,7 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonSimpleEmailServiceAsyncClient() {
         this(new DefaultAWSCredentialsProviderChain());
@@ -94,7 +94,7 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
      *                       client connects to AmazonSimpleEmailService
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonSimpleEmailServiceAsyncClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());
