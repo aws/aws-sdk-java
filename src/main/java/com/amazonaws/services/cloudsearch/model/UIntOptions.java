@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class UIntOptions implements Serializable {
 
     /**
-     * The default value for an unsigned integer field.
+     * The default value for an unsigned integer field. Optional.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
@@ -33,38 +33,38 @@ public class UIntOptions implements Serializable {
     private Integer defaultValue;
 
     /**
-     * The default value for an unsigned integer field.
+     * The default value for an unsigned integer field. Optional.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
      *
-     * @return The default value for an unsigned integer field.
+     * @return The default value for an unsigned integer field. Optional.
      */
     public Integer getDefaultValue() {
         return defaultValue;
     }
     
     /**
-     * The default value for an unsigned integer field.
+     * The default value for an unsigned integer field. Optional.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
      *
-     * @param defaultValue The default value for an unsigned integer field.
+     * @param defaultValue The default value for an unsigned integer field. Optional.
      */
     public void setDefaultValue(Integer defaultValue) {
         this.defaultValue = defaultValue;
     }
     
     /**
-     * The default value for an unsigned integer field.
+     * The default value for an unsigned integer field. Optional.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
      *
-     * @param defaultValue The default value for an unsigned integer field.
+     * @param defaultValue The default value for an unsigned integer field. Optional.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

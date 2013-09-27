@@ -28,8 +28,13 @@ public class InstanceStatusSummary implements Serializable {
 
     /**
      * Returns the value of the Status property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ok, impaired, insufficient-data, not-applicable
      *
      * @return The value of the Status property for this object.
+     *
+     * @see SummaryStatus
      */
     public String getStatus() {
         return status;
@@ -37,8 +42,13 @@ public class InstanceStatusSummary implements Serializable {
     
     /**
      * Sets the value of the Status property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ok, impaired, insufficient-data, not-applicable
      *
      * @param status The new value for the Status property for this object.
+     *
+     * @see SummaryStatus
      */
     public void setStatus(String status) {
         this.status = status;
@@ -48,17 +58,56 @@ public class InstanceStatusSummary implements Serializable {
      * Sets the value of the Status property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ok, impaired, insufficient-data, not-applicable
      *
      * @param status The new value for the Status property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see SummaryStatus
      */
     public InstanceStatusSummary withStatus(String status) {
         this.status = status;
         return this;
     }
     
+    
+    /**
+     * Sets the value of the Status property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ok, impaired, insufficient-data, not-applicable
+     *
+     * @param status The new value for the Status property for this object.
+     *
+     * @see SummaryStatus
+     */
+    public void setStatus(SummaryStatus status) {
+        this.status = status.toString();
+    }
+    
+    /**
+     * Sets the value of the Status property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ok, impaired, insufficient-data, not-applicable
+     *
+     * @param status The new value for the Status property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see SummaryStatus
+     */
+    public InstanceStatusSummary withStatus(SummaryStatus status) {
+        this.status = status.toString();
+        return this;
+    }
     
     /**
      * Returns the value of the Details property for this object.

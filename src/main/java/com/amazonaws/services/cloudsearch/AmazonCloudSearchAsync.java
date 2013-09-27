@@ -26,17 +26,22 @@ import com.amazonaws.services.cloudsearch.model.*;
  * Each asynchronous method will return a Java Future object, and users are also allowed
  * to provide a callback handler.
  * Amazon CloudSearch Configuration Service <p>
- * You use the Configuration Service to create, configure, and manage search domains. Amazon CloudSearch configuration requests are submitted to
- * <code>cloudsearch.us-east-1.amazonaws.com</code> using the AWS Query protocol.
+ * You use the configuration service to create, configure, and manage search domains. Configuration service requests are submitted using the AWS Query
+ * protocol. AWS Query requests are HTTP or HTTPS requests submitted via HTTP GET or POST with a query parameter named Action.
+ * </p>
+ * <p>
+ * The endpoint for configuration service requests is region-specific: cloudsearch. <i>region</i> .amazonaws.com. For example,
+ * cloudsearch.us-east-1.amazonaws.com. For a current list of supported regions and endpoints, see <a
+ * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cloudsearch_region"> Regions and Endpoints </a> .
  * </p> 
  */       
 public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
     /**
      * <p>
      * Configures the default search field for the search domain. The default
-     * search field is used when a search request does not specify which
-     * fields to search. By default, it is configured to include the contents
-     * of all of the domain's text fields.
+     * search field is the text field that is searched when a search request
+     * does not specify which fields to search. By default, it is configured
+     * to include the contents of all of the domain's text fields.
      * </p>
      *
      * @param updateDefaultSearchFieldRequest Container for the necessary
@@ -61,9 +66,9 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
     /**
      * <p>
      * Configures the default search field for the search domain. The default
-     * search field is used when a search request does not specify which
-     * fields to search. By default, it is configured to include the contents
-     * of all of the domain's text fields.
+     * search field is the text field that is searched when a search request
+     * does not specify which fields to search. By default, it is configured
+     * to include the contents of all of the domain's text fields.
      * </p>
      *
      * @param updateDefaultSearchFieldRequest Container for the necessary
@@ -251,7 +256,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * <p>
      * Configures the policies that control access to the domain's document
      * and search services. The maximum size of an access policy document is
-     * 100KB.
+     * 100 KB.
      * </p>
      *
      * @param updateServiceAccessPoliciesRequest Container for the necessary
@@ -277,7 +282,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * <p>
      * Configures the policies that control access to the domain's document
      * and search services. The maximum size of an access policy document is
-     * 100KB.
+     * 100 KB.
      * </p>
      *
      * @param updateServiceAccessPoliciesRequest Container for the necessary
@@ -683,7 +688,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * <p>
      * Configures stopwords for the search domain. Stopwords are used during
      * indexing and when processing search requests. The maximum size of the
-     * stopwords dictionary is 10KB.
+     * stopwords dictionary is 10 KB.
      * </p>
      *
      * @param updateStopwordOptionsRequest Container for the necessary
@@ -709,7 +714,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * <p>
      * Configures stopwords for the search domain. Stopwords are used during
      * indexing and when processing search requests. The maximum size of the
-     * stopwords dictionary is 10KB.
+     * stopwords dictionary is 10 KB.
      * </p>
      *
      * @param updateStopwordOptionsRequest Container for the necessary
@@ -741,7 +746,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * Configures a synonym dictionary for the search domain. The synonym
      * dictionary is used during indexing to configure mappings for terms
      * that occur in text fields. The maximum size of the synonym dictionary
-     * is 100KB.
+     * is 100 KB.
      * </p>
      *
      * @param updateSynonymOptionsRequest Container for the necessary
@@ -767,7 +772,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * Configures a synonym dictionary for the search domain. The synonym
      * dictionary is used during indexing to configure mappings for terms
      * that occur in text fields. The maximum size of the synonym dictionary
-     * is 100KB.
+     * is 100 KB.
      * </p>
      *
      * @param updateSynonymOptionsRequest Container for the necessary
@@ -797,7 +802,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * <p>
      * Configures a stemming dictionary for the search domain. The stemming
      * dictionary is used during indexing and when processing search
-     * requests. The maximum size of the stemming dictionary is 500KB.
+     * requests. The maximum size of the stemming dictionary is 500 KB.
      * </p>
      *
      * @param updateStemmingOptionsRequest Container for the necessary
@@ -823,7 +828,7 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
      * <p>
      * Configures a stemming dictionary for the search domain. The stemming
      * dictionary is used during indexing and when processing search
-     * requests. The maximum size of the stemming dictionary is 500KB.
+     * requests. The maximum size of the stemming dictionary is 500 KB.
      * </p>
      *
      * @param updateStemmingOptionsRequest Container for the necessary

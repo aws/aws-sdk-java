@@ -30,8 +30,13 @@ public class InstanceStatusDetails implements Serializable {
 
     /**
      * Returns the value of the Name property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>reachability
      *
      * @return The value of the Name property for this object.
+     *
+     * @see StatusName
      */
     public String getName() {
         return name;
@@ -39,8 +44,13 @@ public class InstanceStatusDetails implements Serializable {
     
     /**
      * Sets the value of the Name property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>reachability
      *
      * @param name The new value for the Name property for this object.
+     *
+     * @see StatusName
      */
     public void setName(String name) {
         this.name = name;
@@ -50,11 +60,16 @@ public class InstanceStatusDetails implements Serializable {
      * Sets the value of the Name property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>reachability
      *
      * @param name The new value for the Name property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see StatusName
      */
     public InstanceStatusDetails withName(String name) {
         this.name = name;
@@ -63,9 +78,48 @@ public class InstanceStatusDetails implements Serializable {
     
     
     /**
+     * Sets the value of the Name property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>reachability
+     *
+     * @param name The new value for the Name property for this object.
+     *
+     * @see StatusName
+     */
+    public void setName(StatusName name) {
+        this.name = name.toString();
+    }
+    
+    /**
+     * Sets the value of the Name property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>reachability
+     *
+     * @param name The new value for the Name property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see StatusName
+     */
+    public InstanceStatusDetails withName(StatusName name) {
+        this.name = name.toString();
+        return this;
+    }
+    
+    /**
      * Returns the value of the Status property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>passed, failed, insufficient-data
      *
      * @return The value of the Status property for this object.
+     *
+     * @see StatusType
      */
     public String getStatus() {
         return status;
@@ -73,8 +127,13 @@ public class InstanceStatusDetails implements Serializable {
     
     /**
      * Sets the value of the Status property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>passed, failed, insufficient-data
      *
      * @param status The new value for the Status property for this object.
+     *
+     * @see StatusType
      */
     public void setStatus(String status) {
         this.status = status;
@@ -84,17 +143,56 @@ public class InstanceStatusDetails implements Serializable {
      * Sets the value of the Status property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>passed, failed, insufficient-data
      *
      * @param status The new value for the Status property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see StatusType
      */
     public InstanceStatusDetails withStatus(String status) {
         this.status = status;
         return this;
     }
     
+    
+    /**
+     * Sets the value of the Status property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>passed, failed, insufficient-data
+     *
+     * @param status The new value for the Status property for this object.
+     *
+     * @see StatusType
+     */
+    public void setStatus(StatusType status) {
+        this.status = status.toString();
+    }
+    
+    /**
+     * Sets the value of the Status property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>passed, failed, insufficient-data
+     *
+     * @param status The new value for the Status property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see StatusType
+     */
+    public InstanceStatusDetails withStatus(StatusType status) {
+        this.status = status.toString();
+        return this;
+    }
     
     /**
      * Returns the value of the ImpairedSince property for this object.

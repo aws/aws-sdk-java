@@ -15,11 +15,10 @@
 package com.amazonaws.services.s3.transfer.internal;
 
 import java.util.Collection;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
+import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.transfer.MultipleFileUpload;
 import com.amazonaws.services.s3.transfer.TransferProgress;
 import com.amazonaws.services.s3.transfer.Upload;
@@ -37,6 +36,16 @@ public class MultipleFileUploadImpl extends MultipleFileTransfer implements Mult
         super(description, transferProgress, progressListenerChain, subTransfers);
         this.keyPrefix = keyPrefix;
         this.bucketName = bucketName;
+    }
+    
+    /**
+     * @deprecated Replaced by {@link #MultipleFileUploadImpl(String, TransferProgress, ProgressListenerChain, String, String, Collection)}
+     */
+    @Deprecated
+    public MultipleFileUploadImpl(String description, TransferProgress transferProgress,
+            com.amazonaws.services.s3.transfer.internal.ProgressListenerChain progressListenerChain, String keyPrefix, String bucketName, Collection<? extends Upload> subTransfers) {
+        this(description, transferProgress, progressListenerChain.transformToGeneralProgressListenerChain(), 
+                keyPrefix, bucketName, subTransfers);
     }
 
     /**
@@ -70,8 +79,8 @@ public class MultipleFileUploadImpl extends MultipleFileTransfer implements Mult
     @Override
     public void waitForCompletion()
             throws AmazonClientException, AmazonServiceException, InterruptedException {
-    	if (subTransfers.isEmpty())
-    		return;
+        if (subTransfers.isEmpty())
+            return;
         super.waitForCompletion();
     }
 

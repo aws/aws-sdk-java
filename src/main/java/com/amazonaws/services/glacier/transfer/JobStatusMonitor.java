@@ -53,109 +53,109 @@ import com.amazonaws.util.json.JSONObject;
  * SNS/SQS.
  */
 public class JobStatusMonitor {
-	private AmazonSQSClient sqs;
-	private AmazonSNSClient sns;
-	private String queueUrl;
-	private String topicArn;
+    private AmazonSQSClient sqs;
+    private AmazonSNSClient sns;
+    private String queueUrl;
+    private String topicArn;
 
     private static final Log log = LogFactory.getLog(JobStatusMonitor.class);
 
-	public JobStatusMonitor(AWSCredentialsProvider credentialsProvider, ClientConfiguration clientConfiguration) {
-		sqs = new AmazonSQSClient(credentialsProvider, clientConfiguration);
-		sns = new AmazonSNSClient(credentialsProvider, clientConfiguration);
-		setupQueueAndTopic();
-	}
+    public JobStatusMonitor(AWSCredentialsProvider credentialsProvider, ClientConfiguration clientConfiguration) {
+        sqs = new AmazonSQSClient(credentialsProvider, clientConfiguration);
+        sns = new AmazonSNSClient(credentialsProvider, clientConfiguration);
+        setupQueueAndTopic();
+    }
 
-	/**
-	 * Constructs a JobStatusMonitor that will use the specified clients for
-	 * polling archive download job status.
-	 *
-	 * @param sqs
-	 *            The client for working with Amazon SQS when polling archive
-	 *            retrieval job status.
-	 * @param sns
-	 *            The client for working with Amazon SNS when polling archive
-	 *            retrieval job status.
-	 */
-	public JobStatusMonitor(AmazonSQSClient sqs, AmazonSNSClient sns) {
-		this.sqs = sqs;
-		this.sns = sns;
-		setupQueueAndTopic();
-	}
+    /**
+     * Constructs a JobStatusMonitor that will use the specified clients for
+     * polling archive download job status.
+     *
+     * @param sqs
+     *            The client for working with Amazon SQS when polling archive
+     *            retrieval job status.
+     * @param sns
+     *            The client for working with Amazon SNS when polling archive
+     *            retrieval job status.
+     */
+    public JobStatusMonitor(AmazonSQSClient sqs, AmazonSNSClient sns) {
+        this.sqs = sqs;
+        this.sns = sns;
+        setupQueueAndTopic();
+    }
 
-	public String getTopicArn() {
-		return topicArn;
-	}
+    public String getTopicArn() {
+        return topicArn;
+    }
 
-	public void shutdown() {
-		try {
-			sqs.deleteQueue(new DeleteQueueRequest(queueUrl));
-		} catch (Exception e) {
-			log.warn("Unable to delete queue: " + queueUrl, e);
-		}
+    public void shutdown() {
+        try {
+            sqs.deleteQueue(new DeleteQueueRequest(queueUrl));
+        } catch (Exception e) {
+            log.warn("Unable to delete queue: " + queueUrl, e);
+        }
 
-		try {
-			sns.deleteTopic(new DeleteTopicRequest(topicArn));
-		} catch (Exception e) {
-			log.warn("Unable to delete topic: " + topicArn, e);
-		}
-	}
+        try {
+            sns.deleteTopic(new DeleteTopicRequest(topicArn));
+        } catch (Exception e) {
+            log.warn("Unable to delete topic: " + topicArn, e);
+        }
+    }
 
-	// Poll the SQS queue to see if we've received a message about the job completion yet
-	public void waitForJobToComplete(String jobId) {
-		while (true) {
-			List<Message> messages = sqs.receiveMessage(new ReceiveMessageRequest(queueUrl)).getMessages();
-			for (Message message : messages) {
-				String messageBody = message.getBody();
-				if (!messageBody.startsWith("{")) {
-					messageBody = new String(BinaryUtils.fromBase64(messageBody));
-				}
+    /** Poll the SQS queue to see if we've received a message about the job completion yet. **/
+    public void waitForJobToComplete(String jobId) {
+        while (true) {
+            List<Message> messages = sqs.receiveMessage(new ReceiveMessageRequest(queueUrl)).getMessages();
+            for (Message message : messages) {
+                String messageBody = message.getBody();
+                if (!messageBody.startsWith("{")) {
+                    messageBody = new String(BinaryUtils.fromBase64(messageBody));
+                }
 
-				try {
-					JSONObject json = new JSONObject(messageBody);
-					String jsonMessage = json.getString("Message").replace("\\\"", "\"");
+                try {
+                    JSONObject json = new JSONObject(messageBody);
+                    String jsonMessage = json.getString("Message").replace("\\\"", "\"");
 
-					json = new JSONObject(jsonMessage);
-					String messageJobId = json.getString("JobId");
-					String messageStatus = json.getString("StatusMessage");
+                    json = new JSONObject(jsonMessage);
+                    String messageJobId = json.getString("JobId");
+                    String messageStatus = json.getString("StatusMessage");
 
-					// Don't process this message if it wasn't the job we were looking for
-					if (!jobId.equals(messageJobId)) continue;
+                    // Don't process this message if it wasn't the job we were looking for
+                    if (!jobId.equals(messageJobId)) continue;
 
-					try {
-						if (StatusCode.Succeeded.toString().equals(messageStatus)) return;
-						if (StatusCode.Failed.toString().equals(messageStatus)) {
-							throw new AmazonClientException("Archive retrieval failed");
-						}
-					} finally {
-						deleteMessage(message);
-					}
-				} catch (JSONException e) {
-					throw new AmazonClientException("Unable to parse status message: " + messageBody, e);
-				}
-			}
-			
-			sleep(1000 * 30);
-		}
-	}
+                    try {
+                        if (StatusCode.Succeeded.toString().equals(messageStatus)) return;
+                        if (StatusCode.Failed.toString().equals(messageStatus)) {
+                            throw new AmazonClientException("Archive retrieval failed");
+                        }
+                    } finally {
+                        deleteMessage(message);
+                    }
+                } catch (JSONException e) {
+                    throw new AmazonClientException("Unable to parse status message: " + messageBody, e);
+                }
+            }
+            
+            sleep(1000 * 30);
+        }
+    }
 
-	private void sleep(long milliseconds) {
-		try {
-			Thread.sleep(milliseconds);
-		} catch (InterruptedException ie) {
-			throw new AmazonClientException("Archive download interrupted", ie);
-		}
-	}
+    private void sleep(long milliseconds) {
+        try {
+            Thread.sleep(milliseconds);
+        } catch (InterruptedException ie) {
+            throw new AmazonClientException("Archive download interrupted", ie);
+        }
+    }
 
-	private void deleteMessage(Message message) {
-		try {
-			sqs.deleteMessage(new DeleteMessageRequest(queueUrl, message.getReceiptHandle()));
-		} catch (Exception e) {}
-	}
+    private void deleteMessage(Message message) {
+        try {
+            sqs.deleteMessage(new DeleteMessageRequest(queueUrl, message.getReceiptHandle()));
+        } catch (Exception e) {}
+    }
 
     private void setupQueueAndTopic() {
-    	String queueName = "glacier-archive-transfer-" + System.currentTimeMillis();
-    	String topicName = "glacier-archive-transfer-" + System.currentTimeMillis();
+        String queueName = "glacier-archive-transfer-" + System.currentTimeMillis();
+        String topicName = "glacier-archive-transfer-" + System.currentTimeMillis();
 
         queueUrl = sqs.createQueue(new CreateQueueRequest(queueName)).getQueueUrl();
         topicArn = sns.createTopic(new CreateTopicRequest(topicName)).getTopicArn();
@@ -174,17 +174,17 @@ public class JobStatusMonitor {
     }
 
     private Map<String, String> newAttributes(String... keyValuePairs) {
-    	if (keyValuePairs.length % 2 != 0)
-    		throw new IllegalArgumentException("Incorrect number of arguments passed.  Input must be specified as: key, value, key, value, ...");
+        if (keyValuePairs.length % 2 != 0)
+            throw new IllegalArgumentException("Incorrect number of arguments passed.  Input must be specified as: key, value, key, value, ...");
 
-    	Map<String, String> map = new HashMap<String, String>();
-    	for (int i = 0; i < keyValuePairs.length; i += 2) {
-    		String key   = keyValuePairs[i];
-    		String value = keyValuePairs[i+1];
-    		map.put(key, value);
-    	}
+        Map<String, String> map = new HashMap<String, String>();
+        for (int i = 0; i < keyValuePairs.length; i += 2) {
+            String key   = keyValuePairs[i];
+            String value = keyValuePairs[i+1];
+            map.put(key, value);
+        }
 
-    	return map;
+        return map;
     }
 
 }

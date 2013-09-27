@@ -31,6 +31,9 @@ public class VpcAttachment implements Serializable {
 
     /**
      * 
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>attaching, attached, detaching, detached
      */
     private String state;
 
@@ -70,8 +73,13 @@ public class VpcAttachment implements Serializable {
     
     /**
      * 
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
      * @return 
+     *
+     * @see AttachmentStatus
      */
     public String getState() {
         return state;
@@ -79,8 +87,13 @@ public class VpcAttachment implements Serializable {
     
     /**
      * 
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
      * @param state 
+     *
+     * @see AttachmentStatus
      */
     public void setState(String state) {
         this.state = state;
@@ -90,17 +103,56 @@ public class VpcAttachment implements Serializable {
      * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
      * @param state 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see AttachmentStatus
      */
     public VpcAttachment withState(String state) {
         this.state = state;
         return this;
     }
     
+    
+    /**
+     * 
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>attaching, attached, detaching, detached
+     *
+     * @param state 
+     *
+     * @see AttachmentStatus
+     */
+    public void setState(AttachmentStatus state) {
+        this.state = state.toString();
+    }
+    
+    /**
+     * 
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>attaching, attached, detaching, detached
+     *
+     * @param state 
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see AttachmentStatus
+     */
+    public VpcAttachment withState(AttachmentStatus state) {
+        this.state = state.toString();
+        return this;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

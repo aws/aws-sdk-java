@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.regex.Matcher;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -55,7 +56,10 @@ import com.amazonaws.auth.EnvironmentVariableCredentialsProvider;
 import com.amazonaws.auth.InstanceProfileCredentialsProvider;
 import com.amazonaws.auth.Signer;
 import com.amazonaws.auth.SystemPropertiesCredentialsProvider;
+import com.amazonaws.event.ProgressListenerCallbackExecutor;
 import com.amazonaws.event.ProgressReportingInputStream;
+import com.amazonaws.event.ProgressListener;
+import com.amazonaws.event.ProgressEvent;
 import com.amazonaws.handlers.HandlerChainFactory;
 import com.amazonaws.handlers.RequestHandler;
 import com.amazonaws.http.ExecutionContext;
@@ -125,7 +129,6 @@ import com.amazonaws.services.s3.model.Grantee;
 import com.amazonaws.services.s3.model.GroupGrantee;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadRequest;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
-import com.amazonaws.services.s3.model.LegacyS3ProgressListener;
 import com.amazonaws.services.s3.model.ListBucketsRequest;
 import com.amazonaws.services.s3.model.ListMultipartUploadsRequest;
 import com.amazonaws.services.s3.model.ListObjectsRequest;
@@ -139,8 +142,6 @@ import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.Owner;
 import com.amazonaws.services.s3.model.PartListing;
 import com.amazonaws.services.s3.model.Permission;
-import com.amazonaws.services.s3.model.ProgressEvent;
-import com.amazonaws.services.s3.model.ProgressListener;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectResult;
 import com.amazonaws.services.s3.model.Region;
@@ -205,9 +206,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
     /** Shared response handler for operations with no response.  */
     private S3XmlResponseHandler<Void> voidResponseHandler = new S3XmlResponseHandler<Void>(null);
-
-    /** Utilities for validating bucket names */
-    private final BucketNameUtils bucketNameUtils = new BucketNameUtils();
 
     /** Shared factory for converting configuration objects to XML */
     private static final BucketConfigurationXmlFactory bucketConfigurationXmlFactory = new BucketConfigurationXmlFactory();
@@ -649,7 +647,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 "The bucket name parameter must be specified when creating a bucket");
 
         if (bucketName != null) bucketName = bucketName.trim();
-        bucketNameUtils.validateBucketName(bucketName);
+        BucketNameUtils.validateBucketName(bucketName);
 
         Request<CreateBucketRequest> request = createRequest(bucketName, null, createBucketRequest, HttpMethodName.PUT);
 
@@ -920,7 +918,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#getObject(com.amazonaws.services.s3.model.GetObjectRequest)
      */
-    @SuppressWarnings("deprecation")
     public S3Object getObject(GetObjectRequest getObjectRequest)
             throws AmazonClientException, AmazonServiceException {
         assertParameterNotNull(getObjectRequest,
@@ -953,10 +950,15 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         addStringListHeader(request, Headers.GET_OBJECT_IF_NONE_MATCH,
                 getObjectRequest.getNonmatchingETagConstraints());
 
-        com.amazonaws.util.ProgressListener progressListener = getObjectRequest.getGeneralProgressListener();
-        if (progressListener == null && getObjectRequest.getProgressListener() != null) {
-            progressListener = new LegacyS3ProgressListener(getObjectRequest.getProgressListener());
-        }
+        /* 
+         * This is compatible with progress listener set by either the legacy
+         * method GetObjectRequest#setProgressListener or the new method
+         * GetObjectRequest#setGeneralProgressListener.
+         */
+        ProgressListener progressListener = getObjectRequest.getGeneralProgressListener();
+        ProgressListenerCallbackExecutor progressListenerCallbackExecutor = ProgressListenerCallbackExecutor
+                .wrapListener(progressListener);
+
         try {
             S3Object s3Object = invoke(request, new S3ObjectResponseHandler(), getObjectRequest.getBucketName(), getObjectRequest.getKey());
 
@@ -969,11 +971,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             s3Object.setKey(getObjectRequest.getKey());
 
             S3ObjectInputStream input = s3Object.getObjectContent();
-            if (progressListener != null) {
-                ProgressReportingInputStream progressReportingInputStream = new ProgressReportingInputStream(input, progressListener);
+            if (progressListenerCallbackExecutor != null) {
+                ProgressReportingInputStream progressReportingInputStream = new ProgressReportingInputStream(input, progressListenerCallbackExecutor);
                 progressReportingInputStream.setFireCompletedEvent(true);
                 input = new S3ObjectInputStream(progressReportingInputStream, input.getHttpRequest());
-                fireProgressEvent(progressListener, com.amazonaws.event.ProgressEvent.STARTED_EVENT_CODE);
+                fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.STARTED_EVENT_CODE);
             }
 
             if (getObjectRequest.getRange() == null && System.getProperty("com.amazonaws.services.s3.disableGetObjectMD5Validation") == null) {
@@ -991,12 +993,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                                     + "checksum and verify data integrity.", e);
                     }
                 }
-            }else{
-				input = new S3ObjectInputStream(
-						new ContentLengthValidationInputStream(input,s3Object.getObjectMetadata()
-										.getContentLength()),
-						input.getHttpRequest());
-
+            } else {
+                input = new S3ObjectInputStream(
+                            new ContentLengthValidationInputStream(input, s3Object.getObjectMetadata().getContentLength()),
+                            input.getHttpRequest());
             }
 
             s3Object.setObjectContent(input);
@@ -1011,11 +1011,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
              * use constraints.
              */
             if (ase.getStatusCode() == 412 || ase.getStatusCode() == 304) {
-                fireProgressEvent(progressListener, com.amazonaws.event.ProgressEvent.CANCELED_EVENT_CODE);
+                fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.CANCELED_EVENT_CODE);
                 return null;
             }
 
-            fireProgressEvent(progressListener, com.amazonaws.event.ProgressEvent.FAILED_EVENT_CODE);
+            fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.FAILED_EVENT_CODE);
 
             throw ase;
         }
@@ -1043,7 +1043,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         });
         // getObject can return null if constraints were specified but not met
-        if(s3Object==null)return null;
+        if (s3Object == null) return null;
 
         return s3Object.getObjectMetadata();
     }
@@ -1093,7 +1093,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#putObject(com.amazonaws.services.s3.model.PutObjectRequest)
      */
-    @SuppressWarnings("deprecation")
     public PutObjectResult putObject(PutObjectRequest putObjectRequest)
             throws AmazonClientException, AmazonServiceException {
         assertParameterNotNull(putObjectRequest, "The PutObjectRequest parameter must be specified when uploading an object");
@@ -1102,10 +1101,15 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         String key = putObjectRequest.getKey();
         ObjectMetadata metadata = putObjectRequest.getMetadata();
         InputStream input = putObjectRequest.getInputStream();
-        com.amazonaws.util.ProgressListener progressListener = putObjectRequest.getGeneralProgressListener();
-        if (progressListener == null && putObjectRequest.getProgressListener() != null) {
-            progressListener = new LegacyS3ProgressListener(putObjectRequest.getProgressListener());
-        }
+
+        /* 
+         * This is compatible with progress listener set by either the legacy
+         * method PutObjectRequest#setProgressListener or the new method
+         * PutObjectRequest#setGeneralProgressListener.
+         */
+        ProgressListener progressListener = putObjectRequest.getGeneralProgressListener();
+        ProgressListenerCallbackExecutor progressListenerCallbackExecutor = ProgressListenerCallbackExecutor
+                .wrapListener(progressListener);
 
         if (metadata == null) metadata = new ObjectMetadata();
 
@@ -1177,9 +1181,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                      "out of memory errors.");
         }
 
-        if (progressListener != null) {
-            input = new ProgressReportingInputStream(input, progressListener);
-            fireProgressEvent(progressListener, com.amazonaws.event.ProgressEvent.STARTED_EVENT_CODE);
+        if (progressListenerCallbackExecutor != null) {
+            input = new ProgressReportingInputStream(input, progressListenerCallbackExecutor);
+            fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.STARTED_EVENT_CODE);
         }
 
         if (!input.markSupported()) {
@@ -1228,7 +1232,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         try {
             returnedMetadata = invoke(request, new S3MetadataResponseHandler(), bucketName, key);
         } catch (AmazonClientException ace) {
-            fireProgressEvent(progressListener, com.amazonaws.event.ProgressEvent.FAILED_EVENT_CODE);
+            fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.FAILED_EVENT_CODE);
             throw ace;
         } finally {
             try {input.close();} catch (Exception e) {
@@ -1246,7 +1250,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             byte[] serverSideHash = BinaryUtils.fromHex(returnedMetadata.getETag());
 
             if (!Arrays.equals(clientSideHash, serverSideHash)) {
-                fireProgressEvent(progressListener, com.amazonaws.event.ProgressEvent.FAILED_EVENT_CODE);
+                fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.FAILED_EVENT_CODE);
 
                 throw new AmazonClientException("Unable to verify integrity of data upload.  " +
                         "Client calculated content hash didn't match hash calculated by Amazon S3.  " +
@@ -1254,7 +1258,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             }
         }
 
-        fireProgressEvent(progressListener, com.amazonaws.event.ProgressEvent.COMPLETED_EVENT_CODE);
+        fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.COMPLETED_EVENT_CODE);
 
         PutObjectResult result = new PutObjectResult();
         result.setETag(returnedMetadata.getETag());
@@ -2318,7 +2322,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#uploadPart(com.amazonaws.services.s3.model.UploadPartRequest)
      */
-    @SuppressWarnings("deprecation")
     public UploadPartResult uploadPart(UploadPartRequest uploadPartRequest)
             throws AmazonClientException, AmazonServiceException {
         assertParameterNotNull(uploadPartRequest,
@@ -2381,14 +2384,18 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             }
         }
 
-        com.amazonaws.util.ProgressListener progressListener = uploadPartRequest.getGeneralProgressListener();
-        if (progressListener == null && uploadPartRequest.getProgressListener() != null) {
-            progressListener = new LegacyS3ProgressListener(uploadPartRequest.getProgressListener());
-        }
+        /* 
+         * This is compatible with progress listener set by either the legacy
+         * method UploadPartRequest#setProgressListener or the new method
+         * UploadPartRequest#setGeneralProgressListener.
+         */
+        ProgressListener progressListener = uploadPartRequest.getGeneralProgressListener();
+        ProgressListenerCallbackExecutor progressListenerCallbackExecutor = ProgressListenerCallbackExecutor
+                .wrapListener(progressListener);
 
-        if (progressListener != null) {
-            inputStream = new ProgressReportingInputStream(inputStream, progressListener);
-            fireProgressEvent(progressListener, com.amazonaws.event.ProgressEvent.STARTED_EVENT_CODE);
+        if (progressListenerCallbackExecutor != null) {
+            inputStream = new ProgressReportingInputStream(inputStream, progressListenerCallbackExecutor);
+            fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.PART_STARTED_EVENT_CODE);
         }
 
         try {
@@ -2401,7 +2408,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 byte[] serverSideHash = BinaryUtils.fromHex(metadata.getETag());
 
                 if (!Arrays.equals(clientSideHash, serverSideHash)) {
-                    fireProgressEvent(progressListener, com.amazonaws.event.ProgressEvent.PART_FAILED_EVENT_CODE);
+                    fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.PART_FAILED_EVENT_CODE);
 
                     throw new AmazonClientException("Unable to verify integrity of data upload.  " +
                             "Client calculated content hash didn't match hash calculated by Amazon S3.  " +
@@ -2409,7 +2416,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 }
             }
 
-            fireProgressEvent(progressListener, com.amazonaws.event.ProgressEvent.PART_COMPLETED_EVENT_CODE);
+            fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.PART_COMPLETED_EVENT_CODE);
 
             UploadPartResult result = new UploadPartResult();
             result.setETag(metadata.getETag());
@@ -2417,7 +2424,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             result.setServerSideEncryption(metadata.getServerSideEncryption());
             return result;
         } catch (AmazonClientException ace) {
-            fireProgressEvent(progressListener, com.amazonaws.event.ProgressEvent.PART_COMPLETED_EVENT_CODE);
+            fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.PART_COMPLETED_EVENT_CODE);
             throw ace;
         } finally {
             if (inputStream != null) {
@@ -2502,16 +2509,16 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      * Fires a progress event with the specified event type to the specified
      * listener.
      *
-     * @param listener
-     *            The listener to receive the event.
+     * @param progressListenerCallbackExecutor
+     *            The listener callback executor.
      * @param eventType
      *            The type of event to fire.
      */
-    private void fireProgressEvent(com.amazonaws.util.ProgressListener listener, int eventType) {
-        if (listener == null) return;
-        com.amazonaws.event.ProgressEvent event = new com.amazonaws.event.ProgressEvent(0);
+    private void fireProgressEvent(final ProgressListenerCallbackExecutor progressListenerCallbackExecutor, final int eventType) {
+        if (progressListenerCallbackExecutor == null) return;
+        ProgressEvent event = new ProgressEvent(0);
         event.setEventCode(eventType);
-        listener.progressChanged(event);
+        progressListenerCallbackExecutor.progressChanged(event);
     }
 
     /**
@@ -2933,24 +2940,30 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      * converted to a URL.
      */
     public String getResourceUrl(String bucketName, String key) {
-
-        URI requestEndpoint = null;
-        String path = null;
-        if ( bucketNameUtils.isDNSBucketName(bucketName) ) {
-            requestEndpoint = convertToVirtualHostEndpoint(bucketName);
-            path = key;
-        } else {
-            requestEndpoint = endpoint;
-
-            if ( bucketName != null ) {
-                path = bucketName + "/" + (key != null ? key : "");
-            }
-        }
-
         try {
-            return new URI(requestEndpoint.getScheme(), requestEndpoint.getHost(), "/" + path, null).toURL().toString();
+            URL url = getURL(bucketName, key);
+            return url.toString();
         } catch ( Exception e ) {
             return null;
+        }
+    }
+
+    private URL getURL(String bucketName, String key) {
+        Request<?> request = new DefaultRequest<Object>(Constants.S3_SERVICE_NAME);
+        configRequest(request, bucketName, key);
+        return ServiceUtils.convertRequestToUrl(request);
+    }
+
+    public Region getRegion() {
+        String authority = super.endpoint.getAuthority();
+        if (Constants.S3_HOSTNAME.equals(authority)) {
+            return Region.US_Standard;
+        }
+        Matcher m = Region.S3_REGIONAL_ENDPOINT_PATTERN.matcher(authority);
+        if (m.matches()) {
+            return Region.fromValue(m.group(1));
+        } else {
+            throw new IllegalStateException("S3 client with invalid S3 endpoint configured");
         }
     }
 
@@ -2981,9 +2994,19 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     protected <X extends AmazonWebServiceRequest> Request<X> createRequest(String bucketName, String key, X originalRequest, HttpMethodName httpMethod) {
         Request<X> request = new DefaultRequest<X>(originalRequest, Constants.S3_SERVICE_NAME);
         request.setHttpMethod(httpMethod);
+        configRequest(request, bucketName, key);
+        return request;
+    }
 
+    /**
+     * Configure the given request with the specified bucket name and key.
+     * @return the request configured
+     */
+    private void configRequest(
+        Request<?> request, String bucketName, String key)
+    {
         if ( !clientOptions.isPathStyleAccess()
-             && bucketNameUtils.isDNSBucketName(bucketName)
+             && BucketNameUtils.isDNSBucketName(bucketName)
              && !validIP(endpoint.getHost()) ) {
             request.setEndpoint(convertToVirtualHostEndpoint(bucketName));
             /*
@@ -3003,8 +3026,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 request.setResourcePath(bucketName + "/" + (key != null ? key : ""));
             }
         }
-
-        return request;
     }
 
     private boolean validIP(String IP) {

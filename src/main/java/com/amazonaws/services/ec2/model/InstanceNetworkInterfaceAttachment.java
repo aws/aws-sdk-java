@@ -102,8 +102,13 @@ public class InstanceNetworkInterfaceAttachment implements Serializable {
     
     /**
      * Returns the value of the Status property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
      * @return The value of the Status property for this object.
+     *
+     * @see AttachmentStatus
      */
     public String getStatus() {
         return status;
@@ -111,8 +116,13 @@ public class InstanceNetworkInterfaceAttachment implements Serializable {
     
     /**
      * Sets the value of the Status property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
      * @param status The new value for the Status property for this object.
+     *
+     * @see AttachmentStatus
      */
     public void setStatus(String status) {
         this.status = status;
@@ -122,17 +132,56 @@ public class InstanceNetworkInterfaceAttachment implements Serializable {
      * Sets the value of the Status property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
      * @param status The new value for the Status property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see AttachmentStatus
      */
     public InstanceNetworkInterfaceAttachment withStatus(String status) {
         this.status = status;
         return this;
     }
     
+    
+    /**
+     * Sets the value of the Status property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>attaching, attached, detaching, detached
+     *
+     * @param status The new value for the Status property for this object.
+     *
+     * @see AttachmentStatus
+     */
+    public void setStatus(AttachmentStatus status) {
+        this.status = status.toString();
+    }
+    
+    /**
+     * Sets the value of the Status property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>attaching, attached, detaching, detached
+     *
+     * @param status The new value for the Status property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see AttachmentStatus
+     */
+    public InstanceNetworkInterfaceAttachment withStatus(AttachmentStatus status) {
+        this.status = status.toString();
+        return this;
+    }
     
     /**
      * Returns the value of the AttachTime property for this object.

@@ -26,6 +26,9 @@ public class RecurringCharge implements Serializable {
 
     /**
      * The frequency of the recurring charge.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Hourly
      */
     private String frequency;
 
@@ -36,8 +39,13 @@ public class RecurringCharge implements Serializable {
 
     /**
      * The frequency of the recurring charge.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Hourly
      *
      * @return The frequency of the recurring charge.
+     *
+     * @see RecurringChargeFrequency
      */
     public String getFrequency() {
         return frequency;
@@ -45,8 +53,13 @@ public class RecurringCharge implements Serializable {
     
     /**
      * The frequency of the recurring charge.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Hourly
      *
      * @param frequency The frequency of the recurring charge.
+     *
+     * @see RecurringChargeFrequency
      */
     public void setFrequency(String frequency) {
         this.frequency = frequency;
@@ -56,17 +69,56 @@ public class RecurringCharge implements Serializable {
      * The frequency of the recurring charge.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Hourly
      *
      * @param frequency The frequency of the recurring charge.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see RecurringChargeFrequency
      */
     public RecurringCharge withFrequency(String frequency) {
         this.frequency = frequency;
         return this;
     }
     
+    
+    /**
+     * The frequency of the recurring charge.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Hourly
+     *
+     * @param frequency The frequency of the recurring charge.
+     *
+     * @see RecurringChargeFrequency
+     */
+    public void setFrequency(RecurringChargeFrequency frequency) {
+        this.frequency = frequency.toString();
+    }
+    
+    /**
+     * The frequency of the recurring charge.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Hourly
+     *
+     * @param frequency The frequency of the recurring charge.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see RecurringChargeFrequency
+     */
+    public RecurringCharge withFrequency(RecurringChargeFrequency frequency) {
+        this.frequency = frequency.toString();
+        return this;
+    }
     
     /**
      * The amount of the recurring charge.

@@ -24,6 +24,8 @@ import com.amazonaws.services.s3.model.ProgressListener;
 /**
  * Simple InputStream wrapper that occasionally notifies a progress listener
  * about the number of bytes transferred.
+ * 
+ * @deprecated Replaced by {@link com.amazonaws.event.ProgressReportingInputStream}
  */
 @Deprecated
 public class ProgressReportingInputStream extends FilterInputStream {

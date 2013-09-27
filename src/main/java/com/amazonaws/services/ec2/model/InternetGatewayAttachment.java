@@ -62,8 +62,13 @@ public class InternetGatewayAttachment implements Serializable {
     
     /**
      * Returns the value of the State property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
      * @return The value of the State property for this object.
+     *
+     * @see AttachmentStatus
      */
     public String getState() {
         return state;
@@ -71,8 +76,13 @@ public class InternetGatewayAttachment implements Serializable {
     
     /**
      * Sets the value of the State property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
      * @param state The new value for the State property for this object.
+     *
+     * @see AttachmentStatus
      */
     public void setState(String state) {
         this.state = state;
@@ -82,17 +92,56 @@ public class InternetGatewayAttachment implements Serializable {
      * Sets the value of the State property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
      * @param state The new value for the State property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see AttachmentStatus
      */
     public InternetGatewayAttachment withState(String state) {
         this.state = state;
         return this;
     }
     
+    
+    /**
+     * Sets the value of the State property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>attaching, attached, detaching, detached
+     *
+     * @param state The new value for the State property for this object.
+     *
+     * @see AttachmentStatus
+     */
+    public void setState(AttachmentStatus state) {
+        this.state = state.toString();
+    }
+    
+    /**
+     * Sets the value of the State property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>attaching, attached, detaching, detached
+     *
+     * @param state The new value for the State property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see AttachmentStatus
+     */
+    public InternetGatewayAttachment withState(AttachmentStatus state) {
+        this.state = state.toString();
+        return this;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

@@ -41,6 +41,9 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
     /**
      * The name of the attribute being reset. <p> Available attribute names:
      * <code>launchPermission</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>launchPermission
      */
     private String attribute;
 
@@ -67,6 +70,20 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
     }
 
     
+    
+    /**
+     * Constructs a new ResetImageAttributeRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param imageId The ID of the AMI whose attribute is being reset.
+     * @param attribute The name of the attribute being reset. <p> Available
+     * attribute names: <code>launchPermission</code>
+     */
+    public ResetImageAttributeRequest(String imageId, ResetImageAttributeName attribute) {
+        this.imageId = imageId;
+        this.attribute = attribute.toString();
+    }
     
     /**
      * The ID of the AMI whose attribute is being reset.
@@ -105,9 +122,14 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
     /**
      * The name of the attribute being reset. <p> Available attribute names:
      * <code>launchPermission</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>launchPermission
      *
      * @return The name of the attribute being reset. <p> Available attribute names:
      *         <code>launchPermission</code>
+     *
+     * @see ResetImageAttributeName
      */
     public String getAttribute() {
         return attribute;
@@ -116,9 +138,14 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
     /**
      * The name of the attribute being reset. <p> Available attribute names:
      * <code>launchPermission</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>launchPermission
      *
      * @param attribute The name of the attribute being reset. <p> Available attribute names:
      *         <code>launchPermission</code>
+     *
+     * @see ResetImageAttributeName
      */
     public void setAttribute(String attribute) {
         this.attribute = attribute;
@@ -129,18 +156,61 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
      * <code>launchPermission</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>launchPermission
      *
      * @param attribute The name of the attribute being reset. <p> Available attribute names:
      *         <code>launchPermission</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see ResetImageAttributeName
      */
     public ResetImageAttributeRequest withAttribute(String attribute) {
         this.attribute = attribute;
         return this;
     }
     
+    
+    /**
+     * The name of the attribute being reset. <p> Available attribute names:
+     * <code>launchPermission</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>launchPermission
+     *
+     * @param attribute The name of the attribute being reset. <p> Available attribute names:
+     *         <code>launchPermission</code>
+     *
+     * @see ResetImageAttributeName
+     */
+    public void setAttribute(ResetImageAttributeName attribute) {
+        this.attribute = attribute.toString();
+    }
+    
+    /**
+     * The name of the attribute being reset. <p> Available attribute names:
+     * <code>launchPermission</code>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>launchPermission
+     *
+     * @param attribute The name of the attribute being reset. <p> Available attribute names:
+     *         <code>launchPermission</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see ResetImageAttributeName
+     */
+    public ResetImageAttributeRequest withAttribute(ResetImageAttributeName attribute) {
+        this.attribute = attribute.toString();
+        return this;
+    }
     
     /**
      * This method is intended for internal use only.

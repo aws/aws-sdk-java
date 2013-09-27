@@ -32,6 +32,9 @@ public class Vpc implements Serializable {
     /**
      * Describes the current state of the VPC. The state of the subnet may be
      * either <code>pending</code> or <code>available</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>pending, available
      */
     private String state;
 
@@ -54,6 +57,9 @@ public class Vpc implements Serializable {
 
     /**
      * The allowed tenancy of instances launched into the VPC.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>default, dedicated
      */
     private String instanceTenancy;
 
@@ -99,9 +105,14 @@ public class Vpc implements Serializable {
     /**
      * Describes the current state of the VPC. The state of the subnet may be
      * either <code>pending</code> or <code>available</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>pending, available
      *
      * @return Describes the current state of the VPC. The state of the subnet may be
      *         either <code>pending</code> or <code>available</code>.
+     *
+     * @see VpcState
      */
     public String getState() {
         return state;
@@ -110,9 +121,14 @@ public class Vpc implements Serializable {
     /**
      * Describes the current state of the VPC. The state of the subnet may be
      * either <code>pending</code> or <code>available</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>pending, available
      *
      * @param state Describes the current state of the VPC. The state of the subnet may be
      *         either <code>pending</code> or <code>available</code>.
+     *
+     * @see VpcState
      */
     public void setState(String state) {
         this.state = state;
@@ -123,18 +139,61 @@ public class Vpc implements Serializable {
      * either <code>pending</code> or <code>available</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>pending, available
      *
      * @param state Describes the current state of the VPC. The state of the subnet may be
      *         either <code>pending</code> or <code>available</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see VpcState
      */
     public Vpc withState(String state) {
         this.state = state;
         return this;
     }
     
+    
+    /**
+     * Describes the current state of the VPC. The state of the subnet may be
+     * either <code>pending</code> or <code>available</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>pending, available
+     *
+     * @param state Describes the current state of the VPC. The state of the subnet may be
+     *         either <code>pending</code> or <code>available</code>.
+     *
+     * @see VpcState
+     */
+    public void setState(VpcState state) {
+        this.state = state.toString();
+    }
+    
+    /**
+     * Describes the current state of the VPC. The state of the subnet may be
+     * either <code>pending</code> or <code>available</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>pending, available
+     *
+     * @param state Describes the current state of the VPC. The state of the subnet may be
+     *         either <code>pending</code> or <code>available</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see VpcState
+     */
+    public Vpc withState(VpcState state) {
+        this.state = state.toString();
+        return this;
+    }
     
     /**
      * Specifies the CIDR block the VPC covers.
@@ -287,8 +346,13 @@ public class Vpc implements Serializable {
     
     /**
      * The allowed tenancy of instances launched into the VPC.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>default, dedicated
      *
      * @return The allowed tenancy of instances launched into the VPC.
+     *
+     * @see Tenancy
      */
     public String getInstanceTenancy() {
         return instanceTenancy;
@@ -296,8 +360,13 @@ public class Vpc implements Serializable {
     
     /**
      * The allowed tenancy of instances launched into the VPC.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>default, dedicated
      *
      * @param instanceTenancy The allowed tenancy of instances launched into the VPC.
+     *
+     * @see Tenancy
      */
     public void setInstanceTenancy(String instanceTenancy) {
         this.instanceTenancy = instanceTenancy;
@@ -307,17 +376,56 @@ public class Vpc implements Serializable {
      * The allowed tenancy of instances launched into the VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>default, dedicated
      *
      * @param instanceTenancy The allowed tenancy of instances launched into the VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see Tenancy
      */
     public Vpc withInstanceTenancy(String instanceTenancy) {
         this.instanceTenancy = instanceTenancy;
         return this;
     }
     
+    
+    /**
+     * The allowed tenancy of instances launched into the VPC.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>default, dedicated
+     *
+     * @param instanceTenancy The allowed tenancy of instances launched into the VPC.
+     *
+     * @see Tenancy
+     */
+    public void setInstanceTenancy(Tenancy instanceTenancy) {
+        this.instanceTenancy = instanceTenancy.toString();
+    }
+    
+    /**
+     * The allowed tenancy of instances launched into the VPC.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>default, dedicated
+     *
+     * @param instanceTenancy The allowed tenancy of instances launched into the VPC.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see Tenancy
+     */
+    public Vpc withInstanceTenancy(Tenancy instanceTenancy) {
+        this.instanceTenancy = instanceTenancy.toString();
+        return this;
+    }
     
     /**
      * 

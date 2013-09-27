@@ -109,6 +109,9 @@ public class Instance implements Serializable {
 
     /**
      * Platform of the instance (e.g., Windows).
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Windows
      */
     private String platform;
 
@@ -145,12 +148,18 @@ public class Instance implements Serializable {
 
     /**
      * The architecture of this instance.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>i386, x86_64
      */
     private String architecture;
 
     /**
      * The root device type used by the AMI. The AMI can use an Amazon EBS or
      * instance store root device.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ebs, instance-store
      */
     private String rootDeviceType;
 
@@ -168,6 +177,9 @@ public class Instance implements Serializable {
 
     /**
      * 
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>spot
      */
     private String instanceLifecycle;
 
@@ -835,8 +847,13 @@ public class Instance implements Serializable {
     
     /**
      * Platform of the instance (e.g., Windows).
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Windows
      *
      * @return Platform of the instance (e.g., Windows).
+     *
+     * @see PlatformValues
      */
     public String getPlatform() {
         return platform;
@@ -844,8 +861,13 @@ public class Instance implements Serializable {
     
     /**
      * Platform of the instance (e.g., Windows).
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Windows
      *
      * @param platform Platform of the instance (e.g., Windows).
+     *
+     * @see PlatformValues
      */
     public void setPlatform(String platform) {
         this.platform = platform;
@@ -855,17 +877,56 @@ public class Instance implements Serializable {
      * Platform of the instance (e.g., Windows).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Windows
      *
      * @param platform Platform of the instance (e.g., Windows).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see PlatformValues
      */
     public Instance withPlatform(String platform) {
         this.platform = platform;
         return this;
     }
     
+    
+    /**
+     * Platform of the instance (e.g., Windows).
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Windows
+     *
+     * @param platform Platform of the instance (e.g., Windows).
+     *
+     * @see PlatformValues
+     */
+    public void setPlatform(PlatformValues platform) {
+        this.platform = platform.toString();
+    }
+    
+    /**
+     * Platform of the instance (e.g., Windows).
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Windows
+     *
+     * @param platform Platform of the instance (e.g., Windows).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see PlatformValues
+     */
+    public Instance withPlatform(PlatformValues platform) {
+        this.platform = platform.toString();
+        return this;
+    }
     
     /**
      * Monitoring status for this instance.
@@ -1079,8 +1140,13 @@ public class Instance implements Serializable {
     
     /**
      * The architecture of this instance.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>i386, x86_64
      *
      * @return The architecture of this instance.
+     *
+     * @see ArchitectureValues
      */
     public String getArchitecture() {
         return architecture;
@@ -1088,8 +1154,13 @@ public class Instance implements Serializable {
     
     /**
      * The architecture of this instance.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>i386, x86_64
      *
      * @param architecture The architecture of this instance.
+     *
+     * @see ArchitectureValues
      */
     public void setArchitecture(String architecture) {
         this.architecture = architecture;
@@ -1099,11 +1170,16 @@ public class Instance implements Serializable {
      * The architecture of this instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>i386, x86_64
      *
      * @param architecture The architecture of this instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see ArchitectureValues
      */
     public Instance withArchitecture(String architecture) {
         this.architecture = architecture;
@@ -1112,11 +1188,50 @@ public class Instance implements Serializable {
     
     
     /**
+     * The architecture of this instance.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>i386, x86_64
+     *
+     * @param architecture The architecture of this instance.
+     *
+     * @see ArchitectureValues
+     */
+    public void setArchitecture(ArchitectureValues architecture) {
+        this.architecture = architecture.toString();
+    }
+    
+    /**
+     * The architecture of this instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>i386, x86_64
+     *
+     * @param architecture The architecture of this instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see ArchitectureValues
+     */
+    public Instance withArchitecture(ArchitectureValues architecture) {
+        this.architecture = architecture.toString();
+        return this;
+    }
+    
+    /**
      * The root device type used by the AMI. The AMI can use an Amazon EBS or
      * instance store root device.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ebs, instance-store
      *
      * @return The root device type used by the AMI. The AMI can use an Amazon EBS or
      *         instance store root device.
+     *
+     * @see DeviceType
      */
     public String getRootDeviceType() {
         return rootDeviceType;
@@ -1125,9 +1240,14 @@ public class Instance implements Serializable {
     /**
      * The root device type used by the AMI. The AMI can use an Amazon EBS or
      * instance store root device.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ebs, instance-store
      *
      * @param rootDeviceType The root device type used by the AMI. The AMI can use an Amazon EBS or
      *         instance store root device.
+     *
+     * @see DeviceType
      */
     public void setRootDeviceType(String rootDeviceType) {
         this.rootDeviceType = rootDeviceType;
@@ -1138,18 +1258,61 @@ public class Instance implements Serializable {
      * instance store root device.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ebs, instance-store
      *
      * @param rootDeviceType The root device type used by the AMI. The AMI can use an Amazon EBS or
      *         instance store root device.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see DeviceType
      */
     public Instance withRootDeviceType(String rootDeviceType) {
         this.rootDeviceType = rootDeviceType;
         return this;
     }
     
+    
+    /**
+     * The root device type used by the AMI. The AMI can use an Amazon EBS or
+     * instance store root device.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ebs, instance-store
+     *
+     * @param rootDeviceType The root device type used by the AMI. The AMI can use an Amazon EBS or
+     *         instance store root device.
+     *
+     * @see DeviceType
+     */
+    public void setRootDeviceType(DeviceType rootDeviceType) {
+        this.rootDeviceType = rootDeviceType.toString();
+    }
+    
+    /**
+     * The root device type used by the AMI. The AMI can use an Amazon EBS or
+     * instance store root device.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ebs, instance-store
+     *
+     * @param rootDeviceType The root device type used by the AMI. The AMI can use an Amazon EBS or
+     *         instance store root device.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see DeviceType
+     */
+    public Instance withRootDeviceType(DeviceType rootDeviceType) {
+        this.rootDeviceType = rootDeviceType.toString();
+        return this;
+    }
     
     /**
      * The root device name (e.g., <code>/dev/sda1</code>).
@@ -1339,8 +1502,13 @@ public class Instance implements Serializable {
     
     /**
      * 
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>spot
      *
      * @return 
+     *
+     * @see InstanceLifecycleType
      */
     public String getInstanceLifecycle() {
         return instanceLifecycle;
@@ -1348,8 +1516,13 @@ public class Instance implements Serializable {
     
     /**
      * 
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>spot
      *
      * @param instanceLifecycle 
+     *
+     * @see InstanceLifecycleType
      */
     public void setInstanceLifecycle(String instanceLifecycle) {
         this.instanceLifecycle = instanceLifecycle;
@@ -1359,17 +1532,56 @@ public class Instance implements Serializable {
      * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>spot
      *
      * @param instanceLifecycle 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see InstanceLifecycleType
      */
     public Instance withInstanceLifecycle(String instanceLifecycle) {
         this.instanceLifecycle = instanceLifecycle;
         return this;
     }
     
+    
+    /**
+     * 
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>spot
+     *
+     * @param instanceLifecycle 
+     *
+     * @see InstanceLifecycleType
+     */
+    public void setInstanceLifecycle(InstanceLifecycleType instanceLifecycle) {
+        this.instanceLifecycle = instanceLifecycle.toString();
+    }
+    
+    /**
+     * 
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>spot
+     *
+     * @param instanceLifecycle 
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see InstanceLifecycleType
+     */
+    public Instance withInstanceLifecycle(InstanceLifecycleType instanceLifecycle) {
+        this.instanceLifecycle = instanceLifecycle.toString();
+        return this;
+    }
     
     /**
      * 

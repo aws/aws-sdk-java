@@ -27,11 +27,13 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.amazonaws.AmazonClientException;
+import com.amazonaws.event.ProgressEvent;
+import com.amazonaws.event.ProgressListenerChain;
+import com.amazonaws.event.ProgressListenerCallbackExecutor;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadResult;
 import com.amazonaws.services.s3.model.PartETag;
-import com.amazonaws.services.s3.model.ProgressEvent;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.transfer.Transfer.TransferState;
 import com.amazonaws.services.s3.transfer.TransferManager;
@@ -55,7 +57,7 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
 
     private static final Log log = LogFactory.getLog(UploadMonitor.class);
     private final TransferManagerConfiguration configuration;
-    private final ProgressListenerChain progressListenerChain;
+    private final ProgressListenerCallbackExecutor progressListenerChainCallbackExecutor;
     private final UploadCallable multipartUploadCallable;
     private final UploadImpl transfer;
 
@@ -120,10 +122,21 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
         this.multipartUploadCallable = multipartUploadCallable;
         this.threadPool = threadPool;
         this.putObjectRequest = putObjectRequest;
-        this.progressListenerChain = progressListenerChain;
+        this.progressListenerChainCallbackExecutor = ProgressListenerCallbackExecutor
+                .wrapListener(progressListenerChain);
         this.transfer = transfer;
 
         setNextFuture(threadPool.submit(this));
+    }
+    
+    /**
+     * @deprecated Replaced by {@link #UploadMonitor(TransferManager, UploadImpl, ExecutorService, UploadCallable, PutObjectRequest, ProgressListenerChain)}
+     */
+    @Deprecated
+    public UploadMonitor(TransferManager manager, UploadImpl transfer, ExecutorService threadPool,
+            UploadCallable multipartUploadCallable, PutObjectRequest putObjectRequest,
+            com.amazonaws.services.s3.transfer.internal.ProgressListenerChain progressListenerChain) {
+        this(manager, transfer, threadPool, multipartUploadCallable, putObjectRequest, progressListenerChain.transformToGeneralProgressListenerChain());
     }
 
     public void setTimedThreadPool(ScheduledExecutorService timedThreadPool) {
@@ -196,7 +209,7 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
         // AmazonS3Client takes care of all the events for single part uploads,
         // so we only need to send a completed event for multipart uploads.
         if (multipartUploadCallable.isMultipartUpload()) {
-        	fireProgressEvent(ProgressEvent.COMPLETED_EVENT_CODE);
+            fireProgressEvent(ProgressEvent.COMPLETED_EVENT_CODE);
         }
     }
 
@@ -209,11 +222,11 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
         }, pollInterval, TimeUnit.MILLISECONDS));
     }
 
-    private void fireProgressEvent(int eventType) {
-        if (progressListenerChain == null) return;
+    private void fireProgressEvent(final int eventType) {
+        if (progressListenerChainCallbackExecutor == null) return;
         ProgressEvent event = new ProgressEvent(0);
         event.setEventCode(eventType);
-        progressListenerChain.progressChanged(event);
+        progressListenerChainCallbackExecutor.progressChanged(event);
     }
 
     /**

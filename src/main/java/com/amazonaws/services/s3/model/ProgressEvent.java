@@ -14,11 +14,12 @@
  */
 package com.amazonaws.services.s3.model;
 
-
 /**
  * Notification of a progress change on an Amazon S3 transfer. Typically this
  * means notice that another chunk of bytes was transferred, but it also signals
  * other types of progress events such as a transfer starting, or failing.
+ * 
+ * @deprecated Replaced by {@link com.amazonaws.event.ProgressEvent}
  */
 @Deprecated
 public class ProgressEvent extends com.amazonaws.event.ProgressEvent {

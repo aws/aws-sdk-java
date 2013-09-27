@@ -135,8 +135,13 @@ public class ImportInstanceTaskDetails implements Serializable {
     
     /**
      * Returns the value of the Platform property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Windows
      *
      * @return The value of the Platform property for this object.
+     *
+     * @see PlatformValues
      */
     public String getPlatform() {
         return platform;
@@ -144,8 +149,13 @@ public class ImportInstanceTaskDetails implements Serializable {
     
     /**
      * Sets the value of the Platform property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Windows
      *
      * @param platform The new value for the Platform property for this object.
+     *
+     * @see PlatformValues
      */
     public void setPlatform(String platform) {
         this.platform = platform;
@@ -155,17 +165,56 @@ public class ImportInstanceTaskDetails implements Serializable {
      * Sets the value of the Platform property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Windows
      *
      * @param platform The new value for the Platform property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see PlatformValues
      */
     public ImportInstanceTaskDetails withPlatform(String platform) {
         this.platform = platform;
         return this;
     }
     
+    
+    /**
+     * Sets the value of the Platform property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Windows
+     *
+     * @param platform The new value for the Platform property for this object.
+     *
+     * @see PlatformValues
+     */
+    public void setPlatform(PlatformValues platform) {
+        this.platform = platform.toString();
+    }
+    
+    /**
+     * Sets the value of the Platform property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Windows
+     *
+     * @param platform The new value for the Platform property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see PlatformValues
+     */
+    public ImportInstanceTaskDetails withPlatform(PlatformValues platform) {
+        this.platform = platform.toString();
+        return this;
+    }
     
     /**
      * Returns the value of the Description property for this object.

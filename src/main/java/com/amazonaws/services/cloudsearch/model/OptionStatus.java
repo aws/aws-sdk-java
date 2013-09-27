@@ -59,6 +59,11 @@ public class OptionStatus implements Serializable {
     private String state;
 
     /**
+     * Indicates that the option will be deleted once processing is complete.
+     */
+    private Boolean pendingDeletion;
+
+    /**
      * A timestamp for when this option was created.
      *
      * @return A timestamp for when this option was created.
@@ -333,6 +338,49 @@ public class OptionStatus implements Serializable {
     }
     
     /**
+     * Indicates that the option will be deleted once processing is complete.
+     *
+     * @return Indicates that the option will be deleted once processing is complete.
+     */
+    public Boolean isPendingDeletion() {
+        return pendingDeletion;
+    }
+    
+    /**
+     * Indicates that the option will be deleted once processing is complete.
+     *
+     * @param pendingDeletion Indicates that the option will be deleted once processing is complete.
+     */
+    public void setPendingDeletion(Boolean pendingDeletion) {
+        this.pendingDeletion = pendingDeletion;
+    }
+    
+    /**
+     * Indicates that the option will be deleted once processing is complete.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param pendingDeletion Indicates that the option will be deleted once processing is complete.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public OptionStatus withPendingDeletion(Boolean pendingDeletion) {
+        this.pendingDeletion = pendingDeletion;
+        return this;
+    }
+    
+    
+    /**
+     * Indicates that the option will be deleted once processing is complete.
+     *
+     * @return Indicates that the option will be deleted once processing is complete.
+     */
+    public Boolean getPendingDeletion() {
+        return pendingDeletion;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -347,7 +395,8 @@ public class OptionStatus implements Serializable {
         if (getCreationDate() != null) sb.append("CreationDate: " + getCreationDate() + ",");
         if (getUpdateDate() != null) sb.append("UpdateDate: " + getUpdateDate() + ",");
         if (getUpdateVersion() != null) sb.append("UpdateVersion: " + getUpdateVersion() + ",");
-        if (getState() != null) sb.append("State: " + getState() );
+        if (getState() != null) sb.append("State: " + getState() + ",");
+        if (isPendingDeletion() != null) sb.append("PendingDeletion: " + isPendingDeletion() );
         sb.append("}");
         return sb.toString();
     }
@@ -361,6 +410,7 @@ public class OptionStatus implements Serializable {
         hashCode = prime * hashCode + ((getUpdateDate() == null) ? 0 : getUpdateDate().hashCode()); 
         hashCode = prime * hashCode + ((getUpdateVersion() == null) ? 0 : getUpdateVersion().hashCode()); 
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode()); 
+        hashCode = prime * hashCode + ((isPendingDeletion() == null) ? 0 : isPendingDeletion().hashCode()); 
         return hashCode;
     }
     
@@ -380,6 +430,8 @@ public class OptionStatus implements Serializable {
         if (other.getUpdateVersion() != null && other.getUpdateVersion().equals(this.getUpdateVersion()) == false) return false; 
         if (other.getState() == null ^ this.getState() == null) return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false) return false; 
+        if (other.isPendingDeletion() == null ^ this.isPendingDeletion() == null) return false;
+        if (other.isPendingDeletion() != null && other.isPendingDeletion().equals(this.isPendingDeletion()) == false) return false; 
         return true;
     }
     

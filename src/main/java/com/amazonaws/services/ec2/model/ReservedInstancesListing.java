@@ -185,8 +185,13 @@ public class ReservedInstancesListing implements Serializable {
     
     /**
      * Returns the value of the Status property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>active, pending, cancelled, closed
      *
      * @return The value of the Status property for this object.
+     *
+     * @see ListingStatus
      */
     public String getStatus() {
         return status;
@@ -194,8 +199,13 @@ public class ReservedInstancesListing implements Serializable {
     
     /**
      * Sets the value of the Status property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>active, pending, cancelled, closed
      *
      * @param status The new value for the Status property for this object.
+     *
+     * @see ListingStatus
      */
     public void setStatus(String status) {
         this.status = status;
@@ -205,17 +215,56 @@ public class ReservedInstancesListing implements Serializable {
      * Sets the value of the Status property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>active, pending, cancelled, closed
      *
      * @param status The new value for the Status property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see ListingStatus
      */
     public ReservedInstancesListing withStatus(String status) {
         this.status = status;
         return this;
     }
     
+    
+    /**
+     * Sets the value of the Status property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>active, pending, cancelled, closed
+     *
+     * @param status The new value for the Status property for this object.
+     *
+     * @see ListingStatus
+     */
+    public void setStatus(ListingStatus status) {
+        this.status = status.toString();
+    }
+    
+    /**
+     * Sets the value of the Status property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>active, pending, cancelled, closed
+     *
+     * @param status The new value for the Status property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see ListingStatus
+     */
+    public ReservedInstancesListing withStatus(ListingStatus status) {
+        this.status = status.toString();
+        return this;
+    }
     
     /**
      * Returns the value of the StatusMessage property for this object.

@@ -16,9 +16,9 @@ package com.amazonaws.services.s3.transfer.internal;
 
 import java.util.Collection;
 
+import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.transfer.Transfer;
 import com.amazonaws.services.s3.transfer.TransferProgress;
-
 
 /**
  * Interface for multiple file transfers
@@ -31,6 +31,15 @@ public abstract class MultipleFileTransfer extends AbstractTransfer {
             ProgressListenerChain progressListenerChain, Collection<? extends Transfer> subTransfers) {
         super(description, transferProgress, progressListenerChain);
         this.subTransfers = subTransfers;
+    }
+    
+    /**
+     * @deprecated Replaced by {@link #MultipleFileTransfer(String, TransferProgress, ProgressListenerChain, Collection)}
+     */
+    @Deprecated
+    MultipleFileTransfer(String description, TransferProgress transferProgress,
+            com.amazonaws.services.s3.transfer.internal.ProgressListenerChain progressListenerChain, Collection<? extends Transfer> subTransfers) {
+        this(description, transferProgress, progressListenerChain.transformToGeneralProgressListenerChain(), subTransfers);
     }
 
     /**

@@ -74,6 +74,12 @@ public class DistributionSummary implements Serializable {
     private CacheBehaviors cacheBehaviors;
 
     /**
+     * A complex type that contains zero or more CustomErrorResponses
+     * elements.
+     */
+    private CustomErrorResponses customErrorResponses;
+
+    /**
      * The comment originally specified when this distribution was created.
      */
     private String comment;
@@ -425,6 +431,46 @@ public class DistributionSummary implements Serializable {
     
     
     /**
+     * A complex type that contains zero or more CustomErrorResponses
+     * elements.
+     *
+     * @return A complex type that contains zero or more CustomErrorResponses
+     *         elements.
+     */
+    public CustomErrorResponses getCustomErrorResponses() {
+        return customErrorResponses;
+    }
+    
+    /**
+     * A complex type that contains zero or more CustomErrorResponses
+     * elements.
+     *
+     * @param customErrorResponses A complex type that contains zero or more CustomErrorResponses
+     *         elements.
+     */
+    public void setCustomErrorResponses(CustomErrorResponses customErrorResponses) {
+        this.customErrorResponses = customErrorResponses;
+    }
+    
+    /**
+     * A complex type that contains zero or more CustomErrorResponses
+     * elements.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param customErrorResponses A complex type that contains zero or more CustomErrorResponses
+     *         elements.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public DistributionSummary withCustomErrorResponses(CustomErrorResponses customErrorResponses) {
+        this.customErrorResponses = customErrorResponses;
+        return this;
+    }
+    
+    
+    /**
      * The comment originally specified when this distribution was created.
      *
      * @return The comment originally specified when this distribution was created.
@@ -652,6 +698,7 @@ public class DistributionSummary implements Serializable {
         if (getOrigins() != null) sb.append("Origins: " + getOrigins() + ",");
         if (getDefaultCacheBehavior() != null) sb.append("DefaultCacheBehavior: " + getDefaultCacheBehavior() + ",");
         if (getCacheBehaviors() != null) sb.append("CacheBehaviors: " + getCacheBehaviors() + ",");
+        if (getCustomErrorResponses() != null) sb.append("CustomErrorResponses: " + getCustomErrorResponses() + ",");
         if (getComment() != null) sb.append("Comment: " + getComment() + ",");
         if (getPriceClass() != null) sb.append("PriceClass: " + getPriceClass() + ",");
         if (isEnabled() != null) sb.append("Enabled: " + isEnabled() + ",");
@@ -673,6 +720,7 @@ public class DistributionSummary implements Serializable {
         hashCode = prime * hashCode + ((getOrigins() == null) ? 0 : getOrigins().hashCode()); 
         hashCode = prime * hashCode + ((getDefaultCacheBehavior() == null) ? 0 : getDefaultCacheBehavior().hashCode()); 
         hashCode = prime * hashCode + ((getCacheBehaviors() == null) ? 0 : getCacheBehaviors().hashCode()); 
+        hashCode = prime * hashCode + ((getCustomErrorResponses() == null) ? 0 : getCustomErrorResponses().hashCode()); 
         hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode()); 
         hashCode = prime * hashCode + ((getPriceClass() == null) ? 0 : getPriceClass().hashCode()); 
         hashCode = prime * hashCode + ((isEnabled() == null) ? 0 : isEnabled().hashCode()); 
@@ -704,6 +752,8 @@ public class DistributionSummary implements Serializable {
         if (other.getDefaultCacheBehavior() != null && other.getDefaultCacheBehavior().equals(this.getDefaultCacheBehavior()) == false) return false; 
         if (other.getCacheBehaviors() == null ^ this.getCacheBehaviors() == null) return false;
         if (other.getCacheBehaviors() != null && other.getCacheBehaviors().equals(this.getCacheBehaviors()) == false) return false; 
+        if (other.getCustomErrorResponses() == null ^ this.getCustomErrorResponses() == null) return false;
+        if (other.getCustomErrorResponses() != null && other.getCustomErrorResponses().equals(this.getCustomErrorResponses()) == false) return false; 
         if (other.getComment() == null ^ this.getComment() == null) return false;
         if (other.getComment() != null && other.getComment().equals(this.getComment()) == false) return false; 
         if (other.getPriceClass() == null ^ this.getPriceClass() == null) return false;

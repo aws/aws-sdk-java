@@ -63,8 +63,13 @@ public class CancelledSpotInstanceRequest implements Serializable {
     
     /**
      * Returns the value of the State property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>active, open, closed, cancelled, completed
      *
      * @return The value of the State property for this object.
+     *
+     * @see CancelSpotInstanceRequestState
      */
     public String getState() {
         return state;
@@ -72,8 +77,13 @@ public class CancelledSpotInstanceRequest implements Serializable {
     
     /**
      * Sets the value of the State property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>active, open, closed, cancelled, completed
      *
      * @param state The new value for the State property for this object.
+     *
+     * @see CancelSpotInstanceRequestState
      */
     public void setState(String state) {
         this.state = state;
@@ -83,17 +93,56 @@ public class CancelledSpotInstanceRequest implements Serializable {
      * Sets the value of the State property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>active, open, closed, cancelled, completed
      *
      * @param state The new value for the State property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see CancelSpotInstanceRequestState
      */
     public CancelledSpotInstanceRequest withState(String state) {
         this.state = state;
         return this;
     }
     
+    
+    /**
+     * Sets the value of the State property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>active, open, closed, cancelled, completed
+     *
+     * @param state The new value for the State property for this object.
+     *
+     * @see CancelSpotInstanceRequestState
+     */
+    public void setState(CancelSpotInstanceRequestState state) {
+        this.state = state.toString();
+    }
+    
+    /**
+     * Sets the value of the State property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>active, open, closed, cancelled, completed
+     *
+     * @param state The new value for the State property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see CancelSpotInstanceRequestState
+     */
+    public CancelledSpotInstanceRequest withState(CancelSpotInstanceRequestState state) {
+        this.state = state.toString();
+        return this;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

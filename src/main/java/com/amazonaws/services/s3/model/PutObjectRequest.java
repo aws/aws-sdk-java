@@ -18,6 +18,7 @@ import java.io.File;
 import java.io.InputStream;
 
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.event.ProgressListener;
 
 /**
  * <p>
@@ -142,7 +143,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * The optional progress listener for receiving updates about object download
      * status.
      */
-    private com.amazonaws.util.ProgressListener generalProgressListener;
+    private ProgressListener generalProgressListener;
 
     /** The optional redirect location about an object */
     private String redirectLocation;
@@ -764,9 +765,12 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * upload status.
      *
      * @param progressListener
-     *            The new progress listener.
+     *            The legacy progress listener that is used exclusively for Amazon S3 client.
+     * 
+     * @deprecated use {@link #setGeneralProgressListener(ProgressListener)} instead.
      */
-    public void setProgressListener(ProgressListener progressListener) {
+    @Deprecated
+    public void setProgressListener(com.amazonaws.services.s3.model.ProgressListener progressListener) {
         this.generalProgressListener = new LegacyS3ProgressListener(progressListener);
     }
 
@@ -776,9 +780,11 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      *
      * @return the optional progress listener for receiving updates about object
      *         upload status.
+     * 
+     * @deprecated use {@link #getGeneralProgressListener()} instead.
      */
     @Deprecated
-    public ProgressListener getProgressListener() {
+    public com.amazonaws.services.s3.model.ProgressListener getProgressListener() {
          if (generalProgressListener instanceof LegacyS3ProgressListener) {
              return ((LegacyS3ProgressListener)generalProgressListener).unwrap();
          } else {
@@ -792,12 +798,14 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * calls can be chained together.
      *
      * @param progressListener
-     *            The new progress listener.
+     *            The legacy progress listener that is used exclusively for Amazon S3 client.
      *
      * @return This updated PutObjectRequest object.
+     * 
+     * @deprecated use {@link #withGeneralProgressListener(ProgressListener)} instead.
      */
     @Deprecated
-    public PutObjectRequest withProgressListener(ProgressListener progressListener) {
+    public PutObjectRequest withProgressListener(com.amazonaws.services.s3.model.ProgressListener progressListener) {
         setProgressListener(progressListener);
         return this;
     }
@@ -809,7 +817,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * @param generalProgressListener
      *            The new progress listener.
      */
-    public void setGeneralProgressListener(com.amazonaws.util.ProgressListener generalProgressListener) {
+    public void setGeneralProgressListener(ProgressListener generalProgressListener) {
         this.generalProgressListener = generalProgressListener;
     }
 
@@ -820,7 +828,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * @return the optional progress listener for receiving updates about object
      *          download status.
      */
-    public com.amazonaws.util.ProgressListener getGeneralProgressListener() {
+    public ProgressListener getGeneralProgressListener() {
         return generalProgressListener;
     }
 
@@ -834,7 +842,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      *
      * @return This updated PutObjectRequest object.
      */
-    public PutObjectRequest withGeneralProgressListener(com.amazonaws.util.ProgressListener generalProgressListener) {
+    public PutObjectRequest withGeneralProgressListener(ProgressListener generalProgressListener) {
         setGeneralProgressListener(generalProgressListener);
         return this;
     }

@@ -30,8 +30,13 @@ public class DiskImageDetail implements Serializable {
 
     /**
      * Returns the value of the Format property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>VMDK, RAW, VHD
      *
      * @return The value of the Format property for this object.
+     *
+     * @see DiskImageFormat
      */
     public String getFormat() {
         return format;
@@ -39,8 +44,13 @@ public class DiskImageDetail implements Serializable {
     
     /**
      * Sets the value of the Format property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>VMDK, RAW, VHD
      *
      * @param format The new value for the Format property for this object.
+     *
+     * @see DiskImageFormat
      */
     public void setFormat(String format) {
         this.format = format;
@@ -50,17 +60,56 @@ public class DiskImageDetail implements Serializable {
      * Sets the value of the Format property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>VMDK, RAW, VHD
      *
      * @param format The new value for the Format property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see DiskImageFormat
      */
     public DiskImageDetail withFormat(String format) {
         this.format = format;
         return this;
     }
     
+    
+    /**
+     * Sets the value of the Format property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>VMDK, RAW, VHD
+     *
+     * @param format The new value for the Format property for this object.
+     *
+     * @see DiskImageFormat
+     */
+    public void setFormat(DiskImageFormat format) {
+        this.format = format.toString();
+    }
+    
+    /**
+     * Sets the value of the Format property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>VMDK, RAW, VHD
+     *
+     * @param format The new value for the Format property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see DiskImageFormat
+     */
+    public DiskImageDetail withFormat(DiskImageFormat format) {
+        this.format = format.toString();
+        return this;
+    }
     
     /**
      * Returns the value of the Bytes property for this object.

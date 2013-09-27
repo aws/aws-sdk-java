@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.cloudsearch.AmazonCloudSearch#updateSynonymOptions(UpdateSynonymOptionsRequest) UpdateSynonymOptions operation}.
  * <p>
  * Configures a synonym dictionary for the search domain. The synonym dictionary is used during indexing to configure mappings for terms that occur in
- * text fields. The maximum size of the synonym dictionary is 100KB.
+ * text fields. The maximum size of the synonym dictionary is 100 KB.
  * </p>
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#updateSynonymOptions(UpdateSynonymOptionsRequest)
@@ -47,7 +47,7 @@ public class UpdateSynonymOptionsRequest extends AmazonWebServiceRequest impleme
      * document has a single object with one property "synonyms" whose value
      * is an object mapping terms to their synonyms. Each synonym is a simple
      * string or an array of strings. The maximum size of a stopwords
-     * document is 100KB. Example: <code>{ "synonyms": {"cat": ["feline",
+     * document is 100 KB. Example: <code>{ "synonyms": {"cat": ["feline",
      * "kitten"], "puppy": "dog"} }</code>
      */
     private String synonyms;
@@ -127,14 +127,14 @@ public class UpdateSynonymOptionsRequest extends AmazonWebServiceRequest impleme
      * document has a single object with one property "synonyms" whose value
      * is an object mapping terms to their synonyms. Each synonym is a simple
      * string or an array of strings. The maximum size of a stopwords
-     * document is 100KB. Example: <code>{ "synonyms": {"cat": ["feline",
+     * document is 100 KB. Example: <code>{ "synonyms": {"cat": ["feline",
      * "kitten"], "puppy": "dog"} }</code>
      *
      * @return Maps terms to their synonyms, serialized as a JSON document. The
      *         document has a single object with one property "synonyms" whose value
      *         is an object mapping terms to their synonyms. Each synonym is a simple
      *         string or an array of strings. The maximum size of a stopwords
-     *         document is 100KB. Example: <code>{ "synonyms": {"cat": ["feline",
+     *         document is 100 KB. Example: <code>{ "synonyms": {"cat": ["feline",
      *         "kitten"], "puppy": "dog"} }</code>
      */
     public String getSynonyms() {
@@ -146,14 +146,14 @@ public class UpdateSynonymOptionsRequest extends AmazonWebServiceRequest impleme
      * document has a single object with one property "synonyms" whose value
      * is an object mapping terms to their synonyms. Each synonym is a simple
      * string or an array of strings. The maximum size of a stopwords
-     * document is 100KB. Example: <code>{ "synonyms": {"cat": ["feline",
+     * document is 100 KB. Example: <code>{ "synonyms": {"cat": ["feline",
      * "kitten"], "puppy": "dog"} }</code>
      *
      * @param synonyms Maps terms to their synonyms, serialized as a JSON document. The
      *         document has a single object with one property "synonyms" whose value
      *         is an object mapping terms to their synonyms. Each synonym is a simple
      *         string or an array of strings. The maximum size of a stopwords
-     *         document is 100KB. Example: <code>{ "synonyms": {"cat": ["feline",
+     *         document is 100 KB. Example: <code>{ "synonyms": {"cat": ["feline",
      *         "kitten"], "puppy": "dog"} }</code>
      */
     public void setSynonyms(String synonyms) {
@@ -165,7 +165,7 @@ public class UpdateSynonymOptionsRequest extends AmazonWebServiceRequest impleme
      * document has a single object with one property "synonyms" whose value
      * is an object mapping terms to their synonyms. Each synonym is a simple
      * string or an array of strings. The maximum size of a stopwords
-     * document is 100KB. Example: <code>{ "synonyms": {"cat": ["feline",
+     * document is 100 KB. Example: <code>{ "synonyms": {"cat": ["feline",
      * "kitten"], "puppy": "dog"} }</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -174,7 +174,7 @@ public class UpdateSynonymOptionsRequest extends AmazonWebServiceRequest impleme
      *         document has a single object with one property "synonyms" whose value
      *         is an object mapping terms to their synonyms. Each synonym is a simple
      *         string or an array of strings. The maximum size of a stopwords
-     *         document is 100KB. Example: <code>{ "synonyms": {"cat": ["feline",
+     *         document is 100 KB. Example: <code>{ "synonyms": {"cat": ["feline",
      *         "kitten"], "puppy": "dog"} }</code>
      *
      * @return A reference to this updated object so that method calls can be chained 

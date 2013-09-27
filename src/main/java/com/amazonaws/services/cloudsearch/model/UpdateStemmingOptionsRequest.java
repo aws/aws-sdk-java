@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.cloudsearch.AmazonCloudSearch#updateStemmingOptions(UpdateStemmingOptionsRequest) UpdateStemmingOptions operation}.
  * <p>
  * Configures a stemming dictionary for the search domain. The stemming dictionary is used during indexing and when processing search requests. The
- * maximum size of the stemming dictionary is 500KB.
+ * maximum size of the stemming dictionary is 500 KB.
  * </p>
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#updateStemmingOptions(UpdateStemmingOptionsRequest)
@@ -46,7 +46,7 @@ public class UpdateStemmingOptionsRequest extends AmazonWebServiceRequest implem
      * Maps terms to their stems, serialized as a JSON document. The document
      * has a single object with one property "stems" whose value is an object
      * mapping terms to their stems. The maximum size of a stemming document
-     * is 500KB. Example: <code>{ "stems": {"people": "person", "walking":
+     * is 500 KB. Example: <code>{ "stems": {"people": "person", "walking":
      * "walk"} }</code>
      */
     private String stems;
@@ -125,13 +125,13 @@ public class UpdateStemmingOptionsRequest extends AmazonWebServiceRequest implem
      * Maps terms to their stems, serialized as a JSON document. The document
      * has a single object with one property "stems" whose value is an object
      * mapping terms to their stems. The maximum size of a stemming document
-     * is 500KB. Example: <code>{ "stems": {"people": "person", "walking":
+     * is 500 KB. Example: <code>{ "stems": {"people": "person", "walking":
      * "walk"} }</code>
      *
      * @return Maps terms to their stems, serialized as a JSON document. The document
      *         has a single object with one property "stems" whose value is an object
      *         mapping terms to their stems. The maximum size of a stemming document
-     *         is 500KB. Example: <code>{ "stems": {"people": "person", "walking":
+     *         is 500 KB. Example: <code>{ "stems": {"people": "person", "walking":
      *         "walk"} }</code>
      */
     public String getStems() {
@@ -142,13 +142,13 @@ public class UpdateStemmingOptionsRequest extends AmazonWebServiceRequest implem
      * Maps terms to their stems, serialized as a JSON document. The document
      * has a single object with one property "stems" whose value is an object
      * mapping terms to their stems. The maximum size of a stemming document
-     * is 500KB. Example: <code>{ "stems": {"people": "person", "walking":
+     * is 500 KB. Example: <code>{ "stems": {"people": "person", "walking":
      * "walk"} }</code>
      *
      * @param stems Maps terms to their stems, serialized as a JSON document. The document
      *         has a single object with one property "stems" whose value is an object
      *         mapping terms to their stems. The maximum size of a stemming document
-     *         is 500KB. Example: <code>{ "stems": {"people": "person", "walking":
+     *         is 500 KB. Example: <code>{ "stems": {"people": "person", "walking":
      *         "walk"} }</code>
      */
     public void setStems(String stems) {
@@ -159,7 +159,7 @@ public class UpdateStemmingOptionsRequest extends AmazonWebServiceRequest implem
      * Maps terms to their stems, serialized as a JSON document. The document
      * has a single object with one property "stems" whose value is an object
      * mapping terms to their stems. The maximum size of a stemming document
-     * is 500KB. Example: <code>{ "stems": {"people": "person", "walking":
+     * is 500 KB. Example: <code>{ "stems": {"people": "person", "walking":
      * "walk"} }</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -167,7 +167,7 @@ public class UpdateStemmingOptionsRequest extends AmazonWebServiceRequest implem
      * @param stems Maps terms to their stems, serialized as a JSON document. The document
      *         has a single object with one property "stems" whose value is an object
      *         mapping terms to their stems. The maximum size of a stemming document
-     *         is 500KB. Example: <code>{ "stems": {"people": "person", "walking":
+     *         is 500 KB. Example: <code>{ "stems": {"people": "person", "walking":
      *         "walk"} }</code>
      *
      * @return A reference to this updated object so that method calls can be chained 

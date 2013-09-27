@@ -19,8 +19,9 @@ package com.amazonaws.services.ec2.model;
  */
 public enum DiskImageFormat {
     
-    Vmdk("vmdk"),
-    Vhd("vhd");
+    VMDK("VMDK"),
+    RAW("RAW"),
+    VHD("VHD");
 
     private String value;
 
@@ -44,10 +45,12 @@ public enum DiskImageFormat {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         
-        } else if ("vmdk".equals(value)) {
-            return DiskImageFormat.Vmdk;
-        } else if ("vhd".equals(value)) {
-            return DiskImageFormat.Vhd;
+        } else if ("VMDK".equals(value)) {
+            return DiskImageFormat.VMDK;
+        } else if ("RAW".equals(value)) {
+            return DiskImageFormat.RAW;
+        } else if ("VHD".equals(value)) {
+            return DiskImageFormat.VHD;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

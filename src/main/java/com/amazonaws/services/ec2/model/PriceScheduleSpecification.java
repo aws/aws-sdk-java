@@ -98,8 +98,13 @@ public class PriceScheduleSpecification implements Serializable {
     
     /**
      * Returns the value of the CurrencyCode property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>USD
      *
      * @return The value of the CurrencyCode property for this object.
+     *
+     * @see CurrencyCodeValues
      */
     public String getCurrencyCode() {
         return currencyCode;
@@ -107,8 +112,13 @@ public class PriceScheduleSpecification implements Serializable {
     
     /**
      * Sets the value of the CurrencyCode property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>USD
      *
      * @param currencyCode The new value for the CurrencyCode property for this object.
+     *
+     * @see CurrencyCodeValues
      */
     public void setCurrencyCode(String currencyCode) {
         this.currencyCode = currencyCode;
@@ -118,17 +128,56 @@ public class PriceScheduleSpecification implements Serializable {
      * Sets the value of the CurrencyCode property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>USD
      *
      * @param currencyCode The new value for the CurrencyCode property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see CurrencyCodeValues
      */
     public PriceScheduleSpecification withCurrencyCode(String currencyCode) {
         this.currencyCode = currencyCode;
         return this;
     }
     
+    
+    /**
+     * Sets the value of the CurrencyCode property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>USD
+     *
+     * @param currencyCode The new value for the CurrencyCode property for this object.
+     *
+     * @see CurrencyCodeValues
+     */
+    public void setCurrencyCode(CurrencyCodeValues currencyCode) {
+        this.currencyCode = currencyCode.toString();
+    }
+    
+    /**
+     * Sets the value of the CurrencyCode property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>USD
+     *
+     * @param currencyCode The new value for the CurrencyCode property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see CurrencyCodeValues
+     */
+    public PriceScheduleSpecification withCurrencyCode(CurrencyCodeValues currencyCode) {
+        this.currencyCode = currencyCode.toString();
+        return this;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

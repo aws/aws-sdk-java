@@ -12,26 +12,31 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-package com.amazonaws.util;
-
-import com.amazonaws.event.ProgressEvent;
+package com.amazonaws.event;
 
 /**
  * Listener interface for transfer progress events.
- *
+ * <p>
+ * This class could be used for both Amazon S3 and Amazon Glacier clients. The
+ * legacy Amazon S3 progress listener
+ * {@link com.amazonaws.services.s3.model.ProgressListener} is deprecated in
+ * favor of this new class.
+ * </p>
+ * 
  * @see ProgressEvent
  */
 public interface ProgressListener {
 
     /**
      * Called when progress has changed, such as additional bytes transferred,
-     * transfer failed, etc. Be aware that do *NOT* do any long running
-     * operations in the call which will ultimately slow down their transfer,
-     * because in our current SDK the call back is done in the main transfer
-     * thread.
+     * transfer failed, etc. The execution of the callback of this listener is managed
+     * by {@link ProgressListenerCallbackExecutor} class, which maintains a single thread
+     * to sequentially execute all progressChanged callbacks.
      *
      * @param progressEvent
      *            The event describing the progress change.
+     *            
+     * @see ProgressListenerCallbackExecutor
      */
     public void progressChanged(ProgressEvent progressEvent);
 

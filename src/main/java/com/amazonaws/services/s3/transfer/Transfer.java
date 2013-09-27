@@ -16,7 +16,7 @@ package com.amazonaws.services.s3.transfer;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
-import com.amazonaws.services.s3.model.ProgressListener;
+import com.amazonaws.event.ProgressListener;
 
 /**
  * Represents an asynchronous upload to or download from Amazon S3.
@@ -132,4 +132,16 @@ public interface Transfer {
      * @return The progress information about this transfer.
      */
     public TransferProgress getProgress();
+    
+    /**
+     * @deprecated Replaced by {@link #addProgressListener(ProgressListener)}
+     */
+    @Deprecated
+    public void addProgressListener(com.amazonaws.services.s3.model.ProgressListener listener);
+
+    /**
+     * @deprecated Replaced by {@link #removeProgressListener(ProgressListener)}
+     */
+    @Deprecated
+    public void removeProgressListener(com.amazonaws.services.s3.model.ProgressListener listener);
 }

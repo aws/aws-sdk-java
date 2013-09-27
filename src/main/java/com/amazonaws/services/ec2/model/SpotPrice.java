@@ -117,8 +117,13 @@ public class SpotPrice implements Serializable {
     
     /**
      * Returns the value of the ProductDescription property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)
      *
      * @return The value of the ProductDescription property for this object.
+     *
+     * @see RIProductDescription
      */
     public String getProductDescription() {
         return productDescription;
@@ -126,8 +131,13 @@ public class SpotPrice implements Serializable {
     
     /**
      * Sets the value of the ProductDescription property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)
      *
      * @param productDescription The new value for the ProductDescription property for this object.
+     *
+     * @see RIProductDescription
      */
     public void setProductDescription(String productDescription) {
         this.productDescription = productDescription;
@@ -137,17 +147,56 @@ public class SpotPrice implements Serializable {
      * Sets the value of the ProductDescription property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)
      *
      * @param productDescription The new value for the ProductDescription property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see RIProductDescription
      */
     public SpotPrice withProductDescription(String productDescription) {
         this.productDescription = productDescription;
         return this;
     }
     
+    
+    /**
+     * Sets the value of the ProductDescription property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)
+     *
+     * @param productDescription The new value for the ProductDescription property for this object.
+     *
+     * @see RIProductDescription
+     */
+    public void setProductDescription(RIProductDescription productDescription) {
+        this.productDescription = productDescription.toString();
+    }
+    
+    /**
+     * Sets the value of the ProductDescription property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)
+     *
+     * @param productDescription The new value for the ProductDescription property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see RIProductDescription
+     */
+    public SpotPrice withProductDescription(RIProductDescription productDescription) {
+        this.productDescription = productDescription.toString();
+        return this;
+    }
     
     /**
      * Returns the value of the SpotPrice property for this object.

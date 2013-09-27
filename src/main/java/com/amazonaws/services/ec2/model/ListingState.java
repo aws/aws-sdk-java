@@ -12,21 +12,21 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-package com.amazonaws.services.cloudsearch.model;
+package com.amazonaws.services.ec2.model;
 
 /**
- * Search Instance Type
+ * Listing State
  */
-public enum SearchInstanceType {
+public enum ListingState {
     
-    SearchInstanceT1Micro("SearchInstance:t1.micro"),
-    SearchInstanceM1Small("SearchInstance:m1.small"),
-    SearchInstanceM1Large("SearchInstance:m1.large"),
-    SearchInstanceM2Xlarge("SearchInstance:m2.xlarge");
+    Available("available"),
+    Sold("sold"),
+    Cancelled("cancelled"),
+    Pending("pending");
 
     private String value;
 
-    private SearchInstanceType(String value) {
+    private ListingState(String value) {
         this.value = value;
     }
 
@@ -40,20 +40,20 @@ public enum SearchInstanceType {
      *
      * @param value
      *            real value
-     * @return SearchInstanceType corresponding to the value
+     * @return ListingState corresponding to the value
      */
-    public static SearchInstanceType fromValue(String value) {
+    public static ListingState fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         
-        } else if ("SearchInstance:t1.micro".equals(value)) {
-            return SearchInstanceType.SearchInstanceT1Micro;
-        } else if ("SearchInstance:m1.small".equals(value)) {
-            return SearchInstanceType.SearchInstanceM1Small;
-        } else if ("SearchInstance:m1.large".equals(value)) {
-            return SearchInstanceType.SearchInstanceM1Large;
-        } else if ("SearchInstance:m2.xlarge".equals(value)) {
-            return SearchInstanceType.SearchInstanceM2Xlarge;
+        } else if ("available".equals(value)) {
+            return ListingState.Available;
+        } else if ("sold".equals(value)) {
+            return ListingState.Sold;
+        } else if ("cancelled".equals(value)) {
+            return ListingState.Cancelled;
+        } else if ("pending".equals(value)) {
+            return ListingState.Pending;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

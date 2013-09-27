@@ -62,6 +62,10 @@ public class OptionStatusStaxUnmarshaller implements Unmarshaller<OptionStatus, 
                     optionStatus.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("PendingDeletion", targetDepth)) {
+                    optionStatus.setPendingDeletion(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return optionStatus;

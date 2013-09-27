@@ -27,7 +27,7 @@ public class StopwordOptionsStatus implements Serializable {
     /**
      * Lists stopwords serialized as a JSON document. The document has a
      * single object with one property "stopwords" whose value is an array of
-     * strings. The maximum size of a stopwords document is 10KB. Example:
+     * strings. The maximum size of a stopwords document is 10 KB. Example:
      * <code>{ "stopwords": ["a", "an", "the", "of"] }</code>
      */
     private String options;
@@ -41,12 +41,12 @@ public class StopwordOptionsStatus implements Serializable {
     /**
      * Lists stopwords serialized as a JSON document. The document has a
      * single object with one property "stopwords" whose value is an array of
-     * strings. The maximum size of a stopwords document is 10KB. Example:
+     * strings. The maximum size of a stopwords document is 10 KB. Example:
      * <code>{ "stopwords": ["a", "an", "the", "of"] }</code>
      *
      * @return Lists stopwords serialized as a JSON document. The document has a
      *         single object with one property "stopwords" whose value is an array of
-     *         strings. The maximum size of a stopwords document is 10KB. Example:
+     *         strings. The maximum size of a stopwords document is 10 KB. Example:
      *         <code>{ "stopwords": ["a", "an", "the", "of"] }</code>
      */
     public String getOptions() {
@@ -56,12 +56,12 @@ public class StopwordOptionsStatus implements Serializable {
     /**
      * Lists stopwords serialized as a JSON document. The document has a
      * single object with one property "stopwords" whose value is an array of
-     * strings. The maximum size of a stopwords document is 10KB. Example:
+     * strings. The maximum size of a stopwords document is 10 KB. Example:
      * <code>{ "stopwords": ["a", "an", "the", "of"] }</code>
      *
      * @param options Lists stopwords serialized as a JSON document. The document has a
      *         single object with one property "stopwords" whose value is an array of
-     *         strings. The maximum size of a stopwords document is 10KB. Example:
+     *         strings. The maximum size of a stopwords document is 10 KB. Example:
      *         <code>{ "stopwords": ["a", "an", "the", "of"] }</code>
      */
     public void setOptions(String options) {
@@ -71,14 +71,14 @@ public class StopwordOptionsStatus implements Serializable {
     /**
      * Lists stopwords serialized as a JSON document. The document has a
      * single object with one property "stopwords" whose value is an array of
-     * strings. The maximum size of a stopwords document is 10KB. Example:
+     * strings. The maximum size of a stopwords document is 10 KB. Example:
      * <code>{ "stopwords": ["a", "an", "the", "of"] }</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param options Lists stopwords serialized as a JSON document. The document has a
      *         single object with one property "stopwords" whose value is an array of
-     *         strings. The maximum size of a stopwords document is 10KB. Example:
+     *         strings. The maximum size of a stopwords document is 10 KB. Example:
      *         <code>{ "stopwords": ["a", "an", "the", "of"] }</code>
      *
      * @return A reference to this updated object so that method calls can be chained 

@@ -23,6 +23,7 @@ public enum VolumeState {
     Available("available"),
     InUse("in-use"),
     Deleting("deleting"),
+    Deleted("deleted"),
     Error("error");
 
     private String value;
@@ -55,6 +56,8 @@ public enum VolumeState {
             return VolumeState.InUse;
         } else if ("deleting".equals(value)) {
             return VolumeState.Deleting;
+        } else if ("deleted".equals(value)) {
+            return VolumeState.Deleted;
         } else if ("error".equals(value)) {
             return VolumeState.Error;
         } else {

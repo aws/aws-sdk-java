@@ -14,8 +14,8 @@
  */
 package com.amazonaws.services.s3.transfer.internal;
 
-import com.amazonaws.services.s3.model.ProgressEvent;
-import com.amazonaws.services.s3.model.ProgressListener;
+import com.amazonaws.event.ProgressListener;
+import com.amazonaws.event.ProgressEvent;
 
 public class TransferProgressUpdatingListener implements ProgressListener {
     private final TransferProgressImpl transferProgress;

@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.cloudsearch.AmazonCloudSearch#updateStopwordOptions(UpdateStopwordOptionsRequest) UpdateStopwordOptions operation}.
  * <p>
  * Configures stopwords for the search domain. Stopwords are used during indexing and when processing search requests. The maximum size of the stopwords
- * dictionary is 10KB.
+ * dictionary is 10 KB.
  * </p>
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#updateStopwordOptions(UpdateStopwordOptionsRequest)
@@ -45,7 +45,7 @@ public class UpdateStopwordOptionsRequest extends AmazonWebServiceRequest implem
     /**
      * Lists stopwords serialized as a JSON document. The document has a
      * single object with one property "stopwords" whose value is an array of
-     * strings. The maximum size of a stopwords document is 10KB. Example:
+     * strings. The maximum size of a stopwords document is 10 KB. Example:
      * <code>{ "stopwords": ["a", "an", "the", "of"] }</code>
      */
     private String stopwords;
@@ -123,12 +123,12 @@ public class UpdateStopwordOptionsRequest extends AmazonWebServiceRequest implem
     /**
      * Lists stopwords serialized as a JSON document. The document has a
      * single object with one property "stopwords" whose value is an array of
-     * strings. The maximum size of a stopwords document is 10KB. Example:
+     * strings. The maximum size of a stopwords document is 10 KB. Example:
      * <code>{ "stopwords": ["a", "an", "the", "of"] }</code>
      *
      * @return Lists stopwords serialized as a JSON document. The document has a
      *         single object with one property "stopwords" whose value is an array of
-     *         strings. The maximum size of a stopwords document is 10KB. Example:
+     *         strings. The maximum size of a stopwords document is 10 KB. Example:
      *         <code>{ "stopwords": ["a", "an", "the", "of"] }</code>
      */
     public String getStopwords() {
@@ -138,12 +138,12 @@ public class UpdateStopwordOptionsRequest extends AmazonWebServiceRequest implem
     /**
      * Lists stopwords serialized as a JSON document. The document has a
      * single object with one property "stopwords" whose value is an array of
-     * strings. The maximum size of a stopwords document is 10KB. Example:
+     * strings. The maximum size of a stopwords document is 10 KB. Example:
      * <code>{ "stopwords": ["a", "an", "the", "of"] }</code>
      *
      * @param stopwords Lists stopwords serialized as a JSON document. The document has a
      *         single object with one property "stopwords" whose value is an array of
-     *         strings. The maximum size of a stopwords document is 10KB. Example:
+     *         strings. The maximum size of a stopwords document is 10 KB. Example:
      *         <code>{ "stopwords": ["a", "an", "the", "of"] }</code>
      */
     public void setStopwords(String stopwords) {
@@ -153,14 +153,14 @@ public class UpdateStopwordOptionsRequest extends AmazonWebServiceRequest implem
     /**
      * Lists stopwords serialized as a JSON document. The document has a
      * single object with one property "stopwords" whose value is an array of
-     * strings. The maximum size of a stopwords document is 10KB. Example:
+     * strings. The maximum size of a stopwords document is 10 KB. Example:
      * <code>{ "stopwords": ["a", "an", "the", "of"] }</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stopwords Lists stopwords serialized as a JSON document. The document has a
      *         single object with one property "stopwords" whose value is an array of
-     *         strings. The maximum size of a stopwords document is 10KB. Example:
+     *         strings. The maximum size of a stopwords document is 10 KB. Example:
      *         <code>{ "stopwords": ["a", "an", "the", "of"] }</code>
      *
      * @return A reference to this updated object so that method calls can be chained 

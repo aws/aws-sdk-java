@@ -81,8 +81,8 @@ public class DynamoDBReflector {
                 }
                 getterCache.put(clazz, relevantGetters);
             }
+            return getterCache.get(clazz);
         }
-        return getterCache.get(clazz);
     }
 
     /**
@@ -114,8 +114,8 @@ public class DynamoDBReflector {
                 }
                 rangeKeyGetterCache.put(clazz, rangeKeyMethod);
             }
+            return rangeKeyGetterCache.get(clazz);
         }
-        return rangeKeyGetterCache.get(clazz);
     }
 
     /**
@@ -143,6 +143,7 @@ public class DynamoDBReflector {
      * throwing an exception if there isn't one.
      */
     <T> Method getHashKeyGetter(Class<T> clazz) {
+        Method hashKeyMethod;
         synchronized (hashKeyGetterCache) {
             if ( !hashKeyGetterCache.containsKey(clazz) ) {
                 for ( Method method : getRelevantGetters(clazz) ) {
@@ -152,9 +153,9 @@ public class DynamoDBReflector {
                     }
                 }
             }
+            hashKeyMethod = hashKeyGetterCache.get(clazz);
         }
 
-        Method hashKeyMethod = hashKeyGetterCache.get(clazz);
         if ( hashKeyMethod == null ) {
             throw new DynamoDBMappingException("Public, zero-parameter hash key property must be annotated with "
                     + DynamoDBHashKey.class);
@@ -196,390 +197,423 @@ public class DynamoDBReflector {
      * @param setter
      *            The corresponding setter method being considered
      */
-    <T> ArgumentUnmarshaller getArgumentUnmarshaller(final T toReturn, final Method getter, final Method setter) {
+    <T> ArgumentUnmarshaller getArgumentUnmarshaller(final T toReturn, final Method getter, final Method setter, S3ClientCache s3cc) {
         synchronized (argumentUnmarshallerCache) {
-            if ( !argumentUnmarshallerCache.containsKey(getter) ) {
-
-                Class<?>[] parameterTypes = setter.getParameterTypes();
-                Class<?> paramType = parameterTypes[0];
-                if ( parameterTypes.length != 1 ) {
-                    throw new DynamoDBMappingException("Expected exactly one agument to " + setter);
+            ArgumentUnmarshaller unmarshaller = argumentUnmarshallerCache.get(getter);
+            if ( unmarshaller != null ) {
+                return unmarshaller;
+            }
+            Class<?>[] parameterTypes = setter.getParameterTypes();
+            Class<?> paramType = parameterTypes[0];
+            if ( parameterTypes.length != 1 ) {
+                throw new DynamoDBMappingException("Expected exactly one agument to " + setter);
+            }
+    
+            if ( isCustomMarshaller(getter) ) {
+                unmarshaller = new SUnmarshaller() {
+    
+                    @Override
+                    public Object unmarshall(AttributeValue value) {
+                        return getCustomMarshalledValue(toReturn, getter, value);
+                    }
+                };
+            } else {
+                unmarshaller = computeArgumentUnmarshaller(toReturn, getter, setter, paramType, s3cc);
+            }
+            argumentUnmarshallerCache.put(getter, unmarshaller);
+            return unmarshaller;
+        }
+    }
+    
+    /**
+     * Note this method is synchronized on {@link #argumentUnmarshallerCache} while being executed.
+     */
+    private <T> ArgumentUnmarshaller computeArgumentUnmarshaller(
+        final T toReturn, final Method getter, final Method setter, Class<?> paramType, S3ClientCache s3cc)
+    {
+        ArgumentUnmarshaller unmarshaller = null;
+        // If we're dealing with a collection, we need to get the
+        // underlying type out of it
+        final boolean isCollection = Set.class.isAssignableFrom(paramType);
+        if ( isCollection ) {
+            Type genericType = setter.getGenericParameterTypes()[0];
+            if ( genericType instanceof ParameterizedType ) {
+                if (((ParameterizedType) genericType).getActualTypeArguments()[0].toString().equals("byte[]")) {
+                    paramType = byte[].class;
+                } else {
+                    paramType = (Class<?>) ((ParameterizedType) genericType).getActualTypeArguments()[0];
                 }
+            }
+        } else if ( Collection.class.isAssignableFrom(paramType) ) {
+            throw new DynamoDBMappingException("Only java.util.Set collection types are permitted for "
+                    + DynamoDBAttribute.class);
+        }
 
-                ArgumentUnmarshaller unmarshaller = null;
-                if ( isCustomMarshaller(getter) ) {
-                    unmarshaller = new SUnmarshaller() {
+        if ( double.class.isAssignableFrom(paramType) || Double.class.isAssignableFrom(paramType) ) {
+            if ( isCollection ) {
+                unmarshaller = new NSUnmarshaller() {
 
+                    @Override
+                    public Object unmarshall(AttributeValue value) {
+                        Set<Double> argument = new HashSet<Double>();
+                        for ( String s : value.getNS() ) {
+                            argument.add(Double.parseDouble(s));
+                        }
+                        return argument;
+                    }
+
+                };
+            } else {
+                unmarshaller = new NUnmarshaller() {
+
+                    @Override
+                    public Object unmarshall(AttributeValue value) {
+                        return Double.parseDouble(value.getN());
+                    }
+                };
+            }
+        } else if ( BigDecimal.class.isAssignableFrom(paramType) ) {
+            if ( isCollection ) {
+                unmarshaller = new NSUnmarshaller() {
+
+                    @Override
+                    public Object unmarshall(AttributeValue value) {
+                        Set<BigDecimal> argument = new HashSet<BigDecimal>();
+                        for ( String s : value.getNS() ) {
+                            argument.add(new BigDecimal(s));
+                        }
+                        return argument;
+                    }
+                };
+            } else {
+                unmarshaller = new NUnmarshaller() {
+
+                    @Override
+                    public Object unmarshall(AttributeValue value) {
+                        return new BigDecimal(value.getN());
+                    }
+                };
+
+            }
+        } else if ( BigInteger.class.isAssignableFrom(paramType) ) {
+            if ( isCollection ) {
+                unmarshaller = new NSUnmarshaller() {
+
+                    @Override
+                    public Object unmarshall(AttributeValue value) {
+                        Set<BigInteger> argument = new HashSet<BigInteger>();
+                        for ( String s : value.getNS() ) {
+                            ((Set<BigInteger>) argument).add(new BigInteger(s));
+                        }
+                        return argument;
+                    }
+                };
+            } else {
+                unmarshaller = new NUnmarshaller() {
+
+                    @Override
+                    public Object unmarshall(AttributeValue value) {
+                        return new BigInteger(value.getN());
+                    }
+                };
+            }
+        } else if ( int.class.isAssignableFrom(paramType) || Integer.class.isAssignableFrom(paramType) ) {
+            if ( isCollection ) {
+                unmarshaller = new NSUnmarshaller() {
+
+                    @Override
+                    public Object unmarshall(AttributeValue value) {
+                        Set<Integer> argument = new HashSet<Integer>();
+                        for ( String s : value.getNS() ) {
+                            argument.add(Integer.parseInt(s));
+                        }
+                        return argument;
+                    }
+                };
+            } else {
+                unmarshaller = new NUnmarshaller() {
+
+                    @Override
+                    public Object unmarshall(AttributeValue value) {
+                        return Integer.parseInt(value.getN());
+                    }
+                };
+            }
+        } else if ( float.class.isAssignableFrom(paramType) || Float.class.isAssignableFrom(paramType) ) {
+            if ( isCollection ) {
+                unmarshaller = new NSUnmarshaller() {
+
+                    @Override
+                    public Object unmarshall(AttributeValue value) {
+                        Set<Float> argument = new HashSet<Float>();
+                        for ( String s : value.getNS() ) {
+                            argument.add(Float.parseFloat(s));
+                        }
+                        return argument;
+                    }
+                };
+            } else {
+                unmarshaller = new NUnmarshaller() {
+
+                    @Override
+                    public Object unmarshall(AttributeValue value) {
+                        return Float.parseFloat(value.getN());
+                    }
+                };
+            }
+        } else if ( byte.class.isAssignableFrom(paramType) || Byte.class.isAssignableFrom(paramType) ) {
+            if ( isCollection ) {
+                unmarshaller = new NSUnmarshaller() {
+
+                    @Override
+                    public Object unmarshall(AttributeValue value) {
+                        Set<Byte> argument = new HashSet<Byte>();
+                        for ( String s : value.getNS() ) {
+                            argument.add(Byte.parseByte(s));
+                        }
+                        return argument;
+                    }
+                };
+            } else {
+                unmarshaller = new NUnmarshaller() {
+
+                    @Override
+                    public Object unmarshall(AttributeValue value) {
+                        return Byte.parseByte(value.getN());
+                    }
+                };
+            }
+        } else if ( long.class.isAssignableFrom(paramType) || Long.class.isAssignableFrom(paramType) ) {
+            if ( isCollection ) {
+                unmarshaller = new NSUnmarshaller() {
+
+                    @Override
+                    public Object unmarshall(AttributeValue value) {
+                        Set<Long> argument = new HashSet<Long>();
+                        for ( String s : value.getNS() ) {
+                            argument.add(Long.parseLong(s));
+                        }
+                        return argument;
+                    }
+                };
+            } else {
+                unmarshaller = new NUnmarshaller() {
+
+                    @Override
+                    public Object unmarshall(AttributeValue value) {
+                        return Long.parseLong(value.getN());
+                    }
+                };
+            }
+        } else if ( short.class.isAssignableFrom(paramType) || Short.class.isAssignableFrom(paramType) ) {
+            if ( isCollection ) {
+                unmarshaller = new NSUnmarshaller() {
+
+                    @Override
+                    public Object unmarshall(AttributeValue value) {
+                        Set<Short> argument = new HashSet<Short>();
+                        for ( String s : value.getNS() ) {
+                            argument.add(Short.parseShort(s));
+                        }
+                        return argument;
+                    }
+                };
+            } else {
+                unmarshaller = new NUnmarshaller() {
+
+                    @Override
+                    public Object unmarshall(AttributeValue value) {
+                        return Short.parseShort(value.getN());
+                    }
+                };
+            }
+        } else if ( boolean.class.isAssignableFrom(paramType) || Boolean.class.isAssignableFrom(paramType) ) {
+            if ( isCollection ) {
+                unmarshaller = new NSUnmarshaller() {
+
+                    @Override
+                    public Object unmarshall(AttributeValue value) {
+                        Set<Boolean> argument = new HashSet<Boolean>();
+                        for ( String s : value.getNS() ) {
+                            argument.add(parseBoolean(s));
+                        }
+                        return argument;
+                    }
+                };
+            } else {
+                unmarshaller = new NUnmarshaller() {
+
+                    @Override
+                    public Object unmarshall(AttributeValue value) {
+                        return parseBoolean(value.getN());
+                    }
+                };
+            }
+        } else if ( Date.class.isAssignableFrom(paramType) ) {
+            if ( isCollection ) {
+                unmarshaller = new SSUnmarshaller() {
+
+                    @Override
+                    public Object unmarshall(AttributeValue value) throws ParseException {
+                        Set<Date> argument = new HashSet<Date>();
+                        for ( String s : value.getSS() ) {
+                            argument.add(new DateUtils().parseIso8601Date(s));
+                        }
+                        return argument;
+                    }
+                };
+            } else {
+                unmarshaller = new SUnmarshaller() {
+
+                    @Override
+                    public Object unmarshall(AttributeValue value) throws ParseException {
+                        return new DateUtils().parseIso8601Date(value.getS());
+                    }
+                };
+            }
+        } else if ( Calendar.class.isAssignableFrom(paramType) ) {
+            if ( isCollection ) {
+                unmarshaller = new SSUnmarshaller() {
+
+                    @Override
+                    public Object unmarshall(AttributeValue value) throws ParseException {
+                        Set<Calendar> argument = new HashSet<Calendar>();
+                        for ( String s : value.getSS() ) {
+                            Calendar cal = GregorianCalendar.getInstance();
+                            cal.setTime(new DateUtils().parseIso8601Date(s));
+                            argument.add(cal);
+                        }
+                        return argument;
+                    }
+                };
+            } else {
+                unmarshaller = new SUnmarshaller() {
+                  
+                    @Override
+                    public Object unmarshall(AttributeValue value) throws ParseException {
+                        Calendar cal = GregorianCalendar.getInstance();
+                        cal.setTime(new DateUtils().parseIso8601Date(value.getS()));
+                        return cal;
+                    }
+                };
+            }
+        } else if (ByteBuffer.class.isAssignableFrom(paramType)) {
+              if ( isCollection ) {
+                  unmarshaller = new BSUnmarshaller() {
+
+                      @Override
+                      public Object unmarshall(AttributeValue value) throws ParseException {
+                         Set<ByteBuffer> argument = new HashSet<ByteBuffer>();
+                         for (ByteBuffer b : value.getBS()) {
+                         argument.add(b);
+                         }
+                         return argument;
+                      }
+                  };
+              } else {
+                  unmarshaller = new BUnmarshaller() {
+                      
+                      @Override
+                      public Object unmarshall(AttributeValue value) throws ParseException {
+                          return value.getB();
+                      }
+                  };
+              }
+        } else if (byte[].class.isAssignableFrom(paramType)) {
+             if ( isCollection ) {
+              unmarshaller = new BSUnmarshaller() {
+
+                     @Override
+                     public Object unmarshall(AttributeValue value) throws ParseException {
+                     Set<byte[]> argument = new HashSet<byte[]>();
+                     for (ByteBuffer b : value.getBS()) {
+                         byte[] bytes = null;
+                        if (b.hasArray()) {
+                            bytes = b.array();
+                        } else {
+                            bytes = new byte[b.limit()];
+                            b.get(bytes, 0, bytes.length);
+                        }
+                        argument.add(bytes);
+                     }
+                        return argument;
+                     }
+                 };
+          } else {
+              unmarshaller = new BUnmarshaller() {
+                  
+                     @Override
+                     public Object unmarshall(AttributeValue value) throws ParseException {
+                         ByteBuffer byteBuffer = value.getB();
+                         byte[] bytes = null;
+                         if (byteBuffer.hasArray()) {
+                                bytes = byteBuffer.array();
+                            } else {
+                                bytes = new byte[byteBuffer.limit()];
+                                byteBuffer.get(bytes, 0, bytes.length);
+                            }
+                         return bytes;
+                     }
+                 };
+          }
+        } else {
+            unmarshaller = defaultArgumentUnmarshaller(paramType, isCollection, s3cc);
+        }
+        return unmarshaller;
+    }
+
+    /**
+     * Note this method is synchronized on {@link #argumentUnmarshallerCache} while being executed.
+     * @param paramType the parameter type or the element type if the parameter is a collection
+     * @param isCollection true if the parameter is a collection; false otherwise.
+     * @return the default unmarshaller
+     */
+    private ArgumentUnmarshaller defaultArgumentUnmarshaller
+        (Class<?> paramType, boolean isCollection, final S3ClientCache s3cc)
+    {
+        if (S3Link.class.isAssignableFrom(paramType)) {
+            if ( isCollection ) {
+                throw new DynamoDBMappingException("Collection types are not permitted for " + S3Link.class);
+            } else {
+                return new SUnmarshaller() {
+                    @Override
+                    public Object unmarshall(AttributeValue value) {
+                        if ( s3cc == null ) {
+                            throw new IllegalStateException("Mapper must be constructed with S3 AWS Credentials to load S3Link");
+                        }
+                        // value should never be null
+                        String json = value.getS();
+                        return S3Link.fromJson(s3cc, json);
+                    }
+                };
+            }
+        } else {
+            if ( !String.class.isAssignableFrom(paramType) ) {
+                throw new DynamoDBMappingException("Expected a String, but was " + paramType);
+            } else {
+                if ( isCollection ) {
+                    return new SSUnmarshaller() {
+    
                         @Override
                         public Object unmarshall(AttributeValue value) {
-                            return getCustomMarshalledValue(toReturn, getter, value);
+                            Set<String> argument = new HashSet<String>();
+                            for ( String s : value.getSS() ) {
+                                argument.add(s);
+                            }
+                            return argument;
                         }
                     };
                 } else {
-
-                    // If we're dealing with a collection, we need to get the
-                    // underlying type out of it
-                    boolean isCollection = false;
-                    if ( Set.class.isAssignableFrom(paramType) ) {
-                        isCollection = true;
-                        Type genericType = setter.getGenericParameterTypes()[0];
-                        if ( genericType instanceof ParameterizedType ) {
-                        	if (((ParameterizedType) genericType).getActualTypeArguments()[0].toString().equals("byte[]")) {
-                        		paramType = byte[].class;
-                        	} else {
-                        		 paramType = (Class<?>) ((ParameterizedType) genericType).getActualTypeArguments()[0];
-                        	}
+                    return new SUnmarshaller() {
+    
+                        @Override
+                        public Object unmarshall(AttributeValue value) {
+                            return value.getS();
                         }
-                    } else if ( Collection.class.isAssignableFrom(paramType) ) {
-                        throw new DynamoDBMappingException("Only java.util.Set collection types are permitted for "
-                                + DynamoDBAttribute.class);
-                    }
-
-                    if ( double.class.isAssignableFrom(paramType) || Double.class.isAssignableFrom(paramType) ) {
-                        if ( isCollection ) {
-                            unmarshaller = new NSUnmarshaller() {
-
-                                @Override
-                                public Object unmarshall(AttributeValue value) {
-                                    Set<Double> argument = new HashSet<Double>();
-                                    for ( String s : value.getNS() ) {
-                                        argument.add(Double.parseDouble(s));
-                                    }
-                                    return argument;
-                                }
-
-                            };
-                        } else {
-                            unmarshaller = new NUnmarshaller() {
-
-                                @Override
-                                public Object unmarshall(AttributeValue value) {
-                                    return Double.parseDouble(value.getN());
-                                }
-                            };
-                        }
-                    } else if ( BigDecimal.class.isAssignableFrom(paramType) ) {
-                        if ( isCollection ) {
-                            unmarshaller = new NSUnmarshaller() {
-
-                                @Override
-                                public Object unmarshall(AttributeValue value) {
-                                    Set<BigDecimal> argument = new HashSet<BigDecimal>();
-                                    for ( String s : value.getNS() ) {
-                                        argument.add(new BigDecimal(s));
-                                    }
-                                    return argument;
-                                }
-                            };
-                        } else {
-                            unmarshaller = new NUnmarshaller() {
-
-                                @Override
-                                public Object unmarshall(AttributeValue value) {
-                                    return new BigDecimal(value.getN());
-                                }
-                            };
-
-                        }
-                    } else if ( BigInteger.class.isAssignableFrom(paramType) ) {
-                        if ( isCollection ) {
-                            unmarshaller = new NSUnmarshaller() {
-
-                                @Override
-                                public Object unmarshall(AttributeValue value) {
-                                    Set<BigInteger> argument = new HashSet<BigInteger>();
-                                    for ( String s : value.getNS() ) {
-                                        ((Set<BigInteger>) argument).add(new BigInteger(s));
-                                    }
-                                    return argument;
-                                }
-                            };
-                        } else {
-                            unmarshaller = new NUnmarshaller() {
-
-                                @Override
-                                public Object unmarshall(AttributeValue value) {
-                                    return new BigInteger(value.getN());
-                                }
-                            };
-                        }
-                    } else if ( int.class.isAssignableFrom(paramType) || Integer.class.isAssignableFrom(paramType) ) {
-                        if ( isCollection ) {
-                            unmarshaller = new NSUnmarshaller() {
-
-                                @Override
-                                public Object unmarshall(AttributeValue value) {
-                                    Set<Integer> argument = new HashSet<Integer>();
-                                    for ( String s : value.getNS() ) {
-                                        argument.add(Integer.parseInt(s));
-                                    }
-                                    return argument;
-                                }
-                            };
-                        } else {
-                            unmarshaller = new NUnmarshaller() {
-
-                                @Override
-                                public Object unmarshall(AttributeValue value) {
-                                    return Integer.parseInt(value.getN());
-                                }
-                            };
-                        }
-                    } else if ( float.class.isAssignableFrom(paramType) || Float.class.isAssignableFrom(paramType) ) {
-                        if ( isCollection ) {
-                            unmarshaller = new NSUnmarshaller() {
-
-                                @Override
-                                public Object unmarshall(AttributeValue value) {
-                                    Set<Float> argument = new HashSet<Float>();
-                                    for ( String s : value.getNS() ) {
-                                        argument.add(Float.parseFloat(s));
-                                    }
-                                    return argument;
-                                }
-                            };
-                        } else {
-                            unmarshaller = new NUnmarshaller() {
-
-                                @Override
-                                public Object unmarshall(AttributeValue value) {
-                                    return Float.parseFloat(value.getN());
-                                }
-                            };
-                        }
-                    } else if ( byte.class.isAssignableFrom(paramType) || Byte.class.isAssignableFrom(paramType) ) {
-                        if ( isCollection ) {
-                            unmarshaller = new NSUnmarshaller() {
-
-                                @Override
-                                public Object unmarshall(AttributeValue value) {
-                                    Set<Byte> argument = new HashSet<Byte>();
-                                    for ( String s : value.getNS() ) {
-                                        argument.add(Byte.parseByte(s));
-                                    }
-                                    return argument;
-                                }
-                            };
-                        } else {
-                            unmarshaller = new NUnmarshaller() {
-
-                                @Override
-                                public Object unmarshall(AttributeValue value) {
-                                    return Byte.parseByte(value.getN());
-                                }
-                            };
-                        }
-                    } else if ( long.class.isAssignableFrom(paramType) || Long.class.isAssignableFrom(paramType) ) {
-                        if ( isCollection ) {
-                            unmarshaller = new NSUnmarshaller() {
-
-                                @Override
-                                public Object unmarshall(AttributeValue value) {
-                                    Set<Long> argument = new HashSet<Long>();
-                                    for ( String s : value.getNS() ) {
-                                        argument.add(Long.parseLong(s));
-                                    }
-                                    return argument;
-                                }
-                            };
-                        } else {
-                            unmarshaller = new NUnmarshaller() {
-
-                                @Override
-                                public Object unmarshall(AttributeValue value) {
-                                    return Long.parseLong(value.getN());
-                                }
-                            };
-                        }
-                    } else if ( short.class.isAssignableFrom(paramType) || Short.class.isAssignableFrom(paramType) ) {
-                        if ( isCollection ) {
-                            unmarshaller = new NSUnmarshaller() {
-
-                                @Override
-                                public Object unmarshall(AttributeValue value) {
-                                    Set<Short> argument = new HashSet<Short>();
-                                    for ( String s : value.getNS() ) {
-                                        argument.add(Short.parseShort(s));
-                                    }
-                                    return argument;
-                                }
-                            };
-                        } else {
-                            unmarshaller = new NUnmarshaller() {
-
-                                @Override
-                                public Object unmarshall(AttributeValue value) {
-                                    return Short.parseShort(value.getN());
-                                }
-                            };
-                        }
-                    } else if ( boolean.class.isAssignableFrom(paramType) || Boolean.class.isAssignableFrom(paramType) ) {
-                        if ( isCollection ) {
-                            unmarshaller = new NSUnmarshaller() {
-
-                                @Override
-                                public Object unmarshall(AttributeValue value) {
-                                    Set<Boolean> argument = new HashSet<Boolean>();
-                                    for ( String s : value.getNS() ) {
-                                        argument.add(parseBoolean(s));
-                                    }
-                                    return argument;
-                                }
-                            };
-                        } else {
-                            unmarshaller = new NUnmarshaller() {
-
-                                @Override
-                                public Object unmarshall(AttributeValue value) {
-                                    return parseBoolean(value.getN());
-                                }
-                            };
-                        }
-                    } else if ( Date.class.isAssignableFrom(paramType) ) {
-                        if ( isCollection ) {
-                            unmarshaller = new SSUnmarshaller() {
-
-                                @Override
-                                public Object unmarshall(AttributeValue value) throws ParseException {
-                                    Set<Date> argument = new HashSet<Date>();
-                                    for ( String s : value.getSS() ) {
-                                        argument.add(new DateUtils().parseIso8601Date(s));
-                                    }
-                                    return argument;
-                                }
-                            };
-                        } else {
-                            unmarshaller = new SUnmarshaller() {
-
-                                @Override
-                                public Object unmarshall(AttributeValue value) throws ParseException {
-                                    return new DateUtils().parseIso8601Date(value.getS());
-                                }
-                            };
-                        }
-                    } else if ( Calendar.class.isAssignableFrom(paramType) ) {
-                        if ( isCollection ) {
-                            unmarshaller = new SSUnmarshaller() {
-
-                                @Override
-                                public Object unmarshall(AttributeValue value) throws ParseException {
-                                    Set<Calendar> argument = new HashSet<Calendar>();
-                                    for ( String s : value.getSS() ) {
-                                        Calendar cal = GregorianCalendar.getInstance();
-                                        cal.setTime(new DateUtils().parseIso8601Date(s));
-                                        argument.add(cal);
-                                    }
-                                    return argument;
-                                }
-                            };
-                        } else {
-                            unmarshaller = new SUnmarshaller() {
-                              
-                                @Override
-                                public Object unmarshall(AttributeValue value) throws ParseException {
-                                    Calendar cal = GregorianCalendar.getInstance();
-                                    cal.setTime(new DateUtils().parseIso8601Date(value.getS()));
-                                    return cal;
-                                }
-                            };
-                        }
-                    } else if (ByteBuffer.class.isAssignableFrom(paramType)) {
-                    	  if ( isCollection ) {
-                    		  unmarshaller = new BSUnmarshaller() {
-
-                                  @Override
-                                  public Object unmarshall(AttributeValue value) throws ParseException {
-                                	 Set<ByteBuffer> argument = new HashSet<ByteBuffer>();
-                                	 for (ByteBuffer b : value.getBS()) {
-                                	 argument.add(b);
-                                	 }
-                                     return argument;
-                                  }
-                              };
-                    	  } else {
-                    		  unmarshaller = new BUnmarshaller() {
-                    			  
-                                  @Override
-                                  public Object unmarshall(AttributeValue value) throws ParseException {
-                                      return value.getB();
-                                  }
-                              };
-                    	  }
-                    } else if (byte[].class.isAssignableFrom(paramType)) {
-                    	 if ( isCollection ) {
-                   		  unmarshaller = new BSUnmarshaller() {
-
-                                 @Override
-                                 public Object unmarshall(AttributeValue value) throws ParseException {
-                               	 Set<byte[]> argument = new HashSet<byte[]>();
-                               	 for (ByteBuffer b : value.getBS()) {
-                               		 byte[] bytes = null;
-                               		if (b.hasArray()) {
-                               			bytes = b.array();
-                               		} else {
-                               			bytes = new byte[b.limit()];
-                               			b.get(bytes, 0, bytes.length);
-                               		}
-                               		argument.add(bytes);
-                               	 }
-                                    return argument;
-                                 }
-                             };
-                   	  } else {
-                   		  unmarshaller = new BUnmarshaller() {
-                   			  
-                                 @Override
-                                 public Object unmarshall(AttributeValue value) throws ParseException {
-                                	 ByteBuffer byteBuffer = value.getB();
-                                	 byte[] bytes = null;
-                                	 if (byteBuffer.hasArray()) {
-                                			bytes = byteBuffer.array();
-                                		} else {
-                                			bytes = new byte[byteBuffer.limit()];
-                                			byteBuffer.get(bytes, 0, bytes.length);
-                                		}
-                                     return bytes;
-                                 }
-                             };
-                   	  }
-                    }
-
-                    /*
-                     * After checking all other supported types, enforce a
-                     * String match
-                     */
-                    else if ( !String.class.isAssignableFrom(paramType) ) {                	 
-                        throw new DynamoDBMappingException("Expected a String, but was " + paramType);
-                    } else {
-                        if ( isCollection ) {
-                            unmarshaller = new SSUnmarshaller() {
-
-                                @Override
-                                public Object unmarshall(AttributeValue value) {
-                                    Set<String> argument = new HashSet<String>();
-                                    for ( String s : value.getSS() ) {
-                                        argument.add(s);
-                                    }
-                                    return argument;
-                                }
-                            };
-                        } else {
-                            unmarshaller = new SUnmarshaller() {
-
-                                @Override
-                                public Object unmarshall(AttributeValue value) {
-                                    return value.getS();
-                                }
-                            };
-                        }
-                    }
+                    };
                 }
-
-                argumentUnmarshallerCache.put(getter, unmarshaller);
             }
         }
-
-        return argumentUnmarshallerCache.get(getter);
     }
 
     /**
@@ -603,8 +637,7 @@ public class DynamoDBReflector {
     }
 
     /**
-     * Returns an attribute value for the getter method with a custom marshaller.
-     * Directly returns null when the custom marshaller returns a null String.
+     * Returns an attribute value for the getter method with a custom marshaller
      */
     @SuppressWarnings({ "rawtypes", "unchecked" })
     private AttributeValue getCustomerMarshallerAttributeValue(Method getter, Object getterReturnResult) {
@@ -622,12 +655,8 @@ public class DynamoDBReflector {
                     e);
         }
         String stringValue = marshaller.marshall(getterReturnResult);
-        
-        if(stringValue == null) {
-            return null;
-        } else {
-            return new AttributeValue().withS(stringValue);
-        }
+
+        return new AttributeValue().withS(stringValue);
     }
 
     /**
@@ -635,200 +664,242 @@ public class DynamoDBReflector {
      * result of the getter given.
      */
     ArgumentMarshaller getArgumentMarshaller(final Method getter) {
-
         synchronized (argumentMarshallerCache) {
-            if ( !argumentMarshallerCache.containsKey(getter) ) {
-                ArgumentMarshaller marshaller = null;
+            ArgumentMarshaller marshaller = argumentMarshallerCache.get(getter);
+            if ( marshaller != null ) {
+                return marshaller;
+            }
+            if ( isCustomMarshaller(getter) ) {
+                marshaller = new ArgumentMarshaller() {
+                    @Override public AttributeValue marshall(Object obj) {
+                        return getCustomerMarshallerAttributeValue(getter, obj);
+                    }
+                };
+            } else {
+                marshaller = computeArgumentMarshaller(getter);
+            }
+            argumentMarshallerCache.put(getter, marshaller);
+            return marshaller;
+        }
+    }
 
-                if ( isCustomMarshaller(getter) ) {
-                    marshaller = new ArgumentMarshaller() {
-
-                        @Override
-                        public AttributeValue marshall(Object obj) {
-                            return getCustomerMarshallerAttributeValue(getter, obj);
-                        }
-                    };
+    /** 
+     * Note this method is synchronized on {@link #argumentMarshallerCache} while being executed.
+     */
+    private ArgumentMarshaller computeArgumentMarshaller(final Method getter) {
+        ArgumentMarshaller marshaller;
+        Class<?> returnType = getter.getReturnType();
+        if ( Set.class.isAssignableFrom(returnType) ) {
+            Type genericType = getter.getGenericReturnType();
+            if ( genericType instanceof ParameterizedType ) {
+                if ( ((ParameterizedType) genericType).getActualTypeArguments()[0].toString().equals("byte[]") ) {
+                    returnType = byte[].class;
                 } else {
+                    returnType = (Class<?>) ((ParameterizedType) genericType).getActualTypeArguments()[0];
+                }
+            }
 
-                    Class<?> returnType = getter.getReturnType();
-                    if ( Set.class.isAssignableFrom(returnType) ) {
-                        Type genericType = getter.getGenericReturnType();
-                        if ( genericType instanceof ParameterizedType ) {
-                            if ( ((ParameterizedType) genericType).getActualTypeArguments()[0].toString().equals("byte[]") ) {
-                                returnType = byte[].class;
+            if ( Date.class.isAssignableFrom(returnType) ) {
+                marshaller = new ArgumentMarshaller() {
+
+                    @Override
+                    public AttributeValue marshall(Object obj) {
+                        List<String> timestamps = new LinkedList<String>();
+                        for ( Object o : (Set<?>) obj ) {
+                            timestamps.add(new DateUtils().formatIso8601Date((Date) o));
+                        }
+                        return new AttributeValue().withSS(timestamps);
+                    }
+                };
+            } else if ( Calendar.class.isAssignableFrom(returnType) ) {
+                marshaller = new ArgumentMarshaller() {
+
+                    @Override
+                    public AttributeValue marshall(Object obj) {
+                        List<String> timestamps = new LinkedList<String>();
+                        for ( Object o : (Set<?>) obj ) {
+                            timestamps.add(new DateUtils().formatIso8601Date(((Calendar) o).getTime()));
+                        }
+                        return new AttributeValue().withSS(timestamps);
+                    }
+                };
+            } else if ( boolean.class.isAssignableFrom(returnType)
+                    || Boolean.class.isAssignableFrom(returnType) ) {
+                marshaller = new ArgumentMarshaller() {
+
+                    @Override
+                    public AttributeValue marshall(Object obj) {
+                        List<String> booleanAttributes = new ArrayList<String>();
+                        for ( Object b : (Set<?>) obj ) {
+                            if ( b == null || !(Boolean) b ) {
+                                booleanAttributes.add("0");
                             } else {
-                                returnType = (Class<?>) ((ParameterizedType) genericType).getActualTypeArguments()[0];
+                                booleanAttributes.add("1");
                             }
                         }
+                        return new AttributeValue().withNS(booleanAttributes);
+                    }
+                };
+            } else if ( returnType.isPrimitive() || Number.class.isAssignableFrom(returnType) ) {
+                marshaller = new ArgumentMarshaller() {
 
-                        if ( Date.class.isAssignableFrom(returnType) ) {
-                            marshaller = new ArgumentMarshaller() {
-
-                                @Override
-                                public AttributeValue marshall(Object obj) {
-                                    List<String> timestamps = new LinkedList<String>();
-                                    for ( Object o : (Set<?>) obj ) {
-                                        timestamps.add(new DateUtils().formatIso8601Date((Date) o));
-                                    }
-                                    return new AttributeValue().withSS(timestamps);
-                                }
-                            };
-                        } else if ( Calendar.class.isAssignableFrom(returnType) ) {
-                            marshaller = new ArgumentMarshaller() {
-
-                                @Override
-                                public AttributeValue marshall(Object obj) {
-                                    List<String> timestamps = new LinkedList<String>();
-                                    for ( Object o : (Set<?>) obj ) {
-                                        timestamps.add(new DateUtils().formatIso8601Date(((Calendar) o).getTime()));
-                                    }
-                                    return new AttributeValue().withSS(timestamps);
-                                }
-                            };
-                        } else if ( boolean.class.isAssignableFrom(returnType)
-                                || Boolean.class.isAssignableFrom(returnType) ) {
-                            marshaller = new ArgumentMarshaller() {
-
-                                @Override
-                                public AttributeValue marshall(Object obj) {
-                                    List<String> booleanAttributes = new ArrayList<String>();
-                                    for ( Object b : (Set<?>) obj ) {
-                                        if ( b == null || !(Boolean) b ) {
-                                            booleanAttributes.add("0");
-                                        } else {
-                                            booleanAttributes.add("1");
-                                        }
-                                    }
-                                    return new AttributeValue().withNS(booleanAttributes);
-                                }
-                            };
-                        } else if ( returnType.isPrimitive() || Number.class.isAssignableFrom(returnType) ) {
-                            marshaller = new ArgumentMarshaller() {
-
-                                @Override
-                                public AttributeValue marshall(Object obj) {
-                                    List<String> attributes = new ArrayList<String>();
-                                    for ( Object o : (Set<?>) obj ) {
-                                        attributes.add(String.valueOf(o));
-                                    }
-                                    return new AttributeValue().withNS(attributes);
-                                }
-                            };
-                        } else if (ByteBuffer.class.isAssignableFrom(returnType)) {
-                        	 marshaller = new ArgumentMarshaller() {
-
-                                 @Override
-                                 public AttributeValue marshall(Object obj) {
-                                     List<ByteBuffer> attributes = new ArrayList<ByteBuffer>();
-                                     for ( Object o : (Set<?>) obj ) {
-                                         attributes.add((ByteBuffer) o);
-                                     }
-                                     return new AttributeValue().withBS(attributes);
-                                 }
-                             };
-                        } else if (byte[].class.isAssignableFrom(returnType)) { 
-                        	 marshaller = new ArgumentMarshaller() {
-
-                                 @Override
-                                 public AttributeValue marshall(Object obj) {
-                                     List<ByteBuffer> attributes = new ArrayList<ByteBuffer>();
-                                     for ( Object o : (Set<?>) obj ) {
-                                         attributes.add(ByteBuffer.wrap((byte[])o));
-                                     }
-                                     return new AttributeValue().withBS(attributes);
-                                 }
-                             };
-                        } else {
-                            marshaller = new ArgumentMarshaller() {
-
-                                @Override
-                                public AttributeValue marshall(Object obj) {
-                                    List<String> attributes = new ArrayList<String>();
-                                    for ( Object o : (Set<?>) obj ) {
-                                        attributes.add(String.valueOf(o));
-                                    }
-                                    return new AttributeValue().withSS(attributes);
-                                }
-                            };
+                    @Override
+                    public AttributeValue marshall(Object obj) {
+                        List<String> attributes = new ArrayList<String>();
+                        for ( Object o : (Set<?>) obj ) {
+                            attributes.add(String.valueOf(o));
                         }
-                    } else if ( Collection.class.isAssignableFrom(returnType) ) {
-                        throw new DynamoDBMappingException("Non-set collections aren't supported: "
-                                + (getter.getDeclaringClass() + "." + getter.getName()));
-                    } else {
-                        if ( Date.class.isAssignableFrom(returnType) ) {
-                            marshaller = new ArgumentMarshaller() {
+                        return new AttributeValue().withNS(attributes);
+                    }
+                };
+            } else if (ByteBuffer.class.isAssignableFrom(returnType)) {
+                 marshaller = new ArgumentMarshaller() {
 
-                                @Override
-                                public AttributeValue marshall(Object obj) {
-                                    return new AttributeValue().withS(new DateUtils().formatIso8601Date((Date) obj));
-                                }
-                            };
-                        } else if ( Calendar.class.isAssignableFrom(returnType) ) {
-                            marshaller = new ArgumentMarshaller() {
+                     @Override
+                     public AttributeValue marshall(Object obj) {
+                         List<ByteBuffer> attributes = new ArrayList<ByteBuffer>();
+                         for ( Object o : (Set<?>) obj ) {
+                             attributes.add((ByteBuffer) o);
+                         }
+                         return new AttributeValue().withBS(attributes);
+                     }
+                 };
+            } else if (byte[].class.isAssignableFrom(returnType)) { 
+                 marshaller = new ArgumentMarshaller() {
 
-                                @Override
-                                public AttributeValue marshall(Object obj) {
-                                    return new AttributeValue().withS(new DateUtils()
-                                            .formatIso8601Date(((Calendar) obj).getTime()));
-                                }
-                            };
-                        } else if ( boolean.class.isAssignableFrom(returnType)
-                                || Boolean.class.isAssignableFrom(returnType) ) {
-                            marshaller = new ArgumentMarshaller() {
+                     @Override
+                     public AttributeValue marshall(Object obj) {
+                         List<ByteBuffer> attributes = new ArrayList<ByteBuffer>();
+                         for ( Object o : (Set<?>) obj ) {
+                             attributes.add(ByteBuffer.wrap((byte[])o));
+                         }
+                         return new AttributeValue().withBS(attributes);
+                     }
+                 };
+            } else {
+                // subclass may extend the behavior by overriding the
+                // defaultCollectionArgumentMarshaller method
+                marshaller = defaultCollectionArgumentMarshaller(returnType);
+            }
+        } else if ( Collection.class.isAssignableFrom(returnType) ) {
+            throw new DynamoDBMappingException("Non-set collections aren't supported: "
+                    + (getter.getDeclaringClass() + "." + getter.getName()));
+        } else { // Non-set return type
+            if ( Date.class.isAssignableFrom(returnType) ) {
+                marshaller = new ArgumentMarshaller() {
 
-                                @Override
-                                public AttributeValue marshall(Object obj) {
-                                    if ( obj == null || !(Boolean) obj ) {
-                                        return new AttributeValue().withN("0");
-                                    } else {
-                                        return new AttributeValue().withN("1");
-                                    }
-                                }
-                            };
-                        } else if ( returnType.isPrimitive() || Number.class.isAssignableFrom(returnType) ) {
-                            marshaller = new ArgumentMarshaller() {
+                    @Override
+                    public AttributeValue marshall(Object obj) {
+                        return new AttributeValue().withS(new DateUtils().formatIso8601Date((Date) obj));
+                    }
+                };
+            } else if ( Calendar.class.isAssignableFrom(returnType) ) {
+                marshaller = new ArgumentMarshaller() {
 
-                                @Override
-                                public AttributeValue marshall(Object obj) {
-                                    return new AttributeValue().withN(String.valueOf(obj));
-                                }
-                            };
-                        } else if ( returnType == String.class ) {
-                            marshaller = new ArgumentMarshaller() {
+                    @Override
+                    public AttributeValue marshall(Object obj) {
+                        return new AttributeValue().withS(new DateUtils()
+                                .formatIso8601Date(((Calendar) obj).getTime()));
+                    }
+                };
+            } else if ( boolean.class.isAssignableFrom(returnType)
+                    || Boolean.class.isAssignableFrom(returnType) ) {
+                marshaller = new ArgumentMarshaller() {
 
-                                @Override
-                                public AttributeValue marshall(Object obj) {
-                                    if ( ((String) obj).length() == 0 )
-                                        return null;
-                                    return new AttributeValue().withS(String.valueOf(obj));
-                                }
-                            };
-                        } else if ( returnType == ByteBuffer.class ) {
-                        	marshaller = new ArgumentMarshaller() {
-
-                                @Override
-                                public AttributeValue marshall(Object obj) {
-                                    return new AttributeValue().withB((ByteBuffer)obj);
-                                }
-                            };
-                        } else if ( returnType == byte[].class) {
-                        	 marshaller = new ArgumentMarshaller() {
-
-                                 @Override
-                                 public AttributeValue marshall(Object obj) {
-                                     return new AttributeValue().withB(ByteBuffer.wrap((byte[])obj));
-                                 }
-                             };
+                    @Override
+                    public AttributeValue marshall(Object obj) {
+                        if ( obj == null || !(Boolean) obj ) {
+                            return new AttributeValue().withN("0");
                         } else {
-                            throw new DynamoDBMappingException("Unsupported type: " + returnType + " for " + getter);
+                            return new AttributeValue().withN("1");
                         }
                     }
-                }
-                argumentMarshallerCache.put(getter, marshaller);
+                };
+            } else if ( returnType.isPrimitive() || Number.class.isAssignableFrom(returnType) ) {
+                marshaller = new ArgumentMarshaller() {
+
+                    @Override
+                    public AttributeValue marshall(Object obj) {
+                        return new AttributeValue().withN(String.valueOf(obj));
+                    }
+                };
+            } else if ( returnType == String.class ) {
+                marshaller = new ArgumentMarshaller() {
+
+                    @Override
+                    public AttributeValue marshall(Object obj) {
+                        if ( ((String) obj).length() == 0 )
+                            return null;
+                        return new AttributeValue().withS(String.valueOf(obj));
+                    }
+                };
+            } else if ( returnType == ByteBuffer.class ) {
+                marshaller = new ArgumentMarshaller() {
+
+                    @Override
+                    public AttributeValue marshall(Object obj) {
+                        return new AttributeValue().withB((ByteBuffer)obj);
+                    }
+                };
+            } else if ( returnType == byte[].class) {
+                 marshaller = new ArgumentMarshaller() {
+
+                     @Override
+                     public AttributeValue marshall(Object obj) {
+                         return new AttributeValue().withB(ByteBuffer.wrap((byte[])obj));
+                     }
+                 };
+            } else {
+                marshaller = defaultArgumentMarshaller(returnType, getter);
             }
         }
+        return marshaller;
+    }
 
-        return argumentMarshallerCache.get(getter);
+    /**
+     * Note this method is synchronized on {@link #argumentMarshallerCache} while being executed.
+     * @param returnElementType the element of the return type which is known to be a collection
+     * @return the default argument marshaller for a collection
+     */
+    private ArgumentMarshaller defaultCollectionArgumentMarshaller(final Class<?> returnElementType) {
+        if ( S3Link.class.isAssignableFrom(returnElementType) ) {
+            throw new DynamoDBMappingException("Collection types not permitted for " + S3Link.class);
+        } else {
+            return new ArgumentMarshaller() {
+                @Override
+                public AttributeValue marshall(Object obj) {
+                    List<String> attributes = new ArrayList<String>();
+                    for ( Object o : (Set<?>) obj ) {
+                        attributes.add(String.valueOf(o));
+                    }
+                    return new AttributeValue().withSS(attributes);
+                }
+            };
+        }
+    }
+
+    /**
+     * Note this method is synchronized on {@link #argumentMarshallerCache} while being executed.
+     * @param returnType the return type
+     * @return the default argument marshaller
+     */
+    private ArgumentMarshaller defaultArgumentMarshaller(final Class<?> returnType, final Method getter) {
+        if ( returnType == S3Link.class ) {
+            return new ArgumentMarshaller() {
+                @Override
+                public AttributeValue marshall(Object obj) {
+                    S3Link s3link = (S3Link) obj;
+                    if ( s3link.getBucketName() == null || s3link.getKey() == null ) {
+                        // insufficient S3 resource specification
+                        return null; 
+                    }
+                    String json = s3link.toJson();
+                    return new AttributeValue().withS(json);
+                }
+            };
+        } else {
+            throw new DynamoDBMappingException("Unsupported type: " + returnType + " for " + getter);
+        }
     }
 
     /**
@@ -892,9 +963,8 @@ public class DynamoDBReflector {
                 attributeName = attributeName.substring(0, 1).toLowerCase() + attributeName.substring(1);
                 attributeNameCache.put(getter, attributeName);
             }
+            return attributeNameCache.get(getter);
         }
-        
-        return attributeNameCache.get(getter);
     }
 
     /**
@@ -926,9 +996,8 @@ public class DynamoDBReflector {
                 }
                 setterCache.put(getter, setter);
             }
+            return setterCache.get(getter);
         }
-        
-        return setterCache.get(getter);
     }
 
     /**
@@ -998,9 +1067,8 @@ public class DynamoDBReflector {
 
                 versionArgumentMarshallerCache.put(getter, marshaller);
             }
+            return versionArgumentMarshallerCache.get(getter);
         }
-
-        return versionArgumentMarshallerCache.get(getter);
     }
 
     /**
@@ -1028,9 +1096,8 @@ public class DynamoDBReflector {
 
                 keyArgumentMarshallerCache.put(getter, marshaller);
             }
+            return keyArgumentMarshallerCache.get(getter);
         }
-
-        return keyArgumentMarshallerCache.get(getter);
     }
 
     /**
@@ -1045,9 +1112,8 @@ public class DynamoDBReflector {
                         getter.getName().startsWith("get") && getter.getParameterTypes().length == 0
                                 && getter.isAnnotationPresent(DynamoDBVersionAttribute.class));
             }
+            return versionAttributeGetterCache.get(getter);
         }
-        
-        return versionAttributeGetterCache.get(getter);
     }
     
     /**
@@ -1062,9 +1128,8 @@ public class DynamoDBReflector {
                                 && (getter.isAnnotationPresent(DynamoDBHashKey.class) || getter
                                         .isAnnotationPresent(DynamoDBRangeKey.class)));
             }
+            return autoGeneratedKeyGetterCache.get(getter);
         }
-
-        return autoGeneratedKeyGetterCache.get(getter);
     }
     
     /**
@@ -1103,12 +1168,11 @@ public class DynamoDBReflector {
                 }
             	indexKeyNameToIndexNamesCache.cache(clazz, indexKeyNameToIndexNamesMap);
             }
+            return indexKeyNameToIndexNamesCache.getIndexNames(clazz, indexRangeKeyName);
         }
-        
-        return indexKeyNameToIndexNamesCache.getIndexNames(clazz, indexRangeKeyName);
     }
     
-    private class IndexKeyNameToIndexNamesCache {
+    private static class IndexKeyNameToIndexNamesCache {
     	private Map<Class<?>, Map<String, List<String>>> cacheMap = new HashMap<Class<?>, Map<String, List<String>>>();
     	
     	public boolean isCached(Class<?> clazz) {

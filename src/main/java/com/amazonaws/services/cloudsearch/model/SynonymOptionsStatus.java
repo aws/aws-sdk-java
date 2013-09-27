@@ -29,7 +29,7 @@ public class SynonymOptionsStatus implements Serializable {
      * document has a single object with one property "synonyms" whose value
      * is an object mapping terms to their synonyms. Each synonym is a simple
      * string or an array of strings. The maximum size of a stopwords
-     * document is 100KB. Example: <code>{ "synonyms": {"cat": ["feline",
+     * document is 100 KB. Example: <code>{ "synonyms": {"cat": ["feline",
      * "kitten"], "puppy": "dog"} }</code>
      */
     private String options;
@@ -45,14 +45,14 @@ public class SynonymOptionsStatus implements Serializable {
      * document has a single object with one property "synonyms" whose value
      * is an object mapping terms to their synonyms. Each synonym is a simple
      * string or an array of strings. The maximum size of a stopwords
-     * document is 100KB. Example: <code>{ "synonyms": {"cat": ["feline",
+     * document is 100 KB. Example: <code>{ "synonyms": {"cat": ["feline",
      * "kitten"], "puppy": "dog"} }</code>
      *
      * @return Maps terms to their synonyms, serialized as a JSON document. The
      *         document has a single object with one property "synonyms" whose value
      *         is an object mapping terms to their synonyms. Each synonym is a simple
      *         string or an array of strings. The maximum size of a stopwords
-     *         document is 100KB. Example: <code>{ "synonyms": {"cat": ["feline",
+     *         document is 100 KB. Example: <code>{ "synonyms": {"cat": ["feline",
      *         "kitten"], "puppy": "dog"} }</code>
      */
     public String getOptions() {
@@ -64,14 +64,14 @@ public class SynonymOptionsStatus implements Serializable {
      * document has a single object with one property "synonyms" whose value
      * is an object mapping terms to their synonyms. Each synonym is a simple
      * string or an array of strings. The maximum size of a stopwords
-     * document is 100KB. Example: <code>{ "synonyms": {"cat": ["feline",
+     * document is 100 KB. Example: <code>{ "synonyms": {"cat": ["feline",
      * "kitten"], "puppy": "dog"} }</code>
      *
      * @param options Maps terms to their synonyms, serialized as a JSON document. The
      *         document has a single object with one property "synonyms" whose value
      *         is an object mapping terms to their synonyms. Each synonym is a simple
      *         string or an array of strings. The maximum size of a stopwords
-     *         document is 100KB. Example: <code>{ "synonyms": {"cat": ["feline",
+     *         document is 100 KB. Example: <code>{ "synonyms": {"cat": ["feline",
      *         "kitten"], "puppy": "dog"} }</code>
      */
     public void setOptions(String options) {
@@ -83,7 +83,7 @@ public class SynonymOptionsStatus implements Serializable {
      * document has a single object with one property "synonyms" whose value
      * is an object mapping terms to their synonyms. Each synonym is a simple
      * string or an array of strings. The maximum size of a stopwords
-     * document is 100KB. Example: <code>{ "synonyms": {"cat": ["feline",
+     * document is 100 KB. Example: <code>{ "synonyms": {"cat": ["feline",
      * "kitten"], "puppy": "dog"} }</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -92,7 +92,7 @@ public class SynonymOptionsStatus implements Serializable {
      *         document has a single object with one property "synonyms" whose value
      *         is an object mapping terms to their synonyms. Each synonym is a simple
      *         string or an array of strings. The maximum size of a stopwords
-     *         document is 100KB. Example: <code>{ "synonyms": {"cat": ["feline",
+     *         document is 100 KB. Example: <code>{ "synonyms": {"cat": ["feline",
      *         "kitten"], "puppy": "dog"} }</code>
      *
      * @return A reference to this updated object so that method calls can be chained 

@@ -48,8 +48,13 @@ public class ImportInstanceLaunchSpecification implements Serializable {
 
     /**
      * Returns the value of the Architecture property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>i386, x86_64
      *
      * @return The value of the Architecture property for this object.
+     *
+     * @see ArchitectureValues
      */
     public String getArchitecture() {
         return architecture;
@@ -57,8 +62,13 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     
     /**
      * Sets the value of the Architecture property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>i386, x86_64
      *
      * @param architecture The new value for the Architecture property for this object.
+     *
+     * @see ArchitectureValues
      */
     public void setArchitecture(String architecture) {
         this.architecture = architecture;
@@ -68,17 +78,56 @@ public class ImportInstanceLaunchSpecification implements Serializable {
      * Sets the value of the Architecture property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>i386, x86_64
      *
      * @param architecture The new value for the Architecture property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see ArchitectureValues
      */
     public ImportInstanceLaunchSpecification withArchitecture(String architecture) {
         this.architecture = architecture;
         return this;
     }
     
+    
+    /**
+     * Sets the value of the Architecture property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>i386, x86_64
+     *
+     * @param architecture The new value for the Architecture property for this object.
+     *
+     * @see ArchitectureValues
+     */
+    public void setArchitecture(ArchitectureValues architecture) {
+        this.architecture = architecture.toString();
+    }
+    
+    /**
+     * Sets the value of the Architecture property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>i386, x86_64
+     *
+     * @param architecture The new value for the Architecture property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see ArchitectureValues
+     */
+    public ImportInstanceLaunchSpecification withArchitecture(ArchitectureValues architecture) {
+        this.architecture = architecture.toString();
+        return this;
+    }
     
     /**
      * Returns the value of the GroupNames property for this object.
@@ -420,9 +469,14 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     /**
      * Returns the value of the InstanceInitiatedShutdownBehavior property
      * for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>stop, terminate
      *
      * @return The value of the InstanceInitiatedShutdownBehavior property for this
      *         object.
+     *
+     * @see ShutdownBehavior
      */
     public String getInstanceInitiatedShutdownBehavior() {
         return instanceInitiatedShutdownBehavior;
@@ -431,9 +485,14 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     /**
      * Sets the value of the InstanceInitiatedShutdownBehavior property for
      * this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>stop, terminate
      *
      * @param instanceInitiatedShutdownBehavior The new value for the InstanceInitiatedShutdownBehavior property for
      *         this object.
+     *
+     * @see ShutdownBehavior
      */
     public void setInstanceInitiatedShutdownBehavior(String instanceInitiatedShutdownBehavior) {
         this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior;
@@ -444,18 +503,61 @@ public class ImportInstanceLaunchSpecification implements Serializable {
      * this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>stop, terminate
      *
      * @param instanceInitiatedShutdownBehavior The new value for the InstanceInitiatedShutdownBehavior property for
      *         this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see ShutdownBehavior
      */
     public ImportInstanceLaunchSpecification withInstanceInitiatedShutdownBehavior(String instanceInitiatedShutdownBehavior) {
         this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior;
         return this;
     }
     
+    
+    /**
+     * Sets the value of the InstanceInitiatedShutdownBehavior property for
+     * this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>stop, terminate
+     *
+     * @param instanceInitiatedShutdownBehavior The new value for the InstanceInitiatedShutdownBehavior property for
+     *         this object.
+     *
+     * @see ShutdownBehavior
+     */
+    public void setInstanceInitiatedShutdownBehavior(ShutdownBehavior instanceInitiatedShutdownBehavior) {
+        this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior.toString();
+    }
+    
+    /**
+     * Sets the value of the InstanceInitiatedShutdownBehavior property for
+     * this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>stop, terminate
+     *
+     * @param instanceInitiatedShutdownBehavior The new value for the InstanceInitiatedShutdownBehavior property for
+     *         this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see ShutdownBehavior
+     */
+    public ImportInstanceLaunchSpecification withInstanceInitiatedShutdownBehavior(ShutdownBehavior instanceInitiatedShutdownBehavior) {
+        this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior.toString();
+        return this;
+    }
     
     /**
      * Returns the value of the PrivateIpAddress property for this object.

@@ -83,6 +83,9 @@ public class DefineIndexFieldRequestMarshaller implements Marshaller<Request<Def
                 if (textOptionsTextOptions.isResultEnabled() != null) {
                     request.addParameter("IndexField.TextOptions.ResultEnabled", StringUtils.fromBoolean(textOptionsTextOptions.isResultEnabled()));
                 }
+                if (textOptionsTextOptions.getTextProcessor() != null) {
+                    request.addParameter("IndexField.TextOptions.TextProcessor", StringUtils.fromString(textOptionsTextOptions.getTextProcessor()));
+                }
             }
 
             java.util.List<SourceAttribute> sourceAttributesList = indexFieldIndexField.getSourceAttributes();

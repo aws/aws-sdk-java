@@ -154,6 +154,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * Specifies whether the instance's Amazon EBS volumes are stopped or
      * terminated when the instance is shut down.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>stop, terminate
      */
     private String instanceInitiatedShutdownBehavior;
 
@@ -1004,9 +1007,14 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * Specifies whether the instance's Amazon EBS volumes are stopped or
      * terminated when the instance is shut down.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>stop, terminate
      *
      * @return Specifies whether the instance's Amazon EBS volumes are stopped or
      *         terminated when the instance is shut down.
+     *
+     * @see ShutdownBehavior
      */
     public String getInstanceInitiatedShutdownBehavior() {
         return instanceInitiatedShutdownBehavior;
@@ -1015,9 +1023,14 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * Specifies whether the instance's Amazon EBS volumes are stopped or
      * terminated when the instance is shut down.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>stop, terminate
      *
      * @param instanceInitiatedShutdownBehavior Specifies whether the instance's Amazon EBS volumes are stopped or
      *         terminated when the instance is shut down.
+     *
+     * @see ShutdownBehavior
      */
     public void setInstanceInitiatedShutdownBehavior(String instanceInitiatedShutdownBehavior) {
         this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior;
@@ -1028,18 +1041,61 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * terminated when the instance is shut down.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>stop, terminate
      *
      * @param instanceInitiatedShutdownBehavior Specifies whether the instance's Amazon EBS volumes are stopped or
      *         terminated when the instance is shut down.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see ShutdownBehavior
      */
     public RunInstancesRequest withInstanceInitiatedShutdownBehavior(String instanceInitiatedShutdownBehavior) {
         this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior;
         return this;
     }
     
+    
+    /**
+     * Specifies whether the instance's Amazon EBS volumes are stopped or
+     * terminated when the instance is shut down.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>stop, terminate
+     *
+     * @param instanceInitiatedShutdownBehavior Specifies whether the instance's Amazon EBS volumes are stopped or
+     *         terminated when the instance is shut down.
+     *
+     * @see ShutdownBehavior
+     */
+    public void setInstanceInitiatedShutdownBehavior(ShutdownBehavior instanceInitiatedShutdownBehavior) {
+        this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior.toString();
+    }
+    
+    /**
+     * Specifies whether the instance's Amazon EBS volumes are stopped or
+     * terminated when the instance is shut down.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>stop, terminate
+     *
+     * @param instanceInitiatedShutdownBehavior Specifies whether the instance's Amazon EBS volumes are stopped or
+     *         terminated when the instance is shut down.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see ShutdownBehavior
+     */
+    public RunInstancesRequest withInstanceInitiatedShutdownBehavior(ShutdownBehavior instanceInitiatedShutdownBehavior) {
+        this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior.toString();
+        return this;
+    }
     
     /**
      * Specifies active licenses in use and attached to an Amazon EC2

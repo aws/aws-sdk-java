@@ -220,8 +220,13 @@ public class InstanceNetworkInterface implements Serializable {
     
     /**
      * Returns the value of the Status property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>available, attaching, in-use, detaching
      *
      * @return The value of the Status property for this object.
+     *
+     * @see NetworkInterfaceStatus
      */
     public String getStatus() {
         return status;
@@ -229,8 +234,13 @@ public class InstanceNetworkInterface implements Serializable {
     
     /**
      * Sets the value of the Status property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>available, attaching, in-use, detaching
      *
      * @param status The new value for the Status property for this object.
+     *
+     * @see NetworkInterfaceStatus
      */
     public void setStatus(String status) {
         this.status = status;
@@ -240,17 +250,56 @@ public class InstanceNetworkInterface implements Serializable {
      * Sets the value of the Status property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>available, attaching, in-use, detaching
      *
      * @param status The new value for the Status property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see NetworkInterfaceStatus
      */
     public InstanceNetworkInterface withStatus(String status) {
         this.status = status;
         return this;
     }
     
+    
+    /**
+     * Sets the value of the Status property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>available, attaching, in-use, detaching
+     *
+     * @param status The new value for the Status property for this object.
+     *
+     * @see NetworkInterfaceStatus
+     */
+    public void setStatus(NetworkInterfaceStatus status) {
+        this.status = status.toString();
+    }
+    
+    /**
+     * Sets the value of the Status property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>available, attaching, in-use, detaching
+     *
+     * @param status The new value for the Status property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see NetworkInterfaceStatus
+     */
+    public InstanceNetworkInterface withStatus(NetworkInterfaceStatus status) {
+        this.status = status.toString();
+        return this;
+    }
     
     /**
      * Returns the value of the PrivateIpAddress property for this object.

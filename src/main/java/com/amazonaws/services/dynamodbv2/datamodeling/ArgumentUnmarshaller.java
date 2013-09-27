@@ -24,7 +24,7 @@ import com.amazonaws.services.dynamodbv2.model.AttributeValue;
  * type-determination behavior necessary when turning a service result back
  * into an object.
  */
-interface ArgumentUnmarshaller {
+public interface ArgumentUnmarshaller {
 
     /**
      * Asserts that the value given can be processed using the setter given.

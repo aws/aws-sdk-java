@@ -47,7 +47,7 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
         	request.addHeader("If-Match", StringUtils.fromString(updateDistributionRequest.getIfMatch()));
         
 
-        String uriResourcePath = "2013-05-12/distribution/{Id}/config"; 
+        String uriResourcePath = "2013-08-26/distribution/{Id}/config"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(updateDistributionRequest.getId())); 
 
         if (uriResourcePath.contains("?")) {
@@ -68,7 +68,7 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
 
         
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2013-05-12/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2013-08-26/");
 
             
                     if (updateDistributionRequest != null) {
@@ -374,6 +374,45 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
 
 
                                     cacheBehaviorsCacheBehaviorsitemsListIndex++;
+                                }
+                                xmlWriter.endElement();
+                            }
+                        }
+                        xmlWriter.endElement();
+                    }
+                }
+                if (distributionConfigDistributionConfig != null) {
+                    CustomErrorResponses customErrorResponsesCustomErrorResponses = distributionConfigDistributionConfig.getCustomErrorResponses();
+                    if (customErrorResponsesCustomErrorResponses != null) {
+                        xmlWriter.startElement("CustomErrorResponses");
+                        if (customErrorResponsesCustomErrorResponses.getQuantity() != null) {
+                            xmlWriter.startElement("Quantity").value(customErrorResponsesCustomErrorResponses.getQuantity()).endElement();
+                        }
+
+                        if (customErrorResponsesCustomErrorResponses != null) {
+                            java.util.List<CustomErrorResponse> customErrorResponsesCustomErrorResponsesitemsList = customErrorResponsesCustomErrorResponses.getItems();
+                            if (customErrorResponsesCustomErrorResponsesitemsList != null && customErrorResponsesCustomErrorResponsesitemsList.size() > 0) {
+                                int customErrorResponsesCustomErrorResponsesitemsListIndex = 1;
+                                xmlWriter.startElement("Items");
+                                for (CustomErrorResponse customErrorResponsesCustomErrorResponsesitemsListValue : customErrorResponsesCustomErrorResponsesitemsList) {
+
+                                xmlWriter.startElement("CustomErrorResponse");
+                                    if (customErrorResponsesCustomErrorResponsesitemsListValue.getErrorCode() != null) {
+                                        xmlWriter.startElement("ErrorCode").value(customErrorResponsesCustomErrorResponsesitemsListValue.getErrorCode()).endElement();
+                                    }
+                                    if (customErrorResponsesCustomErrorResponsesitemsListValue.getResponsePagePath() != null) {
+                                        xmlWriter.startElement("ResponsePagePath").value(customErrorResponsesCustomErrorResponsesitemsListValue.getResponsePagePath()).endElement();
+                                    }
+                                    if (customErrorResponsesCustomErrorResponsesitemsListValue.getResponseCode() != null) {
+                                        xmlWriter.startElement("ResponseCode").value(customErrorResponsesCustomErrorResponsesitemsListValue.getResponseCode()).endElement();
+                                    }
+                                    if (customErrorResponsesCustomErrorResponsesitemsListValue.getErrorCachingMinTTL() != null) {
+                                        xmlWriter.startElement("ErrorCachingMinTTL").value(customErrorResponsesCustomErrorResponsesitemsListValue.getErrorCachingMinTTL()).endElement();
+                                    }
+                                xmlWriter.endElement();
+
+
+                                    customErrorResponsesCustomErrorResponsesitemsListIndex++;
                                 }
                                 xmlWriter.endElement();
                             }

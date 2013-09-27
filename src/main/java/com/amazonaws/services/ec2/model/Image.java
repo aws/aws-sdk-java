@@ -63,11 +63,17 @@ public class Image implements Serializable {
 
     /**
      * The architecture of the image.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>i386, x86_64
      */
     private String architecture;
 
     /**
      * The type of image (machine, kernel, or ramdisk).
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>machine, kernel, ramdisk
      */
     private String imageType;
 
@@ -85,6 +91,9 @@ public class Image implements Serializable {
 
     /**
      * The operating platform of the AMI.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Windows
      */
     private String platform;
 
@@ -112,6 +121,9 @@ public class Image implements Serializable {
     /**
      * The root device type used by the AMI. The AMI can use an Amazon EBS or
      * instance store root device.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ebs, instance-store
      */
     private String rootDeviceType;
 
@@ -471,8 +483,13 @@ public class Image implements Serializable {
     
     /**
      * The architecture of the image.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>i386, x86_64
      *
      * @return The architecture of the image.
+     *
+     * @see ArchitectureValues
      */
     public String getArchitecture() {
         return architecture;
@@ -480,8 +497,13 @@ public class Image implements Serializable {
     
     /**
      * The architecture of the image.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>i386, x86_64
      *
      * @param architecture The architecture of the image.
+     *
+     * @see ArchitectureValues
      */
     public void setArchitecture(String architecture) {
         this.architecture = architecture;
@@ -491,11 +513,16 @@ public class Image implements Serializable {
      * The architecture of the image.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>i386, x86_64
      *
      * @param architecture The architecture of the image.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see ArchitectureValues
      */
     public Image withArchitecture(String architecture) {
         this.architecture = architecture;
@@ -504,9 +531,48 @@ public class Image implements Serializable {
     
     
     /**
+     * The architecture of the image.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>i386, x86_64
+     *
+     * @param architecture The architecture of the image.
+     *
+     * @see ArchitectureValues
+     */
+    public void setArchitecture(ArchitectureValues architecture) {
+        this.architecture = architecture.toString();
+    }
+    
+    /**
+     * The architecture of the image.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>i386, x86_64
+     *
+     * @param architecture The architecture of the image.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see ArchitectureValues
+     */
+    public Image withArchitecture(ArchitectureValues architecture) {
+        this.architecture = architecture.toString();
+        return this;
+    }
+    
+    /**
      * The type of image (machine, kernel, or ramdisk).
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>machine, kernel, ramdisk
      *
      * @return The type of image (machine, kernel, or ramdisk).
+     *
+     * @see ImageTypeValues
      */
     public String getImageType() {
         return imageType;
@@ -514,8 +580,13 @@ public class Image implements Serializable {
     
     /**
      * The type of image (machine, kernel, or ramdisk).
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>machine, kernel, ramdisk
      *
      * @param imageType The type of image (machine, kernel, or ramdisk).
+     *
+     * @see ImageTypeValues
      */
     public void setImageType(String imageType) {
         this.imageType = imageType;
@@ -525,17 +596,56 @@ public class Image implements Serializable {
      * The type of image (machine, kernel, or ramdisk).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>machine, kernel, ramdisk
      *
      * @param imageType The type of image (machine, kernel, or ramdisk).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see ImageTypeValues
      */
     public Image withImageType(String imageType) {
         this.imageType = imageType;
         return this;
     }
     
+    
+    /**
+     * The type of image (machine, kernel, or ramdisk).
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>machine, kernel, ramdisk
+     *
+     * @param imageType The type of image (machine, kernel, or ramdisk).
+     *
+     * @see ImageTypeValues
+     */
+    public void setImageType(ImageTypeValues imageType) {
+        this.imageType = imageType.toString();
+    }
+    
+    /**
+     * The type of image (machine, kernel, or ramdisk).
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>machine, kernel, ramdisk
+     *
+     * @param imageType The type of image (machine, kernel, or ramdisk).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see ImageTypeValues
+     */
+    public Image withImageType(ImageTypeValues imageType) {
+        this.imageType = imageType.toString();
+        return this;
+    }
     
     /**
      * The kernel associated with the image, if any. Only applicable for
@@ -619,8 +729,13 @@ public class Image implements Serializable {
     
     /**
      * The operating platform of the AMI.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Windows
      *
      * @return The operating platform of the AMI.
+     *
+     * @see PlatformValues
      */
     public String getPlatform() {
         return platform;
@@ -628,8 +743,13 @@ public class Image implements Serializable {
     
     /**
      * The operating platform of the AMI.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Windows
      *
      * @param platform The operating platform of the AMI.
+     *
+     * @see PlatformValues
      */
     public void setPlatform(String platform) {
         this.platform = platform;
@@ -639,17 +759,56 @@ public class Image implements Serializable {
      * The operating platform of the AMI.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Windows
      *
      * @param platform The operating platform of the AMI.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see PlatformValues
      */
     public Image withPlatform(String platform) {
         this.platform = platform;
         return this;
     }
     
+    
+    /**
+     * The operating platform of the AMI.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Windows
+     *
+     * @param platform The operating platform of the AMI.
+     *
+     * @see PlatformValues
+     */
+    public void setPlatform(PlatformValues platform) {
+        this.platform = platform.toString();
+    }
+    
+    /**
+     * The operating platform of the AMI.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Windows
+     *
+     * @param platform The operating platform of the AMI.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see PlatformValues
+     */
+    public Image withPlatform(PlatformValues platform) {
+        this.platform = platform.toString();
+        return this;
+    }
     
     /**
      * The reason for the state change.
@@ -796,9 +955,14 @@ public class Image implements Serializable {
     /**
      * The root device type used by the AMI. The AMI can use an Amazon EBS or
      * instance store root device.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ebs, instance-store
      *
      * @return The root device type used by the AMI. The AMI can use an Amazon EBS or
      *         instance store root device.
+     *
+     * @see DeviceType
      */
     public String getRootDeviceType() {
         return rootDeviceType;
@@ -807,9 +971,14 @@ public class Image implements Serializable {
     /**
      * The root device type used by the AMI. The AMI can use an Amazon EBS or
      * instance store root device.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ebs, instance-store
      *
      * @param rootDeviceType The root device type used by the AMI. The AMI can use an Amazon EBS or
      *         instance store root device.
+     *
+     * @see DeviceType
      */
     public void setRootDeviceType(String rootDeviceType) {
         this.rootDeviceType = rootDeviceType;
@@ -820,18 +989,61 @@ public class Image implements Serializable {
      * instance store root device.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ebs, instance-store
      *
      * @param rootDeviceType The root device type used by the AMI. The AMI can use an Amazon EBS or
      *         instance store root device.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see DeviceType
      */
     public Image withRootDeviceType(String rootDeviceType) {
         this.rootDeviceType = rootDeviceType;
         return this;
     }
     
+    
+    /**
+     * The root device type used by the AMI. The AMI can use an Amazon EBS or
+     * instance store root device.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ebs, instance-store
+     *
+     * @param rootDeviceType The root device type used by the AMI. The AMI can use an Amazon EBS or
+     *         instance store root device.
+     *
+     * @see DeviceType
+     */
+    public void setRootDeviceType(DeviceType rootDeviceType) {
+        this.rootDeviceType = rootDeviceType.toString();
+    }
+    
+    /**
+     * The root device type used by the AMI. The AMI can use an Amazon EBS or
+     * instance store root device.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ebs, instance-store
+     *
+     * @param rootDeviceType The root device type used by the AMI. The AMI can use an Amazon EBS or
+     *         instance store root device.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see DeviceType
+     */
+    public Image withRootDeviceType(DeviceType rootDeviceType) {
+        this.rootDeviceType = rootDeviceType.toString();
+        return this;
+    }
     
     /**
      * The root device name (e.g., <code>/dev/sda1</code>).

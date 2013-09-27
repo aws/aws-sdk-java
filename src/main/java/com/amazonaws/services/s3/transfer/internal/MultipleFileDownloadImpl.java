@@ -16,12 +16,10 @@ package com.amazonaws.services.s3.transfer.internal;
 
 import java.io.IOException;
 import java.util.Collection;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
-import java.util.concurrent.ThreadPoolExecutor;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
+import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.transfer.Download;
 import com.amazonaws.services.s3.transfer.MultipleFileDownload;
 import com.amazonaws.services.s3.transfer.Transfer;
@@ -40,6 +38,16 @@ public class MultipleFileDownloadImpl extends MultipleFileTransfer implements Mu
         super(description, transferProgress, progressListenerChain, downloads);
         this.keyPrefix = keyPrefix;
         this.bucketName = bucketName;
+    }
+    
+    /**
+     * @deprecated Replaced by {@link #MultipleFileDownloadImpl(String, TransferProgress, ProgressListenerChain, String, String, Collection)}
+     */
+    @Deprecated
+    public MultipleFileDownloadImpl(String description, TransferProgress transferProgress,
+            com.amazonaws.services.s3.transfer.internal.ProgressListenerChain progressListenerChain, String keyPrefix, String bucketName, Collection<? extends Download> downloads) {
+        this(description, transferProgress, progressListenerChain.transformToGeneralProgressListenerChain(), 
+                keyPrefix, bucketName, downloads);
     }
 
     /**
@@ -73,8 +81,8 @@ public class MultipleFileDownloadImpl extends MultipleFileTransfer implements Mu
     @Override
     public void waitForCompletion()
             throws AmazonClientException, AmazonServiceException, InterruptedException {
-    	if (subTransfers.isEmpty())
-    		return;
+        if (subTransfers.isEmpty())
+            return;
         super.waitForCompletion();
     }
     

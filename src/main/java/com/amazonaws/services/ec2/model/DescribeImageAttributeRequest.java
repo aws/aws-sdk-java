@@ -39,6 +39,9 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
      * The name of the attribute to describe. <p> Available attribute names:
      * <code>productCodes</code>, <code>kernel</code>, <code>ramdisk</code>,
      * <code>launchPermisson</code>, <code>blockDeviceMapping</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping
      */
     private String attribute;
 
@@ -67,6 +70,22 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
     }
 
     
+    
+    /**
+     * Constructs a new DescribeImageAttributeRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param imageId The ID of the AMI whose attribute is to be described.
+     * @param attribute The name of the attribute to describe. <p> Available
+     * attribute names: <code>productCodes</code>, <code>kernel</code>,
+     * <code>ramdisk</code>, <code>launchPermisson</code>,
+     * <code>blockDeviceMapping</code>
+     */
+    public DescribeImageAttributeRequest(String imageId, ImageAttributeName attribute) {
+        this.imageId = imageId;
+        this.attribute = attribute.toString();
+    }
     
     /**
      * The ID of the AMI whose attribute is to be described.
@@ -106,10 +125,15 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
      * The name of the attribute to describe. <p> Available attribute names:
      * <code>productCodes</code>, <code>kernel</code>, <code>ramdisk</code>,
      * <code>launchPermisson</code>, <code>blockDeviceMapping</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping
      *
      * @return The name of the attribute to describe. <p> Available attribute names:
      *         <code>productCodes</code>, <code>kernel</code>, <code>ramdisk</code>,
      *         <code>launchPermisson</code>, <code>blockDeviceMapping</code>
+     *
+     * @see ImageAttributeName
      */
     public String getAttribute() {
         return attribute;
@@ -119,10 +143,15 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
      * The name of the attribute to describe. <p> Available attribute names:
      * <code>productCodes</code>, <code>kernel</code>, <code>ramdisk</code>,
      * <code>launchPermisson</code>, <code>blockDeviceMapping</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping
      *
      * @param attribute The name of the attribute to describe. <p> Available attribute names:
      *         <code>productCodes</code>, <code>kernel</code>, <code>ramdisk</code>,
      *         <code>launchPermisson</code>, <code>blockDeviceMapping</code>
+     *
+     * @see ImageAttributeName
      */
     public void setAttribute(String attribute) {
         this.attribute = attribute;
@@ -134,6 +163,9 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
      * <code>launchPermisson</code>, <code>blockDeviceMapping</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping
      *
      * @param attribute The name of the attribute to describe. <p> Available attribute names:
      *         <code>productCodes</code>, <code>kernel</code>, <code>ramdisk</code>,
@@ -141,12 +173,56 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see ImageAttributeName
      */
     public DescribeImageAttributeRequest withAttribute(String attribute) {
         this.attribute = attribute;
         return this;
     }
     
+    
+    /**
+     * The name of the attribute to describe. <p> Available attribute names:
+     * <code>productCodes</code>, <code>kernel</code>, <code>ramdisk</code>,
+     * <code>launchPermisson</code>, <code>blockDeviceMapping</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping
+     *
+     * @param attribute The name of the attribute to describe. <p> Available attribute names:
+     *         <code>productCodes</code>, <code>kernel</code>, <code>ramdisk</code>,
+     *         <code>launchPermisson</code>, <code>blockDeviceMapping</code>
+     *
+     * @see ImageAttributeName
+     */
+    public void setAttribute(ImageAttributeName attribute) {
+        this.attribute = attribute.toString();
+    }
+    
+    /**
+     * The name of the attribute to describe. <p> Available attribute names:
+     * <code>productCodes</code>, <code>kernel</code>, <code>ramdisk</code>,
+     * <code>launchPermisson</code>, <code>blockDeviceMapping</code>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping
+     *
+     * @param attribute The name of the attribute to describe. <p> Available attribute names:
+     *         <code>productCodes</code>, <code>kernel</code>, <code>ramdisk</code>,
+     *         <code>launchPermisson</code>, <code>blockDeviceMapping</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see ImageAttributeName
+     */
+    public DescribeImageAttributeRequest withAttribute(ImageAttributeName attribute) {
+        this.attribute = attribute.toString();
+        return this;
+    }
     
     /**
      * This method is intended for internal use only.

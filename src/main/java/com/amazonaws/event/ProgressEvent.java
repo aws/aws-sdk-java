@@ -18,6 +18,12 @@ package com.amazonaws.event;
  * Notification of a progress change on a transfer. Typically this means notice
  * that another chunk of bytes was transferred, but it also signals other types
  * of progress events such as a transfer starting, or failing.
+ * <p>
+ * This class could be used for both Amazon S3 and Amazon Glacier clients. The
+ * legacy Amazon S3 progress event
+ * {@link com.amazonaws.services.s3.model.ProgressEvent} is deprecated in favor
+ * of this new class.
+ * </p>
  */
 public class ProgressEvent {
 

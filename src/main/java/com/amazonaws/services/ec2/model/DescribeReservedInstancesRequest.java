@@ -46,6 +46,9 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
 
     /**
      * The Reserved Instance offering type.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization
      */
     private String offeringType;
 
@@ -221,8 +224,13 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
     
     /**
      * The Reserved Instance offering type.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization
      *
      * @return The Reserved Instance offering type.
+     *
+     * @see OfferingTypeValues
      */
     public String getOfferingType() {
         return offeringType;
@@ -230,8 +238,13 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
     
     /**
      * The Reserved Instance offering type.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization
      *
      * @param offeringType The Reserved Instance offering type.
+     *
+     * @see OfferingTypeValues
      */
     public void setOfferingType(String offeringType) {
         this.offeringType = offeringType;
@@ -241,17 +254,56 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      * The Reserved Instance offering type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization
      *
      * @param offeringType The Reserved Instance offering type.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see OfferingTypeValues
      */
     public DescribeReservedInstancesRequest withOfferingType(String offeringType) {
         this.offeringType = offeringType;
         return this;
     }
     
+    
+    /**
+     * The Reserved Instance offering type.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization
+     *
+     * @param offeringType The Reserved Instance offering type.
+     *
+     * @see OfferingTypeValues
+     */
+    public void setOfferingType(OfferingTypeValues offeringType) {
+        this.offeringType = offeringType.toString();
+    }
+    
+    /**
+     * The Reserved Instance offering type.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Heavy Utilization, Medium Utilization, Light Utilization
+     *
+     * @param offeringType The Reserved Instance offering type.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see OfferingTypeValues
+     */
+    public DescribeReservedInstancesRequest withOfferingType(OfferingTypeValues offeringType) {
+        this.offeringType = offeringType.toString();
+        return this;
+    }
     
     /**
      * This method is intended for internal use only.

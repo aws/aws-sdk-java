@@ -32,6 +32,9 @@ public class Subnet implements Serializable {
     /**
      * Describes the current state of the subnet. The state of the subnet may
      * be either <code>pending</code> or <code>available</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>pending, available
      */
     private String state;
 
@@ -103,9 +106,14 @@ public class Subnet implements Serializable {
     /**
      * Describes the current state of the subnet. The state of the subnet may
      * be either <code>pending</code> or <code>available</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>pending, available
      *
      * @return Describes the current state of the subnet. The state of the subnet may
      *         be either <code>pending</code> or <code>available</code>.
+     *
+     * @see SubnetState
      */
     public String getState() {
         return state;
@@ -114,9 +122,14 @@ public class Subnet implements Serializable {
     /**
      * Describes the current state of the subnet. The state of the subnet may
      * be either <code>pending</code> or <code>available</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>pending, available
      *
      * @param state Describes the current state of the subnet. The state of the subnet may
      *         be either <code>pending</code> or <code>available</code>.
+     *
+     * @see SubnetState
      */
     public void setState(String state) {
         this.state = state;
@@ -127,18 +140,61 @@ public class Subnet implements Serializable {
      * be either <code>pending</code> or <code>available</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>pending, available
      *
      * @param state Describes the current state of the subnet. The state of the subnet may
      *         be either <code>pending</code> or <code>available</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see SubnetState
      */
     public Subnet withState(String state) {
         this.state = state;
         return this;
     }
     
+    
+    /**
+     * Describes the current state of the subnet. The state of the subnet may
+     * be either <code>pending</code> or <code>available</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>pending, available
+     *
+     * @param state Describes the current state of the subnet. The state of the subnet may
+     *         be either <code>pending</code> or <code>available</code>.
+     *
+     * @see SubnetState
+     */
+    public void setState(SubnetState state) {
+        this.state = state.toString();
+    }
+    
+    /**
+     * Describes the current state of the subnet. The state of the subnet may
+     * be either <code>pending</code> or <code>available</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>pending, available
+     *
+     * @param state Describes the current state of the subnet. The state of the subnet may
+     *         be either <code>pending</code> or <code>available</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see SubnetState
+     */
+    public Subnet withState(SubnetState state) {
+        this.state = state.toString();
+        return this;
+    }
     
     /**
      * Contains the ID of the VPC the subnet is in.

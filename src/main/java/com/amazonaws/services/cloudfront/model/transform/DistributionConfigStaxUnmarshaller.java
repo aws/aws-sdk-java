@@ -68,6 +68,10 @@ public class DistributionConfigStaxUnmarshaller implements Unmarshaller<Distribu
                     distributionConfig.setCacheBehaviors(CacheBehaviorsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("CustomErrorResponses", targetDepth)) {
+                    distributionConfig.setCustomErrorResponses(CustomErrorResponsesStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("Comment", targetDepth)) {
                     distributionConfig.setComment(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

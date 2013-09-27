@@ -95,10 +95,8 @@ public class DomainStatus implements Serializable {
     private Boolean processing;
 
     /**
-     * The instance type that is being used to process search requests.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>SearchInstance:t1.micro, SearchInstance:m1.small, SearchInstance:m1.large, SearchInstance:m2.xlarge
+     * The instance type (such as search.m1.small) that is being used to
+     * process search requests.
      */
     private String searchInstanceType;
 
@@ -600,87 +598,44 @@ public class DomainStatus implements Serializable {
     }
     
     /**
-     * The instance type that is being used to process search requests.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>SearchInstance:t1.micro, SearchInstance:m1.small, SearchInstance:m1.large, SearchInstance:m2.xlarge
+     * The instance type (such as search.m1.small) that is being used to
+     * process search requests.
      *
-     * @return The instance type that is being used to process search requests.
-     *
-     * @see SearchInstanceType
+     * @return The instance type (such as search.m1.small) that is being used to
+     *         process search requests.
      */
     public String getSearchInstanceType() {
         return searchInstanceType;
     }
     
     /**
-     * The instance type that is being used to process search requests.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>SearchInstance:t1.micro, SearchInstance:m1.small, SearchInstance:m1.large, SearchInstance:m2.xlarge
+     * The instance type (such as search.m1.small) that is being used to
+     * process search requests.
      *
-     * @param searchInstanceType The instance type that is being used to process search requests.
-     *
-     * @see SearchInstanceType
+     * @param searchInstanceType The instance type (such as search.m1.small) that is being used to
+     *         process search requests.
      */
     public void setSearchInstanceType(String searchInstanceType) {
         this.searchInstanceType = searchInstanceType;
     }
     
     /**
-     * The instance type that is being used to process search requests.
+     * The instance type (such as search.m1.small) that is being used to
+     * process search requests.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>SearchInstance:t1.micro, SearchInstance:m1.small, SearchInstance:m1.large, SearchInstance:m2.xlarge
      *
-     * @param searchInstanceType The instance type that is being used to process search requests.
+     * @param searchInstanceType The instance type (such as search.m1.small) that is being used to
+     *         process search requests.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
-     *
-     * @see SearchInstanceType
      */
     public DomainStatus withSearchInstanceType(String searchInstanceType) {
         this.searchInstanceType = searchInstanceType;
         return this;
     }
     
-    
-    /**
-     * The instance type that is being used to process search requests.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>SearchInstance:t1.micro, SearchInstance:m1.small, SearchInstance:m1.large, SearchInstance:m2.xlarge
-     *
-     * @param searchInstanceType The instance type that is being used to process search requests.
-     *
-     * @see SearchInstanceType
-     */
-    public void setSearchInstanceType(SearchInstanceType searchInstanceType) {
-        this.searchInstanceType = searchInstanceType.toString();
-    }
-    
-    /**
-     * The instance type that is being used to process search requests.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>SearchInstance:t1.micro, SearchInstance:m1.small, SearchInstance:m1.large, SearchInstance:m2.xlarge
-     *
-     * @param searchInstanceType The instance type that is being used to process search requests.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together.
-     *
-     * @see SearchInstanceType
-     */
-    public DomainStatus withSearchInstanceType(SearchInstanceType searchInstanceType) {
-        this.searchInstanceType = searchInstanceType.toString();
-        return this;
-    }
     
     /**
      * The number of partitions across which the search index is spread.

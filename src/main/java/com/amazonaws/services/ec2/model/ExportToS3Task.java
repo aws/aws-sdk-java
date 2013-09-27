@@ -34,7 +34,7 @@ public class ExportToS3Task implements Serializable {
      * Returns the value of the DiskImageFormat property for this object.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>vmdk, vhd
+     * <b>Allowed Values: </b>VMDK, RAW, VHD
      *
      * @return The value of the DiskImageFormat property for this object.
      *
@@ -48,7 +48,7 @@ public class ExportToS3Task implements Serializable {
      * Sets the value of the DiskImageFormat property for this object.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>vmdk, vhd
+     * <b>Allowed Values: </b>VMDK, RAW, VHD
      *
      * @param diskImageFormat The new value for the DiskImageFormat property for this object.
      *
@@ -64,7 +64,7 @@ public class ExportToS3Task implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>vmdk, vhd
+     * <b>Allowed Values: </b>VMDK, RAW, VHD
      *
      * @param diskImageFormat The new value for the DiskImageFormat property for this object.
      *
@@ -83,7 +83,7 @@ public class ExportToS3Task implements Serializable {
      * Sets the value of the DiskImageFormat property for this object.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>vmdk, vhd
+     * <b>Allowed Values: </b>VMDK, RAW, VHD
      *
      * @param diskImageFormat The new value for the DiskImageFormat property for this object.
      *
@@ -99,7 +99,7 @@ public class ExportToS3Task implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>vmdk, vhd
+     * <b>Allowed Values: </b>VMDK, RAW, VHD
      *
      * @param diskImageFormat The new value for the DiskImageFormat property for this object.
      *

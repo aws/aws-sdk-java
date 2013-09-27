@@ -65,8 +65,13 @@ public class VpnStaticRoute implements Serializable {
     
     /**
      * Returns the value of the Source property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Static
      *
      * @return The value of the Source property for this object.
+     *
+     * @see VpnStaticRouteSource
      */
     public String getSource() {
         return source;
@@ -74,8 +79,13 @@ public class VpnStaticRoute implements Serializable {
     
     /**
      * Sets the value of the Source property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Static
      *
      * @param source The new value for the Source property for this object.
+     *
+     * @see VpnStaticRouteSource
      */
     public void setSource(String source) {
         this.source = source;
@@ -85,11 +95,16 @@ public class VpnStaticRoute implements Serializable {
      * Sets the value of the Source property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Static
      *
      * @param source The new value for the Source property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see VpnStaticRouteSource
      */
     public VpnStaticRoute withSource(String source) {
         this.source = source;
@@ -98,9 +113,48 @@ public class VpnStaticRoute implements Serializable {
     
     
     /**
+     * Sets the value of the Source property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Static
+     *
+     * @param source The new value for the Source property for this object.
+     *
+     * @see VpnStaticRouteSource
+     */
+    public void setSource(VpnStaticRouteSource source) {
+        this.source = source.toString();
+    }
+    
+    /**
+     * Sets the value of the Source property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Static
+     *
+     * @param source The new value for the Source property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see VpnStaticRouteSource
+     */
+    public VpnStaticRoute withSource(VpnStaticRouteSource source) {
+        this.source = source.toString();
+        return this;
+    }
+    
+    /**
      * Returns the value of the State property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>pending, available, deleting, deleted
      *
      * @return The value of the State property for this object.
+     *
+     * @see VpnState
      */
     public String getState() {
         return state;
@@ -108,8 +162,13 @@ public class VpnStaticRoute implements Serializable {
     
     /**
      * Sets the value of the State property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>pending, available, deleting, deleted
      *
      * @param state The new value for the State property for this object.
+     *
+     * @see VpnState
      */
     public void setState(String state) {
         this.state = state;
@@ -119,17 +178,56 @@ public class VpnStaticRoute implements Serializable {
      * Sets the value of the State property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>pending, available, deleting, deleted
      *
      * @param state The new value for the State property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see VpnState
      */
     public VpnStaticRoute withState(String state) {
         this.state = state;
         return this;
     }
     
+    
+    /**
+     * Sets the value of the State property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>pending, available, deleting, deleted
+     *
+     * @param state The new value for the State property for this object.
+     *
+     * @see VpnState
+     */
+    public void setState(VpnState state) {
+        this.state = state.toString();
+    }
+    
+    /**
+     * Sets the value of the State property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>pending, available, deleting, deleted
+     *
+     * @param state The new value for the State property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see VpnState
+     */
+    public VpnStaticRoute withState(VpnState state) {
+        this.state = state.toString();
+        return this;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

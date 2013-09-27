@@ -60,6 +60,9 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
     /**
      * The architecture of the image. <p> Valid Values: <code>i386</code>,
      * <code>x86_64</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>i386, x86_64
      */
     private String architecture;
 
@@ -233,9 +236,14 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
     /**
      * The architecture of the image. <p> Valid Values: <code>i386</code>,
      * <code>x86_64</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>i386, x86_64
      *
      * @return The architecture of the image. <p> Valid Values: <code>i386</code>,
      *         <code>x86_64</code>
+     *
+     * @see ArchitectureValues
      */
     public String getArchitecture() {
         return architecture;
@@ -244,9 +252,14 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
     /**
      * The architecture of the image. <p> Valid Values: <code>i386</code>,
      * <code>x86_64</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>i386, x86_64
      *
      * @param architecture The architecture of the image. <p> Valid Values: <code>i386</code>,
      *         <code>x86_64</code>
+     *
+     * @see ArchitectureValues
      */
     public void setArchitecture(String architecture) {
         this.architecture = architecture;
@@ -257,18 +270,61 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * <code>x86_64</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>i386, x86_64
      *
      * @param architecture The architecture of the image. <p> Valid Values: <code>i386</code>,
      *         <code>x86_64</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see ArchitectureValues
      */
     public RegisterImageRequest withArchitecture(String architecture) {
         this.architecture = architecture;
         return this;
     }
     
+    
+    /**
+     * The architecture of the image. <p> Valid Values: <code>i386</code>,
+     * <code>x86_64</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>i386, x86_64
+     *
+     * @param architecture The architecture of the image. <p> Valid Values: <code>i386</code>,
+     *         <code>x86_64</code>
+     *
+     * @see ArchitectureValues
+     */
+    public void setArchitecture(ArchitectureValues architecture) {
+        this.architecture = architecture.toString();
+    }
+    
+    /**
+     * The architecture of the image. <p> Valid Values: <code>i386</code>,
+     * <code>x86_64</code>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>i386, x86_64
+     *
+     * @param architecture The architecture of the image. <p> Valid Values: <code>i386</code>,
+     *         <code>x86_64</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see ArchitectureValues
+     */
+    public RegisterImageRequest withArchitecture(ArchitectureValues architecture) {
+        this.architecture = architecture.toString();
+        return this;
+    }
     
     /**
      * The optional ID of a specific kernel to register with the new AMI.

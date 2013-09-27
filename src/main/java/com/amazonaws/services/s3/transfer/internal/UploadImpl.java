@@ -19,6 +19,7 @@ import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
+import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.transfer.Upload;
 import com.amazonaws.services.s3.transfer.model.UploadResult;
 
@@ -27,6 +28,15 @@ public class UploadImpl extends AbstractTransfer implements Upload {
     public UploadImpl(String description, TransferProgressImpl transferProgressInternalState,
             ProgressListenerChain progressListenerChain, TransferStateChangeListener listener) {
         super(description, transferProgressInternalState, progressListenerChain, listener);
+    }
+
+    /**
+     * @deprecated Replaced by {@link #UploadImpl(String, TransferProgressImpl, ProgressListenerChain, TransferStateChangeListener)}
+     */
+    @Deprecated
+    public UploadImpl(String description, TransferProgressImpl transferProgressInternalState,
+            com.amazonaws.services.s3.transfer.internal.ProgressListenerChain progressListenerChain, TransferStateChangeListener listener) {
+        this(description, transferProgressInternalState, progressListenerChain.transformToGeneralProgressListenerChain(), listener);
     }
 
     /**

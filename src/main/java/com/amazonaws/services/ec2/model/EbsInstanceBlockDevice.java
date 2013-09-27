@@ -31,6 +31,9 @@ public class EbsInstanceBlockDevice implements Serializable {
 
     /**
      * The status of the EBS volume.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>attaching, attached, detaching, detached
      */
     private String status;
 
@@ -82,8 +85,13 @@ public class EbsInstanceBlockDevice implements Serializable {
     
     /**
      * The status of the EBS volume.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
      * @return The status of the EBS volume.
+     *
+     * @see AttachmentStatus
      */
     public String getStatus() {
         return status;
@@ -91,8 +99,13 @@ public class EbsInstanceBlockDevice implements Serializable {
     
     /**
      * The status of the EBS volume.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
      * @param status The status of the EBS volume.
+     *
+     * @see AttachmentStatus
      */
     public void setStatus(String status) {
         this.status = status;
@@ -102,17 +115,56 @@ public class EbsInstanceBlockDevice implements Serializable {
      * The status of the EBS volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>attaching, attached, detaching, detached
      *
      * @param status The status of the EBS volume.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see AttachmentStatus
      */
     public EbsInstanceBlockDevice withStatus(String status) {
         this.status = status;
         return this;
     }
     
+    
+    /**
+     * The status of the EBS volume.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>attaching, attached, detaching, detached
+     *
+     * @param status The status of the EBS volume.
+     *
+     * @see AttachmentStatus
+     */
+    public void setStatus(AttachmentStatus status) {
+        this.status = status.toString();
+    }
+    
+    /**
+     * The status of the EBS volume.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>attaching, attached, detaching, detached
+     *
+     * @param status The status of the EBS volume.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see AttachmentStatus
+     */
+    public EbsInstanceBlockDevice withStatus(AttachmentStatus status) {
+        this.status = status.toString();
+        return this;
+    }
     
     /**
      * The time at which the EBS volume was attached to the associated

@@ -14,17 +14,22 @@
  */
 package com.amazonaws.services.s3.transfer.internal;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import com.amazonaws.services.s3.model.LegacyS3ProgressListener;
 import com.amazonaws.services.s3.model.ProgressEvent;
 import com.amazonaws.services.s3.model.ProgressListener;
 
+/**
+ * @deprecated Replaced by {@link com.amazonaws.event.ProgressListenerChain}
+ */
+@Deprecated
 public class ProgressListenerChain implements ProgressListener {
-    private final List<ProgressListener> listeners = new ArrayList<ProgressListener>();
+    private final List<ProgressListener> listeners = new CopyOnWriteArrayList<ProgressListener>();
 
     private static final Log log = LogFactory.getLog(ProgressListenerChain.class);
     
@@ -50,5 +55,13 @@ public class ProgressListenerChain implements ProgressListener {
                 log.warn("Couldn't update progress listener", t);
             }
         }
+    }
+    
+    public com.amazonaws.event.ProgressListenerChain transformToGeneralProgressListenerChain() {
+        com.amazonaws.event.ProgressListenerChain newProgressListenerChain = new com.amazonaws.event.ProgressListenerChain();
+        for ( ProgressListener listener : listeners ) {
+            newProgressListenerChain.addProgressListener(new LegacyS3ProgressListener(listener));
+        }
+        return newProgressListenerChain;
     }
 }

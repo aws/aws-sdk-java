@@ -28,8 +28,13 @@ public class VolumeStatusDetails implements Serializable {
 
     /**
      * Returns the value of the Name property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>io-enabled, io-performance
      *
      * @return The value of the Name property for this object.
+     *
+     * @see VolumeStatusName
      */
     public String getName() {
         return name;
@@ -37,8 +42,13 @@ public class VolumeStatusDetails implements Serializable {
     
     /**
      * Sets the value of the Name property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>io-enabled, io-performance
      *
      * @param name The new value for the Name property for this object.
+     *
+     * @see VolumeStatusName
      */
     public void setName(String name) {
         this.name = name;
@@ -48,17 +58,56 @@ public class VolumeStatusDetails implements Serializable {
      * Sets the value of the Name property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>io-enabled, io-performance
      *
      * @param name The new value for the Name property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see VolumeStatusName
      */
     public VolumeStatusDetails withName(String name) {
         this.name = name;
         return this;
     }
     
+    
+    /**
+     * Sets the value of the Name property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>io-enabled, io-performance
+     *
+     * @param name The new value for the Name property for this object.
+     *
+     * @see VolumeStatusName
+     */
+    public void setName(VolumeStatusName name) {
+        this.name = name.toString();
+    }
+    
+    /**
+     * Sets the value of the Name property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>io-enabled, io-performance
+     *
+     * @param name The new value for the Name property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see VolumeStatusName
+     */
+    public VolumeStatusDetails withName(VolumeStatusName name) {
+        this.name = name.toString();
+        return this;
+    }
     
     /**
      * Returns the value of the Status property for this object.

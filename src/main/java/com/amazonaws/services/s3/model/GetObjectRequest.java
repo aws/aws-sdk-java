@@ -19,6 +19,7 @@ import java.util.Date;
 import java.util.List;
 
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.event.ProgressListener;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.internal.Constants;
 
@@ -95,7 +96,7 @@ public class GetObjectRequest extends AmazonWebServiceRequest {
      * The optional progress listener for receiving updates about object download
      * status.
      */
-    private com.amazonaws.util.ProgressListener generalProgressListener;
+    private ProgressListener generalProgressListener;
 
 
     /**
@@ -670,7 +671,6 @@ public class GetObjectRequest extends AmazonWebServiceRequest {
      * @param responseHeaders
      *            The headers to be overridden in the service response.
      *
-     *
      * @return This {@link GetObjectRequest} for method chaining.
      */
     public GetObjectRequest withResponseHeaders(ResponseHeaderOverrides responseHeaders) {
@@ -683,10 +683,13 @@ public class GetObjectRequest extends AmazonWebServiceRequest {
      * download status.
      *
      * @param progressListener
-     *            The new progress listener.
+     *            The legacy progress listener that is used exclusively for Amazon S3 client.
+     *            
+     * @deprecated use {@link #setGeneralProgressListener(ProgressListener)}
+     *             instead.
      */
     @Deprecated
-    public void setProgressListener(ProgressListener progressListener) {
+    public void setProgressListener(com.amazonaws.services.s3.model.ProgressListener progressListener) {
         this.generalProgressListener = new LegacyS3ProgressListener(progressListener);
     }
 
@@ -696,9 +699,11 @@ public class GetObjectRequest extends AmazonWebServiceRequest {
      *
      * @return the optional progress listener for receiving updates about object
      *          download status.
+     *         
+     * @deprecated use {@link #getGeneralProgressListener()} instead.
      */
     @Deprecated
-    public ProgressListener getProgressListener() {
+    public com.amazonaws.services.s3.model.ProgressListener getProgressListener() {
         if (generalProgressListener instanceof LegacyS3ProgressListener) {
             return ((LegacyS3ProgressListener)generalProgressListener).unwrap();
         } else {
@@ -712,11 +717,15 @@ public class GetObjectRequest extends AmazonWebServiceRequest {
      * calls can be chained together.
      *
      * @param progressListener
-     *            The new progress listener.
+     *            The legacy progress listener that is used exclusively for Amazon S3 client.
      *
      * @return This updated GetObjectRequest object.
+     * 
+     * @deprecated use {@link #withGeneralProgressListener(ProgressListener)}
+     *             instead.
      */
-    public GetObjectRequest withProgressListener(ProgressListener progressListener) {
+    @Deprecated
+    public GetObjectRequest withProgressListener(com.amazonaws.services.s3.model.ProgressListener progressListener) {
         setProgressListener(progressListener);
         return this;
     }
@@ -728,7 +737,7 @@ public class GetObjectRequest extends AmazonWebServiceRequest {
      * @param generalProgressListener
      *            The new progress listener.
      */
-    public void setGeneralProgressListener(com.amazonaws.util.ProgressListener generalProgressListener) {
+    public void setGeneralProgressListener(ProgressListener generalProgressListener) {
         this.generalProgressListener = generalProgressListener;
     }
 
@@ -739,7 +748,7 @@ public class GetObjectRequest extends AmazonWebServiceRequest {
      * @return the optional progress listener for receiving updates about object
      *          download status.
      */
-    public com.amazonaws.util.ProgressListener getGeneralProgressListener() {
+    public ProgressListener getGeneralProgressListener() {
         return generalProgressListener;
     }
 
@@ -753,7 +762,7 @@ public class GetObjectRequest extends AmazonWebServiceRequest {
      *
      * @return This updated GetObjectRequest object.
      */
-    public GetObjectRequest withGeneralProgressListener(com.amazonaws.util.ProgressListener progressListener) {
+    public GetObjectRequest withGeneralProgressListener(ProgressListener progressListener) {
         setGeneralProgressListener(progressListener);
         return this;
     }

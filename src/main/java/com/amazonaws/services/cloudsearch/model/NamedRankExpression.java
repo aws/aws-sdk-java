@@ -43,21 +43,20 @@ public class NamedRankExpression implements Serializable {
      * based on JavaScript expressions and supports:<ul> <li>Integer,
      * floating point, hex and octal literals</li> <li>Shortcut evaluation of
      * logical operators such that an expression <code>a || b</code>
-     * evaluates to the value <code>a</code> if <code>a</code> is
-     * <code>true</code> without evaluting <code>b</code> at all</li>
-     * <li>JavaScript order of precendence for operators</li> <li>Arithmetic
-     * operators: <code>+ - * / %</code></li> <li>Boolean operators
-     * (including the ternary operator)</li> <li>Bitwise operators</li>
-     * <li>Comparison operators</li> <li>Common mathematic functions:
-     * <code>abs ceil erf exp floor lgamma ln log2 log10 max min sqrt
-     * pow</code></li> <li>Trigonometric library functions: <code>acosh acos
-     * asinh asin atanh atan cosh cos sinh sin tanh tan</code></li>
-     * <li>Random generation of a number between 0 and 1:
-     * <code>rand</code></li> <li>Current time in epoch:
-     * <code>time</code></li> <li>The <code>min max</code> functions that
-     * operate on a variable argument list</li> </ul> <p>Intermediate results
-     * are calculated as double precision floating point values. The final
-     * return value of a <code>RankExpression</code> is automatically
+     * evaluates to the value <code>a</code>, if <code>a</code> is true,
+     * without evaluating <code>b</code> at all</li> <li>JavaScript order of
+     * precedence for operators</li> <li>Arithmetic operators: <code>+ - * /
+     * %</code></li> <li>Boolean operators (including the ternary
+     * operator)</li> <li>Bitwise operators</li> <li>Comparison
+     * operators</li> <li>Common mathematic functions: <code>abs ceil erf exp
+     * floor lgamma ln log2 log10 max min sqrt pow</code></li>
+     * <li>Trigonometric library functions: <code>acosh acos asinh asin atanh
+     * atan cosh cos sinh sin tanh tan</code></li> <li>Random generation of a
+     * number between 0 and 1: <code>rand</code></li> <li>Current time in
+     * epoch: <code>time</code></li> <li>The <code>min max</code> functions
+     * that operate on a variable argument list</li> </ul> <p>Intermediate
+     * results are calculated as double precision floating point values. The
+     * final return value of a <code>RankExpression</code> is automatically
      * converted from floating point to a 32-bit unsigned integer by rounding
      * to the nearest integer, with a natural floor of 0 and a ceiling of
      * max(uint32_t), 4294967295. Mathematical errors such as dividing by 0
@@ -154,21 +153,20 @@ public class NamedRankExpression implements Serializable {
      * based on JavaScript expressions and supports:<ul> <li>Integer,
      * floating point, hex and octal literals</li> <li>Shortcut evaluation of
      * logical operators such that an expression <code>a || b</code>
-     * evaluates to the value <code>a</code> if <code>a</code> is
-     * <code>true</code> without evaluting <code>b</code> at all</li>
-     * <li>JavaScript order of precendence for operators</li> <li>Arithmetic
-     * operators: <code>+ - * / %</code></li> <li>Boolean operators
-     * (including the ternary operator)</li> <li>Bitwise operators</li>
-     * <li>Comparison operators</li> <li>Common mathematic functions:
-     * <code>abs ceil erf exp floor lgamma ln log2 log10 max min sqrt
-     * pow</code></li> <li>Trigonometric library functions: <code>acosh acos
-     * asinh asin atanh atan cosh cos sinh sin tanh tan</code></li>
-     * <li>Random generation of a number between 0 and 1:
-     * <code>rand</code></li> <li>Current time in epoch:
-     * <code>time</code></li> <li>The <code>min max</code> functions that
-     * operate on a variable argument list</li> </ul> <p>Intermediate results
-     * are calculated as double precision floating point values. The final
-     * return value of a <code>RankExpression</code> is automatically
+     * evaluates to the value <code>a</code>, if <code>a</code> is true,
+     * without evaluating <code>b</code> at all</li> <li>JavaScript order of
+     * precedence for operators</li> <li>Arithmetic operators: <code>+ - * /
+     * %</code></li> <li>Boolean operators (including the ternary
+     * operator)</li> <li>Bitwise operators</li> <li>Comparison
+     * operators</li> <li>Common mathematic functions: <code>abs ceil erf exp
+     * floor lgamma ln log2 log10 max min sqrt pow</code></li>
+     * <li>Trigonometric library functions: <code>acosh acos asinh asin atanh
+     * atan cosh cos sinh sin tanh tan</code></li> <li>Random generation of a
+     * number between 0 and 1: <code>rand</code></li> <li>Current time in
+     * epoch: <code>time</code></li> <li>The <code>min max</code> functions
+     * that operate on a variable argument list</li> </ul> <p>Intermediate
+     * results are calculated as double precision floating point values. The
+     * final return value of a <code>RankExpression</code> is automatically
      * converted from floating point to a 32-bit unsigned integer by rounding
      * to the nearest integer, with a natural floor of 0 and a ceiling of
      * max(uint32_t), 4294967295. Mathematical errors such as dividing by 0
@@ -192,21 +190,20 @@ public class NamedRankExpression implements Serializable {
      *         based on JavaScript expressions and supports:<ul> <li>Integer,
      *         floating point, hex and octal literals</li> <li>Shortcut evaluation of
      *         logical operators such that an expression <code>a || b</code>
-     *         evaluates to the value <code>a</code> if <code>a</code> is
-     *         <code>true</code> without evaluting <code>b</code> at all</li>
-     *         <li>JavaScript order of precendence for operators</li> <li>Arithmetic
-     *         operators: <code>+ - * / %</code></li> <li>Boolean operators
-     *         (including the ternary operator)</li> <li>Bitwise operators</li>
-     *         <li>Comparison operators</li> <li>Common mathematic functions:
-     *         <code>abs ceil erf exp floor lgamma ln log2 log10 max min sqrt
-     *         pow</code></li> <li>Trigonometric library functions: <code>acosh acos
-     *         asinh asin atanh atan cosh cos sinh sin tanh tan</code></li>
-     *         <li>Random generation of a number between 0 and 1:
-     *         <code>rand</code></li> <li>Current time in epoch:
-     *         <code>time</code></li> <li>The <code>min max</code> functions that
-     *         operate on a variable argument list</li> </ul> <p>Intermediate results
-     *         are calculated as double precision floating point values. The final
-     *         return value of a <code>RankExpression</code> is automatically
+     *         evaluates to the value <code>a</code>, if <code>a</code> is true,
+     *         without evaluating <code>b</code> at all</li> <li>JavaScript order of
+     *         precedence for operators</li> <li>Arithmetic operators: <code>+ - * /
+     *         %</code></li> <li>Boolean operators (including the ternary
+     *         operator)</li> <li>Bitwise operators</li> <li>Comparison
+     *         operators</li> <li>Common mathematic functions: <code>abs ceil erf exp
+     *         floor lgamma ln log2 log10 max min sqrt pow</code></li>
+     *         <li>Trigonometric library functions: <code>acosh acos asinh asin atanh
+     *         atan cosh cos sinh sin tanh tan</code></li> <li>Random generation of a
+     *         number between 0 and 1: <code>rand</code></li> <li>Current time in
+     *         epoch: <code>time</code></li> <li>The <code>min max</code> functions
+     *         that operate on a variable argument list</li> </ul> <p>Intermediate
+     *         results are calculated as double precision floating point values. The
+     *         final return value of a <code>RankExpression</code> is automatically
      *         converted from floating point to a 32-bit unsigned integer by rounding
      *         to the nearest integer, with a natural floor of 0 and a ceiling of
      *         max(uint32_t), 4294967295. Mathematical errors such as dividing by 0
@@ -232,21 +229,20 @@ public class NamedRankExpression implements Serializable {
      * based on JavaScript expressions and supports:<ul> <li>Integer,
      * floating point, hex and octal literals</li> <li>Shortcut evaluation of
      * logical operators such that an expression <code>a || b</code>
-     * evaluates to the value <code>a</code> if <code>a</code> is
-     * <code>true</code> without evaluting <code>b</code> at all</li>
-     * <li>JavaScript order of precendence for operators</li> <li>Arithmetic
-     * operators: <code>+ - * / %</code></li> <li>Boolean operators
-     * (including the ternary operator)</li> <li>Bitwise operators</li>
-     * <li>Comparison operators</li> <li>Common mathematic functions:
-     * <code>abs ceil erf exp floor lgamma ln log2 log10 max min sqrt
-     * pow</code></li> <li>Trigonometric library functions: <code>acosh acos
-     * asinh asin atanh atan cosh cos sinh sin tanh tan</code></li>
-     * <li>Random generation of a number between 0 and 1:
-     * <code>rand</code></li> <li>Current time in epoch:
-     * <code>time</code></li> <li>The <code>min max</code> functions that
-     * operate on a variable argument list</li> </ul> <p>Intermediate results
-     * are calculated as double precision floating point values. The final
-     * return value of a <code>RankExpression</code> is automatically
+     * evaluates to the value <code>a</code>, if <code>a</code> is true,
+     * without evaluating <code>b</code> at all</li> <li>JavaScript order of
+     * precedence for operators</li> <li>Arithmetic operators: <code>+ - * /
+     * %</code></li> <li>Boolean operators (including the ternary
+     * operator)</li> <li>Bitwise operators</li> <li>Comparison
+     * operators</li> <li>Common mathematic functions: <code>abs ceil erf exp
+     * floor lgamma ln log2 log10 max min sqrt pow</code></li>
+     * <li>Trigonometric library functions: <code>acosh acos asinh asin atanh
+     * atan cosh cos sinh sin tanh tan</code></li> <li>Random generation of a
+     * number between 0 and 1: <code>rand</code></li> <li>Current time in
+     * epoch: <code>time</code></li> <li>The <code>min max</code> functions
+     * that operate on a variable argument list</li> </ul> <p>Intermediate
+     * results are calculated as double precision floating point values. The
+     * final return value of a <code>RankExpression</code> is automatically
      * converted from floating point to a 32-bit unsigned integer by rounding
      * to the nearest integer, with a natural floor of 0 and a ceiling of
      * max(uint32_t), 4294967295. Mathematical errors such as dividing by 0
@@ -270,21 +266,20 @@ public class NamedRankExpression implements Serializable {
      *         based on JavaScript expressions and supports:<ul> <li>Integer,
      *         floating point, hex and octal literals</li> <li>Shortcut evaluation of
      *         logical operators such that an expression <code>a || b</code>
-     *         evaluates to the value <code>a</code> if <code>a</code> is
-     *         <code>true</code> without evaluting <code>b</code> at all</li>
-     *         <li>JavaScript order of precendence for operators</li> <li>Arithmetic
-     *         operators: <code>+ - * / %</code></li> <li>Boolean operators
-     *         (including the ternary operator)</li> <li>Bitwise operators</li>
-     *         <li>Comparison operators</li> <li>Common mathematic functions:
-     *         <code>abs ceil erf exp floor lgamma ln log2 log10 max min sqrt
-     *         pow</code></li> <li>Trigonometric library functions: <code>acosh acos
-     *         asinh asin atanh atan cosh cos sinh sin tanh tan</code></li>
-     *         <li>Random generation of a number between 0 and 1:
-     *         <code>rand</code></li> <li>Current time in epoch:
-     *         <code>time</code></li> <li>The <code>min max</code> functions that
-     *         operate on a variable argument list</li> </ul> <p>Intermediate results
-     *         are calculated as double precision floating point values. The final
-     *         return value of a <code>RankExpression</code> is automatically
+     *         evaluates to the value <code>a</code>, if <code>a</code> is true,
+     *         without evaluating <code>b</code> at all</li> <li>JavaScript order of
+     *         precedence for operators</li> <li>Arithmetic operators: <code>+ - * /
+     *         %</code></li> <li>Boolean operators (including the ternary
+     *         operator)</li> <li>Bitwise operators</li> <li>Comparison
+     *         operators</li> <li>Common mathematic functions: <code>abs ceil erf exp
+     *         floor lgamma ln log2 log10 max min sqrt pow</code></li>
+     *         <li>Trigonometric library functions: <code>acosh acos asinh asin atanh
+     *         atan cosh cos sinh sin tanh tan</code></li> <li>Random generation of a
+     *         number between 0 and 1: <code>rand</code></li> <li>Current time in
+     *         epoch: <code>time</code></li> <li>The <code>min max</code> functions
+     *         that operate on a variable argument list</li> </ul> <p>Intermediate
+     *         results are calculated as double precision floating point values. The
+     *         final return value of a <code>RankExpression</code> is automatically
      *         converted from floating point to a 32-bit unsigned integer by rounding
      *         to the nearest integer, with a natural floor of 0 and a ceiling of
      *         max(uint32_t), 4294967295. Mathematical errors such as dividing by 0
@@ -310,21 +305,20 @@ public class NamedRankExpression implements Serializable {
      * based on JavaScript expressions and supports:<ul> <li>Integer,
      * floating point, hex and octal literals</li> <li>Shortcut evaluation of
      * logical operators such that an expression <code>a || b</code>
-     * evaluates to the value <code>a</code> if <code>a</code> is
-     * <code>true</code> without evaluting <code>b</code> at all</li>
-     * <li>JavaScript order of precendence for operators</li> <li>Arithmetic
-     * operators: <code>+ - * / %</code></li> <li>Boolean operators
-     * (including the ternary operator)</li> <li>Bitwise operators</li>
-     * <li>Comparison operators</li> <li>Common mathematic functions:
-     * <code>abs ceil erf exp floor lgamma ln log2 log10 max min sqrt
-     * pow</code></li> <li>Trigonometric library functions: <code>acosh acos
-     * asinh asin atanh atan cosh cos sinh sin tanh tan</code></li>
-     * <li>Random generation of a number between 0 and 1:
-     * <code>rand</code></li> <li>Current time in epoch:
-     * <code>time</code></li> <li>The <code>min max</code> functions that
-     * operate on a variable argument list</li> </ul> <p>Intermediate results
-     * are calculated as double precision floating point values. The final
-     * return value of a <code>RankExpression</code> is automatically
+     * evaluates to the value <code>a</code>, if <code>a</code> is true,
+     * without evaluating <code>b</code> at all</li> <li>JavaScript order of
+     * precedence for operators</li> <li>Arithmetic operators: <code>+ - * /
+     * %</code></li> <li>Boolean operators (including the ternary
+     * operator)</li> <li>Bitwise operators</li> <li>Comparison
+     * operators</li> <li>Common mathematic functions: <code>abs ceil erf exp
+     * floor lgamma ln log2 log10 max min sqrt pow</code></li>
+     * <li>Trigonometric library functions: <code>acosh acos asinh asin atanh
+     * atan cosh cos sinh sin tanh tan</code></li> <li>Random generation of a
+     * number between 0 and 1: <code>rand</code></li> <li>Current time in
+     * epoch: <code>time</code></li> <li>The <code>min max</code> functions
+     * that operate on a variable argument list</li> </ul> <p>Intermediate
+     * results are calculated as double precision floating point values. The
+     * final return value of a <code>RankExpression</code> is automatically
      * converted from floating point to a 32-bit unsigned integer by rounding
      * to the nearest integer, with a natural floor of 0 and a ceiling of
      * max(uint32_t), 4294967295. Mathematical errors such as dividing by 0
@@ -350,21 +344,20 @@ public class NamedRankExpression implements Serializable {
      *         based on JavaScript expressions and supports:<ul> <li>Integer,
      *         floating point, hex and octal literals</li> <li>Shortcut evaluation of
      *         logical operators such that an expression <code>a || b</code>
-     *         evaluates to the value <code>a</code> if <code>a</code> is
-     *         <code>true</code> without evaluting <code>b</code> at all</li>
-     *         <li>JavaScript order of precendence for operators</li> <li>Arithmetic
-     *         operators: <code>+ - * / %</code></li> <li>Boolean operators
-     *         (including the ternary operator)</li> <li>Bitwise operators</li>
-     *         <li>Comparison operators</li> <li>Common mathematic functions:
-     *         <code>abs ceil erf exp floor lgamma ln log2 log10 max min sqrt
-     *         pow</code></li> <li>Trigonometric library functions: <code>acosh acos
-     *         asinh asin atanh atan cosh cos sinh sin tanh tan</code></li>
-     *         <li>Random generation of a number between 0 and 1:
-     *         <code>rand</code></li> <li>Current time in epoch:
-     *         <code>time</code></li> <li>The <code>min max</code> functions that
-     *         operate on a variable argument list</li> </ul> <p>Intermediate results
-     *         are calculated as double precision floating point values. The final
-     *         return value of a <code>RankExpression</code> is automatically
+     *         evaluates to the value <code>a</code>, if <code>a</code> is true,
+     *         without evaluating <code>b</code> at all</li> <li>JavaScript order of
+     *         precedence for operators</li> <li>Arithmetic operators: <code>+ - * /
+     *         %</code></li> <li>Boolean operators (including the ternary
+     *         operator)</li> <li>Bitwise operators</li> <li>Comparison
+     *         operators</li> <li>Common mathematic functions: <code>abs ceil erf exp
+     *         floor lgamma ln log2 log10 max min sqrt pow</code></li>
+     *         <li>Trigonometric library functions: <code>acosh acos asinh asin atanh
+     *         atan cosh cos sinh sin tanh tan</code></li> <li>Random generation of a
+     *         number between 0 and 1: <code>rand</code></li> <li>Current time in
+     *         epoch: <code>time</code></li> <li>The <code>min max</code> functions
+     *         that operate on a variable argument list</li> </ul> <p>Intermediate
+     *         results are calculated as double precision floating point values. The
+     *         final return value of a <code>RankExpression</code> is automatically
      *         converted from floating point to a 32-bit unsigned integer by rounding
      *         to the nearest integer, with a natural floor of 0 and a ceiling of
      *         max(uint32_t), 4294967295. Mathematical errors such as dividing by 0

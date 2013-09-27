@@ -21,7 +21,9 @@ import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
-import com.amazonaws.services.s3.model.ProgressListener;
+import com.amazonaws.event.ProgressListener;
+import com.amazonaws.event.ProgressListenerChain;
+import com.amazonaws.services.s3.model.LegacyS3ProgressListener;
 import com.amazonaws.services.s3.transfer.Transfer;
 import com.amazonaws.services.s3.transfer.TransferProgress;
 
@@ -50,6 +52,14 @@ public abstract class AbstractTransfer implements Transfer {
     AbstractTransfer(String description, TransferProgress transferProgress, ProgressListenerChain progressListenerChain) {
         this(description, transferProgress, progressListenerChain, null);
     }
+    
+    /**
+     * @deprecated Replaced by {@link #AbstractTransfer(String, TransferProgress, ProgressListenerChain)}
+     */
+    @Deprecated
+    AbstractTransfer(String description, TransferProgress transferProgress, com.amazonaws.services.s3.transfer.internal.ProgressListenerChain progressListenerChain) {
+        this(description, transferProgress, progressListenerChain, null);
+    }
 
     AbstractTransfer(String description, TransferProgress transferProgress,
             ProgressListenerChain progressListenerChain, TransferStateChangeListener stateChangeListener) {
@@ -57,6 +67,16 @@ public abstract class AbstractTransfer implements Transfer {
         this.progressListenerChain = progressListenerChain;
         this.transferProgress = transferProgress;
         addStateChangeListener(stateChangeListener);
+    }
+    
+    /**
+     * @deprecated Replaced by {@link #AbstractTransfer(String, TransferProgress, ProgressListenerChain)}
+     */
+    @Deprecated
+    AbstractTransfer(String description, TransferProgress transferProgress,
+            com.amazonaws.services.s3.transfer.internal.ProgressListenerChain progressListenerChain, TransferStateChangeListener stateChangeListener) {
+        this(description, transferProgress, progressListenerChain.transformToGeneralProgressListenerChain(),
+                stateChangeListener);
     }
     
     /**
@@ -180,6 +200,22 @@ public abstract class AbstractTransfer implements Transfer {
     }
     
     /**
+     * @deprecated Replaced by {@link #addProgressListener(ProgressListener)}
+     */
+    @Deprecated
+    public synchronized void addProgressListener(com.amazonaws.services.s3.model.ProgressListener listener) {
+        progressListenerChain.addProgressListener(new LegacyS3ProgressListener(listener));
+    }
+    
+    /**
+     * @deprecated Replaced by {@link #removeProgressListener(ProgressListener)}
+     */
+    @Deprecated
+    public synchronized void removeProgressListener(com.amazonaws.services.s3.model.ProgressListener listener) {
+        progressListenerChain.removeProgressListener(new LegacyS3ProgressListener(listener));
+    }
+    
+    /**
      * Adds the given state change listener to the collection of listeners.
      */
     public synchronized void addStateChangeListener(TransferStateChangeListener listener) {
@@ -192,7 +228,7 @@ public abstract class AbstractTransfer implements Transfer {
      */
     public synchronized void removeStateChangeListener(TransferStateChangeListener listener) {
         if ( listener != null )
-            stateChangeListeners.remove(listener);        
+            stateChangeListeners.remove(listener);
     }
 
     /**

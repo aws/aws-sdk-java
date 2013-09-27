@@ -58,6 +58,10 @@ public class TextOptionsStaxUnmarshaller implements Unmarshaller<TextOptions, St
                     textOptions.setResultEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("TextProcessor", targetDepth)) {
+                    textOptions.setTextProcessor(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return textOptions;

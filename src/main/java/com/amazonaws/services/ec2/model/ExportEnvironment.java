@@ -20,7 +20,8 @@ package com.amazonaws.services.ec2.model;
 public enum ExportEnvironment {
     
     Citrix("citrix"),
-    Vmware("vmware");
+    Vmware("vmware"),
+    Microsoft("microsoft");
 
     private String value;
 
@@ -48,6 +49,8 @@ public enum ExportEnvironment {
             return ExportEnvironment.Citrix;
         } else if ("vmware".equals(value)) {
             return ExportEnvironment.Vmware;
+        } else if ("microsoft".equals(value)) {
+            return ExportEnvironment.Microsoft;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

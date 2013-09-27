@@ -33,6 +33,9 @@ import com.amazonaws.ClientConfiguration;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.event.ProgressEvent;
+import com.amazonaws.event.ProgressListener;
+import com.amazonaws.event.ProgressListenerCallbackExecutor;
+import com.amazonaws.event.ProgressReportingInputStream;
 import com.amazonaws.internal.StaticCredentialsProvider;
 import com.amazonaws.services.glacier.AmazonGlacier;
 import com.amazonaws.services.glacier.AmazonGlacierClient;
@@ -58,7 +61,6 @@ import com.amazonaws.services.s3.internal.RepeatableFileInputStream;
 import com.amazonaws.services.sns.AmazonSNSClient;
 import com.amazonaws.services.sqs.AmazonSQSClient;
 import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.ProgressListener;
 
 /**
  * Utilities for uploading and downloading data to and from AWS Glacier.
@@ -301,10 +303,13 @@ public class ArchiveTransferManager {
      */
     public UploadResult upload(final String accountId, final String vaultName, final String archiveDescription, final File file, ProgressListener progressListener)
             throws AmazonServiceException, AmazonClientException, FileNotFoundException {
+        ProgressListenerCallbackExecutor progressListenerCallbackExecutor = ProgressListenerCallbackExecutor
+                .wrapListener(progressListener);
+        
         if (file.length() > MULTIPART_UPLOAD_SIZE_THRESHOLD) {
-            return uploadInMultipleParts(accountId, vaultName, archiveDescription, file, progressListener);
+            return uploadInMultipleParts(accountId, vaultName, archiveDescription, file, progressListenerCallbackExecutor);
         } else {
-            return uploadInSinglePart(accountId, vaultName, archiveDescription, file, progressListener);
+            return uploadInSinglePart(accountId, vaultName, archiveDescription, file, progressListenerCallbackExecutor);
         }
     }
 
@@ -413,8 +418,10 @@ public class ArchiveTransferManager {
 
         JobStatusMonitor jobStatusMonitor = null;
         String jobId = null;
+        ProgressListenerCallbackExecutor progressListenerCallbackExecutor = ProgressListenerCallbackExecutor
+                .wrapListener(progressListener);
 
-        fireProgressEvent(progressListener, ProgressEvent.PREPARING_EVENT_CODE);
+        fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.PREPARING_EVENT_CODE);
 
         try {
             if (credentialsProvider != null && clientConfiguration != null) {
@@ -437,7 +444,7 @@ public class ArchiveTransferManager {
             jobStatusMonitor.waitForJobToComplete(jobId);
 
         } catch (AmazonServiceException ace) {
-            fireProgressEvent(progressListener, ProgressEvent.FAILED_EVENT_CODE);
+            fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.FAILED_EVENT_CODE);
             throw ace;
         } finally {
             if (jobStatusMonitor != null) {
@@ -445,54 +452,58 @@ public class ArchiveTransferManager {
             }
         }
 
-        downloadJobOutput(accountId, vaultName, jobId, file, progressListener);
+        downloadJobOutput(accountId, vaultName, jobId, file, progressListenerCallbackExecutor);
     }
 
     /**
-	 * Downloads the job output for the specified job (which must be ready to
-	 * download already, and must be a complete archive retrieval, not a partial
-	 * range retrieval), into the specified file. This method will request
-	 * individual chunks of the data, one at a time, in order to handle any
-	 * transient errors along the way.
-	 *
-	 * @param accountId
-	 *            The account ID containing the job output to download (or null
-	 *            if the current account should be used).
-	 * @param vaultName
-	 *            The name of the vault from where the job was initiated.
-	 * @param jobId
-	 *            The ID of the job whose output is to be downloaded. This job
-	 *            must be a complete archive retrieval, not a range retrieval.
-	 * @param file
-	 *            The file to download the job output into.
-	 */
+     * Downloads the job output for the specified job (which must be ready to
+     * download already, and must be a complete archive retrieval, not a partial
+     * range retrieval), into the specified file. This method will request
+     * individual chunks of the data, one at a time, in order to handle any
+     * transient errors along the way.
+     *
+     * @param accountId
+     *            The account ID containing the job output to download (or null
+     *            if the current account should be used).
+     * @param vaultName
+     *            The name of the vault from where the job was initiated.
+     * @param jobId
+     *            The ID of the job whose output is to be downloaded. This job
+     *            must be a complete archive retrieval, not a range retrieval.
+     * @param file
+     *            The file to download the job output into.
+     */
     public void downloadJobOutput(String accountId, String vaultName, String jobId, File file) {
-        downloadJobOutput(accountId, vaultName, jobId, file, null);
+        downloadJobOutput(accountId, vaultName, jobId, file, (ProgressListenerCallbackExecutor)null);
     }
 
     /**
-	 * Downloads the job output for the specified job (which must be ready to
-	 * download already, and must be a complete archive retrieval, not a partial
-	 * range retrieval), into the specified file. This method will request
-	 * individual chunks of the data, one at a time, in order to handle any
-	 * transient errors along the way. You can also add an optional progress
-	 * listener for receiving updates about the download status.
-	 *
-	 * @param accountId
-	 *            The account ID containing the job output to download (or null
-	 *            if the current account shoudl be used).
-	 * @param vaultName
-	 *            The name of the vault from where the job was initiated.
-	 * @param jobId
-	 *            The ID of the job whose output is to be downloaded. This job
-	 *            must be a complete archive retrieval, not a range retrieval.
-	 * @param file
-	 *            The file to download the job output into.
-	 * @param progressListener
-	 *            The optional progress listener for receiving updates about the
-	 *            download status.
-	 */
+     * Downloads the job output for the specified job (which must be ready to
+     * download already, and must be a complete archive retrieval, not a partial
+     * range retrieval), into the specified file. This method will request
+     * individual chunks of the data, one at a time, in order to handle any
+     * transient errors along the way. You can also add an optional progress
+     * listener for receiving updates about the download status.
+     *
+     * @param accountId
+     *            The account ID containing the job output to download (or null
+     *            if the current account shoudl be used).
+     * @param vaultName
+     *            The name of the vault from where the job was initiated.
+     * @param jobId
+     *            The ID of the job whose output is to be downloaded. This job
+     *            must be a complete archive retrieval, not a range retrieval.
+     * @param file
+     *            The file to download the job output into.
+     * @param progressListener
+     *            The optional progress listener for receiving updates about the
+     *            download status.
+     */
     public void downloadJobOutput(String accountId, String vaultName, String jobId, File file, ProgressListener progressListener) {
+        downloadJobOutput(accountId, vaultName, jobId, file, ProgressListenerCallbackExecutor.wrapListener(progressListener));
+    }
+    
+    private void downloadJobOutput(String accountId, String vaultName, String jobId, File file, ProgressListenerCallbackExecutor progressListenerCallbackExecutor) {
         long archiveSize = 0;
         long chunkSize = DEFAULT_DOWNLOAD_CHUNK_SIZE;
         long currentPosition = 0;
@@ -509,7 +520,7 @@ public class ArchiveTransferManager {
             try {
                 chunkSize = Long.parseLong(customizedChunkSize) * 1024 * 1024;
             } catch (NumberFormatException e) {
-                fireProgressEvent(progressListener, ProgressEvent.FAILED_EVENT_CODE);
+                fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.FAILED_EVENT_CODE);
                 throw new AmazonClientException("Invalid chunk size: " + e.getMessage());
             }
             validateChunkSize(chunkSize);
@@ -518,11 +529,11 @@ public class ArchiveTransferManager {
         try {
             output = new RandomAccessFile(file, "rw");
         } catch (IOException e) {
-            fireProgressEvent(progressListener, ProgressEvent.FAILED_EVENT_CODE);
+            fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.FAILED_EVENT_CODE);
             throw new AmazonClientException("Unable to open the output file " + file.getPath(), e);
         }
 
-        fireProgressEvent(progressListener, ProgressEvent.STARTED_EVENT_CODE);
+        fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.STARTED_EVENT_CODE);
 
         while (currentPosition < archiveSize) {
             if (currentPosition + chunkSize > archiveSize) {
@@ -535,19 +546,19 @@ public class ArchiveTransferManager {
             try {
             downloadOneChunk(accountId, vaultName, jobId, output, currentPosition, endPosition);
             } catch (AmazonServiceException ace) {
-                fireProgressEvent(progressListener, ProgressEvent.FAILED_EVENT_CODE);
+                fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.FAILED_EVENT_CODE);
                 throw ace;
             }
 
-            if (progressListener != null) {
+            if (progressListenerCallbackExecutor != null) {
                 ProgressEvent event = new ProgressEvent(endPosition - currentPosition + 1);
-                progressListener.progressChanged(event);
+                progressListenerCallbackExecutor.progressChanged(event);
             }
 
             currentPosition += chunkSize;
         }
         try { output.close();} catch (Exception e) {};
-        fireProgressEvent(progressListener, ProgressEvent.COMPLETED_EVENT_CODE);
+        fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.COMPLETED_EVENT_CODE);
     }
 
     private void validateChunkSize(long chunkSize) {
@@ -662,11 +673,11 @@ public class ArchiveTransferManager {
         }
     }
 
-    private UploadResult uploadInMultipleParts(final String accountId, final String vaultName, final String archiveDescription, final File file, ProgressListener progressListener) {
+    private UploadResult uploadInMultipleParts(final String accountId, final String vaultName, final String archiveDescription, final File file, ProgressListenerCallbackExecutor progressListenerCallbackExecutor) {
         long partSize = calculatePartSize(file.length());
         String partSizeString = Long.toString(partSize);
 
-        fireProgressEvent(progressListener, ProgressEvent.PREPARING_EVENT_CODE);
+        fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.PREPARING_EVENT_CODE);
         String uploadId = null;
         try {
             InitiateMultipartUploadResult initiateResult = glacier.initiateMultipartUpload(new InitiateMultipartUploadRequest()
@@ -676,11 +687,11 @@ public class ArchiveTransferManager {
                 .withPartSize(partSizeString));
             uploadId = initiateResult.getUploadId();
         } catch (AmazonServiceException ace) {
-            fireProgressEvent(progressListener, ProgressEvent.FAILED_EVENT_CODE);
+            fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.FAILED_EVENT_CODE);
             throw ace;
         }
 
-        fireProgressEvent(progressListener, ProgressEvent.STARTED_EVENT_CODE);
+        fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.STARTED_EVENT_CODE);
 
         try {
             List<byte[]> binaryChecksums = new LinkedList<byte[]>();
@@ -723,9 +734,9 @@ public class ArchiveTransferManager {
                     throw failedException;
                 }
 
-                if (progressListener != null) {
+                if (progressListenerCallbackExecutor != null) {
                 ProgressEvent event = new ProgressEvent(length);
-                progressListener.progressChanged(event);
+                progressListenerCallbackExecutor.progressChanged(event);
                 }
 
                 currentPosition += partSize;
@@ -743,25 +754,25 @@ public class ArchiveTransferManager {
                     .withUploadId(uploadId));
 
             String artifactId = completeMultipartUploadResult.getArchiveId();
-            fireProgressEvent(progressListener, ProgressEvent.COMPLETED_EVENT_CODE);
+            fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.COMPLETED_EVENT_CODE);
             return new UploadResult(artifactId);
         } catch (Exception e) {
-            fireProgressEvent(progressListener, ProgressEvent.FAILED_EVENT_CODE);
+            fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.FAILED_EVENT_CODE);
             glacier.abortMultipartUpload(new AbortMultipartUploadRequest(accountId, vaultName, uploadId));
             throw new AmazonClientException("Unable to finish the upload", e);
         }
     }
 
 
-    private UploadResult uploadInSinglePart(final String accountId, final String vaultName, final String archiveDescription, final File file, ProgressListener progressListener)
+    private UploadResult uploadInSinglePart(final String accountId, final String vaultName, final String archiveDescription, final File file, ProgressListenerCallbackExecutor progressListenerCallbackExecutor)
             throws AmazonServiceException, AmazonClientException, FileNotFoundException {
         String checksum = TreeHashGenerator.calculateTreeHash(file);
 
         InputStream input = new RepeatableFileInputStream(file);
 
-        if (progressListener != null) {
-            input = new com.amazonaws.event.ProgressReportingInputStream(input, progressListener);
-            fireProgressEvent(progressListener, ProgressEvent.STARTED_EVENT_CODE);
+        if (progressListenerCallbackExecutor != null) {
+            input = new ProgressReportingInputStream(input, progressListenerCallbackExecutor);
+            fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.STARTED_EVENT_CODE);
         }
 
         try {
@@ -775,21 +786,21 @@ public class ArchiveTransferManager {
                     .withContentLength(file.length())
                     );
             String artifactId = uploadArchiveResult.getArchiveId();
-            fireProgressEvent(progressListener, ProgressEvent.COMPLETED_EVENT_CODE);
+            fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.COMPLETED_EVENT_CODE);
             return new UploadResult(artifactId);
         } catch (AmazonClientException ace) {
-            fireProgressEvent(progressListener, ProgressEvent.FAILED_EVENT_CODE);
+            fireProgressEvent(progressListenerCallbackExecutor, ProgressEvent.FAILED_EVENT_CODE);
             throw ace;
         } finally {
             try {input.close();} catch (Exception e) {}
         }
     }
 
-    private void fireProgressEvent(ProgressListener listener, int eventType) {
-        if (listener == null) return;
+    private void fireProgressEvent(ProgressListenerCallbackExecutor listenerCallbackExecutor, int eventType) {
+        if (listenerCallbackExecutor == null) return;
         ProgressEvent event = new ProgressEvent(0);
         event.setEventCode(eventType);
-        listener.progressChanged(event);
+        listenerCallbackExecutor.progressChanged(event);
     }
 
 }

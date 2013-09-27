@@ -18,8 +18,8 @@ package com.amazonaws.services.s3.internal;
  * Utilities for working with Amazon S3 bucket names, such as validation and
  * checked to see if they are compatible with DNS addressing.
  */
-public class BucketNameUtils {
-
+public enum BucketNameUtils {
+    ;
     private static final int MIN_BUCKET_NAME_LENGTH = 3;
     private static final int MAX_BUCKET_NAME_LENGTH = 63;
 
@@ -39,7 +39,7 @@ public class BucketNameUtils {
      *             If the specified bucket name doesn't follow Amazon S3's
      *             guidelines.
      */
-    public void validateBucketName(final String bucketName) {
+    public static void validateBucketName(final String bucketName) {
         isValidV2BucketName(bucketName, true);
     }
 
@@ -55,14 +55,14 @@ public class BucketNameUtils {
      *         host style, addressing otherwise false if V1, path style,
      *         addressing is required.
      */
-    public boolean isValidV2BucketName(String bucketName) {
+    public static boolean isValidV2BucketName(String bucketName) {
         return isValidV2BucketName(bucketName, false);
     }
 
     /**
      * Convience method that allows the DNS rules to be altered for different SDKs.
      */
-    public boolean isDNSBucketName(String bucketName) {
+    public static boolean isDNSBucketName(String bucketName) {
         return isValidV2BucketName( bucketName );
     }
 
@@ -75,7 +75,7 @@ public class BucketNameUtils {
      * @param throwOnError true to throw exceptions on failure
      * @return true if the name is valid, false if not
      */
-    private boolean isValidV2BucketName(final String bucketName,
+    private static boolean isValidV2BucketName(final String bucketName,
                                         final boolean throwOnError) {
 
         if (bucketName == null) {
@@ -161,7 +161,7 @@ public class BucketNameUtils {
      * @param message the message for the exception
      * @return false if 'exception' is false
      */
-    private boolean exception(final boolean exception, final String message) {
+    private static boolean exception(final boolean exception, final String message) {
         if (exception) {
             throw new IllegalArgumentException(message);
         }

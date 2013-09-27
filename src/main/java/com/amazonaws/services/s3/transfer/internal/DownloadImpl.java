@@ -16,6 +16,7 @@ package com.amazonaws.services.s3.transfer.internal;
 
 import java.io.IOException;
 
+import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.transfer.Download;
@@ -29,6 +30,16 @@ public class DownloadImpl extends AbstractTransfer implements Download {
             ProgressListenerChain progressListenerChain, S3Object s3Object, TransferStateChangeListener listener) {
         super(description, transferProgress, progressListenerChain, listener);
         this.s3Object = s3Object;
+    }
+    
+    /**
+     * @deprecated Replaced by {@link #DownloadImpl(String, TransferProgress, ProgressListenerChain, S3Object, TransferStateChangeListener)}
+     */
+    @Deprecated
+    public DownloadImpl(String description, TransferProgress transferProgress,
+            com.amazonaws.services.s3.transfer.internal.ProgressListenerChain progressListenerChain, S3Object s3Object, TransferStateChangeListener listener) {
+        this(description, transferProgress, progressListenerChain.transformToGeneralProgressListenerChain(), 
+                s3Object, listener);
     }
     
     /**
@@ -64,12 +75,12 @@ public class DownloadImpl extends AbstractTransfer implements Download {
      * @throws IOException
      */
     public synchronized void abort() throws IOException {
-    	
-    	this.monitor.getFuture().cancel(true);
-    	
-    	  if ( s3Object != null ) {
+        
+        this.monitor.getFuture().cancel(true);
+        
+        if ( s3Object != null ) {
               s3Object.getObjectContent().abort();
-    	      }
+        }
         setState(TransferState.Canceled);
     }
     
@@ -79,7 +90,4 @@ public class DownloadImpl extends AbstractTransfer implements Download {
     public synchronized void setS3Object(S3Object s3Object) {
     	this.s3Object = s3Object;
     }
-
-
-    
 }

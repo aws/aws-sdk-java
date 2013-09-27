@@ -23,9 +23,15 @@ public enum ResourceType {
     DhcpOptions("dhcp-options"),
     Image("image"),
     Instance("instance"),
+    InternetGateway("internet-gateway"),
+    NetworkAcl("network-acl"),
+    NetworkInterface("network-interface"),
+    ReservedInstances("reserved-instances"),
+    RouteTable("route-table"),
     Snapshot("snapshot"),
     SpotInstancesRequest("spot-instances-request"),
     Subnet("subnet"),
+    SecurityGroup("security-group"),
     Volume("volume"),
     Vpc("vpc"),
     VpnConnection("vpn-connection"),
@@ -61,12 +67,24 @@ public enum ResourceType {
             return ResourceType.Image;
         } else if ("instance".equals(value)) {
             return ResourceType.Instance;
+        } else if ("internet-gateway".equals(value)) {
+            return ResourceType.InternetGateway;
+        } else if ("network-acl".equals(value)) {
+            return ResourceType.NetworkAcl;
+        } else if ("network-interface".equals(value)) {
+            return ResourceType.NetworkInterface;
+        } else if ("reserved-instances".equals(value)) {
+            return ResourceType.ReservedInstances;
+        } else if ("route-table".equals(value)) {
+            return ResourceType.RouteTable;
         } else if ("snapshot".equals(value)) {
             return ResourceType.Snapshot;
         } else if ("spot-instances-request".equals(value)) {
             return ResourceType.SpotInstancesRequest;
         } else if ("subnet".equals(value)) {
             return ResourceType.Subnet;
+        } else if ("security-group".equals(value)) {
+            return ResourceType.SecurityGroup;
         } else if ("volume".equals(value)) {
             return ResourceType.Volume;
         } else if ("vpc".equals(value)) {

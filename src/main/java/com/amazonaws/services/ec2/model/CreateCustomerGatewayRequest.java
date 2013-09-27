@@ -43,6 +43,9 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
 
     /**
      * The type of VPN connection this customer gateway supports.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ipsec.1
      */
     private String type;
 
@@ -86,9 +89,31 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
     
     
     /**
+     * Constructs a new CreateCustomerGatewayRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param type The type of VPN connection this customer gateway supports.
+     * @param publicIp The Internet-routable IP address for the customer
+     * gateway's outside interface. The address must be static
+     * @param bgpAsn The customer gateway's Border Gateway Protocol (BGP)
+     * Autonomous System Number (ASN).
+     */
+    public CreateCustomerGatewayRequest(GatewayType type, String publicIp, Integer bgpAsn) {
+        this.type = type.toString();
+        this.publicIp = publicIp;
+        this.bgpAsn = bgpAsn;
+    }
+    
+    /**
      * The type of VPN connection this customer gateway supports.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ipsec.1
      *
      * @return The type of VPN connection this customer gateway supports.
+     *
+     * @see GatewayType
      */
     public String getType() {
         return type;
@@ -96,8 +121,13 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
     
     /**
      * The type of VPN connection this customer gateway supports.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ipsec.1
      *
      * @param type The type of VPN connection this customer gateway supports.
+     *
+     * @see GatewayType
      */
     public void setType(String type) {
         this.type = type;
@@ -107,17 +137,56 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
      * The type of VPN connection this customer gateway supports.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ipsec.1
      *
      * @param type The type of VPN connection this customer gateway supports.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see GatewayType
      */
     public CreateCustomerGatewayRequest withType(String type) {
         this.type = type;
         return this;
     }
     
+    
+    /**
+     * The type of VPN connection this customer gateway supports.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ipsec.1
+     *
+     * @param type The type of VPN connection this customer gateway supports.
+     *
+     * @see GatewayType
+     */
+    public void setType(GatewayType type) {
+        this.type = type.toString();
+    }
+    
+    /**
+     * The type of VPN connection this customer gateway supports.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ipsec.1
+     *
+     * @param type The type of VPN connection this customer gateway supports.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see GatewayType
+     */
+    public CreateCustomerGatewayRequest withType(GatewayType type) {
+        this.type = type.toString();
+        return this;
+    }
     
     /**
      * The Internet-routable IP address for the customer gateway's outside

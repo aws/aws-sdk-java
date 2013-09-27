@@ -28,8 +28,13 @@ public class InstanceCount implements Serializable {
 
     /**
      * Returns the value of the State property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>available, sold, cancelled, pending
      *
      * @return The value of the State property for this object.
+     *
+     * @see ListingState
      */
     public String getState() {
         return state;
@@ -37,8 +42,13 @@ public class InstanceCount implements Serializable {
     
     /**
      * Sets the value of the State property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>available, sold, cancelled, pending
      *
      * @param state The new value for the State property for this object.
+     *
+     * @see ListingState
      */
     public void setState(String state) {
         this.state = state;
@@ -48,17 +58,56 @@ public class InstanceCount implements Serializable {
      * Sets the value of the State property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>available, sold, cancelled, pending
      *
      * @param state The new value for the State property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
+     *
+     * @see ListingState
      */
     public InstanceCount withState(String state) {
         this.state = state;
         return this;
     }
     
+    
+    /**
+     * Sets the value of the State property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>available, sold, cancelled, pending
+     *
+     * @param state The new value for the State property for this object.
+     *
+     * @see ListingState
+     */
+    public void setState(ListingState state) {
+        this.state = state.toString();
+    }
+    
+    /**
+     * Sets the value of the State property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>available, sold, cancelled, pending
+     *
+     * @param state The new value for the State property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see ListingState
+     */
+    public InstanceCount withState(ListingState state) {
+        this.state = state.toString();
+        return this;
+    }
     
     /**
      * Returns the value of the InstanceCount property for this object.

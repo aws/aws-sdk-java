@@ -18,19 +18,23 @@ import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-import com.amazonaws.util.ProgressListener;
-
 /**
  * Simple InputStream wrapper that occasionally notifies a progress listener
  * about the number of bytes transferred.
+ * <p>
+ * This class could be used for both Amazon S3 and Amazon Glacier clients. The
+ * legacy Amazon Amazon S3 ProgressReportingInputStream
+ * {@link com.amazonaws.services.s3.internal.ProgressReportingInputStream} is
+ * deprecated in favor of this new class.
+ * </p>
  */
 public class ProgressReportingInputStream extends FilterInputStream {
 
     /** The threshold of bytes between notifications. */
     private static final int NOTIFICATION_THRESHOLD = 8 * 1024;
 
-    /** The listener to notify. */
-    private final ProgressListener listener;
+    /** The listener callback executor */
+    private final ProgressListenerCallbackExecutor listenerCallbackExecutor;
 
     /** The number of bytes read that the listener hasn't been notified about yet. */
     private int unnotifiedByteCount;
@@ -40,17 +44,17 @@ public class ProgressReportingInputStream extends FilterInputStream {
 
     /**
      * Creates a new progress reporting input stream that simply wraps the
-     * specified input stream and notifies the specified listener occasionally
-     * about the number of bytes transferred.
-     *
+     * specified input stream and uses the specified listener callback executor to
+     * asynchronously notify the listener about the number of bytes transferred.
+     * 
      * @param in
      *            The input stream to wrap.
-     * @param listener
-     *            The listener to notify about progress.
+     * @param listenerCallbackExecutor
+     *            The listener callback executor that wraps the listener to notify about progress.
      */
-    public ProgressReportingInputStream(final InputStream in, final ProgressListener listener) {
+    public ProgressReportingInputStream(final InputStream in, final ProgressListenerCallbackExecutor listenerCallbackExecutor) {
         super(in);
-        this.listener = listener;
+        this.listenerCallbackExecutor = listenerCallbackExecutor;
     }
 
     /**
@@ -94,7 +98,7 @@ public class ProgressReportingInputStream extends FilterInputStream {
         super.reset();
         ProgressEvent event = new ProgressEvent(unnotifiedByteCount);
         event.setEventCode(ProgressEvent.RESET_EVENT_CODE);
-        listener.progressChanged(event);
+        listenerCallbackExecutor.progressChanged(event);
         unnotifiedByteCount = 0;
     }
 
@@ -109,7 +113,7 @@ public class ProgressReportingInputStream extends FilterInputStream {
     @Override
     public void close() throws IOException {
         if (unnotifiedByteCount > 0) {
-            listener.progressChanged(new ProgressEvent(unnotifiedByteCount));
+            listenerCallbackExecutor.progressChanged(new ProgressEvent(unnotifiedByteCount));
             unnotifiedByteCount = 0;
         }
         super.close();
@@ -121,13 +125,13 @@ public class ProgressReportingInputStream extends FilterInputStream {
         ProgressEvent event = new ProgressEvent(unnotifiedByteCount);
         event.setEventCode(ProgressEvent.COMPLETED_EVENT_CODE);
         unnotifiedByteCount = 0;
-        listener.progressChanged(event);
+        listenerCallbackExecutor.progressChanged(event);
     }
 
     private void notify(int bytesRead) {
         unnotifiedByteCount += bytesRead;
         if (unnotifiedByteCount >= NOTIFICATION_THRESHOLD) {
-            listener.progressChanged(new ProgressEvent(unnotifiedByteCount));
+            listenerCallbackExecutor.progressChanged(new ProgressEvent(unnotifiedByteCount));
             unnotifiedByteCount = 0;
         }
     }
