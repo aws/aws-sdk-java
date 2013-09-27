@@ -28,7 +28,7 @@ public class TimingInfo {
     private final Map<String, Number> countersByName = new HashMap<String, Number>();
 
     public TimingInfo() {
-        this(System.currentTimeMillis(), -1);
+        this(System.nanoTime(), -1);
     }
 
     public TimingInfo(long startTime) {
