@@ -637,7 +637,8 @@ public class DynamoDBReflector {
     }
 
     /**
-     * Returns an attribute value for the getter method with a custom marshaller
+     * Returns an attribute value for the getter method with a custom marshaller.
+     * Directly returns null when the custom marshaller returns a null String.
      */
     @SuppressWarnings({ "rawtypes", "unchecked" })
     private AttributeValue getCustomerMarshallerAttributeValue(Method getter, Object getterReturnResult) {
@@ -655,8 +656,12 @@ public class DynamoDBReflector {
                     e);
         }
         String stringValue = marshaller.marshall(getterReturnResult);
-
-        return new AttributeValue().withS(stringValue);
+        
+        if(stringValue == null) {
+            return null;
+        } else {
+            return new AttributeValue().withS(stringValue);
+        }
     }
 
     /**

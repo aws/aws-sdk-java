@@ -23,18 +23,26 @@ import java.util.regex.Pattern;
 import com.amazonaws.http.HttpResponse;
 import com.amazonaws.services.s3.Headers;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 /**
- * Header handler to pull the S3_VERSION_ID header out of the response. This
- * header is required for the copyPart and copyObject api methods.
+ * Header handler to pull the EXPIRATION header out of the response.
  */
-public class ObjectExpirationHeaderHandler<T extends ObjectExpirationResult> implements HeaderHandler<T> {
+public class ObjectExpirationHeaderHandler<T extends ObjectExpirationResult>
+        implements HeaderHandler<T> {
 
     /*
      * expiry-date="Sun, 11 Dec 2012 00:00:00 GMT", rule-id="baz rule"
      */
 
-    private static final Pattern datePattern = Pattern.compile("expiry-date=\"(.*?)\"");
-    private static final Pattern rulePattern = Pattern.compile("rule-id=\"(.*)\"");
+    private static final Pattern datePattern =
+        Pattern.compile("expiry-date=\"(.*?)\"");
+    private static final Pattern rulePattern =
+        Pattern.compile("rule-id=\"(.*?)\"");
+
+    private static final Log log =
+        LogFactory.getLog(ObjectExpirationHeaderHandler.class);
 
     /*
      * (non-Javadoc)
@@ -45,7 +53,9 @@ public class ObjectExpirationHeaderHandler<T extends ObjectExpirationResult> imp
      */
     @Override
     public void handle(T result, HttpResponse response) {
-        String expirationHeader = response.getHeaders().get(Headers.EXPIRATION);
+        String expirationHeader =
+            response.getHeaders().get(Headers.EXPIRATION);
+
         if ( expirationHeader != null ) {
             result.setExpirationTime(parseDate(expirationHeader));
             result.setExpirationTimeRuleId(parseRuleId(expirationHeader));
@@ -64,11 +74,12 @@ public class ObjectExpirationHeaderHandler<T extends ObjectExpirationResult> imp
         Matcher matcher = datePattern.matcher(expirationHeader);
         if ( matcher.find() ) {
             String date = matcher.group(1);
-            SimpleDateFormat fmt = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z");
             try {
-                return fmt.parse(date);
-            } catch ( ParseException e ) {
-                return null;
+                return ServiceUtils.parseRfc822Date(date);
+            } catch (ParseException exception) {
+                log.warn("Error parsing expiry-date from x-amz-expiration "
+                         + "header.",
+                         exception);
             }
         }
 

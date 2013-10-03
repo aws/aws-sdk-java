@@ -285,34 +285,6 @@ public interface AmazonSNS {
 
     /**
      * <p>
-     * The <code>DeleteTopic</code> action deletes a topic and all its
-     * subscriptions. Deleting a topic might prevent some messages previously
-     * sent to the topic from being delivered to subscribers. This action is
-     * idempotent, so deleting a topic that does not exist does not result in
-     * an error.
-     * </p>
-     *
-     * @param deleteTopicRequest Container for the necessary parameters to
-     *           execute the DeleteTopic service method on AmazonSNS.
-     * 
-     * @throws NotFoundException
-     * @throws AuthorizationErrorException
-     * @throws InternalErrorException
-     * @throws InvalidParameterException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteTopic(DeleteTopicRequest deleteTopicRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * The <code>RemovePermission</code> action removes a statement from a
      * topic's access control policy.
      * </p>
@@ -370,38 +342,6 @@ public interface AmazonSNS {
 
     /**
      * <p>
-     * The <code>GetPlatformApplicationAttributes</code> action retrieves the
-     * attributes of the platform application object for the supported push
-     * notification services, such as APNS and GCM. For more information, see
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
-     * Using Amazon SNS Mobile Push Notifications </a> .
-     * </p>
-     *
-     * @param getPlatformApplicationAttributesRequest Container for the
-     *           necessary parameters to execute the GetPlatformApplicationAttributes
-     *           service method on AmazonSNS.
-     * 
-     * @return The response from the GetPlatformApplicationAttributes service
-     *         method, as returned by AmazonSNS.
-     * 
-     * @throws NotFoundException
-     * @throws AuthorizationErrorException
-     * @throws InternalErrorException
-     * @throws InvalidParameterException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetPlatformApplicationAttributesResult getPlatformApplicationAttributes(GetPlatformApplicationAttributesRequest getPlatformApplicationAttributesRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * The <code>ListSubscriptions</code> action returns a list of the
      * requester's subscriptions. Each call returns a limited list of
      * subscriptions, up to 100. If there are more subscriptions, a
@@ -429,61 +369,6 @@ public interface AmazonSNS {
      *             either a problem with the data in the request, or a server side issue.
      */
     public ListSubscriptionsResult listSubscriptions(ListSubscriptionsRequest listSubscriptionsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * The <code>SetSubscriptionAttributes</code> action allows a
-     * subscription owner to set an attribute of the topic to a new value.
-     * </p>
-     *
-     * @param setSubscriptionAttributesRequest Container for the necessary
-     *           parameters to execute the SetSubscriptionAttributes service method on
-     *           AmazonSNS.
-     * 
-     * @throws NotFoundException
-     * @throws AuthorizationErrorException
-     * @throws InternalErrorException
-     * @throws InvalidParameterException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void setSubscriptionAttributes(SetSubscriptionAttributesRequest setSubscriptionAttributesRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * The <code>SetPlatformApplicationAttributes</code> action sets the
-     * attributes of the platform application object for the supported push
-     * notification services, such as APNS and GCM. For more information, see
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
-     * Using Amazon SNS Mobile Push Notifications </a> .
-     * </p>
-     *
-     * @param setPlatformApplicationAttributesRequest Container for the
-     *           necessary parameters to execute the SetPlatformApplicationAttributes
-     *           service method on AmazonSNS.
-     * 
-     * @throws NotFoundException
-     * @throws AuthorizationErrorException
-     * @throws InternalErrorException
-     * @throws InvalidParameterException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void setPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest setPlatformApplicationAttributesRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -526,43 +411,14 @@ public interface AmazonSNS {
 
     /**
      * <p>
-     * The <code>AddPermission</code> action adds a statement to a topic's
-     * access control policy, granting access for the specified AWS accounts
-     * to the specified actions.
+     * The <code>SetSubscriptionAttributes</code> action allows a
+     * subscription owner to set an attribute of the topic to a new value.
      * </p>
      *
-     * @param addPermissionRequest Container for the necessary parameters to
-     *           execute the AddPermission service method on AmazonSNS.
-     * 
-     * @throws NotFoundException
-     * @throws AuthorizationErrorException
-     * @throws InternalErrorException
-     * @throws InvalidParameterException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void addPermission(AddPermissionRequest addPermissionRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * The <code>GetSubscriptionAttribtues</code> action returns all of the
-     * properties of a subscription.
-     * </p>
-     *
-     * @param getSubscriptionAttributesRequest Container for the necessary
-     *           parameters to execute the GetSubscriptionAttributes service method on
+     * @param setSubscriptionAttributesRequest Container for the necessary
+     *           parameters to execute the SetSubscriptionAttributes service method on
      *           AmazonSNS.
      * 
-     * @return The response from the GetSubscriptionAttributes service
-     *         method, as returned by AmazonSNS.
-     * 
      * @throws NotFoundException
      * @throws AuthorizationErrorException
      * @throws InternalErrorException
@@ -576,7 +432,7 @@ public interface AmazonSNS {
      *             If an error response is returned by AmazonSNS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public GetSubscriptionAttributesResult getSubscriptionAttributes(GetSubscriptionAttributesRequest getSubscriptionAttributesRequest) 
+    public void setSubscriptionAttributes(SetSubscriptionAttributesRequest setSubscriptionAttributesRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -613,6 +469,35 @@ public interface AmazonSNS {
 
     /**
      * <p>
+     * The <code>GetSubscriptionAttribtues</code> action returns all of the
+     * properties of a subscription.
+     * </p>
+     *
+     * @param getSubscriptionAttributesRequest Container for the necessary
+     *           parameters to execute the GetSubscriptionAttributes service method on
+     *           AmazonSNS.
+     * 
+     * @return The response from the GetSubscriptionAttributes service
+     *         method, as returned by AmazonSNS.
+     * 
+     * @throws NotFoundException
+     * @throws AuthorizationErrorException
+     * @throws InternalErrorException
+     * @throws InvalidParameterException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetSubscriptionAttributesResult getSubscriptionAttributes(GetSubscriptionAttributesRequest getSubscriptionAttributesRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * The <code>ListTopics</code> action returns a list of the requester's
      * topics. Each call returns a limited list of topics, up to 100. If
      * there are more topics, a <code>NextToken</code> is also returned. Use
@@ -639,46 +524,6 @@ public interface AmazonSNS {
      *             either a problem with the data in the request, or a server side issue.
      */
     public ListTopicsResult listTopics(ListTopicsRequest listTopicsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * The <code>ListEndpointsByPlatformApplication</code> action lists the
-     * endpoints and endpoint attributes for devices in a supported push
-     * notification service, such as GCM and APNS. The results for
-     * <code>ListEndpointsByPlatformApplication</code> are paginated and
-     * return a limited list of endpoints, up to 100. If additional records
-     * are available after the first page results, then a NextToken string
-     * will be returned. To receive the next page, you call
-     * <code>ListEndpointsByPlatformApplication</code> again using the
-     * NextToken string received from the previous call. When there are no
-     * more records to return, NextToken will be null. For more information,
-     * see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
-     * Using Amazon SNS Mobile Push Notifications </a> .
-     * </p>
-     *
-     * @param listEndpointsByPlatformApplicationRequest Container for the
-     *           necessary parameters to execute the ListEndpointsByPlatformApplication
-     *           service method on AmazonSNS.
-     * 
-     * @return The response from the ListEndpointsByPlatformApplication
-     *         service method, as returned by AmazonSNS.
-     * 
-     * @throws NotFoundException
-     * @throws AuthorizationErrorException
-     * @throws InternalErrorException
-     * @throws InvalidParameterException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSNS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListEndpointsByPlatformApplicationResult listEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest listEndpointsByPlatformApplicationRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -804,6 +649,161 @@ public interface AmazonSNS {
      *             either a problem with the data in the request, or a server side issue.
      */
     public void unsubscribe(UnsubscribeRequest unsubscribeRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * The <code>DeleteTopic</code> action deletes a topic and all its
+     * subscriptions. Deleting a topic might prevent some messages previously
+     * sent to the topic from being delivered to subscribers. This action is
+     * idempotent, so deleting a topic that does not exist does not result in
+     * an error.
+     * </p>
+     *
+     * @param deleteTopicRequest Container for the necessary parameters to
+     *           execute the DeleteTopic service method on AmazonSNS.
+     * 
+     * @throws NotFoundException
+     * @throws AuthorizationErrorException
+     * @throws InternalErrorException
+     * @throws InvalidParameterException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteTopic(DeleteTopicRequest deleteTopicRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * The <code>GetPlatformApplicationAttributes</code> action retrieves the
+     * attributes of the platform application object for the supported push
+     * notification services, such as APNS and GCM. For more information, see
+     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
+     * Using Amazon SNS Mobile Push Notifications </a> .
+     * </p>
+     *
+     * @param getPlatformApplicationAttributesRequest Container for the
+     *           necessary parameters to execute the GetPlatformApplicationAttributes
+     *           service method on AmazonSNS.
+     * 
+     * @return The response from the GetPlatformApplicationAttributes service
+     *         method, as returned by AmazonSNS.
+     * 
+     * @throws NotFoundException
+     * @throws AuthorizationErrorException
+     * @throws InternalErrorException
+     * @throws InvalidParameterException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetPlatformApplicationAttributesResult getPlatformApplicationAttributes(GetPlatformApplicationAttributesRequest getPlatformApplicationAttributesRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * The <code>SetPlatformApplicationAttributes</code> action sets the
+     * attributes of the platform application object for the supported push
+     * notification services, such as APNS and GCM. For more information, see
+     * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
+     * Using Amazon SNS Mobile Push Notifications </a> .
+     * </p>
+     *
+     * @param setPlatformApplicationAttributesRequest Container for the
+     *           necessary parameters to execute the SetPlatformApplicationAttributes
+     *           service method on AmazonSNS.
+     * 
+     * @throws NotFoundException
+     * @throws AuthorizationErrorException
+     * @throws InternalErrorException
+     * @throws InvalidParameterException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void setPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest setPlatformApplicationAttributesRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * The <code>AddPermission</code> action adds a statement to a topic's
+     * access control policy, granting access for the specified AWS accounts
+     * to the specified actions.
+     * </p>
+     *
+     * @param addPermissionRequest Container for the necessary parameters to
+     *           execute the AddPermission service method on AmazonSNS.
+     * 
+     * @throws NotFoundException
+     * @throws AuthorizationErrorException
+     * @throws InternalErrorException
+     * @throws InvalidParameterException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void addPermission(AddPermissionRequest addPermissionRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * The <code>ListEndpointsByPlatformApplication</code> action lists the
+     * endpoints and endpoint attributes for devices in a supported push
+     * notification service, such as GCM and APNS. The results for
+     * <code>ListEndpointsByPlatformApplication</code> are paginated and
+     * return a limited list of endpoints, up to 100. If additional records
+     * are available after the first page results, then a NextToken string
+     * will be returned. To receive the next page, you call
+     * <code>ListEndpointsByPlatformApplication</code> again using the
+     * NextToken string received from the previous call. When there are no
+     * more records to return, NextToken will be null. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
+     * Using Amazon SNS Mobile Push Notifications </a> .
+     * </p>
+     *
+     * @param listEndpointsByPlatformApplicationRequest Container for the
+     *           necessary parameters to execute the ListEndpointsByPlatformApplication
+     *           service method on AmazonSNS.
+     * 
+     * @return The response from the ListEndpointsByPlatformApplication
+     *         service method, as returned by AmazonSNS.
+     * 
+     * @throws NotFoundException
+     * @throws AuthorizationErrorException
+     * @throws InternalErrorException
+     * @throws InvalidParameterException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListEndpointsByPlatformApplicationResult listEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest listEndpointsByPlatformApplicationRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**

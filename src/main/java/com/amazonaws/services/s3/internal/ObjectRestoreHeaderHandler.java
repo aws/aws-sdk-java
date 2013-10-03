@@ -22,17 +22,26 @@ import java.util.regex.Pattern;
 import com.amazonaws.http.HttpResponse;
 import com.amazonaws.services.s3.Headers;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 /**
  * Header handler to pull the RESTORE header out of the response.
  */
-public class ObjectRestoreHeaderHandler<T extends ObjectRestoreResult> implements HeaderHandler<T> {
+public class ObjectRestoreHeaderHandler<T extends ObjectRestoreResult>
+        implements HeaderHandler<T> {
 
     /*
      *  ongoing-request="false", expiry-date="Fri, 23 Dec 2012 00:00:00 GMT"
      */
 
-    private static final Pattern datePattern = Pattern.compile("expiry-date=\"(.*?)\"");
-    private static final Pattern ongoingPattern = Pattern.compile("ongoing-request=\"(.*)\"");
+    private static final Pattern datePattern =
+        Pattern.compile("expiry-date=\"(.*?)\"");
+    private static final Pattern ongoingPattern =
+        Pattern.compile("ongoing-request=\"(.*?)\"");
+
+    private static final Log log =
+        LogFactory.getLog(ObjectRestoreHeaderHandler.class);
 
     /*
      * (non-Javadoc)
@@ -55,9 +64,11 @@ public class ObjectRestoreHeaderHandler<T extends ObjectRestoreResult> implement
         if ( matcher.find() ) {
             String date = matcher.group(1);
             try {
-                ServiceUtils.parseIso8601Date(date);
-            } catch (ParseException e) {
-                return null;
+                return ServiceUtils.parseRfc822Date(date);
+            } catch (ParseException exception) {
+                log.warn("Error parsing expiry-date from x-amz-restore "
+                         + "header.",
+                         exception);
             }
         }
 

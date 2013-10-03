@@ -200,8 +200,8 @@ public class AmazonHttpClient {
 
         try {
             T t = executeHelper(request, responseHandler, errorResponseHandler, executionContext);
-            TimingInfo timingInfo = executionContext.getAwsRequestMetrics().getTimingInfo();
-            timingInfo.setEndTime(System.currentTimeMillis());
+            AWSRequestMetrics metrics = executionContext.getAwsRequestMetrics();
+            TimingInfo timingInfo = metrics.getTimingInfo().endTiming();
 
             for (RequestHandler handler : requestHandlers) {
                 try {

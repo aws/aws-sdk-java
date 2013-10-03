@@ -58,23 +58,29 @@ public class ObjectMetadata implements ServerSideEncryptionResult, ObjectExpirat
     private Date httpExpiresDate;
 
     /**
-     * The time this object expires, or null if it has no expiration.
+     * The time this object will expire and be completely removed from S3, or
+     * null if this object will never expire.
      * <p>
      * This and the expiration time rule aren't stored in the metadata map
      * because the header contains both the time and the rule.
      */
     private Date expirationTime;
 
-    /** The expiration rule for this object */
+    /**
+     * The expiration rule id for this object.
+     */
     private String expirationTimeRuleId;
 
     /**
-     * Boolean value to indicate whether there is an ongoing restore request.
+     * Boolean value indicating whether there is an ongoing request to restore
+     * an archived copy of this object from Amazon Glacier.
      */
     private Boolean ongoingRestore;
 
     /**
-     * The expiration time when the object is scheduled to move to Amazon Glacier, or null if it has no expiration.
+     * The time at which an object that has been temporarily restored from
+     * Glacier will expire, and will need to be restored again in order to be
+     * accessed. Null if this object has not been restored from Glacier.
      */
     private Date restoreExpirationTime;
 
@@ -444,38 +450,38 @@ public class ObjectMetadata implements ServerSideEncryptionResult, ObjectExpirat
         metadata.put(Headers.CACHE_CONTROL, cacheControl);
     }
 
-	/**
-	 * <p>
-	 * Sets the base64 encoded 128-bit MD5 digest of the associated object
-	 * (content - not including headers) according to RFC 1864. This data is
-	 * used as a message integrity check to verify that the data received by
-	 * Amazon S3 is the same data that the caller sent. If set to null,then the
-	 * MD5 digest is removed from the metadata.
-	 * </p>
-	 * <p>
-	 * This field represents the base64 encoded 128-bit MD5 digest digest of an
-	 * object's content as calculated on the caller's side. The ETag metadata
-	 * field represents the hex encoded 128-bit MD5 digest as computed by Amazon
-	 * S3.
-	 * </p>
-	 * <p>
-	 * The AWS S3 Java client will attempt to calculate this field automatically
-	 * when uploading files to Amazon S3.
-	 * </p>
-	 * 
-	 * @param md5Base64
-	 *            The base64 encoded MD5 hash of the content for the object
-	 *            associated with this metadata.
-	 * 
-	 * @see ObjectMetadata#getContentMD5()
-	 */
+    /**
+     * <p>
+     * Sets the base64 encoded 128-bit MD5 digest of the associated object
+     * (content - not including headers) according to RFC 1864. This data is
+     * used as a message integrity check to verify that the data received by
+     * Amazon S3 is the same data that the caller sent. If set to null,then the
+     * MD5 digest is removed from the metadata.
+     * </p>
+     * <p>
+     * This field represents the base64 encoded 128-bit MD5 digest digest of an
+     * object's content as calculated on the caller's side. The ETag metadata
+     * field represents the hex encoded 128-bit MD5 digest as computed by Amazon
+     * S3.
+     * </p>
+     * <p>
+     * The AWS S3 Java client will attempt to calculate this field automatically
+     * when uploading files to Amazon S3.
+     * </p>
+     * 
+     * @param md5Base64
+     *            The base64 encoded MD5 hash of the content for the object
+     *            associated with this metadata.
+     * 
+     * @see ObjectMetadata#getContentMD5()
+     */
     public void setContentMD5(String md5Base64) {
-    	if(md5Base64 == null){
-    		metadata.remove(Headers.CONTENT_MD5);
-    	}else{
-    		metadata.put(Headers.CONTENT_MD5, md5Base64);
-    	}
-        
+        if(md5Base64 == null){
+            metadata.remove(Headers.CONTENT_MD5);
+        }else{
+            metadata.put(Headers.CONTENT_MD5, md5Base64);
+        }
+
     }
 
     /**
@@ -604,7 +610,8 @@ public class ObjectMetadata implements ServerSideEncryptionResult, ObjectExpirat
     }
 
     /**
-     * Returns the expiration time for this object, or null if it doesn't expire.
+     * Returns the time this object will expire and be completely removed from
+     * S3. Returns null if this object will never expire.
      */
     public Date getExpirationTime() {
         return expirationTime;
@@ -643,19 +650,22 @@ public class ObjectMetadata implements ServerSideEncryptionResult, ObjectExpirat
 
 
     /**
-     * Returns the expiration time when the object is scheduled to move to
-     * Amazon Glacier, or null if it doesn't expire.
+     * Returns the time at which an object that has been temporarily restored
+     * from Amazon Glacier will expire, and will need to be restored again in
+     * order to be accessed. Returns null if this is not a temporary copy of an
+     * object restored from Glacier.
      */
     public Date getRestoreExpirationTime() {
         return restoreExpirationTime;
     }
 
     /**
-     * Sets the expiration time when the object is scheduled to move to Amazon
-     * Glacier.
+     * For internal use only. This will *not* set the object's restore
+     * expiration time, and is only used to set the value in the object after
+     * receiving the value in a response from S3.
      *
-     * @param expirationTime
-     *            The expiration time for the object to move to.
+     * @param restoreExpirationTime
+     *            The new restore expiration time for the object.
      */
     public void setRestoreExpirationTime(Date restoreExpirationTime) {
         this.restoreExpirationTime = restoreExpirationTime;

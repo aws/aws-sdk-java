@@ -58,7 +58,7 @@ public class AWSRequestMetrics {
     private final Map<String, List<Object>> properties = new HashMap<String, List<Object>>();
     
     /* A map to store events that are being profiled. */
-    private final Map<String, Long> eventsBeingProfiled = new HashMap<String, Long>();
+    private final Map<String, TimingInfo> eventsBeingProfiled = new HashMap<String, TimingInfo>();
     /* Latency Logger */
     private static final Log latencyLogger = LogFactory.getLog("com.amazonaws.latency");
     private static final Object KEY_VALUE_SEPARATOR = "=";
@@ -66,7 +66,7 @@ public class AWSRequestMetrics {
     
     
     public AWSRequestMetrics() {
-        this.timingInfo = new TimingInfo();
+        this.timingInfo = TimingInfo.startTiming();
         this.profilingSystemPropertyEnabled = isProfilingEnabled();
     }
 
@@ -89,10 +89,11 @@ public class AWSRequestMetrics {
     public void startEvent(String eventName) {
         if (profilingSystemPropertyEnabled) {
             /* This will overwrite past events */
-            eventsBeingProfiled.put(eventName, System.nanoTime());
+            eventsBeingProfiled.put // ignoring the wall clock time
+                (eventName, TimingInfo.startTiming(System.nanoTime()));
         }
     }
-    
+
     /**
      * End an event which was previously started. Once ended, log how much time the event took. It is illegal to
      * end an Event that was not started. It is good practice to endEvent in a finally block. See Also startEvent.
@@ -103,13 +104,12 @@ public class AWSRequestMetrics {
      */
     public void endEvent(String eventName) {
         if (profilingSystemPropertyEnabled) {
-            Long startTime = eventsBeingProfiled.get(eventName);
+            TimingInfo timingInfo = eventsBeingProfiled.get(eventName);
             /* Somebody tried to end an event that was not started. */
-            if (startTime == null) {
+            if (timingInfo == null) {
                 throw new IllegalStateException("Trying to end an event which was never started. " + eventName);
             }
-            
-            this.timingInfo.addSubMeasurement(eventName, new TimingInfo(startTime, System.nanoTime()));
+            this.timingInfo.addSubMeasurement(eventName, timingInfo.endTiming());
         }
     }
     

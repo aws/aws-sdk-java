@@ -217,20 +217,14 @@ public class AmazonServiceException extends AmazonClientException {
         return statusCode;
     }
 
-    /**
-     * Returns a string summary of the details of this exception including the
-     * HTTP status code, AWS request ID, AWS error code and error message.
-     *
-     * @see java.lang.Throwable#toString()
-     */
+    /** {@inheritDoc} */
     @Override
-    public String toString() {
-        return getClass().getSimpleName() + ": "
-                + "Status Code: " + getStatusCode() + ", "
-                + "AWS Service: " + getServiceName() + ", "
-                + "AWS Request ID: " + getRequestId() + ", "
-                + "AWS Error Code: " + getErrorCode() + ", "
-                + "AWS Error Message: " + getMessage();
+    public String getMessage() {
+        return "Status Code: " + getStatusCode() + ", "
+            + "AWS Service: " + getServiceName() + ", "
+            + "AWS Request ID: " + getRequestId() + ", "
+            + "AWS Error Code: " + getErrorCode() + ", "
+            + "AWS Error Message: " + super.getMessage();
     }
 
 }
