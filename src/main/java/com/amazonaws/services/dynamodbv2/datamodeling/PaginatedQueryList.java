@@ -17,6 +17,7 @@ package com.amazonaws.services.dynamodbv2.datamodeling;
 import java.util.List;
 
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.PaginationLoadingStrategy;
 import com.amazonaws.services.dynamodbv2.model.QueryRequest;
 import com.amazonaws.services.dynamodbv2.model.QueryResult;
 
@@ -43,14 +44,20 @@ public class PaginatedQueryList<T> extends PaginatedList<T> {
     /** The current results for the last executed query operation */
     private QueryResult queryResult;
 
-
-    public PaginatedQueryList(DynamoDBMapper mapper, Class<T> clazz, AmazonDynamoDB dynamo, QueryRequest queryRequest, QueryResult queryResult) {
-        super(mapper, clazz, dynamo);
+    public PaginatedQueryList(DynamoDBMapper mapper, Class<T> clazz,
+            AmazonDynamoDB dynamo, QueryRequest queryRequest,
+            QueryResult queryResult, PaginationLoadingStrategy paginationLoadingStrategy) {
+        super(mapper, clazz, dynamo, paginationLoadingStrategy);
 
         this.queryRequest = queryRequest;
         this.queryResult  = queryResult;
 
         allResults.addAll(mapper.marshallIntoObjects(clazz, queryResult.getItems()));
+        
+        // If the results should be eagerly loaded at once
+        if (paginationLoadingStrategy == PaginationLoadingStrategy.EAGER_LOADING) {
+            loadAllResults();
+        }
     }
 
     @Override    

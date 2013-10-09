@@ -14,14 +14,23 @@
  */
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.net.URL;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.internal.BucketNameUtils;
+import com.amazonaws.services.s3.model.AccessControlList;
+import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectResult;
 import com.amazonaws.services.s3.model.Region;
+import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.services.s3.model.S3ObjectInputStream;
 import com.amazonaws.services.s3.transfer.TransferManager;
 import com.amazonaws.util.json.Jackson;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -41,23 +50,23 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * AWSCredentialsProvider s3CredentialProvider = ...;
  * DynamoDBMapper mapper = new DynamoDBMapper(..., s3CredentialProvider);
  * String username = "jamestkirk";
- *  
+ *
  * User user = new User();
  * user.setUsername(username);
- *  
+ *
  * // S3 region can be specified, but is optional
  * S3Link s3link = mapper.createS3Link("my-company-user-avatars", username + ".jpg");
  * user.setAvatar(s3link);
- *  
+ *
  * // All meta information of the S3 resource is persisted in DynamoDB, including
  * // region, bucket, and key
  * mapper.save(user);
- *  
+ *
  * // Upload file to S3 with the link saved in DynamoDB
  * s3link.uploadFrom(new File("/path/to/all/those/user/avatars/" + username + ".jpg"));
  * // Download file from S3 via an S3Link
  * s3link.downloadTo(new File("/path/to/downloads/" + username + ".jpg"));
- *  
+ *
  * // Full S3 API is available via the canonical AmazonS3Client and TransferManager API.
  * // For example:
  * AmazonS3Client s3 = s3link.getAmazonS3Client();
@@ -68,20 +77,20 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * public class User {
  *     private String username;
  *     private S3Link avatar;
- *  
+ *
  *     &commat;DynamoDBHashKey
  *     public String getUsername() {
  *         return username;
  *     }
- *  
+ *
  *     public void setUsername(String username) {
  *         this.username = username;
  *     }
- * 
+ *
  *     public S3Link getAvatar() {
  *         return avatar;
  *     }
- *  
+ *
  *     public void setAvatar(S3Link avatar) {
  *         this.avatar = avatar;
  *     }
@@ -104,7 +113,7 @@ public class S3Link {
     private S3Link(S3ClientCache s3cc, ID id) {
         this.s3cc = s3cc;
         this.id = id;
-        
+
         if ( s3cc == null ) {
             throw new IllegalArgumentException("S3ClientCache must be configured for use with S3Link");
         }
@@ -151,16 +160,75 @@ public class S3Link {
     }
 
     /**
-     * Convenient method to synchronously upload from the given file to the
-     * S3 object represented by this S3Link.
+     * Convenience method to synchronously upload from the given file to the
+     * Amazon S3 object represented by this S3Link.
      *
-     * @param source source file to upload from
+     * @param source
+     *            source file to upload from
      *
      * @return A {@link PutObjectResult} object containing the information
-     * returned by Amazon S3 for the newly created object.
+     *         returned by Amazon S3 for the newly created object.
      */
     public PutObjectResult uploadFrom(final File source) {
         return getAmazonS3Client().putObject(getBucketName(), getKey(), source);
+    }
+
+    /**
+     * Convenience method to synchronously upload from the given buffer to the
+     * Amazon S3 object represented by this S3Link.
+     *
+     * @param buffer
+     *            The buffer containing the data to upload.
+     *
+     * @return A {@link PutObjectResult} object containing the information
+     *         returned by Amazon S3 for the newly created object.
+     */
+    public PutObjectResult uploadFrom(final byte[] buffer) {
+        ObjectMetadata objectMetadata = new ObjectMetadata();
+        objectMetadata.setContentLength(buffer.length);
+        return getAmazonS3Client().putObject(getBucketName(), getKey(),
+                new ByteArrayInputStream(buffer), objectMetadata);
+    }
+
+    /**
+     * Sets the access control list for the object represented by this S3Link.
+     *
+     * Note: Executing this method requires that the object already exists in
+     * Amazon S3.
+     *
+     * @param acl
+     *            The access control list describing the new permissions for the
+     *            object represented by this S3Link.
+     */
+    public void setAcl(CannedAccessControlList acl) {
+        getAmazonS3Client().setObjectAcl(getBucketName(), getKey(), acl);
+    }
+
+    /**
+     * Sets the access control list for the object represented by this S3Link.
+     *
+     * Note: Executing this method requires that the object already exists in
+     * Amazon S3.
+     *
+     * @param acl
+     *            The access control list describing the new permissions for the
+     *            object represented by this S3Link.
+     */
+    public void setAcl(AccessControlList acl) {
+        getAmazonS3Client().setObjectAcl(getBucketName(), getKey(), acl);
+    }
+
+    /**
+     * Returns a URL for the location of the object represented by this S3Link.
+     * <p>
+     * If the object represented by this S3Link has public read permissions (ex:
+     * {@link CannedAccessControlList#PublicRead}), then this URL can be
+     * directly accessed to retrieve the object data.
+     *
+     * @return A URL for the location of the object represented by this S3Link.
+     */
+    public URL getUrl() {
+        return getAmazonS3Client().getUrl(getBucketName(), getKey());
     }
 
     /**
@@ -177,7 +245,38 @@ public class S3Link {
     }
 
     /**
-     * JASON wrapper of an {@link S3Link} identifier, 
+     * Downloads the data from the object represented by this S3Link to the
+     * specified output stream.
+     *
+     * @param output
+     *            The output stream to write the object's data to.
+     *
+     * @return The object's metadata.
+     */
+    public ObjectMetadata downloadTo(final OutputStream output) {
+        S3Object s3Object = getAmazonS3Client().getObject(getBucketName(), getKey());
+        S3ObjectInputStream objectContent = s3Object.getObjectContent();
+
+        try {
+            byte[] buffer = new byte[1024 * 10];
+            int bytesRead = -1;
+            while ((bytesRead = objectContent.read(buffer)) > -1) {
+                output.write(buffer, 0, bytesRead);
+            }
+        } catch (IOException ioe) {
+            try {
+                objectContent.abort();
+            } catch (IOException e) {}
+            throw new AmazonClientException("Unable to transfer content from Amazon S3 to the output stream", ioe);
+        } finally {
+            try {objectContent.close();} catch (IOException ioe) {}
+        }
+
+        return s3Object.getObjectMetadata();
+    }
+
+    /**
+     * JSON wrapper of an {@link S3Link} identifier,
      * which consists of the S3 region id, bucket name and key.
      * Sample JSON serialized form:
      * <pre>

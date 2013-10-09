@@ -104,11 +104,14 @@ public interface AWSOpsWorks {
     
     /**
      * <p>
-     * Updates a specified user profile.
+     * Deregisters an Amazon EBS volume. The volume can then be registered by
+     * another stack. For more information, see <a
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
+     * </a> .
      * </p>
      *
-     * @param updateUserProfileRequest Container for the necessary parameters
-     *           to execute the UpdateUserProfile service method on AWSOpsWorks.
+     * @param deregisterVolumeRequest Container for the necessary parameters
+     *           to execute the DeregisterVolume service method on AWSOpsWorks.
      * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
@@ -121,57 +124,7 @@ public interface AWSOpsWorks {
      *             If an error response is returned by AWSOpsWorks indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void updateUserProfile(UpdateUserProfileRequest updateUserProfileRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Creates a new stack. For more information, see <a
-     * ocs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html">
-     * Create a New Stack </a> .
-     * </p>
-     *
-     * @param createStackRequest Container for the necessary parameters to
-     *           execute the CreateStack service method on AWSOpsWorks.
-     * 
-     * @return The response from the CreateStack service method, as returned
-     *         by AWSOpsWorks.
-     * 
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateStackResult createStack(CreateStackRequest createStackRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Reboots a specified instance. For more information, see <a
-     * .amazon.com/opsworks/latest/userguide/workinginstances-starting.html">
-     * Starting, Stopping, and Rebooting Instances </a> .
-     * </p>
-     *
-     * @param rebootInstanceRequest Container for the necessary parameters to
-     *           execute the RebootInstance service method on AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void rebootInstance(RebootInstanceRequest rebootInstanceRequest) 
+    public void deregisterVolume(DeregisterVolumeRequest deregisterVolumeRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -306,19 +259,14 @@ public interface AWSOpsWorks {
 
     /**
      * <p>
-     * Creates an instance in a specified stack. For more information, see <a
-     * s.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
-     * Adding an Instance to a Layer </a> .
+     * Detaches a specified Elastic Load Balancing instance from its layer.
      * </p>
      *
-     * @param createInstanceRequest Container for the necessary parameters to
-     *           execute the CreateInstance service method on AWSOpsWorks.
-     * 
-     * @return The response from the CreateInstance service method, as
-     *         returned by AWSOpsWorks.
+     * @param detachElasticLoadBalancerRequest Container for the necessary
+     *           parameters to execute the DetachElasticLoadBalancer service method on
+     *           AWSOpsWorks.
      * 
      * @throws ResourceNotFoundException
-     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -328,7 +276,7 @@ public interface AWSOpsWorks {
      *             If an error response is returned by AWSOpsWorks indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreateInstanceResult createInstance(CreateInstanceRequest createInstanceRequest) 
+    public void detachElasticLoadBalancer(DetachElasticLoadBalancerRequest detachElasticLoadBalancerRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -360,28 +308,6 @@ public interface AWSOpsWorks {
 
     /**
      * <p>
-     * Detaches a specified Elastic Load Balancing instance from it's layer.
-     * </p>
-     *
-     * @param detachElasticLoadBalancerRequest Container for the necessary
-     *           parameters to execute the DetachElasticLoadBalancer service method on
-     *           AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void detachElasticLoadBalancer(DetachElasticLoadBalancerRequest detachElasticLoadBalancerRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Updates a specified app.
      * </p>
      *
@@ -400,56 +326,6 @@ public interface AWSOpsWorks {
      *             either a problem with the data in the request, or a server side issue.
      */
     public void updateApp(UpdateAppRequest updateAppRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes a specified app.
-     * </p>
-     *
-     * @param deleteAppRequest Container for the necessary parameters to
-     *           execute the DeleteApp service method on AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteApp(DeleteAppRequest deleteAppRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Attaches an Elastic Load Balancing instance to a specified layer.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>You must create the Elastic Load Balancing instance
-     * separately, by using the Elastic Load Balancing console, API, or CLI.
-     * For more information, see Elastic Load Balancing Developer Guide.
-     * </p>
-     *
-     * @param attachElasticLoadBalancerRequest Container for the necessary
-     *           parameters to execute the AttachElasticLoadBalancer service method on
-     *           AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void attachElasticLoadBalancer(AttachElasticLoadBalancerRequest attachElasticLoadBalancerRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -478,6 +354,609 @@ public interface AWSOpsWorks {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeCommandsResult describeCommands(DescribeCommandsRequest describeCommandsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Associates one of the stack's registered Elastic IP addresses with a
+     * specified instance. The address must first be registered with the
+     * stack by calling RegisterElasticIp. For more information, see <a
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
+     * </a> .
+     * </p>
+     *
+     * @param associateElasticIpRequest Container for the necessary
+     *           parameters to execute the AssociateElasticIp service method on
+     *           AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void associateElasticIp(AssociateElasticIpRequest associateElasticIpRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Unassigns an assigned Amazon EBS volume. The volume remains registered
+     * with the stack. For more information, see <a
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
+     * </a> .
+     * </p>
+     *
+     * @param unassignVolumeRequest Container for the necessary parameters to
+     *           execute the UnassignVolume service method on AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void unassignVolume(UnassignVolumeRequest unassignVolumeRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Describe an instance's RAID arrays.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     *
+     * @param describeRaidArraysRequest Container for the necessary
+     *           parameters to execute the DescribeRaidArrays service method on
+     *           AWSOpsWorks.
+     * 
+     * @return The response from the DescribeRaidArrays service method, as
+     *         returned by AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeRaidArraysResult describeRaidArrays(DescribeRaidArraysRequest describeRaidArraysRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Gets a generated host name for the specified layer, based on the
+     * current host name theme.
+     * </p>
+     *
+     * @param getHostnameSuggestionRequest Container for the necessary
+     *           parameters to execute the GetHostnameSuggestion service method on
+     *           AWSOpsWorks.
+     * 
+     * @return The response from the GetHostnameSuggestion service method, as
+     *         returned by AWSOpsWorks.
+     * 
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetHostnameSuggestionResult getHostnameSuggestion(GetHostnameSuggestionRequest getHostnameSuggestionRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Specify the load-based auto scaling configuration for a specified
+     * layer. For more information, see <a
+     * azon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">
+     * Managing Load with Time-based and Load-based Instances </a> .
+     * </p>
+     * <p>
+     * <b>NOTE:</b>To use load-based auto scaling, you must create a set of
+     * load-based auto scaling instances. Load-based auto scaling operates
+     * only on the instances from that set, so you must ensure that you have
+     * created enough instances to handle the maximum anticipated load.
+     * </p>
+     *
+     * @param setLoadBasedAutoScalingRequest Container for the necessary
+     *           parameters to execute the SetLoadBasedAutoScaling service method on
+     *           AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void setLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest setLoadBasedAutoScalingRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Describes an instance's Amazon EBS volumes.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     *
+     * @param describeVolumesRequest Container for the necessary parameters
+     *           to execute the DescribeVolumes service method on AWSOpsWorks.
+     * 
+     * @return The response from the DescribeVolumes service method, as
+     *         returned by AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeVolumesResult describeVolumes(DescribeVolumesRequest describeVolumesRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Assigns one of the stack's registered Amazon EBS volumes to a
+     * specified instance. The volume must first be registered with the stack
+     * by calling RegisterVolume. For more information, see <a
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
+     * </a> .
+     * </p>
+     *
+     * @param assignVolumeRequest Container for the necessary parameters to
+     *           execute the AssignVolume service method on AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void assignVolume(AssignVolumeRequest assignVolumeRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Describes AWS OpsWorks service errors.
+     * </p>
+     *
+     * @param describeServiceErrorsRequest Container for the necessary
+     *           parameters to execute the DescribeServiceErrors service method on
+     *           AWSOpsWorks.
+     * 
+     * @return The response from the DescribeServiceErrors service method, as
+     *         returned by AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeServiceErrorsResult describeServiceErrors(DescribeServiceErrorsRequest describeServiceErrorsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Updates a specified layer.
+     * </p>
+     *
+     * @param updateLayerRequest Container for the necessary parameters to
+     *           execute the UpdateLayer service method on AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void updateLayer(UpdateLayerRequest updateLayerRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Updates a registered Elastic IP address's name. For more information,
+     * see <a
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
+     * </a> .
+     * </p>
+     *
+     * @param updateElasticIpRequest Container for the necessary parameters
+     *           to execute the UpdateElasticIp service method on AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void updateElasticIp(UpdateElasticIpRequest updateElasticIpRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Starts a specified instance. For more information, see <a
+     * .amazon.com/opsworks/latest/userguide/workinginstances-starting.html">
+     * Starting, Stopping, and Rebooting Instances </a> .
+     * </p>
+     *
+     * @param startInstanceRequest Container for the necessary parameters to
+     *           execute the StartInstance service method on AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void startInstance(StartInstanceRequest startInstanceRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Creates a layer. For more information, see <a
+     * mazon.com/opsworks/latest/userguide/workinglayers-basics-create.html">
+     * How to Create a Layer </a> .
+     * </p>
+     * <p>
+     * <b>NOTE:</b>You should use CreateLayer for noncustom layer types such
+     * as PHP App Server only if the stack does not have an existing layer of
+     * that type. A stack can have at most one instance of each noncustom
+     * layer; if you attempt to create a second instance, CreateLayer fails.
+     * A stack can have an arbitrary number of custom layers, so you can call
+     * CreateLayer as many times as you like for that layer type.
+     * </p>
+     *
+     * @param createLayerRequest Container for the necessary parameters to
+     *           execute the CreateLayer service method on AWSOpsWorks.
+     * 
+     * @return The response from the CreateLayer service method, as returned
+     *         by AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateLayerResult createLayer(CreateLayerRequest createLayerRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Disassociates an Elastic IP address from its instance. The address
+     * remains registered with the stack. For more information, see <a
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
+     * </a> .
+     * </p>
+     *
+     * @param disassociateElasticIpRequest Container for the necessary
+     *           parameters to execute the DisassociateElasticIp service method on
+     *           AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void disassociateElasticIp(DisassociateElasticIpRequest disassociateElasticIpRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Deletes a specified stack. You must first delete all instances,
+     * layers, and apps. For more information, see <a
+     * aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html">
+     * Shut Down a Stack </a> .
+     * </p>
+     *
+     * @param deleteStackRequest Container for the necessary parameters to
+     *           execute the DeleteStack service method on AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteStack(DeleteStackRequest deleteStackRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Starts stack's instances.
+     * </p>
+     *
+     * @param startStackRequest Container for the necessary parameters to
+     *           execute the StartStack service method on AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void startStack(StartStackRequest startStackRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Registers an Amazon EBS volume with a specified stack. A volume can be
+     * registered with only one stack at a time. If the volume is already
+     * registered, you must first deregister it by calling DeregisterVolume.
+     * For more information, see <a
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
+     * </a> .
+     * </p>
+     *
+     * @param registerVolumeRequest Container for the necessary parameters to
+     *           execute the RegisterVolume service method on AWSOpsWorks.
+     * 
+     * @return The response from the RegisterVolume service method, as
+     *         returned by AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public RegisterVolumeResult registerVolume(RegisterVolumeRequest registerVolumeRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Updates a specified user profile.
+     * </p>
+     *
+     * @param updateUserProfileRequest Container for the necessary parameters
+     *           to execute the UpdateUserProfile service method on AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void updateUserProfile(UpdateUserProfileRequest updateUserProfileRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Creates a new stack. For more information, see <a
+     * ocs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html">
+     * Create a New Stack </a> .
+     * </p>
+     *
+     * @param createStackRequest Container for the necessary parameters to
+     *           execute the CreateStack service method on AWSOpsWorks.
+     * 
+     * @return The response from the CreateStack service method, as returned
+     *         by AWSOpsWorks.
+     * 
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateStackResult createStack(CreateStackRequest createStackRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Reboots a specified instance. For more information, see <a
+     * .amazon.com/opsworks/latest/userguide/workinginstances-starting.html">
+     * Starting, Stopping, and Rebooting Instances </a> .
+     * </p>
+     *
+     * @param rebootInstanceRequest Container for the necessary parameters to
+     *           execute the RebootInstance service method on AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void rebootInstance(RebootInstanceRequest rebootInstanceRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Creates an instance in a specified stack. For more information, see <a
+     * s.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
+     * Adding an Instance to a Layer </a> .
+     * </p>
+     *
+     * @param createInstanceRequest Container for the necessary parameters to
+     *           execute the CreateInstance service method on AWSOpsWorks.
+     * 
+     * @return The response from the CreateInstance service method, as
+     *         returned by AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateInstanceResult createInstance(CreateInstanceRequest createInstanceRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Deletes a specified app.
+     * </p>
+     *
+     * @param deleteAppRequest Container for the necessary parameters to
+     *           execute the DeleteApp service method on AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteApp(DeleteAppRequest deleteAppRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Deregisters a specified Elastic IP address. The address can then be
+     * registered by another stack. For more information, see <a
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
+     * </a> .
+     * </p>
+     *
+     * @param deregisterElasticIpRequest Container for the necessary
+     *           parameters to execute the DeregisterElasticIp service method on
+     *           AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deregisterElasticIp(DeregisterElasticIpRequest deregisterElasticIpRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Attaches an Elastic Load Balancing load balancer to a specified layer.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>You must create the Elastic Load Balancing instance
+     * separately, by using the Elastic Load Balancing console, API, or CLI.
+     * For more information, see Elastic Load Balancing Developer Guide.
+     * </p>
+     *
+     * @param attachElasticLoadBalancerRequest Container for the necessary
+     *           parameters to execute the AttachElasticLoadBalancer service method on
+     *           AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void attachElasticLoadBalancer(AttachElasticLoadBalancerRequest attachElasticLoadBalancerRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -524,61 +1003,6 @@ public interface AWSOpsWorks {
      *             either a problem with the data in the request, or a server side issue.
      */
     public CreateUserProfileResult createUserProfile(CreateUserProfileRequest createUserProfileRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Gets a generated host name for the specified layer, based on the
-     * current host name theme.
-     * </p>
-     *
-     * @param getHostnameSuggestionRequest Container for the necessary
-     *           parameters to execute the GetHostnameSuggestion service method on
-     *           AWSOpsWorks.
-     * 
-     * @return The response from the GetHostnameSuggestion service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetHostnameSuggestionResult getHostnameSuggestion(GetHostnameSuggestionRequest getHostnameSuggestionRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Describe an instance's RAID arrays.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>You must specify at least one of the parameters.
-     * </p>
-     *
-     * @param describeRaidArraysRequest Container for the necessary
-     *           parameters to execute the DescribeRaidArrays service method on
-     *           AWSOpsWorks.
-     * 
-     * @return The response from the DescribeRaidArrays service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeRaidArraysResult describeRaidArrays(DescribeRaidArraysRequest describeRaidArraysRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -636,38 +1060,6 @@ public interface AWSOpsWorks {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeLoadBasedAutoScalingResult describeLoadBasedAutoScaling(DescribeLoadBasedAutoScalingRequest describeLoadBasedAutoScalingRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Specify the load-based auto scaling configuration for a specified
-     * layer. For more information, see <a
-     * azon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">
-     * Managing Load with Time-based and Load-based Instances </a> .
-     * </p>
-     * <p>
-     * <b>NOTE:</b>To use load-based auto scaling, you must create a set of
-     * load-based auto scaling instances. Load-based auto scaling operates
-     * only on the instances from that set, so you must ensure that you have
-     * created enough instances to handle the maximum anticipated load.
-     * </p>
-     *
-     * @param setLoadBasedAutoScalingRequest Container for the necessary
-     *           parameters to execute the SetLoadBasedAutoScaling service method on
-     *           AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void setLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest setLoadBasedAutoScalingRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -752,34 +1144,6 @@ public interface AWSOpsWorks {
 
     /**
      * <p>
-     * Describes an instance's Amazon EBS volumes.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>You must specify at least one of the parameters.
-     * </p>
-     *
-     * @param describeVolumesRequest Container for the necessary parameters
-     *           to execute the DescribeVolumes service method on AWSOpsWorks.
-     * 
-     * @return The response from the DescribeVolumes service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeVolumesResult describeVolumes(DescribeVolumesRequest describeVolumesRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Creates an app for a specified stack. For more information, see <a
      * s.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">
      * Creating Apps </a> .
@@ -803,6 +1167,28 @@ public interface AWSOpsWorks {
      *             either a problem with the data in the request, or a server side issue.
      */
     public CreateAppResult createApp(CreateAppRequest createAppRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Deletes a user profile.
+     * </p>
+     *
+     * @param deleteUserProfileRequest Container for the necessary parameters
+     *           to execute the DeleteUserProfile service method on AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteUserProfile(DeleteUserProfileRequest deleteUserProfileRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -837,11 +1223,14 @@ public interface AWSOpsWorks {
 
     /**
      * <p>
-     * Deletes a user profile.
+     * Updates an Amazon EBS volume's name or mount point. For more
+     * information, see <a
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
+     * </a> .
      * </p>
      *
-     * @param deleteUserProfileRequest Container for the necessary parameters
-     *           to execute the DeleteUserProfile service method on AWSOpsWorks.
+     * @param updateVolumeRequest Container for the necessary parameters to
+     *           execute the UpdateVolume service method on AWSOpsWorks.
      * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
@@ -854,7 +1243,7 @@ public interface AWSOpsWorks {
      *             If an error response is returned by AWSOpsWorks indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void deleteUserProfile(DeleteUserProfileRequest deleteUserProfileRequest) 
+    public void updateVolume(UpdateVolumeRequest updateVolumeRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -907,32 +1296,6 @@ public interface AWSOpsWorks {
 
     /**
      * <p>
-     * Describes AWS OpsWorks service errors.
-     * </p>
-     *
-     * @param describeServiceErrorsRequest Container for the necessary
-     *           parameters to execute the DescribeServiceErrors service method on
-     *           AWSOpsWorks.
-     * 
-     * @return The response from the DescribeServiceErrors service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeServiceErrorsResult describeServiceErrors(DescribeServiceErrorsRequest describeServiceErrorsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Requests a description of a specified set of deployments.
      * </p>
      * <p>
@@ -962,11 +1325,19 @@ public interface AWSOpsWorks {
 
     /**
      * <p>
-     * Updates a specified layer.
+     * Registers an Elastic IP address with a specified stack. An address can
+     * be registered with only one stack at a time. If the address is already
+     * registered, you must first deregister it by calling
+     * DeregisterElasticIp. For more information, see <a
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
+     * </a> .
      * </p>
      *
-     * @param updateLayerRequest Container for the necessary parameters to
-     *           execute the UpdateLayer service method on AWSOpsWorks.
+     * @param registerElasticIpRequest Container for the necessary parameters
+     *           to execute the RegisterElasticIp service method on AWSOpsWorks.
+     * 
+     * @return The response from the RegisterElasticIp service method, as
+     *         returned by AWSOpsWorks.
      * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
@@ -979,31 +1350,7 @@ public interface AWSOpsWorks {
      *             If an error response is returned by AWSOpsWorks indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void updateLayer(UpdateLayerRequest updateLayerRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Starts a specified instance. For more information, see <a
-     * .amazon.com/opsworks/latest/userguide/workinginstances-starting.html">
-     * Starting, Stopping, and Rebooting Instances </a> .
-     * </p>
-     *
-     * @param startInstanceRequest Container for the necessary parameters to
-     *           execute the StartInstance service method on AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void startInstance(StartInstanceRequest startInstanceRequest) 
+    public RegisterElasticIpResult registerElasticIp(RegisterElasticIpRequest registerElasticIpRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -1088,88 +1435,6 @@ public interface AWSOpsWorks {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeAppsResult describeApps(DescribeAppsRequest describeAppsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Creates a layer. For more information, see <a
-     * mazon.com/opsworks/latest/userguide/workinglayers-basics-create.html">
-     * How to Create a Layer </a> .
-     * </p>
-     * <p>
-     * <b>NOTE:</b>You should use CreateLayer for noncustom layer types such
-     * as PHP App Server only if the stack does not have an existing layer of
-     * that type. A stack can have at most one instance of each noncustom
-     * layer; if you attempt to create a second instance, CreateLayer fails.
-     * A stack can have an arbitrary number of custom layers, so you can call
-     * CreateLayer as many times as you like for that layer type.
-     * </p>
-     *
-     * @param createLayerRequest Container for the necessary parameters to
-     *           execute the CreateLayer service method on AWSOpsWorks.
-     * 
-     * @return The response from the CreateLayer service method, as returned
-     *         by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateLayerResult createLayer(CreateLayerRequest createLayerRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes a specified stack. You must first delete all instances,
-     * layers, and apps. For more information, see <a
-     * aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html">
-     * Shut Down a Stack </a> .
-     * </p>
-     *
-     * @param deleteStackRequest Container for the necessary parameters to
-     *           execute the DeleteStack service method on AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteStack(DeleteStackRequest deleteStackRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Starts stack's instances.
-     * </p>
-     *
-     * @param startStackRequest Container for the necessary parameters to
-     *           execute the StartStack service method on AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void startStack(StartStackRequest startStackRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**

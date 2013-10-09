@@ -18,6 +18,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.PaginationLoadingStrategy;
 import com.amazonaws.services.dynamodbv2.model.ScanRequest;
 import com.amazonaws.services.dynamodbv2.model.ScanResult;
 
@@ -41,13 +42,20 @@ public class PaginatedParallelScanList<T> extends PaginatedList<T> {
     /** The current parallel scan task which contains all the information about the scan request */
     private final ParallelScanTask parallelScanTask;
 
-    public PaginatedParallelScanList(DynamoDBMapper mapper, Class<T> clazz, AmazonDynamoDB dynamo, ParallelScanTask parallelScanTask) {
-        super(mapper, clazz, dynamo);
+    public PaginatedParallelScanList(DynamoDBMapper mapper, Class<T> clazz,
+            AmazonDynamoDB dynamo, ParallelScanTask parallelScanTask,
+            PaginationLoadingStrategy paginationLoadingStrategy) {
+        super(mapper, clazz, dynamo, paginationLoadingStrategy);
 
         this.parallelScanTask = parallelScanTask;
 
         // Marshal the first batch of results in allResults
         allResults.addAll(marshalParallelScanResultsIntoObjects(parallelScanTask.getNextBatchOfScanResults()));
+        
+        // If the results should be eagerly loaded at once
+        if (paginationLoadingStrategy == PaginationLoadingStrategy.EAGER_LOADING) {
+            loadAllResults();
+        }
     }
 
     @Override
@@ -61,13 +69,13 @@ public class PaginatedParallelScanList<T> extends PaginatedList<T> {
     }
     
     private List<T> marshalParallelScanResultsIntoObjects(List<ScanResult> scanResults) {
-    	List<T> allItems = new LinkedList<T>();
-    	for (ScanResult scanResult : scanResults) {
-    		if (null != scanResult) {
-    			allItems.addAll(mapper.marshallIntoObjects(clazz, scanResult.getItems()));
-    		}
-    	}
-    	return allItems;
+        List<T> allItems = new LinkedList<T>();
+        for (ScanResult scanResult : scanResults) {
+            if (null != scanResult) {
+                allItems.addAll(mapper.marshallIntoObjects(clazz, scanResult.getItems()));
+            }
+        }
+        return allItems;
     }
 
 }

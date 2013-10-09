@@ -36,6 +36,7 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.event.ProgressListener;
 import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.AmazonS3;
@@ -130,6 +131,24 @@ public class TransferManager {
 
     private static final Log log = LogFactory.getLog(TransferManager.class);
 
+
+    /**
+     * Constructs a new <code>TransferManager</code> and Amazon S3 client using
+     * the specified AWS security credentials provider.
+     * <p>
+     * <code>TransferManager</code> and client objects may pool connections and
+     * threads. Reuse <code>TransferManager</code> and client objects and share
+     * them throughout applications.
+     * <p>
+     * TransferManager and all AWS client objects are thread safe.
+     *
+     * @param credentialsProvider
+     *            The AWS security credentials provider to use when making
+     *            authenticated requests.
+     */
+    public TransferManager(AWSCredentialsProvider credentialsProvider) {
+        this(new AmazonS3Client(credentialsProvider));
+    }
 
     /**
      * Constructs a new <code>TransferManager</code> and Amazon S3 client using

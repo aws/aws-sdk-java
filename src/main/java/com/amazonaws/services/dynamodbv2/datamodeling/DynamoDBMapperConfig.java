@@ -93,6 +93,38 @@ public class DynamoDBMapperConfig {
     };
 
     /**
+     * Enumeration of pagination loading strategy.
+     */
+    public static enum PaginationLoadingStrategy {
+        /**
+         * Paginated list is lazily loaded when possible, and all loaded results
+         * are kept in the memory.
+         * <p>
+         * By default, the mapper uses LAZY_LOADING.
+         */
+        LAZY_LOADING,
+        
+        /**
+         * Only supports using iterator to read from the paginated list. All
+         * other list operations will return UnsupportedOperationException
+         * immediately. During the iteration, the list will clear all the
+         * previous results before loading the next page, so that the list will
+         * keep at most one page of the loaded results in memory. This also
+         * means the list could only be iterated once.
+         * <p>
+         * Use this configuration to reduce the memory overhead when handling
+         * large DynamoDB items.
+         */
+        ITERATION_ONLY,
+        
+        /**
+         * Paginated list will eagerly load all the paginated results from
+         * DynamoDB as soon as the list is initialized.
+         */
+        EAGER_LOADING
+    }
+    
+    /**
      * Allows overriding the table name declared on a domain class by the
      * {@link DynamoDBTable} annotation.
      */
@@ -153,6 +185,13 @@ public class DynamoDBMapperConfig {
     private final SaveBehavior saveBehavior;
     private final ConsistentReads consistentReads;
     private final TableNameOverride tableNameOverride;
+    private final PaginationLoadingStrategy paginationLoadingStrategy;
+
+    /** Legacy constructor, using default PaginationLoadingStrategy **/
+    public DynamoDBMapperConfig(SaveBehavior saveBehavior, ConsistentReads consistentReads,
+            TableNameOverride tableNameOverride) {
+        this(saveBehavior, consistentReads, tableNameOverride, null);
+    }
 
     /**
      * Constructs a new configuration object with the save behavior, consistent
@@ -164,19 +203,22 @@ public class DynamoDBMapperConfig {
      *            The {@link ConsistentReads} to use, or null for default.
      * @param tableNameOverride
      *            An override for the table name, or null for no override.
+     * @param paginationLoadingStrategy
+     *            The pagination loading strategy, or null for default.
      */
     public DynamoDBMapperConfig(SaveBehavior saveBehavior, ConsistentReads consistentReads,
-            TableNameOverride tableNameOverride) {
+            TableNameOverride tableNameOverride, PaginationLoadingStrategy paginationLoadingStrategy) {
         this.saveBehavior = saveBehavior;
         this.consistentReads = consistentReads;
         this.tableNameOverride = tableNameOverride;
+        this.paginationLoadingStrategy = paginationLoadingStrategy;
     }
 
     /**
      * Constructs a new configuration object with the save behavior given.
      */
     public DynamoDBMapperConfig(SaveBehavior saveBehavior) {
-        this(saveBehavior, null, null);
+        this(saveBehavior, null, null, null);
     }
 
     /**
@@ -184,14 +226,21 @@ public class DynamoDBMapperConfig {
      * given.
      */
     public DynamoDBMapperConfig(ConsistentReads consistentReads) {
-        this(null, consistentReads, null);
+        this(null, consistentReads, null, null);
     }
 
     /**
      * Constructs a new configuration object with the table name override given.
      */
     public DynamoDBMapperConfig(TableNameOverride tableNameOverride) {
-        this(null, null, tableNameOverride);
+        this(null, null, tableNameOverride, null);
+    }
+    
+    /**
+     * Constructs a new configuration object with the pagination loading strategy given.
+     */
+    public DynamoDBMapperConfig(PaginationLoadingStrategy paginationLoadingStrategy) {
+        this(null, null, null, paginationLoadingStrategy);
     }
 
     /**
@@ -207,6 +256,7 @@ public class DynamoDBMapperConfig {
             this.saveBehavior = defaults.getSaveBehavior();
             this.consistentReads = defaults.getConsistentReads();
             this.tableNameOverride = defaults.getTableNameOverride();
+            this.paginationLoadingStrategy = defaults.getPaginationLoadingStrategy();
         } else {
             this.saveBehavior = overrides.getSaveBehavior() == null ? defaults.getSaveBehavior() : overrides
                     .getSaveBehavior();
@@ -214,6 +264,8 @@ public class DynamoDBMapperConfig {
                     .getConsistentReads();
             this.tableNameOverride = overrides.getTableNameOverride() == null ? defaults.getTableNameOverride()
                     : overrides.getTableNameOverride();
+            this.paginationLoadingStrategy = overrides.getPaginationLoadingStrategy() == null ? defaults.getPaginationLoadingStrategy()
+                    : overrides.getPaginationLoadingStrategy();
         }
     }
 
@@ -244,11 +296,18 @@ public class DynamoDBMapperConfig {
     public TableNameOverride getTableNameOverride() {
         return tableNameOverride;
     }
+    
+    /**
+     * Returns the pagination loading strategy for this configuration.
+     */
+    public PaginationLoadingStrategy getPaginationLoadingStrategy() {
+        return paginationLoadingStrategy;
+    }
 
     /**
      * Default configuration uses UPDATE behavior for saves and EVENTUALly
-     * consistent reads, with no table name override.
+     * consistent reads, with no table name override and lazy-loading strategy.
      */
     public static final DynamoDBMapperConfig DEFAULT = new DynamoDBMapperConfig(SaveBehavior.UPDATE,
-            ConsistentReads.EVENTUAL, null);
+            ConsistentReads.EVENTUAL, null, PaginationLoadingStrategy.LAZY_LOADING);
 }

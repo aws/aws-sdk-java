@@ -38,7 +38,7 @@ public class EnableVolumeIORequestMarshaller implements Marshaller<Request<Enabl
 
         Request<EnableVolumeIORequest> request = new DefaultRequest<EnableVolumeIORequest>(enableVolumeIORequest, "AmazonEC2");
         request.addParameter("Action", "EnableVolumeIO");
-        request.addParameter("Version", "2013-08-15");
+        request.addParameter("Version", "2013-10-01");
 
         if (enableVolumeIORequest.getVolumeId() != null) {
             request.addParameter("VolumeId", StringUtils.fromString(enableVolumeIORequest.getVolumeId()));

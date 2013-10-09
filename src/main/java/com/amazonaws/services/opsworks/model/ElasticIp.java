@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class ElasticIp implements Serializable {
 
     /**
-     * The IP address
+     * The IP address.
      */
     private String ip;
 
@@ -47,29 +47,34 @@ public class ElasticIp implements Serializable {
     private String region;
 
     /**
-     * The IP address
+     * The ID of the instance that the address is attached to.
+     */
+    private String instanceId;
+
+    /**
+     * The IP address.
      *
-     * @return The IP address
+     * @return The IP address.
      */
     public String getIp() {
         return ip;
     }
     
     /**
-     * The IP address
+     * The IP address.
      *
-     * @param ip The IP address
+     * @param ip The IP address.
      */
     public void setIp(String ip) {
         this.ip = ip;
     }
     
     /**
-     * The IP address
+     * The IP address.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ip The IP address
+     * @param ip The IP address.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -195,6 +200,40 @@ public class ElasticIp implements Serializable {
     
     
     /**
+     * The ID of the instance that the address is attached to.
+     *
+     * @return The ID of the instance that the address is attached to.
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+    
+    /**
+     * The ID of the instance that the address is attached to.
+     *
+     * @param instanceId The ID of the instance that the address is attached to.
+     */
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+    
+    /**
+     * The ID of the instance that the address is attached to.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param instanceId The ID of the instance that the address is attached to.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public ElasticIp withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -209,7 +248,8 @@ public class ElasticIp implements Serializable {
         if (getIp() != null) sb.append("Ip: " + getIp() + ",");
         if (getName() != null) sb.append("Name: " + getName() + ",");
         if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");
-        if (getRegion() != null) sb.append("Region: " + getRegion() );
+        if (getRegion() != null) sb.append("Region: " + getRegion() + ",");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() );
         sb.append("}");
         return sb.toString();
     }
@@ -223,6 +263,7 @@ public class ElasticIp implements Serializable {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
         hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode()); 
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode()); 
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode()); 
         return hashCode;
     }
     
@@ -242,6 +283,8 @@ public class ElasticIp implements Serializable {
         if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false) return false; 
         if (other.getRegion() == null ^ this.getRegion() == null) return false;
         if (other.getRegion() != null && other.getRegion().equals(this.getRegion()) == false) return false; 
+        if (other.getInstanceId() == null ^ this.getInstanceId() == null) return false;
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false) return false; 
         return true;
     }
     

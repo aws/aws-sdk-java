@@ -88,6 +88,9 @@ public class DescribeVolumesRequestMarshaller implements Marshaller<Request<Desc
             if (describeVolumesRequest.getInstanceId() != null) {
                 jsonWriter.key("InstanceId").value(describeVolumesRequest.getInstanceId());
             }
+            if (describeVolumesRequest.getStackId() != null) {
+                jsonWriter.key("StackId").value(describeVolumesRequest.getStackId());
+            }
             if (describeVolumesRequest.getRaidArrayId() != null) {
                 jsonWriter.key("RaidArrayId").value(describeVolumesRequest.getRaidArrayId());
             }

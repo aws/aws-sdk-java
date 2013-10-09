@@ -335,52 +335,52 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         init();
     }
 
-	/**
-	 * Constructs a new client using the specified client configuration to
-	 * access Amazon S3. A credentials provider chain will be used that searches
-	 * for credentials in this order:
-	 * <ul>
-	 * <li>Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY</li>
-	 * <li>Java System Properties - aws.accessKeyId and aws.secretKey</li>
-	 * <li>Instance Profile Credentials - delivered through the Amazon EC2
-	 * metadata service</li>
-	 * </ul>
-	 *
-	 * <p>
-	 * If no credentials are found in the chain, this client will attempt to
-	 * work in an anonymous mode where requests aren't signed. Only a subset of
-	 * the Amazon S3 API will work with anonymous <i>(i.e. unsigned)</i>
-	 * requests, but this can prove useful in some situations. For example:
-	 * <ul>
-	 * <li>If an Amazon S3 bucket has {@link Permission#Read} permission for the
-	 * {@link GroupGrantee#AllUsers} group, anonymous clients can call
-	 * {@link #listObjects(String)} to see what objects are stored in a bucket.</li>
-	 * <li>If an object has {@link Permission#Read} permission for the
-	 * {@link GroupGrantee#AllUsers} group, anonymous clients can call
-	 * {@link #getObject(String, String)} and
-	 * {@link #getObjectMetadata(String, String)} to pull object content and
-	 * metadata.</li>
-	 * <li>If a bucket has {@link Permission#Write} permission for the
-	 * {@link GroupGrantee#AllUsers} group, anonymous clients can upload objects
-	 * to the bucket.</li>
-	 * </ul>
-	 * </p>
-	 * <p>
-	 * You can force the client to operate in an anonymous mode, and skip the
-	 * credentials provider chain, by passing in <code>null</code> for the
-	 * credentials.
-	 * </p>
-	 *
-	 * @param clientConfiguration
+    /**
+     * Constructs a new client using the specified client configuration to
+     * access Amazon S3. A credentials provider chain will be used that searches
+     * for credentials in this order:
+     * <ul>
+     * <li>Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY</li>
+     * <li>Java System Properties - aws.accessKeyId and aws.secretKey</li>
+     * <li>Instance Profile Credentials - delivered through the Amazon EC2
+     * metadata service</li>
+     * </ul>
+     *
+     * <p>
+     * If no credentials are found in the chain, this client will attempt to
+     * work in an anonymous mode where requests aren't signed. Only a subset of
+     * the Amazon S3 API will work with anonymous <i>(i.e. unsigned)</i>
+     * requests, but this can prove useful in some situations. For example:
+     * <ul>
+     * <li>If an Amazon S3 bucket has {@link Permission#Read} permission for the
+     * {@link GroupGrantee#AllUsers} group, anonymous clients can call
+     * {@link #listObjects(String)} to see what objects are stored in a bucket.</li>
+     * <li>If an object has {@link Permission#Read} permission for the
+     * {@link GroupGrantee#AllUsers} group, anonymous clients can call
+     * {@link #getObject(String, String)} and
+     * {@link #getObjectMetadata(String, String)} to pull object content and
+     * metadata.</li>
+     * <li>If a bucket has {@link Permission#Write} permission for the
+     * {@link GroupGrantee#AllUsers} group, anonymous clients can upload objects
+     * to the bucket.</li>
+     * </ul>
+     * </p>
+     * <p>
+     * You can force the client to operate in an anonymous mode, and skip the
+     * credentials provider chain, by passing in <code>null</code> for the
+     * credentials.
+     * </p>
+     *
+     * @param clientConfiguration
      *            The client configuration options controlling how this client
      *            connects to Amazon S3 (e.g. proxy settings, retry counts, etc).
      *
-	 * @see AmazonS3Client#AmazonS3Client(AWSCredentials)
-	 * @see AmazonS3Client#AmazonS3Client(AWSCredentials, ClientConfiguration)
-	 */
-	public AmazonS3Client(ClientConfiguration clientConfiguration) {
-		this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
-	}
+     * @see AmazonS3Client#AmazonS3Client(AWSCredentials)
+     * @see AmazonS3Client#AmazonS3Client(AWSCredentials, ClientConfiguration)
+     */
+    public AmazonS3Client(ClientConfiguration clientConfiguration) {
+        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+    }
 
     private void init() {
         // Because of S3's virtual host style addressing, we need to change the
@@ -662,11 +662,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
          * *must* specify a location constraint. Try to derive the region from
          * the endpoint.
          */
-		if (!(this.endpoint.getHost().equals(Constants.S3_HOSTNAME))
-				&& (region == null || region.isEmpty())) {
+        if (!(this.endpoint.getHost().equals(Constants.S3_HOSTNAME))
+                && (region == null || region.isEmpty())) {
 
-			region = RegionUtils.getRegionByEndpoint(this.endpoint.getHost())
-					.getName();
+            region = RegionUtils.getRegionByEndpoint(this.endpoint.getHost())
+                    .getName();
 
         }
 
@@ -950,7 +950,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         addStringListHeader(request, Headers.GET_OBJECT_IF_NONE_MATCH,
                 getObjectRequest.getNonmatchingETagConstraints());
 
-        /* 
+        /*
          * This is compatible with progress listener set by either the legacy
          * method GetObjectRequest#setProgressListener or the new method
          * GetObjectRequest#setGeneralProgressListener.
@@ -1102,7 +1102,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         ObjectMetadata metadata = putObjectRequest.getMetadata();
         InputStream input = putObjectRequest.getInputStream();
 
-        /* 
+        /*
          * This is compatible with progress listener set by either the legacy
          * method PutObjectRequest#setProgressListener or the new method
          * PutObjectRequest#setGeneralProgressListener.
@@ -2384,7 +2384,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             }
         }
 
-        /* 
+        /*
          * This is compatible with progress listener set by either the legacy
          * method UploadPartRequest#setProgressListener or the new method
          * UploadPartRequest#setGeneralProgressListener.
@@ -2941,14 +2941,31 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      */
     public String getResourceUrl(String bucketName, String key) {
         try {
-            URL url = getURL(bucketName, key);
-            return url.toString();
+            return getUrl(bucketName, key).toString();
         } catch ( Exception e ) {
             return null;
         }
     }
 
-    private URL getURL(String bucketName, String key) {
+    /**
+     * Returns an URL for the object stored in the specified bucket and
+     * key.
+     * <p>
+     * If the object identified by the given bucket and key has public read
+     * permissions (ex: {@link CannedAccessControlList#PublicRead}), then this
+     * URL can be directly accessed to retrieve the object's data.
+     *
+     * @param bucketName
+     *            The name of the bucket containing the object whose URL is
+     *            being requested.
+     * @param key
+     *            The key under which the object whose URL is being requested is
+     *            stored.
+     *
+     * @return A unique URL for the object stored in the specified bucket and
+     *         key.
+     */
+    public URL getUrl(String bucketName, String key) {
         Request<?> request = new DefaultRequest<Object>(Constants.S3_SERVICE_NAME);
         configRequest(request, bucketName, key);
         return ServiceUtils.convertRequestToUrl(request);
@@ -3012,7 +3029,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             /*
              * If the key name starts with a slash character, in order to
              * prevent it being treated as a path delimiter, we need to add
-             * another slash before the key name. 
+             * another slash before the key name.
              * {@see com.amazonaws.http.HttpRequestFactory#createHttpRequest}
              */
             if (key != null && key.startsWith("/")) {

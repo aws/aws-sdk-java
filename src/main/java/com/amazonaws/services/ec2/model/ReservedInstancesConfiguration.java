@@ -41,6 +41,14 @@ public class ReservedInstancesConfiguration implements Serializable {
     private Integer instanceCount;
 
     /**
+     * The instance type for the modified Reserved Instances.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, hs1.8xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge, cr1.8xlarge
+     */
+    private String instanceType;
+
+    /**
      * The Availability Zone for the modified Reserved Instances.
      *
      * @return The Availability Zone for the modified Reserved Instances.
@@ -149,6 +157,89 @@ public class ReservedInstancesConfiguration implements Serializable {
     
     
     /**
+     * The instance type for the modified Reserved Instances.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, hs1.8xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge, cr1.8xlarge
+     *
+     * @return The instance type for the modified Reserved Instances.
+     *
+     * @see InstanceType
+     */
+    public String getInstanceType() {
+        return instanceType;
+    }
+    
+    /**
+     * The instance type for the modified Reserved Instances.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, hs1.8xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge, cr1.8xlarge
+     *
+     * @param instanceType The instance type for the modified Reserved Instances.
+     *
+     * @see InstanceType
+     */
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+    }
+    
+    /**
+     * The instance type for the modified Reserved Instances.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, hs1.8xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge, cr1.8xlarge
+     *
+     * @param instanceType The instance type for the modified Reserved Instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see InstanceType
+     */
+    public ReservedInstancesConfiguration withInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+        return this;
+    }
+    
+    
+    /**
+     * The instance type for the modified Reserved Instances.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, hs1.8xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge, cr1.8xlarge
+     *
+     * @param instanceType The instance type for the modified Reserved Instances.
+     *
+     * @see InstanceType
+     */
+    public void setInstanceType(InstanceType instanceType) {
+        this.instanceType = instanceType.toString();
+    }
+    
+    /**
+     * The instance type for the modified Reserved Instances.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, hs1.8xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge, cr1.8xlarge
+     *
+     * @param instanceType The instance type for the modified Reserved Instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     *
+     * @see InstanceType
+     */
+    public ReservedInstancesConfiguration withInstanceType(InstanceType instanceType) {
+        this.instanceType = instanceType.toString();
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -162,7 +253,8 @@ public class ReservedInstancesConfiguration implements Serializable {
         sb.append("{");
         if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
         if (getPlatform() != null) sb.append("Platform: " + getPlatform() + ",");
-        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() );
+        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ",");
+        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() );
         sb.append("}");
         return sb.toString();
     }
@@ -175,6 +267,7 @@ public class ReservedInstancesConfiguration implements Serializable {
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode()); 
         hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode()); 
         hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode()); 
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode()); 
         return hashCode;
     }
     
@@ -192,6 +285,8 @@ public class ReservedInstancesConfiguration implements Serializable {
         if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false) return false; 
         if (other.getInstanceCount() == null ^ this.getInstanceCount() == null) return false;
         if (other.getInstanceCount() != null && other.getInstanceCount().equals(this.getInstanceCount()) == false) return false; 
+        if (other.getInstanceType() == null ^ this.getInstanceType() == null) return false;
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false) return false; 
         return true;
     }
     

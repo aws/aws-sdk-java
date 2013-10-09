@@ -17,6 +17,7 @@ package com.amazonaws.services.dynamodbv2.datamodeling;
 import java.util.List;
 
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.PaginationLoadingStrategy;
 import com.amazonaws.services.dynamodbv2.model.ScanRequest;
 import com.amazonaws.services.dynamodbv2.model.ScanResult;
 
@@ -43,14 +44,20 @@ public class PaginatedScanList<T> extends PaginatedList<T> {
     /** The current results for the last executed scan operation */
     private ScanResult scanResult;
 
-
-    public PaginatedScanList(DynamoDBMapper mapper, Class<T> clazz, AmazonDynamoDB dynamo, ScanRequest scanRequest, ScanResult scanResult) {
-        super(mapper, clazz, dynamo);
+    public PaginatedScanList(DynamoDBMapper mapper, Class<T> clazz,
+            AmazonDynamoDB dynamo, ScanRequest scanRequest,
+            ScanResult scanResult, PaginationLoadingStrategy paginationLoadingStrategy) {
+        super(mapper, clazz, dynamo, paginationLoadingStrategy);
 
         this.scanRequest = scanRequest;
         this.scanResult = scanResult;
 
         allResults.addAll(mapper.marshallIntoObjects(clazz, scanResult.getItems()));
+        
+        // If the results should be eagerly loaded at once
+        if (paginationLoadingStrategy == PaginationLoadingStrategy.EAGER_LOADING) {
+            loadAllResults();
+        }
     }
 
     @Override

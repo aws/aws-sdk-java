@@ -44,6 +44,7 @@ public class ElasticIpJsonUnmarshaller implements Unmarshaller<ElasticIp, JsonUn
 
         JsonToken token = context.currentToken;
         if (token == null) token = context.nextToken();
+        if (token == VALUE_NULL) return null;
 
         while (true) {
             if (token == null) break;
@@ -65,6 +66,10 @@ public class ElasticIpJsonUnmarshaller implements Unmarshaller<ElasticIp, JsonUn
                 if (context.testExpression("Region", targetDepth)) {
                     context.nextToken();
                     elasticIp.setRegion(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("InstanceId", targetDepth)) {
+                    context.nextToken();
+                    elasticIp.setInstanceId(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

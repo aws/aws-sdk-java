@@ -32,8 +32,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeElasticLoadBalancersRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * A stack ID. The action describes the Elastic Load Balancing instances
-     * for the stack.
+     * A stack ID. The action describes the stack's Elastic Load Balancing
+     * instances.
      */
     private String stackId;
 
@@ -44,35 +44,35 @@ public class DescribeElasticLoadBalancersRequest extends AmazonWebServiceRequest
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> layerIds;
 
     /**
-     * A stack ID. The action describes the Elastic Load Balancing instances
-     * for the stack.
+     * A stack ID. The action describes the stack's Elastic Load Balancing
+     * instances.
      *
-     * @return A stack ID. The action describes the Elastic Load Balancing instances
-     *         for the stack.
+     * @return A stack ID. The action describes the stack's Elastic Load Balancing
+     *         instances.
      */
     public String getStackId() {
         return stackId;
     }
     
     /**
-     * A stack ID. The action describes the Elastic Load Balancing instances
-     * for the stack.
+     * A stack ID. The action describes the stack's Elastic Load Balancing
+     * instances.
      *
-     * @param stackId A stack ID. The action describes the Elastic Load Balancing instances
-     *         for the stack.
+     * @param stackId A stack ID. The action describes the stack's Elastic Load Balancing
+     *         instances.
      */
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
     
     /**
-     * A stack ID. The action describes the Elastic Load Balancing instances
-     * for the stack.
+     * A stack ID. The action describes the stack's Elastic Load Balancing
+     * instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param stackId A stack ID. The action describes the Elastic Load Balancing instances
-     *         for the stack.
+     * @param stackId A stack ID. The action describes the stack's Elastic Load Balancing
+     *         instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -39,6 +39,13 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest implement
     private String instanceId;
 
     /**
+     * A stack ID. If you include this parameter,
+     * <code>DescribeElasticIps</code> returns a description of the Elastic
+     * IP addresses that are registered with the specified stack.
+     */
+    private String stackId;
+
+    /**
      * An array of Elastic IP addresses to be described. If you include this
      * parameter, <code>DescribeElasticIps</code> returns a description of
      * the specified Elastic IP addresses. Otherwise, it returns a
@@ -88,6 +95,52 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest implement
      */
     public DescribeElasticIpsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
+        return this;
+    }
+    
+    
+    /**
+     * A stack ID. If you include this parameter,
+     * <code>DescribeElasticIps</code> returns a description of the Elastic
+     * IP addresses that are registered with the specified stack.
+     *
+     * @return A stack ID. If you include this parameter,
+     *         <code>DescribeElasticIps</code> returns a description of the Elastic
+     *         IP addresses that are registered with the specified stack.
+     */
+    public String getStackId() {
+        return stackId;
+    }
+    
+    /**
+     * A stack ID. If you include this parameter,
+     * <code>DescribeElasticIps</code> returns a description of the Elastic
+     * IP addresses that are registered with the specified stack.
+     *
+     * @param stackId A stack ID. If you include this parameter,
+     *         <code>DescribeElasticIps</code> returns a description of the Elastic
+     *         IP addresses that are registered with the specified stack.
+     */
+    public void setStackId(String stackId) {
+        this.stackId = stackId;
+    }
+    
+    /**
+     * A stack ID. If you include this parameter,
+     * <code>DescribeElasticIps</code> returns a description of the Elastic
+     * IP addresses that are registered with the specified stack.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param stackId A stack ID. If you include this parameter,
+     *         <code>DescribeElasticIps</code> returns a description of the Elastic
+     *         IP addresses that are registered with the specified stack.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public DescribeElasticIpsRequest withStackId(String stackId) {
+        this.stackId = stackId;
         return this;
     }
     
@@ -198,6 +251,7 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest implement
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");
         if (getIps() != null) sb.append("Ips: " + getIps() );
         sb.append("}");
         return sb.toString();
@@ -209,6 +263,7 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest implement
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode()); 
+        hashCode = prime * hashCode + ((getStackId() == null) ? 0 : getStackId().hashCode()); 
         hashCode = prime * hashCode + ((getIps() == null) ? 0 : getIps().hashCode()); 
         return hashCode;
     }
@@ -223,6 +278,8 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest implement
         
         if (other.getInstanceId() == null ^ this.getInstanceId() == null) return false;
         if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false) return false; 
+        if (other.getStackId() == null ^ this.getStackId() == null) return false;
+        if (other.getStackId() != null && other.getStackId().equals(this.getStackId()) == false) return false; 
         if (other.getIps() == null ^ this.getIps() == null) return false;
         if (other.getIps() != null && other.getIps().equals(this.getIps()) == false) return false; 
         return true;

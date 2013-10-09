@@ -88,6 +88,9 @@ public class DescribeElasticIpsRequestMarshaller implements Marshaller<Request<D
             if (describeElasticIpsRequest.getInstanceId() != null) {
                 jsonWriter.key("InstanceId").value(describeElasticIpsRequest.getInstanceId());
             }
+            if (describeElasticIpsRequest.getStackId() != null) {
+                jsonWriter.key("StackId").value(describeElasticIpsRequest.getStackId());
+            }
 
             com.amazonaws.internal.ListWithAutoConstructFlag<String> ipsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(describeElasticIpsRequest.getIps());
             if (ipsList != null && !(ipsList.isAutoConstruct() && ipsList.isEmpty())) {

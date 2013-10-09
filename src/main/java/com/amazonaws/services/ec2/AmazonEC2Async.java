@@ -2755,8 +2755,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * The ModifyReservedInstances operation modifies the Availability Zone,
-     * instance count, or network platform (EC2-Classic or EC2-VPC) of your
-     * Reserved Instances.
+     * instance count, instance type, or network platform (EC2-Classic or
+     * EC2-VPC) of your Reserved Instances.
      * </p>
      *
      * @param modifyReservedInstancesRequest Container for the necessary
@@ -2780,8 +2780,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * The ModifyReservedInstances operation modifies the Availability Zone,
-     * instance count, or network platform (EC2-Classic or EC2-VPC) of your
-     * Reserved Instances.
+     * instance count, instance type, or network platform (EC2-Classic or
+     * EC2-VPC) of your Reserved Instances.
      * </p>
      *
      * @param modifyReservedInstancesRequest Container for the necessary

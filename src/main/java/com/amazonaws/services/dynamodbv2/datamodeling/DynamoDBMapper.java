@@ -37,6 +37,7 @@ import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.http.AmazonHttpClient;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.ConsistentReads;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.PaginationLoadingStrategy;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.SaveBehavior;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.dynamodbv2.model.AttributeValueUpdate;
@@ -1080,6 +1081,11 @@ public class DynamoDBMapper {
      * Saves the objects given using one or more calls to the
      * {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)} API. <b>No
      * version checks are performed</b>, as required by the API.
+     * <p/>
+     * <b>This method ignores any SaveBehavior set on the mapper</b>, and
+     * always behaves as if SaveBehavior.CLOBBER was specified, as
+     * the AmazonDynamoDB.batchWriteItem() request does not support updating
+     * existing items.
      *
      * @see DynamoDBMapper#batchWrite(List, List, DynamoDBMapperConfig)
      */
@@ -1091,6 +1097,11 @@ public class DynamoDBMapper {
      * Saves the objects given using one or more calls to the
      * {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)} API. <b>No
      * version checks are performed</b>, as required by the API.
+     * <p/>
+     * <b>This method ignores any SaveBehavior set on the mapper</b>, and
+     * always behaves as if SaveBehavior.CLOBBER was specified, as
+     * the AmazonDynamoDB.batchWriteItem() request does not support updating
+     * existing items.
      *
      * @see DynamoDBMapper#batchWrite(List, List, DynamoDBMapperConfig)
      */
@@ -1102,6 +1113,11 @@ public class DynamoDBMapper {
      * Saves and deletes the objects given using one or more calls to the
      * {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)} API. <b>No
      * version checks are performed</b>, as required by the API.
+     * <p/>
+     * <b>This method ignores any SaveBehavior set on the mapper</b>, and
+     * always behaves as if SaveBehavior.CLOBBER was specified, as
+     * the AmazonDynamoDB.batchWriteItem() request does not support updating
+     * existing items.
      *
      * @see DynamoDBMapper#batchWrite(List, List, DynamoDBMapperConfig)
      */
@@ -1127,7 +1143,9 @@ public class DynamoDBMapper {
      *            Only {@link DynamoDBMapperConfig#getTableNameOverride()} is
      *            considered; if specified, all objects in the two parameter
      *            lists will be considered to belong to the given table
-     *            override.
+     *            override. In particular, this method <b>always acts as
+     *            if SaveBehavior.CLOBBER was specified</b> regardless of the
+     *            value of the config parameter.
      * @return A list of failed batches which includes the unprocessed items and
      *         the exceptions causing the failure.
      */
@@ -1576,8 +1594,8 @@ public class DynamoDBMapper {
      * attempts to modify the list will result in an
      * UnsupportedOperationException.
      * <p>
-     * The unmodifiable list returned is lazily loaded when possible, so calls
-     * to DynamoDB will be made only as needed.
+     * You can specify the pagination loading strategy for this scan operation.
+     * By default, the list returned is lazily loaded when possible.
      *
      * @param <T>
      *            The type of the objects being returned.
@@ -1593,6 +1611,7 @@ public class DynamoDBMapper {
      * @return An unmodifiable list of the objects constructed from the results
      *         of the scan operation.
      * @see PaginatedScanList
+     * @see PaginationLoadingStrategy
      */
     public <T> PaginatedScanList<T> scan(Class<T> clazz, DynamoDBScanExpression scanExpression, DynamoDBMapperConfig config) {
         config = mergeConfig(config);
@@ -1600,60 +1619,61 @@ public class DynamoDBMapper {
         ScanRequest scanRequest = createScanRequestFromExpression(clazz, scanExpression, config);
 
         ScanResult scanResult = db.scan(applyUserAgent(scanRequest));
-        return new PaginatedScanList<T>(this, clazz, db, scanRequest, scanResult);
+        return new PaginatedScanList<T>(this, clazz, db, scanRequest, scanResult, config.getPaginationLoadingStrategy());
     }
 
     /**
-	 * Scans through an Amazon DynamoDB table on logically partitioned segments
-	 * in parallel and returns the matching results in one unmodifiable list of
-	 * instantiated objects, using the default configuration.
-	 *
-	 * @see DynamoDBMapper#parallelScan(Class, DynamoDBScanExpression,int,
-	 *      DynamoDBMapperConfig)
-	 */
+     * Scans through an Amazon DynamoDB table on logically partitioned segments
+     * in parallel and returns the matching results in one unmodifiable list of
+     * instantiated objects, using the default configuration.
+     *
+     * @see DynamoDBMapper#parallelScan(Class, DynamoDBScanExpression,int,
+     *      DynamoDBMapperConfig)
+     */
     public <T> PaginatedParallelScanList<T> parallelScan(Class<T> clazz, DynamoDBScanExpression scanExpression, int totalSegments) {
         return parallelScan(clazz, scanExpression, totalSegments, config);
     }
 
-	/**
-	 * Scans through an Amazon DynamoDB table on logically partitioned segments
-	 * in parallel. This method will create a thread pool of the specified size,
-	 * and each thread will issue scan requests for its assigned segment,
-	 * following the returned continuation token, until the end of its segment.
-	 * Callers should be responsible for setting the appropriate number of total
-	 * segments. More scan segments would result in better performance but more
-	 * consumed capacity of the table. The results are returned in one
-	 * unmodifiable list of instantiated objects. The table to scan is
-	 * determined by looking at the annotations on the specified class, which
-	 * declares where to store the object data in Amazon DynamoDB, and the scan
-	 * expression parameter allows the caller to filter results and control how
-	 * the scan is executed.
-	 * <p>
-	 * Callers should be aware that the returned list is unmodifiable, and any
-	 * attempts to modify the list will result in an
-	 * UnsupportedOperationException.
-	 * <p>
-	 * The unmodifiable list returned is lazily loaded when possible, so calls
-	 * to DynamoDB will be made only as needed.
-	 *
-	 * @param <T>
-	 *            The type of the objects being returned.
-	 * @param clazz
-	 *            The class annotated with DynamoDB annotations describing how
-	 *            to store the object data in Amazon DynamoDB.
-	 * @param scanExpression
-	 *            Details on how to run the scan, including any filters to apply
-	 *            to limit results.
-	 * @param totalSegments
-	 *            Number of total parallel scan segments.
-	 *            <b>Range: </b>1 - 4096
-	 * @param config
-	 *            The configuration to use for this scan, which overrides the
-	 *            default provided at object construction.
-	 * @return An unmodifiable list of the objects constructed from the results
-	 *         of the scan operation.
-	 * @see PaginatedParallelScanList
-	 */
+    /**
+     * Scans through an Amazon DynamoDB table on logically partitioned segments
+     * in parallel. This method will create a thread pool of the specified size,
+     * and each thread will issue scan requests for its assigned segment,
+     * following the returned continuation token, until the end of its segment.
+     * Callers should be responsible for setting the appropriate number of total
+     * segments. More scan segments would result in better performance but more
+     * consumed capacity of the table. The results are returned in one
+     * unmodifiable list of instantiated objects. The table to scan is
+     * determined by looking at the annotations on the specified class, which
+     * declares where to store the object data in Amazon DynamoDB, and the scan
+     * expression parameter allows the caller to filter results and control how
+     * the scan is executed.
+     * <p>
+     * Callers should be aware that the returned list is unmodifiable, and any
+     * attempts to modify the list will result in an
+     * UnsupportedOperationException.
+     * <p>
+     * You can specify the pagination loading strategy for this parallel scan operation.
+     * By default, the list returned is lazily loaded when possible.
+     *
+     * @param <T>
+     *            The type of the objects being returned.
+     * @param clazz
+     *            The class annotated with DynamoDB annotations describing how
+     *            to store the object data in Amazon DynamoDB.
+     * @param scanExpression
+     *            Details on how to run the scan, including any filters to apply
+     *            to limit results.
+     * @param totalSegments
+     *            Number of total parallel scan segments.
+     *            <b>Range: </b>1 - 4096
+     * @param config
+     *            The configuration to use for this scan, which overrides the
+     *            default provided at object construction.
+     * @return An unmodifiable list of the objects constructed from the results
+     *         of the scan operation.
+     * @see PaginatedParallelScanList
+     * @see PaginationLoadingStrategy
+     */
     public <T> PaginatedParallelScanList<T> parallelScan(Class<T> clazz, DynamoDBScanExpression scanExpression, int totalSegments, DynamoDBMapperConfig config) {
         config = mergeConfig(config);
 
@@ -1661,7 +1681,7 @@ public class DynamoDBMapper {
         List<ScanRequest> parallelScanRequests = createParallelScanRequestsFromExpression(clazz, scanExpression, totalSegments, config);
         ParallelScanTask parallelScanTask = new ParallelScanTask(this, db, parallelScanRequests);
 
-        return new PaginatedParallelScanList<T>(this, clazz, db, parallelScanTask);
+        return new PaginatedParallelScanList<T>(this, clazz, db, parallelScanTask, config.getPaginationLoadingStrategy());
     }
 
     /**
@@ -1735,8 +1755,8 @@ public class DynamoDBMapper {
      * attempts to modify the list will result in an
      * UnsupportedOperationException.
      * <p>
-     * The unmodifiable list returned is lazily loaded when possible, so calls
-     * to DynamoDB will be made only as needed.
+     * You can specify the pagination loading strategy for this query operation.
+     * By default, the list returned is lazily loaded when possible.
      *
      * @param <T>
      *            The type of the objects being returned.
@@ -1752,6 +1772,7 @@ public class DynamoDBMapper {
      * @return An unmodifiable list of the objects constructed from the results
      *         of the query operation.
      * @see PaginatedQueryList
+     * @see PaginationLoadingStrategy
      */
     public <T> PaginatedQueryList<T> query(Class<T> clazz, DynamoDBQueryExpression<T> queryExpression, DynamoDBMapperConfig config) {
         config = mergeConfig(config);
@@ -1759,7 +1780,7 @@ public class DynamoDBMapper {
         QueryRequest queryRequest = createQueryRequestFromExpression(clazz, queryExpression, config);
 
         QueryResult queryResult = db.query(applyUserAgent(queryRequest));
-        return new PaginatedQueryList<T>(this, clazz, db, queryRequest, queryResult);
+        return new PaginatedQueryList<T>(this, clazz, db, queryRequest, queryResult, config.getPaginationLoadingStrategy());
     }
 
     /**

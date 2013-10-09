@@ -234,11 +234,14 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
     
     /**
      * <p>
-     * Updates a specified user profile.
+     * Deregisters an Amazon EBS volume. The volume can then be registered by
+     * another stack. For more information, see <a
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
+     * </a> .
      * </p>
      *
-     * @param updateUserProfileRequest Container for the necessary parameters
-     *           to execute the UpdateUserProfile service method on AWSOpsWorks.
+     * @param deregisterVolumeRequest Container for the necessary parameters
+     *           to execute the DeregisterVolume service method on AWSOpsWorks.
      * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
@@ -251,7 +254,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *             If an error response is returned by AWSOpsWorks indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void updateUserProfile(UpdateUserProfileRequest updateUserProfileRequest) 
+    public void deregisterVolume(DeregisterVolumeRequest deregisterVolumeRequest) 
             throws AmazonServiceException, AmazonClientException {
                                      
         /* Create execution context */
@@ -259,86 +262,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<UpdateUserProfileRequest> request = new UpdateUserProfileRequestMarshaller().marshall(updateUserProfileRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
-
-        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-        invoke(request, responseHandler, executionContext);
-    }
-    
-    /**
-     * <p>
-     * Creates a new stack. For more information, see <a
-     * ocs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html">
-     * Create a New Stack </a> .
-     * </p>
-     *
-     * @param createStackRequest Container for the necessary parameters to
-     *           execute the CreateStack service method on AWSOpsWorks.
-     * 
-     * @return The response from the CreateStack service method, as returned
-     *         by AWSOpsWorks.
-     * 
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateStackResult createStack(CreateStackRequest createStackRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<CreateStackRequest> request = new CreateStackRequestMarshaller().marshall(createStackRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
-
-        Unmarshaller<CreateStackResult, JsonUnmarshallerContext> unmarshaller = new CreateStackResultJsonUnmarshaller();
-        
-        JsonResponseHandler<CreateStackResult> responseHandler = new JsonResponseHandler<CreateStackResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
-    }
-    
-    /**
-     * <p>
-     * Reboots a specified instance. For more information, see <a
-     * .amazon.com/opsworks/latest/userguide/workinginstances-starting.html">
-     * Starting, Stopping, and Rebooting Instances </a> .
-     * </p>
-     *
-     * @param rebootInstanceRequest Container for the necessary parameters to
-     *           execute the RebootInstance service method on AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void rebootInstance(RebootInstanceRequest rebootInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException {
-                                     
-        /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<RebootInstanceRequest> request = new RebootInstanceRequestMarshaller().marshall(rebootInstanceRequest);
+        Request<DeregisterVolumeRequest> request = new DeregisterVolumeRequestMarshaller().marshall(deregisterVolumeRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
@@ -552,19 +476,14 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
     
     /**
      * <p>
-     * Creates an instance in a specified stack. For more information, see <a
-     * s.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
-     * Adding an Instance to a Layer </a> .
+     * Detaches a specified Elastic Load Balancing instance from its layer.
      * </p>
      *
-     * @param createInstanceRequest Container for the necessary parameters to
-     *           execute the CreateInstance service method on AWSOpsWorks.
-     * 
-     * @return The response from the CreateInstance service method, as
-     *         returned by AWSOpsWorks.
+     * @param detachElasticLoadBalancerRequest Container for the necessary
+     *           parameters to execute the DetachElasticLoadBalancer service method on
+     *           AWSOpsWorks.
      * 
      * @throws ResourceNotFoundException
-     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -574,24 +493,19 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *             If an error response is returned by AWSOpsWorks indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreateInstanceResult createInstance(CreateInstanceRequest createInstanceRequest) 
+    public void detachElasticLoadBalancer(DetachElasticLoadBalancerRequest detachElasticLoadBalancerRequest) 
             throws AmazonServiceException, AmazonClientException {
-
+                                     
         /* Create execution context */
         ExecutionContext executionContext = createExecutionContext();
         
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<CreateInstanceRequest> request = new CreateInstanceRequestMarshaller().marshall(createInstanceRequest);
+        Request<DetachElasticLoadBalancerRequest> request = new DetachElasticLoadBalancerRequestMarshaller().marshall(detachElasticLoadBalancerRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
-        Unmarshaller<CreateInstanceResult, JsonUnmarshallerContext> unmarshaller = new CreateInstanceResultJsonUnmarshaller();
-        
-        JsonResponseHandler<CreateInstanceResult> responseHandler = new JsonResponseHandler<CreateInstanceResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler, executionContext);
     }
     
     /**
@@ -635,40 +549,6 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
     
     /**
      * <p>
-     * Detaches a specified Elastic Load Balancing instance from it's layer.
-     * </p>
-     *
-     * @param detachElasticLoadBalancerRequest Container for the necessary
-     *           parameters to execute the DetachElasticLoadBalancer service method on
-     *           AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void detachElasticLoadBalancer(DetachElasticLoadBalancerRequest detachElasticLoadBalancerRequest) 
-            throws AmazonServiceException, AmazonClientException {
-                                     
-        /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<DetachElasticLoadBalancerRequest> request = new DetachElasticLoadBalancerRequestMarshaller().marshall(detachElasticLoadBalancerRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
-
-        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-        invoke(request, responseHandler, executionContext);
-    }
-    
-    /**
-     * <p>
      * Updates a specified app.
      * </p>
      *
@@ -695,80 +575,6 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<UpdateAppRequest> request = new UpdateAppRequestMarshaller().marshall(updateAppRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
-
-        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-        invoke(request, responseHandler, executionContext);
-    }
-    
-    /**
-     * <p>
-     * Deletes a specified app.
-     * </p>
-     *
-     * @param deleteAppRequest Container for the necessary parameters to
-     *           execute the DeleteApp service method on AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteApp(DeleteAppRequest deleteAppRequest) 
-            throws AmazonServiceException, AmazonClientException {
-                                     
-        /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<DeleteAppRequest> request = new DeleteAppRequestMarshaller().marshall(deleteAppRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
-
-        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-        invoke(request, responseHandler, executionContext);
-    }
-    
-    /**
-     * <p>
-     * Attaches an Elastic Load Balancing instance to a specified layer.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>You must create the Elastic Load Balancing instance
-     * separately, by using the Elastic Load Balancing console, API, or CLI.
-     * For more information, see Elastic Load Balancing Developer Guide.
-     * </p>
-     *
-     * @param attachElasticLoadBalancerRequest Container for the necessary
-     *           parameters to execute the AttachElasticLoadBalancer service method on
-     *           AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void attachElasticLoadBalancer(AttachElasticLoadBalancerRequest attachElasticLoadBalancerRequest) 
-            throws AmazonServiceException, AmazonClientException {
-                                     
-        /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<AttachElasticLoadBalancerRequest> request = new AttachElasticLoadBalancerRequestMarshaller().marshall(attachElasticLoadBalancerRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
@@ -818,6 +624,925 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         
 
         return invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Associates one of the stack's registered Elastic IP addresses with a
+     * specified instance. The address must first be registered with the
+     * stack by calling RegisterElasticIp. For more information, see <a
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
+     * </a> .
+     * </p>
+     *
+     * @param associateElasticIpRequest Container for the necessary
+     *           parameters to execute the AssociateElasticIp service method on
+     *           AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void associateElasticIp(AssociateElasticIpRequest associateElasticIpRequest) 
+            throws AmazonServiceException, AmazonClientException {
+                                     
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext();
+        
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
+        Request<AssociateElasticIpRequest> request = new AssociateElasticIpRequestMarshaller().marshall(associateElasticIpRequest);
+        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Unassigns an assigned Amazon EBS volume. The volume remains registered
+     * with the stack. For more information, see <a
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
+     * </a> .
+     * </p>
+     *
+     * @param unassignVolumeRequest Container for the necessary parameters to
+     *           execute the UnassignVolume service method on AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void unassignVolume(UnassignVolumeRequest unassignVolumeRequest) 
+            throws AmazonServiceException, AmazonClientException {
+                                     
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext();
+        
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
+        Request<UnassignVolumeRequest> request = new UnassignVolumeRequestMarshaller().marshall(unassignVolumeRequest);
+        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Describe an instance's RAID arrays.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     *
+     * @param describeRaidArraysRequest Container for the necessary
+     *           parameters to execute the DescribeRaidArrays service method on
+     *           AWSOpsWorks.
+     * 
+     * @return The response from the DescribeRaidArrays service method, as
+     *         returned by AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeRaidArraysResult describeRaidArrays(DescribeRaidArraysRequest describeRaidArraysRequest) 
+            throws AmazonServiceException, AmazonClientException {
+
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext();
+        
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
+        Request<DescribeRaidArraysRequest> request = new DescribeRaidArraysRequestMarshaller().marshall(describeRaidArraysRequest);
+        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+
+        Unmarshaller<DescribeRaidArraysResult, JsonUnmarshallerContext> unmarshaller = new DescribeRaidArraysResultJsonUnmarshaller();
+        
+        JsonResponseHandler<DescribeRaidArraysResult> responseHandler = new JsonResponseHandler<DescribeRaidArraysResult>(unmarshaller);
+
+        
+
+        return invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Gets a generated host name for the specified layer, based on the
+     * current host name theme.
+     * </p>
+     *
+     * @param getHostnameSuggestionRequest Container for the necessary
+     *           parameters to execute the GetHostnameSuggestion service method on
+     *           AWSOpsWorks.
+     * 
+     * @return The response from the GetHostnameSuggestion service method, as
+     *         returned by AWSOpsWorks.
+     * 
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetHostnameSuggestionResult getHostnameSuggestion(GetHostnameSuggestionRequest getHostnameSuggestionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext();
+        
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
+        Request<GetHostnameSuggestionRequest> request = new GetHostnameSuggestionRequestMarshaller().marshall(getHostnameSuggestionRequest);
+        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+
+        Unmarshaller<GetHostnameSuggestionResult, JsonUnmarshallerContext> unmarshaller = new GetHostnameSuggestionResultJsonUnmarshaller();
+        
+        JsonResponseHandler<GetHostnameSuggestionResult> responseHandler = new JsonResponseHandler<GetHostnameSuggestionResult>(unmarshaller);
+
+        
+
+        return invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Specify the load-based auto scaling configuration for a specified
+     * layer. For more information, see <a
+     * azon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">
+     * Managing Load with Time-based and Load-based Instances </a> .
+     * </p>
+     * <p>
+     * <b>NOTE:</b>To use load-based auto scaling, you must create a set of
+     * load-based auto scaling instances. Load-based auto scaling operates
+     * only on the instances from that set, so you must ensure that you have
+     * created enough instances to handle the maximum anticipated load.
+     * </p>
+     *
+     * @param setLoadBasedAutoScalingRequest Container for the necessary
+     *           parameters to execute the SetLoadBasedAutoScaling service method on
+     *           AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void setLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest setLoadBasedAutoScalingRequest) 
+            throws AmazonServiceException, AmazonClientException {
+                                     
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext();
+        
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
+        Request<SetLoadBasedAutoScalingRequest> request = new SetLoadBasedAutoScalingRequestMarshaller().marshall(setLoadBasedAutoScalingRequest);
+        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Describes an instance's Amazon EBS volumes.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>You must specify at least one of the parameters.
+     * </p>
+     *
+     * @param describeVolumesRequest Container for the necessary parameters
+     *           to execute the DescribeVolumes service method on AWSOpsWorks.
+     * 
+     * @return The response from the DescribeVolumes service method, as
+     *         returned by AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeVolumesResult describeVolumes(DescribeVolumesRequest describeVolumesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext();
+        
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
+        Request<DescribeVolumesRequest> request = new DescribeVolumesRequestMarshaller().marshall(describeVolumesRequest);
+        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+
+        Unmarshaller<DescribeVolumesResult, JsonUnmarshallerContext> unmarshaller = new DescribeVolumesResultJsonUnmarshaller();
+        
+        JsonResponseHandler<DescribeVolumesResult> responseHandler = new JsonResponseHandler<DescribeVolumesResult>(unmarshaller);
+
+        
+
+        return invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Assigns one of the stack's registered Amazon EBS volumes to a
+     * specified instance. The volume must first be registered with the stack
+     * by calling RegisterVolume. For more information, see <a
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
+     * </a> .
+     * </p>
+     *
+     * @param assignVolumeRequest Container for the necessary parameters to
+     *           execute the AssignVolume service method on AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void assignVolume(AssignVolumeRequest assignVolumeRequest) 
+            throws AmazonServiceException, AmazonClientException {
+                                     
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext();
+        
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
+        Request<AssignVolumeRequest> request = new AssignVolumeRequestMarshaller().marshall(assignVolumeRequest);
+        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Describes AWS OpsWorks service errors.
+     * </p>
+     *
+     * @param describeServiceErrorsRequest Container for the necessary
+     *           parameters to execute the DescribeServiceErrors service method on
+     *           AWSOpsWorks.
+     * 
+     * @return The response from the DescribeServiceErrors service method, as
+     *         returned by AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeServiceErrorsResult describeServiceErrors(DescribeServiceErrorsRequest describeServiceErrorsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext();
+        
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
+        Request<DescribeServiceErrorsRequest> request = new DescribeServiceErrorsRequestMarshaller().marshall(describeServiceErrorsRequest);
+        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+
+        Unmarshaller<DescribeServiceErrorsResult, JsonUnmarshallerContext> unmarshaller = new DescribeServiceErrorsResultJsonUnmarshaller();
+        
+        JsonResponseHandler<DescribeServiceErrorsResult> responseHandler = new JsonResponseHandler<DescribeServiceErrorsResult>(unmarshaller);
+
+        
+
+        return invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Updates a specified layer.
+     * </p>
+     *
+     * @param updateLayerRequest Container for the necessary parameters to
+     *           execute the UpdateLayer service method on AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void updateLayer(UpdateLayerRequest updateLayerRequest) 
+            throws AmazonServiceException, AmazonClientException {
+                                     
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext();
+        
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
+        Request<UpdateLayerRequest> request = new UpdateLayerRequestMarshaller().marshall(updateLayerRequest);
+        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Updates a registered Elastic IP address's name. For more information,
+     * see <a
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
+     * </a> .
+     * </p>
+     *
+     * @param updateElasticIpRequest Container for the necessary parameters
+     *           to execute the UpdateElasticIp service method on AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void updateElasticIp(UpdateElasticIpRequest updateElasticIpRequest) 
+            throws AmazonServiceException, AmazonClientException {
+                                     
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext();
+        
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
+        Request<UpdateElasticIpRequest> request = new UpdateElasticIpRequestMarshaller().marshall(updateElasticIpRequest);
+        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Starts a specified instance. For more information, see <a
+     * .amazon.com/opsworks/latest/userguide/workinginstances-starting.html">
+     * Starting, Stopping, and Rebooting Instances </a> .
+     * </p>
+     *
+     * @param startInstanceRequest Container for the necessary parameters to
+     *           execute the StartInstance service method on AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void startInstance(StartInstanceRequest startInstanceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+                                     
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext();
+        
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
+        Request<StartInstanceRequest> request = new StartInstanceRequestMarshaller().marshall(startInstanceRequest);
+        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Creates a layer. For more information, see <a
+     * mazon.com/opsworks/latest/userguide/workinglayers-basics-create.html">
+     * How to Create a Layer </a> .
+     * </p>
+     * <p>
+     * <b>NOTE:</b>You should use CreateLayer for noncustom layer types such
+     * as PHP App Server only if the stack does not have an existing layer of
+     * that type. A stack can have at most one instance of each noncustom
+     * layer; if you attempt to create a second instance, CreateLayer fails.
+     * A stack can have an arbitrary number of custom layers, so you can call
+     * CreateLayer as many times as you like for that layer type.
+     * </p>
+     *
+     * @param createLayerRequest Container for the necessary parameters to
+     *           execute the CreateLayer service method on AWSOpsWorks.
+     * 
+     * @return The response from the CreateLayer service method, as returned
+     *         by AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateLayerResult createLayer(CreateLayerRequest createLayerRequest) 
+            throws AmazonServiceException, AmazonClientException {
+
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext();
+        
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
+        Request<CreateLayerRequest> request = new CreateLayerRequestMarshaller().marshall(createLayerRequest);
+        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+
+        Unmarshaller<CreateLayerResult, JsonUnmarshallerContext> unmarshaller = new CreateLayerResultJsonUnmarshaller();
+        
+        JsonResponseHandler<CreateLayerResult> responseHandler = new JsonResponseHandler<CreateLayerResult>(unmarshaller);
+
+        
+
+        return invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Disassociates an Elastic IP address from its instance. The address
+     * remains registered with the stack. For more information, see <a
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
+     * </a> .
+     * </p>
+     *
+     * @param disassociateElasticIpRequest Container for the necessary
+     *           parameters to execute the DisassociateElasticIp service method on
+     *           AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void disassociateElasticIp(DisassociateElasticIpRequest disassociateElasticIpRequest) 
+            throws AmazonServiceException, AmazonClientException {
+                                     
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext();
+        
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
+        Request<DisassociateElasticIpRequest> request = new DisassociateElasticIpRequestMarshaller().marshall(disassociateElasticIpRequest);
+        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Deletes a specified stack. You must first delete all instances,
+     * layers, and apps. For more information, see <a
+     * aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html">
+     * Shut Down a Stack </a> .
+     * </p>
+     *
+     * @param deleteStackRequest Container for the necessary parameters to
+     *           execute the DeleteStack service method on AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteStack(DeleteStackRequest deleteStackRequest) 
+            throws AmazonServiceException, AmazonClientException {
+                                     
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext();
+        
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
+        Request<DeleteStackRequest> request = new DeleteStackRequestMarshaller().marshall(deleteStackRequest);
+        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Starts stack's instances.
+     * </p>
+     *
+     * @param startStackRequest Container for the necessary parameters to
+     *           execute the StartStack service method on AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void startStack(StartStackRequest startStackRequest) 
+            throws AmazonServiceException, AmazonClientException {
+                                     
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext();
+        
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
+        Request<StartStackRequest> request = new StartStackRequestMarshaller().marshall(startStackRequest);
+        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Registers an Amazon EBS volume with a specified stack. A volume can be
+     * registered with only one stack at a time. If the volume is already
+     * registered, you must first deregister it by calling DeregisterVolume.
+     * For more information, see <a
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
+     * </a> .
+     * </p>
+     *
+     * @param registerVolumeRequest Container for the necessary parameters to
+     *           execute the RegisterVolume service method on AWSOpsWorks.
+     * 
+     * @return The response from the RegisterVolume service method, as
+     *         returned by AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public RegisterVolumeResult registerVolume(RegisterVolumeRequest registerVolumeRequest) 
+            throws AmazonServiceException, AmazonClientException {
+
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext();
+        
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
+        Request<RegisterVolumeRequest> request = new RegisterVolumeRequestMarshaller().marshall(registerVolumeRequest);
+        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+
+        Unmarshaller<RegisterVolumeResult, JsonUnmarshallerContext> unmarshaller = new RegisterVolumeResultJsonUnmarshaller();
+        
+        JsonResponseHandler<RegisterVolumeResult> responseHandler = new JsonResponseHandler<RegisterVolumeResult>(unmarshaller);
+
+        
+
+        return invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Updates a specified user profile.
+     * </p>
+     *
+     * @param updateUserProfileRequest Container for the necessary parameters
+     *           to execute the UpdateUserProfile service method on AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void updateUserProfile(UpdateUserProfileRequest updateUserProfileRequest) 
+            throws AmazonServiceException, AmazonClientException {
+                                     
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext();
+        
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
+        Request<UpdateUserProfileRequest> request = new UpdateUserProfileRequestMarshaller().marshall(updateUserProfileRequest);
+        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Creates a new stack. For more information, see <a
+     * ocs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html">
+     * Create a New Stack </a> .
+     * </p>
+     *
+     * @param createStackRequest Container for the necessary parameters to
+     *           execute the CreateStack service method on AWSOpsWorks.
+     * 
+     * @return The response from the CreateStack service method, as returned
+     *         by AWSOpsWorks.
+     * 
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateStackResult createStack(CreateStackRequest createStackRequest) 
+            throws AmazonServiceException, AmazonClientException {
+
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext();
+        
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
+        Request<CreateStackRequest> request = new CreateStackRequestMarshaller().marshall(createStackRequest);
+        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+
+        Unmarshaller<CreateStackResult, JsonUnmarshallerContext> unmarshaller = new CreateStackResultJsonUnmarshaller();
+        
+        JsonResponseHandler<CreateStackResult> responseHandler = new JsonResponseHandler<CreateStackResult>(unmarshaller);
+
+        
+
+        return invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Reboots a specified instance. For more information, see <a
+     * .amazon.com/opsworks/latest/userguide/workinginstances-starting.html">
+     * Starting, Stopping, and Rebooting Instances </a> .
+     * </p>
+     *
+     * @param rebootInstanceRequest Container for the necessary parameters to
+     *           execute the RebootInstance service method on AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void rebootInstance(RebootInstanceRequest rebootInstanceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+                                     
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext();
+        
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
+        Request<RebootInstanceRequest> request = new RebootInstanceRequestMarshaller().marshall(rebootInstanceRequest);
+        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Creates an instance in a specified stack. For more information, see <a
+     * s.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
+     * Adding an Instance to a Layer </a> .
+     * </p>
+     *
+     * @param createInstanceRequest Container for the necessary parameters to
+     *           execute the CreateInstance service method on AWSOpsWorks.
+     * 
+     * @return The response from the CreateInstance service method, as
+     *         returned by AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateInstanceResult createInstance(CreateInstanceRequest createInstanceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext();
+        
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
+        Request<CreateInstanceRequest> request = new CreateInstanceRequestMarshaller().marshall(createInstanceRequest);
+        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+
+        Unmarshaller<CreateInstanceResult, JsonUnmarshallerContext> unmarshaller = new CreateInstanceResultJsonUnmarshaller();
+        
+        JsonResponseHandler<CreateInstanceResult> responseHandler = new JsonResponseHandler<CreateInstanceResult>(unmarshaller);
+
+        
+
+        return invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Deletes a specified app.
+     * </p>
+     *
+     * @param deleteAppRequest Container for the necessary parameters to
+     *           execute the DeleteApp service method on AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteApp(DeleteAppRequest deleteAppRequest) 
+            throws AmazonServiceException, AmazonClientException {
+                                     
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext();
+        
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
+        Request<DeleteAppRequest> request = new DeleteAppRequestMarshaller().marshall(deleteAppRequest);
+        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Deregisters a specified Elastic IP address. The address can then be
+     * registered by another stack. For more information, see <a
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
+     * </a> .
+     * </p>
+     *
+     * @param deregisterElasticIpRequest Container for the necessary
+     *           parameters to execute the DeregisterElasticIp service method on
+     *           AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deregisterElasticIp(DeregisterElasticIpRequest deregisterElasticIpRequest) 
+            throws AmazonServiceException, AmazonClientException {
+                                     
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext();
+        
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
+        Request<DeregisterElasticIpRequest> request = new DeregisterElasticIpRequestMarshaller().marshall(deregisterElasticIpRequest);
+        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Attaches an Elastic Load Balancing load balancer to a specified layer.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>You must create the Elastic Load Balancing instance
+     * separately, by using the Elastic Load Balancing console, API, or CLI.
+     * For more information, see Elastic Load Balancing Developer Guide.
+     * </p>
+     *
+     * @param attachElasticLoadBalancerRequest Container for the necessary
+     *           parameters to execute the AttachElasticLoadBalancer service method on
+     *           AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void attachElasticLoadBalancer(AttachElasticLoadBalancerRequest attachElasticLoadBalancerRequest) 
+            throws AmazonServiceException, AmazonClientException {
+                                     
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext();
+        
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
+        Request<AttachElasticLoadBalancerRequest> request = new AttachElasticLoadBalancerRequestMarshaller().marshall(attachElasticLoadBalancerRequest);
+        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler, executionContext);
     }
     
     /**
@@ -889,95 +1614,6 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         Unmarshaller<CreateUserProfileResult, JsonUnmarshallerContext> unmarshaller = new CreateUserProfileResultJsonUnmarshaller();
         
         JsonResponseHandler<CreateUserProfileResult> responseHandler = new JsonResponseHandler<CreateUserProfileResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
-    }
-    
-    /**
-     * <p>
-     * Gets a generated host name for the specified layer, based on the
-     * current host name theme.
-     * </p>
-     *
-     * @param getHostnameSuggestionRequest Container for the necessary
-     *           parameters to execute the GetHostnameSuggestion service method on
-     *           AWSOpsWorks.
-     * 
-     * @return The response from the GetHostnameSuggestion service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetHostnameSuggestionResult getHostnameSuggestion(GetHostnameSuggestionRequest getHostnameSuggestionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<GetHostnameSuggestionRequest> request = new GetHostnameSuggestionRequestMarshaller().marshall(getHostnameSuggestionRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
-
-        Unmarshaller<GetHostnameSuggestionResult, JsonUnmarshallerContext> unmarshaller = new GetHostnameSuggestionResultJsonUnmarshaller();
-        
-        JsonResponseHandler<GetHostnameSuggestionResult> responseHandler = new JsonResponseHandler<GetHostnameSuggestionResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
-    }
-    
-    /**
-     * <p>
-     * Describe an instance's RAID arrays.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>You must specify at least one of the parameters.
-     * </p>
-     *
-     * @param describeRaidArraysRequest Container for the necessary
-     *           parameters to execute the DescribeRaidArrays service method on
-     *           AWSOpsWorks.
-     * 
-     * @return The response from the DescribeRaidArrays service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeRaidArraysResult describeRaidArrays(DescribeRaidArraysRequest describeRaidArraysRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<DescribeRaidArraysRequest> request = new DescribeRaidArraysRequestMarshaller().marshall(describeRaidArraysRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
-
-        Unmarshaller<DescribeRaidArraysResult, JsonUnmarshallerContext> unmarshaller = new DescribeRaidArraysResultJsonUnmarshaller();
-        
-        JsonResponseHandler<DescribeRaidArraysResult> responseHandler = new JsonResponseHandler<DescribeRaidArraysResult>(unmarshaller);
 
         
 
@@ -1073,50 +1709,6 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         
 
         return invoke(request, responseHandler, executionContext);
-    }
-    
-    /**
-     * <p>
-     * Specify the load-based auto scaling configuration for a specified
-     * layer. For more information, see <a
-     * azon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">
-     * Managing Load with Time-based and Load-based Instances </a> .
-     * </p>
-     * <p>
-     * <b>NOTE:</b>To use load-based auto scaling, you must create a set of
-     * load-based auto scaling instances. Load-based auto scaling operates
-     * only on the instances from that set, so you must ensure that you have
-     * created enough instances to handle the maximum anticipated load.
-     * </p>
-     *
-     * @param setLoadBasedAutoScalingRequest Container for the necessary
-     *           parameters to execute the SetLoadBasedAutoScaling service method on
-     *           AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void setLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest setLoadBasedAutoScalingRequest) 
-            throws AmazonServiceException, AmazonClientException {
-                                     
-        /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<SetLoadBasedAutoScalingRequest> request = new SetLoadBasedAutoScalingRequestMarshaller().marshall(setLoadBasedAutoScalingRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
-
-        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-        invoke(request, responseHandler, executionContext);
     }
     
     /**
@@ -1242,51 +1834,6 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
     
     /**
      * <p>
-     * Describes an instance's Amazon EBS volumes.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>You must specify at least one of the parameters.
-     * </p>
-     *
-     * @param describeVolumesRequest Container for the necessary parameters
-     *           to execute the DescribeVolumes service method on AWSOpsWorks.
-     * 
-     * @return The response from the DescribeVolumes service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeVolumesResult describeVolumes(DescribeVolumesRequest describeVolumesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<DescribeVolumesRequest> request = new DescribeVolumesRequestMarshaller().marshall(describeVolumesRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
-
-        Unmarshaller<DescribeVolumesResult, JsonUnmarshallerContext> unmarshaller = new DescribeVolumesResultJsonUnmarshaller();
-        
-        JsonResponseHandler<DescribeVolumesResult> responseHandler = new JsonResponseHandler<DescribeVolumesResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
-    }
-    
-    /**
-     * <p>
      * Creates an app for a specified stack. For more information, see <a
      * s.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">
      * Creating Apps </a> .
@@ -1327,6 +1874,40 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         
 
         return invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Deletes a user profile.
+     * </p>
+     *
+     * @param deleteUserProfileRequest Container for the necessary parameters
+     *           to execute the DeleteUserProfile service method on AWSOpsWorks.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteUserProfile(DeleteUserProfileRequest deleteUserProfileRequest) 
+            throws AmazonServiceException, AmazonClientException {
+                                     
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext();
+        
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
+        Request<DeleteUserProfileRequest> request = new DeleteUserProfileRequestMarshaller().marshall(deleteUserProfileRequest);
+        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler, executionContext);
     }
     
     /**
@@ -1378,11 +1959,14 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
     
     /**
      * <p>
-     * Deletes a user profile.
+     * Updates an Amazon EBS volume's name or mount point. For more
+     * information, see <a
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
+     * </a> .
      * </p>
      *
-     * @param deleteUserProfileRequest Container for the necessary parameters
-     *           to execute the DeleteUserProfile service method on AWSOpsWorks.
+     * @param updateVolumeRequest Container for the necessary parameters to
+     *           execute the UpdateVolume service method on AWSOpsWorks.
      * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
@@ -1395,7 +1979,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *             If an error response is returned by AWSOpsWorks indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void deleteUserProfile(DeleteUserProfileRequest deleteUserProfileRequest) 
+    public void updateVolume(UpdateVolumeRequest updateVolumeRequest) 
             throws AmazonServiceException, AmazonClientException {
                                      
         /* Create execution context */
@@ -1403,7 +1987,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<DeleteUserProfileRequest> request = new DeleteUserProfileRequestMarshaller().marshall(deleteUserProfileRequest);
+        Request<UpdateVolumeRequest> request = new UpdateVolumeRequestMarshaller().marshall(updateVolumeRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
@@ -1489,49 +2073,6 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
     
     /**
      * <p>
-     * Describes AWS OpsWorks service errors.
-     * </p>
-     *
-     * @param describeServiceErrorsRequest Container for the necessary
-     *           parameters to execute the DescribeServiceErrors service method on
-     *           AWSOpsWorks.
-     * 
-     * @return The response from the DescribeServiceErrors service method, as
-     *         returned by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeServiceErrorsResult describeServiceErrors(DescribeServiceErrorsRequest describeServiceErrorsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<DescribeServiceErrorsRequest> request = new DescribeServiceErrorsRequestMarshaller().marshall(describeServiceErrorsRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
-
-        Unmarshaller<DescribeServiceErrorsResult, JsonUnmarshallerContext> unmarshaller = new DescribeServiceErrorsResultJsonUnmarshaller();
-        
-        JsonResponseHandler<DescribeServiceErrorsResult> responseHandler = new JsonResponseHandler<DescribeServiceErrorsResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
-    }
-    
-    /**
-     * <p>
      * Requests a description of a specified set of deployments.
      * </p>
      * <p>
@@ -1578,11 +2119,19 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
     
     /**
      * <p>
-     * Updates a specified layer.
+     * Registers an Elastic IP address with a specified stack. An address can
+     * be registered with only one stack at a time. If the address is already
+     * registered, you must first deregister it by calling
+     * DeregisterElasticIp. For more information, see <a
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">
+     * </a> .
      * </p>
      *
-     * @param updateLayerRequest Container for the necessary parameters to
-     *           execute the UpdateLayer service method on AWSOpsWorks.
+     * @param registerElasticIpRequest Container for the necessary parameters
+     *           to execute the RegisterElasticIp service method on AWSOpsWorks.
+     * 
+     * @return The response from the RegisterElasticIp service method, as
+     *         returned by AWSOpsWorks.
      * 
      * @throws ResourceNotFoundException
      * @throws ValidationException
@@ -1595,55 +2144,24 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *             If an error response is returned by AWSOpsWorks indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void updateLayer(UpdateLayerRequest updateLayerRequest) 
+    public RegisterElasticIpResult registerElasticIp(RegisterElasticIpRequest registerElasticIpRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
         ExecutionContext executionContext = createExecutionContext();
         
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<UpdateLayerRequest> request = new UpdateLayerRequestMarshaller().marshall(updateLayerRequest);
+        Request<RegisterElasticIpRequest> request = new RegisterElasticIpRequestMarshaller().marshall(registerElasticIpRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
-        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-        invoke(request, responseHandler, executionContext);
-    }
-    
-    /**
-     * <p>
-     * Starts a specified instance. For more information, see <a
-     * .amazon.com/opsworks/latest/userguide/workinginstances-starting.html">
-     * Starting, Stopping, and Rebooting Instances </a> .
-     * </p>
-     *
-     * @param startInstanceRequest Container for the necessary parameters to
-     *           execute the StartInstance service method on AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void startInstance(StartInstanceRequest startInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException {
-                                     
-        /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
+        Unmarshaller<RegisterElasticIpResult, JsonUnmarshallerContext> unmarshaller = new RegisterElasticIpResultJsonUnmarshaller();
         
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<StartInstanceRequest> request = new StartInstanceRequestMarshaller().marshall(startInstanceRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+        JsonResponseHandler<RegisterElasticIpResult> responseHandler = new JsonResponseHandler<RegisterElasticIpResult>(unmarshaller);
 
-        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-        invoke(request, responseHandler, executionContext);
+        
+
+        return invoke(request, responseHandler, executionContext);
     }
     
     /**
@@ -1779,129 +2297,6 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         
 
         return invoke(request, responseHandler, executionContext);
-    }
-    
-    /**
-     * <p>
-     * Creates a layer. For more information, see <a
-     * mazon.com/opsworks/latest/userguide/workinglayers-basics-create.html">
-     * How to Create a Layer </a> .
-     * </p>
-     * <p>
-     * <b>NOTE:</b>You should use CreateLayer for noncustom layer types such
-     * as PHP App Server only if the stack does not have an existing layer of
-     * that type. A stack can have at most one instance of each noncustom
-     * layer; if you attempt to create a second instance, CreateLayer fails.
-     * A stack can have an arbitrary number of custom layers, so you can call
-     * CreateLayer as many times as you like for that layer type.
-     * </p>
-     *
-     * @param createLayerRequest Container for the necessary parameters to
-     *           execute the CreateLayer service method on AWSOpsWorks.
-     * 
-     * @return The response from the CreateLayer service method, as returned
-     *         by AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateLayerResult createLayer(CreateLayerRequest createLayerRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<CreateLayerRequest> request = new CreateLayerRequestMarshaller().marshall(createLayerRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
-
-        Unmarshaller<CreateLayerResult, JsonUnmarshallerContext> unmarshaller = new CreateLayerResultJsonUnmarshaller();
-        
-        JsonResponseHandler<CreateLayerResult> responseHandler = new JsonResponseHandler<CreateLayerResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
-    }
-    
-    /**
-     * <p>
-     * Deletes a specified stack. You must first delete all instances,
-     * layers, and apps. For more information, see <a
-     * aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html">
-     * Shut Down a Stack </a> .
-     * </p>
-     *
-     * @param deleteStackRequest Container for the necessary parameters to
-     *           execute the DeleteStack service method on AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteStack(DeleteStackRequest deleteStackRequest) 
-            throws AmazonServiceException, AmazonClientException {
-                                     
-        /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<DeleteStackRequest> request = new DeleteStackRequestMarshaller().marshall(deleteStackRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
-
-        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-        invoke(request, responseHandler, executionContext);
-    }
-    
-    /**
-     * <p>
-     * Starts stack's instances.
-     * </p>
-     *
-     * @param startStackRequest Container for the necessary parameters to
-     *           execute the StartStack service method on AWSOpsWorks.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void startStack(StartStackRequest startStackRequest) 
-            throws AmazonServiceException, AmazonClientException {
-                                     
-        /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<StartStackRequest> request = new StartStackRequestMarshaller().marshall(startStackRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
-
-        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-        invoke(request, responseHandler, executionContext);
     }
     
     /**

@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#detachElasticLoadBalancer(DetachElasticLoadBalancerRequest) DetachElasticLoadBalancer operation}.
  * <p>
- * Detaches a specified Elastic Load Balancing instance from it's layer.
+ * Detaches a specified Elastic Load Balancing instance from its layer.
  * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#detachElasticLoadBalancer(DetachElasticLoadBalancerRequest)
