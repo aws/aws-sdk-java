@@ -68,8 +68,7 @@ public class SecurityGroupMembership implements Serializable {
         this.securityGroupId = securityGroupId;
         return this;
     }
-    
-    
+
     /**
      * The status of the cache security group membership. The status changes
      * whenever a cache security group is modified, or when the cache
@@ -114,8 +113,7 @@ public class SecurityGroupMembership implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

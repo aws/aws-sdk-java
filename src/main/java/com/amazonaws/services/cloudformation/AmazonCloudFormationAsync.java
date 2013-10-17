@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudformation;
-            
+
 import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
@@ -41,8 +41,8 @@ import com.amazonaws.services.cloudformation.model.*;
  * <p>
  * Amazon CloudFormation makes use of other AWS products. If you need additional technical information about a specific AWS product, you can find the
  * product's technical documentation at <a href="http://aws.amazon.com/documentation/"> http://aws.amazon.com/documentation/ </a> .
- * </p> 
- */       
+ * </p>
+ */
 public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
     /**
      * <p>

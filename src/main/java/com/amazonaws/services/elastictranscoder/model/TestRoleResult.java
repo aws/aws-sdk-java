@@ -87,8 +87,7 @@ public class TestRoleResult implements Serializable {
         this.success = success;
         return this;
     }
-    
-    
+
     /**
      * If the <code>Success</code> element contains <code>false</code>, this
      * value is an array of one or more error messages that were generated
@@ -99,7 +98,6 @@ public class TestRoleResult implements Serializable {
      *         during the test process.
      */
     public java.util.List<String> getMessages() {
-        
         if (messages == null) {
               messages = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               messages.setAutoConstruct(true);
@@ -173,7 +171,7 @@ public class TestRoleResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

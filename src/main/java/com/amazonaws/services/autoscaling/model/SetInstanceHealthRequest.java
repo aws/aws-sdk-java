@@ -108,8 +108,7 @@ public class SetInstanceHealthRequest extends AmazonWebServiceRequest implements
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * The health status of the instance. Set to <code>Healthy</code> if you
      * want the instance to remain in service. Set to <code>Unhealthy</code>
@@ -172,8 +171,7 @@ public class SetInstanceHealthRequest extends AmazonWebServiceRequest implements
         this.healthStatus = healthStatus;
         return this;
     }
-    
-    
+
     /**
      * If the Auto Scaling group of the specified instance has a
      * <code>HealthCheckGracePeriod</code> specified for the group, by
@@ -242,8 +240,7 @@ public class SetInstanceHealthRequest extends AmazonWebServiceRequest implements
         this.shouldRespectGracePeriod = shouldRespectGracePeriod;
         return this;
     }
-    
-    
+
     /**
      * If the Auto Scaling group of the specified instance has a
      * <code>HealthCheckGracePeriod</code> specified for the group, by
@@ -264,7 +261,7 @@ public class SetInstanceHealthRequest extends AmazonWebServiceRequest implements
     public Boolean getShouldRespectGracePeriod() {
         return shouldRespectGracePeriod;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

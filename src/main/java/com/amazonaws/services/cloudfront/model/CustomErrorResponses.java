@@ -67,8 +67,7 @@ public class CustomErrorResponses implements Serializable {
         this.quantity = quantity;
         return this;
     }
-    
-    
+
     /**
      * Optional: A complex type that contains custom error responses for this
      * distribution. If Quantity is 0, you can omit Items.
@@ -77,7 +76,6 @@ public class CustomErrorResponses implements Serializable {
      *         distribution. If Quantity is 0, you can omit Items.
      */
     public java.util.List<CustomErrorResponse> getItems() {
-        
         if (items == null) {
               items = new com.amazonaws.internal.ListWithAutoConstructFlag<CustomErrorResponse>();
               items.setAutoConstruct(true);
@@ -145,7 +143,7 @@ public class CustomErrorResponses implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -67,8 +67,6 @@ public class GetGroupRequest extends AmazonWebServiceRequest implements Serializ
      */
     public GetGroupRequest() {}
     
-
-
     /**
      * Constructs a new GetGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -80,8 +78,6 @@ public class GetGroupRequest extends AmazonWebServiceRequest implements Serializ
         setGroupName(groupName);
     }
 
-    
-    
     /**
      * Name of the group.
      * <p>
@@ -126,8 +122,7 @@ public class GetGroupRequest extends AmazonWebServiceRequest implements Serializ
         this.groupName = groupName;
         return this;
     }
-    
-    
+
     /**
      * Use this only when paginating results, and only in a subsequent
      * request after you've received a response where the results are
@@ -190,8 +185,7 @@ public class GetGroupRequest extends AmazonWebServiceRequest implements Serializ
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Use this only when paginating results to indicate the maximum number
      * of user names you want in the response. If there are additional user
@@ -251,8 +245,7 @@ public class GetGroupRequest extends AmazonWebServiceRequest implements Serializ
         this.maxItems = maxItems;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

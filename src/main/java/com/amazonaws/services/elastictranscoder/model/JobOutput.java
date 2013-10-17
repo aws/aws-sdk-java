@@ -193,6 +193,11 @@ public class JobOutput implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<JobWatermark> watermarks;
 
     /**
+     * The album art to be associated with the output file, if any.
+     */
+    private JobAlbumArt albumArt;
+
+    /**
      * A sequential counter, starting with 1, that identifies an output among
      * the outputs from the current job. In the Output syntax, this value is
      * always 1.
@@ -236,8 +241,7 @@ public class JobOutput implements Serializable {
         this.id = id;
         return this;
     }
-    
-    
+
     /**
      * The name to assign to the transcoded file. Elastic Transcoder saves
      * the file in the Amazon S3 bucket specified by the
@@ -297,8 +301,7 @@ public class JobOutput implements Serializable {
         this.key = key;
         return this;
     }
-    
-    
+
     /**
      * Whether you want Elastic Transcoder to create thumbnails for your
      * videos and, if so, how you want Elastic Transcoder to name the files.
@@ -502,8 +505,7 @@ public class JobOutput implements Serializable {
         this.thumbnailPattern = thumbnailPattern;
         return this;
     }
-    
-    
+
     /**
      * The number of degrees clockwise by which you want Elastic Transcoder
      * to rotate the output relative to the input. Enter one of the following
@@ -575,8 +577,7 @@ public class JobOutput implements Serializable {
         this.rotate = rotate;
         return this;
     }
-    
-    
+
     /**
      * The value of the <code>Id</code> object for the preset that you want
      * to use for this job. The preset determines the audio, video, and
@@ -654,8 +655,7 @@ public class JobOutput implements Serializable {
         this.presetId = presetId;
         return this;
     }
-    
-    
+
     /**
      * <important>(Outputs in MPEG-TS format only.</important>If you specify
      * a preset in <code>PresetId</code> for which the value of
@@ -757,8 +757,7 @@ public class JobOutput implements Serializable {
         this.segmentDuration = segmentDuration;
         return this;
     }
-    
-    
+
     /**
      * The status of one output in a job. If you specified only one output
      * for the job, <code>Outputs:Status</code> is always the same as
@@ -914,8 +913,7 @@ public class JobOutput implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * Information that further explains <code>Status</code>.
      * <p>
@@ -957,8 +955,7 @@ public class JobOutput implements Serializable {
         this.statusDetail = statusDetail;
         return this;
     }
-    
-    
+
     /**
      * Duration of the output file, in seconds.
      *
@@ -991,8 +988,7 @@ public class JobOutput implements Serializable {
         this.duration = duration;
         return this;
     }
-    
-    
+
     /**
      * Specifies the width of the output file in pixels.
      *
@@ -1025,8 +1021,7 @@ public class JobOutput implements Serializable {
         this.width = width;
         return this;
     }
-    
-    
+
     /**
      * Height of the output file, in pixels.
      *
@@ -1059,8 +1054,7 @@ public class JobOutput implements Serializable {
         this.height = height;
         return this;
     }
-    
-    
+
     /**
      * Information about the watermarks that you want Elastic Transcoder to
      * add to the video during transcoding. You can specify up to four
@@ -1089,7 +1083,6 @@ public class JobOutput implements Serializable {
      *         will cover the third.
      */
     public java.util.List<JobWatermark> getWatermarks() {
-        
         if (watermarks == null) {
               watermarks = new com.amazonaws.internal.ListWithAutoConstructFlag<JobWatermark>();
               watermarks.setAutoConstruct(true);
@@ -1217,7 +1210,40 @@ public class JobOutput implements Serializable {
 
         return this;
     }
+
+    /**
+     * The album art to be associated with the output file, if any.
+     *
+     * @return The album art to be associated with the output file, if any.
+     */
+    public JobAlbumArt getAlbumArt() {
+        return albumArt;
+    }
     
+    /**
+     * The album art to be associated with the output file, if any.
+     *
+     * @param albumArt The album art to be associated with the output file, if any.
+     */
+    public void setAlbumArt(JobAlbumArt albumArt) {
+        this.albumArt = albumArt;
+    }
+    
+    /**
+     * The album art to be associated with the output file, if any.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param albumArt The album art to be associated with the output file, if any.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public JobOutput withAlbumArt(JobAlbumArt albumArt) {
+        this.albumArt = albumArt;
+        return this;
+    }
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
@@ -1241,7 +1267,8 @@ public class JobOutput implements Serializable {
         if (getDuration() != null) sb.append("Duration: " + getDuration() + ",");
         if (getWidth() != null) sb.append("Width: " + getWidth() + ",");
         if (getHeight() != null) sb.append("Height: " + getHeight() + ",");
-        if (getWatermarks() != null) sb.append("Watermarks: " + getWatermarks() );
+        if (getWatermarks() != null) sb.append("Watermarks: " + getWatermarks() + ",");
+        if (getAlbumArt() != null) sb.append("AlbumArt: " + getAlbumArt() );
         sb.append("}");
         return sb.toString();
     }
@@ -1263,6 +1290,7 @@ public class JobOutput implements Serializable {
         hashCode = prime * hashCode + ((getWidth() == null) ? 0 : getWidth().hashCode()); 
         hashCode = prime * hashCode + ((getHeight() == null) ? 0 : getHeight().hashCode()); 
         hashCode = prime * hashCode + ((getWatermarks() == null) ? 0 : getWatermarks().hashCode()); 
+        hashCode = prime * hashCode + ((getAlbumArt() == null) ? 0 : getAlbumArt().hashCode()); 
         return hashCode;
     }
     
@@ -1298,6 +1326,8 @@ public class JobOutput implements Serializable {
         if (other.getHeight() != null && other.getHeight().equals(this.getHeight()) == false) return false; 
         if (other.getWatermarks() == null ^ this.getWatermarks() == null) return false;
         if (other.getWatermarks() != null && other.getWatermarks().equals(this.getWatermarks()) == false) return false; 
+        if (other.getAlbumArt() == null ^ this.getAlbumArt() == null) return false;
+        if (other.getAlbumArt() != null && other.getAlbumArt().equals(this.getAlbumArt()) == false) return false; 
         return true;
     }
     

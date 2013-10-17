@@ -81,8 +81,7 @@ public class SendDataPoint implements Serializable {
         this.timestamp = timestamp;
         return this;
     }
-    
-    
+
     /**
      * Number of emails that have been enqueued for sending.
      *
@@ -115,8 +114,7 @@ public class SendDataPoint implements Serializable {
         this.deliveryAttempts = deliveryAttempts;
         return this;
     }
-    
-    
+
     /**
      * Number of emails that have bounced.
      *
@@ -149,8 +147,7 @@ public class SendDataPoint implements Serializable {
         this.bounces = bounces;
         return this;
     }
-    
-    
+
     /**
      * Number of unwanted emails that were rejected by recipients.
      *
@@ -183,8 +180,7 @@ public class SendDataPoint implements Serializable {
         this.complaints = complaints;
         return this;
     }
-    
-    
+
     /**
      * Number of emails rejected by Amazon SES.
      *
@@ -217,8 +213,7 @@ public class SendDataPoint implements Serializable {
         this.rejects = rejects;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

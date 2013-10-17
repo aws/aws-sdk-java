@@ -109,8 +109,7 @@ public class CacheNode implements Serializable {
         this.cacheNodeId = cacheNodeId;
         return this;
     }
-    
-    
+
     /**
      * The current state of this cache node.
      *
@@ -143,8 +142,7 @@ public class CacheNode implements Serializable {
         this.cacheNodeStatus = cacheNodeStatus;
         return this;
     }
-    
-    
+
     /**
      * The date and time the cache node was created.
      *
@@ -177,8 +175,7 @@ public class CacheNode implements Serializable {
         this.cacheNodeCreateTime = cacheNodeCreateTime;
         return this;
     }
-    
-    
+
     /**
      * The hostname and IP address for connecting to this cache node.
      *
@@ -211,8 +208,7 @@ public class CacheNode implements Serializable {
         this.endpoint = endpoint;
         return this;
     }
-    
-    
+
     /**
      * The status of the parameter group applied to this cache node.
      *
@@ -245,8 +241,7 @@ public class CacheNode implements Serializable {
         this.parameterGroupStatus = parameterGroupStatus;
         return this;
     }
-    
-    
+
     /**
      * The ID of the primary node to which this read replica node is
      * synchronized. If this field is empty, then this node is not associated
@@ -291,8 +286,7 @@ public class CacheNode implements Serializable {
         this.sourceCacheNodeId = sourceCacheNodeId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

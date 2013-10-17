@@ -99,15 +99,13 @@ public class PutMetricDataRequest extends AmazonWebServiceRequest implements Ser
         this.namespace = namespace;
         return this;
     }
-    
-    
+
     /**
      * A list of data describing the metric.
      *
      * @return A list of data describing the metric.
      */
     public java.util.List<MetricDatum> getMetricData() {
-        
         if (metricData == null) {
               metricData = new com.amazonaws.internal.ListWithAutoConstructFlag<MetricDatum>();
               metricData.setAutoConstruct(true);
@@ -169,7 +167,7 @@ public class PutMetricDataRequest extends AmazonWebServiceRequest implements Ser
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

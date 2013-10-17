@@ -80,8 +80,7 @@ public class InstanceStatus implements Serializable {
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * The Amazon EC2 instance's availability zone.
      *
@@ -114,15 +113,13 @@ public class InstanceStatus implements Serializable {
         this.availabilityZone = availabilityZone;
         return this;
     }
-    
-    
+
     /**
      * Events that affect the status of the associated Amazon EC2 instance.
      *
      * @return Events that affect the status of the associated Amazon EC2 instance.
      */
     public java.util.List<InstanceStatusEvent> getEvents() {
-        
         if (events == null) {
               events = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceStatusEvent>();
               events.setAutoConstruct(true);
@@ -184,7 +181,7 @@ public class InstanceStatus implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Represents the state of an Amazon EC2 instance.
      *
@@ -217,8 +214,7 @@ public class InstanceStatus implements Serializable {
         this.instanceState = instanceState;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the SystemStatus property for this object.
      *
@@ -251,8 +247,7 @@ public class InstanceStatus implements Serializable {
         this.systemStatus = systemStatus;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the InstanceStatus property for this object.
      *
@@ -285,8 +280,7 @@ public class InstanceStatus implements Serializable {
         this.instanceStatus = instanceStatus;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

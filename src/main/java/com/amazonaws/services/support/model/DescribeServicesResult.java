@@ -35,7 +35,6 @@ public class DescribeServicesResult implements Serializable {
      * @return JSON-formatted list of AWS services.
      */
     public java.util.List<Service> getServices() {
-        
         if (services == null) {
               services = new com.amazonaws.internal.ListWithAutoConstructFlag<Service>();
               services.setAutoConstruct(true);
@@ -97,7 +96,7 @@ public class DescribeServicesResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

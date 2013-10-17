@@ -114,8 +114,7 @@ public class Instance implements Serializable {
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * Availability Zones associated with this instance.
      * <p>
@@ -160,8 +159,7 @@ public class Instance implements Serializable {
         this.availabilityZone = availabilityZone;
         return this;
     }
-    
-    
+
     /**
      * Contains a description of the current <i>lifecycle</i> state. <note>
      * <p>The <code>Quarantined</code> lifecycle state is currently not used.
@@ -221,8 +219,7 @@ public class Instance implements Serializable {
         this.lifecycleState = lifecycleState;
         return this;
     }
-    
-    
+
     /**
      * Contains a description of the current <i>lifecycle</i> state. <note>
      * <p>The <code>Quarantined</code> lifecycle state is currently not used.
@@ -264,7 +261,7 @@ public class Instance implements Serializable {
         this.lifecycleState = lifecycleState.toString();
         return this;
     }
-    
+
     /**
      * The instance's health status.
      * <p>
@@ -309,8 +306,7 @@ public class Instance implements Serializable {
         this.healthStatus = healthStatus;
         return this;
     }
-    
-    
+
     /**
      * The launch configuration associated with this instance.
      * <p>
@@ -355,8 +351,7 @@ public class Instance implements Serializable {
         this.launchConfigurationName = launchConfigurationName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

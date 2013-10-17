@@ -61,8 +61,7 @@ public class UpdateTableResult implements Serializable {
         this.tableDescription = tableDescription;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

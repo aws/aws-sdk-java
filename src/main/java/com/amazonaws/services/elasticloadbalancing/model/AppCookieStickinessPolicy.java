@@ -41,8 +41,6 @@ public class AppCookieStickinessPolicy implements Serializable {
      */
     public AppCookieStickinessPolicy() {}
     
-
-
     /**
      * Constructs a new AppCookieStickinessPolicy object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -58,8 +56,6 @@ public class AppCookieStickinessPolicy implements Serializable {
         setCookieName(cookieName);
     }
 
-    
-    
     /**
      * The mnemonic name for the policy being created. The name must be
      * unique within a set of policies for this LoadBalancer.
@@ -98,8 +94,7 @@ public class AppCookieStickinessPolicy implements Serializable {
         this.policyName = policyName;
         return this;
     }
-    
-    
+
     /**
      * The name of the application cookie used for stickiness.
      *
@@ -132,8 +127,7 @@ public class AppCookieStickinessPolicy implements Serializable {
         this.cookieName = cookieName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

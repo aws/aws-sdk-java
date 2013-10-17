@@ -30,7 +30,6 @@ public class DescribeNetworkInterfacesResult implements Serializable {
      * @return The value of the NetworkInterfaces property for this object.
      */
     public java.util.List<NetworkInterface> getNetworkInterfaces() {
-        
         if (networkInterfaces == null) {
               networkInterfaces = new com.amazonaws.internal.ListWithAutoConstructFlag<NetworkInterface>();
               networkInterfaces.setAutoConstruct(true);
@@ -92,7 +91,7 @@ public class DescribeNetworkInterfacesResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

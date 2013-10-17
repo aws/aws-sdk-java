@@ -62,8 +62,6 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements Ser
      */
     public ImportKeyPairRequest() {}
     
-
-
     /**
      * Constructs a new ImportKeyPairRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -78,8 +76,6 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements Ser
         setPublicKeyMaterial(publicKeyMaterial);
     }
 
-    
-    
     /**
      * The unique name for the key pair.
      *
@@ -112,8 +108,7 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements Ser
         this.keyName = keyName;
         return this;
     }
-    
-    
+
     /**
      * The public key portion of the key pair being imported.
      *
@@ -146,8 +141,7 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements Ser
         this.publicKeyMaterial = publicKeyMaterial;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

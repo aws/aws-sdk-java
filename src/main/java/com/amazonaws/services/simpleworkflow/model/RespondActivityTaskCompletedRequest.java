@@ -143,8 +143,7 @@ public class RespondActivityTaskCompletedRequest extends AmazonWebServiceRequest
         this.taskToken = taskToken;
         return this;
     }
-    
-    
+
     /**
      * The result of the activity task. It is a free form string that is
      * implementation specific.
@@ -192,8 +191,7 @@ public class RespondActivityTaskCompletedRequest extends AmazonWebServiceRequest
         this.result = result;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

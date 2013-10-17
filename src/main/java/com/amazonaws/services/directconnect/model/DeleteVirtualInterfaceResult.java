@@ -149,8 +149,7 @@ public class DeleteVirtualInterfaceResult implements Serializable {
         this.virtualInterfaceState = virtualInterfaceState;
         return this;
     }
-    
-    
+
     /**
      * State of the virtual interface. <ul> <li><b>Verifying</b>: This state
      * only applies to public virtual interfaces. Each public virtual
@@ -224,7 +223,7 @@ public class DeleteVirtualInterfaceResult implements Serializable {
         this.virtualInterfaceState = virtualInterfaceState.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

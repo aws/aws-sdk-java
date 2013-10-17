@@ -72,8 +72,6 @@ public class JobParameters implements Serializable {
      */
     public JobParameters() {}
     
-
-
     /**
      * Constructs a new JobParameters object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -103,8 +101,6 @@ public class JobParameters implements Serializable {
         setDescription(description);
     }
 
-    
-    
     /**
      * When initiating a job to retrieve a vault inventory, you can
      * optionally add this parameter to your request to specify the output
@@ -161,8 +157,7 @@ public class JobParameters implements Serializable {
         this.format = format;
         return this;
     }
-    
-    
+
     /**
      * The job type. You can initiate a job to retrieve an archive or get an
      * inventory of a vault. Valid Values are "archive-retrieval" and
@@ -207,8 +202,7 @@ public class JobParameters implements Serializable {
         this.type = type;
         return this;
     }
-    
-    
+
     /**
      * The ID of the archive that you want to retrieve. This field is
      * required only if <code>Type</code> is set to archive-retrieval. An
@@ -259,8 +253,7 @@ public class JobParameters implements Serializable {
         this.archiveId = archiveId;
         return this;
     }
-    
-    
+
     /**
      * The optional description for the job. The description must be less
      * than or equal to 1,024 bytes. The allowable characters are 7-bit ASCII
@@ -311,8 +304,7 @@ public class JobParameters implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * The Amazon SNS topic ARN to which Amazon Glacier sends a notification
      * when the job is completed and the output is ready for you to download.
@@ -363,8 +355,7 @@ public class JobParameters implements Serializable {
         this.sNSTopic = sNSTopic;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the RetrievalByteRange property for this object.
      *
@@ -397,8 +388,7 @@ public class JobParameters implements Serializable {
         this.retrievalByteRange = retrievalByteRange;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

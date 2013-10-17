@@ -47,7 +47,6 @@ public class ListStacksResult implements Serializable {
      *         about the specified stacks.
      */
     public java.util.List<StackSummary> getStackSummaries() {
-        
         if (stackSummaries == null) {
               stackSummaries = new com.amazonaws.internal.ListWithAutoConstructFlag<StackSummary>();
               stackSummaries.setAutoConstruct(true);
@@ -115,7 +114,7 @@ public class ListStacksResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * String that identifies the start of the next list of stacks, if there
      * is one.
@@ -163,8 +162,7 @@ public class ListStacksResult implements Serializable {
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

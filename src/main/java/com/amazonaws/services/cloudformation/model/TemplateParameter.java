@@ -77,8 +77,7 @@ public class TemplateParameter implements Serializable {
         this.parameterKey = parameterKey;
         return this;
     }
-    
-    
+
     /**
      * The default value associated with the parameter.
      *
@@ -111,8 +110,7 @@ public class TemplateParameter implements Serializable {
         this.defaultValue = defaultValue;
         return this;
     }
-    
-    
+
     /**
      * Flag indicating whether the parameter should be displayed as plain
      * text in logs and UIs.
@@ -151,8 +149,7 @@ public class TemplateParameter implements Serializable {
         this.noEcho = noEcho;
         return this;
     }
-    
-    
+
     /**
      * Flag indicating whether the parameter should be displayed as plain
      * text in logs and UIs.
@@ -163,7 +160,7 @@ public class TemplateParameter implements Serializable {
     public Boolean getNoEcho() {
         return noEcho;
     }
-    
+
     /**
      * User defined description associated with the parameter.
      *
@@ -196,8 +193,7 @@ public class TemplateParameter implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

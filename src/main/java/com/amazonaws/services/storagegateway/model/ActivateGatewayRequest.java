@@ -181,8 +181,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements S
         this.activationKey = activationKey;
         return this;
     }
-    
-    
+
     /**
      * A unique identifier for your gateway. This name becomes part of the
      * gateway Amazon Resources Name (ARN) which is what you use as an input
@@ -239,8 +238,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements S
         this.gatewayName = gatewayName;
         return this;
     }
-    
-    
+
     /**
      * One of the values that indicates the time zone you want to set for the
      * gateway. The time zone is used, for example, for scheduling snapshots
@@ -300,8 +298,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements S
         this.gatewayTimezone = gatewayTimezone;
         return this;
     }
-    
-    
+
     /**
      * One of the values that indicates the time zone you want to set for the
      * gateway. The time zone is used, for example, for scheduling snapshots
@@ -343,7 +340,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements S
         this.gatewayTimezone = gatewayTimezone.toString();
         return this;
     }
-    
+
     /**
      * One of the values that indicates the region where you want to store
      * the snapshot backups. The gateway region specified must be the same
@@ -433,8 +430,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements S
         this.gatewayRegion = gatewayRegion;
         return this;
     }
-    
-    
+
     /**
      * One of the values that defines the type of gateway to activate. The
      * type specified is critical to all later functions of the gateway and
@@ -500,8 +496,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements S
         this.gatewayType = gatewayType;
         return this;
     }
-    
-    
+
     /**
      * One of the values that defines the type of gateway to activate. The
      * type specified is critical to all later functions of the gateway and
@@ -547,7 +542,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements S
         this.gatewayType = gatewayType.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

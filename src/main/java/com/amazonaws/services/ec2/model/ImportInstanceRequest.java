@@ -68,8 +68,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the LaunchSpecification property for this object.
      *
@@ -102,15 +101,13 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
         this.launchSpecification = launchSpecification;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the DiskImages property for this object.
      *
      * @return The value of the DiskImages property for this object.
      */
     public java.util.List<DiskImage> getDiskImages() {
-        
         if (diskImages == null) {
               diskImages = new com.amazonaws.internal.ListWithAutoConstructFlag<DiskImage>();
               diskImages.setAutoConstruct(true);
@@ -172,7 +169,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
 
         return this;
     }
-    
+
     /**
      * Returns the value of the Platform property for this object.
      * <p>
@@ -220,8 +217,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
         this.platform = platform;
         return this;
     }
-    
-    
+
     /**
      * Sets the value of the Platform property for this object.
      * <p>
@@ -255,7 +251,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
         this.platform = platform.toString();
         return this;
     }
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

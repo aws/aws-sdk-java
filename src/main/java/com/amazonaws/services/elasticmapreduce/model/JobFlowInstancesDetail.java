@@ -137,8 +137,6 @@ public class JobFlowInstancesDetail implements Serializable {
      */
     public JobFlowInstancesDetail() {}
     
-
-
     /**
      * Constructs a new JobFlowInstancesDetail object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -157,8 +155,6 @@ public class JobFlowInstancesDetail implements Serializable {
         setInstanceCount(instanceCount);
     }
 
-    
-    
     /**
      * The Amazon EC2 master node instance type.
      * <p>
@@ -203,8 +199,7 @@ public class JobFlowInstancesDetail implements Serializable {
         this.masterInstanceType = masterInstanceType;
         return this;
     }
-    
-    
+
     /**
      * The DNS name of the master node.
      * <p>
@@ -249,8 +244,7 @@ public class JobFlowInstancesDetail implements Serializable {
         this.masterPublicDnsName = masterPublicDnsName;
         return this;
     }
-    
-    
+
     /**
      * The Amazon EC2 instance identifier of the master node.
      * <p>
@@ -295,8 +289,7 @@ public class JobFlowInstancesDetail implements Serializable {
         this.masterInstanceId = masterInstanceId;
         return this;
     }
-    
-    
+
     /**
      * The Amazon EC2 slave node instance type.
      * <p>
@@ -341,8 +334,7 @@ public class JobFlowInstancesDetail implements Serializable {
         this.slaveInstanceType = slaveInstanceType;
         return this;
     }
-    
-    
+
     /**
      * The number of Amazon EC2 instances in the cluster. If the value is 1,
      * the same instance serves as both the master and slave node. If the
@@ -393,15 +385,13 @@ public class JobFlowInstancesDetail implements Serializable {
         this.instanceCount = instanceCount;
         return this;
     }
-    
-    
+
     /**
      * Details about the job flow's instance groups.
      *
      * @return Details about the job flow's instance groups.
      */
     public java.util.List<InstanceGroupDetail> getInstanceGroups() {
-        
         if (instanceGroups == null) {
               instanceGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupDetail>();
               instanceGroups.setAutoConstruct(true);
@@ -463,7 +453,7 @@ public class JobFlowInstancesDetail implements Serializable {
 
         return this;
     }
-    
+
     /**
      * An approximation of the cost of the job flow, represented in
      * m1.small/hours. This value is incremented once for every hour an
@@ -526,8 +516,7 @@ public class JobFlowInstancesDetail implements Serializable {
         this.normalizedInstanceHours = normalizedInstanceHours;
         return this;
     }
-    
-    
+
     /**
      * The name of an Amazon EC2 key pair that can be used to ssh to the
      * master node of job flow.
@@ -578,8 +567,7 @@ public class JobFlowInstancesDetail implements Serializable {
         this.ec2KeyName = ec2KeyName;
         return this;
     }
-    
-    
+
     /**
      * For job flows launched within Amazon Virtual Private Cloud, this value
      * specifies the identifier of the subnet where the job flow was
@@ -636,8 +624,7 @@ public class JobFlowInstancesDetail implements Serializable {
         this.ec2SubnetId = ec2SubnetId;
         return this;
     }
-    
-    
+
     /**
      * Specifies the Amazon EC2 Availability Zone for the job flow.
      *
@@ -670,8 +657,7 @@ public class JobFlowInstancesDetail implements Serializable {
         this.placement = placement;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether or not the job flow should terminate after
      * completing all steps.
@@ -710,8 +696,7 @@ public class JobFlowInstancesDetail implements Serializable {
         this.keepJobFlowAliveWhenNoSteps = keepJobFlowAliveWhenNoSteps;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether or not the job flow should terminate after
      * completing all steps.
@@ -722,7 +707,7 @@ public class JobFlowInstancesDetail implements Serializable {
     public Boolean getKeepJobFlowAliveWhenNoSteps() {
         return keepJobFlowAliveWhenNoSteps;
     }
-    
+
     /**
      * Specifies whether the Amazon EC2 instances in the cluster are
      * protected from termination by API calls, user intervention, or in the
@@ -767,8 +752,7 @@ public class JobFlowInstancesDetail implements Serializable {
         this.terminationProtected = terminationProtected;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether the Amazon EC2 instances in the cluster are
      * protected from termination by API calls, user intervention, or in the
@@ -781,7 +765,7 @@ public class JobFlowInstancesDetail implements Serializable {
     public Boolean getTerminationProtected() {
         return terminationProtected;
     }
-    
+
     /**
      * Specifies the Hadoop version for the job flow.
      * <p>
@@ -826,8 +810,7 @@ public class JobFlowInstancesDetail implements Serializable {
         this.hadoopVersion = hadoopVersion;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

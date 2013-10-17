@@ -61,8 +61,6 @@ public class CreateUserRequest extends AmazonWebServiceRequest implements Serial
      */
     public CreateUserRequest() {}
     
-
-
     /**
      * Constructs a new CreateUserRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -74,8 +72,6 @@ public class CreateUserRequest extends AmazonWebServiceRequest implements Serial
         setUserName(userName);
     }
 
-    
-    
     /**
      * The path for the user name. For more information about paths, see <a
      * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
@@ -144,8 +140,7 @@ public class CreateUserRequest extends AmazonWebServiceRequest implements Serial
         this.path = path;
         return this;
     }
-    
-    
+
     /**
      * Name of the user to create.
      * <p>
@@ -190,8 +185,7 @@ public class CreateUserRequest extends AmazonWebServiceRequest implements Serial
         this.userName = userName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

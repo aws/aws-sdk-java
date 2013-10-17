@@ -54,8 +54,6 @@ public class ListTablesRequest extends AmazonWebServiceRequest implements Serial
      */
     public ListTablesRequest() {}
     
-
-
     /**
      * Constructs a new ListTablesRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -69,10 +67,6 @@ public class ListTablesRequest extends AmazonWebServiceRequest implements Serial
     public ListTablesRequest(String exclusiveStartTableName) {
         setExclusiveStartTableName(exclusiveStartTableName);
     }
-
-    
-    
-
 
     /**
      * Constructs a new ListTablesRequest object.
@@ -90,8 +84,6 @@ public class ListTablesRequest extends AmazonWebServiceRequest implements Serial
         setLimit(limit);
     }
 
-    
-    
     /**
      * The name of the table that starts the list. If you already ran a
      * <i>ListTables</i> operation and received a
@@ -154,8 +146,7 @@ public class ListTablesRequest extends AmazonWebServiceRequest implements Serial
         this.exclusiveStartTableName = exclusiveStartTableName;
         return this;
     }
-    
-    
+
     /**
      * A maximum number of table names to return.
      * <p>
@@ -197,8 +188,7 @@ public class ListTablesRequest extends AmazonWebServiceRequest implements Serial
         this.limit = limit;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

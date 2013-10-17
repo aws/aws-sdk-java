@@ -86,8 +86,7 @@ public class SuspendedProcess implements Serializable {
         this.processName = processName;
         return this;
     }
-    
-    
+
     /**
      * The reason that the process was suspended.
      * <p>
@@ -132,8 +131,7 @@ public class SuspendedProcess implements Serializable {
         this.suspensionReason = suspensionReason;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

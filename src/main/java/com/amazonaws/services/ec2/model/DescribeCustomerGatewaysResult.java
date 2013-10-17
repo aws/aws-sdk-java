@@ -35,7 +35,6 @@ public class DescribeCustomerGatewaysResult implements Serializable {
      * @return 
      */
     public java.util.List<CustomerGateway> getCustomerGateways() {
-        
         if (customerGateways == null) {
               customerGateways = new com.amazonaws.internal.ListWithAutoConstructFlag<CustomerGateway>();
               customerGateways.setAutoConstruct(true);
@@ -97,7 +96,7 @@ public class DescribeCustomerGatewaysResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

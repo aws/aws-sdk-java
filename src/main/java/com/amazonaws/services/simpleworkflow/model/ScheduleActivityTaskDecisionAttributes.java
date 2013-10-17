@@ -200,8 +200,7 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
         this.activityType = activityType;
         return this;
     }
-    
-    
+
     /**
      * The <code>activityId</code> of the activity task. This field is
      * required. <p>The specified string must not start or end with
@@ -273,8 +272,7 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
         this.activityId = activityId;
         return this;
     }
-    
-    
+
     /**
      * Optional data attached to the event that can be used by the decider in
      * subsequent workflow tasks. This data is not sent to the activity.
@@ -322,8 +320,7 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
         this.control = control;
         return this;
     }
-    
-    
+
     /**
      * The input provided to the activity task.
      * <p>
@@ -365,8 +362,7 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
         this.input = input;
         return this;
     }
-    
-    
+
     /**
      * The maximum duration for this activity task. <p>The valid values are
      * integers greater than or equal to <code>0</code>. An integer value can
@@ -450,8 +446,7 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
         this.scheduleToCloseTimeout = scheduleToCloseTimeout;
         return this;
     }
-    
-    
+
     /**
      * If set, specifies the name of the task list in which to schedule the
      * activity task. If not specified, the <code>defaultTaskList</code>
@@ -544,8 +539,7 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
         this.taskList = taskList;
         return this;
     }
-    
-    
+
     /**
      * If set, specifies the maximum duration the activity task can wait to
      * be assigned to a worker. This overrides the default schedule-to-start
@@ -647,8 +641,7 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
         this.scheduleToStartTimeout = scheduleToStartTimeout;
         return this;
     }
-    
-    
+
     /**
      * If set, specifies the maximum duration a worker may take to process
      * this activity task. This overrides the default start-to-close timeout
@@ -750,8 +743,7 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
         this.startToCloseTimeout = startToCloseTimeout;
         return this;
     }
-    
-    
+
     /**
      * If set, specifies the maximum time before which a worker processing a
      * task of this type must report progress by calling
@@ -853,8 +845,7 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable {
         this.heartbeatTimeout = heartbeatTimeout;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

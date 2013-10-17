@@ -92,8 +92,7 @@ public class DBSubnetGroup implements Serializable {
         this.dBSubnetGroupName = dBSubnetGroupName;
         return this;
     }
-    
-    
+
     /**
      * Provides the description of the DB Subnet Group.
      *
@@ -126,8 +125,7 @@ public class DBSubnetGroup implements Serializable {
         this.dBSubnetGroupDescription = dBSubnetGroupDescription;
         return this;
     }
-    
-    
+
     /**
      * Provides the VpcId of the DB Subnet Group.
      *
@@ -160,8 +158,7 @@ public class DBSubnetGroup implements Serializable {
         this.vpcId = vpcId;
         return this;
     }
-    
-    
+
     /**
      * Provides the status of the DB Subnet Group.
      *
@@ -194,15 +191,13 @@ public class DBSubnetGroup implements Serializable {
         this.subnetGroupStatus = subnetGroupStatus;
         return this;
     }
-    
-    
+
     /**
      * Contains a list of <a>Subnet</a> elements.
      *
      * @return Contains a list of <a>Subnet</a> elements.
      */
     public java.util.List<Subnet> getSubnets() {
-        
         if (subnets == null) {
               subnets = new com.amazonaws.internal.ListWithAutoConstructFlag<Subnet>();
               subnets.setAutoConstruct(true);
@@ -264,7 +259,7 @@ public class DBSubnetGroup implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

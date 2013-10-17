@@ -109,8 +109,7 @@ public class TaskObject implements Serializable {
         this.taskId = taskId;
         return this;
     }
-    
-    
+
     /**
      * Identifier of the pipeline that provided the task.
      * <p>
@@ -155,8 +154,7 @@ public class TaskObject implements Serializable {
         this.pipelineId = pipelineId;
         return this;
     }
-    
-    
+
     /**
      * Identifier of the pipeline task attempt object. AWS Data Pipeline uses
      * this value to track how many times a task is attempted.
@@ -207,8 +205,7 @@ public class TaskObject implements Serializable {
         this.attemptId = attemptId;
         return this;
     }
-    
-    
+
     /**
      * Connection information for the location where the task runner will
      * publish the output of the task.
@@ -251,8 +248,7 @@ public class TaskObject implements Serializable {
         setObjects(objects);
         return this;
     }
-    
-   	
+
     /**
      * Connection information for the location where the task runner will
      * publish the output of the task.
@@ -273,7 +269,7 @@ public class TaskObject implements Serializable {
 		this.objects.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into Objects.
 	 * <p>

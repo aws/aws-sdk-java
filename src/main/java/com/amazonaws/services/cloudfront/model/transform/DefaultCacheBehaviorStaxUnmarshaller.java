@@ -64,6 +64,10 @@ public class DefaultCacheBehaviorStaxUnmarshaller implements Unmarshaller<Defaul
                     defaultCacheBehavior.setMinTTL(LongStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("AllowedMethods", targetDepth)) {
+                    defaultCacheBehavior.setAllowedMethods(AllowedMethodsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return defaultCacheBehavior;

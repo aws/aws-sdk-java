@@ -35,7 +35,6 @@ public class DescribeVpnConnectionsResult implements Serializable {
      * @return 
      */
     public java.util.List<VpnConnection> getVpnConnections() {
-        
         if (vpnConnections == null) {
               vpnConnections = new com.amazonaws.internal.ListWithAutoConstructFlag<VpnConnection>();
               vpnConnections.setAutoConstruct(true);
@@ -97,7 +96,7 @@ public class DescribeVpnConnectionsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

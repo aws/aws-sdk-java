@@ -45,8 +45,6 @@ public class DeleteMessageBatchRequest extends AmazonWebServiceRequest implement
      */
     public DeleteMessageBatchRequest() {}
     
-
-
     /**
      * Constructs a new DeleteMessageBatchRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -57,10 +55,6 @@ public class DeleteMessageBatchRequest extends AmazonWebServiceRequest implement
     public DeleteMessageBatchRequest(String queueUrl) {
         setQueueUrl(queueUrl);
     }
-
-    
-    
-
 
     /**
      * Constructs a new DeleteMessageBatchRequest object.
@@ -76,8 +70,6 @@ public class DeleteMessageBatchRequest extends AmazonWebServiceRequest implement
         setEntries(entries);
     }
 
-    
-    
     /**
      * The URL of the SQS queue to take action on.
      *
@@ -110,15 +102,13 @@ public class DeleteMessageBatchRequest extends AmazonWebServiceRequest implement
         this.queueUrl = queueUrl;
         return this;
     }
-    
-    
+
     /**
      * A list of receipt handles for the messages to be deleted.
      *
      * @return A list of receipt handles for the messages to be deleted.
      */
     public java.util.List<DeleteMessageBatchRequestEntry> getEntries() {
-        
         if (entries == null) {
               entries = new com.amazonaws.internal.ListWithAutoConstructFlag<DeleteMessageBatchRequestEntry>();
               entries.setAutoConstruct(true);
@@ -180,7 +170,7 @@ public class DeleteMessageBatchRequest extends AmazonWebServiceRequest implement
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

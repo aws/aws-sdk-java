@@ -62,8 +62,7 @@ public class DeleteVpnConnectionRouteRequest extends AmazonWebServiceRequest imp
         this.vpnConnectionId = vpnConnectionId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the DestinationCidrBlock property for this
      * object.
@@ -97,8 +96,7 @@ public class DeleteVpnConnectionRouteRequest extends AmazonWebServiceRequest imp
         this.destinationCidrBlock = destinationCidrBlock;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

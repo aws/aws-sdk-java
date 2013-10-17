@@ -77,8 +77,7 @@ public class StatisticSet implements Serializable {
         this.sampleCount = sampleCount;
         return this;
     }
-    
-    
+
     /**
      * The sum of values for the sample set.
      *
@@ -111,8 +110,7 @@ public class StatisticSet implements Serializable {
         this.sum = sum;
         return this;
     }
-    
-    
+
     /**
      * The minimum value of the sample set.
      *
@@ -145,8 +143,7 @@ public class StatisticSet implements Serializable {
         this.minimum = minimum;
         return this;
     }
-    
-    
+
     /**
      * The maximum value of the sample set.
      *
@@ -179,8 +176,7 @@ public class StatisticSet implements Serializable {
         this.maximum = maximum;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

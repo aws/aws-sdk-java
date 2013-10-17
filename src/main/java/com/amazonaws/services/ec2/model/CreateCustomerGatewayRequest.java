@@ -67,8 +67,6 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
      */
     public CreateCustomerGatewayRequest() {}
     
-
-
     /**
      * Constructs a new CreateCustomerGatewayRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -86,8 +84,6 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
         setBgpAsn(bgpAsn);
     }
 
-    
-    
     /**
      * Constructs a new CreateCustomerGatewayRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -104,7 +100,7 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
         this.publicIp = publicIp;
         this.bgpAsn = bgpAsn;
     }
-    
+
     /**
      * The type of VPN connection this customer gateway supports.
      * <p>
@@ -152,8 +148,7 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
         this.type = type;
         return this;
     }
-    
-    
+
     /**
      * The type of VPN connection this customer gateway supports.
      * <p>
@@ -187,7 +182,7 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
         this.type = type.toString();
         return this;
     }
-    
+
     /**
      * The Internet-routable IP address for the customer gateway's outside
      * interface. The address must be static
@@ -226,8 +221,7 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
         this.publicIp = publicIp;
         return this;
     }
-    
-    
+
     /**
      * The customer gateway's Border Gateway Protocol (BGP) Autonomous System
      * Number (ASN).
@@ -266,8 +260,7 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
         this.bgpAsn = bgpAsn;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

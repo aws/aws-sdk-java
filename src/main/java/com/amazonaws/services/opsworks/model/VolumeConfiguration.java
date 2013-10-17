@@ -78,8 +78,7 @@ public class VolumeConfiguration implements Serializable {
         this.mountPoint = mountPoint;
         return this;
     }
-    
-    
+
     /**
      * The volume <a
      * href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID
@@ -124,8 +123,7 @@ public class VolumeConfiguration implements Serializable {
         this.raidLevel = raidLevel;
         return this;
     }
-    
-    
+
     /**
      * The number of disks in the volume.
      *
@@ -158,8 +156,7 @@ public class VolumeConfiguration implements Serializable {
         this.numberOfDisks = numberOfDisks;
         return this;
     }
-    
-    
+
     /**
      * The volume size.
      *
@@ -192,8 +189,7 @@ public class VolumeConfiguration implements Serializable {
         this.size = size;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

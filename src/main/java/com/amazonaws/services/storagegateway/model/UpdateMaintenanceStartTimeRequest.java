@@ -120,8 +120,7 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest i
         this.gatewayARN = gatewayARN;
         return this;
     }
-    
-    
+
     /**
      * The hour component of the maintenance start time represented as
      * <emphasis>hh</emphasis>, where <i>hh</i> is the hour (00 to 23). The
@@ -175,8 +174,7 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest i
         this.hourOfDay = hourOfDay;
         return this;
     }
-    
-    
+
     /**
      * The minute component of the maintenance start time represented as
      * <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute of the
@@ -230,8 +228,7 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest i
         this.minuteOfHour = minuteOfHour;
         return this;
     }
-    
-    
+
     /**
      * The maintenance start time day of the week.
      * <p>
@@ -273,8 +270,7 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest i
         this.dayOfWeek = dayOfWeek;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

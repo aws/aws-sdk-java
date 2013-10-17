@@ -136,8 +136,7 @@ public class DescribeMaintenanceStartTimeResult implements Serializable {
         this.gatewayARN = gatewayARN;
         return this;
     }
-    
-    
+
     /**
      * The hour component of the maintenance start time represented as
      * <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day
@@ -191,8 +190,7 @@ public class DescribeMaintenanceStartTimeResult implements Serializable {
         this.hourOfDay = hourOfDay;
         return this;
     }
-    
-    
+
     /**
      * The minute component of the maintenance start time represented as
      * <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the
@@ -246,8 +244,7 @@ public class DescribeMaintenanceStartTimeResult implements Serializable {
         this.minuteOfHour = minuteOfHour;
         return this;
     }
-    
-    
+
     /**
      * An ordinal number between 0 and 6 that represents the day of the week,
      * where 0 represents Sunday and 6 represents Saturday. The day of week
@@ -301,8 +298,7 @@ public class DescribeMaintenanceStartTimeResult implements Serializable {
         this.dayOfWeek = dayOfWeek;
         return this;
     }
-    
-    
+
     /**
      * One of the <a>GatewayTimezone</a> values that indicates the time zone
      * that is set for the gateway. The start time and day of week specified
@@ -362,8 +358,7 @@ public class DescribeMaintenanceStartTimeResult implements Serializable {
         this.timezone = timezone;
         return this;
     }
-    
-    
+
     /**
      * One of the <a>GatewayTimezone</a> values that indicates the time zone
      * that is set for the gateway. The start time and day of week specified
@@ -405,7 +400,7 @@ public class DescribeMaintenanceStartTimeResult implements Serializable {
         this.timezone = timezone.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

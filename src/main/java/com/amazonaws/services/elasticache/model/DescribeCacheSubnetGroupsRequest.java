@@ -82,8 +82,7 @@ public class DescribeCacheSubnetGroupsRequest extends AmazonWebServiceRequest im
         this.cacheSubnetGroupName = cacheSubnetGroupName;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
@@ -134,8 +133,7 @@ public class DescribeCacheSubnetGroupsRequest extends AmazonWebServiceRequest im
         this.maxRecords = maxRecords;
         return this;
     }
-    
-    
+
     /**
      * An optional marker returned from a prior request. Use this marker for
      * pagination of results from this operation. If this parameter is
@@ -186,8 +184,7 @@ public class DescribeCacheSubnetGroupsRequest extends AmazonWebServiceRequest im
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

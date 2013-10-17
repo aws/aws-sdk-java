@@ -96,8 +96,7 @@ public class ReservedCacheNodesOffering implements Serializable {
         this.reservedCacheNodesOfferingId = reservedCacheNodesOfferingId;
         return this;
     }
-    
-    
+
     /**
      * The cache node type for the reserved cache node.
      *
@@ -130,8 +129,7 @@ public class ReservedCacheNodesOffering implements Serializable {
         this.cacheNodeType = cacheNodeType;
         return this;
     }
-    
-    
+
     /**
      * The duration of the offering. in seconds.
      *
@@ -164,8 +162,7 @@ public class ReservedCacheNodesOffering implements Serializable {
         this.duration = duration;
         return this;
     }
-    
-    
+
     /**
      * The fixed price charged for this offering.
      *
@@ -198,8 +195,7 @@ public class ReservedCacheNodesOffering implements Serializable {
         this.fixedPrice = fixedPrice;
         return this;
     }
-    
-    
+
     /**
      * The hourly price charged for this offering.
      *
@@ -232,8 +228,7 @@ public class ReservedCacheNodesOffering implements Serializable {
         this.usagePrice = usagePrice;
         return this;
     }
-    
-    
+
     /**
      * The cache engine used by the offering.
      *
@@ -266,8 +261,7 @@ public class ReservedCacheNodesOffering implements Serializable {
         this.productDescription = productDescription;
         return this;
     }
-    
-    
+
     /**
      * The offering type.
      *
@@ -300,15 +294,13 @@ public class ReservedCacheNodesOffering implements Serializable {
         this.offeringType = offeringType;
         return this;
     }
-    
-    
+
     /**
      * The recurring price charged to run this reserved cache node.
      *
      * @return The recurring price charged to run this reserved cache node.
      */
     public java.util.List<RecurringCharge> getRecurringCharges() {
-        
         if (recurringCharges == null) {
               recurringCharges = new com.amazonaws.internal.ListWithAutoConstructFlag<RecurringCharge>();
               recurringCharges.setAutoConstruct(true);
@@ -370,7 +362,7 @@ public class ReservedCacheNodesOffering implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -116,8 +116,7 @@ public class ReservedCacheNode implements Serializable {
         this.reservedCacheNodeId = reservedCacheNodeId;
         return this;
     }
-    
-    
+
     /**
      * The offering identifier.
      *
@@ -150,8 +149,7 @@ public class ReservedCacheNode implements Serializable {
         this.reservedCacheNodesOfferingId = reservedCacheNodesOfferingId;
         return this;
     }
-    
-    
+
     /**
      * The cache node type for the reserved cache nodes.
      *
@@ -184,8 +182,7 @@ public class ReservedCacheNode implements Serializable {
         this.cacheNodeType = cacheNodeType;
         return this;
     }
-    
-    
+
     /**
      * The time the reservation started.
      *
@@ -218,8 +215,7 @@ public class ReservedCacheNode implements Serializable {
         this.startTime = startTime;
         return this;
     }
-    
-    
+
     /**
      * The duration of the reservation in seconds.
      *
@@ -252,8 +248,7 @@ public class ReservedCacheNode implements Serializable {
         this.duration = duration;
         return this;
     }
-    
-    
+
     /**
      * The fixed price charged for this reserved cache node.
      *
@@ -286,8 +281,7 @@ public class ReservedCacheNode implements Serializable {
         this.fixedPrice = fixedPrice;
         return this;
     }
-    
-    
+
     /**
      * The hourly price charged for this reserved cache node.
      *
@@ -320,8 +314,7 @@ public class ReservedCacheNode implements Serializable {
         this.usagePrice = usagePrice;
         return this;
     }
-    
-    
+
     /**
      * The number of cache nodes that have been reserved.
      *
@@ -354,8 +347,7 @@ public class ReservedCacheNode implements Serializable {
         this.cacheNodeCount = cacheNodeCount;
         return this;
     }
-    
-    
+
     /**
      * The description of the reserved cache node.
      *
@@ -388,8 +380,7 @@ public class ReservedCacheNode implements Serializable {
         this.productDescription = productDescription;
         return this;
     }
-    
-    
+
     /**
      * The offering type of this reserved cache node.
      *
@@ -422,8 +413,7 @@ public class ReservedCacheNode implements Serializable {
         this.offeringType = offeringType;
         return this;
     }
-    
-    
+
     /**
      * The state of the reserved cache node.
      *
@@ -456,15 +446,13 @@ public class ReservedCacheNode implements Serializable {
         this.state = state;
         return this;
     }
-    
-    
+
     /**
      * The recurring price charged to run this reserved cache node.
      *
      * @return The recurring price charged to run this reserved cache node.
      */
     public java.util.List<RecurringCharge> getRecurringCharges() {
-        
         if (recurringCharges == null) {
               recurringCharges = new com.amazonaws.internal.ListWithAutoConstructFlag<RecurringCharge>();
               recurringCharges.setAutoConstruct(true);
@@ -526,7 +514,7 @@ public class ReservedCacheNode implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -89,8 +89,7 @@ public class WorkflowTypeInfo implements Serializable {
         this.workflowType = workflowType;
         return this;
     }
-    
-    
+
     /**
      * The current status of the workflow type.
      * <p>
@@ -138,8 +137,7 @@ public class WorkflowTypeInfo implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * The current status of the workflow type.
      * <p>
@@ -173,7 +171,7 @@ public class WorkflowTypeInfo implements Serializable {
         this.status = status.toString();
         return this;
     }
-    
+
     /**
      * The description of the type registered through
      * <a>RegisterWorkflowType</a>.
@@ -221,8 +219,7 @@ public class WorkflowTypeInfo implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * The date when this type was registered.
      *
@@ -255,8 +252,7 @@ public class WorkflowTypeInfo implements Serializable {
         this.creationDate = creationDate;
         return this;
     }
-    
-    
+
     /**
      * If the type is in deprecated state, then it is set to the date when
      * the type was deprecated.
@@ -295,8 +291,7 @@ public class WorkflowTypeInfo implements Serializable {
         this.deprecationDate = deprecationDate;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

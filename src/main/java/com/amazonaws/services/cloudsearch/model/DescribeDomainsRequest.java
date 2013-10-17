@@ -39,7 +39,6 @@ public class DescribeDomainsRequest extends AmazonWebServiceRequest implements S
      * @return Limits the DescribeDomains response to the specified search domains.
      */
     public java.util.List<String> getDomainNames() {
-        
         if (domainNames == null) {
               domainNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               domainNames.setAutoConstruct(true);
@@ -101,7 +100,7 @@ public class DescribeDomainsRequest extends AmazonWebServiceRequest implements S
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

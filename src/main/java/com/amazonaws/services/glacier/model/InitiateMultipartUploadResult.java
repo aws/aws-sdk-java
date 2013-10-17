@@ -74,8 +74,7 @@ public class InitiateMultipartUploadResult implements Serializable {
         this.location = location;
         return this;
     }
-    
-    
+
     /**
      * The ID of the multipart upload. This value is also included as part of
      * the location.
@@ -114,8 +113,7 @@ public class InitiateMultipartUploadResult implements Serializable {
         this.uploadId = uploadId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -71,8 +71,6 @@ public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest impl
      */
     public RetrieveEnvironmentInfoRequest() {}
     
-
-
     /**
      * Constructs a new RetrieveEnvironmentInfoRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -84,8 +82,6 @@ public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest impl
         setInfoType(infoType);
     }
 
-    
-    
     /**
      * Constructs a new RetrieveEnvironmentInfoRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -96,7 +92,7 @@ public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest impl
     public RetrieveEnvironmentInfoRequest(EnvironmentInfoType infoType) {
         this.infoType = infoType.toString();
     }
-    
+
     /**
      * The ID of the data's environment. <p> If no such environment is found,
      * returns an <code>InvalidParameterValue</code> error. <p> Condition:
@@ -153,8 +149,7 @@ public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest impl
         this.environmentId = environmentId;
         return this;
     }
-    
-    
+
     /**
      * The name of the data's environment. <p> If no such environment is
      * found, returns an <code>InvalidParameterValue</code> error. <p>
@@ -220,8 +215,7 @@ public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest impl
         this.environmentName = environmentName;
         return this;
     }
-    
-    
+
     /**
      * The type of information to retrieve.
      * <p>
@@ -269,8 +263,7 @@ public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest impl
         this.infoType = infoType;
         return this;
     }
-    
-    
+
     /**
      * The type of information to retrieve.
      * <p>
@@ -304,7 +297,7 @@ public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest impl
         this.infoType = infoType.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

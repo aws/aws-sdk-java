@@ -101,8 +101,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
         this.jobType = jobType;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether the job to initiate is an import or export job.
      * <p>
@@ -136,7 +135,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
         this.jobType = jobType.toString();
         return this;
     }
-    
+
     /**
      * The UTF-8 encoded text of the manifest file.
      *
@@ -169,8 +168,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
         this.manifest = manifest;
         return this;
     }
-    
-    
+
     /**
      * For internal use only.
      *
@@ -203,8 +201,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
         this.manifestAddendum = manifestAddendum;
         return this;
     }
-    
-    
+
     /**
      * Validate the manifest and parameter values in the request but do not
      * actually create a job.
@@ -243,8 +240,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
         this.validateOnly = validateOnly;
         return this;
     }
-    
-    
+
     /**
      * Validate the manifest and parameter values in the request but do not
      * actually create a job.
@@ -255,7 +251,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements Seriali
     public Boolean getValidateOnly() {
         return validateOnly;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

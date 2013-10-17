@@ -130,8 +130,7 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest imple
         this.stackName = stackName;
         return this;
     }
-    
-    
+
     /**
      * The logical name of the resource as specified in the template.
      * <p>Default: There is no default value.
@@ -170,8 +169,7 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest imple
         this.logicalResourceId = logicalResourceId;
         return this;
     }
-    
-    
+
     /**
      * The name or unique identifier that corresponds to a physical instance
      * ID of a resource supported by AWS CloudFormation. <p>For example, for
@@ -258,8 +256,7 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest imple
         this.physicalResourceId = physicalResourceId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -93,8 +93,7 @@ public class SourceSecurityGroup implements Serializable {
         this.ownerAlias = ownerAlias;
         return this;
     }
-    
-    
+
     /**
      * Name of the source security group. Use this value for the
      * <code>--source-group</code> parameter of the
@@ -145,8 +144,7 @@ public class SourceSecurityGroup implements Serializable {
         this.groupName = groupName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

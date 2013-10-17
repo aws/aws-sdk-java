@@ -108,8 +108,7 @@ public class Tag implements Serializable {
         this.resourceId = resourceId;
         return this;
     }
-    
-    
+
     /**
      * The kind of resource to which the tag is applied. Currently, Auto
      * Scaling supports the <code>auto-scaling-group</code> resource type.
@@ -157,8 +156,7 @@ public class Tag implements Serializable {
         this.resourceType = resourceType;
         return this;
     }
-    
-    
+
     /**
      * The key of the tag.
      * <p>
@@ -203,8 +201,7 @@ public class Tag implements Serializable {
         this.key = key;
         return this;
     }
-    
-    
+
     /**
      * The value of the tag.
      * <p>
@@ -249,8 +246,7 @@ public class Tag implements Serializable {
         this.value = value;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether the new tag will be applied to instances launched
      * after the tag is created. The same behavior applies to updates: If you
@@ -301,8 +297,7 @@ public class Tag implements Serializable {
         this.propagateAtLaunch = propagateAtLaunch;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether the new tag will be applied to instances launched
      * after the tag is created. The same behavior applies to updates: If you
@@ -317,7 +312,7 @@ public class Tag implements Serializable {
     public Boolean getPropagateAtLaunch() {
         return propagateAtLaunch;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

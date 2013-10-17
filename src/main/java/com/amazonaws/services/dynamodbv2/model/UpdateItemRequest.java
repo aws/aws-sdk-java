@@ -208,8 +208,6 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      */
     public UpdateItemRequest() {}
     
-
-
     /**
      * Constructs a new UpdateItemRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -297,8 +295,6 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
         setAttributeUpdates(attributeUpdates);
     }
 
-    
-    
     /**
      * The name of the table containing the item to update.
      * <p>
@@ -343,8 +339,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
         this.tableName = tableName;
         return this;
     }
-    
-    
+
     /**
      * The primary key that defines the item. Each element consists of an
      * attribute name and a value for that attribute.
@@ -384,8 +379,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
         setKey(key);
         return this;
     }
-    
-   	
+
     /**
      * The primary key that defines the item. Each element consists of an
      * attribute name and a value for that attribute.
@@ -420,12 +414,12 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
      *
      * @param hashKey Primary hash key.
      * @param rangeKey Primary range key. (null if it a hash-only table)
-     */    
+     */
     public UpdateItemRequest withKey(java.util.Map.Entry<String, AttributeValue> hashKey, java.util.Map.Entry<String, AttributeValue> rangeKey) throws IllegalArgumentException {
     	setKey(hashKey, rangeKey);
     	return this;
     }
-	
+
     /**
      * The primary key that defines the item. Each element consists of an
      * attribute name and a value for that attribute.
@@ -445,7 +439,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
 		this.key.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into Key.
 	 * <p>
@@ -915,8 +909,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
         setAttributeUpdates(attributeUpdates);
         return this;
     }
-    
-   	
+
     /**
      * The names of attributes to be modified, the action to perform on each,
      * and the new value for each. If you are updating an attribute that is
@@ -1007,7 +1000,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
 		this.attributeUpdates.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into AttributeUpdates.
 	 * <p>
@@ -1243,8 +1236,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
         setExpected(expected);
         return this;
     }
-    
-   	
+
     /**
      * A map of attribute/condition pairs. This is the conditional block for
      * the <i>UpdateItem</i> operation. All the conditions must be met for
@@ -1296,7 +1288,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
 		this.expected.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into Expected.
 	 * <p>
@@ -1426,8 +1418,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
         this.returnValues = returnValues;
         return this;
     }
-    
-    
+
     /**
      * Use <i>ReturnValues</i> if you want to get the item attributes as they
      * appeared either before or after they were updated. For
@@ -1509,7 +1500,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
         this.returnValues = returnValues.toString();
         return this;
     }
-    
+
     /**
      * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
      * the response; if set to <code>NONE</code> (the default),
@@ -1569,8 +1560,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
         this.returnConsumedCapacity = returnConsumedCapacity;
         return this;
     }
-    
-    
+
     /**
      * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
      * the response; if set to <code>NONE</code> (the default),
@@ -1612,7 +1602,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
         this.returnConsumedCapacity = returnConsumedCapacity.toString();
         return this;
     }
-    
+
     /**
      * If set to <code>SIZE</code>, statistics about item collections, if
      * any, that were modified during the operation are returned in the
@@ -1678,8 +1668,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
         this.returnItemCollectionMetrics = returnItemCollectionMetrics;
         return this;
     }
-    
-    
+
     /**
      * If set to <code>SIZE</code>, statistics about item collections, if
      * any, that were modified during the operation are returned in the
@@ -1725,7 +1714,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements Serial
         this.returnItemCollectionMetrics = returnItemCollectionMetrics.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

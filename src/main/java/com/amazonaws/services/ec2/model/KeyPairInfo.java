@@ -69,8 +69,7 @@ public class KeyPairInfo implements Serializable {
         this.keyName = keyName;
         return this;
     }
-    
-    
+
     /**
      * The SHA-1 digest of the DER encoded private key.
      *
@@ -103,8 +102,7 @@ public class KeyPairInfo implements Serializable {
         this.keyFingerprint = keyFingerprint;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

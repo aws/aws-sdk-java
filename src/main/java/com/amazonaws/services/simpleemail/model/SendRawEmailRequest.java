@@ -79,8 +79,6 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
      */
     public SendRawEmailRequest() {}
     
-
-
     /**
      * Constructs a new SendRawEmailRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -101,8 +99,6 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
         setRawMessage(rawMessage);
     }
 
-    
-    
     /**
      * The identity's email address. <note>If you specify the
      * <code>Source</code> parameter, then bounce notifications and
@@ -159,15 +155,13 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
         this.source = source;
         return this;
     }
-    
-    
+
     /**
      * A list of destinations for the message.
      *
      * @return A list of destinations for the message.
      */
     public java.util.List<String> getDestinations() {
-        
         if (destinations == null) {
               destinations = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               destinations.setAutoConstruct(true);
@@ -229,7 +223,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
 
         return this;
     }
-    
+
     /**
      * The raw text of the message. The client is responsible for ensuring
      * the following: <p> <ul> <li>Message must contain a header and a body,
@@ -310,8 +304,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements Seri
         this.rawMessage = rawMessage;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

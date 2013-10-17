@@ -195,8 +195,7 @@ public class ListClosedWorkflowExecutionsRequest extends AmazonWebServiceRequest
         this.domain = domain;
         return this;
     }
-    
-    
+
     /**
      * If specified, the workflow executions are included in the returned
      * results based on whether their start times are within the range
@@ -265,8 +264,7 @@ public class ListClosedWorkflowExecutionsRequest extends AmazonWebServiceRequest
         this.startTimeFilter = startTimeFilter;
         return this;
     }
-    
-    
+
     /**
      * If specified, the workflow executions are included in the returned
      * results based on whether their close times are within the range
@@ -335,8 +333,7 @@ public class ListClosedWorkflowExecutionsRequest extends AmazonWebServiceRequest
         this.closeTimeFilter = closeTimeFilter;
         return this;
     }
-    
-    
+
     /**
      * If specified, only workflow executions matching the workflow id
      * specified in the filter are returned.
@@ -393,8 +390,7 @@ public class ListClosedWorkflowExecutionsRequest extends AmazonWebServiceRequest
         this.executionFilter = executionFilter;
         return this;
     }
-    
-    
+
     /**
      * If specified, only workflow executions that match this <i>close
      * status</i> are listed. For example, if TERMINATED is specified, then
@@ -457,8 +453,7 @@ public class ListClosedWorkflowExecutionsRequest extends AmazonWebServiceRequest
         this.closeStatusFilter = closeStatusFilter;
         return this;
     }
-    
-    
+
     /**
      * If specified, only executions of the type specified in the filter are
      * returned. <note><code>closeStatusFilter</code>,
@@ -515,8 +510,7 @@ public class ListClosedWorkflowExecutionsRequest extends AmazonWebServiceRequest
         this.typeFilter = typeFilter;
         return this;
     }
-    
-    
+
     /**
      * If specified, only executions that have the matching tag are listed.
      * <note><code>closeStatusFilter</code>, <code>executionFilter</code>,
@@ -567,8 +561,7 @@ public class ListClosedWorkflowExecutionsRequest extends AmazonWebServiceRequest
         this.tagFilter = tagFilter;
         return this;
     }
-    
-    
+
     /**
      * If on a previous call to this method a <code>NextPageToken</code> was
      * returned, the results are being paginated. To get the next page of
@@ -628,8 +621,7 @@ public class ListClosedWorkflowExecutionsRequest extends AmazonWebServiceRequest
         this.nextPageToken = nextPageToken;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of results returned in each page. The default is
      * 100, but the caller can override this value to a page size
@@ -701,8 +693,7 @@ public class ListClosedWorkflowExecutionsRequest extends AmazonWebServiceRequest
         this.maximumPageSize = maximumPageSize;
         return this;
     }
-    
-    
+
     /**
      * When set to <code>true</code>, returns the results in reverse order.
      * By default the results are returned in descending order of the start
@@ -747,8 +738,7 @@ public class ListClosedWorkflowExecutionsRequest extends AmazonWebServiceRequest
         this.reverseOrder = reverseOrder;
         return this;
     }
-    
-    
+
     /**
      * When set to <code>true</code>, returns the results in reverse order.
      * By default the results are returned in descending order of the start
@@ -761,7 +751,7 @@ public class ListClosedWorkflowExecutionsRequest extends AmazonWebServiceRequest
     public Boolean getReverseOrder() {
         return reverseOrder;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

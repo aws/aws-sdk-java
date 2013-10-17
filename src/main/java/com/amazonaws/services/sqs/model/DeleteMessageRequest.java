@@ -45,8 +45,6 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest implements Ser
      */
     public DeleteMessageRequest() {}
     
-
-
     /**
      * Constructs a new DeleteMessageRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -61,8 +59,6 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest implements Ser
         setReceiptHandle(receiptHandle);
     }
 
-    
-    
     /**
      * The URL of the SQS queue to take action on.
      *
@@ -95,8 +91,7 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest implements Ser
         this.queueUrl = queueUrl;
         return this;
     }
-    
-    
+
     /**
      * The receipt handle associated with the message to delete.
      *
@@ -129,8 +124,7 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest implements Ser
         this.receiptHandle = receiptHandle;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

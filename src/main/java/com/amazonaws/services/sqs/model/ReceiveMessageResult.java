@@ -33,7 +33,6 @@ public class ReceiveMessageResult implements Serializable {
      * @return A list of messages.
      */
     public java.util.List<Message> getMessages() {
-        
         if (messages == null) {
               messages = new com.amazonaws.internal.ListWithAutoConstructFlag<Message>();
               messages.setAutoConstruct(true);
@@ -95,7 +94,7 @@ public class ReceiveMessageResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

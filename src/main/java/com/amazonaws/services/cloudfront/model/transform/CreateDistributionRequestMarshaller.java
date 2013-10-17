@@ -44,7 +44,7 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
         Request<CreateDistributionRequest> request = new DefaultRequest<CreateDistributionRequest>(createDistributionRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "2013-08-26/distribution"; 
+        String uriResourcePath = "2013-09-27/distribution"; 
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
@@ -64,7 +64,7 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
 
         
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2013-08-26/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2013-09-27/");
 
             
                     if (createDistributionRequest != null) {
@@ -256,6 +256,34 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                         if (defaultCacheBehaviorDefaultCacheBehavior.getMinTTL() != null) {
                             xmlWriter.startElement("MinTTL").value(defaultCacheBehaviorDefaultCacheBehavior.getMinTTL()).endElement();
                         }
+                        if (defaultCacheBehaviorDefaultCacheBehavior != null) {
+                            AllowedMethods allowedMethodsAllowedMethods = defaultCacheBehaviorDefaultCacheBehavior.getAllowedMethods();
+                            if (allowedMethodsAllowedMethods != null) {
+                                xmlWriter.startElement("AllowedMethods");
+                                if (allowedMethodsAllowedMethods.getQuantity() != null) {
+                                    xmlWriter.startElement("Quantity").value(allowedMethodsAllowedMethods.getQuantity()).endElement();
+                                }
+
+                                if (allowedMethodsAllowedMethods != null) {
+                                    java.util.List<String> allowedMethodsAllowedMethodsitemsList = allowedMethodsAllowedMethods.getItems();
+                                    if (allowedMethodsAllowedMethodsitemsList != null && allowedMethodsAllowedMethodsitemsList.size() > 0) {
+                                        int allowedMethodsAllowedMethodsitemsListIndex = 1;
+                                        xmlWriter.startElement("Items");
+                                        for (String allowedMethodsAllowedMethodsitemsListValue : allowedMethodsAllowedMethodsitemsList) {
+
+                                        xmlWriter.startElement("Method");
+                                            xmlWriter.value(allowedMethodsAllowedMethodsitemsListValue);
+                                        xmlWriter.endElement();
+
+
+                                            allowedMethodsAllowedMethodsitemsListIndex++;
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                }
+                                xmlWriter.endElement();
+                            }
+                        }
                         xmlWriter.endElement();
                     }
                 }
@@ -365,6 +393,34 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                                     }
                                     if (cacheBehaviorsCacheBehaviorsitemsListValue.getMinTTL() != null) {
                                         xmlWriter.startElement("MinTTL").value(cacheBehaviorsCacheBehaviorsitemsListValue.getMinTTL()).endElement();
+                                    }
+                                    if (cacheBehaviorsCacheBehaviorsitemsListValue != null) {
+                                        AllowedMethods allowedMethodsAllowedMethods = cacheBehaviorsCacheBehaviorsitemsListValue.getAllowedMethods();
+                                        if (allowedMethodsAllowedMethods != null) {
+                                            xmlWriter.startElement("AllowedMethods");
+                                            if (allowedMethodsAllowedMethods.getQuantity() != null) {
+                                                xmlWriter.startElement("Quantity").value(allowedMethodsAllowedMethods.getQuantity()).endElement();
+                                            }
+
+                                            if (allowedMethodsAllowedMethods != null) {
+                                                java.util.List<String> allowedMethodsAllowedMethodsitemsList = allowedMethodsAllowedMethods.getItems();
+                                                if (allowedMethodsAllowedMethodsitemsList != null && allowedMethodsAllowedMethodsitemsList.size() > 0) {
+                                                    int allowedMethodsAllowedMethodsitemsListIndex = 1;
+                                                    xmlWriter.startElement("Items");
+                                                    for (String allowedMethodsAllowedMethodsitemsListValue : allowedMethodsAllowedMethodsitemsList) {
+
+                                                    xmlWriter.startElement("Method");
+                                                        xmlWriter.value(allowedMethodsAllowedMethodsitemsListValue);
+                                                    xmlWriter.endElement();
+
+
+                                                        allowedMethodsAllowedMethodsitemsListIndex++;
+                                                    }
+                                                    xmlWriter.endElement();
+                                                }
+                                            }
+                                            xmlWriter.endElement();
+                                        }
                                     }
                                 xmlWriter.endElement();
 

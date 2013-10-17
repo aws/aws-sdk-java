@@ -62,8 +62,6 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest imple
      */
     public CreateDBParameterGroupRequest() {}
     
-
-
     /**
      * Constructs a new CreateDBParameterGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -87,8 +85,6 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest imple
         setDescription(description);
     }
 
-    
-    
     /**
      * The name of the DB Parameter Group. <p> Constraints: <ul> <li>Must be
      * 1 to 255 alphanumeric characters</li> <li>First character must be a
@@ -145,8 +141,7 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest imple
         this.dBParameterGroupName = dBParameterGroupName;
         return this;
     }
-    
-    
+
     /**
      * The DB Parameter Group Family name. A DB Parameter Group can be
      * associated with one and only one DB Parameter Group Family, and can be
@@ -197,8 +192,7 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest imple
         this.dBParameterGroupFamily = dBParameterGroupFamily;
         return this;
     }
-    
-    
+
     /**
      * The description for the DB Parameter Group.
      *
@@ -231,8 +225,7 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest imple
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

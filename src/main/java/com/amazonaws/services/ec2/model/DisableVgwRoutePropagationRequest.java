@@ -62,8 +62,7 @@ public class DisableVgwRoutePropagationRequest extends AmazonWebServiceRequest i
         this.routeTableId = routeTableId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the GatewayId property for this object.
      *
@@ -96,8 +95,7 @@ public class DisableVgwRoutePropagationRequest extends AmazonWebServiceRequest i
         this.gatewayId = gatewayId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

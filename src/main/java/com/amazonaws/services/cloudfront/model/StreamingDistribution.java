@@ -110,8 +110,7 @@ public class StreamingDistribution implements Serializable {
         this.id = id;
         return this;
     }
-    
-    
+
     /**
      * The current status of the streaming distribution. When the status is
      * Deployed, the distribution's information is fully propagated
@@ -156,8 +155,7 @@ public class StreamingDistribution implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * The date and time the distribution was last modified.
      *
@@ -190,8 +188,7 @@ public class StreamingDistribution implements Serializable {
         this.lastModifiedTime = lastModifiedTime;
         return this;
     }
-    
-    
+
     /**
      * The domain name corresponding to the streaming distribution. For
      * example: s5c39gqb8ow64r.cloudfront.net.
@@ -230,8 +227,7 @@ public class StreamingDistribution implements Serializable {
         this.domainName = domainName;
         return this;
     }
-    
-    
+
     /**
      * CloudFront automatically adds this element to the response only if
      * you've set up the distribution to serve private content with signed
@@ -312,8 +308,7 @@ public class StreamingDistribution implements Serializable {
         this.activeTrustedSigners = activeTrustedSigners;
         return this;
     }
-    
-    
+
     /**
      * The current configuration information for the streaming distribution.
      *
@@ -346,8 +341,7 @@ public class StreamingDistribution implements Serializable {
         this.streamingDistributionConfig = streamingDistributionConfig;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

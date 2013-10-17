@@ -115,8 +115,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
         this.startTime = startTime;
         return this;
     }
-    
-    
+
     /**
      * The end date and time of the Spot Instance price history data.
      *
@@ -149,15 +148,13 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
         this.endTime = endTime;
         return this;
     }
-    
-    
+
     /**
      * Specifies the instance type to return.
      *
      * @return Specifies the instance type to return.
      */
     public java.util.List<String> getInstanceTypes() {
-        
         if (instanceTypes == null) {
               instanceTypes = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               instanceTypes.setAutoConstruct(true);
@@ -219,14 +216,36 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
 
         return this;
     }
-    
+
+    /**
+     * Specifies the instance type to return.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param instanceTypes Specifies the instance type to return.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public DescribeSpotPriceHistoryRequest withInstanceTypes(InstanceType... instanceTypes) {
+        java.util.ArrayList<String> instanceTypesCopy = new java.util.ArrayList<String>(instanceTypes.length);
+        for (InstanceType member : instanceTypes) {
+            instanceTypesCopy.add(member.toString());
+        }
+        if (getInstanceTypes() == null) {
+            setInstanceTypes(instanceTypesCopy);
+        } else {
+            getInstanceTypes().addAll(instanceTypesCopy);
+        }
+        return this;
+    }
+
     /**
      * The description of the AMI.
      *
      * @return The description of the AMI.
      */
     public java.util.List<String> getProductDescriptions() {
-        
         if (productDescriptions == null) {
               productDescriptions = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               productDescriptions.setAutoConstruct(true);
@@ -288,7 +307,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
 
         return this;
     }
-    
+
     /**
      * A list of filters used to match properties for SpotPriceHistory. For a
      * complete reference to the available filter keys for this operation,
@@ -303,7 +322,6 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
-        
         if (filters == null) {
               filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
               filters.setAutoConstruct(true);
@@ -389,7 +407,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
 
         return this;
     }
-    
+
     /**
      * Filters the results by availability zone (ex: 'us-east-1a').
      *
@@ -422,8 +440,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
         this.availabilityZone = availabilityZone;
         return this;
     }
-    
-    
+
     /**
      * Specifies the number of rows to return.
      *
@@ -456,8 +473,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
         this.maxResults = maxResults;
         return this;
     }
-    
-    
+
     /**
      * Specifies the next set of rows to return.
      *
@@ -490,8 +506,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

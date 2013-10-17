@@ -108,8 +108,7 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest imple
         this.caseId = caseId;
         return this;
     }
-    
-    
+
     /**
      * End date for a filtered date search on support case communications.
      *
@@ -142,8 +141,7 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest imple
         this.beforeTime = beforeTime;
         return this;
     }
-    
-    
+
     /**
      * Start date for a filtered date search on support case communications.
      *
@@ -176,8 +174,7 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest imple
         this.afterTime = afterTime;
         return this;
     }
-    
-    
+
     /**
      * Defines a resumption point for pagination.
      *
@@ -210,8 +207,7 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest imple
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * Integer that sets the maximum number of results to return before
      * paginating.
@@ -259,8 +255,7 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest imple
         this.maxResults = maxResults;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

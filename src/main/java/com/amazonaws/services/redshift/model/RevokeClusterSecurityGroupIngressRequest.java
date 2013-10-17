@@ -95,8 +95,7 @@ public class RevokeClusterSecurityGroupIngressRequest extends AmazonWebServiceRe
         this.clusterSecurityGroupName = clusterSecurityGroupName;
         return this;
     }
-    
-    
+
     /**
      * The IP range for which to revoke access. This range must be a valid
      * Classless Inter-Domain Routing (CIDR) block of IP addresses. If
@@ -147,8 +146,7 @@ public class RevokeClusterSecurityGroupIngressRequest extends AmazonWebServiceRe
         this.cIDRIP = cIDRIP;
         return this;
     }
-    
-    
+
     /**
      * The name of the EC2 Security Group whose access is to be revoked. If
      * <code>EC2SecurityGroupName</code> is specified,
@@ -199,8 +197,7 @@ public class RevokeClusterSecurityGroupIngressRequest extends AmazonWebServiceRe
         this.eC2SecurityGroupName = eC2SecurityGroupName;
         return this;
     }
-    
-    
+
     /**
      * The AWS account number of the owner of the security group specified in
      * the <code>EC2SecurityGroupName</code> parameter. The AWS access key ID
@@ -263,8 +260,7 @@ public class RevokeClusterSecurityGroupIngressRequest extends AmazonWebServiceRe
         this.eC2SecurityGroupOwnerId = eC2SecurityGroupOwnerId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

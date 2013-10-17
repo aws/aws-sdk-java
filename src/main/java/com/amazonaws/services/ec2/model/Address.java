@@ -78,8 +78,7 @@ public class Address implements Serializable {
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * 
      *
@@ -112,8 +111,7 @@ public class Address implements Serializable {
         this.publicIp = publicIp;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the AllocationId property for this object.
      *
@@ -146,8 +144,7 @@ public class Address implements Serializable {
         this.allocationId = allocationId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the AssociationId property for this object.
      *
@@ -180,8 +177,7 @@ public class Address implements Serializable {
         this.associationId = associationId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Domain property for this object.
      * <p>
@@ -229,8 +225,7 @@ public class Address implements Serializable {
         this.domain = domain;
         return this;
     }
-    
-    
+
     /**
      * Sets the value of the Domain property for this object.
      * <p>
@@ -264,7 +259,7 @@ public class Address implements Serializable {
         this.domain = domain.toString();
         return this;
     }
-    
+
     /**
      * Returns the value of the NetworkInterfaceId property for this object.
      *
@@ -297,8 +292,7 @@ public class Address implements Serializable {
         this.networkInterfaceId = networkInterfaceId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the NetworkInterfaceOwnerId property for this
      * object.
@@ -336,8 +330,7 @@ public class Address implements Serializable {
         this.networkInterfaceOwnerId = networkInterfaceOwnerId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the PrivateIpAddress property for this object.
      *
@@ -370,8 +363,7 @@ public class Address implements Serializable {
         this.privateIpAddress = privateIpAddress;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

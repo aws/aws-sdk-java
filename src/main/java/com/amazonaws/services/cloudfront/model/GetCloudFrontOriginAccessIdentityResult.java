@@ -67,8 +67,7 @@ public class GetCloudFrontOriginAccessIdentityResult implements Serializable {
         this.cloudFrontOriginAccessIdentity = cloudFrontOriginAccessIdentity;
         return this;
     }
-    
-    
+
     /**
      * The current version of the origin access identity's information. For
      * example: E2QWRUHAPOMQZL.
@@ -107,8 +106,7 @@ public class GetCloudFrontOriginAccessIdentityResult implements Serializable {
         this.eTag = eTag;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

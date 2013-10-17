@@ -51,8 +51,6 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest imple
      */
     public ConfirmProductInstanceRequest() {}
     
-
-
     /**
      * Constructs a new ConfirmProductInstanceRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -66,8 +64,6 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest imple
         setInstanceId(instanceId);
     }
 
-    
-    
     /**
      * The product code to confirm.
      *
@@ -100,8 +96,7 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest imple
         this.productCode = productCode;
         return this;
     }
-    
-    
+
     /**
      * The ID of the instance to confirm.
      *
@@ -134,8 +129,7 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest imple
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

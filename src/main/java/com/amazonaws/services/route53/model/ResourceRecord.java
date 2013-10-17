@@ -39,8 +39,6 @@ public class ResourceRecord implements Serializable {
      */
     public ResourceRecord() {}
     
-
-
     /**
      * Constructs a new ResourceRecord object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -53,8 +51,6 @@ public class ResourceRecord implements Serializable {
         setValue(value);
     }
 
-    
-    
     /**
      * The value of the <code>Value</code> element for the current resource
      * record set.
@@ -102,8 +98,7 @@ public class ResourceRecord implements Serializable {
         this.value = value;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

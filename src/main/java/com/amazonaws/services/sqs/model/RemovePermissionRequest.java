@@ -46,8 +46,6 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements 
      */
     public RemovePermissionRequest() {}
     
-
-
     /**
      * Constructs a new RemovePermissionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -62,8 +60,6 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements 
         setLabel(label);
     }
 
-    
-    
     /**
      * The URL of the SQS queue to take action on.
      *
@@ -96,8 +92,7 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements 
         this.queueUrl = queueUrl;
         return this;
     }
-    
-    
+
     /**
      * The identification of the permission to remove. This is the label
      * added with the <a>AddPermission</a> operation.
@@ -136,8 +131,7 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements 
         this.label = label;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

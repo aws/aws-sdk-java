@@ -102,8 +102,7 @@ public class DecisionTaskTimedOutEventAttributes implements Serializable {
         this.timeoutType = timeoutType;
         return this;
     }
-    
-    
+
     /**
      * The type of timeout that expired before the decision task could be
      * completed.
@@ -141,7 +140,7 @@ public class DecisionTaskTimedOutEventAttributes implements Serializable {
         this.timeoutType = timeoutType.toString();
         return this;
     }
-    
+
     /**
      * The id of the <code>DecisionTaskScheduled</code> event that was
      * recorded when this decision task was scheduled. This information can
@@ -192,8 +191,7 @@ public class DecisionTaskTimedOutEventAttributes implements Serializable {
         this.scheduledEventId = scheduledEventId;
         return this;
     }
-    
-    
+
     /**
      * The Id of the <code>DecisionTaskStarted</code> event recorded when
      * this decision task was started. This information can be useful for
@@ -244,8 +242,7 @@ public class DecisionTaskTimedOutEventAttributes implements Serializable {
         this.startedEventId = startedEventId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

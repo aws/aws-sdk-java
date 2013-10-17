@@ -37,7 +37,6 @@ public class DescribeReservedInstancesOfferingsResult implements Serializable {
      * @return The list of described Reserved Instance offerings.
      */
     public java.util.List<ReservedInstancesOffering> getReservedInstancesOfferings() {
-        
         if (reservedInstancesOfferings == null) {
               reservedInstancesOfferings = new com.amazonaws.internal.ListWithAutoConstructFlag<ReservedInstancesOffering>();
               reservedInstancesOfferings.setAutoConstruct(true);
@@ -99,7 +98,7 @@ public class DescribeReservedInstancesOfferingsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns the value of the NextToken property for this object.
      *
@@ -132,8 +131,7 @@ public class DescribeReservedInstancesOfferingsResult implements Serializable {
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -38,7 +38,6 @@ public class DeleteMessageBatchResult implements Serializable {
      * @return A list of <a>DeleteMessageBatchResultEntry</a>s.
      */
     public java.util.List<DeleteMessageBatchResultEntry> getSuccessful() {
-        
         if (successful == null) {
               successful = new com.amazonaws.internal.ListWithAutoConstructFlag<DeleteMessageBatchResultEntry>();
               successful.setAutoConstruct(true);
@@ -100,14 +99,13 @@ public class DeleteMessageBatchResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * A list of <a>BatchResultErrorEntry</a>s.
      *
      * @return A list of <a>BatchResultErrorEntry</a>s.
      */
     public java.util.List<BatchResultErrorEntry> getFailed() {
-        
         if (failed == null) {
               failed = new com.amazonaws.internal.ListWithAutoConstructFlag<BatchResultErrorEntry>();
               failed.setAutoConstruct(true);
@@ -169,7 +167,7 @@ public class DeleteMessageBatchResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

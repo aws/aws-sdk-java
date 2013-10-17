@@ -61,8 +61,7 @@ public class CreateVolumeResult implements Serializable {
         this.volume = volume;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

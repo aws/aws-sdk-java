@@ -57,8 +57,6 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      */
     public CreateVpcRequest() {}
     
-
-
     /**
      * Constructs a new CreateVpcRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -70,8 +68,6 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
         setCidrBlock(cidrBlock);
     }
 
-    
-    
     /**
      * A valid CIDR block.
      *
@@ -104,8 +100,7 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
         this.cidrBlock = cidrBlock;
         return this;
     }
-    
-    
+
     /**
      * The allowed tenancy of instances launched into the VPC. A value of
      * default means instances can be launched with any tenancy; a value of
@@ -165,8 +160,7 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
         this.instanceTenancy = instanceTenancy;
         return this;
     }
-    
-    
+
     /**
      * The allowed tenancy of instances launched into the VPC. A value of
      * default means instances can be launched with any tenancy; a value of
@@ -208,7 +202,7 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
         this.instanceTenancy = instanceTenancy.toString();
         return this;
     }
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

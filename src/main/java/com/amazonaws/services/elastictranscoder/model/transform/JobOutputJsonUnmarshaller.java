@@ -98,6 +98,10 @@ public class JobOutputJsonUnmarshaller implements Unmarshaller<JobOutput, JsonUn
                 if (context.testExpression("Watermarks", targetDepth)) {
                     jobOutput.setWatermarks(new ListUnmarshaller<JobWatermark>(JobWatermarkJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("AlbumArt", targetDepth)) {
+                    context.nextToken();
+                    jobOutput.setAlbumArt(JobAlbumArtJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

@@ -81,8 +81,6 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest imp
      */
     public ChangeResourceRecordSetsRequest() {}
     
-
-
     /**
      * Constructs a new ChangeResourceRecordSetsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -103,8 +101,6 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest imp
         setChangeBatch(changeBatch);
     }
 
-    
-    
     /**
      * <i>Alias resource record sets only:</i> The value of the hosted zone
      * ID for the AWS resource. <p>For more information, an example, and
@@ -176,8 +172,7 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest imp
         this.hostedZoneId = hostedZoneId;
         return this;
     }
-    
-    
+
     /**
      * A complex type that contains an optional comment and the
      * <code>Changes</code> element.
@@ -216,8 +211,7 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest imp
         this.changeBatch = changeBatch;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

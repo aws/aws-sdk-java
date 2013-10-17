@@ -91,15 +91,13 @@ public class ImageAttribute implements Serializable {
         this.imageId = imageId;
         return this;
     }
-    
-    
+
     /**
      * Launch permissions for the associated AMI.
      *
      * @return Launch permissions for the associated AMI.
      */
     public java.util.List<LaunchPermission> getLaunchPermissions() {
-        
         if (launchPermissions == null) {
               launchPermissions = new com.amazonaws.internal.ListWithAutoConstructFlag<LaunchPermission>();
               launchPermissions.setAutoConstruct(true);
@@ -161,14 +159,13 @@ public class ImageAttribute implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Product codes for the associated AMI.
      *
      * @return Product codes for the associated AMI.
      */
     public java.util.List<ProductCode> getProductCodes() {
-        
         if (productCodes == null) {
               productCodes = new com.amazonaws.internal.ListWithAutoConstructFlag<ProductCode>();
               productCodes.setAutoConstruct(true);
@@ -230,7 +227,7 @@ public class ImageAttribute implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Kernel ID of the associated AMI.
      *
@@ -263,8 +260,7 @@ public class ImageAttribute implements Serializable {
         this.kernelId = kernelId;
         return this;
     }
-    
-    
+
     /**
      * Ramdisk ID of the associated AMI.
      *
@@ -297,8 +293,7 @@ public class ImageAttribute implements Serializable {
         this.ramdiskId = ramdiskId;
         return this;
     }
-    
-    
+
     /**
      * User-created description of the associated AMI.
      *
@@ -331,15 +326,13 @@ public class ImageAttribute implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * Block device mappings for the associated AMI.
      *
      * @return Block device mappings for the associated AMI.
      */
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
-        
         if (blockDeviceMappings == null) {
               blockDeviceMappings = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>();
               blockDeviceMappings.setAutoConstruct(true);
@@ -401,7 +394,7 @@ public class ImageAttribute implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

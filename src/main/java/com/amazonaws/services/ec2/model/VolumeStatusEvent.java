@@ -64,8 +64,7 @@ public class VolumeStatusEvent implements Serializable {
         this.eventType = eventType;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Description property for this object.
      *
@@ -98,8 +97,7 @@ public class VolumeStatusEvent implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the NotBefore property for this object.
      *
@@ -132,8 +130,7 @@ public class VolumeStatusEvent implements Serializable {
         this.notBefore = notBefore;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the NotAfter property for this object.
      *
@@ -166,8 +163,7 @@ public class VolumeStatusEvent implements Serializable {
         this.notAfter = notAfter;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the EventId property for this object.
      *
@@ -200,8 +196,7 @@ public class VolumeStatusEvent implements Serializable {
         this.eventId = eventId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

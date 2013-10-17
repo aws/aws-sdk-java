@@ -64,8 +64,7 @@ public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest imple
         this.attachmentId = attachmentId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Force property for this object.
      *
@@ -98,8 +97,7 @@ public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest imple
         this.force = force;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Force property for this object.
      *
@@ -108,7 +106,7 @@ public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest imple
     public Boolean getForce() {
         return force;
     }
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

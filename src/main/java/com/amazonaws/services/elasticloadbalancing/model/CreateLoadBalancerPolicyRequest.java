@@ -91,8 +91,7 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest imp
         this.loadBalancerName = loadBalancerName;
         return this;
     }
-    
-    
+
     /**
      * The name of the LoadBalancer policy being created. The name must be
      * unique within the set of policies for this LoadBalancer.
@@ -131,8 +130,7 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest imp
         this.policyName = policyName;
         return this;
     }
-    
-    
+
     /**
      * The name of the base policy type being used to create this policy. To
      * get the list of policy types, use the
@@ -177,15 +175,13 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest imp
         this.policyTypeName = policyTypeName;
         return this;
     }
-    
-    
+
     /**
      * A list of attributes associated with the policy being created.
      *
      * @return A list of attributes associated with the policy being created.
      */
     public java.util.List<PolicyAttribute> getPolicyAttributes() {
-        
         if (policyAttributes == null) {
               policyAttributes = new com.amazonaws.internal.ListWithAutoConstructFlag<PolicyAttribute>();
               policyAttributes.setAutoConstruct(true);
@@ -247,7 +243,7 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest imp
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

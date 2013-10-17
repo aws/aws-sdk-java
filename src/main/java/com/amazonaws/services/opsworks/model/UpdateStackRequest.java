@@ -191,8 +191,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         this.stackId = stackId;
         return this;
     }
-    
-    
+
     /**
      * The stack's new name.
      *
@@ -225,8 +224,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * One or more user-defined key/value pairs to be added to the stack
      * attributes bag.
@@ -269,8 +267,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         setAttributes(attributes);
         return this;
     }
-    
-   	
+
     /**
      * One or more user-defined key/value pairs to be added to the stack
      * attributes bag.
@@ -291,7 +288,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
 		this.attributes.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into Attributes.
 	 * <p>
@@ -382,8 +379,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         this.serviceRoleArn = serviceRoleArn;
         return this;
     }
-    
-    
+
     /**
      * The ARN of an IAM profile that is the default profile for all of the
      * stack's EC2 instances. For more information about IAM ARNs, see <a
@@ -434,8 +430,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         this.defaultInstanceProfileArn = defaultInstanceProfileArn;
         return this;
     }
-    
-    
+
     /**
      * The stack's default operating system, which must be set to
      * <code>Amazon Linux</code> or <code>Ubuntu 12.04 LTS</code>. The
@@ -480,8 +475,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         this.defaultOs = defaultOs;
         return this;
     }
-    
-    
+
     /**
      * The stack's new host name theme, with spaces are replaced by
      * underscores. The theme is used to generate host names for the stack's
@@ -580,8 +574,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         this.hostnameTheme = hostnameTheme;
         return this;
     }
-    
-    
+
     /**
      * The stack's default Availability Zone, which must be in the specified
      * region. For more information, see <a
@@ -644,8 +637,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         this.defaultAvailabilityZone = defaultAvailabilityZone;
         return this;
     }
-    
-    
+
     /**
      * The stack's default subnet ID. All instances will be launched into
      * this subnet unless you specify otherwise when you create the instance.
@@ -702,8 +694,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         this.defaultSubnetId = defaultSubnetId;
         return this;
     }
-    
-    
+
     /**
      * A string that contains user-defined, custom JSON. It is used to
      * override the corresponding default stack configuration JSON values.
@@ -772,8 +763,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         this.customJson = customJson;
         return this;
     }
-    
-    
+
     /**
      * The configuration manager. When you update a stack you can optionally
      * use the configuration manager to specify the Chef version, 0.9 or
@@ -824,8 +814,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         this.configurationManager = configurationManager;
         return this;
     }
-    
-    
+
     /**
      * Whether the stack uses custom cookbooks.
      *
@@ -858,8 +847,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         this.useCustomCookbooks = useCustomCookbooks;
         return this;
     }
-    
-    
+
     /**
      * Whether the stack uses custom cookbooks.
      *
@@ -868,7 +856,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
     public Boolean getUseCustomCookbooks() {
         return useCustomCookbooks;
     }
-    
+
     /**
      * Contains the information required to retrieve an app or cookbook from
      * a repository. For more information, see <a
@@ -931,8 +919,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         this.customCookbooksSource = customCookbooksSource;
         return this;
     }
-    
-    
+
     /**
      * A default SSH key for the stack instances. You can override this value
      * when you create or update an instance.
@@ -971,8 +958,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         this.defaultSshKeyName = defaultSshKeyName;
         return this;
     }
-    
-    
+
     /**
      * The default root device type. This value is used by default for all
      * instances in the cloned stack, but you can override it when you create
@@ -1044,8 +1030,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         this.defaultRootDeviceType = defaultRootDeviceType;
         return this;
     }
-    
-    
+
     /**
      * The default root device type. This value is used by default for all
      * instances in the cloned stack, but you can override it when you create
@@ -1095,7 +1080,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         this.defaultRootDeviceType = defaultRootDeviceType.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

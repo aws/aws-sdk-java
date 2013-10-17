@@ -89,8 +89,7 @@ public class DeleteInstanceProfileRequest extends AmazonWebServiceRequest implem
         this.instanceProfileName = instanceProfileName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

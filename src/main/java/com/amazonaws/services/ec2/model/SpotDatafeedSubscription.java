@@ -85,8 +85,7 @@ public class SpotDatafeedSubscription implements Serializable {
         this.ownerId = ownerId;
         return this;
     }
-    
-    
+
     /**
      * Specifies the Amazon S3 bucket where the Spot Instance data feed is
      * located.
@@ -125,8 +124,7 @@ public class SpotDatafeedSubscription implements Serializable {
         this.bucket = bucket;
         return this;
     }
-    
-    
+
     /**
      * Contains the prefix that is prepended to data feed files.
      *
@@ -159,8 +157,7 @@ public class SpotDatafeedSubscription implements Serializable {
         this.prefix = prefix;
         return this;
     }
-    
-    
+
     /**
      * Specifies the state of the Spot Instance request.
      * <p>
@@ -208,8 +205,7 @@ public class SpotDatafeedSubscription implements Serializable {
         this.state = state;
         return this;
     }
-    
-    
+
     /**
      * Specifies the state of the Spot Instance request.
      * <p>
@@ -243,7 +239,7 @@ public class SpotDatafeedSubscription implements Serializable {
         this.state = state.toString();
         return this;
     }
-    
+
     /**
      * Specifies a fault code for the Spot Instance request, if present.
      *
@@ -276,8 +272,7 @@ public class SpotDatafeedSubscription implements Serializable {
         this.fault = fault;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

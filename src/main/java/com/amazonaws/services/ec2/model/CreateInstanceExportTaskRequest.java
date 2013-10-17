@@ -66,8 +66,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the InstanceId property for this object.
      *
@@ -100,8 +99,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the TargetEnvironment property for this object.
      * <p>
@@ -149,8 +147,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
         this.targetEnvironment = targetEnvironment;
         return this;
     }
-    
-    
+
     /**
      * Sets the value of the TargetEnvironment property for this object.
      * <p>
@@ -184,7 +181,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
         this.targetEnvironment = targetEnvironment.toString();
         return this;
     }
-    
+
     /**
      * Returns the value of the ExportToS3Task property for this object.
      *
@@ -217,8 +214,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
         this.exportToS3Task = exportToS3Task;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -65,8 +65,7 @@ public class DeleteUserProfileRequest extends AmazonWebServiceRequest implements
         this.iamUserArn = iamUserArn;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

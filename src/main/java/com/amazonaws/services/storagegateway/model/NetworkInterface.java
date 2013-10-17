@@ -73,8 +73,7 @@ public class NetworkInterface implements Serializable {
         this.ipv4Address = ipv4Address;
         return this;
     }
-    
-    
+
     /**
      * The Media Access Control (MAC) address of the interface. <note>This is
      * currently unsupported and will not be returned in output.</note>
@@ -113,8 +112,7 @@ public class NetworkInterface implements Serializable {
         this.macAddress = macAddress;
         return this;
     }
-    
-    
+
     /**
      * The Internet Protocol version 6 (IPv6) address of the interface.
      * <i>Currently not supported</i>.
@@ -153,8 +151,7 @@ public class NetworkInterface implements Serializable {
         this.ipv6Address = ipv6Address;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

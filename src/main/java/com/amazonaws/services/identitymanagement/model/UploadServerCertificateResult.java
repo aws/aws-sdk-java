@@ -68,8 +68,7 @@ public class UploadServerCertificateResult implements Serializable {
         this.serverCertificateMetadata = serverCertificateMetadata;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

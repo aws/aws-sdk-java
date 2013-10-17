@@ -45,7 +45,6 @@ public class DeleteAlarmsRequest extends AmazonWebServiceRequest implements Seri
      * @return A list of alarms to be deleted.
      */
     public java.util.List<String> getAlarmNames() {
-        
         if (alarmNames == null) {
               alarmNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               alarmNames.setAutoConstruct(true);
@@ -116,7 +115,7 @@ public class DeleteAlarmsRequest extends AmazonWebServiceRequest implements Seri
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

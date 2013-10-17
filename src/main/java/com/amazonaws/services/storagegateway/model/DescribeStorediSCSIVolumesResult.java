@@ -134,7 +134,6 @@ public class DescribeStorediSCSIVolumesResult implements Serializable {
      *         </ul>
      */
     public java.util.List<StorediSCSIVolume> getStorediSCSIVolumes() {
-        
         if (storediSCSIVolumes == null) {
               storediSCSIVolumes = new com.amazonaws.internal.ListWithAutoConstructFlag<StorediSCSIVolume>();
               storediSCSIVolumes.setAutoConstruct(true);
@@ -394,7 +393,7 @@ public class DescribeStorediSCSIVolumesResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

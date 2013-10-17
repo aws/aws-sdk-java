@@ -113,8 +113,7 @@ public class Disk implements Serializable {
         this.diskId = diskId;
         return this;
     }
-    
-    
+
     /**
      * The path of the local disk in the gateway virtual machine (VM).
      *
@@ -147,8 +146,7 @@ public class Disk implements Serializable {
         this.diskPath = diskPath;
         return this;
     }
-    
-    
+
     /**
      * The device node of the local disk as assigned by the virtualization
      * environment.
@@ -187,8 +185,7 @@ public class Disk implements Serializable {
         this.diskNode = diskNode;
         return this;
     }
-    
-    
+
     /**
      * The local disk size in bytes.
      *
@@ -221,8 +218,7 @@ public class Disk implements Serializable {
         this.diskSizeInBytes = diskSizeInBytes;
         return this;
     }
-    
-    
+
     /**
      * One of the <a>DiskAllocationType</a> enumeration values that
      * identifies how the local disk is used.
@@ -276,8 +272,7 @@ public class Disk implements Serializable {
         this.diskAllocationType = diskAllocationType;
         return this;
     }
-    
-    
+
     /**
      * One of the <a>DiskAllocationType</a> enumeration values that
      * identifies how the local disk is used.
@@ -315,7 +310,7 @@ public class Disk implements Serializable {
         this.diskAllocationType = diskAllocationType.toString();
         return this;
     }
-    
+
     /**
      * The iSCSI Qualified Name (IQN) that is defined for the disk. This
      * field is not included in the response if the local disk is not defined
@@ -366,8 +361,7 @@ public class Disk implements Serializable {
         this.diskAllocationResource = diskAllocationResource;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

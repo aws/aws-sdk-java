@@ -117,8 +117,7 @@ public class CreateClusterSubnetGroupRequest extends AmazonWebServiceRequest imp
         this.clusterSubnetGroupName = clusterSubnetGroupName;
         return this;
     }
-    
-    
+
     /**
      * A description for the subnet group.
      *
@@ -151,8 +150,7 @@ public class CreateClusterSubnetGroupRequest extends AmazonWebServiceRequest imp
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * An array of VPC subnet IDs. A maximum of 20 subnets can be modified in
      * a single request.
@@ -161,7 +159,6 @@ public class CreateClusterSubnetGroupRequest extends AmazonWebServiceRequest imp
      *         a single request.
      */
     public java.util.List<String> getSubnetIds() {
-        
         if (subnetIds == null) {
               subnetIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               subnetIds.setAutoConstruct(true);
@@ -229,7 +226,7 @@ public class CreateClusterSubnetGroupRequest extends AmazonWebServiceRequest imp
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

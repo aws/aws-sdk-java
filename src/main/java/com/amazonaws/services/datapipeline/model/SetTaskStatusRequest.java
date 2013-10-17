@@ -139,8 +139,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements Ser
         this.taskId = taskId;
         return this;
     }
-    
-    
+
     /**
      * If <code>FINISHED</code>, the task successfully completed. If
      * <code>FAILED</code> the task ended unsuccessfully. The
@@ -200,8 +199,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements Ser
         this.taskStatus = taskStatus;
         return this;
     }
-    
-    
+
     /**
      * If <code>FINISHED</code>, the task successfully completed. If
      * <code>FAILED</code> the task ended unsuccessfully. The
@@ -243,7 +241,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements Ser
         this.taskStatus = taskStatus.toString();
         return this;
     }
-    
+
     /**
      * If an error occurred during the task, this value specifies an id value
      * that represents the error. This value is set on the physical attempt
@@ -306,8 +304,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements Ser
         this.errorId = errorId;
         return this;
     }
-    
-    
+
     /**
      * If an error occurred during the task, this value specifies a text
      * description of the error. This value is set on the physical attempt
@@ -358,8 +355,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements Ser
         this.errorMessage = errorMessage;
         return this;
     }
-    
-    
+
     /**
      * If an error occurred during the task, this value specifies the stack
      * trace associated with the error. This value is set on the physical
@@ -422,8 +418,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements Ser
         this.errorStackTrace = errorStackTrace;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

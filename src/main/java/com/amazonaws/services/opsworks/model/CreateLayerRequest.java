@@ -173,8 +173,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
         this.stackId = stackId;
         return this;
     }
-    
-    
+
     /**
      * The layer type. A stack cannot have more than one layer of the same
      * type. This parameter must be set to one of the following: <ul> <li>lb:
@@ -264,8 +263,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
         this.type = type;
         return this;
     }
-    
-    
+
     /**
      * The layer type. A stack cannot have more than one layer of the same
      * type. This parameter must be set to one of the following: <ul> <li>lb:
@@ -327,7 +325,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
         this.type = type.toString();
         return this;
     }
-    
+
     /**
      * The layer name, which is used by the console.
      *
@@ -360,8 +358,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * The layer short name, which is used internally by AWS OpsWorks and by
      * Chef recipes. The short name is also used as the name for the
@@ -418,8 +415,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
         this.shortname = shortname;
         return this;
     }
-    
-    
+
     /**
      * One or more user-defined key/value pairs to be added to the stack
      * attributes bag.
@@ -462,8 +458,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
         setAttributes(attributes);
         return this;
     }
-    
-   	
+
     /**
      * One or more user-defined key/value pairs to be added to the stack
      * attributes bag.
@@ -484,7 +479,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
 		this.attributes.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into Attributes.
 	 * <p>
@@ -545,15 +540,13 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
         this.customInstanceProfileArn = customInstanceProfileArn;
         return this;
     }
-    
-    
+
     /**
      * An array containing the layer custom security group IDs.
      *
      * @return An array containing the layer custom security group IDs.
      */
     public java.util.List<String> getCustomSecurityGroupIds() {
-        
         if (customSecurityGroupIds == null) {
               customSecurityGroupIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               customSecurityGroupIds.setAutoConstruct(true);
@@ -615,7 +608,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
 
         return this;
     }
-    
+
     /**
      * An array of <code>Package</code> objects that describe the layer
      * packages.
@@ -624,7 +617,6 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      *         packages.
      */
     public java.util.List<String> getPackages() {
-        
         if (packages == null) {
               packages = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               packages.setAutoConstruct(true);
@@ -692,7 +684,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
 
         return this;
     }
-    
+
     /**
      * A <code>VolumeConfigurations</code> object that describes the layer
      * Amazon EBS volumes.
@@ -701,7 +693,6 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
      *         Amazon EBS volumes.
      */
     public java.util.List<VolumeConfiguration> getVolumeConfigurations() {
-        
         if (volumeConfigurations == null) {
               volumeConfigurations = new com.amazonaws.internal.ListWithAutoConstructFlag<VolumeConfiguration>();
               volumeConfigurations.setAutoConstruct(true);
@@ -769,7 +760,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
 
         return this;
     }
-    
+
     /**
      * Whether to disable auto healing for the layer.
      *
@@ -802,8 +793,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
         this.enableAutoHealing = enableAutoHealing;
         return this;
     }
-    
-    
+
     /**
      * Whether to disable auto healing for the layer.
      *
@@ -812,7 +802,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
     public Boolean getEnableAutoHealing() {
         return enableAutoHealing;
     }
-    
+
     /**
      * Whether to automatically assign an <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
@@ -869,8 +859,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
         this.autoAssignElasticIps = autoAssignElasticIps;
         return this;
     }
-    
-    
+
     /**
      * Whether to automatically assign an <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
@@ -887,7 +876,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
     public Boolean getAutoAssignElasticIps() {
         return autoAssignElasticIps;
     }
-    
+
     /**
      * For stacks that are running in a VPC, whether to automatically assign
      * a public IP address to the layer's instances. For more information,
@@ -944,8 +933,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
         this.autoAssignPublicIps = autoAssignPublicIps;
         return this;
     }
-    
-    
+
     /**
      * For stacks that are running in a VPC, whether to automatically assign
      * a public IP address to the layer's instances. For more information,
@@ -962,7 +950,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
     public Boolean getAutoAssignPublicIps() {
         return autoAssignPublicIps;
     }
-    
+
     /**
      * A <code>LayerCustomRecipes</code> object that specifies the layer
      * custom recipes.
@@ -1001,8 +989,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
         this.customRecipes = customRecipes;
         return this;
     }
-    
-    
+
     /**
      * Whether to install operating system and package updates when the
      * instance boots. The default value is <code>true</code>. To control
@@ -1083,8 +1070,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
         this.installUpdatesOnBoot = installUpdatesOnBoot;
         return this;
     }
-    
-    
+
     /**
      * Whether to install operating system and package updates when the
      * instance boots. The default value is <code>true</code>. To control
@@ -1109,7 +1095,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements Seria
     public Boolean getInstallUpdatesOnBoot() {
         return installUpdatesOnBoot;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

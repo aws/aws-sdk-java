@@ -104,8 +104,7 @@ public class ListDistributionsRequest extends AmazonWebServiceRequest implements
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of distributions you want in the response body.
      *
@@ -138,8 +137,7 @@ public class ListDistributionsRequest extends AmazonWebServiceRequest implements
         this.maxItems = maxItems;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -90,8 +90,7 @@ public class ReplicationGroup implements Serializable {
         this.replicationGroupId = replicationGroupId;
         return this;
     }
-    
-    
+
     /**
      * The description of the replication group.
      *
@@ -124,8 +123,7 @@ public class ReplicationGroup implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * The current state of this replication group - <i>creating</i>,
      * <i>available</i>, etc.
@@ -164,8 +162,7 @@ public class ReplicationGroup implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * A group of settings to be applied to the replication group, either
      * immediately or during the next maintenance window.
@@ -204,8 +201,7 @@ public class ReplicationGroup implements Serializable {
         this.pendingModifiedValues = pendingModifiedValues;
         return this;
     }
-    
-    
+
     /**
      * The names of all the cache clusters that are part of this replication
      * group.
@@ -214,7 +210,6 @@ public class ReplicationGroup implements Serializable {
      *         group.
      */
     public java.util.List<String> getMemberClusters() {
-        
         if (memberClusters == null) {
               memberClusters = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               memberClusters.setAutoConstruct(true);
@@ -282,7 +277,7 @@ public class ReplicationGroup implements Serializable {
 
         return this;
     }
-    
+
     /**
      * A single element list with information about the nodes in the
      * replication group.
@@ -291,7 +286,6 @@ public class ReplicationGroup implements Serializable {
      *         replication group.
      */
     public java.util.List<NodeGroup> getNodeGroups() {
-        
         if (nodeGroups == null) {
               nodeGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<NodeGroup>();
               nodeGroups.setAutoConstruct(true);
@@ -359,7 +353,7 @@ public class ReplicationGroup implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

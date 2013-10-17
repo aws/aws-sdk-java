@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.route53;
-            
+
 import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
@@ -25,8 +25,8 @@ import com.amazonaws.services.route53.model.*;
  * Interface for accessing AmazonRoute53 asynchronously.
  * Each asynchronous method will return a Java Future object, and users are also allowed
  * to provide a callback handler.
- *  
- */       
+ * 
+ */
 public interface AmazonRoute53Async extends AmazonRoute53 {
     /**
      * <p>

@@ -38,7 +38,6 @@ public class DescribeLoadBasedAutoScalingResult implements Serializable {
      *         that describe each layer's configuration.
      */
     public java.util.List<LoadBasedAutoScalingConfiguration> getLoadBasedAutoScalingConfigurations() {
-        
         if (loadBasedAutoScalingConfigurations == null) {
               loadBasedAutoScalingConfigurations = new com.amazonaws.internal.ListWithAutoConstructFlag<LoadBasedAutoScalingConfiguration>();
               loadBasedAutoScalingConfigurations.setAutoConstruct(true);
@@ -106,7 +105,7 @@ public class DescribeLoadBasedAutoScalingResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

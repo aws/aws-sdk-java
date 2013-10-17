@@ -94,8 +94,7 @@ public class VpnGateway implements Serializable {
         this.vpnGatewayId = vpnGatewayId;
         return this;
     }
-    
-    
+
     /**
      * Describes the current state of the VPN gateway. Valid values are
      * <code>pending</code>, <code>available</code>, <code>deleting</code>,
@@ -155,8 +154,7 @@ public class VpnGateway implements Serializable {
         this.state = state;
         return this;
     }
-    
-    
+
     /**
      * Describes the current state of the VPN gateway. Valid values are
      * <code>pending</code>, <code>available</code>, <code>deleting</code>,
@@ -198,7 +196,7 @@ public class VpnGateway implements Serializable {
         this.state = state.toString();
         return this;
     }
-    
+
     /**
      * Specifies the type of VPN connection the VPN gateway supports.
      * <p>
@@ -246,8 +244,7 @@ public class VpnGateway implements Serializable {
         this.type = type;
         return this;
     }
-    
-    
+
     /**
      * Specifies the type of VPN connection the VPN gateway supports.
      * <p>
@@ -281,7 +278,7 @@ public class VpnGateway implements Serializable {
         this.type = type.toString();
         return this;
     }
-    
+
     /**
      * Specifies the Availability Zone where the VPN gateway was created.
      *
@@ -314,15 +311,13 @@ public class VpnGateway implements Serializable {
         this.availabilityZone = availabilityZone;
         return this;
     }
-    
-    
+
     /**
      * Contains information about the VPCs attached to the VPN gateway.
      *
      * @return Contains information about the VPCs attached to the VPN gateway.
      */
     public java.util.List<VpcAttachment> getVpcAttachments() {
-        
         if (vpcAttachments == null) {
               vpcAttachments = new com.amazonaws.internal.ListWithAutoConstructFlag<VpcAttachment>();
               vpcAttachments.setAutoConstruct(true);
@@ -384,14 +379,13 @@ public class VpnGateway implements Serializable {
 
         return this;
     }
-    
+
     /**
      * A list of tags for the VpnGateway.
      *
      * @return A list of tags for the VpnGateway.
      */
     public java.util.List<Tag> getTags() {
-        
         if (tags == null) {
               tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
               tags.setAutoConstruct(true);
@@ -453,7 +447,7 @@ public class VpnGateway implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -66,15 +66,13 @@ public class GetMetricStatisticsResult implements Serializable {
         this.label = label;
         return this;
     }
-    
-    
+
     /**
      * The datapoints for the specified metric.
      *
      * @return The datapoints for the specified metric.
      */
     public java.util.List<Datapoint> getDatapoints() {
-        
         if (datapoints == null) {
               datapoints = new com.amazonaws.internal.ListWithAutoConstructFlag<Datapoint>();
               datapoints.setAutoConstruct(true);
@@ -136,7 +134,7 @@ public class GetMetricStatisticsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

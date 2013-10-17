@@ -80,15 +80,13 @@ public class DescribeDBSubnetGroupsResult implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * A list of <a>DBSubnetGroup</a> instances.
      *
      * @return A list of <a>DBSubnetGroup</a> instances.
      */
     public java.util.List<DBSubnetGroup> getDBSubnetGroups() {
-        
         if (dBSubnetGroups == null) {
               dBSubnetGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<DBSubnetGroup>();
               dBSubnetGroups.setAutoConstruct(true);
@@ -150,7 +148,7 @@ public class DescribeDBSubnetGroupsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

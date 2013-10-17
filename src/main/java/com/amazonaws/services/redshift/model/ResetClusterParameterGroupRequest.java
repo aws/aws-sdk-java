@@ -81,8 +81,7 @@ public class ResetClusterParameterGroupRequest extends AmazonWebServiceRequest i
         this.parameterGroupName = parameterGroupName;
         return this;
     }
-    
-    
+
     /**
      * If <code>true</code>, all parameters in the specified parameter group
      * will be reset to their default values. <p>Default: <code>true</code>
@@ -121,8 +120,7 @@ public class ResetClusterParameterGroupRequest extends AmazonWebServiceRequest i
         this.resetAllParameters = resetAllParameters;
         return this;
     }
-    
-    
+
     /**
      * If <code>true</code>, all parameters in the specified parameter group
      * will be reset to their default values. <p>Default: <code>true</code>
@@ -133,7 +131,7 @@ public class ResetClusterParameterGroupRequest extends AmazonWebServiceRequest i
     public Boolean getResetAllParameters() {
         return resetAllParameters;
     }
-    
+
     /**
      * An array of names of parameters to be reset. If
      * <i>ResetAllParameters</i> option is not used, then at least one
@@ -146,7 +144,6 @@ public class ResetClusterParameterGroupRequest extends AmazonWebServiceRequest i
      *         parameters can be reset in a single request.
      */
     public java.util.List<Parameter> getParameters() {
-        
         if (parameters == null) {
               parameters = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>();
               parameters.setAutoConstruct(true);
@@ -226,7 +223,7 @@ public class ResetClusterParameterGroupRequest extends AmazonWebServiceRequest i
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

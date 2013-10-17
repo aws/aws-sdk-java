@@ -50,8 +50,6 @@ public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest impleme
      */
     public AssociateDhcpOptionsRequest() {}
     
-
-
     /**
      * Constructs a new AssociateDhcpOptionsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -63,8 +61,6 @@ public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest impleme
         setVpcId(vpcId);
     }
 
-    
-    
     /**
      * The ID of the DHCP options to associate with the VPC. Specify
      * "default" to associate the default DHCP options with the VPC.
@@ -103,8 +99,7 @@ public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest impleme
         this.dhcpOptionsId = dhcpOptionsId;
         return this;
     }
-    
-    
+
     /**
      * The ID of the VPC to associate the DHCP options with.
      *
@@ -137,8 +132,7 @@ public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest impleme
         this.vpcId = vpcId;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

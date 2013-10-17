@@ -40,7 +40,6 @@ public class DescribeAlarmHistoryResult implements Serializable {
      * @return A list of alarm histories in JSON format.
      */
     public java.util.List<AlarmHistoryItem> getAlarmHistoryItems() {
-        
         if (alarmHistoryItems == null) {
               alarmHistoryItems = new com.amazonaws.internal.ListWithAutoConstructFlag<AlarmHistoryItem>();
               alarmHistoryItems.setAutoConstruct(true);
@@ -102,7 +101,7 @@ public class DescribeAlarmHistoryResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * A string that marks the start of the next batch of returned results.
      *
@@ -135,8 +134,7 @@ public class DescribeAlarmHistoryResult implements Serializable {
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

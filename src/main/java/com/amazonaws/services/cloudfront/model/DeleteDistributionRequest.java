@@ -45,8 +45,6 @@ public class DeleteDistributionRequest extends AmazonWebServiceRequest implement
      */
     public DeleteDistributionRequest() {}
     
-
-
     /**
      * Constructs a new DeleteDistributionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -61,8 +59,6 @@ public class DeleteDistributionRequest extends AmazonWebServiceRequest implement
         setIfMatch(ifMatch);
     }
 
-    
-    
     /**
      * The distribution id.
      *
@@ -95,8 +91,7 @@ public class DeleteDistributionRequest extends AmazonWebServiceRequest implement
         this.id = id;
         return this;
     }
-    
-    
+
     /**
      * The value of the ETag header you received when you disabled the
      * distribution. For example: E2QWRUHAPOMQZL.
@@ -135,8 +130,7 @@ public class DeleteDistributionRequest extends AmazonWebServiceRequest implement
         this.ifMatch = ifMatch;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

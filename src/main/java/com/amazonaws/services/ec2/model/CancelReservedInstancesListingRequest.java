@@ -65,8 +65,7 @@ public class CancelReservedInstancesListingRequest extends AmazonWebServiceReque
         this.reservedInstancesListingId = reservedInstancesListingId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

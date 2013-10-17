@@ -17,11 +17,15 @@ package com.amazonaws;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.http.annotation.NotThreadSafe;
+
 import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.metrics.RequestMetricCollector;;
 
 /**
  * Base class for all user facing web service request objects.
  */
+@NotThreadSafe
 public abstract class AmazonWebServiceRequest {
 
     /**
@@ -31,35 +35,41 @@ public abstract class AmazonWebServiceRequest {
     private final RequestClientOptions requestClientOptions = new RequestClientOptions();
 
     /**
+     * A request metric collector used for this specific service request; or
+     * null if there is none.  This collector always takes precedence over the
+     * ones specified at the http client level and AWS SDK level.
+     */
+    private RequestMetricCollector requestMetricCollector;
+
+    /**
      * The optional credentials to use for this request - overrides the
      * default credentials set at the client level.
      */
-	private AWSCredentials credentials;
+    private AWSCredentials credentials;
 
 
-	/**
-	 * Sets the optional credentials to use for this request, overriding the
-	 * default credentials set at the client level.
-	 *
-	 * @param credentials
-	 *            The optional AWS security credentials to use for this request,
-	 *            overriding the default credentials set at the client level.
-	 */
+    /**
+     * Sets the optional credentials to use for this request, overriding the
+     * default credentials set at the client level.
+     *
+     * @param credentials
+     *            The optional AWS security credentials to use for this request,
+     *            overriding the default credentials set at the client level.
+     */
     public void setRequestCredentials(AWSCredentials credentials) {
-		this.credentials = credentials;
+        this.credentials = credentials;
     }
 
-	/**
-	 * Returns the optional credentials to use to sign this request, overriding
-	 * the default credentials set at the client level.
-	 *
-	 * @return The optional credentials to use to sign this request, overriding
-	 *         the default credentials set at the client level.
-	 */
+    /**
+     * Returns the optional credentials to use to sign this request, overriding
+     * the default credentials set at the client level.
+     *
+     * @return The optional credentials to use to sign this request, overriding
+     *         the default credentials set at the client level.
+     */
     public AWSCredentials getRequestCredentials() {
-    	return credentials;
+        return credentials;
     }
-
 
     /**
      * Internal only method for accessing private, internal request parameters.
@@ -77,6 +87,31 @@ public abstract class AmazonWebServiceRequest {
      */
     public RequestClientOptions getRequestClientOptions() {
         return requestClientOptions;
+    }
+
+    /**
+     * Returns a request level metric collector; or null if not specified.
+     */
+    public RequestMetricCollector getRequestMetricCollector() {
+        return requestMetricCollector;
+    }
+
+    /**
+     * Sets a request level request metric collector which takes precedence over
+     * the ones at the http client level and AWS SDK level.
+     */
+    public void setRequestMetricCollector(RequestMetricCollector requestMetricCollector) {
+        this.requestMetricCollector = requestMetricCollector;
+    }
+
+    /**
+     * Specifies a request level metric collector which takes precedence over
+     * the ones at the http client level and AWS SDK level.
+     */
+    public <T extends AmazonWebServiceRequest> T withRequestMetricCollector(RequestMetricCollector metricCollector) {
+        setRequestMetricCollector(metricCollector);
+        @SuppressWarnings("unchecked") T t = (T)this;
+        return t;
     }
 }
 

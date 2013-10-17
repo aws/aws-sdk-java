@@ -79,8 +79,7 @@ public class DBInstanceStatusInfo implements Serializable {
         this.statusType = statusType;
         return this;
     }
-    
-    
+
     /**
      * Boolean value that is true if the instance is operating normally, or
      * false if the instance is in an error state.
@@ -119,8 +118,7 @@ public class DBInstanceStatusInfo implements Serializable {
         this.normal = normal;
         return this;
     }
-    
-    
+
     /**
      * Boolean value that is true if the instance is operating normally, or
      * false if the instance is in an error state.
@@ -131,7 +129,7 @@ public class DBInstanceStatusInfo implements Serializable {
     public Boolean getNormal() {
         return normal;
     }
-    
+
     /**
      * Status of the DB instance. For a StatusType of Read Replica, the
      * values can be replicating, error, stopped, or terminated.
@@ -170,8 +168,7 @@ public class DBInstanceStatusInfo implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * Details of the error if there is an error for the instance. If the
      * instance is not in an error state, this value is blank.
@@ -210,8 +207,7 @@ public class DBInstanceStatusInfo implements Serializable {
         this.message = message;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

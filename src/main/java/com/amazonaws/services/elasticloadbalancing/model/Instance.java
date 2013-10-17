@@ -35,8 +35,6 @@ public class Instance implements Serializable {
      */
     public Instance() {}
     
-
-
     /**
      * Constructs a new Instance object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -48,8 +46,6 @@ public class Instance implements Serializable {
         setInstanceId(instanceId);
     }
 
-    
-    
     /**
      * Provides an EC2 instance ID.
      *
@@ -82,8 +78,7 @@ public class Instance implements Serializable {
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

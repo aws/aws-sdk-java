@@ -49,8 +49,6 @@ public class DeregisterInstancesFromLoadBalancerRequest extends AmazonWebService
      */
     public DeregisterInstancesFromLoadBalancerRequest() {}
     
-
-
     /**
      * Constructs a new DeregisterInstancesFromLoadBalancerRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -66,8 +64,6 @@ public class DeregisterInstancesFromLoadBalancerRequest extends AmazonWebService
         setInstances(instances);
     }
 
-    
-    
     /**
      * The name associated with the LoadBalancer. The name must be unique
      * within the client AWS account.
@@ -106,8 +102,7 @@ public class DeregisterInstancesFromLoadBalancerRequest extends AmazonWebService
         this.loadBalancerName = loadBalancerName;
         return this;
     }
-    
-    
+
     /**
      * A list of EC2 instance IDs consisting of all instances to be
      * deregistered.
@@ -116,7 +111,6 @@ public class DeregisterInstancesFromLoadBalancerRequest extends AmazonWebService
      *         deregistered.
      */
     public java.util.List<Instance> getInstances() {
-        
         if (instances == null) {
               instances = new com.amazonaws.internal.ListWithAutoConstructFlag<Instance>();
               instances.setAutoConstruct(true);
@@ -184,7 +178,7 @@ public class DeregisterInstancesFromLoadBalancerRequest extends AmazonWebService
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

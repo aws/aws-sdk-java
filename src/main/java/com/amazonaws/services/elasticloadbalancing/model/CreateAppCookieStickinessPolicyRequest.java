@@ -64,8 +64,6 @@ public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequ
      */
     public CreateAppCookieStickinessPolicyRequest() {}
     
-
-
     /**
      * Constructs a new CreateAppCookieStickinessPolicyRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -83,8 +81,6 @@ public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequ
         setCookieName(cookieName);
     }
 
-    
-    
     /**
      * The name associated with the LoadBalancer. The name must be unique
      * within the client AWS account.
@@ -123,8 +119,7 @@ public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequ
         this.loadBalancerName = loadBalancerName;
         return this;
     }
-    
-    
+
     /**
      * The name of the policy being created. The name must be unique within
      * the set of policies for this LoadBalancer.
@@ -163,8 +158,7 @@ public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequ
         this.policyName = policyName;
         return this;
     }
-    
-    
+
     /**
      * Name of the application cookie used for stickiness.
      *
@@ -197,8 +191,7 @@ public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequ
         this.cookieName = cookieName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

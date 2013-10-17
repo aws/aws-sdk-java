@@ -141,8 +141,7 @@ public class ScheduledUpdateGroupAction implements Serializable {
         this.autoScalingGroupName = autoScalingGroupName;
         return this;
     }
-    
-    
+
     /**
      * The name of this scheduled action.
      * <p>
@@ -187,8 +186,7 @@ public class ScheduledUpdateGroupAction implements Serializable {
         this.scheduledActionName = scheduledActionName;
         return this;
     }
-    
-    
+
     /**
      * The Amazon Resource Name (ARN) of this scheduled action.
      * <p>
@@ -233,8 +231,7 @@ public class ScheduledUpdateGroupAction implements Serializable {
         this.scheduledActionARN = scheduledActionARN;
         return this;
     }
-    
-    
+
     /**
      * <code>Time</code> is deprecated. <p>The time that the action is
      * scheduled to begin. <code>Time</code> is an alias for
@@ -279,8 +276,7 @@ public class ScheduledUpdateGroupAction implements Serializable {
         this.time = time;
         return this;
     }
-    
-    
+
     /**
      * The time that the action is scheduled to begin. This value can be up
      * to one month in the future. <p>When <code>StartTime</code> and
@@ -331,8 +327,7 @@ public class ScheduledUpdateGroupAction implements Serializable {
         this.startTime = startTime;
         return this;
     }
-    
-    
+
     /**
      * The time that the action is scheduled to end. This value can be up to
      * one month in the future.
@@ -371,8 +366,7 @@ public class ScheduledUpdateGroupAction implements Serializable {
         this.endTime = endTime;
         return this;
     }
-    
-    
+
     /**
      * The regular schedule that an action occurs.
      * <p>
@@ -417,8 +411,7 @@ public class ScheduledUpdateGroupAction implements Serializable {
         this.recurrence = recurrence;
         return this;
     }
-    
-    
+
     /**
      * The minimum size of the Auto Scaling group.
      *
@@ -451,8 +444,7 @@ public class ScheduledUpdateGroupAction implements Serializable {
         this.minSize = minSize;
         return this;
     }
-    
-    
+
     /**
      * The maximum size of the Auto Scaling group.
      *
@@ -485,8 +477,7 @@ public class ScheduledUpdateGroupAction implements Serializable {
         this.maxSize = maxSize;
         return this;
     }
-    
-    
+
     /**
      * The number of instances you prefer to maintain in your Auto Scaling
      * group.
@@ -525,8 +516,7 @@ public class ScheduledUpdateGroupAction implements Serializable {
         this.desiredCapacity = desiredCapacity;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

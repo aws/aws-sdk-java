@@ -168,8 +168,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements S
         this.durationSeconds = durationSeconds;
         return this;
     }
-    
-    
+
     /**
      * The identification number of the MFA device that is associated with
      * the IAM user who is making the <code>GetSessionToken</code> call.
@@ -262,8 +261,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements S
         this.serialNumber = serialNumber;
         return this;
     }
-    
-    
+
     /**
      * The value provided by the MFA device, if MFA is required. If any
      * policy requires the IAM user to submit an MFA code, specify this
@@ -338,8 +336,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements S
         this.tokenCode = tokenCode;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

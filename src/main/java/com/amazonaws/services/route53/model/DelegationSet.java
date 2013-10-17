@@ -41,8 +41,6 @@ public class DelegationSet implements Serializable {
      */
     public DelegationSet() {}
     
-
-
     /**
      * Constructs a new DelegationSet object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -57,8 +55,6 @@ public class DelegationSet implements Serializable {
         setNameServers(nameServers);
     }
 
-    
-    
     /**
      * A complex type that contains the authoritative name servers for the
      * hosted zone. Use the method provided by your domain registrar to add
@@ -74,7 +70,6 @@ public class DelegationSet implements Serializable {
      *         assigned to your hosted zone.
      */
     public java.util.List<String> getNameServers() {
-        
         if (nameServers == null) {
               nameServers = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               nameServers.setAutoConstruct(true);
@@ -163,7 +158,7 @@ public class DelegationSet implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

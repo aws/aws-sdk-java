@@ -55,7 +55,6 @@ public class ValidateTemplateResult implements Serializable {
      * @return A list of <code>TemplateParameter</code> structures.
      */
     public java.util.List<TemplateParameter> getParameters() {
-        
         if (parameters == null) {
               parameters = new com.amazonaws.internal.ListWithAutoConstructFlag<TemplateParameter>();
               parameters.setAutoConstruct(true);
@@ -117,7 +116,7 @@ public class ValidateTemplateResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * The description found within the template.
      *
@@ -150,8 +149,7 @@ public class ValidateTemplateResult implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * The capabitilites found within the template. Currently, CAPABILITY_IAM
      * is the only capability detected. If your template contains IAM
@@ -168,7 +166,6 @@ public class ValidateTemplateResult implements Serializable {
      *         InsufficientCapabilities error.
      */
     public java.util.List<String> getCapabilities() {
-        
         if (capabilities == null) {
               capabilities = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               capabilities.setAutoConstruct(true);
@@ -260,7 +257,40 @@ public class ValidateTemplateResult implements Serializable {
 
         return this;
     }
-    
+
+    /**
+     * The capabitilites found within the template. Currently, CAPABILITY_IAM
+     * is the only capability detected. If your template contains IAM
+     * resources, you must specify the CAPABILITY_IAM value for this
+     * parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
+     * actions with your template; otherwise, those actions return an
+     * InsufficientCapabilities error.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param capabilities The capabitilites found within the template. Currently, CAPABILITY_IAM
+     *         is the only capability detected. If your template contains IAM
+     *         resources, you must specify the CAPABILITY_IAM value for this
+     *         parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
+     *         actions with your template; otherwise, those actions return an
+     *         InsufficientCapabilities error.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public ValidateTemplateResult withCapabilities(Capability... capabilities) {
+        java.util.ArrayList<String> capabilitiesCopy = new java.util.ArrayList<String>(capabilities.length);
+        for (Capability member : capabilities) {
+            capabilitiesCopy.add(member.toString());
+        }
+        if (getCapabilities() == null) {
+            setCapabilities(capabilitiesCopy);
+        } else {
+            getCapabilities().addAll(capabilitiesCopy);
+        }
+        return this;
+    }
+
     /**
      * The capabilities reason found within the template.
      *
@@ -293,8 +323,7 @@ public class ValidateTemplateResult implements Serializable {
         this.capabilitiesReason = capabilitiesReason;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

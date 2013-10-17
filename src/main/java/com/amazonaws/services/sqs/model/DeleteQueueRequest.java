@@ -42,8 +42,6 @@ public class DeleteQueueRequest extends AmazonWebServiceRequest implements Seria
      */
     public DeleteQueueRequest() {}
     
-
-
     /**
      * Constructs a new DeleteQueueRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -55,8 +53,6 @@ public class DeleteQueueRequest extends AmazonWebServiceRequest implements Seria
         setQueueUrl(queueUrl);
     }
 
-    
-    
     /**
      * The URL of the SQS queue to take action on.
      *
@@ -89,8 +85,7 @@ public class DeleteQueueRequest extends AmazonWebServiceRequest implements Seria
         this.queueUrl = queueUrl;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -103,8 +103,7 @@ public class S3Storage implements Serializable {
         this.bucket = bucket;
         return this;
     }
-    
-    
+
     /**
      * The prefix to use when storing the AMI in S3.
      *
@@ -137,8 +136,7 @@ public class S3Storage implements Serializable {
         this.prefix = prefix;
         return this;
     }
-    
-    
+
     /**
      * The Access Key ID of the owner of the Amazon S3 bucket.
      *
@@ -171,8 +169,7 @@ public class S3Storage implements Serializable {
         this.aWSAccessKeyId = aWSAccessKeyId;
         return this;
     }
-    
-    
+
     /**
      * A Base64-encoded Amazon S3 upload policy that gives Amazon EC2
      * permission to upload items into Amazon S3 on the user's behalf.
@@ -211,8 +208,7 @@ public class S3Storage implements Serializable {
         this.uploadPolicy = uploadPolicy;
         return this;
     }
-    
-    
+
     /**
      * The signature of the Base64 encoded JSON document.
      *
@@ -245,8 +241,7 @@ public class S3Storage implements Serializable {
         this.uploadPolicySignature = uploadPolicySignature;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -47,7 +47,7 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
         	request.addHeader("If-Match", StringUtils.fromString(updateDistributionRequest.getIfMatch()));
         
 
-        String uriResourcePath = "2013-08-26/distribution/{Id}/config"; 
+        String uriResourcePath = "2013-09-27/distribution/{Id}/config"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(updateDistributionRequest.getId())); 
 
         if (uriResourcePath.contains("?")) {
@@ -68,7 +68,7 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
 
         
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2013-08-26/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2013-09-27/");
 
             
                     if (updateDistributionRequest != null) {
@@ -260,6 +260,34 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
                         if (defaultCacheBehaviorDefaultCacheBehavior.getMinTTL() != null) {
                             xmlWriter.startElement("MinTTL").value(defaultCacheBehaviorDefaultCacheBehavior.getMinTTL()).endElement();
                         }
+                        if (defaultCacheBehaviorDefaultCacheBehavior != null) {
+                            AllowedMethods allowedMethodsAllowedMethods = defaultCacheBehaviorDefaultCacheBehavior.getAllowedMethods();
+                            if (allowedMethodsAllowedMethods != null) {
+                                xmlWriter.startElement("AllowedMethods");
+                                if (allowedMethodsAllowedMethods.getQuantity() != null) {
+                                    xmlWriter.startElement("Quantity").value(allowedMethodsAllowedMethods.getQuantity()).endElement();
+                                }
+
+                                if (allowedMethodsAllowedMethods != null) {
+                                    java.util.List<String> allowedMethodsAllowedMethodsitemsList = allowedMethodsAllowedMethods.getItems();
+                                    if (allowedMethodsAllowedMethodsitemsList != null && allowedMethodsAllowedMethodsitemsList.size() > 0) {
+                                        int allowedMethodsAllowedMethodsitemsListIndex = 1;
+                                        xmlWriter.startElement("Items");
+                                        for (String allowedMethodsAllowedMethodsitemsListValue : allowedMethodsAllowedMethodsitemsList) {
+
+                                        xmlWriter.startElement("Method");
+                                            xmlWriter.value(allowedMethodsAllowedMethodsitemsListValue);
+                                        xmlWriter.endElement();
+
+
+                                            allowedMethodsAllowedMethodsitemsListIndex++;
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                }
+                                xmlWriter.endElement();
+                            }
+                        }
                         xmlWriter.endElement();
                     }
                 }
@@ -369,6 +397,34 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
                                     }
                                     if (cacheBehaviorsCacheBehaviorsitemsListValue.getMinTTL() != null) {
                                         xmlWriter.startElement("MinTTL").value(cacheBehaviorsCacheBehaviorsitemsListValue.getMinTTL()).endElement();
+                                    }
+                                    if (cacheBehaviorsCacheBehaviorsitemsListValue != null) {
+                                        AllowedMethods allowedMethodsAllowedMethods = cacheBehaviorsCacheBehaviorsitemsListValue.getAllowedMethods();
+                                        if (allowedMethodsAllowedMethods != null) {
+                                            xmlWriter.startElement("AllowedMethods");
+                                            if (allowedMethodsAllowedMethods.getQuantity() != null) {
+                                                xmlWriter.startElement("Quantity").value(allowedMethodsAllowedMethods.getQuantity()).endElement();
+                                            }
+
+                                            if (allowedMethodsAllowedMethods != null) {
+                                                java.util.List<String> allowedMethodsAllowedMethodsitemsList = allowedMethodsAllowedMethods.getItems();
+                                                if (allowedMethodsAllowedMethodsitemsList != null && allowedMethodsAllowedMethodsitemsList.size() > 0) {
+                                                    int allowedMethodsAllowedMethodsitemsListIndex = 1;
+                                                    xmlWriter.startElement("Items");
+                                                    for (String allowedMethodsAllowedMethodsitemsListValue : allowedMethodsAllowedMethodsitemsList) {
+
+                                                    xmlWriter.startElement("Method");
+                                                        xmlWriter.value(allowedMethodsAllowedMethodsitemsListValue);
+                                                    xmlWriter.endElement();
+
+
+                                                        allowedMethodsAllowedMethodsitemsListIndex++;
+                                                    }
+                                                    xmlWriter.endElement();
+                                                }
+                                            }
+                                            xmlWriter.endElement();
+                                        }
                                     }
                                 xmlWriter.endElement();
 

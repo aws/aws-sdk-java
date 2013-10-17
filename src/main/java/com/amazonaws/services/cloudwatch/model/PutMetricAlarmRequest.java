@@ -215,8 +215,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
         this.alarmName = alarmName;
         return this;
     }
-    
-    
+
     /**
      * The description for the alarm.
      * <p>
@@ -258,8 +257,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
         this.alarmDescription = alarmDescription;
         return this;
     }
-    
-    
+
     /**
      * Indicates whether or not actions should be executed during any changes
      * to the alarm's state.
@@ -298,8 +296,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
         this.actionsEnabled = actionsEnabled;
         return this;
     }
-    
-    
+
     /**
      * Indicates whether or not actions should be executed during any changes
      * to the alarm's state.
@@ -310,7 +307,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
     public Boolean getActionsEnabled() {
         return actionsEnabled;
     }
-    
+
     /**
      * The list of actions to execute when this alarm transitions into an
      * <code>OK</code> state from any other state. Each action is specified
@@ -328,7 +325,6 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
      *         Scaling policy.
      */
     public java.util.List<String> getOKActions() {
-        
         if (oKActions == null) {
               oKActions = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               oKActions.setAutoConstruct(true);
@@ -423,7 +419,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
 
         return this;
     }
-    
+
     /**
      * The list of actions to execute when this alarm transitions into an
      * <code>ALARM</code> state from any other state. Each action is
@@ -441,7 +437,6 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
      *         Auto Scaling policy.
      */
     public java.util.List<String> getAlarmActions() {
-        
         if (alarmActions == null) {
               alarmActions = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               alarmActions.setAutoConstruct(true);
@@ -536,7 +531,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
 
         return this;
     }
-    
+
     /**
      * The list of actions to execute when this alarm transitions into an
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action
@@ -554,7 +549,6 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
      *         Auto Scaling policy.
      */
     public java.util.List<String> getInsufficientDataActions() {
-        
         if (insufficientDataActions == null) {
               insufficientDataActions = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               insufficientDataActions.setAutoConstruct(true);
@@ -649,7 +643,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
 
         return this;
     }
-    
+
     /**
      * The name for the alarm's associated metric.
      * <p>
@@ -691,8 +685,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
         this.metricName = metricName;
         return this;
     }
-    
-    
+
     /**
      * The namespace for the alarm's associated metric.
      * <p>
@@ -737,8 +730,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
         this.namespace = namespace;
         return this;
     }
-    
-    
+
     /**
      * The statistic to apply to the alarm's associated metric.
      * <p>
@@ -786,8 +778,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
         this.statistic = statistic;
         return this;
     }
-    
-    
+
     /**
      * The statistic to apply to the alarm's associated metric.
      * <p>
@@ -821,7 +812,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
         this.statistic = statistic.toString();
         return this;
     }
-    
+
     /**
      * The dimensions for the alarm's associated metric.
      * <p>
@@ -831,7 +822,6 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
      * @return The dimensions for the alarm's associated metric.
      */
     public java.util.List<Dimension> getDimensions() {
-        
         if (dimensions == null) {
               dimensions = new com.amazonaws.internal.ListWithAutoConstructFlag<Dimension>();
               dimensions.setAutoConstruct(true);
@@ -902,7 +892,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
 
         return this;
     }
-    
+
     /**
      * The period in seconds over which the specified statistic is applied.
      * <p>
@@ -944,8 +934,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
         this.period = period;
         return this;
     }
-    
-    
+
     /**
      * The unit for the alarm's associated metric.
      * <p>
@@ -993,8 +982,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
         this.unit = unit;
         return this;
     }
-    
-    
+
     /**
      * The unit for the alarm's associated metric.
      * <p>
@@ -1028,7 +1016,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
         this.unit = unit.toString();
         return this;
     }
-    
+
     /**
      * The number of periods over which data is compared to the specified
      * threshold.
@@ -1076,8 +1064,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
         this.evaluationPeriods = evaluationPeriods;
         return this;
     }
-    
-    
+
     /**
      * The value against which the specified statistic is compared.
      *
@@ -1110,8 +1097,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
         this.threshold = threshold;
         return this;
     }
-    
-    
+
     /**
      * The arithmetic operation to use when comparing the specified
      * <code>Statistic</code> and <code>Threshold</code>. The specified
@@ -1171,8 +1157,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
         this.comparisonOperator = comparisonOperator;
         return this;
     }
-    
-    
+
     /**
      * The arithmetic operation to use when comparing the specified
      * <code>Statistic</code> and <code>Threshold</code>. The specified
@@ -1214,7 +1199,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements Se
         this.comparisonOperator = comparisonOperator.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

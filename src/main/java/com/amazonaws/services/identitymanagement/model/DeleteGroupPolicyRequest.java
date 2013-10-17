@@ -52,8 +52,6 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest implements
      */
     public DeleteGroupPolicyRequest() {}
     
-
-
     /**
      * Constructs a new DeleteGroupPolicyRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -67,8 +65,6 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest implements
         setPolicyName(policyName);
     }
 
-    
-    
     /**
      * Name of the group the policy is associated with.
      * <p>
@@ -113,8 +109,7 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest implements
         this.groupName = groupName;
         return this;
     }
-    
-    
+
     /**
      * Name of the policy document to delete.
      * <p>
@@ -159,8 +154,7 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest implements
         this.policyName = policyName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

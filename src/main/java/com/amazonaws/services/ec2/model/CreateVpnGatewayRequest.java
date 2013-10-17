@@ -50,8 +50,6 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
      */
     public CreateVpnGatewayRequest() {}
     
-
-
     /**
      * Constructs a new CreateVpnGatewayRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -63,8 +61,6 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
         setType(type);
     }
 
-    
-    
     /**
      * Constructs a new CreateVpnGatewayRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -75,7 +71,7 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
     public CreateVpnGatewayRequest(GatewayType type) {
         this.type = type.toString();
     }
-    
+
     /**
      * The type of VPN connection this VPN gateway supports.
      * <p>
@@ -123,8 +119,7 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
         this.type = type;
         return this;
     }
-    
-    
+
     /**
      * The type of VPN connection this VPN gateway supports.
      * <p>
@@ -158,7 +153,7 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
         this.type = type.toString();
         return this;
     }
-    
+
     /**
      * The Availability Zone in which to create the VPN gateway.
      *
@@ -191,8 +186,7 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
         this.availabilityZone = availabilityZone;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

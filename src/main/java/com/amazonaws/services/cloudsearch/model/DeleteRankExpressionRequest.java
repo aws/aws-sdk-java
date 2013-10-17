@@ -118,8 +118,7 @@ public class DeleteRankExpressionRequest extends AmazonWebServiceRequest impleme
         this.domainName = domainName;
         return this;
     }
-    
-    
+
     /**
      * The name of the <code>RankExpression</code> to delete.
      * <p>
@@ -164,8 +163,7 @@ public class DeleteRankExpressionRequest extends AmazonWebServiceRequest impleme
         this.rankName = rankName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

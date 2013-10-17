@@ -96,8 +96,7 @@ public class NewPublicVirtualInterface implements Serializable {
         this.virtualInterfaceName = virtualInterfaceName;
         return this;
     }
-    
-    
+
     /**
      * VLAN ID <p>Example: 101
      *
@@ -130,8 +129,7 @@ public class NewPublicVirtualInterface implements Serializable {
         this.vlan = vlan;
         return this;
     }
-    
-    
+
     /**
      * Autonomous system (AS) number for Border Gateway Protocol (BGP)
      * configuration <p>Example: 65000
@@ -170,8 +168,7 @@ public class NewPublicVirtualInterface implements Serializable {
         this.asn = asn;
         return this;
     }
-    
-    
+
     /**
      * Authentication key for BGP configuration <p>Example: asdf34example
      *
@@ -204,8 +201,7 @@ public class NewPublicVirtualInterface implements Serializable {
         this.authKey = authKey;
         return this;
     }
-    
-    
+
     /**
      * IP address assigned to the Amazon interface. <p>Example: 192.168.1.1
      *
@@ -238,8 +234,7 @@ public class NewPublicVirtualInterface implements Serializable {
         this.amazonAddress = amazonAddress;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the CustomerAddress property for this object.
      *
@@ -272,15 +267,13 @@ public class NewPublicVirtualInterface implements Serializable {
         this.customerAddress = customerAddress;
         return this;
     }
-    
-    
+
     /**
      * A list of route filter prefixes.
      *
      * @return A list of route filter prefixes.
      */
     public java.util.List<RouteFilterPrefix> getRouteFilterPrefixes() {
-        
         if (routeFilterPrefixes == null) {
               routeFilterPrefixes = new com.amazonaws.internal.ListWithAutoConstructFlag<RouteFilterPrefix>();
               routeFilterPrefixes.setAutoConstruct(true);
@@ -342,7 +335,7 @@ public class NewPublicVirtualInterface implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

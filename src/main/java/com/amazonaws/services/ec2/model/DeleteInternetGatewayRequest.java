@@ -68,8 +68,7 @@ public class DeleteInternetGatewayRequest extends AmazonWebServiceRequest implem
         this.internetGatewayId = internetGatewayId;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

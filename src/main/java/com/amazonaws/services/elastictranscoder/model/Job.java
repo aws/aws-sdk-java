@@ -152,8 +152,7 @@ public class Job implements Serializable {
         this.id = id;
         return this;
     }
-    
-    
+
     /**
      * The <code>Id</code> of the pipeline that you want Elastic Transcoder
      * to use for transcoding. The pipeline determines several settings,
@@ -219,8 +218,7 @@ public class Job implements Serializable {
         this.pipelineId = pipelineId;
         return this;
     }
-    
-    
+
     /**
      * A section of the request or response body that provides information
      * about the file that is being transcoded.
@@ -259,8 +257,7 @@ public class Job implements Serializable {
         this.input = input;
         return this;
     }
-    
-    
+
     /**
      * If you specified one output for a job, information about that output.
      * If you specified multiple outputs for a job, the Output object lists
@@ -329,8 +326,7 @@ public class Job implements Serializable {
         this.output = output;
         return this;
     }
-    
-    
+
     /**
      * Information about the output files. We recommend that you use the
      * <code>Outputs</code> syntax for all jobs, even when you want Elastic
@@ -351,7 +347,6 @@ public class Job implements Serializable {
      *         job.
      */
     public java.util.List<JobOutput> getOutputs() {
-        
         if (outputs == null) {
               outputs = new com.amazonaws.internal.ListWithAutoConstructFlag<JobOutput>();
               outputs.setAutoConstruct(true);
@@ -455,7 +450,7 @@ public class Job implements Serializable {
 
         return this;
     }
-    
+
     /**
      * The value, if any, that you want Elastic Transcoder to prepend to the
      * names of all files that this job creates, including output files,
@@ -515,8 +510,7 @@ public class Job implements Serializable {
         this.outputKeyPrefix = outputKeyPrefix;
         return this;
     }
-    
-    
+
     /**
      * <important>Outputs in MPEG-TS format only.</important>If you specify a
      * preset in <code>PresetId</code> for which the value of
@@ -533,7 +527,6 @@ public class Job implements Serializable {
      *         playlist. The maximum number of master playlists in a job is 30.
      */
     public java.util.List<Playlist> getPlaylists() {
-        
         if (playlists == null) {
               playlists = new com.amazonaws.internal.ListWithAutoConstructFlag<Playlist>();
               playlists.setAutoConstruct(true);
@@ -625,7 +618,7 @@ public class Job implements Serializable {
 
         return this;
     }
-    
+
     /**
      * The status of the job: <code>Submitted</code>,
      * <code>Progressing</code>, <code>Complete</code>,
@@ -679,8 +672,7 @@ public class Job implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

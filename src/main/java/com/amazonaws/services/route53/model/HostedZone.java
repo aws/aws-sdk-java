@@ -72,8 +72,6 @@ public class HostedZone implements Serializable {
      */
     public HostedZone() {}
     
-
-
     /**
      * Constructs a new HostedZone object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -98,8 +96,6 @@ public class HostedZone implements Serializable {
         setCallerReference(callerReference);
     }
 
-    
-    
     /**
      * The ID of the specified hosted zone.
      * <p>
@@ -141,8 +137,7 @@ public class HostedZone implements Serializable {
         this.id = id;
         return this;
     }
-    
-    
+
     /**
      * The name of the domain. This must be a fully-specified domain, for
      * example, www.example.com. The trailing dot is optional; Route 53
@@ -232,8 +227,7 @@ public class HostedZone implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * A unique string that identifies the request to create the hosted zone.
      * <p>
@@ -275,8 +269,7 @@ public class HostedZone implements Serializable {
         this.callerReference = callerReference;
         return this;
     }
-    
-    
+
     /**
      * A complex type that contains the <code>Comment</code> element.
      *
@@ -309,8 +302,7 @@ public class HostedZone implements Serializable {
         this.config = config;
         return this;
     }
-    
-    
+
     /**
      * Total number of resource record sets in the hosted zone.
      *
@@ -343,8 +335,7 @@ public class HostedZone implements Serializable {
         this.resourceRecordSetCount = resourceRecordSetCount;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

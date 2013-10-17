@@ -46,7 +46,6 @@ public class DescribeOrderableDBInstanceOptionsResult implements Serializable {
      *         about orderable options for the DB Instance.
      */
     public java.util.List<OrderableDBInstanceOption> getOrderableDBInstanceOptions() {
-        
         if (orderableDBInstanceOptions == null) {
               orderableDBInstanceOptions = new com.amazonaws.internal.ListWithAutoConstructFlag<OrderableDBInstanceOption>();
               orderableDBInstanceOptions.setAutoConstruct(true);
@@ -114,7 +113,7 @@ public class DescribeOrderableDBInstanceOptionsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * An optional pagination token provided by a previous
      * OrderableDBInstanceOptions request. If this parameter is specified,
@@ -165,8 +164,7 @@ public class DescribeOrderableDBInstanceOptionsResult implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

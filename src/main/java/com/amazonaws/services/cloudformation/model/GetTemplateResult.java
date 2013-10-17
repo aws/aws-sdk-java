@@ -94,8 +94,7 @@ public class GetTemplateResult implements Serializable {
         this.templateBody = templateBody;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

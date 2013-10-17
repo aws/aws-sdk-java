@@ -81,8 +81,7 @@ public class EbsInstanceBlockDevice implements Serializable {
         this.volumeId = volumeId;
         return this;
     }
-    
-    
+
     /**
      * The status of the EBS volume.
      * <p>
@@ -130,8 +129,7 @@ public class EbsInstanceBlockDevice implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * The status of the EBS volume.
      * <p>
@@ -165,7 +163,7 @@ public class EbsInstanceBlockDevice implements Serializable {
         this.status = status.toString();
         return this;
     }
-    
+
     /**
      * The time at which the EBS volume was attached to the associated
      * instance.
@@ -204,8 +202,7 @@ public class EbsInstanceBlockDevice implements Serializable {
         this.attachTime = attachTime;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether the Amazon EBS volume is deleted on instance
      * termination.
@@ -244,8 +241,7 @@ public class EbsInstanceBlockDevice implements Serializable {
         this.deleteOnTermination = deleteOnTermination;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether the Amazon EBS volume is deleted on instance
      * termination.
@@ -256,7 +252,7 @@ public class EbsInstanceBlockDevice implements Serializable {
     public Boolean getDeleteOnTermination() {
         return deleteOnTermination;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

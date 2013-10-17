@@ -59,8 +59,7 @@ public class CreateNetworkInterfaceResult implements Serializable {
         this.networkInterface = networkInterface;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

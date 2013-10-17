@@ -66,8 +66,6 @@ public class LoggingConfig implements Serializable {
      */
     public LoggingConfig() {}
     
-
-
     /**
      * Constructs a new LoggingConfig object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -86,8 +84,6 @@ public class LoggingConfig implements Serializable {
         setPrefix(prefix);
     }
 
-    
-    
     /**
      * Specifies whether you want CloudFront to save access logs to an Amazon
      * S3 bucket. If you do not want to enable logging when you create a
@@ -156,8 +152,7 @@ public class LoggingConfig implements Serializable {
         this.enabled = enabled;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether you want CloudFront to save access logs to an Amazon
      * S3 bucket. If you do not want to enable logging when you create a
@@ -178,7 +173,7 @@ public class LoggingConfig implements Serializable {
     public Boolean getEnabled() {
         return enabled;
     }
-    
+
     /**
      * Specifies whether you want CloudFront to include cookies in access
      * logs, specify true for IncludeCookies. If you choose to include
@@ -247,8 +242,7 @@ public class LoggingConfig implements Serializable {
         this.includeCookies = includeCookies;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether you want CloudFront to include cookies in access
      * logs, specify true for IncludeCookies. If you choose to include
@@ -269,7 +263,7 @@ public class LoggingConfig implements Serializable {
     public Boolean getIncludeCookies() {
         return includeCookies;
     }
-    
+
     /**
      * The Amazon S3 bucket to store the access logs in, for example,
      * myawslogbucket.s3.amazonaws.com.
@@ -308,8 +302,7 @@ public class LoggingConfig implements Serializable {
         this.bucket = bucket;
         return this;
     }
-    
-    
+
     /**
      * An optional string that you want CloudFront to prefix to the access
      * log filenames for this distribution, for example, myprefix/. If you
@@ -360,8 +353,7 @@ public class LoggingConfig implements Serializable {
         this.prefix = prefix;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

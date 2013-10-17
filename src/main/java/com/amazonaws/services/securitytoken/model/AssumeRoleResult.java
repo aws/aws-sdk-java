@@ -88,8 +88,7 @@ public class AssumeRoleResult implements Serializable {
         this.credentials = credentials;
         return this;
     }
-    
-    
+
     /**
      * The Amazon Resource Name (ARN) and the assumed role ID, which are
      * identifiers that you can use to refer to the resulting temporary
@@ -152,8 +151,7 @@ public class AssumeRoleResult implements Serializable {
         this.assumedRoleUser = assumedRoleUser;
         return this;
     }
-    
-    
+
     /**
      * A percentage value that indicates the size of the policy in packed
      * form. The service rejects any policy with a packed size greater than
@@ -207,8 +205,7 @@ public class AssumeRoleResult implements Serializable {
         this.packedPolicySize = packedPolicySize;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

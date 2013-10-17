@@ -39,7 +39,6 @@ public class ListDomainsResult implements Serializable {
      * @return A list of domain names that match the expression.
      */
     public java.util.List<String> getDomainNames() {
-        
         if (domainNames == null) {
               domainNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               domainNames.setAutoConstruct(true);
@@ -101,7 +100,7 @@ public class ListDomainsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * An opaque token indicating that there are more domains than the
      * specified <code>MaxNumberOfDomains</code> still available.
@@ -140,8 +139,7 @@ public class ListDomainsResult implements Serializable {
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

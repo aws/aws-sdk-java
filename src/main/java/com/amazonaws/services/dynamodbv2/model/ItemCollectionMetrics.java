@@ -82,8 +82,7 @@ public class ItemCollectionMetrics implements Serializable {
         setItemCollectionKey(itemCollectionKey);
         return this;
     }
-    
-   	
+
     /**
      * The hash key value of the item collection. This is the same as the
      * hash key of the item.
@@ -104,7 +103,7 @@ public class ItemCollectionMetrics implements Serializable {
 		this.itemCollectionKey.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into ItemCollectionKey.
 	 * <p>
@@ -135,7 +134,6 @@ public class ItemCollectionMetrics implements Serializable {
      *         or accuracy of the estimate.
      */
     public java.util.List<Double> getSizeEstimateRangeGB() {
-        
         return sizeEstimateRangeGB;
     }
     
@@ -235,7 +233,7 @@ public class ItemCollectionMetrics implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

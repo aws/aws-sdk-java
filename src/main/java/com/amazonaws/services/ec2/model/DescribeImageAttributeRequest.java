@@ -51,8 +51,6 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
      */
     public DescribeImageAttributeRequest() {}
     
-
-
     /**
      * Constructs a new DescribeImageAttributeRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -69,8 +67,6 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
         setAttribute(attribute);
     }
 
-    
-    
     /**
      * Constructs a new DescribeImageAttributeRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -86,7 +82,7 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
         this.imageId = imageId;
         this.attribute = attribute.toString();
     }
-    
+
     /**
      * The ID of the AMI whose attribute is to be described.
      *
@@ -119,8 +115,7 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
         this.imageId = imageId;
         return this;
     }
-    
-    
+
     /**
      * The name of the attribute to describe. <p> Available attribute names:
      * <code>productCodes</code>, <code>kernel</code>, <code>ramdisk</code>,
@@ -180,8 +175,7 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
         this.attribute = attribute;
         return this;
     }
-    
-    
+
     /**
      * The name of the attribute to describe. <p> Available attribute names:
      * <code>productCodes</code>, <code>kernel</code>, <code>ramdisk</code>,
@@ -223,7 +217,7 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
         this.attribute = attribute.toString();
         return this;
     }
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

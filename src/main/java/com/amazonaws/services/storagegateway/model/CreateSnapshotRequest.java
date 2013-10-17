@@ -111,8 +111,7 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Se
         this.volumeARN = volumeARN;
         return this;
     }
-    
-    
+
     /**
      * Textual description of the snapshot that appears in the Amazon EC2
      * console, Elastic Block Store snapshots panel in the <b>Description</b>
@@ -172,8 +171,7 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Se
         this.snapshotDescription = snapshotDescription;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

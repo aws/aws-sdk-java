@@ -52,11 +52,12 @@ public class Preset implements Serializable {
     private String description;
 
     /**
-     * The container type for the output file. This value must be
-     * <code>mp4</code>.
+     * The container type for the output file. Valid values include
+     * <code>mp3</code>, <code>mp4</code>, <code>ogg</code>, <code>ts</code>,
+     * and <code>webm</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^mp4$)|(^ts$)|(^webm$)<br/>
+     * <b>Pattern: </b>(^mp4$)|(^ts$)|(^webm$)|(^mp3$)|(^ogg$)<br/>
      */
     private String container;
 
@@ -135,8 +136,7 @@ public class Preset implements Serializable {
         this.id = id;
         return this;
     }
-    
-    
+
     /**
      * The name of the preset.
      * <p>
@@ -178,8 +178,7 @@ public class Preset implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * A description of the preset.
      * <p>
@@ -221,47 +220,52 @@ public class Preset implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
-     * The container type for the output file. This value must be
-     * <code>mp4</code>.
+     * The container type for the output file. Valid values include
+     * <code>mp3</code>, <code>mp4</code>, <code>ogg</code>, <code>ts</code>,
+     * and <code>webm</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^mp4$)|(^ts$)|(^webm$)<br/>
+     * <b>Pattern: </b>(^mp4$)|(^ts$)|(^webm$)|(^mp3$)|(^ogg$)<br/>
      *
-     * @return The container type for the output file. This value must be
-     *         <code>mp4</code>.
+     * @return The container type for the output file. Valid values include
+     *         <code>mp3</code>, <code>mp4</code>, <code>ogg</code>, <code>ts</code>,
+     *         and <code>webm</code>.
      */
     public String getContainer() {
         return container;
     }
     
     /**
-     * The container type for the output file. This value must be
-     * <code>mp4</code>.
+     * The container type for the output file. Valid values include
+     * <code>mp3</code>, <code>mp4</code>, <code>ogg</code>, <code>ts</code>,
+     * and <code>webm</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^mp4$)|(^ts$)|(^webm$)<br/>
+     * <b>Pattern: </b>(^mp4$)|(^ts$)|(^webm$)|(^mp3$)|(^ogg$)<br/>
      *
-     * @param container The container type for the output file. This value must be
-     *         <code>mp4</code>.
+     * @param container The container type for the output file. Valid values include
+     *         <code>mp3</code>, <code>mp4</code>, <code>ogg</code>, <code>ts</code>,
+     *         and <code>webm</code>.
      */
     public void setContainer(String container) {
         this.container = container;
     }
     
     /**
-     * The container type for the output file. This value must be
-     * <code>mp4</code>.
+     * The container type for the output file. Valid values include
+     * <code>mp3</code>, <code>mp4</code>, <code>ogg</code>, <code>ts</code>,
+     * and <code>webm</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^mp4$)|(^ts$)|(^webm$)<br/>
+     * <b>Pattern: </b>(^mp4$)|(^ts$)|(^webm$)|(^mp3$)|(^ogg$)<br/>
      *
-     * @param container The container type for the output file. This value must be
-     *         <code>mp4</code>.
+     * @param container The container type for the output file. Valid values include
+     *         <code>mp3</code>, <code>mp4</code>, <code>ogg</code>, <code>ts</code>,
+     *         and <code>webm</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -270,8 +274,7 @@ public class Preset implements Serializable {
         this.container = container;
         return this;
     }
-    
-    
+
     /**
      * A section of the response body that provides information about the
      * audio preset values.
@@ -310,8 +313,7 @@ public class Preset implements Serializable {
         this.audio = audio;
         return this;
     }
-    
-    
+
     /**
      * A section of the response body that provides information about the
      * video preset values.
@@ -350,8 +352,7 @@ public class Preset implements Serializable {
         this.video = video;
         return this;
     }
-    
-    
+
     /**
      * A section of the response body that provides information about the
      * thumbnail preset values, if any.
@@ -390,8 +391,7 @@ public class Preset implements Serializable {
         this.thumbnails = thumbnails;
         return this;
     }
-    
-    
+
     /**
      * Whether the preset is a default preset provided by Elastic Transcoder
      * (<code>System</code>) or a preset that you have defined
@@ -445,8 +445,7 @@ public class Preset implements Serializable {
         this.type = type;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

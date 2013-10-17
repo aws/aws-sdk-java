@@ -61,8 +61,6 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest impl
      */
     public DescribeCacheParametersRequest() {}
     
-
-
     /**
      * Constructs a new DescribeCacheParametersRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -75,8 +73,6 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest impl
         setCacheParameterGroupName(cacheParameterGroupName);
     }
 
-    
-    
     /**
      * The name of a specific cache parameter group to return details for.
      *
@@ -109,8 +105,7 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest impl
         this.cacheParameterGroupName = cacheParameterGroupName;
         return this;
     }
-    
-    
+
     /**
      * The parameter types to return. <p>Valid values: <code>user</code> |
      * <code>system</code> | <code>engine-default</code>
@@ -149,8 +144,7 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest impl
         this.source = source;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
@@ -201,8 +195,7 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest impl
         this.maxRecords = maxRecords;
         return this;
     }
-    
-    
+
     /**
      * An optional marker returned from a prior request. Use this marker for
      * pagination of results from this operation. If this parameter is
@@ -253,8 +246,7 @@ public class DescribeCacheParametersRequest extends AmazonWebServiceRequest impl
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

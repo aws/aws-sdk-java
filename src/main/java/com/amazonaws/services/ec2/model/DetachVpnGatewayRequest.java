@@ -50,8 +50,6 @@ public class DetachVpnGatewayRequest extends AmazonWebServiceRequest implements 
      */
     public DetachVpnGatewayRequest() {}
     
-
-
     /**
      * Constructs a new DetachVpnGatewayRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -65,8 +63,6 @@ public class DetachVpnGatewayRequest extends AmazonWebServiceRequest implements 
         setVpcId(vpcId);
     }
 
-    
-    
     /**
      * The ID of the VPN gateway to detach from the VPC.
      *
@@ -99,8 +95,7 @@ public class DetachVpnGatewayRequest extends AmazonWebServiceRequest implements 
         this.vpnGatewayId = vpnGatewayId;
         return this;
     }
-    
-    
+
     /**
      * The ID of the VPC to detach the VPN gateway from.
      *
@@ -133,8 +128,7 @@ public class DetachVpnGatewayRequest extends AmazonWebServiceRequest implements 
         this.vpcId = vpcId;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

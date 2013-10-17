@@ -96,8 +96,6 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest imp
      */
     public CreateApplicationVersionRequest() {}
     
-
-
     /**
      * Constructs a new CreateApplicationVersionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -117,8 +115,6 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest imp
         setVersionLabel(versionLabel);
     }
 
-    
-    
     /**
      * The name of the application. If no application is found with this
      * name, and <code>AutoCreateApplication</code> is <code>false</code>,
@@ -172,8 +168,7 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest imp
         this.applicationName = applicationName;
         return this;
     }
-    
-    
+
     /**
      * A label identifying this version. <p>Constraint: Must be unique per
      * application. If an application version already exists with this label
@@ -233,8 +228,7 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest imp
         this.versionLabel = versionLabel;
         return this;
     }
-    
-    
+
     /**
      * Describes this version.
      * <p>
@@ -276,8 +270,7 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest imp
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * The Amazon S3 bucket and key that identify the location of the source
      * bundle for this version. <p> If data found at the Amazon S3 location
@@ -352,8 +345,7 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest imp
         this.sourceBundle = sourceBundle;
         return this;
     }
-    
-    
+
     /**
      * Determines how the system behaves if the specified application for
      * this version does not already exist: <enumValues> <value name="true">
@@ -458,8 +450,7 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest imp
         this.autoCreateApplication = autoCreateApplication;
         return this;
     }
-    
-    
+
     /**
      * Determines how the system behaves if the specified application for
      * this version does not already exist: <enumValues> <value name="true">
@@ -492,7 +483,7 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest imp
     public Boolean getAutoCreateApplication() {
         return autoCreateApplication;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudwatch;
-            
+
 import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
@@ -52,8 +52,8 @@ import com.amazonaws.services.cloudwatch.model.*;
  * <li> <a href="http://monitoring.amazonaws.com/doc/2010-08-01/CloudWatch.wsdl"> WSDL Location </a> :
  * http://monitoring.amazonaws.com/doc/2010-08-01/CloudWatch.wsdl</li>
  * 
- * </ul> 
- */       
+ * </ul>
+ */
 public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
     /**
      * <p>

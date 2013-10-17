@@ -68,8 +68,7 @@ public class ExecutionTimeFilter implements Serializable {
         this.oldestDate = oldestDate;
         return this;
     }
-    
-    
+
     /**
      * Specifies the latest start or close date and time to return.
      *
@@ -102,8 +101,7 @@ public class ExecutionTimeFilter implements Serializable {
         this.latestDate = latestDate;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

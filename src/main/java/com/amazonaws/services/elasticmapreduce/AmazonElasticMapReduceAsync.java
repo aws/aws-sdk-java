@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce;
-            
+
 import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
@@ -32,8 +32,8 @@ import com.amazonaws.services.elasticmapreduce.model.*;
  * Amazon Elastic MapReduce is a web service that makes it easy to process large amounts of data efficiently. Elastic MapReduce uses Hadoop processing
  * combined with several AWS products to do tasks such as web indexing, data mining, log file analysis, machine learning, scientific simulation, and data
  * warehousing.
- * </p> 
- */       
+ * </p>
+ */
 public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
     /**
      * <p>

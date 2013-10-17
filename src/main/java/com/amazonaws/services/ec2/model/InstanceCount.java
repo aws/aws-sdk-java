@@ -73,8 +73,7 @@ public class InstanceCount implements Serializable {
         this.state = state;
         return this;
     }
-    
-    
+
     /**
      * Sets the value of the State property for this object.
      * <p>
@@ -108,7 +107,7 @@ public class InstanceCount implements Serializable {
         this.state = state.toString();
         return this;
     }
-    
+
     /**
      * Returns the value of the InstanceCount property for this object.
      *
@@ -141,8 +140,7 @@ public class InstanceCount implements Serializable {
         this.instanceCount = instanceCount;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

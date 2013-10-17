@@ -97,8 +97,7 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest implement
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * A stack ID. If you include this parameter,
      * <code>DescribeElasticIps</code> returns a description of the Elastic
@@ -143,8 +142,7 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest implement
         this.stackId = stackId;
         return this;
     }
-    
-    
+
     /**
      * An array of Elastic IP addresses to be described. If you include this
      * parameter, <code>DescribeElasticIps</code> returns a description of
@@ -157,7 +155,6 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest implement
      *         description of every Elastic IP address.
      */
     public java.util.List<String> getIps() {
-        
         if (ips == null) {
               ips = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               ips.setAutoConstruct(true);
@@ -237,7 +234,7 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest implement
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

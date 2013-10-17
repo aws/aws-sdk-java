@@ -86,8 +86,7 @@ public class Alarm implements Serializable {
         this.alarmName = alarmName;
         return this;
     }
-    
-    
+
     /**
      * The Amazon Resource Name (ARN) of the alarm.
      * <p>
@@ -132,8 +131,7 @@ public class Alarm implements Serializable {
         this.alarmARN = alarmARN;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

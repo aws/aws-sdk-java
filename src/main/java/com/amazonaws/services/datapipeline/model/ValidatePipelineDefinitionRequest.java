@@ -87,8 +87,7 @@ public class ValidatePipelineDefinitionRequest extends AmazonWebServiceRequest i
         this.pipelineId = pipelineId;
         return this;
     }
-    
-    
+
     /**
      * A list of objects that define the pipeline changes to validate against
      * the pipeline.
@@ -97,7 +96,6 @@ public class ValidatePipelineDefinitionRequest extends AmazonWebServiceRequest i
      *         the pipeline.
      */
     public java.util.List<PipelineObject> getPipelineObjects() {
-        
         if (pipelineObjects == null) {
               pipelineObjects = new com.amazonaws.internal.ListWithAutoConstructFlag<PipelineObject>();
               pipelineObjects.setAutoConstruct(true);
@@ -165,7 +163,7 @@ public class ValidatePipelineDefinitionRequest extends AmazonWebServiceRequest i
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -90,9 +90,9 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
         if (!needsConnectionLeftOpen) {
             if (CRC32Checksum != null) {
                 crc32ChecksumInputStream = new CRC32ChecksumCalculatingInputStream(response.getContent());
-                jsonParser = jsonFactory.createJsonParser(crc32ChecksumInputStream);
+                jsonParser = jsonFactory.createParser(crc32ChecksumInputStream);
             } else {
-                jsonParser = jsonFactory.createJsonParser(response.getContent());
+                jsonParser = jsonFactory.createParser(response.getContent());
             }
         }
 

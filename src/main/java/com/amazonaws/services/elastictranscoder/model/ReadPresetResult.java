@@ -68,8 +68,7 @@ public class ReadPresetResult implements Serializable {
         this.preset = preset;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

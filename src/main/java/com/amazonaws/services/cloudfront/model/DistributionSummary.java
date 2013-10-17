@@ -136,8 +136,7 @@ public class DistributionSummary implements Serializable {
         this.id = id;
         return this;
     }
-    
-    
+
     /**
      * This response element indicates the current status of the
      * distribution. When the status is Deployed, the distribution's
@@ -188,8 +187,7 @@ public class DistributionSummary implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * The date and time the distribution was last modified.
      *
@@ -222,8 +220,7 @@ public class DistributionSummary implements Serializable {
         this.lastModifiedTime = lastModifiedTime;
         return this;
     }
-    
-    
+
     /**
      * The domain name corresponding to the distribution. For example:
      * d604721fxaaqy9.cloudfront.net.
@@ -262,8 +259,7 @@ public class DistributionSummary implements Serializable {
         this.domainName = domainName;
         return this;
     }
-    
-    
+
     /**
      * A complex type that contains information about CNAMEs (alternate
      * domain names), if any, for this distribution.
@@ -302,8 +298,7 @@ public class DistributionSummary implements Serializable {
         this.aliases = aliases;
         return this;
     }
-    
-    
+
     /**
      * A complex type that contains information about origins for this
      * distribution.
@@ -342,8 +337,7 @@ public class DistributionSummary implements Serializable {
         this.origins = origins;
         return this;
     }
-    
-    
+
     /**
      * A complex type that describes the default cache behavior if you do not
      * specify a CacheBehavior element or if files don't match any of the
@@ -394,8 +388,7 @@ public class DistributionSummary implements Serializable {
         this.defaultCacheBehavior = defaultCacheBehavior;
         return this;
     }
-    
-    
+
     /**
      * A complex type that contains zero or more CacheBehavior elements.
      *
@@ -428,8 +421,7 @@ public class DistributionSummary implements Serializable {
         this.cacheBehaviors = cacheBehaviors;
         return this;
     }
-    
-    
+
     /**
      * A complex type that contains zero or more CustomErrorResponses
      * elements.
@@ -468,8 +460,7 @@ public class DistributionSummary implements Serializable {
         this.customErrorResponses = customErrorResponses;
         return this;
     }
-    
-    
+
     /**
      * The comment originally specified when this distribution was created.
      *
@@ -502,8 +493,7 @@ public class DistributionSummary implements Serializable {
         this.comment = comment;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the PriceClass property for this object.
      * <p>
@@ -551,8 +541,7 @@ public class DistributionSummary implements Serializable {
         this.priceClass = priceClass;
         return this;
     }
-    
-    
+
     /**
      * Sets the value of the PriceClass property for this object.
      * <p>
@@ -586,7 +575,7 @@ public class DistributionSummary implements Serializable {
         this.priceClass = priceClass.toString();
         return this;
     }
-    
+
     /**
      * Whether the distribution is enabled to accept end user requests for
      * content.
@@ -625,8 +614,7 @@ public class DistributionSummary implements Serializable {
         this.enabled = enabled;
         return this;
     }
-    
-    
+
     /**
      * Whether the distribution is enabled to accept end user requests for
      * content.
@@ -637,7 +625,7 @@ public class DistributionSummary implements Serializable {
     public Boolean getEnabled() {
         return enabled;
     }
-    
+
     /**
      * A complex type that contains information about viewer certificates for
      * this distribution.
@@ -676,8 +664,7 @@ public class DistributionSummary implements Serializable {
         this.viewerCertificate = viewerCertificate;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

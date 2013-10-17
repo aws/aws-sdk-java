@@ -86,8 +86,7 @@ public class CloseStatusFilter implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * The close status that must match the close status of an execution for
      * it to meet the criteria of this filter. This field is required.
@@ -125,7 +124,7 @@ public class CloseStatusFilter implements Serializable {
         this.status = status.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

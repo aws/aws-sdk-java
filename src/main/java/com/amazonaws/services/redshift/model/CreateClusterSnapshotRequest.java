@@ -116,8 +116,7 @@ public class CreateClusterSnapshotRequest extends AmazonWebServiceRequest implem
         this.snapshotIdentifier = snapshotIdentifier;
         return this;
     }
-    
-    
+
     /**
      * The cluster identifier for which you want a snapshot.
      *
@@ -150,8 +149,7 @@ public class CreateClusterSnapshotRequest extends AmazonWebServiceRequest implem
         this.clusterIdentifier = clusterIdentifier;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -79,8 +79,7 @@ public class Event implements Serializable {
         this.sourceIdentifier = sourceIdentifier;
         return this;
     }
-    
-    
+
     /**
      * The source type for this event.
      * <p>
@@ -128,8 +127,7 @@ public class Event implements Serializable {
         this.sourceType = sourceType;
         return this;
     }
-    
-    
+
     /**
      * The source type for this event.
      * <p>
@@ -163,7 +161,7 @@ public class Event implements Serializable {
         this.sourceType = sourceType.toString();
         return this;
     }
-    
+
     /**
      * The text of this event.
      *
@@ -196,8 +194,7 @@ public class Event implements Serializable {
         this.message = message;
         return this;
     }
-    
-    
+
     /**
      * The date and time of the event.
      *
@@ -230,8 +227,7 @@ public class Event implements Serializable {
         this.date = date;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

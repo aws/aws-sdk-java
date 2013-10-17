@@ -44,7 +44,7 @@ public class CreateStreamingDistributionRequestMarshaller implements Marshaller<
         Request<CreateStreamingDistributionRequest> request = new DefaultRequest<CreateStreamingDistributionRequest>(createStreamingDistributionRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "2013-08-26/streaming-distribution"; 
+        String uriResourcePath = "2013-09-27/streaming-distribution"; 
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
@@ -64,7 +64,7 @@ public class CreateStreamingDistributionRequestMarshaller implements Marshaller<
 
         
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2013-08-26/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2013-09-27/");
 
             
                     if (createStreamingDistributionRequest != null) {

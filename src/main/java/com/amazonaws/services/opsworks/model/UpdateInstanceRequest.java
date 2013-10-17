@@ -155,15 +155,13 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * The instance's layer IDs.
      *
      * @return The instance's layer IDs.
      */
     public java.util.List<String> getLayerIds() {
-        
         if (layerIds == null) {
               layerIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               layerIds.setAutoConstruct(true);
@@ -225,7 +223,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
 
         return this;
     }
-    
+
     /**
      * The instance type. AWS OpsWorks supports all instance types except
      * Cluster Compute, Cluster GPU, and High Memory Cluster. For more
@@ -294,8 +292,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
         this.instanceType = instanceType;
         return this;
     }
-    
-    
+
     /**
      * The instance's auto scaling type, which has three possible values:
      * <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
@@ -379,8 +376,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
         this.autoScalingType = autoScalingType;
         return this;
     }
-    
-    
+
     /**
      * The instance's auto scaling type, which has three possible values:
      * <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
@@ -438,7 +434,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
         this.autoScalingType = autoScalingType.toString();
         return this;
     }
-    
+
     /**
      * The instance host name.
      *
@@ -471,8 +467,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
         this.hostname = hostname;
         return this;
     }
-    
-    
+
     /**
      * The instance operating system, which must be set to one of the
      * following. <ul> <li>Standard operating systems: <code>Amazon
@@ -577,8 +572,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
         this.os = os;
         return this;
     }
-    
-    
+
     /**
      * A custom AMI ID to be used to create the instance. The AMI should be
      * based on one of the standard AWS OpsWorks APIs: Amazon Linux or Ubuntu
@@ -629,8 +623,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
         this.amiId = amiId;
         return this;
     }
-    
-    
+
     /**
      * The instance SSH key name.
      *
@@ -663,8 +656,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
         this.sshKeyName = sshKeyName;
         return this;
     }
-    
-    
+
     /**
      * The instance architecture. Instance types do not necessarily support
      * both architectures. For a list of the architectures that are supported
@@ -736,8 +728,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
         this.architecture = architecture;
         return this;
     }
-    
-    
+
     /**
      * The instance architecture. Instance types do not necessarily support
      * both architectures. For a list of the architectures that are supported
@@ -787,7 +778,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
         this.architecture = architecture.toString();
         return this;
     }
-    
+
     /**
      * Whether to install operating system and package updates when the
      * instance boots. The default value is <code>true</code>. To control
@@ -868,8 +859,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
         this.installUpdatesOnBoot = installUpdatesOnBoot;
         return this;
     }
-    
-    
+
     /**
      * Whether to install operating system and package updates when the
      * instance boots. The default value is <code>true</code>. To control
@@ -894,7 +884,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements Se
     public Boolean getInstallUpdatesOnBoot() {
         return installUpdatesOnBoot;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

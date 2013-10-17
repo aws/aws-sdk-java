@@ -100,8 +100,7 @@ public class DBEngineVersion implements Serializable {
         this.engine = engine;
         return this;
     }
-    
-    
+
     /**
      * The version number of the database engine.
      *
@@ -134,8 +133,7 @@ public class DBEngineVersion implements Serializable {
         this.engineVersion = engineVersion;
         return this;
     }
-    
-    
+
     /**
      * The name of the DBParameterGroupFamily for the database engine.
      *
@@ -168,8 +166,7 @@ public class DBEngineVersion implements Serializable {
         this.dBParameterGroupFamily = dBParameterGroupFamily;
         return this;
     }
-    
-    
+
     /**
      * The description of the database engine.
      *
@@ -202,8 +199,7 @@ public class DBEngineVersion implements Serializable {
         this.dBEngineDescription = dBEngineDescription;
         return this;
     }
-    
-    
+
     /**
      * The description of the database engine version.
      *
@@ -236,8 +232,7 @@ public class DBEngineVersion implements Serializable {
         this.dBEngineVersionDescription = dBEngineVersionDescription;
         return this;
     }
-    
-    
+
     /**
      * The default character set for new instances of this engine version, if
      * the <code>CharacterSetName</code> parameter of the CreateDBInstance
@@ -282,8 +277,7 @@ public class DBEngineVersion implements Serializable {
         this.defaultCharacterSet = defaultCharacterSet;
         return this;
     }
-    
-    
+
     /**
      * A list of the character sets supported by this engine for the
      * <code>CharacterSetName</code> parameter of the CreateDBInstance API.
@@ -292,7 +286,6 @@ public class DBEngineVersion implements Serializable {
      *         <code>CharacterSetName</code> parameter of the CreateDBInstance API.
      */
     public java.util.List<CharacterSet> getSupportedCharacterSets() {
-        
         if (supportedCharacterSets == null) {
               supportedCharacterSets = new com.amazonaws.internal.ListWithAutoConstructFlag<CharacterSet>();
               supportedCharacterSets.setAutoConstruct(true);
@@ -360,7 +353,7 @@ public class DBEngineVersion implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

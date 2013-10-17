@@ -92,8 +92,7 @@ public class DeleteVirtualMFADeviceRequest extends AmazonWebServiceRequest imple
         this.serialNumber = serialNumber;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

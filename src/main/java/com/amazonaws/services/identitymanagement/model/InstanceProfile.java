@@ -165,8 +165,7 @@ public class InstanceProfile implements Serializable {
         this.path = path;
         return this;
     }
-    
-    
+
     /**
      * The name identifying the instance profile.
      * <p>
@@ -211,8 +210,7 @@ public class InstanceProfile implements Serializable {
         this.instanceProfileName = instanceProfileName;
         return this;
     }
-    
-    
+
     /**
      * The stable and unique string identifying the instance profile. For
      * more information about IDs, see <a
@@ -281,8 +279,7 @@ public class InstanceProfile implements Serializable {
         this.instanceProfileId = instanceProfileId;
         return this;
     }
-    
-    
+
     /**
      * The Amazon Resource Name (ARN) specifying the instance profile. For
      * more information about ARNs and how to use them in policies, see <a
@@ -348,8 +345,7 @@ public class InstanceProfile implements Serializable {
         this.arn = arn;
         return this;
     }
-    
-    
+
     /**
      * The date when the instance profile was created.
      *
@@ -382,15 +378,13 @@ public class InstanceProfile implements Serializable {
         this.createDate = createDate;
         return this;
     }
-    
-    
+
     /**
      * The role associated with the instance profile.
      *
      * @return The role associated with the instance profile.
      */
     public java.util.List<Role> getRoles() {
-        
         if (roles == null) {
               roles = new com.amazonaws.internal.ListWithAutoConstructFlag<Role>();
               roles.setAutoConstruct(true);
@@ -452,7 +446,7 @@ public class InstanceProfile implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

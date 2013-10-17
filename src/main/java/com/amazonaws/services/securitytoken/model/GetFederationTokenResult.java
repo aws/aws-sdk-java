@@ -79,8 +79,7 @@ public class GetFederationTokenResult implements Serializable {
         this.credentials = credentials;
         return this;
     }
-    
-    
+
     /**
      * Identifiers for the federated user associated with the credentials
      * (such as <code>arn:aws:sts::123456789012:federated-user/Bob</code> or
@@ -131,8 +130,7 @@ public class GetFederationTokenResult implements Serializable {
         this.federatedUser = federatedUser;
         return this;
     }
-    
-    
+
     /**
      * A percentage value indicating the size of the policy in packed form.
      * The service rejects policies for which the packed size is greater than
@@ -186,8 +184,7 @@ public class GetFederationTokenResult implements Serializable {
         this.packedPolicySize = packedPolicySize;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

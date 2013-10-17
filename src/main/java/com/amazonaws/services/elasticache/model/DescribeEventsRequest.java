@@ -126,8 +126,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
         this.sourceIdentifier = sourceIdentifier;
         return this;
     }
-    
-    
+
     /**
      * The event source to retrieve events for. If no value is specified, all
      * events are returned. <p>Valid values are: <code>cache-cluster</code> |
@@ -193,8 +192,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
         this.sourceType = sourceType;
         return this;
     }
-    
-    
+
     /**
      * The event source to retrieve events for. If no value is specified, all
      * events are returned. <p>Valid values are: <code>cache-cluster</code> |
@@ -240,7 +238,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
         this.sourceType = sourceType.toString();
         return this;
     }
-    
+
     /**
      * The beginning of the time interval to retrieve events for, specified
      * in ISO 8601 format.
@@ -279,8 +277,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
         this.startTime = startTime;
         return this;
     }
-    
-    
+
     /**
      * The end of the time interval for which to retrieve events, specified
      * in ISO 8601 format.
@@ -319,8 +316,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
         this.endTime = endTime;
         return this;
     }
-    
-    
+
     /**
      * The number of minutes' worth of events to retrieve.
      *
@@ -353,8 +349,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
         this.duration = duration;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
@@ -405,8 +400,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
         this.maxRecords = maxRecords;
         return this;
     }
-    
-    
+
     /**
      * An optional marker returned from a prior request. Use this marker for
      * pagination of results from this operation. If this parameter is
@@ -457,8 +451,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

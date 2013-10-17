@@ -75,8 +75,7 @@ public class DescribeVirtualInterfacesRequest extends AmazonWebServiceRequest im
         this.connectionId = connectionId;
         return this;
     }
-    
-    
+
     /**
      * ID of the virtual interface. <p>Example: dxvif-123dfg56 <p>Default:
      * None
@@ -115,8 +114,7 @@ public class DescribeVirtualInterfacesRequest extends AmazonWebServiceRequest im
         this.virtualInterfaceId = virtualInterfaceId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

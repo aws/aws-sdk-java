@@ -79,8 +79,7 @@ public class Permission implements Serializable {
         this.stackId = stackId;
         return this;
     }
-    
-    
+
     /**
      * The Amazon Resource Name (ARN) for an AWS Identity and Access
      * Management (IAM) role. For more information about IAM ARNs, see <a
@@ -131,8 +130,7 @@ public class Permission implements Serializable {
         this.iamUserArn = iamUserArn;
         return this;
     }
-    
-    
+
     /**
      * Whether the user can use SSH.
      *
@@ -165,8 +163,7 @@ public class Permission implements Serializable {
         this.allowSsh = allowSsh;
         return this;
     }
-    
-    
+
     /**
      * Whether the user can use SSH.
      *
@@ -175,7 +172,7 @@ public class Permission implements Serializable {
     public Boolean getAllowSsh() {
         return allowSsh;
     }
-    
+
     /**
      * Whether the user can use <b>sudo</b>.
      *
@@ -208,8 +205,7 @@ public class Permission implements Serializable {
         this.allowSudo = allowSudo;
         return this;
     }
-    
-    
+
     /**
      * Whether the user can use <b>sudo</b>.
      *
@@ -218,7 +214,7 @@ public class Permission implements Serializable {
     public Boolean getAllowSudo() {
         return allowSudo;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -66,8 +66,7 @@ public class UpdateStreamingDistributionResult implements Serializable {
         this.streamingDistribution = streamingDistribution;
         return this;
     }
-    
-    
+
     /**
      * The current version of the configuration. For example: E2QWRUHAPOMQZL.
      *
@@ -100,8 +99,7 @@ public class UpdateStreamingDistributionResult implements Serializable {
         this.eTag = eTag;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

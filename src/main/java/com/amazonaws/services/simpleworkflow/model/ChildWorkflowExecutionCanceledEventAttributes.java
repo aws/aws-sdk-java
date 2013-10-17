@@ -91,8 +91,7 @@ public class ChildWorkflowExecutionCanceledEventAttributes implements Serializab
         this.workflowExecution = workflowExecution;
         return this;
     }
-    
-    
+
     /**
      * The type of the child workflow execution.
      *
@@ -125,8 +124,7 @@ public class ChildWorkflowExecutionCanceledEventAttributes implements Serializab
         this.workflowType = workflowType;
         return this;
     }
-    
-    
+
     /**
      * Details of the cancellation (if provided).
      * <p>
@@ -168,8 +166,7 @@ public class ChildWorkflowExecutionCanceledEventAttributes implements Serializab
         this.details = details;
         return this;
     }
-    
-    
+
     /**
      * The id of the <code>StartChildWorkflowExecutionInitiated</code> event
      * corresponding to the <code>StartChildWorkflowExecution</code>
@@ -226,8 +223,7 @@ public class ChildWorkflowExecutionCanceledEventAttributes implements Serializab
         this.initiatedEventId = initiatedEventId;
         return this;
     }
-    
-    
+
     /**
      * The Id of the <code>ChildWorkflowExecutionStarted</code> event
      * recorded when this child workflow execution was started. This
@@ -278,8 +274,7 @@ public class ChildWorkflowExecutionCanceledEventAttributes implements Serializab
         this.startedEventId = startedEventId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

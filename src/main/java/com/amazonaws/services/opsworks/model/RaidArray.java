@@ -109,8 +109,7 @@ public class RaidArray implements Serializable {
         this.raidArrayId = raidArrayId;
         return this;
     }
-    
-    
+
     /**
      * The instance ID.
      *
@@ -143,8 +142,7 @@ public class RaidArray implements Serializable {
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * The array name.
      *
@@ -177,8 +175,7 @@ public class RaidArray implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * The <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID
      * level</a>.
@@ -217,8 +214,7 @@ public class RaidArray implements Serializable {
         this.raidLevel = raidLevel;
         return this;
     }
-    
-    
+
     /**
      * The number of disks in the array.
      *
@@ -251,8 +247,7 @@ public class RaidArray implements Serializable {
         this.numberOfDisks = numberOfDisks;
         return this;
     }
-    
-    
+
     /**
      * The array's size.
      *
@@ -285,8 +280,7 @@ public class RaidArray implements Serializable {
         this.size = size;
         return this;
     }
-    
-    
+
     /**
      * The array's Linux device. For example /dev/mdadm0.
      *
@@ -319,8 +313,7 @@ public class RaidArray implements Serializable {
         this.device = device;
         return this;
     }
-    
-    
+
     /**
      * The array's mount point.
      *
@@ -353,8 +346,7 @@ public class RaidArray implements Serializable {
         this.mountPoint = mountPoint;
         return this;
     }
-    
-    
+
     /**
      * The array's Availability Zone. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
@@ -399,8 +391,7 @@ public class RaidArray implements Serializable {
         this.availabilityZone = availabilityZone;
         return this;
     }
-    
-    
+
     /**
      * When the RAID array was created.
      *
@@ -433,8 +424,7 @@ public class RaidArray implements Serializable {
         this.createdAt = createdAt;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

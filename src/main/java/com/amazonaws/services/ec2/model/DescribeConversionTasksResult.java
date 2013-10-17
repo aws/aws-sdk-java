@@ -30,7 +30,6 @@ public class DescribeConversionTasksResult implements Serializable {
      * @return The value of the ConversionTasks property for this object.
      */
     public java.util.List<ConversionTask> getConversionTasks() {
-        
         if (conversionTasks == null) {
               conversionTasks = new com.amazonaws.internal.ListWithAutoConstructFlag<ConversionTask>();
               conversionTasks.setAutoConstruct(true);
@@ -92,7 +91,7 @@ public class DescribeConversionTasksResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

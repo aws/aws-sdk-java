@@ -112,8 +112,7 @@ public class ReservedDBInstancesOffering implements Serializable {
         this.reservedDBInstancesOfferingId = reservedDBInstancesOfferingId;
         return this;
     }
-    
-    
+
     /**
      * The DB instance class for the reserved DB Instance.
      *
@@ -146,8 +145,7 @@ public class ReservedDBInstancesOffering implements Serializable {
         this.dBInstanceClass = dBInstanceClass;
         return this;
     }
-    
-    
+
     /**
      * The duration of the offering in seconds.
      *
@@ -180,8 +178,7 @@ public class ReservedDBInstancesOffering implements Serializable {
         this.duration = duration;
         return this;
     }
-    
-    
+
     /**
      * The fixed price charged for this offering.
      *
@@ -214,8 +211,7 @@ public class ReservedDBInstancesOffering implements Serializable {
         this.fixedPrice = fixedPrice;
         return this;
     }
-    
-    
+
     /**
      * The hourly price charged for this offering.
      *
@@ -248,8 +244,7 @@ public class ReservedDBInstancesOffering implements Serializable {
         this.usagePrice = usagePrice;
         return this;
     }
-    
-    
+
     /**
      * The currency code for the reserved DB Instance offering.
      *
@@ -282,8 +277,7 @@ public class ReservedDBInstancesOffering implements Serializable {
         this.currencyCode = currencyCode;
         return this;
     }
-    
-    
+
     /**
      * The database engine used by the offering.
      *
@@ -316,8 +310,7 @@ public class ReservedDBInstancesOffering implements Serializable {
         this.productDescription = productDescription;
         return this;
     }
-    
-    
+
     /**
      * The offering type.
      *
@@ -350,8 +343,7 @@ public class ReservedDBInstancesOffering implements Serializable {
         this.offeringType = offeringType;
         return this;
     }
-    
-    
+
     /**
      * Indicates if the offering applies to Multi-AZ deployments.
      *
@@ -384,8 +376,7 @@ public class ReservedDBInstancesOffering implements Serializable {
         this.multiAZ = multiAZ;
         return this;
     }
-    
-    
+
     /**
      * Indicates if the offering applies to Multi-AZ deployments.
      *
@@ -394,14 +385,13 @@ public class ReservedDBInstancesOffering implements Serializable {
     public Boolean getMultiAZ() {
         return multiAZ;
     }
-    
+
     /**
      * The recurring price charged to run this reserved DB Instance.
      *
      * @return The recurring price charged to run this reserved DB Instance.
      */
     public java.util.List<RecurringCharge> getRecurringCharges() {
-        
         if (recurringCharges == null) {
               recurringCharges = new com.amazonaws.internal.ListWithAutoConstructFlag<RecurringCharge>();
               recurringCharges.setAutoConstruct(true);
@@ -463,7 +453,7 @@ public class ReservedDBInstancesOffering implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -47,8 +47,6 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest implem
      */
     public CreateDBSecurityGroupRequest() {}
     
-
-
     /**
      * Constructs a new CreateDBSecurityGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -66,8 +64,6 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest implem
         setDBSecurityGroupDescription(dBSecurityGroupDescription);
     }
 
-    
-    
     /**
      * The name for the DB Security Group. This value is stored as a
      * lowercase string. <p>Constraints: Must contain no more than 255
@@ -118,8 +114,7 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest implem
         this.dBSecurityGroupName = dBSecurityGroupName;
         return this;
     }
-    
-    
+
     /**
      * The description for the DB Security Group.
      *
@@ -152,8 +147,7 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest implem
         this.dBSecurityGroupDescription = dBSecurityGroupDescription;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

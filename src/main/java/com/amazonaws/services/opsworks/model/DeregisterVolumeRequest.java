@@ -66,8 +66,7 @@ public class DeregisterVolumeRequest extends AmazonWebServiceRequest implements 
         this.volumeId = volumeId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

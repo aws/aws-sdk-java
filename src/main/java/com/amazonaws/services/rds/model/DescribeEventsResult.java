@@ -80,15 +80,13 @@ public class DescribeEventsResult implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * A list of <a>Event</a> instances.
      *
      * @return A list of <a>Event</a> instances.
      */
     public java.util.List<Event> getEvents() {
-        
         if (events == null) {
               events = new com.amazonaws.internal.ListWithAutoConstructFlag<Event>();
               events.setAutoConstruct(true);
@@ -150,7 +148,7 @@ public class DescribeEventsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

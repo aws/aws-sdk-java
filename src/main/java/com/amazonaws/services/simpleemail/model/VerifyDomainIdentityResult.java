@@ -68,8 +68,7 @@ public class VerifyDomainIdentityResult implements Serializable {
         this.verificationToken = verificationToken;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

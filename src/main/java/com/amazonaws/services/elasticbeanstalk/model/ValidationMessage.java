@@ -92,8 +92,7 @@ public class ValidationMessage implements Serializable {
         this.message = message;
         return this;
     }
-    
-    
+
     /**
      * An indication of the severity of this message: <enumValues> <value
      * name="error"> <p> error: This message indicates that this is not a
@@ -183,8 +182,7 @@ public class ValidationMessage implements Serializable {
         this.severity = severity;
         return this;
     }
-    
-    
+
     /**
      * An indication of the severity of this message: <enumValues> <value
      * name="error"> <p> error: This message indicates that this is not a
@@ -246,7 +244,7 @@ public class ValidationMessage implements Serializable {
         this.severity = severity.toString();
         return this;
     }
-    
+
     /**
      * 
      *
@@ -279,8 +277,7 @@ public class ValidationMessage implements Serializable {
         this.namespace = namespace;
         return this;
     }
-    
-    
+
     /**
      * 
      *
@@ -313,8 +310,7 @@ public class ValidationMessage implements Serializable {
         this.optionName = optionName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -99,8 +99,7 @@ public class OrderableDBInstanceOption implements Serializable {
         this.engine = engine;
         return this;
     }
-    
-    
+
     /**
      * The engine version of the orderable DB Instance.
      *
@@ -133,8 +132,7 @@ public class OrderableDBInstanceOption implements Serializable {
         this.engineVersion = engineVersion;
         return this;
     }
-    
-    
+
     /**
      * The DB Instance Class for the orderable DB Instance
      *
@@ -167,8 +165,7 @@ public class OrderableDBInstanceOption implements Serializable {
         this.dBInstanceClass = dBInstanceClass;
         return this;
     }
-    
-    
+
     /**
      * The license model for the orderable DB Instance.
      *
@@ -201,15 +198,13 @@ public class OrderableDBInstanceOption implements Serializable {
         this.licenseModel = licenseModel;
         return this;
     }
-    
-    
+
     /**
      * A list of availability zones for the orderable DB Instance.
      *
      * @return A list of availability zones for the orderable DB Instance.
      */
     public java.util.List<AvailabilityZone> getAvailabilityZones() {
-        
         if (availabilityZones == null) {
               availabilityZones = new com.amazonaws.internal.ListWithAutoConstructFlag<AvailabilityZone>();
               availabilityZones.setAutoConstruct(true);
@@ -271,7 +266,7 @@ public class OrderableDBInstanceOption implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Indicates whether this orderable DB Instance is multi-AZ capable.
      *
@@ -304,8 +299,7 @@ public class OrderableDBInstanceOption implements Serializable {
         this.multiAZCapable = multiAZCapable;
         return this;
     }
-    
-    
+
     /**
      * Indicates whether this orderable DB Instance is multi-AZ capable.
      *
@@ -314,7 +308,7 @@ public class OrderableDBInstanceOption implements Serializable {
     public Boolean getMultiAZCapable() {
         return multiAZCapable;
     }
-    
+
     /**
      * Indicates whether this orderable DB Instance can have a read replica.
      *
@@ -347,8 +341,7 @@ public class OrderableDBInstanceOption implements Serializable {
         this.readReplicaCapable = readReplicaCapable;
         return this;
     }
-    
-    
+
     /**
      * Indicates whether this orderable DB Instance can have a read replica.
      *
@@ -357,7 +350,7 @@ public class OrderableDBInstanceOption implements Serializable {
     public Boolean getReadReplicaCapable() {
         return readReplicaCapable;
     }
-    
+
     /**
      * Indicates whether this is a VPC orderable DB Instance.
      *
@@ -390,8 +383,7 @@ public class OrderableDBInstanceOption implements Serializable {
         this.vpc = vpc;
         return this;
     }
-    
-    
+
     /**
      * Indicates whether this is a VPC orderable DB Instance.
      *
@@ -400,7 +392,7 @@ public class OrderableDBInstanceOption implements Serializable {
     public Boolean getVpc() {
         return vpc;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

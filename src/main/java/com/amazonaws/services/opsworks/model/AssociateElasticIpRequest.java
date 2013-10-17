@@ -71,8 +71,7 @@ public class AssociateElasticIpRequest extends AmazonWebServiceRequest implement
         this.elasticIp = elasticIp;
         return this;
     }
-    
-    
+
     /**
      * The instance ID.
      *
@@ -105,8 +104,7 @@ public class AssociateElasticIpRequest extends AmazonWebServiceRequest implement
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

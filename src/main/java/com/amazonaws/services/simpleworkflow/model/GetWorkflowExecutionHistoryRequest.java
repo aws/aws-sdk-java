@@ -136,8 +136,7 @@ public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest 
         this.domain = domain;
         return this;
     }
-    
-    
+
     /**
      * Specifies the workflow execution for which to return the history.
      *
@@ -170,8 +169,7 @@ public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest 
         this.execution = execution;
         return this;
     }
-    
-    
+
     /**
      * If a <code>NextPageToken</code> is returned, the result has more than
      * one pages. To get the next page, repeat the call and specify the
@@ -225,8 +223,7 @@ public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest 
         this.nextPageToken = nextPageToken;
         return this;
     }
-    
-    
+
     /**
      * Specifies the maximum number of history events returned in one page.
      * The next page in the result is identified by the
@@ -310,8 +307,7 @@ public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest 
         this.maximumPageSize = maximumPageSize;
         return this;
     }
-    
-    
+
     /**
      * When set to <code>true</code>, returns the events in reverse order. By
      * default the results are returned in ascending order of the
@@ -356,8 +352,7 @@ public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest 
         this.reverseOrder = reverseOrder;
         return this;
     }
-    
-    
+
     /**
      * When set to <code>true</code>, returns the events in reverse order. By
      * default the results are returned in ascending order of the
@@ -370,7 +365,7 @@ public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest 
     public Boolean getReverseOrder() {
         return reverseOrder;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

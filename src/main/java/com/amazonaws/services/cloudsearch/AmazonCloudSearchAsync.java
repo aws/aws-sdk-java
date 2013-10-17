@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudsearch;
-            
+
 import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
@@ -33,8 +33,8 @@ import com.amazonaws.services.cloudsearch.model.*;
  * The endpoint for configuration service requests is region-specific: cloudsearch. <i>region</i> .amazonaws.com. For example,
  * cloudsearch.us-east-1.amazonaws.com. For a current list of supported regions and endpoints, see <a
  * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cloudsearch_region"> Regions and Endpoints </a> .
- * </p> 
- */       
+ * </p>
+ */
 public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
     /**
      * <p>

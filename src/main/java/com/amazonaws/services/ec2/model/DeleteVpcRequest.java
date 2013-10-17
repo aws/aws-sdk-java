@@ -42,8 +42,6 @@ public class DeleteVpcRequest extends AmazonWebServiceRequest implements Seriali
      */
     public DeleteVpcRequest() {}
     
-
-
     /**
      * Constructs a new DeleteVpcRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -55,8 +53,6 @@ public class DeleteVpcRequest extends AmazonWebServiceRequest implements Seriali
         setVpcId(vpcId);
     }
 
-    
-    
     /**
      * The ID of the VPC you want to delete.
      *
@@ -89,8 +85,7 @@ public class DeleteVpcRequest extends AmazonWebServiceRequest implements Seriali
         this.vpcId = vpcId;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

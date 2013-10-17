@@ -96,8 +96,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
         this.stackId = stackId;
         return this;
     }
-    
-    
+
     /**
      * A layer ID. If you use this parameter, <code>DescribeInstances</code>
      * returns descriptions of the instances associated with the specified
@@ -142,8 +141,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
         this.layerId = layerId;
         return this;
     }
-    
-    
+
     /**
      * An array of instance IDs to be described. If you use this parameter,
      * <code>DescribeInstances</code> returns a description of the specified
@@ -154,7 +152,6 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         instances. Otherwise, it returns a description of every instance.
      */
     public java.util.List<String> getInstanceIds() {
-        
         if (instanceIds == null) {
               instanceIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               instanceIds.setAutoConstruct(true);
@@ -228,7 +225,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

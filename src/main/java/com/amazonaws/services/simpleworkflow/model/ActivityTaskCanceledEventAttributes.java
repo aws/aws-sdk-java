@@ -97,8 +97,7 @@ public class ActivityTaskCanceledEventAttributes implements Serializable {
         this.details = details;
         return this;
     }
-    
-    
+
     /**
      * The id of the <code>ActivityTaskScheduled</code> event that was
      * recorded when this activity task was scheduled. This information can
@@ -149,8 +148,7 @@ public class ActivityTaskCanceledEventAttributes implements Serializable {
         this.scheduledEventId = scheduledEventId;
         return this;
     }
-    
-    
+
     /**
      * The Id of the <code>ActivityTaskStarted</code> event recorded when
      * this activity task was started. This information can be useful for
@@ -201,8 +199,7 @@ public class ActivityTaskCanceledEventAttributes implements Serializable {
         this.startedEventId = startedEventId;
         return this;
     }
-    
-    
+
     /**
      * If set, contains the Id of the last
      * <code>ActivityTaskCancelRequested</code> event recorded for this
@@ -253,8 +250,7 @@ public class ActivityTaskCanceledEventAttributes implements Serializable {
         this.latestCancelRequestedEventId = latestCancelRequestedEventId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

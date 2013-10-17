@@ -115,7 +115,6 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *         to describe.
      */
     public java.util.List<String> getReservedInstancesOfferingIds() {
-        
         if (reservedInstancesOfferingIds == null) {
               reservedInstancesOfferingIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               reservedInstancesOfferingIds.setAutoConstruct(true);
@@ -183,7 +182,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
 
         return this;
     }
-    
+
     /**
      * The instance type on which the Reserved Instance can be used.
      * <p>
@@ -231,8 +230,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
         this.instanceType = instanceType;
         return this;
     }
-    
-    
+
     /**
      * The instance type on which the Reserved Instance can be used.
      * <p>
@@ -266,7 +264,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
         this.instanceType = instanceType.toString();
         return this;
     }
-    
+
     /**
      * The Availability Zone in which the Reserved Instance can be used.
      *
@@ -299,8 +297,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
         this.availabilityZone = availabilityZone;
         return this;
     }
-    
-    
+
     /**
      * The Reserved Instance product description.
      * <p>
@@ -348,8 +345,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
         this.productDescription = productDescription;
         return this;
     }
-    
-    
+
     /**
      * The Reserved Instance product description.
      * <p>
@@ -383,7 +379,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
         this.productDescription = productDescription.toString();
         return this;
     }
-    
+
     /**
      * A list of filters used to match properties for
      * ReservedInstancesOfferings. For a complete reference to the available
@@ -398,7 +394,6 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
-        
         if (filters == null) {
               filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
               filters.setAutoConstruct(true);
@@ -484,7 +479,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
 
         return this;
     }
-    
+
     /**
      * The tenancy of the Reserved Instance offering. A Reserved Instance
      * with tenancy of dedicated will run on single-tenant hardware and can
@@ -544,8 +539,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
         this.instanceTenancy = instanceTenancy;
         return this;
     }
-    
-    
+
     /**
      * The tenancy of the Reserved Instance offering. A Reserved Instance
      * with tenancy of dedicated will run on single-tenant hardware and can
@@ -587,7 +581,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
         this.instanceTenancy = instanceTenancy.toString();
         return this;
     }
-    
+
     /**
      * The Reserved Instance offering type.
      * <p>
@@ -635,8 +629,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
         this.offeringType = offeringType;
         return this;
     }
-    
-    
+
     /**
      * The Reserved Instance offering type.
      * <p>
@@ -670,7 +663,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
         this.offeringType = offeringType.toString();
         return this;
     }
-    
+
     /**
      * Returns the value of the NextToken property for this object.
      *
@@ -703,8 +696,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the MaxResults property for this object.
      *
@@ -737,8 +729,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
         this.maxResults = maxResults;
         return this;
     }
-    
-    
+
     /**
      * Include Marketplace offerings in the response.
      *
@@ -771,8 +762,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
         this.includeMarketplace = includeMarketplace;
         return this;
     }
-    
-    
+
     /**
      * Include Marketplace offerings in the response.
      *
@@ -781,7 +771,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     public Boolean getIncludeMarketplace() {
         return includeMarketplace;
     }
-    
+
     /**
      * Minimum duration (in seconds) to filter when searching for offerings.
      *
@@ -814,8 +804,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
         this.minDuration = minDuration;
         return this;
     }
-    
-    
+
     /**
      * Maximum duration (in seconds) to filter when searching for offerings.
      *
@@ -848,8 +837,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
         this.maxDuration = maxDuration;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the MaxInstanceCount property for this object.
      *
@@ -882,8 +870,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
         this.maxInstanceCount = maxInstanceCount;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

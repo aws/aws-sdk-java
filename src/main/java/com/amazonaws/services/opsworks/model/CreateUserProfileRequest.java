@@ -75,8 +75,7 @@ public class CreateUserProfileRequest extends AmazonWebServiceRequest implements
         this.iamUserArn = iamUserArn;
         return this;
     }
-    
-    
+
     /**
      * The user's SSH user name.
      *
@@ -109,8 +108,7 @@ public class CreateUserProfileRequest extends AmazonWebServiceRequest implements
         this.sshUsername = sshUsername;
         return this;
     }
-    
-    
+
     /**
      * The user's public SSH key.
      *
@@ -143,8 +141,7 @@ public class CreateUserProfileRequest extends AmazonWebServiceRequest implements
         this.sshPublicKey = sshPublicKey;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

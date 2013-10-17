@@ -107,7 +107,6 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *         AMIs will be described.
      */
     public java.util.List<String> getImageIds() {
-        
         if (imageIds == null) {
               imageIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               imageIds.setAutoConstruct(true);
@@ -175,7 +174,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
 
         return this;
     }
-    
+
     /**
      * An optional list of owners by which to scope the described AMIs. Valid
      * values are: <ul> <li> <code>self</code> : AMIs owned by you </li> <li>
@@ -196,7 +195,6 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *         <code>amazon</code>, and <code>all</code> are literals.
      */
     public java.util.List<String> getOwners() {
-        
         if (owners == null) {
               owners = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               owners.setAutoConstruct(true);
@@ -300,7 +298,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
 
         return this;
     }
-    
+
     /**
      * An optional list of users whose launch permissions will be used to
      * scope the described AMIs. Valid values are: <ul> <li>
@@ -319,7 +317,6 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *         <code>self</code> and <code>all</code> are literals.
      */
     public java.util.List<String> getExecutableUsers() {
-        
         if (executableUsers == null) {
               executableUsers = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               executableUsers.setAutoConstruct(true);
@@ -417,7 +414,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
 
         return this;
     }
-    
+
     /**
      * A list of filters used to match properties for Images. For a complete
      * reference to the available filter keys for this operation, see the <a
@@ -430,7 +427,6 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
-        
         if (filters == null) {
               filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
               filters.setAutoConstruct(true);
@@ -510,7 +506,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
 
         return this;
     }
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

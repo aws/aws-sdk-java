@@ -114,8 +114,6 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      */
     public CreateDBInstanceReadReplicaRequest() {}
     
-
-
     /**
      * Constructs a new CreateDBInstanceReadReplicaRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -135,8 +133,6 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
         setSourceDBInstanceIdentifier(sourceDBInstanceIdentifier);
     }
 
-    
-    
     /**
      * The DB Instance identifier of the Read Replica. This is the unique key
      * that identifies a DB Instance. This parameter is stored as a lowercase
@@ -181,8 +177,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
         this.dBInstanceIdentifier = dBInstanceIdentifier;
         return this;
     }
-    
-    
+
     /**
      * The identifier of the DB Instance that will act as the source for the
      * Read Replica. Each DB Instance can have up to five Read Replicas.
@@ -233,8 +228,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
         this.sourceDBInstanceIdentifier = sourceDBInstanceIdentifier;
         return this;
     }
-    
-    
+
     /**
      * The compute and memory capacity of the Read Replica. <p> Valid Values:
      * <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
@@ -285,8 +279,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
         this.dBInstanceClass = dBInstanceClass;
         return this;
     }
-    
-    
+
     /**
      * The Amazon EC2 Availability Zone that the Read Replica will be created
      * in. <p> Default: A random, system-chosen Availability Zone in the
@@ -331,8 +324,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
         this.availabilityZone = availabilityZone;
         return this;
     }
-    
-    
+
     /**
      * The port number that the DB Instance uses for connections. <p>Default:
      * Inherits from the source DB Instance <p>Valid Values:
@@ -377,8 +369,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
         this.port = port;
         return this;
     }
-    
-    
+
     /**
      * Indicates that minor engine upgrades will be applied automatically to
      * the Read Replica during the maintenance window. <p>Default: Inherits
@@ -423,8 +414,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
         this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
         return this;
     }
-    
-    
+
     /**
      * Indicates that minor engine upgrades will be applied automatically to
      * the Read Replica during the maintenance window. <p>Default: Inherits
@@ -437,7 +427,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     public Boolean getAutoMinorVersionUpgrade() {
         return autoMinorVersionUpgrade;
     }
-    
+
     /**
      * The amount of Provisioned IOPS (input/output operations per second) to
      * be initially allocated for the DB Instance.
@@ -476,8 +466,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
         this.iops = iops;
         return this;
     }
-    
-    
+
     /**
      * The option group the DB instance will be associated with. If omitted,
      * the default Option Group for the engine specified will be used.
@@ -516,8 +505,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
         this.optionGroupName = optionGroupName;
         return this;
     }
-    
-    
+
     /**
      * Specifies the accessibility options for the DB Instance. A value of
      * true specifies an Internet-facing instance with a publicly resolvable
@@ -622,8 +610,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
         this.publiclyAccessible = publiclyAccessible;
         return this;
     }
-    
-    
+
     /**
      * Specifies the accessibility options for the DB Instance. A value of
      * true specifies an Internet-facing instance with a publicly resolvable
@@ -656,7 +643,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     public Boolean getPubliclyAccessible() {
         return publiclyAccessible;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

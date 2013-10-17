@@ -105,8 +105,7 @@ public class ActivityTaskTimedOutEventAttributes implements Serializable {
         this.timeoutType = timeoutType;
         return this;
     }
-    
-    
+
     /**
      * The type of the timeout that caused this event.
      * <p>
@@ -140,7 +139,7 @@ public class ActivityTaskTimedOutEventAttributes implements Serializable {
         this.timeoutType = timeoutType.toString();
         return this;
     }
-    
+
     /**
      * The id of the <code>ActivityTaskScheduled</code> event that was
      * recorded when this activity task was scheduled. This information can
@@ -191,8 +190,7 @@ public class ActivityTaskTimedOutEventAttributes implements Serializable {
         this.scheduledEventId = scheduledEventId;
         return this;
     }
-    
-    
+
     /**
      * The Id of the <code>ActivityTaskStarted</code> event recorded when
      * this activity task was started. This information can be useful for
@@ -243,8 +241,7 @@ public class ActivityTaskTimedOutEventAttributes implements Serializable {
         this.startedEventId = startedEventId;
         return this;
     }
-    
-    
+
     /**
      * Contains the content of the <code>details</code> parameter for the
      * last call made by the activity to
@@ -298,8 +295,7 @@ public class ActivityTaskTimedOutEventAttributes implements Serializable {
         this.details = details;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

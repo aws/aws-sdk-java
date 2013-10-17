@@ -110,8 +110,7 @@ public class Command implements Serializable {
         this.commandId = commandId;
         return this;
     }
-    
-    
+
     /**
      * The ID of the instance where the command was executed.
      *
@@ -144,8 +143,7 @@ public class Command implements Serializable {
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * The command deployment ID.
      *
@@ -178,8 +176,7 @@ public class Command implements Serializable {
         this.deploymentId = deploymentId;
         return this;
     }
-    
-    
+
     /**
      * Date and time when the command was run.
      *
@@ -212,8 +209,7 @@ public class Command implements Serializable {
         this.createdAt = createdAt;
         return this;
     }
-    
-    
+
     /**
      * Date and time when the command was acknowledged.
      *
@@ -246,8 +242,7 @@ public class Command implements Serializable {
         this.acknowledgedAt = acknowledgedAt;
         return this;
     }
-    
-    
+
     /**
      * Date when the command completed.
      *
@@ -280,8 +275,7 @@ public class Command implements Serializable {
         this.completedAt = completedAt;
         return this;
     }
-    
-    
+
     /**
      * The command status: <ul> <li>failed</li> <li>successful</li>
      * <li>skipped</li> <li>pending</li> </ul>
@@ -320,8 +314,7 @@ public class Command implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * The command exit code.
      *
@@ -354,8 +347,7 @@ public class Command implements Serializable {
         this.exitCode = exitCode;
         return this;
     }
-    
-    
+
     /**
      * The URL of the command log.
      *
@@ -388,8 +380,7 @@ public class Command implements Serializable {
         this.logUrl = logUrl;
         return this;
     }
-    
-    
+
     /**
      * The command type: <ul> <li>deploy</li> <li>rollback</li>
      * <li>start</li> <li>stop</li> <li>restart</li> <li>undeploy</li>
@@ -440,8 +431,7 @@ public class Command implements Serializable {
         this.type = type;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

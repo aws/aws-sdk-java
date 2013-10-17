@@ -78,8 +78,7 @@ public class ModifyClusterParameterGroupRequest extends AmazonWebServiceRequest 
         this.parameterGroupName = parameterGroupName;
         return this;
     }
-    
-    
+
     /**
      * An array of parameters to be modified. A maximum of 20 parameters can
      * be modified in a single request. <p> For each parameter to be
@@ -92,7 +91,6 @@ public class ModifyClusterParameterGroupRequest extends AmazonWebServiceRequest 
      *         value; other name-value pairs of the parameter are optional.
      */
     public java.util.List<Parameter> getParameters() {
-        
         if (parameters == null) {
               parameters = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>();
               parameters.setAutoConstruct(true);
@@ -172,7 +170,7 @@ public class ModifyClusterParameterGroupRequest extends AmazonWebServiceRequest 
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -86,8 +86,7 @@ public class DescribeStackEventsRequest extends AmazonWebServiceRequest implemen
         this.stackName = stackName;
         return this;
     }
-    
-    
+
     /**
      * String that identifies the start of the next list of events, if there
      * is one. <p>Default: There is no default value.
@@ -135,8 +134,7 @@ public class DescribeStackEventsRequest extends AmazonWebServiceRequest implemen
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

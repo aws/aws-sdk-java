@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2;
-            
+
 import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
@@ -38,8 +38,8 @@ import com.amazonaws.services.ec2.model.*;
  * </p>
  * <p>
  * Visit <a href="http://aws.amazon.com/ec2/"> http://aws.amazon.com/ec2/ </a> for more information.
- * </p> 
- */       
+ * </p>
+ */
 public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>

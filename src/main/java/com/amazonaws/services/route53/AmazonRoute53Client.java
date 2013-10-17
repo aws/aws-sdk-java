@@ -821,7 +821,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
         	credentials = originalRequest.getRequestCredentials();
         }
 
-        ExecutionContext executionContext = createExecutionContext();
+        ExecutionContext executionContext = createExecutionContext(originalRequest);
         executionContext.setSigner(signer);
         executionContext.setCredentials(credentials);
         

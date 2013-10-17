@@ -82,8 +82,7 @@ public class DetachLoadBalancerFromSubnetsRequest extends AmazonWebServiceReques
         this.loadBalancerName = loadBalancerName;
         return this;
     }
-    
-    
+
     /**
      * A list of subnet IDs to remove from the set of configured subnets for
      * the LoadBalancer.
@@ -92,7 +91,6 @@ public class DetachLoadBalancerFromSubnetsRequest extends AmazonWebServiceReques
      *         the LoadBalancer.
      */
     public java.util.List<String> getSubnets() {
-        
         if (subnets == null) {
               subnets = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               subnets.setAutoConstruct(true);
@@ -160,7 +158,7 @@ public class DetachLoadBalancerFromSubnetsRequest extends AmazonWebServiceReques
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -54,7 +54,6 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest imp
      * @return A set of one or more customer gateway IDs.
      */
     public java.util.List<String> getCustomerGatewayIds() {
-        
         if (customerGatewayIds == null) {
               customerGatewayIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               customerGatewayIds.setAutoConstruct(true);
@@ -116,7 +115,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest imp
 
         return this;
     }
-    
+
     /**
      * A list of filters used to match properties for Customer Gateways. For
      * a complete reference to the available filter keys for this operation,
@@ -131,7 +130,6 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest imp
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
-        
         if (filters == null) {
               filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
               filters.setAutoConstruct(true);
@@ -217,7 +215,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest imp
 
         return this;
     }
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

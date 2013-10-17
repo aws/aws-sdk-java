@@ -269,8 +269,6 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      */
     public QueryRequest() {}
     
-
-
     /**
      * Constructs a new QueryRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -282,8 +280,6 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
         setTableName(tableName);
     }
 
-    
-    
     /**
      * The name of the table containing the requested items.
      * <p>
@@ -328,8 +324,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
         this.tableName = tableName;
         return this;
     }
-    
-    
+
     /**
      * The name of an index on the table to query.
      * <p>
@@ -374,8 +369,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
         this.indexName = indexName;
         return this;
     }
-    
-    
+
     /**
      * The attributes to be returned in the result. You can retrieve all item
      * attributes, specific item attributes, the count of matching items, or
@@ -615,8 +609,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
         this.select = select;
         return this;
     }
-    
-    
+
     /**
      * The attributes to be returned in the result. You can retrieve all item
      * attributes, specific item attributes, the count of matching items, or
@@ -778,7 +771,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
         this.select = select.toString();
         return this;
     }
-    
+
     /**
      * The names of one or more attributes to retrieve. If no attribute names
      * are specified, then all attributes will be returned. If any of the
@@ -814,7 +807,6 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *         <i>Select</i>.)
      */
     public java.util.List<String> getAttributesToGet() {
-        
         return attributesToGet;
     }
     
@@ -959,7 +951,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
 
         return this;
     }
-    
+
     /**
      * The maximum number of items to evaluate (not necessarily the number of
      * matching items). If Amazon DynamoDB processes the number of items up
@@ -1067,8 +1059,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
         this.limit = limit;
         return this;
     }
-    
-    
+
     /**
      * If set to <code>true</code>, then the operation uses strongly
      * consistent reads; otherwise, eventually consistent reads are used.
@@ -1107,8 +1098,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
         this.consistentRead = consistentRead;
         return this;
     }
-    
-    
+
     /**
      * If set to <code>true</code>, then the operation uses strongly
      * consistent reads; otherwise, eventually consistent reads are used.
@@ -1119,7 +1109,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     public Boolean getConsistentRead() {
         return consistentRead;
     }
-    
+
     /**
      * The selection criteria for the query. <p>For a query on a table, you
      * can only have conditions on the table primary key attributes. You must
@@ -1639,8 +1629,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
         setKeyConditions(keyConditions);
         return this;
     }
-    
-   	
+
     /**
      * The selection criteria for the query. <p>For a query on a table, you
      * can only have conditions on the table primary key attributes. You must
@@ -1741,7 +1730,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
 		this.keyConditions.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into KeyConditions.
 	 * <p>
@@ -1826,8 +1815,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
         this.scanIndexForward = scanIndexForward;
         return this;
     }
-    
-    
+
     /**
      * Specifies ascending (true) or descending (false) traversal of the
      * index. Amazon DynamoDB returns results reflecting the requested order
@@ -1850,7 +1838,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
     public Boolean getScanIndexForward() {
         return scanIndexForward;
     }
-    
+
     /**
      * The primary key of the first item that this operation will evaluate.
      * Use the value that was returned for <i>LastEvaluatedKey</i> in the
@@ -1902,8 +1890,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
         setExclusiveStartKey(exclusiveStartKey);
         return this;
     }
-    
-   	
+
     /**
      * The primary key of the first item that this operation will evaluate.
      * Use the value that was returned for <i>LastEvaluatedKey</i> in the
@@ -1942,12 +1929,12 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
      *
      * @param hashKey Primary hash key.
      * @param rangeKey Primary range key. (null if it a hash-only table)
-     */    
+     */
     public QueryRequest withExclusiveStartKey(java.util.Map.Entry<String, AttributeValue> hashKey, java.util.Map.Entry<String, AttributeValue> rangeKey) throws IllegalArgumentException {
     	setExclusiveStartKey(hashKey, rangeKey);
     	return this;
     }
-	
+
     /**
      * The primary key of the first item that this operation will evaluate.
      * Use the value that was returned for <i>LastEvaluatedKey</i> in the
@@ -1970,7 +1957,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
 		this.exclusiveStartKey.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into ExclusiveStartKey.
 	 * <p>
@@ -2040,8 +2027,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
         this.returnConsumedCapacity = returnConsumedCapacity;
         return this;
     }
-    
-    
+
     /**
      * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
      * the response; if set to <code>NONE</code> (the default),
@@ -2083,7 +2069,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements Serializabl
         this.returnConsumedCapacity = returnConsumedCapacity.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

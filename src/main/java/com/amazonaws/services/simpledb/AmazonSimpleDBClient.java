@@ -803,7 +803,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
         	credentials = originalRequest.getRequestCredentials();
         }
 
-        ExecutionContext executionContext = createExecutionContext();
+        ExecutionContext executionContext = createExecutionContext(originalRequest);
         executionContext.setSigner(signer);
         executionContext.setCredentials(credentials);
         

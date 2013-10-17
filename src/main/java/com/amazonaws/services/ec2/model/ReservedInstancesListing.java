@@ -79,8 +79,7 @@ public class ReservedInstancesListing implements Serializable {
         this.reservedInstancesListingId = reservedInstancesListingId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the ReservedInstancesId property for this object.
      *
@@ -113,8 +112,7 @@ public class ReservedInstancesListing implements Serializable {
         this.reservedInstancesId = reservedInstancesId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the CreateDate property for this object.
      *
@@ -147,8 +145,7 @@ public class ReservedInstancesListing implements Serializable {
         this.createDate = createDate;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the UpdateDate property for this object.
      *
@@ -181,8 +178,7 @@ public class ReservedInstancesListing implements Serializable {
         this.updateDate = updateDate;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Status property for this object.
      * <p>
@@ -230,8 +226,7 @@ public class ReservedInstancesListing implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * Sets the value of the Status property for this object.
      * <p>
@@ -265,7 +260,7 @@ public class ReservedInstancesListing implements Serializable {
         this.status = status.toString();
         return this;
     }
-    
+
     /**
      * Returns the value of the StatusMessage property for this object.
      *
@@ -298,15 +293,13 @@ public class ReservedInstancesListing implements Serializable {
         this.statusMessage = statusMessage;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the InstanceCounts property for this object.
      *
      * @return The value of the InstanceCounts property for this object.
      */
     public java.util.List<InstanceCount> getInstanceCounts() {
-        
         if (instanceCounts == null) {
               instanceCounts = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceCount>();
               instanceCounts.setAutoConstruct(true);
@@ -368,14 +361,13 @@ public class ReservedInstancesListing implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns the value of the PriceSchedules property for this object.
      *
      * @return The value of the PriceSchedules property for this object.
      */
     public java.util.List<PriceSchedule> getPriceSchedules() {
-        
         if (priceSchedules == null) {
               priceSchedules = new com.amazonaws.internal.ListWithAutoConstructFlag<PriceSchedule>();
               priceSchedules.setAutoConstruct(true);
@@ -437,14 +429,13 @@ public class ReservedInstancesListing implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns the value of the Tags property for this object.
      *
      * @return The value of the Tags property for this object.
      */
     public java.util.List<Tag> getTags() {
-        
         if (tags == null) {
               tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
               tags.setAutoConstruct(true);
@@ -506,7 +497,7 @@ public class ReservedInstancesListing implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns the value of the ClientToken property for this object.
      *
@@ -539,8 +530,7 @@ public class ReservedInstancesListing implements Serializable {
         this.clientToken = clientToken;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

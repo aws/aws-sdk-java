@@ -43,8 +43,6 @@ public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest implements
      */
     public CreateDhcpOptionsRequest() {}
     
-
-
     /**
      * Constructs a new CreateDhcpOptionsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -56,15 +54,12 @@ public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest implements
         setDhcpConfigurations(dhcpConfigurations);
     }
 
-    
-    
     /**
      * A set of one or more DHCP configurations.
      *
      * @return A set of one or more DHCP configurations.
      */
     public java.util.List<DhcpConfiguration> getDhcpConfigurations() {
-        
         if (dhcpConfigurations == null) {
               dhcpConfigurations = new com.amazonaws.internal.ListWithAutoConstructFlag<DhcpConfiguration>();
               dhcpConfigurations.setAutoConstruct(true);
@@ -126,7 +121,7 @@ public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest implements
 
         return this;
     }
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

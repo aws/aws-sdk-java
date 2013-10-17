@@ -43,7 +43,6 @@ public class ListMultipartUploadsResult implements Serializable {
      * @return A list of in-progress multipart uploads.
      */
     public java.util.List<UploadListElement> getUploadsList() {
-        
         if (uploadsList == null) {
               uploadsList = new com.amazonaws.internal.ListWithAutoConstructFlag<UploadListElement>();
               uploadsList.setAutoConstruct(true);
@@ -105,7 +104,7 @@ public class ListMultipartUploadsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * An opaque string that represents where to continue pagination of the
      * results. You use the marker in a new List Multipart Uploads request to
@@ -156,8 +155,7 @@ public class ListMultipartUploadsResult implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

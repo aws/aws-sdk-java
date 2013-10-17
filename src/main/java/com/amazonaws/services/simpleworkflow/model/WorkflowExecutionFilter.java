@@ -74,8 +74,7 @@ public class WorkflowExecutionFilter implements Serializable {
         this.workflowId = workflowId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

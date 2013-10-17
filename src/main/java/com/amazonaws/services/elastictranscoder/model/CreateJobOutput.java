@@ -114,6 +114,14 @@ public class CreateJobOutput implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<JobWatermark> watermarks;
 
     /**
+     * Information about the album art that you want Elastic Transcoder to
+     * add to the file during transcoding. You can specify up to twenty album
+     * artworks for each output. Settings for each artwork must be defined in
+     * the job for the current output.
+     */
+    private JobAlbumArt albumArt;
+
+    /**
      * The name to assign to the transcoded file. Elastic Transcoder saves
      * the file in the Amazon S3 bucket specified by the
      * <code>OutputBucket</code> object in the pipeline that is specified by
@@ -178,8 +186,7 @@ public class CreateJobOutput implements Serializable {
         this.key = key;
         return this;
     }
-    
-    
+
     /**
      * Whether you want Elastic Transcoder to create thumbnails for your
      * videos and, if so, how you want Elastic Transcoder to name the files.
@@ -383,8 +390,7 @@ public class CreateJobOutput implements Serializable {
         this.thumbnailPattern = thumbnailPattern;
         return this;
     }
-    
-    
+
     /**
      * The number of degrees clockwise by which you want Elastic Transcoder
      * to rotate the output relative to the input. Enter one of the following
@@ -456,8 +462,7 @@ public class CreateJobOutput implements Serializable {
         this.rotate = rotate;
         return this;
     }
-    
-    
+
     /**
      * The <code>Id</code> of the preset to use for this job. The preset
      * determines the audio, video, and thumbnail settings that Elastic
@@ -511,8 +516,7 @@ public class CreateJobOutput implements Serializable {
         this.presetId = presetId;
         return this;
     }
-    
-    
+
     /**
      * If you specify a preset in <code>PresetId</code> for which the value
      * of <code>Container</code> is ts (MPEG-TS), SegmentDuration is the
@@ -572,8 +576,7 @@ public class CreateJobOutput implements Serializable {
         this.segmentDuration = segmentDuration;
         return this;
     }
-    
-    
+
     /**
      * Information about the watermarks that you want Elastic Transcoder to
      * add to the video during transcoding. You can specify up to four
@@ -586,7 +589,6 @@ public class CreateJobOutput implements Serializable {
      *         defined in the preset for the current output.
      */
     public java.util.List<JobWatermark> getWatermarks() {
-        
         if (watermarks == null) {
               watermarks = new com.amazonaws.internal.ListWithAutoConstructFlag<JobWatermark>();
               watermarks.setAutoConstruct(true);
@@ -666,7 +668,58 @@ public class CreateJobOutput implements Serializable {
 
         return this;
     }
+
+    /**
+     * Information about the album art that you want Elastic Transcoder to
+     * add to the file during transcoding. You can specify up to twenty album
+     * artworks for each output. Settings for each artwork must be defined in
+     * the job for the current output.
+     *
+     * @return Information about the album art that you want Elastic Transcoder to
+     *         add to the file during transcoding. You can specify up to twenty album
+     *         artworks for each output. Settings for each artwork must be defined in
+     *         the job for the current output.
+     */
+    public JobAlbumArt getAlbumArt() {
+        return albumArt;
+    }
     
+    /**
+     * Information about the album art that you want Elastic Transcoder to
+     * add to the file during transcoding. You can specify up to twenty album
+     * artworks for each output. Settings for each artwork must be defined in
+     * the job for the current output.
+     *
+     * @param albumArt Information about the album art that you want Elastic Transcoder to
+     *         add to the file during transcoding. You can specify up to twenty album
+     *         artworks for each output. Settings for each artwork must be defined in
+     *         the job for the current output.
+     */
+    public void setAlbumArt(JobAlbumArt albumArt) {
+        this.albumArt = albumArt;
+    }
+    
+    /**
+     * Information about the album art that you want Elastic Transcoder to
+     * add to the file during transcoding. You can specify up to twenty album
+     * artworks for each output. Settings for each artwork must be defined in
+     * the job for the current output.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param albumArt Information about the album art that you want Elastic Transcoder to
+     *         add to the file during transcoding. You can specify up to twenty album
+     *         artworks for each output. Settings for each artwork must be defined in
+     *         the job for the current output.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CreateJobOutput withAlbumArt(JobAlbumArt albumArt) {
+        this.albumArt = albumArt;
+        return this;
+    }
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
@@ -684,7 +737,8 @@ public class CreateJobOutput implements Serializable {
         if (getRotate() != null) sb.append("Rotate: " + getRotate() + ",");
         if (getPresetId() != null) sb.append("PresetId: " + getPresetId() + ",");
         if (getSegmentDuration() != null) sb.append("SegmentDuration: " + getSegmentDuration() + ",");
-        if (getWatermarks() != null) sb.append("Watermarks: " + getWatermarks() );
+        if (getWatermarks() != null) sb.append("Watermarks: " + getWatermarks() + ",");
+        if (getAlbumArt() != null) sb.append("AlbumArt: " + getAlbumArt() );
         sb.append("}");
         return sb.toString();
     }
@@ -700,6 +754,7 @@ public class CreateJobOutput implements Serializable {
         hashCode = prime * hashCode + ((getPresetId() == null) ? 0 : getPresetId().hashCode()); 
         hashCode = prime * hashCode + ((getSegmentDuration() == null) ? 0 : getSegmentDuration().hashCode()); 
         hashCode = prime * hashCode + ((getWatermarks() == null) ? 0 : getWatermarks().hashCode()); 
+        hashCode = prime * hashCode + ((getAlbumArt() == null) ? 0 : getAlbumArt().hashCode()); 
         return hashCode;
     }
     
@@ -723,6 +778,8 @@ public class CreateJobOutput implements Serializable {
         if (other.getSegmentDuration() != null && other.getSegmentDuration().equals(this.getSegmentDuration()) == false) return false; 
         if (other.getWatermarks() == null ^ this.getWatermarks() == null) return false;
         if (other.getWatermarks() != null && other.getWatermarks().equals(this.getWatermarks()) == false) return false; 
+        if (other.getAlbumArt() == null ^ this.getAlbumArt() == null) return false;
+        if (other.getAlbumArt() != null && other.getAlbumArt().equals(this.getAlbumArt()) == false) return false; 
         return true;
     }
     

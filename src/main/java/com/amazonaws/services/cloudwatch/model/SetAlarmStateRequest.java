@@ -112,8 +112,7 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest implements Ser
         this.alarmName = alarmName;
         return this;
     }
-    
-    
+
     /**
      * The value of the state.
      * <p>
@@ -161,8 +160,7 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest implements Ser
         this.stateValue = stateValue;
         return this;
     }
-    
-    
+
     /**
      * The value of the state.
      * <p>
@@ -196,7 +194,7 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest implements Ser
         this.stateValue = stateValue.toString();
         return this;
     }
-    
+
     /**
      * The reason that this alarm is set to this specific state (in
      * human-readable text format)
@@ -244,8 +242,7 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest implements Ser
         this.stateReason = stateReason;
         return this;
     }
-    
-    
+
     /**
      * The reason that this alarm is set to this specific state (in
      * machine-readable JSON format)
@@ -293,8 +290,7 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest implements Ser
         this.stateReasonData = stateReasonData;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -66,8 +66,7 @@ public class VpcSecurityGroupMembership implements Serializable {
         this.vpcSecurityGroupId = vpcSecurityGroupId;
         return this;
     }
-    
-    
+
     /**
      * 
      *
@@ -100,8 +99,7 @@ public class VpcSecurityGroupMembership implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

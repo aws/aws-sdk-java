@@ -45,8 +45,6 @@ public class TerminateJobFlowsRequest extends AmazonWebServiceRequest implements
      */
     public TerminateJobFlowsRequest() {}
     
-
-
     /**
      * Constructs a new TerminateJobFlowsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -58,15 +56,12 @@ public class TerminateJobFlowsRequest extends AmazonWebServiceRequest implements
         setJobFlowIds(jobFlowIds);
     }
 
-    
-    
     /**
      * A list of job flows to be shutdown.
      *
      * @return A list of job flows to be shutdown.
      */
     public java.util.List<String> getJobFlowIds() {
-        
         if (jobFlowIds == null) {
               jobFlowIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               jobFlowIds.setAutoConstruct(true);
@@ -128,7 +123,7 @@ public class TerminateJobFlowsRequest extends AmazonWebServiceRequest implements
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -123,8 +123,7 @@ public class Deployment implements Serializable {
         this.deploymentId = deploymentId;
         return this;
     }
-    
-    
+
     /**
      * The stack ID.
      *
@@ -157,8 +156,7 @@ public class Deployment implements Serializable {
         this.stackId = stackId;
         return this;
     }
-    
-    
+
     /**
      * The app ID.
      *
@@ -191,8 +189,7 @@ public class Deployment implements Serializable {
         this.appId = appId;
         return this;
     }
-    
-    
+
     /**
      * Date when the deployment was created.
      *
@@ -225,8 +222,7 @@ public class Deployment implements Serializable {
         this.createdAt = createdAt;
         return this;
     }
-    
-    
+
     /**
      * Date when the deployment completed.
      *
@@ -259,8 +255,7 @@ public class Deployment implements Serializable {
         this.completedAt = completedAt;
         return this;
     }
-    
-    
+
     /**
      * The deployment duration.
      *
@@ -293,8 +288,7 @@ public class Deployment implements Serializable {
         this.duration = duration;
         return this;
     }
-    
-    
+
     /**
      * The user's IAM ARN.
      *
@@ -327,8 +321,7 @@ public class Deployment implements Serializable {
         this.iamUserArn = iamUserArn;
         return this;
     }
-    
-    
+
     /**
      * A user-defined comment.
      *
@@ -361,8 +354,7 @@ public class Deployment implements Serializable {
         this.comment = comment;
         return this;
     }
-    
-    
+
     /**
      * Used to specify a deployment operation.
      *
@@ -395,8 +387,7 @@ public class Deployment implements Serializable {
         this.command = command;
         return this;
     }
-    
-    
+
     /**
      * The deployment status: <ul> <li>running</li> <li>successful</li>
      * <li>failed</li> </ul>
@@ -435,8 +426,7 @@ public class Deployment implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * A string that contains user-defined custom JSON. It is used to
      * override the corresponding default stack configuration JSON values for
@@ -505,15 +495,13 @@ public class Deployment implements Serializable {
         this.customJson = customJson;
         return this;
     }
-    
-    
+
     /**
      * The IDs of the target instances.
      *
      * @return The IDs of the target instances.
      */
     public java.util.List<String> getInstanceIds() {
-        
         if (instanceIds == null) {
               instanceIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               instanceIds.setAutoConstruct(true);
@@ -575,7 +563,7 @@ public class Deployment implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

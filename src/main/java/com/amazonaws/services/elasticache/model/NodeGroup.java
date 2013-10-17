@@ -86,8 +86,7 @@ public class NodeGroup implements Serializable {
         this.nodeGroupId = nodeGroupId;
         return this;
     }
-    
-    
+
     /**
      * The current state of this replication group - <i>creating</i>,
      * <i>available</i>, etc.
@@ -126,8 +125,7 @@ public class NodeGroup implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * Represents the information required for client programs to connect to
      * a cache node.
@@ -166,8 +164,7 @@ public class NodeGroup implements Serializable {
         this.primaryEndpoint = primaryEndpoint;
         return this;
     }
-    
-    
+
     /**
      * A list containing information about individual nodes within the node
      * group.
@@ -176,7 +173,6 @@ public class NodeGroup implements Serializable {
      *         group.
      */
     public java.util.List<NodeGroupMember> getNodeGroupMembers() {
-        
         if (nodeGroupMembers == null) {
               nodeGroupMembers = new com.amazonaws.internal.ListWithAutoConstructFlag<NodeGroupMember>();
               nodeGroupMembers.setAutoConstruct(true);
@@ -244,7 +240,7 @@ public class NodeGroup implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

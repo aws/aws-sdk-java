@@ -136,8 +136,7 @@ public class CreateHealthCheckRequest extends AmazonWebServiceRequest implements
         this.callerReference = callerReference;
         return this;
     }
-    
-    
+
     /**
      * A complex type that contains health check configuration.
      *
@@ -170,8 +169,7 @@ public class CreateHealthCheckRequest extends AmazonWebServiceRequest implements
         this.healthCheckConfig = healthCheckConfig;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

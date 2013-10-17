@@ -51,8 +51,6 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest implemen
      */
     public DeleteSecurityGroupRequest() {}
     
-
-
     /**
      * Constructs a new DeleteSecurityGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -64,8 +62,6 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest implemen
         setGroupName(groupName);
     }
 
-    
-    
     /**
      * The name of the Amazon EC2 security group to delete.
      *
@@ -98,8 +94,7 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest implemen
         this.groupName = groupName;
         return this;
     }
-    
-    
+
     /**
      * The ID of the Amazon EC2 security group to delete.
      *
@@ -132,8 +127,7 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest implemen
         this.groupId = groupId;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

@@ -304,15 +304,15 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(describeCasesRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DescribeCasesRequest> request = new DescribeCasesRequestMarshaller().marshall(describeCasesRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<DescribeCasesResult, JsonUnmarshallerContext> unmarshaller = new DescribeCasesResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<DescribeCasesResult> responseHandler = new JsonResponseHandler<DescribeCasesResult>(unmarshaller);
 
         
@@ -351,15 +351,15 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(describeTrustedAdvisorCheckRefreshStatusesRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DescribeTrustedAdvisorCheckRefreshStatusesRequest> request = new DescribeTrustedAdvisorCheckRefreshStatusesRequestMarshaller().marshall(describeTrustedAdvisorCheckRefreshStatusesRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<DescribeTrustedAdvisorCheckRefreshStatusesResult, JsonUnmarshallerContext> unmarshaller = new DescribeTrustedAdvisorCheckRefreshStatusesResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<DescribeTrustedAdvisorCheckRefreshStatusesResult> responseHandler = new JsonResponseHandler<DescribeTrustedAdvisorCheckRefreshStatusesResult>(unmarshaller);
 
         
@@ -399,15 +399,15 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(describeSeverityLevelsRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DescribeSeverityLevelsRequest> request = new DescribeSeverityLevelsRequestMarshaller().marshall(describeSeverityLevelsRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<DescribeSeverityLevelsResult, JsonUnmarshallerContext> unmarshaller = new DescribeSeverityLevelsResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<DescribeSeverityLevelsResult> responseHandler = new JsonResponseHandler<DescribeSeverityLevelsResult>(unmarshaller);
 
         
@@ -451,15 +451,15 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(describeCommunicationsRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DescribeCommunicationsRequest> request = new DescribeCommunicationsRequestMarshaller().marshall(describeCommunicationsRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<DescribeCommunicationsResult, JsonUnmarshallerContext> unmarshaller = new DescribeCommunicationsResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<DescribeCommunicationsResult> responseHandler = new JsonResponseHandler<DescribeCommunicationsResult>(unmarshaller);
 
         
@@ -508,15 +508,15 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(addCommunicationToCaseRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<AddCommunicationToCaseRequest> request = new AddCommunicationToCaseRequestMarshaller().marshall(addCommunicationToCaseRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<AddCommunicationToCaseResult, JsonUnmarshallerContext> unmarshaller = new AddCommunicationToCaseResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<AddCommunicationToCaseResult> responseHandler = new JsonResponseHandler<AddCommunicationToCaseResult>(unmarshaller);
 
         
@@ -605,15 +605,15 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(createCaseRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<CreateCaseRequest> request = new CreateCaseRequestMarshaller().marshall(createCaseRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<CreateCaseResult, JsonUnmarshallerContext> unmarshaller = new CreateCaseResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<CreateCaseResult> responseHandler = new JsonResponseHandler<CreateCaseResult>(unmarshaller);
 
         
@@ -651,15 +651,15 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(describeTrustedAdvisorChecksRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DescribeTrustedAdvisorChecksRequest> request = new DescribeTrustedAdvisorChecksRequestMarshaller().marshall(describeTrustedAdvisorChecksRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<DescribeTrustedAdvisorChecksResult, JsonUnmarshallerContext> unmarshaller = new DescribeTrustedAdvisorChecksResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<DescribeTrustedAdvisorChecksResult> responseHandler = new JsonResponseHandler<DescribeTrustedAdvisorChecksResult>(unmarshaller);
 
         
@@ -726,15 +726,15 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(describeTrustedAdvisorCheckResultRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DescribeTrustedAdvisorCheckResultRequest> request = new DescribeTrustedAdvisorCheckResultRequestMarshaller().marshall(describeTrustedAdvisorCheckResultRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<DescribeTrustedAdvisorCheckResultResult, JsonUnmarshallerContext> unmarshaller = new DescribeTrustedAdvisorCheckResultResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<DescribeTrustedAdvisorCheckResultResult> responseHandler = new JsonResponseHandler<DescribeTrustedAdvisorCheckResultResult>(unmarshaller);
 
         
@@ -771,15 +771,15 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(resolveCaseRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<ResolveCaseRequest> request = new ResolveCaseRequestMarshaller().marshall(resolveCaseRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<ResolveCaseResult, JsonUnmarshallerContext> unmarshaller = new ResolveCaseResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<ResolveCaseResult> responseHandler = new JsonResponseHandler<ResolveCaseResult>(unmarshaller);
 
         
@@ -819,15 +819,15 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(refreshTrustedAdvisorCheckRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<RefreshTrustedAdvisorCheckRequest> request = new RefreshTrustedAdvisorCheckRequestMarshaller().marshall(refreshTrustedAdvisorCheckRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<RefreshTrustedAdvisorCheckResult, JsonUnmarshallerContext> unmarshaller = new RefreshTrustedAdvisorCheckResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<RefreshTrustedAdvisorCheckResult> responseHandler = new JsonResponseHandler<RefreshTrustedAdvisorCheckResult>(unmarshaller);
 
         
@@ -876,15 +876,15 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(describeServicesRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DescribeServicesRequest> request = new DescribeServicesRequestMarshaller().marshall(describeServicesRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<DescribeServicesResult, JsonUnmarshallerContext> unmarshaller = new DescribeServicesResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<DescribeServicesResult> responseHandler = new JsonResponseHandler<DescribeServicesResult>(unmarshaller);
 
         
@@ -928,15 +928,15 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(describeTrustedAdvisorCheckSummariesRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DescribeTrustedAdvisorCheckSummariesRequest> request = new DescribeTrustedAdvisorCheckSummariesRequestMarshaller().marshall(describeTrustedAdvisorCheckSummariesRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<DescribeTrustedAdvisorCheckSummariesResult, JsonUnmarshallerContext> unmarshaller = new DescribeTrustedAdvisorCheckSummariesResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<DescribeTrustedAdvisorCheckSummariesResult> responseHandler = new JsonResponseHandler<DescribeTrustedAdvisorCheckSummariesResult>(unmarshaller);
 
         
@@ -1105,7 +1105,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *
      * @throws IllegalArgumentException
      *             If any problems are detected with the specified endpoint.
-     * @see AmazonDynamoDB#setRegion(Region)     
+     * @see AmazonDynamoDB#setRegion(Region)
      */
     public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
         setEndpoint(endpoint);

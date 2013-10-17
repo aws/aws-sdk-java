@@ -93,8 +93,7 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest implem
         this.stackId = stackId;
         return this;
     }
-    
-    
+
     /**
      * The instance ID. If you use this parameter,
      * <code>DescribeServiceErrors</code> returns descriptions of the errors
@@ -139,8 +138,7 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest implem
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * An array of service error IDs. If you use this parameter,
      * <code>DescribeServiceErrors</code> returns descriptions of the
@@ -151,7 +149,6 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest implem
      *         specified errors. Otherwise, it returns a description of every error.
      */
     public java.util.List<String> getServiceErrorIds() {
-        
         if (serviceErrorIds == null) {
               serviceErrorIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               serviceErrorIds.setAutoConstruct(true);
@@ -225,7 +222,7 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest implem
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -38,7 +38,6 @@ public class DeregisterInstancesFromLoadBalancerResult implements Serializable {
      *         LoadBalancer.
      */
     public java.util.List<Instance> getInstances() {
-        
         if (instances == null) {
               instances = new com.amazonaws.internal.ListWithAutoConstructFlag<Instance>();
               instances.setAutoConstruct(true);
@@ -106,7 +105,7 @@ public class DeregisterInstancesFromLoadBalancerResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

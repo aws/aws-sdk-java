@@ -41,8 +41,6 @@ public class DeleteSubnetRequest extends AmazonWebServiceRequest implements Seri
      */
     public DeleteSubnetRequest() {}
     
-
-
     /**
      * Constructs a new DeleteSubnetRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -54,8 +52,6 @@ public class DeleteSubnetRequest extends AmazonWebServiceRequest implements Seri
         setSubnetId(subnetId);
     }
 
-    
-    
     /**
      * The ID of the subnet you want to delete.
      *
@@ -88,8 +84,7 @@ public class DeleteSubnetRequest extends AmazonWebServiceRequest implements Seri
         this.subnetId = subnetId;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

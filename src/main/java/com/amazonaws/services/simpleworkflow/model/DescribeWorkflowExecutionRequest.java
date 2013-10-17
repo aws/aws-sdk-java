@@ -103,8 +103,7 @@ public class DescribeWorkflowExecutionRequest extends AmazonWebServiceRequest im
         this.domain = domain;
         return this;
     }
-    
-    
+
     /**
      * The workflow execution to describe.
      *
@@ -137,8 +136,7 @@ public class DescribeWorkflowExecutionRequest extends AmazonWebServiceRequest im
         this.execution = execution;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -131,8 +131,6 @@ public class InstanceGroupDetail implements Serializable {
      */
     public InstanceGroupDetail() {}
     
-
-
     /**
      * Constructs a new InstanceGroupDetail object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -156,8 +154,6 @@ public class InstanceGroupDetail implements Serializable {
         setCreationDateTime(creationDateTime);
     }
 
-    
-    
     /**
      * Constructs a new InstanceGroupDetail object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -180,7 +176,7 @@ public class InstanceGroupDetail implements Serializable {
         this.state = state.toString();
         this.creationDateTime = creationDateTime;
     }
-    
+
     /**
      * Unique identifier for the instance group.
      * <p>
@@ -225,8 +221,7 @@ public class InstanceGroupDetail implements Serializable {
         this.instanceGroupId = instanceGroupId;
         return this;
     }
-    
-    
+
     /**
      * Friendly name for the instance group.
      * <p>
@@ -271,8 +266,7 @@ public class InstanceGroupDetail implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * Market type of the Amazon EC2 instances used to create a cluster node.
      * <p>
@@ -320,8 +314,7 @@ public class InstanceGroupDetail implements Serializable {
         this.market = market;
         return this;
     }
-    
-    
+
     /**
      * Market type of the Amazon EC2 instances used to create a cluster node.
      * <p>
@@ -355,7 +348,7 @@ public class InstanceGroupDetail implements Serializable {
         this.market = market.toString();
         return this;
     }
-    
+
     /**
      * Instance group role in the cluster
      * <p>
@@ -403,8 +396,7 @@ public class InstanceGroupDetail implements Serializable {
         this.instanceRole = instanceRole;
         return this;
     }
-    
-    
+
     /**
      * Instance group role in the cluster
      * <p>
@@ -438,7 +430,7 @@ public class InstanceGroupDetail implements Serializable {
         this.instanceRole = instanceRole.toString();
         return this;
     }
-    
+
     /**
      * Bid price for EC2 Instances when launching nodes as Spot Instances,
      * expressed in USD.
@@ -489,8 +481,7 @@ public class InstanceGroupDetail implements Serializable {
         this.bidPrice = bidPrice;
         return this;
     }
-    
-    
+
     /**
      * Amazon EC2 Instance type.
      * <p>
@@ -535,8 +526,7 @@ public class InstanceGroupDetail implements Serializable {
         this.instanceType = instanceType;
         return this;
     }
-    
-    
+
     /**
      * Target number of instances to run in the instance group.
      *
@@ -569,8 +559,7 @@ public class InstanceGroupDetail implements Serializable {
         this.instanceRequestCount = instanceRequestCount;
         return this;
     }
-    
-    
+
     /**
      * Actual count of running instances.
      *
@@ -603,8 +592,7 @@ public class InstanceGroupDetail implements Serializable {
         this.instanceRunningCount = instanceRunningCount;
         return this;
     }
-    
-    
+
     /**
      * State of instance group. The following values are deprecated:
      * STARTING, TERMINATED, and FAILED.
@@ -658,8 +646,7 @@ public class InstanceGroupDetail implements Serializable {
         this.state = state;
         return this;
     }
-    
-    
+
     /**
      * State of instance group. The following values are deprecated:
      * STARTING, TERMINATED, and FAILED.
@@ -697,7 +684,7 @@ public class InstanceGroupDetail implements Serializable {
         this.state = state.toString();
         return this;
     }
-    
+
     /**
      * Details regarding the state of the instance group.
      * <p>
@@ -742,8 +729,7 @@ public class InstanceGroupDetail implements Serializable {
         this.lastStateChangeReason = lastStateChangeReason;
         return this;
     }
-    
-    
+
     /**
      * The date/time the instance group was created.
      *
@@ -776,8 +762,7 @@ public class InstanceGroupDetail implements Serializable {
         this.creationDateTime = creationDateTime;
         return this;
     }
-    
-    
+
     /**
      * The date/time the instance group was started.
      *
@@ -810,8 +795,7 @@ public class InstanceGroupDetail implements Serializable {
         this.startDateTime = startDateTime;
         return this;
     }
-    
-    
+
     /**
      * The date/time the instance group was available to the cluster.
      *
@@ -844,8 +828,7 @@ public class InstanceGroupDetail implements Serializable {
         this.readyDateTime = readyDateTime;
         return this;
     }
-    
-    
+
     /**
      * The date/time the instance group was terminated.
      *
@@ -878,8 +861,7 @@ public class InstanceGroupDetail implements Serializable {
         this.endDateTime = endDateTime;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -73,8 +73,6 @@ public class UpdateUserRequest extends AmazonWebServiceRequest implements Serial
      */
     public UpdateUserRequest() {}
     
-
-
     /**
      * Constructs a new UpdateUserRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -87,8 +85,6 @@ public class UpdateUserRequest extends AmazonWebServiceRequest implements Serial
         setUserName(userName);
     }
 
-    
-    
     /**
      * Name of the user to update. If you're changing the name of the user,
      * this is the original user name.
@@ -139,8 +135,7 @@ public class UpdateUserRequest extends AmazonWebServiceRequest implements Serial
         this.userName = userName;
         return this;
     }
-    
-    
+
     /**
      * New path for the user. Include this parameter only if you're changing
      * the user's path.
@@ -191,8 +186,7 @@ public class UpdateUserRequest extends AmazonWebServiceRequest implements Serial
         this.newPath = newPath;
         return this;
     }
-    
-    
+
     /**
      * New name for the user. Include this parameter only if you're changing
      * the user's name.
@@ -243,8 +237,7 @@ public class UpdateUserRequest extends AmazonWebServiceRequest implements Serial
         this.newUserName = newUserName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

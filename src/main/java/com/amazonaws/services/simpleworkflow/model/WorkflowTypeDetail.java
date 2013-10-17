@@ -116,8 +116,7 @@ public class WorkflowTypeDetail implements Serializable {
         this.typeInfo = typeInfo;
         return this;
     }
-    
-    
+
     /**
      * Configuration settings of the workflow type registered through
      * <a>RegisterWorkflowType</a>
@@ -156,8 +155,7 @@ public class WorkflowTypeDetail implements Serializable {
         this.configuration = configuration;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -45,7 +45,6 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest implements Se
      *         of every stack.
      */
     public java.util.List<String> getStackIds() {
-        
         if (stackIds == null) {
               stackIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               stackIds.setAutoConstruct(true);
@@ -119,7 +118,7 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest implements Se
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

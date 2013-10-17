@@ -64,8 +64,7 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest impl
         this.volumeId = volumeId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Attribute property for this object.
      * <p>
@@ -113,8 +112,7 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest impl
         this.attribute = attribute;
         return this;
     }
-    
-    
+
     /**
      * Sets the value of the Attribute property for this object.
      * <p>
@@ -148,7 +146,7 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest impl
         this.attribute = attribute.toString();
         return this;
     }
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

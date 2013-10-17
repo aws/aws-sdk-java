@@ -134,8 +134,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest impleme
         this.applicationName = applicationName;
         return this;
     }
-    
-    
+
     /**
      * If specified, AWS Elastic Beanstalk restricts the returned
      * descriptions to include only those that are associated with this
@@ -189,8 +188,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest impleme
         this.versionLabel = versionLabel;
         return this;
     }
-    
-    
+
     /**
      * If specified, AWS Elastic Beanstalk restricts the returned
      * descriptions to include only those that have the specified IDs.
@@ -199,7 +197,6 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest impleme
      *         descriptions to include only those that have the specified IDs.
      */
     public java.util.List<String> getEnvironmentIds() {
-        
         if (environmentIds == null) {
               environmentIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               environmentIds.setAutoConstruct(true);
@@ -267,7 +264,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest impleme
 
         return this;
     }
-    
+
     /**
      * If specified, AWS Elastic Beanstalk restricts the returned
      * descriptions to include only those that have the specified names.
@@ -276,7 +273,6 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest impleme
      *         descriptions to include only those that have the specified names.
      */
     public java.util.List<String> getEnvironmentNames() {
-        
         if (environmentNames == null) {
               environmentNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               environmentNames.setAutoConstruct(true);
@@ -344,7 +340,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest impleme
 
         return this;
     }
-    
+
     /**
      * Indicates whether to include deleted environments: <p>
      * <code>true</code>: Environments that have been deleted after
@@ -395,8 +391,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest impleme
         this.includeDeleted = includeDeleted;
         return this;
     }
-    
-    
+
     /**
      * Indicates whether to include deleted environments: <p>
      * <code>true</code>: Environments that have been deleted after
@@ -411,7 +406,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest impleme
     public Boolean getIncludeDeleted() {
         return includeDeleted;
     }
-    
+
     /**
      * If specified when <code>IncludeDeleted</code> is set to
      * <code>true</code>, then environments deleted after this date are
@@ -456,8 +451,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest impleme
         this.includedDeletedBackTo = includedDeletedBackTo;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

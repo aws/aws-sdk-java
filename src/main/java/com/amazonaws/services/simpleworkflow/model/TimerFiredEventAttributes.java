@@ -80,8 +80,7 @@ public class TimerFiredEventAttributes implements Serializable {
         this.timerId = timerId;
         return this;
     }
-    
-    
+
     /**
      * The id of the <code>TimerStarted</code> event that was recorded when
      * this timer was started. This information can be useful for diagnosing
@@ -126,8 +125,7 @@ public class TimerFiredEventAttributes implements Serializable {
         this.startedEventId = startedEventId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -92,8 +92,7 @@ public class WorkflowExecutionDetail implements Serializable {
         this.executionInfo = executionInfo;
         return this;
     }
-    
-    
+
     /**
      * The configuration settings for this workflow execution including
      * timeout values, tasklist etc.
@@ -132,8 +131,7 @@ public class WorkflowExecutionDetail implements Serializable {
         this.executionConfiguration = executionConfiguration;
         return this;
     }
-    
-    
+
     /**
      * The number of tasks for this workflow execution. This includes open
      * and closed tasks of all types.
@@ -172,8 +170,7 @@ public class WorkflowExecutionDetail implements Serializable {
         this.openCounts = openCounts;
         return this;
     }
-    
-    
+
     /**
      * The time when the last activity task was scheduled for this workflow
      * execution. You can use this information to determine if the workflow
@@ -224,8 +221,7 @@ public class WorkflowExecutionDetail implements Serializable {
         this.latestActivityTaskTimestamp = latestActivityTaskTimestamp;
         return this;
     }
-    
-    
+
     /**
      * The latest executionContext provided by the decider for this workflow
      * execution. A decider can provide an executionContext, which is a free
@@ -285,8 +281,7 @@ public class WorkflowExecutionDetail implements Serializable {
         this.latestExecutionContext = latestExecutionContext;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

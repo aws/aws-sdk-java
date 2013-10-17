@@ -77,8 +77,6 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest imple
      */
     public RequestEnvironmentInfoRequest() {}
     
-
-
     /**
      * Constructs a new RequestEnvironmentInfoRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -90,8 +88,6 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest imple
         setInfoType(infoType);
     }
 
-    
-    
     /**
      * Constructs a new RequestEnvironmentInfoRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -102,7 +98,7 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest imple
     public RequestEnvironmentInfoRequest(EnvironmentInfoType infoType) {
         this.infoType = infoType.toString();
     }
-    
+
     /**
      * The ID of the environment of the requested data. <p> If no such
      * environment is found, <code>RequestEnvironmentInfo</code> returns an
@@ -165,8 +161,7 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest imple
         this.environmentId = environmentId;
         return this;
     }
-    
-    
+
     /**
      * The name of the environment of the requested data. <p> If no such
      * environment is found, <code>RequestEnvironmentInfo</code> returns an
@@ -238,8 +233,7 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest imple
         this.environmentName = environmentName;
         return this;
     }
-    
-    
+
     /**
      * The type of information to request.
      * <p>
@@ -287,8 +281,7 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest imple
         this.infoType = infoType;
         return this;
     }
-    
-    
+
     /**
      * The type of information to request.
      * <p>
@@ -322,7 +315,7 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest imple
         this.infoType = infoType.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

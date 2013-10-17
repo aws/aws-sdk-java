@@ -116,8 +116,7 @@ public class Volume implements Serializable {
         this.volumeId = volumeId;
         return this;
     }
-    
-    
+
     /**
      * The Amazon EC2 volume ID.
      *
@@ -150,8 +149,7 @@ public class Volume implements Serializable {
         this.ec2VolumeId = ec2VolumeId;
         return this;
     }
-    
-    
+
     /**
      * The volume name.
      *
@@ -184,8 +182,7 @@ public class Volume implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * The RAID array ID.
      *
@@ -218,8 +215,7 @@ public class Volume implements Serializable {
         this.raidArrayId = raidArrayId;
         return this;
     }
-    
-    
+
     /**
      * The instance ID.
      *
@@ -252,8 +248,7 @@ public class Volume implements Serializable {
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * The value returned by <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.
@@ -292,8 +287,7 @@ public class Volume implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * The volume size.
      *
@@ -326,8 +320,7 @@ public class Volume implements Serializable {
         this.size = size;
         return this;
     }
-    
-    
+
     /**
      * The device name.
      *
@@ -360,8 +353,7 @@ public class Volume implements Serializable {
         this.device = device;
         return this;
     }
-    
-    
+
     /**
      * The volume mount point. For example "/dev/sdh".
      *
@@ -394,8 +386,7 @@ public class Volume implements Serializable {
         this.mountPoint = mountPoint;
         return this;
     }
-    
-    
+
     /**
      * The AWS region. For more information about AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
@@ -440,8 +431,7 @@ public class Volume implements Serializable {
         this.region = region;
         return this;
     }
-    
-    
+
     /**
      * The volume Availability Zone. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
@@ -486,8 +476,7 @@ public class Volume implements Serializable {
         this.availabilityZone = availabilityZone;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

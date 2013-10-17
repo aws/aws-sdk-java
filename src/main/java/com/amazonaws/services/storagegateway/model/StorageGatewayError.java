@@ -85,8 +85,7 @@ public class StorageGatewayError implements Serializable {
         this.errorCode = errorCode;
         return this;
     }
-    
-    
+
     /**
      * Additional information about the error.
      * <p>
@@ -120,7 +119,7 @@ public class StorageGatewayError implements Serializable {
         this.errorCode = errorCode.toString();
         return this;
     }
-    
+
     /**
      * Human-readable text that provides detail about the error that occured.
      *
@@ -157,8 +156,7 @@ public class StorageGatewayError implements Serializable {
         setErrorDetails(errorDetails);
         return this;
     }
-    
-   	
+
     /**
      * Human-readable text that provides detail about the error that occured.
      * <p>
@@ -178,7 +176,7 @@ public class StorageGatewayError implements Serializable {
 		this.errorDetails.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into ErrorDetails.
 	 * <p>

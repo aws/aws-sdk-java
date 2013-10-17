@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.redshift;
-            
+
 import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
@@ -94,8 +94,8 @@ import com.amazonaws.services.redshift.model.*;
  * For a list of supported AWS regions where you can provision a cluster, go to the <a
  * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region"> Regions and Endpoints </a> section in the <i>Amazon Web Services
  * Glossary</i> .
- * </p> 
- */       
+ * </p>
+ */
 public interface AmazonRedshiftAsync extends AmazonRedshift {
     /**
      * <p>

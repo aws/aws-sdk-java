@@ -128,8 +128,7 @@ public class CreateClusterParameterGroupRequest extends AmazonWebServiceRequest 
         this.parameterGroupName = parameterGroupName;
         return this;
     }
-    
-    
+
     /**
      * The Amazon Redshift engine version to which the cluster parameter
      * group applies. The cluster engine version determines the set of
@@ -210,8 +209,7 @@ public class CreateClusterParameterGroupRequest extends AmazonWebServiceRequest 
         this.parameterGroupFamily = parameterGroupFamily;
         return this;
     }
-    
-    
+
     /**
      * A description of the parameter group.
      *
@@ -244,8 +242,7 @@ public class CreateClusterParameterGroupRequest extends AmazonWebServiceRequest 
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -157,8 +157,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest impl
         this.gatewayARN = gatewayARN;
         return this;
     }
-    
-    
+
     /**
      * The unique identifier for the gateway local disk that is configured as
      * a stored volume. Use <a
@@ -218,8 +217,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest impl
         this.diskId = diskId;
         return this;
     }
-    
-    
+
     /**
      * The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as
      * the new stored volume. Specify this field if you want to create the
@@ -291,8 +289,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest impl
         this.snapshotId = snapshotId;
         return this;
     }
-    
-    
+
     /**
      * Specify this field as true if you want to preserve the data on the
      * local disk. Otherwise, specifying this field as false creates an empty
@@ -337,8 +334,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest impl
         this.preserveExistingData = preserveExistingData;
         return this;
     }
-    
-    
+
     /**
      * Specify this field as true if you want to preserve the data on the
      * local disk. Otherwise, specifying this field as false creates an empty
@@ -351,7 +347,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest impl
     public Boolean getPreserveExistingData() {
         return preserveExistingData;
     }
-    
+
     /**
      * The name of the iSCSI target used by initiators to connect to the
      * target and as a suffix for the target ARN. For example, specifying
@@ -426,8 +422,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest impl
         this.targetName = targetName;
         return this;
     }
-    
-    
+
     /**
      * The network interface of the gateway on which to expose the iSCSI
      * target. Only IPv4 addresses are accepted. Use
@@ -493,8 +488,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest impl
         this.networkInterfaceId = networkInterfaceId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

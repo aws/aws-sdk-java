@@ -76,8 +76,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
         this.networkInterfaceId = networkInterfaceId;
         return this;
     }
-    
-    
+
     /**
      * String value
      *
@@ -110,8 +109,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * Boolean value
      *
@@ -144,8 +142,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
         this.sourceDestCheck = sourceDestCheck;
         return this;
     }
-    
-    
+
     /**
      * Boolean value
      *
@@ -154,14 +151,13 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
     public Boolean getSourceDestCheck() {
         return sourceDestCheck;
     }
-    
+
     /**
      * Returns the value of the Groups property for this object.
      *
      * @return The value of the Groups property for this object.
      */
     public java.util.List<String> getGroups() {
-        
         if (groups == null) {
               groups = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               groups.setAutoConstruct(true);
@@ -223,7 +219,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
 
         return this;
     }
-    
+
     /**
      * Returns the value of the Attachment property for this object.
      *
@@ -256,8 +252,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
         this.attachment = attachment;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

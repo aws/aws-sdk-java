@@ -110,8 +110,7 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest imp
         this.dBInstanceIdentifier = dBInstanceIdentifier;
         return this;
     }
-    
-    
+
     /**
      * The name of the log file to be downloaded.
      *
@@ -144,8 +143,7 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest imp
         this.logFileName = logFileName;
         return this;
     }
-    
-    
+
     /**
      * The pagination token provided in the previous request. If this
      * parameter is specified the response includes only records beyond the
@@ -190,8 +188,7 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest imp
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * The number of lines remaining to be downloaded.
      *
@@ -224,8 +221,7 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest imp
         this.numberOfLines = numberOfLines;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

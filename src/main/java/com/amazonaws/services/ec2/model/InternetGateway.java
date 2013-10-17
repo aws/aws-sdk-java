@@ -60,15 +60,13 @@ public class InternetGateway implements Serializable {
         this.internetGatewayId = internetGatewayId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Attachments property for this object.
      *
      * @return The value of the Attachments property for this object.
      */
     public java.util.List<InternetGatewayAttachment> getAttachments() {
-        
         if (attachments == null) {
               attachments = new com.amazonaws.internal.ListWithAutoConstructFlag<InternetGatewayAttachment>();
               attachments.setAutoConstruct(true);
@@ -130,14 +128,13 @@ public class InternetGateway implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns the value of the Tags property for this object.
      *
      * @return The value of the Tags property for this object.
      */
     public java.util.List<Tag> getTags() {
-        
         if (tags == null) {
               tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
               tags.setAutoConstruct(true);
@@ -199,7 +196,7 @@ public class InternetGateway implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

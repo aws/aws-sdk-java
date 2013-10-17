@@ -95,8 +95,7 @@ public class GetUserPolicyResult implements Serializable {
         this.userName = userName;
         return this;
     }
-    
-    
+
     /**
      * The name of the policy.
      * <p>
@@ -141,8 +140,7 @@ public class GetUserPolicyResult implements Serializable {
         this.policyName = policyName;
         return this;
     }
-    
-    
+
     /**
      * The policy document.
      * <p>
@@ -187,8 +185,7 @@ public class GetUserPolicyResult implements Serializable {
         this.policyDocument = policyDocument;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

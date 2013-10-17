@@ -97,8 +97,7 @@ public class CreateSnapshotResult implements Serializable {
         this.volumeARN = volumeARN;
         return this;
     }
-    
-    
+
     /**
      * The snapshot ID that is used to refer to the snapshot in future
      * operations such as describing snapshots (Amazon Elastic Compute Cloud
@@ -158,8 +157,7 @@ public class CreateSnapshotResult implements Serializable {
         this.snapshotId = snapshotId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

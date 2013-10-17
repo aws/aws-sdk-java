@@ -62,8 +62,7 @@ public class InstancePrivateIpAddress implements Serializable {
         this.privateIpAddress = privateIpAddress;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the PrivateDnsName property for this object.
      *
@@ -96,8 +95,7 @@ public class InstancePrivateIpAddress implements Serializable {
         this.privateDnsName = privateDnsName;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Primary property for this object.
      *
@@ -130,8 +128,7 @@ public class InstancePrivateIpAddress implements Serializable {
         this.primary = primary;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Primary property for this object.
      *
@@ -140,7 +137,7 @@ public class InstancePrivateIpAddress implements Serializable {
     public Boolean getPrimary() {
         return primary;
     }
-    
+
     /**
      * Returns the value of the Association property for this object.
      *
@@ -173,8 +170,7 @@ public class InstancePrivateIpAddress implements Serializable {
         this.association = association;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

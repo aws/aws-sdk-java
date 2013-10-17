@@ -44,8 +44,6 @@ public class DescribeTableRequest extends AmazonWebServiceRequest implements Ser
      */
     public DescribeTableRequest() {}
     
-
-
     /**
      * Constructs a new DescribeTableRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -57,8 +55,6 @@ public class DescribeTableRequest extends AmazonWebServiceRequest implements Ser
         setTableName(tableName);
     }
 
-    
-    
     /**
      * The name of the table to describe.
      * <p>
@@ -103,8 +99,7 @@ public class DescribeTableRequest extends AmazonWebServiceRequest implements Ser
         this.tableName = tableName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

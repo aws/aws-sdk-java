@@ -171,8 +171,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
         this.environmentId = environmentId;
         return this;
     }
-    
-    
+
     /**
      * The name of the environment to update. If no environment with this
      * name exists, AWS Elastic Beanstalk returns an
@@ -244,8 +243,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
         this.environmentName = environmentName;
         return this;
     }
-    
-    
+
     /**
      * If this parameter is specified, AWS Elastic Beanstalk deploys the
      * named application version to the environment. If no such application
@@ -299,8 +297,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
         this.versionLabel = versionLabel;
         return this;
     }
-    
-    
+
     /**
      * If this parameter is specified, AWS Elastic Beanstalk deploys this
      * configuration template to the environment. If no such configuration
@@ -360,8 +357,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
         this.templateName = templateName;
         return this;
     }
-    
-    
+
     /**
      * If this parameter is specified, AWS Elastic Beanstalk updates the
      * description of this environment.
@@ -409,8 +405,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * If specified, AWS Elastic Beanstalk updates the configuration set
      * associated with the running environment and sets the specified
@@ -421,7 +416,6 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      *         configuration options to the requested value.
      */
     public java.util.List<ConfigurationOptionSetting> getOptionSettings() {
-        
         if (optionSettings == null) {
               optionSettings = new com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting>();
               optionSettings.setAutoConstruct(true);
@@ -495,7 +489,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
 
         return this;
     }
-    
+
     /**
      * A list of custom user-defined configuration options to remove from the
      * configuration set for this environment.
@@ -504,7 +498,6 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      *         configuration set for this environment.
      */
     public java.util.List<OptionSpecification> getOptionsToRemove() {
-        
         if (optionsToRemove == null) {
               optionsToRemove = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionSpecification>();
               optionsToRemove.setAutoConstruct(true);
@@ -572,7 +565,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

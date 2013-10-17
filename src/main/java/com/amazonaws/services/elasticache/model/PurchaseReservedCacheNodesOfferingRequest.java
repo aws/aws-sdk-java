@@ -84,8 +84,7 @@ public class PurchaseReservedCacheNodesOfferingRequest extends AmazonWebServiceR
         this.reservedCacheNodesOfferingId = reservedCacheNodesOfferingId;
         return this;
     }
-    
-    
+
     /**
      * A customer-specified identifier to track this reservation. <p>Example:
      * myreservationID
@@ -124,8 +123,7 @@ public class PurchaseReservedCacheNodesOfferingRequest extends AmazonWebServiceR
         this.reservedCacheNodeId = reservedCacheNodeId;
         return this;
     }
-    
-    
+
     /**
      * The number of cache node instances to reserve. <p>Default:
      * <code>1</code>
@@ -164,8 +162,7 @@ public class PurchaseReservedCacheNodesOfferingRequest extends AmazonWebServiceR
         this.cacheNodeCount = cacheNodeCount;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

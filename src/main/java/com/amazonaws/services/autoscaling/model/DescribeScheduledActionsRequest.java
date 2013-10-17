@@ -119,8 +119,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest imp
         this.autoScalingGroupName = autoScalingGroupName;
         return this;
     }
-    
-    
+
     /**
      * A list of scheduled actions to be described. If this list is omitted,
      * all scheduled actions are described. The list of requested scheduled
@@ -135,7 +134,6 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest imp
      *         scheduled actions are requested, they are ignored with no error.
      */
     public java.util.List<String> getScheduledActionNames() {
-        
         if (scheduledActionNames == null) {
               scheduledActionNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               scheduledActionNames.setAutoConstruct(true);
@@ -221,7 +219,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest imp
 
         return this;
     }
-    
+
     /**
      * The earliest scheduled start time to return. If scheduled action names
      * are provided, this field will be ignored.
@@ -260,8 +258,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest imp
         this.startTime = startTime;
         return this;
     }
-    
-    
+
     /**
      * The latest scheduled start time to return. If scheduled action names
      * are provided, this field is ignored.
@@ -300,8 +297,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest imp
         this.endTime = endTime;
         return this;
     }
-    
-    
+
     /**
      * A string that marks the start of the next batch of returned results.
      * <p>
@@ -343,8 +339,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest imp
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of scheduled actions to return.
      * <p>
@@ -386,8 +381,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest imp
         this.maxRecords = maxRecords;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

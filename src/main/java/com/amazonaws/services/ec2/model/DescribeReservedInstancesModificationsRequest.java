@@ -53,7 +53,6 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
      * @return An optional list of Reserved Instances modification IDs to describe.
      */
     public java.util.List<String> getReservedInstancesModificationIds() {
-        
         if (reservedInstancesModificationIds == null) {
               reservedInstancesModificationIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               reservedInstancesModificationIds.setAutoConstruct(true);
@@ -115,7 +114,7 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
 
         return this;
     }
-    
+
     /**
      * A string specifying the next paginated set of results to return.
      *
@@ -148,8 +147,7 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * A list of filters used to match properties for
      * ReservedInstancesModifications. For a complete reference to the
@@ -164,7 +162,6 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
-        
         if (filters == null) {
               filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
               filters.setAutoConstruct(true);
@@ -250,7 +247,7 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

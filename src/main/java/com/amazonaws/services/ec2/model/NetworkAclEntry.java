@@ -74,8 +74,7 @@ public class NetworkAclEntry implements Serializable {
         this.ruleNumber = ruleNumber;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Protocol property for this object.
      *
@@ -108,8 +107,7 @@ public class NetworkAclEntry implements Serializable {
         this.protocol = protocol;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the RuleAction property for this object.
      * <p>
@@ -157,8 +155,7 @@ public class NetworkAclEntry implements Serializable {
         this.ruleAction = ruleAction;
         return this;
     }
-    
-    
+
     /**
      * Sets the value of the RuleAction property for this object.
      * <p>
@@ -192,7 +189,7 @@ public class NetworkAclEntry implements Serializable {
         this.ruleAction = ruleAction.toString();
         return this;
     }
-    
+
     /**
      * Returns the value of the Egress property for this object.
      *
@@ -225,8 +222,7 @@ public class NetworkAclEntry implements Serializable {
         this.egress = egress;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Egress property for this object.
      *
@@ -235,7 +231,7 @@ public class NetworkAclEntry implements Serializable {
     public Boolean getEgress() {
         return egress;
     }
-    
+
     /**
      * Returns the value of the CidrBlock property for this object.
      *
@@ -268,8 +264,7 @@ public class NetworkAclEntry implements Serializable {
         this.cidrBlock = cidrBlock;
         return this;
     }
-    
-    
+
     /**
      * 
      *
@@ -302,8 +297,7 @@ public class NetworkAclEntry implements Serializable {
         this.icmpTypeCode = icmpTypeCode;
         return this;
     }
-    
-    
+
     /**
      * 
      *
@@ -336,8 +330,7 @@ public class NetworkAclEntry implements Serializable {
         this.portRange = portRange;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

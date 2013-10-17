@@ -82,8 +82,7 @@ public class DescribeTrustedAdvisorCheckResultResult implements Serializable {
         this.result = result;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

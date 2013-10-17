@@ -84,8 +84,7 @@ public class DescribePermissionsRequest extends AmazonWebServiceRequest implemen
         this.iamUserArn = iamUserArn;
         return this;
     }
-    
-    
+
     /**
      * The stack ID.
      *
@@ -118,8 +117,7 @@ public class DescribePermissionsRequest extends AmazonWebServiceRequest implemen
         this.stackId = stackId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

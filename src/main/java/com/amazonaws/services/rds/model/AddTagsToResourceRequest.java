@@ -95,15 +95,13 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements
         this.resourceName = resourceName;
         return this;
     }
-    
-    
+
     /**
      * The tags to be assigned to the DB Instance.
      *
      * @return The tags to be assigned to the DB Instance.
      */
     public java.util.List<Tag> getTags() {
-        
         if (tags == null) {
               tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
               tags.setAutoConstruct(true);
@@ -165,7 +163,7 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

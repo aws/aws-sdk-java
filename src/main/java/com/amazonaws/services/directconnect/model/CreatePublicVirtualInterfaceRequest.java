@@ -72,8 +72,7 @@ public class CreatePublicVirtualInterfaceRequest extends AmazonWebServiceRequest
         this.connectionId = connectionId;
         return this;
     }
-    
-    
+
     /**
      * Detailed information of the public virtual interface to be created.
      * <p>Default: None
@@ -112,8 +111,7 @@ public class CreatePublicVirtualInterfaceRequest extends AmazonWebServiceRequest
         this.newPublicVirtualInterface = newPublicVirtualInterface;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

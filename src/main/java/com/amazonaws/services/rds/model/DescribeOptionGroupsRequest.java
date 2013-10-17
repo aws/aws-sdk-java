@@ -102,8 +102,7 @@ public class DescribeOptionGroupsRequest extends AmazonWebServiceRequest impleme
         this.optionGroupName = optionGroupName;
         return this;
     }
-    
-    
+
     /**
      * An optional pagination token provided by a previous
      * DescribeOptionGroups request. If this parameter is specified, the
@@ -154,8 +153,7 @@ public class DescribeOptionGroupsRequest extends AmazonWebServiceRequest impleme
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
@@ -212,8 +210,7 @@ public class DescribeOptionGroupsRequest extends AmazonWebServiceRequest impleme
         this.maxRecords = maxRecords;
         return this;
     }
-    
-    
+
     /**
      * Filters the list of option groups to only include groups associated
      * with a specific database engine.
@@ -252,8 +249,7 @@ public class DescribeOptionGroupsRequest extends AmazonWebServiceRequest impleme
         this.engineName = engineName;
         return this;
     }
-    
-    
+
     /**
      * Filters the list of option groups to only include groups associated
      * with a specific database engine version. If specified, then EngineName
@@ -298,8 +294,7 @@ public class DescribeOptionGroupsRequest extends AmazonWebServiceRequest impleme
         this.majorEngineVersion = majorEngineVersion;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

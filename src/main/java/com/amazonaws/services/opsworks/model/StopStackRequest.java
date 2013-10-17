@@ -65,8 +65,7 @@ public class StopStackRequest extends AmazonWebServiceRequest implements Seriali
         this.stackId = stackId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

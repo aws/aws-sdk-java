@@ -104,15 +104,13 @@ public class EnvironmentResourceDescription implements Serializable {
         this.environmentName = environmentName;
         return this;
     }
-    
-    
+
     /**
      * The <code>AutoScalingGroups</code> used by this environment.
      *
      * @return The <code>AutoScalingGroups</code> used by this environment.
      */
     public java.util.List<AutoScalingGroup> getAutoScalingGroups() {
-        
         if (autoScalingGroups == null) {
               autoScalingGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<AutoScalingGroup>();
               autoScalingGroups.setAutoConstruct(true);
@@ -174,14 +172,13 @@ public class EnvironmentResourceDescription implements Serializable {
 
         return this;
     }
-    
+
     /**
      * The Amazon EC2 instances used by this environment.
      *
      * @return The Amazon EC2 instances used by this environment.
      */
     public java.util.List<Instance> getInstances() {
-        
         if (instances == null) {
               instances = new com.amazonaws.internal.ListWithAutoConstructFlag<Instance>();
               instances.setAutoConstruct(true);
@@ -243,14 +240,13 @@ public class EnvironmentResourceDescription implements Serializable {
 
         return this;
     }
-    
+
     /**
      * The Auto Scaling launch configurations in use by this environment.
      *
      * @return The Auto Scaling launch configurations in use by this environment.
      */
     public java.util.List<LaunchConfiguration> getLaunchConfigurations() {
-        
         if (launchConfigurations == null) {
               launchConfigurations = new com.amazonaws.internal.ListWithAutoConstructFlag<LaunchConfiguration>();
               launchConfigurations.setAutoConstruct(true);
@@ -312,14 +308,13 @@ public class EnvironmentResourceDescription implements Serializable {
 
         return this;
     }
-    
+
     /**
      * The LoadBalancers in use by this environment.
      *
      * @return The LoadBalancers in use by this environment.
      */
     public java.util.List<LoadBalancer> getLoadBalancers() {
-        
         if (loadBalancers == null) {
               loadBalancers = new com.amazonaws.internal.ListWithAutoConstructFlag<LoadBalancer>();
               loadBalancers.setAutoConstruct(true);
@@ -381,14 +376,13 @@ public class EnvironmentResourceDescription implements Serializable {
 
         return this;
     }
-    
+
     /**
      * The <code>AutoScaling</code> triggers in use by this environment.
      *
      * @return The <code>AutoScaling</code> triggers in use by this environment.
      */
     public java.util.List<Trigger> getTriggers() {
-        
         if (triggers == null) {
               triggers = new com.amazonaws.internal.ListWithAutoConstructFlag<Trigger>();
               triggers.setAutoConstruct(true);
@@ -450,7 +444,7 @@ public class EnvironmentResourceDescription implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

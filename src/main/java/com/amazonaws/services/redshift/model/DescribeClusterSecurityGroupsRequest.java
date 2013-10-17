@@ -110,8 +110,7 @@ public class DescribeClusterSecurityGroupsRequest extends AmazonWebServiceReques
         this.clusterSecurityGroupName = clusterSecurityGroupName;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of records to be included in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
@@ -174,8 +173,7 @@ public class DescribeClusterSecurityGroupsRequest extends AmazonWebServiceReques
         this.maxRecords = maxRecords;
         return this;
     }
-    
-    
+
     /**
      * An optional marker returned by a previous
      * <a>DescribeClusterSecurityGroups</a> request to indicate the first
@@ -232,8 +230,7 @@ public class DescribeClusterSecurityGroupsRequest extends AmazonWebServiceReques
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

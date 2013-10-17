@@ -69,8 +69,7 @@ public class VpcAttachment implements Serializable {
         this.vpcId = vpcId;
         return this;
     }
-    
-    
+
     /**
      * 
      * <p>
@@ -118,8 +117,7 @@ public class VpcAttachment implements Serializable {
         this.state = state;
         return this;
     }
-    
-    
+
     /**
      * 
      * <p>
@@ -153,7 +151,7 @@ public class VpcAttachment implements Serializable {
         this.state = state.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

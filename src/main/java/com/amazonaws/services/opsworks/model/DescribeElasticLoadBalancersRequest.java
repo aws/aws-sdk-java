@@ -81,8 +81,7 @@ public class DescribeElasticLoadBalancersRequest extends AmazonWebServiceRequest
         this.stackId = stackId;
         return this;
     }
-    
-    
+
     /**
      * A list of layer IDs. The action describes the Elastic Load Balancing
      * instances for the specified layers.
@@ -91,7 +90,6 @@ public class DescribeElasticLoadBalancersRequest extends AmazonWebServiceRequest
      *         instances for the specified layers.
      */
     public java.util.List<String> getLayerIds() {
-        
         if (layerIds == null) {
               layerIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               layerIds.setAutoConstruct(true);
@@ -159,7 +157,7 @@ public class DescribeElasticLoadBalancersRequest extends AmazonWebServiceRequest
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

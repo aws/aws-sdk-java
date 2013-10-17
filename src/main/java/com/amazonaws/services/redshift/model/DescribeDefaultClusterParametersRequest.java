@@ -87,8 +87,7 @@ public class DescribeDefaultClusterParametersRequest extends AmazonWebServiceReq
         this.parameterGroupFamily = parameterGroupFamily;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
@@ -145,8 +144,7 @@ public class DescribeDefaultClusterParametersRequest extends AmazonWebServiceReq
         this.maxRecords = maxRecords;
         return this;
     }
-    
-    
+
     /**
      * An optional marker returned from a previous
      * <b>DescribeDefaultClusterParameters</b> request. If this parameter is
@@ -197,8 +195,7 @@ public class DescribeDefaultClusterParametersRequest extends AmazonWebServiceReq
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

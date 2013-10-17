@@ -82,8 +82,7 @@ public class OptionConfiguration implements Serializable {
         this.optionName = optionName;
         return this;
     }
-    
-    
+
     /**
      * The optional port for the option.
      *
@@ -116,15 +115,13 @@ public class OptionConfiguration implements Serializable {
         this.port = port;
         return this;
     }
-    
-    
+
     /**
      * A list of DBSecurityGroupMemebrship name strings used for this option.
      *
      * @return A list of DBSecurityGroupMemebrship name strings used for this option.
      */
     public java.util.List<String> getDBSecurityGroupMemberships() {
-        
         if (dBSecurityGroupMemberships == null) {
               dBSecurityGroupMemberships = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               dBSecurityGroupMemberships.setAutoConstruct(true);
@@ -186,7 +183,7 @@ public class OptionConfiguration implements Serializable {
 
         return this;
     }
-    
+
     /**
      * A list of VpcSecurityGroupMemebrship name strings used for this
      * option.
@@ -195,7 +192,6 @@ public class OptionConfiguration implements Serializable {
      *         option.
      */
     public java.util.List<String> getVpcSecurityGroupMemberships() {
-        
         if (vpcSecurityGroupMemberships == null) {
               vpcSecurityGroupMemberships = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               vpcSecurityGroupMemberships.setAutoConstruct(true);
@@ -263,14 +259,13 @@ public class OptionConfiguration implements Serializable {
 
         return this;
     }
-    
+
     /**
      * The option settings to include in an option group.
      *
      * @return The option settings to include in an option group.
      */
     public java.util.List<OptionSetting> getOptionSettings() {
-        
         if (optionSettings == null) {
               optionSettings = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionSetting>();
               optionSettings.setAutoConstruct(true);
@@ -332,7 +327,7 @@ public class OptionConfiguration implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

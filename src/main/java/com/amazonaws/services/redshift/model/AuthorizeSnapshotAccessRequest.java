@@ -83,8 +83,7 @@ public class AuthorizeSnapshotAccessRequest extends AmazonWebServiceRequest impl
         this.snapshotIdentifier = snapshotIdentifier;
         return this;
     }
-    
-    
+
     /**
      * The identifier of the cluster the snapshot was created from. This
      * parameter is required if your IAM user has a policy containing a
@@ -135,8 +134,7 @@ public class AuthorizeSnapshotAccessRequest extends AmazonWebServiceRequest impl
         this.snapshotClusterIdentifier = snapshotClusterIdentifier;
         return this;
     }
-    
-    
+
     /**
      * The identifier of the AWS customer account authorized to restore the
      * specified snapshot.
@@ -175,8 +173,7 @@ public class AuthorizeSnapshotAccessRequest extends AmazonWebServiceRequest impl
         this.accountWithRestoreAccess = accountWithRestoreAccess;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

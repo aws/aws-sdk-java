@@ -145,8 +145,7 @@ public class NamedRankExpression implements Serializable {
         this.rankName = rankName;
         return this;
     }
-    
-    
+
     /**
      * The expression to evaluate for ranking or thresholding while
      * processing a search request. The <code>RankExpression</code> syntax is
@@ -380,8 +379,7 @@ public class NamedRankExpression implements Serializable {
         this.rankExpression = rankExpression;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

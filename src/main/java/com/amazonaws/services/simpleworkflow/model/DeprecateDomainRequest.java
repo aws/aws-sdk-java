@@ -100,8 +100,7 @@ public class DeprecateDomainRequest extends AmazonWebServiceRequest implements S
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

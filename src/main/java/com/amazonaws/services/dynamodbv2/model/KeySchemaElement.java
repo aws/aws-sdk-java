@@ -47,8 +47,6 @@ public class KeySchemaElement implements Serializable {
      */
     public KeySchemaElement() {}
     
-
-
     /**
      * Constructs a new KeySchemaElement object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -63,8 +61,6 @@ public class KeySchemaElement implements Serializable {
         setKeyType(keyType);
     }
 
-    
-    
     /**
      * Constructs a new KeySchemaElement object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -78,7 +74,7 @@ public class KeySchemaElement implements Serializable {
         this.attributeName = attributeName;
         this.keyType = keyType.toString();
     }
-    
+
     /**
      * Represents the name of a key attribute.
      * <p>
@@ -120,8 +116,7 @@ public class KeySchemaElement implements Serializable {
         this.attributeName = attributeName;
         return this;
     }
-    
-    
+
     /**
      * Represents the attribute data, consisting of the data type and the
      * attribute value itself.
@@ -175,8 +170,7 @@ public class KeySchemaElement implements Serializable {
         this.keyType = keyType;
         return this;
     }
-    
-    
+
     /**
      * Represents the attribute data, consisting of the data type and the
      * attribute value itself.
@@ -214,7 +208,7 @@ public class KeySchemaElement implements Serializable {
         this.keyType = keyType.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

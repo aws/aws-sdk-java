@@ -55,7 +55,6 @@ public class ListAccountAliasesResult implements Serializable {
      * @return A list of aliases associated with the account.
      */
     public java.util.List<String> getAccountAliases() {
-        
         if (accountAliases == null) {
               accountAliases = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               accountAliases.setAutoConstruct(true);
@@ -117,7 +116,7 @@ public class ListAccountAliasesResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * A flag that indicates whether there are more account aliases to list.
      * If your results were truncated, you can make a subsequent pagination
@@ -168,8 +167,7 @@ public class ListAccountAliasesResult implements Serializable {
         this.isTruncated = isTruncated;
         return this;
     }
-    
-    
+
     /**
      * A flag that indicates whether there are more account aliases to list.
      * If your results were truncated, you can make a subsequent pagination
@@ -184,7 +182,7 @@ public class ListAccountAliasesResult implements Serializable {
     public Boolean getIsTruncated() {
         return isTruncated;
     }
-    
+
     /**
      * Use this only when paginating results, and only in a subsequent
      * request after you've received a response where the results are
@@ -247,8 +245,7 @@ public class ListAccountAliasesResult implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -71,8 +71,7 @@ public class LoadBalancerDescription implements Serializable {
         this.loadBalancerName = loadBalancerName;
         return this;
     }
-    
-    
+
     /**
      * The domain name of the LoadBalancer.
      *
@@ -105,15 +104,13 @@ public class LoadBalancerDescription implements Serializable {
         this.domain = domain;
         return this;
     }
-    
-    
+
     /**
      * A list of Listeners used by the LoadBalancer.
      *
      * @return A list of Listeners used by the LoadBalancer.
      */
     public java.util.List<Listener> getListeners() {
-        
         if (listeners == null) {
               listeners = new com.amazonaws.internal.ListWithAutoConstructFlag<Listener>();
               listeners.setAutoConstruct(true);
@@ -175,7 +172,7 @@ public class LoadBalancerDescription implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

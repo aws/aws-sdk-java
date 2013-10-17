@@ -39,8 +39,6 @@ public class CreateStreamingDistributionRequest extends AmazonWebServiceRequest 
      */
     public CreateStreamingDistributionRequest() {}
     
-
-
     /**
      * Constructs a new CreateStreamingDistributionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -53,8 +51,6 @@ public class CreateStreamingDistributionRequest extends AmazonWebServiceRequest 
         setStreamingDistributionConfig(streamingDistributionConfig);
     }
 
-    
-    
     /**
      * The streaming distribution's configuration information.
      *
@@ -87,8 +83,7 @@ public class CreateStreamingDistributionRequest extends AmazonWebServiceRequest 
         this.streamingDistributionConfig = streamingDistributionConfig;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

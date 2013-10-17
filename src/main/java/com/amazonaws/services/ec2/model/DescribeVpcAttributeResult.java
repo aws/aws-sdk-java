@@ -66,8 +66,7 @@ public class DescribeVpcAttributeResult implements Serializable {
         this.vpcId = vpcId;
         return this;
     }
-    
-    
+
     /**
      * Boolean value
      *
@@ -100,8 +99,7 @@ public class DescribeVpcAttributeResult implements Serializable {
         this.enableDnsSupport = enableDnsSupport;
         return this;
     }
-    
-    
+
     /**
      * Boolean value
      *
@@ -110,7 +108,7 @@ public class DescribeVpcAttributeResult implements Serializable {
     public Boolean getEnableDnsSupport() {
         return enableDnsSupport;
     }
-    
+
     /**
      * Boolean value
      *
@@ -143,8 +141,7 @@ public class DescribeVpcAttributeResult implements Serializable {
         this.enableDnsHostnames = enableDnsHostnames;
         return this;
     }
-    
-    
+
     /**
      * Boolean value
      *
@@ -153,7 +150,7 @@ public class DescribeVpcAttributeResult implements Serializable {
     public Boolean getEnableDnsHostnames() {
         return enableDnsHostnames;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

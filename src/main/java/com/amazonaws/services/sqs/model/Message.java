@@ -85,8 +85,7 @@ public class Message implements Serializable {
         this.messageId = messageId;
         return this;
     }
-    
-    
+
     /**
      * 
      *
@@ -119,8 +118,7 @@ public class Message implements Serializable {
         this.receiptHandle = receiptHandle;
         return this;
     }
-    
-    
+
     /**
      * 
      *
@@ -153,8 +151,7 @@ public class Message implements Serializable {
         this.mD5OfBody = mD5OfBody;
         return this;
     }
-    
-    
+
     /**
      * 
      *
@@ -187,8 +184,7 @@ public class Message implements Serializable {
         this.body = body;
         return this;
     }
-    
-    
+
     /**
      * 
      *
@@ -225,8 +221,7 @@ public class Message implements Serializable {
         setAttributes(attributes);
         return this;
     }
-    
-   	
+
     /**
      * 
      * <p>
@@ -246,7 +241,7 @@ public class Message implements Serializable {
 		this.attributes.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into Attributes.
 	 * <p>

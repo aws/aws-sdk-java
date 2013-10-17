@@ -84,7 +84,6 @@ public class ListResourceRecordSetsResult implements Serializable {
      *         sets that are returned by the request.
      */
     public java.util.List<ResourceRecordSet> getResourceRecordSets() {
-        
         if (resourceRecordSets == null) {
               resourceRecordSets = new com.amazonaws.internal.ListWithAutoConstructFlag<ResourceRecordSet>();
               resourceRecordSets.setAutoConstruct(true);
@@ -152,7 +151,7 @@ public class ListResourceRecordSetsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * A flag that indicates whether there are more resource record sets to
      * be listed. If your results were truncated, you can make a follow-up
@@ -209,8 +208,7 @@ public class ListResourceRecordSetsResult implements Serializable {
         this.isTruncated = isTruncated;
         return this;
     }
-    
-    
+
     /**
      * A flag that indicates whether there are more resource record sets to
      * be listed. If your results were truncated, you can make a follow-up
@@ -227,7 +225,7 @@ public class ListResourceRecordSetsResult implements Serializable {
     public Boolean getIsTruncated() {
         return isTruncated;
     }
-    
+
     /**
      * If the results were truncated, the name of the next record in the
      * list. This element is present only if
@@ -281,8 +279,7 @@ public class ListResourceRecordSetsResult implements Serializable {
         this.nextRecordName = nextRecordName;
         return this;
     }
-    
-    
+
     /**
      * If the results were truncated, the type of the next record in the
      * list. This element is present only if
@@ -342,8 +339,7 @@ public class ListResourceRecordSetsResult implements Serializable {
         this.nextRecordType = nextRecordType;
         return this;
     }
-    
-    
+
     /**
      * If the results were truncated, the type of the next record in the
      * list. This element is present only if
@@ -385,7 +381,7 @@ public class ListResourceRecordSetsResult implements Serializable {
         this.nextRecordType = nextRecordType.toString();
         return this;
     }
-    
+
     /**
      * <i>Weighted resource record sets only:</i> If results were truncated
      * for a given DNS name and type, the value of <code>SetIdentifier</code>
@@ -445,8 +441,7 @@ public class ListResourceRecordSetsResult implements Serializable {
         this.nextRecordIdentifier = nextRecordIdentifier;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of records you requested. The maximum value of
      * <code>MaxItems</code> is 100.
@@ -485,8 +480,7 @@ public class ListResourceRecordSetsResult implements Serializable {
         this.maxItems = maxItems;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

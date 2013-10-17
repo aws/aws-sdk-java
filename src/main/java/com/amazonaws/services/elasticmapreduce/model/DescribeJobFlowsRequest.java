@@ -74,8 +74,6 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements 
      */
     public DescribeJobFlowsRequest() {}
     
-
-
     /**
      * Constructs a new DescribeJobFlowsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -88,8 +86,6 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements 
         setJobFlowIds(jobFlowIds);
     }
 
-    
-    
     /**
      * Return only job flows created after this date and time.
      *
@@ -122,8 +118,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements 
         this.createdAfter = createdAfter;
         return this;
     }
-    
-    
+
     /**
      * Return only job flows created before this date and time.
      *
@@ -156,15 +151,13 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements 
         this.createdBefore = createdBefore;
         return this;
     }
-    
-    
+
     /**
      * Return only job flows whose job flow ID is contained in this list.
      *
      * @return Return only job flows whose job flow ID is contained in this list.
      */
     public java.util.List<String> getJobFlowIds() {
-        
         if (jobFlowIds == null) {
               jobFlowIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               jobFlowIds.setAutoConstruct(true);
@@ -226,14 +219,13 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements 
 
         return this;
     }
-    
+
     /**
      * Return only job flows whose state is contained in this list.
      *
      * @return Return only job flows whose state is contained in this list.
      */
     public java.util.List<String> getJobFlowStates() {
-        
         if (jobFlowStates == null) {
               jobFlowStates = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               jobFlowStates.setAutoConstruct(true);
@@ -295,7 +287,30 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements 
 
         return this;
     }
-    
+
+    /**
+     * Return only job flows whose state is contained in this list.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param jobFlowStates Return only job flows whose state is contained in this list.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public DescribeJobFlowsRequest withJobFlowStates(JobFlowExecutionState... jobFlowStates) {
+        java.util.ArrayList<String> jobFlowStatesCopy = new java.util.ArrayList<String>(jobFlowStates.length);
+        for (JobFlowExecutionState member : jobFlowStates) {
+            jobFlowStatesCopy.add(member.toString());
+        }
+        if (getJobFlowStates() == null) {
+            setJobFlowStates(jobFlowStatesCopy);
+        } else {
+            getJobFlowStates().addAll(jobFlowStatesCopy);
+        }
+        return this;
+    }
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

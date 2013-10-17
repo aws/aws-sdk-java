@@ -210,14 +210,35 @@ public class JsonPolicyWriter {
     private void writePrincipals(Statement statement, JSONWriter generator)
             throws IOException, JSONException {
 
+        boolean allAccessPrincipal = false;
+        boolean allUserAccessPrincipal = false;
+        boolean allServiceAccessPrincipal = false;
+        boolean allFederatedAccessPrincipal = false;
         List<Principal> principals = statement.getPrincipals();
         if (principals == null || principals.isEmpty()) return;
 
-        generator.key("Principal").object();
+
+
         Map<String, List<String>> principalContentsByScheme =
             new HashMap<String, List<String>>();
 
         for (Principal p : principals) {
+            if (p.equals(Principal.All)) {
+                allAccessPrincipal = true;
+            }
+
+            if (p.equals(Principal.AllUsers)) {
+                allUserAccessPrincipal = true;
+            }
+
+            if (p.equals(Principal.AllServices)) {
+                allServiceAccessPrincipal = true;
+            }
+
+            if (p.equals(Principal.AllWebProviders)) {
+                allFederatedAccessPrincipal = true;
+            }
+
             List<String> principalValues =
                 principalContentsByScheme.get(p.getProvider());
 
@@ -228,6 +249,30 @@ public class JsonPolicyWriter {
             }
 
             principalValues.add(p.getId());
+        }
+
+        if (allAccessPrincipal == true) {
+            generator.key("Principal");
+            generator.value("*");
+            return;
+        }
+
+        generator.key("Principal").object();
+        if (allUserAccessPrincipal == true) {
+            principalContentsByScheme.remove("AWS");
+            generator.key("AWS").value("*");
+        }
+
+        if (allServiceAccessPrincipal == true) {
+            principalContentsByScheme.remove("Service");
+            generator.key("Service");
+            generator.value("*");
+        }
+
+        if (allFederatedAccessPrincipal == true) {
+            principalContentsByScheme.remove("Federated");
+            generator.key("Federated");
+            generator.value("*");
         }
 
         for (Map.Entry<String, List<String>> entry

@@ -42,8 +42,6 @@ public class DeleteCacheParameterGroupRequest extends AmazonWebServiceRequest im
      */
     public DeleteCacheParameterGroupRequest() {}
     
-
-
     /**
      * Constructs a new DeleteCacheParameterGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -57,8 +55,6 @@ public class DeleteCacheParameterGroupRequest extends AmazonWebServiceRequest im
         setCacheParameterGroupName(cacheParameterGroupName);
     }
 
-    
-    
     /**
      * The name of the cache parameter group to delete. <note> The specified
      * cache security group must not be associated with any cache clusters.
@@ -103,8 +99,7 @@ public class DeleteCacheParameterGroupRequest extends AmazonWebServiceRequest im
         this.cacheParameterGroupName = cacheParameterGroupName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

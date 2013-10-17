@@ -92,8 +92,7 @@ public class DescribeChapCredentialsRequest extends AmazonWebServiceRequest impl
         this.targetARN = targetARN;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

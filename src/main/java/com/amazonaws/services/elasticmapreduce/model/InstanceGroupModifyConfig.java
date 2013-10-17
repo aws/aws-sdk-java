@@ -44,8 +44,6 @@ public class InstanceGroupModifyConfig implements Serializable {
      */
     public InstanceGroupModifyConfig() {}
     
-
-
     /**
      * Constructs a new InstanceGroupModifyConfig object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -60,8 +58,6 @@ public class InstanceGroupModifyConfig implements Serializable {
         setInstanceCount(instanceCount);
     }
 
-    
-    
     /**
      * Unique ID of the instance group to expand or shrink.
      * <p>
@@ -106,8 +102,7 @@ public class InstanceGroupModifyConfig implements Serializable {
         this.instanceGroupId = instanceGroupId;
         return this;
     }
-    
-    
+
     /**
      * Target size for the instance group.
      *
@@ -140,8 +135,7 @@ public class InstanceGroupModifyConfig implements Serializable {
         this.instanceCount = instanceCount;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

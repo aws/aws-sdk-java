@@ -111,8 +111,7 @@ public class DeprecateActivityTypeRequest extends AmazonWebServiceRequest implem
         this.domain = domain;
         return this;
     }
-    
-    
+
     /**
      * The activity type to deprecate.
      *
@@ -145,8 +144,7 @@ public class DeprecateActivityTypeRequest extends AmazonWebServiceRequest implem
         this.activityType = activityType;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -109,8 +109,7 @@ public class ProvisionedThroughputDescription implements Serializable {
         this.lastIncreaseDateTime = lastIncreaseDateTime;
         return this;
     }
-    
-    
+
     /**
      * The date and time of the last provisioned throughput decrease for this
      * table.
@@ -149,8 +148,7 @@ public class ProvisionedThroughputDescription implements Serializable {
         this.lastDecreaseDateTime = lastDecreaseDateTime;
         return this;
     }
-    
-    
+
     /**
      * The number of provisioned throughput decreases for this table during
      * this UTC calendar day. For current maximums on provisioned throughput
@@ -216,8 +214,7 @@ public class ProvisionedThroughputDescription implements Serializable {
         this.numberOfDecreasesToday = numberOfDecreasesToday;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of strongly consistent reads consumed per second
      * before Amazon DynamoDB returns a <i>ThrottlingException</i>.
@@ -289,8 +286,7 @@ public class ProvisionedThroughputDescription implements Serializable {
         this.readCapacityUnits = readCapacityUnits;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of writes consumed per second before Amazon
      * DynamoDB returns a <i>ThrottlingException</i>.
@@ -338,8 +334,7 @@ public class ProvisionedThroughputDescription implements Serializable {
         this.writeCapacityUnits = writeCapacityUnits;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

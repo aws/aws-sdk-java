@@ -68,8 +68,7 @@ public class RefreshTrustedAdvisorCheckRequest extends AmazonWebServiceRequest i
         this.checkId = checkId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

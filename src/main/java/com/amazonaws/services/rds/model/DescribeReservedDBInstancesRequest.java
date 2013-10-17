@@ -141,8 +141,7 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
         this.reservedDBInstanceId = reservedDBInstanceId;
         return this;
     }
-    
-    
+
     /**
      * The offering identifier filter value. Specify this parameter to show
      * only purchased reservations matching the specified offering
@@ -187,8 +186,7 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
         this.reservedDBInstancesOfferingId = reservedDBInstancesOfferingId;
         return this;
     }
-    
-    
+
     /**
      * The DB Instance class filter value. Specify this parameter to show
      * only those reservations matching the specified DB Instances class.
@@ -227,8 +225,7 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
         this.dBInstanceClass = dBInstanceClass;
         return this;
     }
-    
-    
+
     /**
      * The duration filter value, specified in years or seconds. Specify this
      * parameter to show only reservations for this duration. <p>Valid
@@ -273,8 +270,7 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
         this.duration = duration;
         return this;
     }
-    
-    
+
     /**
      * The product description filter value. Specify this parameter to show
      * only those reservations matching the specified product description.
@@ -313,8 +309,7 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
         this.productDescription = productDescription;
         return this;
     }
-    
-    
+
     /**
      * The offering type filter value. Specify this parameter to show only
      * the available offerings matching the specified offering type. <p>Valid
@@ -365,8 +360,7 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
         this.offeringType = offeringType;
         return this;
     }
-    
-    
+
     /**
      * The Multi-AZ filter value. Specify this parameter to show only those
      * reservations matching the specified Multi-AZ parameter.
@@ -405,8 +399,7 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
         this.multiAZ = multiAZ;
         return this;
     }
-    
-    
+
     /**
      * The Multi-AZ filter value. Specify this parameter to show only those
      * reservations matching the specified Multi-AZ parameter.
@@ -417,7 +410,7 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
     public Boolean getMultiAZ() {
         return multiAZ;
     }
-    
+
     /**
      * The maximum number of records to include in the response. If more than
      * the <code>MaxRecords</code> value is available, a pagination token
@@ -474,8 +467,7 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
         this.maxRecords = maxRecords;
         return this;
     }
-    
-    
+
     /**
      * An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the
@@ -520,8 +512,7 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

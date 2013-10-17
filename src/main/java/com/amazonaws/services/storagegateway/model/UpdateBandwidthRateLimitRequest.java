@@ -115,8 +115,7 @@ public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest imp
         this.gatewayARN = gatewayARN;
         return this;
     }
-    
-    
+
     /**
      * The average upload bandwidth rate limit in bits per second.
      * <p>
@@ -158,8 +157,7 @@ public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest imp
         this.averageUploadRateLimitInBitsPerSec = averageUploadRateLimitInBitsPerSec;
         return this;
     }
-    
-    
+
     /**
      * The average download bandwidth rate limit in bits per second.
      * <p>
@@ -201,8 +199,7 @@ public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest imp
         this.averageDownloadRateLimitInBitsPerSec = averageDownloadRateLimitInBitsPerSec;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -95,8 +95,7 @@ public class TextOptions implements Serializable {
         this.defaultValue = defaultValue;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether facets are enabled for this field. Default: False.
      *
@@ -129,8 +128,7 @@ public class TextOptions implements Serializable {
         this.facetEnabled = facetEnabled;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether facets are enabled for this field. Default: False.
      *
@@ -139,7 +137,7 @@ public class TextOptions implements Serializable {
     public Boolean getFacetEnabled() {
         return facetEnabled;
     }
-    
+
     /**
      * Specifies whether values of this field can be returned in search
      * results and used for ranking. Default: False.
@@ -178,8 +176,7 @@ public class TextOptions implements Serializable {
         this.resultEnabled = resultEnabled;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether values of this field can be returned in search
      * results and used for ranking. Default: False.
@@ -190,7 +187,7 @@ public class TextOptions implements Serializable {
     public Boolean getResultEnabled() {
         return resultEnabled;
     }
-    
+
     /**
      * The text processor to apply to this field. Optional. Possible values:
      * <ul> <li><code>cs_text_no_stemming</code>: turns off stemming for the
@@ -247,8 +244,7 @@ public class TextOptions implements Serializable {
         this.textProcessor = textProcessor;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

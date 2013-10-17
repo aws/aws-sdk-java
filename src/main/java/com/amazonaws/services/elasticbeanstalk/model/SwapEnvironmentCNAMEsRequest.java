@@ -126,8 +126,7 @@ public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest implem
         this.sourceEnvironmentId = sourceEnvironmentId;
         return this;
     }
-    
-    
+
     /**
      * The name of the source environment. <p> Condition: You must specify at
      * least the <code>SourceEnvironmentID</code> or the
@@ -193,8 +192,7 @@ public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest implem
         this.sourceEnvironmentName = sourceEnvironmentName;
         return this;
     }
-    
-    
+
     /**
      * The ID of the destination environment. <p> Condition: You must specify
      * at least the <code>DestinationEnvironmentID</code> or the
@@ -251,8 +249,7 @@ public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest implem
         this.destinationEnvironmentId = destinationEnvironmentId;
         return this;
     }
-    
-    
+
     /**
      * The name of the destination environment. <p> Condition: You must
      * specify at least the <code>DestinationEnvironmentID</code> or the
@@ -318,8 +315,7 @@ public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest implem
         this.destinationEnvironmentName = destinationEnvironmentName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

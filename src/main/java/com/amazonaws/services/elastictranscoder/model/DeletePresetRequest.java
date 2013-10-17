@@ -87,8 +87,7 @@ public class DeletePresetRequest extends AmazonWebServiceRequest implements Seri
         this.id = id;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

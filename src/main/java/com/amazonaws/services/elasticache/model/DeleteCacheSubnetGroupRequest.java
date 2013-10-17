@@ -75,8 +75,7 @@ public class DeleteCacheSubnetGroupRequest extends AmazonWebServiceRequest imple
         this.cacheSubnetGroupName = cacheSubnetGroupName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

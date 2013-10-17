@@ -60,8 +60,7 @@ public class PriceScheduleSpecification implements Serializable {
         this.term = term;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Price property for this object.
      *
@@ -94,8 +93,7 @@ public class PriceScheduleSpecification implements Serializable {
         this.price = price;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the CurrencyCode property for this object.
      * <p>
@@ -143,8 +141,7 @@ public class PriceScheduleSpecification implements Serializable {
         this.currencyCode = currencyCode;
         return this;
     }
-    
-    
+
     /**
      * Sets the value of the CurrencyCode property for this object.
      * <p>
@@ -178,7 +175,7 @@ public class PriceScheduleSpecification implements Serializable {
         this.currencyCode = currencyCode.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

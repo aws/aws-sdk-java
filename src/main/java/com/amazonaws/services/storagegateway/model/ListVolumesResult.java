@@ -111,8 +111,7 @@ public class ListVolumesResult implements Serializable {
         this.gatewayARN = gatewayARN;
         return this;
     }
-    
-    
+
     /**
      * Use the marker in your next request to continue pagination of iSCSI
      * volumes. If there are no more volumes to list, this field does not
@@ -166,8 +165,7 @@ public class ListVolumesResult implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * An array of <a>VolumeInfo</a> objects, where each object describes an
      * iSCSI volume. If no volumes are defined for the gateway, then
@@ -178,7 +176,6 @@ public class ListVolumesResult implements Serializable {
      *         <code>VolumeInfos</code> is an empty array "[]".
      */
     public java.util.List<VolumeInfo> getVolumeInfos() {
-        
         if (volumeInfos == null) {
               volumeInfos = new com.amazonaws.internal.ListWithAutoConstructFlag<VolumeInfo>();
               volumeInfos.setAutoConstruct(true);
@@ -252,7 +249,7 @@ public class ListVolumesResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

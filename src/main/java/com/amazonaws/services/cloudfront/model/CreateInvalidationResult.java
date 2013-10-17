@@ -73,8 +73,7 @@ public class CreateInvalidationResult implements Serializable {
         this.location = location;
         return this;
     }
-    
-    
+
     /**
      * The invalidation's information.
      *
@@ -107,8 +106,7 @@ public class CreateInvalidationResult implements Serializable {
         this.invalidation = invalidation;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -47,8 +47,6 @@ public class AttachVpnGatewayRequest extends AmazonWebServiceRequest implements 
      */
     public AttachVpnGatewayRequest() {}
     
-
-
     /**
      * Constructs a new AttachVpnGatewayRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -62,8 +60,6 @@ public class AttachVpnGatewayRequest extends AmazonWebServiceRequest implements 
         setVpcId(vpcId);
     }
 
-    
-    
     /**
      * The ID of the VPN gateway to attach to the VPC.
      *
@@ -96,8 +92,7 @@ public class AttachVpnGatewayRequest extends AmazonWebServiceRequest implements 
         this.vpnGatewayId = vpnGatewayId;
         return this;
     }
-    
-    
+
     /**
      * The ID of the VPC to attach to the VPN gateway.
      *
@@ -130,8 +125,7 @@ public class AttachVpnGatewayRequest extends AmazonWebServiceRequest implements 
         this.vpcId = vpcId;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

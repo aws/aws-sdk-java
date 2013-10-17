@@ -102,8 +102,7 @@ public class ListGatewaysRequest extends AmazonWebServiceRequest implements Seri
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Specifies that the list of gateways returned be limited to the
      * specified number of items.
@@ -151,8 +150,7 @@ public class ListGatewaysRequest extends AmazonWebServiceRequest implements Seri
         this.limit = limit;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

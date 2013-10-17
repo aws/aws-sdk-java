@@ -42,7 +42,6 @@ public class DescribeLoadBasedAutoScalingRequest extends AmazonWebServiceRequest
      * @return An array of layer IDs.
      */
     public java.util.List<String> getLayerIds() {
-        
         if (layerIds == null) {
               layerIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               layerIds.setAutoConstruct(true);
@@ -104,7 +103,7 @@ public class DescribeLoadBasedAutoScalingRequest extends AmazonWebServiceRequest
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

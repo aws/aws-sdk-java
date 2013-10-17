@@ -110,8 +110,7 @@ public class DescribeConnectionDetailResult implements Serializable {
         this.connectionId = connectionId;
         return this;
     }
-    
-    
+
     /**
      * The name of the connection. <p>Example: "<i>1G Connection to AWS</i>"
      * <p>Default: None
@@ -150,8 +149,7 @@ public class DescribeConnectionDetailResult implements Serializable {
         this.connectionName = connectionName;
         return this;
     }
-    
-    
+
     /**
      * State of the connection. <ul> <li><b>Requested</b>: The initial state
      * of connection immediately after creation. The connection stays in the
@@ -247,8 +245,7 @@ public class DescribeConnectionDetailResult implements Serializable {
         this.connectionState = connectionState;
         return this;
     }
-    
-    
+
     /**
      * State of the connection. <ul> <li><b>Requested</b>: The initial state
      * of connection immediately after creation. The connection stays in the
@@ -314,7 +311,7 @@ public class DescribeConnectionDetailResult implements Serializable {
         this.connectionState = connectionState.toString();
         return this;
     }
-    
+
     /**
      * The AWS region where the offering is located. <p>Example: us-east-1
      * <p>Default: None
@@ -353,8 +350,7 @@ public class DescribeConnectionDetailResult implements Serializable {
         this.region = region;
         return this;
     }
-    
-    
+
     /**
      * Where the AWS Direct Connect offering is located. <p>Example: EqSV5
      * <p>Default: None
@@ -393,8 +389,7 @@ public class DescribeConnectionDetailResult implements Serializable {
         this.location = location;
         return this;
     }
-    
-    
+
     /**
      * Bandwidth of the connection. <p>Example: 1Gbps <p>Default: None
      *
@@ -427,15 +422,13 @@ public class DescribeConnectionDetailResult implements Serializable {
         this.bandwidth = bandwidth;
         return this;
     }
-    
-    
+
     /**
      * A list of connection costs.
      *
      * @return A list of connection costs.
      */
     public java.util.List<ConnectionCost> getConnectionCosts() {
-        
         if (connectionCosts == null) {
               connectionCosts = new com.amazonaws.internal.ListWithAutoConstructFlag<ConnectionCost>();
               connectionCosts.setAutoConstruct(true);
@@ -497,14 +490,13 @@ public class DescribeConnectionDetailResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * A list of connection order steps.
      *
      * @return A list of connection order steps.
      */
     public java.util.List<ConnectionOrderStep> getOrderSteps() {
-        
         if (orderSteps == null) {
               orderSteps = new com.amazonaws.internal.ListWithAutoConstructFlag<ConnectionOrderStep>();
               orderSteps.setAutoConstruct(true);
@@ -566,7 +558,7 @@ public class DescribeConnectionDetailResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -104,8 +104,7 @@ public class AssumedRoleUser implements Serializable {
         this.assumedRoleId = assumedRoleId;
         return this;
     }
-    
-    
+
     /**
      * The ARN of the temporary security credentials that are returned from
      * the <a>AssumeRole</a> action. For more information about ARNs and how
@@ -177,8 +176,7 @@ public class AssumedRoleUser implements Serializable {
         this.arn = arn;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

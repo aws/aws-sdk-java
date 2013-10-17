@@ -35,7 +35,6 @@ public class DescribeAlarmsForMetricResult implements Serializable {
      * @return A list of information for each alarm with the specified metric.
      */
     public java.util.List<MetricAlarm> getMetricAlarms() {
-        
         if (metricAlarms == null) {
               metricAlarms = new com.amazonaws.internal.ListWithAutoConstructFlag<MetricAlarm>();
               metricAlarms.setAutoConstruct(true);
@@ -97,7 +96,7 @@ public class DescribeAlarmsForMetricResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

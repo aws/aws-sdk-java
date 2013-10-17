@@ -72,8 +72,7 @@ public class ClusterParameterGroup implements Serializable {
         this.parameterGroupName = parameterGroupName;
         return this;
     }
-    
-    
+
     /**
      * The name of the cluster parameter group family that this cluster
      * parameter group is compatible with.
@@ -112,8 +111,7 @@ public class ClusterParameterGroup implements Serializable {
         this.parameterGroupFamily = parameterGroupFamily;
         return this;
     }
-    
-    
+
     /**
      * The description of the parameter group.
      *
@@ -146,8 +144,7 @@ public class ClusterParameterGroup implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

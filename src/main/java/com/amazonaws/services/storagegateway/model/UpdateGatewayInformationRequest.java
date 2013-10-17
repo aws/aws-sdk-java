@@ -113,8 +113,7 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest imp
         this.gatewayARN = gatewayARN;
         return this;
     }
-    
-    
+
     /**
      * A unique identifier for your gateway. This name becomes part of the
      * gateway Amazon Resources Name (ARN) which is what you use as an input
@@ -171,8 +170,7 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest imp
         this.gatewayName = gatewayName;
         return this;
     }
-    
-    
+
     /**
      * One of the <a>GatewayTimezone</a> values that represents the time zone
      * for your gateway. The time zone is used, for example, when a time
@@ -232,8 +230,7 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest imp
         this.gatewayTimezone = gatewayTimezone;
         return this;
     }
-    
-    
+
     /**
      * One of the <a>GatewayTimezone</a> values that represents the time zone
      * for your gateway. The time zone is used, for example, when a time
@@ -275,7 +272,7 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest imp
         this.gatewayTimezone = gatewayTimezone.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

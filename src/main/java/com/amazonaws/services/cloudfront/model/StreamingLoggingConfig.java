@@ -118,8 +118,7 @@ public class StreamingLoggingConfig implements Serializable {
         this.enabled = enabled;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether you want CloudFront to save access logs to an Amazon
      * S3 bucket. If you do not want to enable logging when you create a
@@ -140,7 +139,7 @@ public class StreamingLoggingConfig implements Serializable {
     public Boolean getEnabled() {
         return enabled;
     }
-    
+
     /**
      * The Amazon S3 bucket to store the access logs in, for example,
      * myawslogbucket.s3.amazonaws.com.
@@ -179,8 +178,7 @@ public class StreamingLoggingConfig implements Serializable {
         this.bucket = bucket;
         return this;
     }
-    
-    
+
     /**
      * An optional string that you want CloudFront to prefix to the access
      * log filenames for this streaming distribution, for example, myprefix/.
@@ -237,8 +235,7 @@ public class StreamingLoggingConfig implements Serializable {
         this.prefix = prefix;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

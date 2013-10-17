@@ -244,10 +244,10 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      */
     public void setVisibleToAllUsers(SetVisibleToAllUsersRequest setVisibleToAllUsersRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(setVisibleToAllUsersRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<SetVisibleToAllUsersRequest> request = new SetVisibleToAllUsersRequestMarshaller().marshall(setVisibleToAllUsersRequest);
@@ -283,15 +283,15 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(addInstanceGroupsRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<AddInstanceGroupsRequest> request = new AddInstanceGroupsRequestMarshaller().marshall(addInstanceGroupsRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<AddInstanceGroupsResult, JsonUnmarshallerContext> unmarshaller = new AddInstanceGroupsResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<AddInstanceGroupsResult> responseHandler = new JsonResponseHandler<AddInstanceGroupsResult>(unmarshaller);
 
         
@@ -349,10 +349,10 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      */
     public void addJobFlowSteps(AddJobFlowStepsRequest addJobFlowStepsRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(addJobFlowStepsRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<AddJobFlowStepsRequest> request = new AddJobFlowStepsRequestMarshaller().marshall(addJobFlowStepsRequest);
@@ -393,10 +393,10 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      */
     public void terminateJobFlows(TerminateJobFlowsRequest terminateJobFlowsRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(terminateJobFlowsRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<TerminateJobFlowsRequest> request = new TerminateJobFlowsRequestMarshaller().marshall(terminateJobFlowsRequest);
@@ -458,15 +458,15 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(describeJobFlowsRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DescribeJobFlowsRequest> request = new DescribeJobFlowsRequestMarshaller().marshall(describeJobFlowsRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<DescribeJobFlowsResult, JsonUnmarshallerContext> unmarshaller = new DescribeJobFlowsResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<DescribeJobFlowsResult> responseHandler = new JsonResponseHandler<DescribeJobFlowsResult>(unmarshaller);
 
         
@@ -520,10 +520,10 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      */
     public void setTerminationProtection(SetTerminationProtectionRequest setTerminationProtectionRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(setTerminationProtectionRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<SetTerminationProtectionRequest> request = new SetTerminationProtectionRequestMarshaller().marshall(setTerminationProtectionRequest);
@@ -589,15 +589,15 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(runJobFlowRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<RunJobFlowRequest> request = new RunJobFlowRequestMarshaller().marshall(runJobFlowRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<RunJobFlowResult, JsonUnmarshallerContext> unmarshaller = new RunJobFlowResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<RunJobFlowResult> responseHandler = new JsonResponseHandler<RunJobFlowResult>(unmarshaller);
 
         
@@ -629,10 +629,10 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      */
     public void modifyInstanceGroups(ModifyInstanceGroupsRequest modifyInstanceGroupsRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(modifyInstanceGroupsRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<ModifyInstanceGroupsRequest> request = new ModifyInstanceGroupsRequestMarshaller().marshall(modifyInstanceGroupsRequest);
@@ -746,7 +746,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      *
      * @throws IllegalArgumentException
      *             If any problems are detected with the specified endpoint.
-     * @see AmazonDynamoDB#setRegion(Region)     
+     * @see AmazonDynamoDB#setRegion(Region)
      */
     public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
         setEndpoint(endpoint);

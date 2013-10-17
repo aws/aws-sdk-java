@@ -72,8 +72,7 @@ public class PolicyTypeDescription implements Serializable {
         this.policyTypeName = policyTypeName;
         return this;
     }
-    
-    
+
     /**
      * A human-readable description of the policy type.
      *
@@ -106,8 +105,7 @@ public class PolicyTypeDescription implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * The description of the policy attributes associated with the
      * LoadBalancer policies defined by the Elastic Load Balancing service.
@@ -116,7 +114,6 @@ public class PolicyTypeDescription implements Serializable {
      *         LoadBalancer policies defined by the Elastic Load Balancing service.
      */
     public java.util.List<PolicyAttributeTypeDescription> getPolicyAttributeTypeDescriptions() {
-        
         if (policyAttributeTypeDescriptions == null) {
               policyAttributeTypeDescriptions = new com.amazonaws.internal.ListWithAutoConstructFlag<PolicyAttributeTypeDescription>();
               policyAttributeTypeDescriptions.setAutoConstruct(true);
@@ -184,7 +181,7 @@ public class PolicyTypeDescription implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

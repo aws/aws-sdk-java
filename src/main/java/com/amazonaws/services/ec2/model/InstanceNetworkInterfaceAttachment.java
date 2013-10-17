@@ -64,8 +64,7 @@ public class InstanceNetworkInterfaceAttachment implements Serializable {
         this.attachmentId = attachmentId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the DeviceIndex property for this object.
      *
@@ -98,8 +97,7 @@ public class InstanceNetworkInterfaceAttachment implements Serializable {
         this.deviceIndex = deviceIndex;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Status property for this object.
      * <p>
@@ -147,8 +145,7 @@ public class InstanceNetworkInterfaceAttachment implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * Sets the value of the Status property for this object.
      * <p>
@@ -182,7 +179,7 @@ public class InstanceNetworkInterfaceAttachment implements Serializable {
         this.status = status.toString();
         return this;
     }
-    
+
     /**
      * Returns the value of the AttachTime property for this object.
      *
@@ -215,8 +212,7 @@ public class InstanceNetworkInterfaceAttachment implements Serializable {
         this.attachTime = attachTime;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the DeleteOnTermination property for this object.
      *
@@ -249,8 +245,7 @@ public class InstanceNetworkInterfaceAttachment implements Serializable {
         this.deleteOnTermination = deleteOnTermination;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the DeleteOnTermination property for this object.
      *
@@ -259,7 +254,7 @@ public class InstanceNetworkInterfaceAttachment implements Serializable {
     public Boolean getDeleteOnTermination() {
         return deleteOnTermination;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

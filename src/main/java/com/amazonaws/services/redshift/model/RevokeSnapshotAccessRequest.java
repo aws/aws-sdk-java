@@ -84,8 +84,7 @@ public class RevokeSnapshotAccessRequest extends AmazonWebServiceRequest impleme
         this.snapshotIdentifier = snapshotIdentifier;
         return this;
     }
-    
-    
+
     /**
      * The identifier of the cluster the snapshot was created from. This
      * parameter is required if your IAM user has a policy containing a
@@ -136,8 +135,7 @@ public class RevokeSnapshotAccessRequest extends AmazonWebServiceRequest impleme
         this.snapshotClusterIdentifier = snapshotClusterIdentifier;
         return this;
     }
-    
-    
+
     /**
      * The identifier of the AWS customer account that can no longer restore
      * the specified snapshot.
@@ -176,8 +174,7 @@ public class RevokeSnapshotAccessRequest extends AmazonWebServiceRequest impleme
         this.accountWithRestoreAccess = accountWithRestoreAccess;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

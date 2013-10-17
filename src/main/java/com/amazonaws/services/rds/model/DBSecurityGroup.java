@@ -97,8 +97,7 @@ public class DBSecurityGroup implements Serializable {
         this.ownerId = ownerId;
         return this;
     }
-    
-    
+
     /**
      * Specifies the name of the DB Security Group.
      *
@@ -131,8 +130,7 @@ public class DBSecurityGroup implements Serializable {
         this.dBSecurityGroupName = dBSecurityGroupName;
         return this;
     }
-    
-    
+
     /**
      * Provides the description of the DB Security Group.
      *
@@ -165,8 +163,7 @@ public class DBSecurityGroup implements Serializable {
         this.dBSecurityGroupDescription = dBSecurityGroupDescription;
         return this;
     }
-    
-    
+
     /**
      * Provides the VpcId of the DB Security Group.
      *
@@ -199,15 +196,13 @@ public class DBSecurityGroup implements Serializable {
         this.vpcId = vpcId;
         return this;
     }
-    
-    
+
     /**
      * Contains a list of <a>EC2SecurityGroup</a> elements.
      *
      * @return Contains a list of <a>EC2SecurityGroup</a> elements.
      */
     public java.util.List<EC2SecurityGroup> getEC2SecurityGroups() {
-        
         if (eC2SecurityGroups == null) {
               eC2SecurityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<EC2SecurityGroup>();
               eC2SecurityGroups.setAutoConstruct(true);
@@ -269,14 +264,13 @@ public class DBSecurityGroup implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Contains a list of <a>IPRange</a> elements.
      *
      * @return Contains a list of <a>IPRange</a> elements.
      */
     public java.util.List<IPRange> getIPRanges() {
-        
         if (iPRanges == null) {
               iPRanges = new com.amazonaws.internal.ListWithAutoConstructFlag<IPRange>();
               iPRanges.setAutoConstruct(true);
@@ -338,7 +332,7 @@ public class DBSecurityGroup implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -256,10 +256,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      */
     public void deregisterVolume(DeregisterVolumeRequest deregisterVolumeRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(deregisterVolumeRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DeregisterVolumeRequest> request = new DeregisterVolumeRequestMarshaller().marshall(deregisterVolumeRequest);
@@ -292,10 +292,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      */
     public void setPermission(SetPermissionRequest setPermissionRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(setPermissionRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<SetPermissionRequest> request = new SetPermissionRequestMarshaller().marshall(setPermissionRequest);
@@ -334,15 +334,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(describeInstancesRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DescribeInstancesRequest> request = new DescribeInstancesRequestMarshaller().marshall(describeInstancesRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<DescribeInstancesResult, JsonUnmarshallerContext> unmarshaller = new DescribeInstancesResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<DescribeInstancesResult> responseHandler = new JsonResponseHandler<DescribeInstancesResult>(unmarshaller);
 
         
@@ -377,15 +377,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(describePermissionsRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DescribePermissionsRequest> request = new DescribePermissionsRequestMarshaller().marshall(describePermissionsRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<DescribePermissionsResult, JsonUnmarshallerContext> unmarshaller = new DescribePermissionsResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<DescribePermissionsResult> responseHandler = new JsonResponseHandler<DescribePermissionsResult>(unmarshaller);
 
         
@@ -417,10 +417,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      */
     public void deleteInstance(DeleteInstanceRequest deleteInstanceRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(deleteInstanceRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DeleteInstanceRequest> request = new DeleteInstanceRequestMarshaller().marshall(deleteInstanceRequest);
@@ -458,15 +458,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(cloneStackRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<CloneStackRequest> request = new CloneStackRequestMarshaller().marshall(cloneStackRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<CloneStackResult, JsonUnmarshallerContext> unmarshaller = new CloneStackResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<CloneStackResult> responseHandler = new JsonResponseHandler<CloneStackResult>(unmarshaller);
 
         
@@ -495,10 +495,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      */
     public void detachElasticLoadBalancer(DetachElasticLoadBalancerRequest detachElasticLoadBalancerRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(detachElasticLoadBalancerRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DetachElasticLoadBalancerRequest> request = new DetachElasticLoadBalancerRequestMarshaller().marshall(detachElasticLoadBalancerRequest);
@@ -534,10 +534,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      */
     public void stopInstance(StopInstanceRequest stopInstanceRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(stopInstanceRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<StopInstanceRequest> request = new StopInstanceRequestMarshaller().marshall(stopInstanceRequest);
@@ -568,10 +568,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      */
     public void updateApp(UpdateAppRequest updateAppRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(updateAppRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<UpdateAppRequest> request = new UpdateAppRequestMarshaller().marshall(updateAppRequest);
@@ -610,15 +610,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(describeCommandsRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DescribeCommandsRequest> request = new DescribeCommandsRequestMarshaller().marshall(describeCommandsRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<DescribeCommandsResult, JsonUnmarshallerContext> unmarshaller = new DescribeCommandsResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<DescribeCommandsResult> responseHandler = new JsonResponseHandler<DescribeCommandsResult>(unmarshaller);
 
         
@@ -652,10 +652,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      */
     public void associateElasticIp(AssociateElasticIpRequest associateElasticIpRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(associateElasticIpRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<AssociateElasticIpRequest> request = new AssociateElasticIpRequestMarshaller().marshall(associateElasticIpRequest);
@@ -689,10 +689,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      */
     public void unassignVolume(UnassignVolumeRequest unassignVolumeRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(unassignVolumeRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<UnassignVolumeRequest> request = new UnassignVolumeRequestMarshaller().marshall(unassignVolumeRequest);
@@ -732,15 +732,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(describeRaidArraysRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DescribeRaidArraysRequest> request = new DescribeRaidArraysRequestMarshaller().marshall(describeRaidArraysRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<DescribeRaidArraysResult, JsonUnmarshallerContext> unmarshaller = new DescribeRaidArraysResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<DescribeRaidArraysResult> responseHandler = new JsonResponseHandler<DescribeRaidArraysResult>(unmarshaller);
 
         
@@ -775,15 +775,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(getHostnameSuggestionRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<GetHostnameSuggestionRequest> request = new GetHostnameSuggestionRequestMarshaller().marshall(getHostnameSuggestionRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<GetHostnameSuggestionResult, JsonUnmarshallerContext> unmarshaller = new GetHostnameSuggestionResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<GetHostnameSuggestionResult> responseHandler = new JsonResponseHandler<GetHostnameSuggestionResult>(unmarshaller);
 
         
@@ -822,10 +822,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      */
     public void setLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest setLoadBasedAutoScalingRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(setLoadBasedAutoScalingRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<SetLoadBasedAutoScalingRequest> request = new SetLoadBasedAutoScalingRequestMarshaller().marshall(setLoadBasedAutoScalingRequest);
@@ -864,15 +864,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(describeVolumesRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DescribeVolumesRequest> request = new DescribeVolumesRequestMarshaller().marshall(describeVolumesRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<DescribeVolumesResult, JsonUnmarshallerContext> unmarshaller = new DescribeVolumesResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<DescribeVolumesResult> responseHandler = new JsonResponseHandler<DescribeVolumesResult>(unmarshaller);
 
         
@@ -905,10 +905,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      */
     public void assignVolume(AssignVolumeRequest assignVolumeRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(assignVolumeRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<AssignVolumeRequest> request = new AssignVolumeRequestMarshaller().marshall(assignVolumeRequest);
@@ -945,15 +945,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(describeServiceErrorsRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DescribeServiceErrorsRequest> request = new DescribeServiceErrorsRequestMarshaller().marshall(describeServiceErrorsRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<DescribeServiceErrorsResult, JsonUnmarshallerContext> unmarshaller = new DescribeServiceErrorsResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<DescribeServiceErrorsResult> responseHandler = new JsonResponseHandler<DescribeServiceErrorsResult>(unmarshaller);
 
         
@@ -982,10 +982,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      */
     public void updateLayer(UpdateLayerRequest updateLayerRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(updateLayerRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<UpdateLayerRequest> request = new UpdateLayerRequestMarshaller().marshall(updateLayerRequest);
@@ -1019,10 +1019,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      */
     public void updateElasticIp(UpdateElasticIpRequest updateElasticIpRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(updateElasticIpRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<UpdateElasticIpRequest> request = new UpdateElasticIpRequestMarshaller().marshall(updateElasticIpRequest);
@@ -1055,10 +1055,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      */
     public void startInstance(StartInstanceRequest startInstanceRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(startInstanceRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<StartInstanceRequest> request = new StartInstanceRequestMarshaller().marshall(startInstanceRequest);
@@ -1104,15 +1104,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(createLayerRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<CreateLayerRequest> request = new CreateLayerRequestMarshaller().marshall(createLayerRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<CreateLayerResult, JsonUnmarshallerContext> unmarshaller = new CreateLayerResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<CreateLayerResult> responseHandler = new JsonResponseHandler<CreateLayerResult>(unmarshaller);
 
         
@@ -1145,10 +1145,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      */
     public void disassociateElasticIp(DisassociateElasticIpRequest disassociateElasticIpRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(disassociateElasticIpRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DisassociateElasticIpRequest> request = new DisassociateElasticIpRequestMarshaller().marshall(disassociateElasticIpRequest);
@@ -1182,10 +1182,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      */
     public void deleteStack(DeleteStackRequest deleteStackRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(deleteStackRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DeleteStackRequest> request = new DeleteStackRequestMarshaller().marshall(deleteStackRequest);
@@ -1216,10 +1216,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      */
     public void startStack(StartStackRequest startStackRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(startStackRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<StartStackRequest> request = new StartStackRequestMarshaller().marshall(startStackRequest);
@@ -1260,15 +1260,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(registerVolumeRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<RegisterVolumeRequest> request = new RegisterVolumeRequestMarshaller().marshall(registerVolumeRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<RegisterVolumeResult, JsonUnmarshallerContext> unmarshaller = new RegisterVolumeResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<RegisterVolumeResult> responseHandler = new JsonResponseHandler<RegisterVolumeResult>(unmarshaller);
 
         
@@ -1297,10 +1297,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      */
     public void updateUserProfile(UpdateUserProfileRequest updateUserProfileRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(updateUserProfileRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<UpdateUserProfileRequest> request = new UpdateUserProfileRequestMarshaller().marshall(updateUserProfileRequest);
@@ -1337,15 +1337,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(createStackRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<CreateStackRequest> request = new CreateStackRequestMarshaller().marshall(createStackRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<CreateStackResult, JsonUnmarshallerContext> unmarshaller = new CreateStackResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<CreateStackResult> responseHandler = new JsonResponseHandler<CreateStackResult>(unmarshaller);
 
         
@@ -1376,10 +1376,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      */
     public void rebootInstance(RebootInstanceRequest rebootInstanceRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(rebootInstanceRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<RebootInstanceRequest> request = new RebootInstanceRequestMarshaller().marshall(rebootInstanceRequest);
@@ -1417,15 +1417,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(createInstanceRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<CreateInstanceRequest> request = new CreateInstanceRequestMarshaller().marshall(createInstanceRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<CreateInstanceResult, JsonUnmarshallerContext> unmarshaller = new CreateInstanceResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<CreateInstanceResult> responseHandler = new JsonResponseHandler<CreateInstanceResult>(unmarshaller);
 
         
@@ -1454,10 +1454,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      */
     public void deleteApp(DeleteAppRequest deleteAppRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(deleteAppRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DeleteAppRequest> request = new DeleteAppRequestMarshaller().marshall(deleteAppRequest);
@@ -1492,10 +1492,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      */
     public void deregisterElasticIp(DeregisterElasticIpRequest deregisterElasticIpRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(deregisterElasticIpRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DeregisterElasticIpRequest> request = new DeregisterElasticIpRequestMarshaller().marshall(deregisterElasticIpRequest);
@@ -1532,10 +1532,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      */
     public void attachElasticLoadBalancer(AttachElasticLoadBalancerRequest attachElasticLoadBalancerRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(attachElasticLoadBalancerRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<AttachElasticLoadBalancerRequest> request = new AttachElasticLoadBalancerRequestMarshaller().marshall(attachElasticLoadBalancerRequest);
@@ -1566,10 +1566,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      */
     public void updateStack(UpdateStackRequest updateStackRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(updateStackRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<UpdateStackRequest> request = new UpdateStackRequestMarshaller().marshall(updateStackRequest);
@@ -1604,15 +1604,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(createUserProfileRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<CreateUserProfileRequest> request = new CreateUserProfileRequestMarshaller().marshall(createUserProfileRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<CreateUserProfileResult, JsonUnmarshallerContext> unmarshaller = new CreateUserProfileResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<CreateUserProfileResult> responseHandler = new JsonResponseHandler<CreateUserProfileResult>(unmarshaller);
 
         
@@ -1649,15 +1649,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(describeLayersRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DescribeLayersRequest> request = new DescribeLayersRequestMarshaller().marshall(describeLayersRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<DescribeLayersResult, JsonUnmarshallerContext> unmarshaller = new DescribeLayersResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<DescribeLayersResult> responseHandler = new JsonResponseHandler<DescribeLayersResult>(unmarshaller);
 
         
@@ -1695,15 +1695,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(describeLoadBasedAutoScalingRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DescribeLoadBasedAutoScalingRequest> request = new DescribeLoadBasedAutoScalingRequestMarshaller().marshall(describeLoadBasedAutoScalingRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<DescribeLoadBasedAutoScalingResult, JsonUnmarshallerContext> unmarshaller = new DescribeLoadBasedAutoScalingResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<DescribeLoadBasedAutoScalingResult> responseHandler = new JsonResponseHandler<DescribeLoadBasedAutoScalingResult>(unmarshaller);
 
         
@@ -1741,15 +1741,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(describeElasticLoadBalancersRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DescribeElasticLoadBalancersRequest> request = new DescribeElasticLoadBalancersRequestMarshaller().marshall(describeElasticLoadBalancersRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<DescribeElasticLoadBalancersResult, JsonUnmarshallerContext> unmarshaller = new DescribeElasticLoadBalancersResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<DescribeElasticLoadBalancersResult> responseHandler = new JsonResponseHandler<DescribeElasticLoadBalancersResult>(unmarshaller);
 
         
@@ -1781,10 +1781,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      */
     public void deleteLayer(DeleteLayerRequest deleteLayerRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(deleteLayerRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DeleteLayerRequest> request = new DeleteLayerRequestMarshaller().marshall(deleteLayerRequest);
@@ -1819,10 +1819,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      */
     public void setTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest setTimeBasedAutoScalingRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(setTimeBasedAutoScalingRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<SetTimeBasedAutoScalingRequest> request = new SetTimeBasedAutoScalingRequestMarshaller().marshall(setTimeBasedAutoScalingRequest);
@@ -1860,15 +1860,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(createAppRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<CreateAppRequest> request = new CreateAppRequestMarshaller().marshall(createAppRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<CreateAppResult, JsonUnmarshallerContext> unmarshaller = new CreateAppResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<CreateAppResult> responseHandler = new JsonResponseHandler<CreateAppResult>(unmarshaller);
 
         
@@ -1897,10 +1897,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      */
     public void deleteUserProfile(DeleteUserProfileRequest deleteUserProfileRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(deleteUserProfileRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DeleteUserProfileRequest> request = new DeleteUserProfileRequestMarshaller().marshall(deleteUserProfileRequest);
@@ -1941,15 +1941,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(describeTimeBasedAutoScalingRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DescribeTimeBasedAutoScalingRequest> request = new DescribeTimeBasedAutoScalingRequestMarshaller().marshall(describeTimeBasedAutoScalingRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<DescribeTimeBasedAutoScalingResult, JsonUnmarshallerContext> unmarshaller = new DescribeTimeBasedAutoScalingResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<DescribeTimeBasedAutoScalingResult> responseHandler = new JsonResponseHandler<DescribeTimeBasedAutoScalingResult>(unmarshaller);
 
         
@@ -1981,10 +1981,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      */
     public void updateVolume(UpdateVolumeRequest updateVolumeRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(updateVolumeRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<UpdateVolumeRequest> request = new UpdateVolumeRequestMarshaller().marshall(updateVolumeRequest);
@@ -2021,15 +2021,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(describeUserProfilesRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DescribeUserProfilesRequest> request = new DescribeUserProfilesRequestMarshaller().marshall(describeUserProfilesRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<DescribeUserProfilesResult, JsonUnmarshallerContext> unmarshaller = new DescribeUserProfilesResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<DescribeUserProfilesResult> responseHandler = new JsonResponseHandler<DescribeUserProfilesResult>(unmarshaller);
 
         
@@ -2058,10 +2058,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      */
     public void updateInstance(UpdateInstanceRequest updateInstanceRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(updateInstanceRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<UpdateInstanceRequest> request = new UpdateInstanceRequestMarshaller().marshall(updateInstanceRequest);
@@ -2101,15 +2101,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(describeDeploymentsRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DescribeDeploymentsRequest> request = new DescribeDeploymentsRequestMarshaller().marshall(describeDeploymentsRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<DescribeDeploymentsResult, JsonUnmarshallerContext> unmarshaller = new DescribeDeploymentsResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<DescribeDeploymentsResult> responseHandler = new JsonResponseHandler<DescribeDeploymentsResult>(unmarshaller);
 
         
@@ -2148,15 +2148,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(registerElasticIpRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<RegisterElasticIpRequest> request = new RegisterElasticIpRequestMarshaller().marshall(registerElasticIpRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<RegisterElasticIpResult, JsonUnmarshallerContext> unmarshaller = new RegisterElasticIpResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<RegisterElasticIpResult> responseHandler = new JsonResponseHandler<RegisterElasticIpResult>(unmarshaller);
 
         
@@ -2196,15 +2196,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(describeElasticIpsRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DescribeElasticIpsRequest> request = new DescribeElasticIpsRequestMarshaller().marshall(describeElasticIpsRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<DescribeElasticIpsResult, JsonUnmarshallerContext> unmarshaller = new DescribeElasticIpsResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<DescribeElasticIpsResult> responseHandler = new JsonResponseHandler<DescribeElasticIpsResult>(unmarshaller);
 
         
@@ -2238,15 +2238,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(describeStacksRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DescribeStacksRequest> request = new DescribeStacksRequestMarshaller().marshall(describeStacksRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<DescribeStacksResult, JsonUnmarshallerContext> unmarshaller = new DescribeStacksResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<DescribeStacksResult> responseHandler = new JsonResponseHandler<DescribeStacksResult>(unmarshaller);
 
         
@@ -2283,15 +2283,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(describeAppsRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<DescribeAppsRequest> request = new DescribeAppsRequestMarshaller().marshall(describeAppsRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<DescribeAppsResult, JsonUnmarshallerContext> unmarshaller = new DescribeAppsResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<DescribeAppsResult> responseHandler = new JsonResponseHandler<DescribeAppsResult>(unmarshaller);
 
         
@@ -2320,10 +2320,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      */
     public void stopStack(StopStackRequest stopStackRequest) 
             throws AmazonServiceException, AmazonClientException {
-                                     
+
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(stopStackRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<StopStackRequest> request = new StopStackRequestMarshaller().marshall(stopStackRequest);
@@ -2375,15 +2375,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext();
-        
+        ExecutionContext executionContext = createExecutionContext(createDeploymentRequest);
+
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
         Request<CreateDeploymentRequest> request = new CreateDeploymentRequestMarshaller().marshall(createDeploymentRequest);
         awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
 
         Unmarshaller<CreateDeploymentResult, JsonUnmarshallerContext> unmarshaller = new CreateDeploymentResultJsonUnmarshaller();
-        
+
         JsonResponseHandler<CreateDeploymentResult> responseHandler = new JsonResponseHandler<CreateDeploymentResult>(unmarshaller);
 
         
@@ -2425,7 +2425,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *
      * @throws IllegalArgumentException
      *             If any problems are detected with the specified endpoint.
-     * @see AmazonDynamoDB#setRegion(Region)     
+     * @see AmazonDynamoDB#setRegion(Region)
      */
     public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
         setEndpoint(endpoint);

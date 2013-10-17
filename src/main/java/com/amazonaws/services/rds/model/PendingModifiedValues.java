@@ -120,8 +120,7 @@ public class PendingModifiedValues implements Serializable {
         this.dBInstanceClass = dBInstanceClass;
         return this;
     }
-    
-    
+
     /**
      * Contains the new <code>AllocatedStorage</code> size for the DB
      * Instance that will be applied or is in progress.
@@ -160,8 +159,7 @@ public class PendingModifiedValues implements Serializable {
         this.allocatedStorage = allocatedStorage;
         return this;
     }
-    
-    
+
     /**
      * Contains the pending or in-progress change of the master credentials
      * for the DB Instance.
@@ -200,8 +198,7 @@ public class PendingModifiedValues implements Serializable {
         this.masterUserPassword = masterUserPassword;
         return this;
     }
-    
-    
+
     /**
      * Specifies the pending port for the DB Instance.
      *
@@ -234,8 +231,7 @@ public class PendingModifiedValues implements Serializable {
         this.port = port;
         return this;
     }
-    
-    
+
     /**
      * Specifies the pending number of days for which automated backups are
      * retained.
@@ -274,8 +270,7 @@ public class PendingModifiedValues implements Serializable {
         this.backupRetentionPeriod = backupRetentionPeriod;
         return this;
     }
-    
-    
+
     /**
      * Indicates that the Single-AZ DB Instance is to change to a Multi-AZ
      * deployment.
@@ -314,8 +309,7 @@ public class PendingModifiedValues implements Serializable {
         this.multiAZ = multiAZ;
         return this;
     }
-    
-    
+
     /**
      * Indicates that the Single-AZ DB Instance is to change to a Multi-AZ
      * deployment.
@@ -326,7 +320,7 @@ public class PendingModifiedValues implements Serializable {
     public Boolean getMultiAZ() {
         return multiAZ;
     }
-    
+
     /**
      * Indicates the database engine version.
      *
@@ -359,8 +353,7 @@ public class PendingModifiedValues implements Serializable {
         this.engineVersion = engineVersion;
         return this;
     }
-    
-    
+
     /**
      * Specifies the new Provisioned IOPS value for the DB Instance that will
      * be applied or is being applied.
@@ -399,8 +392,7 @@ public class PendingModifiedValues implements Serializable {
         this.iops = iops;
         return this;
     }
-    
-    
+
     /**
      * Contains the new <code>DBInstanceIdentifier</code> for the DB Instance
      * that will be applied or is in progress.
@@ -439,8 +431,7 @@ public class PendingModifiedValues implements Serializable {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

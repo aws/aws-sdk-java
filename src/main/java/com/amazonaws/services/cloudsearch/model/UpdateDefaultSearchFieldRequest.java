@@ -120,8 +120,7 @@ public class UpdateDefaultSearchFieldRequest extends AmazonWebServiceRequest imp
         this.domainName = domainName;
         return this;
     }
-    
-    
+
     /**
      * The text field to search if the search request does not specify which
      * field to search. The default search field is used when search terms
@@ -184,8 +183,7 @@ public class UpdateDefaultSearchFieldRequest extends AmazonWebServiceRequest imp
         this.defaultSearchField = defaultSearchField;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

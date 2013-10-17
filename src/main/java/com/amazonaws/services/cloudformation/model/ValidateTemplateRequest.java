@@ -126,8 +126,7 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest implements 
         this.templateBody = templateBody;
         return this;
     }
-    
-    
+
     /**
      * Location of file containing the template body. The URL must point to a
      * template (max size: 307,200 bytes) located in an S3 bucket in the same
@@ -205,8 +204,7 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest implements 
         this.templateURL = templateURL;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

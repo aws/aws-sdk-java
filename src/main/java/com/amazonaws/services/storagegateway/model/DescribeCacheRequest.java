@@ -94,8 +94,7 @@ public class DescribeCacheRequest extends AmazonWebServiceRequest implements Ser
         this.gatewayARN = gatewayARN;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

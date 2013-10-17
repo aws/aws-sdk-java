@@ -72,8 +72,6 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest impl
      */
     public UpdateServerCertificateRequest() {}
     
-
-
     /**
      * Constructs a new UpdateServerCertificateRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -86,8 +84,6 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest impl
         setServerCertificateName(serverCertificateName);
     }
 
-    
-    
     /**
      * The name of the server certificate that you want to update.
      * <p>
@@ -132,8 +128,7 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest impl
         this.serverCertificateName = serverCertificateName;
         return this;
     }
-    
-    
+
     /**
      * The new path for the server certificate. Include this only if you are
      * updating the server certificate's path.
@@ -184,8 +179,7 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest impl
         this.newPath = newPath;
         return this;
     }
-    
-    
+
     /**
      * The new name for the server certificate. Include this only if you are
      * updating the server certificate's name.
@@ -236,8 +230,7 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest impl
         this.newServerCertificateName = newServerCertificateName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

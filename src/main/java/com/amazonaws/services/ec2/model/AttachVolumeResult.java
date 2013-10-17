@@ -61,8 +61,7 @@ public class AttachVolumeResult implements Serializable {
         this.attachment = attachment;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

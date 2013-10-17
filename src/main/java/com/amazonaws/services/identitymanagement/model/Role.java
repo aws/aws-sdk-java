@@ -168,8 +168,7 @@ public class Role implements Serializable {
         this.path = path;
         return this;
     }
-    
-    
+
     /**
      * The name identifying the role.
      * <p>
@@ -214,8 +213,7 @@ public class Role implements Serializable {
         this.roleName = roleName;
         return this;
     }
-    
-    
+
     /**
      * The stable and unique string identifying the role. For more
      * information about IDs, see <a
@@ -284,8 +282,7 @@ public class Role implements Serializable {
         this.roleId = roleId;
         return this;
     }
-    
-    
+
     /**
      * The Amazon Resource Name (ARN) specifying the role. For more
      * information about ARNs and how to use them in policies, see <a
@@ -351,8 +348,7 @@ public class Role implements Serializable {
         this.arn = arn;
         return this;
     }
-    
-    
+
     /**
      * The date when the role was created.
      *
@@ -385,8 +381,7 @@ public class Role implements Serializable {
         this.createDate = createDate;
         return this;
     }
-    
-    
+
     /**
      * The policy that grants an entity permission to assume the role. <p>The
      * returned policy is URL-encoded according to RFC 3986. For more
@@ -449,8 +444,7 @@ public class Role implements Serializable {
         this.assumeRolePolicyDocument = assumeRolePolicyDocument;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

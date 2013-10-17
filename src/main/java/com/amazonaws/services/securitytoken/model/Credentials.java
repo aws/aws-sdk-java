@@ -55,8 +55,6 @@ public class Credentials implements Serializable {
      */
     public Credentials() {}
     
-
-
     /**
      * Constructs a new Credentials object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -77,8 +75,6 @@ public class Credentials implements Serializable {
         setExpiration(expiration);
     }
 
-    
-    
     /**
      * The access key ID that identifies the temporary security credentials.
      * <p>
@@ -123,8 +119,7 @@ public class Credentials implements Serializable {
         this.accessKeyId = accessKeyId;
         return this;
     }
-    
-    
+
     /**
      * The secret access key that can be used to sign requests.
      *
@@ -157,8 +152,7 @@ public class Credentials implements Serializable {
         this.secretAccessKey = secretAccessKey;
         return this;
     }
-    
-    
+
     /**
      * The token that users must pass to the service API to use the temporary
      * credentials.
@@ -197,8 +191,7 @@ public class Credentials implements Serializable {
         this.sessionToken = sessionToken;
         return this;
     }
-    
-    
+
     /**
      * The date on which the current credentials expire.
      *
@@ -231,8 +224,7 @@ public class Credentials implements Serializable {
         this.expiration = expiration;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

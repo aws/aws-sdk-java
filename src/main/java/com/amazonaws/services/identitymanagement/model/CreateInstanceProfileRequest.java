@@ -101,8 +101,7 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implem
         this.instanceProfileName = instanceProfileName;
         return this;
     }
-    
-    
+
     /**
      * The path to the instance profile. For more information about paths,
      * see <a
@@ -177,8 +176,7 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest implem
         this.path = path;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -63,8 +63,6 @@ public class SelectRequest extends AmazonWebServiceRequest implements Serializab
      */
     public SelectRequest() {}
     
-
-
     /**
      * Constructs a new SelectRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -75,10 +73,6 @@ public class SelectRequest extends AmazonWebServiceRequest implements Serializab
     public SelectRequest(String selectExpression) {
         setSelectExpression(selectExpression);
     }
-
-    
-    
-
 
     /**
      * Constructs a new SelectRequest object.
@@ -97,8 +91,6 @@ public class SelectRequest extends AmazonWebServiceRequest implements Serializab
         setConsistentRead(consistentRead);
     }
 
-    
-    
     /**
      * The expression used to query the domain.
      *
@@ -131,8 +123,7 @@ public class SelectRequest extends AmazonWebServiceRequest implements Serializab
         this.selectExpression = selectExpression;
         return this;
     }
-    
-    
+
     /**
      * A string informing Amazon SimpleDB where to start the next list of
      * <code>ItemNames</code>.
@@ -171,8 +162,7 @@ public class SelectRequest extends AmazonWebServiceRequest implements Serializab
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * Determines whether or not strong consistency should be enforced when
      * data is read from SimpleDB. If <code>true</code>, any data previously
@@ -229,8 +219,7 @@ public class SelectRequest extends AmazonWebServiceRequest implements Serializab
         this.consistentRead = consistentRead;
         return this;
     }
-    
-    
+
     /**
      * Determines whether or not strong consistency should be enforced when
      * data is read from SimpleDB. If <code>true</code>, any data previously
@@ -247,7 +236,7 @@ public class SelectRequest extends AmazonWebServiceRequest implements Serializab
     public Boolean getConsistentRead() {
         return consistentRead;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -42,8 +42,6 @@ public class DeleteSnapshotRequest extends AmazonWebServiceRequest implements Se
      */
     public DeleteSnapshotRequest() {}
     
-
-
     /**
      * Constructs a new DeleteSnapshotRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -55,8 +53,6 @@ public class DeleteSnapshotRequest extends AmazonWebServiceRequest implements Se
         setSnapshotId(snapshotId);
     }
 
-    
-    
     /**
      * The ID of the snapshot to delete.
      *
@@ -89,8 +85,7 @@ public class DeleteSnapshotRequest extends AmazonWebServiceRequest implements Se
         this.snapshotId = snapshotId;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

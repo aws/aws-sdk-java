@@ -86,8 +86,7 @@ public class ServiceError implements Serializable {
         this.serviceErrorId = serviceErrorId;
         return this;
     }
-    
-    
+
     /**
      * The stack ID.
      *
@@ -120,8 +119,7 @@ public class ServiceError implements Serializable {
         this.stackId = stackId;
         return this;
     }
-    
-    
+
     /**
      * The instance ID.
      *
@@ -154,8 +152,7 @@ public class ServiceError implements Serializable {
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * The error type.
      *
@@ -188,8 +185,7 @@ public class ServiceError implements Serializable {
         this.type = type;
         return this;
     }
-    
-    
+
     /**
      * A message that describes the error.
      *
@@ -222,8 +218,7 @@ public class ServiceError implements Serializable {
         this.message = message;
         return this;
     }
-    
-    
+
     /**
      * When the error occurred.
      *
@@ -256,8 +251,7 @@ public class ServiceError implements Serializable {
         this.createdAt = createdAt;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

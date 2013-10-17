@@ -79,8 +79,7 @@ public class SpotPrice implements Serializable {
         this.instanceType = instanceType;
         return this;
     }
-    
-    
+
     /**
      * Sets the value of the InstanceType property for this object.
      * <p>
@@ -114,7 +113,7 @@ public class SpotPrice implements Serializable {
         this.instanceType = instanceType.toString();
         return this;
     }
-    
+
     /**
      * Returns the value of the ProductDescription property for this object.
      * <p>
@@ -162,8 +161,7 @@ public class SpotPrice implements Serializable {
         this.productDescription = productDescription;
         return this;
     }
-    
-    
+
     /**
      * Sets the value of the ProductDescription property for this object.
      * <p>
@@ -197,7 +195,7 @@ public class SpotPrice implements Serializable {
         this.productDescription = productDescription.toString();
         return this;
     }
-    
+
     /**
      * Returns the value of the SpotPrice property for this object.
      *
@@ -230,8 +228,7 @@ public class SpotPrice implements Serializable {
         this.spotPrice = spotPrice;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Timestamp property for this object.
      *
@@ -264,8 +261,7 @@ public class SpotPrice implements Serializable {
         this.timestamp = timestamp;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the AvailabilityZone property for this object.
      *
@@ -298,8 +294,7 @@ public class SpotPrice implements Serializable {
         this.availabilityZone = availabilityZone;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

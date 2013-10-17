@@ -78,8 +78,7 @@ public class DefaultClusterParameters implements Serializable {
         this.parameterGroupFamily = parameterGroupFamily;
         return this;
     }
-    
-    
+
     /**
      * An identifier to allow retrieval of paginated results.
      *
@@ -112,15 +111,13 @@ public class DefaultClusterParameters implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * The list of cluster default parameters.
      *
      * @return The list of cluster default parameters.
      */
     public java.util.List<Parameter> getParameters() {
-        
         if (parameters == null) {
               parameters = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>();
               parameters.setAutoConstruct(true);
@@ -182,7 +179,7 @@ public class DefaultClusterParameters implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

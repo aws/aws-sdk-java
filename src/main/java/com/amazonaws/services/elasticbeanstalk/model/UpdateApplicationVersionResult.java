@@ -61,8 +61,7 @@ public class UpdateApplicationVersionResult implements Serializable {
         this.applicationVersion = applicationVersion;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -68,8 +68,7 @@ public class DeleteHostedZoneResult implements Serializable {
         this.changeInfo = changeInfo;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

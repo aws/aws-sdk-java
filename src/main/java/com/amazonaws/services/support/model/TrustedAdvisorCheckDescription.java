@@ -86,8 +86,7 @@ public class TrustedAdvisorCheckDescription implements Serializable {
         this.id = id;
         return this;
     }
-    
-    
+
     /**
      * Display name for the Trusted Advisor check. Corresponds to the display
      * name for the check in the Trusted Advisor user interface.
@@ -126,8 +125,7 @@ public class TrustedAdvisorCheckDescription implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * Description of the Trusted Advisor check.
      *
@@ -160,8 +158,7 @@ public class TrustedAdvisorCheckDescription implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * Category to which the Trusted Advisor check belongs.
      *
@@ -194,8 +191,7 @@ public class TrustedAdvisorCheckDescription implements Serializable {
         this.category = category;
         return this;
     }
-    
-    
+
     /**
      * List of metadata returned in <a
      * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorResourceDetail.html"
@@ -208,7 +204,6 @@ public class TrustedAdvisorCheckDescription implements Serializable {
      *         objects for a Trusted Advisor check.
      */
     public java.util.List<String> getMetadata() {
-        
         if (metadata == null) {
               metadata = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               metadata.setAutoConstruct(true);
@@ -288,7 +283,7 @@ public class TrustedAdvisorCheckDescription implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

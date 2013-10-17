@@ -107,8 +107,7 @@ public class StackResource implements Serializable {
         this.stackName = stackName;
         return this;
     }
-    
-    
+
     /**
      * Unique identifier of the stack.
      *
@@ -141,8 +140,7 @@ public class StackResource implements Serializable {
         this.stackId = stackId;
         return this;
     }
-    
-    
+
     /**
      * The logical name of the resource specified in the template.
      *
@@ -175,8 +173,7 @@ public class StackResource implements Serializable {
         this.logicalResourceId = logicalResourceId;
         return this;
     }
-    
-    
+
     /**
      * The name or unique identifier that corresponds to a physical instance
      * ID of a resource supported by AWS CloudFormation.
@@ -215,8 +212,7 @@ public class StackResource implements Serializable {
         this.physicalResourceId = physicalResourceId;
         return this;
     }
-    
-    
+
     /**
      * Type of the resource. (For more information, go to the <a
      * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
@@ -261,8 +257,7 @@ public class StackResource implements Serializable {
         this.resourceType = resourceType;
         return this;
     }
-    
-    
+
     /**
      * Time the status was updated.
      *
@@ -295,8 +290,7 @@ public class StackResource implements Serializable {
         this.timestamp = timestamp;
         return this;
     }
-    
-    
+
     /**
      * Current status of the resource.
      * <p>
@@ -344,8 +338,7 @@ public class StackResource implements Serializable {
         this.resourceStatus = resourceStatus;
         return this;
     }
-    
-    
+
     /**
      * Current status of the resource.
      * <p>
@@ -379,7 +372,7 @@ public class StackResource implements Serializable {
         this.resourceStatus = resourceStatus.toString();
         return this;
     }
-    
+
     /**
      * Success/failure message associated with the resource.
      *
@@ -412,8 +405,7 @@ public class StackResource implements Serializable {
         this.resourceStatusReason = resourceStatusReason;
         return this;
     }
-    
-    
+
     /**
      * User defined description associated with the resource.
      *
@@ -446,8 +438,7 @@ public class StackResource implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

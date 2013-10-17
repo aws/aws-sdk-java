@@ -32,7 +32,6 @@ public class CreateVolumePermissionModifications implements Serializable {
      * @return The value of the Add property for this object.
      */
     public java.util.List<CreateVolumePermission> getAdd() {
-        
         if (add == null) {
               add = new com.amazonaws.internal.ListWithAutoConstructFlag<CreateVolumePermission>();
               add.setAutoConstruct(true);
@@ -94,14 +93,13 @@ public class CreateVolumePermissionModifications implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns the value of the Remove property for this object.
      *
      * @return The value of the Remove property for this object.
      */
     public java.util.List<CreateVolumePermission> getRemove() {
-        
         if (remove == null) {
               remove = new com.amazonaws.internal.ListWithAutoConstructFlag<CreateVolumePermission>();
               remove.setAutoConstruct(true);
@@ -163,7 +161,7 @@ public class CreateVolumePermissionModifications implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

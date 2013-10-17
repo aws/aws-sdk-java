@@ -85,8 +85,7 @@ public class DescribeSnapshotScheduleRequest extends AmazonWebServiceRequest imp
         this.volumeARN = volumeARN;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

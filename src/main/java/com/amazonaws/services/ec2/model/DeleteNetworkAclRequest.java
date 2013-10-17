@@ -68,8 +68,7 @@ public class DeleteNetworkAclRequest extends AmazonWebServiceRequest implements 
         this.networkAclId = networkAclId;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

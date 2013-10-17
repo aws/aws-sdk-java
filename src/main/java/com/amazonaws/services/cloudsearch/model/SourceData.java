@@ -93,8 +93,7 @@ public class SourceData implements Serializable {
         this.sourceName = sourceName;
         return this;
     }
-    
-    
+
     /**
      * The default value to use if the source attribute is not specified in a
      * document. Optional.
@@ -142,8 +141,7 @@ public class SourceData implements Serializable {
         this.defaultValue = defaultValue;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

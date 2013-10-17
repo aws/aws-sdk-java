@@ -80,8 +80,7 @@ public class LicenseCapacity implements Serializable {
         this.capacity = capacity;
         return this;
     }
-    
-    
+
     /**
      * The number of Amazon EC2 instances that can be supported with the
      * license's capacity.
@@ -120,8 +119,7 @@ public class LicenseCapacity implements Serializable {
         this.instanceCapacity = instanceCapacity;
         return this;
     }
-    
-    
+
     /**
      * The state of this license capacity, indicating whether the license is
      * actively being used or not.
@@ -160,8 +158,7 @@ public class LicenseCapacity implements Serializable {
         this.state = state;
         return this;
     }
-    
-    
+
     /**
      * The earliest allowed time at which a license can be deactivated. Some
      * licenses have time restrictions on when they can be activated and
@@ -206,8 +203,7 @@ public class LicenseCapacity implements Serializable {
         this.earliestAllowedDeactivationTime = earliestAllowedDeactivationTime;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

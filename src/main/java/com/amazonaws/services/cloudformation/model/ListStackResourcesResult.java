@@ -44,7 +44,6 @@ public class ListStackResourcesResult implements Serializable {
      * @return A list of <code>StackResourceSummary</code> structures.
      */
     public java.util.List<StackResourceSummary> getStackResourceSummaries() {
-        
         if (stackResourceSummaries == null) {
               stackResourceSummaries = new com.amazonaws.internal.ListWithAutoConstructFlag<StackResourceSummary>();
               stackResourceSummaries.setAutoConstruct(true);
@@ -106,7 +105,7 @@ public class ListStackResourcesResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * String that identifies the start of the next list of events, if there
      * is one.
@@ -154,8 +153,7 @@ public class ListStackResourcesResult implements Serializable {
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

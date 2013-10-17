@@ -40,7 +40,6 @@ public class DescribeReservedInstancesModificationsResult implements Serializabl
      * @return The list of Reserved Instances modification requests.
      */
     public java.util.List<ReservedInstancesModification> getReservedInstancesModifications() {
-        
         if (reservedInstancesModifications == null) {
               reservedInstancesModifications = new com.amazonaws.internal.ListWithAutoConstructFlag<ReservedInstancesModification>();
               reservedInstancesModifications.setAutoConstruct(true);
@@ -102,7 +101,7 @@ public class DescribeReservedInstancesModificationsResult implements Serializabl
 
         return this;
     }
-    
+
     /**
      * The string specifying the next paginated set of results to return.
      *
@@ -135,8 +134,7 @@ public class DescribeReservedInstancesModificationsResult implements Serializabl
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

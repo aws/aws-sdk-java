@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.support;
-            
+
 import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
@@ -79,8 +79,8 @@ import com.amazonaws.services.support.model.*;
  * <p>
  * See the AWS Support <a href="http://docs.aws.amazon.com/awssupport/latest/developerguide/Welcome.html"> Developer Guide </a> for information about
  * how to use this service to manage create and manage your support cases, and how to call Trusted Advisor for results of checks on your resources.
- * </p> 
- */       
+ * </p>
+ */
 public interface AWSSupportAsync extends AWSSupport {
     /**
      * <p>

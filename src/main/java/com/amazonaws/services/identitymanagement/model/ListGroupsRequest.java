@@ -148,8 +148,7 @@ public class ListGroupsRequest extends AmazonWebServiceRequest implements Serial
         this.pathPrefix = pathPrefix;
         return this;
     }
-    
-    
+
     /**
      * Use this only when paginating results, and only in a subsequent
      * request after you've received a response where the results are
@@ -212,8 +211,7 @@ public class ListGroupsRequest extends AmazonWebServiceRequest implements Serial
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Use this only when paginating results to indicate the maximum number
      * of groups you want in the response. If there are additional groups
@@ -273,8 +271,7 @@ public class ListGroupsRequest extends AmazonWebServiceRequest implements Serial
         this.maxItems = maxItems;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

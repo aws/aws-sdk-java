@@ -166,8 +166,7 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
         this.clusterIdentifier = clusterIdentifier;
         return this;
     }
-    
-    
+
     /**
      * The name of the snapshot from which to create the new cluster. This
      * parameter isn't case sensitive. <p>Example:
@@ -212,8 +211,7 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
         this.snapshotIdentifier = snapshotIdentifier;
         return this;
     }
-    
-    
+
     /**
      * The name of the cluster the source snapshot was created from. This
      * parameter is required if your IAM user has a policy containing a
@@ -264,8 +262,7 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
         this.snapshotClusterIdentifier = snapshotClusterIdentifier;
         return this;
     }
-    
-    
+
     /**
      * The port number on which the cluster accepts connections. <p>Default:
      * The same port as the original cluster. <p>Constraints: Must be between
@@ -310,8 +307,7 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
         this.port = port;
         return this;
     }
-    
-    
+
     /**
      * The Amazon EC2 Availability Zone in which to restore the cluster.
      * <p>Default: A random, system-chosen Availability Zone. <p>Example:
@@ -356,8 +352,7 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
         this.availabilityZone = availabilityZone;
         return this;
     }
-    
-    
+
     /**
      * If <code>true</code>, upgrades can be applied during the maintenance
      * window to the Amazon Redshift engine that is running on the cluster.
@@ -402,8 +397,7 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
         this.allowVersionUpgrade = allowVersionUpgrade;
         return this;
     }
-    
-    
+
     /**
      * If <code>true</code>, upgrades can be applied during the maintenance
      * window to the Amazon Redshift engine that is running on the cluster.
@@ -416,7 +410,7 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
     public Boolean getAllowVersionUpgrade() {
         return allowVersionUpgrade;
     }
-    
+
     /**
      * The name of the subnet group where you want to cluster restored. <p> A
      * snapshot of cluster in VPC can be restored only in VPC. Therefore, you
@@ -461,8 +455,7 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
         this.clusterSubnetGroupName = clusterSubnetGroupName;
         return this;
     }
-    
-    
+
     /**
      * If <code>true</code>, the cluster can be accessed from a public
      * network.
@@ -501,8 +494,7 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
         this.publiclyAccessible = publiclyAccessible;
         return this;
     }
-    
-    
+
     /**
      * If <code>true</code>, the cluster can be accessed from a public
      * network.
@@ -513,7 +505,7 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
     public Boolean getPubliclyAccessible() {
         return publiclyAccessible;
     }
-    
+
     /**
      * The AWS customer account used to create or copy the snapshot. Required
      * if you are restoring a snapshot you do not own, optional if you own
@@ -558,8 +550,7 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
         this.ownerAccount = ownerAccount;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

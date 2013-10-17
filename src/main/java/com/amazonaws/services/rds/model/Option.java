@@ -98,8 +98,7 @@ public class Option implements Serializable {
         this.optionName = optionName;
         return this;
     }
-    
-    
+
     /**
      * The description of the option.
      *
@@ -132,8 +131,7 @@ public class Option implements Serializable {
         this.optionDescription = optionDescription;
         return this;
     }
-    
-    
+
     /**
      * Indicate if this option is persistent.
      *
@@ -166,8 +164,7 @@ public class Option implements Serializable {
         this.persistent = persistent;
         return this;
     }
-    
-    
+
     /**
      * Indicate if this option is persistent.
      *
@@ -176,7 +173,7 @@ public class Option implements Serializable {
     public Boolean getPersistent() {
         return persistent;
     }
-    
+
     /**
      * Indicate if this option is permanent.
      *
@@ -209,8 +206,7 @@ public class Option implements Serializable {
         this.permanent = permanent;
         return this;
     }
-    
-    
+
     /**
      * Indicate if this option is permanent.
      *
@@ -219,7 +215,7 @@ public class Option implements Serializable {
     public Boolean getPermanent() {
         return permanent;
     }
-    
+
     /**
      * If required, the port configured for this option to use.
      *
@@ -252,15 +248,13 @@ public class Option implements Serializable {
         this.port = port;
         return this;
     }
-    
-    
+
     /**
      * The option settings for this option.
      *
      * @return The option settings for this option.
      */
     public java.util.List<OptionSetting> getOptionSettings() {
-        
         if (optionSettings == null) {
               optionSettings = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionSetting>();
               optionSettings.setAutoConstruct(true);
@@ -322,7 +316,7 @@ public class Option implements Serializable {
 
         return this;
     }
-    
+
     /**
      * If the option requires access to a port, then this DB Security Group
      * allows access to the port.
@@ -331,7 +325,6 @@ public class Option implements Serializable {
      *         allows access to the port.
      */
     public java.util.List<DBSecurityGroupMembership> getDBSecurityGroupMemberships() {
-        
         if (dBSecurityGroupMemberships == null) {
               dBSecurityGroupMemberships = new com.amazonaws.internal.ListWithAutoConstructFlag<DBSecurityGroupMembership>();
               dBSecurityGroupMemberships.setAutoConstruct(true);
@@ -399,7 +392,7 @@ public class Option implements Serializable {
 
         return this;
     }
-    
+
     /**
      * If the option requires access to a port, then this VPC Security Group
      * allows access to the port.
@@ -408,7 +401,6 @@ public class Option implements Serializable {
      *         allows access to the port.
      */
     public java.util.List<VpcSecurityGroupMembership> getVpcSecurityGroupMemberships() {
-        
         if (vpcSecurityGroupMemberships == null) {
               vpcSecurityGroupMemberships = new com.amazonaws.internal.ListWithAutoConstructFlag<VpcSecurityGroupMembership>();
               vpcSecurityGroupMemberships.setAutoConstruct(true);
@@ -476,7 +468,7 @@ public class Option implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

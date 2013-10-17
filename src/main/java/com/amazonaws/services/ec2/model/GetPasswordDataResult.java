@@ -78,8 +78,7 @@ public class GetPasswordDataResult implements Serializable {
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * The time the data was last updated.
      *
@@ -112,8 +111,7 @@ public class GetPasswordDataResult implements Serializable {
         this.timestamp = timestamp;
         return this;
     }
-    
-    
+
     /**
      * The Windows administrator password of the specified instance.
      *
@@ -146,8 +144,7 @@ public class GetPasswordDataResult implements Serializable {
         this.passwordData = passwordData;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

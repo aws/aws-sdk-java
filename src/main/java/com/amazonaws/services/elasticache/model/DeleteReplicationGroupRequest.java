@@ -74,8 +74,7 @@ public class DeleteReplicationGroupRequest extends AmazonWebServiceRequest imple
         this.replicationGroupId = replicationGroupId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

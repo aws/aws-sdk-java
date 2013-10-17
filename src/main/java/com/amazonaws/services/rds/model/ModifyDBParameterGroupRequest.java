@@ -61,8 +61,6 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest imple
      */
     public ModifyDBParameterGroupRequest() {}
     
-
-
     /**
      * Constructs a new ModifyDBParameterGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -88,8 +86,6 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest imple
         setParameters(parameters);
     }
 
-    
-    
     /**
      * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
      * the name of an existing DB Parameter Group</li> <li>Must be 1 to 255
@@ -146,8 +142,7 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest imple
         this.dBParameterGroupName = dBParameterGroupName;
         return this;
     }
-    
-    
+
     /**
      * An array of parameter names, values, and the apply method for the
      * parameter update. At least one parameter name, value, and apply method
@@ -168,7 +163,6 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest imple
      *         parameters, and changes are applied when DB Instance reboots. </note>
      */
     public java.util.List<Parameter> getParameters() {
-        
         if (parameters == null) {
               parameters = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>();
               parameters.setAutoConstruct(true);
@@ -272,7 +266,7 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest imple
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

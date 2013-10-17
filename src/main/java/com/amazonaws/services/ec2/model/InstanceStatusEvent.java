@@ -101,8 +101,7 @@ public class InstanceStatusEvent implements Serializable {
         this.code = code;
         return this;
     }
-    
-    
+
     /**
      * The associated code of the event. Valid values: instance-reboot,
      * system-reboot, instance-retirement
@@ -140,7 +139,7 @@ public class InstanceStatusEvent implements Serializable {
         this.code = code.toString();
         return this;
     }
-    
+
     /**
      * A description of the event.
      *
@@ -173,8 +172,7 @@ public class InstanceStatusEvent implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * The earliest scheduled start time for the event.
      *
@@ -207,8 +205,7 @@ public class InstanceStatusEvent implements Serializable {
         this.notBefore = notBefore;
         return this;
     }
-    
-    
+
     /**
      * The latest scheduled end time for the event.
      *
@@ -241,8 +238,7 @@ public class InstanceStatusEvent implements Serializable {
         this.notAfter = notAfter;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

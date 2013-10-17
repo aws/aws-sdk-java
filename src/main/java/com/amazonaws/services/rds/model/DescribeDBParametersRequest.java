@@ -65,8 +65,6 @@ public class DescribeDBParametersRequest extends AmazonWebServiceRequest impleme
      */
     public DescribeDBParametersRequest() {}
     
-
-
     /**
      * Constructs a new DescribeDBParametersRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -82,8 +80,6 @@ public class DescribeDBParametersRequest extends AmazonWebServiceRequest impleme
         setDBParameterGroupName(dBParameterGroupName);
     }
 
-    
-    
     /**
      * The name of a specific DB Parameter Group to return details for.
      * <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
@@ -134,8 +130,7 @@ public class DescribeDBParametersRequest extends AmazonWebServiceRequest impleme
         this.dBParameterGroupName = dBParameterGroupName;
         return this;
     }
-    
-    
+
     /**
      * The parameter types to return. <p>Default: All parameter types
      * returned <p>Valid Values: <code>user | system | engine-default</code>
@@ -174,8 +169,7 @@ public class DescribeDBParametersRequest extends AmazonWebServiceRequest impleme
         this.source = source;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
@@ -232,8 +226,7 @@ public class DescribeDBParametersRequest extends AmazonWebServiceRequest impleme
         this.maxRecords = maxRecords;
         return this;
     }
-    
-    
+
     /**
      * An optional pagination token provided by a previous
      * DescribeDBParameters request. If this parameter is specified, the
@@ -284,8 +277,7 @@ public class DescribeDBParametersRequest extends AmazonWebServiceRequest impleme
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

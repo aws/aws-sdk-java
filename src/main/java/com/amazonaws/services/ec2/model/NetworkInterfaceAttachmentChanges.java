@@ -58,8 +58,7 @@ public class NetworkInterfaceAttachmentChanges implements Serializable {
         this.attachmentId = attachmentId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the DeleteOnTermination property for this object.
      *
@@ -92,8 +91,7 @@ public class NetworkInterfaceAttachmentChanges implements Serializable {
         this.deleteOnTermination = deleteOnTermination;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the DeleteOnTermination property for this object.
      *
@@ -102,7 +100,7 @@ public class NetworkInterfaceAttachmentChanges implements Serializable {
     public Boolean getDeleteOnTermination() {
         return deleteOnTermination;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

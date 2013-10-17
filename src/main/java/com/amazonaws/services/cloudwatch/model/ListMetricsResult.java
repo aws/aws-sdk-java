@@ -40,7 +40,6 @@ public class ListMetricsResult implements Serializable {
      * @return A list of metrics used to generate statistics for an AWS account.
      */
     public java.util.List<Metric> getMetrics() {
-        
         if (metrics == null) {
               metrics = new com.amazonaws.internal.ListWithAutoConstructFlag<Metric>();
               metrics.setAutoConstruct(true);
@@ -102,7 +101,7 @@ public class ListMetricsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * A string that marks the start of the next batch of returned results.
      *
@@ -135,8 +134,7 @@ public class ListMetricsResult implements Serializable {
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

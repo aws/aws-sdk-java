@@ -35,7 +35,6 @@ public class DescribeEnvironmentsResult implements Serializable {
      * @return Returns an <a>EnvironmentDescription</a> list.
      */
     public java.util.List<EnvironmentDescription> getEnvironments() {
-        
         if (environments == null) {
               environments = new com.amazonaws.internal.ListWithAutoConstructFlag<EnvironmentDescription>();
               environments.setAutoConstruct(true);
@@ -97,7 +96,7 @@ public class DescribeEnvironmentsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

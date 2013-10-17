@@ -42,8 +42,6 @@ public class DeleteDhcpOptionsRequest extends AmazonWebServiceRequest implements
      */
     public DeleteDhcpOptionsRequest() {}
     
-
-
     /**
      * Constructs a new DeleteDhcpOptionsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -55,8 +53,6 @@ public class DeleteDhcpOptionsRequest extends AmazonWebServiceRequest implements
         setDhcpOptionsId(dhcpOptionsId);
     }
 
-    
-    
     /**
      * The ID of the DHCP options set to delete.
      *
@@ -89,8 +85,7 @@ public class DeleteDhcpOptionsRequest extends AmazonWebServiceRequest implements
         this.dhcpOptionsId = dhcpOptionsId;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

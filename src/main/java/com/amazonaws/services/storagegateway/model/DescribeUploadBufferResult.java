@@ -123,8 +123,7 @@ public class DescribeUploadBufferResult implements Serializable {
         this.gatewayARN = gatewayARN;
         return this;
     }
-    
-    
+
     /**
      * An array of the gateway's local disk IDs that are configured as
      * working storage. Each local disk ID is specified as a string (minimum
@@ -139,7 +138,6 @@ public class DescribeUploadBufferResult implements Serializable {
      *         empty.
      */
     public java.util.List<String> getDiskIds() {
-        
         if (diskIds == null) {
               diskIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               diskIds.setAutoConstruct(true);
@@ -225,7 +223,7 @@ public class DescribeUploadBufferResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * The total upload buffer in bytes in use by the gateway. If no upload
      * buffer is configured for the gateway, this field returns 0.
@@ -264,8 +262,7 @@ public class DescribeUploadBufferResult implements Serializable {
         this.uploadBufferUsedInBytes = uploadBufferUsedInBytes;
         return this;
     }
-    
-    
+
     /**
      * The total upload buffer in bytes allocated for the gateway. If no
      * upload buffer is configured for the gateway, this field returns 0.
@@ -304,8 +301,7 @@ public class DescribeUploadBufferResult implements Serializable {
         this.uploadBufferAllocatedInBytes = uploadBufferAllocatedInBytes;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

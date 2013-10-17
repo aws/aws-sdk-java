@@ -78,8 +78,7 @@ public class AssociateRouteTableRequest extends AmazonWebServiceRequest implemen
         this.subnetId = subnetId;
         return this;
     }
-    
-    
+
     /**
      * The ID of the route table.
      *
@@ -112,8 +111,7 @@ public class AssociateRouteTableRequest extends AmazonWebServiceRequest implemen
         this.routeTableId = routeTableId;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

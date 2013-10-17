@@ -75,8 +75,7 @@ public class ChildWorkflowExecutionStartedEventAttributes implements Serializabl
         this.workflowExecution = workflowExecution;
         return this;
     }
-    
-    
+
     /**
      * The type of the child workflow execution.
      *
@@ -109,8 +108,7 @@ public class ChildWorkflowExecutionStartedEventAttributes implements Serializabl
         this.workflowType = workflowType;
         return this;
     }
-    
-    
+
     /**
      * The id of the <code>StartChildWorkflowExecutionInitiated</code> event
      * corresponding to the <code>StartChildWorkflowExecution</code>
@@ -167,8 +165,7 @@ public class ChildWorkflowExecutionStartedEventAttributes implements Serializabl
         this.initiatedEventId = initiatedEventId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

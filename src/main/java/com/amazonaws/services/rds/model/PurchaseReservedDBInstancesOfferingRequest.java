@@ -51,8 +51,6 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
      */
     public PurchaseReservedDBInstancesOfferingRequest() {}
     
-
-
     /**
      * Constructs a new PurchaseReservedDBInstancesOfferingRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -66,8 +64,6 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
         setReservedDBInstancesOfferingId(reservedDBInstancesOfferingId);
     }
 
-    
-    
     /**
      * The ID of the Reserved DB Instance offering to purchase. <p>Example:
      * 438012d3-4052-4cc7-b2e3-8d3372e0e706
@@ -106,8 +102,7 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
         this.reservedDBInstancesOfferingId = reservedDBInstancesOfferingId;
         return this;
     }
-    
-    
+
     /**
      * Customer-specified identifier to track this reservation. <p>Example:
      * myreservationID
@@ -146,8 +141,7 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
         this.reservedDBInstanceId = reservedDBInstanceId;
         return this;
     }
-    
-    
+
     /**
      * The number of instances to reserve. <p>Default: <code>1</code>
      *
@@ -180,8 +174,7 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
         this.dBInstanceCount = dBInstanceCount;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

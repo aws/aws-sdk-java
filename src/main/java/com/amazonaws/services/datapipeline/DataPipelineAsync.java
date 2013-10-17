@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.datapipeline;
-            
+
 import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
@@ -51,8 +51,8 @@ import com.amazonaws.services.datapipeline.model.*;
  * The AWS Data Pipeline API uses the Signature Version 4 protocol for signing requests. For more information about how to sign a request with this
  * protocol, see <a href="http://docs.amazonwebservices.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing Process </a> . In
  * the code examples in this reference, the Signature Version 4 Request parameters are represented as AuthParams.
- * </p> 
- */       
+ * </p>
+ */
 public interface DataPipelineAsync extends DataPipeline {
     /**
      * <p>

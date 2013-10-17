@@ -135,8 +135,7 @@ public class Projection implements Serializable {
         this.projectionType = projectionType;
         return this;
     }
-    
-    
+
     /**
      * Represents the set of attributes that are projected into the index:
      * <ul> <li> <p><code>KEYS_ONLY</code> - Only the index and primary keys
@@ -194,7 +193,7 @@ public class Projection implements Serializable {
         this.projectionType = projectionType.toString();
         return this;
     }
-    
+
     /**
      * Represents the non-key attribute names which will be projected into
      * the index. <p>The total count of attributes specified in
@@ -214,7 +213,6 @@ public class Projection implements Serializable {
      *         determining the total.
      */
     public java.util.List<String> getNonKeyAttributes() {
-        
         return nonKeyAttributes;
     }
     
@@ -311,7 +309,7 @@ public class Projection implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -73,8 +73,6 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
      */
     public AddPermissionRequest() {}
     
-
-
     /**
      * Constructs a new AddPermissionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -99,8 +97,6 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
         setActions(actions);
     }
 
-    
-    
     /**
      * The URL of the SQS queue to take action on.
      *
@@ -133,8 +129,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
         this.queueUrl = queueUrl;
         return this;
     }
-    
-    
+
     /**
      * The unique identification of the permission you're setting (e.g.,
      * <code>AliceSendMessage</code>). Constraints: Maximum 80 characters;
@@ -179,8 +174,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
         this.label = label;
         return this;
     }
-    
-    
+
     /**
      * The AWS account number of the <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a>
@@ -193,7 +187,6 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
      *         but does not need to be signed up for Amazon SQS.
      */
     public java.util.List<String> getAWSAccountIds() {
-        
         if (aWSAccountIds == null) {
               aWSAccountIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               aWSAccountIds.setAutoConstruct(true);
@@ -273,14 +266,13 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
 
         return this;
     }
-    
+
     /**
      * The action the client wants to allow for the specified principal.
      *
      * @return The action the client wants to allow for the specified principal.
      */
     public java.util.List<String> getActions() {
-        
         if (actions == null) {
               actions = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               actions.setAutoConstruct(true);
@@ -342,7 +334,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements Ser
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

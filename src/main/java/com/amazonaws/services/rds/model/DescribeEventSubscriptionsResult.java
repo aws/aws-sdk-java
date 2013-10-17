@@ -87,15 +87,13 @@ public class DescribeEventSubscriptionsResult implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * A list of EventSubscriptions data types.
      *
      * @return A list of EventSubscriptions data types.
      */
     public java.util.List<EventSubscription> getEventSubscriptionsList() {
-        
         if (eventSubscriptionsList == null) {
               eventSubscriptionsList = new com.amazonaws.internal.ListWithAutoConstructFlag<EventSubscription>();
               eventSubscriptionsList.setAutoConstruct(true);
@@ -157,7 +155,7 @@ public class DescribeEventSubscriptionsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -44,6 +44,7 @@ public class TimerFiredEventAttributesJsonUnmarshaller implements Unmarshaller<T
 
         JsonToken token = context.currentToken;
         if (token == null) token = context.nextToken();
+        if (token == VALUE_NULL) return null;
 
         while (true) {
             if (token == null) break;

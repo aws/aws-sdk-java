@@ -123,8 +123,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest implem
         this.targetARN = targetARN;
         return this;
     }
-    
-    
+
     /**
      * The secret key that the initiator (e.g. Windows client) must provide
      * to participate in mutual CHAP with the target.
@@ -172,8 +171,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest implem
         this.secretToAuthenticateInitiator = secretToAuthenticateInitiator;
         return this;
     }
-    
-    
+
     /**
      * The iSCSI initiator that connects to the target.
      * <p>
@@ -218,8 +216,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest implem
         this.initiatorName = initiatorName;
         return this;
     }
-    
-    
+
     /**
      * The secret key that the target must provide to participate in mutual
      * CHAP with the initiator (e.g. Windows client).
@@ -267,8 +264,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest implem
         this.secretToAuthenticateTarget = secretToAuthenticateTarget;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

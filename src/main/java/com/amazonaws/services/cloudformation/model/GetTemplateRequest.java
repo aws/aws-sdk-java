@@ -71,8 +71,7 @@ public class GetTemplateRequest extends AmazonWebServiceRequest implements Seria
         this.stackName = stackName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

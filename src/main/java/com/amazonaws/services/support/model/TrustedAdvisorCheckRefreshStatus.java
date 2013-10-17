@@ -82,8 +82,7 @@ public class TrustedAdvisorCheckRefreshStatus implements Serializable {
         this.checkId = checkId;
         return this;
     }
-    
-    
+
     /**
      * Indicates the status of the Trusted Advisor check for which a refresh
      * has been requested.
@@ -122,8 +121,7 @@ public class TrustedAdvisorCheckRefreshStatus implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * Indicates the time in milliseconds until a call to <a
      * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html"
@@ -174,8 +172,7 @@ public class TrustedAdvisorCheckRefreshStatus implements Serializable {
         this.millisUntilNextRefreshable = millisUntilNextRefreshable;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

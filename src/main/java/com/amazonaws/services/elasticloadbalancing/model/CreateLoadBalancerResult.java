@@ -61,8 +61,7 @@ public class CreateLoadBalancerResult implements Serializable {
         this.dNSName = dNSName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

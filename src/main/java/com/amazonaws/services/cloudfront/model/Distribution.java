@@ -77,8 +77,6 @@ public class Distribution implements Serializable {
      */
     public Distribution() {}
     
-
-
     /**
      * Constructs a new Distribution object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -99,8 +97,6 @@ public class Distribution implements Serializable {
         setDomainName(domainName);
     }
 
-    
-    
     /**
      * The identifier for the distribution. For example: EDFDVBD632BHDS5.
      *
@@ -133,8 +129,7 @@ public class Distribution implements Serializable {
         this.id = id;
         return this;
     }
-    
-    
+
     /**
      * This response element indicates the current status of the
      * distribution. When the status is Deployed, the distribution's
@@ -185,8 +180,7 @@ public class Distribution implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * The date and time the distribution was last modified.
      *
@@ -219,8 +213,7 @@ public class Distribution implements Serializable {
         this.lastModifiedTime = lastModifiedTime;
         return this;
     }
-    
-    
+
     /**
      * The number of invalidation batches currently in progress.
      *
@@ -253,8 +246,7 @@ public class Distribution implements Serializable {
         this.inProgressInvalidationBatches = inProgressInvalidationBatches;
         return this;
     }
-    
-    
+
     /**
      * The domain name corresponding to the distribution. For example:
      * d604721fxaaqy9.cloudfront.net.
@@ -293,8 +285,7 @@ public class Distribution implements Serializable {
         this.domainName = domainName;
         return this;
     }
-    
-    
+
     /**
      * CloudFront automatically adds this element to the response only if
      * you've set up the distribution to serve private content with signed
@@ -375,8 +366,7 @@ public class Distribution implements Serializable {
         this.activeTrustedSigners = activeTrustedSigners;
         return this;
     }
-    
-    
+
     /**
      * The current configuration information for the distribution.
      *
@@ -409,8 +399,7 @@ public class Distribution implements Serializable {
         this.distributionConfig = distributionConfig;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

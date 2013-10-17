@@ -87,15 +87,13 @@ public class DescribeClusterSnapshotsResult implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * A list of <a>Snapshot</a> instances.
      *
      * @return A list of <a>Snapshot</a> instances.
      */
     public java.util.List<Snapshot> getSnapshots() {
-        
         if (snapshots == null) {
               snapshots = new com.amazonaws.internal.ListWithAutoConstructFlag<Snapshot>();
               snapshots.setAutoConstruct(true);
@@ -157,7 +155,7 @@ public class DescribeClusterSnapshotsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

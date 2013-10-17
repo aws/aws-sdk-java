@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement;
-            
+
 import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
@@ -39,8 +39,8 @@ import com.amazonaws.services.identitymanagement.model.*;
  * <p>
  * If you're new to AWS and need additional technical information about a specific AWS product, you can find the product's technical documentation at <a
  * href="http://aws.amazon.com/documentation/"> http://aws.amazon.com/documentation/ </a> .
- * </p> 
- */       
+ * </p>
+ */
 public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement {
     /**
      * <p>

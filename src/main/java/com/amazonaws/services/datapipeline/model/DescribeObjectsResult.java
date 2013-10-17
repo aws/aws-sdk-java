@@ -53,7 +53,6 @@ public class DescribeObjectsResult implements Serializable {
      *         <a>DescribeObjects</a>.
      */
     public java.util.List<PipelineObject> getPipelineObjects() {
-        
         if (pipelineObjects == null) {
               pipelineObjects = new com.amazonaws.internal.ListWithAutoConstructFlag<PipelineObject>();
               pipelineObjects.setAutoConstruct(true);
@@ -121,7 +120,7 @@ public class DescribeObjectsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * The starting point for the next page of results. To view the next page
      * of results, call <a>DescribeObjects</a> again with this marker value.
@@ -172,8 +171,7 @@ public class DescribeObjectsResult implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * If <code>True</code>, there are more pages of results to return.
      *
@@ -206,8 +204,7 @@ public class DescribeObjectsResult implements Serializable {
         this.hasMoreResults = hasMoreResults;
         return this;
     }
-    
-    
+
     /**
      * If <code>True</code>, there are more pages of results to return.
      *
@@ -216,7 +213,7 @@ public class DescribeObjectsResult implements Serializable {
     public Boolean getHasMoreResults() {
         return hasMoreResults;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

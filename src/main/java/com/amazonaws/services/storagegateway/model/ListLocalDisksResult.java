@@ -98,15 +98,13 @@ public class ListLocalDisksResult implements Serializable {
         this.gatewayARN = gatewayARN;
         return this;
     }
-    
-    
+
     /**
      * An array of <a>Disk</a> objects.
      *
      * @return An array of <a>Disk</a> objects.
      */
     public java.util.List<Disk> getDisks() {
-        
         if (disks == null) {
               disks = new com.amazonaws.internal.ListWithAutoConstructFlag<Disk>();
               disks.setAutoConstruct(true);
@@ -168,7 +166,7 @@ public class ListLocalDisksResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

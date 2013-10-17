@@ -102,8 +102,7 @@ public class ReservedNodeOffering implements Serializable {
         this.reservedNodeOfferingId = reservedNodeOfferingId;
         return this;
     }
-    
-    
+
     /**
      * The node type offered by the reserved node offering.
      *
@@ -136,8 +135,7 @@ public class ReservedNodeOffering implements Serializable {
         this.nodeType = nodeType;
         return this;
     }
-    
-    
+
     /**
      * The duration, in seconds, for which the offering will reserve the
      * node.
@@ -176,8 +174,7 @@ public class ReservedNodeOffering implements Serializable {
         this.duration = duration;
         return this;
     }
-    
-    
+
     /**
      * The upfront fixed charge you will pay to purchase the specific
      * reserved node offering.
@@ -216,8 +213,7 @@ public class ReservedNodeOffering implements Serializable {
         this.fixedPrice = fixedPrice;
         return this;
     }
-    
-    
+
     /**
      * The rate you are charged for each hour the cluster that is using the
      * offering is running.
@@ -256,8 +252,7 @@ public class ReservedNodeOffering implements Serializable {
         this.usagePrice = usagePrice;
         return this;
     }
-    
-    
+
     /**
      * The currency code for the compute nodes offering.
      *
@@ -290,8 +285,7 @@ public class ReservedNodeOffering implements Serializable {
         this.currencyCode = currencyCode;
         return this;
     }
-    
-    
+
     /**
      * The anticipated utilization of the reserved node, as defined in the
      * reserved node offering.
@@ -330,8 +324,7 @@ public class ReservedNodeOffering implements Serializable {
         this.offeringType = offeringType;
         return this;
     }
-    
-    
+
     /**
      * The charge to your account regardless of whether you are creating any
      * clusters using the node offering. Recurring charges are only in effect
@@ -342,7 +335,6 @@ public class ReservedNodeOffering implements Serializable {
      *         for heavy-utilization reserved nodes.
      */
     public java.util.List<RecurringCharge> getRecurringCharges() {
-        
         if (recurringCharges == null) {
               recurringCharges = new com.amazonaws.internal.ListWithAutoConstructFlag<RecurringCharge>();
               recurringCharges.setAutoConstruct(true);
@@ -416,7 +408,7 @@ public class ReservedNodeOffering implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

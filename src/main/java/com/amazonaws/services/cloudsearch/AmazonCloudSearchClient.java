@@ -944,7 +944,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         	credentials = originalRequest.getRequestCredentials();
         }
 
-        ExecutionContext executionContext = createExecutionContext();
+        ExecutionContext executionContext = createExecutionContext(originalRequest);
         executionContext.setSigner(signer);
         executionContext.setCredentials(credentials);
         

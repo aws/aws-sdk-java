@@ -195,8 +195,7 @@ public class LaunchConfiguration implements Serializable {
         this.launchConfigurationName = launchConfigurationName;
         return this;
     }
-    
-    
+
     /**
      * The launch configuration's Amazon Resource Name (ARN).
      * <p>
@@ -241,8 +240,7 @@ public class LaunchConfiguration implements Serializable {
         this.launchConfigurationARN = launchConfigurationARN;
         return this;
     }
-    
-    
+
     /**
      * Provides the unique ID of the <i>Amazon Machine Image</i> (AMI) that
      * was assigned during registration.
@@ -293,8 +291,7 @@ public class LaunchConfiguration implements Serializable {
         this.imageId = imageId;
         return this;
     }
-    
-    
+
     /**
      * Provides the name of the Amazon EC2 key pair.
      * <p>
@@ -339,8 +336,7 @@ public class LaunchConfiguration implements Serializable {
         this.keyName = keyName;
         return this;
     }
-    
-    
+
     /**
      * A description of the security groups to associate with the Amazon EC2
      * instances.
@@ -349,7 +345,6 @@ public class LaunchConfiguration implements Serializable {
      *         instances.
      */
     public java.util.List<String> getSecurityGroups() {
-        
         if (securityGroups == null) {
               securityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               securityGroups.setAutoConstruct(true);
@@ -417,7 +412,7 @@ public class LaunchConfiguration implements Serializable {
 
         return this;
     }
-    
+
     /**
      * The user data available to the launched Amazon EC2 instances.
      * <p>
@@ -462,8 +457,7 @@ public class LaunchConfiguration implements Serializable {
         this.userData = userData;
         return this;
     }
-    
-    
+
     /**
      * Specifies the instance type of the Amazon EC2 instance.
      * <p>
@@ -508,8 +502,7 @@ public class LaunchConfiguration implements Serializable {
         this.instanceType = instanceType;
         return this;
     }
-    
-    
+
     /**
      * Provides the ID of the kernel associated with the Amazon EC2 AMI.
      * <p>
@@ -554,8 +547,7 @@ public class LaunchConfiguration implements Serializable {
         this.kernelId = kernelId;
         return this;
     }
-    
-    
+
     /**
      * Provides ID of the RAM disk associated with the Amazon EC2 AMI.
      * <p>
@@ -600,8 +592,7 @@ public class LaunchConfiguration implements Serializable {
         this.ramdiskId = ramdiskId;
         return this;
     }
-    
-    
+
     /**
      * Specifies how block devices are exposed to the instance. Each mapping
      * is made up of a <i>virtualName</i> and a <i>deviceName</i>.
@@ -610,7 +601,6 @@ public class LaunchConfiguration implements Serializable {
      *         is made up of a <i>virtualName</i> and a <i>deviceName</i>.
      */
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
-        
         if (blockDeviceMappings == null) {
               blockDeviceMappings = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>();
               blockDeviceMappings.setAutoConstruct(true);
@@ -678,7 +668,7 @@ public class LaunchConfiguration implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Controls whether instances in this group are launched with detailed
      * monitoring or not.
@@ -717,8 +707,7 @@ public class LaunchConfiguration implements Serializable {
         this.instanceMonitoring = instanceMonitoring;
         return this;
     }
-    
-    
+
     /**
      * Specifies the price to bid when launching Spot Instances.
      * <p>
@@ -760,8 +749,7 @@ public class LaunchConfiguration implements Serializable {
         this.spotPrice = spotPrice;
         return this;
     }
-    
-    
+
     /**
      * Provides the name or the Amazon Resource Name (ARN) of the instance
      * profile associated with the IAM role for the instance. The instance
@@ -818,8 +806,7 @@ public class LaunchConfiguration implements Serializable {
         this.iamInstanceProfile = iamInstanceProfile;
         return this;
     }
-    
-    
+
     /**
      * Provides the creation date and time for this launch configuration.
      *
@@ -852,8 +839,7 @@ public class LaunchConfiguration implements Serializable {
         this.createdTime = createdTime;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether the instance is optimized for EBS I/O (<i>true</i>)
      * or not (<i>false</i>).
@@ -892,8 +878,7 @@ public class LaunchConfiguration implements Serializable {
         this.ebsOptimized = ebsOptimized;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether the instance is optimized for EBS I/O (<i>true</i>)
      * or not (<i>false</i>).
@@ -904,7 +889,7 @@ public class LaunchConfiguration implements Serializable {
     public Boolean getEbsOptimized() {
         return ebsOptimized;
     }
-    
+
     /**
      * Specifies whether the instance is associated with a public IP address
      * (<code>true</code>) or not (<code>false</code>).
@@ -943,8 +928,7 @@ public class LaunchConfiguration implements Serializable {
         this.associatePublicIpAddress = associatePublicIpAddress;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether the instance is associated with a public IP address
      * (<code>true</code>) or not (<code>false</code>).
@@ -955,7 +939,7 @@ public class LaunchConfiguration implements Serializable {
     public Boolean getAssociatePublicIpAddress() {
         return associatePublicIpAddress;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -118,8 +118,7 @@ public class DefineIndexFieldRequest extends AmazonWebServiceRequest implements 
         this.domainName = domainName;
         return this;
     }
-    
-    
+
     /**
      * Defines a field in the index, including its name, type, and the source
      * of its data. The <code>IndexFieldType</code> indicates which of the
@@ -170,8 +169,7 @@ public class DefineIndexFieldRequest extends AmazonWebServiceRequest implements 
         this.indexField = indexField;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

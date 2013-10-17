@@ -144,8 +144,7 @@ public class StorediSCSIVolume implements Serializable {
         this.volumeARN = volumeARN;
         return this;
     }
-    
-    
+
     /**
      * The unique identifier of the volume, e.g. vol-AE4B946D.
      * <p>
@@ -187,8 +186,7 @@ public class StorediSCSIVolume implements Serializable {
         this.volumeId = volumeId;
         return this;
     }
-    
-    
+
     /**
      * One of the <a>VolumeType</a> enumeration values describing the type of
      * the volume.
@@ -242,8 +240,7 @@ public class StorediSCSIVolume implements Serializable {
         this.volumeType = volumeType;
         return this;
     }
-    
-    
+
     /**
      * One of the <a>VolumeType</a> enumeration values describing the type of
      * the volume.
@@ -281,7 +278,7 @@ public class StorediSCSIVolume implements Serializable {
         this.volumeType = volumeType.toString();
         return this;
     }
-    
+
     /**
      * One of the <a>VolumeStatus</a> values that indicates the state of the
      * storage volume.
@@ -335,8 +332,7 @@ public class StorediSCSIVolume implements Serializable {
         this.volumeStatus = volumeStatus;
         return this;
     }
-    
-    
+
     /**
      * One of the <a>VolumeStatus</a> values that indicates the state of the
      * storage volume.
@@ -374,7 +370,7 @@ public class StorediSCSIVolume implements Serializable {
         this.volumeStatus = volumeStatus.toString();
         return this;
     }
-    
+
     /**
      * The size of the volume in bytes.
      *
@@ -407,8 +403,7 @@ public class StorediSCSIVolume implements Serializable {
         this.volumeSizeInBytes = volumeSizeInBytes;
         return this;
     }
-    
-    
+
     /**
      * Represents the percentage complete if the volume is restoring or
      * bootstrapping that represents the percent of data transferred. This
@@ -459,8 +454,7 @@ public class StorediSCSIVolume implements Serializable {
         this.volumeProgress = volumeProgress;
         return this;
     }
-    
-    
+
     /**
      * The disk ID of the local disk that was specified in the
      * <a>CreateStorediSCSIVolume</a> operation.
@@ -508,8 +502,7 @@ public class StorediSCSIVolume implements Serializable {
         this.volumeDiskId = volumeDiskId;
         return this;
     }
-    
-    
+
     /**
      * If the stored volume was created from a snapshot, this field contains
      * the snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not
@@ -563,8 +556,7 @@ public class StorediSCSIVolume implements Serializable {
         this.sourceSnapshotId = sourceSnapshotId;
         return this;
     }
-    
-    
+
     /**
      * Indicates if when the stored volume was created, existing data on the
      * underlying local disk was preserved. <p><i>Valid Values</i>: true,
@@ -609,8 +601,7 @@ public class StorediSCSIVolume implements Serializable {
         this.preservedExistingData = preservedExistingData;
         return this;
     }
-    
-    
+
     /**
      * Indicates if when the stored volume was created, existing data on the
      * underlying local disk was preserved. <p><i>Valid Values</i>: true,
@@ -623,7 +614,7 @@ public class StorediSCSIVolume implements Serializable {
     public Boolean getPreservedExistingData() {
         return preservedExistingData;
     }
-    
+
     /**
      * An <a>VolumeiSCSIAttributes</a> object that represents a collection of
      * iSCSI attributes for one stored volume.
@@ -662,8 +653,7 @@ public class StorediSCSIVolume implements Serializable {
         this.volumeiSCSIAttributes = volumeiSCSIAttributes;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

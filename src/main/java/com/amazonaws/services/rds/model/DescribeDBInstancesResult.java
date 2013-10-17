@@ -80,15 +80,13 @@ public class DescribeDBInstancesResult implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * A list of <a>DBInstance</a> instances.
      *
      * @return A list of <a>DBInstance</a> instances.
      */
     public java.util.List<DBInstance> getDBInstances() {
-        
         if (dBInstances == null) {
               dBInstances = new com.amazonaws.internal.ListWithAutoConstructFlag<DBInstance>();
               dBInstances.setAutoConstruct(true);
@@ -150,7 +148,7 @@ public class DescribeDBInstancesResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

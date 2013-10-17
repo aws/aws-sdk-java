@@ -111,8 +111,7 @@ public class PutRolePolicyRequest extends AmazonWebServiceRequest implements Ser
         this.roleName = roleName;
         return this;
     }
-    
-    
+
     /**
      * Name of the policy document.
      * <p>
@@ -157,8 +156,7 @@ public class PutRolePolicyRequest extends AmazonWebServiceRequest implements Ser
         this.policyName = policyName;
         return this;
     }
-    
-    
+
     /**
      * The policy document.
      * <p>
@@ -203,8 +201,7 @@ public class PutRolePolicyRequest extends AmazonWebServiceRequest implements Ser
         this.policyDocument = policyDocument;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

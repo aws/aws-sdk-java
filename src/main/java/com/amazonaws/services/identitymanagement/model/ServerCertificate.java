@@ -57,8 +57,6 @@ public class ServerCertificate implements Serializable {
      */
     public ServerCertificate() {}
     
-
-
     /**
      * Constructs a new ServerCertificate object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -73,8 +71,6 @@ public class ServerCertificate implements Serializable {
         setCertificateBody(certificateBody);
     }
 
-    
-    
     /**
      * The meta information of the server certificate, such as its name,
      * path, ID, and ARN.
@@ -113,8 +109,7 @@ public class ServerCertificate implements Serializable {
         this.serverCertificateMetadata = serverCertificateMetadata;
         return this;
     }
-    
-    
+
     /**
      * The contents of the public key certificate.
      * <p>
@@ -159,8 +154,7 @@ public class ServerCertificate implements Serializable {
         this.certificateBody = certificateBody;
         return this;
     }
-    
-    
+
     /**
      * The contents of the public key certificate chain.
      * <p>
@@ -205,8 +199,7 @@ public class ServerCertificate implements Serializable {
         this.certificateChain = certificateChain;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

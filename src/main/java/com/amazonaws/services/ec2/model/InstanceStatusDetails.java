@@ -75,8 +75,7 @@ public class InstanceStatusDetails implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * Sets the value of the Name property for this object.
      * <p>
@@ -110,7 +109,7 @@ public class InstanceStatusDetails implements Serializable {
         this.name = name.toString();
         return this;
     }
-    
+
     /**
      * Returns the value of the Status property for this object.
      * <p>
@@ -158,8 +157,7 @@ public class InstanceStatusDetails implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * Sets the value of the Status property for this object.
      * <p>
@@ -193,7 +191,7 @@ public class InstanceStatusDetails implements Serializable {
         this.status = status.toString();
         return this;
     }
-    
+
     /**
      * Returns the value of the ImpairedSince property for this object.
      *
@@ -226,8 +224,7 @@ public class InstanceStatusDetails implements Serializable {
         this.impairedSince = impairedSince;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

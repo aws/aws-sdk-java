@@ -41,7 +41,6 @@ public class ListAvailableSolutionStacksResult implements Serializable {
      * @return A list of available solution stacks.
      */
     public java.util.List<String> getSolutionStacks() {
-        
         if (solutionStacks == null) {
               solutionStacks = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               solutionStacks.setAutoConstruct(true);
@@ -103,7 +102,7 @@ public class ListAvailableSolutionStacksResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * A list of available solution stacks and their
      * <a>SolutionStackDescription</a>.
@@ -112,7 +111,6 @@ public class ListAvailableSolutionStacksResult implements Serializable {
      *         <a>SolutionStackDescription</a>.
      */
     public java.util.List<SolutionStackDescription> getSolutionStackDetails() {
-        
         if (solutionStackDetails == null) {
               solutionStackDetails = new com.amazonaws.internal.ListWithAutoConstructFlag<SolutionStackDescription>();
               solutionStackDetails.setAutoConstruct(true);
@@ -180,7 +178,7 @@ public class ListAvailableSolutionStacksResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

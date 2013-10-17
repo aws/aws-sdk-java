@@ -291,8 +291,6 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      */
     public ModifyDBInstanceRequest() {}
     
-
-
     /**
      * Constructs a new ModifyDBInstanceRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -309,8 +307,6 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         setDBInstanceIdentifier(dBInstanceIdentifier);
     }
 
-    
-    
     /**
      * The DB Instance identifier. This value is stored as a lowercase
      * string. <p>Constraints: <ul> <li>Must be the identifier for an
@@ -373,8 +369,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.dBInstanceIdentifier = dBInstanceIdentifier;
         return this;
     }
-    
-    
+
     /**
      * The new storage capacity of the RDS instance. Changing this parameter
      * does not result in an outage and the change is applied during the next
@@ -569,8 +564,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.allocatedStorage = allocatedStorage;
         return this;
     }
-    
-    
+
     /**
      * The new compute and memory capacity of the DB Instance. To determine
      * the instance classes that are available for a particular DB engine,
@@ -657,8 +651,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.dBInstanceClass = dBInstanceClass;
         return this;
     }
-    
-    
+
     /**
      * A list of DB Security Groups to authorize on this DB Instance.
      * Changing this parameter does not result in an outage and the change is
@@ -675,7 +668,6 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         consecutive hyphens</li> </ul>
      */
     public java.util.List<String> getDBSecurityGroups() {
-        
         if (dBSecurityGroups == null) {
               dBSecurityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               dBSecurityGroups.setAutoConstruct(true);
@@ -767,7 +759,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
 
         return this;
     }
-    
+
     /**
      * A list of EC2 VPC Security Groups to authorize on this DB Instance.
      * This change is asynchronously applied as soon as possible.
@@ -782,7 +774,6 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         or contain two consecutive hyphens</li> </ul>
      */
     public java.util.List<String> getVpcSecurityGroupIds() {
-        
         if (vpcSecurityGroupIds == null) {
               vpcSecurityGroupIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               vpcSecurityGroupIds.setAutoConstruct(true);
@@ -868,7 +859,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
 
         return this;
     }
-    
+
     /**
      * Specifies whether or not the modifications in this request and any
      * pending modifications are asynchronously applied as soon as possible,
@@ -943,8 +934,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.applyImmediately = applyImmediately;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether or not the modifications in this request and any
      * pending modifications are asynchronously applied as soon as possible,
@@ -967,7 +957,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     public Boolean getApplyImmediately() {
         return applyImmediately;
     }
-    
+
     /**
      * The new password for the DB Instance master user. Can be any printable
      * ASCII character except "/", "\", or "@". <p> Changing this parameter
@@ -1066,8 +1056,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.masterUserPassword = masterUserPassword;
         return this;
     }
-    
-    
+
     /**
      * The name of the DB Parameter Group to apply to this DB Instance.
      * Changing this parameter does not result in an outage and the change is
@@ -1136,8 +1125,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.dBParameterGroupName = dBParameterGroupName;
         return this;
     }
-    
-    
+
     /**
      * The number of days to retain automated backups. Setting this parameter
      * to a positive number enables backups. Setting this parameter to 0
@@ -1236,8 +1224,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.backupRetentionPeriod = backupRetentionPeriod;
         return this;
     }
-    
-    
+
     /**
      * The daily time range during which automated backups are created if
      * automated backups are enabled, as determined by the
@@ -1312,8 +1299,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.preferredBackupWindow = preferredBackupWindow;
         return this;
     }
-    
-    
+
     /**
      * The weekly time range (in UTC) during which system maintenance can
      * occur, which may result in an outage. Changing this parameter does not
@@ -1412,8 +1398,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.preferredMaintenanceWindow = preferredMaintenanceWindow;
         return this;
     }
-    
-    
+
     /**
      * Specifies if the DB Instance is a Multi-AZ deployment. Changing this
      * parameter does not result in an outage and the change is applied
@@ -1476,8 +1461,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.multiAZ = multiAZ;
         return this;
     }
-    
-    
+
     /**
      * Specifies if the DB Instance is a Multi-AZ deployment. Changing this
      * parameter does not result in an outage and the change is applied
@@ -1496,7 +1480,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     public Boolean getMultiAZ() {
         return multiAZ;
     }
-    
+
     /**
      * The version number of the database engine to upgrade to. Changing this
      * parameter results in an outage and the change is applied during the
@@ -1577,8 +1561,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.engineVersion = engineVersion;
         return this;
     }
-    
-    
+
     /**
      * Indicates that major version upgrades are allowed. Changing this
      * parameter does not result in an outage and the change is
@@ -1641,8 +1624,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.allowMajorVersionUpgrade = allowMajorVersionUpgrade;
         return this;
     }
-    
-    
+
     /**
      * Indicates that major version upgrades are allowed. Changing this
      * parameter does not result in an outage and the change is
@@ -1661,7 +1643,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     public Boolean getAllowMajorVersionUpgrade() {
         return allowMajorVersionUpgrade;
     }
-    
+
     /**
      * Indicates that minor version upgrades will be applied automatically to
      * the DB Instance during the maintenance window. Changing this parameter
@@ -1730,8 +1712,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
         return this;
     }
-    
-    
+
     /**
      * Indicates that minor version upgrades will be applied automatically to
      * the DB Instance during the maintenance window. Changing this parameter
@@ -1752,7 +1733,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
     public Boolean getAutoMinorVersionUpgrade() {
         return autoMinorVersionUpgrade;
     }
-    
+
     /**
      * The new Provisioned IOPS (I/O operations per second) value for the RDS
      * instance. Changing this parameter does not result in an outage and the
@@ -1917,8 +1898,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.iops = iops;
         return this;
     }
-    
-    
+
     /**
      * Indicates that the DB Instance should be associated with the specified
      * option group. Changing this parameter does not result in an outage
@@ -2029,8 +2009,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.optionGroupName = optionGroupName;
         return this;
     }
-    
-    
+
     /**
      * The new DB Instance identifier for the DB Instance when renaming a DB
      * Instance. This value is stored as a lowercase string. <p>Constraints:
@@ -2087,8 +2066,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.newDBInstanceIdentifier = newDBInstanceIdentifier;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

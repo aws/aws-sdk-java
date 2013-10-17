@@ -124,8 +124,7 @@ public class DescribeSnapshotScheduleResult implements Serializable {
         this.volumeARN = volumeARN;
         return this;
     }
-    
-    
+
     /**
      * The hour of the day at which the snapshot schedule begins represented
      * as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the
@@ -179,8 +178,7 @@ public class DescribeSnapshotScheduleResult implements Serializable {
         this.startAt = startAt;
         return this;
     }
-    
-    
+
     /**
      * The number of hours between snapshots.
      * <p>
@@ -222,8 +220,7 @@ public class DescribeSnapshotScheduleResult implements Serializable {
         this.recurrenceInHours = recurrenceInHours;
         return this;
     }
-    
-    
+
     /**
      * The snapshot description.
      * <p>
@@ -265,8 +262,7 @@ public class DescribeSnapshotScheduleResult implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * One of the <a>GatewayTimezone</a> values that indicates the time zone
      * of the gateway.
@@ -320,8 +316,7 @@ public class DescribeSnapshotScheduleResult implements Serializable {
         this.timezone = timezone;
         return this;
     }
-    
-    
+
     /**
      * One of the <a>GatewayTimezone</a> values that indicates the time zone
      * of the gateway.
@@ -359,7 +354,7 @@ public class DescribeSnapshotScheduleResult implements Serializable {
         this.timezone = timezone.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -35,7 +35,6 @@ public class AttachLoadBalancerToSubnetsResult implements Serializable {
      * @return A list of subnet IDs added for the LoadBalancer.
      */
     public java.util.List<String> getSubnets() {
-        
         if (subnets == null) {
               subnets = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               subnets.setAutoConstruct(true);
@@ -97,7 +96,7 @@ public class AttachLoadBalancerToSubnetsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

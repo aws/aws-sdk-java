@@ -46,8 +46,6 @@ public class GetPasswordDataRequest extends AmazonWebServiceRequest implements S
      */
     public GetPasswordDataRequest() {}
     
-
-
     /**
      * Constructs a new GetPasswordDataRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -60,8 +58,6 @@ public class GetPasswordDataRequest extends AmazonWebServiceRequest implements S
         setInstanceId(instanceId);
     }
 
-    
-    
     /**
      * The ID of the instance for which you want the Windows administrator
      * password.
@@ -100,8 +96,7 @@ public class GetPasswordDataRequest extends AmazonWebServiceRequest implements S
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

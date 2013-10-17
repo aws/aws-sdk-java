@@ -43,8 +43,6 @@ public class DeleteCacheSecurityGroupRequest extends AmazonWebServiceRequest imp
      */
     public DeleteCacheSecurityGroupRequest() {}
     
-
-
     /**
      * Constructs a new DeleteCacheSecurityGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -57,8 +55,6 @@ public class DeleteCacheSecurityGroupRequest extends AmazonWebServiceRequest imp
         setCacheSecurityGroupName(cacheSecurityGroupName);
     }
 
-    
-    
     /**
      * The name of the cache security group to delete. <note>You cannot
      * delete the default security group.</note>
@@ -97,8 +93,7 @@ public class DeleteCacheSecurityGroupRequest extends AmazonWebServiceRequest imp
         this.cacheSecurityGroupName = cacheSecurityGroupName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

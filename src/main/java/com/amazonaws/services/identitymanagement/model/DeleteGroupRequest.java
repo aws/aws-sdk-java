@@ -43,8 +43,6 @@ public class DeleteGroupRequest extends AmazonWebServiceRequest implements Seria
      */
     public DeleteGroupRequest() {}
     
-
-
     /**
      * Constructs a new DeleteGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -56,8 +54,6 @@ public class DeleteGroupRequest extends AmazonWebServiceRequest implements Seria
         setGroupName(groupName);
     }
 
-    
-    
     /**
      * Name of the group to delete.
      * <p>
@@ -102,8 +98,7 @@ public class DeleteGroupRequest extends AmazonWebServiceRequest implements Seria
         this.groupName = groupName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

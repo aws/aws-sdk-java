@@ -139,8 +139,7 @@ public class DescribeConfigurationOptionsRequest extends AmazonWebServiceRequest
         this.applicationName = applicationName;
         return this;
     }
-    
-    
+
     /**
      * The name of the configuration template whose configuration options you
      * want to describe.
@@ -188,8 +187,7 @@ public class DescribeConfigurationOptionsRequest extends AmazonWebServiceRequest
         this.templateName = templateName;
         return this;
     }
-    
-    
+
     /**
      * The name of the environment whose configuration options you want to
      * describe.
@@ -237,8 +235,7 @@ public class DescribeConfigurationOptionsRequest extends AmazonWebServiceRequest
         this.environmentName = environmentName;
         return this;
     }
-    
-    
+
     /**
      * The name of the solution stack whose configuration options you want to
      * describe.
@@ -286,8 +283,7 @@ public class DescribeConfigurationOptionsRequest extends AmazonWebServiceRequest
         this.solutionStackName = solutionStackName;
         return this;
     }
-    
-    
+
     /**
      * If specified, restricts the descriptions to only the specified
      * options.
@@ -296,7 +292,6 @@ public class DescribeConfigurationOptionsRequest extends AmazonWebServiceRequest
      *         options.
      */
     public java.util.List<OptionSpecification> getOptions() {
-        
         if (options == null) {
               options = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionSpecification>();
               options.setAutoConstruct(true);
@@ -364,7 +359,7 @@ public class DescribeConfigurationOptionsRequest extends AmazonWebServiceRequest
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

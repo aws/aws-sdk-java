@@ -58,8 +58,7 @@ public class PricingDetail implements Serializable {
         this.price = price;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Count property for this object.
      *
@@ -92,8 +91,7 @@ public class PricingDetail implements Serializable {
         this.count = count;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

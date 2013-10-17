@@ -75,8 +75,6 @@ public class SigningCertificate implements Serializable {
      */
     public SigningCertificate() {}
     
-
-
     /**
      * Constructs a new SigningCertificate object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -97,8 +95,6 @@ public class SigningCertificate implements Serializable {
         setStatus(status);
     }
 
-    
-    
     /**
      * Constructs a new SigningCertificate object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -118,7 +114,7 @@ public class SigningCertificate implements Serializable {
         this.certificateBody = certificateBody;
         this.status = status.toString();
     }
-    
+
     /**
      * Name of the user the signing certificate is associated with.
      * <p>
@@ -163,8 +159,7 @@ public class SigningCertificate implements Serializable {
         this.userName = userName;
         return this;
     }
-    
-    
+
     /**
      * The ID for the signing certificate.
      * <p>
@@ -209,8 +204,7 @@ public class SigningCertificate implements Serializable {
         this.certificateId = certificateId;
         return this;
     }
-    
-    
+
     /**
      * The contents of the signing certificate.
      * <p>
@@ -255,8 +249,7 @@ public class SigningCertificate implements Serializable {
         this.certificateBody = certificateBody;
         return this;
     }
-    
-    
+
     /**
      * The status of the signing certificate. <code>Active</code> means the
      * key is valid for API calls, while <code>Inactive</code> means it is
@@ -316,8 +309,7 @@ public class SigningCertificate implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * The status of the signing certificate. <code>Active</code> means the
      * key is valid for API calls, while <code>Inactive</code> means it is
@@ -359,7 +351,7 @@ public class SigningCertificate implements Serializable {
         this.status = status.toString();
         return this;
     }
-    
+
     /**
      * The date when the signing certificate was uploaded.
      *
@@ -392,8 +384,7 @@ public class SigningCertificate implements Serializable {
         this.uploadDate = uploadDate;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

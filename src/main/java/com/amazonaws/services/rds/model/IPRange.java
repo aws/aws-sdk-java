@@ -79,8 +79,7 @@ public class IPRange implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * Specifies the IP range.
      *
@@ -113,8 +112,7 @@ public class IPRange implements Serializable {
         this.cIDRIP = cIDRIP;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

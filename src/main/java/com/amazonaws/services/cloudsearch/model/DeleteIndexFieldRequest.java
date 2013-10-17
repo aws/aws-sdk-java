@@ -122,8 +122,7 @@ public class DeleteIndexFieldRequest extends AmazonWebServiceRequest implements 
         this.domainName = domainName;
         return this;
     }
-    
-    
+
     /**
      * A string that represents the name of an index field. Field names must
      * begin with a letter and can contain the following characters: a-z
@@ -192,8 +191,7 @@ public class DeleteIndexFieldRequest extends AmazonWebServiceRequest implements 
         this.indexFieldName = indexFieldName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

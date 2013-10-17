@@ -38,7 +38,6 @@ public class Query implements Serializable {
      *         the selectors to match the query.
      */
     public java.util.List<Selector> getSelectors() {
-        
         if (selectors == null) {
               selectors = new com.amazonaws.internal.ListWithAutoConstructFlag<Selector>();
               selectors.setAutoConstruct(true);
@@ -106,7 +105,7 @@ public class Query implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

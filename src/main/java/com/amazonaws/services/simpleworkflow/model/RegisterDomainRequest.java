@@ -154,8 +154,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements Se
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * Textual description of the domain.
      * <p>
@@ -197,8 +196,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements Se
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * Specifies the duration--<b><i>in days</i></b>--for which the record
      * (including the history) of workflow executions in this domain should
@@ -270,8 +268,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements Se
         this.workflowExecutionRetentionPeriodInDays = workflowExecutionRetentionPeriodInDays;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -126,8 +126,7 @@ public class DescribeDBLogFilesRequest extends AmazonWebServiceRequest implement
         this.dBInstanceIdentifier = dBInstanceIdentifier;
         return this;
     }
-    
-    
+
     /**
      * Filters the available log files for log file names that contain the
      * specified string.
@@ -166,8 +165,7 @@ public class DescribeDBLogFilesRequest extends AmazonWebServiceRequest implement
         this.filenameContains = filenameContains;
         return this;
     }
-    
-    
+
     /**
      * Filters the available log files for files written since the specified
      * date, in POSIX timestamp format.
@@ -206,8 +204,7 @@ public class DescribeDBLogFilesRequest extends AmazonWebServiceRequest implement
         this.fileLastWritten = fileLastWritten;
         return this;
     }
-    
-    
+
     /**
      * Filters the available log files for files larger than the specified
      * size.
@@ -246,8 +243,7 @@ public class DescribeDBLogFilesRequest extends AmazonWebServiceRequest implement
         this.fileSize = fileSize;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of records to include in the response. If more
      * records exist than the specified MaxRecords value, a pagination token
@@ -298,8 +294,7 @@ public class DescribeDBLogFilesRequest extends AmazonWebServiceRequest implement
         this.maxRecords = maxRecords;
         return this;
     }
-    
-    
+
     /**
      * The pagination token provided in the previous request. If this
      * parameter is specified the response includes only records beyond the
@@ -344,8 +339,7 @@ public class DescribeDBLogFilesRequest extends AmazonWebServiceRequest implement
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

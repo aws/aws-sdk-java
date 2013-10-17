@@ -57,8 +57,6 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
      */
     public CreateSecurityGroupRequest() {}
     
-
-
     /**
      * Constructs a new CreateSecurityGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -73,8 +71,6 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
         setDescription(description);
     }
 
-    
-    
     /**
      * Name of the security group.
      *
@@ -107,8 +103,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
         this.groupName = groupName;
         return this;
     }
-    
-    
+
     /**
      * Description of the group. This is informational only.
      *
@@ -141,8 +136,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * ID of the VPC.
      *
@@ -175,8 +169,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
         this.vpcId = vpcId;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

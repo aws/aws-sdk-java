@@ -120,8 +120,7 @@ public class UpdateSynonymOptionsRequest extends AmazonWebServiceRequest impleme
         this.domainName = domainName;
         return this;
     }
-    
-    
+
     /**
      * Maps terms to their synonyms, serialized as a JSON document. The
      * document has a single object with one property "synonyms" whose value
@@ -184,8 +183,7 @@ public class UpdateSynonymOptionsRequest extends AmazonWebServiceRequest impleme
         this.synonyms = synonyms;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

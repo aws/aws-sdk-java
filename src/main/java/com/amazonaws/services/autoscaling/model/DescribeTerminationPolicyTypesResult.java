@@ -44,7 +44,6 @@ public class DescribeTerminationPolicyTypesResult implements Serializable {
      *         <code>Default</code>
      */
     public java.util.List<String> getTerminationPolicyTypes() {
-        
         if (terminationPolicyTypes == null) {
               terminationPolicyTypes = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               terminationPolicyTypes.setAutoConstruct(true);
@@ -124,7 +123,7 @@ public class DescribeTerminationPolicyTypesResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

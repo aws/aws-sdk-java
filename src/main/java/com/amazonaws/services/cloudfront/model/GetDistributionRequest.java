@@ -39,8 +39,6 @@ public class GetDistributionRequest extends AmazonWebServiceRequest implements S
      */
     public GetDistributionRequest() {}
     
-
-
     /**
      * Constructs a new GetDistributionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -52,8 +50,6 @@ public class GetDistributionRequest extends AmazonWebServiceRequest implements S
         setId(id);
     }
 
-    
-    
     /**
      * The distribution's id.
      *
@@ -86,8 +82,7 @@ public class GetDistributionRequest extends AmazonWebServiceRequest implements S
         this.id = id;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

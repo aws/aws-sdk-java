@@ -71,8 +71,7 @@ public class PolicyDescription implements Serializable {
         this.policyName = policyName;
         return this;
     }
-    
-    
+
     /**
      * The name of the policy type associated with the LoadBalancer.
      *
@@ -105,15 +104,13 @@ public class PolicyDescription implements Serializable {
         this.policyTypeName = policyTypeName;
         return this;
     }
-    
-    
+
     /**
      * A list of policy attribute description structures.
      *
      * @return A list of policy attribute description structures.
      */
     public java.util.List<PolicyAttributeDescription> getPolicyAttributeDescriptions() {
-        
         if (policyAttributeDescriptions == null) {
               policyAttributeDescriptions = new com.amazonaws.internal.ListWithAutoConstructFlag<PolicyAttributeDescription>();
               policyAttributeDescriptions.setAutoConstruct(true);
@@ -175,7 +172,7 @@ public class PolicyDescription implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -100,8 +100,7 @@ public class Vpc implements Serializable {
         this.vpcId = vpcId;
         return this;
     }
-    
-    
+
     /**
      * Describes the current state of the VPC. The state of the subnet may be
      * either <code>pending</code> or <code>available</code>.
@@ -155,8 +154,7 @@ public class Vpc implements Serializable {
         this.state = state;
         return this;
     }
-    
-    
+
     /**
      * Describes the current state of the VPC. The state of the subnet may be
      * either <code>pending</code> or <code>available</code>.
@@ -194,7 +192,7 @@ public class Vpc implements Serializable {
         this.state = state.toString();
         return this;
     }
-    
+
     /**
      * Specifies the CIDR block the VPC covers.
      *
@@ -227,8 +225,7 @@ public class Vpc implements Serializable {
         this.cidrBlock = cidrBlock;
         return this;
     }
-    
-    
+
     /**
      * Specifies the ID of the set of DHCP options associated with the VPC.
      * Contains a value of <code>default</code> if the default options are
@@ -273,15 +270,13 @@ public class Vpc implements Serializable {
         this.dhcpOptionsId = dhcpOptionsId;
         return this;
     }
-    
-    
+
     /**
      * A list of tags for the VPC.
      *
      * @return A list of tags for the VPC.
      */
     public java.util.List<Tag> getTags() {
-        
         if (tags == null) {
               tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
               tags.setAutoConstruct(true);
@@ -343,7 +338,7 @@ public class Vpc implements Serializable {
 
         return this;
     }
-    
+
     /**
      * The allowed tenancy of instances launched into the VPC.
      * <p>
@@ -391,8 +386,7 @@ public class Vpc implements Serializable {
         this.instanceTenancy = instanceTenancy;
         return this;
     }
-    
-    
+
     /**
      * The allowed tenancy of instances launched into the VPC.
      * <p>
@@ -426,7 +420,7 @@ public class Vpc implements Serializable {
         this.instanceTenancy = instanceTenancy.toString();
         return this;
     }
-    
+
     /**
      * 
      *
@@ -459,8 +453,7 @@ public class Vpc implements Serializable {
         this.isDefault = isDefault;
         return this;
     }
-    
-    
+
     /**
      * 
      *
@@ -469,7 +462,7 @@ public class Vpc implements Serializable {
     public Boolean getIsDefault() {
         return isDefault;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

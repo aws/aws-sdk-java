@@ -102,8 +102,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements Ser
         this.autoScalingGroupName = autoScalingGroupName;
         return this;
     }
-    
-    
+
     /**
      * The name or ARN of the policy you want to run.
      * <p>
@@ -148,8 +147,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements Ser
         this.policyName = policyName;
         return this;
     }
-    
-    
+
     /**
      * Set to <code>True</code> if you want Auto Scaling to wait for the
      * cooldown period associated with the Auto Scaling group to complete
@@ -224,8 +222,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements Ser
         this.honorCooldown = honorCooldown;
         return this;
     }
-    
-    
+
     /**
      * Set to <code>True</code> if you want Auto Scaling to wait for the
      * cooldown period associated with the Auto Scaling group to complete
@@ -248,7 +245,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements Ser
     public Boolean getHonorCooldown() {
         return honorCooldown;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

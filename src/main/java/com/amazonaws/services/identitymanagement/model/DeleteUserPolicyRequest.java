@@ -52,8 +52,6 @@ public class DeleteUserPolicyRequest extends AmazonWebServiceRequest implements 
      */
     public DeleteUserPolicyRequest() {}
     
-
-
     /**
      * Constructs a new DeleteUserPolicyRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -67,8 +65,6 @@ public class DeleteUserPolicyRequest extends AmazonWebServiceRequest implements 
         setPolicyName(policyName);
     }
 
-    
-    
     /**
      * Name of the user the policy is associated with.
      * <p>
@@ -113,8 +109,7 @@ public class DeleteUserPolicyRequest extends AmazonWebServiceRequest implements 
         this.userName = userName;
         return this;
     }
-    
-    
+
     /**
      * Name of the policy document to delete.
      * <p>
@@ -159,8 +154,7 @@ public class DeleteUserPolicyRequest extends AmazonWebServiceRequest implements 
         this.policyName = policyName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -67,7 +67,6 @@ public class KeysAndAttributes implements Serializable {
      *         the attributes associated with the items.
      */
     public java.util.List<java.util.Map<String,AttributeValue>> getKeys() {
-        
         return keys;
     }
     
@@ -140,7 +139,7 @@ public class KeysAndAttributes implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Represents one or more attributes to retrieve from the table or index.
      * If no attribute names are specified then all attributes will be
@@ -166,7 +165,6 @@ public class KeysAndAttributes implements Serializable {
      *         additional throughput cost and latency.
      */
     public java.util.List<String> getAttributesToGet() {
-        
         return attributesToGet;
     }
     
@@ -281,7 +279,7 @@ public class KeysAndAttributes implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Represents the consistency of a read operation. If set to
      * <code>true</code>, then a strongly consistent read is used; otherwise,
@@ -326,8 +324,7 @@ public class KeysAndAttributes implements Serializable {
         this.consistentRead = consistentRead;
         return this;
     }
-    
-    
+
     /**
      * Represents the consistency of a read operation. If set to
      * <code>true</code>, then a strongly consistent read is used; otherwise,
@@ -340,7 +337,7 @@ public class KeysAndAttributes implements Serializable {
     public Boolean getConsistentRead() {
         return consistentRead;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

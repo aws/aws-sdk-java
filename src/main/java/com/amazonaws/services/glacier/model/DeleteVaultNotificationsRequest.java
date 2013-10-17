@@ -62,8 +62,6 @@ public class DeleteVaultNotificationsRequest extends AmazonWebServiceRequest imp
      */
     public DeleteVaultNotificationsRequest() {}
     
-
-
     /**
      * Constructs a new DeleteVaultNotificationsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -74,10 +72,6 @@ public class DeleteVaultNotificationsRequest extends AmazonWebServiceRequest imp
     public DeleteVaultNotificationsRequest(String vaultName) {
         setVaultName(vaultName);
     }
-
-    
-    
-
 
     /**
      * Constructs a new DeleteVaultNotificationsRequest object.
@@ -96,8 +90,6 @@ public class DeleteVaultNotificationsRequest extends AmazonWebServiceRequest imp
         setVaultName(vaultName);
     }
 
-    
-    
     /**
      * The <code>AccountId</code> is the AWS Account ID. You can specify
      * either the AWS Account ID or optionally a '-', in which case Amazon
@@ -154,8 +146,7 @@ public class DeleteVaultNotificationsRequest extends AmazonWebServiceRequest imp
         this.accountId = accountId;
         return this;
     }
-    
-    
+
     /**
      * The name of the vault.
      *
@@ -188,8 +179,7 @@ public class DeleteVaultNotificationsRequest extends AmazonWebServiceRequest imp
         this.vaultName = vaultName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

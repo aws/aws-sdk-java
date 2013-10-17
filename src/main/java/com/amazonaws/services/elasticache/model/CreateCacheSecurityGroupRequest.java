@@ -52,8 +52,6 @@ public class CreateCacheSecurityGroupRequest extends AmazonWebServiceRequest imp
      */
     public CreateCacheSecurityGroupRequest() {}
     
-
-
     /**
      * Constructs a new CreateCacheSecurityGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -70,8 +68,6 @@ public class CreateCacheSecurityGroupRequest extends AmazonWebServiceRequest imp
         setDescription(description);
     }
 
-    
-    
     /**
      * A name for the cache security group. This value is stored as a
      * lowercase string. <p>Constraints: Must contain no more than 255
@@ -122,8 +118,7 @@ public class CreateCacheSecurityGroupRequest extends AmazonWebServiceRequest imp
         this.cacheSecurityGroupName = cacheSecurityGroupName;
         return this;
     }
-    
-    
+
     /**
      * A description for the cache security group.
      *
@@ -156,8 +151,7 @@ public class CreateCacheSecurityGroupRequest extends AmazonWebServiceRequest imp
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

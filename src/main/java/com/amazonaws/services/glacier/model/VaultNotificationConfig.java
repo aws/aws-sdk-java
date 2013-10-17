@@ -42,8 +42,6 @@ public class VaultNotificationConfig implements Serializable {
      */
     public VaultNotificationConfig() {}
     
-
-
     /**
      * Constructs a new VaultNotificationConfig object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -59,8 +57,6 @@ public class VaultNotificationConfig implements Serializable {
         setEvents(events);
     }
 
-    
-    
     /**
      * The Amazon Simple Notification Service (Amazon SNS) topic Amazon
      * Resource Name (ARN).
@@ -99,8 +95,7 @@ public class VaultNotificationConfig implements Serializable {
         this.sNSTopic = sNSTopic;
         return this;
     }
-    
-    
+
     /**
      * A list of one or more events for which Amazon Glacier will send a
      * notification to the specified Amazon SNS topic.
@@ -109,7 +104,6 @@ public class VaultNotificationConfig implements Serializable {
      *         notification to the specified Amazon SNS topic.
      */
     public java.util.List<String> getEvents() {
-        
         if (events == null) {
               events = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               events.setAutoConstruct(true);
@@ -177,7 +171,7 @@ public class VaultNotificationConfig implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

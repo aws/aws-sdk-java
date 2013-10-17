@@ -92,8 +92,7 @@ public class IpPermission implements Serializable {
         this.ipProtocol = ipProtocol;
         return this;
     }
-    
-    
+
     /**
      * Start of port range for the TCP and UDP protocols, or an ICMP type
      * number. An ICMP type number of <code>-1</code> indicates a wildcard
@@ -138,8 +137,7 @@ public class IpPermission implements Serializable {
         this.fromPort = fromPort;
         return this;
     }
-    
-    
+
     /**
      * End of port range for the TCP and UDP protocols, or an ICMP code. An
      * ICMP code of <code>-1</code> indicates a wildcard (i.e., any ICMP
@@ -184,15 +182,13 @@ public class IpPermission implements Serializable {
         this.toPort = toPort;
         return this;
     }
-    
-    
+
     /**
      * The list of AWS user IDs and groups included in this permission.
      *
      * @return The list of AWS user IDs and groups included in this permission.
      */
     public java.util.List<UserIdGroupPair> getUserIdGroupPairs() {
-        
         if (userIdGroupPairs == null) {
               userIdGroupPairs = new com.amazonaws.internal.ListWithAutoConstructFlag<UserIdGroupPair>();
               userIdGroupPairs.setAutoConstruct(true);
@@ -254,14 +250,13 @@ public class IpPermission implements Serializable {
 
         return this;
     }
-    
+
     /**
      * The list of CIDR IP ranges included in this permission.
      *
      * @return The list of CIDR IP ranges included in this permission.
      */
     public java.util.List<String> getIpRanges() {
-        
         if (ipRanges == null) {
               ipRanges = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               ipRanges.setAutoConstruct(true);
@@ -323,7 +318,7 @@ public class IpPermission implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

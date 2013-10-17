@@ -65,8 +65,7 @@ public class DeleteAppRequest extends AmazonWebServiceRequest implements Seriali
         this.appId = appId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

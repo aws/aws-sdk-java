@@ -38,7 +38,6 @@ public class DescribeElasticLoadBalancersResult implements Serializable {
      *         specified Elastic Load Balancing instances.
      */
     public java.util.List<ElasticLoadBalancer> getElasticLoadBalancers() {
-        
         if (elasticLoadBalancers == null) {
               elasticLoadBalancers = new com.amazonaws.internal.ListWithAutoConstructFlag<ElasticLoadBalancer>();
               elasticLoadBalancers.setAutoConstruct(true);
@@ -106,7 +105,7 @@ public class DescribeElasticLoadBalancersResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

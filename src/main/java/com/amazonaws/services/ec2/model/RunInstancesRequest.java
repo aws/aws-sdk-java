@@ -200,8 +200,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      */
     public RunInstancesRequest() {}
     
-
-
     /**
      * Constructs a new RunInstancesRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -222,8 +220,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         setMaxCount(maxCount);
     }
 
-    
-    
     /**
      * Unique ID of a machine image, returned by a call to DescribeImages.
      *
@@ -256,8 +252,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         this.imageId = imageId;
         return this;
     }
-    
-    
+
     /**
      * Minimum number of instances to launch. If the value is more than
      * Amazon EC2 can launch, no instances are launched at all.
@@ -296,8 +291,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         this.minCount = minCount;
         return this;
     }
-    
-    
+
     /**
      * Maximum number of instances to launch. If the value is more than
      * Amazon EC2 can launch, the largest possible number above minCount will
@@ -348,8 +342,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         this.maxCount = maxCount;
         return this;
     }
-    
-    
+
     /**
      * The name of the key pair.
      *
@@ -382,8 +375,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         this.keyName = keyName;
         return this;
     }
-    
-    
+
     /**
      * The names of the security groups into which the instances will be
      * launched.
@@ -392,7 +384,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *         launched.
      */
     public java.util.List<String> getSecurityGroups() {
-        
         if (securityGroups == null) {
               securityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               securityGroups.setAutoConstruct(true);
@@ -460,14 +451,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
         return this;
     }
-    
+
     /**
      * Returns the value of the SecurityGroupIds property for this object.
      *
      * @return The value of the SecurityGroupIds property for this object.
      */
     public java.util.List<String> getSecurityGroupIds() {
-        
         if (securityGroupIds == null) {
               securityGroupIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               securityGroupIds.setAutoConstruct(true);
@@ -529,7 +519,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
         return this;
     }
-    
+
     /**
      * Specifies additional information to make available to the instance(s).
      * This parameter must be passed as a Base64-encoded string.
@@ -568,8 +558,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         this.userData = userData;
         return this;
     }
-    
-    
+
     /**
      * Specifies the instance type for the launched instances.
      * <p>
@@ -617,8 +606,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         this.instanceType = instanceType;
         return this;
     }
-    
-    
+
     /**
      * Specifies the instance type for the launched instances.
      * <p>
@@ -652,7 +640,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         this.instanceType = instanceType.toString();
         return this;
     }
-    
+
     /**
      * Specifies the placement constraints (Availability Zones) for launching
      * the instances.
@@ -691,8 +679,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         this.placement = placement;
         return this;
     }
-    
-    
+
     /**
      * The ID of the kernel with which to launch the instance.
      *
@@ -725,8 +712,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         this.kernelId = kernelId;
         return this;
     }
-    
-    
+
     /**
      * The ID of the RAM disk with which to launch the instance. Some kernels
      * require additional drivers at launch. Check the kernel requirements
@@ -783,8 +769,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         this.ramdiskId = ramdiskId;
         return this;
     }
-    
-    
+
     /**
      * Specifies how block devices are exposed to the instance. Each mapping
      * is made up of a virtualName and a deviceName.
@@ -793,7 +778,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *         is made up of a virtualName and a deviceName.
      */
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
-        
         if (blockDeviceMappings == null) {
               blockDeviceMappings = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>();
               blockDeviceMappings.setAutoConstruct(true);
@@ -861,7 +845,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
         return this;
     }
-    
+
     /**
      * Enables monitoring for the instance.
      *
@@ -894,8 +878,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         this.monitoring = monitoring;
         return this;
     }
-    
-    
+
     /**
      * Enables monitoring for the instance.
      *
@@ -904,7 +887,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     public Boolean getMonitoring() {
         return monitoring;
     }
-    
+
     /**
      * Specifies the subnet ID within which to launch the instance(s) for
      * Amazon Virtual Private Cloud.
@@ -943,8 +926,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         this.subnetId = subnetId;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether the instance can be terminated using the APIs. You
      * must modify this attribute before you can terminate any "locked"
@@ -989,8 +971,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         this.disableApiTermination = disableApiTermination;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether the instance can be terminated using the APIs. You
      * must modify this attribute before you can terminate any "locked"
@@ -1003,7 +984,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     public Boolean getDisableApiTermination() {
         return disableApiTermination;
     }
-    
+
     /**
      * Specifies whether the instance's Amazon EBS volumes are stopped or
      * terminated when the instance is shut down.
@@ -1057,8 +1038,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether the instance's Amazon EBS volumes are stopped or
      * terminated when the instance is shut down.
@@ -1096,7 +1076,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior.toString();
         return this;
     }
-    
+
     /**
      * Specifies active licenses in use and attached to an Amazon EC2
      * instance.
@@ -1135,8 +1115,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         this.license = license;
         return this;
     }
-    
-    
+
     /**
      * If you're using Amazon Virtual Private Cloud, you can optionally use
      * this parameter to assign the instance a specific available IP address
@@ -1181,8 +1160,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         this.privateIpAddress = privateIpAddress;
         return this;
     }
-    
-    
+
     /**
      * Unique, case-sensitive identifier you provide to ensure idempotency of
      * the request. For more information, go to How to Ensure Idempotency in
@@ -1227,8 +1205,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         this.clientToken = clientToken;
         return this;
     }
-    
-    
+
     /**
      * Do not use. Reserved for internal use.
      *
@@ -1261,15 +1238,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         this.additionalInfo = additionalInfo;
         return this;
     }
-    
-    
+
     /**
      * List of network interfaces associated with the instance.
      *
      * @return List of network interfaces associated with the instance.
      */
     public java.util.List<InstanceNetworkInterfaceSpecification> getNetworkInterfaces() {
-        
         if (networkInterfaces == null) {
               networkInterfaces = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceNetworkInterfaceSpecification>();
               networkInterfaces.setAutoConstruct(true);
@@ -1331,7 +1306,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
         return this;
     }
-    
+
     /**
      * Returns the value of the IamInstanceProfile property for this object.
      *
@@ -1364,8 +1339,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         this.iamInstanceProfile = iamInstanceProfile;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the EbsOptimized property for this object.
      *
@@ -1398,8 +1372,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         this.ebsOptimized = ebsOptimized;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the EbsOptimized property for this object.
      *
@@ -1408,7 +1381,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     public Boolean getEbsOptimized() {
         return ebsOptimized;
     }
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

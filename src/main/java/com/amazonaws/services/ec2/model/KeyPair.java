@@ -74,8 +74,7 @@ public class KeyPair implements Serializable {
         this.keyName = keyName;
         return this;
     }
-    
-    
+
     /**
      * The SHA-1 digest of the DER encoded private key.
      *
@@ -108,8 +107,7 @@ public class KeyPair implements Serializable {
         this.keyFingerprint = keyFingerprint;
         return this;
     }
-    
-    
+
     /**
      * The unencrypted PEM encoded RSA private key.
      *
@@ -142,8 +140,7 @@ public class KeyPair implements Serializable {
         this.keyMaterial = keyMaterial;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

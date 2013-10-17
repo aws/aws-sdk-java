@@ -55,8 +55,6 @@ public class InvalidationBatch implements Serializable {
      */
     public InvalidationBatch() {}
     
-
-
     /**
      * Constructs a new InvalidationBatch object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -85,10 +83,6 @@ public class InvalidationBatch implements Serializable {
         setCallerReference(callerReference);
     }
 
-    
-    
-
-
     /**
      * Constructs a new InvalidationBatch object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -109,8 +103,6 @@ public class InvalidationBatch implements Serializable {
         setCallerReference(callerReference);
     }
 
-    
-    
     /**
      * The path of the object to invalidate. The path is relative to the
      * distribution and must begin with a slash (/). You must enclose each
@@ -179,8 +171,7 @@ public class InvalidationBatch implements Serializable {
         this.paths = paths;
         return this;
     }
-    
-    
+
     /**
      * A unique name that ensures the request can't be replayed. If the
      * CallerReference is new (no matter the content of the Path object), a
@@ -267,8 +258,7 @@ public class InvalidationBatch implements Serializable {
         this.callerReference = callerReference;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -45,8 +45,6 @@ public class DeleteDBParameterGroupRequest extends AmazonWebServiceRequest imple
      */
     public DeleteDBParameterGroupRequest() {}
     
-
-
     /**
      * Constructs a new DeleteDBParameterGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -61,8 +59,6 @@ public class DeleteDBParameterGroupRequest extends AmazonWebServiceRequest imple
         setDBParameterGroupName(dBParameterGroupName);
     }
 
-    
-    
     /**
      * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
      * the name of an existing DB Parameter Group</li> <li>You cannot delete
@@ -113,8 +109,7 @@ public class DeleteDBParameterGroupRequest extends AmazonWebServiceRequest imple
         this.dBParameterGroupName = dBParameterGroupName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

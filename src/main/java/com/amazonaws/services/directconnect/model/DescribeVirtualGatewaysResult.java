@@ -35,7 +35,6 @@ public class DescribeVirtualGatewaysResult implements Serializable {
      * @return A list of virtual gateways.
      */
     public java.util.List<VirtualGateway> getVirtualGateways() {
-        
         if (virtualGateways == null) {
               virtualGateways = new com.amazonaws.internal.ListWithAutoConstructFlag<VirtualGateway>();
               virtualGateways.setAutoConstruct(true);
@@ -97,7 +96,7 @@ public class DescribeVirtualGatewaysResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

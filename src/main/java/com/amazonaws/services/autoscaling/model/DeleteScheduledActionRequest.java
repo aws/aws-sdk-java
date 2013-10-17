@@ -90,8 +90,7 @@ public class DeleteScheduledActionRequest extends AmazonWebServiceRequest implem
         this.autoScalingGroupName = autoScalingGroupName;
         return this;
     }
-    
-    
+
     /**
      * The name of the action you want to delete.
      * <p>
@@ -136,8 +135,7 @@ public class DeleteScheduledActionRequest extends AmazonWebServiceRequest implem
         this.scheduledActionName = scheduledActionName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

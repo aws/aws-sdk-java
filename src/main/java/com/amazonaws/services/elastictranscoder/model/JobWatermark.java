@@ -111,8 +111,7 @@ public class JobWatermark implements Serializable {
         this.presetWatermarkId = presetWatermarkId;
         return this;
     }
-    
-    
+
     /**
      * The name of the .png or .jpg file that you want to use for the
      * watermark. To determine which Amazon S3 bucket contains the specified
@@ -199,8 +198,7 @@ public class JobWatermark implements Serializable {
         this.inputKey = inputKey;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

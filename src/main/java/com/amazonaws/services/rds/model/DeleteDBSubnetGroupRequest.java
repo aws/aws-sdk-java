@@ -96,8 +96,7 @@ public class DeleteDBSubnetGroupRequest extends AmazonWebServiceRequest implemen
         this.dBSubnetGroupName = dBSubnetGroupName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

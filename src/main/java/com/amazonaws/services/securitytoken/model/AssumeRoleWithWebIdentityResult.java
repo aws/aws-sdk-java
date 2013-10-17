@@ -104,8 +104,7 @@ public class AssumeRoleWithWebIdentityResult implements Serializable {
         this.credentials = credentials;
         return this;
     }
-    
-    
+
     /**
      * The unique user identifier that is returned by the identity provider.
      * This identifier is associated with the <code>WebIdentityToken</code>
@@ -189,8 +188,7 @@ public class AssumeRoleWithWebIdentityResult implements Serializable {
         this.subjectFromWebIdentityToken = subjectFromWebIdentityToken;
         return this;
     }
-    
-    
+
     /**
      * The Amazon Resource Name (ARN) and the assumed role ID, which are
      * identifiers that you can use to refer to the resulting temporary
@@ -253,8 +251,7 @@ public class AssumeRoleWithWebIdentityResult implements Serializable {
         this.assumedRoleUser = assumedRoleUser;
         return this;
     }
-    
-    
+
     /**
      * A percentage value that indicates the size of the policy in packed
      * form. The service rejects any policy with a packed size greater than
@@ -308,8 +305,7 @@ public class AssumeRoleWithWebIdentityResult implements Serializable {
         this.packedPolicySize = packedPolicySize;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

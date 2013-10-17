@@ -112,8 +112,7 @@ public class AutoScalingThresholds implements Serializable {
         this.instanceCount = instanceCount;
         return this;
     }
-    
-    
+
     /**
      * The amount of time, in minutes, that the load must exceed a threshold
      * before more instances are added or removed.
@@ -161,8 +160,7 @@ public class AutoScalingThresholds implements Serializable {
         this.thresholdsWaitTime = thresholdsWaitTime;
         return this;
     }
-    
-    
+
     /**
      * The amount of time (in minutes) after a scaling event occurs that AWS
      * OpsWorks should ignore metrics and not raise any additional scaling
@@ -252,8 +250,7 @@ public class AutoScalingThresholds implements Serializable {
         this.ignoreMetricsTime = ignoreMetricsTime;
         return this;
     }
-    
-    
+
     /**
      * The CPU utilization threshold, as a percent of the available CPU.
      *
@@ -286,8 +283,7 @@ public class AutoScalingThresholds implements Serializable {
         this.cpuThreshold = cpuThreshold;
         return this;
     }
-    
-    
+
     /**
      * The memory utilization threshold, as a percent of the available
      * memory.
@@ -326,8 +322,7 @@ public class AutoScalingThresholds implements Serializable {
         this.memoryThreshold = memoryThreshold;
         return this;
     }
-    
-    
+
     /**
      * The load threshold. For more information about how load is computed,
      * see <a href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
@@ -372,8 +367,7 @@ public class AutoScalingThresholds implements Serializable {
         this.loadThreshold = loadThreshold;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow;
-            
+
 import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
@@ -316,8 +316,8 @@ import com.amazonaws.services.simpleworkflow.model.*;
  * </p>
  * </li>
  * 
- * </ul> 
- */       
+ * </ul>
+ */
 public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
     /**
      * <p>

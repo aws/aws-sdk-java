@@ -95,8 +95,7 @@ public class DescribeLoadBalancerPoliciesRequest extends AmazonWebServiceRequest
         this.loadBalancerName = loadBalancerName;
         return this;
     }
-    
-    
+
     /**
      * The names of LoadBalancer policies you've created or Elastic Load
      * Balancing sample policy names.
@@ -105,7 +104,6 @@ public class DescribeLoadBalancerPoliciesRequest extends AmazonWebServiceRequest
      *         Balancing sample policy names.
      */
     public java.util.List<String> getPolicyNames() {
-        
         if (policyNames == null) {
               policyNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               policyNames.setAutoConstruct(true);
@@ -173,7 +171,7 @@ public class DescribeLoadBalancerPoliciesRequest extends AmazonWebServiceRequest
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -89,8 +89,7 @@ public class ServiceEndpoint implements Serializable {
         this.arn = arn;
         return this;
     }
-    
-    
+
     /**
      * The URL (including /version/pathPrefix) to which service requests can
      * be submitted.
@@ -129,8 +128,7 @@ public class ServiceEndpoint implements Serializable {
         this.endpoint = endpoint;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

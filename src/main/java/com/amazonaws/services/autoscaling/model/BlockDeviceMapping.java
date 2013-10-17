@@ -91,8 +91,7 @@ public class BlockDeviceMapping implements Serializable {
         this.virtualName = virtualName;
         return this;
     }
-    
-    
+
     /**
      * The name of the device within Amazon EC2.
      * <p>
@@ -137,8 +136,7 @@ public class BlockDeviceMapping implements Serializable {
         this.deviceName = deviceName;
         return this;
     }
-    
-    
+
     /**
      * The Elastic Block Storage volume information.
      *
@@ -171,8 +169,7 @@ public class BlockDeviceMapping implements Serializable {
         this.ebs = ebs;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

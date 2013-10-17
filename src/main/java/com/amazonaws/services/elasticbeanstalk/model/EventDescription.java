@@ -118,8 +118,7 @@ public class EventDescription implements Serializable {
         this.eventDate = eventDate;
         return this;
     }
-    
-    
+
     /**
      * The event message.
      *
@@ -152,8 +151,7 @@ public class EventDescription implements Serializable {
         this.message = message;
         return this;
     }
-    
-    
+
     /**
      * The application associated with the event.
      * <p>
@@ -195,8 +193,7 @@ public class EventDescription implements Serializable {
         this.applicationName = applicationName;
         return this;
     }
-    
-    
+
     /**
      * The release label for the application version associated with this
      * event.
@@ -244,8 +241,7 @@ public class EventDescription implements Serializable {
         this.versionLabel = versionLabel;
         return this;
     }
-    
-    
+
     /**
      * The name of the configuration associated with this event.
      * <p>
@@ -287,8 +283,7 @@ public class EventDescription implements Serializable {
         this.templateName = templateName;
         return this;
     }
-    
-    
+
     /**
      * The name of the environment associated with this event.
      * <p>
@@ -330,8 +325,7 @@ public class EventDescription implements Serializable {
         this.environmentName = environmentName;
         return this;
     }
-    
-    
+
     /**
      * The web service request ID for the activity of this event.
      *
@@ -364,8 +358,7 @@ public class EventDescription implements Serializable {
         this.requestId = requestId;
         return this;
     }
-    
-    
+
     /**
      * The severity level of this event.
      * <p>
@@ -413,8 +406,7 @@ public class EventDescription implements Serializable {
         this.severity = severity;
         return this;
     }
-    
-    
+
     /**
      * The severity level of this event.
      * <p>
@@ -448,7 +440,7 @@ public class EventDescription implements Serializable {
         this.severity = severity.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -150,8 +150,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest impl
         this.gatewayARN = gatewayARN;
         return this;
     }
-    
-    
+
     /**
      * The size of the cached volume.
      *
@@ -184,8 +183,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest impl
         this.volumeSizeInBytes = volumeSizeInBytes;
         return this;
     }
-    
-    
+
     /**
      * The snapshot ID (e.g., "snap-1122aabb") of the snapshot to restore as
      * the new stored volume. Specify this field if you want to create the
@@ -257,8 +255,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest impl
         this.snapshotId = snapshotId;
         return this;
     }
-    
-    
+
     /**
      * The name of the iSCSI target used by initiators to connect to the
      * target and as a suffix for the target ARN. For example, specifying
@@ -327,8 +324,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest impl
         this.targetName = targetName;
         return this;
     }
-    
-    
+
     /**
      * The network interface of the gateway on which to expose the iSCSI
      * target. Only IPv4 addresses are accepted. Use the
@@ -388,8 +384,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest impl
         this.networkInterfaceId = networkInterfaceId;
         return this;
     }
-    
-    
+
     /**
      * A unique identifying string for the cached volume.
      * <p>
@@ -431,8 +426,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest impl
         this.clientToken = clientToken;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -71,8 +71,7 @@ public class InstanceStateChange implements Serializable {
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * The current state of the specified instance.
      *
@@ -105,8 +104,7 @@ public class InstanceStateChange implements Serializable {
         this.currentState = currentState;
         return this;
     }
-    
-    
+
     /**
      * The previous state of the specified instance.
      *
@@ -139,8 +137,7 @@ public class InstanceStateChange implements Serializable {
         this.previousState = previousState;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

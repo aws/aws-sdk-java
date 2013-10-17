@@ -35,7 +35,6 @@ public class DescribeConnectionsResult implements Serializable {
      * @return A list of connections.
      */
     public java.util.List<Connection> getConnections() {
-        
         if (connections == null) {
               connections = new com.amazonaws.internal.ListWithAutoConstructFlag<Connection>();
               connections.setAutoConstruct(true);
@@ -97,7 +96,7 @@ public class DescribeConnectionsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

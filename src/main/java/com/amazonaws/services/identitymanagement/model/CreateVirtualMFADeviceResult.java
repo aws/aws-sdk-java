@@ -61,8 +61,7 @@ public class CreateVirtualMFADeviceResult implements Serializable {
         this.virtualMFADevice = virtualMFADevice;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -75,8 +75,7 @@ public class VerifyDomainDkimRequest extends AmazonWebServiceRequest implements 
         this.domain = domain;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

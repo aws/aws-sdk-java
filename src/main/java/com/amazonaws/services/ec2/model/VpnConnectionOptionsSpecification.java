@@ -56,8 +56,7 @@ public class VpnConnectionOptionsSpecification implements Serializable {
         this.staticRoutesOnly = staticRoutesOnly;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the StaticRoutesOnly property for this object.
      *
@@ -66,7 +65,7 @@ public class VpnConnectionOptionsSpecification implements Serializable {
     public Boolean getStaticRoutesOnly() {
         return staticRoutesOnly;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

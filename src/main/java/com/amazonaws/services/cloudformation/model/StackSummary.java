@@ -100,8 +100,7 @@ public class StackSummary implements Serializable {
         this.stackId = stackId;
         return this;
     }
-    
-    
+
     /**
      * The name associated with the stack.
      *
@@ -134,8 +133,7 @@ public class StackSummary implements Serializable {
         this.stackName = stackName;
         return this;
     }
-    
-    
+
     /**
      * The template description of the template used to create the stack.
      *
@@ -168,8 +166,7 @@ public class StackSummary implements Serializable {
         this.templateDescription = templateDescription;
         return this;
     }
-    
-    
+
     /**
      * The time the stack was created.
      *
@@ -202,8 +199,7 @@ public class StackSummary implements Serializable {
         this.creationTime = creationTime;
         return this;
     }
-    
-    
+
     /**
      * The time the stack was last updated. This field will only be returned
      * if the stack has been updated at least once.
@@ -242,8 +238,7 @@ public class StackSummary implements Serializable {
         this.lastUpdatedTime = lastUpdatedTime;
         return this;
     }
-    
-    
+
     /**
      * The time the stack was deleted.
      *
@@ -276,8 +271,7 @@ public class StackSummary implements Serializable {
         this.deletionTime = deletionTime;
         return this;
     }
-    
-    
+
     /**
      * The current status of the stack.
      * <p>
@@ -325,8 +319,7 @@ public class StackSummary implements Serializable {
         this.stackStatus = stackStatus;
         return this;
     }
-    
-    
+
     /**
      * The current status of the stack.
      * <p>
@@ -360,7 +353,7 @@ public class StackSummary implements Serializable {
         this.stackStatus = stackStatus.toString();
         return this;
     }
-    
+
     /**
      * Success/Failure message associated with the stack status.
      *
@@ -393,8 +386,7 @@ public class StackSummary implements Serializable {
         this.stackStatusReason = stackStatusReason;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -44,8 +44,6 @@ public class GetInvalidationRequest extends AmazonWebServiceRequest implements S
      */
     public GetInvalidationRequest() {}
     
-
-
     /**
      * Constructs a new GetInvalidationRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -59,8 +57,6 @@ public class GetInvalidationRequest extends AmazonWebServiceRequest implements S
         setId(id);
     }
 
-    
-    
     /**
      * The distribution's id.
      *
@@ -93,8 +89,7 @@ public class GetInvalidationRequest extends AmazonWebServiceRequest implements S
         this.distributionId = distributionId;
         return this;
     }
-    
-    
+
     /**
      * The invalidation's id.
      *
@@ -127,8 +122,7 @@ public class GetInvalidationRequest extends AmazonWebServiceRequest implements S
         this.id = id;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

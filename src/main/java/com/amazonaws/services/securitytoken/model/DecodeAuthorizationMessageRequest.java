@@ -107,8 +107,7 @@ public class DecodeAuthorizationMessageRequest extends AmazonWebServiceRequest i
         this.encodedMessage = encodedMessage;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

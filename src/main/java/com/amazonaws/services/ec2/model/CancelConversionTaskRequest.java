@@ -64,8 +64,7 @@ public class CancelConversionTaskRequest extends AmazonWebServiceRequest impleme
         this.conversionTaskId = conversionTaskId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the ReasonMessage property for this object.
      *
@@ -98,8 +97,7 @@ public class CancelConversionTaskRequest extends AmazonWebServiceRequest impleme
         this.reasonMessage = reasonMessage;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

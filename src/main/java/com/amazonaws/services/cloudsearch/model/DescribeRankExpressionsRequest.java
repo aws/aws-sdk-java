@@ -116,8 +116,7 @@ public class DescribeRankExpressionsRequest extends AmazonWebServiceRequest impl
         this.domainName = domainName;
         return this;
     }
-    
-    
+
     /**
      * Limits the <code>DescribeRankExpressions</code> response to the
      * specified fields.
@@ -126,7 +125,6 @@ public class DescribeRankExpressionsRequest extends AmazonWebServiceRequest impl
      *         specified fields.
      */
     public java.util.List<String> getRankNames() {
-        
         if (rankNames == null) {
               rankNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               rankNames.setAutoConstruct(true);
@@ -194,7 +192,7 @@ public class DescribeRankExpressionsRequest extends AmazonWebServiceRequest impl
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

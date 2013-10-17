@@ -80,15 +80,13 @@ public class DescribeDBSnapshotsResult implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * A list of <a>DBSnapshot</a> instances.
      *
      * @return A list of <a>DBSnapshot</a> instances.
      */
     public java.util.List<DBSnapshot> getDBSnapshots() {
-        
         if (dBSnapshots == null) {
               dBSnapshots = new com.amazonaws.internal.ListWithAutoConstructFlag<DBSnapshot>();
               dBSnapshots.setAutoConstruct(true);
@@ -150,7 +148,7 @@ public class DescribeDBSnapshotsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

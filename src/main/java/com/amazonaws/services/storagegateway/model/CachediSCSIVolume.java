@@ -126,8 +126,7 @@ public class CachediSCSIVolume implements Serializable {
         this.volumeARN = volumeARN;
         return this;
     }
-    
-    
+
     /**
      * The unique identifier of the storage volume, e.g. vol-1122AABB.
      * <p>
@@ -169,8 +168,7 @@ public class CachediSCSIVolume implements Serializable {
         this.volumeId = volumeId;
         return this;
     }
-    
-    
+
     /**
      * A value describing the type of volume.
      * <p>
@@ -218,8 +216,7 @@ public class CachediSCSIVolume implements Serializable {
         this.volumeType = volumeType;
         return this;
     }
-    
-    
+
     /**
      * A value describing the type of volume.
      * <p>
@@ -253,7 +250,7 @@ public class CachediSCSIVolume implements Serializable {
         this.volumeType = volumeType.toString();
         return this;
     }
-    
+
     /**
      * A value that indicates the state of the volume.
      * <p>
@@ -301,8 +298,7 @@ public class CachediSCSIVolume implements Serializable {
         this.volumeStatus = volumeStatus;
         return this;
     }
-    
-    
+
     /**
      * A value that indicates the state of the volume.
      * <p>
@@ -336,7 +332,7 @@ public class CachediSCSIVolume implements Serializable {
         this.volumeStatus = volumeStatus.toString();
         return this;
     }
-    
+
     /**
      * The size of the volume in bytes that was specified in the
      * <a>API_CreateCachediSCSIVolume</a> operation.
@@ -375,8 +371,7 @@ public class CachediSCSIVolume implements Serializable {
         this.volumeSizeInBytes = volumeSizeInBytes;
         return this;
     }
-    
-    
+
     /**
      * The percentage complete if the volume is restoring or bootstrapping
      * that represents the percent of data transferred. This field does not
@@ -427,8 +422,7 @@ public class CachediSCSIVolume implements Serializable {
         this.volumeProgress = volumeProgress;
         return this;
     }
-    
-    
+
     /**
      * If the cached volume was created from a snapshot, this field contains
      * the snapshot ID used, e.g. snap-1122aabb. Otherwise, this field is not
@@ -482,8 +476,7 @@ public class CachediSCSIVolume implements Serializable {
         this.sourceSnapshotId = sourceSnapshotId;
         return this;
     }
-    
-    
+
     /**
      * Lists iSCSI information about a volume.
      *
@@ -516,8 +509,7 @@ public class CachediSCSIVolume implements Serializable {
         this.volumeiSCSIAttributes = volumeiSCSIAttributes;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

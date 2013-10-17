@@ -79,8 +79,7 @@ public class RemoveSourceIdentifierFromSubscriptionRequest extends AmazonWebServ
         this.subscriptionName = subscriptionName;
         return this;
     }
-    
-    
+
     /**
      * The source identifier to be removed from the subscription, such as the
      * <b>DB instance identifier</b> for a DB instance or the name of a
@@ -125,8 +124,7 @@ public class RemoveSourceIdentifierFromSubscriptionRequest extends AmazonWebServ
         this.sourceIdentifier = sourceIdentifier;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

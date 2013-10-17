@@ -65,8 +65,7 @@ public class GetIdentityNotificationAttributesResult implements Serializable {
         setNotificationAttributes(notificationAttributes);
         return this;
     }
-    
-   	
+
     /**
      * A map of Identity to IdentityNotificationAttributes.
      * <p>
@@ -86,7 +85,7 @@ public class GetIdentityNotificationAttributesResult implements Serializable {
 		this.notificationAttributes.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into NotificationAttributes.
 	 * <p>

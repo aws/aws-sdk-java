@@ -107,8 +107,7 @@ public class InstanceIdentity implements Serializable {
         this.document = document;
         return this;
     }
-    
-    
+
     /**
      * A signature which can be used to verify the accuracy and authenticity
      * of the information provided in the instance identity document.
@@ -159,8 +158,7 @@ public class InstanceIdentity implements Serializable {
         this.signature = signature;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

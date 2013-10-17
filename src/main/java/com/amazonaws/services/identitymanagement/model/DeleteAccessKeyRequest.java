@@ -57,8 +57,6 @@ public class DeleteAccessKeyRequest extends AmazonWebServiceRequest implements S
      */
     public DeleteAccessKeyRequest() {}
     
-
-
     /**
      * Constructs a new DeleteAccessKeyRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -71,8 +69,6 @@ public class DeleteAccessKeyRequest extends AmazonWebServiceRequest implements S
         setAccessKeyId(accessKeyId);
     }
 
-    
-    
     /**
      * Name of the user whose key you want to delete.
      * <p>
@@ -117,8 +113,7 @@ public class DeleteAccessKeyRequest extends AmazonWebServiceRequest implements S
         this.userName = userName;
         return this;
     }
-    
-    
+
     /**
      * The Access Key ID for the Access Key ID and Secret Access Key you want
      * to delete.
@@ -169,8 +164,7 @@ public class DeleteAccessKeyRequest extends AmazonWebServiceRequest implements S
         this.accessKeyId = accessKeyId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

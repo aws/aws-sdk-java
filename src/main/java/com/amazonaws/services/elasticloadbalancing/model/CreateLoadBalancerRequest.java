@@ -89,8 +89,6 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      */
     public CreateLoadBalancerRequest() {}
     
-
-
     /**
      * Constructs a new CreateLoadBalancerRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -102,10 +100,6 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     public CreateLoadBalancerRequest(String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
     }
-
-    
-    
-
 
     /**
      * Constructs a new CreateLoadBalancerRequest object.
@@ -128,8 +122,6 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
         setAvailabilityZones(availabilityZones);
     }
 
-    
-    
     /**
      * The name associated with the LoadBalancer. The name must be unique
      * within your set of LoadBalancers.
@@ -168,8 +160,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
         this.loadBalancerName = loadBalancerName;
         return this;
     }
-    
-    
+
     /**
      * A list of the following tuples: LoadBalancerPort, InstancePort, and
      * Protocol.
@@ -178,7 +169,6 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      *         Protocol.
      */
     public java.util.List<Listener> getListeners() {
-        
         if (listeners == null) {
               listeners = new com.amazonaws.internal.ListWithAutoConstructFlag<Listener>();
               listeners.setAutoConstruct(true);
@@ -246,7 +236,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
 
         return this;
     }
-    
+
     /**
      * A list of Availability Zones. <p> At least one Availability Zone must
      * be specified. Specified Availability Zones must be in the same EC2
@@ -261,7 +251,6 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      *         LoadBalancer.
      */
     public java.util.List<String> getAvailabilityZones() {
-        
         if (availabilityZones == null) {
               availabilityZones = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               availabilityZones.setAutoConstruct(true);
@@ -347,14 +336,13 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
 
         return this;
     }
-    
+
     /**
      * A list of subnet IDs in your VPC to attach to your LoadBalancer.
      *
      * @return A list of subnet IDs in your VPC to attach to your LoadBalancer.
      */
     public java.util.List<String> getSubnets() {
-        
         if (subnets == null) {
               subnets = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               subnets.setAutoConstruct(true);
@@ -416,14 +404,13 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
 
         return this;
     }
-    
+
     /**
      * The security groups assigned to your LoadBalancer within your VPC.
      *
      * @return The security groups assigned to your LoadBalancer within your VPC.
      */
     public java.util.List<String> getSecurityGroups() {
-        
         if (securityGroups == null) {
               securityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               securityGroups.setAutoConstruct(true);
@@ -485,7 +472,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
 
         return this;
     }
-    
+
     /**
      * The type of a LoadBalancer. This option is only available for
      * LoadBalancers attached to a Amazon VPC. By default, Elastic Load
@@ -548,8 +535,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
         this.scheme = scheme;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -48,8 +48,6 @@ public class KeyValue implements Serializable {
      */
     public KeyValue() {}
     
-
-
     /**
      * Constructs a new KeyValue object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -63,8 +61,6 @@ public class KeyValue implements Serializable {
         setValue(value);
     }
 
-    
-    
     /**
      * The unique identifier of a key value pair.
      * <p>
@@ -109,8 +105,7 @@ public class KeyValue implements Serializable {
         this.key = key;
         return this;
     }
-    
-    
+
     /**
      * The value part of the identified key.
      * <p>
@@ -155,8 +150,7 @@ public class KeyValue implements Serializable {
         this.value = value;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

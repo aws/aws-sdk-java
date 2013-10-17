@@ -161,8 +161,7 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
         this.input = input;
         return this;
     }
-    
-    
+
     /**
      * The maximum duration for this workflow execution. <p>The valid values
      * are integers greater than or equal to <code>0</code>. An integer value
@@ -222,8 +221,7 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
         this.executionStartToCloseTimeout = executionStartToCloseTimeout;
         return this;
     }
-    
-    
+
     /**
      * The maximum duration of decision tasks for this workflow type. <p>The
      * valid values are integers greater than or equal to <code>0</code>. An
@@ -283,8 +281,7 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
         this.taskStartToCloseTimeout = taskStartToCloseTimeout;
         return this;
     }
-    
-    
+
     /**
      * The policy to use for the child workflow executions if this workflow
      * execution is terminated, by calling the
@@ -392,8 +389,7 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
         this.childPolicy = childPolicy;
         return this;
     }
-    
-    
+
     /**
      * The policy to use for the child workflow executions if this workflow
      * execution is terminated, by calling the
@@ -467,7 +463,7 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
         this.childPolicy = childPolicy.toString();
         return this;
     }
-    
+
     /**
      * The name of the task list for scheduling the decision tasks for this
      * workflow execution.
@@ -506,8 +502,7 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
         this.taskList = taskList;
         return this;
     }
-    
-    
+
     /**
      * The workflow type of this execution.
      *
@@ -540,8 +535,7 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
         this.workflowType = workflowType;
         return this;
     }
-    
-    
+
     /**
      * The list of tags associated with this workflow execution. An execution
      * can have up to 5 tags.
@@ -553,7 +547,6 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
      *         can have up to 5 tags.
      */
     public java.util.List<String> getTagList() {
-        
         if (tagList == null) {
               tagList = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               tagList.setAutoConstruct(true);
@@ -630,7 +623,7 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
 
         return this;
     }
-    
+
     /**
      * If this workflow execution was started due to a
      * <code>ContinueAsNewWorkflowExecution</code> decision, then it contains
@@ -690,8 +683,7 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
         this.continuedExecutionRunId = continuedExecutionRunId;
         return this;
     }
-    
-    
+
     /**
      * The source workflow execution that started this workflow execution.
      * The member is not set if the workflow execution was not started by a
@@ -736,8 +728,7 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
         this.parentWorkflowExecution = parentWorkflowExecution;
         return this;
     }
-    
-    
+
     /**
      * The id of the <code>StartChildWorkflowExecutionInitiated</code> event
      * corresponding to the <code>StartChildWorkflowExecution</code>
@@ -800,8 +791,7 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable {
         this.parentInitiatedEventId = parentInitiatedEventId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -92,8 +92,7 @@ public class PipelineObject implements Serializable {
         this.id = id;
         return this;
     }
-    
-    
+
     /**
      * Name of the object.
      * <p>
@@ -138,15 +137,13 @@ public class PipelineObject implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * Key-value pairs that define the properties of the object.
      *
      * @return Key-value pairs that define the properties of the object.
      */
     public java.util.List<Field> getFields() {
-        
         if (fields == null) {
               fields = new com.amazonaws.internal.ListWithAutoConstructFlag<Field>();
               fields.setAutoConstruct(true);
@@ -208,7 +205,7 @@ public class PipelineObject implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

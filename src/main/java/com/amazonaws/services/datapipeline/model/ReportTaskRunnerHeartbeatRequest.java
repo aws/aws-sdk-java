@@ -142,8 +142,7 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest im
         this.taskrunnerId = taskrunnerId;
         return this;
     }
-    
-    
+
     /**
      * Indicates the type of task the task runner is configured to accept and
      * process. The worker group is set as a field on objects in the pipeline
@@ -224,8 +223,7 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest im
         this.workerGroup = workerGroup;
         return this;
     }
-    
-    
+
     /**
      * The public DNS name of the calling task runner.
      * <p>
@@ -270,8 +268,7 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest im
         this.hostname = hostname;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

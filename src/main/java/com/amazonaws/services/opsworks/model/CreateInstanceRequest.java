@@ -183,15 +183,13 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
         this.stackId = stackId;
         return this;
     }
-    
-    
+
     /**
      * An array that contains the instance layer IDs.
      *
      * @return An array that contains the instance layer IDs.
      */
     public java.util.List<String> getLayerIds() {
-        
         if (layerIds == null) {
               layerIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               layerIds.setAutoConstruct(true);
@@ -253,7 +251,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
 
         return this;
     }
-    
+
     /**
      * The instance type. AWS OpsWorks supports all instance types except
      * Cluster Compute, Cluster GPU, and High Memory Cluster. For more
@@ -322,8 +320,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
         this.instanceType = instanceType;
         return this;
     }
-    
-    
+
     /**
      * The instance auto scaling type, which has three possible values: <ul>
      * <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected by
@@ -425,8 +422,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
         this.autoScalingType = autoScalingType;
         return this;
     }
-    
-    
+
     /**
      * The instance auto scaling type, which has three possible values: <ul>
      * <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected by
@@ -496,7 +492,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
         this.autoScalingType = autoScalingType.toString();
         return this;
     }
-    
+
     /**
      * The instance host name.
      *
@@ -529,8 +525,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
         this.hostname = hostname;
         return this;
     }
-    
-    
+
     /**
      * The instance operating system, which must be set to one of the
      * following. <ul> <li>Standard operating systems: <code>Amazon
@@ -635,8 +630,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
         this.os = os;
         return this;
     }
-    
-    
+
     /**
      * A custom AMI ID to be used to create the instance. The AMI should be
      * based on one of the standard AWS OpsWorks APIs: Amazon Linux or Ubuntu
@@ -687,8 +681,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
         this.amiId = amiId;
         return this;
     }
-    
-    
+
     /**
      * The instance SSH key name.
      *
@@ -721,8 +714,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
         this.sshKeyName = sshKeyName;
         return this;
     }
-    
-    
+
     /**
      * The instance Availability Zone. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
@@ -767,8 +759,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
         this.availabilityZone = availabilityZone;
         return this;
     }
-    
-    
+
     /**
      * The ID of the instance's subnet. If the stack is running in a VPC, you
      * can use this parameter to override the stack's default subnet ID value
@@ -813,8 +804,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
         this.subnetId = subnetId;
         return this;
     }
-    
-    
+
     /**
      * The instance architecture. Instance types do not necessarily support
      * both architectures. For a list of the architectures that are supported
@@ -886,8 +876,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
         this.architecture = architecture;
         return this;
     }
-    
-    
+
     /**
      * The instance architecture. Instance types do not necessarily support
      * both architectures. For a list of the architectures that are supported
@@ -937,7 +926,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
         this.architecture = architecture.toString();
         return this;
     }
-    
+
     /**
      * The instance root device type. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
@@ -997,8 +986,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
         this.rootDeviceType = rootDeviceType;
         return this;
     }
-    
-    
+
     /**
      * The instance root device type. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
@@ -1040,7 +1028,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
         this.rootDeviceType = rootDeviceType.toString();
         return this;
     }
-    
+
     /**
      * Whether to install operating system and package updates when the
      * instance boots. The default value is <code>true</code>. To control
@@ -1121,8 +1109,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
         this.installUpdatesOnBoot = installUpdatesOnBoot;
         return this;
     }
-    
-    
+
     /**
      * Whether to install operating system and package updates when the
      * instance boots. The default value is <code>true</code>. To control
@@ -1147,7 +1134,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements Se
     public Boolean getInstallUpdatesOnBoot() {
         return installUpdatesOnBoot;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

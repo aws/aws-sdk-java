@@ -44,8 +44,6 @@ public class Change implements Serializable {
      */
     public Change() {}
     
-
-
     /**
      * Constructs a new Change object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -61,8 +59,6 @@ public class Change implements Serializable {
         setResourceRecordSet(resourceRecordSet);
     }
 
-    
-    
     /**
      * Constructs a new Change object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -77,7 +73,7 @@ public class Change implements Serializable {
         this.action = action.toString();
         this.resourceRecordSet = resourceRecordSet;
     }
-    
+
     /**
      * The action to perform. <p>Valid values: <code>CREATE</code> |
      * <code>DELETE</code>
@@ -131,8 +127,7 @@ public class Change implements Serializable {
         this.action = action;
         return this;
     }
-    
-    
+
     /**
      * The action to perform. <p>Valid values: <code>CREATE</code> |
      * <code>DELETE</code>
@@ -170,7 +165,7 @@ public class Change implements Serializable {
         this.action = action.toString();
         return this;
     }
-    
+
     /**
      * Information about the resource record set to create or delete.
      *
@@ -203,8 +198,7 @@ public class Change implements Serializable {
         this.resourceRecordSet = resourceRecordSet;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

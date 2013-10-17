@@ -72,8 +72,7 @@ public class RegisterElasticIpRequest extends AmazonWebServiceRequest implements
         this.elasticIp = elasticIp;
         return this;
     }
-    
-    
+
     /**
      * The stack ID.
      *
@@ -106,8 +105,7 @@ public class RegisterElasticIpRequest extends AmazonWebServiceRequest implements
         this.stackId = stackId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

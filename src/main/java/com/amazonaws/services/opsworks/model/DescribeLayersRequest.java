@@ -75,8 +75,7 @@ public class DescribeLayersRequest extends AmazonWebServiceRequest implements Se
         this.stackId = stackId;
         return this;
     }
-    
-    
+
     /**
      * An array of layer IDs that specify the layers to be described. If you
      * omit this parameter, <code>DescribeLayers</code> returns a description
@@ -87,7 +86,6 @@ public class DescribeLayersRequest extends AmazonWebServiceRequest implements Se
      *         of every layer in the specified stack.
      */
     public java.util.List<String> getLayerIds() {
-        
         if (layerIds == null) {
               layerIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               layerIds.setAutoConstruct(true);
@@ -161,7 +159,7 @@ public class DescribeLayersRequest extends AmazonWebServiceRequest implements Se
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

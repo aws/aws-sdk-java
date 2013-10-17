@@ -34,21 +34,57 @@ import com.amazonaws.http.HttpResponse;
 
 public class JsonUnmarshallerContext {
 
+    /** The current JsonToken that the private JsonParser is currently pointing to. **/
+    public JsonToken currentToken;
+    
+    /** A cache of the next token if it has been peeked ahead. **/
+    private JsonToken nextToken;
+    
     private final JsonParser jsonParser;
 
-    private final Stack<String> stack = new Stack<String>();
-    private String stackString = "";
+    /**
+     * A stack of JsonFieldTokenPair objects that indicates the current state of the context.
+     * For example, if we have a JSON object:
+     * { 
+     *   A :
+     *     { 
+     *       B : [
+     *         {
+     *           C : {
+     *             D : E
+     *           }
+     *         },
+     *       ]
+     *     }
+     * }
+     * When the parser points to "D", the state of this stack should be (from top to bottom):
+     *  [ (C, START_OBJECT), (B, START_ARRAY), (A, START_OBJECT) ]
+     */
+    private final Stack<JsonFieldTokenPair> stack = new Stack<JsonFieldTokenPair>();
 
+    /**
+     * The name of the field that is currently being parsed. This value is
+     * nulled out when the parser reaches into the object/array structure of the
+     * corresponding value, and then it will be pushed into the stack after
+     * wrapped into a JsonFieldTokenPair object with the START_OBJECT or
+     * START_ARRAY token following it. 
+     * So in the same example as shown above:
+     *   (1) when the parser moves from "C" to "{", (currentField, START_OBJECT)
+     *       will be pushed into the stack and currentField will be set null;
+     *   (2) but when it moves from "{" to "C", nothing will be pushed into the 
+     *       stack and only currentField will be updated from null to "D".
+     */
     private String currentField;
-
-    // The string has been deleted from stackString when doing update on the stack
+    
+    /**
+     * This string is used to cache the parent element that was just parsed,
+     * after it is removed from the stack.
+     */
     private String lastParsedParentElement;
 
     private Map<String, String> metadata = new HashMap<String, String>();
     private List<MetadataExpression> metadataExpressions = new ArrayList<MetadataExpression>();
 
-    public JsonToken currentToken;
-    private JsonToken nextToken;
     private final HttpResponse httpResponse;
 
 
@@ -90,12 +126,7 @@ public class JsonUnmarshallerContext {
      *         document being parsed.
      */
     public int getCurrentDepth() {
-        int depth = 0;
-        for (String s : stack) {
-            if (!(s.equals(START_OBJECT.asString()) || s.equals(START_ARRAY.toString()))) {
-                 depth++;
-            }
-        }
+        int depth = stack.size();
         if (currentField != null) depth++;
         return depth;
     }
@@ -132,59 +163,64 @@ public class JsonUnmarshallerContext {
     }
 
     /**
-     * Tests the specified expression against the current position in the JSON
-     * document being parsed.
-     *
+     * Tests the specified expression (a JSON field name) against the current
+     * position in the JSON document being parsed.
+     * 
      * @param expression
-     *            The psuedo-xpath expression to test.
+     *            The field name to test.
      * @return True if the expression matches the current document position,
      *         otherwise false.
      */
     public boolean testExpression(String expression) {
-        if (expression.equals("."))
+        if (expression.equals(".")) {
             return true;
-        return stackString.endsWith(expression);
+        } else {
+            if (currentField != null) {
+                return currentField.equals(expression);
+            } else {
+                return (!stack.isEmpty())
+                        && stack.peek().getField().equals(expression);
+            }
+        }
     }
 
     /**
-     * This will return the last token when doing split by "/" on the
-     * stackString
+     * Returns the name of the JSON field that is the nearest parent of the
+     * current context.
      */
     public String getCurrentParentElement() {
-        String[] tokens = stackString.split("/");
-        if (tokens.length == 0) {
-            return "";
+        String parentElement;
+        if (currentField != null) {
+            parentElement = currentField;
+        } else if ( !stack.isEmpty() ) {
+            parentElement = stack.peek().getField();
+        } else {
+            parentElement = "";
         }
-        return tokens[tokens.length - 1];
+        return parentElement;
     }
 
     /**
-     * Tests the specified expression against the current position in the JSON
-     * document being parsed, and restricts the expression to matching at the
-     * specified stack depth.
-     *
+     * Tests the specified expression (a JSON field name) against the current
+     * position in the JSON document being parsed, and restricts the expression
+     * to matching at the specified stack depth.
+     * 
      * @param expression
-     *            The psuedo-xpath expression to test.
+     *            The field name to test.
      * @param stackDepth
      *            The depth in the stack representing where the expression must
      *            start matching in order for this method to return true.
-     *
+     * 
      * @return True if the specified expression matches the current position in
      *         the JSON document, starting from the specified depth.
      */
     public boolean testExpression(String expression, int stackDepth) {
-        if (expression.equals(".")) return true;
-
-        int index = -1;
-        while ((index = expression.indexOf("/", index + 1)) > -1) {
-            // Don't consider attributes a new depth level
-            if (expression.charAt(index + 1) != '@') {
-                stackDepth++;
-            }
+        if (expression.equals(".")) {
+            return true;
+        } else {
+            return testExpression(expression)
+                    && stackDepth == getCurrentDepth();
         }
-
-        return stackString.endsWith("/" + expression) &&
-               stackDepth == getCurrentDepth();
     }
 
     public JsonToken nextToken() throws IOException {
@@ -268,17 +304,15 @@ public class JsonUnmarshallerContext {
 
         if (currentToken == START_OBJECT || currentToken == START_ARRAY) {
             if (currentField != null) {
-                stack.push(currentField);
-                stack.push(currentToken.asString());
+                stack.push(new JsonFieldTokenPair(currentField, currentToken));
                 currentField = null;
             }
         } else if (currentToken == END_OBJECT || currentToken == END_ARRAY) {
             if (!stack.isEmpty()) {
-                boolean squareBracketsMatch = currentToken == END_ARRAY && stack.peek().equals(START_ARRAY.asString());
-                boolean curlyBracketsMatch = currentToken == END_OBJECT && stack.peek().equals(START_OBJECT.asString());
+                boolean squareBracketsMatch = currentToken == END_ARRAY && stack.peek().getToken() == START_ARRAY;
+                boolean curlyBracketsMatch = currentToken == END_OBJECT && stack.peek().getToken() == START_OBJECT;
                 if (squareBracketsMatch || curlyBracketsMatch) {
-                stack.pop();
-                lastParsedParentElement = stack.pop();
+                    lastParsedParentElement = stack.pop().getField();
                 }
             }
             currentField = null;
@@ -286,13 +320,23 @@ public class JsonUnmarshallerContext {
             String t = jsonParser.getText();
             currentField = t;
         }
-
-        rebuildStackString();
     }
 
     @Override
     public String toString() {
-        return stackString;
+        StringBuilder stackString = new StringBuilder();
+
+        for (JsonFieldTokenPair jsonFieldTokenPair : stack) {
+            stackString.append("/")
+                       .append(jsonFieldTokenPair.getField());
+        }
+
+        if (currentField != null) {
+            stackString.append("/")
+                       .append(currentField);
+        }
+
+        return stackString.length() == 0 ? "/" : stackString.toString();
     }
 
     /**
@@ -303,19 +347,36 @@ public class JsonUnmarshallerContext {
         return lastParsedParentElement;
     }
 
-    private void rebuildStackString() {
-        stackString = "";
-
-        for (String s : stack) {
-            if (! (s.equals(START_ARRAY.asString()) || s.equals(START_OBJECT.asString()))) {
-                stackString += "/" + s;
-            }
+    /**
+     * An immutable class used to indicate a JSON field value followed by a
+     * subsequent JSON token. This inner class should only be used by the
+     * private stack to indicate the current state of the context.
+     */
+    private static class JsonFieldTokenPair {
+        private final String field;
+        private final JsonToken jsonToken;
+        
+        /**
+         * @param fieldString
+         *            Not null.
+         * @param token
+         *            Not null.
+         */
+        public JsonFieldTokenPair(String fieldString, JsonToken token) {
+            field = fieldString;
+            jsonToken = token;
         }
-
-        if (currentField != null) {
-            stackString += "/" + currentField;
+        
+        public String getField() {
+            return field;
         }
-
-        if (stackString == "") stackString = "/";
+        
+        public JsonToken getToken() {
+            return jsonToken;
+        }
+        
+        public String toString() {
+            return field + ": " + jsonToken.asString();
+        }
     }
 }

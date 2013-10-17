@@ -42,7 +42,6 @@ public class DescribeTimeBasedAutoScalingRequest extends AmazonWebServiceRequest
      * @return An array of instance IDs.
      */
     public java.util.List<String> getInstanceIds() {
-        
         if (instanceIds == null) {
               instanceIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               instanceIds.setAutoConstruct(true);
@@ -104,7 +103,7 @@ public class DescribeTimeBasedAutoScalingRequest extends AmazonWebServiceRequest
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

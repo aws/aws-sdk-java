@@ -99,8 +99,6 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest implement
      */
     public GetFederationTokenRequest() {}
     
-
-
     /**
      * Constructs a new GetFederationTokenRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -116,8 +114,6 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest implement
         setName(name);
     }
 
-    
-    
     /**
      * The name of the federated user. The name is used as an identifier for
      * the temporary security credentials (such as <code>Bob</code>). For
@@ -180,8 +176,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest implement
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * A policy that specifies the permissions that are granted to the
      * federated user. By default, federated users have no permissions; they
@@ -268,8 +263,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest implement
         this.policy = policy;
         return this;
     }
-    
-    
+
     /**
      * The duration, in seconds, that the session should last. Acceptable
      * durations for federation sessions range from 900 seconds (15 minutes)
@@ -341,8 +335,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest implement
         this.durationSeconds = durationSeconds;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

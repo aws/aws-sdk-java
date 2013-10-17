@@ -110,8 +110,7 @@ public class CreateOptionGroupRequest extends AmazonWebServiceRequest implements
         this.optionGroupName = optionGroupName;
         return this;
     }
-    
-    
+
     /**
      * Specifies the name of the engine that this option group should be
      * associated with.
@@ -150,8 +149,7 @@ public class CreateOptionGroupRequest extends AmazonWebServiceRequest implements
         this.engineName = engineName;
         return this;
     }
-    
-    
+
     /**
      * Specifies the major version of the engine that this option group
      * should be associated with.
@@ -190,8 +188,7 @@ public class CreateOptionGroupRequest extends AmazonWebServiceRequest implements
         this.majorEngineVersion = majorEngineVersion;
         return this;
     }
-    
-    
+
     /**
      * The description of the option group.
      *
@@ -224,8 +221,7 @@ public class CreateOptionGroupRequest extends AmazonWebServiceRequest implements
         this.optionGroupDescription = optionGroupDescription;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

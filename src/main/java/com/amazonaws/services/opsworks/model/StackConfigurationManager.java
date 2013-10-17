@@ -68,8 +68,7 @@ public class StackConfigurationManager implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * The Chef version. This parameter must be set to "0.9" or "11.4". The
      * default value is "0.9". However, we expect to change the default value
@@ -114,8 +113,7 @@ public class StackConfigurationManager implements Serializable {
         this.version = version;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

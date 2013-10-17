@@ -93,8 +93,7 @@ public class DescribeVaultResult implements Serializable {
         this.vaultARN = vaultARN;
         return this;
     }
-    
-    
+
     /**
      * The name of the vault.
      *
@@ -127,8 +126,7 @@ public class DescribeVaultResult implements Serializable {
         this.vaultName = vaultName;
         return this;
     }
-    
-    
+
     /**
      * The UTC date when the vault was created. A string representation of
      * ISO 8601 date format, for example, "2012-03-20T17:03:43.221Z".
@@ -167,8 +165,7 @@ public class DescribeVaultResult implements Serializable {
         this.creationDate = creationDate;
         return this;
     }
-    
-    
+
     /**
      * The UTC date when Amazon Glacier completed the last vault inventory. A
      * string representation of ISO 8601 date format, for example,
@@ -213,8 +210,7 @@ public class DescribeVaultResult implements Serializable {
         this.lastInventoryDate = lastInventoryDate;
         return this;
     }
-    
-    
+
     /**
      * The number of archives in the vault as of the last inventory date.
      * This field will return <code>null</code> if an inventory has not yet
@@ -259,8 +255,7 @@ public class DescribeVaultResult implements Serializable {
         this.numberOfArchives = numberOfArchives;
         return this;
     }
-    
-    
+
     /**
      * Total size, in bytes, of the archives in the vault as of the last
      * inventory date. This field will return null if an inventory has not
@@ -305,8 +300,7 @@ public class DescribeVaultResult implements Serializable {
         this.sizeInBytes = sizeInBytes;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

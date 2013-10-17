@@ -103,8 +103,7 @@ public class PollForTaskResult implements Serializable {
         this.taskObject = taskObject;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

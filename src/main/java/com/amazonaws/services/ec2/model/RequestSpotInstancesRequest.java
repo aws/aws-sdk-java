@@ -99,8 +99,6 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      */
     public RequestSpotInstancesRequest() {}
     
-
-
     /**
      * Constructs a new RequestSpotInstancesRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -113,8 +111,6 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
         setSpotPrice(spotPrice);
     }
 
-    
-    
     /**
      * Specifies the maximum hourly price for any Spot Instance launched to
      * fulfill the request.
@@ -153,8 +149,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
         this.spotPrice = spotPrice;
         return this;
     }
-    
-    
+
     /**
      * Specifies the maximum number of Spot Instances to launch.
      *
@@ -187,8 +182,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
         this.instanceCount = instanceCount;
         return this;
     }
-    
-    
+
     /**
      * Specifies the Spot Instance type.
      * <p>
@@ -236,8 +230,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
         this.type = type;
         return this;
     }
-    
-    
+
     /**
      * Specifies the Spot Instance type.
      * <p>
@@ -271,7 +264,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
         this.type = type.toString();
         return this;
     }
-    
+
     /**
      * Defines the start date of the request. <p> If this is a one-time
      * request, the request becomes active at this date and time and remains
@@ -334,8 +327,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
         this.validFrom = validFrom;
         return this;
     }
-    
-    
+
     /**
      * End date of the request. <p> If this is a one-time request, the
      * request remains active until all instances launch, the request is
@@ -386,8 +378,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
         this.validUntil = validUntil;
         return this;
     }
-    
-    
+
     /**
      * Specifies the instance launch group. Launch groups are Spot Instances
      * that launch and terminate together.
@@ -426,8 +417,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
         this.launchGroup = launchGroup;
         return this;
     }
-    
-    
+
     /**
      * Specifies the Availability Zone group. <p> When specifying the same
      * Availability Zone group for all Spot Instance requests, all Spot
@@ -472,8 +462,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
         this.availabilityZoneGroup = availabilityZoneGroup;
         return this;
     }
-    
-    
+
     /**
      * Specifies additional launch instance information.
      *
@@ -506,8 +495,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
         this.launchSpecification = launchSpecification;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

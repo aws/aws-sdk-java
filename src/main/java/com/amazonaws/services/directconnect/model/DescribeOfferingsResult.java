@@ -35,7 +35,6 @@ public class DescribeOfferingsResult implements Serializable {
      * @return A list of offerings.
      */
     public java.util.List<Offering> getOfferings() {
-        
         if (offerings == null) {
               offerings = new com.amazonaws.internal.ListWithAutoConstructFlag<Offering>();
               offerings.setAutoConstruct(true);
@@ -97,7 +96,7 @@ public class DescribeOfferingsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

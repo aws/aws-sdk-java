@@ -52,8 +52,6 @@ public class TrustedSigners implements Serializable {
      */
     public TrustedSigners() {}
     
-
-
     /**
      * Constructs a new TrustedSigners object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -66,8 +64,6 @@ public class TrustedSigners implements Serializable {
         setItems(items);
     }
 
-    
-    
     /**
      * Specifies whether you want to require end users to use signed URLs to
      * access the files specified by PathPattern and TargetOriginId.
@@ -106,8 +102,7 @@ public class TrustedSigners implements Serializable {
         this.enabled = enabled;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether you want to require end users to use signed URLs to
      * access the files specified by PathPattern and TargetOriginId.
@@ -118,7 +113,7 @@ public class TrustedSigners implements Serializable {
     public Boolean getEnabled() {
         return enabled;
     }
-    
+
     /**
      * The number of trusted signers for this cache behavior.
      *
@@ -151,8 +146,7 @@ public class TrustedSigners implements Serializable {
         this.quantity = quantity;
         return this;
     }
-    
-    
+
     /**
      * Optional: A complex type that contains trusted signers for this cache
      * behavior. If Quantity is 0, you can omit Items.
@@ -161,7 +155,6 @@ public class TrustedSigners implements Serializable {
      *         behavior. If Quantity is 0, you can omit Items.
      */
     public java.util.List<String> getItems() {
-        
         if (items == null) {
               items = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               items.setAutoConstruct(true);
@@ -229,7 +222,7 @@ public class TrustedSigners implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

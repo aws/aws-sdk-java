@@ -43,8 +43,6 @@ public class DeleteUserRequest extends AmazonWebServiceRequest implements Serial
      */
     public DeleteUserRequest() {}
     
-
-
     /**
      * Constructs a new DeleteUserRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -56,8 +54,6 @@ public class DeleteUserRequest extends AmazonWebServiceRequest implements Serial
         setUserName(userName);
     }
 
-    
-    
     /**
      * Name of the user to delete.
      * <p>
@@ -102,8 +98,7 @@ public class DeleteUserRequest extends AmazonWebServiceRequest implements Serial
         this.userName = userName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

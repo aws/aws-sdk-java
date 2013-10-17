@@ -82,8 +82,7 @@ public class AddCommunicationToCaseResult implements Serializable {
         this.result = result;
         return this;
     }
-    
-    
+
     /**
      * Returns true if the <a
      * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_AddCommunicationToCase.html"
@@ -98,7 +97,7 @@ public class AddCommunicationToCaseResult implements Serializable {
     public Boolean getResult() {
         return result;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

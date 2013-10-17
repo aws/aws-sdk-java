@@ -40,7 +40,6 @@ public class SelectResult implements Serializable {
      * @return A list of items that match the select expression.
      */
     public java.util.List<Item> getItems() {
-        
         if (items == null) {
               items = new com.amazonaws.internal.ListWithAutoConstructFlag<Item>();
               items.setAutoConstruct(true);
@@ -102,7 +101,7 @@ public class SelectResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * An opaque token indicating that more items than
      * <code>MaxNumberOfItems</code> were matched, the response size exceeded
@@ -147,8 +146,7 @@ public class SelectResult implements Serializable {
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

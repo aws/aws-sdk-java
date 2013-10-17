@@ -170,8 +170,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
         this.applicationName = applicationName;
         return this;
     }
-    
-    
+
     /**
      * If specified, AWS Elastic Beanstalk restricts the returned
      * descriptions to those associated with this application version.
@@ -219,8 +218,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
         this.versionLabel = versionLabel;
         return this;
     }
-    
-    
+
     /**
      * If specified, AWS Elastic Beanstalk restricts the returned
      * descriptions to those that are associated with this environment
@@ -274,8 +272,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
         this.templateName = templateName;
         return this;
     }
-    
-    
+
     /**
      * If specified, AWS Elastic Beanstalk restricts the returned
      * descriptions to those associated with this environment.
@@ -314,8 +311,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
         this.environmentId = environmentId;
         return this;
     }
-    
-    
+
     /**
      * If specified, AWS Elastic Beanstalk restricts the returned
      * descriptions to those associated with this environment.
@@ -363,8 +359,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
         this.environmentName = environmentName;
         return this;
     }
-    
-    
+
     /**
      * If specified, AWS Elastic Beanstalk restricts the described events to
      * include only those associated with this request ID.
@@ -403,8 +398,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
         this.requestId = requestId;
         return this;
     }
-    
-    
+
     /**
      * If specified, limits the events returned from this call to include
      * only those with the specified severity or higher.
@@ -458,8 +452,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
         this.severity = severity;
         return this;
     }
-    
-    
+
     /**
      * If specified, limits the events returned from this call to include
      * only those with the specified severity or higher.
@@ -497,7 +490,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
         this.severity = severity.toString();
         return this;
     }
-    
+
     /**
      * If specified, AWS Elastic Beanstalk restricts the returned
      * descriptions to those that occur on or after this time.
@@ -536,8 +529,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
         this.startTime = startTime;
         return this;
     }
-    
-    
+
     /**
      * If specified, AWS Elastic Beanstalk restricts the returned
      * descriptions to those that occur up to, but not including, the
@@ -582,8 +574,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
         this.endTime = endTime;
         return this;
     }
-    
-    
+
     /**
      * Specifies the maximum number of events that can be returned, beginning
      * with the most recent event.
@@ -631,8 +622,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
         this.maxRecords = maxRecords;
         return this;
     }
-    
-    
+
     /**
      * Pagination token. If specified, the events return the next batch of
      * results.
@@ -671,8 +661,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

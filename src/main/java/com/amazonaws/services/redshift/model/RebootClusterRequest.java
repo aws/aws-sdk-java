@@ -69,8 +69,7 @@ public class RebootClusterRequest extends AmazonWebServiceRequest implements Ser
         this.clusterIdentifier = clusterIdentifier;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

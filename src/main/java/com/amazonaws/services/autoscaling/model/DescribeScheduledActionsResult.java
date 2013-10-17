@@ -46,7 +46,6 @@ public class DescribeScheduledActionsResult implements Serializable {
      * @return A list of scheduled actions designed to update an Auto Scaling group.
      */
     public java.util.List<ScheduledUpdateGroupAction> getScheduledUpdateGroupActions() {
-        
         if (scheduledUpdateGroupActions == null) {
               scheduledUpdateGroupActions = new com.amazonaws.internal.ListWithAutoConstructFlag<ScheduledUpdateGroupAction>();
               scheduledUpdateGroupActions.setAutoConstruct(true);
@@ -108,7 +107,7 @@ public class DescribeScheduledActionsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * A string that marks the start of the next batch of returned results.
      * <p>
@@ -150,8 +149,7 @@ public class DescribeScheduledActionsResult implements Serializable {
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

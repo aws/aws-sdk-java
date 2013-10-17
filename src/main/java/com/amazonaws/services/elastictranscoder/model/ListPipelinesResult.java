@@ -35,7 +35,6 @@ public class ListPipelinesResult implements Serializable {
      * @return An array of <code>Pipeline</code> objects.
      */
     public java.util.List<Pipeline> getPipelines() {
-        
         if (pipelines == null) {
               pipelines = new com.amazonaws.internal.ListWithAutoConstructFlag<Pipeline>();
               pipelines.setAutoConstruct(true);
@@ -97,7 +96,7 @@ public class ListPipelinesResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

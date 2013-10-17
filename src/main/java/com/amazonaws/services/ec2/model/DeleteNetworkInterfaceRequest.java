@@ -62,8 +62,7 @@ public class DeleteNetworkInterfaceRequest extends AmazonWebServiceRequest imple
         this.networkInterfaceId = networkInterfaceId;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

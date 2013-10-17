@@ -50,8 +50,6 @@ public class UpdateDistributionRequest extends AmazonWebServiceRequest implement
      */
     public UpdateDistributionRequest() {}
     
-
-
     /**
      * Constructs a new UpdateDistributionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -70,8 +68,6 @@ public class UpdateDistributionRequest extends AmazonWebServiceRequest implement
         setIfMatch(ifMatch);
     }
 
-    
-    
     /**
      * The distribution's configuration information.
      *
@@ -104,8 +100,7 @@ public class UpdateDistributionRequest extends AmazonWebServiceRequest implement
         this.distributionConfig = distributionConfig;
         return this;
     }
-    
-    
+
     /**
      * The distribution's id.
      *
@@ -138,8 +133,7 @@ public class UpdateDistributionRequest extends AmazonWebServiceRequest implement
         this.id = id;
         return this;
     }
-    
-    
+
     /**
      * The value of the ETag header you received when retrieving the
      * distribution's configuration. For example: E2QWRUHAPOMQZL.
@@ -178,8 +172,7 @@ public class UpdateDistributionRequest extends AmazonWebServiceRequest implement
         this.ifMatch = ifMatch;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

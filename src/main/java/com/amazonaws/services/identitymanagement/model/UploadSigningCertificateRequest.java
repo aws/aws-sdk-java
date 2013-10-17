@@ -63,8 +63,6 @@ public class UploadSigningCertificateRequest extends AmazonWebServiceRequest imp
      */
     public UploadSigningCertificateRequest() {}
     
-
-
     /**
      * Constructs a new UploadSigningCertificateRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -76,8 +74,6 @@ public class UploadSigningCertificateRequest extends AmazonWebServiceRequest imp
         setCertificateBody(certificateBody);
     }
 
-    
-    
     /**
      * Name of the user the signing certificate is for.
      * <p>
@@ -122,8 +118,7 @@ public class UploadSigningCertificateRequest extends AmazonWebServiceRequest imp
         this.userName = userName;
         return this;
     }
-    
-    
+
     /**
      * The contents of the signing certificate.
      * <p>
@@ -168,8 +163,7 @@ public class UploadSigningCertificateRequest extends AmazonWebServiceRequest imp
         this.certificateBody = certificateBody;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

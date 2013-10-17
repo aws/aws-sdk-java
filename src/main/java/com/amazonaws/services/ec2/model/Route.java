@@ -67,8 +67,7 @@ public class Route implements Serializable {
         this.destinationCidrBlock = destinationCidrBlock;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the GatewayId property for this object.
      *
@@ -101,8 +100,7 @@ public class Route implements Serializable {
         this.gatewayId = gatewayId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the InstanceId property for this object.
      *
@@ -135,8 +133,7 @@ public class Route implements Serializable {
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the InstanceOwnerId property for this object.
      *
@@ -169,8 +166,7 @@ public class Route implements Serializable {
         this.instanceOwnerId = instanceOwnerId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the NetworkInterfaceId property for this object.
      *
@@ -203,8 +199,7 @@ public class Route implements Serializable {
         this.networkInterfaceId = networkInterfaceId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the State property for this object.
      * <p>
@@ -252,8 +247,7 @@ public class Route implements Serializable {
         this.state = state;
         return this;
     }
-    
-    
+
     /**
      * Sets the value of the State property for this object.
      * <p>
@@ -287,7 +281,7 @@ public class Route implements Serializable {
         this.state = state.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

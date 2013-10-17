@@ -47,8 +47,6 @@ public class SendMessageBatchRequestEntry implements Serializable {
      */
     public SendMessageBatchRequestEntry() {}
     
-
-
     /**
      * Constructs a new SendMessageBatchRequestEntry object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -64,8 +62,6 @@ public class SendMessageBatchRequestEntry implements Serializable {
         setMessageBody(messageBody);
     }
 
-    
-    
     /**
      * An identifier for the message in this batch. This is used to
      * communicate the result. Note that the the <code>Id</code>s of a batch
@@ -110,8 +106,7 @@ public class SendMessageBatchRequestEntry implements Serializable {
         this.id = id;
         return this;
     }
-    
-    
+
     /**
      * Body of the message.
      *
@@ -144,8 +139,7 @@ public class SendMessageBatchRequestEntry implements Serializable {
         this.messageBody = messageBody;
         return this;
     }
-    
-    
+
     /**
      * The number of seconds for which the message has to be delayed.
      *
@@ -178,8 +172,7 @@ public class SendMessageBatchRequestEntry implements Serializable {
         this.delaySeconds = delaySeconds;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

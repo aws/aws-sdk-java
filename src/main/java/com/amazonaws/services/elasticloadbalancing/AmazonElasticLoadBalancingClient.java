@@ -1261,7 +1261,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
         	credentials = originalRequest.getRequestCredentials();
         }
 
-        ExecutionContext executionContext = createExecutionContext();
+        ExecutionContext executionContext = createExecutionContext(originalRequest);
         executionContext.setSigner(signer);
         executionContext.setCredentials(credentials);
         

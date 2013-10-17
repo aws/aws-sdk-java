@@ -140,8 +140,7 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest imple
         this.path = path;
         return this;
     }
-    
-    
+
     /**
      * The name of the virtual MFA device. Use with path to uniquely identify
      * a virtual MFA device.
@@ -192,8 +191,7 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest imple
         this.virtualMFADeviceName = virtualMFADeviceName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

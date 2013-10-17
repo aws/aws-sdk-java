@@ -92,8 +92,7 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest impl
         this.layerId = layerId;
         return this;
     }
-    
-    
+
     /**
      * Enables load-based auto scaling for the layer.
      *
@@ -126,8 +125,7 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest impl
         this.enable = enable;
         return this;
     }
-    
-    
+
     /**
      * Enables load-based auto scaling for the layer.
      *
@@ -136,7 +134,7 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest impl
     public Boolean getEnable() {
         return enable;
     }
-    
+
     /**
      * An <code>AutoScalingThresholds</code> object with the upscaling
      * threshold configuration. If the load exceeds these thresholds for a
@@ -187,8 +185,7 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest impl
         this.upScaling = upScaling;
         return this;
     }
-    
-    
+
     /**
      * An <code>AutoScalingThresholds</code> object with the downscaling
      * threshold configuration. If the load falls below these thresholds for
@@ -239,8 +236,7 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest impl
         this.downScaling = downScaling;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

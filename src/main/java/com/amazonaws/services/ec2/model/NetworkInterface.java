@@ -92,8 +92,7 @@ public class NetworkInterface implements Serializable {
         this.networkInterfaceId = networkInterfaceId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the SubnetId property for this object.
      *
@@ -126,8 +125,7 @@ public class NetworkInterface implements Serializable {
         this.subnetId = subnetId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the VpcId property for this object.
      *
@@ -160,8 +158,7 @@ public class NetworkInterface implements Serializable {
         this.vpcId = vpcId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the AvailabilityZone property for this object.
      *
@@ -194,8 +191,7 @@ public class NetworkInterface implements Serializable {
         this.availabilityZone = availabilityZone;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Description property for this object.
      *
@@ -228,8 +224,7 @@ public class NetworkInterface implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the OwnerId property for this object.
      *
@@ -262,8 +257,7 @@ public class NetworkInterface implements Serializable {
         this.ownerId = ownerId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the RequesterId property for this object.
      *
@@ -296,8 +290,7 @@ public class NetworkInterface implements Serializable {
         this.requesterId = requesterId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the RequesterManaged property for this object.
      *
@@ -330,8 +323,7 @@ public class NetworkInterface implements Serializable {
         this.requesterManaged = requesterManaged;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the RequesterManaged property for this object.
      *
@@ -340,7 +332,7 @@ public class NetworkInterface implements Serializable {
     public Boolean getRequesterManaged() {
         return requesterManaged;
     }
-    
+
     /**
      * Returns the value of the Status property for this object.
      * <p>
@@ -388,8 +380,7 @@ public class NetworkInterface implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * Sets the value of the Status property for this object.
      * <p>
@@ -423,7 +414,7 @@ public class NetworkInterface implements Serializable {
         this.status = status.toString();
         return this;
     }
-    
+
     /**
      * Returns the value of the MacAddress property for this object.
      *
@@ -456,8 +447,7 @@ public class NetworkInterface implements Serializable {
         this.macAddress = macAddress;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the PrivateIpAddress property for this object.
      *
@@ -490,8 +480,7 @@ public class NetworkInterface implements Serializable {
         this.privateIpAddress = privateIpAddress;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the PrivateDnsName property for this object.
      *
@@ -524,8 +513,7 @@ public class NetworkInterface implements Serializable {
         this.privateDnsName = privateDnsName;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the SourceDestCheck property for this object.
      *
@@ -558,8 +546,7 @@ public class NetworkInterface implements Serializable {
         this.sourceDestCheck = sourceDestCheck;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the SourceDestCheck property for this object.
      *
@@ -568,14 +555,13 @@ public class NetworkInterface implements Serializable {
     public Boolean getSourceDestCheck() {
         return sourceDestCheck;
     }
-    
+
     /**
      * Returns the value of the Groups property for this object.
      *
      * @return The value of the Groups property for this object.
      */
     public java.util.List<GroupIdentifier> getGroups() {
-        
         if (groups == null) {
               groups = new com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier>();
               groups.setAutoConstruct(true);
@@ -637,7 +623,7 @@ public class NetworkInterface implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns the value of the Attachment property for this object.
      *
@@ -670,8 +656,7 @@ public class NetworkInterface implements Serializable {
         this.attachment = attachment;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Association property for this object.
      *
@@ -704,15 +689,13 @@ public class NetworkInterface implements Serializable {
         this.association = association;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the TagSet property for this object.
      *
      * @return The value of the TagSet property for this object.
      */
     public java.util.List<Tag> getTagSet() {
-        
         if (tagSet == null) {
               tagSet = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
               tagSet.setAutoConstruct(true);
@@ -774,14 +757,13 @@ public class NetworkInterface implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns the value of the PrivateIpAddresses property for this object.
      *
      * @return The value of the PrivateIpAddresses property for this object.
      */
     public java.util.List<NetworkInterfacePrivateIpAddress> getPrivateIpAddresses() {
-        
         if (privateIpAddresses == null) {
               privateIpAddresses = new com.amazonaws.internal.ListWithAutoConstructFlag<NetworkInterfacePrivateIpAddress>();
               privateIpAddresses.setAutoConstruct(true);
@@ -843,7 +825,7 @@ public class NetworkInterface implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

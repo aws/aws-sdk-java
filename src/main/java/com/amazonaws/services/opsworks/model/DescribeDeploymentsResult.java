@@ -38,7 +38,6 @@ public class DescribeDeploymentsResult implements Serializable {
      *         deployments.
      */
     public java.util.List<Deployment> getDeployments() {
-        
         if (deployments == null) {
               deployments = new com.amazonaws.internal.ListWithAutoConstructFlag<Deployment>();
               deployments.setAutoConstruct(true);
@@ -106,7 +105,7 @@ public class DescribeDeploymentsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

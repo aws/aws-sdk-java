@@ -47,8 +47,6 @@ public class Filter implements Serializable {
      */
     public Filter() {}
     
-
-
     /**
      * Constructs a new Filter object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -62,10 +60,6 @@ public class Filter implements Serializable {
         setValues(values);
     }
 
-    
-    
-
-
     /**
      * Constructs a new Filter object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -77,8 +71,6 @@ public class Filter implements Serializable {
         setName(name);
     }
 
-    
-    
     /**
      * Specifies the name of the filter.
      *
@@ -111,15 +103,13 @@ public class Filter implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * Contains one or more values for the filter.
      *
      * @return Contains one or more values for the filter.
      */
     public java.util.List<String> getValues() {
-        
         if (values == null) {
               values = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               values.setAutoConstruct(true);
@@ -181,7 +171,7 @@ public class Filter implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

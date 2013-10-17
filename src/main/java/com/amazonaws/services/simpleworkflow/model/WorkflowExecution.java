@@ -81,8 +81,7 @@ public class WorkflowExecution implements Serializable {
         this.workflowId = workflowId;
         return this;
     }
-    
-    
+
     /**
      * A system generated unique identifier for the workflow execution.
      * <p>
@@ -124,8 +123,7 @@ public class WorkflowExecution implements Serializable {
         this.runId = runId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

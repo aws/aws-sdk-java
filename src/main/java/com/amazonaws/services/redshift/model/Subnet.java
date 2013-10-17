@@ -71,8 +71,7 @@ public class Subnet implements Serializable {
         this.subnetIdentifier = subnetIdentifier;
         return this;
     }
-    
-    
+
     /**
      * Describes an availability zone.
      *
@@ -105,8 +104,7 @@ public class Subnet implements Serializable {
         this.subnetAvailabilityZone = subnetAvailabilityZone;
         return this;
     }
-    
-    
+
     /**
      * The status of the subnet.
      *
@@ -139,8 +137,7 @@ public class Subnet implements Serializable {
         this.subnetStatus = subnetStatus;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

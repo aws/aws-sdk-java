@@ -52,8 +52,6 @@ public class FederatedUser implements Serializable {
      */
     public FederatedUser() {}
     
-
-
     /**
      * Constructs a new FederatedUser object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -73,8 +71,6 @@ public class FederatedUser implements Serializable {
         setArn(arn);
     }
 
-    
-    
     /**
      * The string that identifies the federated user associated with the
      * credentials, similar to the unique ID of an IAM user.
@@ -125,8 +121,7 @@ public class FederatedUser implements Serializable {
         this.federatedUserId = federatedUserId;
         return this;
     }
-    
-    
+
     /**
      * The ARN that specifies the federated user that is associated with the
      * credentials. For more information about ARNs and how to use them in
@@ -192,8 +187,7 @@ public class FederatedUser implements Serializable {
         this.arn = arn;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -67,8 +67,7 @@ public class DescribeCacheParameterGroupsResult implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * A list of cache parameter groups. Each element in the list contains
      * detailed information about one cache parameter group.
@@ -77,7 +76,6 @@ public class DescribeCacheParameterGroupsResult implements Serializable {
      *         detailed information about one cache parameter group.
      */
     public java.util.List<CacheParameterGroup> getCacheParameterGroups() {
-        
         if (cacheParameterGroups == null) {
               cacheParameterGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheParameterGroup>();
               cacheParameterGroups.setAutoConstruct(true);
@@ -145,7 +143,7 @@ public class DescribeCacheParameterGroupsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

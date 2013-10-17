@@ -138,8 +138,7 @@ public class ScalingPolicy implements Serializable {
         this.autoScalingGroupName = autoScalingGroupName;
         return this;
     }
-    
-    
+
     /**
      * The name of the scaling policy.
      * <p>
@@ -184,8 +183,7 @@ public class ScalingPolicy implements Serializable {
         this.policyName = policyName;
         return this;
     }
-    
-    
+
     /**
      * The number associated with the specified adjustment type. A positive
      * value adds to the current capacity and a negative value removes from
@@ -230,8 +228,7 @@ public class ScalingPolicy implements Serializable {
         this.scalingAdjustment = scalingAdjustment;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether the <code>ScalingAdjustment</code> is an absolute
      * number or a percentage of the current capacity. Valid values are
@@ -294,8 +291,7 @@ public class ScalingPolicy implements Serializable {
         this.adjustmentType = adjustmentType;
         return this;
     }
-    
-    
+
     /**
      * The amount of time, in seconds, after a scaling activity completes
      * before any further trigger-related scaling activities can start.
@@ -334,8 +330,7 @@ public class ScalingPolicy implements Serializable {
         this.cooldown = cooldown;
         return this;
     }
-    
-    
+
     /**
      * The Amazon Resource Name (ARN) of the policy.
      * <p>
@@ -380,15 +375,13 @@ public class ScalingPolicy implements Serializable {
         this.policyARN = policyARN;
         return this;
     }
-    
-    
+
     /**
      * A list of CloudWatch Alarms related to the policy.
      *
      * @return A list of CloudWatch Alarms related to the policy.
      */
     public java.util.List<Alarm> getAlarms() {
-        
         if (alarms == null) {
               alarms = new com.amazonaws.internal.ListWithAutoConstructFlag<Alarm>();
               alarms.setAutoConstruct(true);
@@ -450,7 +443,7 @@ public class ScalingPolicy implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Changes the <code>DesiredCapacity</code> of the Auto Scaling group by
      * at least the specified number of instances.
@@ -489,8 +482,7 @@ public class ScalingPolicy implements Serializable {
         this.minAdjustmentStep = minAdjustmentStep;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

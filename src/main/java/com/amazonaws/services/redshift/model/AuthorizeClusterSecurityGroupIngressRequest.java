@@ -97,8 +97,7 @@ public class AuthorizeClusterSecurityGroupIngressRequest extends AmazonWebServic
         this.clusterSecurityGroupName = clusterSecurityGroupName;
         return this;
     }
-    
-    
+
     /**
      * The IP range to be added the Amazon Redshift security group.
      *
@@ -131,8 +130,7 @@ public class AuthorizeClusterSecurityGroupIngressRequest extends AmazonWebServic
         this.cIDRIP = cIDRIP;
         return this;
     }
-    
-    
+
     /**
      * The EC2 security group to be added the Amazon Redshift security group.
      *
@@ -165,8 +163,7 @@ public class AuthorizeClusterSecurityGroupIngressRequest extends AmazonWebServic
         this.eC2SecurityGroupName = eC2SecurityGroupName;
         return this;
     }
-    
-    
+
     /**
      * The AWS account number of the owner of the security group specified by
      * the <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is
@@ -211,8 +208,7 @@ public class AuthorizeClusterSecurityGroupIngressRequest extends AmazonWebServic
         this.eC2SecurityGroupOwnerId = eC2SecurityGroupOwnerId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

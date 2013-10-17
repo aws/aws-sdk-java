@@ -84,8 +84,7 @@ public class RecurringCharge implements Serializable {
         this.frequency = frequency;
         return this;
     }
-    
-    
+
     /**
      * The frequency of the recurring charge.
      * <p>
@@ -119,7 +118,7 @@ public class RecurringCharge implements Serializable {
         this.frequency = frequency.toString();
         return this;
     }
-    
+
     /**
      * The amount of the recurring charge.
      *
@@ -152,8 +151,7 @@ public class RecurringCharge implements Serializable {
         this.amount = amount;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

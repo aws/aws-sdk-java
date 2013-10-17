@@ -86,8 +86,7 @@ public class Monitoring implements Serializable {
         this.state = state;
         return this;
     }
-    
-    
+
     /**
      * The state of monitoring on an Amazon EC2 instance (ex: enabled,
      * disabled).
@@ -125,7 +124,7 @@ public class Monitoring implements Serializable {
         this.state = state.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

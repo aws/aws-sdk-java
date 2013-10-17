@@ -79,8 +79,7 @@ public class CacheParameterGroupStatus implements Serializable {
         this.cacheParameterGroupName = cacheParameterGroupName;
         return this;
     }
-    
-    
+
     /**
      * The status of parameter updates.
      *
@@ -113,8 +112,7 @@ public class CacheParameterGroupStatus implements Serializable {
         this.parameterApplyStatus = parameterApplyStatus;
         return this;
     }
-    
-    
+
     /**
      * A list of the cache node IDs which need to be rebooted for parameter
      * changes to be applied. A node ID is a numeric identifier (0001, 0002,
@@ -125,7 +123,6 @@ public class CacheParameterGroupStatus implements Serializable {
      *         etc.).
      */
     public java.util.List<String> getCacheNodeIdsToReboot() {
-        
         if (cacheNodeIdsToReboot == null) {
               cacheNodeIdsToReboot = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               cacheNodeIdsToReboot.setAutoConstruct(true);
@@ -199,7 +196,7 @@ public class CacheParameterGroupStatus implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

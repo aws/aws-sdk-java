@@ -46,7 +46,6 @@ public class WorkflowTypeInfos implements Serializable {
      * @return The list of workflow type information.
      */
     public java.util.List<WorkflowTypeInfo> getTypeInfos() {
-        
         if (typeInfos == null) {
               typeInfos = new com.amazonaws.internal.ListWithAutoConstructFlag<WorkflowTypeInfo>();
               typeInfos.setAutoConstruct(true);
@@ -108,7 +107,7 @@ public class WorkflowTypeInfos implements Serializable {
 
         return this;
     }
-    
+
     /**
      * The token for the next page of type information. If set then the list
      * consists of more than one page. You can retrieve the next page by
@@ -168,8 +167,7 @@ public class WorkflowTypeInfos implements Serializable {
         this.nextPageToken = nextPageToken;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -66,8 +66,7 @@ public class GetStatusRequest extends AmazonWebServiceRequest implements Seriali
         this.jobId = jobId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

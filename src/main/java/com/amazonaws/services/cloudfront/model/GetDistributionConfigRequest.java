@@ -39,8 +39,6 @@ public class GetDistributionConfigRequest extends AmazonWebServiceRequest implem
      */
     public GetDistributionConfigRequest() {}
     
-
-
     /**
      * Constructs a new GetDistributionConfigRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -52,8 +50,6 @@ public class GetDistributionConfigRequest extends AmazonWebServiceRequest implem
         setId(id);
     }
 
-    
-    
     /**
      * The distribution's id.
      *
@@ -86,8 +82,7 @@ public class GetDistributionConfigRequest extends AmazonWebServiceRequest implem
         this.id = id;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

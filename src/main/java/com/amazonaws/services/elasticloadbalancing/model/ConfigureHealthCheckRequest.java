@@ -46,8 +46,6 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest impleme
      */
     public ConfigureHealthCheckRequest() {}
     
-
-
     /**
      * Constructs a new ConfigureHealthCheckRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -63,8 +61,6 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest impleme
         setHealthCheck(healthCheck);
     }
 
-    
-    
     /**
      * The mnemonic name associated with the LoadBalancer. This name must be
      * unique within the client AWS account.
@@ -103,8 +99,7 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest impleme
         this.loadBalancerName = loadBalancerName;
         return this;
     }
-    
-    
+
     /**
      * A structure containing the configuration information for the new
      * healthcheck.
@@ -143,8 +138,7 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest impleme
         this.healthCheck = healthCheck;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

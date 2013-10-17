@@ -76,8 +76,7 @@ public class VirtualGateway implements Serializable {
         this.virtualGatewayId = virtualGatewayId;
         return this;
     }
-    
-    
+
     /**
      * State of the virtual private gateway. <ul> <li><b>Pending</b>: This is
      * the initial state after calling <i>CreateVpnGateway</i>.</li>
@@ -146,8 +145,7 @@ public class VirtualGateway implements Serializable {
         this.virtualGatewayState = virtualGatewayState;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

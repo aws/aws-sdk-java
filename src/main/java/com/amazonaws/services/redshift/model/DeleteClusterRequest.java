@@ -120,8 +120,7 @@ public class DeleteClusterRequest extends AmazonWebServiceRequest implements Ser
         this.clusterIdentifier = clusterIdentifier;
         return this;
     }
-    
-    
+
     /**
      * Determines whether a final snapshot of the cluster is created before
      * Amazon Redshift deletes the cluster. If <code>true</code>, a final
@@ -190,8 +189,7 @@ public class DeleteClusterRequest extends AmazonWebServiceRequest implements Ser
         this.skipFinalClusterSnapshot = skipFinalClusterSnapshot;
         return this;
     }
-    
-    
+
     /**
      * Determines whether a final snapshot of the cluster is created before
      * Amazon Redshift deletes the cluster. If <code>true</code>, a final
@@ -212,7 +210,7 @@ public class DeleteClusterRequest extends AmazonWebServiceRequest implements Ser
     public Boolean getSkipFinalClusterSnapshot() {
         return skipFinalClusterSnapshot;
     }
-    
+
     /**
      * The identifier of the final snapshot that is to be created immediately
      * before deleting the cluster. If this parameter is provided,
@@ -275,8 +273,7 @@ public class DeleteClusterRequest extends AmazonWebServiceRequest implements Ser
         this.finalClusterSnapshotIdentifier = finalClusterSnapshotIdentifier;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

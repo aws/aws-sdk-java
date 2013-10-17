@@ -56,8 +56,6 @@ public class DeleteSigningCertificateRequest extends AmazonWebServiceRequest imp
      */
     public DeleteSigningCertificateRequest() {}
     
-
-
     /**
      * Constructs a new DeleteSigningCertificateRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -69,8 +67,6 @@ public class DeleteSigningCertificateRequest extends AmazonWebServiceRequest imp
         setCertificateId(certificateId);
     }
 
-    
-    
     /**
      * Name of the user the signing certificate belongs to.
      * <p>
@@ -115,8 +111,7 @@ public class DeleteSigningCertificateRequest extends AmazonWebServiceRequest imp
         this.userName = userName;
         return this;
     }
-    
-    
+
     /**
      * ID of the signing certificate to delete.
      * <p>
@@ -161,8 +156,7 @@ public class DeleteSigningCertificateRequest extends AmazonWebServiceRequest imp
         this.certificateId = certificateId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

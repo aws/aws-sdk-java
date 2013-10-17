@@ -84,8 +84,7 @@ public class CacheSecurityGroup implements Serializable {
         this.ownerId = ownerId;
         return this;
     }
-    
-    
+
     /**
      * The name of the cache security group.
      *
@@ -118,8 +117,7 @@ public class CacheSecurityGroup implements Serializable {
         this.cacheSecurityGroupName = cacheSecurityGroupName;
         return this;
     }
-    
-    
+
     /**
      * The description of the cache security group.
      *
@@ -152,8 +150,7 @@ public class CacheSecurityGroup implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * A list of Amazon EC2 security groups that are associated with this
      * cache security group.
@@ -162,7 +159,6 @@ public class CacheSecurityGroup implements Serializable {
      *         cache security group.
      */
     public java.util.List<EC2SecurityGroup> getEC2SecurityGroups() {
-        
         if (eC2SecurityGroups == null) {
               eC2SecurityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<EC2SecurityGroup>();
               eC2SecurityGroups.setAutoConstruct(true);
@@ -230,7 +226,7 @@ public class CacheSecurityGroup implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -91,8 +91,7 @@ public class VolumeAttachment implements Serializable {
         this.volumeId = volumeId;
         return this;
     }
-    
-    
+
     /**
      * 
      *
@@ -125,8 +124,7 @@ public class VolumeAttachment implements Serializable {
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * How the device is exposed to the instance (e.g.,
      * <code>/dev/sdh</code>).
@@ -165,8 +163,7 @@ public class VolumeAttachment implements Serializable {
         this.device = device;
         return this;
     }
-    
-    
+
     /**
      * 
      * <p>
@@ -214,8 +211,7 @@ public class VolumeAttachment implements Serializable {
         this.state = state;
         return this;
     }
-    
-    
+
     /**
      * 
      * <p>
@@ -249,7 +245,7 @@ public class VolumeAttachment implements Serializable {
         this.state = state.toString();
         return this;
     }
-    
+
     /**
      * Timestamp when this attachment initiated.
      *
@@ -282,8 +278,7 @@ public class VolumeAttachment implements Serializable {
         this.attachTime = attachTime;
         return this;
     }
-    
-    
+
     /**
      * ` <p> Whether this volume will be deleted or not when the associated
      * instance is terminated.
@@ -322,8 +317,7 @@ public class VolumeAttachment implements Serializable {
         this.deleteOnTermination = deleteOnTermination;
         return this;
     }
-    
-    
+
     /**
      * ` <p> Whether this volume will be deleted or not when the associated
      * instance is terminated.
@@ -334,7 +328,7 @@ public class VolumeAttachment implements Serializable {
     public Boolean getDeleteOnTermination() {
         return deleteOnTermination;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

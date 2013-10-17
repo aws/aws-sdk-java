@@ -118,8 +118,7 @@ public class UpdateStopwordOptionsRequest extends AmazonWebServiceRequest implem
         this.domainName = domainName;
         return this;
     }
-    
-    
+
     /**
      * Lists stopwords serialized as a JSON document. The document has a
      * single object with one property "stopwords" whose value is an array of
@@ -170,8 +169,7 @@ public class UpdateStopwordOptionsRequest extends AmazonWebServiceRequest implem
         this.stopwords = stopwords;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

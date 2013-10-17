@@ -108,8 +108,7 @@ public class CopyClusterSnapshotRequest extends AmazonWebServiceRequest implemen
         this.sourceSnapshotIdentifier = sourceSnapshotIdentifier;
         return this;
     }
-    
-    
+
     /**
      * The identifier of the cluster the source snapshot was created from.
      * This parameter is required if your IAM user has a policy containing a
@@ -166,8 +165,7 @@ public class CopyClusterSnapshotRequest extends AmazonWebServiceRequest implemen
         this.sourceSnapshotClusterIdentifier = sourceSnapshotClusterIdentifier;
         return this;
     }
-    
-    
+
     /**
      * The identifier given to the new manual snapshot. <p>Constraints: <ul>
      * <li>Cannot be null, empty, or blank.</li> <li>Must contain from 1 to
@@ -230,8 +228,7 @@ public class CopyClusterSnapshotRequest extends AmazonWebServiceRequest implemen
         this.targetSnapshotIdentifier = targetSnapshotIdentifier;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

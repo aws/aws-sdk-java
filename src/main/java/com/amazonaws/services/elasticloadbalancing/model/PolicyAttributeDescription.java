@@ -66,8 +66,7 @@ public class PolicyAttributeDescription implements Serializable {
         this.attributeName = attributeName;
         return this;
     }
-    
-    
+
     /**
      * The value of the attribute associated with the policy.
      *
@@ -100,8 +99,7 @@ public class PolicyAttributeDescription implements Serializable {
         this.attributeValue = attributeValue;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

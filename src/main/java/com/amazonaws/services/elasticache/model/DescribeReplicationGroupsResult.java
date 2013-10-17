@@ -67,8 +67,7 @@ public class DescribeReplicationGroupsResult implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * A list of replication groups. Each item in the list contains detailed
      * information about one replication group.
@@ -77,7 +76,6 @@ public class DescribeReplicationGroupsResult implements Serializable {
      *         information about one replication group.
      */
     public java.util.List<ReplicationGroup> getReplicationGroups() {
-        
         if (replicationGroups == null) {
               replicationGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<ReplicationGroup>();
               replicationGroups.setAutoConstruct(true);
@@ -145,7 +143,7 @@ public class DescribeReplicationGroupsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

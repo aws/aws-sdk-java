@@ -59,8 +59,6 @@ public class DisableAvailabilityZonesForLoadBalancerRequest extends AmazonWebSer
      */
     public DisableAvailabilityZonesForLoadBalancerRequest() {}
     
-
-
     /**
      * Constructs a new DisableAvailabilityZonesForLoadBalancerRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -79,8 +77,6 @@ public class DisableAvailabilityZonesForLoadBalancerRequest extends AmazonWebSer
         setAvailabilityZones(availabilityZones);
     }
 
-    
-    
     /**
      * The name associated with the LoadBalancer. The name must be unique
      * within the client AWS account.
@@ -119,8 +115,7 @@ public class DisableAvailabilityZonesForLoadBalancerRequest extends AmazonWebSer
         this.loadBalancerName = loadBalancerName;
         return this;
     }
-    
-    
+
     /**
      * A list of Availability Zones to be removed from the LoadBalancer.
      * <note> There must be at least one Availability Zone registered with a
@@ -135,7 +130,6 @@ public class DisableAvailabilityZonesForLoadBalancerRequest extends AmazonWebSer
      *         must be in the same Region. </note>
      */
     public java.util.List<String> getAvailabilityZones() {
-        
         if (availabilityZones == null) {
               availabilityZones = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               availabilityZones.setAutoConstruct(true);
@@ -221,7 +215,7 @@ public class DisableAvailabilityZonesForLoadBalancerRequest extends AmazonWebSer
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

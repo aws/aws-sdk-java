@@ -99,8 +99,7 @@ public class DistributionList implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * If IsTruncated is true, this element is present and contains the value
      * you can use for the Marker request parameter to continue listing your
@@ -145,8 +144,7 @@ public class DistributionList implements Serializable {
         this.nextMarker = nextMarker;
         return this;
     }
-    
-    
+
     /**
      * The value you provided for the MaxItems request parameter.
      *
@@ -179,8 +177,7 @@ public class DistributionList implements Serializable {
         this.maxItems = maxItems;
         return this;
     }
-    
-    
+
     /**
      * A flag that indicates whether more distributions remain to be listed.
      * If your results were truncated, you can make a follow-up pagination
@@ -231,8 +228,7 @@ public class DistributionList implements Serializable {
         this.isTruncated = isTruncated;
         return this;
     }
-    
-    
+
     /**
      * A flag that indicates whether more distributions remain to be listed.
      * If your results were truncated, you can make a follow-up pagination
@@ -247,7 +243,7 @@ public class DistributionList implements Serializable {
     public Boolean getIsTruncated() {
         return isTruncated;
     }
-    
+
     /**
      * The number of distributions that were created by the current AWS
      * account.
@@ -286,8 +282,7 @@ public class DistributionList implements Serializable {
         this.quantity = quantity;
         return this;
     }
-    
-    
+
     /**
      * A complex type that contains one DistributionSummary element for each
      * distribution that was created by the current AWS account.
@@ -296,7 +291,6 @@ public class DistributionList implements Serializable {
      *         distribution that was created by the current AWS account.
      */
     public java.util.List<DistributionSummary> getItems() {
-        
         if (items == null) {
               items = new com.amazonaws.internal.ListWithAutoConstructFlag<DistributionSummary>();
               items.setAutoConstruct(true);
@@ -364,7 +358,7 @@ public class DistributionList implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

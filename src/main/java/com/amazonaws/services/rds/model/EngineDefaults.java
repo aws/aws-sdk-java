@@ -81,8 +81,7 @@ public class EngineDefaults implements Serializable {
         this.dBParameterGroupFamily = dBParameterGroupFamily;
         return this;
     }
-    
-    
+
     /**
      * An optional pagination token provided by a previous EngineDefaults
      * request. If this parameter is specified, the response includes only
@@ -133,15 +132,13 @@ public class EngineDefaults implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Contains a list of engine default parameters.
      *
      * @return Contains a list of engine default parameters.
      */
     public java.util.List<Parameter> getParameters() {
-        
         if (parameters == null) {
               parameters = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>();
               parameters.setAutoConstruct(true);
@@ -203,7 +200,7 @@ public class EngineDefaults implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

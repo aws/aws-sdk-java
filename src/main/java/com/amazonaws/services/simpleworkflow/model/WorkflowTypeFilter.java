@@ -81,8 +81,7 @@ public class WorkflowTypeFilter implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * Version of the workflow type.
      * <p>
@@ -124,8 +123,7 @@ public class WorkflowTypeFilter implements Serializable {
         this.version = version;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

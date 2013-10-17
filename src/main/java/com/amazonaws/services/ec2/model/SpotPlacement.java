@@ -43,8 +43,6 @@ public class SpotPlacement implements Serializable {
      */
     public SpotPlacement() {}
     
-
-
     /**
      * Constructs a new SpotPlacement object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -57,8 +55,6 @@ public class SpotPlacement implements Serializable {
         setAvailabilityZone(availabilityZone);
     }
 
-    
-    
     /**
      * The availability zone in which an Amazon EC2 instance runs.
      *
@@ -91,8 +87,7 @@ public class SpotPlacement implements Serializable {
         this.availabilityZone = availabilityZone;
         return this;
     }
-    
-    
+
     /**
      * The name of the <a>PlacementGroup</a> in which an Amazon EC2 instance
      * runs. Placement groups are primarily used for launching High
@@ -143,8 +138,7 @@ public class SpotPlacement implements Serializable {
         this.groupName = groupName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

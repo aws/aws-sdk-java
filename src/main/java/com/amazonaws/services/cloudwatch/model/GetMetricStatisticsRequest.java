@@ -165,8 +165,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest implemen
         this.namespace = namespace;
         return this;
     }
-    
-    
+
     /**
      * The name of the metric.
      * <p>
@@ -208,8 +207,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest implemen
         this.metricName = metricName;
         return this;
     }
-    
-    
+
     /**
      * A list of dimensions describing qualities of the metric.
      * <p>
@@ -219,7 +217,6 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest implemen
      * @return A list of dimensions describing qualities of the metric.
      */
     public java.util.List<Dimension> getDimensions() {
-        
         if (dimensions == null) {
               dimensions = new com.amazonaws.internal.ListWithAutoConstructFlag<Dimension>();
               dimensions.setAutoConstruct(true);
@@ -290,7 +287,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest implemen
 
         return this;
     }
-    
+
     /**
      * The time stamp to use for determining the first datapoint to return.
      * The value specified is inclusive; results include datapoints with the
@@ -359,8 +356,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest implemen
         this.startTime = startTime;
         return this;
     }
-    
-    
+
     /**
      * The time stamp to use for determining the last datapoint to return.
      * The value specified is exclusive; results will include datapoints up
@@ -405,8 +401,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest implemen
         this.endTime = endTime;
         return this;
     }
-    
-    
+
     /**
      * The granularity, in seconds, of the returned datapoints.
      * <code>Period</code> must be at least 60 seconds and must be a multiple
@@ -460,8 +455,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest implemen
         this.period = period;
         return this;
     }
-    
-    
+
     /**
      * The metric statistics to return.
      * <p>
@@ -471,7 +465,6 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest implemen
      * @return The metric statistics to return.
      */
     public java.util.List<String> getStatistics() {
-        
         if (statistics == null) {
               statistics = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               statistics.setAutoConstruct(true);
@@ -542,7 +535,33 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest implemen
 
         return this;
     }
-    
+
+    /**
+     * The metric statistics to return.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 5<br/>
+     *
+     * @param statistics The metric statistics to return.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public GetMetricStatisticsRequest withStatistics(Statistic... statistics) {
+        java.util.ArrayList<String> statisticsCopy = new java.util.ArrayList<String>(statistics.length);
+        for (Statistic member : statistics) {
+            statisticsCopy.add(member.toString());
+        }
+        if (getStatistics() == null) {
+            setStatistics(statisticsCopy);
+        } else {
+            getStatistics().addAll(statisticsCopy);
+        }
+        return this;
+    }
+
     /**
      * The unit for the metric.
      * <p>
@@ -590,8 +609,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest implemen
         this.unit = unit;
         return this;
     }
-    
-    
+
     /**
      * The unit for the metric.
      * <p>
@@ -625,7 +643,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest implemen
         this.unit = unit.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

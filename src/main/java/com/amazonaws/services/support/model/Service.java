@@ -106,8 +106,7 @@ public class Service implements Serializable {
         this.code = code;
         return this;
     }
-    
-    
+
     /**
      * JSON-formatted string that represents the friendly name for an AWS
      * service. Has a corresponding code reprsented by a Service.code string.
@@ -146,8 +145,7 @@ public class Service implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * JSON-formatted list of categories that describe the type of support
      * issue a case describes. Categories are strings that represent a
@@ -164,7 +162,6 @@ public class Service implements Serializable {
      *         title="CreateCase">CreateCase</a>.
      */
     public java.util.List<Category> getCategories() {
-        
         if (categories == null) {
               categories = new com.amazonaws.internal.ListWithAutoConstructFlag<Category>();
               categories.setAutoConstruct(true);
@@ -256,7 +253,7 @@ public class Service implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

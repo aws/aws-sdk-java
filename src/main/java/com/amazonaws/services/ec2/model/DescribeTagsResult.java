@@ -34,7 +34,6 @@ public class DescribeTagsResult implements Serializable {
      * @return A list of the tags for the specified resources.
      */
     public java.util.List<TagDescription> getTags() {
-        
         if (tags == null) {
               tags = new com.amazonaws.internal.ListWithAutoConstructFlag<TagDescription>();
               tags.setAutoConstruct(true);
@@ -96,7 +95,7 @@ public class DescribeTagsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -80,15 +80,13 @@ public class DescribeDBEngineVersionsResult implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * A list of <code>DBEngineVersion</code> elements.
      *
      * @return A list of <code>DBEngineVersion</code> elements.
      */
     public java.util.List<DBEngineVersion> getDBEngineVersions() {
-        
         if (dBEngineVersions == null) {
               dBEngineVersions = new com.amazonaws.internal.ListWithAutoConstructFlag<DBEngineVersion>();
               dBEngineVersions.setAutoConstruct(true);
@@ -150,7 +148,7 @@ public class DescribeDBEngineVersionsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

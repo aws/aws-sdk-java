@@ -40,7 +40,6 @@ public class GetIdentityVerificationAttributesRequest extends AmazonWebServiceRe
      * @return A list of identities.
      */
     public java.util.List<String> getIdentities() {
-        
         if (identities == null) {
               identities = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               identities.setAutoConstruct(true);
@@ -102,7 +101,7 @@ public class GetIdentityVerificationAttributesRequest extends AmazonWebServiceRe
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

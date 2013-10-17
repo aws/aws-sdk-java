@@ -95,8 +95,7 @@ public class GetRolePolicyRequest extends AmazonWebServiceRequest implements Ser
         this.roleName = roleName;
         return this;
     }
-    
-    
+
     /**
      * Name of the policy document to get.
      * <p>
@@ -141,8 +140,7 @@ public class GetRolePolicyRequest extends AmazonWebServiceRequest implements Ser
         this.policyName = policyName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

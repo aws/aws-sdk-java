@@ -178,8 +178,7 @@ public class Image implements Serializable {
         this.imageId = imageId;
         return this;
     }
-    
-    
+
     /**
      * The location of the AMI.
      *
@@ -212,8 +211,7 @@ public class Image implements Serializable {
         this.imageLocation = imageLocation;
         return this;
     }
-    
-    
+
     /**
      * Current state of the AMI. If the operation returns available, the
      * image is successfully registered and available for launching. If the
@@ -279,8 +277,7 @@ public class Image implements Serializable {
         this.state = state;
         return this;
     }
-    
-    
+
     /**
      * Current state of the AMI. If the operation returns available, the
      * image is successfully registered and available for launching. If the
@@ -326,7 +323,7 @@ public class Image implements Serializable {
         this.state = state.toString();
         return this;
     }
-    
+
     /**
      * AWS Access Key ID of the image owner.
      *
@@ -359,8 +356,7 @@ public class Image implements Serializable {
         this.ownerId = ownerId;
         return this;
     }
-    
-    
+
     /**
      * True if this image has public launch permissions. False if it only has
      * implicit and explicit launch permissions.
@@ -399,8 +395,7 @@ public class Image implements Serializable {
         this.publicValue = publicValue;
         return this;
     }
-    
-    
+
     /**
      * True if this image has public launch permissions. False if it only has
      * implicit and explicit launch permissions.
@@ -411,14 +406,13 @@ public class Image implements Serializable {
     public Boolean getPublic() {
         return publicValue;
     }
-    
+
     /**
      * Product codes of the AMI.
      *
      * @return Product codes of the AMI.
      */
     public java.util.List<ProductCode> getProductCodes() {
-        
         if (productCodes == null) {
               productCodes = new com.amazonaws.internal.ListWithAutoConstructFlag<ProductCode>();
               productCodes.setAutoConstruct(true);
@@ -480,7 +474,7 @@ public class Image implements Serializable {
 
         return this;
     }
-    
+
     /**
      * The architecture of the image.
      * <p>
@@ -528,8 +522,7 @@ public class Image implements Serializable {
         this.architecture = architecture;
         return this;
     }
-    
-    
+
     /**
      * The architecture of the image.
      * <p>
@@ -563,7 +556,7 @@ public class Image implements Serializable {
         this.architecture = architecture.toString();
         return this;
     }
-    
+
     /**
      * The type of image (machine, kernel, or ramdisk).
      * <p>
@@ -611,8 +604,7 @@ public class Image implements Serializable {
         this.imageType = imageType;
         return this;
     }
-    
-    
+
     /**
      * The type of image (machine, kernel, or ramdisk).
      * <p>
@@ -646,7 +638,7 @@ public class Image implements Serializable {
         this.imageType = imageType.toString();
         return this;
     }
-    
+
     /**
      * The kernel associated with the image, if any. Only applicable for
      * machine images.
@@ -685,8 +677,7 @@ public class Image implements Serializable {
         this.kernelId = kernelId;
         return this;
     }
-    
-    
+
     /**
      * The RAM disk associated with the image, if any. Only applicable for
      * machine images.
@@ -725,8 +716,7 @@ public class Image implements Serializable {
         this.ramdiskId = ramdiskId;
         return this;
     }
-    
-    
+
     /**
      * The operating platform of the AMI.
      * <p>
@@ -774,8 +764,7 @@ public class Image implements Serializable {
         this.platform = platform;
         return this;
     }
-    
-    
+
     /**
      * The operating platform of the AMI.
      * <p>
@@ -809,7 +798,7 @@ public class Image implements Serializable {
         this.platform = platform.toString();
         return this;
     }
-    
+
     /**
      * The reason for the state change.
      *
@@ -842,8 +831,7 @@ public class Image implements Serializable {
         this.stateReason = stateReason;
         return this;
     }
-    
-    
+
     /**
      * The AWS account alias (e.g., "amazon", "redhat", "self", etc.) or AWS
      * account ID that owns the AMI.
@@ -882,8 +870,7 @@ public class Image implements Serializable {
         this.imageOwnerAlias = imageOwnerAlias;
         return this;
     }
-    
-    
+
     /**
      * The name of the AMI that was provided during image creation.
      *
@@ -916,8 +903,7 @@ public class Image implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * The description of the AMI that was provided during image creation.
      *
@@ -950,8 +936,7 @@ public class Image implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * The root device type used by the AMI. The AMI can use an Amazon EBS or
      * instance store root device.
@@ -1005,8 +990,7 @@ public class Image implements Serializable {
         this.rootDeviceType = rootDeviceType;
         return this;
     }
-    
-    
+
     /**
      * The root device type used by the AMI. The AMI can use an Amazon EBS or
      * instance store root device.
@@ -1044,7 +1028,7 @@ public class Image implements Serializable {
         this.rootDeviceType = rootDeviceType.toString();
         return this;
     }
-    
+
     /**
      * The root device name (e.g., <code>/dev/sda1</code>).
      *
@@ -1077,15 +1061,13 @@ public class Image implements Serializable {
         this.rootDeviceName = rootDeviceName;
         return this;
     }
-    
-    
+
     /**
      * Specifies how block devices are exposed to the instance.
      *
      * @return Specifies how block devices are exposed to the instance.
      */
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
-        
         if (blockDeviceMappings == null) {
               blockDeviceMappings = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>();
               blockDeviceMappings.setAutoConstruct(true);
@@ -1147,7 +1129,7 @@ public class Image implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns the value of the VirtualizationType property for this object.
      * <p>
@@ -1195,8 +1177,7 @@ public class Image implements Serializable {
         this.virtualizationType = virtualizationType;
         return this;
     }
-    
-    
+
     /**
      * Sets the value of the VirtualizationType property for this object.
      * <p>
@@ -1230,14 +1211,13 @@ public class Image implements Serializable {
         this.virtualizationType = virtualizationType.toString();
         return this;
     }
-    
+
     /**
      * A list of tags for the Image.
      *
      * @return A list of tags for the Image.
      */
     public java.util.List<Tag> getTags() {
-        
         if (tags == null) {
               tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
               tags.setAutoConstruct(true);
@@ -1299,7 +1279,7 @@ public class Image implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns the value of the Hypervisor property for this object.
      * <p>
@@ -1347,8 +1327,7 @@ public class Image implements Serializable {
         this.hypervisor = hypervisor;
         return this;
     }
-    
-    
+
     /**
      * Sets the value of the Hypervisor property for this object.
      * <p>
@@ -1382,7 +1361,7 @@ public class Image implements Serializable {
         this.hypervisor = hypervisor.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

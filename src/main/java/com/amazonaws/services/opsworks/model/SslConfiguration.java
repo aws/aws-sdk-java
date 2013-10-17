@@ -72,8 +72,7 @@ public class SslConfiguration implements Serializable {
         this.certificate = certificate;
         return this;
     }
-    
-    
+
     /**
      * The private key; the contents of the certificate's domain.kex file.
      *
@@ -106,8 +105,7 @@ public class SslConfiguration implements Serializable {
         this.privateKey = privateKey;
         return this;
     }
-    
-    
+
     /**
      * Optional. Can be used to specify an intermediate certificate authority
      * key or client authentication.
@@ -146,8 +144,7 @@ public class SslConfiguration implements Serializable {
         this.chain = chain;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

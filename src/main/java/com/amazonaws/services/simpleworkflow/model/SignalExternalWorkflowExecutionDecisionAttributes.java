@@ -133,8 +133,7 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements Serial
         this.workflowId = workflowId;
         return this;
     }
-    
-    
+
     /**
      * The <code>runId</code> of the workflow execution to be signaled.
      * <p>
@@ -176,8 +175,7 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements Serial
         this.runId = runId;
         return this;
     }
-    
-    
+
     /**
      * The name of the signal.The target workflow execution will use the
      * signal name and input to process the signal. This field is required.
@@ -225,8 +223,7 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements Serial
         this.signalName = signalName;
         return this;
     }
-    
-    
+
     /**
      * Optional input to be provided with the signal.The target workflow
      * execution will use the signal name and input to process the signal.
@@ -274,8 +271,7 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements Serial
         this.input = input;
         return this;
     }
-    
-    
+
     /**
      * Optional data attached to the event that can be used by the decider in
      * subsequent decision tasks.
@@ -323,8 +319,7 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements Serial
         this.control = control;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

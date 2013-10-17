@@ -72,8 +72,7 @@ public class PortRange implements Serializable {
         this.from = from;
         return this;
     }
-    
-    
+
     /**
      * The last port in the range. Required if specifying <code>tcp</code> or
      * <code>udp</code> for the protocol.
@@ -112,8 +111,7 @@ public class PortRange implements Serializable {
         this.to = to;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

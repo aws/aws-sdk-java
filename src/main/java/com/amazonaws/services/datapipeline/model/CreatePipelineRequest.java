@@ -125,8 +125,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * A unique identifier that you specify. This identifier is not the same
      * as the pipeline identifier assigned by AWS Data Pipeline. You are
@@ -243,8 +242,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
         this.uniqueId = uniqueId;
         return this;
     }
-    
-    
+
     /**
      * The description of the new pipeline.
      * <p>
@@ -289,8 +287,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements Se
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

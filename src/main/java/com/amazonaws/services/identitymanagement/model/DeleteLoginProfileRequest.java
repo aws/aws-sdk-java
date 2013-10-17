@@ -48,8 +48,6 @@ public class DeleteLoginProfileRequest extends AmazonWebServiceRequest implement
      */
     public DeleteLoginProfileRequest() {}
     
-
-
     /**
      * Constructs a new DeleteLoginProfileRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -61,8 +59,6 @@ public class DeleteLoginProfileRequest extends AmazonWebServiceRequest implement
         setUserName(userName);
     }
 
-    
-    
     /**
      * Name of the user whose password you want to delete.
      * <p>
@@ -107,8 +103,7 @@ public class DeleteLoginProfileRequest extends AmazonWebServiceRequest implement
         this.userName = userName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

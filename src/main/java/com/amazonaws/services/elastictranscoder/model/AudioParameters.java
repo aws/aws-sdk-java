@@ -18,16 +18,18 @@ import java.io.Serializable;
 
 
 /**
- * 
+ * <p>
+ * Parameters required for transcoding audio.
+ * </p>
  */
 public class AudioParameters implements Serializable {
 
     /**
-     * The audio codec for the output file. This value must be
-     * <code>AAC</code>.
+     * the audio codec for the output file. Valid values include
+     * <code>aac</code>, <code>mp3</code>, and <code>vorbis</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^AAC$)|(^vorbis$)<br/>
+     * <b>Pattern: </b>(^AAC$)|(^vorbis$)|(^mp3$)<br/>
      */
     private String codec;
 
@@ -64,44 +66,44 @@ public class AudioParameters implements Serializable {
     private String channels;
 
     /**
-     * The audio codec for the output file. This value must be
-     * <code>AAC</code>.
+     * the audio codec for the output file. Valid values include
+     * <code>aac</code>, <code>mp3</code>, and <code>vorbis</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^AAC$)|(^vorbis$)<br/>
+     * <b>Pattern: </b>(^AAC$)|(^vorbis$)|(^mp3$)<br/>
      *
-     * @return The audio codec for the output file. This value must be
-     *         <code>AAC</code>.
+     * @return the audio codec for the output file. Valid values include
+     *         <code>aac</code>, <code>mp3</code>, and <code>vorbis</code>.
      */
     public String getCodec() {
         return codec;
     }
     
     /**
-     * The audio codec for the output file. This value must be
-     * <code>AAC</code>.
+     * the audio codec for the output file. Valid values include
+     * <code>aac</code>, <code>mp3</code>, and <code>vorbis</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^AAC$)|(^vorbis$)<br/>
+     * <b>Pattern: </b>(^AAC$)|(^vorbis$)|(^mp3$)<br/>
      *
-     * @param codec The audio codec for the output file. This value must be
-     *         <code>AAC</code>.
+     * @param codec the audio codec for the output file. Valid values include
+     *         <code>aac</code>, <code>mp3</code>, and <code>vorbis</code>.
      */
     public void setCodec(String codec) {
         this.codec = codec;
     }
     
     /**
-     * The audio codec for the output file. This value must be
-     * <code>AAC</code>.
+     * the audio codec for the output file. Valid values include
+     * <code>aac</code>, <code>mp3</code>, and <code>vorbis</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^AAC$)|(^vorbis$)<br/>
+     * <b>Pattern: </b>(^AAC$)|(^vorbis$)|(^mp3$)<br/>
      *
-     * @param codec The audio codec for the output file. This value must be
-     *         <code>AAC</code>.
+     * @param codec the audio codec for the output file. Valid values include
+     *         <code>aac</code>, <code>mp3</code>, and <code>vorbis</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -110,8 +112,7 @@ public class AudioParameters implements Serializable {
         this.codec = codec;
         return this;
     }
-    
-    
+
     /**
      * The sample rate of the audio stream in the output file, in Hertz.
      * Valid values include: <p><code>auto</code>, <code>22050</code>,
@@ -177,8 +178,7 @@ public class AudioParameters implements Serializable {
         this.sampleRate = sampleRate;
         return this;
     }
-    
-    
+
     /**
      * The bit rate of the audio stream in the output file, in
      * kilobits/second. Enter an integer between 64 and 320, inclusive.
@@ -226,8 +226,7 @@ public class AudioParameters implements Serializable {
         this.bitRate = bitRate;
         return this;
     }
-    
-    
+
     /**
      * The number of audio channels in the output file. Valid values include:
      * <p><code>auto</code>, <code>0</code>, <code>1</code>, <code>2</code>
@@ -287,8 +286,7 @@ public class AudioParameters implements Serializable {
         this.channels = channels;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

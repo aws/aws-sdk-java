@@ -44,6 +44,7 @@ public class InstanceGroupDetailJsonUnmarshaller implements Unmarshaller<Instanc
 
         JsonToken token = context.currentToken;
         if (token == null) token = context.nextToken();
+        if (token == VALUE_NULL) return null;
 
         while (true) {
             if (token == null) break;

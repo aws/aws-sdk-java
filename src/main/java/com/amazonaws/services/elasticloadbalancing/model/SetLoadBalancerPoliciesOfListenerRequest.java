@@ -53,8 +53,6 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
      */
     public SetLoadBalancerPoliciesOfListenerRequest() {}
     
-
-
     /**
      * Constructs a new SetLoadBalancerPoliciesOfListenerRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -74,8 +72,6 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
         setPolicyNames(policyNames);
     }
 
-    
-    
     /**
      * The name associated with the LoadBalancer. The name must be unique
      * within the client AWS account.
@@ -114,8 +110,7 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
         this.loadBalancerName = loadBalancerName;
         return this;
     }
-    
-    
+
     /**
      * The external port of the LoadBalancer with which this policy applies
      * to.
@@ -154,8 +149,7 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
         this.loadBalancerPort = loadBalancerPort;
         return this;
     }
-    
-    
+
     /**
      * List of policies to be associated with the listener. Currently this
      * list can have at most one policy. If the list is empty, the current
@@ -166,7 +160,6 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
      *         policy is removed from the listener.
      */
     public java.util.List<String> getPolicyNames() {
-        
         if (policyNames == null) {
               policyNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               policyNames.setAutoConstruct(true);
@@ -240,7 +233,7 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -50,7 +50,6 @@ public class DescribePipelinesRequest extends AmazonWebServiceRequest implements
      *         obtain pipeline identifiers by calling <a>ListPipelines</a>.
      */
     public java.util.List<String> getPipelineIds() {
-        
         if (pipelineIds == null) {
               pipelineIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               pipelineIds.setAutoConstruct(true);
@@ -124,7 +123,7 @@ public class DescribePipelinesRequest extends AmazonWebServiceRequest implements
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

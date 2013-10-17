@@ -62,8 +62,6 @@ public class StepExecutionStatusDetail implements Serializable {
      */
     public StepExecutionStatusDetail() {}
     
-
-
     /**
      * Constructs a new StepExecutionStatusDetail object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -77,8 +75,6 @@ public class StepExecutionStatusDetail implements Serializable {
         setCreationDateTime(creationDateTime);
     }
 
-    
-    
     /**
      * Constructs a new StepExecutionStatusDetail object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -91,7 +87,7 @@ public class StepExecutionStatusDetail implements Serializable {
         this.state = state.toString();
         this.creationDateTime = creationDateTime;
     }
-    
+
     /**
      * The state of the job flow step.
      * <p>
@@ -139,8 +135,7 @@ public class StepExecutionStatusDetail implements Serializable {
         this.state = state;
         return this;
     }
-    
-    
+
     /**
      * The state of the job flow step.
      * <p>
@@ -174,7 +169,7 @@ public class StepExecutionStatusDetail implements Serializable {
         this.state = state.toString();
         return this;
     }
-    
+
     /**
      * The creation date and time of the step.
      *
@@ -207,8 +202,7 @@ public class StepExecutionStatusDetail implements Serializable {
         this.creationDateTime = creationDateTime;
         return this;
     }
-    
-    
+
     /**
      * The start date and time of the step.
      *
@@ -241,8 +235,7 @@ public class StepExecutionStatusDetail implements Serializable {
         this.startDateTime = startDateTime;
         return this;
     }
-    
-    
+
     /**
      * The completion date and time of the step.
      *
@@ -275,8 +268,7 @@ public class StepExecutionStatusDetail implements Serializable {
         this.endDateTime = endDateTime;
         return this;
     }
-    
-    
+
     /**
      * A description of the step's current state.
      * <p>
@@ -321,8 +313,7 @@ public class StepExecutionStatusDetail implements Serializable {
         this.lastStateChangeReason = lastStateChangeReason;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

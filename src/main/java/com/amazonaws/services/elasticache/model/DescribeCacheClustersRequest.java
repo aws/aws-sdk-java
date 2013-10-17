@@ -126,8 +126,7 @@ public class DescribeCacheClustersRequest extends AmazonWebServiceRequest implem
         this.cacheClusterId = cacheClusterId;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
@@ -178,8 +177,7 @@ public class DescribeCacheClustersRequest extends AmazonWebServiceRequest implem
         this.maxRecords = maxRecords;
         return this;
     }
-    
-    
+
     /**
      * An optional marker returned from a prior request. Use this marker for
      * pagination of results from this operation. If this parameter is
@@ -230,8 +228,7 @@ public class DescribeCacheClustersRequest extends AmazonWebServiceRequest implem
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * An optional flag that can be included in the DescribeCacheCluster
      * request to retrieve information about the individual cache nodes.
@@ -270,8 +267,7 @@ public class DescribeCacheClustersRequest extends AmazonWebServiceRequest implem
         this.showCacheNodeInfo = showCacheNodeInfo;
         return this;
     }
-    
-    
+
     /**
      * An optional flag that can be included in the DescribeCacheCluster
      * request to retrieve information about the individual cache nodes.
@@ -282,7 +278,7 @@ public class DescribeCacheClustersRequest extends AmazonWebServiceRequest implem
     public Boolean getShowCacheNodeInfo() {
         return showCacheNodeInfo;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

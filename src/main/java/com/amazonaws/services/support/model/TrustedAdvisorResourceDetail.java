@@ -88,8 +88,7 @@ public class TrustedAdvisorResourceDetail implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * AWS region in which the identified resource is located.
      *
@@ -122,8 +121,7 @@ public class TrustedAdvisorResourceDetail implements Serializable {
         this.region = region;
         return this;
     }
-    
-    
+
     /**
      * Unique identifier for the identified resource.
      *
@@ -156,8 +154,7 @@ public class TrustedAdvisorResourceDetail implements Serializable {
         this.resourceId = resourceId;
         return this;
     }
-    
-    
+
     /**
      * Indicates whether the specified AWS resource has had its participation
      * in Trusted Advisor checks suppressed.
@@ -196,8 +193,7 @@ public class TrustedAdvisorResourceDetail implements Serializable {
         this.isSuppressed = isSuppressed;
         return this;
     }
-    
-    
+
     /**
      * Indicates whether the specified AWS resource has had its participation
      * in Trusted Advisor checks suppressed.
@@ -208,7 +204,7 @@ public class TrustedAdvisorResourceDetail implements Serializable {
     public Boolean getIsSuppressed() {
         return isSuppressed;
     }
-    
+
     /**
      * Additional information about the identified resource. The exact
      * metadata and its order can be obtained by inspecting the <a
@@ -227,7 +223,6 @@ public class TrustedAdvisorResourceDetail implements Serializable {
      *         title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>.
      */
     public java.util.List<String> getMetadata() {
-        
         if (metadata == null) {
               metadata = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               metadata.setAutoConstruct(true);
@@ -325,7 +320,7 @@ public class TrustedAdvisorResourceDetail implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -88,8 +88,7 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
         this.routeTableId = routeTableId;
         return this;
     }
-    
-    
+
     /**
      * The CIDR address block used for the destination match. For example:
      * <code>0.0.0.0/0</code>. The value you provide must match the CIDR of
@@ -134,8 +133,7 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
         this.destinationCidrBlock = destinationCidrBlock;
         return this;
     }
-    
-    
+
     /**
      * The ID of a VPN or Internet gateway attached to your VPC.
      *
@@ -168,8 +166,7 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
         this.gatewayId = gatewayId;
         return this;
     }
-    
-    
+
     /**
      * The ID of a NAT instance in your VPC.
      *
@@ -202,8 +199,7 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the NetworkInterfaceId property for this object.
      *
@@ -236,8 +232,7 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
         this.networkInterfaceId = networkInterfaceId;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

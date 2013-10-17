@@ -117,8 +117,7 @@ public class CreateSnapshotFromVolumeRecoveryPointResult implements Serializable
         this.snapshotId = snapshotId;
         return this;
     }
-    
-    
+
     /**
      * The ARN of the volume of which the snapshot was taken. Obtain volume
      * ARNs from the <a>ListVolumes</a> operation.
@@ -166,8 +165,7 @@ public class CreateSnapshotFromVolumeRecoveryPointResult implements Serializable
         this.volumeARN = volumeARN;
         return this;
     }
-    
-    
+
     /**
      * The time of the recovery point. Data up to this recovery point are
      * included in the snapshot. <p><emphasis>Type</emphasis>: String format
@@ -212,8 +210,7 @@ public class CreateSnapshotFromVolumeRecoveryPointResult implements Serializable
         this.volumeRecoveryPointTime = volumeRecoveryPointTime;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

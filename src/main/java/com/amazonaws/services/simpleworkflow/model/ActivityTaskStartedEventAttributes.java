@@ -95,8 +95,7 @@ public class ActivityTaskStartedEventAttributes implements Serializable {
         this.identity = identity;
         return this;
     }
-    
-    
+
     /**
      * The id of the <code>ActivityTaskScheduled</code> event that was
      * recorded when this activity task was scheduled. This information can
@@ -147,8 +146,7 @@ public class ActivityTaskStartedEventAttributes implements Serializable {
         this.scheduledEventId = scheduledEventId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

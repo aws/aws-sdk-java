@@ -303,8 +303,7 @@ public class GetAccountSummaryResult implements Serializable {
         setSummaryMap(summaryMap);
         return this;
     }
-    
-   	
+
     /**
      * A set of key value pairs containing account-level information. <p>
      * <code>SummaryMap</code> contains the following keys: <ul>
@@ -358,7 +357,7 @@ public class GetAccountSummaryResult implements Serializable {
 		this.summaryMap.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into SummaryMap.
 	 * <p>

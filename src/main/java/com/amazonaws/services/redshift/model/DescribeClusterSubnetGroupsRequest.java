@@ -91,8 +91,7 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest 
         this.clusterSubnetGroupName = clusterSubnetGroupName;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of cluster subnet group records to include in the
      * response. If more records exist than the specified
@@ -161,8 +160,7 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest 
         this.maxRecords = maxRecords;
         return this;
     }
-    
-    
+
     /**
      * An optional marker returned by a previous
      * <a>DescribeClusterSubnetGroups</a> request to indicate the first
@@ -207,8 +205,7 @@ public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest 
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

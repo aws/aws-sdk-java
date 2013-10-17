@@ -38,7 +38,6 @@ public class DescribeCommandsResult implements Serializable {
      *         specified commands.
      */
     public java.util.List<Command> getCommands() {
-        
         if (commands == null) {
               commands = new com.amazonaws.internal.ListWithAutoConstructFlag<Command>();
               commands.setAutoConstruct(true);
@@ -106,7 +105,7 @@ public class DescribeCommandsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

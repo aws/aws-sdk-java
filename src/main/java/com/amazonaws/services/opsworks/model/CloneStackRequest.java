@@ -239,8 +239,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
         this.sourceStackId = sourceStackId;
         return this;
     }
-    
-    
+
     /**
      * The cloned stack name.
      *
@@ -273,8 +272,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * The cloned stack AWS region, such as "us-east-1". For more information
      * about AWS regions, see <a
@@ -325,8 +323,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
         this.region = region;
         return this;
     }
-    
-    
+
     /**
      * The ID of the VPC that the cloned stack is to be launched into. It
      * must be in the specified region. All instances will be launched into
@@ -485,8 +482,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
         this.vpcId = vpcId;
         return this;
     }
-    
-    
+
     /**
      * A list of stack attributes and values as key/value pairs to be added
      * to the cloned stack.
@@ -529,8 +525,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
         setAttributes(attributes);
         return this;
     }
-    
-   	
+
     /**
      * A list of stack attributes and values as key/value pairs to be added
      * to the cloned stack.
@@ -551,7 +546,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
 		this.attributes.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into Attributes.
 	 * <p>
@@ -660,8 +655,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
         this.serviceRoleArn = serviceRoleArn;
         return this;
     }
-    
-    
+
     /**
      * The ARN of an IAM profile that is the default profile for all of the
      * stack's EC2 instances. For more information about IAM ARNs, see <a
@@ -712,8 +706,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
         this.defaultInstanceProfileArn = defaultInstanceProfileArn;
         return this;
     }
-    
-    
+
     /**
      * The cloned stack's default operating system, which must be set to
      * <code>Amazon Linux</code> or <code>Ubuntu 12.04 LTS</code>. The
@@ -758,8 +751,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
         this.defaultOs = defaultOs;
         return this;
     }
-    
-    
+
     /**
      * The stack's host name theme, with spaces are replaced by underscores.
      * The theme is used to generate host names for the stack's instances. By
@@ -852,8 +844,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
         this.hostnameTheme = hostnameTheme;
         return this;
     }
-    
-    
+
     /**
      * The cloned stack's default Availability Zone, which must be in the
      * specified region. For more information, see <a
@@ -916,8 +907,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
         this.defaultAvailabilityZone = defaultAvailabilityZone;
         return this;
     }
-    
-    
+
     /**
      * The stack's default subnet ID. All instances will be launched into
      * this subnet unless you specify otherwise when you create the instance.
@@ -980,8 +970,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
         this.defaultSubnetId = defaultSubnetId;
         return this;
     }
-    
-    
+
     /**
      * A string that contains user-defined, custom JSON. It is used to
      * override the corresponding default stack configuration JSON values.
@@ -1050,8 +1039,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
         this.customJson = customJson;
         return this;
     }
-    
-    
+
     /**
      * The configuration manager. When you clone a stack we recommend that
      * you use the configuration manager to specify the Chef version, 0.9 or
@@ -1102,8 +1090,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
         this.configurationManager = configurationManager;
         return this;
     }
-    
-    
+
     /**
      * Whether to use custom cookbooks.
      *
@@ -1136,8 +1123,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
         this.useCustomCookbooks = useCustomCookbooks;
         return this;
     }
-    
-    
+
     /**
      * Whether to use custom cookbooks.
      *
@@ -1146,7 +1132,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
     public Boolean getUseCustomCookbooks() {
         return useCustomCookbooks;
     }
-    
+
     /**
      * Contains the information required to retrieve an app or cookbook from
      * a repository. For more information, see <a
@@ -1209,8 +1195,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
         this.customCookbooksSource = customCookbooksSource;
         return this;
     }
-    
-    
+
     /**
      * A default SSH key for the stack instances. You can override this value
      * when you create or update an instance.
@@ -1249,8 +1234,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
         this.defaultSshKeyName = defaultSshKeyName;
         return this;
     }
-    
-    
+
     /**
      * Whether to clone the source stack's permissions.
      *
@@ -1283,8 +1267,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
         this.clonePermissions = clonePermissions;
         return this;
     }
-    
-    
+
     /**
      * Whether to clone the source stack's permissions.
      *
@@ -1293,14 +1276,13 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
     public Boolean getClonePermissions() {
         return clonePermissions;
     }
-    
+
     /**
      * A list of source stack app IDs to be included in the cloned stack.
      *
      * @return A list of source stack app IDs to be included in the cloned stack.
      */
     public java.util.List<String> getCloneAppIds() {
-        
         if (cloneAppIds == null) {
               cloneAppIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               cloneAppIds.setAutoConstruct(true);
@@ -1362,7 +1344,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
 
         return this;
     }
-    
+
     /**
      * The default root device type. This value is used by default for all
      * instances in the cloned stack, but you can override it when you create
@@ -1434,8 +1416,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
         this.defaultRootDeviceType = defaultRootDeviceType;
         return this;
     }
-    
-    
+
     /**
      * The default root device type. This value is used by default for all
      * instances in the cloned stack, but you can override it when you create
@@ -1485,7 +1466,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements Serial
         this.defaultRootDeviceType = defaultRootDeviceType.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

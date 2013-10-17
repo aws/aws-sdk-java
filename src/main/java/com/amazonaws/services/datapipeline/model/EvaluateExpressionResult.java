@@ -77,8 +77,7 @@ public class EvaluateExpressionResult implements Serializable {
         this.evaluatedExpression = evaluatedExpression;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

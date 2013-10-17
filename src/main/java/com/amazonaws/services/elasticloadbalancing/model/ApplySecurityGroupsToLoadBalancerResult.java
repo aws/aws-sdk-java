@@ -35,7 +35,6 @@ public class ApplySecurityGroupsToLoadBalancerResult implements Serializable {
      * @return A list of security group IDs associated with your LoadBalancer.
      */
     public java.util.List<String> getSecurityGroups() {
-        
         if (securityGroups == null) {
               securityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               securityGroups.setAutoConstruct(true);
@@ -97,7 +96,7 @@ public class ApplySecurityGroupsToLoadBalancerResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -38,7 +38,6 @@ public class StopInstancesResult implements Serializable {
      *         changed.
      */
     public java.util.List<InstanceStateChange> getStoppingInstances() {
-        
         if (stoppingInstances == null) {
               stoppingInstances = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceStateChange>();
               stoppingInstances.setAutoConstruct(true);
@@ -106,7 +105,7 @@ public class StopInstancesResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

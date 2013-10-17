@@ -61,8 +61,7 @@ public class BundleInstanceResult implements Serializable {
         this.bundleTask = bundleTask;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

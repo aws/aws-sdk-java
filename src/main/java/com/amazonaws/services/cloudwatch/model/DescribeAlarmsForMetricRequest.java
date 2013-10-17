@@ -118,8 +118,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest impl
         this.metricName = metricName;
         return this;
     }
-    
-    
+
     /**
      * The namespace of the metric.
      * <p>
@@ -164,8 +163,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest impl
         this.namespace = namespace;
         return this;
     }
-    
-    
+
     /**
      * The statistic for the metric.
      * <p>
@@ -213,8 +211,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest impl
         this.statistic = statistic;
         return this;
     }
-    
-    
+
     /**
      * The statistic for the metric.
      * <p>
@@ -248,7 +245,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest impl
         this.statistic = statistic.toString();
         return this;
     }
-    
+
     /**
      * The list of dimensions associated with the metric.
      * <p>
@@ -258,7 +255,6 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest impl
      * @return The list of dimensions associated with the metric.
      */
     public java.util.List<Dimension> getDimensions() {
-        
         if (dimensions == null) {
               dimensions = new com.amazonaws.internal.ListWithAutoConstructFlag<Dimension>();
               dimensions.setAutoConstruct(true);
@@ -329,7 +325,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest impl
 
         return this;
     }
-    
+
     /**
      * The period in seconds over which the statistic is applied.
      * <p>
@@ -371,8 +367,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest impl
         this.period = period;
         return this;
     }
-    
-    
+
     /**
      * The unit for the metric.
      * <p>
@@ -420,8 +415,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest impl
         this.unit = unit;
         return this;
     }
-    
-    
+
     /**
      * The unit for the metric.
      * <p>
@@ -455,7 +449,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest impl
         this.unit = unit.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

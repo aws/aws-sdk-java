@@ -90,8 +90,7 @@ public class CustomerGateway implements Serializable {
         this.customerGatewayId = customerGatewayId;
         return this;
     }
-    
-    
+
     /**
      * Describes the current state of the customer gateway. Valid values are
      * <code>pending</code>, <code>available</code>, <code>deleting</code>,
@@ -136,8 +135,7 @@ public class CustomerGateway implements Serializable {
         this.state = state;
         return this;
     }
-    
-    
+
     /**
      * Specifies the type of VPN connection the customer gateway supports.
      *
@@ -170,8 +168,7 @@ public class CustomerGateway implements Serializable {
         this.type = type;
         return this;
     }
-    
-    
+
     /**
      * Contains the Internet-routable IP address of the customer gateway's
      * outside interface.
@@ -210,8 +207,7 @@ public class CustomerGateway implements Serializable {
         this.ipAddress = ipAddress;
         return this;
     }
-    
-    
+
     /**
      * Specifies the customer gateway's Border Gateway Protocol (BGP)
      * Autonomous System Number (ASN).
@@ -250,15 +246,13 @@ public class CustomerGateway implements Serializable {
         this.bgpAsn = bgpAsn;
         return this;
     }
-    
-    
+
     /**
      * A list of tags for the CustomerGateway.
      *
      * @return A list of tags for the CustomerGateway.
      */
     public java.util.List<Tag> getTags() {
-        
         if (tags == null) {
               tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
               tags.setAutoConstruct(true);
@@ -320,7 +314,7 @@ public class CustomerGateway implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

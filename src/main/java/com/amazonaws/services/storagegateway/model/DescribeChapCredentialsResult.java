@@ -71,7 +71,6 @@ public class DescribeChapCredentialsResult implements Serializable {
      *         volume. </li> </ul>
      */
     public java.util.List<ChapInfo> getChapCredentials() {
-        
         if (chapCredentials == null) {
               chapCredentials = new com.amazonaws.internal.ListWithAutoConstructFlag<ChapInfo>();
               chapCredentials.setAutoConstruct(true);
@@ -205,7 +204,7 @@ public class DescribeChapCredentialsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

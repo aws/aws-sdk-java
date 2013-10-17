@@ -54,7 +54,6 @@ public class ListServerCertificatesResult implements Serializable {
      * @return A list of server certificates.
      */
     public java.util.List<ServerCertificateMetadata> getServerCertificateMetadataList() {
-        
         if (serverCertificateMetadataList == null) {
               serverCertificateMetadataList = new com.amazonaws.internal.ListWithAutoConstructFlag<ServerCertificateMetadata>();
               serverCertificateMetadataList.setAutoConstruct(true);
@@ -116,7 +115,7 @@ public class ListServerCertificatesResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * A flag that indicates whether there are more server certificates to
      * list. If your results were truncated, you can make a subsequent
@@ -167,8 +166,7 @@ public class ListServerCertificatesResult implements Serializable {
         this.isTruncated = isTruncated;
         return this;
     }
-    
-    
+
     /**
      * A flag that indicates whether there are more server certificates to
      * list. If your results were truncated, you can make a subsequent
@@ -183,7 +181,7 @@ public class ListServerCertificatesResult implements Serializable {
     public Boolean getIsTruncated() {
         return isTruncated;
     }
-    
+
     /**
      * If <code>IsTruncated</code> is <code>true</code>, this element is
      * present and contains the value to use for the <code>Marker</code>
@@ -240,8 +238,7 @@ public class ListServerCertificatesResult implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

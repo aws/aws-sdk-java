@@ -110,8 +110,7 @@ public class VolumeInfo implements Serializable {
         this.volumeARN = volumeARN;
         return this;
     }
-    
-    
+
     /**
      * One of the VolumeType values that indicates the configuration of the
      * storage volume, for example as a storage volume.
@@ -165,8 +164,7 @@ public class VolumeInfo implements Serializable {
         this.volumeType = volumeType;
         return this;
     }
-    
-    
+
     /**
      * One of the VolumeType values that indicates the configuration of the
      * storage volume, for example as a storage volume.
@@ -204,7 +202,7 @@ public class VolumeInfo implements Serializable {
         this.volumeType = volumeType.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

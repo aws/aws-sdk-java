@@ -94,8 +94,7 @@ public class HostedZoneConfig implements Serializable {
         this.comment = comment;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

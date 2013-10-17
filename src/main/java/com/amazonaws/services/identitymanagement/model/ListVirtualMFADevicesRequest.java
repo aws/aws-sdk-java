@@ -134,8 +134,7 @@ public class ListVirtualMFADevicesRequest extends AmazonWebServiceRequest implem
         this.assignmentStatus = assignmentStatus;
         return this;
     }
-    
-    
+
     /**
      * The status (unassigned or assigned) of the devices to list. If you do
      * not specify an <code>AssignmentStatus</code>, the action defaults to
@@ -181,7 +180,7 @@ public class ListVirtualMFADevicesRequest extends AmazonWebServiceRequest implem
         this.assignmentStatus = assignmentStatus.toString();
         return this;
     }
-    
+
     /**
      * Use this parameter only when paginating results, and only in a
      * subsequent request after you've received a response where the results
@@ -244,8 +243,7 @@ public class ListVirtualMFADevicesRequest extends AmazonWebServiceRequest implem
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Use this parameter only when paginating results to indicate the
      * maximum number of user names you want in the response. If there are
@@ -305,8 +303,7 @@ public class ListVirtualMFADevicesRequest extends AmazonWebServiceRequest implem
         this.maxItems = maxItems;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

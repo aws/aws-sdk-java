@@ -30,7 +30,6 @@ public class DescribeRouteTablesResult implements Serializable {
      * @return The value of the RouteTables property for this object.
      */
     public java.util.List<RouteTable> getRouteTables() {
-        
         if (routeTables == null) {
               routeTables = new com.amazonaws.internal.ListWithAutoConstructFlag<RouteTable>();
               routeTables.setAutoConstruct(true);
@@ -92,7 +91,7 @@ public class DescribeRouteTablesResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

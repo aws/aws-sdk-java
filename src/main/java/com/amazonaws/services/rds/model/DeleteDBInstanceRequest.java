@@ -70,8 +70,6 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest implements 
      */
     public DeleteDBInstanceRequest() {}
     
-
-
     /**
      * Constructs a new DeleteDBInstanceRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -88,8 +86,6 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest implements 
         setDBInstanceIdentifier(dBInstanceIdentifier);
     }
 
-    
-    
     /**
      * The DB Instance identifier for the DB Instance to be deleted. This
      * parameter isn't case sensitive. <p>Constraints: <ul> <li>Must contain
@@ -146,8 +142,7 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.dBInstanceIdentifier = dBInstanceIdentifier;
         return this;
     }
-    
-    
+
     /**
      * Determines whether a final DB Snapshot is created before the DB
      * Instance is deleted. If <code>true</code> is specified, no DBSnapshot
@@ -210,8 +205,7 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.skipFinalSnapshot = skipFinalSnapshot;
         return this;
     }
-    
-    
+
     /**
      * Determines whether a final DB Snapshot is created before the DB
      * Instance is deleted. If <code>true</code> is specified, no DBSnapshot
@@ -230,7 +224,7 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest implements 
     public Boolean getSkipFinalSnapshot() {
         return skipFinalSnapshot;
     }
-    
+
     /**
      * The DBSnapshotIdentifier of the new DBSnapshot created when
      * SkipFinalSnapshot is set to <code>false</code>. <note> Specifying this
@@ -299,8 +293,7 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.finalDBSnapshotIdentifier = finalDBSnapshotIdentifier;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

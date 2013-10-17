@@ -113,8 +113,7 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest imp
         this.engine = engine;
         return this;
     }
-    
-    
+
     /**
      * The database engine version to return. <p>Example: <code>5.1.49</code>
      *
@@ -147,8 +146,7 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest imp
         this.engineVersion = engineVersion;
         return this;
     }
-    
-    
+
     /**
      * The name of a specific DB Parameter Group family to return details
      * for. <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric
@@ -199,8 +197,7 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest imp
         this.dBParameterGroupFamily = dBParameterGroupFamily;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of records to include in the response. If more than
      * the <code>MaxRecords</code> value is available, a pagination token
@@ -257,8 +254,7 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest imp
         this.maxRecords = maxRecords;
         return this;
     }
-    
-    
+
     /**
      * An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the
@@ -303,8 +299,7 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest imp
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Indicates that only the default version of the specified engine or
      * engine and major version combination is returned.
@@ -343,8 +338,7 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest imp
         this.defaultOnly = defaultOnly;
         return this;
     }
-    
-    
+
     /**
      * Indicates that only the default version of the specified engine or
      * engine and major version combination is returned.
@@ -355,7 +349,7 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest imp
     public Boolean getDefaultOnly() {
         return defaultOnly;
     }
-    
+
     /**
      * If this parameter is specified, and if the requested engine supports
      * the CharacterSetName parameter for CreateDBInstance, the response
@@ -400,8 +394,7 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest imp
         this.listSupportedCharacterSets = listSupportedCharacterSets;
         return this;
     }
-    
-    
+
     /**
      * If this parameter is specified, and if the requested engine supports
      * the CharacterSetName parameter for CreateDBInstance, the response
@@ -414,7 +407,7 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest imp
     public Boolean getListSupportedCharacterSets() {
         return listSupportedCharacterSets;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

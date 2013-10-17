@@ -73,8 +73,7 @@ public class Subnet implements Serializable {
         this.subnetIdentifier = subnetIdentifier;
         return this;
     }
-    
-    
+
     /**
      * Contains Availability Zone information. <p> This data type is used as
      * an element in the following data type: <ul>
@@ -119,8 +118,7 @@ public class Subnet implements Serializable {
         this.subnetAvailabilityZone = subnetAvailabilityZone;
         return this;
     }
-    
-    
+
     /**
      * Specifies the status of the subnet.
      *
@@ -153,8 +151,7 @@ public class Subnet implements Serializable {
         this.subnetStatus = subnetStatus;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

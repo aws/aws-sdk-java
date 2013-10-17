@@ -101,8 +101,7 @@ public class CountPendingActivityTasksRequest extends AmazonWebServiceRequest im
         this.domain = domain;
         return this;
     }
-    
-    
+
     /**
      * The name of the task list.
      *
@@ -135,8 +134,7 @@ public class CountPendingActivityTasksRequest extends AmazonWebServiceRequest im
         this.taskList = taskList;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

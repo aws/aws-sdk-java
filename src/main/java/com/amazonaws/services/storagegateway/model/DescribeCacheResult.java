@@ -146,8 +146,7 @@ public class DescribeCacheResult implements Serializable {
         this.gatewayARN = gatewayARN;
         return this;
     }
-    
-    
+
     /**
      * An array of the gateway's local disk IDs that are configured as cache.
      * Each local disk ID is specified as a string (minimum length of 1 and
@@ -160,7 +159,6 @@ public class DescribeCacheResult implements Serializable {
      *         then the <code>DiskIds</code> array is empty.
      */
     public java.util.List<String> getDiskIds() {
-        
         if (diskIds == null) {
               diskIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               diskIds.setAutoConstruct(true);
@@ -240,7 +238,7 @@ public class DescribeCacheResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * The size allocated, in bytes, for the cache. If no cache is defined
      * for the gateway, this field returns 0.
@@ -279,8 +277,7 @@ public class DescribeCacheResult implements Serializable {
         this.cacheAllocatedInBytes = cacheAllocatedInBytes;
         return this;
     }
-    
-    
+
     /**
      * The percentage (0 to 100) of the cache storage in use. If no cached is
      * defined for the gateway, this field returns 0.
@@ -319,8 +316,7 @@ public class DescribeCacheResult implements Serializable {
         this.cacheUsedPercentage = cacheUsedPercentage;
         return this;
     }
-    
-    
+
     /**
      * The percentage of the cache that contains data that has not yet been
      * persisted to Amazon S3. If no cached is defined for the gateway, this
@@ -365,8 +361,7 @@ public class DescribeCacheResult implements Serializable {
         this.cacheDirtyPercentage = cacheDirtyPercentage;
         return this;
     }
-    
-    
+
     /**
      * The percentage (0 to 100) of data read from the storage volume that
      * was read from cache. If no cached is defined for the gateway, this
@@ -411,8 +406,7 @@ public class DescribeCacheResult implements Serializable {
         this.cacheHitPercentage = cacheHitPercentage;
         return this;
     }
-    
-    
+
     /**
      * TThe percentage (0 to 100) of data read from the storage volume that
      * was not read from the cache, but was read from Amazon S3. If no cached
@@ -457,8 +451,7 @@ public class DescribeCacheResult implements Serializable {
         this.cacheMissPercentage = cacheMissPercentage;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

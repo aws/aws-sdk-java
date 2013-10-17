@@ -105,8 +105,7 @@ public class VirtualMFADevice implements Serializable {
         this.serialNumber = serialNumber;
         return this;
     }
-    
-    
+
     /**
      * The Base32 seed defined as specified in <a
      * href="http://www.ietf.org/rfc/rfc3548.txt"
@@ -157,8 +156,7 @@ public class VirtualMFADevice implements Serializable {
         this.base32StringSeed = base32StringSeed;
         return this;
     }
-    
-    
+
     /**
      * A QR code PNG image that encodes
      * <i>otpauth://totp/$virtualMFADeviceName@$AccountName?
@@ -221,8 +219,7 @@ public class VirtualMFADevice implements Serializable {
         this.qRCodePNG = qRCodePNG;
         return this;
     }
-    
-    
+
     /**
      * The User data type contains information about a user. <p> This data
      * type is used as a response element in the following actions: <ul>
@@ -273,8 +270,7 @@ public class VirtualMFADevice implements Serializable {
         this.user = user;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the EnableDate property for this object.
      *
@@ -307,8 +303,7 @@ public class VirtualMFADevice implements Serializable {
         this.enableDate = enableDate;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -72,8 +72,6 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements S
      */
     public EnableMFADeviceRequest() {}
     
-
-
     /**
      * Constructs a new EnableMFADeviceRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -95,8 +93,6 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements S
         setAuthenticationCode2(authenticationCode2);
     }
 
-    
-    
     /**
      * Name of the user for whom you want to enable the MFA device.
      * <p>
@@ -141,8 +137,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements S
         this.userName = userName;
         return this;
     }
-    
-    
+
     /**
      * The serial number that uniquely identifies the MFA device. For virtual
      * MFA devices, the serial number is the device ARN.
@@ -193,8 +188,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements S
         this.serialNumber = serialNumber;
         return this;
     }
-    
-    
+
     /**
      * An authentication code emitted by the device.
      * <p>
@@ -239,8 +233,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements S
         this.authenticationCode1 = authenticationCode1;
         return this;
     }
-    
-    
+
     /**
      * A subsequent authentication code emitted by the device.
      * <p>
@@ -285,8 +278,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements S
         this.authenticationCode2 = authenticationCode2;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

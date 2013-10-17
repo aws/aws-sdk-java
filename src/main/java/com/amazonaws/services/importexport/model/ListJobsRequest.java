@@ -94,8 +94,7 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements Serializ
         this.maxJobs = maxJobs;
         return this;
     }
-    
-    
+
     /**
      * Specifies the JOBID to start after when listing the jobs created with
      * your account. AWS Import/Export lists your jobs in reverse
@@ -140,8 +139,7 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements Serializ
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

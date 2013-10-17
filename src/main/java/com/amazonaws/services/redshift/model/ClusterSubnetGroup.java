@@ -83,8 +83,7 @@ public class ClusterSubnetGroup implements Serializable {
         this.clusterSubnetGroupName = clusterSubnetGroupName;
         return this;
     }
-    
-    
+
     /**
      * The description of the cluster subnet group.
      *
@@ -117,8 +116,7 @@ public class ClusterSubnetGroup implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * The VPC ID of the cluster subnet group.
      *
@@ -151,8 +149,7 @@ public class ClusterSubnetGroup implements Serializable {
         this.vpcId = vpcId;
         return this;
     }
-    
-    
+
     /**
      * The status of the cluster subnet group. Possible values are
      * <code>Complete</code>, <code>Incomplete</code> and
@@ -197,15 +194,13 @@ public class ClusterSubnetGroup implements Serializable {
         this.subnetGroupStatus = subnetGroupStatus;
         return this;
     }
-    
-    
+
     /**
      * A list of the VPC <a>Subnet</a> elements.
      *
      * @return A list of the VPC <a>Subnet</a> elements.
      */
     public java.util.List<Subnet> getSubnets() {
-        
         if (subnets == null) {
               subnets = new com.amazonaws.internal.ListWithAutoConstructFlag<Subnet>();
               subnets.setAutoConstruct(true);
@@ -267,7 +262,7 @@ public class ClusterSubnetGroup implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

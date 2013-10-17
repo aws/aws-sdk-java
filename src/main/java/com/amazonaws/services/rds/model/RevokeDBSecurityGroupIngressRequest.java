@@ -76,8 +76,6 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
      */
     public RevokeDBSecurityGroupIngressRequest() {}
     
-
-
     /**
      * Constructs a new RevokeDBSecurityGroupIngressRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -90,8 +88,6 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
         setDBSecurityGroupName(dBSecurityGroupName);
     }
 
-    
-    
     /**
      * The name of the DB Security Group to revoke ingress from.
      *
@@ -124,8 +120,7 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
         this.dBSecurityGroupName = dBSecurityGroupName;
         return this;
     }
-    
-    
+
     /**
      * The IP range to revoke access from. Must be a valid CIDR range. If
      * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>,
@@ -176,8 +171,7 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
         this.cIDRIP = cIDRIP;
         return this;
     }
-    
-    
+
     /**
      * The name of the EC2 Security Group to revoke access from. For VPC DB
      * Security Groups, <code>EC2SecurityGroupId</code> must be provided.
@@ -234,8 +228,7 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
         this.eC2SecurityGroupName = eC2SecurityGroupName;
         return this;
     }
-    
-    
+
     /**
      * The id of the EC2 Security Group to revoke access from. For VPC DB
      * Security Groups, <code>EC2SecurityGroupId</code> must be provided.
@@ -292,8 +285,7 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
         this.eC2SecurityGroupId = eC2SecurityGroupId;
         return this;
     }
-    
-    
+
     /**
      * The AWS Account Number of the owner of the EC2 security group
      * specified in the <code>EC2SecurityGroupName</code> parameter. The AWS
@@ -356,8 +348,7 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
         this.eC2SecurityGroupOwnerId = eC2SecurityGroupOwnerId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

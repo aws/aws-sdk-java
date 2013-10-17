@@ -85,8 +85,7 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends AmazonWebSer
         this.loadBalancerName = loadBalancerName;
         return this;
     }
-    
-    
+
     /**
      * The port number associated with the back-end server.
      *
@@ -119,8 +118,7 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends AmazonWebSer
         this.instancePort = instancePort;
         return this;
     }
-    
-    
+
     /**
      * List of policy names to be set. If the list is empty, then all current
      * polices are removed from the back-end server.
@@ -129,7 +127,6 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends AmazonWebSer
      *         polices are removed from the back-end server.
      */
     public java.util.List<String> getPolicyNames() {
-        
         if (policyNames == null) {
               policyNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               policyNames.setAutoConstruct(true);
@@ -197,7 +194,7 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends AmazonWebSer
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

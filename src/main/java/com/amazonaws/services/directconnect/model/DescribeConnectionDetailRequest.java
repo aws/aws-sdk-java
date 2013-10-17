@@ -65,8 +65,7 @@ public class DescribeConnectionDetailRequest extends AmazonWebServiceRequest imp
         this.connectionId = connectionId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
