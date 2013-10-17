@@ -43,7 +43,6 @@ public class DescribeCachediSCSIVolumesResult implements Serializable {
      *         contains metadata about one cached volume.
      */
     public java.util.List<CachediSCSIVolume> getCachediSCSIVolumes() {
-        
         if (cachediSCSIVolumes == null) {
               cachediSCSIVolumes = new com.amazonaws.internal.ListWithAutoConstructFlag<CachediSCSIVolume>();
               cachediSCSIVolumes.setAutoConstruct(true);
@@ -111,7 +110,7 @@ public class DescribeCachediSCSIVolumesResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

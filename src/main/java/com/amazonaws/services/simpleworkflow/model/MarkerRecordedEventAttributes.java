@@ -89,8 +89,7 @@ public class MarkerRecordedEventAttributes implements Serializable {
         this.markerName = markerName;
         return this;
     }
-    
-    
+
     /**
      * Details of the marker (if any).
      * <p>
@@ -132,8 +131,7 @@ public class MarkerRecordedEventAttributes implements Serializable {
         this.details = details;
         return this;
     }
-    
-    
+
     /**
      * The id of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the <code>RecordMarker</code>
@@ -184,8 +182,7 @@ public class MarkerRecordedEventAttributes implements Serializable {
         this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

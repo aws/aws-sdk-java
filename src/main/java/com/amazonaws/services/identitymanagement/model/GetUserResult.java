@@ -61,8 +61,7 @@ public class GetUserResult implements Serializable {
         this.user = user;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -73,8 +73,7 @@ public class CreateStreamingDistributionResult implements Serializable {
         this.streamingDistribution = streamingDistribution;
         return this;
     }
-    
-    
+
     /**
      * The fully qualified URI of the new streaming distribution resource
      * just created. For example:
@@ -119,8 +118,7 @@ public class CreateStreamingDistributionResult implements Serializable {
         this.location = location;
         return this;
     }
-    
-    
+
     /**
      * The current version of the streaming distribution created.
      *
@@ -153,8 +151,7 @@ public class CreateStreamingDistributionResult implements Serializable {
         this.eTag = eTag;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

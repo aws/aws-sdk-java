@@ -101,8 +101,7 @@ public class LocalSecondaryIndex implements Serializable {
         this.indexName = indexName;
         return this;
     }
-    
-    
+
     /**
      * Represents the complete index key schema, which consists of one or
      * more pairs of attribute names and key types (<code>HASH</code> or
@@ -116,7 +115,6 @@ public class LocalSecondaryIndex implements Serializable {
      *         <code>RANGE</code>).
      */
     public java.util.List<KeySchemaElement> getKeySchema() {
-        
         return keySchema;
     }
     
@@ -195,7 +193,7 @@ public class LocalSecondaryIndex implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Represents attributes that are copied (projected) from the table into
      * the index. These are in addition to the primary key attributes and
@@ -240,8 +238,7 @@ public class LocalSecondaryIndex implements Serializable {
         this.projection = projection;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

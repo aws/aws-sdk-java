@@ -103,8 +103,7 @@ public class DescribeEnvironmentResourcesRequest extends AmazonWebServiceRequest
         this.environmentId = environmentId;
         return this;
     }
-    
-    
+
     /**
      * The name of the environment to retrieve AWS resource usage data. <p>
      * Condition: You must specify either this or an EnvironmentId, or both.
@@ -164,8 +163,7 @@ public class DescribeEnvironmentResourcesRequest extends AmazonWebServiceRequest
         this.environmentName = environmentName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

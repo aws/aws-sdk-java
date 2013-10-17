@@ -85,8 +85,6 @@ public class ServerCertificateMetadata implements Serializable {
      */
     public ServerCertificateMetadata() {}
     
-
-
     /**
      * Constructs a new ServerCertificateMetadata object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -118,8 +116,6 @@ public class ServerCertificateMetadata implements Serializable {
         setArn(arn);
     }
 
-    
-    
     /**
      * Path to the server certificate. For more information about paths, see
      * <a
@@ -188,8 +184,7 @@ public class ServerCertificateMetadata implements Serializable {
         this.path = path;
         return this;
     }
-    
-    
+
     /**
      * The name that identifies the server certificate.
      * <p>
@@ -234,8 +229,7 @@ public class ServerCertificateMetadata implements Serializable {
         this.serverCertificateName = serverCertificateName;
         return this;
     }
-    
-    
+
     /**
      * The stable and unique string identifying the server certificate. For
      * more information about IDs, see <a
@@ -304,8 +298,7 @@ public class ServerCertificateMetadata implements Serializable {
         this.serverCertificateId = serverCertificateId;
         return this;
     }
-    
-    
+
     /**
      * The Amazon Resource Name (ARN) specifying the server certificate. For
      * more information about ARNs and how to use them in policies, see <a
@@ -371,8 +364,7 @@ public class ServerCertificateMetadata implements Serializable {
         this.arn = arn;
         return this;
     }
-    
-    
+
     /**
      * The date when the server certificate was uploaded.
      *
@@ -405,8 +397,7 @@ public class ServerCertificateMetadata implements Serializable {
         this.uploadDate = uploadDate;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

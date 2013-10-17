@@ -46,8 +46,6 @@ public class ScriptBootstrapActionConfig implements Serializable {
      */
     public ScriptBootstrapActionConfig() {}
     
-
-
     /**
      * Constructs a new ScriptBootstrapActionConfig object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -63,8 +61,6 @@ public class ScriptBootstrapActionConfig implements Serializable {
         setArgs(args);
     }
 
-    
-    
     /**
      * Location of the script to run during a bootstrap action. Can be either
      * a location in Amazon S3 or on a local file system.
@@ -115,8 +111,7 @@ public class ScriptBootstrapActionConfig implements Serializable {
         this.path = path;
         return this;
     }
-    
-    
+
     /**
      * A list of command line arguments to pass to the bootstrap action
      * script.
@@ -125,7 +120,6 @@ public class ScriptBootstrapActionConfig implements Serializable {
      *         script.
      */
     public java.util.List<String> getArgs() {
-        
         if (args == null) {
               args = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               args.setAutoConstruct(true);
@@ -193,7 +187,7 @@ public class ScriptBootstrapActionConfig implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

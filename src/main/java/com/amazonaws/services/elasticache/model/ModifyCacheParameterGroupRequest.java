@@ -48,8 +48,6 @@ public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest im
      */
     public ModifyCacheParameterGroupRequest() {}
     
-
-
     /**
      * Constructs a new ModifyCacheParameterGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -67,8 +65,6 @@ public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest im
         setParameterNameValues(parameterNameValues);
     }
 
-    
-    
     /**
      * The name of the cache parameter group to modify.
      *
@@ -101,8 +97,7 @@ public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest im
         this.cacheParameterGroupName = cacheParameterGroupName;
         return this;
     }
-    
-    
+
     /**
      * An array of parameter names and values for the parameter update. You
      * must supply at least one parameter name and value; subsequent
@@ -115,7 +110,6 @@ public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest im
      *         request.
      */
     public java.util.List<ParameterNameValue> getParameterNameValues() {
-        
         if (parameterNameValues == null) {
               parameterNameValues = new com.amazonaws.internal.ListWithAutoConstructFlag<ParameterNameValue>();
               parameterNameValues.setAutoConstruct(true);
@@ -195,7 +189,7 @@ public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest im
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

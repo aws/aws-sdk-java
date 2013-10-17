@@ -80,15 +80,13 @@ public class DescribeReservedDBInstancesOfferingsResult implements Serializable 
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * A list of reserved DB Instance offerings.
      *
      * @return A list of reserved DB Instance offerings.
      */
     public java.util.List<ReservedDBInstancesOffering> getReservedDBInstancesOfferings() {
-        
         if (reservedDBInstancesOfferings == null) {
               reservedDBInstancesOfferings = new com.amazonaws.internal.ListWithAutoConstructFlag<ReservedDBInstancesOffering>();
               reservedDBInstancesOfferings.setAutoConstruct(true);
@@ -150,7 +148,7 @@ public class DescribeReservedDBInstancesOfferingsResult implements Serializable 
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

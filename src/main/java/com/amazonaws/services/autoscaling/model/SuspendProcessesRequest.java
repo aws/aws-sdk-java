@@ -99,8 +99,7 @@ public class SuspendProcessesRequest extends AmazonWebServiceRequest implements 
         this.autoScalingGroupName = autoScalingGroupName;
         return this;
     }
-    
-    
+
     /**
      * The processes that you want to suspend or resume, which can include
      * one or more of the following: <ul> <li>Launch</li> <li>Terminate</li>
@@ -117,7 +116,6 @@ public class SuspendProcessesRequest extends AmazonWebServiceRequest implements 
      *         omit this parameter.
      */
     public java.util.List<String> getScalingProcesses() {
-        
         if (scalingProcesses == null) {
               scalingProcesses = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               scalingProcesses.setAutoConstruct(true);
@@ -209,7 +207,7 @@ public class SuspendProcessesRequest extends AmazonWebServiceRequest implements 
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

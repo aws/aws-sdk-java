@@ -56,8 +56,7 @@ public class CreateRouteTableResult implements Serializable {
         this.routeTable = routeTable;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

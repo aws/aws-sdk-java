@@ -73,8 +73,6 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest implements Se
      */
     public PutGroupPolicyRequest() {}
     
-
-
     /**
      * Constructs a new PutGroupPolicyRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -90,8 +88,6 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest implements Se
         setPolicyDocument(policyDocument);
     }
 
-    
-    
     /**
      * Name of the group to associate the policy with.
      * <p>
@@ -136,8 +132,7 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest implements Se
         this.groupName = groupName;
         return this;
     }
-    
-    
+
     /**
      * Name of the policy document.
      * <p>
@@ -182,8 +177,7 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest implements Se
         this.policyName = policyName;
         return this;
     }
-    
-    
+
     /**
      * The policy document.
      * <p>
@@ -228,8 +222,7 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest implements Se
         this.policyDocument = policyDocument;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

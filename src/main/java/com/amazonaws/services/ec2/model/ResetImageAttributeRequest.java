@@ -53,8 +53,6 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
      */
     public ResetImageAttributeRequest() {}
     
-
-
     /**
      * Constructs a new ResetImageAttributeRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -69,8 +67,6 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
         setAttribute(attribute);
     }
 
-    
-    
     /**
      * Constructs a new ResetImageAttributeRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -84,7 +80,7 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
         this.imageId = imageId;
         this.attribute = attribute.toString();
     }
-    
+
     /**
      * The ID of the AMI whose attribute is being reset.
      *
@@ -117,8 +113,7 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
         this.imageId = imageId;
         return this;
     }
-    
-    
+
     /**
      * The name of the attribute being reset. <p> Available attribute names:
      * <code>launchPermission</code>
@@ -172,8 +167,7 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
         this.attribute = attribute;
         return this;
     }
-    
-    
+
     /**
      * The name of the attribute being reset. <p> Available attribute names:
      * <code>launchPermission</code>
@@ -211,7 +205,7 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
         this.attribute = attribute.toString();
         return this;
     }
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

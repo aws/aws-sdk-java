@@ -88,7 +88,6 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest im
      *         with no error.
      */
     public java.util.List<String> getActivityIds() {
-        
         if (activityIds == null) {
               activityIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               activityIds.setAutoConstruct(true);
@@ -180,7 +179,7 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest im
 
         return this;
     }
-    
+
     /**
      * The name of the <a>AutoScalingGroup</a>.
      * <p>
@@ -225,8 +224,7 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest im
         this.autoScalingGroupName = autoScalingGroupName;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of scaling activities to return.
      * <p>
@@ -268,8 +266,7 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest im
         this.maxRecords = maxRecords;
         return this;
     }
-    
-    
+
     /**
      * A string that marks the start of the next batch of returned results
      * for pagination.
@@ -317,8 +314,7 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest im
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -86,8 +86,7 @@ public class ReplaceRouteTableAssociationRequest extends AmazonWebServiceRequest
         this.associationId = associationId;
         return this;
     }
-    
-    
+
     /**
      * The ID of the new route table to associate with the subnet.
      *
@@ -120,8 +119,7 @@ public class ReplaceRouteTableAssociationRequest extends AmazonWebServiceRequest
         this.routeTableId = routeTableId;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

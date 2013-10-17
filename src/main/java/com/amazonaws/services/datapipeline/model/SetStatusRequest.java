@@ -101,8 +101,7 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements Seriali
         this.pipelineId = pipelineId;
         return this;
     }
-    
-    
+
     /**
      * Identifies an array of objects. The corresponding objects can be
      * either physical or components, but not a mix of both types.
@@ -111,7 +110,6 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements Seriali
      *         either physical or components, but not a mix of both types.
      */
     public java.util.List<String> getObjectIds() {
-        
         if (objectIds == null) {
               objectIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               objectIds.setAutoConstruct(true);
@@ -179,7 +177,7 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements Seriali
 
         return this;
     }
-    
+
     /**
      * Specifies the status to be set on all the objects in
      * <code>objectIds</code>. For components, this can be either
@@ -248,8 +246,7 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements Seriali
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -88,8 +88,7 @@ public class OptionGroupOptionSetting implements Serializable {
         this.settingName = settingName;
         return this;
     }
-    
-    
+
     /**
      * The description of the option group option.
      *
@@ -122,8 +121,7 @@ public class OptionGroupOptionSetting implements Serializable {
         this.settingDescription = settingDescription;
         return this;
     }
-    
-    
+
     /**
      * The default value for the option group option.
      *
@@ -156,8 +154,7 @@ public class OptionGroupOptionSetting implements Serializable {
         this.defaultValue = defaultValue;
         return this;
     }
-    
-    
+
     /**
      * The DB engine specific parameter type for the option group option.
      *
@@ -190,8 +187,7 @@ public class OptionGroupOptionSetting implements Serializable {
         this.applyType = applyType;
         return this;
     }
-    
-    
+
     /**
      * Indicates the acceptable values for the option group option.
      *
@@ -224,8 +220,7 @@ public class OptionGroupOptionSetting implements Serializable {
         this.allowedValues = allowedValues;
         return this;
     }
-    
-    
+
     /**
      * Boolean value where true indicates that this option group option can
      * be changed from the default value.
@@ -264,8 +259,7 @@ public class OptionGroupOptionSetting implements Serializable {
         this.isModifiable = isModifiable;
         return this;
     }
-    
-    
+
     /**
      * Boolean value where true indicates that this option group option can
      * be changed from the default value.
@@ -276,7 +270,7 @@ public class OptionGroupOptionSetting implements Serializable {
     public Boolean getIsModifiable() {
         return isModifiable;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

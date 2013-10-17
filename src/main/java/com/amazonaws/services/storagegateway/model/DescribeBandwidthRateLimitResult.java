@@ -113,8 +113,7 @@ public class DescribeBandwidthRateLimitResult implements Serializable {
         this.gatewayARN = gatewayARN;
         return this;
     }
-    
-    
+
     /**
      * The average upload bandwidth rate limit in bits per second. This field
      * does not appear in the response if the upload rate limit is not set.
@@ -162,8 +161,7 @@ public class DescribeBandwidthRateLimitResult implements Serializable {
         this.averageUploadRateLimitInBitsPerSec = averageUploadRateLimitInBitsPerSec;
         return this;
     }
-    
-    
+
     /**
      * The average download bandwidth rate limit in bits per second. This
      * field does not appear in the response if the download rate limit is
@@ -217,8 +215,7 @@ public class DescribeBandwidthRateLimitResult implements Serializable {
         this.averageDownloadRateLimitInBitsPerSec = averageDownloadRateLimitInBitsPerSec;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

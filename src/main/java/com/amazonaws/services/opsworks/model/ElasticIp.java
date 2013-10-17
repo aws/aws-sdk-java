@@ -83,8 +83,7 @@ public class ElasticIp implements Serializable {
         this.ip = ip;
         return this;
     }
-    
-    
+
     /**
      * The name.
      *
@@ -117,8 +116,7 @@ public class ElasticIp implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * The domain.
      *
@@ -151,8 +149,7 @@ public class ElasticIp implements Serializable {
         this.domain = domain;
         return this;
     }
-    
-    
+
     /**
      * The AWS region. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
@@ -197,8 +194,7 @@ public class ElasticIp implements Serializable {
         this.region = region;
         return this;
     }
-    
-    
+
     /**
      * The ID of the instance that the address is attached to.
      *
@@ -231,8 +227,7 @@ public class ElasticIp implements Serializable {
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

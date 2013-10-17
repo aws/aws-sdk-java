@@ -66,8 +66,7 @@ public class StateReason implements Serializable {
         this.code = code;
         return this;
     }
-    
-    
+
     /**
      * Descriptive message for the state change.
      *
@@ -100,8 +99,7 @@ public class StateReason implements Serializable {
         this.message = message;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -90,8 +90,7 @@ public class DomainMetadataResult implements Serializable {
         this.itemCount = itemCount;
         return this;
     }
-    
-    
+
     /**
      * The total size of all item names in the domain, in bytes.
      *
@@ -124,8 +123,7 @@ public class DomainMetadataResult implements Serializable {
         this.itemNamesSizeBytes = itemNamesSizeBytes;
         return this;
     }
-    
-    
+
     /**
      * The number of unique attribute names in the domain.
      *
@@ -158,8 +156,7 @@ public class DomainMetadataResult implements Serializable {
         this.attributeNameCount = attributeNameCount;
         return this;
     }
-    
-    
+
     /**
      * The total size of all unique attribute names in the domain, in bytes.
      *
@@ -192,8 +189,7 @@ public class DomainMetadataResult implements Serializable {
         this.attributeNamesSizeBytes = attributeNamesSizeBytes;
         return this;
     }
-    
-    
+
     /**
      * The number of all attribute name/value pairs in the domain.
      *
@@ -226,8 +222,7 @@ public class DomainMetadataResult implements Serializable {
         this.attributeValueCount = attributeValueCount;
         return this;
     }
-    
-    
+
     /**
      * The total size of all attribute values in the domain, in bytes.
      *
@@ -260,8 +255,7 @@ public class DomainMetadataResult implements Serializable {
         this.attributeValuesSizeBytes = attributeValuesSizeBytes;
         return this;
     }
-    
-    
+
     /**
      * The data and time when metadata was calculated, in Epoch (UNIX)
      * seconds.
@@ -300,8 +294,7 @@ public class DomainMetadataResult implements Serializable {
         this.timestamp = timestamp;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

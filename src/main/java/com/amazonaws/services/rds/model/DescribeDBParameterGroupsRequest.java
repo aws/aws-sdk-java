@@ -110,8 +110,7 @@ public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest im
         this.dBParameterGroupName = dBParameterGroupName;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
@@ -168,8 +167,7 @@ public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest im
         this.maxRecords = maxRecords;
         return this;
     }
-    
-    
+
     /**
      * An optional pagination token provided by a previous
      * DescribeDBParameterGroups request. If this parameter is specified, the
@@ -220,8 +218,7 @@ public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest im
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

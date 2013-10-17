@@ -34,7 +34,6 @@ public class ListTagsForResourceResult implements Serializable {
      * @return List of tags returned by the ListTagsForResource operation.
      */
     public java.util.List<Tag> getTagList() {
-        
         if (tagList == null) {
               tagList = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
               tagList.setAutoConstruct(true);
@@ -96,7 +95,7 @@ public class ListTagsForResourceResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

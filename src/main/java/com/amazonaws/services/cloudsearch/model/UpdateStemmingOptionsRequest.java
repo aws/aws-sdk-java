@@ -119,8 +119,7 @@ public class UpdateStemmingOptionsRequest extends AmazonWebServiceRequest implem
         this.domainName = domainName;
         return this;
     }
-    
-    
+
     /**
      * Maps terms to their stems, serialized as a JSON document. The document
      * has a single object with one property "stems" whose value is an object
@@ -177,8 +176,7 @@ public class UpdateStemmingOptionsRequest extends AmazonWebServiceRequest implem
         this.stems = stems;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

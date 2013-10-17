@@ -48,8 +48,6 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest implements
      */
     public AddInstanceGroupsRequest() {}
     
-
-
     /**
      * Constructs a new AddInstanceGroupsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -63,15 +61,12 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest implements
         setJobFlowId(jobFlowId);
     }
 
-    
-    
     /**
      * Instance Groups to add.
      *
      * @return Instance Groups to add.
      */
     public java.util.List<InstanceGroupConfig> getInstanceGroups() {
-        
         if (instanceGroups == null) {
               instanceGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupConfig>();
               instanceGroups.setAutoConstruct(true);
@@ -133,7 +128,7 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest implements
 
         return this;
     }
-    
+
     /**
      * Job flow in which to add the instance groups.
      * <p>
@@ -178,8 +173,7 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest implements
         this.jobFlowId = jobFlowId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

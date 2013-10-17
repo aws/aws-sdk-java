@@ -68,8 +68,6 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest impl
      */
     public ChangeMessageVisibilityRequest() {}
     
-
-
     /**
      * Constructs a new ChangeMessageVisibilityRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -87,8 +85,6 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest impl
         setVisibilityTimeout(visibilityTimeout);
     }
 
-    
-    
     /**
      * The URL of the SQS queue to take action on.
      *
@@ -121,8 +117,7 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest impl
         this.queueUrl = queueUrl;
         return this;
     }
-    
-    
+
     /**
      * The receipt handle associated with the message whose visibility
      * timeout should be changed.
@@ -161,8 +156,7 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest impl
         this.receiptHandle = receiptHandle;
         return this;
     }
-    
-    
+
     /**
      * The new value (in seconds) for the message's visibility timeout.
      *
@@ -195,8 +189,7 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest impl
         this.visibilityTimeout = visibilityTimeout;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

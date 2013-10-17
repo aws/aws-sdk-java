@@ -119,8 +119,6 @@ public class JobFlowDetail implements Serializable {
      */
     public JobFlowDetail() {}
     
-
-
     /**
      * Constructs a new JobFlowDetail object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -139,8 +137,6 @@ public class JobFlowDetail implements Serializable {
         setInstances(instances);
     }
 
-    
-    
     /**
      * The job flow identifier.
      * <p>
@@ -185,8 +181,7 @@ public class JobFlowDetail implements Serializable {
         this.jobFlowId = jobFlowId;
         return this;
     }
-    
-    
+
     /**
      * The name of the job flow.
      * <p>
@@ -231,8 +226,7 @@ public class JobFlowDetail implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * The location in Amazon S3 where log files for the job are stored.
      * <p>
@@ -277,8 +271,7 @@ public class JobFlowDetail implements Serializable {
         this.logUri = logUri;
         return this;
     }
-    
-    
+
     /**
      * The version of the AMI used to initialize Amazon EC2 instances in the
      * job flow. For a list of AMI versions currently supported by Amazon
@@ -353,8 +346,7 @@ public class JobFlowDetail implements Serializable {
         this.amiVersion = amiVersion;
         return this;
     }
-    
-    
+
     /**
      * Describes the execution status of the job flow.
      *
@@ -387,8 +379,7 @@ public class JobFlowDetail implements Serializable {
         this.executionStatusDetail = executionStatusDetail;
         return this;
     }
-    
-    
+
     /**
      * Describes the Amazon EC2 instances of the job flow.
      *
@@ -421,15 +412,13 @@ public class JobFlowDetail implements Serializable {
         this.instances = instances;
         return this;
     }
-    
-    
+
     /**
      * A list of steps run by the job flow.
      *
      * @return A list of steps run by the job flow.
      */
     public java.util.List<StepDetail> getSteps() {
-        
         if (steps == null) {
               steps = new com.amazonaws.internal.ListWithAutoConstructFlag<StepDetail>();
               steps.setAutoConstruct(true);
@@ -491,14 +480,13 @@ public class JobFlowDetail implements Serializable {
 
         return this;
     }
-    
+
     /**
      * A list of the bootstrap actions run by the job flow.
      *
      * @return A list of the bootstrap actions run by the job flow.
      */
     public java.util.List<BootstrapActionDetail> getBootstrapActions() {
-        
         if (bootstrapActions == null) {
               bootstrapActions = new com.amazonaws.internal.ListWithAutoConstructFlag<BootstrapActionDetail>();
               bootstrapActions.setAutoConstruct(true);
@@ -560,7 +548,7 @@ public class JobFlowDetail implements Serializable {
 
         return this;
     }
-    
+
     /**
      * A list of strings set by third party software when the job flow is
      * launched. If you are not using third party software to manage the job
@@ -571,7 +559,6 @@ public class JobFlowDetail implements Serializable {
      *         flow this value is empty.
      */
     public java.util.List<String> getSupportedProducts() {
-        
         if (supportedProducts == null) {
               supportedProducts = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               supportedProducts.setAutoConstruct(true);
@@ -645,7 +632,7 @@ public class JobFlowDetail implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Specifies whether the job flow is visible to all IAM users of the AWS
      * account associated with the job flow. If this value is set to
@@ -714,8 +701,7 @@ public class JobFlowDetail implements Serializable {
         this.visibleToAllUsers = visibleToAllUsers;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether the job flow is visible to all IAM users of the AWS
      * account associated with the job flow. If this value is set to
@@ -736,7 +722,7 @@ public class JobFlowDetail implements Serializable {
     public Boolean getVisibleToAllUsers() {
         return visibleToAllUsers;
     }
-    
+
     /**
      * The IAM role that was specified when the job flow was launched. The
      * EC2 instances of the job flow assume this role.
@@ -787,8 +773,7 @@ public class JobFlowDetail implements Serializable {
         this.jobFlowRole = jobFlowRole;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

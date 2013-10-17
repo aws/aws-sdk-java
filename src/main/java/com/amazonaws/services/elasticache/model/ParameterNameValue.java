@@ -40,8 +40,6 @@ public class ParameterNameValue implements Serializable {
      */
     public ParameterNameValue() {}
     
-
-
     /**
      * Constructs a new ParameterNameValue object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -52,10 +50,6 @@ public class ParameterNameValue implements Serializable {
     public ParameterNameValue(String parameterName) {
         setParameterName(parameterName);
     }
-
-    
-    
-
 
     /**
      * Constructs a new ParameterNameValue object.
@@ -70,8 +64,6 @@ public class ParameterNameValue implements Serializable {
         setParameterValue(parameterValue);
     }
 
-    
-    
     /**
      * The name of the parameter.
      *
@@ -104,8 +96,7 @@ public class ParameterNameValue implements Serializable {
         this.parameterName = parameterName;
         return this;
     }
-    
-    
+
     /**
      * The value of the parameter.
      *
@@ -138,8 +129,7 @@ public class ParameterNameValue implements Serializable {
         this.parameterValue = parameterValue;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

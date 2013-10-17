@@ -197,8 +197,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
         this.autoScalingGroupName = autoScalingGroupName;
         return this;
     }
-    
-    
+
     /**
      * The name of the launch configuration.
      * <p>
@@ -243,8 +242,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
         this.launchConfigurationName = launchConfigurationName;
         return this;
     }
-    
-    
+
     /**
      * The minimum size of the Auto Scaling group.
      *
@@ -277,8 +275,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
         this.minSize = minSize;
         return this;
     }
-    
-    
+
     /**
      * The maximum size of the Auto Scaling group.
      *
@@ -311,8 +308,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
         this.maxSize = maxSize;
         return this;
     }
-    
-    
+
     /**
      * The desired capacity for the Auto Scaling group.
      *
@@ -345,8 +341,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
         this.desiredCapacity = desiredCapacity;
         return this;
     }
-    
-    
+
     /**
      * The amount of time, in seconds, after a scaling activity completes
      * before any further scaling activities can start. For more information,
@@ -403,8 +398,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
         this.defaultCooldown = defaultCooldown;
         return this;
     }
-    
-    
+
     /**
      * Availability Zones for the group.
      * <p>
@@ -414,7 +408,6 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      * @return Availability Zones for the group.
      */
     public java.util.List<String> getAvailabilityZones() {
-        
         if (availabilityZones == null) {
               availabilityZones = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               availabilityZones.setAutoConstruct(true);
@@ -485,7 +478,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
 
         return this;
     }
-    
+
     /**
      * The type of health check for the instances in the Auto Scaling group.
      * The health check type can either be <code>EC2</code> for Amazon EC2 or
@@ -542,8 +535,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
         this.healthCheckType = healthCheckType;
         return this;
     }
-    
-    
+
     /**
      * The length of time that Auto Scaling waits before checking an
      * instance's health status. The grace period begins when an instance
@@ -588,8 +580,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
         this.healthCheckGracePeriod = healthCheckGracePeriod;
         return this;
     }
-    
-    
+
     /**
      * The name of the cluster placement group, if applicable. For more
      * information, go to <a
@@ -652,8 +643,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
         this.placementGroup = placementGroup;
         return this;
     }
-    
-    
+
     /**
      * The subnet identifier for the Amazon VPC connection, if applicable.
      * You can specify several subnets in a comma-separated list. <p> When
@@ -752,8 +742,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
         this.vPCZoneIdentifier = vPCZoneIdentifier;
         return this;
     }
-    
-    
+
     /**
      * A standalone termination policy or a list of termination policies used
      * to select the instance to terminate. The policies are executed in the
@@ -772,7 +761,6 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         Scaling Developer Guide</i>.
      */
     public java.util.List<String> getTerminationPolicies() {
-        
         if (terminationPolicies == null) {
               terminationPolicies = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               terminationPolicies.setAutoConstruct(true);
@@ -870,7 +858,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

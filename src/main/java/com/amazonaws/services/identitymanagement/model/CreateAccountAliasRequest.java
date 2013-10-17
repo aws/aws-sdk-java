@@ -45,8 +45,6 @@ public class CreateAccountAliasRequest extends AmazonWebServiceRequest implement
      */
     public CreateAccountAliasRequest() {}
     
-
-
     /**
      * Constructs a new CreateAccountAliasRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -58,8 +56,6 @@ public class CreateAccountAliasRequest extends AmazonWebServiceRequest implement
         setAccountAlias(accountAlias);
     }
 
-    
-    
     /**
      * Name of the account alias to create.
      * <p>
@@ -104,8 +100,7 @@ public class CreateAccountAliasRequest extends AmazonWebServiceRequest implement
         this.accountAlias = accountAlias;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

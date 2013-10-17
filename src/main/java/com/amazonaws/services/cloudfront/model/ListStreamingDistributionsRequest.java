@@ -105,8 +105,7 @@ public class ListStreamingDistributionsRequest extends AmazonWebServiceRequest i
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of streaming distributions you want in the response
      * body.
@@ -145,8 +144,7 @@ public class ListStreamingDistributionsRequest extends AmazonWebServiceRequest i
         this.maxItems = maxItems;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

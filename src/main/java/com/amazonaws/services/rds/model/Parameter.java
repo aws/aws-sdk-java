@@ -120,8 +120,7 @@ public class Parameter implements Serializable {
         this.parameterName = parameterName;
         return this;
     }
-    
-    
+
     /**
      * Specifies the value of the parameter.
      *
@@ -154,8 +153,7 @@ public class Parameter implements Serializable {
         this.parameterValue = parameterValue;
         return this;
     }
-    
-    
+
     /**
      * Provides a description of the parameter.
      *
@@ -188,8 +186,7 @@ public class Parameter implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * Indicates the source of the parameter value.
      *
@@ -222,8 +219,7 @@ public class Parameter implements Serializable {
         this.source = source;
         return this;
     }
-    
-    
+
     /**
      * Specifies the engine specific parameters type.
      *
@@ -256,8 +252,7 @@ public class Parameter implements Serializable {
         this.applyType = applyType;
         return this;
     }
-    
-    
+
     /**
      * Specifies the valid data type for the parameter.
      *
@@ -290,8 +285,7 @@ public class Parameter implements Serializable {
         this.dataType = dataType;
         return this;
     }
-    
-    
+
     /**
      * Specifies the valid range of values for the parameter.
      *
@@ -324,8 +318,7 @@ public class Parameter implements Serializable {
         this.allowedValues = allowedValues;
         return this;
     }
-    
-    
+
     /**
      * Indicates whether (<code>true</code>) or not (<code>false</code>) the
      * parameter can be modified. Some parameters have security or
@@ -370,8 +363,7 @@ public class Parameter implements Serializable {
         this.isModifiable = isModifiable;
         return this;
     }
-    
-    
+
     /**
      * Indicates whether (<code>true</code>) or not (<code>false</code>) the
      * parameter can be modified. Some parameters have security or
@@ -384,7 +376,7 @@ public class Parameter implements Serializable {
     public Boolean getIsModifiable() {
         return isModifiable;
     }
-    
+
     /**
      * The earliest engine version to which the parameter can apply.
      *
@@ -417,8 +409,7 @@ public class Parameter implements Serializable {
         this.minimumEngineVersion = minimumEngineVersion;
         return this;
     }
-    
-    
+
     /**
      * Indicates when to apply parameter updates.
      * <p>
@@ -466,8 +457,7 @@ public class Parameter implements Serializable {
         this.applyMethod = applyMethod;
         return this;
     }
-    
-    
+
     /**
      * Indicates when to apply parameter updates.
      * <p>
@@ -501,7 +491,7 @@ public class Parameter implements Serializable {
         this.applyMethod = applyMethod.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

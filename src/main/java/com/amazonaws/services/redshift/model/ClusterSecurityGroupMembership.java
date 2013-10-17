@@ -66,8 +66,7 @@ public class ClusterSecurityGroupMembership implements Serializable {
         this.clusterSecurityGroupName = clusterSecurityGroupName;
         return this;
     }
-    
-    
+
     /**
      * The status of the cluster security group.
      *
@@ -100,8 +99,7 @@ public class ClusterSecurityGroupMembership implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

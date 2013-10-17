@@ -55,7 +55,6 @@ public class DescribeMetricCollectionTypesResult implements Serializable {
      *         </ul>
      */
     public java.util.List<MetricCollectionType> getMetrics() {
-        
         if (metrics == null) {
               metrics = new com.amazonaws.internal.ListWithAutoConstructFlag<MetricCollectionType>();
               metrics.setAutoConstruct(true);
@@ -147,14 +146,13 @@ public class DescribeMetricCollectionTypesResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * A list of granularities for the listed Metrics.
      *
      * @return A list of granularities for the listed Metrics.
      */
     public java.util.List<MetricGranularityType> getGranularities() {
-        
         if (granularities == null) {
               granularities = new com.amazonaws.internal.ListWithAutoConstructFlag<MetricGranularityType>();
               granularities.setAutoConstruct(true);
@@ -216,7 +214,7 @@ public class DescribeMetricCollectionTypesResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

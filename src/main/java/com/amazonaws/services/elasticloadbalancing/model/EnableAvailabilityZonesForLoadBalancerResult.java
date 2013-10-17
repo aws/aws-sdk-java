@@ -35,7 +35,6 @@ public class EnableAvailabilityZonesForLoadBalancerResult implements Serializabl
      * @return An updated list of Availability Zones for the LoadBalancer.
      */
     public java.util.List<String> getAvailabilityZones() {
-        
         if (availabilityZones == null) {
               availabilityZones = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               availabilityZones.setAutoConstruct(true);
@@ -97,7 +96,7 @@ public class EnableAvailabilityZonesForLoadBalancerResult implements Serializabl
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -103,8 +103,7 @@ public class PasswordPolicy implements Serializable {
         this.minimumPasswordLength = minimumPasswordLength;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether to require symbols for IAM user passwords.
      *
@@ -137,8 +136,7 @@ public class PasswordPolicy implements Serializable {
         this.requireSymbols = requireSymbols;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether to require symbols for IAM user passwords.
      *
@@ -147,7 +145,7 @@ public class PasswordPolicy implements Serializable {
     public Boolean getRequireSymbols() {
         return requireSymbols;
     }
-    
+
     /**
      * Specifies whether to require numbers for IAM user passwords.
      *
@@ -180,8 +178,7 @@ public class PasswordPolicy implements Serializable {
         this.requireNumbers = requireNumbers;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether to require numbers for IAM user passwords.
      *
@@ -190,7 +187,7 @@ public class PasswordPolicy implements Serializable {
     public Boolean getRequireNumbers() {
         return requireNumbers;
     }
-    
+
     /**
      * Specifies whether to require uppercase characters for IAM user
      * passwords.
@@ -229,8 +226,7 @@ public class PasswordPolicy implements Serializable {
         this.requireUppercaseCharacters = requireUppercaseCharacters;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether to require uppercase characters for IAM user
      * passwords.
@@ -241,7 +237,7 @@ public class PasswordPolicy implements Serializable {
     public Boolean getRequireUppercaseCharacters() {
         return requireUppercaseCharacters;
     }
-    
+
     /**
      * Specifies whether to require lowercase characters for IAM user
      * passwords.
@@ -280,8 +276,7 @@ public class PasswordPolicy implements Serializable {
         this.requireLowercaseCharacters = requireLowercaseCharacters;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether to require lowercase characters for IAM user
      * passwords.
@@ -292,7 +287,7 @@ public class PasswordPolicy implements Serializable {
     public Boolean getRequireLowercaseCharacters() {
         return requireLowercaseCharacters;
     }
-    
+
     /**
      * Specifies whether to allow IAM users to change their own password.
      *
@@ -325,8 +320,7 @@ public class PasswordPolicy implements Serializable {
         this.allowUsersToChangePassword = allowUsersToChangePassword;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether to allow IAM users to change their own password.
      *
@@ -335,7 +329,7 @@ public class PasswordPolicy implements Serializable {
     public Boolean getAllowUsersToChangePassword() {
         return allowUsersToChangePassword;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -66,8 +66,7 @@ public class GetHostnameSuggestionResult implements Serializable {
         this.layerId = layerId;
         return this;
     }
-    
-    
+
     /**
      * The generated host name.
      *
@@ -100,8 +99,7 @@ public class GetHostnameSuggestionResult implements Serializable {
         this.hostname = hostname;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

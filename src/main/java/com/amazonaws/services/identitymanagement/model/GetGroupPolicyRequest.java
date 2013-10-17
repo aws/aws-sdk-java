@@ -53,8 +53,6 @@ public class GetGroupPolicyRequest extends AmazonWebServiceRequest implements Se
      */
     public GetGroupPolicyRequest() {}
     
-
-
     /**
      * Constructs a new GetGroupPolicyRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -68,8 +66,6 @@ public class GetGroupPolicyRequest extends AmazonWebServiceRequest implements Se
         setPolicyName(policyName);
     }
 
-    
-    
     /**
      * Name of the group the policy is associated with.
      * <p>
@@ -114,8 +110,7 @@ public class GetGroupPolicyRequest extends AmazonWebServiceRequest implements Se
         this.groupName = groupName;
         return this;
     }
-    
-    
+
     /**
      * Name of the policy document to get.
      * <p>
@@ -160,8 +155,7 @@ public class GetGroupPolicyRequest extends AmazonWebServiceRequest implements Se
         this.policyName = policyName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -69,8 +69,7 @@ public class ResetClusterParameterGroupResult implements Serializable {
         this.parameterGroupName = parameterGroupName;
         return this;
     }
-    
-    
+
     /**
      * The status of the parameter group. For example, if you made a change
      * to a parameter group name-value pair, then the change could be pending
@@ -115,8 +114,7 @@ public class ResetClusterParameterGroupResult implements Serializable {
         this.parameterGroupStatus = parameterGroupStatus;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

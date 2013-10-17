@@ -92,8 +92,7 @@ public class DeleteClusterSnapshotRequest extends AmazonWebServiceRequest implem
         this.snapshotIdentifier = snapshotIdentifier;
         return this;
     }
-    
-    
+
     /**
      * The unique identifier of the cluster the snapshot was created from.
      * This parameter is required if your IAM user has a policy containing a
@@ -144,8 +143,7 @@ public class DeleteClusterSnapshotRequest extends AmazonWebServiceRequest implem
         this.snapshotClusterIdentifier = snapshotClusterIdentifier;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

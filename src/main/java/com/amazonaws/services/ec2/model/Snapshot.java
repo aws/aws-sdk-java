@@ -110,8 +110,7 @@ public class Snapshot implements Serializable {
         this.snapshotId = snapshotId;
         return this;
     }
-    
-    
+
     /**
      * The ID of the volume from which this snapshot was created.
      *
@@ -144,8 +143,7 @@ public class Snapshot implements Serializable {
         this.volumeId = volumeId;
         return this;
     }
-    
-    
+
     /**
      * Snapshot state (e.g., pending, completed, or error).
      * <p>
@@ -193,8 +191,7 @@ public class Snapshot implements Serializable {
         this.state = state;
         return this;
     }
-    
-    
+
     /**
      * Snapshot state (e.g., pending, completed, or error).
      * <p>
@@ -228,7 +225,7 @@ public class Snapshot implements Serializable {
         this.state = state.toString();
         return this;
     }
-    
+
     /**
      * Time stamp when the snapshot was initiated.
      *
@@ -261,8 +258,7 @@ public class Snapshot implements Serializable {
         this.startTime = startTime;
         return this;
     }
-    
-    
+
     /**
      * The progress of the snapshot, in percentage.
      *
@@ -295,8 +291,7 @@ public class Snapshot implements Serializable {
         this.progress = progress;
         return this;
     }
-    
-    
+
     /**
      * AWS Access Key ID of the user who owns the snapshot.
      *
@@ -329,8 +324,7 @@ public class Snapshot implements Serializable {
         this.ownerId = ownerId;
         return this;
     }
-    
-    
+
     /**
      * Description of the snapshot.
      *
@@ -363,8 +357,7 @@ public class Snapshot implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * The size of the volume, in gigabytes.
      *
@@ -397,8 +390,7 @@ public class Snapshot implements Serializable {
         this.volumeSize = volumeSize;
         return this;
     }
-    
-    
+
     /**
      * The AWS account alias (e.g., "amazon", "redhat", "self", etc.) or AWS
      * account ID that owns the AMI.
@@ -437,15 +429,13 @@ public class Snapshot implements Serializable {
         this.ownerAlias = ownerAlias;
         return this;
     }
-    
-    
+
     /**
      * A list of tags for the Snapshot.
      *
      * @return A list of tags for the Snapshot.
      */
     public java.util.List<Tag> getTags() {
-        
         if (tags == null) {
               tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
               tags.setAutoConstruct(true);
@@ -507,7 +497,7 @@ public class Snapshot implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

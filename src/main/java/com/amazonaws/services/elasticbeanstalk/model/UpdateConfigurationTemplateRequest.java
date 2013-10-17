@@ -89,8 +89,6 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      */
     public UpdateConfigurationTemplateRequest() {}
     
-
-
     /**
      * Constructs a new UpdateConfigurationTemplateRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -110,8 +108,6 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
         setTemplateName(templateName);
     }
 
-    
-    
     /**
      * The name of the application associated with the configuration template
      * to update. <p> If no application is found with this name,
@@ -171,8 +167,7 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
         this.applicationName = applicationName;
         return this;
     }
-    
-    
+
     /**
      * The name of the configuration template to update. <p> If no
      * configuration template is found with this name,
@@ -232,8 +227,7 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
         this.templateName = templateName;
         return this;
     }
-    
-    
+
     /**
      * A new description for the configuration.
      * <p>
@@ -275,8 +269,7 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * A list of configuration option settings to update with the new
      * specified option value.
@@ -285,7 +278,6 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      *         specified option value.
      */
     public java.util.List<ConfigurationOptionSetting> getOptionSettings() {
-        
         if (optionSettings == null) {
               optionSettings = new com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting>();
               optionSettings.setAutoConstruct(true);
@@ -353,7 +345,7 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
 
         return this;
     }
-    
+
     /**
      * A list of configuration options to remove from the configuration set.
      * <p> Constraint: You can remove only <code>UserDefined</code>
@@ -364,7 +356,6 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      *         configuration options.
      */
     public java.util.List<OptionSpecification> getOptionsToRemove() {
-        
         if (optionsToRemove == null) {
               optionsToRemove = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionSpecification>();
               optionsToRemove.setAutoConstruct(true);
@@ -438,7 +429,7 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -79,8 +79,7 @@ public class Endpoint implements Serializable {
         this.address = address;
         return this;
     }
-    
-    
+
     /**
      * Specifies the port that the database engine is listening on.
      *
@@ -113,8 +112,7 @@ public class Endpoint implements Serializable {
         this.port = port;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

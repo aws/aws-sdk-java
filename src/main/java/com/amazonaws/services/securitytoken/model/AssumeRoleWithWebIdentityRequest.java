@@ -184,8 +184,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
         this.roleArn = roleArn;
         return this;
     }
-    
-    
+
     /**
      * An identifier for the assumed role session. Typically, you pass the
      * name or identifier that is associated with the user who is using your
@@ -260,8 +259,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
         this.roleSessionName = roleSessionName;
         return this;
     }
-    
-    
+
     /**
      * The OAuth 2.0 access token or OpenID Connect ID token that is provided
      * by the identity provider. Your application must get this token by
@@ -327,8 +325,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
         this.webIdentityToken = webIdentityToken;
         return this;
     }
-    
-    
+
     /**
      * The fully-qualified host component of the domain name of the identity
      * provider. Specify this value only for OAuth access tokens. Do not
@@ -400,8 +397,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
         this.providerId = providerId;
         return this;
     }
-    
-    
+
     /**
      * A supplemental policy that is associated with the temporary security
      * credentials from the <code>AssumeRoleWithWebIdentity</code> call. The
@@ -476,8 +472,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
         this.policy = policy;
         return this;
     }
-    
-    
+
     /**
      * The duration, in seconds, of the role session. The value can range
      * from 900 seconds (15 minutes) to 3600 seconds (1 hour). By default,
@@ -531,8 +526,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest im
         this.durationSeconds = durationSeconds;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

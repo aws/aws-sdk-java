@@ -94,8 +94,7 @@ public class ListStacksRequest extends AmazonWebServiceRequest implements Serial
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * Stack status to use as a filter. Specify one or more stack status
      * codes to list only stacks with the specified status codes. For a
@@ -108,7 +107,6 @@ public class ListStacksRequest extends AmazonWebServiceRequest implements Serial
      *         parameter of the <a>Stack</a> data type.
      */
     public java.util.List<String> getStackStatusFilters() {
-        
         if (stackStatusFilters == null) {
               stackStatusFilters = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               stackStatusFilters.setAutoConstruct(true);
@@ -188,7 +186,36 @@ public class ListStacksRequest extends AmazonWebServiceRequest implements Serial
 
         return this;
     }
-    
+
+    /**
+     * Stack status to use as a filter. Specify one or more stack status
+     * codes to list only stacks with the specified status codes. For a
+     * complete list of stack status codes, see the <code>StackStatus</code>
+     * parameter of the <a>Stack</a> data type.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param stackStatusFilters Stack status to use as a filter. Specify one or more stack status
+     *         codes to list only stacks with the specified status codes. For a
+     *         complete list of stack status codes, see the <code>StackStatus</code>
+     *         parameter of the <a>Stack</a> data type.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public ListStacksRequest withStackStatusFilters(StackStatus... stackStatusFilters) {
+        java.util.ArrayList<String> stackStatusFiltersCopy = new java.util.ArrayList<String>(stackStatusFilters.length);
+        for (StackStatus member : stackStatusFilters) {
+            stackStatusFiltersCopy.add(member.toString());
+        }
+        if (getStackStatusFilters() == null) {
+            setStackStatusFilters(stackStatusFiltersCopy);
+        } else {
+            getStackStatusFilters().addAll(stackStatusFiltersCopy);
+        }
+        return this;
+    }
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

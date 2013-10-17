@@ -238,8 +238,7 @@ public class MetricAlarm implements Serializable {
         this.alarmName = alarmName;
         return this;
     }
-    
-    
+
     /**
      * The Amazon Resource Name (ARN) of the alarm.
      * <p>
@@ -281,8 +280,7 @@ public class MetricAlarm implements Serializable {
         this.alarmArn = alarmArn;
         return this;
     }
-    
-    
+
     /**
      * The description for the alarm.
      * <p>
@@ -324,8 +322,7 @@ public class MetricAlarm implements Serializable {
         this.alarmDescription = alarmDescription;
         return this;
     }
-    
-    
+
     /**
      * The time stamp of the last update to the alarm configuration.
      *
@@ -358,8 +355,7 @@ public class MetricAlarm implements Serializable {
         this.alarmConfigurationUpdatedTimestamp = alarmConfigurationUpdatedTimestamp;
         return this;
     }
-    
-    
+
     /**
      * Indicates whether actions should be executed during any changes to the
      * alarm's state.
@@ -398,8 +394,7 @@ public class MetricAlarm implements Serializable {
         this.actionsEnabled = actionsEnabled;
         return this;
     }
-    
-    
+
     /**
      * Indicates whether actions should be executed during any changes to the
      * alarm's state.
@@ -410,7 +405,7 @@ public class MetricAlarm implements Serializable {
     public Boolean getActionsEnabled() {
         return actionsEnabled;
     }
-    
+
     /**
      * The list of actions to execute when this alarm transitions into an
      * <code>OK</code> state from any other state. Each action is specified
@@ -428,7 +423,6 @@ public class MetricAlarm implements Serializable {
      *         Scaling policy.
      */
     public java.util.List<String> getOKActions() {
-        
         if (oKActions == null) {
               oKActions = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               oKActions.setAutoConstruct(true);
@@ -523,7 +517,7 @@ public class MetricAlarm implements Serializable {
 
         return this;
     }
-    
+
     /**
      * The list of actions to execute when this alarm transitions into an
      * <code>ALARM</code> state from any other state. Each action is
@@ -541,7 +535,6 @@ public class MetricAlarm implements Serializable {
      *         an Auto Scaling policy.
      */
     public java.util.List<String> getAlarmActions() {
-        
         if (alarmActions == null) {
               alarmActions = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               alarmActions.setAutoConstruct(true);
@@ -636,7 +629,7 @@ public class MetricAlarm implements Serializable {
 
         return this;
     }
-    
+
     /**
      * The list of actions to execute when this alarm transitions into an
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action
@@ -654,7 +647,6 @@ public class MetricAlarm implements Serializable {
      *         an Auto Scaling policy.
      */
     public java.util.List<String> getInsufficientDataActions() {
-        
         if (insufficientDataActions == null) {
               insufficientDataActions = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               insufficientDataActions.setAutoConstruct(true);
@@ -749,7 +741,7 @@ public class MetricAlarm implements Serializable {
 
         return this;
     }
-    
+
     /**
      * The state value for the alarm.
      * <p>
@@ -797,8 +789,7 @@ public class MetricAlarm implements Serializable {
         this.stateValue = stateValue;
         return this;
     }
-    
-    
+
     /**
      * The state value for the alarm.
      * <p>
@@ -832,7 +823,7 @@ public class MetricAlarm implements Serializable {
         this.stateValue = stateValue.toString();
         return this;
     }
-    
+
     /**
      * A human-readable explanation for the alarm's state.
      * <p>
@@ -874,8 +865,7 @@ public class MetricAlarm implements Serializable {
         this.stateReason = stateReason;
         return this;
     }
-    
-    
+
     /**
      * An explanation for the alarm's state in machine-readable JSON format
      * <p>
@@ -917,8 +907,7 @@ public class MetricAlarm implements Serializable {
         this.stateReasonData = stateReasonData;
         return this;
     }
-    
-    
+
     /**
      * The time stamp of the last update to the alarm's state.
      *
@@ -951,8 +940,7 @@ public class MetricAlarm implements Serializable {
         this.stateUpdatedTimestamp = stateUpdatedTimestamp;
         return this;
     }
-    
-    
+
     /**
      * The name of the alarm's metric.
      * <p>
@@ -994,8 +982,7 @@ public class MetricAlarm implements Serializable {
         this.metricName = metricName;
         return this;
     }
-    
-    
+
     /**
      * The namespace of alarm's associated metric.
      * <p>
@@ -1040,8 +1027,7 @@ public class MetricAlarm implements Serializable {
         this.namespace = namespace;
         return this;
     }
-    
-    
+
     /**
      * The statistic to apply to the alarm's associated metric.
      * <p>
@@ -1089,8 +1075,7 @@ public class MetricAlarm implements Serializable {
         this.statistic = statistic;
         return this;
     }
-    
-    
+
     /**
      * The statistic to apply to the alarm's associated metric.
      * <p>
@@ -1124,7 +1109,7 @@ public class MetricAlarm implements Serializable {
         this.statistic = statistic.toString();
         return this;
     }
-    
+
     /**
      * The list of dimensions associated with the alarm's associated metric.
      * <p>
@@ -1134,7 +1119,6 @@ public class MetricAlarm implements Serializable {
      * @return The list of dimensions associated with the alarm's associated metric.
      */
     public java.util.List<Dimension> getDimensions() {
-        
         if (dimensions == null) {
               dimensions = new com.amazonaws.internal.ListWithAutoConstructFlag<Dimension>();
               dimensions.setAutoConstruct(true);
@@ -1205,7 +1189,7 @@ public class MetricAlarm implements Serializable {
 
         return this;
     }
-    
+
     /**
      * The period in seconds over which the statistic is applied.
      * <p>
@@ -1247,8 +1231,7 @@ public class MetricAlarm implements Serializable {
         this.period = period;
         return this;
     }
-    
-    
+
     /**
      * The unit of the alarm's associated metric.
      * <p>
@@ -1296,8 +1279,7 @@ public class MetricAlarm implements Serializable {
         this.unit = unit;
         return this;
     }
-    
-    
+
     /**
      * The unit of the alarm's associated metric.
      * <p>
@@ -1331,7 +1313,7 @@ public class MetricAlarm implements Serializable {
         this.unit = unit.toString();
         return this;
     }
-    
+
     /**
      * The number of periods over which data is compared to the specified
      * threshold.
@@ -1379,8 +1361,7 @@ public class MetricAlarm implements Serializable {
         this.evaluationPeriods = evaluationPeriods;
         return this;
     }
-    
-    
+
     /**
      * The value against which the specified statistic is compared.
      *
@@ -1413,8 +1394,7 @@ public class MetricAlarm implements Serializable {
         this.threshold = threshold;
         return this;
     }
-    
-    
+
     /**
      * The arithmetic operation to use when comparing the specified
      * <code>Statistic</code> and <code>Threshold</code>. The specified
@@ -1474,8 +1454,7 @@ public class MetricAlarm implements Serializable {
         this.comparisonOperator = comparisonOperator;
         return this;
     }
-    
-    
+
     /**
      * The arithmetic operation to use when comparing the specified
      * <code>Statistic</code> and <code>Threshold</code>. The specified
@@ -1517,7 +1496,7 @@ public class MetricAlarm implements Serializable {
         this.comparisonOperator = comparisonOperator.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

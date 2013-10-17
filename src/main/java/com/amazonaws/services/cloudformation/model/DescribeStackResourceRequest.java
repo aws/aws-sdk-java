@@ -81,8 +81,7 @@ public class DescribeStackResourceRequest extends AmazonWebServiceRequest implem
         this.stackName = stackName;
         return this;
     }
-    
-    
+
     /**
      * The logical name of the resource as specified in the template.
      * <p>Default: There is no default value.
@@ -121,8 +120,7 @@ public class DescribeStackResourceRequest extends AmazonWebServiceRequest implem
         this.logicalResourceId = logicalResourceId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

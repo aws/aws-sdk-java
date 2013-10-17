@@ -81,7 +81,6 @@ public class ListHostedZonesResult implements Serializable {
      *         associated with the current AWS account.
      */
     public java.util.List<HostedZone> getHostedZones() {
-        
         if (hostedZones == null) {
               hostedZones = new com.amazonaws.internal.ListWithAutoConstructFlag<HostedZone>();
               hostedZones.setAutoConstruct(true);
@@ -149,7 +148,7 @@ public class ListHostedZonesResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * If the request returned more than one page of results, submit another
      * request and specify the value of <code>NextMarker</code> from the last
@@ -209,8 +208,7 @@ public class ListHostedZonesResult implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * A flag indicating whether there are more hosted zones to be listed. If
      * your results were truncated, you can make a follow-up request for the
@@ -261,8 +259,7 @@ public class ListHostedZonesResult implements Serializable {
         this.isTruncated = isTruncated;
         return this;
     }
-    
-    
+
     /**
      * A flag indicating whether there are more hosted zones to be listed. If
      * your results were truncated, you can make a follow-up request for the
@@ -277,7 +274,7 @@ public class ListHostedZonesResult implements Serializable {
     public Boolean getIsTruncated() {
         return isTruncated;
     }
-    
+
     /**
      * Indicates where to continue listing hosted zones. If
      * <a>ListHostedZonesResponse$IsTruncated</a> is <code>true</code>, make
@@ -343,8 +340,7 @@ public class ListHostedZonesResult implements Serializable {
         this.nextMarker = nextMarker;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of hosted zones to be included in the response
      * body. If the number of hosted zones associated with this AWS account
@@ -419,8 +415,7 @@ public class ListHostedZonesResult implements Serializable {
         this.maxItems = maxItems;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

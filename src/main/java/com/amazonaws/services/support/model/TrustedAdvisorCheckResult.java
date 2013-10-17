@@ -100,8 +100,7 @@ public class TrustedAdvisorCheckResult implements Serializable {
         this.checkId = checkId;
         return this;
     }
-    
-    
+
     /**
      * Time at which Trusted Advisor ran the check.
      *
@@ -134,8 +133,7 @@ public class TrustedAdvisorCheckResult implements Serializable {
         this.timestamp = timestamp;
         return this;
     }
-    
-    
+
     /**
      * Overall status of the check. Status values are "ok," "warning,"
      * "error," or "not_available."
@@ -174,8 +172,7 @@ public class TrustedAdvisorCheckResult implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * JSON-formatted object that lists details about AWS resources that were
      * analyzed in a call to Trusted Advisor <a
@@ -226,8 +223,7 @@ public class TrustedAdvisorCheckResult implements Serializable {
         this.resourcesSummary = resourcesSummary;
         return this;
     }
-    
-    
+
     /**
      * Reports summaries for each Trusted Advisor category. Only the category
      * <i>cost optimizing</i> is currently supported. The other categories
@@ -272,15 +268,13 @@ public class TrustedAdvisorCheckResult implements Serializable {
         this.categorySpecificSummary = categorySpecificSummary;
         return this;
     }
-    
-    
+
     /**
      * List of AWS resources flagged by the Trusted Advisor check.
      *
      * @return List of AWS resources flagged by the Trusted Advisor check.
      */
     public java.util.List<TrustedAdvisorResourceDetail> getFlaggedResources() {
-        
         if (flaggedResources == null) {
               flaggedResources = new com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorResourceDetail>();
               flaggedResources.setAutoConstruct(true);
@@ -342,7 +336,7 @@ public class TrustedAdvisorCheckResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

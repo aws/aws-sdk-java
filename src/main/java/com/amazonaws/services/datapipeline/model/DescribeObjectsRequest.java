@@ -108,8 +108,7 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest implements S
         this.pipelineId = pipelineId;
         return this;
     }
-    
-    
+
     /**
      * Identifiers of the pipeline objects that contain the definitions to be
      * described. You can pass as many as 25 identifiers in a single call to
@@ -120,7 +119,6 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest implements S
      *         DescribeObjects.
      */
     public java.util.List<String> getObjectIds() {
-        
         if (objectIds == null) {
               objectIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               objectIds.setAutoConstruct(true);
@@ -194,7 +192,7 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest implements S
 
         return this;
     }
-    
+
     /**
      * Indicates whether any expressions in the object should be evaluated
      * when the object descriptions are returned.
@@ -233,8 +231,7 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest implements S
         this.evaluateExpressions = evaluateExpressions;
         return this;
     }
-    
-    
+
     /**
      * Indicates whether any expressions in the object should be evaluated
      * when the object descriptions are returned.
@@ -245,7 +242,7 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest implements S
     public Boolean getEvaluateExpressions() {
         return evaluateExpressions;
     }
-    
+
     /**
      * The starting point for the results to be returned. The first time you
      * call <a>DescribeObjects</a>, this value should be empty. As long as
@@ -314,8 +311,7 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest implements S
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

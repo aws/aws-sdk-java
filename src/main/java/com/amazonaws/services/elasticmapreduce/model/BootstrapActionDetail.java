@@ -35,8 +35,6 @@ public class BootstrapActionDetail implements Serializable {
      */
     public BootstrapActionDetail() {}
     
-
-
     /**
      * Constructs a new BootstrapActionDetail object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -48,8 +46,6 @@ public class BootstrapActionDetail implements Serializable {
         setBootstrapActionConfig(bootstrapActionConfig);
     }
 
-    
-    
     /**
      * A description of the bootstrap action.
      *
@@ -82,8 +78,7 @@ public class BootstrapActionDetail implements Serializable {
         this.bootstrapActionConfig = bootstrapActionConfig;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

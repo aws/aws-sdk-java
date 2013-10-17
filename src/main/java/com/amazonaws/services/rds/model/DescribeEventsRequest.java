@@ -189,8 +189,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
         this.sourceIdentifier = sourceIdentifier;
         return this;
     }
-    
-    
+
     /**
      * The event source to retrieve events for. If no value is specified, all
      * events are returned.
@@ -244,8 +243,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
         this.sourceType = sourceType;
         return this;
     }
-    
-    
+
     /**
      * The event source to retrieve events for. If no value is specified, all
      * events are returned.
@@ -283,7 +281,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
         this.sourceType = sourceType.toString();
         return this;
     }
-    
+
     /**
      * The beginning of the time interval to retrieve events for, specified
      * in ISO 8601 format. For more information about ISO 8601, go to the <a
@@ -334,8 +332,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
         this.startTime = startTime;
         return this;
     }
-    
-    
+
     /**
      * The end of the time interval for which to retrieve events, specified
      * in ISO 8601 format. For more information about ISO 8601, go to the <a
@@ -386,8 +383,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
         this.endTime = endTime;
         return this;
     }
-    
-    
+
     /**
      * The number of minutes to retrieve events for. <p>Default: 60
      *
@@ -420,8 +416,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
         this.duration = duration;
         return this;
     }
-    
-    
+
     /**
      * A list of event categories that trigger notifications for a event
      * notification subscription.
@@ -430,7 +425,6 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
      *         notification subscription.
      */
     public java.util.List<String> getEventCategories() {
-        
         if (eventCategories == null) {
               eventCategories = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               eventCategories.setAutoConstruct(true);
@@ -498,7 +492,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
 
         return this;
     }
-    
+
     /**
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
@@ -555,8 +549,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
         this.maxRecords = maxRecords;
         return this;
     }
-    
-    
+
     /**
      * An optional pagination token provided by a previous DescribeEvents
      * request. If this parameter is specified, the response includes only
@@ -607,8 +600,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest implements Se
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

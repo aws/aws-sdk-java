@@ -91,8 +91,7 @@ public class DeleteNotificationConfigurationRequest extends AmazonWebServiceRequ
         this.autoScalingGroupName = autoScalingGroupName;
         return this;
     }
-    
-    
+
     /**
      * The Amazon Resource Name (ARN) of the Amazon Simple Notification
      * Service (SNS) topic.
@@ -143,8 +142,7 @@ public class DeleteNotificationConfigurationRequest extends AmazonWebServiceRequ
         this.topicARN = topicARN;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

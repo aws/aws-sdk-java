@@ -110,8 +110,7 @@ public class CreateClusterSecurityGroupRequest extends AmazonWebServiceRequest i
         this.clusterSecurityGroupName = clusterSecurityGroupName;
         return this;
     }
-    
-    
+
     /**
      * A description for the security group.
      *
@@ -144,8 +143,7 @@ public class CreateClusterSecurityGroupRequest extends AmazonWebServiceRequest i
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

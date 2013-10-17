@@ -234,8 +234,7 @@ public class Pipeline implements Serializable {
         this.id = id;
         return this;
     }
-    
-    
+
     /**
      * The Amazon Resource Name (ARN) for the pipeline.
      *
@@ -268,8 +267,7 @@ public class Pipeline implements Serializable {
         this.arn = arn;
         return this;
     }
-    
-    
+
     /**
      * The name of the pipeline. We recommend that the name be unique within
      * the AWS account, but uniqueness is not enforced. <p>Constraints:
@@ -323,8 +321,7 @@ public class Pipeline implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * The current status of the pipeline: <ul> <li><code>Active</code>: The
      * pipeline is processing jobs.</li> <li><code>Paused</code>: The
@@ -378,8 +375,7 @@ public class Pipeline implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * The Amazon S3 bucket from which Elastic Transcoder gets media files
      * for transcoding and the graphics files, if any, that you want to use
@@ -433,8 +429,7 @@ public class Pipeline implements Serializable {
         this.inputBucket = inputBucket;
         return this;
     }
-    
-    
+
     /**
      * The Amazon S3 bucket in which you want Elastic Transcoder to save
      * transcoded files, thumbnails, and playlists. Either you specify this
@@ -494,8 +489,7 @@ public class Pipeline implements Serializable {
         this.outputBucket = outputBucket;
         return this;
     }
-    
-    
+
     /**
      * The IAM Amazon Resource Name (ARN) for the role that Elastic
      * Transcoder uses to transcode jobs for this pipeline.
@@ -543,8 +537,7 @@ public class Pipeline implements Serializable {
         this.role = role;
         return this;
     }
-    
-    
+
     /**
      * The Amazon Simple Notification Service (Amazon SNS) topic that you
      * want to notify to report job status. <important>To receive
@@ -649,8 +642,7 @@ public class Pipeline implements Serializable {
         this.notifications = notifications;
         return this;
     }
-    
-    
+
     /**
      * Information about the Amazon S3 bucket in which you want Elastic
      * Transcoder to save transcoded files and playlists. Either you specify
@@ -875,8 +867,7 @@ public class Pipeline implements Serializable {
         this.contentConfig = contentConfig;
         return this;
     }
-    
-    
+
     /**
      * Information about the Amazon S3 bucket in which you want Elastic
      * Transcoder to save thumbnail files. Either you specify both
@@ -1107,8 +1098,7 @@ public class Pipeline implements Serializable {
         this.thumbnailConfig = thumbnailConfig;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

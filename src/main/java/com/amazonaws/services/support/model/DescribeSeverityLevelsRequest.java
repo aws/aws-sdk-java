@@ -88,8 +88,7 @@ public class DescribeSeverityLevelsRequest extends AmazonWebServiceRequest imple
         this.language = language;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -6292,7 +6292,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         	credentials = originalRequest.getRequestCredentials();
         }
 
-        ExecutionContext executionContext = createExecutionContext();
+        ExecutionContext executionContext = createExecutionContext(originalRequest);
         executionContext.setSigner(signer);
         executionContext.setCredentials(credentials);
         

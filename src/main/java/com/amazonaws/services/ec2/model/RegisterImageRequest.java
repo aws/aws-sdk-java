@@ -97,8 +97,6 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      */
     public RegisterImageRequest() {}
     
-
-
     /**
      * Constructs a new RegisterImageRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -111,8 +109,6 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
         setImageLocation(imageLocation);
     }
 
-    
-    
     /**
      * The full path to your AMI manifest in Amazon S3 storage.
      *
@@ -145,8 +141,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
         this.imageLocation = imageLocation;
         return this;
     }
-    
-    
+
     /**
      * The name to give the new Amazon Machine Image. <p> Constraints: 3-128
      * alphanumeric characters, parenthesis (<code>()</code>), commas
@@ -197,8 +192,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * The description describing the new AMI.
      *
@@ -231,8 +225,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * The architecture of the image. <p> Valid Values: <code>i386</code>,
      * <code>x86_64</code>
@@ -286,8 +279,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
         this.architecture = architecture;
         return this;
     }
-    
-    
+
     /**
      * The architecture of the image. <p> Valid Values: <code>i386</code>,
      * <code>x86_64</code>
@@ -325,7 +317,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
         this.architecture = architecture.toString();
         return this;
     }
-    
+
     /**
      * The optional ID of a specific kernel to register with the new AMI.
      *
@@ -358,8 +350,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
         this.kernelId = kernelId;
         return this;
     }
-    
-    
+
     /**
      * The optional ID of a specific ramdisk to register with the new AMI.
      * <p> Some kernels require additional drivers at launch. Check the
@@ -410,8 +401,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
         this.ramdiskId = ramdiskId;
         return this;
     }
-    
-    
+
     /**
      * The root device name (e.g., <code>/dev/sda1</code>).
      *
@@ -444,8 +434,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
         this.rootDeviceName = rootDeviceName;
         return this;
     }
-    
-    
+
     /**
      * The block device mappings for the new AMI, which specify how different
      * block devices (ex: EBS volumes and ephemeral drives) will be exposed
@@ -456,7 +445,6 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      *         on instances launched from the new image.
      */
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
-        
         if (blockDeviceMappings == null) {
               blockDeviceMappings = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>();
               blockDeviceMappings.setAutoConstruct(true);
@@ -530,7 +518,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
 
         return this;
     }
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

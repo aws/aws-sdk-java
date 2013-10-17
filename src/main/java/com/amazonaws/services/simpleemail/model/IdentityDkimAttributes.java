@@ -88,8 +88,7 @@ public class IdentityDkimAttributes implements Serializable {
         this.dkimEnabled = dkimEnabled;
         return this;
     }
-    
-    
+
     /**
      * True if DKIM signing is enabled for email sent from the identity;
      * false otherwise.
@@ -100,7 +99,7 @@ public class IdentityDkimAttributes implements Serializable {
     public Boolean getDkimEnabled() {
         return dkimEnabled;
     }
-    
+
     /**
      * Describes whether Amazon SES has successfully verified the DKIM DNS
      * records (tokens) published in the domain name's DNS. (This only
@@ -160,8 +159,7 @@ public class IdentityDkimAttributes implements Serializable {
         this.dkimVerificationStatus = dkimVerificationStatus;
         return this;
     }
-    
-    
+
     /**
      * Describes whether Amazon SES has successfully verified the DKIM DNS
      * records (tokens) published in the domain name's DNS. (This only
@@ -203,7 +201,7 @@ public class IdentityDkimAttributes implements Serializable {
         this.dkimVerificationStatus = dkimVerificationStatus.toString();
         return this;
     }
-    
+
     /**
      * A set of DNS records (tokens) that must be published in the domain
      * name's DNS for DKIM verification to complete, and which must remain
@@ -220,7 +218,6 @@ public class IdentityDkimAttributes implements Serializable {
      *         address identities.)
      */
     public java.util.List<String> getDkimTokens() {
-        
         if (dkimTokens == null) {
               dkimTokens = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               dkimTokens.setAutoConstruct(true);
@@ -312,7 +309,7 @@ public class IdentityDkimAttributes implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -55,8 +55,6 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements Seri
      */
     public AttachVolumeRequest() {}
     
-
-
     /**
      * Constructs a new AttachVolumeRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -77,8 +75,6 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements Seri
         setDevice(device);
     }
 
-    
-    
     /**
      * The ID of the Amazon EBS volume. The volume and instance must be
      * within the same Availability Zone and the instance must be running.
@@ -117,8 +113,7 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements Seri
         this.volumeId = volumeId;
         return this;
     }
-    
-    
+
     /**
      * The ID of the instance to which the volume attaches. The volume and
      * instance must be within the same Availability Zone and the instance
@@ -163,8 +158,7 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements Seri
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * Specifies how the device is exposed to the instance (e.g.,
      * <code>/dev/sdh</code>).
@@ -203,8 +197,7 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements Seri
         this.device = device;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

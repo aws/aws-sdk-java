@@ -81,8 +81,7 @@ public class DescribeEventCategoriesRequest extends AmazonWebServiceRequest impl
         this.sourceType = sourceType;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

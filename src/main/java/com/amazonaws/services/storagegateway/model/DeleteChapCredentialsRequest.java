@@ -100,8 +100,7 @@ public class DeleteChapCredentialsRequest extends AmazonWebServiceRequest implem
         this.targetARN = targetARN;
         return this;
     }
-    
-    
+
     /**
      * The iSCSI initiator that connects to the target.
      * <p>
@@ -146,8 +145,7 @@ public class DeleteChapCredentialsRequest extends AmazonWebServiceRequest implem
         this.initiatorName = initiatorName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

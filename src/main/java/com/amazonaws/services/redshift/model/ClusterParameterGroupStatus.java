@@ -66,8 +66,7 @@ public class ClusterParameterGroupStatus implements Serializable {
         this.parameterGroupName = parameterGroupName;
         return this;
     }
-    
-    
+
     /**
      * The status of parameter updates.
      *
@@ -100,8 +99,7 @@ public class ClusterParameterGroupStatus implements Serializable {
         this.parameterApplyStatus = parameterApplyStatus;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

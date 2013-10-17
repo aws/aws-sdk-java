@@ -72,8 +72,7 @@ public class DeleteOptionGroupRequest extends AmazonWebServiceRequest implements
         this.optionGroupName = optionGroupName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

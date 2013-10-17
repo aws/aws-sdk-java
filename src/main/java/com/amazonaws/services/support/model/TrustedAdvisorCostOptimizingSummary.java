@@ -74,8 +74,7 @@ public class TrustedAdvisorCostOptimizingSummary implements Serializable {
         this.estimatedMonthlySavings = estimatedMonthlySavings;
         return this;
     }
-    
-    
+
     /**
      * Reports the estimated percentage of savings determined for your
      * account by the Trusted Advisor check.
@@ -114,8 +113,7 @@ public class TrustedAdvisorCostOptimizingSummary implements Serializable {
         this.estimatedPercentMonthlySavings = estimatedPercentMonthlySavings;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

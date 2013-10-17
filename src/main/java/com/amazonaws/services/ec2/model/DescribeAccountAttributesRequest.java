@@ -36,7 +36,6 @@ public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest im
      * @return The value of the AttributeNames property for this object.
      */
     public java.util.List<String> getAttributeNames() {
-        
         if (attributeNames == null) {
               attributeNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               attributeNames.setAutoConstruct(true);
@@ -98,7 +97,30 @@ public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest im
 
         return this;
     }
-    
+
+    /**
+     * Sets the value of the AttributeNames property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param attributeNames The new value for the AttributeNames property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public DescribeAccountAttributesRequest withAttributeNames(AccountAttributeName... attributeNames) {
+        java.util.ArrayList<String> attributeNamesCopy = new java.util.ArrayList<String>(attributeNames.length);
+        for (AccountAttributeName member : attributeNames) {
+            attributeNamesCopy.add(member.toString());
+        }
+        if (getAttributeNames() == null) {
+            setAttributeNames(attributeNamesCopy);
+        } else {
+            getAttributeNames().addAll(attributeNamesCopy);
+        }
+        return this;
+    }
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

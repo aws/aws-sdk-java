@@ -76,8 +76,6 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
      */
     public ModifySnapshotAttributeRequest() {}
     
-
-
     /**
      * Constructs a new ModifySnapshotAttributeRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -96,8 +94,6 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
         setOperationType(operationType);
     }
 
-    
-    
     /**
      * Constructs a new ModifySnapshotAttributeRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -115,7 +111,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
         this.attribute = attribute.toString();
         this.operationType = operationType;
     }
-    
+
     /**
      * The ID of the EBS snapshot whose attributes are being modified.
      *
@@ -148,8 +144,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
         this.snapshotId = snapshotId;
         return this;
     }
-    
-    
+
     /**
      * The name of the attribute being modified. <p> Available attribute
      * names: <code>createVolumePermission</code>
@@ -203,8 +198,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
         this.attribute = attribute;
         return this;
     }
-    
-    
+
     /**
      * The name of the attribute being modified. <p> Available attribute
      * names: <code>createVolumePermission</code>
@@ -242,7 +236,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
         this.attribute = attribute.toString();
         return this;
     }
-    
+
     /**
      * The operation to perform on the attribute. <p> Available operation
      * names: <code>add</code>, <code>remove</code>
@@ -281,8 +275,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
         this.operationType = operationType;
         return this;
     }
-    
-    
+
     /**
      * The AWS user IDs to add to or remove from the list of users that have
      * permission to create EBS volumes from the specified snapshot.
@@ -297,7 +290,6 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
      *         </note>
      */
     public java.util.List<String> getUserIds() {
-        
         if (userIds == null) {
               userIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               userIds.setAutoConstruct(true);
@@ -383,7 +375,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
 
         return this;
     }
-    
+
     /**
      * The AWS group names to add to or remove from the list of groups that
      * have permission to create EBS volumes from the specified snapshot.
@@ -398,7 +390,6 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
      *         </note>
      */
     public java.util.List<String> getGroupNames() {
-        
         if (groupNames == null) {
               groupNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               groupNames.setAutoConstruct(true);
@@ -484,7 +475,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
 
         return this;
     }
-    
+
     /**
      * Returns the value of the CreateVolumePermission property for this
      * object.
@@ -518,8 +509,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
         this.createVolumePermission = createVolumePermission;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

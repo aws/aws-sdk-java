@@ -66,8 +66,6 @@ public class RegisterInstancesWithLoadBalancerRequest extends AmazonWebServiceRe
      */
     public RegisterInstancesWithLoadBalancerRequest() {}
     
-
-
     /**
      * Constructs a new RegisterInstancesWithLoadBalancerRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -91,8 +89,6 @@ public class RegisterInstancesWithLoadBalancerRequest extends AmazonWebServiceRe
         setInstances(instances);
     }
 
-    
-    
     /**
      * The name associated with the LoadBalancer. The name must be unique
      * within the client AWS account.
@@ -131,8 +127,7 @@ public class RegisterInstancesWithLoadBalancerRequest extends AmazonWebServiceRe
         this.loadBalancerName = loadBalancerName;
         return this;
     }
-    
-    
+
     /**
      * A list of instance IDs that should be registered with the
      * LoadBalancer. <note>When the instance is stopped and then restarted,
@@ -155,7 +150,6 @@ public class RegisterInstancesWithLoadBalancerRequest extends AmazonWebServiceRe
      *         use <a>DeregisterInstancesFromLoadBalancer</a> action.</note>
      */
     public java.util.List<Instance> getInstances() {
-        
         if (instances == null) {
               instances = new com.amazonaws.internal.ListWithAutoConstructFlag<Instance>();
               instances.setAutoConstruct(true);
@@ -265,7 +259,7 @@ public class RegisterInstancesWithLoadBalancerRequest extends AmazonWebServiceRe
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

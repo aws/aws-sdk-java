@@ -124,8 +124,7 @@ public class ListAccountAliasesRequest extends AmazonWebServiceRequest implement
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Use this only when paginating results to indicate the maximum number
      * of account aliases you want in the response. If there are additional
@@ -185,8 +184,7 @@ public class ListAccountAliasesRequest extends AmazonWebServiceRequest implement
         this.maxItems = maxItems;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

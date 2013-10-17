@@ -83,15 +83,13 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest impl
         this.clientToken = clientToken;
         return this;
     }
-    
-    
+
     /**
      * The IDs of the Reserved Instances to modify.
      *
      * @return The IDs of the Reserved Instances to modify.
      */
     public java.util.List<String> getReservedInstancesIds() {
-        
         if (reservedInstancesIds == null) {
               reservedInstancesIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               reservedInstancesIds.setAutoConstruct(true);
@@ -153,14 +151,13 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest impl
 
         return this;
     }
-    
+
     /**
      * The configuration settings for the Reserved Instances to modify.
      *
      * @return The configuration settings for the Reserved Instances to modify.
      */
     public java.util.List<ReservedInstancesConfiguration> getTargetConfigurations() {
-        
         if (targetConfigurations == null) {
               targetConfigurations = new com.amazonaws.internal.ListWithAutoConstructFlag<ReservedInstancesConfiguration>();
               targetConfigurations.setAutoConstruct(true);
@@ -222,7 +219,7 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest impl
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

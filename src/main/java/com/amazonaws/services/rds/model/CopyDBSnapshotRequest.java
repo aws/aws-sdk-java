@@ -95,8 +95,7 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements Se
         this.sourceDBSnapshotIdentifier = sourceDBSnapshotIdentifier;
         return this;
     }
-    
-    
+
     /**
      * The identifier for the copied snapshot. <p>Constraints: <ul>
      * <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to
@@ -153,8 +152,7 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest implements Se
         this.targetDBSnapshotIdentifier = targetDBSnapshotIdentifier;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

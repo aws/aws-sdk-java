@@ -68,8 +68,7 @@ public class SendRawEmailResult implements Serializable {
         this.messageId = messageId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

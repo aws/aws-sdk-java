@@ -117,8 +117,7 @@ public class VpnConnection implements Serializable {
         this.vpnConnectionId = vpnConnectionId;
         return this;
     }
-    
-    
+
     /**
      * Describes the current state of the VPN connection. Valid values are
      * <code>pending</code>, <code>available</code>, <code>deleting</code>,
@@ -178,8 +177,7 @@ public class VpnConnection implements Serializable {
         this.state = state;
         return this;
     }
-    
-    
+
     /**
      * Describes the current state of the VPN connection. Valid values are
      * <code>pending</code>, <code>available</code>, <code>deleting</code>,
@@ -221,7 +219,7 @@ public class VpnConnection implements Serializable {
         this.state = state.toString();
         return this;
     }
-    
+
     /**
      * Contains configuration information in the native XML format for the
      * VPN connection's customer gateway. <p> This element is always present
@@ -278,8 +276,7 @@ public class VpnConnection implements Serializable {
         this.customerGatewayConfiguration = customerGatewayConfiguration;
         return this;
     }
-    
-    
+
     /**
      * Specifies the type of VPN connection.
      * <p>
@@ -327,8 +324,7 @@ public class VpnConnection implements Serializable {
         this.type = type;
         return this;
     }
-    
-    
+
     /**
      * Specifies the type of VPN connection.
      * <p>
@@ -362,7 +358,7 @@ public class VpnConnection implements Serializable {
         this.type = type.toString();
         return this;
     }
-    
+
     /**
      * Specifies ID of the customer gateway at the end of the VPN connection.
      *
@@ -395,8 +391,7 @@ public class VpnConnection implements Serializable {
         this.customerGatewayId = customerGatewayId;
         return this;
     }
-    
-    
+
     /**
      * Specfies the ID of the VPN gateway at the VPC end of the VPN
      * connection.
@@ -435,15 +430,13 @@ public class VpnConnection implements Serializable {
         this.vpnGatewayId = vpnGatewayId;
         return this;
     }
-    
-    
+
     /**
      * A list of tags for the VpnConnection.
      *
      * @return A list of tags for the VpnConnection.
      */
     public java.util.List<Tag> getTags() {
-        
         if (tags == null) {
               tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
               tags.setAutoConstruct(true);
@@ -505,14 +498,13 @@ public class VpnConnection implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns the value of the VgwTelemetry property for this object.
      *
      * @return The value of the VgwTelemetry property for this object.
      */
     public java.util.List<VgwTelemetry> getVgwTelemetry() {
-        
         if (vgwTelemetry == null) {
               vgwTelemetry = new com.amazonaws.internal.ListWithAutoConstructFlag<VgwTelemetry>();
               vgwTelemetry.setAutoConstruct(true);
@@ -574,7 +566,7 @@ public class VpnConnection implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns the value of the Options property for this object.
      *
@@ -607,15 +599,13 @@ public class VpnConnection implements Serializable {
         this.options = options;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Routes property for this object.
      *
      * @return The value of the Routes property for this object.
      */
     public java.util.List<VpnStaticRoute> getRoutes() {
-        
         if (routes == null) {
               routes = new com.amazonaws.internal.ListWithAutoConstructFlag<VpnStaticRoute>();
               routes.setAutoConstruct(true);
@@ -677,7 +667,7 @@ public class VpnConnection implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

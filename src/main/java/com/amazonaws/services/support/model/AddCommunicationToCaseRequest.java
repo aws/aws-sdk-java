@@ -105,8 +105,7 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest imple
         this.caseId = caseId;
         return this;
     }
-    
-    
+
     /**
      * Represents the body of an email communication added to the support
      * case.
@@ -154,8 +153,7 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest imple
         this.communicationBody = communicationBody;
         return this;
     }
-    
-    
+
     /**
      * Represents any email addresses contained in the CC line of an email
      * added to the support case.
@@ -167,7 +165,6 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest imple
      *         added to the support case.
      */
     public java.util.List<String> getCcEmailAddresses() {
-        
         if (ccEmailAddresses == null) {
               ccEmailAddresses = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               ccEmailAddresses.setAutoConstruct(true);
@@ -244,7 +241,7 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest imple
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

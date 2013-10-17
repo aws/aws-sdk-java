@@ -41,7 +41,6 @@ public class DescribeInstanceStatusResult implements Serializable {
      *         instances.
      */
     public java.util.List<InstanceStatus> getInstanceStatuses() {
-        
         if (instanceStatuses == null) {
               instanceStatuses = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceStatus>();
               instanceStatuses.setAutoConstruct(true);
@@ -109,7 +108,7 @@ public class DescribeInstanceStatusResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * A string specifying the next paginated set of results to return.
      *
@@ -142,8 +141,7 @@ public class DescribeInstanceStatusResult implements Serializable {
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

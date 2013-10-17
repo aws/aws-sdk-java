@@ -89,8 +89,7 @@ public class LiteralOptions implements Serializable {
         this.defaultValue = defaultValue;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether search is enabled for this field. Default: False.
      *
@@ -123,8 +122,7 @@ public class LiteralOptions implements Serializable {
         this.searchEnabled = searchEnabled;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether search is enabled for this field. Default: False.
      *
@@ -133,7 +131,7 @@ public class LiteralOptions implements Serializable {
     public Boolean getSearchEnabled() {
         return searchEnabled;
     }
-    
+
     /**
      * Specifies whether facets are enabled for this field. Default: False.
      *
@@ -166,8 +164,7 @@ public class LiteralOptions implements Serializable {
         this.facetEnabled = facetEnabled;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether facets are enabled for this field. Default: False.
      *
@@ -176,7 +173,7 @@ public class LiteralOptions implements Serializable {
     public Boolean getFacetEnabled() {
         return facetEnabled;
     }
-    
+
     /**
      * Specifies whether values of this field can be returned in search
      * results and used for ranking. Default: False.
@@ -215,8 +212,7 @@ public class LiteralOptions implements Serializable {
         this.resultEnabled = resultEnabled;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether values of this field can be returned in search
      * results and used for ranking. Default: False.
@@ -227,7 +223,7 @@ public class LiteralOptions implements Serializable {
     public Boolean getResultEnabled() {
         return resultEnabled;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

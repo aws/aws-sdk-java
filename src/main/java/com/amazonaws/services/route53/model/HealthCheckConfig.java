@@ -113,8 +113,7 @@ public class HealthCheckConfig implements Serializable {
         this.iPAddress = iPAddress;
         return this;
     }
-    
-    
+
     /**
      * Port on which connection will be opened to the instance to health
      * check. For HTTP this defaults to 80 if the port is not specified.
@@ -162,8 +161,7 @@ public class HealthCheckConfig implements Serializable {
         this.port = port;
         return this;
     }
-    
-    
+
     /**
      * The type of health check to be performed. Currently supported
      * protocols are TCP and HTTP.
@@ -217,8 +215,7 @@ public class HealthCheckConfig implements Serializable {
         this.type = type;
         return this;
     }
-    
-    
+
     /**
      * The type of health check to be performed. Currently supported
      * protocols are TCP and HTTP.
@@ -256,7 +253,7 @@ public class HealthCheckConfig implements Serializable {
         this.type = type.toString();
         return this;
     }
-    
+
     /**
      * Path to ping on the instance to check the health. Required only for
      * HTTP health checks, HTTP request is issued to the instance on the
@@ -310,8 +307,7 @@ public class HealthCheckConfig implements Serializable {
         this.resourcePath = resourcePath;
         return this;
     }
-    
-    
+
     /**
      * Fully qualified domain name of the instance to be health checked.
      * <p>
@@ -353,8 +349,7 @@ public class HealthCheckConfig implements Serializable {
         this.fullyQualifiedDomainName = fullyQualifiedDomainName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

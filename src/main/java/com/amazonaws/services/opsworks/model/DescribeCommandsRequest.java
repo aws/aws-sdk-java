@@ -96,8 +96,7 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest implements 
         this.deploymentId = deploymentId;
         return this;
     }
-    
-    
+
     /**
      * The instance ID. If you include this parameter,
      * <code>DescribeCommands</code> returns a description of the commands
@@ -142,8 +141,7 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest implements 
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * An array of command IDs. If you include this parameter,
      * <code>DescribeCommands</code> returns a description of the specified
@@ -154,7 +152,6 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest implements 
      *         commands. Otherwise, it returns a description of every command.
      */
     public java.util.List<String> getCommandIds() {
-        
         if (commandIds == null) {
               commandIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               commandIds.setAutoConstruct(true);
@@ -228,7 +225,7 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest implements 
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

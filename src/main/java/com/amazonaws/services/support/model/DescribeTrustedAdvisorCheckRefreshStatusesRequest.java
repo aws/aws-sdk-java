@@ -52,7 +52,6 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends AmazonWeb
      *         title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>.
      */
     public java.util.List<String> getCheckIds() {
-        
         if (checkIds == null) {
               checkIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               checkIds.setAutoConstruct(true);
@@ -138,7 +137,7 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends AmazonWeb
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

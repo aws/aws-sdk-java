@@ -49,7 +49,6 @@ public class ValidatePipelineDefinitionResult implements Serializable {
      *         <a>ValidatePipelineDefinition</a>.
      */
     public java.util.List<ValidationError> getValidationErrors() {
-        
         if (validationErrors == null) {
               validationErrors = new com.amazonaws.internal.ListWithAutoConstructFlag<ValidationError>();
               validationErrors.setAutoConstruct(true);
@@ -117,7 +116,7 @@ public class ValidatePipelineDefinitionResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Lists the validation warnings that were found by
      * <a>ValidatePipelineDefinition</a>.
@@ -126,7 +125,6 @@ public class ValidatePipelineDefinitionResult implements Serializable {
      *         <a>ValidatePipelineDefinition</a>.
      */
     public java.util.List<ValidationWarning> getValidationWarnings() {
-        
         if (validationWarnings == null) {
               validationWarnings = new com.amazonaws.internal.ListWithAutoConstructFlag<ValidationWarning>();
               validationWarnings.setAutoConstruct(true);
@@ -194,7 +192,7 @@ public class ValidatePipelineDefinitionResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * If <code>True</code>, there were validation errors.
      *
@@ -227,8 +225,7 @@ public class ValidatePipelineDefinitionResult implements Serializable {
         this.errored = errored;
         return this;
     }
-    
-    
+
     /**
      * If <code>True</code>, there were validation errors.
      *
@@ -237,7 +234,7 @@ public class ValidatePipelineDefinitionResult implements Serializable {
     public Boolean getErrored() {
         return errored;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

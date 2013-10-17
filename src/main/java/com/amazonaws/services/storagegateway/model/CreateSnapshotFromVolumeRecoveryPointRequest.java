@@ -111,8 +111,7 @@ public class CreateSnapshotFromVolumeRecoveryPointRequest extends AmazonWebServi
         this.volumeARN = volumeARN;
         return this;
     }
-    
-    
+
     /**
      * A textual description of the snapshot that appears in the Amazon EC2
      * console, Elastic Block Store snapshots panel in the <b>Description</b>
@@ -178,8 +177,7 @@ public class CreateSnapshotFromVolumeRecoveryPointRequest extends AmazonWebServi
         this.snapshotDescription = snapshotDescription;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

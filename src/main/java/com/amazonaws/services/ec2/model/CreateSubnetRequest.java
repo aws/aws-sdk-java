@@ -59,8 +59,6 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      */
     public CreateSubnetRequest() {}
     
-
-
     /**
      * Constructs a new CreateSubnetRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -74,8 +72,6 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
         setCidrBlock(cidrBlock);
     }
 
-    
-    
     /**
      * The ID of the VPC to create the subnet in.
      *
@@ -108,8 +104,7 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
         this.vpcId = vpcId;
         return this;
     }
-    
-    
+
     /**
      * The CIDR block the subnet is to cover.
      *
@@ -142,8 +137,7 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
         this.cidrBlock = cidrBlock;
         return this;
     }
-    
-    
+
     /**
      * The Availability Zone to create the subnet in.
      *
@@ -176,8 +170,7 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
         this.availabilityZone = availabilityZone;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

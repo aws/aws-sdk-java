@@ -67,8 +67,7 @@ public class StopInstanceRequest extends AmazonWebServiceRequest implements Seri
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

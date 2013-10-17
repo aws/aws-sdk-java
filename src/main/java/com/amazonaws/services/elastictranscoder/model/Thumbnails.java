@@ -198,8 +198,7 @@ public class Thumbnails implements Serializable {
         this.format = format;
         return this;
     }
-    
-    
+
     /**
      * The number of seconds between thumbnails. Specify an integer value.
      * <p>
@@ -241,8 +240,7 @@ public class Thumbnails implements Serializable {
         this.interval = interval;
         return this;
     }
-    
-    
+
     /**
      * <important> <p>To better control resolution and aspect ratio of
      * thumbnails, we recommend that you use the values
@@ -344,8 +342,7 @@ public class Thumbnails implements Serializable {
         this.resolution = resolution;
         return this;
     }
-    
-    
+
     /**
      * <important> <p>To better control resolution and aspect ratio of
      * thumbnails, we recommend that you use the values
@@ -447,8 +444,7 @@ public class Thumbnails implements Serializable {
         this.aspectRatio = aspectRatio;
         return this;
     }
-    
-    
+
     /**
      * The maximum width of thumbnails in pixels. If you specify auto,
      * Elastic Transcoder uses 1920 (Full HD) as the default value. If you
@@ -502,8 +498,7 @@ public class Thumbnails implements Serializable {
         this.maxWidth = maxWidth;
         return this;
     }
-    
-    
+
     /**
      * The maximum height of thumbnails in pixels. If you specify auto,
      * Elastic Transcoder uses 1080 (Full HD) as the default value. If you
@@ -557,8 +552,7 @@ public class Thumbnails implements Serializable {
         this.maxHeight = maxHeight;
         return this;
     }
-    
-    
+
     /**
      * Specify one of the following values to control scaling of thumbnails:
      * <p> <ul> <li><code>Fit</code>: Elastic Transcoder scales thumbnails so
@@ -762,8 +756,7 @@ public class Thumbnails implements Serializable {
         this.sizingPolicy = sizingPolicy;
         return this;
     }
-    
-    
+
     /**
      * When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic
      * Transcoder may add black bars to the top and bottom and/or left and
@@ -829,8 +822,7 @@ public class Thumbnails implements Serializable {
         this.paddingPolicy = paddingPolicy;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -92,8 +92,7 @@ public class UpdatePipelineStatusRequest extends AmazonWebServiceRequest impleme
         this.id = id;
         return this;
     }
-    
-    
+
     /**
      * The desired status of the pipeline: <ul> <li> <code>Active</code>: The
      * pipeline is processing jobs.</li> <li> <code>Paused</code>: The
@@ -147,8 +146,7 @@ public class UpdatePipelineStatusRequest extends AmazonWebServiceRequest impleme
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

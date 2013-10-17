@@ -91,8 +91,7 @@ public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest imple
         this.roleName = roleName;
         return this;
     }
-    
-    
+
     /**
      * The policy that grants an entity permission to assume the role.
      * <p>
@@ -137,8 +136,7 @@ public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest imple
         this.policyDocument = policyDocument;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

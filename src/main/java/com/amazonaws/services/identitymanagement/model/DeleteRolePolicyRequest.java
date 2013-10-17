@@ -90,8 +90,7 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest implements 
         this.roleName = roleName;
         return this;
     }
-    
-    
+
     /**
      * Name of the policy document to delete.
      * <p>
@@ -136,8 +135,7 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest implements 
         this.policyName = policyName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

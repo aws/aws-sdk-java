@@ -80,15 +80,13 @@ public class AttachLoadBalancerToSubnetsRequest extends AmazonWebServiceRequest 
         this.loadBalancerName = loadBalancerName;
         return this;
     }
-    
-    
+
     /**
      * A list of subnet IDs to add for the LoadBalancer.
      *
      * @return A list of subnet IDs to add for the LoadBalancer.
      */
     public java.util.List<String> getSubnets() {
-        
         if (subnets == null) {
               subnets = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               subnets.setAutoConstruct(true);
@@ -150,7 +148,7 @@ public class AttachLoadBalancerToSubnetsRequest extends AmazonWebServiceRequest 
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

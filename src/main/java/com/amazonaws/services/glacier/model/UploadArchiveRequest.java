@@ -98,8 +98,6 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest implements Ser
      */
     public UploadArchiveRequest() {}
     
-
-
     /**
      * Constructs a new UploadArchiveRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -117,10 +115,6 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest implements Ser
         setChecksum(checksum);
         setBody(body);
     }
-
-    
-    
-
 
     /**
      * Constructs a new UploadArchiveRequest object.
@@ -146,8 +140,6 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest implements Ser
         setBody(body);
     }
 
-    
-    
     /**
      * Returns the value of the ContentLength property for this object.
      *
@@ -180,8 +172,7 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest implements Ser
         this.contentLength = contentLength;
         return this;
     }
-    
-    
+
     /**
      * The name of the vault.
      *
@@ -214,8 +205,7 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest implements Ser
         this.vaultName = vaultName;
         return this;
     }
-    
-    
+
     /**
      * The <code>AccountId</code> is the AWS Account ID. You can specify
      * either the AWS Account ID or optionally a '-', in which case Amazon
@@ -272,8 +262,7 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest implements Ser
         this.accountId = accountId;
         return this;
     }
-    
-    
+
     /**
      * The optional description of the archive you are uploading.
      *
@@ -306,8 +295,7 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest implements Ser
         this.archiveDescription = archiveDescription;
         return this;
     }
-    
-    
+
     /**
      * The SHA256 checksum (a linear hash) of the payload.
      *
@@ -340,8 +328,7 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest implements Ser
         this.checksum = checksum;
         return this;
     }
-    
-    
+
     /**
      * The data to upload.
      *
@@ -374,8 +361,7 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest implements Ser
         this.body = body;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

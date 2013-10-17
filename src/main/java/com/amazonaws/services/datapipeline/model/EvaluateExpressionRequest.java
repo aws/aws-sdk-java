@@ -99,8 +99,7 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest implement
         this.pipelineId = pipelineId;
         return this;
     }
-    
-    
+
     /**
      * The identifier of the object.
      * <p>
@@ -145,8 +144,7 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest implement
         this.objectId = objectId;
         return this;
     }
-    
-    
+
     /**
      * The expression to evaluate.
      * <p>
@@ -191,8 +189,7 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest implement
         this.expression = expression;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

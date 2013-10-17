@@ -66,8 +66,6 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest implem
      */
     public ResetDBParameterGroupRequest() {}
     
-
-
     /**
      * Constructs a new ResetDBParameterGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -82,8 +80,6 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest implem
         setDBParameterGroupName(dBParameterGroupName);
     }
 
-    
-    
     /**
      * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be 1
      * to 255 alphanumeric characters</li> <li>First character must be a
@@ -134,8 +130,7 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest implem
         this.dBParameterGroupName = dBParameterGroupName;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether (<code>true</code>) or not (<code>false</code>) to
      * reset all parameters in the DB Parameter Group to default values.
@@ -180,8 +175,7 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest implem
         this.resetAllParameters = resetAllParameters;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether (<code>true</code>) or not (<code>false</code>) to
      * reset all parameters in the DB Parameter Group to default values.
@@ -194,7 +188,7 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest implem
     public Boolean getResetAllParameters() {
         return resetAllParameters;
     }
-    
+
     /**
      * An array of parameter names, values, and the apply method for the
      * parameter update. At least one parameter name, value, and apply method
@@ -219,7 +213,6 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest implem
      *         method): <code>pending-reboot</code>
      */
     public java.util.List<Parameter> getParameters() {
-        
         if (parameters == null) {
               parameters = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>();
               parameters.setAutoConstruct(true);
@@ -335,7 +328,7 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest implem
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

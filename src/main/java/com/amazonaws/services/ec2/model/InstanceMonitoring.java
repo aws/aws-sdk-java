@@ -66,8 +66,7 @@ public class InstanceMonitoring implements Serializable {
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * Monitoring state for the associated instance.
      *
@@ -100,8 +99,7 @@ public class InstanceMonitoring implements Serializable {
         this.monitoring = monitoring;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

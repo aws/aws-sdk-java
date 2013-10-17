@@ -140,8 +140,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         this.stackName = stackName;
         return this;
     }
-    
-    
+
     /**
      * Structure containing the template body. (For more information, go to
      * the <a
@@ -213,8 +212,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         this.templateBody = templateBody;
         return this;
     }
-    
-    
+
     /**
      * Location of file containing the template body. The URL must point to a
      * template located in an S3 bucket in the same region as the stack. For
@@ -292,8 +290,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         this.templateURL = templateURL;
         return this;
     }
-    
-    
+
     /**
      * A list of <code>Parameter</code> structures that specify input
      * parameters for the stack.
@@ -302,7 +299,6 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      *         parameters for the stack.
      */
     public java.util.List<Parameter> getParameters() {
-        
         if (parameters == null) {
               parameters = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>();
               parameters.setAutoConstruct(true);
@@ -370,7 +366,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
 
         return this;
     }
-    
+
     /**
      * The list of capabilities that you want to allow in the stack. If your
      * stack contains IAM resources, you must specify the CAPABILITY_IAM
@@ -401,7 +397,6 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      */
     public java.util.List<String> getCapabilities() {
-        
         if (capabilities == null) {
               capabilities = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               capabilities.setAutoConstruct(true);
@@ -535,7 +530,54 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
 
         return this;
     }
-    
+
+    /**
+     * The list of capabilities that you want to allow in the stack. If your
+     * stack contains IAM resources, you must specify the CAPABILITY_IAM
+     * value for this parameter; otherwise, this action returns an
+     * InsufficientCapabilities error. IAM resources are the following: <a
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     * <a
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     * <a
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * <a
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     * and <a
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param capabilities The list of capabilities that you want to allow in the stack. If your
+     *         stack contains IAM resources, you must specify the CAPABILITY_IAM
+     *         value for this parameter; otherwise, this action returns an
+     *         InsufficientCapabilities error. IAM resources are the following: <a
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     *         <a
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     *         <a
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     *         <a
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     *         and <a
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public UpdateStackRequest withCapabilities(Capability... capabilities) {
+        java.util.ArrayList<String> capabilitiesCopy = new java.util.ArrayList<String>(capabilities.length);
+        for (Capability member : capabilities) {
+            capabilitiesCopy.add(member.toString());
+        }
+        if (getCapabilities() == null) {
+            setCapabilities(capabilitiesCopy);
+        } else {
+            getCapabilities().addAll(capabilitiesCopy);
+        }
+        return this;
+    }
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

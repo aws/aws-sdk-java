@@ -70,8 +70,7 @@ public class ExternalWorkflowExecutionSignaledEventAttributes implements Seriali
         this.workflowExecution = workflowExecution;
         return this;
     }
-    
-    
+
     /**
      * The id of the <code>SignalExternalWorkflowExecutionInitiated</code>
      * event corresponding to the
@@ -128,8 +127,7 @@ public class ExternalWorkflowExecutionSignaledEventAttributes implements Seriali
         this.initiatedEventId = initiatedEventId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -107,7 +107,7 @@ public class Statement {
      * Developers should be careful to not use the same statement ID for
      * multiple statements in the same policy. Reusing the same statement ID in
      * different policies is not a problem.
-     * 
+     *
      * @return The statement ID.
      */
     public String getId() {
@@ -376,6 +376,21 @@ public class Statement {
     }
 
     /**
+     * Sets the principals associated with this policy statement, indicating
+     * which AWS accounts are affected by this policy statement.
+     * <p>
+     * If you don't want to restrict your policy to specific users, you can use
+     * {@link Principal#AllUsers} to apply the policy to any user trying to
+     * access your resource.
+     *
+     * @param principals
+     *            The list of principals associated with this policy statement.
+     */
+    public void setPrincipals(Principal... principals) {
+        setPrincipals(new ArrayList<Principal>(Arrays.asList(principals)));
+    }
+
+    /**
      * Sets the principals associated with this policy statement, and returns
      * this updated Statement object. Principals control which AWS accounts are
      * affected by this policy statement.
@@ -391,7 +406,7 @@ public class Statement {
      *         be chained together.
      */
     public Statement withPrincipals(Principal... principals) {
-        setPrincipals(Arrays.asList(principals));
+        setPrincipals(principals);
         return this;
     }
 

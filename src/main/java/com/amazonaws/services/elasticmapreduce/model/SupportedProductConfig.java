@@ -83,15 +83,13 @@ public class SupportedProductConfig implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * The list of user-supplied arguments.
      *
      * @return The list of user-supplied arguments.
      */
     public java.util.List<String> getArgs() {
-        
         if (args == null) {
               args = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               args.setAutoConstruct(true);
@@ -153,7 +151,7 @@ public class SupportedProductConfig implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

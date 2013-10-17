@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleemail;
-            
+
 import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
@@ -35,8 +35,8 @@ import com.amazonaws.services.simpleemail.model.*;
  * </p>
  * <p>
  * <b>NOTE:</b>The endpoint for Amazon SES is located at: https://email.us-east-1.amazonaws.com
- * </p> 
- */       
+ * </p>
+ */
 public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService {
     /**
      * <p>

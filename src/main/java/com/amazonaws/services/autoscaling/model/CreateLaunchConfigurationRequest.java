@@ -261,8 +261,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
         this.launchConfigurationName = launchConfigurationName;
         return this;
     }
-    
-    
+
     /**
      * Unique ID of the <i>Amazon Machine Image</i> (AMI) you want to use to
      * launch your EC2 instances. For information about finding Amazon EC2
@@ -337,8 +336,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
         this.imageId = imageId;
         return this;
     }
-    
-    
+
     /**
      * The name of the Amazon EC2 key pair. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/generating-a-keypair.html">Getting
@@ -395,8 +393,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
         this.keyName = keyName;
         return this;
     }
-    
-    
+
     /**
      * The security groups with which to associate Amazon EC2 or Amazon VPC
      * instances. <p>If your instances are launched in EC2, you can either
@@ -423,7 +420,6 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *         Groups</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      */
     public java.util.List<String> getSecurityGroups() {
-        
         if (securityGroups == null) {
               securityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               securityGroups.setAutoConstruct(true);
@@ -545,7 +541,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
 
         return this;
     }
-    
+
     /**
      * The user data to make available to the launched Amazon EC2 instances.
      * For more information about Amazon EC2 user data, see <a
@@ -614,8 +610,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
         this.userData = userData;
         return this;
     }
-    
-    
+
     /**
      * The instance type of the Amazon EC2 instance. For information about
      * available Amazon EC2 instance types, see <a
@@ -684,8 +679,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
         this.instanceType = instanceType;
         return this;
     }
-    
-    
+
     /**
      * The ID of the kernel associated with the Amazon EC2 AMI.
      * <p>
@@ -730,8 +724,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
         this.kernelId = kernelId;
         return this;
     }
-    
-    
+
     /**
      * The ID of the RAM disk associated with the Amazon EC2 AMI.
      * <p>
@@ -776,8 +769,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
         this.ramdiskId = ramdiskId;
         return this;
     }
-    
-    
+
     /**
      * A list of mappings that specify how block devices are exposed to the
      * instance. Each mapping is made up of a <i>VirtualName</i>, a
@@ -796,7 +788,6 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
      *         Block Device Mapping</a> in the Amazon EC2 product documentation.
      */
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
-        
         if (blockDeviceMappings == null) {
               blockDeviceMappings = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>();
               blockDeviceMappings.setAutoConstruct(true);
@@ -894,7 +885,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
 
         return this;
     }
-    
+
     /**
      * Enables detailed monitoring if it is disabled. Detailed monitoring is
      * enabled by default. <p> When detailed monitoring is enabled, Amazon
@@ -987,8 +978,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
         this.instanceMonitoring = instanceMonitoring;
         return this;
     }
-    
-    
+
     /**
      * The maximum hourly price to be paid for any Spot Instance launched to
      * fulfill the request. Spot Instances are launched when the price you
@@ -1066,8 +1056,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
         this.spotPrice = spotPrice;
         return this;
     }
-    
-    
+
     /**
      * The name or the Amazon Resource Name (ARN) of the instance profile
      * associated with the IAM role for the instance. <p>Amazon EC2 instances
@@ -1166,8 +1155,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
         this.iamInstanceProfile = iamInstanceProfile;
         return this;
     }
-    
-    
+
     /**
      * Whether the instance is optimized for EBS I/O. The optimization
      * provides dedicated throughput to Amazon EBS and an optimized
@@ -1248,8 +1236,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
         this.ebsOptimized = ebsOptimized;
         return this;
     }
-    
-    
+
     /**
      * Whether the instance is optimized for EBS I/O. The optimization
      * provides dedicated throughput to Amazon EBS and an optimized
@@ -1274,7 +1261,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
     public Boolean getEbsOptimized() {
         return ebsOptimized;
     }
-    
+
     /**
      * Used for Auto Scaling groups that launch instances into an Amazon
      * Virtual Private Cloud (Amazon VPC). Specifies whether to assign a
@@ -1373,8 +1360,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
         this.associatePublicIpAddress = associatePublicIpAddress;
         return this;
     }
-    
-    
+
     /**
      * Used for Auto Scaling groups that launch instances into an Amazon
      * Virtual Private Cloud (Amazon VPC). Specifies whether to assign a
@@ -1405,7 +1391,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest im
     public Boolean getAssociatePublicIpAddress() {
         return associatePublicIpAddress;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

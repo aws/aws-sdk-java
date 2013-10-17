@@ -61,8 +61,7 @@ public class CreateVaultResult implements Serializable {
         this.location = location;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

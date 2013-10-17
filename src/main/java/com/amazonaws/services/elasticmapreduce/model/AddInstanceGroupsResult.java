@@ -82,15 +82,13 @@ public class AddInstanceGroupsResult implements Serializable {
         this.jobFlowId = jobFlowId;
         return this;
     }
-    
-    
+
     /**
      * Instance group IDs of the newly created instance groups.
      *
      * @return Instance group IDs of the newly created instance groups.
      */
     public java.util.List<String> getInstanceGroupIds() {
-        
         if (instanceGroupIds == null) {
               instanceGroupIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               instanceGroupIds.setAutoConstruct(true);
@@ -152,7 +150,7 @@ public class AddInstanceGroupsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

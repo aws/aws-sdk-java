@@ -77,8 +77,7 @@ public class DBParameterGroup implements Serializable {
         this.dBParameterGroupName = dBParameterGroupName;
         return this;
     }
-    
-    
+
     /**
      * Provides the name of the DB Parameter Group Family that this DB
      * Parameter Group is compatible with.
@@ -117,8 +116,7 @@ public class DBParameterGroup implements Serializable {
         this.dBParameterGroupFamily = dBParameterGroupFamily;
         return this;
     }
-    
-    
+
     /**
      * Provides the customer-specified description for this DB Parameter
      * Group.
@@ -157,8 +155,7 @@ public class DBParameterGroup implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

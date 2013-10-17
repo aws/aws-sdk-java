@@ -83,8 +83,6 @@ public class SetVaultNotificationsRequest extends AmazonWebServiceRequest implem
      */
     public SetVaultNotificationsRequest() {}
     
-
-
     /**
      * Constructs a new SetVaultNotificationsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -98,10 +96,6 @@ public class SetVaultNotificationsRequest extends AmazonWebServiceRequest implem
         setVaultName(vaultName);
         setVaultNotificationConfig(vaultNotificationConfig);
     }
-
-    
-    
-
 
     /**
      * Constructs a new SetVaultNotificationsRequest object.
@@ -123,8 +117,6 @@ public class SetVaultNotificationsRequest extends AmazonWebServiceRequest implem
         setVaultNotificationConfig(vaultNotificationConfig);
     }
 
-    
-    
     /**
      * The <code>AccountId</code> is the AWS Account ID. You can specify
      * either the AWS Account ID or optionally a '-', in which case Amazon
@@ -181,8 +173,7 @@ public class SetVaultNotificationsRequest extends AmazonWebServiceRequest implem
         this.accountId = accountId;
         return this;
     }
-    
-    
+
     /**
      * The name of the vault.
      *
@@ -215,8 +206,7 @@ public class SetVaultNotificationsRequest extends AmazonWebServiceRequest implem
         this.vaultName = vaultName;
         return this;
     }
-    
-    
+
     /**
      * Provides options for specifying notification configuration.
      *
@@ -249,8 +239,7 @@ public class SetVaultNotificationsRequest extends AmazonWebServiceRequest implem
         this.vaultNotificationConfig = vaultNotificationConfig;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

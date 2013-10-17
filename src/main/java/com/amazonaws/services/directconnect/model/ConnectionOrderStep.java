@@ -94,8 +94,7 @@ public class ConnectionOrderStep implements Serializable {
         this.number = number;
         return this;
     }
-    
-    
+
     /**
      * Name of the order step. <p>Example: Authorize cross connect
      *
@@ -128,8 +127,7 @@ public class ConnectionOrderStep implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * More detailed description of the order step. <p>Example: "<i>AWS will
      * prepare your connection and send you an email with an LOA to provide
@@ -174,8 +172,7 @@ public class ConnectionOrderStep implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * The entity who owns the completion of the order step. <p>Example: AWS,
      * Customer
@@ -214,8 +211,7 @@ public class ConnectionOrderStep implements Serializable {
         this.owner = owner;
         return this;
     }
-    
-    
+
     /**
      * Time to complete the order step in minutes. <p>Example: 60
      *
@@ -248,8 +244,7 @@ public class ConnectionOrderStep implements Serializable {
         this.sla = sla;
         return this;
     }
-    
-    
+
     /**
      * State of the connection step. <ul> <li><b>Pending</b>: This step is
      * not yet completed.</li> <li><b>Completed</b>: This step has been
@@ -309,8 +304,7 @@ public class ConnectionOrderStep implements Serializable {
         this.stepState = stepState;
         return this;
     }
-    
-    
+
     /**
      * State of the connection step. <ul> <li><b>Pending</b>: This step is
      * not yet completed.</li> <li><b>Completed</b>: This step has been
@@ -352,7 +346,7 @@ public class ConnectionOrderStep implements Serializable {
         this.stepState = stepState.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

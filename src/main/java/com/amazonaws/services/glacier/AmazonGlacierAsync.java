@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.glacier;
-            
+
 import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
@@ -60,8 +60,8 @@ import com.amazonaws.services.glacier.model.*;
  * </p>
  * </li>
  * 
- * </ul> 
- */       
+ * </ul>
+ */
 public interface AmazonGlacierAsync extends AmazonGlacier {
     /**
      * <p>

@@ -66,8 +66,7 @@ public class GetCloudFrontOriginAccessIdentityConfigResult implements Serializab
         this.cloudFrontOriginAccessIdentityConfig = cloudFrontOriginAccessIdentityConfig;
         return this;
     }
-    
-    
+
     /**
      * The current version of the configuration. For example: E2QWRUHAPOMQZL.
      *
@@ -100,8 +99,7 @@ public class GetCloudFrontOriginAccessIdentityConfigResult implements Serializab
         this.eTag = eTag;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

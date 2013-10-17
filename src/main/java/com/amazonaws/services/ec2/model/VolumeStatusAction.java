@@ -62,8 +62,7 @@ public class VolumeStatusAction implements Serializable {
         this.code = code;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Description property for this object.
      *
@@ -96,8 +95,7 @@ public class VolumeStatusAction implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the EventType property for this object.
      *
@@ -130,8 +128,7 @@ public class VolumeStatusAction implements Serializable {
         this.eventType = eventType;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the EventId property for this object.
      *
@@ -164,8 +161,7 @@ public class VolumeStatusAction implements Serializable {
         this.eventId = eventId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

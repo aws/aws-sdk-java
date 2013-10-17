@@ -323,8 +323,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
         this.dBName = dBName;
         return this;
     }
-    
-    
+
     /**
      * A unique identifier for the cluster. You use this identifier to refer
      * to the cluster for any subsequent cluster operations such as deleting
@@ -405,8 +404,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
         this.clusterIdentifier = clusterIdentifier;
         return this;
     }
-    
-    
+
     /**
      * The type of the cluster. When cluster type is specified as <ul>
      * <li><code>single-node</code>, the <b>NumberOfNodes</b> parameter is
@@ -469,8 +467,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
         this.clusterType = clusterType;
         return this;
     }
-    
-    
+
     /**
      * The node type to be provisioned for the cluster. For information about
      * node types, go to <a
@@ -533,8 +530,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
         this.nodeType = nodeType;
         return this;
     }
-    
-    
+
     /**
      * The user name associated with the master user account for the cluster
      * that is being created. <p>Constraints: <ul> <li>Must be 1 - 128
@@ -603,8 +599,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
         this.masterUsername = masterUsername;
         return this;
     }
-    
-    
+
     /**
      * The password associated with the master user account for the cluster
      * that is being created. <p> Constraints: <ul> <li>Must be between 8 and
@@ -673,8 +668,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
         this.masterUserPassword = masterUserPassword;
         return this;
     }
-    
-    
+
     /**
      * A list of security groups to be associated with this cluster. <p>
      * Default: The default cluster security group for Amazon Redshift.
@@ -683,7 +677,6 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      *         Default: The default cluster security group for Amazon Redshift.
      */
     public java.util.List<String> getClusterSecurityGroups() {
-        
         if (clusterSecurityGroups == null) {
               clusterSecurityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               clusterSecurityGroups.setAutoConstruct(true);
@@ -751,7 +744,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
 
         return this;
     }
-    
+
     /**
      * A list of Virtual Private Cloud (VPC) security groups to be associated
      * with the cluster. <p>Default: The default VPC security group is
@@ -762,7 +755,6 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      *         associated with the cluster.
      */
     public java.util.List<String> getVpcSecurityGroupIds() {
-        
         if (vpcSecurityGroupIds == null) {
               vpcSecurityGroupIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               vpcSecurityGroupIds.setAutoConstruct(true);
@@ -836,7 +828,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
 
         return this;
     }
-    
+
     /**
      * The name of a cluster subnet group to be associated with this cluster.
      * <p> If this parameter is not provided the resulting cluster will be
@@ -881,8 +873,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
         this.clusterSubnetGroupName = clusterSubnetGroupName;
         return this;
     }
-    
-    
+
     /**
      * The EC2 Availability Zone (AZ) in which you want Amazon Redshift to
      * provision the cluster. For example, if you have several EC2 instances
@@ -957,8 +948,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
         this.availabilityZone = availabilityZone;
         return this;
     }
-    
-    
+
     /**
      * The weekly time range (in UTC) during which automated cluster
      * maintenance can occur. <p> Format:
@@ -1045,8 +1035,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
         this.preferredMaintenanceWindow = preferredMaintenanceWindow;
         return this;
     }
-    
-    
+
     /**
      * The name of the parameter group to be associated with this cluster.
      * <p>Default: The default Amazon Redshift cluster parameter group. For
@@ -1121,8 +1110,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
         this.clusterParameterGroupName = clusterParameterGroupName;
         return this;
     }
-    
-    
+
     /**
      * The number of days that automated snapshots are retained. If the value
      * is 0, automated snapshots are disabled. Even if automated snapshots
@@ -1179,8 +1167,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
         this.automatedSnapshotRetentionPeriod = automatedSnapshotRetentionPeriod;
         return this;
     }
-    
-    
+
     /**
      * The port number on which the cluster accepts incoming connections.
      * <p>The cluster is accessible only via the JDBC and ODBC connection
@@ -1237,8 +1224,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
         this.port = port;
         return this;
     }
-    
-    
+
     /**
      * The version of the Amazon Redshift engine software that you want to
      * deploy on the cluster. <p> The version selected runs on all the nodes
@@ -1289,8 +1275,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
         this.clusterVersion = clusterVersion;
         return this;
     }
-    
-    
+
     /**
      * If <code>true</code>, upgrades can be applied during the maintenance
      * window to the Amazon Redshift engine that is running on the cluster.
@@ -1353,8 +1338,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
         this.allowVersionUpgrade = allowVersionUpgrade;
         return this;
     }
-    
-    
+
     /**
      * If <code>true</code>, upgrades can be applied during the maintenance
      * window to the Amazon Redshift engine that is running on the cluster.
@@ -1373,7 +1357,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
     public Boolean getAllowVersionUpgrade() {
         return allowVersionUpgrade;
     }
-    
+
     /**
      * The number of compute nodes in the cluster. This parameter is required
      * when the <b>ClusterType</b> parameter is specified as
@@ -1466,8 +1450,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
         this.numberOfNodes = numberOfNodes;
         return this;
     }
-    
-    
+
     /**
      * If <code>true</code>, the cluster can be accessed from a public
      * network.
@@ -1506,8 +1489,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
         this.publiclyAccessible = publiclyAccessible;
         return this;
     }
-    
-    
+
     /**
      * If <code>true</code>, the cluster can be accessed from a public
      * network.
@@ -1518,7 +1500,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
     public Boolean getPubliclyAccessible() {
         return publiclyAccessible;
     }
-    
+
     /**
      * If <code>true</code>, the data in cluster is encrypted at rest.
      * <p>Default: false
@@ -1557,8 +1539,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
         this.encrypted = encrypted;
         return this;
     }
-    
-    
+
     /**
      * If <code>true</code>, the data in cluster is encrypted at rest.
      * <p>Default: false
@@ -1569,7 +1550,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
     public Boolean getEncrypted() {
         return encrypted;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

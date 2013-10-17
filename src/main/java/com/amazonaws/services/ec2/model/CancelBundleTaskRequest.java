@@ -43,8 +43,6 @@ public class CancelBundleTaskRequest extends AmazonWebServiceRequest implements 
      */
     public CancelBundleTaskRequest() {}
     
-
-
     /**
      * Constructs a new CancelBundleTaskRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -56,8 +54,6 @@ public class CancelBundleTaskRequest extends AmazonWebServiceRequest implements 
         setBundleId(bundleId);
     }
 
-    
-    
     /**
      * The ID of the bundle task to cancel.
      *
@@ -90,8 +86,7 @@ public class CancelBundleTaskRequest extends AmazonWebServiceRequest implements 
         this.bundleId = bundleId;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

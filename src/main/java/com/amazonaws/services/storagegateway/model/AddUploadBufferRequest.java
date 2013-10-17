@@ -104,8 +104,7 @@ public class AddUploadBufferRequest extends AmazonWebServiceRequest implements S
         this.gatewayARN = gatewayARN;
         return this;
     }
-    
-    
+
     /**
      * An array of strings that identify disks that are to be configured as
      * upload buffer. Each string in the array must be minimum length of 1
@@ -118,7 +117,6 @@ public class AddUploadBufferRequest extends AmazonWebServiceRequest implements S
      *         <a>ListLocalDisks</a> API.
      */
     public java.util.List<String> getDiskIds() {
-        
         if (diskIds == null) {
               diskIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               diskIds.setAutoConstruct(true);
@@ -198,7 +196,7 @@ public class AddUploadBufferRequest extends AmazonWebServiceRequest implements S
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

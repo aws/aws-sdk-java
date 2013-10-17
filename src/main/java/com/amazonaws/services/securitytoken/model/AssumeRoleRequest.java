@@ -186,8 +186,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
         this.roleArn = roleArn;
         return this;
     }
-    
-    
+
     /**
      * An identifier for the assumed role session. The session name is
      * included as part of the <code>AssumedRoleUser</code>.
@@ -238,8 +237,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
         this.roleSessionName = roleSessionName;
         return this;
     }
-    
-    
+
     /**
      * A supplemental policy that is associated with the temporary security
      * credentials from the <code>AssumeRole</code> call. The resulting
@@ -314,8 +312,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
         this.policy = policy;
         return this;
     }
-    
-    
+
     /**
      * The duration, in seconds, of the role session. The value can range
      * from 900 seconds (15 minutes) to 3600 seconds (1 hour). By default,
@@ -369,8 +366,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
         this.durationSeconds = durationSeconds;
         return this;
     }
-    
-    
+
     /**
      * A unique identifier that is used by third parties to assume a role in
      * their customers' accounts. For each role that the third party can
@@ -475,8 +471,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
         this.externalId = externalId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

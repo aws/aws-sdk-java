@@ -52,8 +52,6 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest implements 
      */
     public CreateDBSnapshotRequest() {}
     
-
-
     /**
      * Constructs a new CreateDBSnapshotRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -77,8 +75,6 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest implements 
         setDBInstanceIdentifier(dBInstanceIdentifier);
     }
 
-    
-    
     /**
      * The identifier for the DB Snapshot. <p>Constraints: <ul> <li>Cannot be
      * null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
@@ -135,8 +131,7 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest implements 
         this.dBSnapshotIdentifier = dBSnapshotIdentifier;
         return this;
     }
-    
-    
+
     /**
      * The DB Instance identifier. This is the unique key that identifies a
      * DB Instance. This parameter isn't case sensitive. <p>Constraints: <ul>
@@ -193,8 +188,7 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest implements 
         this.dBInstanceIdentifier = dBInstanceIdentifier;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

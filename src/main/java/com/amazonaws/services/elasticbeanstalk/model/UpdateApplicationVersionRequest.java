@@ -65,8 +65,6 @@ public class UpdateApplicationVersionRequest extends AmazonWebServiceRequest imp
      */
     public UpdateApplicationVersionRequest() {}
     
-
-
     /**
      * Constructs a new UpdateApplicationVersionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -86,8 +84,6 @@ public class UpdateApplicationVersionRequest extends AmazonWebServiceRequest imp
         setVersionLabel(versionLabel);
     }
 
-    
-    
     /**
      * The name of the application associated with this version. <p> If no
      * application is found with this name, <code>UpdateApplication</code>
@@ -141,8 +137,7 @@ public class UpdateApplicationVersionRequest extends AmazonWebServiceRequest imp
         this.applicationName = applicationName;
         return this;
     }
-    
-    
+
     /**
      * The name of the version to update. <p> If no application version is
      * found with this label, <code>UpdateApplication</code> returns an
@@ -196,8 +191,7 @@ public class UpdateApplicationVersionRequest extends AmazonWebServiceRequest imp
         this.versionLabel = versionLabel;
         return this;
     }
-    
-    
+
     /**
      * A new description for this release.
      * <p>
@@ -239,8 +233,7 @@ public class UpdateApplicationVersionRequest extends AmazonWebServiceRequest imp
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

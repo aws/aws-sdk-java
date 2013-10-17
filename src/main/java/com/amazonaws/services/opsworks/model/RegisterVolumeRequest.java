@@ -72,8 +72,7 @@ public class RegisterVolumeRequest extends AmazonWebServiceRequest implements Se
         this.ec2VolumeId = ec2VolumeId;
         return this;
     }
-    
-    
+
     /**
      * The stack ID.
      *
@@ -106,8 +105,7 @@ public class RegisterVolumeRequest extends AmazonWebServiceRequest implements Se
         this.stackId = stackId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

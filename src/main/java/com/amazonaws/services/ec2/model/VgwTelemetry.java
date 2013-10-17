@@ -64,8 +64,7 @@ public class VgwTelemetry implements Serializable {
         this.outsideIpAddress = outsideIpAddress;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Status property for this object.
      * <p>
@@ -113,8 +112,7 @@ public class VgwTelemetry implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * Sets the value of the Status property for this object.
      * <p>
@@ -148,7 +146,7 @@ public class VgwTelemetry implements Serializable {
         this.status = status.toString();
         return this;
     }
-    
+
     /**
      * Returns the value of the LastStatusChange property for this object.
      *
@@ -181,8 +179,7 @@ public class VgwTelemetry implements Serializable {
         this.lastStatusChange = lastStatusChange;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the StatusMessage property for this object.
      *
@@ -215,8 +212,7 @@ public class VgwTelemetry implements Serializable {
         this.statusMessage = statusMessage;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the AcceptedRouteCount property for this object.
      *
@@ -249,8 +245,7 @@ public class VgwTelemetry implements Serializable {
         this.acceptedRouteCount = acceptedRouteCount;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

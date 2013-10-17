@@ -91,8 +91,7 @@ public class AdjustmentType implements Serializable {
         this.adjustmentType = adjustmentType;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -260,8 +260,7 @@ public class PresetWatermark implements Serializable {
         this.id = id;
         return this;
     }
-    
-    
+
     /**
      * The maximum width of the watermark in one of the following formats:
      * <ul> <li>number of pixels (px): The minimum value is 16 pixels, and
@@ -351,8 +350,7 @@ public class PresetWatermark implements Serializable {
         this.maxWidth = maxWidth;
         return this;
     }
-    
-    
+
     /**
      * The maximum height of the watermark in one of the following formats:
      * <ul> <li>number of pixels (px): The minimum value is 16 pixels, and
@@ -442,8 +440,7 @@ public class PresetWatermark implements Serializable {
         this.maxHeight = maxHeight;
         return this;
     }
-    
-    
+
     /**
      * A value that controls scaling of the watermark: <ul> <li><b>Fit</b>:
      * Elastic Transcoder scales the watermark so it matches the value that
@@ -563,8 +560,7 @@ public class PresetWatermark implements Serializable {
         this.sizingPolicy = sizingPolicy;
         return this;
     }
-    
-    
+
     /**
      * The horizontal position of the watermark unless you specify a non-zero
      * value for <code>HorizontalOffset</code>: <ul> <li><b>Left</b>: The
@@ -642,8 +638,7 @@ public class PresetWatermark implements Serializable {
         this.horizontalAlign = horizontalAlign;
         return this;
     }
-    
-    
+
     /**
      * The amount by which you want the horizontal position of the watermark
      * to be offset from the position specified by HorizontalAlign: <ul>
@@ -787,8 +782,7 @@ public class PresetWatermark implements Serializable {
         this.horizontalOffset = horizontalOffset;
         return this;
     }
-    
-    
+
     /**
      * The vertical position of the watermark unless you specify a non-zero
      * value for <code>VerticalOffset</code>: <ul> <li><b>Top</b>: The top
@@ -866,8 +860,7 @@ public class PresetWatermark implements Serializable {
         this.verticalAlign = verticalAlign;
         return this;
     }
-    
-    
+
     /**
      * <code>VerticalOffset</code> <p>The amount by which you want the
      * vertical position of the watermark to be offset from the position
@@ -1011,8 +1004,7 @@ public class PresetWatermark implements Serializable {
         this.verticalOffset = verticalOffset;
         return this;
     }
-    
-    
+
     /**
      * A percentage that indicates how much you want a watermark to obscure
      * the video in the location where it appears. Valid values are 0 (the
@@ -1096,8 +1088,7 @@ public class PresetWatermark implements Serializable {
         this.opacity = opacity;
         return this;
     }
-    
-    
+
     /**
      * A value that determines how Elastic Transcoder interprets values that
      * you specified for <code>HorizontalOffset</code>,
@@ -1229,8 +1220,7 @@ public class PresetWatermark implements Serializable {
         this.target = target;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

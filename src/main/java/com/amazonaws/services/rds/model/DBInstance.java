@@ -265,8 +265,7 @@ public class DBInstance implements Serializable {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
         return this;
     }
-    
-    
+
     /**
      * Contains the name of the compute and memory capacity class of the DB
      * Instance.
@@ -305,8 +304,7 @@ public class DBInstance implements Serializable {
         this.dBInstanceClass = dBInstanceClass;
         return this;
     }
-    
-    
+
     /**
      * Provides the name of the database engine to be used for this DB
      * Instance.
@@ -345,8 +343,7 @@ public class DBInstance implements Serializable {
         this.engine = engine;
         return this;
     }
-    
-    
+
     /**
      * Specifies the current state of this database.
      *
@@ -379,8 +376,7 @@ public class DBInstance implements Serializable {
         this.dBInstanceStatus = dBInstanceStatus;
         return this;
     }
-    
-    
+
     /**
      * Contains the master username for the DB Instance.
      *
@@ -413,8 +409,7 @@ public class DBInstance implements Serializable {
         this.masterUsername = masterUsername;
         return this;
     }
-    
-    
+
     /**
      * The meaning of this parameter differs according to the database engine
      * you use. <p><b>MySQL</b> <p> Contains the name of the initial database
@@ -477,8 +472,7 @@ public class DBInstance implements Serializable {
         this.dBName = dBName;
         return this;
     }
-    
-    
+
     /**
      * Specifies the connection endpoint.
      *
@@ -511,8 +505,7 @@ public class DBInstance implements Serializable {
         this.endpoint = endpoint;
         return this;
     }
-    
-    
+
     /**
      * Specifies the allocated storage size specified in gigabytes.
      *
@@ -545,8 +538,7 @@ public class DBInstance implements Serializable {
         this.allocatedStorage = allocatedStorage;
         return this;
     }
-    
-    
+
     /**
      * Provides the date and time the DB Instance was created.
      *
@@ -579,8 +571,7 @@ public class DBInstance implements Serializable {
         this.instanceCreateTime = instanceCreateTime;
         return this;
     }
-    
-    
+
     /**
      * Specifies the daily time range during which automated backups are
      * created if automated backups are enabled, as determined by the
@@ -625,8 +616,7 @@ public class DBInstance implements Serializable {
         this.preferredBackupWindow = preferredBackupWindow;
         return this;
     }
-    
-    
+
     /**
      * Specifies the number of days for which automatic DB Snapshots are
      * retained.
@@ -665,8 +655,7 @@ public class DBInstance implements Serializable {
         this.backupRetentionPeriod = backupRetentionPeriod;
         return this;
     }
-    
-    
+
     /**
      * Provides List of DB Security Group elements containing only
      * <code>DBSecurityGroup.Name</code> and
@@ -677,7 +666,6 @@ public class DBInstance implements Serializable {
      *         <code>DBSecurityGroup.Status</code> subelements.
      */
     public java.util.List<DBSecurityGroupMembership> getDBSecurityGroups() {
-        
         if (dBSecurityGroups == null) {
               dBSecurityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<DBSecurityGroupMembership>();
               dBSecurityGroups.setAutoConstruct(true);
@@ -751,7 +739,7 @@ public class DBInstance implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Provides List of VPC security group elements that the DB Instance
      * belongs to.
@@ -760,7 +748,6 @@ public class DBInstance implements Serializable {
      *         belongs to.
      */
     public java.util.List<VpcSecurityGroupMembership> getVpcSecurityGroups() {
-        
         if (vpcSecurityGroups == null) {
               vpcSecurityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<VpcSecurityGroupMembership>();
               vpcSecurityGroups.setAutoConstruct(true);
@@ -828,14 +815,13 @@ public class DBInstance implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Provides the list of DB Parameter Groups applied to this DB Instance.
      *
      * @return Provides the list of DB Parameter Groups applied to this DB Instance.
      */
     public java.util.List<DBParameterGroupStatus> getDBParameterGroups() {
-        
         if (dBParameterGroups == null) {
               dBParameterGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<DBParameterGroupStatus>();
               dBParameterGroups.setAutoConstruct(true);
@@ -897,7 +883,7 @@ public class DBInstance implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Specifies the name of the Availability Zone the DB Instance is located
      * in.
@@ -936,8 +922,7 @@ public class DBInstance implements Serializable {
         this.availabilityZone = availabilityZone;
         return this;
     }
-    
-    
+
     /**
      * Provides the inforamtion of the subnet group associated with the DB
      * instance, including the name, descrption and subnets in the subnet
@@ -982,8 +967,7 @@ public class DBInstance implements Serializable {
         this.dBSubnetGroup = dBSubnetGroup;
         return this;
     }
-    
-    
+
     /**
      * Specifies the weekly time range (in UTC) during which system
      * maintenance can occur.
@@ -1022,8 +1006,7 @@ public class DBInstance implements Serializable {
         this.preferredMaintenanceWindow = preferredMaintenanceWindow;
         return this;
     }
-    
-    
+
     /**
      * Specifies that changes to the DB Instance are pending. This element is
      * only included when changes are pending. Specific changes are
@@ -1068,8 +1051,7 @@ public class DBInstance implements Serializable {
         this.pendingModifiedValues = pendingModifiedValues;
         return this;
     }
-    
-    
+
     /**
      * Specifies the latest time to which a database can be restored with
      * point-in-time restore.
@@ -1108,8 +1090,7 @@ public class DBInstance implements Serializable {
         this.latestRestorableTime = latestRestorableTime;
         return this;
     }
-    
-    
+
     /**
      * Specifies if the DB Instance is a Multi-AZ deployment.
      *
@@ -1142,8 +1123,7 @@ public class DBInstance implements Serializable {
         this.multiAZ = multiAZ;
         return this;
     }
-    
-    
+
     /**
      * Specifies if the DB Instance is a Multi-AZ deployment.
      *
@@ -1152,7 +1132,7 @@ public class DBInstance implements Serializable {
     public Boolean getMultiAZ() {
         return multiAZ;
     }
-    
+
     /**
      * Indicates the database engine version.
      *
@@ -1185,8 +1165,7 @@ public class DBInstance implements Serializable {
         this.engineVersion = engineVersion;
         return this;
     }
-    
-    
+
     /**
      * Indicates that minor version patches are applied automatically.
      *
@@ -1219,8 +1198,7 @@ public class DBInstance implements Serializable {
         this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
         return this;
     }
-    
-    
+
     /**
      * Indicates that minor version patches are applied automatically.
      *
@@ -1229,7 +1207,7 @@ public class DBInstance implements Serializable {
     public Boolean getAutoMinorVersionUpgrade() {
         return autoMinorVersionUpgrade;
     }
-    
+
     /**
      * Contains the identifier of the source DB Instance if this DB Instance
      * is a Read Replica.
@@ -1268,8 +1246,7 @@ public class DBInstance implements Serializable {
         this.readReplicaSourceDBInstanceIdentifier = readReplicaSourceDBInstanceIdentifier;
         return this;
     }
-    
-    
+
     /**
      * Contains one or more identifiers of the Read Replicas associated with
      * this DB Instance.
@@ -1278,7 +1255,6 @@ public class DBInstance implements Serializable {
      *         this DB Instance.
      */
     public java.util.List<String> getReadReplicaDBInstanceIdentifiers() {
-        
         if (readReplicaDBInstanceIdentifiers == null) {
               readReplicaDBInstanceIdentifiers = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               readReplicaDBInstanceIdentifiers.setAutoConstruct(true);
@@ -1346,7 +1322,7 @@ public class DBInstance implements Serializable {
 
         return this;
     }
-    
+
     /**
      * License model information for this DB Instance.
      *
@@ -1379,8 +1355,7 @@ public class DBInstance implements Serializable {
         this.licenseModel = licenseModel;
         return this;
     }
-    
-    
+
     /**
      * Specifies the Provisioned IOPS (I/O operations per second) value.
      *
@@ -1413,15 +1388,13 @@ public class DBInstance implements Serializable {
         this.iops = iops;
         return this;
     }
-    
-    
+
     /**
      * Provides the list of option group memberships for this DB Instance.
      *
      * @return Provides the list of option group memberships for this DB Instance.
      */
     public java.util.List<OptionGroupMembership> getOptionGroupMemberships() {
-        
         if (optionGroupMemberships == null) {
               optionGroupMemberships = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionGroupMembership>();
               optionGroupMemberships.setAutoConstruct(true);
@@ -1483,7 +1456,7 @@ public class DBInstance implements Serializable {
 
         return this;
     }
-    
+
     /**
      * If present, specifies the name of the character set that this instance
      * is associated with.
@@ -1522,8 +1495,7 @@ public class DBInstance implements Serializable {
         this.characterSetName = characterSetName;
         return this;
     }
-    
-    
+
     /**
      * If present, specifies the name of the secondary Availability Zone for
      * a DB instance with multi-AZ support.
@@ -1562,8 +1534,7 @@ public class DBInstance implements Serializable {
         this.secondaryAvailabilityZone = secondaryAvailabilityZone;
         return this;
     }
-    
-    
+
     /**
      * Specifies the accessibility options for the DB Instance. A value of
      * true specifies an Internet-facing instance with a publicly resolvable
@@ -1668,8 +1639,7 @@ public class DBInstance implements Serializable {
         this.publiclyAccessible = publiclyAccessible;
         return this;
     }
-    
-    
+
     /**
      * Specifies the accessibility options for the DB Instance. A value of
      * true specifies an Internet-facing instance with a publicly resolvable
@@ -1702,7 +1672,7 @@ public class DBInstance implements Serializable {
     public Boolean getPubliclyAccessible() {
         return publiclyAccessible;
     }
-    
+
     /**
      * The status of a Read Replica. If the instance is not a for a read
      * replica, this will be blank.
@@ -1711,7 +1681,6 @@ public class DBInstance implements Serializable {
      *         replica, this will be blank.
      */
     public java.util.List<DBInstanceStatusInfo> getStatusInfos() {
-        
         if (statusInfos == null) {
               statusInfos = new com.amazonaws.internal.ListWithAutoConstructFlag<DBInstanceStatusInfo>();
               statusInfos.setAutoConstruct(true);
@@ -1779,7 +1748,7 @@ public class DBInstance implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

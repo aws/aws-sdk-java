@@ -138,8 +138,7 @@ public class StartTimerDecisionAttributes implements Serializable {
         this.timerId = timerId;
         return this;
     }
-    
-    
+
     /**
      * Optional data attached to the event that can be used by the decider in
      * subsequent workflow tasks.
@@ -187,8 +186,7 @@ public class StartTimerDecisionAttributes implements Serializable {
         this.control = control;
         return this;
     }
-    
-    
+
     /**
      * The duration to wait before firing the timer. This field is required.
      * <p>The duration is specified in seconds. The valid values are integers
@@ -242,8 +240,7 @@ public class StartTimerDecisionAttributes implements Serializable {
         this.startToFireTimeout = startToFireTimeout;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

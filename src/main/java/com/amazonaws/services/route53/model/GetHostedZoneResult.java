@@ -74,8 +74,7 @@ public class GetHostedZoneResult implements Serializable {
         this.hostedZone = hostedZone;
         return this;
     }
-    
-    
+
     /**
      * A complex type that contains information about the name servers for
      * the specified hosted zone.
@@ -114,8 +113,7 @@ public class GetHostedZoneResult implements Serializable {
         this.delegationSet = delegationSet;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

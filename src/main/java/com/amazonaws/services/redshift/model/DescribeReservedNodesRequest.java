@@ -81,8 +81,7 @@ public class DescribeReservedNodesRequest extends AmazonWebServiceRequest implem
         this.reservedNodeId = reservedNodeId;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
@@ -139,8 +138,7 @@ public class DescribeReservedNodesRequest extends AmazonWebServiceRequest implem
         this.maxRecords = maxRecords;
         return this;
     }
-    
-    
+
     /**
      * An optional marker returned by a previous <a>DescribeReservedNodes</a>
      * request to indicate the first parameter group that the current request
@@ -185,8 +183,7 @@ public class DescribeReservedNodesRequest extends AmazonWebServiceRequest implem
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -98,8 +98,7 @@ public class Tag implements Serializable {
         this.key = key;
         return this;
     }
-    
-    
+
     /**
      * A value is the optional value of the tag. The string value can be from
      * 1 to 256 Unicode characters in length and cannot be prefixed with
@@ -156,8 +155,7 @@ public class Tag implements Serializable {
         this.value = value;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

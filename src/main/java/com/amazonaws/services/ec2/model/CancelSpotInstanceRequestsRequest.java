@@ -50,8 +50,6 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest i
      */
     public CancelSpotInstanceRequestsRequest() {}
     
-
-
     /**
      * Constructs a new CancelSpotInstanceRequestsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -64,15 +62,12 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest i
         setSpotInstanceRequestIds(spotInstanceRequestIds);
     }
 
-    
-    
     /**
      * Specifies the ID of the Spot Instance request.
      *
      * @return Specifies the ID of the Spot Instance request.
      */
     public java.util.List<String> getSpotInstanceRequestIds() {
-        
         if (spotInstanceRequestIds == null) {
               spotInstanceRequestIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               spotInstanceRequestIds.setAutoConstruct(true);
@@ -134,7 +129,7 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest i
 
         return this;
     }
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

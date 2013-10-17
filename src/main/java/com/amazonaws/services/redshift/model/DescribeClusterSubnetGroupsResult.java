@@ -80,15 +80,13 @@ public class DescribeClusterSubnetGroupsResult implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * A list of <a>ClusterSubnetGroup</a> instances.
      *
      * @return A list of <a>ClusterSubnetGroup</a> instances.
      */
     public java.util.List<ClusterSubnetGroup> getClusterSubnetGroups() {
-        
         if (clusterSubnetGroups == null) {
               clusterSubnetGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<ClusterSubnetGroup>();
               clusterSubnetGroups.setAutoConstruct(true);
@@ -150,7 +148,7 @@ public class DescribeClusterSubnetGroupsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

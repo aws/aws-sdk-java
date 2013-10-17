@@ -102,8 +102,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * A stack ID. The action describes the stack's registered Amazon EBS
      * volumes.
@@ -142,8 +141,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
         this.stackId = stackId;
         return this;
     }
-    
-    
+
     /**
      * The RAID array ID. If you use this parameter,
      * <code>DescribeVolumes</code> returns descriptions of the volumes
@@ -188,8 +186,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
         this.raidArrayId = raidArrayId;
         return this;
     }
-    
-    
+
     /**
      * Am array of volume IDs. If you use this parameter,
      * <code>DescribeVolumes</code> returns descriptions of the specified
@@ -200,7 +197,6 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *         volumes. Otherwise, it returns a description of every volume.
      */
     public java.util.List<String> getVolumeIds() {
-        
         if (volumeIds == null) {
               volumeIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               volumeIds.setAutoConstruct(true);
@@ -274,7 +270,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -104,8 +104,7 @@ public class Parameter implements Serializable {
         this.parameterName = parameterName;
         return this;
     }
-    
-    
+
     /**
      * The value of the parameter.
      *
@@ -138,8 +137,7 @@ public class Parameter implements Serializable {
         this.parameterValue = parameterValue;
         return this;
     }
-    
-    
+
     /**
      * A description of the parameter.
      *
@@ -172,8 +170,7 @@ public class Parameter implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * The source of the parameter.
      *
@@ -206,8 +203,7 @@ public class Parameter implements Serializable {
         this.source = source;
         return this;
     }
-    
-    
+
     /**
      * The valid data type for the parameter.
      *
@@ -240,8 +236,7 @@ public class Parameter implements Serializable {
         this.dataType = dataType;
         return this;
     }
-    
-    
+
     /**
      * The valid range of values for the parameter.
      *
@@ -274,8 +269,7 @@ public class Parameter implements Serializable {
         this.allowedValues = allowedValues;
         return this;
     }
-    
-    
+
     /**
      * Indicates whether (<code>true</code>) or not (<code>false</code>) the
      * parameter can be modified. Some parameters have security or
@@ -320,8 +314,7 @@ public class Parameter implements Serializable {
         this.isModifiable = isModifiable;
         return this;
     }
-    
-    
+
     /**
      * Indicates whether (<code>true</code>) or not (<code>false</code>) the
      * parameter can be modified. Some parameters have security or
@@ -334,7 +327,7 @@ public class Parameter implements Serializable {
     public Boolean getIsModifiable() {
         return isModifiable;
     }
-    
+
     /**
      * The earliest cache engine version to which the parameter can apply.
      *
@@ -367,8 +360,7 @@ public class Parameter implements Serializable {
         this.minimumEngineVersion = minimumEngineVersion;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

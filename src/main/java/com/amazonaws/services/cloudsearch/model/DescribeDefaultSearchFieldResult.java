@@ -75,8 +75,7 @@ public class DescribeDefaultSearchFieldResult implements Serializable {
         this.defaultSearchField = defaultSearchField;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

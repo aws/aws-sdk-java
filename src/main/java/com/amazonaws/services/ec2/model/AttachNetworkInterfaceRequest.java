@@ -66,8 +66,7 @@ public class AttachNetworkInterfaceRequest extends AmazonWebServiceRequest imple
         this.networkInterfaceId = networkInterfaceId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the InstanceId property for this object.
      *
@@ -100,8 +99,7 @@ public class AttachNetworkInterfaceRequest extends AmazonWebServiceRequest imple
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the DeviceIndex property for this object.
      *
@@ -134,8 +132,7 @@ public class AttachNetworkInterfaceRequest extends AmazonWebServiceRequest imple
         this.deviceIndex = deviceIndex;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

@@ -72,8 +72,7 @@ public class CacheNodeTypeSpecificValue implements Serializable {
         this.cacheNodeType = cacheNodeType;
         return this;
     }
-    
-    
+
     /**
      * The value for the cache node type.
      *
@@ -106,8 +105,7 @@ public class CacheNodeTypeSpecificValue implements Serializable {
         this.value = value;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

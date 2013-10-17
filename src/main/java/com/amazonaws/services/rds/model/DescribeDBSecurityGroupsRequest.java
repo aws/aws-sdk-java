@@ -92,8 +92,7 @@ public class DescribeDBSecurityGroupsRequest extends AmazonWebServiceRequest imp
         this.dBSecurityGroupName = dBSecurityGroupName;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
@@ -150,8 +149,7 @@ public class DescribeDBSecurityGroupsRequest extends AmazonWebServiceRequest imp
         this.maxRecords = maxRecords;
         return this;
     }
-    
-    
+
     /**
      * An optional pagination token provided by a previous
      * DescribeDBSecurityGroups request. If this parameter is specified, the
@@ -202,8 +200,7 @@ public class DescribeDBSecurityGroupsRequest extends AmazonWebServiceRequest imp
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

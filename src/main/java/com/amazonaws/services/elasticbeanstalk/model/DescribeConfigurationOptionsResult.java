@@ -78,15 +78,13 @@ public class DescribeConfigurationOptionsResult implements Serializable {
         this.solutionStackName = solutionStackName;
         return this;
     }
-    
-    
+
     /**
      * A list of <a>ConfigurationOptionDescription</a>.
      *
      * @return A list of <a>ConfigurationOptionDescription</a>.
      */
     public java.util.List<ConfigurationOptionDescription> getOptions() {
-        
         if (options == null) {
               options = new com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionDescription>();
               options.setAutoConstruct(true);
@@ -148,7 +146,7 @@ public class DescribeConfigurationOptionsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

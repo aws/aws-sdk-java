@@ -79,8 +79,7 @@ public class OptionRestrictionRegex implements Serializable {
         this.pattern = pattern;
         return this;
     }
-    
-    
+
     /**
      * A unique name representing this regular expression.
      *
@@ -113,8 +112,7 @@ public class OptionRestrictionRegex implements Serializable {
         this.label = label;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

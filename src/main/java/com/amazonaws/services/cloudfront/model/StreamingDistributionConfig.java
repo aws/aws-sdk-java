@@ -102,8 +102,6 @@ public class StreamingDistributionConfig implements Serializable {
      */
     public StreamingDistributionConfig() {}
     
-
-
     /**
      * Constructs a new StreamingDistributionConfig object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -133,8 +131,6 @@ public class StreamingDistributionConfig implements Serializable {
         setEnabled(enabled);
     }
 
-    
-    
     /**
      * A unique number that ensures the request can't be replayed. If the
      * CallerReference is new (no matter the content of the
@@ -233,8 +229,7 @@ public class StreamingDistributionConfig implements Serializable {
         this.callerReference = callerReference;
         return this;
     }
-    
-    
+
     /**
      * A complex type that contains information about the Amazon S3 bucket
      * from which you want CloudFront to get your media files for
@@ -279,8 +274,7 @@ public class StreamingDistributionConfig implements Serializable {
         this.s3Origin = s3Origin;
         return this;
     }
-    
-    
+
     /**
      * A complex type that contains information about CNAMEs (alternate
      * domain names), if any, for this streaming distribution.
@@ -319,8 +313,7 @@ public class StreamingDistributionConfig implements Serializable {
         this.aliases = aliases;
         return this;
     }
-    
-    
+
     /**
      * Any comments you want to include about the streaming distribution.
      *
@@ -353,8 +346,7 @@ public class StreamingDistributionConfig implements Serializable {
         this.comment = comment;
         return this;
     }
-    
-    
+
     /**
      * A complex type that controls whether access logs are written for the
      * streaming distribution.
@@ -393,8 +385,7 @@ public class StreamingDistributionConfig implements Serializable {
         this.logging = logging;
         return this;
     }
-    
-    
+
     /**
      * A complex type that specifies the AWS accounts, if any, that you want
      * to allow to create signed URLs for private content. If you want to
@@ -499,8 +490,7 @@ public class StreamingDistributionConfig implements Serializable {
         this.trustedSigners = trustedSigners;
         return this;
     }
-    
-    
+
     /**
      * A complex type that contains information about price class for this
      * streaming distribution.
@@ -554,8 +544,7 @@ public class StreamingDistributionConfig implements Serializable {
         this.priceClass = priceClass;
         return this;
     }
-    
-    
+
     /**
      * A complex type that contains information about price class for this
      * streaming distribution.
@@ -593,7 +582,7 @@ public class StreamingDistributionConfig implements Serializable {
         this.priceClass = priceClass.toString();
         return this;
     }
-    
+
     /**
      * Whether the streaming distribution is enabled to accept end user
      * requests for content.
@@ -632,8 +621,7 @@ public class StreamingDistributionConfig implements Serializable {
         this.enabled = enabled;
         return this;
     }
-    
-    
+
     /**
      * Whether the streaming distribution is enabled to accept end user
      * requests for content.
@@ -644,7 +632,7 @@ public class StreamingDistributionConfig implements Serializable {
     public Boolean getEnabled() {
         return enabled;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -135,8 +135,6 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      */
     public CreateEnvironmentRequest() {}
     
-
-
     /**
      * Constructs a new CreateEnvironmentRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -161,8 +159,6 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
         setEnvironmentName(environmentName);
     }
 
-    
-    
     /**
      * The name of the application that contains the version to be deployed.
      * <p> If no application is found with this name,
@@ -222,8 +218,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
         this.applicationName = applicationName;
         return this;
     }
-    
-    
+
     /**
      * The name of the application version to deploy. <p> If the specified
      * application has no associated application versions, AWS Elastic
@@ -295,8 +290,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
         this.versionLabel = versionLabel;
         return this;
     }
-    
-    
+
     /**
      * A unique name for the deployment environment. Used in the application
      * URL. <p>Constraint: Must be from 4 to 23 characters in length. The
@@ -380,8 +374,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
         this.environmentName = environmentName;
         return this;
     }
-    
-    
+
     /**
      * The name of the configuration template to use in deployment. If no
      * configuration template is found with this name, AWS Elastic Beanstalk
@@ -465,8 +458,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
         this.templateName = templateName;
         return this;
     }
-    
-    
+
     /**
      * This is an alternative to specifying a configuration name. If
      * specified, AWS Elastic Beanstalk sets the configuration values to the
@@ -550,8 +542,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
         this.solutionStackName = solutionStackName;
         return this;
     }
-    
-    
+
     /**
      * If specified, the environment attempts to use this value as the prefix
      * for the CNAME. If not specified, the environment uses the environment
@@ -605,8 +596,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
         this.cNAMEPrefix = cNAMEPrefix;
         return this;
     }
-    
-    
+
     /**
      * Describes this environment.
      * <p>
@@ -648,8 +638,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * If specified, AWS Elastic Beanstalk sets the specified configuration
      * options to the requested value in the configuration set for the new
@@ -662,7 +651,6 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      *         stack or the configuration template.
      */
     public java.util.List<ConfigurationOptionSetting> getOptionSettings() {
-        
         if (optionSettings == null) {
               optionSettings = new com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting>();
               optionSettings.setAutoConstruct(true);
@@ -742,7 +730,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
 
         return this;
     }
-    
+
     /**
      * A list of custom user-defined configuration options to remove from the
      * configuration set for this new environment.
@@ -751,7 +739,6 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      *         configuration set for this new environment.
      */
     public java.util.List<OptionSpecification> getOptionsToRemove() {
-        
         if (optionsToRemove == null) {
               optionsToRemove = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionSpecification>();
               optionsToRemove.setAutoConstruct(true);
@@ -819,7 +806,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

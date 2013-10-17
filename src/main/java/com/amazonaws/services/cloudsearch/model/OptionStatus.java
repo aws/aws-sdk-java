@@ -95,8 +95,7 @@ public class OptionStatus implements Serializable {
         this.creationDate = creationDate;
         return this;
     }
-    
-    
+
     /**
      * A timestamp for when this option was last updated.
      *
@@ -129,8 +128,7 @@ public class OptionStatus implements Serializable {
         this.updateDate = updateDate;
         return this;
     }
-    
-    
+
     /**
      * A unique integer that indicates when this option was last updated.
      * <p>
@@ -172,8 +170,7 @@ public class OptionStatus implements Serializable {
         this.updateVersion = updateVersion;
         return this;
     }
-    
-    
+
     /**
      * The state of processing a change to an option. Possible values:<ul>
      * <li><code>RequiresIndexDocuments</code>: the option's latest value
@@ -269,8 +266,7 @@ public class OptionStatus implements Serializable {
         this.state = state;
         return this;
     }
-    
-    
+
     /**
      * The state of processing a change to an option. Possible values:<ul>
      * <li><code>RequiresIndexDocuments</code>: the option's latest value
@@ -336,7 +332,7 @@ public class OptionStatus implements Serializable {
         this.state = state.toString();
         return this;
     }
-    
+
     /**
      * Indicates that the option will be deleted once processing is complete.
      *
@@ -369,8 +365,7 @@ public class OptionStatus implements Serializable {
         this.pendingDeletion = pendingDeletion;
         return this;
     }
-    
-    
+
     /**
      * Indicates that the option will be deleted once processing is complete.
      *
@@ -379,7 +374,7 @@ public class OptionStatus implements Serializable {
     public Boolean getPendingDeletion() {
         return pendingDeletion;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

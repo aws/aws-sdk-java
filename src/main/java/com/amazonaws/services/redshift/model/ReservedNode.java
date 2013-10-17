@@ -123,8 +123,7 @@ public class ReservedNode implements Serializable {
         this.reservedNodeId = reservedNodeId;
         return this;
     }
-    
-    
+
     /**
      * The identifier for the reserved node offering.
      *
@@ -157,8 +156,7 @@ public class ReservedNode implements Serializable {
         this.reservedNodeOfferingId = reservedNodeOfferingId;
         return this;
     }
-    
-    
+
     /**
      * The node type of the reserved node.
      *
@@ -191,8 +189,7 @@ public class ReservedNode implements Serializable {
         this.nodeType = nodeType;
         return this;
     }
-    
-    
+
     /**
      * The time the reservation started. You purchase a reserved node
      * offering for a duration. This is the start time of that duration.
@@ -231,8 +228,7 @@ public class ReservedNode implements Serializable {
         this.startTime = startTime;
         return this;
     }
-    
-    
+
     /**
      * The duration of the node reservation in seconds.
      *
@@ -265,8 +261,7 @@ public class ReservedNode implements Serializable {
         this.duration = duration;
         return this;
     }
-    
-    
+
     /**
      * The fixed cost Amazon Redshift charged you for this reserved node.
      *
@@ -299,8 +294,7 @@ public class ReservedNode implements Serializable {
         this.fixedPrice = fixedPrice;
         return this;
     }
-    
-    
+
     /**
      * The hourly rate Amazon Redshift charge you for this reserved node.
      *
@@ -333,8 +327,7 @@ public class ReservedNode implements Serializable {
         this.usagePrice = usagePrice;
         return this;
     }
-    
-    
+
     /**
      * The currency code for the reserved cluster.
      *
@@ -367,8 +360,7 @@ public class ReservedNode implements Serializable {
         this.currencyCode = currencyCode;
         return this;
     }
-    
-    
+
     /**
      * The number of reserved compute nodes.
      *
@@ -401,8 +393,7 @@ public class ReservedNode implements Serializable {
         this.nodeCount = nodeCount;
         return this;
     }
-    
-    
+
     /**
      * The state of the reserved Compute Node. <p>Possible Values: <ul>
      * <li>pending-payment-This reserved node has recently been purchased,
@@ -465,8 +456,7 @@ public class ReservedNode implements Serializable {
         this.state = state;
         return this;
     }
-    
-    
+
     /**
      * The anticipated utilization of the reserved node, as defined in the
      * reserved node offering.
@@ -505,15 +495,13 @@ public class ReservedNode implements Serializable {
         this.offeringType = offeringType;
         return this;
     }
-    
-    
+
     /**
      * The recurring charges for the reserved node.
      *
      * @return The recurring charges for the reserved node.
      */
     public java.util.List<RecurringCharge> getRecurringCharges() {
-        
         if (recurringCharges == null) {
               recurringCharges = new com.amazonaws.internal.ListWithAutoConstructFlag<RecurringCharge>();
               recurringCharges.setAutoConstruct(true);
@@ -575,7 +563,7 @@ public class ReservedNode implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

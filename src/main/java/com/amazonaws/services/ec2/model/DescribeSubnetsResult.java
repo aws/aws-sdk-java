@@ -35,7 +35,6 @@ public class DescribeSubnetsResult implements Serializable {
      * @return Contains a set of one or more <a>Subnet</a> instances.
      */
     public java.util.List<Subnet> getSubnets() {
-        
         if (subnets == null) {
               subnets = new com.amazonaws.internal.ListWithAutoConstructFlag<Subnet>();
               subnets.setAutoConstruct(true);
@@ -97,7 +96,7 @@ public class DescribeSubnetsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

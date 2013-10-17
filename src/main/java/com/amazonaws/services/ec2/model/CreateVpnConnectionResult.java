@@ -61,8 +61,7 @@ public class CreateVpnConnectionResult implements Serializable {
         this.vpnConnection = vpnConnection;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

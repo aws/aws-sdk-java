@@ -38,7 +38,6 @@ public class UnmonitorInstancesResult implements Serializable {
      *         in the request.
      */
     public java.util.List<InstanceMonitoring> getInstanceMonitorings() {
-        
         if (instanceMonitorings == null) {
               instanceMonitorings = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceMonitoring>();
               instanceMonitorings.setAutoConstruct(true);
@@ -106,7 +105,7 @@ public class UnmonitorInstancesResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -52,8 +52,6 @@ public class CreateCacheParameterGroupRequest extends AmazonWebServiceRequest im
      */
     public CreateCacheParameterGroupRequest() {}
     
-
-
     /**
      * Constructs a new CreateCacheParameterGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -73,8 +71,6 @@ public class CreateCacheParameterGroupRequest extends AmazonWebServiceRequest im
         setDescription(description);
     }
 
-    
-    
     /**
      * A user-specified name for the cache parameter group.
      *
@@ -107,8 +103,7 @@ public class CreateCacheParameterGroupRequest extends AmazonWebServiceRequest im
         this.cacheParameterGroupName = cacheParameterGroupName;
         return this;
     }
-    
-    
+
     /**
      * The name of the cache parameter group family the cache parameter group
      * can be used with. <p>Valid values are: <code>memcached1.4</code> |
@@ -153,8 +148,7 @@ public class CreateCacheParameterGroupRequest extends AmazonWebServiceRequest im
         this.cacheParameterGroupFamily = cacheParameterGroupFamily;
         return this;
     }
-    
-    
+
     /**
      * A user-specified description for the cache parameter group.
      *
@@ -187,8 +181,7 @@ public class CreateCacheParameterGroupRequest extends AmazonWebServiceRequest im
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

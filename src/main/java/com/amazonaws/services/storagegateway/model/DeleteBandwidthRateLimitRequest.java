@@ -103,8 +103,7 @@ public class DeleteBandwidthRateLimitRequest extends AmazonWebServiceRequest imp
         this.gatewayARN = gatewayARN;
         return this;
     }
-    
-    
+
     /**
      * One of the <a>BandwidthType</a> values that indicates the gateway
      * bandwidth rate limit to delete. <p><i>Valid Values</i>:
@@ -164,8 +163,7 @@ public class DeleteBandwidthRateLimitRequest extends AmazonWebServiceRequest imp
         this.bandwidthType = bandwidthType;
         return this;
     }
-    
-    
+
     /**
      * One of the <a>BandwidthType</a> values that indicates the gateway
      * bandwidth rate limit to delete. <p><i>Valid Values</i>:
@@ -207,7 +205,7 @@ public class DeleteBandwidthRateLimitRequest extends AmazonWebServiceRequest imp
         this.bandwidthType = bandwidthType.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

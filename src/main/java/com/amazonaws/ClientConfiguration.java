@@ -14,11 +14,14 @@
  */
 package com.amazonaws;
 
+import org.apache.http.annotation.NotThreadSafe;
+
 import com.amazonaws.util.VersionInfoUtils;
 /**
  * Client configuration options such as proxy settings, user agent string, max
  * retry attempts, etc.
  */
+@NotThreadSafe
 public class ClientConfiguration {
 
     /** The default timeout for a connected socket. */

@@ -161,8 +161,7 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes implements Seri
         this.workflowId = workflowId;
         return this;
     }
-    
-    
+
     /**
      * The type of the child workflow execution.
      *
@@ -195,8 +194,7 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes implements Seri
         this.workflowType = workflowType;
         return this;
     }
-    
-    
+
     /**
      * Optional data attached to the event that can be used by the decider in
      * subsequent decision tasks. This data is not sent to the activity.
@@ -244,8 +242,7 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes implements Seri
         this.control = control;
         return this;
     }
-    
-    
+
     /**
      * The inputs provided to the child workflow execution (if any).
      * <p>
@@ -287,8 +284,7 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes implements Seri
         this.input = input;
         return this;
     }
-    
-    
+
     /**
      * The maximum duration for the child workflow execution. If the workflow
      * execution is not closed within this duration, it will be timed out and
@@ -360,8 +356,7 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes implements Seri
         this.executionStartToCloseTimeout = executionStartToCloseTimeout;
         return this;
     }
-    
-    
+
     /**
      * The name of the task list used for the decision tasks of the child
      * workflow execution.
@@ -400,8 +395,7 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes implements Seri
         this.taskList = taskList;
         return this;
     }
-    
-    
+
     /**
      * The id of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the
@@ -458,8 +452,7 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes implements Seri
         this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;
         return this;
     }
-    
-    
+
     /**
      * The policy to use for the child workflow executions if this execution
      * gets terminated by explicitly calling the
@@ -567,8 +560,7 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes implements Seri
         this.childPolicy = childPolicy;
         return this;
     }
-    
-    
+
     /**
      * The policy to use for the child workflow executions if this execution
      * gets terminated by explicitly calling the
@@ -642,7 +634,7 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes implements Seri
         this.childPolicy = childPolicy.toString();
         return this;
     }
-    
+
     /**
      * The maximum duration allowed for the decision tasks for this workflow
      * execution. <p>The valid values are integers greater than or equal to
@@ -708,8 +700,7 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes implements Seri
         this.taskStartToCloseTimeout = taskStartToCloseTimeout;
         return this;
     }
-    
-    
+
     /**
      * The list of tags to associated with the child workflow execution.
      * <p>
@@ -719,7 +710,6 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes implements Seri
      * @return The list of tags to associated with the child workflow execution.
      */
     public java.util.List<String> getTagList() {
-        
         if (tagList == null) {
               tagList = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               tagList.setAutoConstruct(true);
@@ -790,7 +780,7 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes implements Seri
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

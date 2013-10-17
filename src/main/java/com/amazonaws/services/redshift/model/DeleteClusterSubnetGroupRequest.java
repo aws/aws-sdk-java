@@ -65,8 +65,7 @@ public class DeleteClusterSubnetGroupRequest extends AmazonWebServiceRequest imp
         this.clusterSubnetGroupName = clusterSubnetGroupName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

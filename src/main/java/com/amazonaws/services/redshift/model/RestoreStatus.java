@@ -97,8 +97,7 @@ public class RestoreStatus implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * The number of megabytes per second being transferred from the backup
      * storage. Returns the average rate for a completed backup.
@@ -137,8 +136,7 @@ public class RestoreStatus implements Serializable {
         this.currentRestoreRateInMegaBytesPerSecond = currentRestoreRateInMegaBytesPerSecond;
         return this;
     }
-    
-    
+
     /**
      * The size of the set of snapshot data used to restore the cluster.
      *
@@ -171,8 +169,7 @@ public class RestoreStatus implements Serializable {
         this.snapshotSizeInMegaBytes = snapshotSizeInMegaBytes;
         return this;
     }
-    
-    
+
     /**
      * The number of megabytes that have been transferred from snapshot
      * storage.
@@ -211,8 +208,7 @@ public class RestoreStatus implements Serializable {
         this.progressInMegaBytes = progressInMegaBytes;
         return this;
     }
-    
-    
+
     /**
      * The amount of time an in-progress restore has been running, or the
      * amount of time it took a completed restore to finish.
@@ -251,8 +247,7 @@ public class RestoreStatus implements Serializable {
         this.elapsedTimeInSeconds = elapsedTimeInSeconds;
         return this;
     }
-    
-    
+
     /**
      * The estimate of the time remaining before the restore will complete.
      * Returns 0 for a completed restore.
@@ -291,8 +286,7 @@ public class RestoreStatus implements Serializable {
         this.estimatedTimeToCompletionInSeconds = estimatedTimeToCompletionInSeconds;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

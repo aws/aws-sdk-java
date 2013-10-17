@@ -149,8 +149,7 @@ public class DescribeGatewayInformationResult implements Serializable {
         this.gatewayARN = gatewayARN;
         return this;
     }
-    
-    
+
     /**
      * The gateway ID.
      * <p>
@@ -192,8 +191,7 @@ public class DescribeGatewayInformationResult implements Serializable {
         this.gatewayId = gatewayId;
         return this;
     }
-    
-    
+
     /**
      * One of the <a>GatewayTimezone</a> values that indicates the time zone
      * configured for the gateway.
@@ -247,8 +245,7 @@ public class DescribeGatewayInformationResult implements Serializable {
         this.gatewayTimezone = gatewayTimezone;
         return this;
     }
-    
-    
+
     /**
      * One of the <a>GatewayTimezone</a> values that indicates the time zone
      * configured for the gateway.
@@ -286,7 +283,7 @@ public class DescribeGatewayInformationResult implements Serializable {
         this.gatewayTimezone = gatewayTimezone.toString();
         return this;
     }
-    
+
     /**
      * One of the <a>GatewayState</a> values that indicates the operating
      * state of the gateway.
@@ -340,8 +337,7 @@ public class DescribeGatewayInformationResult implements Serializable {
         this.gatewayState = gatewayState;
         return this;
     }
-    
-    
+
     /**
      * One of the <a>GatewayState</a> values that indicates the operating
      * state of the gateway.
@@ -379,7 +375,7 @@ public class DescribeGatewayInformationResult implements Serializable {
         this.gatewayState = gatewayState.toString();
         return this;
     }
-    
+
     /**
      * A <a>NetworkInterface</a> array that contains descriptions of the
      * gateway network interfaces.
@@ -388,7 +384,6 @@ public class DescribeGatewayInformationResult implements Serializable {
      *         gateway network interfaces.
      */
     public java.util.List<NetworkInterface> getGatewayNetworkInterfaces() {
-        
         if (gatewayNetworkInterfaces == null) {
               gatewayNetworkInterfaces = new com.amazonaws.internal.ListWithAutoConstructFlag<NetworkInterface>();
               gatewayNetworkInterfaces.setAutoConstruct(true);
@@ -456,7 +451,7 @@ public class DescribeGatewayInformationResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * TBD
      * <p>
@@ -504,8 +499,7 @@ public class DescribeGatewayInformationResult implements Serializable {
         this.gatewayType = gatewayType;
         return this;
     }
-    
-    
+
     /**
      * TBD
      * <p>
@@ -539,7 +533,7 @@ public class DescribeGatewayInformationResult implements Serializable {
         this.gatewayType = gatewayType.toString();
         return this;
     }
-    
+
     /**
      * The date at which an update to the gateway is available. This date is
      * in the time zone of the gateway. If the gateway is not available for
@@ -605,8 +599,7 @@ public class DescribeGatewayInformationResult implements Serializable {
         this.nextUpdateAvailabilityDate = nextUpdateAvailabilityDate;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

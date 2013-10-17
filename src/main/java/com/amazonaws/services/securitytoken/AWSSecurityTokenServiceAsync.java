@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.securitytoken;
-            
+
 import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
@@ -48,8 +48,8 @@ import com.amazonaws.services.securitytoken.model.*;
  * </p>
  * <p>
  * We will refer to Amazon Identity and Access Management using the abbreviated form IAM. All copyrights and legal protections still apply.
- * </p> 
- */       
+ * </p>
+ */
 public interface AWSSecurityTokenServiceAsync extends AWSSecurityTokenService {
     /**
      * <p>

@@ -51,7 +51,6 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
      *         <i>false</i>.
      */
     public java.util.List<Tag> getTags() {
-        
         if (tags == null) {
               tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
               tags.setAutoConstruct(true);
@@ -137,7 +136,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -45,7 +45,6 @@ public class ActivityTypeInfos implements Serializable {
      * @return List of activity type information.
      */
     public java.util.List<ActivityTypeInfo> getTypeInfos() {
-        
         if (typeInfos == null) {
               typeInfos = new com.amazonaws.internal.ListWithAutoConstructFlag<ActivityTypeInfo>();
               typeInfos.setAutoConstruct(true);
@@ -107,7 +106,7 @@ public class ActivityTypeInfos implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a value if the results are paginated. To get the next page of
      * results, repeat the request specifying this token and all other
@@ -161,8 +160,7 @@ public class ActivityTypeInfos implements Serializable {
         this.nextPageToken = nextPageToken;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

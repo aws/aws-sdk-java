@@ -43,7 +43,6 @@ public class DescribeAutoScalingGroupsResult implements Serializable {
      * @return A list of Auto Scaling groups.
      */
     public java.util.List<AutoScalingGroup> getAutoScalingGroups() {
-        
         if (autoScalingGroups == null) {
               autoScalingGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<AutoScalingGroup>();
               autoScalingGroups.setAutoConstruct(true);
@@ -105,7 +104,7 @@ public class DescribeAutoScalingGroupsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * A string that marks the start of the next batch of returned results.
      * <p>
@@ -147,8 +146,7 @@ public class DescribeAutoScalingGroupsResult implements Serializable {
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

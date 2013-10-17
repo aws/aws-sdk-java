@@ -97,8 +97,7 @@ public class WorkflowType implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * The version of the workflow type. This field is required. <note>The
      * combination of workflow type name and version must be unique with in a
@@ -152,8 +151,7 @@ public class WorkflowType implements Serializable {
         this.version = version;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -30,7 +30,6 @@ public class DescribeNetworkAclsResult implements Serializable {
      * @return The value of the NetworkAcls property for this object.
      */
     public java.util.List<NetworkAcl> getNetworkAcls() {
-        
         if (networkAcls == null) {
               networkAcls = new com.amazonaws.internal.ListWithAutoConstructFlag<NetworkAcl>();
               networkAcls.setAutoConstruct(true);
@@ -92,7 +91,7 @@ public class DescribeNetworkAclsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

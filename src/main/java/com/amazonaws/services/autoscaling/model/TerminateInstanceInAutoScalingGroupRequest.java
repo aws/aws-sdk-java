@@ -91,8 +91,7 @@ public class TerminateInstanceInAutoScalingGroupRequest extends AmazonWebService
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether (<i>true</i>) or not (<i>false</i>) terminating this
      * instance should also decrement the size of the
@@ -137,8 +136,7 @@ public class TerminateInstanceInAutoScalingGroupRequest extends AmazonWebService
         this.shouldDecrementDesiredCapacity = shouldDecrementDesiredCapacity;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether (<i>true</i>) or not (<i>false</i>) terminating this
      * instance should also decrement the size of the
@@ -151,7 +149,7 @@ public class TerminateInstanceInAutoScalingGroupRequest extends AmazonWebService
     public Boolean getShouldDecrementDesiredCapacity() {
         return shouldDecrementDesiredCapacity;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

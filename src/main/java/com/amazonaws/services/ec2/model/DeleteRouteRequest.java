@@ -75,8 +75,7 @@ public class DeleteRouteRequest extends AmazonWebServiceRequest implements Seria
         this.routeTableId = routeTableId;
         return this;
     }
-    
-    
+
     /**
      * The CIDR range for the route you want to delete. The value you specify
      * must exactly match the CIDR for the route you want to delete.
@@ -115,8 +114,7 @@ public class DeleteRouteRequest extends AmazonWebServiceRequest implements Seria
         this.destinationCidrBlock = destinationCidrBlock;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

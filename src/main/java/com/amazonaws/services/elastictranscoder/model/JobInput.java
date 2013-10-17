@@ -49,7 +49,7 @@ public class JobInput implements Serializable {
      * automatic detection of the frame rate.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^auto$)|(^10$)|(^15$)|(^23.97$)|(^24$)|(^25$)|(^29.97$)|(^30$)|(^60$)<br/>
+     * <b>Pattern: </b>(^auto$)|(^10$)|(^15$)|(^23.97$)|(^24$)|(^25$)|(^29.97$)|(^30$)|(^50$)|(^60$)<br/>
      */
     private String frameRate;
 
@@ -95,14 +95,15 @@ public class JobInput implements Serializable {
      * to automatically detect the container type of the input file, specify
      * <code>auto</code>. If you want to specify the container type for the
      * input file, enter one of the following values: <p> <code>3gp</code>,
-     * <code>asf</code>, <code>avi</code>, <code>divx</code>,
-     * <code>flv</code>, <code>mkv</code>, <code>mov</code>,
+     * <code>aac</code>, <code>asf</code>, <code>avi</code>,
+     * <code>divx</code>, <code>flv</code>, <code>m4a</code>,
+     * <code>mkv</code>, <code>mov</code>, <code>mp3</code>,
      * <code>mp4</code>, <code>mpeg</code>, <code>mpeg-ps</code>,
      * <code>mpeg-ts</code>, <code>mxf</code>, <code>ogg</code>,
      * <code>vob</code>, <code>wav</code>, <code>webm</code>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^auto$)|(^3gp$)|(^asf$)|(^avi$)|(^divx$)|(^flv$)|(^mkv$)|(^mov$)|(^mp4$)|(^mpeg$)|(^mpeg-ps$)|(^mpeg-ts$)|(^mxf$)|(^ogg$)|(^ts$)|(^vob$)|(^wav$)|(^webm$)<br/>
+     * <b>Pattern: </b>(^auto$)|(^3gp$)|(^asf$)|(^avi$)|(^divx$)|(^flv$)|(^mkv$)|(^mov$)|(^mp4$)|(^mpeg$)|(^mpeg-ps$)|(^mpeg-ts$)|(^mxf$)|(^ogg$)|(^ts$)|(^vob$)|(^wav$)|(^webm$)|(^mp3$)|(^m4a$)|(^aac$)<br/>
      */
     private String container;
 
@@ -183,8 +184,7 @@ public class JobInput implements Serializable {
         this.key = key;
         return this;
     }
-    
-    
+
     /**
      * The frame rate of the input file. If you want Elastic Transcoder to
      * automatically detect the frame rate of the input file, specify
@@ -196,7 +196,7 @@ public class JobInput implements Serializable {
      * automatic detection of the frame rate.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^auto$)|(^10$)|(^15$)|(^23.97$)|(^24$)|(^25$)|(^29.97$)|(^30$)|(^60$)<br/>
+     * <b>Pattern: </b>(^auto$)|(^10$)|(^15$)|(^23.97$)|(^24$)|(^25$)|(^29.97$)|(^30$)|(^50$)|(^60$)<br/>
      *
      * @return The frame rate of the input file. If you want Elastic Transcoder to
      *         automatically detect the frame rate of the input file, specify
@@ -222,7 +222,7 @@ public class JobInput implements Serializable {
      * automatic detection of the frame rate.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^auto$)|(^10$)|(^15$)|(^23.97$)|(^24$)|(^25$)|(^29.97$)|(^30$)|(^60$)<br/>
+     * <b>Pattern: </b>(^auto$)|(^10$)|(^15$)|(^23.97$)|(^24$)|(^25$)|(^29.97$)|(^30$)|(^50$)|(^60$)<br/>
      *
      * @param frameRate The frame rate of the input file. If you want Elastic Transcoder to
      *         automatically detect the frame rate of the input file, specify
@@ -250,7 +250,7 @@ public class JobInput implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^auto$)|(^10$)|(^15$)|(^23.97$)|(^24$)|(^25$)|(^29.97$)|(^30$)|(^60$)<br/>
+     * <b>Pattern: </b>(^auto$)|(^10$)|(^15$)|(^23.97$)|(^24$)|(^25$)|(^29.97$)|(^30$)|(^50$)|(^60$)<br/>
      *
      * @param frameRate The frame rate of the input file. If you want Elastic Transcoder to
      *         automatically detect the frame rate of the input file, specify
@@ -268,8 +268,7 @@ public class JobInput implements Serializable {
         this.frameRate = frameRate;
         return this;
     }
-    
-    
+
     /**
      * This value must be <code>auto</code>, which causes Elastic Transcoder
      * to automatically detect the resolution of the input file.
@@ -317,8 +316,7 @@ public class JobInput implements Serializable {
         this.resolution = resolution;
         return this;
     }
-    
-    
+
     /**
      * The aspect ratio of the input file. If you want Elastic Transcoder to
      * automatically detect the aspect ratio of the input file, specify
@@ -396,8 +394,7 @@ public class JobInput implements Serializable {
         this.aspectRatio = aspectRatio;
         return this;
     }
-    
-    
+
     /**
      * Whether the input file is interlaced. If you want Elastic Transcoder
      * to automatically detect whether the input file is interlaced, specify
@@ -475,28 +472,29 @@ public class JobInput implements Serializable {
         this.interlaced = interlaced;
         return this;
     }
-    
-    
+
     /**
      * The container type for the input file. If you want Elastic Transcoder
      * to automatically detect the container type of the input file, specify
      * <code>auto</code>. If you want to specify the container type for the
      * input file, enter one of the following values: <p> <code>3gp</code>,
-     * <code>asf</code>, <code>avi</code>, <code>divx</code>,
-     * <code>flv</code>, <code>mkv</code>, <code>mov</code>,
+     * <code>aac</code>, <code>asf</code>, <code>avi</code>,
+     * <code>divx</code>, <code>flv</code>, <code>m4a</code>,
+     * <code>mkv</code>, <code>mov</code>, <code>mp3</code>,
      * <code>mp4</code>, <code>mpeg</code>, <code>mpeg-ps</code>,
      * <code>mpeg-ts</code>, <code>mxf</code>, <code>ogg</code>,
      * <code>vob</code>, <code>wav</code>, <code>webm</code>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^auto$)|(^3gp$)|(^asf$)|(^avi$)|(^divx$)|(^flv$)|(^mkv$)|(^mov$)|(^mp4$)|(^mpeg$)|(^mpeg-ps$)|(^mpeg-ts$)|(^mxf$)|(^ogg$)|(^ts$)|(^vob$)|(^wav$)|(^webm$)<br/>
+     * <b>Pattern: </b>(^auto$)|(^3gp$)|(^asf$)|(^avi$)|(^divx$)|(^flv$)|(^mkv$)|(^mov$)|(^mp4$)|(^mpeg$)|(^mpeg-ps$)|(^mpeg-ts$)|(^mxf$)|(^ogg$)|(^ts$)|(^vob$)|(^wav$)|(^webm$)|(^mp3$)|(^m4a$)|(^aac$)<br/>
      *
      * @return The container type for the input file. If you want Elastic Transcoder
      *         to automatically detect the container type of the input file, specify
      *         <code>auto</code>. If you want to specify the container type for the
      *         input file, enter one of the following values: <p> <code>3gp</code>,
-     *         <code>asf</code>, <code>avi</code>, <code>divx</code>,
-     *         <code>flv</code>, <code>mkv</code>, <code>mov</code>,
+     *         <code>aac</code>, <code>asf</code>, <code>avi</code>,
+     *         <code>divx</code>, <code>flv</code>, <code>m4a</code>,
+     *         <code>mkv</code>, <code>mov</code>, <code>mp3</code>,
      *         <code>mp4</code>, <code>mpeg</code>, <code>mpeg-ps</code>,
      *         <code>mpeg-ts</code>, <code>mxf</code>, <code>ogg</code>,
      *         <code>vob</code>, <code>wav</code>, <code>webm</code>
@@ -510,21 +508,23 @@ public class JobInput implements Serializable {
      * to automatically detect the container type of the input file, specify
      * <code>auto</code>. If you want to specify the container type for the
      * input file, enter one of the following values: <p> <code>3gp</code>,
-     * <code>asf</code>, <code>avi</code>, <code>divx</code>,
-     * <code>flv</code>, <code>mkv</code>, <code>mov</code>,
+     * <code>aac</code>, <code>asf</code>, <code>avi</code>,
+     * <code>divx</code>, <code>flv</code>, <code>m4a</code>,
+     * <code>mkv</code>, <code>mov</code>, <code>mp3</code>,
      * <code>mp4</code>, <code>mpeg</code>, <code>mpeg-ps</code>,
      * <code>mpeg-ts</code>, <code>mxf</code>, <code>ogg</code>,
      * <code>vob</code>, <code>wav</code>, <code>webm</code>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^auto$)|(^3gp$)|(^asf$)|(^avi$)|(^divx$)|(^flv$)|(^mkv$)|(^mov$)|(^mp4$)|(^mpeg$)|(^mpeg-ps$)|(^mpeg-ts$)|(^mxf$)|(^ogg$)|(^ts$)|(^vob$)|(^wav$)|(^webm$)<br/>
+     * <b>Pattern: </b>(^auto$)|(^3gp$)|(^asf$)|(^avi$)|(^divx$)|(^flv$)|(^mkv$)|(^mov$)|(^mp4$)|(^mpeg$)|(^mpeg-ps$)|(^mpeg-ts$)|(^mxf$)|(^ogg$)|(^ts$)|(^vob$)|(^wav$)|(^webm$)|(^mp3$)|(^m4a$)|(^aac$)<br/>
      *
      * @param container The container type for the input file. If you want Elastic Transcoder
      *         to automatically detect the container type of the input file, specify
      *         <code>auto</code>. If you want to specify the container type for the
      *         input file, enter one of the following values: <p> <code>3gp</code>,
-     *         <code>asf</code>, <code>avi</code>, <code>divx</code>,
-     *         <code>flv</code>, <code>mkv</code>, <code>mov</code>,
+     *         <code>aac</code>, <code>asf</code>, <code>avi</code>,
+     *         <code>divx</code>, <code>flv</code>, <code>m4a</code>,
+     *         <code>mkv</code>, <code>mov</code>, <code>mp3</code>,
      *         <code>mp4</code>, <code>mpeg</code>, <code>mpeg-ps</code>,
      *         <code>mpeg-ts</code>, <code>mxf</code>, <code>ogg</code>,
      *         <code>vob</code>, <code>wav</code>, <code>webm</code>
@@ -538,8 +538,9 @@ public class JobInput implements Serializable {
      * to automatically detect the container type of the input file, specify
      * <code>auto</code>. If you want to specify the container type for the
      * input file, enter one of the following values: <p> <code>3gp</code>,
-     * <code>asf</code>, <code>avi</code>, <code>divx</code>,
-     * <code>flv</code>, <code>mkv</code>, <code>mov</code>,
+     * <code>aac</code>, <code>asf</code>, <code>avi</code>,
+     * <code>divx</code>, <code>flv</code>, <code>m4a</code>,
+     * <code>mkv</code>, <code>mov</code>, <code>mp3</code>,
      * <code>mp4</code>, <code>mpeg</code>, <code>mpeg-ps</code>,
      * <code>mpeg-ts</code>, <code>mxf</code>, <code>ogg</code>,
      * <code>vob</code>, <code>wav</code>, <code>webm</code>
@@ -547,14 +548,15 @@ public class JobInput implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^auto$)|(^3gp$)|(^asf$)|(^avi$)|(^divx$)|(^flv$)|(^mkv$)|(^mov$)|(^mp4$)|(^mpeg$)|(^mpeg-ps$)|(^mpeg-ts$)|(^mxf$)|(^ogg$)|(^ts$)|(^vob$)|(^wav$)|(^webm$)<br/>
+     * <b>Pattern: </b>(^auto$)|(^3gp$)|(^asf$)|(^avi$)|(^divx$)|(^flv$)|(^mkv$)|(^mov$)|(^mp4$)|(^mpeg$)|(^mpeg-ps$)|(^mpeg-ts$)|(^mxf$)|(^ogg$)|(^ts$)|(^vob$)|(^wav$)|(^webm$)|(^mp3$)|(^m4a$)|(^aac$)<br/>
      *
      * @param container The container type for the input file. If you want Elastic Transcoder
      *         to automatically detect the container type of the input file, specify
      *         <code>auto</code>. If you want to specify the container type for the
      *         input file, enter one of the following values: <p> <code>3gp</code>,
-     *         <code>asf</code>, <code>avi</code>, <code>divx</code>,
-     *         <code>flv</code>, <code>mkv</code>, <code>mov</code>,
+     *         <code>aac</code>, <code>asf</code>, <code>avi</code>,
+     *         <code>divx</code>, <code>flv</code>, <code>m4a</code>,
+     *         <code>mkv</code>, <code>mov</code>, <code>mp3</code>,
      *         <code>mp4</code>, <code>mpeg</code>, <code>mpeg-ps</code>,
      *         <code>mpeg-ts</code>, <code>mxf</code>, <code>ogg</code>,
      *         <code>vob</code>, <code>wav</code>, <code>webm</code>
@@ -566,8 +568,7 @@ public class JobInput implements Serializable {
         this.container = container;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

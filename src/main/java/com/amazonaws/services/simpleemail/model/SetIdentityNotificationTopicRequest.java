@@ -92,8 +92,7 @@ public class SetIdentityNotificationTopicRequest extends AmazonWebServiceRequest
         this.identity = identity;
         return this;
     }
-    
-    
+
     /**
      * The type of feedback notifications that will be published to the
      * specified topic.
@@ -147,8 +146,7 @@ public class SetIdentityNotificationTopicRequest extends AmazonWebServiceRequest
         this.notificationType = notificationType;
         return this;
     }
-    
-    
+
     /**
      * The type of feedback notifications that will be published to the
      * specified topic.
@@ -186,7 +184,7 @@ public class SetIdentityNotificationTopicRequest extends AmazonWebServiceRequest
         this.notificationType = notificationType.toString();
         return this;
     }
-    
+
     /**
      * The Amazon Resource Name (ARN) of the Amazon Simple Notification
      * Service (Amazon SNS) topic. If the parameter is ommited from the
@@ -237,8 +235,7 @@ public class SetIdentityNotificationTopicRequest extends AmazonWebServiceRequest
         this.snsTopic = snsTopic;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

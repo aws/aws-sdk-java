@@ -64,8 +64,6 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest implement
      */
     public GetQueueAttributesRequest() {}
     
-
-
     /**
      * Constructs a new GetQueueAttributesRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -77,8 +75,6 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest implement
         setQueueUrl(queueUrl);
     }
 
-    
-    
     /**
      * The URL of the SQS queue to take action on.
      *
@@ -111,15 +107,13 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest implement
         this.queueUrl = queueUrl;
         return this;
     }
-    
-    
+
     /**
      * A list of attributes to retrieve information for.
      *
      * @return A list of attributes to retrieve information for.
      */
     public java.util.List<String> getAttributeNames() {
-        
         if (attributeNames == null) {
               attributeNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               attributeNames.setAutoConstruct(true);
@@ -181,7 +175,30 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest implement
 
         return this;
     }
-    
+
+    /**
+     * A list of attributes to retrieve information for.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param attributeNames A list of attributes to retrieve information for.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public GetQueueAttributesRequest withAttributeNames(QueueAttributeName... attributeNames) {
+        java.util.ArrayList<String> attributeNamesCopy = new java.util.ArrayList<String>(attributeNames.length);
+        for (QueueAttributeName member : attributeNames) {
+            attributeNamesCopy.add(member.toString());
+        }
+        if (getAttributeNames() == null) {
+            setAttributeNames(attributeNamesCopy);
+        } else {
+            getAttributeNames().addAll(attributeNamesCopy);
+        }
+        return this;
+    }
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

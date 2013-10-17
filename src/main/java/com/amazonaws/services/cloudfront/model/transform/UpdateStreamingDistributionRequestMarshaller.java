@@ -47,7 +47,7 @@ public class UpdateStreamingDistributionRequestMarshaller implements Marshaller<
         	request.addHeader("If-Match", StringUtils.fromString(updateStreamingDistributionRequest.getIfMatch()));
         
 
-        String uriResourcePath = "2013-08-26/streaming-distribution/{Id}/config"; 
+        String uriResourcePath = "2013-09-27/streaming-distribution/{Id}/config"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(updateStreamingDistributionRequest.getId())); 
 
         if (uriResourcePath.contains("?")) {
@@ -68,7 +68,7 @@ public class UpdateStreamingDistributionRequestMarshaller implements Marshaller<
 
         
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2013-08-26/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2013-09-27/");
 
             
                     if (updateStreamingDistributionRequest != null) {

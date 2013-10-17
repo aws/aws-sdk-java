@@ -44,8 +44,6 @@ public class GetHostedZoneRequest extends AmazonWebServiceRequest implements Ser
      */
     public GetHostedZoneRequest() {}
     
-
-
     /**
      * Constructs a new GetHostedZoneRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -58,8 +56,6 @@ public class GetHostedZoneRequest extends AmazonWebServiceRequest implements Ser
         setId(id);
     }
 
-    
-    
     /**
      * The ID of the hosted zone for which you want to get a list of the name
      * servers in the delegation set.
@@ -107,8 +103,7 @@ public class GetHostedZoneRequest extends AmazonWebServiceRequest implements Ser
         this.id = id;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

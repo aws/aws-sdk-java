@@ -90,8 +90,7 @@ public class Event implements Serializable {
         this.sourceIdentifier = sourceIdentifier;
         return this;
     }
-    
-    
+
     /**
      * Specifies the source type for this event.
      * <p>
@@ -139,8 +138,7 @@ public class Event implements Serializable {
         this.sourceType = sourceType;
         return this;
     }
-    
-    
+
     /**
      * Specifies the source type for this event.
      * <p>
@@ -174,7 +172,7 @@ public class Event implements Serializable {
         this.sourceType = sourceType.toString();
         return this;
     }
-    
+
     /**
      * Provides the text of this event.
      *
@@ -207,15 +205,13 @@ public class Event implements Serializable {
         this.message = message;
         return this;
     }
-    
-    
+
     /**
      * Specifies the category for the event.
      *
      * @return Specifies the category for the event.
      */
     public java.util.List<String> getEventCategories() {
-        
         if (eventCategories == null) {
               eventCategories = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               eventCategories.setAutoConstruct(true);
@@ -277,7 +273,7 @@ public class Event implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Specifies the date and time of the event.
      *
@@ -310,8 +306,7 @@ public class Event implements Serializable {
         this.date = date;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

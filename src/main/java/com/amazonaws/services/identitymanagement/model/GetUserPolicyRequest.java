@@ -53,8 +53,6 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest implements Ser
      */
     public GetUserPolicyRequest() {}
     
-
-
     /**
      * Constructs a new GetUserPolicyRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -68,8 +66,6 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest implements Ser
         setPolicyName(policyName);
     }
 
-    
-    
     /**
      * Name of the user who the policy is associated with.
      * <p>
@@ -114,8 +110,7 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest implements Ser
         this.userName = userName;
         return this;
     }
-    
-    
+
     /**
      * Name of the policy document to get.
      * <p>
@@ -160,8 +155,7 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest implements Ser
         this.policyName = policyName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

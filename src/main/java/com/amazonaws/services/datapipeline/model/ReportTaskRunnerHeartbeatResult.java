@@ -75,8 +75,7 @@ public class ReportTaskRunnerHeartbeatResult implements Serializable {
         this.terminate = terminate;
         return this;
     }
-    
-    
+
     /**
      * Indicates whether the calling task runner should terminate. If
      * <code>True</code>, the task runner that called
@@ -89,7 +88,7 @@ public class ReportTaskRunnerHeartbeatResult implements Serializable {
     public Boolean getTerminate() {
         return terminate;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

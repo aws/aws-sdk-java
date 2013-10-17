@@ -45,8 +45,6 @@ public class GetConsoleOutputRequest extends AmazonWebServiceRequest implements 
      */
     public GetConsoleOutputRequest() {}
     
-
-
     /**
      * Constructs a new GetConsoleOutputRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -59,8 +57,6 @@ public class GetConsoleOutputRequest extends AmazonWebServiceRequest implements 
         setInstanceId(instanceId);
     }
 
-    
-    
     /**
      * The ID of the instance for which you want console output.
      *
@@ -93,8 +89,7 @@ public class GetConsoleOutputRequest extends AmazonWebServiceRequest implements 
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

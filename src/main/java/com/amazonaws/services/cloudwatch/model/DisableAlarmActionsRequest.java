@@ -46,7 +46,6 @@ public class DisableAlarmActionsRequest extends AmazonWebServiceRequest implemen
      * @return The names of the alarms to disable actions for.
      */
     public java.util.List<String> getAlarmNames() {
-        
         if (alarmNames == null) {
               alarmNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               alarmNames.setAutoConstruct(true);
@@ -117,7 +116,7 @@ public class DisableAlarmActionsRequest extends AmazonWebServiceRequest implemen
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

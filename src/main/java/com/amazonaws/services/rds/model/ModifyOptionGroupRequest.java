@@ -126,8 +126,7 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest implements
         this.optionGroupName = optionGroupName;
         return this;
     }
-    
-    
+
     /**
      * Options in this list are added to the Option Group or, if already
      * present, the specified configuration is used to update the existing
@@ -138,7 +137,6 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest implements
      *         configuration.
      */
     public java.util.List<OptionConfiguration> getOptionsToInclude() {
-        
         if (optionsToInclude == null) {
               optionsToInclude = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionConfiguration>();
               optionsToInclude.setAutoConstruct(true);
@@ -212,14 +210,13 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest implements
 
         return this;
     }
-    
+
     /**
      * Options in this list are removed from the Option Group.
      *
      * @return Options in this list are removed from the Option Group.
      */
     public java.util.List<String> getOptionsToRemove() {
-        
         if (optionsToRemove == null) {
               optionsToRemove = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               optionsToRemove.setAutoConstruct(true);
@@ -281,7 +278,7 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest implements
 
         return this;
     }
-    
+
     /**
      * Indicates whether the changes should be applied immediately, or during
      * the next maintenance window for each instance associated with the
@@ -326,8 +323,7 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest implements
         this.applyImmediately = applyImmediately;
         return this;
     }
-    
-    
+
     /**
      * Indicates whether the changes should be applied immediately, or during
      * the next maintenance window for each instance associated with the
@@ -340,7 +336,7 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest implements
     public Boolean getApplyImmediately() {
         return applyImmediately;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

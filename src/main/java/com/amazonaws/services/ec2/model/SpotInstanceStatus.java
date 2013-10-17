@@ -60,8 +60,7 @@ public class SpotInstanceStatus implements Serializable {
         this.code = code;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the UpdateTime property for this object.
      *
@@ -94,8 +93,7 @@ public class SpotInstanceStatus implements Serializable {
         this.updateTime = updateTime;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Message property for this object.
      *
@@ -128,8 +126,7 @@ public class SpotInstanceStatus implements Serializable {
         this.message = message;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

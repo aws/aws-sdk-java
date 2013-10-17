@@ -108,8 +108,7 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements 
         this.autoScalingGroupName = autoScalingGroupName;
         return this;
     }
-    
-    
+
     /**
      * A list of policy names or policy ARNs to be described. If this list is
      * omitted, all policy names are described. If an auto scaling group name
@@ -124,7 +123,6 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements 
      *         policy names are requested, they are ignored with no error.
      */
     public java.util.List<String> getPolicyNames() {
-        
         if (policyNames == null) {
               policyNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               policyNames.setAutoConstruct(true);
@@ -210,7 +208,7 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements 
 
         return this;
     }
-    
+
     /**
      * A string that is used to mark the start of the next batch of returned
      * results for pagination.
@@ -258,8 +256,7 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements 
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of policies that will be described with each call.
      * <p>
@@ -301,8 +298,7 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements 
         this.maxRecords = maxRecords;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

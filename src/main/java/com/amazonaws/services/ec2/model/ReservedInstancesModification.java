@@ -102,15 +102,13 @@ public class ReservedInstancesModification implements Serializable {
         this.reservedInstancesModificationId = reservedInstancesModificationId;
         return this;
     }
-    
-    
+
     /**
      * The IDs of the Reserved Instances submitted for modification.
      *
      * @return The IDs of the Reserved Instances submitted for modification.
      */
     public java.util.List<ReservedInstancesId> getReservedInstancesIds() {
-        
         if (reservedInstancesIds == null) {
               reservedInstancesIds = new com.amazonaws.internal.ListWithAutoConstructFlag<ReservedInstancesId>();
               reservedInstancesIds.setAutoConstruct(true);
@@ -172,14 +170,13 @@ public class ReservedInstancesModification implements Serializable {
 
         return this;
     }
-    
+
     /**
      * The resulting information about the modified Reserved Instances.
      *
      * @return The resulting information about the modified Reserved Instances.
      */
     public java.util.List<ReservedInstancesModificationResult> getModificationResults() {
-        
         if (modificationResults == null) {
               modificationResults = new com.amazonaws.internal.ListWithAutoConstructFlag<ReservedInstancesModificationResult>();
               modificationResults.setAutoConstruct(true);
@@ -241,7 +238,7 @@ public class ReservedInstancesModification implements Serializable {
 
         return this;
     }
-    
+
     /**
      * The time the modification request was created.
      *
@@ -274,8 +271,7 @@ public class ReservedInstancesModification implements Serializable {
         this.createDate = createDate;
         return this;
     }
-    
-    
+
     /**
      * The time the modification request was last updated.
      *
@@ -308,8 +304,7 @@ public class ReservedInstancesModification implements Serializable {
         this.updateDate = updateDate;
         return this;
     }
-    
-    
+
     /**
      * The time the modification becomes effective.
      *
@@ -342,8 +337,7 @@ public class ReservedInstancesModification implements Serializable {
         this.effectiveDate = effectiveDate;
         return this;
     }
-    
-    
+
     /**
      * The status of the modification request, which can be any of the
      * following values: processing, fulfilled, failed.
@@ -382,8 +376,7 @@ public class ReservedInstancesModification implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * The reason for the status.
      *
@@ -416,8 +409,7 @@ public class ReservedInstancesModification implements Serializable {
         this.statusMessage = statusMessage;
         return this;
     }
-    
-    
+
     /**
      * The idempotency token for the modification request.
      *
@@ -450,8 +442,7 @@ public class ReservedInstancesModification implements Serializable {
         this.clientToken = clientToken;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

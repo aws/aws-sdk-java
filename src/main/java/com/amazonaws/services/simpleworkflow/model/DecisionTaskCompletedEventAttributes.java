@@ -89,8 +89,7 @@ public class DecisionTaskCompletedEventAttributes implements Serializable {
         this.executionContext = executionContext;
         return this;
     }
-    
-    
+
     /**
      * The id of the <code>DecisionTaskScheduled</code> event that was
      * recorded when this decision task was scheduled. This information can
@@ -141,8 +140,7 @@ public class DecisionTaskCompletedEventAttributes implements Serializable {
         this.scheduledEventId = scheduledEventId;
         return this;
     }
-    
-    
+
     /**
      * The Id of the <code>DecisionTaskStarted</code> event recorded when
      * this decision task was started. This information can be useful for
@@ -193,8 +191,7 @@ public class DecisionTaskCompletedEventAttributes implements Serializable {
         this.startedEventId = startedEventId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

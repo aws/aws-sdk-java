@@ -89,8 +89,7 @@ public class DescribeRaidArraysRequest extends AmazonWebServiceRequest implement
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * An array of RAID array IDs. If you use this parameter,
      * <code>DescribeRaidArrays</code> returns descriptions of the specified
@@ -101,7 +100,6 @@ public class DescribeRaidArraysRequest extends AmazonWebServiceRequest implement
      *         arrays. Otherwise, it returns a description of every array.
      */
     public java.util.List<String> getRaidArrayIds() {
-        
         if (raidArrayIds == null) {
               raidArrayIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               raidArrayIds.setAutoConstruct(true);
@@ -175,7 +173,7 @@ public class DescribeRaidArraysRequest extends AmazonWebServiceRequest implement
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

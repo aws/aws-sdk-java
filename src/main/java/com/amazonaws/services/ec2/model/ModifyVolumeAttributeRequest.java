@@ -64,8 +64,7 @@ public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest implem
         this.volumeId = volumeId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the AutoEnableIO property for this object.
      *
@@ -98,8 +97,7 @@ public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest implem
         this.autoEnableIO = autoEnableIO;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the AutoEnableIO property for this object.
      *
@@ -108,7 +106,7 @@ public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest implem
     public Boolean getAutoEnableIO() {
         return autoEnableIO;
     }
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

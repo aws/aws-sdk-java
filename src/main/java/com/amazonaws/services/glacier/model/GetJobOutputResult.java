@@ -113,8 +113,7 @@ public class GetJobOutputResult implements Serializable {
         this.body = body;
         return this;
     }
-    
-    
+
     /**
      * The checksum of the data in the response. This header is returned only
      * when retrieving the output for an archive retrieval job. Furthermore,
@@ -219,8 +218,7 @@ public class GetJobOutputResult implements Serializable {
         this.checksum = checksum;
         return this;
     }
-    
-    
+
     /**
      * The HTTP response code for a job output request. The value depends on
      * whether a range was specified in the request.
@@ -259,8 +257,7 @@ public class GetJobOutputResult implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * The range of bytes returned by Amazon Glacier. If only partial output
      * is downloaded, the response provides the range of bytes Amazon Glacier
@@ -311,8 +308,7 @@ public class GetJobOutputResult implements Serializable {
         this.contentRange = contentRange;
         return this;
     }
-    
-    
+
     /**
      * Indicates the range units accepted. For more information, go to <a
      * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>.
@@ -351,8 +347,7 @@ public class GetJobOutputResult implements Serializable {
         this.acceptRanges = acceptRanges;
         return this;
     }
-    
-    
+
     /**
      * The Content-Type depends on whether the job output is an archive or a
      * vault inventory. For archive data, the Content-Type is
@@ -415,8 +410,7 @@ public class GetJobOutputResult implements Serializable {
         this.contentType = contentType;
         return this;
     }
-    
-    
+
     /**
      * The description of an archive.
      *
@@ -449,8 +443,7 @@ public class GetJobOutputResult implements Serializable {
         this.archiveDescription = archiveDescription;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

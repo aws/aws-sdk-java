@@ -48,8 +48,6 @@ public class ChangeBatch implements Serializable {
      */
     public ChangeBatch() {}
     
-
-
     /**
      * Constructs a new ChangeBatch object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -63,8 +61,6 @@ public class ChangeBatch implements Serializable {
         setChanges(changes);
     }
 
-    
-    
     /**
      * <i>Optional:</i> Any comments you want to include about a change batch
      * request.
@@ -112,8 +108,7 @@ public class ChangeBatch implements Serializable {
         this.comment = comment;
         return this;
     }
-    
-    
+
     /**
      * A complex type that contains one <code>Change</code> element for each
      * resource record set that you want to create or delete.
@@ -125,7 +120,6 @@ public class ChangeBatch implements Serializable {
      *         resource record set that you want to create or delete.
      */
     public java.util.List<Change> getChanges() {
-        
         if (changes == null) {
               changes = new com.amazonaws.internal.ListWithAutoConstructFlag<Change>();
               changes.setAutoConstruct(true);
@@ -202,7 +196,7 @@ public class ChangeBatch implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

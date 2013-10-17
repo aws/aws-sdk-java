@@ -46,7 +46,6 @@ public class History implements Serializable {
      * @return The list of history events.
      */
     public java.util.List<HistoryEvent> getEvents() {
-        
         if (events == null) {
               events = new com.amazonaws.internal.ListWithAutoConstructFlag<HistoryEvent>();
               events.setAutoConstruct(true);
@@ -108,7 +107,7 @@ public class History implements Serializable {
 
         return this;
     }
-    
+
     /**
      * The token for the next page. If set, the history consists of more than
      * one page and the next page can be retrieved by repeating the request
@@ -162,8 +161,7 @@ public class History implements Serializable {
         this.nextPageToken = nextPageToken;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

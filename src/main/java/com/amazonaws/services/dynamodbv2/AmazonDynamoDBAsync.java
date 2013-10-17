@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.dynamodbv2;
-            
+
 import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
@@ -27,8 +27,8 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * to provide a callback handler.
  * Amazon DynamoDB <b>Overview</b> <p>
  * This is the Amazon DynamoDB API Reference. This guide provides descriptions and samples of the Amazon DynamoDB API.
- * </p> 
- */       
+ * </p>
+ */
 public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
     /**
      * <p>

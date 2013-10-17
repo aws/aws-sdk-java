@@ -80,15 +80,13 @@ public class DescribeDBSecurityGroupsResult implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * A list of <a>DBSecurityGroup</a> instances.
      *
      * @return A list of <a>DBSecurityGroup</a> instances.
      */
     public java.util.List<DBSecurityGroup> getDBSecurityGroups() {
-        
         if (dBSecurityGroups == null) {
               dBSecurityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<DBSecurityGroup>();
               dBSecurityGroups.setAutoConstruct(true);
@@ -150,7 +148,7 @@ public class DescribeDBSecurityGroupsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

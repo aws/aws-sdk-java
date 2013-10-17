@@ -115,8 +115,7 @@ public class RequestCancelExternalWorkflowExecutionDecisionAttributes implements
         this.workflowId = workflowId;
         return this;
     }
-    
-    
+
     /**
      * The <code>runId</code> of the external workflow execution to cancel.
      * <p>
@@ -158,8 +157,7 @@ public class RequestCancelExternalWorkflowExecutionDecisionAttributes implements
         this.runId = runId;
         return this;
     }
-    
-    
+
     /**
      * Optional data attached to the event that can be used by the decider in
      * subsequent workflow tasks.
@@ -207,8 +205,7 @@ public class RequestCancelExternalWorkflowExecutionDecisionAttributes implements
         this.control = control;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -47,7 +47,7 @@ public class DeleteStreamingDistributionRequestMarshaller implements Marshaller<
         	request.addHeader("If-Match", StringUtils.fromString(deleteStreamingDistributionRequest.getIfMatch()));
         
 
-        String uriResourcePath = "2013-08-26/streaming-distribution/{Id}"; 
+        String uriResourcePath = "2013-09-27/streaming-distribution/{Id}"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(deleteStreamingDistributionRequest.getId())); 
 
         if (uriResourcePath.contains("?")) {

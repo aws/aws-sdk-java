@@ -106,8 +106,7 @@ public class PutNotificationConfigurationRequest extends AmazonWebServiceRequest
         this.autoScalingGroupName = autoScalingGroupName;
         return this;
     }
-    
-    
+
     /**
      * The Amazon Resource Name (ARN) of the Amazon Simple Notification
      * Service (SNS) topic.
@@ -158,8 +157,7 @@ public class PutNotificationConfigurationRequest extends AmazonWebServiceRequest
         this.topicARN = topicARN;
         return this;
     }
-    
-    
+
     /**
      * The type of event that will cause the notification to be sent. For
      * details about notification types supported by Auto Scaling, see
@@ -170,7 +168,6 @@ public class PutNotificationConfigurationRequest extends AmazonWebServiceRequest
      *         <a>DescribeAutoScalingNotificationTypes</a>.
      */
     public java.util.List<String> getNotificationTypes() {
-        
         if (notificationTypes == null) {
               notificationTypes = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               notificationTypes.setAutoConstruct(true);
@@ -244,7 +241,7 @@ public class PutNotificationConfigurationRequest extends AmazonWebServiceRequest
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -124,8 +124,7 @@ public class UpdateServiceAccessPoliciesRequest extends AmazonWebServiceRequest 
         this.domainName = domainName;
         return this;
     }
-    
-    
+
     /**
      * An IAM access policy as described in <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
@@ -218,8 +217,7 @@ public class UpdateServiceAccessPoliciesRequest extends AmazonWebServiceRequest 
         this.accessPolicies = accessPolicies;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

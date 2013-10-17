@@ -38,7 +38,6 @@ public class DescribeTimeBasedAutoScalingResult implements Serializable {
      *         that describe the configuration for the specified instances.
      */
     public java.util.List<TimeBasedAutoScalingConfiguration> getTimeBasedAutoScalingConfigurations() {
-        
         if (timeBasedAutoScalingConfigurations == null) {
               timeBasedAutoScalingConfigurations = new com.amazonaws.internal.ListWithAutoConstructFlag<TimeBasedAutoScalingConfiguration>();
               timeBasedAutoScalingConfigurations.setAutoConstruct(true);
@@ -106,7 +105,7 @@ public class DescribeTimeBasedAutoScalingResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

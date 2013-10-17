@@ -74,8 +74,6 @@ public class AliasTarget implements Serializable {
      */
     public AliasTarget() {}
     
-
-
     /**
      * Constructs a new AliasTarget object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -99,8 +97,6 @@ public class AliasTarget implements Serializable {
         setDNSName(dNSName);
     }
 
-    
-    
     /**
      * <i>Alias resource record sets only:</i> The value of the hosted zone
      * ID for the AWS resource. <p>For more information and an example, see
@@ -172,8 +168,7 @@ public class AliasTarget implements Serializable {
         this.hostedZoneId = hostedZoneId;
         return this;
     }
-    
-    
+
     /**
      * <i>Alias resource record sets only:</i> The external DNS name
      * associated with the AWS Resource. <p>For more information and an
@@ -245,8 +240,7 @@ public class AliasTarget implements Serializable {
         this.dNSName = dNSName;
         return this;
     }
-    
-    
+
     /**
      * <i>Alias resource record sets only:</i> A boolean value that indicates
      * whether this Resource Record Set should respect the health status of
@@ -315,8 +309,7 @@ public class AliasTarget implements Serializable {
         this.evaluateTargetHealth = evaluateTargetHealth;
         return this;
     }
-    
-    
+
     /**
      * <i>Alias resource record sets only:</i> A boolean value that indicates
      * whether this Resource Record Set should respect the health status of
@@ -337,7 +330,7 @@ public class AliasTarget implements Serializable {
     public Boolean getEvaluateTargetHealth() {
         return evaluateTargetHealth;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

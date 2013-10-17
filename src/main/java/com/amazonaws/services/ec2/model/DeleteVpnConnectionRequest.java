@@ -48,8 +48,6 @@ public class DeleteVpnConnectionRequest extends AmazonWebServiceRequest implemen
      */
     public DeleteVpnConnectionRequest() {}
     
-
-
     /**
      * Constructs a new DeleteVpnConnectionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -61,8 +59,6 @@ public class DeleteVpnConnectionRequest extends AmazonWebServiceRequest implemen
         setVpnConnectionId(vpnConnectionId);
     }
 
-    
-    
     /**
      * The ID of the VPN connection to delete
      *
@@ -95,8 +91,7 @@ public class DeleteVpnConnectionRequest extends AmazonWebServiceRequest implemen
         this.vpnConnectionId = vpnConnectionId;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

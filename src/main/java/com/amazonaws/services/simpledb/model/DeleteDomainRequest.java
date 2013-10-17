@@ -44,8 +44,6 @@ public class DeleteDomainRequest extends AmazonWebServiceRequest implements Seri
      */
     public DeleteDomainRequest() {}
     
-
-
     /**
      * Constructs a new DeleteDomainRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -57,8 +55,6 @@ public class DeleteDomainRequest extends AmazonWebServiceRequest implements Seri
         setDomainName(domainName);
     }
 
-    
-    
     /**
      * The name of the domain to delete.
      *
@@ -91,8 +87,7 @@ public class DeleteDomainRequest extends AmazonWebServiceRequest implements Seri
         this.domainName = domainName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

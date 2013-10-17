@@ -87,8 +87,7 @@ public class HealthCheck implements Serializable {
         this.id = id;
         return this;
     }
-    
-    
+
     /**
      * A unique string that identifies the request to create the health
      * check.
@@ -136,8 +135,7 @@ public class HealthCheck implements Serializable {
         this.callerReference = callerReference;
         return this;
     }
-    
-    
+
     /**
      * A complex type that contains the health check configuration.
      *
@@ -170,8 +168,7 @@ public class HealthCheck implements Serializable {
         this.healthCheckConfig = healthCheckConfig;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

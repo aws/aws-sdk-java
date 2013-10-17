@@ -84,8 +84,7 @@ public class ListStackResourcesRequest extends AmazonWebServiceRequest implement
         this.stackName = stackName;
         return this;
     }
-    
-    
+
     /**
      * String that identifies the start of the next list of stack resource
      * summaries, if there is one. <p>Default: There is no default value.
@@ -133,8 +132,7 @@ public class ListStackResourcesRequest extends AmazonWebServiceRequest implement
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

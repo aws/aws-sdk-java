@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing;
-            
+
 import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
@@ -49,8 +49,8 @@ import com.amazonaws.services.elasticloadbalancing.model.*;
  * For detailed information about Elastic Load Balancing features and their associated API calls, go to <a
  * href="http://docs.amazonwebservices.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenarios.html"> Using Elastic Load Balancing </a> in the
  * <i>Elastic Load Balancing Developer Guide</i> .
- * </p> 
- */       
+ * </p>
+ */
 public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalancing {
     /**
      * <p>

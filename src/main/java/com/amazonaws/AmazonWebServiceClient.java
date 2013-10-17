@@ -25,6 +25,8 @@ import com.amazonaws.http.AmazonHttpClient;
 import com.amazonaws.http.ExecutionContext;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.HttpRequest;
+import com.amazonaws.metrics.AwsSdkMetrics;
+import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.ServiceAbbreviations;
 
@@ -50,7 +52,6 @@ public abstract class AmazonWebServiceClient {
     
     /** Optional offset (in seconds) to use when signing requests */
     protected int timeOffset;
-
 
     /**
      * Constructs a new AmazonWebServiceClient object using the specified
@@ -231,9 +232,52 @@ public abstract class AmazonWebServiceClient {
         requestHandlers.remove(requestHandler);
     }
 
-    protected ExecutionContext createExecutionContext() {
-        ExecutionContext executionContext = new ExecutionContext(requestHandlers);
-        return executionContext;
+    protected final ExecutionContext createExecutionContext(AmazonWebServiceRequest req) {
+        boolean isMetricsEnabled = isRequestMetricsEnabled(req) || isProfilingEnabled();
+        return new ExecutionContext(requestHandlers, isMetricsEnabled);
+    }
+
+    /**
+     * @deprecated by {@link #createExecutionContext(AmazonWebServiceRequest)}.
+     * 
+     *             This method exists only for backward compatiblity reason, so
+     *             that clients compiled against the older version of this class
+     *             won't get {@link NoSuchMethodError} at runtime. However,
+     *             calling this methods would effectively ignore and disable the
+     *             request metric collector, if any, specified at the request
+     *             level. Request metric collector specified at the service
+     *             client or AWS SDK level will still be honored.
+     */
+    @Deprecated
+    protected final ExecutionContext createExecutionContext() {
+        boolean isMetricsEnabled = isRMCEnabledAtClientOrSdkLevel() || isProfilingEnabled();
+        return new ExecutionContext(requestHandlers, isMetricsEnabled);
+    }
+
+    /* Check the profiling system property and return true if set */
+    private static boolean isProfilingEnabled() {
+        return System.getProperty(AmazonHttpClient.PROFILING_SYSTEM_PROPERTY) != null;
+    }
+    
+    /**
+     * Returns true if request metric collection is applicable to the given
+     * request; false otherwise.
+     */
+    private boolean isRequestMetricsEnabled(AmazonWebServiceRequest req) {
+        RequestMetricCollector c = req.getRequestMetricCollector(); // request level collector
+        if (c != null && c.isEnabled()) {
+            return true;
+        }
+        return isRMCEnabledAtClientOrSdkLevel();
+    }
+
+    /**
+     * Returns true if request metric collection is enabled at the service
+     * client or AWS SDK level request; false otherwise.
+     */
+    private boolean isRMCEnabledAtClientOrSdkLevel() {
+        RequestMetricCollector c = requestMetricCollector();
+        return c != null && c.isEnabled();
     }
     
     /**
@@ -277,4 +321,20 @@ public abstract class AmazonWebServiceClient {
         return timeOffset;
     }
 
+    /**
+     * Returns the client specific {@link RequestMetricCollector}; or null if
+     * there is none.
+     */
+    public RequestMetricCollector getRequestMetricsCollector() {
+        return client.getRequestMetricCollector();
+    }
+
+    /**
+     * Returns the client specific request metric collector if there is one; or
+     * the one at the AWS SDK level otherwise.
+     */
+    protected RequestMetricCollector requestMetricCollector() {
+        RequestMetricCollector mc = client.getRequestMetricCollector();
+        return mc == null ? AwsSdkMetrics.getRequestMetricCollector() : mc;
+    }
 }

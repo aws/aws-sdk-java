@@ -113,8 +113,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
         this.networkInterfaceId = networkInterfaceId;
         return this;
     }
-    
-    
+
     /**
      * The device index. Applies to both attaching an existing network
      * interface and when creating a network interface. <p>Condition: If you
@@ -165,8 +164,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
         this.deviceIndex = deviceIndex;
         return this;
     }
-    
-    
+
     /**
      * The subnet ID. Applies only when creating a network interface.
      *
@@ -199,8 +197,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
         this.subnetId = subnetId;
         return this;
     }
-    
-    
+
     /**
      * A description. Applies only when creating a network interface.
      *
@@ -233,8 +230,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * The primary private IP address. Applies only when creating a network
      * interface. Requires n=1 network interfaces in launch. <p>
@@ -273,15 +269,13 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
         this.privateIpAddress = privateIpAddress;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Groups property for this object.
      *
      * @return The value of the Groups property for this object.
      */
     public java.util.List<String> getGroups() {
-        
         if (groups == null) {
               groups = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               groups.setAutoConstruct(true);
@@ -343,7 +337,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns the value of the DeleteOnTermination property for this object.
      *
@@ -376,8 +370,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
         this.deleteOnTermination = deleteOnTermination;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the DeleteOnTermination property for this object.
      *
@@ -386,14 +379,13 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
     public Boolean getDeleteOnTermination() {
         return deleteOnTermination;
     }
-    
+
     /**
      * Returns the value of the PrivateIpAddresses property for this object.
      *
      * @return The value of the PrivateIpAddresses property for this object.
      */
     public java.util.List<PrivateIpAddressSpecification> getPrivateIpAddresses() {
-        
         if (privateIpAddresses == null) {
               privateIpAddresses = new com.amazonaws.internal.ListWithAutoConstructFlag<PrivateIpAddressSpecification>();
               privateIpAddresses.setAutoConstruct(true);
@@ -455,7 +447,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns the value of the SecondaryPrivateIpAddressCount property for
      * this object.
@@ -494,8 +486,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
         this.secondaryPrivateIpAddressCount = secondaryPrivateIpAddressCount;
         return this;
     }
-    
-    
+
     /**
      * Indicates whether to assign a public IP address to an instance in a
      * VPC. The public IP address is associated with a specific network
@@ -588,8 +579,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
         this.associatePublicIpAddress = associatePublicIpAddress;
         return this;
     }
-    
-    
+
     /**
      * Indicates whether to assign a public IP address to an instance in a
      * VPC. The public IP address is associated with a specific network
@@ -618,7 +608,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable {
     public Boolean getAssociatePublicIpAddress() {
         return associatePublicIpAddress;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

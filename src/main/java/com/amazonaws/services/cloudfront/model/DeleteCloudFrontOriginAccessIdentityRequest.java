@@ -45,8 +45,6 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends AmazonWebServic
      */
     public DeleteCloudFrontOriginAccessIdentityRequest() {}
     
-
-
     /**
      * Constructs a new DeleteCloudFrontOriginAccessIdentityRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -61,8 +59,6 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends AmazonWebServic
         setIfMatch(ifMatch);
     }
 
-    
-    
     /**
      * The origin access identity's id.
      *
@@ -95,8 +91,7 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends AmazonWebServic
         this.id = id;
         return this;
     }
-    
-    
+
     /**
      * The value of the ETag header you received from a previous GET or PUT
      * request. For example: E2QWRUHAPOMQZL.
@@ -135,8 +130,7 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends AmazonWebServic
         this.ifMatch = ifMatch;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

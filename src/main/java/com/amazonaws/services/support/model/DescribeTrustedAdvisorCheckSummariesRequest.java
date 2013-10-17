@@ -45,7 +45,6 @@ public class DescribeTrustedAdvisorCheckSummariesRequest extends AmazonWebServic
      * @return Unique identifier for a Trusted Advisor check.
      */
     public java.util.List<String> getCheckIds() {
-        
         if (checkIds == null) {
               checkIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               checkIds.setAutoConstruct(true);
@@ -107,7 +106,7 @@ public class DescribeTrustedAdvisorCheckSummariesRequest extends AmazonWebServic
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

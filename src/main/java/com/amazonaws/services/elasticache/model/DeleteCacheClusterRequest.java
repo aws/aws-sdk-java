@@ -42,8 +42,6 @@ public class DeleteCacheClusterRequest extends AmazonWebServiceRequest implement
      */
     public DeleteCacheClusterRequest() {}
     
-
-
     /**
      * Constructs a new DeleteCacheClusterRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -56,8 +54,6 @@ public class DeleteCacheClusterRequest extends AmazonWebServiceRequest implement
         setCacheClusterId(cacheClusterId);
     }
 
-    
-    
     /**
      * The cache cluster identifier for the cluster to be deleted. This
      * parameter is not case sensitive.
@@ -96,8 +92,7 @@ public class DeleteCacheClusterRequest extends AmazonWebServiceRequest implement
         this.cacheClusterId = cacheClusterId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

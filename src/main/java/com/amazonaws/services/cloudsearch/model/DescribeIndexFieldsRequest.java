@@ -115,8 +115,7 @@ public class DescribeIndexFieldsRequest extends AmazonWebServiceRequest implemen
         this.domainName = domainName;
         return this;
     }
-    
-    
+
     /**
      * Limits the <code>DescribeIndexFields</code> response to the specified
      * fields.
@@ -125,7 +124,6 @@ public class DescribeIndexFieldsRequest extends AmazonWebServiceRequest implemen
      *         fields.
      */
     public java.util.List<String> getFieldNames() {
-        
         if (fieldNames == null) {
               fieldNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               fieldNames.setAutoConstruct(true);
@@ -193,7 +191,7 @@ public class DescribeIndexFieldsRequest extends AmazonWebServiceRequest implemen
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

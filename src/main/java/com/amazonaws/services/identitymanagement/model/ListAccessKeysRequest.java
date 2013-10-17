@@ -122,8 +122,7 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest implements Se
         this.userName = userName;
         return this;
     }
-    
-    
+
     /**
      * Use this parameter only when paginating results, and only in a
      * subsequent request after you've received a response where the results
@@ -186,8 +185,7 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest implements Se
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Use this parameter only when paginating results to indicate the
      * maximum number of keys you want in the response. If there are
@@ -247,8 +245,7 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest implements Se
         this.maxItems = maxItems;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

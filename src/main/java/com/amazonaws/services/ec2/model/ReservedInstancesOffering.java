@@ -131,8 +131,7 @@ public class ReservedInstancesOffering implements Serializable {
         this.reservedInstancesOfferingId = reservedInstancesOfferingId;
         return this;
     }
-    
-    
+
     /**
      * The instance type on which the Reserved Instances can be used.
      * <p>
@@ -180,8 +179,7 @@ public class ReservedInstancesOffering implements Serializable {
         this.instanceType = instanceType;
         return this;
     }
-    
-    
+
     /**
      * The instance type on which the Reserved Instances can be used.
      * <p>
@@ -215,7 +213,7 @@ public class ReservedInstancesOffering implements Serializable {
         this.instanceType = instanceType.toString();
         return this;
     }
-    
+
     /**
      * The Availability Zone in which the Reserved Instances can be used.
      *
@@ -248,8 +246,7 @@ public class ReservedInstancesOffering implements Serializable {
         this.availabilityZone = availabilityZone;
         return this;
     }
-    
-    
+
     /**
      * The duration of the Reserved Instance, in seconds.
      *
@@ -282,8 +279,7 @@ public class ReservedInstancesOffering implements Serializable {
         this.duration = duration;
         return this;
     }
-    
-    
+
     /**
      * The usage price of the Reserved Instance, per hour.
      *
@@ -316,8 +312,7 @@ public class ReservedInstancesOffering implements Serializable {
         this.usagePrice = usagePrice;
         return this;
     }
-    
-    
+
     /**
      * The purchase price of the Reserved Instance.
      *
@@ -350,8 +345,7 @@ public class ReservedInstancesOffering implements Serializable {
         this.fixedPrice = fixedPrice;
         return this;
     }
-    
-    
+
     /**
      * The Reserved Instances description (ex: Windows or Unix/Linux).
      * <p>
@@ -399,8 +393,7 @@ public class ReservedInstancesOffering implements Serializable {
         this.productDescription = productDescription;
         return this;
     }
-    
-    
+
     /**
      * The Reserved Instances description (ex: Windows or Unix/Linux).
      * <p>
@@ -434,7 +427,7 @@ public class ReservedInstancesOffering implements Serializable {
         this.productDescription = productDescription.toString();
         return this;
     }
-    
+
     /**
      * The tenancy of the reserved instance (ex: default or dedicated).
      * <p>
@@ -482,8 +475,7 @@ public class ReservedInstancesOffering implements Serializable {
         this.instanceTenancy = instanceTenancy;
         return this;
     }
-    
-    
+
     /**
      * The tenancy of the reserved instance (ex: default or dedicated).
      * <p>
@@ -517,7 +509,7 @@ public class ReservedInstancesOffering implements Serializable {
         this.instanceTenancy = instanceTenancy.toString();
         return this;
     }
-    
+
     /**
      * The currency of the reserved instance. Specified using ISO 4217
      * standard (e.g., USD, JPY).
@@ -571,8 +563,7 @@ public class ReservedInstancesOffering implements Serializable {
         this.currencyCode = currencyCode;
         return this;
     }
-    
-    
+
     /**
      * The currency of the reserved instance. Specified using ISO 4217
      * standard (e.g., USD, JPY).
@@ -610,7 +601,7 @@ public class ReservedInstancesOffering implements Serializable {
         this.currencyCode = currencyCode.toString();
         return this;
     }
-    
+
     /**
      * The Reserved Instance offering type.
      * <p>
@@ -658,8 +649,7 @@ public class ReservedInstancesOffering implements Serializable {
         this.offeringType = offeringType;
         return this;
     }
-    
-    
+
     /**
      * The Reserved Instance offering type.
      * <p>
@@ -693,14 +683,13 @@ public class ReservedInstancesOffering implements Serializable {
         this.offeringType = offeringType.toString();
         return this;
     }
-    
+
     /**
      * The recurring charge tag assigned to the resource.
      *
      * @return The recurring charge tag assigned to the resource.
      */
     public java.util.List<RecurringCharge> getRecurringCharges() {
-        
         if (recurringCharges == null) {
               recurringCharges = new com.amazonaws.internal.ListWithAutoConstructFlag<RecurringCharge>();
               recurringCharges.setAutoConstruct(true);
@@ -762,7 +751,7 @@ public class ReservedInstancesOffering implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns the value of the Marketplace property for this object.
      *
@@ -795,8 +784,7 @@ public class ReservedInstancesOffering implements Serializable {
         this.marketplace = marketplace;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Marketplace property for this object.
      *
@@ -805,14 +793,13 @@ public class ReservedInstancesOffering implements Serializable {
     public Boolean getMarketplace() {
         return marketplace;
     }
-    
+
     /**
      * Returns the value of the PricingDetails property for this object.
      *
      * @return The value of the PricingDetails property for this object.
      */
     public java.util.List<PricingDetail> getPricingDetails() {
-        
         if (pricingDetails == null) {
               pricingDetails = new com.amazonaws.internal.ListWithAutoConstructFlag<PricingDetail>();
               pricingDetails.setAutoConstruct(true);
@@ -874,7 +861,7 @@ public class ReservedInstancesOffering implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

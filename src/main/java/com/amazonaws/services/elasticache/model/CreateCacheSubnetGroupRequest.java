@@ -92,8 +92,7 @@ public class CreateCacheSubnetGroupRequest extends AmazonWebServiceRequest imple
         this.cacheSubnetGroupName = cacheSubnetGroupName;
         return this;
     }
-    
-    
+
     /**
      * A description for the cache subnet group.
      *
@@ -126,15 +125,13 @@ public class CreateCacheSubnetGroupRequest extends AmazonWebServiceRequest imple
         this.cacheSubnetGroupDescription = cacheSubnetGroupDescription;
         return this;
     }
-    
-    
+
     /**
      * A list of VPC subnet IDs for the cache subnet group.
      *
      * @return A list of VPC subnet IDs for the cache subnet group.
      */
     public java.util.List<String> getSubnetIds() {
-        
         if (subnetIds == null) {
               subnetIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               subnetIds.setAutoConstruct(true);
@@ -196,7 +193,7 @@ public class CreateCacheSubnetGroupRequest extends AmazonWebServiceRequest imple
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

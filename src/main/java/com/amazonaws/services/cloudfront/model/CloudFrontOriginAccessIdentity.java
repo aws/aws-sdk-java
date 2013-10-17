@@ -47,8 +47,6 @@ public class CloudFrontOriginAccessIdentity implements Serializable {
      */
     public CloudFrontOriginAccessIdentity() {}
     
-
-
     /**
      * Constructs a new CloudFrontOriginAccessIdentity object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -65,8 +63,6 @@ public class CloudFrontOriginAccessIdentity implements Serializable {
         setS3CanonicalUserId(s3CanonicalUserId);
     }
 
-    
-    
     /**
      * The ID for the origin access identity. For example: E74FTE3AJFJ256A.
      *
@@ -99,8 +95,7 @@ public class CloudFrontOriginAccessIdentity implements Serializable {
         this.id = id;
         return this;
     }
-    
-    
+
     /**
      * The Amazon S3 canonical user ID for the origin access identity, which
      * you use when giving the origin access identity read permission to an
@@ -145,8 +140,7 @@ public class CloudFrontOriginAccessIdentity implements Serializable {
         this.s3CanonicalUserId = s3CanonicalUserId;
         return this;
     }
-    
-    
+
     /**
      * The current configuration information for the identity.
      *
@@ -179,8 +173,7 @@ public class CloudFrontOriginAccessIdentity implements Serializable {
         this.cloudFrontOriginAccessIdentityConfig = cloudFrontOriginAccessIdentityConfig;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

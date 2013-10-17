@@ -45,8 +45,6 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
      */
     public DeleteLoadBalancerListenersRequest() {}
     
-
-
     /**
      * Constructs a new DeleteLoadBalancerListenersRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -62,8 +60,6 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
         setLoadBalancerPorts(loadBalancerPorts);
     }
 
-    
-    
     /**
      * The mnemonic name associated with the LoadBalancer.
      *
@@ -96,8 +92,7 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
         this.loadBalancerName = loadBalancerName;
         return this;
     }
-    
-    
+
     /**
      * The client port number(s) of the LoadBalancerListener(s) to be
      * removed.
@@ -106,7 +101,6 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
      *         removed.
      */
     public java.util.List<Integer> getLoadBalancerPorts() {
-        
         if (loadBalancerPorts == null) {
               loadBalancerPorts = new com.amazonaws.internal.ListWithAutoConstructFlag<Integer>();
               loadBalancerPorts.setAutoConstruct(true);
@@ -174,7 +168,7 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -159,8 +159,7 @@ public class Permission implements Serializable {
         this.granteeType = granteeType;
         return this;
     }
-    
-    
+
     /**
      * The AWS user or group that you want to have access to transcoded files
      * and playlists. To identify the user or group, you can specify the
@@ -226,8 +225,7 @@ public class Permission implements Serializable {
         this.grantee = grantee;
         return this;
     }
-    
-    
+
     /**
      * The permission that you want to give to the AWS user that is listed in
      * Grantee. Valid values include: <ul> <li><code>READ</code>: The grantee
@@ -257,7 +255,6 @@ public class Permission implements Serializable {
      *         to the Amazon S3 bucket.</li> </ul>
      */
     public java.util.List<String> getAccess() {
-        
         if (access == null) {
               access = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               access.setAutoConstruct(true);
@@ -388,7 +385,7 @@ public class Permission implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

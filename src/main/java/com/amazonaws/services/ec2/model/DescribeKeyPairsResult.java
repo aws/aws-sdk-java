@@ -35,7 +35,6 @@ public class DescribeKeyPairsResult implements Serializable {
      * @return The list of described key pairs.
      */
     public java.util.List<KeyPairInfo> getKeyPairs() {
-        
         if (keyPairs == null) {
               keyPairs = new com.amazonaws.internal.ListWithAutoConstructFlag<KeyPairInfo>();
               keyPairs.setAutoConstruct(true);
@@ -97,7 +96,7 @@ public class DescribeKeyPairsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

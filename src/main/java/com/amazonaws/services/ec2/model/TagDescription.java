@@ -80,8 +80,7 @@ public class TagDescription implements Serializable {
         this.resourceId = resourceId;
         return this;
     }
-    
-    
+
     /**
      * The type of resource identified by the associated resource ID (ex:
      * instance, AMI, EBS volume, etc).
@@ -135,8 +134,7 @@ public class TagDescription implements Serializable {
         this.resourceType = resourceType;
         return this;
     }
-    
-    
+
     /**
      * The type of resource identified by the associated resource ID (ex:
      * instance, AMI, EBS volume, etc).
@@ -174,7 +172,7 @@ public class TagDescription implements Serializable {
         this.resourceType = resourceType.toString();
         return this;
     }
-    
+
     /**
      * The tag's key.
      *
@@ -207,8 +205,7 @@ public class TagDescription implements Serializable {
         this.key = key;
         return this;
     }
-    
-    
+
     /**
      * The tag's value.
      *
@@ -241,8 +238,7 @@ public class TagDescription implements Serializable {
         this.value = value;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

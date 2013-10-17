@@ -205,8 +205,7 @@ public class DeploymentCommand implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * Specifies the deployment operation. You can specify only one command.
      * <p>For stacks, the available commands are: <ul>
@@ -308,7 +307,7 @@ public class DeploymentCommand implements Serializable {
         this.name = name.toString();
         return this;
     }
-    
+
     /**
      * An array of command arguments. This parameter is currently used only
      * to specify the list of recipes to be executed by the
@@ -357,8 +356,7 @@ public class DeploymentCommand implements Serializable {
         setArgs(args);
         return this;
     }
-    
-   	
+
     /**
      * An array of command arguments. This parameter is currently used only
      * to specify the list of recipes to be executed by the
@@ -380,7 +378,7 @@ public class DeploymentCommand implements Serializable {
 		this.args.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into Args.
 	 * <p>

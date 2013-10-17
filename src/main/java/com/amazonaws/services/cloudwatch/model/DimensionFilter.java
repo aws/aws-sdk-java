@@ -83,8 +83,7 @@ public class DimensionFilter implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * The value of the dimension to be matched. <note> Specifying a
      * <code>Name</code> without specifying a <code>Value</code> returns all
@@ -138,8 +137,7 @@ public class DimensionFilter implements Serializable {
         this.value = value;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

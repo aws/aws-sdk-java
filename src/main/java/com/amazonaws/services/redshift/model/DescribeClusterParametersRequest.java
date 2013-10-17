@@ -101,8 +101,7 @@ public class DescribeClusterParametersRequest extends AmazonWebServiceRequest im
         this.parameterGroupName = parameterGroupName;
         return this;
     }
-    
-    
+
     /**
      * The parameter types to return. Specify <code>user</code> to show
      * parameters that are different form the default. Similarly, specify
@@ -159,8 +158,7 @@ public class DescribeClusterParametersRequest extends AmazonWebServiceRequest im
         this.source = source;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value,
@@ -217,8 +215,7 @@ public class DescribeClusterParametersRequest extends AmazonWebServiceRequest im
         this.maxRecords = maxRecords;
         return this;
     }
-    
-    
+
     /**
      * An optional marker returned from a previous
      * <b>DescribeClusterParameters</b> request. If this parameter is
@@ -269,8 +266,7 @@ public class DescribeClusterParametersRequest extends AmazonWebServiceRequest im
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

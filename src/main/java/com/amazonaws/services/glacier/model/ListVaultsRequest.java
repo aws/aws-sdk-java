@@ -75,8 +75,6 @@ public class ListVaultsRequest extends AmazonWebServiceRequest implements Serial
      */
     public ListVaultsRequest() {}
     
-
-
     /**
      * Constructs a new ListVaultsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -91,10 +89,6 @@ public class ListVaultsRequest extends AmazonWebServiceRequest implements Serial
     public ListVaultsRequest(String accountId) {
         setAccountId(accountId);
     }
-
-    
-    
-
 
     /**
      * Constructs a new ListVaultsRequest object.
@@ -118,8 +112,6 @@ public class ListVaultsRequest extends AmazonWebServiceRequest implements Serial
         setLimit(limit);
     }
 
-    
-    
     /**
      * The <code>AccountId</code> is the AWS Account ID. You can specify
      * either the AWS Account ID or optionally a '-', in which case Amazon
@@ -176,8 +168,7 @@ public class ListVaultsRequest extends AmazonWebServiceRequest implements Serial
         this.accountId = accountId;
         return this;
     }
-    
-    
+
     /**
      * A string used for pagination. The marker specifies the vault ARN after
      * which the listing of vaults should begin.
@@ -216,8 +207,7 @@ public class ListVaultsRequest extends AmazonWebServiceRequest implements Serial
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of items returned in the response. If you don't
      * specify a value, the List Vaults operation returns up to 1,000 items.
@@ -256,8 +246,7 @@ public class ListVaultsRequest extends AmazonWebServiceRequest implements Serial
         this.limit = limit;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

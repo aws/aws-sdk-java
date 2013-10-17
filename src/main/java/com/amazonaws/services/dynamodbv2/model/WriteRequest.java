@@ -41,8 +41,6 @@ public class WriteRequest implements Serializable {
      */
     public WriteRequest() {}
     
-
-
     /**
      * Constructs a new WriteRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -54,10 +52,6 @@ public class WriteRequest implements Serializable {
     public WriteRequest(PutRequest putRequest) {
         setPutRequest(putRequest);
     }
-
-    
-    
-
 
     /**
      * Constructs a new WriteRequest object.
@@ -71,8 +65,6 @@ public class WriteRequest implements Serializable {
         setDeleteRequest(deleteRequest);
     }
 
-    
-    
     /**
      * Represents a request to perform a <i>PutItem</i> operation.
      *
@@ -105,8 +97,7 @@ public class WriteRequest implements Serializable {
         this.putRequest = putRequest;
         return this;
     }
-    
-    
+
     /**
      * Represents a request to perform a <i>DeleteItem</i> operation.
      *
@@ -139,8 +130,7 @@ public class WriteRequest implements Serializable {
         this.deleteRequest = deleteRequest;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

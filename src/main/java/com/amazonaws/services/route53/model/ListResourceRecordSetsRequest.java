@@ -122,8 +122,6 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
      */
     public ListResourceRecordSetsRequest() {}
     
-
-
     /**
      * Constructs a new ListResourceRecordSetsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -136,8 +134,6 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
         setHostedZoneId(hostedZoneId);
     }
 
-    
-    
     /**
      * The ID of the hosted zone that contains the resource record sets that
      * you want to get.
@@ -185,8 +181,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
         this.hostedZoneId = hostedZoneId;
         return this;
     }
-    
-    
+
     /**
      * The first name in the lexicographic ordering of domain names that you
      * want the <code>ListResourceRecordSets</code> request to list.
@@ -234,8 +229,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
         this.startRecordName = startRecordName;
         return this;
     }
-    
-    
+
     /**
      * The DNS type at which to begin the listing of resource record sets.
      * <p>Valid values: <code>A</code> | <code>AAAA</code> |
@@ -349,8 +343,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
         this.startRecordType = startRecordType;
         return this;
     }
-    
-    
+
     /**
      * The DNS type at which to begin the listing of resource record sets.
      * <p>Valid values: <code>A</code> | <code>AAAA</code> |
@@ -428,7 +421,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
         this.startRecordType = startRecordType.toString();
         return this;
     }
-    
+
     /**
      * <i>Weighted resource record sets only:</i> If results were truncated
      * for a given DNS name and type, specify the value of
@@ -494,8 +487,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
         this.startRecordIdentifier = startRecordIdentifier;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of records you want in the response body.
      *
@@ -528,8 +520,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest imple
         this.maxItems = maxItems;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

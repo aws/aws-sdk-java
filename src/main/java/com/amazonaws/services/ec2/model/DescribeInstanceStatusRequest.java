@@ -106,7 +106,6 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *         described.
      */
     public java.util.List<String> getInstanceIds() {
-        
         if (instanceIds == null) {
               instanceIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               instanceIds.setAutoConstruct(true);
@@ -174,14 +173,13 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
 
         return this;
     }
-    
+
     /**
      * The list of filters to limit returned results.
      *
      * @return The list of filters to limit returned results.
      */
     public java.util.List<Filter> getFilters() {
-        
         if (filters == null) {
               filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
               filters.setAutoConstruct(true);
@@ -243,7 +241,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
 
         return this;
     }
-    
+
     /**
      * A string specifying the next paginated set of results to return.
      *
@@ -276,8 +274,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of paginated instance items per response.
      *
@@ -310,8 +307,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
         this.maxResults = maxResults;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the IncludeAllInstances property for this object.
      *
@@ -344,8 +340,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
         this.includeAllInstances = includeAllInstances;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the IncludeAllInstances property for this object.
      *
@@ -354,7 +349,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
     public Boolean getIncludeAllInstances() {
         return includeAllInstances;
     }
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

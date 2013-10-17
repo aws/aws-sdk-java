@@ -46,8 +46,6 @@ public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest implem
      */
     public DeleteDBSecurityGroupRequest() {}
     
-
-
     /**
      * Constructs a new DeleteDBSecurityGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -63,8 +61,6 @@ public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest implem
         setDBSecurityGroupName(dBSecurityGroupName);
     }
 
-    
-    
     /**
      * The name of the DB Security Group to delete. <note>You cannot delete
      * the default DB Security Group.</note> <p> Constraints: <ul> <li>Must
@@ -121,8 +117,7 @@ public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest implem
         this.dBSecurityGroupName = dBSecurityGroupName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

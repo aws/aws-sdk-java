@@ -67,8 +67,7 @@ public class DescribeReservedCacheNodesOfferingsResult implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * A list of reserved cache node offerings. Each element in the list
      * contains detailed information about one offering.
@@ -77,7 +76,6 @@ public class DescribeReservedCacheNodesOfferingsResult implements Serializable {
      *         contains detailed information about one offering.
      */
     public java.util.List<ReservedCacheNodesOffering> getReservedCacheNodesOfferings() {
-        
         if (reservedCacheNodesOfferings == null) {
               reservedCacheNodesOfferings = new com.amazonaws.internal.ListWithAutoConstructFlag<ReservedCacheNodesOffering>();
               reservedCacheNodesOfferings.setAutoConstruct(true);
@@ -145,7 +143,7 @@ public class DescribeReservedCacheNodesOfferingsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

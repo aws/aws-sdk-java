@@ -154,8 +154,6 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      */
     public RestoreDBInstanceFromDBSnapshotRequest() {}
     
-
-
     /**
      * Constructs a new RestoreDBInstanceFromDBSnapshotRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -178,8 +176,6 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
         setDBSnapshotIdentifier(dBSnapshotIdentifier);
     }
 
-    
-    
     /**
      * The identifier for the DB Snapshot to restore from. <p>Constraints:
      * <ul> <li>Must contain from 1 to 63 alphanumeric characters or
@@ -230,8 +226,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
         this.dBInstanceIdentifier = dBInstanceIdentifier;
         return this;
     }
-    
-    
+
     /**
      * Name of the DB Instance to create from the DB Snapshot. This parameter
      * isn't case sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
@@ -288,8 +283,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
         this.dBSnapshotIdentifier = dBSnapshotIdentifier;
         return this;
     }
-    
-    
+
     /**
      * The compute and memory capacity of the Amazon RDS DB instance.
      * <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
@@ -334,8 +328,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
         this.dBInstanceClass = dBInstanceClass;
         return this;
     }
-    
-    
+
     /**
      * The port number on which the database accepts connections. <p>Default:
      * The same port as the original DB Instance <p>Constraints: Value must
@@ -380,8 +373,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
         this.port = port;
         return this;
     }
-    
-    
+
     /**
      * The EC2 Availability Zone that the database instance will be created
      * in. <p>Default: A random, system-chosen Availability Zone.
@@ -438,8 +430,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
         this.availabilityZone = availabilityZone;
         return this;
     }
-    
-    
+
     /**
      * The DB Subnet Group name to use for the new instance.
      *
@@ -472,8 +463,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
         this.dBSubnetGroupName = dBSubnetGroupName;
         return this;
     }
-    
-    
+
     /**
      * Specifies if the DB Instance is a Multi-AZ deployment. <p>Constraint:
      * You cannot specify the AvailabilityZone parameter if the MultiAZ
@@ -518,8 +508,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
         this.multiAZ = multiAZ;
         return this;
     }
-    
-    
+
     /**
      * Specifies if the DB Instance is a Multi-AZ deployment. <p>Constraint:
      * You cannot specify the AvailabilityZone parameter if the MultiAZ
@@ -532,7 +521,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     public Boolean getMultiAZ() {
         return multiAZ;
     }
-    
+
     /**
      * Specifies the accessibility options for the DB Instance. A value of
      * true specifies an Internet-facing instance with a publicly resolvable
@@ -637,8 +626,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
         this.publiclyAccessible = publiclyAccessible;
         return this;
     }
-    
-    
+
     /**
      * Specifies the accessibility options for the DB Instance. A value of
      * true specifies an Internet-facing instance with a publicly resolvable
@@ -671,7 +659,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     public Boolean getPubliclyAccessible() {
         return publiclyAccessible;
     }
-    
+
     /**
      * Indicates that minor version upgrades will be applied automatically to
      * the DB Instance during the maintenance window.
@@ -710,8 +698,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
         this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
         return this;
     }
-    
-    
+
     /**
      * Indicates that minor version upgrades will be applied automatically to
      * the DB Instance during the maintenance window.
@@ -722,7 +709,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     public Boolean getAutoMinorVersionUpgrade() {
         return autoMinorVersionUpgrade;
     }
-    
+
     /**
      * License model information for the restored DB Instance. <p> Default:
      * Same as source. <p> Valid values: <code>license-included</code> |
@@ -773,8 +760,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
         this.licenseModel = licenseModel;
         return this;
     }
-    
-    
+
     /**
      * The database name for the restored DB Instance. <note> <p>This
      * parameter doesn't apply to the MySQL engine. </note>
@@ -813,8 +799,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
         this.dBName = dBName;
         return this;
     }
-    
-    
+
     /**
      * The database engine to use for the new instance. <p>Default: The same
      * as source <p>Constraint: Must be compatible with the engine of the
@@ -859,8 +844,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
         this.engine = engine;
         return this;
     }
-    
-    
+
     /**
      * Specifies the amount of provisioned IOPS for the DB Instance,
      * expressed in I/O operations per second. If this parameter is not
@@ -929,8 +913,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
         this.iops = iops;
         return this;
     }
-    
-    
+
     /**
      * The name of the option group to be used for the restored DB instance.
      * <p> <!-- Note that persistent options, such as the TDE_SQLServer
@@ -1005,8 +988,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
         this.optionGroupName = optionGroupName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

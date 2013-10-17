@@ -55,8 +55,6 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest imp
      */
     public ResetCacheParameterGroupRequest() {}
     
-
-
     /**
      * Constructs a new ResetCacheParameterGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -73,8 +71,6 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest imp
         setParameterNameValues(parameterNameValues);
     }
 
-    
-    
     /**
      * The name of the cache parameter group to reset.
      *
@@ -107,8 +103,7 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest imp
         this.cacheParameterGroupName = cacheParameterGroupName;
         return this;
     }
-    
-    
+
     /**
      * If <i>true</i>, all parameters in the cache parameter group will be
      * reset to default values. If <i>false</i>, no such action occurs.
@@ -153,8 +148,7 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest imp
         this.resetAllParameters = resetAllParameters;
         return this;
     }
-    
-    
+
     /**
      * If <i>true</i>, all parameters in the cache parameter group will be
      * reset to default values. If <i>false</i>, no such action occurs.
@@ -167,7 +161,7 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest imp
     public Boolean getResetAllParameters() {
         return resetAllParameters;
     }
-    
+
     /**
      * An array of parameter names to be reset. If you are not resetting the
      * entire cache parameter group, you must specify at least one parameter
@@ -178,7 +172,6 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest imp
      *         name.
      */
     public java.util.List<ParameterNameValue> getParameterNameValues() {
-        
         if (parameterNameValues == null) {
               parameterNameValues = new com.amazonaws.internal.ListWithAutoConstructFlag<ParameterNameValue>();
               parameterNameValues.setAutoConstruct(true);
@@ -252,7 +245,7 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest imp
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

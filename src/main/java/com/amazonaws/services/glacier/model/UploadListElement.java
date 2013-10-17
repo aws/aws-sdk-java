@@ -90,8 +90,7 @@ public class UploadListElement implements Serializable {
         this.multipartUploadId = multipartUploadId;
         return this;
     }
-    
-    
+
     /**
      * The Amazon Resource Name (ARN) of the vault that contains the archive.
      *
@@ -124,8 +123,7 @@ public class UploadListElement implements Serializable {
         this.vaultARN = vaultARN;
         return this;
     }
-    
-    
+
     /**
      * The description of the archive that was specified in the Initiate
      * Multipart Upload request.
@@ -164,8 +162,7 @@ public class UploadListElement implements Serializable {
         this.archiveDescription = archiveDescription;
         return this;
     }
-    
-    
+
     /**
      * The part size, in bytes, specified in the Initiate Multipart Upload
      * request. This is the size of all the parts in the upload except the
@@ -210,8 +207,7 @@ public class UploadListElement implements Serializable {
         this.partSizeInBytes = partSizeInBytes;
         return this;
     }
-    
-    
+
     /**
      * The UTC time at which the multipart upload was initiated.
      *
@@ -244,8 +240,7 @@ public class UploadListElement implements Serializable {
         this.creationDate = creationDate;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

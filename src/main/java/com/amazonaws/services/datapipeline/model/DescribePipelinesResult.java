@@ -35,7 +35,6 @@ public class DescribePipelinesResult implements Serializable {
      * @return An array of descriptions returned for the specified pipelines.
      */
     public java.util.List<PipelineDescription> getPipelineDescriptionList() {
-        
         if (pipelineDescriptionList == null) {
               pipelineDescriptionList = new com.amazonaws.internal.ListWithAutoConstructFlag<PipelineDescription>();
               pipelineDescriptionList.setAutoConstruct(true);
@@ -97,7 +96,7 @@ public class DescribePipelinesResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

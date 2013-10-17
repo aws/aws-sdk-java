@@ -865,7 +865,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         	credentials = originalRequest.getRequestCredentials();
         }
 
-        ExecutionContext executionContext = createExecutionContext();
+        ExecutionContext executionContext = createExecutionContext(originalRequest);
         executionContext.setSigner(signer);
         executionContext.setCredentials(credentials);
         

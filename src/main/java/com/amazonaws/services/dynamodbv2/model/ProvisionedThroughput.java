@@ -60,8 +60,6 @@ public class ProvisionedThroughput implements Serializable {
      */
     public ProvisionedThroughput() {}
     
-
-
     /**
      * Constructs a new ProvisionedThroughput object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -85,8 +83,6 @@ public class ProvisionedThroughput implements Serializable {
         setWriteCapacityUnits(writeCapacityUnits);
     }
 
-    
-    
     /**
      * The maximum number of strongly consistent reads consumed per second
      * before Amazon DynamoDB returns a <i>ThrottlingException</i>. For more
@@ -158,8 +154,7 @@ public class ProvisionedThroughput implements Serializable {
         this.readCapacityUnits = readCapacityUnits;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of writes consumed per second before Amazon
      * DynamoDB returns a <i>ThrottlingException</i>. For more information,
@@ -231,8 +226,7 @@ public class ProvisionedThroughput implements Serializable {
         this.writeCapacityUnits = writeCapacityUnits;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -91,8 +91,7 @@ public class ChildWorkflowExecutionCompletedEventAttributes implements Serializa
         this.workflowExecution = workflowExecution;
         return this;
     }
-    
-    
+
     /**
      * The type of the child workflow execution.
      *
@@ -125,8 +124,7 @@ public class ChildWorkflowExecutionCompletedEventAttributes implements Serializa
         this.workflowType = workflowType;
         return this;
     }
-    
-    
+
     /**
      * The result of the child workflow execution (if any).
      * <p>
@@ -168,8 +166,7 @@ public class ChildWorkflowExecutionCompletedEventAttributes implements Serializa
         this.result = result;
         return this;
     }
-    
-    
+
     /**
      * The id of the <code>StartChildWorkflowExecutionInitiated</code> event
      * corresponding to the <code>StartChildWorkflowExecution</code>
@@ -226,8 +223,7 @@ public class ChildWorkflowExecutionCompletedEventAttributes implements Serializa
         this.initiatedEventId = initiatedEventId;
         return this;
     }
-    
-    
+
     /**
      * The Id of the <code>ChildWorkflowExecutionStarted</code> event
      * recorded when this child workflow execution was started. This
@@ -278,8 +274,7 @@ public class ChildWorkflowExecutionCompletedEventAttributes implements Serializa
         this.startedEventId = startedEventId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

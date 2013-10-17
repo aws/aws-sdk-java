@@ -104,8 +104,7 @@ public class Selector implements Serializable {
         this.fieldName = fieldName;
         return this;
     }
-    
-    
+
     /**
      * Contains a logical operation for comparing the value of a field with a
      * specified value.
@@ -144,8 +143,7 @@ public class Selector implements Serializable {
         this.operator = operator;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

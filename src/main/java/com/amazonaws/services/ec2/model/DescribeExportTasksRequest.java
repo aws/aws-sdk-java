@@ -34,7 +34,6 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest implemen
      * @return The value of the ExportTaskIds property for this object.
      */
     public java.util.List<String> getExportTaskIds() {
-        
         if (exportTaskIds == null) {
               exportTaskIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               exportTaskIds.setAutoConstruct(true);
@@ -96,7 +95,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest implemen
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

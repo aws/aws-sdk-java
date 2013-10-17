@@ -94,8 +94,7 @@ public class Metric implements Serializable {
         this.namespace = namespace;
         return this;
     }
-    
-    
+
     /**
      * The name of the metric.
      * <p>
@@ -137,8 +136,7 @@ public class Metric implements Serializable {
         this.metricName = metricName;
         return this;
     }
-    
-    
+
     /**
      * A list of dimensions associated with the metric.
      * <p>
@@ -148,7 +146,6 @@ public class Metric implements Serializable {
      * @return A list of dimensions associated with the metric.
      */
     public java.util.List<Dimension> getDimensions() {
-        
         if (dimensions == null) {
               dimensions = new com.amazonaws.internal.ListWithAutoConstructFlag<Dimension>();
               dimensions.setAutoConstruct(true);
@@ -219,7 +216,7 @@ public class Metric implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

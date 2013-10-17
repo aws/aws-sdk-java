@@ -115,8 +115,7 @@ public class DescribeWorkingStorageResult implements Serializable {
         this.gatewayARN = gatewayARN;
         return this;
     }
-    
-    
+
     /**
      * An array of the gateway's local disk IDs that are configured as
      * working storage. Each local disk ID is specified as a string (minimum
@@ -129,7 +128,6 @@ public class DescribeWorkingStorageResult implements Serializable {
      *         configured as working storage, then the DiskIds array is empty.
      */
     public java.util.List<String> getDiskIds() {
-        
         if (diskIds == null) {
               diskIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               diskIds.setAutoConstruct(true);
@@ -209,7 +207,7 @@ public class DescribeWorkingStorageResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * The total working storage in bytes in use by the gateway. If no
      * working storage is configured for the gateway, this field returns 0.
@@ -248,8 +246,7 @@ public class DescribeWorkingStorageResult implements Serializable {
         this.workingStorageUsedInBytes = workingStorageUsedInBytes;
         return this;
     }
-    
-    
+
     /**
      * The total working storage in bytes allocated for the gateway. If no
      * working storage is configured for the gateway, this field returns 0.
@@ -288,8 +285,7 @@ public class DescribeWorkingStorageResult implements Serializable {
         this.workingStorageAllocatedInBytes = workingStorageAllocatedInBytes;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

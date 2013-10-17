@@ -59,8 +59,7 @@ public class CreateQueueResult implements Serializable {
         this.queueUrl = queueUrl;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

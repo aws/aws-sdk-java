@@ -56,8 +56,6 @@ public class DescribeCacheSecurityGroupsRequest extends AmazonWebServiceRequest 
      */
     public DescribeCacheSecurityGroupsRequest() {}
     
-
-
     /**
      * Constructs a new DescribeCacheSecurityGroupsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -70,8 +68,6 @@ public class DescribeCacheSecurityGroupsRequest extends AmazonWebServiceRequest 
         setCacheSecurityGroupName(cacheSecurityGroupName);
     }
 
-    
-    
     /**
      * The name of the cache security group to return details for.
      *
@@ -104,8 +100,7 @@ public class DescribeCacheSecurityGroupsRequest extends AmazonWebServiceRequest 
         this.cacheSecurityGroupName = cacheSecurityGroupName;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
@@ -156,8 +151,7 @@ public class DescribeCacheSecurityGroupsRequest extends AmazonWebServiceRequest 
         this.maxRecords = maxRecords;
         return this;
     }
-    
-    
+
     /**
      * An optional marker returned from a prior request. Use this marker for
      * pagination of results from this operation. If this parameter is
@@ -208,8 +202,7 @@ public class DescribeCacheSecurityGroupsRequest extends AmazonWebServiceRequest 
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

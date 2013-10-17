@@ -37,7 +37,22 @@ public class Principal {
      * identity of the requester, but instead on other identifying
      * characteristics such as the requester's IP address.
      */
-    public static final Principal AllUsers = new Principal("*");
+    public static final Principal AllUsers = new Principal("AWS", "*");
+
+    /**
+     * Principal instance that includes all AWS web services.
+     */
+    public static final Principal AllServices = new Principal("Service", "*");
+
+    /**
+     * Principal instance that includes all the web identity providers.
+     */
+    public static final Principal AllWebProviders = new Principal("Federated", "*");
+
+    /**
+     * Principal instance that includes all the AWS accounts, AWS web services and web identity providers.
+     */
+    public static final Principal All = new Principal("*", "*");
 
     private final String id;
     private final String provider;
@@ -59,6 +74,17 @@ public class Principal {
     }
 
     /**
+     * Constructs a new principal with the specified id and provider.
+     */
+    public Principal(String provider, String id) {
+        this.provider = provider;
+        if (provider.equals("AWS")) {
+            id = id.replaceAll("-", "");
+        }
+        this.id = id;
+    }
+
+    /**
      * Constructs a new principal with the specified AWS account ID.
      *
      * @param accountId
@@ -68,6 +94,7 @@ public class Principal {
         if (accountId == null) {
             throw new IllegalArgumentException("Null AWS account ID specified");
         }
+
         this.id = accountId.replaceAll("-", "");
         provider = "AWS";
     }
@@ -117,7 +144,8 @@ public class Principal {
         AWSDataPipeline("datapipeline.amazonaws.com"),
         AmazonElasticTranscoder("elastictranscoder.amazonaws.com"),
         AmazonEC2("ec2.amazonaws.com"),
-        AWSOpsWorks("opsworks.amazonaws.com");
+        AWSOpsWorks("opsworks.amazonaws.com"),
+        AllServices("*");
         private String serviceId;
 
         /**
@@ -152,11 +180,12 @@ public class Principal {
     /**
      * Web identity providers, such as Login with Amazon, Facebook, or Google.
      */
-     public static enum WebIdentityProviders {
+    static public enum WebIdentityProviders {
 
         Facebook("graph.facebook.com"),
         Google("accounts.google.com"),
-        Amazon("www.amazon.com");
+        Amazon("www.amazon.com"),
+        AllProviders("*");
 
         private String webIdentityProvider;
 
@@ -188,5 +217,41 @@ public class Principal {
 
 
     }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + provider.hashCode();
+        hashCode = prime * hashCode + id.hashCode();
+        return hashCode;
+    }
+
+    @Override
+    public boolean equals(Object principal) {
+        if (this == principal) {
+            return true;
+        }
+
+        if (principal == null) {
+            return false;
+        }
+
+        if (principal instanceof Principal == false) {
+            return false;
+        }
+
+        Principal other = (Principal) principal;
+
+        if (this.getProvider().equals(other.getProvider())
+                && this.getId().equals(other.getId())) {
+            return true;
+        }
+
+        return false;
+    }
+
+
 
 }

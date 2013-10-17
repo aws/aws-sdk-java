@@ -119,8 +119,7 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest impl
         this.userName = userName;
         return this;
     }
-    
-    
+
     /**
      * Use this only when paginating results, and only in a subsequent
      * request after you've received a response where the results are
@@ -183,8 +182,7 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest impl
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Use this only when paginating results to indicate the maximum number
      * of certificate IDs you want in the response. If there are additional
@@ -244,8 +242,7 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest impl
         this.maxItems = maxItems;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

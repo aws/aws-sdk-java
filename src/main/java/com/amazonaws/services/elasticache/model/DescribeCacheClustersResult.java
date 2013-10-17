@@ -67,8 +67,7 @@ public class DescribeCacheClustersResult implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * A list of cache clusters. Each item in the list contains detailed
      * information about one cache cluster.
@@ -77,7 +76,6 @@ public class DescribeCacheClustersResult implements Serializable {
      *         information about one cache cluster.
      */
     public java.util.List<CacheCluster> getCacheClusters() {
-        
         if (cacheClusters == null) {
               cacheClusters = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheCluster>();
               cacheClusters.setAutoConstruct(true);
@@ -145,7 +143,7 @@ public class DescribeCacheClustersResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -93,8 +93,6 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
      */
     public BatchGetItemRequest() {}
     
-
-
     /**
      * Constructs a new BatchGetItemRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -116,10 +114,6 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
     public BatchGetItemRequest(java.util.Map<String,KeysAndAttributes> requestItems) {
         setRequestItems(requestItems);
     }
-
-    
-    
-
 
     /**
      * Constructs a new BatchGetItemRequest object.
@@ -148,8 +142,6 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
         setReturnConsumedCapacity(returnConsumedCapacity);
     }
 
-    
-    
     /**
      * Constructs a new BatchGetItemRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -176,7 +168,7 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
         this.requestItems = requestItems;
         this.returnConsumedCapacity = returnConsumedCapacity.toString();
     }
-    
+
     /**
      * A map of one or more table names and, for each table, the
      * corresponding primary keys for the items to retrieve. Each table name
@@ -279,8 +271,7 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
         setRequestItems(requestItems);
         return this;
     }
-    
-   	
+
     /**
      * A map of one or more table names and, for each table, the
      * corresponding primary keys for the items to retrieve. Each table name
@@ -313,7 +304,7 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
 		this.requestItems.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into RequestItems.
 	 * <p>
@@ -383,8 +374,7 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
         this.returnConsumedCapacity = returnConsumedCapacity;
         return this;
     }
-    
-    
+
     /**
      * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
      * the response; if set to <code>NONE</code> (the default),
@@ -426,7 +416,7 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements Seri
         this.returnConsumedCapacity = returnConsumedCapacity.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

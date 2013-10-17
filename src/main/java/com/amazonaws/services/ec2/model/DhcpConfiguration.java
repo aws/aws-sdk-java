@@ -66,15 +66,13 @@ public class DhcpConfiguration implements Serializable {
         this.key = key;
         return this;
     }
-    
-    
+
     /**
      * Contains a set of values for a DHCP option.
      *
      * @return Contains a set of values for a DHCP option.
      */
     public java.util.List<String> getValues() {
-        
         if (values == null) {
               values = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               values.setAutoConstruct(true);
@@ -136,7 +134,7 @@ public class DhcpConfiguration implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

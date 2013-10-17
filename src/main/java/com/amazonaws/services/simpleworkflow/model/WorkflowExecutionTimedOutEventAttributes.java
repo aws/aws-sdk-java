@@ -95,8 +95,7 @@ public class WorkflowExecutionTimedOutEventAttributes implements Serializable {
         this.timeoutType = timeoutType;
         return this;
     }
-    
-    
+
     /**
      * The type of timeout that caused this event.
      * <p>
@@ -130,7 +129,7 @@ public class WorkflowExecutionTimedOutEventAttributes implements Serializable {
         this.timeoutType = timeoutType.toString();
         return this;
     }
-    
+
     /**
      * The policy used for the child workflow executions of this workflow
      * execution. The supported child policies are: <ul>
@@ -226,8 +225,7 @@ public class WorkflowExecutionTimedOutEventAttributes implements Serializable {
         this.childPolicy = childPolicy;
         return this;
     }
-    
-    
+
     /**
      * The policy used for the child workflow executions of this workflow
      * execution. The supported child policies are: <ul>
@@ -293,7 +291,7 @@ public class WorkflowExecutionTimedOutEventAttributes implements Serializable {
         this.childPolicy = childPolicy.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

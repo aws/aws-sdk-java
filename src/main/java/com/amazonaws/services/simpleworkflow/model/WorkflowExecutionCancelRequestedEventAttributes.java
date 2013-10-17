@@ -91,8 +91,7 @@ public class WorkflowExecutionCancelRequestedEventAttributes implements Serializ
         this.externalWorkflowExecution = externalWorkflowExecution;
         return this;
     }
-    
-    
+
     /**
      * The id of the
      * <code>RequestCancelExternalWorkflowExecutionInitiated</code> event
@@ -167,8 +166,7 @@ public class WorkflowExecutionCancelRequestedEventAttributes implements Serializ
         this.externalInitiatedEventId = externalInitiatedEventId;
         return this;
     }
-    
-    
+
     /**
      * If set, indicates that the request to cancel the workflow execution
      * was automatically generated, and specifies the cause. This happens if
@@ -234,8 +232,7 @@ public class WorkflowExecutionCancelRequestedEventAttributes implements Serializ
         this.cause = cause;
         return this;
     }
-    
-    
+
     /**
      * If set, indicates that the request to cancel the workflow execution
      * was automatically generated, and specifies the cause. This happens if
@@ -281,7 +278,7 @@ public class WorkflowExecutionCancelRequestedEventAttributes implements Serializ
         this.cause = cause.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -99,8 +99,7 @@ public class RemoveRoleFromInstanceProfileRequest extends AmazonWebServiceReques
         this.instanceProfileName = instanceProfileName;
         return this;
     }
-    
-    
+
     /**
      * Name of the role to remove.
      * <p>
@@ -145,8 +144,7 @@ public class RemoveRoleFromInstanceProfileRequest extends AmazonWebServiceReques
         this.roleName = roleName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

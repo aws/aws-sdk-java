@@ -92,8 +92,7 @@ public class DescribeClusterVersionsRequest extends AmazonWebServiceRequest impl
         this.clusterVersion = clusterVersion;
         return this;
     }
-    
-    
+
     /**
      * The name of a specific cluster parameter group family to return
      * details for. <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric
@@ -144,8 +143,7 @@ public class DescribeClusterVersionsRequest extends AmazonWebServiceRequest impl
         this.clusterParameterGroupFamily = clusterParameterGroupFamily;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of records to include in the response. If more than
      * the <code>MaxRecords</code> value is available, a marker is included
@@ -202,8 +200,7 @@ public class DescribeClusterVersionsRequest extends AmazonWebServiceRequest impl
         this.maxRecords = maxRecords;
         return this;
     }
-    
-    
+
     /**
      * The marker returned from a previous request. If this parameter is
      * specified, the response includes records beyond the marker only, up to
@@ -248,8 +245,7 @@ public class DescribeClusterVersionsRequest extends AmazonWebServiceRequest impl
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

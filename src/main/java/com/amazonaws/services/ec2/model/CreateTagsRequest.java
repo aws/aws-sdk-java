@@ -49,8 +49,6 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
      */
     public CreateTagsRequest() {}
     
-
-
     /**
      * Constructs a new CreateTagsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -66,8 +64,6 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
         setTags(tags);
     }
 
-    
-    
     /**
      * One or more IDs of resources to tag. This could be the ID of an AMI,
      * an instance, an EBS volume, or snapshot, etc.
@@ -76,7 +72,6 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
      *         an instance, an EBS volume, or snapshot, etc.
      */
     public java.util.List<String> getResources() {
-        
         if (resources == null) {
               resources = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               resources.setAutoConstruct(true);
@@ -144,7 +139,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
 
         return this;
     }
-    
+
     /**
      * The tags to add or overwrite for the specified resources. Each tag
      * item consists of a key-value pair.
@@ -153,7 +148,6 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
      *         item consists of a key-value pair.
      */
     public java.util.List<Tag> getTags() {
-        
         if (tags == null) {
               tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
               tags.setAutoConstruct(true);
@@ -221,7 +215,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
 
         return this;
     }
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

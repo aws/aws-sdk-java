@@ -111,8 +111,7 @@ public class WeeklyAutoScalingSchedule implements Serializable {
         setMonday(monday);
         return this;
     }
-    
-   	
+
     /**
      * The schedule for Monday.
      * <p>
@@ -132,7 +131,7 @@ public class WeeklyAutoScalingSchedule implements Serializable {
 		this.monday.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into Monday.
 	 * <p>
@@ -179,8 +178,7 @@ public class WeeklyAutoScalingSchedule implements Serializable {
         setTuesday(tuesday);
         return this;
     }
-    
-   	
+
     /**
      * The schedule for Tuesday.
      * <p>
@@ -200,7 +198,7 @@ public class WeeklyAutoScalingSchedule implements Serializable {
 		this.tuesday.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into Tuesday.
 	 * <p>
@@ -247,8 +245,7 @@ public class WeeklyAutoScalingSchedule implements Serializable {
         setWednesday(wednesday);
         return this;
     }
-    
-   	
+
     /**
      * The schedule for Wednesday.
      * <p>
@@ -268,7 +265,7 @@ public class WeeklyAutoScalingSchedule implements Serializable {
 		this.wednesday.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into Wednesday.
 	 * <p>
@@ -315,8 +312,7 @@ public class WeeklyAutoScalingSchedule implements Serializable {
         setThursday(thursday);
         return this;
     }
-    
-   	
+
     /**
      * The schedule for Thursday.
      * <p>
@@ -336,7 +332,7 @@ public class WeeklyAutoScalingSchedule implements Serializable {
 		this.thursday.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into Thursday.
 	 * <p>
@@ -383,8 +379,7 @@ public class WeeklyAutoScalingSchedule implements Serializable {
         setFriday(friday);
         return this;
     }
-    
-   	
+
     /**
      * The schedule for Friday.
      * <p>
@@ -404,7 +399,7 @@ public class WeeklyAutoScalingSchedule implements Serializable {
 		this.friday.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into Friday.
 	 * <p>
@@ -451,8 +446,7 @@ public class WeeklyAutoScalingSchedule implements Serializable {
         setSaturday(saturday);
         return this;
     }
-    
-   	
+
     /**
      * The schedule for Saturday.
      * <p>
@@ -472,7 +466,7 @@ public class WeeklyAutoScalingSchedule implements Serializable {
 		this.saturday.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into Saturday.
 	 * <p>
@@ -519,8 +513,7 @@ public class WeeklyAutoScalingSchedule implements Serializable {
         setSunday(sunday);
         return this;
     }
-    
-   	
+
     /**
      * The schedule for Sunday.
      * <p>
@@ -540,7 +533,7 @@ public class WeeklyAutoScalingSchedule implements Serializable {
 		this.sunday.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into Sunday.
 	 * <p>

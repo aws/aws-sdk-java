@@ -45,8 +45,6 @@ public class SetQueueAttributesRequest extends AmazonWebServiceRequest implement
      */
     public SetQueueAttributesRequest() {}
     
-
-
     /**
      * Constructs a new SetQueueAttributesRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -60,8 +58,6 @@ public class SetQueueAttributesRequest extends AmazonWebServiceRequest implement
         setAttributes(attributes);
     }
 
-    
-    
     /**
      * The URL of the SQS queue to take action on.
      *
@@ -94,8 +90,7 @@ public class SetQueueAttributesRequest extends AmazonWebServiceRequest implement
         this.queueUrl = queueUrl;
         return this;
     }
-    
-    
+
     /**
      * A map of attributes to set.
      *
@@ -132,8 +127,7 @@ public class SetQueueAttributesRequest extends AmazonWebServiceRequest implement
         setAttributes(attributes);
         return this;
     }
-    
-   	
+
     /**
      * A map of attributes to set.
      * <p>
@@ -153,7 +147,7 @@ public class SetQueueAttributesRequest extends AmazonWebServiceRequest implement
 		this.attributes.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into Attributes.
 	 * <p>

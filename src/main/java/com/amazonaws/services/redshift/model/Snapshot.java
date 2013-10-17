@@ -192,8 +192,7 @@ public class Snapshot implements Serializable {
         this.snapshotIdentifier = snapshotIdentifier;
         return this;
     }
-    
-    
+
     /**
      * The identifier of the cluster for which the snapshot was taken.
      *
@@ -226,8 +225,7 @@ public class Snapshot implements Serializable {
         this.clusterIdentifier = clusterIdentifier;
         return this;
     }
-    
-    
+
     /**
      * The time (UTC) when Amazon Redshift began the snapshot. A snapshot
      * contains a copy of the cluster data as of this exact time.
@@ -266,8 +264,7 @@ public class Snapshot implements Serializable {
         this.snapshotCreateTime = snapshotCreateTime;
         return this;
     }
-    
-    
+
     /**
      * The snapshot status. The value of the status depends on the API
      * operation used. <ul> <li><a>CreateClusterSnapshot</a> and
@@ -330,8 +327,7 @@ public class Snapshot implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * The port that the cluster is listening on.
      *
@@ -364,8 +360,7 @@ public class Snapshot implements Serializable {
         this.port = port;
         return this;
     }
-    
-    
+
     /**
      * The Availability Zone in which the cluster was created.
      *
@@ -398,8 +393,7 @@ public class Snapshot implements Serializable {
         this.availabilityZone = availabilityZone;
         return this;
     }
-    
-    
+
     /**
      * The time (UTC) when the cluster was originally created.
      *
@@ -432,8 +426,7 @@ public class Snapshot implements Serializable {
         this.clusterCreateTime = clusterCreateTime;
         return this;
     }
-    
-    
+
     /**
      * The master user name for the cluster.
      *
@@ -466,8 +459,7 @@ public class Snapshot implements Serializable {
         this.masterUsername = masterUsername;
         return this;
     }
-    
-    
+
     /**
      * The version ID of the Amazon Redshift engine that is running on the
      * cluster.
@@ -506,8 +498,7 @@ public class Snapshot implements Serializable {
         this.clusterVersion = clusterVersion;
         return this;
     }
-    
-    
+
     /**
      * The snapshot type. Snapshots created using
      * <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a> will be of
@@ -552,8 +543,7 @@ public class Snapshot implements Serializable {
         this.snapshotType = snapshotType;
         return this;
     }
-    
-    
+
     /**
      * The node type of the nodes in the cluster.
      *
@@ -586,8 +576,7 @@ public class Snapshot implements Serializable {
         this.nodeType = nodeType;
         return this;
     }
-    
-    
+
     /**
      * The number of nodes in the cluster.
      *
@@ -620,8 +609,7 @@ public class Snapshot implements Serializable {
         this.numberOfNodes = numberOfNodes;
         return this;
     }
-    
-    
+
     /**
      * The name of the database that was created when the cluster was
      * created.
@@ -660,8 +648,7 @@ public class Snapshot implements Serializable {
         this.dBName = dBName;
         return this;
     }
-    
-    
+
     /**
      * The VPC identifier of the cluster if the snapshot is from a cluster in
      * a VPC. Otherwise, this field is not in the output.
@@ -700,8 +687,7 @@ public class Snapshot implements Serializable {
         this.vpcId = vpcId;
         return this;
     }
-    
-    
+
     /**
      * If <code>true</code>, the data in the snapshot is encrypted at rest.
      *
@@ -734,8 +720,7 @@ public class Snapshot implements Serializable {
         this.encrypted = encrypted;
         return this;
     }
-    
-    
+
     /**
      * If <code>true</code>, the data in the snapshot is encrypted at rest.
      *
@@ -744,7 +729,7 @@ public class Snapshot implements Serializable {
     public Boolean getEncrypted() {
         return encrypted;
     }
-    
+
     /**
      * A list of the AWS customer accounts authorized to restore the
      * snapshot. Returns <code>null</code> if no accounts are authorized.
@@ -755,7 +740,6 @@ public class Snapshot implements Serializable {
      *         Visible only to the snapshot owner.
      */
     public java.util.List<AccountWithRestoreAccess> getAccountsWithRestoreAccess() {
-        
         if (accountsWithRestoreAccess == null) {
               accountsWithRestoreAccess = new com.amazonaws.internal.ListWithAutoConstructFlag<AccountWithRestoreAccess>();
               accountsWithRestoreAccess.setAutoConstruct(true);
@@ -829,7 +813,7 @@ public class Snapshot implements Serializable {
 
         return this;
     }
-    
+
     /**
      * For manual snapshots, the AWS customer account used to create or copy
      * the snapshot. For automatic snapshots, the owner of the cluster. The
@@ -880,8 +864,7 @@ public class Snapshot implements Serializable {
         this.ownerAccount = ownerAccount;
         return this;
     }
-    
-    
+
     /**
      * The size of the complete set of backup data that would be used to
      * restore the cluster.
@@ -920,8 +903,7 @@ public class Snapshot implements Serializable {
         this.totalBackupSizeInMegaBytes = totalBackupSizeInMegaBytes;
         return this;
     }
-    
-    
+
     /**
      * The size of the incremental backup.
      *
@@ -954,8 +936,7 @@ public class Snapshot implements Serializable {
         this.actualIncrementalBackupSizeInMegaBytes = actualIncrementalBackupSizeInMegaBytes;
         return this;
     }
-    
-    
+
     /**
      * The number of megabytes that have been transferred to the snapshot
      * backup.
@@ -994,8 +975,7 @@ public class Snapshot implements Serializable {
         this.backupProgressInMegaBytes = backupProgressInMegaBytes;
         return this;
     }
-    
-    
+
     /**
      * The number of megabytes per second being transferred to the snapshot
      * backup. Returns <code>0</code> for a completed backup.
@@ -1034,8 +1014,7 @@ public class Snapshot implements Serializable {
         this.currentBackupRateInMegaBytesPerSecond = currentBackupRateInMegaBytesPerSecond;
         return this;
     }
-    
-    
+
     /**
      * The estimate of the time remaining before the snapshot backup will
      * complete. Returns <code>0</code> for a completed backup.
@@ -1074,8 +1053,7 @@ public class Snapshot implements Serializable {
         this.estimatedSecondsToCompletion = estimatedSecondsToCompletion;
         return this;
     }
-    
-    
+
     /**
      * The amount of time an in-progress snapshot backup has been running, or
      * the amount of time it took a completed backup to finish.
@@ -1114,8 +1092,7 @@ public class Snapshot implements Serializable {
         this.elapsedTimeInSeconds = elapsedTimeInSeconds;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

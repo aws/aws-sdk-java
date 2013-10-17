@@ -94,6 +94,19 @@ public class CacheBehavior implements Serializable {
     private Long minTTL;
 
     /**
+     * A complex type that controls which HTTP methods CloudFront processes
+     * and forwards to your Amazon S3 bucket or your custom origin. There are
+     * two options: - CloudFront forwards only GET and HEAD requests. -
+     * CloudFront forwards DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT
+     * requests. If you choose the second option, you may need to restrict
+     * access to your Amazon S3 bucket or to your custom origin so users
+     * can't perform operations that you don't want them to. For example, you
+     * may not want users to have permission to delete objects from your
+     * origin.
+     */
+    private AllowedMethods allowedMethods;
+
+    /**
      * The pattern (for example, images/*.jpg) that specifies which requests
      * you want this cache behavior to apply to. When CloudFront receives an
      * end-user request, the requested path is compared with path patterns in
@@ -167,8 +180,7 @@ public class CacheBehavior implements Serializable {
         this.pathPattern = pathPattern;
         return this;
     }
-    
-    
+
     /**
      * The value of ID for the origin that you want CloudFront to route
      * requests to when a request matches the path pattern either for a cache
@@ -213,8 +225,7 @@ public class CacheBehavior implements Serializable {
         this.targetOriginId = targetOriginId;
         return this;
     }
-    
-    
+
     /**
      * A complex type that specifies how CloudFront handles query strings and
      * cookies.
@@ -253,8 +264,7 @@ public class CacheBehavior implements Serializable {
         this.forwardedValues = forwardedValues;
         return this;
     }
-    
-    
+
     /**
      * A complex type that specifies the AWS accounts, if any, that you want
      * to allow to create signed URLs for private content. If you want to
@@ -359,8 +369,7 @@ public class CacheBehavior implements Serializable {
         this.trustedSigners = trustedSigners;
         return this;
     }
-    
-    
+
     /**
      * Use this element to specify the protocol that users can use to access
      * the files in the origin specified by TargetOriginId when a request
@@ -432,8 +441,7 @@ public class CacheBehavior implements Serializable {
         this.viewerProtocolPolicy = viewerProtocolPolicy;
         return this;
     }
-    
-    
+
     /**
      * Use this element to specify the protocol that users can use to access
      * the files in the origin specified by TargetOriginId when a request
@@ -483,7 +491,7 @@ public class CacheBehavior implements Serializable {
         this.viewerProtocolPolicy = viewerProtocolPolicy.toString();
         return this;
     }
-    
+
     /**
      * The minimum amount of time that you want objects to stay in CloudFront
      * caches before CloudFront queries your origin to see whether the object
@@ -534,8 +542,88 @@ public class CacheBehavior implements Serializable {
         this.minTTL = minTTL;
         return this;
     }
+
+    /**
+     * A complex type that controls which HTTP methods CloudFront processes
+     * and forwards to your Amazon S3 bucket or your custom origin. There are
+     * two options: - CloudFront forwards only GET and HEAD requests. -
+     * CloudFront forwards DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT
+     * requests. If you choose the second option, you may need to restrict
+     * access to your Amazon S3 bucket or to your custom origin so users
+     * can't perform operations that you don't want them to. For example, you
+     * may not want users to have permission to delete objects from your
+     * origin.
+     *
+     * @return A complex type that controls which HTTP methods CloudFront processes
+     *         and forwards to your Amazon S3 bucket or your custom origin. There are
+     *         two options: - CloudFront forwards only GET and HEAD requests. -
+     *         CloudFront forwards DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT
+     *         requests. If you choose the second option, you may need to restrict
+     *         access to your Amazon S3 bucket or to your custom origin so users
+     *         can't perform operations that you don't want them to. For example, you
+     *         may not want users to have permission to delete objects from your
+     *         origin.
+     */
+    public AllowedMethods getAllowedMethods() {
+        return allowedMethods;
+    }
     
+    /**
+     * A complex type that controls which HTTP methods CloudFront processes
+     * and forwards to your Amazon S3 bucket or your custom origin. There are
+     * two options: - CloudFront forwards only GET and HEAD requests. -
+     * CloudFront forwards DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT
+     * requests. If you choose the second option, you may need to restrict
+     * access to your Amazon S3 bucket or to your custom origin so users
+     * can't perform operations that you don't want them to. For example, you
+     * may not want users to have permission to delete objects from your
+     * origin.
+     *
+     * @param allowedMethods A complex type that controls which HTTP methods CloudFront processes
+     *         and forwards to your Amazon S3 bucket or your custom origin. There are
+     *         two options: - CloudFront forwards only GET and HEAD requests. -
+     *         CloudFront forwards DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT
+     *         requests. If you choose the second option, you may need to restrict
+     *         access to your Amazon S3 bucket or to your custom origin so users
+     *         can't perform operations that you don't want them to. For example, you
+     *         may not want users to have permission to delete objects from your
+     *         origin.
+     */
+    public void setAllowedMethods(AllowedMethods allowedMethods) {
+        this.allowedMethods = allowedMethods;
+    }
     
+    /**
+     * A complex type that controls which HTTP methods CloudFront processes
+     * and forwards to your Amazon S3 bucket or your custom origin. There are
+     * two options: - CloudFront forwards only GET and HEAD requests. -
+     * CloudFront forwards DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT
+     * requests. If you choose the second option, you may need to restrict
+     * access to your Amazon S3 bucket or to your custom origin so users
+     * can't perform operations that you don't want them to. For example, you
+     * may not want users to have permission to delete objects from your
+     * origin.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param allowedMethods A complex type that controls which HTTP methods CloudFront processes
+     *         and forwards to your Amazon S3 bucket or your custom origin. There are
+     *         two options: - CloudFront forwards only GET and HEAD requests. -
+     *         CloudFront forwards DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT
+     *         requests. If you choose the second option, you may need to restrict
+     *         access to your Amazon S3 bucket or to your custom origin so users
+     *         can't perform operations that you don't want them to. For example, you
+     *         may not want users to have permission to delete objects from your
+     *         origin.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CacheBehavior withAllowedMethods(AllowedMethods allowedMethods) {
+        this.allowedMethods = allowedMethods;
+        return this;
+    }
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
@@ -553,7 +641,8 @@ public class CacheBehavior implements Serializable {
         if (getForwardedValues() != null) sb.append("ForwardedValues: " + getForwardedValues() + ",");
         if (getTrustedSigners() != null) sb.append("TrustedSigners: " + getTrustedSigners() + ",");
         if (getViewerProtocolPolicy() != null) sb.append("ViewerProtocolPolicy: " + getViewerProtocolPolicy() + ",");
-        if (getMinTTL() != null) sb.append("MinTTL: " + getMinTTL() );
+        if (getMinTTL() != null) sb.append("MinTTL: " + getMinTTL() + ",");
+        if (getAllowedMethods() != null) sb.append("AllowedMethods: " + getAllowedMethods() );
         sb.append("}");
         return sb.toString();
     }
@@ -569,6 +658,7 @@ public class CacheBehavior implements Serializable {
         hashCode = prime * hashCode + ((getTrustedSigners() == null) ? 0 : getTrustedSigners().hashCode()); 
         hashCode = prime * hashCode + ((getViewerProtocolPolicy() == null) ? 0 : getViewerProtocolPolicy().hashCode()); 
         hashCode = prime * hashCode + ((getMinTTL() == null) ? 0 : getMinTTL().hashCode()); 
+        hashCode = prime * hashCode + ((getAllowedMethods() == null) ? 0 : getAllowedMethods().hashCode()); 
         return hashCode;
     }
     
@@ -592,6 +682,8 @@ public class CacheBehavior implements Serializable {
         if (other.getViewerProtocolPolicy() != null && other.getViewerProtocolPolicy().equals(this.getViewerProtocolPolicy()) == false) return false; 
         if (other.getMinTTL() == null ^ this.getMinTTL() == null) return false;
         if (other.getMinTTL() != null && other.getMinTTL().equals(this.getMinTTL()) == false) return false; 
+        if (other.getAllowedMethods() == null ^ this.getAllowedMethods() == null) return false;
+        if (other.getAllowedMethods() != null && other.getAllowedMethods().equals(this.getAllowedMethods()) == false) return false; 
         return true;
     }
     

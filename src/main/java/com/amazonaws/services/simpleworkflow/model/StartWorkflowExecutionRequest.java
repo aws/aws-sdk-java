@@ -231,8 +231,7 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
         this.domain = domain;
         return this;
     }
-    
-    
+
     /**
      * The user defined identifier associated with the workflow execution.
      * You can use this to associate a custom identifier with the workflow
@@ -328,8 +327,7 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
         this.workflowId = workflowId;
         return this;
     }
-    
-    
+
     /**
      * The type of the workflow to start.
      *
@@ -362,8 +360,7 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
         this.workflowType = workflowType;
         return this;
     }
-    
-    
+
     /**
      * The task list to use for the decision tasks generated for this
      * workflow execution. This overrides the <code>defaultTaskList</code>
@@ -456,8 +453,7 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
         this.taskList = taskList;
         return this;
     }
-    
-    
+
     /**
      * The input for the workflow execution. This is a free form string which
      * should be meaningful to the workflow you are starting. This
@@ -517,8 +513,7 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
         this.input = input;
         return this;
     }
-    
-    
+
     /**
      * The total duration for this workflow execution. This overrides the
      * defaultExecutionStartToCloseTimeout specified when registering the
@@ -626,8 +621,7 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
         this.executionStartToCloseTimeout = executionStartToCloseTimeout;
         return this;
     }
-    
-    
+
     /**
      * The list of tags to associate with the workflow execution. You can
      * specify a maximum of 5 tags. You can list workflow executions with a
@@ -643,7 +637,6 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
      *         <a>ListClosedWorkflowExecutions</a> and specifying a <a>TagFilter</a>.
      */
     public java.util.List<String> getTagList() {
-        
         if (tagList == null) {
               tagList = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               tagList.setAutoConstruct(true);
@@ -732,7 +725,7 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
 
         return this;
     }
-    
+
     /**
      * Specifies the maximum duration of decision tasks for this workflow
      * execution. This parameter overrides the
@@ -840,8 +833,7 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
         this.taskStartToCloseTimeout = taskStartToCloseTimeout;
         return this;
     }
-    
-    
+
     /**
      * If set, specifies the policy to use for the child workflow executions
      * of this workflow execution if it is terminated, by calling the
@@ -985,8 +977,7 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
         this.childPolicy = childPolicy;
         return this;
     }
-    
-    
+
     /**
      * If set, specifies the policy to use for the child workflow executions
      * of this workflow execution if it is terminated, by calling the
@@ -1084,7 +1075,7 @@ public class StartWorkflowExecutionRequest extends AmazonWebServiceRequest imple
         this.childPolicy = childPolicy.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -45,8 +45,6 @@ public class DeleteLoadBalancerPolicyRequest extends AmazonWebServiceRequest imp
      */
     public DeleteLoadBalancerPolicyRequest() {}
     
-
-
     /**
      * Constructs a new DeleteLoadBalancerPolicyRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -61,8 +59,6 @@ public class DeleteLoadBalancerPolicyRequest extends AmazonWebServiceRequest imp
         setPolicyName(policyName);
     }
 
-    
-    
     /**
      * The mnemonic name associated with the LoadBalancer. The name must be
      * unique within your AWS account.
@@ -101,8 +97,7 @@ public class DeleteLoadBalancerPolicyRequest extends AmazonWebServiceRequest imp
         this.loadBalancerName = loadBalancerName;
         return this;
     }
-    
-    
+
     /**
      * The mnemonic name for the policy being deleted.
      *
@@ -135,8 +130,7 @@ public class DeleteLoadBalancerPolicyRequest extends AmazonWebServiceRequest imp
         this.policyName = policyName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

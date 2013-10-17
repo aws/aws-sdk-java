@@ -77,8 +77,7 @@ public class ConnectionCost implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * The unit used in cost calculation. <p>Example: "Gbps," if the price is
      * calculated based on Gbps.
@@ -117,8 +116,7 @@ public class ConnectionCost implements Serializable {
         this.unit = unit;
         return this;
     }
-    
-    
+
     /**
      * Currency code based on ISO 4217. <p>Example: "USD" for US dollar.
      *
@@ -151,8 +149,7 @@ public class ConnectionCost implements Serializable {
         this.currencyCode = currencyCode;
         return this;
     }
-    
-    
+
     /**
      * The amount of charge per unit. <p>Example: 0.01
      *
@@ -185,8 +182,7 @@ public class ConnectionCost implements Serializable {
         this.amount = amount;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -61,7 +61,6 @@ public class ListPipelinesResult implements Serializable {
      *         <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.
      */
     public java.util.List<PipelineIdName> getPipelineIdList() {
-        
         if (pipelineIdList == null) {
               pipelineIdList = new com.amazonaws.internal.ListWithAutoConstructFlag<PipelineIdName>();
               pipelineIdList.setAutoConstruct(true);
@@ -141,7 +140,7 @@ public class ListPipelinesResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * If not null, indicates the starting point for the set of pipeline
      * identifiers that the next call to <a>ListPipelines</a> will retrieve.
@@ -198,8 +197,7 @@ public class ListPipelinesResult implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * If <code>True</code>, there are more results that can be obtained by a
      * subsequent call to <a>ListPipelines</a>.
@@ -238,8 +236,7 @@ public class ListPipelinesResult implements Serializable {
         this.hasMoreResults = hasMoreResults;
         return this;
     }
-    
-    
+
     /**
      * If <code>True</code>, there are more results that can be obtained by a
      * subsequent call to <a>ListPipelines</a>.
@@ -250,7 +247,7 @@ public class ListPipelinesResult implements Serializable {
     public Boolean getHasMoreResults() {
         return hasMoreResults;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

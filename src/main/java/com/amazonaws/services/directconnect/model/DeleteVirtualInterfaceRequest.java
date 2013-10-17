@@ -72,8 +72,7 @@ public class DeleteVirtualInterfaceRequest extends AmazonWebServiceRequest imple
         this.virtualInterfaceId = virtualInterfaceId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

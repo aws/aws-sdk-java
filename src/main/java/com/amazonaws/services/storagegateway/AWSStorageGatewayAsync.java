@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.storagegateway;
-            
+
 import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
@@ -47,8 +47,8 @@ import com.amazonaws.services.storagegateway.model.*;
  * <li> <a href="http://docs.amazonwebservices.com/general/latest/gr/index.html?rande.html"> AWS Storage Gateway Regions and Endpoints </a> : Provides a
  * list of each of the regions and endpoints available for use with AWS Storage Gateway. </li>
  * 
- * </ul> 
- */       
+ * </ul>
+ */
 public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>

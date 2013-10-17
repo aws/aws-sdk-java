@@ -51,7 +51,6 @@ public class ListGatewaysResult implements Serializable {
      * @return An array of <a>GatewayInfo</a> objects.
      */
     public java.util.List<GatewayInfo> getGateways() {
-        
         if (gateways == null) {
               gateways = new com.amazonaws.internal.ListWithAutoConstructFlag<GatewayInfo>();
               gateways.setAutoConstruct(true);
@@ -113,7 +112,7 @@ public class ListGatewaysResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Use the marker in your next request to fetch the next set of gateways
      * in the list. If there are no more gateways to list, this field does
@@ -167,8 +166,7 @@ public class ListGatewaysResult implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

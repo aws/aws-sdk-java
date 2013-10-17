@@ -49,8 +49,6 @@ public class Attribute implements Serializable {
      */
     public Attribute() {}
     
-
-
     /**
      * Constructs a new Attribute object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -64,8 +62,6 @@ public class Attribute implements Serializable {
         setValue(value);
     }
 
-    
-    
     /**
      * The name of the attribute.
      *
@@ -98,8 +94,7 @@ public class Attribute implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * 
      *
@@ -132,8 +127,7 @@ public class Attribute implements Serializable {
         this.alternateNameEncoding = alternateNameEncoding;
         return this;
     }
-    
-    
+
     /**
      * The value of the attribute.
      *
@@ -166,8 +160,7 @@ public class Attribute implements Serializable {
         this.value = value;
         return this;
     }
-    
-    
+
     /**
      * 
      *
@@ -200,8 +193,7 @@ public class Attribute implements Serializable {
         this.alternateValueEncoding = alternateValueEncoding;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

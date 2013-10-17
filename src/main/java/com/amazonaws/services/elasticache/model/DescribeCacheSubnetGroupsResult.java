@@ -67,8 +67,7 @@ public class DescribeCacheSubnetGroupsResult implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * A list of cache subnet groups. Each element in the list contains
      * detailed information about one group.
@@ -77,7 +76,6 @@ public class DescribeCacheSubnetGroupsResult implements Serializable {
      *         detailed information about one group.
      */
     public java.util.List<CacheSubnetGroup> getCacheSubnetGroups() {
-        
         if (cacheSubnetGroups == null) {
               cacheSubnetGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheSubnetGroup>();
               cacheSubnetGroups.setAutoConstruct(true);
@@ -145,7 +143,7 @@ public class DescribeCacheSubnetGroupsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

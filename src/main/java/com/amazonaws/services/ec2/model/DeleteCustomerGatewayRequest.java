@@ -45,8 +45,6 @@ public class DeleteCustomerGatewayRequest extends AmazonWebServiceRequest implem
      */
     public DeleteCustomerGatewayRequest() {}
     
-
-
     /**
      * Constructs a new DeleteCustomerGatewayRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -58,8 +56,6 @@ public class DeleteCustomerGatewayRequest extends AmazonWebServiceRequest implem
         setCustomerGatewayId(customerGatewayId);
     }
 
-    
-    
     /**
      * The ID of the customer gateway to delete.
      *
@@ -92,8 +88,7 @@ public class DeleteCustomerGatewayRequest extends AmazonWebServiceRequest implem
         this.customerGatewayId = customerGatewayId;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

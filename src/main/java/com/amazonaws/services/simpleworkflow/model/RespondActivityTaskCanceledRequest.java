@@ -144,8 +144,7 @@ public class RespondActivityTaskCanceledRequest extends AmazonWebServiceRequest 
         this.taskToken = taskToken;
         return this;
     }
-    
-    
+
     /**
      * Optional information about the cancellation.
      * <p>
@@ -187,8 +186,7 @@ public class RespondActivityTaskCanceledRequest extends AmazonWebServiceRequest 
         this.details = details;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

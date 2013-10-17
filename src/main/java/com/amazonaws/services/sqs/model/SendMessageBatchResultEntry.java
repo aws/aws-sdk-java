@@ -75,8 +75,7 @@ public class SendMessageBatchResultEntry implements Serializable {
         this.id = id;
         return this;
     }
-    
-    
+
     /**
      * An identifier for the message.
      *
@@ -109,8 +108,7 @@ public class SendMessageBatchResultEntry implements Serializable {
         this.messageId = messageId;
         return this;
     }
-    
-    
+
     /**
      * An MD5 digest of the non-URL-encoded message body string. This can be
      * used to verify that SQS received the message correctly. SQS first URL
@@ -167,8 +165,7 @@ public class SendMessageBatchResultEntry implements Serializable {
         this.mD5OfMessageBody = mD5OfMessageBody;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

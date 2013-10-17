@@ -66,8 +66,7 @@ public class RouteTable implements Serializable {
         this.routeTableId = routeTableId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the VpcId property for this object.
      *
@@ -100,15 +99,13 @@ public class RouteTable implements Serializable {
         this.vpcId = vpcId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Routes property for this object.
      *
      * @return The value of the Routes property for this object.
      */
     public java.util.List<Route> getRoutes() {
-        
         if (routes == null) {
               routes = new com.amazonaws.internal.ListWithAutoConstructFlag<Route>();
               routes.setAutoConstruct(true);
@@ -170,14 +167,13 @@ public class RouteTable implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns the value of the Associations property for this object.
      *
      * @return The value of the Associations property for this object.
      */
     public java.util.List<RouteTableAssociation> getAssociations() {
-        
         if (associations == null) {
               associations = new com.amazonaws.internal.ListWithAutoConstructFlag<RouteTableAssociation>();
               associations.setAutoConstruct(true);
@@ -239,14 +235,13 @@ public class RouteTable implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns the value of the Tags property for this object.
      *
      * @return The value of the Tags property for this object.
      */
     public java.util.List<Tag> getTags() {
-        
         if (tags == null) {
               tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
               tags.setAutoConstruct(true);
@@ -308,14 +303,13 @@ public class RouteTable implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns the value of the PropagatingVgws property for this object.
      *
      * @return The value of the PropagatingVgws property for this object.
      */
     public java.util.List<PropagatingVgw> getPropagatingVgws() {
-        
         if (propagatingVgws == null) {
               propagatingVgws = new com.amazonaws.internal.ListWithAutoConstructFlag<PropagatingVgw>();
               propagatingVgws.setAutoConstruct(true);
@@ -377,7 +371,7 @@ public class RouteTable implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

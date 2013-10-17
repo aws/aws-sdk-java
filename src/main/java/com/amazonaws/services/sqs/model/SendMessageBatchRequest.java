@@ -45,8 +45,6 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest implements 
      */
     public SendMessageBatchRequest() {}
     
-
-
     /**
      * Constructs a new SendMessageBatchRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -57,10 +55,6 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest implements 
     public SendMessageBatchRequest(String queueUrl) {
         setQueueUrl(queueUrl);
     }
-
-    
-    
-
 
     /**
      * Constructs a new SendMessageBatchRequest object.
@@ -75,8 +69,6 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest implements 
         setEntries(entries);
     }
 
-    
-    
     /**
      * The URL of the SQS queue to take action on.
      *
@@ -109,15 +101,13 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest implements 
         this.queueUrl = queueUrl;
         return this;
     }
-    
-    
+
     /**
      * A list of <a>SendMessageBatchRequestEntry</a>s.
      *
      * @return A list of <a>SendMessageBatchRequestEntry</a>s.
      */
     public java.util.List<SendMessageBatchRequestEntry> getEntries() {
-        
         if (entries == null) {
               entries = new com.amazonaws.internal.ListWithAutoConstructFlag<SendMessageBatchRequestEntry>();
               entries.setAutoConstruct(true);
@@ -179,7 +169,7 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest implements 
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

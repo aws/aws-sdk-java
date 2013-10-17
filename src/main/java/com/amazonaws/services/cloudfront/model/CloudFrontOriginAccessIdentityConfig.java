@@ -51,8 +51,6 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable {
      */
     public CloudFrontOriginAccessIdentityConfig() {}
     
-
-
     /**
      * Constructs a new CloudFrontOriginAccessIdentityConfig object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -75,8 +73,6 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable {
         setCallerReference(callerReference);
     }
 
-    
-    
     /**
      * A unique number that ensures the request can't be replayed. If the
      * CallerReference is new (no matter the content of the
@@ -175,8 +171,7 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable {
         this.callerReference = callerReference;
         return this;
     }
-    
-    
+
     /**
      * Any comments you want to include about the origin access identity.
      *
@@ -209,8 +204,7 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable {
         this.comment = comment;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -45,8 +45,6 @@ public class Body implements Serializable {
      */
     public Body() {}
     
-
-
     /**
      * Constructs a new Body object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -60,8 +58,6 @@ public class Body implements Serializable {
         setText(text);
     }
 
-    
-    
     /**
      * The content of the message, in text format. Use this for text-based
      * email clients, or clients on high-latency networks (such as mobile
@@ -106,8 +102,7 @@ public class Body implements Serializable {
         this.text = text;
         return this;
     }
-    
-    
+
     /**
      * The content of the message, in HTML format. Use this for email clients
      * that can process HTML. You can include clickable links, formatted
@@ -152,8 +147,7 @@ public class Body implements Serializable {
         this.html = html;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

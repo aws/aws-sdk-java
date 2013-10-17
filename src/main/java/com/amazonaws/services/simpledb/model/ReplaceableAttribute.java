@@ -46,8 +46,6 @@ public class ReplaceableAttribute implements Serializable {
      */
     public ReplaceableAttribute() {}
     
-
-
     /**
      * Constructs a new ReplaceableAttribute object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -65,8 +63,6 @@ public class ReplaceableAttribute implements Serializable {
         setReplace(replace);
     }
 
-    
-    
     /**
      * The name of the replaceable attribute.
      *
@@ -99,8 +95,7 @@ public class ReplaceableAttribute implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * The value of the replaceable attribute.
      *
@@ -133,8 +128,7 @@ public class ReplaceableAttribute implements Serializable {
         this.value = value;
         return this;
     }
-    
-    
+
     /**
      * A flag specifying whether or not to replace the attribute/value pair
      * or to add a new attribute/value pair. The default setting is
@@ -179,8 +173,7 @@ public class ReplaceableAttribute implements Serializable {
         this.replace = replace;
         return this;
     }
-    
-    
+
     /**
      * A flag specifying whether or not to replace the attribute/value pair
      * or to add a new attribute/value pair. The default setting is
@@ -193,7 +186,7 @@ public class ReplaceableAttribute implements Serializable {
     public Boolean getReplace() {
         return replace;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

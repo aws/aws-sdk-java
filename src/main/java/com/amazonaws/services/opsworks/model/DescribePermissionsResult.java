@@ -59,7 +59,6 @@ public class DescribePermissionsResult implements Serializable {
      *         specified stack and IAM ARN.</li> </ul>
      */
     public java.util.List<Permission> getPermissions() {
-        
         if (permissions == null) {
               permissions = new com.amazonaws.internal.ListWithAutoConstructFlag<Permission>();
               permissions.setAutoConstruct(true);
@@ -169,7 +168,7 @@ public class DescribePermissionsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

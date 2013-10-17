@@ -35,7 +35,6 @@ public class DescribeEventCategoriesResult implements Serializable {
      * @return A list of EventCategoriesMap data types.
      */
     public java.util.List<EventCategoriesMap> getEventCategoriesMapList() {
-        
         if (eventCategoriesMapList == null) {
               eventCategoriesMapList = new com.amazonaws.internal.ListWithAutoConstructFlag<EventCategoriesMap>();
               eventCategoriesMapList.setAutoConstruct(true);
@@ -97,7 +96,7 @@ public class DescribeEventCategoriesResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -87,8 +87,7 @@ public class SourceConfiguration implements Serializable {
         this.applicationName = applicationName;
         return this;
     }
-    
-    
+
     /**
      * The name of the configuration template.
      * <p>
@@ -130,8 +129,7 @@ public class SourceConfiguration implements Serializable {
         this.templateName = templateName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

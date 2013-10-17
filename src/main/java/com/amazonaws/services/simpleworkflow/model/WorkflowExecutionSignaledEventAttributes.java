@@ -106,8 +106,7 @@ public class WorkflowExecutionSignaledEventAttributes implements Serializable {
         this.signalName = signalName;
         return this;
     }
-    
-    
+
     /**
      * Inputs provided with the signal (if any). The decider can use the
      * signal name and inputs to determine how to process the signal.
@@ -155,8 +154,7 @@ public class WorkflowExecutionSignaledEventAttributes implements Serializable {
         this.input = input;
         return this;
     }
-    
-    
+
     /**
      * The workflow execution that sent the signal. This is set only of the
      * signal was sent by another workflow execution.
@@ -195,8 +193,7 @@ public class WorkflowExecutionSignaledEventAttributes implements Serializable {
         this.externalWorkflowExecution = externalWorkflowExecution;
         return this;
     }
-    
-    
+
     /**
      * The id of the <code>SignalExternalWorkflowExecutionInitiated</code>
      * event corresponding to the <code>SignalExternalWorkflow</code>
@@ -265,8 +262,7 @@ public class WorkflowExecutionSignaledEventAttributes implements Serializable {
         this.externalInitiatedEventId = externalInitiatedEventId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -107,8 +107,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
         this.routeTableId = routeTableId;
         return this;
     }
-    
-    
+
     /**
      * The CIDR address block used for the destination match. For example:
      * <code>0.0.0.0/0</code>. Routing decisions are based on the most
@@ -153,8 +152,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
         this.destinationCidrBlock = destinationCidrBlock;
         return this;
     }
-    
-    
+
     /**
      * The ID of a VPN or Internet gateway attached to your VPC. You must
      * provide either <code>GatewayId</code> or <code>InstanceId</code>, but
@@ -199,8 +197,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
         this.gatewayId = gatewayId;
         return this;
     }
-    
-    
+
     /**
      * The ID of a NAT instance in your VPC. You must provide either
      * <code>GatewayId</code> or <code>InstanceId</code>, but not both.
@@ -239,8 +236,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the NetworkInterfaceId property for this object.
      *
@@ -273,8 +269,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
         this.networkInterfaceId = networkInterfaceId;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

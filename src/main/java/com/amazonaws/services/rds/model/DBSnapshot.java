@@ -149,8 +149,7 @@ public class DBSnapshot implements Serializable {
         this.dBSnapshotIdentifier = dBSnapshotIdentifier;
         return this;
     }
-    
-    
+
     /**
      * Specifies the the DBInstanceIdentifier of the DB Instance this DB
      * Snapshot was created from.
@@ -189,8 +188,7 @@ public class DBSnapshot implements Serializable {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
         return this;
     }
-    
-    
+
     /**
      * Provides the time (UTC) when the snapshot was taken.
      *
@@ -223,8 +221,7 @@ public class DBSnapshot implements Serializable {
         this.snapshotCreateTime = snapshotCreateTime;
         return this;
     }
-    
-    
+
     /**
      * Specifies the name of the database engine.
      *
@@ -257,8 +254,7 @@ public class DBSnapshot implements Serializable {
         this.engine = engine;
         return this;
     }
-    
-    
+
     /**
      * Specifies the allocated storage size in gigabytes (GB).
      *
@@ -291,8 +287,7 @@ public class DBSnapshot implements Serializable {
         this.allocatedStorage = allocatedStorage;
         return this;
     }
-    
-    
+
     /**
      * Specifies the status of this DB Snapshot.
      *
@@ -325,8 +320,7 @@ public class DBSnapshot implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * Specifies the port that the database engine was listening on at the
      * time of the snapshot.
@@ -365,8 +359,7 @@ public class DBSnapshot implements Serializable {
         this.port = port;
         return this;
     }
-    
-    
+
     /**
      * Specifies the name of the Availability Zone the DB Instance was
      * located in at the time of the DB Snapshot.
@@ -405,8 +398,7 @@ public class DBSnapshot implements Serializable {
         this.availabilityZone = availabilityZone;
         return this;
     }
-    
-    
+
     /**
      * Provides the Vpc Id associated with the DB Snapshot.
      *
@@ -439,8 +431,7 @@ public class DBSnapshot implements Serializable {
         this.vpcId = vpcId;
         return this;
     }
-    
-    
+
     /**
      * Specifies the time (UTC) when the snapshot was taken.
      *
@@ -473,8 +464,7 @@ public class DBSnapshot implements Serializable {
         this.instanceCreateTime = instanceCreateTime;
         return this;
     }
-    
-    
+
     /**
      * Provides the master username for the DB Snapshot.
      *
@@ -507,8 +497,7 @@ public class DBSnapshot implements Serializable {
         this.masterUsername = masterUsername;
         return this;
     }
-    
-    
+
     /**
      * Specifies the version of the database engine.
      *
@@ -541,8 +530,7 @@ public class DBSnapshot implements Serializable {
         this.engineVersion = engineVersion;
         return this;
     }
-    
-    
+
     /**
      * License model information for the restored DB Instance.
      *
@@ -575,8 +563,7 @@ public class DBSnapshot implements Serializable {
         this.licenseModel = licenseModel;
         return this;
     }
-    
-    
+
     /**
      * Provides the type of the DB Snapshot.
      *
@@ -609,8 +596,7 @@ public class DBSnapshot implements Serializable {
         this.snapshotType = snapshotType;
         return this;
     }
-    
-    
+
     /**
      * Specifies the Provisioned IOPS (I/O operations per second) value of
      * the DB Instance at the time of the snapshot.
@@ -649,8 +635,7 @@ public class DBSnapshot implements Serializable {
         this.iops = iops;
         return this;
     }
-    
-    
+
     /**
      * Provides the option group name for the DB Snapshot.
      *
@@ -683,8 +668,7 @@ public class DBSnapshot implements Serializable {
         this.optionGroupName = optionGroupName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

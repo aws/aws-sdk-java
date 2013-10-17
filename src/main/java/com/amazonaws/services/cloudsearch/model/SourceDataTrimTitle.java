@@ -108,8 +108,7 @@ public class SourceDataTrimTitle implements Serializable {
         this.sourceName = sourceName;
         return this;
     }
-    
-    
+
     /**
      * The default value to use if the source attribute is not specified in a
      * document. Optional.
@@ -157,8 +156,7 @@ public class SourceDataTrimTitle implements Serializable {
         this.defaultValue = defaultValue;
         return this;
     }
-    
-    
+
     /**
      * The separator that follows the text to trim.
      *
@@ -191,8 +189,7 @@ public class SourceDataTrimTitle implements Serializable {
         this.separator = separator;
         return this;
     }
-    
-    
+
     /**
      * An <a href="http://tools.ietf.org/html/rfc4646">IETF RFC 4646</a>
      * language code. Only the primary language is considered. English (en)
@@ -246,8 +243,7 @@ public class SourceDataTrimTitle implements Serializable {
         this.language = language;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -64,8 +64,7 @@ public class ResetNetworkInterfaceAttributeRequest extends AmazonWebServiceReque
         this.networkInterfaceId = networkInterfaceId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the SourceDestCheck property for this object.
      *
@@ -98,8 +97,7 @@ public class ResetNetworkInterfaceAttributeRequest extends AmazonWebServiceReque
         this.sourceDestCheck = sourceDestCheck;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

@@ -110,8 +110,7 @@ public class Notifications implements Serializable {
         this.progressing = progressing;
         return this;
     }
-    
-    
+
     /**
      * The Amazon SNS topic that you want to notify when Elastic Transcoder
      * has finished processing the job.
@@ -159,8 +158,7 @@ public class Notifications implements Serializable {
         this.completed = completed;
         return this;
     }
-    
-    
+
     /**
      * The Amazon SNS topic that you want to notify when Elastic Transcoder
      * encounters a warning condition.
@@ -208,8 +206,7 @@ public class Notifications implements Serializable {
         this.warning = warning;
         return this;
     }
-    
-    
+
     /**
      * The Amazon SNS topic that you want to notify when Elastic Transcoder
      * encounters an error condition.
@@ -257,8 +254,7 @@ public class Notifications implements Serializable {
         this.error = error;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

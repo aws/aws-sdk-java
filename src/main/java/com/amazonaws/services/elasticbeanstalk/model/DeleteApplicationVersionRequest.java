@@ -63,8 +63,6 @@ public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest imp
      */
     public DeleteApplicationVersionRequest() {}
     
-
-
     /**
      * Constructs a new DeleteApplicationVersionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -79,8 +77,6 @@ public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest imp
         setVersionLabel(versionLabel);
     }
 
-    
-    
     /**
      * The name of the application to delete releases from.
      * <p>
@@ -122,8 +118,7 @@ public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest imp
         this.applicationName = applicationName;
         return this;
     }
-    
-    
+
     /**
      * The label of the version to delete.
      * <p>
@@ -165,8 +160,7 @@ public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest imp
         this.versionLabel = versionLabel;
         return this;
     }
-    
-    
+
     /**
      * Indicates whether to delete the associated source bundle from Amazon
      * S3: <ul> <li> <code>true</code>: An attempt is made to delete the
@@ -229,8 +223,7 @@ public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest imp
         this.deleteSourceBundle = deleteSourceBundle;
         return this;
     }
-    
-    
+
     /**
      * Indicates whether to delete the associated source bundle from Amazon
      * S3: <ul> <li> <code>true</code>: An attempt is made to delete the
@@ -249,7 +242,7 @@ public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest imp
     public Boolean getDeleteSourceBundle() {
         return deleteSourceBundle;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

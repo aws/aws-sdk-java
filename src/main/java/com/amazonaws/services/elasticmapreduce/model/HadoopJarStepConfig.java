@@ -63,8 +63,6 @@ public class HadoopJarStepConfig implements Serializable {
      */
     public HadoopJarStepConfig() {}
     
-
-
     /**
      * Constructs a new HadoopJarStepConfig object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -76,8 +74,6 @@ public class HadoopJarStepConfig implements Serializable {
         setJar(jar);
     }
 
-    
-    
     /**
      * A list of Java properties that are set when the step runs. You can use
      * these properties to pass key value pairs to your main function.
@@ -86,7 +82,6 @@ public class HadoopJarStepConfig implements Serializable {
      *         these properties to pass key value pairs to your main function.
      */
     public java.util.List<KeyValue> getProperties() {
-        
         if (properties == null) {
               properties = new com.amazonaws.internal.ListWithAutoConstructFlag<KeyValue>();
               properties.setAutoConstruct(true);
@@ -154,7 +149,7 @@ public class HadoopJarStepConfig implements Serializable {
 
         return this;
     }
-    
+
     /**
      * A path to a JAR file run during the step.
      * <p>
@@ -199,8 +194,7 @@ public class HadoopJarStepConfig implements Serializable {
         this.jar = jar;
         return this;
     }
-    
-    
+
     /**
      * The name of the main class in the specified Java file. If not
      * specified, the JAR file should specify a Main-Class in its manifest
@@ -257,8 +251,7 @@ public class HadoopJarStepConfig implements Serializable {
         this.mainClass = mainClass;
         return this;
     }
-    
-    
+
     /**
      * A list of command line arguments passed to the JAR file's main
      * function when executed.
@@ -267,7 +260,6 @@ public class HadoopJarStepConfig implements Serializable {
      *         function when executed.
      */
     public java.util.List<String> getArgs() {
-        
         if (args == null) {
               args = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               args.setAutoConstruct(true);
@@ -335,7 +327,7 @@ public class HadoopJarStepConfig implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

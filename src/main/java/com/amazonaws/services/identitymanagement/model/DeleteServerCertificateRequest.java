@@ -49,8 +49,6 @@ public class DeleteServerCertificateRequest extends AmazonWebServiceRequest impl
      */
     public DeleteServerCertificateRequest() {}
     
-
-
     /**
      * Constructs a new DeleteServerCertificateRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -63,8 +61,6 @@ public class DeleteServerCertificateRequest extends AmazonWebServiceRequest impl
         setServerCertificateName(serverCertificateName);
     }
 
-    
-    
     /**
      * The name of the server certificate you want to delete.
      * <p>
@@ -109,8 +105,7 @@ public class DeleteServerCertificateRequest extends AmazonWebServiceRequest impl
         this.serverCertificateName = serverCertificateName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

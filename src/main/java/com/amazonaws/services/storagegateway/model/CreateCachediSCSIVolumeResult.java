@@ -88,8 +88,7 @@ public class CreateCachediSCSIVolumeResult implements Serializable {
         this.volumeARN = volumeARN;
         return this;
     }
-    
-    
+
     /**
      * The ARN of the volume target that includes the iSCSI name that
      * initiators can use to connect to the target.
@@ -137,8 +136,7 @@ public class CreateCachediSCSIVolumeResult implements Serializable {
         this.targetARN = targetARN;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

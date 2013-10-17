@@ -53,7 +53,6 @@ public class DescribeTrustedAdvisorCheckSummariesResult implements Serializable 
      *         request.
      */
     public java.util.List<TrustedAdvisorCheckSummary> getSummaries() {
-        
         if (summaries == null) {
               summaries = new com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorCheckSummary>();
               summaries.setAutoConstruct(true);
@@ -151,7 +150,7 @@ public class DescribeTrustedAdvisorCheckSummariesResult implements Serializable 
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

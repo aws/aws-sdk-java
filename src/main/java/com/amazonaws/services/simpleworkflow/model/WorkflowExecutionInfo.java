@@ -125,8 +125,7 @@ public class WorkflowExecutionInfo implements Serializable {
         this.execution = execution;
         return this;
     }
-    
-    
+
     /**
      * The type of the workflow execution.
      *
@@ -159,8 +158,7 @@ public class WorkflowExecutionInfo implements Serializable {
         this.workflowType = workflowType;
         return this;
     }
-    
-    
+
     /**
      * The time when the execution was started.
      *
@@ -193,8 +191,7 @@ public class WorkflowExecutionInfo implements Serializable {
         this.startTimestamp = startTimestamp;
         return this;
     }
-    
-    
+
     /**
      * The time when the workflow execution was closed. Set only if the
      * execution status is CLOSED.
@@ -233,8 +230,7 @@ public class WorkflowExecutionInfo implements Serializable {
         this.closeTimestamp = closeTimestamp;
         return this;
     }
-    
-    
+
     /**
      * The current status of the execution.
      * <p>
@@ -282,8 +278,7 @@ public class WorkflowExecutionInfo implements Serializable {
         this.executionStatus = executionStatus;
         return this;
     }
-    
-    
+
     /**
      * The current status of the execution.
      * <p>
@@ -317,7 +312,7 @@ public class WorkflowExecutionInfo implements Serializable {
         this.executionStatus = executionStatus.toString();
         return this;
     }
-    
+
     /**
      * If the execution status is closed then this specifies how the
      * execution was closed: <ul> <li>COMPLETED: the execution was
@@ -425,8 +420,7 @@ public class WorkflowExecutionInfo implements Serializable {
         this.closeStatus = closeStatus;
         return this;
     }
-    
-    
+
     /**
      * If the execution status is closed then this specifies how the
      * execution was closed: <ul> <li>COMPLETED: the execution was
@@ -500,7 +494,7 @@ public class WorkflowExecutionInfo implements Serializable {
         this.closeStatus = closeStatus.toString();
         return this;
     }
-    
+
     /**
      * If this workflow execution is a child of another execution then
      * contains the workflow execution that started this execution.
@@ -539,8 +533,7 @@ public class WorkflowExecutionInfo implements Serializable {
         this.parent = parent;
         return this;
     }
-    
-    
+
     /**
      * The list of tags associated with the workflow execution. Tags can be
      * used to identify and list workflow executions of interest through the
@@ -554,7 +547,6 @@ public class WorkflowExecutionInfo implements Serializable {
      *         visibility APIs. A workflow execution can have a maximum of 5 tags.
      */
     public java.util.List<String> getTagList() {
-        
         if (tagList == null) {
               tagList = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               tagList.setAutoConstruct(true);
@@ -637,7 +629,7 @@ public class WorkflowExecutionInfo implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Set to true if a cancellation is requested for this workflow
      * execution.
@@ -676,8 +668,7 @@ public class WorkflowExecutionInfo implements Serializable {
         this.cancelRequested = cancelRequested;
         return this;
     }
-    
-    
+
     /**
      * Set to true if a cancellation is requested for this workflow
      * execution.
@@ -688,7 +679,7 @@ public class WorkflowExecutionInfo implements Serializable {
     public Boolean getCancelRequested() {
         return cancelRequested;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

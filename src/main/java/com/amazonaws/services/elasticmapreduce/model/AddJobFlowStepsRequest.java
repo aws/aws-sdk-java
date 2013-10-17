@@ -69,8 +69,6 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest implements S
      */
     public AddJobFlowStepsRequest() {}
     
-
-
     /**
      * Constructs a new AddJobFlowStepsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -83,10 +81,6 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest implements S
     public AddJobFlowStepsRequest(String jobFlowId) {
         setJobFlowId(jobFlowId);
     }
-
-    
-    
-
 
     /**
      * Constructs a new AddJobFlowStepsRequest object.
@@ -104,8 +98,6 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest implements S
         setSteps(steps);
     }
 
-    
-    
     /**
      * A string that uniquely identifies the job flow. This identifier is
      * returned by <a>RunJobFlow</a> and can also be obtained from
@@ -162,15 +154,13 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest implements S
         this.jobFlowId = jobFlowId;
         return this;
     }
-    
-    
+
     /**
      * A list of <a>StepConfig</a> to be executed by the job flow.
      *
      * @return A list of <a>StepConfig</a> to be executed by the job flow.
      */
     public java.util.List<StepConfig> getSteps() {
-        
         if (steps == null) {
               steps = new com.amazonaws.internal.ListWithAutoConstructFlag<StepConfig>();
               steps.setAutoConstruct(true);
@@ -232,7 +222,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest implements S
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

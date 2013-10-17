@@ -35,7 +35,6 @@ public class DescribeApplicationVersionsResult implements Serializable {
      * @return A list of <a>ApplicationVersionDescription</a> .
      */
     public java.util.List<ApplicationVersionDescription> getApplicationVersions() {
-        
         if (applicationVersions == null) {
               applicationVersions = new com.amazonaws.internal.ListWithAutoConstructFlag<ApplicationVersionDescription>();
               applicationVersions.setAutoConstruct(true);
@@ -97,7 +96,7 @@ public class DescribeApplicationVersionsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

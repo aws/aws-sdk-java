@@ -105,8 +105,7 @@ public class CustomErrorResponse implements Serializable {
         this.errorCode = errorCode;
         return this;
     }
-    
-    
+
     /**
      * The path of the custom error page (for example, /custom_404.html). The
      * path is relative to the distribution and must begin with a slash (/).
@@ -169,8 +168,7 @@ public class CustomErrorResponse implements Serializable {
         this.responsePagePath = responsePagePath;
         return this;
     }
-    
-    
+
     /**
      * The HTTP status code that you want CloudFront to return with the
      * custom error page to the viewer. For a list of HTTP status codes that
@@ -215,8 +213,7 @@ public class CustomErrorResponse implements Serializable {
         this.responseCode = responseCode;
         return this;
     }
-    
-    
+
     /**
      * The minimum amount of time you want HTTP error codes to stay in
      * CloudFront caches before CloudFront queries your origin to see whether
@@ -267,8 +264,7 @@ public class CustomErrorResponse implements Serializable {
         this.errorCachingMinTTL = errorCachingMinTTL;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

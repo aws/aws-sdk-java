@@ -170,8 +170,6 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      */
     public RestoreDBInstanceToPointInTimeRequest() {}
     
-
-
     /**
      * Constructs a new RestoreDBInstanceToPointInTimeRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -194,8 +192,6 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         setTargetDBInstanceIdentifier(targetDBInstanceIdentifier);
     }
 
-    
-    
     /**
      * The identifier of the source DB Instance from which to restore.
      * <p>Constraints: <ul> <li>Must be the identifier of an existing
@@ -258,8 +254,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         this.sourceDBInstanceIdentifier = sourceDBInstanceIdentifier;
         return this;
     }
-    
-    
+
     /**
      * The name of the new database instance to be created. <p>Constraints:
      * <ul> <li>Must contain from 1 to 63 alphanumeric characters or
@@ -310,8 +305,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         this.targetDBInstanceIdentifier = targetDBInstanceIdentifier;
         return this;
     }
-    
-    
+
     /**
      * The date and time to restore from. <p>Valid Values: Value must be a
      * UTC time <p>Constraints: <ul> <li>Must be before the latest restorable
@@ -368,8 +362,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         this.restoreTime = restoreTime;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether (<code>true</code>) or not (<code>false</code>) the
      * DB Instance is restored from the latest backup time. <p>Default:
@@ -420,8 +413,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         this.useLatestRestorableTime = useLatestRestorableTime;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether (<code>true</code>) or not (<code>false</code>) the
      * DB Instance is restored from the latest backup time. <p>Default:
@@ -436,7 +428,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     public Boolean getUseLatestRestorableTime() {
         return useLatestRestorableTime;
     }
-    
+
     /**
      * The compute and memory capacity of the Amazon RDS DB instance.
      * <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium |
@@ -487,8 +479,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         this.dBInstanceClass = dBInstanceClass;
         return this;
     }
-    
-    
+
     /**
      * The port number on which the database accepts connections.
      * <p>Constraints: Value must be <code>1150-65535</code> <p>Default: The
@@ -533,8 +524,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         this.port = port;
         return this;
     }
-    
-    
+
     /**
      * The EC2 Availability Zone that the database instance will be created
      * in. <p>Default: A random, system-chosen Availability Zone.
@@ -591,8 +581,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         this.availabilityZone = availabilityZone;
         return this;
     }
-    
-    
+
     /**
      * The DB subnet group name to use for the new instance.
      *
@@ -625,8 +614,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         this.dBSubnetGroupName = dBSubnetGroupName;
         return this;
     }
-    
-    
+
     /**
      * Specifies if the DB Instance is a Multi-AZ deployment. <p>Constraint:
      * You cannot specify the AvailabilityZone parameter if the MultiAZ
@@ -671,8 +659,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         this.multiAZ = multiAZ;
         return this;
     }
-    
-    
+
     /**
      * Specifies if the DB Instance is a Multi-AZ deployment. <p>Constraint:
      * You cannot specify the AvailabilityZone parameter if the MultiAZ
@@ -685,7 +672,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     public Boolean getMultiAZ() {
         return multiAZ;
     }
-    
+
     /**
      * Specifies the accessibility options for the DB Instance. A value of
      * true specifies an Internet-facing instance with a publicly resolvable
@@ -790,8 +777,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         this.publiclyAccessible = publiclyAccessible;
         return this;
     }
-    
-    
+
     /**
      * Specifies the accessibility options for the DB Instance. A value of
      * true specifies an Internet-facing instance with a publicly resolvable
@@ -824,7 +810,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     public Boolean getPubliclyAccessible() {
         return publiclyAccessible;
     }
-    
+
     /**
      * Indicates that minor version upgrades will be applied automatically to
      * the DB Instance during the maintenance window.
@@ -863,8 +849,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
         return this;
     }
-    
-    
+
     /**
      * Indicates that minor version upgrades will be applied automatically to
      * the DB Instance during the maintenance window.
@@ -875,7 +860,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     public Boolean getAutoMinorVersionUpgrade() {
         return autoMinorVersionUpgrade;
     }
-    
+
     /**
      * License model information for the restored DB Instance. <p> Default:
      * Same as source. <p> Valid values: <code>license-included</code> |
@@ -926,8 +911,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         this.licenseModel = licenseModel;
         return this;
     }
-    
-    
+
     /**
      * The database name for the restored DB Instance. <note> <p>This
      * parameter is not used for the MySQL engine. </note>
@@ -966,8 +950,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         this.dBName = dBName;
         return this;
     }
-    
-    
+
     /**
      * The database engine to use for the new instance. <p>Default: The same
      * as source <p>Constraint: Must be compatible with the engine of the
@@ -1012,8 +995,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         this.engine = engine;
         return this;
     }
-    
-    
+
     /**
      * The amount of Provisioned IOPS (input/output operations per second) to
      * be initially allocated for the DB Instance. <p> Constraints: Must be
@@ -1058,8 +1040,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         this.iops = iops;
         return this;
     }
-    
-    
+
     /**
      * The name of the option group to be used for the restored DB instance.
      * <p> <!-- Note that persistent options, such as the TDE_SQLServer
@@ -1134,8 +1115,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         this.optionGroupName = optionGroupName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

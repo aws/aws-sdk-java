@@ -120,8 +120,7 @@ public class App implements Serializable {
         this.appId = appId;
         return this;
     }
-    
-    
+
     /**
      * The app stack ID.
      *
@@ -154,8 +153,7 @@ public class App implements Serializable {
         this.stackId = stackId;
         return this;
     }
-    
-    
+
     /**
      * The app's short name.
      *
@@ -188,8 +186,7 @@ public class App implements Serializable {
         this.shortname = shortname;
         return this;
     }
-    
-    
+
     /**
      * The app name.
      *
@@ -222,8 +219,7 @@ public class App implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * A description of the app.
      *
@@ -256,8 +252,7 @@ public class App implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * The app type.
      * <p>
@@ -305,8 +300,7 @@ public class App implements Serializable {
         this.type = type;
         return this;
     }
-    
-    
+
     /**
      * The app type.
      * <p>
@@ -340,7 +334,7 @@ public class App implements Serializable {
         this.type = type.toString();
         return this;
     }
-    
+
     /**
      * A <code>Source</code> object that describes the app repository.
      *
@@ -373,8 +367,7 @@ public class App implements Serializable {
         this.appSource = appSource;
         return this;
     }
-    
-    
+
     /**
      * The app vhost settings, with multiple domains separated by commas. For
      * example: <code>'www.example.com, example.com'</code>
@@ -383,7 +376,6 @@ public class App implements Serializable {
      *         example: <code>'www.example.com, example.com'</code>
      */
     public java.util.List<String> getDomains() {
-        
         if (domains == null) {
               domains = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               domains.setAutoConstruct(true);
@@ -451,7 +443,7 @@ public class App implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Whether to enable SSL for the app.
      *
@@ -484,8 +476,7 @@ public class App implements Serializable {
         this.enableSsl = enableSsl;
         return this;
     }
-    
-    
+
     /**
      * Whether to enable SSL for the app.
      *
@@ -494,7 +485,7 @@ public class App implements Serializable {
     public Boolean getEnableSsl() {
         return enableSsl;
     }
-    
+
     /**
      * An <code>SslConfiguration</code> object with the SSL configuration.
      *
@@ -527,8 +518,7 @@ public class App implements Serializable {
         this.sslConfiguration = sslConfiguration;
         return this;
     }
-    
-    
+
     /**
      * The contents of the stack attributes bag.
      *
@@ -565,8 +555,7 @@ public class App implements Serializable {
         setAttributes(attributes);
         return this;
     }
-    
-   	
+
     /**
      * The contents of the stack attributes bag.
      * <p>
@@ -586,7 +575,7 @@ public class App implements Serializable {
 		this.attributes.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into Attributes.
 	 * <p>
@@ -629,8 +618,7 @@ public class App implements Serializable {
         this.createdAt = createdAt;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

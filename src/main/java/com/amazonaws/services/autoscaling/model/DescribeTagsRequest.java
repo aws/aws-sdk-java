@@ -75,7 +75,6 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      *         (PropagateAtLaunch).
      */
     public java.util.List<Filter> getFilters() {
-        
         if (filters == null) {
               filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
               filters.setAutoConstruct(true);
@@ -161,7 +160,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
 
         return this;
     }
-    
+
     /**
      * A string that marks the start of the next batch of returned results.
      * <p>
@@ -203,8 +202,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of records to return.
      * <p>
@@ -246,8 +244,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
         this.maxRecords = maxRecords;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

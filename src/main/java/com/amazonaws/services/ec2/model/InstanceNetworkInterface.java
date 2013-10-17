@@ -80,8 +80,7 @@ public class InstanceNetworkInterface implements Serializable {
         this.networkInterfaceId = networkInterfaceId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the SubnetId property for this object.
      *
@@ -114,8 +113,7 @@ public class InstanceNetworkInterface implements Serializable {
         this.subnetId = subnetId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the VpcId property for this object.
      *
@@ -148,8 +146,7 @@ public class InstanceNetworkInterface implements Serializable {
         this.vpcId = vpcId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Description property for this object.
      *
@@ -182,8 +179,7 @@ public class InstanceNetworkInterface implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the OwnerId property for this object.
      *
@@ -216,8 +212,7 @@ public class InstanceNetworkInterface implements Serializable {
         this.ownerId = ownerId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Status property for this object.
      * <p>
@@ -265,8 +260,7 @@ public class InstanceNetworkInterface implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * Sets the value of the Status property for this object.
      * <p>
@@ -300,7 +294,7 @@ public class InstanceNetworkInterface implements Serializable {
         this.status = status.toString();
         return this;
     }
-    
+
     /**
      * Returns the value of the PrivateIpAddress property for this object.
      *
@@ -333,8 +327,7 @@ public class InstanceNetworkInterface implements Serializable {
         this.privateIpAddress = privateIpAddress;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the PrivateDnsName property for this object.
      *
@@ -367,8 +360,7 @@ public class InstanceNetworkInterface implements Serializable {
         this.privateDnsName = privateDnsName;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the SourceDestCheck property for this object.
      *
@@ -401,8 +393,7 @@ public class InstanceNetworkInterface implements Serializable {
         this.sourceDestCheck = sourceDestCheck;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the SourceDestCheck property for this object.
      *
@@ -411,14 +402,13 @@ public class InstanceNetworkInterface implements Serializable {
     public Boolean getSourceDestCheck() {
         return sourceDestCheck;
     }
-    
+
     /**
      * Returns the value of the Groups property for this object.
      *
      * @return The value of the Groups property for this object.
      */
     public java.util.List<GroupIdentifier> getGroups() {
-        
         if (groups == null) {
               groups = new com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier>();
               groups.setAutoConstruct(true);
@@ -480,7 +470,7 @@ public class InstanceNetworkInterface implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns the value of the Attachment property for this object.
      *
@@ -513,8 +503,7 @@ public class InstanceNetworkInterface implements Serializable {
         this.attachment = attachment;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Association property for this object.
      *
@@ -547,15 +536,13 @@ public class InstanceNetworkInterface implements Serializable {
         this.association = association;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the PrivateIpAddresses property for this object.
      *
      * @return The value of the PrivateIpAddresses property for this object.
      */
     public java.util.List<InstancePrivateIpAddress> getPrivateIpAddresses() {
-        
         if (privateIpAddresses == null) {
               privateIpAddresses = new com.amazonaws.internal.ListWithAutoConstructFlag<InstancePrivateIpAddress>();
               privateIpAddresses.setAutoConstruct(true);
@@ -617,7 +604,7 @@ public class InstanceNetworkInterface implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

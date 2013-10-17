@@ -87,8 +87,6 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
      */
     public ModifyImageAttributeRequest() {}
     
-
-
     /**
      * Constructs a new ModifyImageAttributeRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -104,8 +102,6 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
         setAttribute(attribute);
     }
 
-    
-    
     /**
      * The ID of the AMI whose attribute you want to modify.
      *
@@ -138,8 +134,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
         this.imageId = imageId;
         return this;
     }
-    
-    
+
     /**
      * The name of the AMI attribute you want to modify. <p> Available
      * attributes: <code>launchPermission</code>, <code>productCodes</code>
@@ -178,8 +173,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
         this.attribute = attribute;
         return this;
     }
-    
-    
+
     /**
      * The type of operation being requested. <p> Available operation types:
      * <code>add</code>, <code>remove</code>
@@ -218,8 +212,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
         this.operationType = operationType;
         return this;
     }
-    
-    
+
     /**
      * The AWS user ID being added to or removed from the list of users with
      * launch permissions for this AMI. Only valid when the launchPermission
@@ -230,7 +223,6 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
      *         attribute is being modified.
      */
     public java.util.List<String> getUserIds() {
-        
         if (userIds == null) {
               userIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               userIds.setAutoConstruct(true);
@@ -304,7 +296,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
         return this;
     }
-    
+
     /**
      * The user group being added to or removed from the list of user groups
      * with launch permissions for this AMI. Only valid when the
@@ -317,7 +309,6 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
      *         groups: <code>all</code>
      */
     public java.util.List<String> getUserGroups() {
-        
         if (userGroups == null) {
               userGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               userGroups.setAutoConstruct(true);
@@ -397,7 +388,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
         return this;
     }
-    
+
     /**
      * The list of product codes being added to or removed from the specified
      * AMI. Only valid when the productCodes attribute is being modified.
@@ -406,7 +397,6 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
      *         AMI. Only valid when the productCodes attribute is being modified.
      */
     public java.util.List<String> getProductCodes() {
-        
         if (productCodes == null) {
               productCodes = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               productCodes.setAutoConstruct(true);
@@ -474,7 +464,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
         return this;
     }
-    
+
     /**
      * The value of the attribute being modified. Only valid when the
      * description attribute is being modified.
@@ -513,8 +503,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
         this.value = value;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the LaunchPermission property for this object.
      *
@@ -547,8 +536,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
         this.launchPermission = launchPermission;
         return this;
     }
-    
-    
+
     /**
      * String value
      *
@@ -581,8 +569,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

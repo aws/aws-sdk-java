@@ -35,7 +35,6 @@ public class ValidateConfigurationSettingsResult implements Serializable {
      * @return A list of <a>ValidationMessage</a>.
      */
     public java.util.List<ValidationMessage> getMessages() {
-        
         if (messages == null) {
               messages = new com.amazonaws.internal.ListWithAutoConstructFlag<ValidationMessage>();
               messages.setAutoConstruct(true);
@@ -97,7 +96,7 @@ public class ValidateConfigurationSettingsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

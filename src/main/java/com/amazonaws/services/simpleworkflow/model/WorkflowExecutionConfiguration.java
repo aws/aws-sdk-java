@@ -137,8 +137,7 @@ public class WorkflowExecutionConfiguration implements Serializable {
         this.taskStartToCloseTimeout = taskStartToCloseTimeout;
         return this;
     }
-    
-    
+
     /**
      * The total duration for this workflow execution. <p>The valid values
      * are integers greater than or equal to <code>0</code>. An integer value
@@ -198,8 +197,7 @@ public class WorkflowExecutionConfiguration implements Serializable {
         this.executionStartToCloseTimeout = executionStartToCloseTimeout;
         return this;
     }
-    
-    
+
     /**
      * The task list used for the decision tasks generated for this workflow
      * execution.
@@ -238,8 +236,7 @@ public class WorkflowExecutionConfiguration implements Serializable {
         this.taskList = taskList;
         return this;
     }
-    
-    
+
     /**
      * The policy to use for the child workflow executions if this workflow
      * execution is terminated, by calling the
@@ -347,8 +344,7 @@ public class WorkflowExecutionConfiguration implements Serializable {
         this.childPolicy = childPolicy;
         return this;
     }
-    
-    
+
     /**
      * The policy to use for the child workflow executions if this workflow
      * execution is terminated, by calling the
@@ -422,7 +418,7 @@ public class WorkflowExecutionConfiguration implements Serializable {
         this.childPolicy = childPolicy.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

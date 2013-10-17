@@ -14,39 +14,82 @@
  */
 package com.amazonaws;
 
+import java.util.EnumMap;
+import java.util.Map;
+
+import org.apache.http.annotation.NotThreadSafe;
+
 /**
- * Arbitrary options storage for individual {@link AmazonWebServiceRequest}s. This
- * class is not intended to be used by clients.
+ * Client markers for individual {@link AmazonWebServiceRequest}s.
  */
+@NotThreadSafe
 public final class RequestClientOptions {
+    public static enum Marker {
+        /** 
+         * Used to specify the http user_agent value.
+         * This marker is intended only for internal use by the AWS SDK. 
+         */
+        USER_AGENT,
+        ;
+    }
     
-    private String clientMarker;
+    private final Map<Marker,String> markers = new EnumMap<Marker,String>(Marker.class);
 
     /**
-     * Returns all client markers as a space-delimited string.
+     * @deprecated by {@link #getClientMarker(Marker)}.
+     * This method is intended only for internal use by the AWS SDK. 
+     * 
+     * Returns the "USER_AGENT" marker as a space-delimited string.
      */
+    @Deprecated
     public String getClientMarker() {
-        return clientMarker;
+        return getClientMarker(Marker.USER_AGENT);
     }
-    
-    /**
-     * Adds a client marker, if it wasn't already present.
-     */
-    public void addClientMarker(String clientMarker) {
-        if (this.clientMarker == null)
-            this.clientMarker = "";
 
-        this.clientMarker = createClientMarkerString(clientMarker);
+    /**
+     * Returns the value of the specified marker; or null if there is no such
+     * value.
+     */
+    public String getClientMarker(Marker marker) {
+        return markers.get(marker);
     }
-    
+
+    /**
+     * Associates the given value with the given marker.
+     * Note the {@link Marker#USER_AGENT} is only intended for internal use
+     * by the AWS SDK.
+     */
+    public void putClientMarker(Marker marker, String value) {
+        markers.put(marker, value);
+    }
+
+    /**
+     * @deprecated by {@link #appendUserAgent(String)}.
+     * This method is intended only for internal use by the AWS SDK. 
+     * 
+     * Adds a "USER_AGENT" client marker, if it wasn't already present.
+     */
+    @Deprecated
+    public void addClientMarker(String clientMarker) {
+        appendUserAgent(clientMarker);
+    }
+
+    /**
+     * Appends a user agent to the USER_AGENT client marker.
+     * This method is intended only for internal use by the AWS SDK. 
+     */
+    public void appendUserAgent(String userAgent) {
+        String marker = markers.get(Marker.USER_AGENT);
+        if (marker == null)
+            marker = "";
+        marker = createUserAgentMarkerString(marker, userAgent);
+        putClientMarker(Marker.USER_AGENT, marker);
+    }
+
     /**
      * Appends the given client marker string to the existing one and returns it.
      */
-    private String createClientMarkerString(String clientMarker) {
-        if (this.clientMarker.contains(clientMarker)) {
-            return this.clientMarker;
-        } else {
-            return this.clientMarker + " " + clientMarker;
-        }
+    private String createUserAgentMarkerString(final String marker, String userAgent) {
+        return marker.contains(userAgent) ? marker : marker + " " + userAgent;
     }
 }

@@ -35,7 +35,6 @@ public class DescribeJobFlowsResult implements Serializable {
      * @return A list of job flows matching the parameters supplied.
      */
     public java.util.List<JobFlowDetail> getJobFlows() {
-        
         if (jobFlows == null) {
               jobFlows = new com.amazonaws.internal.ListWithAutoConstructFlag<JobFlowDetail>();
               jobFlows.setAutoConstruct(true);
@@ -97,7 +96,7 @@ public class DescribeJobFlowsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

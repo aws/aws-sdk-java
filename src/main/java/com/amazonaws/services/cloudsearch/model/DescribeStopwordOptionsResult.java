@@ -68,8 +68,7 @@ public class DescribeStopwordOptionsResult implements Serializable {
         this.stopwords = stopwords;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

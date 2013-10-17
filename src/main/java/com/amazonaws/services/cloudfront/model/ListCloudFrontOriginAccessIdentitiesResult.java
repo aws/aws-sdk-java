@@ -61,8 +61,7 @@ public class ListCloudFrontOriginAccessIdentitiesResult implements Serializable 
         this.cloudFrontOriginAccessIdentityList = cloudFrontOriginAccessIdentityList;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

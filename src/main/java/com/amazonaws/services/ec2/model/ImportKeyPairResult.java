@@ -66,8 +66,7 @@ public class ImportKeyPairResult implements Serializable {
         this.keyName = keyName;
         return this;
     }
-    
-    
+
     /**
      * The MD5 public key fingerprint as specified in section 4 of <a
      * href="http://tools.ietf.org/html/rfc4716"> RFC4716 </a>.
@@ -106,8 +105,7 @@ public class ImportKeyPairResult implements Serializable {
         this.keyFingerprint = keyFingerprint;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

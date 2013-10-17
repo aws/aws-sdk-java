@@ -167,8 +167,7 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest implemen
         this.domain = domain;
         return this;
     }
-    
-    
+
     /**
      * Specifies the task list to poll for decision tasks. <p>The specified
      * string must not start or end with whitespace. It must not contain a
@@ -225,8 +224,7 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest implemen
         this.taskList = taskList;
         return this;
     }
-    
-    
+
     /**
      * Identity of the decider making the request, which is recorded in the
      * DecisionTaskStarted event in the workflow history. This enables
@@ -286,8 +284,7 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest implemen
         this.identity = identity;
         return this;
     }
-    
-    
+
     /**
      * If on a previous call to this method a <code>NextPageToken</code> was
      * returned, the results are being paginated. To get the next page of
@@ -383,8 +380,7 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest implemen
         this.nextPageToken = nextPageToken;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of history events returned in each page. The
      * default is 100, but the caller can override this value to a page size
@@ -456,8 +452,7 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest implemen
         this.maximumPageSize = maximumPageSize;
         return this;
     }
-    
-    
+
     /**
      * When set to <code>true</code>, returns the events in reverse order. By
      * default the results are returned in ascending order of the
@@ -502,8 +497,7 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest implemen
         this.reverseOrder = reverseOrder;
         return this;
     }
-    
-    
+
     /**
      * When set to <code>true</code>, returns the events in reverse order. By
      * default the results are returned in ascending order of the
@@ -516,7 +510,7 @@ public class PollForDecisionTaskRequest extends AmazonWebServiceRequest implemen
     public Boolean getReverseOrder() {
         return reverseOrder;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

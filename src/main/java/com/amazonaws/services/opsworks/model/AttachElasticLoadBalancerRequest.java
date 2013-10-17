@@ -75,8 +75,7 @@ public class AttachElasticLoadBalancerRequest extends AmazonWebServiceRequest im
         this.elasticLoadBalancerName = elasticLoadBalancerName;
         return this;
     }
-    
-    
+
     /**
      * The ID of the layer that the Elastic Load Balancing instance is to be
      * attached to.
@@ -115,8 +114,7 @@ public class AttachElasticLoadBalancerRequest extends AmazonWebServiceRequest im
         this.layerId = layerId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

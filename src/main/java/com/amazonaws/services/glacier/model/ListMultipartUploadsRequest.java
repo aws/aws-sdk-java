@@ -90,8 +90,6 @@ public class ListMultipartUploadsRequest extends AmazonWebServiceRequest impleme
      */
     public ListMultipartUploadsRequest() {}
     
-
-
     /**
      * Constructs a new ListMultipartUploadsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -102,10 +100,6 @@ public class ListMultipartUploadsRequest extends AmazonWebServiceRequest impleme
     public ListMultipartUploadsRequest(String vaultName) {
         setVaultName(vaultName);
     }
-
-    
-    
-
 
     /**
      * Constructs a new ListMultipartUploadsRequest object.
@@ -124,8 +118,6 @@ public class ListMultipartUploadsRequest extends AmazonWebServiceRequest impleme
         setVaultName(vaultName);
     }
 
-    
-    
     /**
      * The <code>AccountId</code> is the AWS Account ID. You can specify
      * either the AWS Account ID or optionally a '-', in which case Amazon
@@ -182,8 +174,7 @@ public class ListMultipartUploadsRequest extends AmazonWebServiceRequest impleme
         this.accountId = accountId;
         return this;
     }
-    
-    
+
     /**
      * The name of the vault.
      *
@@ -216,8 +207,7 @@ public class ListMultipartUploadsRequest extends AmazonWebServiceRequest impleme
         this.vaultName = vaultName;
         return this;
     }
-    
-    
+
     /**
      * An opaque string used for pagination. This value specifies the upload
      * at which the listing of uploads should begin. Get the marker value
@@ -274,8 +264,7 @@ public class ListMultipartUploadsRequest extends AmazonWebServiceRequest impleme
         this.uploadIdMarker = uploadIdMarker;
         return this;
     }
-    
-    
+
     /**
      * Specifies the maximum number of uploads returned in the response body.
      * If this value is not specified, the List Uploads operation returns up
@@ -320,8 +309,7 @@ public class ListMultipartUploadsRequest extends AmazonWebServiceRequest impleme
         this.limit = limit;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

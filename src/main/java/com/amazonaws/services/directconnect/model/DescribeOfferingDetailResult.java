@@ -103,8 +103,7 @@ public class DescribeOfferingDetailResult implements Serializable {
         this.offeringId = offeringId;
         return this;
     }
-    
-    
+
     /**
      * The AWS region where the offering is located. <p>Example: us-east-1
      * <p>Default: None
@@ -143,8 +142,7 @@ public class DescribeOfferingDetailResult implements Serializable {
         this.region = region;
         return this;
     }
-    
-    
+
     /**
      * Where the AWS Direct Connect offering is located. <p>Example: EqSV5
      * <p>Default: None
@@ -183,8 +181,7 @@ public class DescribeOfferingDetailResult implements Serializable {
         this.location = location;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the OfferingName property for this object.
      *
@@ -217,8 +214,7 @@ public class DescribeOfferingDetailResult implements Serializable {
         this.offeringName = offeringName;
         return this;
     }
-    
-    
+
     /**
      * Description of the offering. <p>Example: "<i>1Gbps Cross Connect in
      * us-east-1 via Equinix</i>" <p>Default: None
@@ -257,8 +253,7 @@ public class DescribeOfferingDetailResult implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * Bandwidth of the connection. <p>Example: 1Gbps <p>Default: None
      *
@@ -291,15 +286,13 @@ public class DescribeOfferingDetailResult implements Serializable {
         this.bandwidth = bandwidth;
         return this;
     }
-    
-    
+
     /**
      * A list of connection costs.
      *
      * @return A list of connection costs.
      */
     public java.util.List<ConnectionCost> getConnectionCosts() {
-        
         if (connectionCosts == null) {
               connectionCosts = new com.amazonaws.internal.ListWithAutoConstructFlag<ConnectionCost>();
               connectionCosts.setAutoConstruct(true);
@@ -361,14 +354,13 @@ public class DescribeOfferingDetailResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * A list of offering order steps.
      *
      * @return A list of offering order steps.
      */
     public java.util.List<OfferingOrderStep> getOrderSteps() {
-        
         if (orderSteps == null) {
               orderSteps = new com.amazonaws.internal.ListWithAutoConstructFlag<OfferingOrderStep>();
               orderSteps.setAutoConstruct(true);
@@ -430,7 +422,7 @@ public class DescribeOfferingDetailResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

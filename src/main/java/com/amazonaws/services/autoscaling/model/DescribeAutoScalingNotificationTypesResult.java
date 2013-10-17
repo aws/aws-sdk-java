@@ -107,7 +107,6 @@ public class DescribeAutoScalingNotificationTypesResult implements Serializable 
      *         </examples>
      */
     public java.util.List<String> getAutoScalingNotificationTypes() {
-        
         if (autoScalingNotificationTypes == null) {
               autoScalingNotificationTypes = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               autoScalingNotificationTypes.setAutoConstruct(true);
@@ -313,7 +312,7 @@ public class DescribeAutoScalingNotificationTypesResult implements Serializable 
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

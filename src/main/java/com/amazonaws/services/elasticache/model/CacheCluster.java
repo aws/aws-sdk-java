@@ -179,8 +179,7 @@ public class CacheCluster implements Serializable {
         this.cacheClusterId = cacheClusterId;
         return this;
     }
-    
-    
+
     /**
      * Represents the information required for client programs to connect to
      * a cache node.
@@ -219,8 +218,7 @@ public class CacheCluster implements Serializable {
         this.configurationEndpoint = configurationEndpoint;
         return this;
     }
-    
-    
+
     /**
      * The URL of the web page where you can download the latest ElastiCache
      * client library.
@@ -259,8 +257,7 @@ public class CacheCluster implements Serializable {
         this.clientDownloadLandingPage = clientDownloadLandingPage;
         return this;
     }
-    
-    
+
     /**
      * The name of the compute and memory capacity node type for the cache
      * cluster.
@@ -299,8 +296,7 @@ public class CacheCluster implements Serializable {
         this.cacheNodeType = cacheNodeType;
         return this;
     }
-    
-    
+
     /**
      * The name of the cache engine (<i>memcached</i> or <i>redis</i>) to be
      * used for this cache cluster.
@@ -339,8 +335,7 @@ public class CacheCluster implements Serializable {
         this.engine = engine;
         return this;
     }
-    
-    
+
     /**
      * The version of the cache engine version that is used in this cache
      * cluster.
@@ -379,8 +374,7 @@ public class CacheCluster implements Serializable {
         this.engineVersion = engineVersion;
         return this;
     }
-    
-    
+
     /**
      * The current state of this cache cluster - <i>creating</i>,
      * <i>available</i>, etc.
@@ -419,8 +413,7 @@ public class CacheCluster implements Serializable {
         this.cacheClusterStatus = cacheClusterStatus;
         return this;
     }
-    
-    
+
     /**
      * The number of cache nodes in the cache cluster.
      *
@@ -453,8 +446,7 @@ public class CacheCluster implements Serializable {
         this.numCacheNodes = numCacheNodes;
         return this;
     }
-    
-    
+
     /**
      * The name of the Availability Zone in which the cache cluster is
      * located.
@@ -493,8 +485,7 @@ public class CacheCluster implements Serializable {
         this.preferredAvailabilityZone = preferredAvailabilityZone;
         return this;
     }
-    
-    
+
     /**
      * The date and time the cache cluster was created.
      *
@@ -527,8 +518,7 @@ public class CacheCluster implements Serializable {
         this.cacheClusterCreateTime = cacheClusterCreateTime;
         return this;
     }
-    
-    
+
     /**
      * The time range (in UTC) during which weekly system maintenance can
      * occur.
@@ -567,8 +557,7 @@ public class CacheCluster implements Serializable {
         this.preferredMaintenanceWindow = preferredMaintenanceWindow;
         return this;
     }
-    
-    
+
     /**
      * A group of settings that will be applied to the cache cluster in the
      * future, or that are currently being applied.
@@ -607,8 +596,7 @@ public class CacheCluster implements Serializable {
         this.pendingModifiedValues = pendingModifiedValues;
         return this;
     }
-    
-    
+
     /**
      * Describes a notification topic and its status. Notification topics are
      * used for publishing ElastiCache events to subscribers using Amazon
@@ -653,8 +641,7 @@ public class CacheCluster implements Serializable {
         this.notificationConfiguration = notificationConfiguration;
         return this;
     }
-    
-    
+
     /**
      * A list of cache security group elements, composed of name and status
      * sub-elements.
@@ -663,7 +650,6 @@ public class CacheCluster implements Serializable {
      *         sub-elements.
      */
     public java.util.List<CacheSecurityGroupMembership> getCacheSecurityGroups() {
-        
         if (cacheSecurityGroups == null) {
               cacheSecurityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheSecurityGroupMembership>();
               cacheSecurityGroups.setAutoConstruct(true);
@@ -731,7 +717,7 @@ public class CacheCluster implements Serializable {
 
         return this;
     }
-    
+
     /**
      * The status of the cache parameter group.
      *
@@ -764,8 +750,7 @@ public class CacheCluster implements Serializable {
         this.cacheParameterGroup = cacheParameterGroup;
         return this;
     }
-    
-    
+
     /**
      * The name of the cache subnet group associated with the cache cluster.
      *
@@ -798,15 +783,13 @@ public class CacheCluster implements Serializable {
         this.cacheSubnetGroupName = cacheSubnetGroupName;
         return this;
     }
-    
-    
+
     /**
      * A list of cache nodes that are members of the cache cluster.
      *
      * @return A list of cache nodes that are members of the cache cluster.
      */
     public java.util.List<CacheNode> getCacheNodes() {
-        
         if (cacheNodes == null) {
               cacheNodes = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheNode>();
               cacheNodes.setAutoConstruct(true);
@@ -868,7 +851,7 @@ public class CacheCluster implements Serializable {
 
         return this;
     }
-    
+
     /**
      * If <code>true</code>, then minor version patches are applied
      * automatically; if <code>false</code>, then automatic minor version
@@ -913,8 +896,7 @@ public class CacheCluster implements Serializable {
         this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
         return this;
     }
-    
-    
+
     /**
      * If <code>true</code>, then minor version patches are applied
      * automatically; if <code>false</code>, then automatic minor version
@@ -927,14 +909,13 @@ public class CacheCluster implements Serializable {
     public Boolean getAutoMinorVersionUpgrade() {
         return autoMinorVersionUpgrade;
     }
-    
+
     /**
      * A list of VPC Security Groups associated with the cache cluster.
      *
      * @return A list of VPC Security Groups associated with the cache cluster.
      */
     public java.util.List<SecurityGroupMembership> getSecurityGroups() {
-        
         if (securityGroups == null) {
               securityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<SecurityGroupMembership>();
               securityGroups.setAutoConstruct(true);
@@ -996,7 +977,7 @@ public class CacheCluster implements Serializable {
 
         return this;
     }
-    
+
     /**
      * The replication group to which this cache cluster belongs. If this
      * field is empty, the cache cluster is not associated with any
@@ -1041,8 +1022,7 @@ public class CacheCluster implements Serializable {
         this.replicationGroupId = replicationGroupId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

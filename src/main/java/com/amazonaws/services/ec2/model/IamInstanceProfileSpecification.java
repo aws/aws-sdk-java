@@ -58,8 +58,7 @@ public class IamInstanceProfileSpecification implements Serializable {
         this.arn = arn;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Name property for this object.
      *
@@ -92,8 +91,7 @@ public class IamInstanceProfileSpecification implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

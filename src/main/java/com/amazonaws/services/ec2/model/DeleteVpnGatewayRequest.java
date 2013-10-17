@@ -43,8 +43,6 @@ public class DeleteVpnGatewayRequest extends AmazonWebServiceRequest implements 
      */
     public DeleteVpnGatewayRequest() {}
     
-
-
     /**
      * Constructs a new DeleteVpnGatewayRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -56,8 +54,6 @@ public class DeleteVpnGatewayRequest extends AmazonWebServiceRequest implements 
         setVpnGatewayId(vpnGatewayId);
     }
 
-    
-    
     /**
      * The ID of the VPN gateway to delete.
      *
@@ -90,8 +86,7 @@ public class DeleteVpnGatewayRequest extends AmazonWebServiceRequest implements 
         this.vpnGatewayId = vpnGatewayId;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

@@ -46,8 +46,6 @@ public class ChangeMessageVisibilityBatchRequest extends AmazonWebServiceRequest
      */
     public ChangeMessageVisibilityBatchRequest() {}
     
-
-
     /**
      * Constructs a new ChangeMessageVisibilityBatchRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -62,8 +60,6 @@ public class ChangeMessageVisibilityBatchRequest extends AmazonWebServiceRequest
         setEntries(entries);
     }
 
-    
-    
     /**
      * The URL of the SQS queue to take action on.
      *
@@ -96,8 +92,7 @@ public class ChangeMessageVisibilityBatchRequest extends AmazonWebServiceRequest
         this.queueUrl = queueUrl;
         return this;
     }
-    
-    
+
     /**
      * A list of receipt handles of the messages for which the visibility
      * timeout must be changed.
@@ -106,7 +101,6 @@ public class ChangeMessageVisibilityBatchRequest extends AmazonWebServiceRequest
      *         timeout must be changed.
      */
     public java.util.List<ChangeMessageVisibilityBatchRequestEntry> getEntries() {
-        
         if (entries == null) {
               entries = new com.amazonaws.internal.ListWithAutoConstructFlag<ChangeMessageVisibilityBatchRequestEntry>();
               entries.setAutoConstruct(true);
@@ -174,7 +168,7 @@ public class ChangeMessageVisibilityBatchRequest extends AmazonWebServiceRequest
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

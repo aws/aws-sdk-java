@@ -38,7 +38,6 @@ public class DescribeElasticIpsResult implements Serializable {
      *         IP addresses.
      */
     public java.util.List<ElasticIp> getElasticIps() {
-        
         if (elasticIps == null) {
               elasticIps = new com.amazonaws.internal.ListWithAutoConstructFlag<ElasticIp>();
               elasticIps.setAutoConstruct(true);
@@ -106,7 +105,7 @@ public class DescribeElasticIpsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

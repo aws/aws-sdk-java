@@ -175,8 +175,7 @@ public class Stack implements Serializable {
         this.stackId = stackId;
         return this;
     }
-    
-    
+
     /**
      * The stack name.
      *
@@ -209,8 +208,7 @@ public class Stack implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * The stack AWS region, such as "us-east-1". For more information about
      * AWS regions, see <a
@@ -261,8 +259,7 @@ public class Stack implements Serializable {
         this.region = region;
         return this;
     }
-    
-    
+
     /**
      * The VPC ID, if the stack is running in a VPC.
      *
@@ -295,8 +292,7 @@ public class Stack implements Serializable {
         this.vpcId = vpcId;
         return this;
     }
-    
-    
+
     /**
      * The contents of the stack's attributes bag.
      *
@@ -333,8 +329,7 @@ public class Stack implements Serializable {
         setAttributes(attributes);
         return this;
     }
-    
-   	
+
     /**
      * The contents of the stack's attributes bag.
      * <p>
@@ -354,7 +349,7 @@ public class Stack implements Serializable {
 		this.attributes.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into Attributes.
 	 * <p>
@@ -397,8 +392,7 @@ public class Stack implements Serializable {
         this.serviceRoleArn = serviceRoleArn;
         return this;
     }
-    
-    
+
     /**
      * The ARN of an IAM profile that is the default profile for all of the
      * stack's EC2 instances. For more information about IAM ARNs, see <a
@@ -449,8 +443,7 @@ public class Stack implements Serializable {
         this.defaultInstanceProfileArn = defaultInstanceProfileArn;
         return this;
     }
-    
-    
+
     /**
      * The stack's default operating system, which must be set to
      * <code>Amazon Linux</code> or <code>Ubuntu 12.04 LTS</code>. The
@@ -495,8 +488,7 @@ public class Stack implements Serializable {
         this.defaultOs = defaultOs;
         return this;
     }
-    
-    
+
     /**
      * The stack host name theme, with spaces replaced by underscores.
      *
@@ -529,8 +521,7 @@ public class Stack implements Serializable {
         this.hostnameTheme = hostnameTheme;
         return this;
     }
-    
-    
+
     /**
      * The stack's default Availability Zone. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
@@ -575,8 +566,7 @@ public class Stack implements Serializable {
         this.defaultAvailabilityZone = defaultAvailabilityZone;
         return this;
     }
-    
-    
+
     /**
      * The default subnet ID, if the stack is running in a VPC.
      *
@@ -609,8 +599,7 @@ public class Stack implements Serializable {
         this.defaultSubnetId = defaultSubnetId;
         return this;
     }
-    
-    
+
     /**
      * A string that contains user-defined, custom JSON. It is used to
      * override the corresponding default stack configuration JSON values.
@@ -679,8 +668,7 @@ public class Stack implements Serializable {
         this.customJson = customJson;
         return this;
     }
-    
-    
+
     /**
      * The configuration manager.
      *
@@ -713,8 +701,7 @@ public class Stack implements Serializable {
         this.configurationManager = configurationManager;
         return this;
     }
-    
-    
+
     /**
      * Whether the stack uses custom cookbooks.
      *
@@ -747,8 +734,7 @@ public class Stack implements Serializable {
         this.useCustomCookbooks = useCustomCookbooks;
         return this;
     }
-    
-    
+
     /**
      * Whether the stack uses custom cookbooks.
      *
@@ -757,7 +743,7 @@ public class Stack implements Serializable {
     public Boolean getUseCustomCookbooks() {
         return useCustomCookbooks;
     }
-    
+
     /**
      * Contains the information required to retrieve an app or cookbook from
      * a repository. For more information, see <a
@@ -820,8 +806,7 @@ public class Stack implements Serializable {
         this.customCookbooksSource = customCookbooksSource;
         return this;
     }
-    
-    
+
     /**
      * A default SSH key for the stack's instances. You can override this
      * value when you create or update an instance.
@@ -860,8 +845,7 @@ public class Stack implements Serializable {
         this.defaultSshKeyName = defaultSshKeyName;
         return this;
     }
-    
-    
+
     /**
      * Date when the stack was created.
      *
@@ -894,8 +878,7 @@ public class Stack implements Serializable {
         this.createdAt = createdAt;
         return this;
     }
-    
-    
+
     /**
      * The default root device type. This value is used by default for all
      * instances in the cloned stack, but you can override it when you create
@@ -967,8 +950,7 @@ public class Stack implements Serializable {
         this.defaultRootDeviceType = defaultRootDeviceType;
         return this;
     }
-    
-    
+
     /**
      * The default root device type. This value is used by default for all
      * instances in the cloned stack, but you can override it when you create
@@ -1018,7 +1000,7 @@ public class Stack implements Serializable {
         this.defaultRootDeviceType = defaultRootDeviceType.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

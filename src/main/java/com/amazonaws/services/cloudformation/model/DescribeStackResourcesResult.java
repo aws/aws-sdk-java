@@ -35,7 +35,6 @@ public class DescribeStackResourcesResult implements Serializable {
      * @return A list of <code>StackResource</code> structures.
      */
     public java.util.List<StackResource> getStackResources() {
-        
         if (stackResources == null) {
               stackResources = new com.amazonaws.internal.ListWithAutoConstructFlag<StackResource>();
               stackResources.setAutoConstruct(true);
@@ -97,7 +96,7 @@ public class DescribeStackResourcesResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

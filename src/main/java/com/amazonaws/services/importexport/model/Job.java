@@ -80,8 +80,7 @@ public class Job implements Serializable {
         this.jobId = jobId;
         return this;
     }
-    
-    
+
     /**
      * Timestamp of the CreateJob request in ISO8601 date format. For example
      * "2010-03-28T20:27:35Z".
@@ -120,8 +119,7 @@ public class Job implements Serializable {
         this.creationDate = creationDate;
         return this;
     }
-    
-    
+
     /**
      * Indicates whether the job was canceled.
      *
@@ -154,8 +152,7 @@ public class Job implements Serializable {
         this.isCanceled = isCanceled;
         return this;
     }
-    
-    
+
     /**
      * Indicates whether the job was canceled.
      *
@@ -164,7 +161,7 @@ public class Job implements Serializable {
     public Boolean getIsCanceled() {
         return isCanceled;
     }
-    
+
     /**
      * Specifies whether the job to initiate is an import or export job.
      * <p>
@@ -212,8 +209,7 @@ public class Job implements Serializable {
         this.jobType = jobType;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether the job to initiate is an import or export job.
      * <p>
@@ -247,7 +243,7 @@ public class Job implements Serializable {
         this.jobType = jobType.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

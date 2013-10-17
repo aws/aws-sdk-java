@@ -111,8 +111,7 @@ public class ListHealthChecksRequest extends AmazonWebServiceRequest implements 
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Specify the maximum number of health checks to return per page of
      * results.
@@ -151,8 +150,7 @@ public class ListHealthChecksRequest extends AmazonWebServiceRequest implements 
         this.maxItems = maxItems;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

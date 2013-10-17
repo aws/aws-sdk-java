@@ -106,8 +106,7 @@ public class DescribeOrderableDBInstanceOptionsRequest extends AmazonWebServiceR
         this.engine = engine;
         return this;
     }
-    
-    
+
     /**
      * The engine version filter value. Specify this parameter to show only
      * the available offerings matching the specified engine version.
@@ -146,8 +145,7 @@ public class DescribeOrderableDBInstanceOptionsRequest extends AmazonWebServiceR
         this.engineVersion = engineVersion;
         return this;
     }
-    
-    
+
     /**
      * The DB Instance class filter value. Specify this parameter to show
      * only the available offerings matching the specified DB Instance class.
@@ -186,8 +184,7 @@ public class DescribeOrderableDBInstanceOptionsRequest extends AmazonWebServiceR
         this.dBInstanceClass = dBInstanceClass;
         return this;
     }
-    
-    
+
     /**
      * The license model filter value. Specify this parameter to show only
      * the available offerings matching the specified license model.
@@ -226,8 +223,7 @@ public class DescribeOrderableDBInstanceOptionsRequest extends AmazonWebServiceR
         this.licenseModel = licenseModel;
         return this;
     }
-    
-    
+
     /**
      * The VPC filter value. Specify this parameter to show only the
      * available VPC or non-VPC offerings.
@@ -266,8 +262,7 @@ public class DescribeOrderableDBInstanceOptionsRequest extends AmazonWebServiceR
         this.vpc = vpc;
         return this;
     }
-    
-    
+
     /**
      * The VPC filter value. Specify this parameter to show only the
      * available VPC or non-VPC offerings.
@@ -278,7 +273,7 @@ public class DescribeOrderableDBInstanceOptionsRequest extends AmazonWebServiceR
     public Boolean getVpc() {
         return vpc;
     }
-    
+
     /**
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
@@ -335,8 +330,7 @@ public class DescribeOrderableDBInstanceOptionsRequest extends AmazonWebServiceR
         this.maxRecords = maxRecords;
         return this;
     }
-    
-    
+
     /**
      * An optional pagination token provided by a previous
      * DescribeOrderableDBInstanceOptions request. If this parameter is
@@ -387,8 +381,7 @@ public class DescribeOrderableDBInstanceOptionsRequest extends AmazonWebServiceR
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

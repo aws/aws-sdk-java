@@ -35,7 +35,6 @@ public class DescribeInstanceHealthResult implements Serializable {
      * @return A list containing health information for the specified instances.
      */
     public java.util.List<InstanceState> getInstanceStates() {
-        
         if (instanceStates == null) {
               instanceStates = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceState>();
               instanceStates.setAutoConstruct(true);
@@ -97,7 +96,7 @@ public class DescribeInstanceHealthResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

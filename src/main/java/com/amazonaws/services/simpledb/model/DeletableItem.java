@@ -32,8 +32,6 @@ public class DeletableItem implements Serializable {
      */
     public DeletableItem() {}
     
-
-
     /**
      * Constructs a new DeletableItem object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -47,8 +45,6 @@ public class DeletableItem implements Serializable {
         setAttributes(attributes);
     }
 
-    
-    
     /**
      * Returns the value of the Name property for this object.
      *
@@ -81,15 +77,13 @@ public class DeletableItem implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Attributes property for this object.
      *
      * @return The value of the Attributes property for this object.
      */
     public java.util.List<Attribute> getAttributes() {
-        
         if (attributes == null) {
               attributes = new com.amazonaws.internal.ListWithAutoConstructFlag<Attribute>();
               attributes.setAutoConstruct(true);
@@ -151,7 +145,7 @@ public class DeletableItem implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

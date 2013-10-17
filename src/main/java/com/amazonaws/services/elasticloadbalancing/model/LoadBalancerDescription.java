@@ -164,8 +164,7 @@ public class LoadBalancerDescription implements Serializable {
         this.loadBalancerName = loadBalancerName;
         return this;
     }
-    
-    
+
     /**
      * Specifies the external DNS name associated with the LoadBalancer.
      *
@@ -198,8 +197,7 @@ public class LoadBalancerDescription implements Serializable {
         this.dNSName = dNSName;
         return this;
     }
-    
-    
+
     /**
      * Provides the name of the Amazon Route 53 hosted zone that is
      * associated with the LoadBalancer. For information on how to associate
@@ -262,8 +260,7 @@ public class LoadBalancerDescription implements Serializable {
         this.canonicalHostedZoneName = canonicalHostedZoneName;
         return this;
     }
-    
-    
+
     /**
      * Provides the ID of the Amazon Route 53 hosted zone name that is
      * associated with the LoadBalancer. For information on how to associate
@@ -326,8 +323,7 @@ public class LoadBalancerDescription implements Serializable {
         this.canonicalHostedZoneNameID = canonicalHostedZoneNameID;
         return this;
     }
-    
-    
+
     /**
      * LoadBalancerPort, InstancePort, Protocol, InstanceProtocol, and
      * PolicyNames are returned in a list of tuples in the
@@ -338,7 +334,6 @@ public class LoadBalancerDescription implements Serializable {
      *         ListenerDescriptions element.
      */
     public java.util.List<ListenerDescription> getListenerDescriptions() {
-        
         if (listenerDescriptions == null) {
               listenerDescriptions = new com.amazonaws.internal.ListWithAutoConstructFlag<ListenerDescription>();
               listenerDescriptions.setAutoConstruct(true);
@@ -412,7 +407,7 @@ public class LoadBalancerDescription implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Provides a list of policies defined for the LoadBalancer.
      *
@@ -445,15 +440,13 @@ public class LoadBalancerDescription implements Serializable {
         this.policies = policies;
         return this;
     }
-    
-    
+
     /**
      * Contains a list of back-end server descriptions.
      *
      * @return Contains a list of back-end server descriptions.
      */
     public java.util.List<BackendServerDescription> getBackendServerDescriptions() {
-        
         if (backendServerDescriptions == null) {
               backendServerDescriptions = new com.amazonaws.internal.ListWithAutoConstructFlag<BackendServerDescription>();
               backendServerDescriptions.setAutoConstruct(true);
@@ -515,14 +508,13 @@ public class LoadBalancerDescription implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Specifies a list of Availability Zones.
      *
      * @return Specifies a list of Availability Zones.
      */
     public java.util.List<String> getAvailabilityZones() {
-        
         if (availabilityZones == null) {
               availabilityZones = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               availabilityZones.setAutoConstruct(true);
@@ -584,14 +576,13 @@ public class LoadBalancerDescription implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Provides a list of VPC subnet IDs for the LoadBalancer.
      *
      * @return Provides a list of VPC subnet IDs for the LoadBalancer.
      */
     public java.util.List<String> getSubnets() {
-        
         if (subnets == null) {
               subnets = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               subnets.setAutoConstruct(true);
@@ -653,7 +644,7 @@ public class LoadBalancerDescription implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Provides the ID of the VPC attached to the LoadBalancer.
      *
@@ -686,15 +677,13 @@ public class LoadBalancerDescription implements Serializable {
         this.vPCId = vPCId;
         return this;
     }
-    
-    
+
     /**
      * Provides a list of EC2 instance IDs for the LoadBalancer.
      *
      * @return Provides a list of EC2 instance IDs for the LoadBalancer.
      */
     public java.util.List<Instance> getInstances() {
-        
         if (instances == null) {
               instances = new com.amazonaws.internal.ListWithAutoConstructFlag<Instance>();
               instances.setAutoConstruct(true);
@@ -756,7 +745,7 @@ public class LoadBalancerDescription implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Specifies information regarding the various health probes conducted on
      * the LoadBalancer.
@@ -795,8 +784,7 @@ public class LoadBalancerDescription implements Serializable {
         this.healthCheck = healthCheck;
         return this;
     }
-    
-    
+
     /**
      * The security group that you can use as part of your inbound rules for
      * your LoadBalancer's back-end Amazon EC2 application instances. To only
@@ -853,15 +841,13 @@ public class LoadBalancerDescription implements Serializable {
         this.sourceSecurityGroup = sourceSecurityGroup;
         return this;
     }
-    
-    
+
     /**
      * The security groups the LoadBalancer is a member of (VPC only).
      *
      * @return The security groups the LoadBalancer is a member of (VPC only).
      */
     public java.util.List<String> getSecurityGroups() {
-        
         if (securityGroups == null) {
               securityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               securityGroups.setAutoConstruct(true);
@@ -923,7 +909,7 @@ public class LoadBalancerDescription implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Provides the date and time the LoadBalancer was created.
      *
@@ -956,8 +942,7 @@ public class LoadBalancerDescription implements Serializable {
         this.createdTime = createdTime;
         return this;
     }
-    
-    
+
     /**
      * Specifies the type of a load balancer. If it is
      * <i>internet-facing</i>, the load balancer has a publicly resolvable
@@ -1020,8 +1005,7 @@ public class LoadBalancerDescription implements Serializable {
         this.scheme = scheme;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

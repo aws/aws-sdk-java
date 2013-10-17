@@ -43,8 +43,6 @@ public class GetLoginProfileRequest extends AmazonWebServiceRequest implements S
      */
     public GetLoginProfileRequest() {}
     
-
-
     /**
      * Constructs a new GetLoginProfileRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -57,8 +55,6 @@ public class GetLoginProfileRequest extends AmazonWebServiceRequest implements S
         setUserName(userName);
     }
 
-    
-    
     /**
      * Name of the user whose login profile you want to retrieve.
      * <p>
@@ -103,8 +99,7 @@ public class GetLoginProfileRequest extends AmazonWebServiceRequest implements S
         this.userName = userName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

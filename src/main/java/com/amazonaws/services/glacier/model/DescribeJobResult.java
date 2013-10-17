@@ -147,8 +147,7 @@ public class DescribeJobResult implements Serializable {
         this.jobId = jobId;
         return this;
     }
-    
-    
+
     /**
      * The job description you provided when you initiated the job.
      *
@@ -181,8 +180,7 @@ public class DescribeJobResult implements Serializable {
         this.jobDescription = jobDescription;
         return this;
     }
-    
-    
+
     /**
      * The job type. It is either ArchiveRetrieval or InventoryRetrieval.
      * <p>
@@ -230,8 +228,7 @@ public class DescribeJobResult implements Serializable {
         this.action = action;
         return this;
     }
-    
-    
+
     /**
      * The job type. It is either ArchiveRetrieval or InventoryRetrieval.
      * <p>
@@ -265,7 +262,7 @@ public class DescribeJobResult implements Serializable {
         this.action = action.toString();
         return this;
     }
-    
+
     /**
      * For an ArchiveRetrieval job, this is the archive ID requested for
      * download. Otherwise, this field is null.
@@ -304,8 +301,7 @@ public class DescribeJobResult implements Serializable {
         this.archiveId = archiveId;
         return this;
     }
-    
-    
+
     /**
      * The Amazon Resource Name (ARN) of the vault from which the archive
      * retrieval was requested.
@@ -344,8 +340,7 @@ public class DescribeJobResult implements Serializable {
         this.vaultARN = vaultARN;
         return this;
     }
-    
-    
+
     /**
      * The UTC date when the job was created. A string representation of ISO
      * 8601 date format, for example, "2012-03-20T17:03:43.221Z".
@@ -384,8 +379,7 @@ public class DescribeJobResult implements Serializable {
         this.creationDate = creationDate;
         return this;
     }
-    
-    
+
     /**
      * The job status. When a job is completed, you get the job's output.
      *
@@ -418,8 +412,7 @@ public class DescribeJobResult implements Serializable {
         this.completed = completed;
         return this;
     }
-    
-    
+
     /**
      * The job status. When a job is completed, you get the job's output.
      *
@@ -428,7 +421,7 @@ public class DescribeJobResult implements Serializable {
     public Boolean getCompleted() {
         return completed;
     }
-    
+
     /**
      * The status code can be InProgress, Succeeded, or Failed, and indicates
      * the status of the job.
@@ -482,8 +475,7 @@ public class DescribeJobResult implements Serializable {
         this.statusCode = statusCode;
         return this;
     }
-    
-    
+
     /**
      * The status code can be InProgress, Succeeded, or Failed, and indicates
      * the status of the job.
@@ -521,7 +513,7 @@ public class DescribeJobResult implements Serializable {
         this.statusCode = statusCode.toString();
         return this;
     }
-    
+
     /**
      * A friendly message that describes the job status.
      *
@@ -554,8 +546,7 @@ public class DescribeJobResult implements Serializable {
         this.statusMessage = statusMessage;
         return this;
     }
-    
-    
+
     /**
      * For an ArchiveRetrieval job, this is the size in bytes of the archive
      * being requested for download. For the InventoryRetrieval job, the
@@ -600,8 +591,7 @@ public class DescribeJobResult implements Serializable {
         this.archiveSizeInBytes = archiveSizeInBytes;
         return this;
     }
-    
-    
+
     /**
      * For an InventoryRetrieval job, this is the size in bytes of the
      * inventory requested for download. For the ArchiveRetrieval job, the
@@ -646,8 +636,7 @@ public class DescribeJobResult implements Serializable {
         this.inventorySizeInBytes = inventorySizeInBytes;
         return this;
     }
-    
-    
+
     /**
      * An Amazon Simple Notification Service (Amazon SNS) topic that receives
      * notification.
@@ -686,8 +675,7 @@ public class DescribeJobResult implements Serializable {
         this.sNSTopic = sNSTopic;
         return this;
     }
-    
-    
+
     /**
      * The UTC time that the archive retrieval request completed. While the
      * job is in progress, the value will be null.
@@ -726,8 +714,7 @@ public class DescribeJobResult implements Serializable {
         this.completionDate = completionDate;
         return this;
     }
-    
-    
+
     /**
      * For an ArchiveRetrieval job, it is the checksum of the archive.
      * Otherwise, the value is null.
@@ -766,8 +753,7 @@ public class DescribeJobResult implements Serializable {
         this.sHA256TreeHash = sHA256TreeHash;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the ArchiveSHA256TreeHash property for this
      * object.
@@ -801,8 +787,7 @@ public class DescribeJobResult implements Serializable {
         this.archiveSHA256TreeHash = archiveSHA256TreeHash;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the RetrievalByteRange property for this object.
      *
@@ -835,8 +820,7 @@ public class DescribeJobResult implements Serializable {
         this.retrievalByteRange = retrievalByteRange;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -76,8 +76,7 @@ public class UpdateVolumeRequest extends AmazonWebServiceRequest implements Seri
         this.volumeId = volumeId;
         return this;
     }
-    
-    
+
     /**
      * The new name.
      *
@@ -110,8 +109,7 @@ public class UpdateVolumeRequest extends AmazonWebServiceRequest implements Seri
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * The new mount point.
      *
@@ -144,8 +142,7 @@ public class UpdateVolumeRequest extends AmazonWebServiceRequest implements Seri
         this.mountPoint = mountPoint;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -147,8 +147,7 @@ public class ListRolesRequest extends AmazonWebServiceRequest implements Seriali
         this.pathPrefix = pathPrefix;
         return this;
     }
-    
-    
+
     /**
      * Use this parameter only when paginating results, and only in a
      * subsequent request after you've received a response where the results
@@ -211,8 +210,7 @@ public class ListRolesRequest extends AmazonWebServiceRequest implements Seriali
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Use this parameter only when paginating results to indicate the
      * maximum number of user names you want in the response. If there are
@@ -272,8 +270,7 @@ public class ListRolesRequest extends AmazonWebServiceRequest implements Seriali
         this.maxItems = maxItems;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

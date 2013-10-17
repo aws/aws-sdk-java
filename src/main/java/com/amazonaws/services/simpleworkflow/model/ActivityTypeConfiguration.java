@@ -174,8 +174,7 @@ public class ActivityTypeConfiguration implements Serializable {
         this.defaultTaskStartToCloseTimeout = defaultTaskStartToCloseTimeout;
         return this;
     }
-    
-    
+
     /**
      * The optional default maximum time, specified when registering the
      * activity type, before which a worker processing a task must report
@@ -289,8 +288,7 @@ public class ActivityTypeConfiguration implements Serializable {
         this.defaultTaskHeartbeatTimeout = defaultTaskHeartbeatTimeout;
         return this;
     }
-    
-    
+
     /**
      * The optional default task list specified for this activity type at
      * registration. This default task list is used if a task list is not
@@ -353,8 +351,7 @@ public class ActivityTypeConfiguration implements Serializable {
         this.defaultTaskList = defaultTaskList;
         return this;
     }
-    
-    
+
     /**
      * The optional default maximum duration, specified when registering the
      * activity type, that a task of an activity type can wait before being
@@ -438,8 +435,7 @@ public class ActivityTypeConfiguration implements Serializable {
         this.defaultTaskScheduleToStartTimeout = defaultTaskScheduleToStartTimeout;
         return this;
     }
-    
-    
+
     /**
      * The optional default maximum duration, specified when registering the
      * activity type, for tasks of this activity type. You can override this
@@ -517,8 +513,7 @@ public class ActivityTypeConfiguration implements Serializable {
         this.defaultTaskScheduleToCloseTimeout = defaultTaskScheduleToCloseTimeout;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

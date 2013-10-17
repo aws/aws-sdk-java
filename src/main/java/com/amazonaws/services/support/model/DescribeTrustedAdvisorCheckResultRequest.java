@@ -98,8 +98,7 @@ public class DescribeTrustedAdvisorCheckResultRequest extends AmazonWebServiceRe
         this.checkId = checkId;
         return this;
     }
-    
-    
+
     /**
      * Specifies the ISO 639-1 code for the language in which AWS provides
      * support. AWS Support currently supports English and Japanese, for
@@ -150,8 +149,7 @@ public class DescribeTrustedAdvisorCheckResultRequest extends AmazonWebServiceRe
         this.language = language;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

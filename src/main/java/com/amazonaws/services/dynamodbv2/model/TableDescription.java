@@ -155,7 +155,6 @@ public class TableDescription implements Serializable {
      *         <p><i>AttributeType</i> - The data type for the attribute. </li> </ul>
      */
     public java.util.List<AttributeDefinition> getAttributeDefinitions() {
-        
         return attributeDefinitions;
     }
     
@@ -237,7 +236,7 @@ public class TableDescription implements Serializable {
 
         return this;
     }
-    
+
     /**
      * The name of the table.
      * <p>
@@ -282,8 +281,7 @@ public class TableDescription implements Serializable {
         this.tableName = tableName;
         return this;
     }
-    
-    
+
     /**
      * The primary key structure for the table. Each <i>KeySchemaElement</i>
      * consists of: <ul> <li> <p><i>AttributeName</i> - The name of the
@@ -305,7 +303,6 @@ public class TableDescription implements Serializable {
      *         Key</a> in the Amazon DynamoDB Developer Guide.
      */
     public java.util.List<KeySchemaElement> getKeySchema() {
-        
         return keySchema;
     }
     
@@ -408,7 +405,7 @@ public class TableDescription implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Represents the current state of the table: <ul> <li>
      * <p><i>CREATING</i> - The table is being created, as the result of a
@@ -492,8 +489,7 @@ public class TableDescription implements Serializable {
         this.tableStatus = tableStatus;
         return this;
     }
-    
-    
+
     /**
      * Represents the current state of the table: <ul> <li>
      * <p><i>CREATING</i> - The table is being created, as the result of a
@@ -551,7 +547,7 @@ public class TableDescription implements Serializable {
         this.tableStatus = tableStatus.toString();
         return this;
     }
-    
+
     /**
      * Represents the date and time when the table was created, in <a
      * href="http://www.epochconverter.com/">UNIX epoch time</a> format.
@@ -590,8 +586,7 @@ public class TableDescription implements Serializable {
         this.creationDateTime = creationDateTime;
         return this;
     }
-    
-    
+
     /**
      * Represents the provisioned throughput settings for the table,
      * consisting of read and write capacity units, along with data about
@@ -636,8 +631,7 @@ public class TableDescription implements Serializable {
         this.provisionedThroughput = provisionedThroughput;
         return this;
     }
-    
-    
+
     /**
      * Represents the total size of the specified table, in bytes. Amazon
      * DynamoDB updates this value approximately every six hours. Recent
@@ -682,8 +676,7 @@ public class TableDescription implements Serializable {
         this.tableSizeBytes = tableSizeBytes;
         return this;
     }
-    
-    
+
     /**
      * Represents the number of items in the specified table. Amazon DynamoDB
      * updates this value approximately every six hours. Recent changes might
@@ -728,8 +721,7 @@ public class TableDescription implements Serializable {
         this.itemCount = itemCount;
         return this;
     }
-    
-    
+
     /**
      * Represents one or more secondary indexes on the table. Each index is
      * scoped to a given hash key value. Tables with one or more local
@@ -802,7 +794,6 @@ public class TableDescription implements Serializable {
      *         returned.
      */
     public java.util.List<LocalSecondaryIndexDescription> getLocalSecondaryIndexes() {
-        
         return localSecondaryIndexes;
     }
     
@@ -1058,7 +1049,7 @@ public class TableDescription implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

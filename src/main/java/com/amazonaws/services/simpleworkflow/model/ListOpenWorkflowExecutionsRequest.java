@@ -169,8 +169,7 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest i
         this.domain = domain;
         return this;
     }
-    
-    
+
     /**
      * Workflow executions are included in the returned results based on
      * whether their start times are within the range specified by this
@@ -215,8 +214,7 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest i
         this.startTimeFilter = startTimeFilter;
         return this;
     }
-    
-    
+
     /**
      * If specified, only executions of the type specified in the filter are
      * returned. <note><code>executionFilter</code>, <code>typeFilter</code>
@@ -267,8 +265,7 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest i
         this.typeFilter = typeFilter;
         return this;
     }
-    
-    
+
     /**
      * If specified, only executions that have the matching tag are listed.
      * <note><code>executionFilter</code>, <code>typeFilter</code> and
@@ -319,8 +316,7 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest i
         this.tagFilter = tagFilter;
         return this;
     }
-    
-    
+
     /**
      * If on a previous call to this method a <code>NextPageToken</code> was
      * returned, the results are being paginated. To get the next page of
@@ -380,8 +376,7 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest i
         this.nextPageToken = nextPageToken;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of results returned in each page. The default is
      * 100, but the caller can override this value to a page size
@@ -453,8 +448,7 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest i
         this.maximumPageSize = maximumPageSize;
         return this;
     }
-    
-    
+
     /**
      * When set to <code>true</code>, returns the results in reverse order.
      * By default the results are returned in descending order of the start
@@ -499,8 +493,7 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest i
         this.reverseOrder = reverseOrder;
         return this;
     }
-    
-    
+
     /**
      * When set to <code>true</code>, returns the results in reverse order.
      * By default the results are returned in descending order of the start
@@ -513,7 +506,7 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest i
     public Boolean getReverseOrder() {
         return reverseOrder;
     }
-    
+
     /**
      * If specified, only workflow executions matching the workflow id
      * specified in the filter are returned.
@@ -570,8 +563,7 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest i
         this.executionFilter = executionFilter;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

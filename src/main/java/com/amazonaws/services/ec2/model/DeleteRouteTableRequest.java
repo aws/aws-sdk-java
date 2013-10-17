@@ -69,8 +69,7 @@ public class DeleteRouteTableRequest extends AmazonWebServiceRequest implements 
         this.routeTableId = routeTableId;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

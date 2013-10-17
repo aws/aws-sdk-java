@@ -66,15 +66,13 @@ public class DescribeClusterVersionsResult implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * A list of <code>Version</code> elements.
      *
      * @return A list of <code>Version</code> elements.
      */
     public java.util.List<ClusterVersion> getClusterVersions() {
-        
         if (clusterVersions == null) {
               clusterVersions = new com.amazonaws.internal.ListWithAutoConstructFlag<ClusterVersion>();
               clusterVersions.setAutoConstruct(true);
@@ -136,7 +134,7 @@ public class DescribeClusterVersionsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

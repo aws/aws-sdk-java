@@ -154,8 +154,7 @@ public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceReques
         this.autoScalingGroupName = autoScalingGroupName;
         return this;
     }
-    
-    
+
     /**
      * The name of this scaling action.
      * <p>
@@ -200,8 +199,7 @@ public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceReques
         this.scheduledActionName = scheduledActionName;
         return this;
     }
-    
-    
+
     /**
      * <code>Time</code> is deprecated. <p>The time for this action to start.
      * <code>Time</code> is an alias for <code>StartTime</code> and can be
@@ -264,8 +262,7 @@ public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceReques
         this.time = time;
         return this;
     }
-    
-    
+
     /**
      * The time for this action to start, as in <code>--start-time
      * 2010-06-01T00:00:00Z</code>. <p>If you try to schedule your action in
@@ -328,8 +325,7 @@ public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceReques
         this.startTime = startTime;
         return this;
     }
-    
-    
+
     /**
      * The time for this action to end.
      *
@@ -362,8 +358,7 @@ public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceReques
         this.endTime = endTime;
         return this;
     }
-    
-    
+
     /**
      * The time when recurring future actions will start. Start time is
      * specified by the user following the Unix cron syntax format. For
@@ -444,8 +439,7 @@ public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceReques
         this.recurrence = recurrence;
         return this;
     }
-    
-    
+
     /**
      * The minimum size for the new Auto Scaling group.
      *
@@ -478,8 +472,7 @@ public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceReques
         this.minSize = minSize;
         return this;
     }
-    
-    
+
     /**
      * The maximum size for the Auto Scaling group.
      *
@@ -512,8 +505,7 @@ public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceReques
         this.maxSize = maxSize;
         return this;
     }
-    
-    
+
     /**
      * The number of Amazon EC2 instances that should be running in the
      * group.
@@ -552,8 +544,7 @@ public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceReques
         this.desiredCapacity = desiredCapacity;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

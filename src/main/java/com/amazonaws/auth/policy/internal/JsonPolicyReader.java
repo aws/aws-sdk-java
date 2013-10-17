@@ -23,6 +23,7 @@ import com.amazonaws.auth.policy.Condition;
 import com.amazonaws.auth.policy.Policy;
 import com.amazonaws.auth.policy.Principal;
 import com.amazonaws.auth.policy.Principal.Services;
+import com.amazonaws.auth.policy.Principal.WebIdentityProviders;
 import com.amazonaws.auth.policy.Resource;
 import com.amazonaws.auth.policy.Statement;
 import com.amazonaws.auth.policy.Statement.Effect;
@@ -108,6 +109,11 @@ public class JsonPolicyReader {
             return;
         }
 
+        if (jStatement.optString(JsonDocumentFields.PRINCIPAL).equals("*")) {
+            statement.setPrincipals(Principal.All);
+            return;
+        }
+
         if (statement.getPrincipals() == null) {
             statement.setPrincipals(new LinkedList<Principal>());
         }
@@ -118,9 +124,13 @@ public class JsonPolicyReader {
             String serviceId = jPrincipals.optString(field);
             if (serviceId != null && serviceId.length() > 0) {
                 if (field.equalsIgnoreCase("AWS")) {
-                statement.getPrincipals().add(new Principal(serviceId));
+                    statement.getPrincipals().add(new Principal(serviceId));
                 } else if (field.equalsIgnoreCase("Service")) {
-                    statement.getPrincipals().add(new Principal(Services.fromString(serviceId)));
+                    statement.getPrincipals().add(
+                            new Principal(Services.fromString(serviceId)));
+                } else if (field.equalsIgnoreCase("Federated")) {
+                    statement.getPrincipals().add(
+                            new Principal(WebIdentityProviders.fromString(serviceId)));
                 }
             } else {
                 JSONArray jPrincipal = jPrincipals.getJSONArray(field);

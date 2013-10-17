@@ -42,7 +42,6 @@ public class ListVaultsResult implements Serializable {
      * @return List of vaults.
      */
     public java.util.List<DescribeVaultOutput> getVaultList() {
-        
         if (vaultList == null) {
               vaultList = new com.amazonaws.internal.ListWithAutoConstructFlag<DescribeVaultOutput>();
               vaultList.setAutoConstruct(true);
@@ -104,7 +103,7 @@ public class ListVaultsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * The vault ARN at which to continue pagination of the results. You use
      * the marker in another List Vaults request to obtain more vaults in the
@@ -149,8 +148,7 @@ public class ListVaultsResult implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

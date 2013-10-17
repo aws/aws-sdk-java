@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk;
-            
+
 import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
@@ -48,8 +48,8 @@ import com.amazonaws.services.elasticbeanstalk.model.*;
  * <ul>
  * <li> https://elasticbeanstalk.us-east-1.amazonaws.com </li>
  * 
- * </ul> 
- */       
+ * </ul>
+ */
 public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
     /**
      * <p>

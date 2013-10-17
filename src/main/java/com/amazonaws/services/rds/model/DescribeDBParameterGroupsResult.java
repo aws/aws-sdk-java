@@ -80,15 +80,13 @@ public class DescribeDBParameterGroupsResult implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * A list of <a>DBParameterGroup</a> instances.
      *
      * @return A list of <a>DBParameterGroup</a> instances.
      */
     public java.util.List<DBParameterGroup> getDBParameterGroups() {
-        
         if (dBParameterGroups == null) {
               dBParameterGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<DBParameterGroup>();
               dBParameterGroups.setAutoConstruct(true);
@@ -150,7 +148,7 @@ public class DescribeDBParameterGroupsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

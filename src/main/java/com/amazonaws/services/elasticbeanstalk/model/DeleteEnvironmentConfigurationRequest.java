@@ -55,8 +55,6 @@ public class DeleteEnvironmentConfigurationRequest extends AmazonWebServiceReque
      */
     public DeleteEnvironmentConfigurationRequest() {}
     
-
-
     /**
      * Constructs a new DeleteEnvironmentConfigurationRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -72,8 +70,6 @@ public class DeleteEnvironmentConfigurationRequest extends AmazonWebServiceReque
         setEnvironmentName(environmentName);
     }
 
-    
-    
     /**
      * The name of the application the environment is associated with.
      * <p>
@@ -115,8 +111,7 @@ public class DeleteEnvironmentConfigurationRequest extends AmazonWebServiceReque
         this.applicationName = applicationName;
         return this;
     }
-    
-    
+
     /**
      * The name of the environment to delete the draft configuration from.
      * <p>
@@ -158,8 +153,7 @@ public class DeleteEnvironmentConfigurationRequest extends AmazonWebServiceReque
         this.environmentName = environmentName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

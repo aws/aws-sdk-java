@@ -66,8 +66,7 @@ public class IPRange implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * The IP range in Classless Inter-Domain Routing (CIDR) notation.
      *
@@ -100,8 +99,7 @@ public class IPRange implements Serializable {
         this.cIDRIP = cIDRIP;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

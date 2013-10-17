@@ -261,8 +261,7 @@ public class BatchWriteItemResult implements Serializable {
         setUnprocessedItems(unprocessedItems);
         return this;
     }
-    
-   	
+
     /**
      * A map of tables and requests against those tables that were not
      * processed. The <i>UnprocessedKeys</i> value is in the same form as
@@ -308,7 +307,7 @@ public class BatchWriteItemResult implements Serializable {
 		this.unprocessedItems.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into UnprocessedItems.
 	 * <p>
@@ -430,8 +429,7 @@ public class BatchWriteItemResult implements Serializable {
         setItemCollectionMetrics(itemCollectionMetrics);
         return this;
     }
-    
-   	
+
     /**
      * A list of tables that were processed by <i>BatchWriteItem</i> and, for
      * each table, information about any item collections that were affected
@@ -464,7 +462,7 @@ public class BatchWriteItemResult implements Serializable {
 		this.itemCollectionMetrics.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into ItemCollectionMetrics.
 	 * <p>
@@ -487,7 +485,6 @@ public class BatchWriteItemResult implements Serializable {
      *         number of capacity units consumed. </li> </ul>
      */
     public java.util.List<ConsumedCapacity> getConsumedCapacity() {
-        
         return consumedCapacity;
     }
     
@@ -563,7 +560,7 @@ public class BatchWriteItemResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

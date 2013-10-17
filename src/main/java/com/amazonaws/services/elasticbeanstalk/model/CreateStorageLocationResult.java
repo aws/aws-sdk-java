@@ -73,8 +73,7 @@ public class CreateStorageLocationResult implements Serializable {
         this.s3Bucket = s3Bucket;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

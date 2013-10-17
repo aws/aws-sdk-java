@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder;
-            
+
 import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
@@ -27,8 +27,8 @@ import com.amazonaws.services.elastictranscoder.model.*;
  * to provide a callback handler.
  * AWS Elastic Transcoder Service <p>
  * The AWS Elastic Transcoder Service.
- * </p> 
- */       
+ * </p>
+ */
 public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
     /**
      * <p>

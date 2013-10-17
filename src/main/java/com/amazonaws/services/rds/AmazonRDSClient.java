@@ -2413,7 +2413,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         	credentials = originalRequest.getRequestCredentials();
         }
 
-        ExecutionContext executionContext = createExecutionContext();
+        ExecutionContext executionContext = createExecutionContext(originalRequest);
         executionContext.setSigner(signer);
         executionContext.setCredentials(credentials);
         

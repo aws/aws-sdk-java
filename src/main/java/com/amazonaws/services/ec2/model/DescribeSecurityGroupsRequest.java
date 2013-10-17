@@ -59,7 +59,6 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *         groups to describe.
      */
     public java.util.List<String> getGroupNames() {
-        
         if (groupNames == null) {
               groupNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               groupNames.setAutoConstruct(true);
@@ -127,14 +126,13 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
 
         return this;
     }
-    
+
     /**
      * Returns the value of the GroupIds property for this object.
      *
      * @return The value of the GroupIds property for this object.
      */
     public java.util.List<String> getGroupIds() {
-        
         if (groupIds == null) {
               groupIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               groupIds.setAutoConstruct(true);
@@ -196,7 +194,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
 
         return this;
     }
-    
+
     /**
      * A list of filters used to match properties for SecurityGroups. For a
      * complete reference to the available filter keys for this operation,
@@ -211,7 +209,6 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
-        
         if (filters == null) {
               filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
               filters.setAutoConstruct(true);
@@ -297,7 +294,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
 
         return this;
     }
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

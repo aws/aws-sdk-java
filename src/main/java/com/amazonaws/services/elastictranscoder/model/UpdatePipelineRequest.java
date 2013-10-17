@@ -226,8 +226,7 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest implements Se
         this.id = id;
         return this;
     }
-    
-    
+
     /**
      * The name of the pipeline. We recommend that the name be unique within
      * the AWS account, but uniqueness is not enforced. <p>Constraints:
@@ -281,8 +280,7 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest implements Se
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * The Amazon S3 bucket in which you saved the media files that you want
      * to transcode and the graphics that you want to use as watermarks.
@@ -330,8 +328,7 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest implements Se
         this.inputBucket = inputBucket;
         return this;
     }
-    
-    
+
     /**
      * The IAM Amazon Resource Name (ARN) for the role that you want Elastic
      * Transcoder to use to transcode jobs for this pipeline.
@@ -379,8 +376,7 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest implements Se
         this.role = role;
         return this;
     }
-    
-    
+
     /**
      * The Amazon Simple Notification Service (Amazon SNS) topic or topics to
      * notify in order to report job status. <important>To receive
@@ -431,8 +427,7 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest implements Se
         this.notifications = notifications;
         return this;
     }
-    
-    
+
     /**
      * The optional <code>ContentConfig</code> object specifies information
      * about the Amazon S3 bucket in which you want Elastic Transcoder to
@@ -777,8 +772,7 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest implements Se
         this.contentConfig = contentConfig;
         return this;
     }
-    
-    
+
     /**
      * The <code>ThumbnailConfig</code> object specifies several values,
      * including the Amazon S3 bucket in which you want Elastic Transcoder to
@@ -1093,8 +1087,7 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest implements Se
         this.thumbnailConfig = thumbnailConfig;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -92,8 +92,7 @@ public class AddRoleToInstanceProfileRequest extends AmazonWebServiceRequest imp
         this.instanceProfileName = instanceProfileName;
         return this;
     }
-    
-    
+
     /**
      * Name of the role to add.
      * <p>
@@ -138,8 +137,7 @@ public class AddRoleToInstanceProfileRequest extends AmazonWebServiceRequest imp
         this.roleName = roleName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

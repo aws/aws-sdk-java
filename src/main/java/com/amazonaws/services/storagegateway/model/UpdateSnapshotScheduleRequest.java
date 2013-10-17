@@ -119,8 +119,7 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest imple
         this.volumeARN = volumeARN;
         return this;
     }
-    
-    
+
     /**
      * The hour of the day at which the snapshot schedule begins represented
      * as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the
@@ -174,8 +173,7 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest imple
         this.startAt = startAt;
         return this;
     }
-    
-    
+
     /**
      * Frequency of snapshots. Specify the number of hours between snapshots.
      * <p>
@@ -217,8 +215,7 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest imple
         this.recurrenceInHours = recurrenceInHours;
         return this;
     }
-    
-    
+
     /**
      * Optional description of the snapshot that overwrites the existing
      * description.
@@ -266,8 +263,7 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest imple
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

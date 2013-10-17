@@ -103,8 +103,6 @@ public class GetJobOutputRequest extends AmazonWebServiceRequest implements Seri
      */
     public GetJobOutputRequest() {}
     
-
-
     /**
      * Constructs a new GetJobOutputRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -122,10 +120,6 @@ public class GetJobOutputRequest extends AmazonWebServiceRequest implements Seri
         setJobId(jobId);
         setRange(range);
     }
-
-    
-    
-
 
     /**
      * Constructs a new GetJobOutputRequest object.
@@ -151,8 +145,6 @@ public class GetJobOutputRequest extends AmazonWebServiceRequest implements Seri
         setRange(range);
     }
 
-    
-    
     /**
      * The <code>AccountId</code> is the AWS Account ID. You can specify
      * either the AWS Account ID or optionally a '-', in which case Amazon
@@ -209,8 +201,7 @@ public class GetJobOutputRequest extends AmazonWebServiceRequest implements Seri
         this.accountId = accountId;
         return this;
     }
-    
-    
+
     /**
      * The name of the vault.
      *
@@ -243,8 +234,7 @@ public class GetJobOutputRequest extends AmazonWebServiceRequest implements Seri
         this.vaultName = vaultName;
         return this;
     }
-    
-    
+
     /**
      * The job ID whose data is downloaded.
      *
@@ -277,8 +267,7 @@ public class GetJobOutputRequest extends AmazonWebServiceRequest implements Seri
         this.jobId = jobId;
         return this;
     }
-    
-    
+
     /**
      * The range of bytes to retrieve from the output. For example, if you
      * want to download the first 1,048,576 bytes, specify "Range:
@@ -329,8 +318,7 @@ public class GetJobOutputRequest extends AmazonWebServiceRequest implements Seri
         this.range = range;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

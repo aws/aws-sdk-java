@@ -104,8 +104,7 @@ public class RebuildEnvironmentRequest extends AmazonWebServiceRequest implement
         this.environmentId = environmentId;
         return this;
     }
-    
-    
+
     /**
      * The name of the environment to rebuild. <p> Condition: You must
      * specify either this or an EnvironmentId, or both. If you do not
@@ -165,8 +164,7 @@ public class RebuildEnvironmentRequest extends AmazonWebServiceRequest implement
         this.environmentName = environmentName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

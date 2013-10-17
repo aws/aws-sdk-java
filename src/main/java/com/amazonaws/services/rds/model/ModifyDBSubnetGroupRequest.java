@@ -96,8 +96,7 @@ public class ModifyDBSubnetGroupRequest extends AmazonWebServiceRequest implemen
         this.dBSubnetGroupName = dBSubnetGroupName;
         return this;
     }
-    
-    
+
     /**
      * The description for the DB Subnet Group.
      *
@@ -130,15 +129,13 @@ public class ModifyDBSubnetGroupRequest extends AmazonWebServiceRequest implemen
         this.dBSubnetGroupDescription = dBSubnetGroupDescription;
         return this;
     }
-    
-    
+
     /**
      * The EC2 Subnet IDs for the DB Subnet Group.
      *
      * @return The EC2 Subnet IDs for the DB Subnet Group.
      */
     public java.util.List<String> getSubnetIds() {
-        
         if (subnetIds == null) {
               subnetIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               subnetIds.setAutoConstruct(true);
@@ -200,7 +197,7 @@ public class ModifyDBSubnetGroupRequest extends AmazonWebServiceRequest implemen
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -46,7 +46,6 @@ public class RecentCaseCommunications implements Serializable {
      *         title="Communication">Commmunication</a> objects.
      */
     public java.util.List<Communication> getCommunications() {
-        
         if (communications == null) {
               communications = new com.amazonaws.internal.ListWithAutoConstructFlag<Communication>();
               communications.setAutoConstruct(true);
@@ -120,7 +119,7 @@ public class RecentCaseCommunications implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Defines a resumption point for pagination.
      *
@@ -153,8 +152,7 @@ public class RecentCaseCommunications implements Serializable {
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

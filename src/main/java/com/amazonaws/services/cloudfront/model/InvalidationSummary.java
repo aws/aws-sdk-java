@@ -74,8 +74,7 @@ public class InvalidationSummary implements Serializable {
         this.id = id;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the CreateTime property for this object.
      *
@@ -108,8 +107,7 @@ public class InvalidationSummary implements Serializable {
         this.createTime = createTime;
         return this;
     }
-    
-    
+
     /**
      * The status of an invalidation request.
      *
@@ -142,8 +140,7 @@ public class InvalidationSummary implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

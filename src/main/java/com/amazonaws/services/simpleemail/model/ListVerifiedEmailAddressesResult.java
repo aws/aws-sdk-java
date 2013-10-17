@@ -35,7 +35,6 @@ public class ListVerifiedEmailAddressesResult implements Serializable {
      * @return A list of email addresses that have been verified.
      */
     public java.util.List<String> getVerifiedEmailAddresses() {
-        
         if (verifiedEmailAddresses == null) {
               verifiedEmailAddresses = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               verifiedEmailAddresses.setAutoConstruct(true);
@@ -97,7 +96,7 @@ public class ListVerifiedEmailAddressesResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

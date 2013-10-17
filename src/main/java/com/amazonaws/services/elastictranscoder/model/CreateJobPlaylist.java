@@ -134,8 +134,7 @@ public class CreateJobPlaylist implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * This value must currently be HLSv3.
      * <p>
@@ -177,8 +176,7 @@ public class CreateJobPlaylist implements Serializable {
         this.format = format;
         return this;
     }
-    
-    
+
     /**
      * For each output in this job that you want to include in a master
      * playlist, the value of the <code>Outputs:Key</code> object. If you
@@ -194,7 +192,6 @@ public class CreateJobPlaylist implements Serializable {
      *         <code>SegmentDuration</code> for all of the outputs must be the same.
      */
     public java.util.List<String> getOutputKeys() {
-        
         if (outputKeys == null) {
               outputKeys = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               outputKeys.setAutoConstruct(true);
@@ -283,7 +280,7 @@ public class CreateJobPlaylist implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

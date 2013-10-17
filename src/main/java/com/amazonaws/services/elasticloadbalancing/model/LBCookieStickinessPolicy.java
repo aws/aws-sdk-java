@@ -43,8 +43,6 @@ public class LBCookieStickinessPolicy implements Serializable {
      */
     public LBCookieStickinessPolicy() {}
     
-
-
     /**
      * Constructs a new LBCookieStickinessPolicy object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -62,8 +60,6 @@ public class LBCookieStickinessPolicy implements Serializable {
         setCookieExpirationPeriod(cookieExpirationPeriod);
     }
 
-    
-    
     /**
      * The name for the policy being created. The name must be unique within
      * the set of policies for this LoadBalancer.
@@ -102,8 +98,7 @@ public class LBCookieStickinessPolicy implements Serializable {
         this.policyName = policyName;
         return this;
     }
-    
-    
+
     /**
      * The time period in seconds after which the cookie should be considered
      * stale. Not specifying this parameter indicates that the stickiness
@@ -148,8 +143,7 @@ public class LBCookieStickinessPolicy implements Serializable {
         this.cookieExpirationPeriod = cookieExpirationPeriod;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

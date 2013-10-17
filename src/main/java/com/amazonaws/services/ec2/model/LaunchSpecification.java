@@ -132,8 +132,7 @@ public class LaunchSpecification implements Serializable {
         this.imageId = imageId;
         return this;
     }
-    
-    
+
     /**
      * The name of the key pair.
      *
@@ -166,15 +165,13 @@ public class LaunchSpecification implements Serializable {
         this.keyName = keyName;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the AllSecurityGroups property for this object.
      *
      * @return The value of the AllSecurityGroups property for this object.
      */
     public java.util.List<GroupIdentifier> getAllSecurityGroups() {
-        
         if (allSecurityGroups == null) {
               allSecurityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier>();
               allSecurityGroups.setAutoConstruct(true);
@@ -236,14 +233,13 @@ public class LaunchSpecification implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns the value of the SecurityGroups property for this object.
      *
      * @return The value of the SecurityGroups property for this object.
      */
     public java.util.List<String> getSecurityGroups() {
-        
         if (securityGroups == null) {
               securityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               securityGroups.setAutoConstruct(true);
@@ -305,7 +301,7 @@ public class LaunchSpecification implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Optional data, specific to a user's application, to provide in the
      * launch request. All instances that collectively comprise the launch
@@ -356,8 +352,7 @@ public class LaunchSpecification implements Serializable {
         this.userData = userData;
         return this;
     }
-    
-    
+
     /**
      * Deprecated.
      *
@@ -390,8 +385,7 @@ public class LaunchSpecification implements Serializable {
         this.addressingType = addressingType;
         return this;
     }
-    
-    
+
     /**
      * Specifies the instance type.
      * <p>
@@ -439,8 +433,7 @@ public class LaunchSpecification implements Serializable {
         this.instanceType = instanceType;
         return this;
     }
-    
-    
+
     /**
      * Specifies the instance type.
      * <p>
@@ -474,7 +467,7 @@ public class LaunchSpecification implements Serializable {
         this.instanceType = instanceType.toString();
         return this;
     }
-    
+
     /**
      * Defines a placement item.
      *
@@ -507,8 +500,7 @@ public class LaunchSpecification implements Serializable {
         this.placement = placement;
         return this;
     }
-    
-    
+
     /**
      * Specifies the ID of the kernel to select.
      *
@@ -541,8 +533,7 @@ public class LaunchSpecification implements Serializable {
         this.kernelId = kernelId;
         return this;
     }
-    
-    
+
     /**
      * Specifies the ID of the RAM disk to select. Some kernels require
      * additional drivers at launch. Check the kernel requirements for
@@ -593,8 +584,7 @@ public class LaunchSpecification implements Serializable {
         this.ramdiskId = ramdiskId;
         return this;
     }
-    
-    
+
     /**
      * Specifies how block devices are exposed to the instance. Each mapping
      * is made up of a virtualName and a deviceName.
@@ -603,7 +593,6 @@ public class LaunchSpecification implements Serializable {
      *         is made up of a virtualName and a deviceName.
      */
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
-        
         if (blockDeviceMappings == null) {
               blockDeviceMappings = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>();
               blockDeviceMappings.setAutoConstruct(true);
@@ -671,7 +660,7 @@ public class LaunchSpecification implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Enables monitoring for the instance.
      *
@@ -704,8 +693,7 @@ public class LaunchSpecification implements Serializable {
         this.monitoringEnabled = monitoringEnabled;
         return this;
     }
-    
-    
+
     /**
      * Enables monitoring for the instance.
      *
@@ -714,7 +702,7 @@ public class LaunchSpecification implements Serializable {
     public Boolean getMonitoringEnabled() {
         return monitoringEnabled;
     }
-    
+
     /**
      * Specifies the Amazon VPC subnet ID within which to launch the
      * instance(s) for Amazon Virtual Private Cloud.
@@ -753,15 +741,13 @@ public class LaunchSpecification implements Serializable {
         this.subnetId = subnetId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the NetworkInterfaces property for this object.
      *
      * @return The value of the NetworkInterfaces property for this object.
      */
     public java.util.List<InstanceNetworkInterfaceSpecification> getNetworkInterfaces() {
-        
         if (networkInterfaces == null) {
               networkInterfaces = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceNetworkInterfaceSpecification>();
               networkInterfaces.setAutoConstruct(true);
@@ -823,7 +809,7 @@ public class LaunchSpecification implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns the value of the IamInstanceProfile property for this object.
      *
@@ -856,8 +842,7 @@ public class LaunchSpecification implements Serializable {
         this.iamInstanceProfile = iamInstanceProfile;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the EbsOptimized property for this object.
      *
@@ -890,8 +875,7 @@ public class LaunchSpecification implements Serializable {
         this.ebsOptimized = ebsOptimized;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the EbsOptimized property for this object.
      *
@@ -900,7 +884,7 @@ public class LaunchSpecification implements Serializable {
     public Boolean getEbsOptimized() {
         return ebsOptimized;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

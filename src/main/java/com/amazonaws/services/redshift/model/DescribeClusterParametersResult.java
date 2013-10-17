@@ -46,7 +46,6 @@ public class DescribeClusterParametersResult implements Serializable {
      *         parameters of one cluster parameter group.
      */
     public java.util.List<Parameter> getParameters() {
-        
         if (parameters == null) {
               parameters = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>();
               parameters.setAutoConstruct(true);
@@ -114,7 +113,7 @@ public class DescribeClusterParametersResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * A marker that indicates the first parameter group that a subsequent
      * <a>DescribeClusterParameterGroups</a> request will return. The
@@ -165,8 +164,7 @@ public class DescribeClusterParametersResult implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

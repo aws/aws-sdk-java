@@ -145,8 +145,7 @@ public class RespondActivityTaskFailedRequest extends AmazonWebServiceRequest im
         this.taskToken = taskToken;
         return this;
     }
-    
-    
+
     /**
      * Description of the error that may assist in diagnostics.
      * <p>
@@ -188,8 +187,7 @@ public class RespondActivityTaskFailedRequest extends AmazonWebServiceRequest im
         this.reason = reason;
         return this;
     }
-    
-    
+
     /**
      * Optional detailed information about the failure.
      * <p>
@@ -231,8 +229,7 @@ public class RespondActivityTaskFailedRequest extends AmazonWebServiceRequest im
         this.details = details;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -165,8 +165,7 @@ public class CaseDetails implements Serializable {
         this.caseId = caseId;
         return this;
     }
-    
-    
+
     /**
      * Represents the Id value displayed on pages for the case in AWS Support
      * Center. This is a numeric string.
@@ -205,8 +204,7 @@ public class CaseDetails implements Serializable {
         this.displayId = displayId;
         return this;
     }
-    
-    
+
     /**
      * Represents the subject line for a support case in the AWS Support
      * Center user interface.
@@ -245,8 +243,7 @@ public class CaseDetails implements Serializable {
         this.subject = subject;
         return this;
     }
-    
-    
+
     /**
      * Represents the status of a case submitted to AWS Support.
      *
@@ -279,8 +276,7 @@ public class CaseDetails implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * Code for the AWS service returned by the call to <a
      * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html"
@@ -325,8 +321,7 @@ public class CaseDetails implements Serializable {
         this.serviceCode = serviceCode;
         return this;
     }
-    
-    
+
     /**
      * Specifies the category of problem for the AWS Support case.
      *
@@ -359,8 +354,7 @@ public class CaseDetails implements Serializable {
         this.categoryCode = categoryCode;
         return this;
     }
-    
-    
+
     /**
      * Code for the severity level returned by the call to <a
      * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeSeverityLevels.html"
@@ -405,8 +399,7 @@ public class CaseDetails implements Serializable {
         this.severityCode = severityCode;
         return this;
     }
-    
-    
+
     /**
      * Represents the email address of the account that submitted the case to
      * support.
@@ -445,8 +438,7 @@ public class CaseDetails implements Serializable {
         this.submittedBy = submittedBy;
         return this;
     }
-    
-    
+
     /**
      * Time that the case was case created in AWS Support Center.
      *
@@ -479,8 +471,7 @@ public class CaseDetails implements Serializable {
         this.timeCreated = timeCreated;
         return this;
     }
-    
-    
+
     /**
      * Returns up to the five most recent communications between you and AWS
      * Support Center. Includes a <i>nextToken</i> to retrieve the next set
@@ -525,8 +516,7 @@ public class CaseDetails implements Serializable {
         this.recentCommunications = recentCommunications;
         return this;
     }
-    
-    
+
     /**
      * List of email addresses that are copied in any communication about the
      * case.
@@ -535,7 +525,6 @@ public class CaseDetails implements Serializable {
      *         case.
      */
     public java.util.List<String> getCcEmailAddresses() {
-        
         if (ccEmailAddresses == null) {
               ccEmailAddresses = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               ccEmailAddresses.setAutoConstruct(true);
@@ -603,7 +592,7 @@ public class CaseDetails implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Specifies the ISO 639-1 code for the language in which AWS provides
      * support. AWS Support currently supports English and Japanese, for
@@ -654,8 +643,7 @@ public class CaseDetails implements Serializable {
         this.language = language;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

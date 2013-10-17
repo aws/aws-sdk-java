@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticache;
-            
+
 import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
@@ -36,8 +36,8 @@ import com.amazonaws.services.elasticache.model.*;
  * <p>
  * In addition, through integration with Amazon CloudWatch, customers get enhanced visibility into the key performance statistics associated with their
  * cache and can receive alarms if a part of their cache runs hot.
- * </p> 
- */       
+ * </p>
+ */
 public interface AmazonElastiCacheAsync extends AmazonElastiCache {
     /**
      * <p>

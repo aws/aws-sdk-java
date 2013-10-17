@@ -66,8 +66,7 @@ public class Parameter implements Serializable {
         this.parameterKey = parameterKey;
         return this;
     }
-    
-    
+
     /**
      * The value associated with the parameter.
      *
@@ -100,8 +99,7 @@ public class Parameter implements Serializable {
         this.parameterValue = parameterValue;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -61,8 +61,7 @@ public class CreateAccessKeyResult implements Serializable {
         this.accessKey = accessKey;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -110,8 +110,7 @@ public class BatchGetItemResult implements Serializable {
         setResponses(responses);
         return this;
     }
-    
-   	
+
     /**
      * A map of table name to a list of items. Each object in
      * <i>Responses</i> consists of a table name, along with a map of
@@ -133,7 +132,7 @@ public class BatchGetItemResult implements Serializable {
 		this.responses.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into Responses.
 	 * <p>
@@ -294,8 +293,7 @@ public class BatchGetItemResult implements Serializable {
         setUnprocessedKeys(unprocessedKeys);
         return this;
     }
-    
-   	
+
     /**
      * A map of tables and their respective keys that were not processed with
      * the current response. The <i>UnprocessedKeys</i> value is in the same
@@ -336,7 +334,7 @@ public class BatchGetItemResult implements Serializable {
 		this.unprocessedKeys.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into UnprocessedKeys.
 	 * <p>
@@ -359,7 +357,6 @@ public class BatchGetItemResult implements Serializable {
      *         total number of capacity units consumed. </li> </ul>
      */
     public java.util.List<ConsumedCapacity> getConsumedCapacity() {
-        
         return consumedCapacity;
     }
     
@@ -435,7 +432,7 @@ public class BatchGetItemResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -30,7 +30,6 @@ public class DescribeExportTasksResult implements Serializable {
      * @return The value of the ExportTasks property for this object.
      */
     public java.util.List<ExportTask> getExportTasks() {
-        
         if (exportTasks == null) {
               exportTasks = new com.amazonaws.internal.ListWithAutoConstructFlag<ExportTask>();
               exportTasks.setAutoConstruct(true);
@@ -92,7 +91,7 @@ public class DescribeExportTasksResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

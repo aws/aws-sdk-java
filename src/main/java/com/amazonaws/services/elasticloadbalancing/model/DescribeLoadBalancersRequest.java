@@ -49,8 +49,6 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest implem
      */
     public DescribeLoadBalancersRequest() {}
     
-
-
     /**
      * Constructs a new DescribeLoadBalancersRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -63,15 +61,12 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest implem
         setLoadBalancerNames(loadBalancerNames);
     }
 
-    
-    
     /**
      * A list of names associated with the LoadBalancers at creation time.
      *
      * @return A list of names associated with the LoadBalancers at creation time.
      */
     public java.util.List<String> getLoadBalancerNames() {
-        
         if (loadBalancerNames == null) {
               loadBalancerNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               loadBalancerNames.setAutoConstruct(true);
@@ -133,7 +128,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest implem
 
         return this;
     }
-    
+
     /**
      * An optional parameter reserved for future use.
      *
@@ -166,8 +161,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest implem
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

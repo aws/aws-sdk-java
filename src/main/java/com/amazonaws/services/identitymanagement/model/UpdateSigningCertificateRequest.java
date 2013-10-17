@@ -72,8 +72,6 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest imp
      */
     public UpdateSigningCertificateRequest() {}
     
-
-
     /**
      * Constructs a new UpdateSigningCertificateRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -90,8 +88,6 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest imp
         setStatus(status);
     }
 
-    
-    
     /**
      * Constructs a new UpdateSigningCertificateRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -107,7 +103,7 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest imp
         this.certificateId = certificateId;
         this.status = status.toString();
     }
-    
+
     /**
      * Name of the user the signing certificate belongs to.
      * <p>
@@ -152,8 +148,7 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest imp
         this.userName = userName;
         return this;
     }
-    
-    
+
     /**
      * The ID of the signing certificate you want to update.
      * <p>
@@ -198,8 +193,7 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest imp
         this.certificateId = certificateId;
         return this;
     }
-    
-    
+
     /**
      * The status you want to assign to the certificate. <code>Active</code>
      * means the certificate can be used for API calls to AWS, while
@@ -259,8 +253,7 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest imp
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * The status you want to assign to the certificate. <code>Active</code>
      * means the certificate can be used for API calls to AWS, while
@@ -302,7 +295,7 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest imp
         this.status = status.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

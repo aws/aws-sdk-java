@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.rds;
-            
+
 import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
@@ -42,8 +42,8 @@ import com.amazonaws.services.rds.model.*;
  * is asynchronous and some actions may require polling to determine when an action has been applied. See the parameter description to determine if a
  * change is applied immediately or on the next instance reboot or during the maintenance window. For more information on Amazon RDS concepts and usage
  * scenarios, go to the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/"> Amazon RDS User Guide </a> .
- * </p> 
- */       
+ * </p>
+ */
 public interface AmazonRDSAsync extends AmazonRDS {
     /**
      * <p>

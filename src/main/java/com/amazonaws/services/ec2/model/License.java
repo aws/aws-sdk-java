@@ -83,8 +83,7 @@ public class License implements Serializable {
         this.licenseId = licenseId;
         return this;
     }
-    
-    
+
     /**
      * The license type (ex. "Microsoft/Windows/Standard").
      *
@@ -117,8 +116,7 @@ public class License implements Serializable {
         this.type = type;
         return this;
     }
-    
-    
+
     /**
      * The name of the pool in which the license is kept.
      *
@@ -151,8 +149,7 @@ public class License implements Serializable {
         this.pool = pool;
         return this;
     }
-    
-    
+
     /**
      * The capacities available for this license, indicating how many
      * licenses are in use, how many are available, how many Amazon EC2
@@ -163,7 +160,6 @@ public class License implements Serializable {
      *         instances can be supported, etc.
      */
     public java.util.List<LicenseCapacity> getCapacities() {
-        
         if (capacities == null) {
               capacities = new com.amazonaws.internal.ListWithAutoConstructFlag<LicenseCapacity>();
               capacities.setAutoConstruct(true);
@@ -237,14 +233,13 @@ public class License implements Serializable {
 
         return this;
     }
-    
+
     /**
      * A list of tags for the License.
      *
      * @return A list of tags for the License.
      */
     public java.util.List<Tag> getTags() {
-        
         if (tags == null) {
               tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
               tags.setAutoConstruct(true);
@@ -306,7 +301,7 @@ public class License implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

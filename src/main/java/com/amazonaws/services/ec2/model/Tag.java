@@ -41,8 +41,6 @@ public class Tag implements Serializable {
      */
     public Tag() {}
     
-
-
     /**
      * Constructs a new Tag object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -56,10 +54,6 @@ public class Tag implements Serializable {
         setValue(value);
     }
 
-    
-    
-
-
     /**
      * Constructs a new Tag object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -71,8 +65,6 @@ public class Tag implements Serializable {
         setKey(key);
     }
 
-    
-    
     /**
      * The tag's key.
      *
@@ -105,8 +97,7 @@ public class Tag implements Serializable {
         this.key = key;
         return this;
     }
-    
-    
+
     /**
      * The tag's value.
      *
@@ -139,8 +130,7 @@ public class Tag implements Serializable {
         this.value = value;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

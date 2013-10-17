@@ -50,7 +50,6 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      * @return The name of the <code>PlacementGroup</code>.
      */
     public java.util.List<String> getGroupNames() {
-        
         if (groupNames == null) {
               groupNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               groupNames.setAutoConstruct(true);
@@ -112,7 +111,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
 
         return this;
     }
-    
+
     /**
      * A list of filters used to match properties for Placement Groups. For a
      * complete reference to the available filter keys for this operation,
@@ -127,7 +126,6 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
-        
         if (filters == null) {
               filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
               filters.setAutoConstruct(true);
@@ -213,7 +211,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
 
         return this;
     }
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

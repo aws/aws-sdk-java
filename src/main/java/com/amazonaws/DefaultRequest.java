@@ -19,7 +19,10 @@ import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.http.annotation.NotThreadSafe;
+
 import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.util.AWSRequestMetrics;
 
 /**
  * Default implementation of the {@linkplain com.amazonaws.Request} interface.
@@ -27,6 +30,7 @@ import com.amazonaws.http.HttpMethodName;
  * This class is only intended for internal use inside the AWS client libraries.
  * Callers shouldn't ever interact directly with objects of this class.
  */
+@NotThreadSafe
 public class DefaultRequest<T> implements Request<T> {
 
     /** The resource path being requested */
@@ -54,10 +58,13 @@ public class DefaultRequest<T> implements Request<T> {
     private HttpMethodName httpMethod = HttpMethodName.POST;
 
     /** An optional stream from which to read the request payload. */
-	private InputStream content;
-	
-	/** An optional time offset to account for clock skew */
-	private int timeOffset;
+    private InputStream content;
+    
+    /** An optional time offset to account for clock skew */
+    private int timeOffset;
+
+    /** All AWS Request metrics are collected into this object. */ 
+    private AWSRequestMetrics metrics;
 
     /**
      * Constructs a new DefaultRequest with the specified service name and the
@@ -151,14 +158,14 @@ public class DefaultRequest<T> implements Request<T> {
      * @see com.amazonaws.Request#getHttpMethod()
      */
     public HttpMethodName getHttpMethod() {
-    	return httpMethod;
+        return httpMethod;
     }
 
     /**
      * @see com.amazonaws.Request#setHttpMethod(com.amazonaws.http.HttpMethodName)
      */
     public void setHttpMethod(HttpMethodName httpMethod) {
-		this.httpMethod = httpMethod;
+        this.httpMethod = httpMethod;
     }
 
     /**
@@ -182,21 +189,21 @@ public class DefaultRequest<T> implements Request<T> {
         return serviceName;
     }
 
-	/** 
-	 * @see com.amazonaws.Request#getContent() 
-	 */
-	public InputStream getContent() {
-		return content;
-	}
+    /** 
+     * @see com.amazonaws.Request#getContent() 
+     */
+    public InputStream getContent() {
+        return content;
+    }
 
-	/**
-	 * @see com.amazonaws.Request#setContent(java.io.InputStream)
-	 */
-	public void setContent(InputStream content) {
-		this.content = content;
-	}
+    /**
+     * @see com.amazonaws.Request#setContent(java.io.InputStream)
+     */
+    public void setContent(InputStream content) {
+        this.content = content;
+    }
 
-	/**
+    /**
      * @see com.amazonaws.Request#setHeaders(java.util.Map)
      */
     public void setHeaders(Map<String, String> headers) {
@@ -237,22 +244,25 @@ public class DefaultRequest<T> implements Request<T> {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-
-        builder.append(getHttpMethod().toString() + " ");
-        builder.append(getEndpoint().toString() + " ");
-
+        builder.append(getHttpMethod()).append(" ");
+        builder.append(getEndpoint()).append(" ");
         String resourcePath = getResourcePath();
-        if (resourcePath != null && !resourcePath.startsWith("/")) {
-            resourcePath = "/" + resourcePath;
-        }
-        builder.append((resourcePath != null ? resourcePath : "/")
-                + " ");
 
+        if (resourcePath == null) {
+            builder.append("/");
+        }
+        else {
+            if (!resourcePath.startsWith("/")) {
+                builder.append("/");
+            }
+            builder.append(resourcePath);
+        }
+        builder.append(" ");
         if (!getParameters().isEmpty()) {
             builder.append("Parameters: (");
             for (String key : getParameters().keySet()) {
                 String value = getParameters().get(key);
-                builder.append(key + ": " + value + ", ");
+                builder.append(key).append(": ").append(value).append(", ");
             }
             builder.append(") ");
         }
@@ -261,12 +271,25 @@ public class DefaultRequest<T> implements Request<T> {
             builder.append("Headers: (");
             for (String key : getHeaders().keySet()) {
                 String value = getHeaders().get(key);
-                builder.append(key + ": " + value + ", ");
+                builder.append(key).append(": ").append(value).append(", ");
             }
             builder.append(") ");
         }
 
         return builder.toString();
     }
-	
+
+    @Override
+    public AWSRequestMetrics getAWSRequestMetrics() {
+        return metrics;
+    }
+
+    @Override
+    public void setAWSRequestMetrics(AWSRequestMetrics metrics) {
+        if (this.metrics == null) {
+            this.metrics = metrics;
+        } else {
+            throw new IllegalStateException("AWSRequestMetrics has already been set on this request");
+        }
+    }
 }

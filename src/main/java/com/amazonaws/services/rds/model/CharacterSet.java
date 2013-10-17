@@ -66,8 +66,7 @@ public class CharacterSet implements Serializable {
         this.characterSetName = characterSetName;
         return this;
     }
-    
-    
+
     /**
      * The description of the character set.
      *
@@ -100,8 +99,7 @@ public class CharacterSet implements Serializable {
         this.characterSetDescription = characterSetDescription;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

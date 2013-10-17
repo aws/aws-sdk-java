@@ -80,8 +80,7 @@ public class IcmpTypeCode implements Serializable {
         this.type = type;
         return this;
     }
-    
-    
+
     /**
      * For the ICMP protocol, the ICMP code. A value of <code>-1</code> is a
      * wildcard meaning all codes. Required if specifying <code>icmp</code>
@@ -126,8 +125,7 @@ public class IcmpTypeCode implements Serializable {
         this.code = code;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

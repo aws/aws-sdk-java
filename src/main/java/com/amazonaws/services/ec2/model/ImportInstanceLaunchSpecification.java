@@ -93,8 +93,7 @@ public class ImportInstanceLaunchSpecification implements Serializable {
         this.architecture = architecture;
         return this;
     }
-    
-    
+
     /**
      * Sets the value of the Architecture property for this object.
      * <p>
@@ -128,14 +127,13 @@ public class ImportInstanceLaunchSpecification implements Serializable {
         this.architecture = architecture.toString();
         return this;
     }
-    
+
     /**
      * Returns the value of the GroupNames property for this object.
      *
      * @return The value of the GroupNames property for this object.
      */
     public java.util.List<String> getGroupNames() {
-        
         if (groupNames == null) {
               groupNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               groupNames.setAutoConstruct(true);
@@ -197,7 +195,7 @@ public class ImportInstanceLaunchSpecification implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns the value of the AdditionalInfo property for this object.
      *
@@ -230,8 +228,7 @@ public class ImportInstanceLaunchSpecification implements Serializable {
         this.additionalInfo = additionalInfo;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the UserData property for this object.
      *
@@ -264,8 +261,7 @@ public class ImportInstanceLaunchSpecification implements Serializable {
         this.userData = userData;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the InstanceType property for this object.
      * <p>
@@ -313,8 +309,7 @@ public class ImportInstanceLaunchSpecification implements Serializable {
         this.instanceType = instanceType;
         return this;
     }
-    
-    
+
     /**
      * Sets the value of the InstanceType property for this object.
      * <p>
@@ -348,7 +343,7 @@ public class ImportInstanceLaunchSpecification implements Serializable {
         this.instanceType = instanceType.toString();
         return this;
     }
-    
+
     /**
      * Describes where an Amazon EC2 instance is running within an Amazon EC2
      * region.
@@ -387,8 +382,7 @@ public class ImportInstanceLaunchSpecification implements Serializable {
         this.placement = placement;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Monitoring property for this object.
      *
@@ -421,8 +415,7 @@ public class ImportInstanceLaunchSpecification implements Serializable {
         this.monitoring = monitoring;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Monitoring property for this object.
      *
@@ -431,7 +424,7 @@ public class ImportInstanceLaunchSpecification implements Serializable {
     public Boolean getMonitoring() {
         return monitoring;
     }
-    
+
     /**
      * Returns the value of the SubnetId property for this object.
      *
@@ -464,8 +457,7 @@ public class ImportInstanceLaunchSpecification implements Serializable {
         this.subnetId = subnetId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the InstanceInitiatedShutdownBehavior property
      * for this object.
@@ -519,8 +511,7 @@ public class ImportInstanceLaunchSpecification implements Serializable {
         this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior;
         return this;
     }
-    
-    
+
     /**
      * Sets the value of the InstanceInitiatedShutdownBehavior property for
      * this object.
@@ -558,7 +549,7 @@ public class ImportInstanceLaunchSpecification implements Serializable {
         this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior.toString();
         return this;
     }
-    
+
     /**
      * Returns the value of the PrivateIpAddress property for this object.
      *
@@ -591,8 +582,7 @@ public class ImportInstanceLaunchSpecification implements Serializable {
         this.privateIpAddress = privateIpAddress;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

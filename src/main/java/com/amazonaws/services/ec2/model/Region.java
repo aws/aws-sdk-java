@@ -66,8 +66,7 @@ public class Region implements Serializable {
         this.regionName = regionName;
         return this;
     }
-    
-    
+
     /**
      * Region service endpoint.
      *
@@ -100,8 +99,7 @@ public class Region implements Serializable {
         this.endpoint = endpoint;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

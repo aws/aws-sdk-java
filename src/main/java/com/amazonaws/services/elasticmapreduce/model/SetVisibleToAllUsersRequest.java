@@ -51,7 +51,6 @@ public class SetVisibleToAllUsersRequest extends AmazonWebServiceRequest impleme
      * @return Identifiers of the job flows to receive the new visibility setting.
      */
     public java.util.List<String> getJobFlowIds() {
-        
         if (jobFlowIds == null) {
               jobFlowIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               jobFlowIds.setAutoConstruct(true);
@@ -113,7 +112,7 @@ public class SetVisibleToAllUsersRequest extends AmazonWebServiceRequest impleme
 
         return this;
     }
-    
+
     /**
      * Whether the specified job flows are visible to all IAM users of the
      * AWS account associated with the job flow. If this value is set to
@@ -176,8 +175,7 @@ public class SetVisibleToAllUsersRequest extends AmazonWebServiceRequest impleme
         this.visibleToAllUsers = visibleToAllUsers;
         return this;
     }
-    
-    
+
     /**
      * Whether the specified job flows are visible to all IAM users of the
      * AWS account associated with the job flow. If this value is set to
@@ -196,7 +194,7 @@ public class SetVisibleToAllUsersRequest extends AmazonWebServiceRequest impleme
     public Boolean getVisibleToAllUsers() {
         return visibleToAllUsers;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

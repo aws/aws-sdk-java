@@ -63,7 +63,6 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * @return One or more network ACL IDs.
      */
     public java.util.List<String> getNetworkAclIds() {
-        
         if (networkAclIds == null) {
               networkAclIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               networkAclIds.setAutoConstruct(true);
@@ -125,7 +124,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
 
         return this;
     }
-    
+
     /**
      * A list of filters used to match properties for Network ACLs. For a
      * complete reference to the available filter keys for this operation,
@@ -140,7 +139,6 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
-        
         if (filters == null) {
               filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
               filters.setAutoConstruct(true);
@@ -226,7 +224,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
 
         return this;
     }
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

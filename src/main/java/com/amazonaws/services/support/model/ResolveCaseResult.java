@@ -82,8 +82,7 @@ public class ResolveCaseResult implements Serializable {
         this.initialCaseStatus = initialCaseStatus;
         return this;
     }
-    
-    
+
     /**
      * Status of the case after the <a
      * href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_ResolveCase.html"
@@ -128,8 +127,7 @@ public class ResolveCaseResult implements Serializable {
         this.finalCaseStatus = finalCaseStatus;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

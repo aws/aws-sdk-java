@@ -123,8 +123,7 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest impleme
         this.environmentId = environmentId;
         return this;
     }
-    
-    
+
     /**
      * The name of the environment to terminate. <p> Condition: You must
      * specify either this or an EnvironmentId, or both. If you do not
@@ -184,8 +183,7 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest impleme
         this.environmentName = environmentName;
         return this;
     }
-    
-    
+
     /**
      * Indicates whether the associated AWS resources should shut down when
      * the environment is terminated: <enumValues> <value name="true"> <p>
@@ -308,8 +306,7 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest impleme
         this.terminateResources = terminateResources;
         return this;
     }
-    
-    
+
     /**
      * Indicates whether the associated AWS resources should shut down when
      * the environment is terminated: <enumValues> <value name="true"> <p>
@@ -348,7 +345,7 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest impleme
     public Boolean getTerminateResources() {
         return terminateResources;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

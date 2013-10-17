@@ -159,8 +159,7 @@ public class JobFlowInstancesConfig implements Serializable {
         this.masterInstanceType = masterInstanceType;
         return this;
     }
-    
-    
+
     /**
      * The EC2 instance type of the slave nodes.
      * <p>
@@ -205,8 +204,7 @@ public class JobFlowInstancesConfig implements Serializable {
         this.slaveInstanceType = slaveInstanceType;
         return this;
     }
-    
-    
+
     /**
      * The number of Amazon EC2 instances used to execute the job flow.
      *
@@ -239,15 +237,13 @@ public class JobFlowInstancesConfig implements Serializable {
         this.instanceCount = instanceCount;
         return this;
     }
-    
-    
+
     /**
      * Configuration for the job flow's instance groups.
      *
      * @return Configuration for the job flow's instance groups.
      */
     public java.util.List<InstanceGroupConfig> getInstanceGroups() {
-        
         if (instanceGroups == null) {
               instanceGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupConfig>();
               instanceGroups.setAutoConstruct(true);
@@ -309,7 +305,7 @@ public class JobFlowInstancesConfig implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Specifies the name of the Amazon EC2 key pair that can be used to ssh
      * to the master node as the user called "hadoop."
@@ -360,8 +356,7 @@ public class JobFlowInstancesConfig implements Serializable {
         this.ec2KeyName = ec2KeyName;
         return this;
     }
-    
-    
+
     /**
      * Specifies the Availability Zone the job flow will run in.
      *
@@ -394,8 +389,7 @@ public class JobFlowInstancesConfig implements Serializable {
         this.placement = placement;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether the job flow should terminate after completing all
      * steps.
@@ -434,8 +428,7 @@ public class JobFlowInstancesConfig implements Serializable {
         this.keepJobFlowAliveWhenNoSteps = keepJobFlowAliveWhenNoSteps;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether the job flow should terminate after completing all
      * steps.
@@ -446,7 +439,7 @@ public class JobFlowInstancesConfig implements Serializable {
     public Boolean getKeepJobFlowAliveWhenNoSteps() {
         return keepJobFlowAliveWhenNoSteps;
     }
-    
+
     /**
      * Specifies whether to lock the job flow to prevent the Amazon EC2
      * instances from being terminated by API call, user intervention, or in
@@ -491,8 +484,7 @@ public class JobFlowInstancesConfig implements Serializable {
         this.terminationProtected = terminationProtected;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether to lock the job flow to prevent the Amazon EC2
      * instances from being terminated by API call, user intervention, or in
@@ -505,7 +497,7 @@ public class JobFlowInstancesConfig implements Serializable {
     public Boolean getTerminationProtected() {
         return terminationProtected;
     }
-    
+
     /**
      * Specifies the Hadoop version for the job flow. Valid inputs are
      * "0.18", "0.20", or "0.20.205". If you do not set this value, the
@@ -574,8 +566,7 @@ public class JobFlowInstancesConfig implements Serializable {
         this.hadoopVersion = hadoopVersion;
         return this;
     }
-    
-    
+
     /**
      * To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC),
      * set this parameter to the identifier of the Amazon VPC subnet where
@@ -662,8 +653,7 @@ public class JobFlowInstancesConfig implements Serializable {
         this.ec2SubnetId = ec2SubnetId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

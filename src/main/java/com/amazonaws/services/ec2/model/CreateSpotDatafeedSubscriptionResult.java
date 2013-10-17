@@ -59,8 +59,7 @@ public class CreateSpotDatafeedSubscriptionResult implements Serializable {
         this.spotDatafeedSubscription = spotDatafeedSubscription;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

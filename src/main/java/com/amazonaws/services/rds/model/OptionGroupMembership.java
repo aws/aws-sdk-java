@@ -67,8 +67,7 @@ public class OptionGroupMembership implements Serializable {
         this.optionGroupName = optionGroupName;
         return this;
     }
-    
-    
+
     /**
      * The status of the DB Instance's option group membership (e.g. in-sync,
      * pending, pending-maintenance, applying).
@@ -107,8 +106,7 @@ public class OptionGroupMembership implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

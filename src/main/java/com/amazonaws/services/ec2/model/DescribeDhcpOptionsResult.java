@@ -30,7 +30,6 @@ public class DescribeDhcpOptionsResult implements Serializable {
      * @return The value of the DhcpOptions property for this object.
      */
     public java.util.List<DhcpOptions> getDhcpOptions() {
-        
         if (dhcpOptions == null) {
               dhcpOptions = new com.amazonaws.internal.ListWithAutoConstructFlag<DhcpOptions>();
               dhcpOptions.setAutoConstruct(true);
@@ -92,7 +91,7 @@ public class DescribeDhcpOptionsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

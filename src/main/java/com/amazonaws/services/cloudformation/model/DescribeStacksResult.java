@@ -37,7 +37,6 @@ public class DescribeStacksResult implements Serializable {
      * @return A list of stack structures.
      */
     public java.util.List<Stack> getStacks() {
-        
         if (stacks == null) {
               stacks = new com.amazonaws.internal.ListWithAutoConstructFlag<Stack>();
               stacks.setAutoConstruct(true);
@@ -99,7 +98,7 @@ public class DescribeStacksResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns the value of the NextToken property for this object.
      * <p>
@@ -141,8 +140,7 @@ public class DescribeStacksResult implements Serializable {
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

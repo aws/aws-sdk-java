@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpledb;
-            
+
 import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
@@ -38,8 +38,8 @@ import com.amazonaws.services.simpledb.model.*;
  * </p>
  * <p>
  * Visit <a href="http://aws.amazon.com/simpledb/"> http://aws.amazon.com/simpledb/ </a> for more information.
- * </p> 
- */       
+ * </p>
+ */
 public interface AmazonSimpleDBAsync extends AmazonSimpleDB {
     /**
      * <p>

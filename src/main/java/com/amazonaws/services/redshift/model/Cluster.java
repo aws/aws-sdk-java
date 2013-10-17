@@ -194,8 +194,7 @@ public class Cluster implements Serializable {
         this.clusterIdentifier = clusterIdentifier;
         return this;
     }
-    
-    
+
     /**
      * The node type for the nodes in the cluster.
      *
@@ -228,8 +227,7 @@ public class Cluster implements Serializable {
         this.nodeType = nodeType;
         return this;
     }
-    
-    
+
     /**
      * The current state of this cluster. Possible values include
      * <code>available</code>, <code>creating</code>, <code>deleting</code>,
@@ -274,8 +272,7 @@ public class Cluster implements Serializable {
         this.clusterStatus = clusterStatus;
         return this;
     }
-    
-    
+
     /**
      * The status of a modify operation, if any, initiated for the cluster.
      *
@@ -308,8 +305,7 @@ public class Cluster implements Serializable {
         this.modifyStatus = modifyStatus;
         return this;
     }
-    
-    
+
     /**
      * The master user name for the cluster. This name is used to connect to
      * the database that is specified in <b>DBName</b>.
@@ -348,8 +344,7 @@ public class Cluster implements Serializable {
         this.masterUsername = masterUsername;
         return this;
     }
-    
-    
+
     /**
      * The name of the initial database that was created when the cluster was
      * created. This same name is returned for the life of the cluster. If an
@@ -400,8 +395,7 @@ public class Cluster implements Serializable {
         this.dBName = dBName;
         return this;
     }
-    
-    
+
     /**
      * The connection endpoint.
      *
@@ -434,8 +428,7 @@ public class Cluster implements Serializable {
         this.endpoint = endpoint;
         return this;
     }
-    
-    
+
     /**
      * The date and time that the cluster was created.
      *
@@ -468,8 +461,7 @@ public class Cluster implements Serializable {
         this.clusterCreateTime = clusterCreateTime;
         return this;
     }
-    
-    
+
     /**
      * The number of days that automatic cluster snapshots are retained.
      *
@@ -502,8 +494,7 @@ public class Cluster implements Serializable {
         this.automatedSnapshotRetentionPeriod = automatedSnapshotRetentionPeriod;
         return this;
     }
-    
-    
+
     /**
      * A list of cluster security group that are associated with the cluster.
      * Each security group is represented by an element that contains
@@ -522,7 +513,6 @@ public class Cluster implements Serializable {
      *         listed by the <b>VpcSecurityGroups</b> parameter.
      */
     public java.util.List<ClusterSecurityGroupMembership> getClusterSecurityGroups() {
-        
         if (clusterSecurityGroups == null) {
               clusterSecurityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<ClusterSecurityGroupMembership>();
               clusterSecurityGroups.setAutoConstruct(true);
@@ -620,7 +610,7 @@ public class Cluster implements Serializable {
 
         return this;
     }
-    
+
     /**
      * A list of Virtual Private Cloud (VPC) security groups that are
      * associated with the cluster. This parameter is returned only if the
@@ -631,7 +621,6 @@ public class Cluster implements Serializable {
      *         cluster is in a VPC.
      */
     public java.util.List<VpcSecurityGroupMembership> getVpcSecurityGroups() {
-        
         if (vpcSecurityGroups == null) {
               vpcSecurityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<VpcSecurityGroupMembership>();
               vpcSecurityGroups.setAutoConstruct(true);
@@ -705,7 +694,7 @@ public class Cluster implements Serializable {
 
         return this;
     }
-    
+
     /**
      * The list of cluster parameter groups that are associated with this
      * cluster.
@@ -714,7 +703,6 @@ public class Cluster implements Serializable {
      *         cluster.
      */
     public java.util.List<ClusterParameterGroupStatus> getClusterParameterGroups() {
-        
         if (clusterParameterGroups == null) {
               clusterParameterGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<ClusterParameterGroupStatus>();
               clusterParameterGroups.setAutoConstruct(true);
@@ -782,7 +770,7 @@ public class Cluster implements Serializable {
 
         return this;
     }
-    
+
     /**
      * The name of the subnet group that is associated with the cluster. This
      * parameter is valid only when the cluster is in a VPC.
@@ -821,8 +809,7 @@ public class Cluster implements Serializable {
         this.clusterSubnetGroupName = clusterSubnetGroupName;
         return this;
     }
-    
-    
+
     /**
      * The identifier of the VPC the cluster is in, if the cluster is in a
      * VPC.
@@ -861,8 +848,7 @@ public class Cluster implements Serializable {
         this.vpcId = vpcId;
         return this;
     }
-    
-    
+
     /**
      * The name of the Availability Zone in which the cluster is located.
      *
@@ -895,8 +881,7 @@ public class Cluster implements Serializable {
         this.availabilityZone = availabilityZone;
         return this;
     }
-    
-    
+
     /**
      * The weekly time range (in UTC) during which system maintenance can
      * occur.
@@ -935,8 +920,7 @@ public class Cluster implements Serializable {
         this.preferredMaintenanceWindow = preferredMaintenanceWindow;
         return this;
     }
-    
-    
+
     /**
      * If present, changes to the cluster are pending. Specific pending
      * changes are identified by subelements.
@@ -975,8 +959,7 @@ public class Cluster implements Serializable {
         this.pendingModifiedValues = pendingModifiedValues;
         return this;
     }
-    
-    
+
     /**
      * The version ID of the Amazon Redshift engine that is running on the
      * cluster.
@@ -1015,8 +998,7 @@ public class Cluster implements Serializable {
         this.clusterVersion = clusterVersion;
         return this;
     }
-    
-    
+
     /**
      * If <code>true</code>, version upgrades will be applied automatically
      * to the cluster during the maintenance window.
@@ -1055,8 +1037,7 @@ public class Cluster implements Serializable {
         this.allowVersionUpgrade = allowVersionUpgrade;
         return this;
     }
-    
-    
+
     /**
      * If <code>true</code>, version upgrades will be applied automatically
      * to the cluster during the maintenance window.
@@ -1067,7 +1048,7 @@ public class Cluster implements Serializable {
     public Boolean getAllowVersionUpgrade() {
         return allowVersionUpgrade;
     }
-    
+
     /**
      * The number of compute nodes in the cluster.
      *
@@ -1100,8 +1081,7 @@ public class Cluster implements Serializable {
         this.numberOfNodes = numberOfNodes;
         return this;
     }
-    
-    
+
     /**
      * If <code>true</code>, the cluster can be accessed from a public
      * network.
@@ -1140,8 +1120,7 @@ public class Cluster implements Serializable {
         this.publiclyAccessible = publiclyAccessible;
         return this;
     }
-    
-    
+
     /**
      * If <code>true</code>, the cluster can be accessed from a public
      * network.
@@ -1152,7 +1131,7 @@ public class Cluster implements Serializable {
     public Boolean getPubliclyAccessible() {
         return publiclyAccessible;
     }
-    
+
     /**
      * If <code>true</code>, data in cluster is encrypted at rest.
      *
@@ -1185,8 +1164,7 @@ public class Cluster implements Serializable {
         this.encrypted = encrypted;
         return this;
     }
-    
-    
+
     /**
      * If <code>true</code>, data in cluster is encrypted at rest.
      *
@@ -1195,7 +1173,7 @@ public class Cluster implements Serializable {
     public Boolean getEncrypted() {
         return encrypted;
     }
-    
+
     /**
      * Describes the status of a cluster restore action. Returns null if the
      * cluster was not created by restoring a snapshot.
@@ -1234,8 +1212,7 @@ public class Cluster implements Serializable {
         this.restoreStatus = restoreStatus;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -35,7 +35,6 @@ public class ListPresetsResult implements Serializable {
      * @return An array of <code>Preset</code> objects.
      */
     public java.util.List<Preset> getPresets() {
-        
         if (presets == null) {
               presets = new com.amazonaws.internal.ListWithAutoConstructFlag<Preset>();
               presets.setAutoConstruct(true);
@@ -97,7 +96,7 @@ public class ListPresetsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

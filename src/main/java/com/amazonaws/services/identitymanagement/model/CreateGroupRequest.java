@@ -61,8 +61,6 @@ public class CreateGroupRequest extends AmazonWebServiceRequest implements Seria
      */
     public CreateGroupRequest() {}
     
-
-
     /**
      * Constructs a new CreateGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -75,8 +73,6 @@ public class CreateGroupRequest extends AmazonWebServiceRequest implements Seria
         setGroupName(groupName);
     }
 
-    
-    
     /**
      * The path to the group. For more information about paths, see <a
      * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
@@ -145,8 +141,7 @@ public class CreateGroupRequest extends AmazonWebServiceRequest implements Seria
         this.path = path;
         return this;
     }
-    
-    
+
     /**
      * Name of the group to create. Do not include the path in this value.
      * <p>
@@ -191,8 +186,7 @@ public class CreateGroupRequest extends AmazonWebServiceRequest implements Seria
         this.groupName = groupName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

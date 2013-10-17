@@ -43,8 +43,6 @@ public class DeleteDBSnapshotRequest extends AmazonWebServiceRequest implements 
      */
     public DeleteDBSnapshotRequest() {}
     
-
-
     /**
      * Constructs a new DeleteDBSnapshotRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -58,8 +56,6 @@ public class DeleteDBSnapshotRequest extends AmazonWebServiceRequest implements 
         setDBSnapshotIdentifier(dBSnapshotIdentifier);
     }
 
-    
-    
     /**
      * The DBSnapshot identifier. <p>Constraints: Must be the name of an
      * existing DB Snapshot in the <code>available</code> state.
@@ -98,8 +94,7 @@ public class DeleteDBSnapshotRequest extends AmazonWebServiceRequest implements 
         this.dBSnapshotIdentifier = dBSnapshotIdentifier;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

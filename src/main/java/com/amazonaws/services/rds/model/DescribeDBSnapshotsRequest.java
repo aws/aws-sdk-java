@@ -140,8 +140,7 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
         this.dBInstanceIdentifier = dBInstanceIdentifier;
         return this;
     }
-    
-    
+
     /**
      * A specific DB Snapshot Identifier to describe. Cannot be used in
      * conjunction with DBInstanceIdentifier. This value is stored as a
@@ -210,8 +209,7 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
         this.dBSnapshotIdentifier = dBSnapshotIdentifier;
         return this;
     }
-    
-    
+
     /**
      * An optional snapshot type for which snapshots will be returned. If not
      * specified, the returned results will include snapshots of all types.
@@ -250,8 +248,7 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
         this.snapshotType = snapshotType;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
@@ -308,8 +305,7 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
         this.maxRecords = maxRecords;
         return this;
     }
-    
-    
+
     /**
      * An optional pagination token provided by a previous
      * DescribeDBSnapshots request. If this parameter is specified, the
@@ -360,8 +356,7 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest implemen
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

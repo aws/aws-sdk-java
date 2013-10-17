@@ -71,8 +71,7 @@ public class AssignVolumeRequest extends AmazonWebServiceRequest implements Seri
         this.volumeId = volumeId;
         return this;
     }
-    
-    
+
     /**
      * The instance ID.
      *
@@ -105,8 +104,7 @@ public class AssignVolumeRequest extends AmazonWebServiceRequest implements Seri
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

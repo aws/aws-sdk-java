@@ -150,8 +150,7 @@ public class CreatePublicVirtualInterfaceResult implements Serializable {
         this.virtualInterfaceId = virtualInterfaceId;
         return this;
     }
-    
-    
+
     /**
      * Where the AWS Direct Connect offering is located. <p>Example: EqSV5
      * <p>Default: None
@@ -190,8 +189,7 @@ public class CreatePublicVirtualInterfaceResult implements Serializable {
         this.location = location;
         return this;
     }
-    
-    
+
     /**
      * ID of the connection. <p>Example: dxcon-fg5678gh <p>Default: None
      *
@@ -224,8 +222,7 @@ public class CreatePublicVirtualInterfaceResult implements Serializable {
         this.connectionId = connectionId;
         return this;
     }
-    
-    
+
     /**
      * The type of virtual interface <p>Example: Private (Amazon VPC) or
      * public (Amazon S3, Amazon DynamoDB, etc.)
@@ -264,8 +261,7 @@ public class CreatePublicVirtualInterfaceResult implements Serializable {
         this.virtualInterfaceType = virtualInterfaceType;
         return this;
     }
-    
-    
+
     /**
      * The name of the virtual interface assigned by the customer <p>Example:
      * "Dev VPC"
@@ -304,8 +300,7 @@ public class CreatePublicVirtualInterfaceResult implements Serializable {
         this.virtualInterfaceName = virtualInterfaceName;
         return this;
     }
-    
-    
+
     /**
      * VLAN ID <p>Example: 101
      *
@@ -338,8 +333,7 @@ public class CreatePublicVirtualInterfaceResult implements Serializable {
         this.vlan = vlan;
         return this;
     }
-    
-    
+
     /**
      * Autonomous system (AS) number for Border Gateway Protocol (BGP)
      * configuration <p>Example: 65000
@@ -378,8 +372,7 @@ public class CreatePublicVirtualInterfaceResult implements Serializable {
         this.asn = asn;
         return this;
     }
-    
-    
+
     /**
      * Authentication key for BGP configuration <p>Example: asdf34example
      *
@@ -412,8 +405,7 @@ public class CreatePublicVirtualInterfaceResult implements Serializable {
         this.authKey = authKey;
         return this;
     }
-    
-    
+
     /**
      * IP address assigned to the Amazon interface. <p>Example: 192.168.1.1
      *
@@ -446,8 +438,7 @@ public class CreatePublicVirtualInterfaceResult implements Serializable {
         this.amazonAddress = amazonAddress;
         return this;
     }
-    
-    
+
     /**
      * IP address assigned to the customer interface. <p>Example: 192.168.1.2
      *
@@ -480,8 +471,7 @@ public class CreatePublicVirtualInterfaceResult implements Serializable {
         this.customerAddress = customerAddress;
         return this;
     }
-    
-    
+
     /**
      * State of the virtual interface. <ul> <li><b>Verifying</b>: This state
      * only applies to public virtual interfaces. Each public virtual
@@ -589,8 +579,7 @@ public class CreatePublicVirtualInterfaceResult implements Serializable {
         this.virtualInterfaceState = virtualInterfaceState;
         return this;
     }
-    
-    
+
     /**
      * State of the virtual interface. <ul> <li><b>Verifying</b>: This state
      * only applies to public virtual interfaces. Each public virtual
@@ -664,7 +653,7 @@ public class CreatePublicVirtualInterfaceResult implements Serializable {
         this.virtualInterfaceState = virtualInterfaceState.toString();
         return this;
     }
-    
+
     /**
      * Information for generating the customer router configuration.
      *
@@ -697,8 +686,7 @@ public class CreatePublicVirtualInterfaceResult implements Serializable {
         this.customerRouterConfig = customerRouterConfig;
         return this;
     }
-    
-    
+
     /**
      * Virtual private gateway to a VPC. <p>Example: vgw-123er56
      *
@@ -731,15 +719,13 @@ public class CreatePublicVirtualInterfaceResult implements Serializable {
         this.virtualGatewayId = virtualGatewayId;
         return this;
     }
-    
-    
+
     /**
      * A list of route filter prefixes.
      *
      * @return A list of route filter prefixes.
      */
     public java.util.List<RouteFilterPrefix> getRouteFilterPrefixes() {
-        
         if (routeFilterPrefixes == null) {
               routeFilterPrefixes = new com.amazonaws.internal.ListWithAutoConstructFlag<RouteFilterPrefix>();
               routeFilterPrefixes.setAutoConstruct(true);
@@ -801,7 +787,7 @@ public class CreatePublicVirtualInterfaceResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

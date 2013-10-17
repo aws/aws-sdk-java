@@ -72,8 +72,7 @@ public class EC2SecurityGroup implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * The name of the EC2 Security Group.
      *
@@ -106,8 +105,7 @@ public class EC2SecurityGroup implements Serializable {
         this.eC2SecurityGroupName = eC2SecurityGroupName;
         return this;
     }
-    
-    
+
     /**
      * The AWS ID of the owner of the EC2 security group specified in the
      * <code>EC2SecurityGroupName</code> field.
@@ -146,8 +144,7 @@ public class EC2SecurityGroup implements Serializable {
         this.eC2SecurityGroupOwnerId = eC2SecurityGroupOwnerId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

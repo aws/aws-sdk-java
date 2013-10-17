@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.directconnect;
-            
+
 import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
@@ -47,8 +47,8 @@ import com.amazonaws.services.directconnect.model.*;
  * <li> <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html"> Regions and Endpoints </a> : Itemized regions and endpoints for
  * all AWS products.</li>
  * 
- * </ul> 
- */       
+ * </ul>
+ */
 public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
     /**
      * <p>

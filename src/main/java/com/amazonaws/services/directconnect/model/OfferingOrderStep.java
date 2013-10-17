@@ -83,8 +83,7 @@ public class OfferingOrderStep implements Serializable {
         this.number = number;
         return this;
     }
-    
-    
+
     /**
      * Name of the order step. <p>Example: Authorize cross connect
      *
@@ -117,8 +116,7 @@ public class OfferingOrderStep implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * More detailed description of the order step. <p>Example: "<i>AWS will
      * prepare your connection and send you an email with an LOA to provide
@@ -163,8 +161,7 @@ public class OfferingOrderStep implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * The entity who owns the completion of the order step. <p>Example: AWS
      *
@@ -197,8 +194,7 @@ public class OfferingOrderStep implements Serializable {
         this.owner = owner;
         return this;
     }
-    
-    
+
     /**
      * Time to complete the order step in minutes. <p>Example: 60
      *
@@ -231,8 +227,7 @@ public class OfferingOrderStep implements Serializable {
         this.sla = sla;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -98,8 +98,7 @@ public class OptionGroup implements Serializable {
         this.optionGroupName = optionGroupName;
         return this;
     }
-    
-    
+
     /**
      * Provides the description of the option group.
      *
@@ -132,8 +131,7 @@ public class OptionGroup implements Serializable {
         this.optionGroupDescription = optionGroupDescription;
         return this;
     }
-    
-    
+
     /**
      * Engine name that this option group can be applied to.
      *
@@ -166,8 +164,7 @@ public class OptionGroup implements Serializable {
         this.engineName = engineName;
         return this;
     }
-    
-    
+
     /**
      * Indicates the major engine version associated with this option group.
      *
@@ -200,15 +197,13 @@ public class OptionGroup implements Serializable {
         this.majorEngineVersion = majorEngineVersion;
         return this;
     }
-    
-    
+
     /**
      * Indicates what options are available in the option group.
      *
      * @return Indicates what options are available in the option group.
      */
     public java.util.List<Option> getOptions() {
-        
         if (options == null) {
               options = new com.amazonaws.internal.ListWithAutoConstructFlag<Option>();
               options.setAutoConstruct(true);
@@ -270,7 +265,7 @@ public class OptionGroup implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Indicates whether this option group can be applied to both VPC and
      * non-VPC instances. The value 'true' indicates the option group can be
@@ -315,8 +310,7 @@ public class OptionGroup implements Serializable {
         this.allowsVpcAndNonVpcInstanceMemberships = allowsVpcAndNonVpcInstanceMemberships;
         return this;
     }
-    
-    
+
     /**
      * Indicates whether this option group can be applied to both VPC and
      * non-VPC instances. The value 'true' indicates the option group can be
@@ -329,7 +323,7 @@ public class OptionGroup implements Serializable {
     public Boolean getAllowsVpcAndNonVpcInstanceMemberships() {
         return allowsVpcAndNonVpcInstanceMemberships;
     }
-    
+
     /**
      * If AllowsVpcAndNonVpcInstanceMemberships is 'false', this field is
      * blank. If AllowsVpcAndNonVpcInstanceMemberships is 'true' and this
@@ -392,8 +386,7 @@ public class OptionGroup implements Serializable {
         this.vpcId = vpcId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

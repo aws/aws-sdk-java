@@ -74,8 +74,7 @@ public class CustomOriginConfig implements Serializable {
         this.hTTPPort = hTTPPort;
         return this;
     }
-    
-    
+
     /**
      * The HTTPS port the custom origin listens on.
      *
@@ -108,8 +107,7 @@ public class CustomOriginConfig implements Serializable {
         this.hTTPSPort = hTTPSPort;
         return this;
     }
-    
-    
+
     /**
      * The origin protocol policy to apply to your origin.
      * <p>
@@ -157,8 +155,7 @@ public class CustomOriginConfig implements Serializable {
         this.originProtocolPolicy = originProtocolPolicy;
         return this;
     }
-    
-    
+
     /**
      * The origin protocol policy to apply to your origin.
      * <p>
@@ -192,7 +189,7 @@ public class CustomOriginConfig implements Serializable {
         this.originProtocolPolicy = originProtocolPolicy.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

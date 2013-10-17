@@ -55,8 +55,6 @@ public class Placement implements Serializable {
      */
     public Placement() {}
     
-
-
     /**
      * Constructs a new Placement object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -69,8 +67,6 @@ public class Placement implements Serializable {
         setAvailabilityZone(availabilityZone);
     }
 
-    
-    
     /**
      * The availability zone in which an Amazon EC2 instance runs.
      *
@@ -103,8 +99,7 @@ public class Placement implements Serializable {
         this.availabilityZone = availabilityZone;
         return this;
     }
-    
-    
+
     /**
      * The name of the <a>PlacementGroup</a> in which an Amazon EC2 instance
      * runs. Placement groups are primarily used for launching High
@@ -155,8 +150,7 @@ public class Placement implements Serializable {
         this.groupName = groupName;
         return this;
     }
-    
-    
+
     /**
      * The allowed tenancy of instances launched into the VPC. A value of
      * default means instances can be launched with any tenancy; a value of
@@ -228,8 +222,7 @@ public class Placement implements Serializable {
         this.tenancy = tenancy;
         return this;
     }
-    
-    
+
     /**
      * The allowed tenancy of instances launched into the VPC. A value of
      * default means instances can be launched with any tenancy; a value of
@@ -279,7 +272,7 @@ public class Placement implements Serializable {
         this.tenancy = tenancy.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -38,7 +38,6 @@ public class DescribeServiceErrorsResult implements Serializable {
      *         specified service errors.
      */
     public java.util.List<ServiceError> getServiceErrors() {
-        
         if (serviceErrors == null) {
               serviceErrors = new com.amazonaws.internal.ListWithAutoConstructFlag<ServiceError>();
               serviceErrors.setAutoConstruct(true);
@@ -106,7 +105,7 @@ public class DescribeServiceErrorsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

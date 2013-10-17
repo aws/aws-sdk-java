@@ -84,8 +84,7 @@ public class InstanceState implements Serializable {
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * Specifies the current status of the instance.
      *
@@ -118,8 +117,7 @@ public class InstanceState implements Serializable {
         this.state = state;
         return this;
     }
-    
-    
+
     /**
      * Provides information about the cause of <i>OutOfService</i> instances.
      * Specifically, it indicates whether the cause is Elastic Load Balancing
@@ -164,8 +162,7 @@ public class InstanceState implements Serializable {
         this.reasonCode = reasonCode;
         return this;
     }
-    
-    
+
     /**
      * Provides a description of the instance.
      *
@@ -198,8 +195,7 @@ public class InstanceState implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

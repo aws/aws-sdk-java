@@ -978,7 +978,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         	credentials = originalRequest.getRequestCredentials();
         }
 
-        ExecutionContext executionContext = createExecutionContext();
+        ExecutionContext executionContext = createExecutionContext(originalRequest);
         executionContext.setSigner(signer);
         executionContext.setCredentials(credentials);
         

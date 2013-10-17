@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.autoscaling;
-            
+
 import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
@@ -57,8 +57,8 @@ import com.amazonaws.services.autoscaling.model.*;
  * <p>
  * For information about this product's regions and endpoints, go to <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">
  * Regions and Endpoints </a> in the Amazon Web Services General Reference.
- * </p> 
- */       
+ * </p>
+ */
 public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
     /**
      * <p>

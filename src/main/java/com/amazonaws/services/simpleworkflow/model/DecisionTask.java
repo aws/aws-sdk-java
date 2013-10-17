@@ -128,8 +128,7 @@ public class DecisionTask implements Serializable {
         this.taskToken = taskToken;
         return this;
     }
-    
-    
+
     /**
      * The id of the <code>DecisionTaskStarted</code> event recorded in the
      * history.
@@ -168,8 +167,7 @@ public class DecisionTask implements Serializable {
         this.startedEventId = startedEventId;
         return this;
     }
-    
-    
+
     /**
      * The workflow execution for which this decision task was created.
      *
@@ -202,8 +200,7 @@ public class DecisionTask implements Serializable {
         this.workflowExecution = workflowExecution;
         return this;
     }
-    
-    
+
     /**
      * The type of the workflow execution for which this decision task was
      * created.
@@ -242,8 +239,7 @@ public class DecisionTask implements Serializable {
         this.workflowType = workflowType;
         return this;
     }
-    
-    
+
     /**
      * A paginated list of history events of the workflow execution. The
      * decider uses this during the processing of the decision task.
@@ -252,7 +248,6 @@ public class DecisionTask implements Serializable {
      *         decider uses this during the processing of the decision task.
      */
     public java.util.List<HistoryEvent> getEvents() {
-        
         if (events == null) {
               events = new com.amazonaws.internal.ListWithAutoConstructFlag<HistoryEvent>();
               events.setAutoConstruct(true);
@@ -320,7 +315,7 @@ public class DecisionTask implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a value if the results are paginated. To get the next page of
      * results, repeat the request specifying this token and all other
@@ -374,8 +369,7 @@ public class DecisionTask implements Serializable {
         this.nextPageToken = nextPageToken;
         return this;
     }
-    
-    
+
     /**
      * The id of the DecisionTaskStarted event of the previous decision task
      * of this workflow execution that was processed by the decider. This can
@@ -426,8 +420,7 @@ public class DecisionTask implements Serializable {
         this.previousStartedEventId = previousStartedEventId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

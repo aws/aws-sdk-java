@@ -77,8 +77,7 @@ public class CreatePresetResult implements Serializable {
         this.preset = preset;
         return this;
     }
-    
-    
+
     /**
      * If the preset settings don't comply with the standards for the video
      * codec but Elastic Transcoder created the preset, this message explains
@@ -135,8 +134,7 @@ public class CreatePresetResult implements Serializable {
         this.warning = warning;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

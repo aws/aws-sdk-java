@@ -66,8 +66,6 @@ public class DescribeVaultRequest extends AmazonWebServiceRequest implements Ser
      */
     public DescribeVaultRequest() {}
     
-
-
     /**
      * Constructs a new DescribeVaultRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -78,10 +76,6 @@ public class DescribeVaultRequest extends AmazonWebServiceRequest implements Ser
     public DescribeVaultRequest(String vaultName) {
         setVaultName(vaultName);
     }
-
-    
-    
-
 
     /**
      * Constructs a new DescribeVaultRequest object.
@@ -100,8 +94,6 @@ public class DescribeVaultRequest extends AmazonWebServiceRequest implements Ser
         setVaultName(vaultName);
     }
 
-    
-    
     /**
      * The <code>AccountId</code> is the AWS Account ID. You can specify
      * either the AWS Account ID or optionally a '-', in which case Amazon
@@ -158,8 +150,7 @@ public class DescribeVaultRequest extends AmazonWebServiceRequest implements Ser
         this.accountId = accountId;
         return this;
     }
-    
-    
+
     /**
      * The name of the vault.
      *
@@ -192,8 +183,7 @@ public class DescribeVaultRequest extends AmazonWebServiceRequest implements Ser
         this.vaultName = vaultName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

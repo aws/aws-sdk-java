@@ -64,8 +64,6 @@ public class CreateLBCookieStickinessPolicyRequest extends AmazonWebServiceReque
      */
     public CreateLBCookieStickinessPolicyRequest() {}
     
-
-
     /**
      * Constructs a new CreateLBCookieStickinessPolicyRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -81,8 +79,6 @@ public class CreateLBCookieStickinessPolicyRequest extends AmazonWebServiceReque
         setPolicyName(policyName);
     }
 
-    
-    
     /**
      * The name associated with the LoadBalancer. The name must be unique
      * within the client AWS account.
@@ -121,8 +117,7 @@ public class CreateLBCookieStickinessPolicyRequest extends AmazonWebServiceReque
         this.loadBalancerName = loadBalancerName;
         return this;
     }
-    
-    
+
     /**
      * The name of the policy being created. The name must be unique within
      * the set of policies for this LoadBalancer.
@@ -161,8 +156,7 @@ public class CreateLBCookieStickinessPolicyRequest extends AmazonWebServiceReque
         this.policyName = policyName;
         return this;
     }
-    
-    
+
     /**
      * The time period in seconds after which the cookie should be considered
      * stale. Not specifying this parameter indicates that the sticky session
@@ -207,8 +201,7 @@ public class CreateLBCookieStickinessPolicyRequest extends AmazonWebServiceReque
         this.cookieExpirationPeriod = cookieExpirationPeriod;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

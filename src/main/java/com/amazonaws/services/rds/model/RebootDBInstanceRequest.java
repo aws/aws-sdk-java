@@ -53,8 +53,6 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest implements 
      */
     public RebootDBInstanceRequest() {}
     
-
-
     /**
      * Constructs a new RebootDBInstanceRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -70,8 +68,6 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest implements 
         setDBInstanceIdentifier(dBInstanceIdentifier);
     }
 
-    
-    
     /**
      * The DB Instance identifier. This parameter is stored as a lowercase
      * string. <p>Constraints: <ul> <li>Must contain from 1 to 63
@@ -128,8 +124,7 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.dBInstanceIdentifier = dBInstanceIdentifier;
         return this;
     }
-    
-    
+
     /**
      * When <code>true</code>, the reboot will be conducted through a MultiAZ
      * failover. <p>Constraint: You cannot specify <code>true</code> if the
@@ -174,8 +169,7 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.forceFailover = forceFailover;
         return this;
     }
-    
-    
+
     /**
      * When <code>true</code>, the reboot will be conducted through a MultiAZ
      * failover. <p>Constraint: You cannot specify <code>true</code> if the
@@ -188,7 +182,7 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest implements 
     public Boolean getForceFailover() {
         return forceFailover;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

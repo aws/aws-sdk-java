@@ -116,8 +116,7 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
         this.workflowId = workflowId;
         return this;
     }
-    
-    
+
     /**
      * The <code>runId</code> of the external workflow execution to send the
      * signal to.
@@ -165,8 +164,7 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
         this.runId = runId;
         return this;
     }
-    
-    
+
     /**
      * The name of the signal.
      * <p>
@@ -208,8 +206,7 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
         this.signalName = signalName;
         return this;
     }
-    
-    
+
     /**
      * Input provided to the signal (if any).
      * <p>
@@ -251,8 +248,7 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
         this.input = input;
         return this;
     }
-    
-    
+
     /**
      * The id of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the
@@ -309,8 +305,7 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
         this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;
         return this;
     }
-    
-    
+
     /**
      * Optional data attached to the event that can be used by the decider in
      * subsequent decision tasks.
@@ -358,8 +353,7 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
         this.control = control;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

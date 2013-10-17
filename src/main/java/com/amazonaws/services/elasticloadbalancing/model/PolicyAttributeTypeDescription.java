@@ -85,8 +85,7 @@ public class PolicyAttributeTypeDescription implements Serializable {
         this.attributeName = attributeName;
         return this;
     }
-    
-    
+
     /**
      * The type of attribute. For example, Boolean, Integer, etc.
      *
@@ -119,8 +118,7 @@ public class PolicyAttributeTypeDescription implements Serializable {
         this.attributeType = attributeType;
         return this;
     }
-    
-    
+
     /**
      * A human-readable description of the attribute.
      *
@@ -153,8 +151,7 @@ public class PolicyAttributeTypeDescription implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * The default value of the attribute, if applicable.
      *
@@ -187,8 +184,7 @@ public class PolicyAttributeTypeDescription implements Serializable {
         this.defaultValue = defaultValue;
         return this;
     }
-    
-    
+
     /**
      * The cardinality of the attribute. Valid Values: <ul> <li>ONE(1) :
      * Single value required</li> <li>ZERO_OR_ONE(0..1) : Up to one value can
@@ -245,8 +241,7 @@ public class PolicyAttributeTypeDescription implements Serializable {
         this.cardinality = cardinality;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -97,8 +97,6 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
      */
     public UploadServerCertificateRequest() {}
     
-
-
     /**
      * Constructs a new UploadServerCertificateRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -117,8 +115,6 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
         setPrivateKey(privateKey);
     }
 
-    
-    
     /**
      * The path for the server certificate. For more information about paths,
      * see <a
@@ -193,8 +189,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
         this.path = path;
         return this;
     }
-    
-    
+
     /**
      * The name for the server certificate. Do not include the path in this
      * value.
@@ -245,8 +240,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
         this.serverCertificateName = serverCertificateName;
         return this;
     }
-    
-    
+
     /**
      * The contents of the public key certificate in PEM-encoded format.
      * <p>
@@ -291,8 +285,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
         this.certificateBody = certificateBody;
         return this;
     }
-    
-    
+
     /**
      * The contents of the private key in PEM-encoded format.
      * <p>
@@ -337,8 +330,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
         this.privateKey = privateKey;
         return this;
     }
-    
-    
+
     /**
      * The contents of the certificate chain. This is typically a
      * concatenation of the PEM-encoded public key certificates of the chain.
@@ -389,8 +381,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
         this.certificateChain = certificateChain;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -90,8 +90,7 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest implemen
         this.resourceName = resourceName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

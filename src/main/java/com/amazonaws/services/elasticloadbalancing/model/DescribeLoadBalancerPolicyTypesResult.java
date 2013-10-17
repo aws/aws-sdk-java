@@ -41,7 +41,6 @@ public class DescribeLoadBalancerPolicyTypesResult implements Serializable {
      *         of all the policy types defined by Elastic Load Balancing service.
      */
     public java.util.List<PolicyTypeDescription> getPolicyTypeDescriptions() {
-        
         if (policyTypeDescriptions == null) {
               policyTypeDescriptions = new com.amazonaws.internal.ListWithAutoConstructFlag<PolicyTypeDescription>();
               policyTypeDescriptions.setAutoConstruct(true);
@@ -115,7 +114,7 @@ public class DescribeLoadBalancerPolicyTypesResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

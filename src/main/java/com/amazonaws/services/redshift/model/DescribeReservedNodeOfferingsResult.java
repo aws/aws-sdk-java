@@ -80,15 +80,13 @@ public class DescribeReservedNodeOfferingsResult implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * A list of reserved node offerings.
      *
      * @return A list of reserved node offerings.
      */
     public java.util.List<ReservedNodeOffering> getReservedNodeOfferings() {
-        
         if (reservedNodeOfferings == null) {
               reservedNodeOfferings = new com.amazonaws.internal.ListWithAutoConstructFlag<ReservedNodeOffering>();
               reservedNodeOfferings.setAutoConstruct(true);
@@ -150,7 +148,7 @@ public class DescribeReservedNodeOfferingsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

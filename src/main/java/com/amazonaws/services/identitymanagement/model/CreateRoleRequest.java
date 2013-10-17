@@ -136,8 +136,7 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements Serial
         this.path = path;
         return this;
     }
-    
-    
+
     /**
      * Name of the role to create.
      * <p>
@@ -182,8 +181,7 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements Serial
         this.roleName = roleName;
         return this;
     }
-    
-    
+
     /**
      * The policy that grants an entity permission to assume the role.
      * <p>
@@ -228,8 +226,7 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements Serial
         this.assumeRolePolicyDocument = assumeRolePolicyDocument;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -75,8 +75,7 @@ public class UpdateUserProfileRequest extends AmazonWebServiceRequest implements
         this.iamUserArn = iamUserArn;
         return this;
     }
-    
-    
+
     /**
      * The user's new SSH user name.
      *
@@ -109,8 +108,7 @@ public class UpdateUserProfileRequest extends AmazonWebServiceRequest implements
         this.sshUsername = sshUsername;
         return this;
     }
-    
-    
+
     /**
      * The user's new SSH public key.
      *
@@ -143,8 +141,7 @@ public class UpdateUserProfileRequest extends AmazonWebServiceRequest implements
         this.sshPublicKey = sshPublicKey;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

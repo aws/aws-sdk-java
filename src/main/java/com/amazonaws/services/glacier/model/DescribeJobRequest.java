@@ -73,8 +73,6 @@ public class DescribeJobRequest extends AmazonWebServiceRequest implements Seria
      */
     public DescribeJobRequest() {}
     
-
-
     /**
      * Constructs a new DescribeJobRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -94,10 +92,6 @@ public class DescribeJobRequest extends AmazonWebServiceRequest implements Seria
         setJobId(jobId);
     }
 
-    
-    
-
-
     /**
      * Constructs a new DescribeJobRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -111,8 +105,6 @@ public class DescribeJobRequest extends AmazonWebServiceRequest implements Seria
         setJobId(jobId);
     }
 
-    
-    
     /**
      * The <code>AccountId</code> is the AWS Account ID. You can specify
      * either the AWS Account ID or optionally a '-', in which case Amazon
@@ -169,8 +161,7 @@ public class DescribeJobRequest extends AmazonWebServiceRequest implements Seria
         this.accountId = accountId;
         return this;
     }
-    
-    
+
     /**
      * The name of the vault.
      *
@@ -203,8 +194,7 @@ public class DescribeJobRequest extends AmazonWebServiceRequest implements Seria
         this.vaultName = vaultName;
         return this;
     }
-    
-    
+
     /**
      * The ID of the job to describe.
      *
@@ -237,8 +227,7 @@ public class DescribeJobRequest extends AmazonWebServiceRequest implements Seria
         this.jobId = jobId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

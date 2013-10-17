@@ -44,7 +44,7 @@ public class CreateInvalidationRequestMarshaller implements Marshaller<Request<C
         Request<CreateInvalidationRequest> request = new DefaultRequest<CreateInvalidationRequest>(createInvalidationRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "2013-08-26/distribution/{DistributionId}/invalidation"; 
+        String uriResourcePath = "2013-09-27/distribution/{DistributionId}/invalidation"; 
         uriResourcePath = uriResourcePath.replace("{DistributionId}", getString(createInvalidationRequest.getDistributionId())); 
 
         if (uriResourcePath.contains("?")) {
@@ -65,7 +65,7 @@ public class CreateInvalidationRequestMarshaller implements Marshaller<Request<C
 
         
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2013-08-26/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2013-09-27/");
 
             
                     if (createInvalidationRequest != null) {

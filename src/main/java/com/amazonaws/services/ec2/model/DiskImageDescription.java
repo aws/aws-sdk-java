@@ -77,8 +77,7 @@ public class DiskImageDescription implements Serializable {
         this.format = format;
         return this;
     }
-    
-    
+
     /**
      * Sets the value of the Format property for this object.
      * <p>
@@ -112,7 +111,7 @@ public class DiskImageDescription implements Serializable {
         this.format = format.toString();
         return this;
     }
-    
+
     /**
      * Returns the value of the Size property for this object.
      *
@@ -145,8 +144,7 @@ public class DiskImageDescription implements Serializable {
         this.size = size;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the ImportManifestUrl property for this object.
      *
@@ -179,8 +177,7 @@ public class DiskImageDescription implements Serializable {
         this.importManifestUrl = importManifestUrl;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Checksum property for this object.
      *
@@ -213,8 +210,7 @@ public class DiskImageDescription implements Serializable {
         this.checksum = checksum;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

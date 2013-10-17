@@ -50,8 +50,6 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest imple
      */
     public DescribeInstanceHealthRequest() {}
     
-
-
     /**
      * Constructs a new DescribeInstanceHealthRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -64,8 +62,6 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest imple
         setLoadBalancerName(loadBalancerName);
     }
 
-    
-    
     /**
      * The name associated with the LoadBalancer. The name must be unique
      * within the client AWS account.
@@ -104,15 +100,13 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest imple
         this.loadBalancerName = loadBalancerName;
         return this;
     }
-    
-    
+
     /**
      * A list of instance IDs whose states are being queried.
      *
      * @return A list of instance IDs whose states are being queried.
      */
     public java.util.List<Instance> getInstances() {
-        
         if (instances == null) {
               instances = new com.amazonaws.internal.ListWithAutoConstructFlag<Instance>();
               instances.setAutoConstruct(true);
@@ -174,7 +168,7 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest imple
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

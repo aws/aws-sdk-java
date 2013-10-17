@@ -107,8 +107,7 @@ public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes impl
         this.workflowId = workflowId;
         return this;
     }
-    
-    
+
     /**
      * The <code>runId</code> of the external workflow execution to be
      * canceled.
@@ -156,8 +155,7 @@ public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes impl
         this.runId = runId;
         return this;
     }
-    
-    
+
     /**
      * The id of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the
@@ -214,8 +212,7 @@ public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes impl
         this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;
         return this;
     }
-    
-    
+
     /**
      * Optional data attached to the event that can be used by the decider in
      * subsequent workflow tasks.
@@ -263,8 +260,7 @@ public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes impl
         this.control = control;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

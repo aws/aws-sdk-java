@@ -61,8 +61,7 @@ public class VpnStaticRoute implements Serializable {
         this.destinationCidrBlock = destinationCidrBlock;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Source property for this object.
      * <p>
@@ -110,8 +109,7 @@ public class VpnStaticRoute implements Serializable {
         this.source = source;
         return this;
     }
-    
-    
+
     /**
      * Sets the value of the Source property for this object.
      * <p>
@@ -145,7 +143,7 @@ public class VpnStaticRoute implements Serializable {
         this.source = source.toString();
         return this;
     }
-    
+
     /**
      * Returns the value of the State property for this object.
      * <p>
@@ -193,8 +191,7 @@ public class VpnStaticRoute implements Serializable {
         this.state = state;
         return this;
     }
-    
-    
+
     /**
      * Sets the value of the State property for this object.
      * <p>
@@ -228,7 +225,7 @@ public class VpnStaticRoute implements Serializable {
         this.state = state.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

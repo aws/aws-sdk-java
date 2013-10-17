@@ -75,8 +75,7 @@ public class ReportTaskProgressResult implements Serializable {
         this.canceled = canceled;
         return this;
     }
-    
-    
+
     /**
      * If <code>True</code>, the calling task runner should cancel processing
      * of the task. The task runner does not need to call
@@ -89,7 +88,7 @@ public class ReportTaskProgressResult implements Serializable {
     public Boolean getCanceled() {
         return canceled;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

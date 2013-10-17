@@ -72,8 +72,7 @@ public class DescribeOfferingDetailRequest extends AmazonWebServiceRequest imple
         this.offeringId = offeringId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

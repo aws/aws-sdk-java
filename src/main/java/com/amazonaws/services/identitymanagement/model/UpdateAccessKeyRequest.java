@@ -72,8 +72,6 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements S
      */
     public UpdateAccessKeyRequest() {}
     
-
-
     /**
      * Constructs a new UpdateAccessKeyRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -90,8 +88,6 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements S
         setStatus(status);
     }
 
-    
-    
     /**
      * Constructs a new UpdateAccessKeyRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -107,7 +103,7 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements S
         this.accessKeyId = accessKeyId;
         this.status = status.toString();
     }
-    
+
     /**
      * Name of the user whose key you want to update.
      * <p>
@@ -152,8 +148,7 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements S
         this.userName = userName;
         return this;
     }
-    
-    
+
     /**
      * The Access Key ID of the Secret Access Key you want to update.
      * <p>
@@ -198,8 +193,7 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements S
         this.accessKeyId = accessKeyId;
         return this;
     }
-    
-    
+
     /**
      * The status you want to assign to the Secret Access Key.
      * <code>Active</code> means the key can be used for API calls to AWS,
@@ -259,8 +253,7 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements S
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * The status you want to assign to the Secret Access Key.
      * <code>Active</code> means the key can be used for API calls to AWS,
@@ -302,7 +295,7 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements S
         this.status = status.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

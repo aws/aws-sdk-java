@@ -58,7 +58,6 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * @return An optional list of the instances to describe.
      */
     public java.util.List<String> getInstanceIds() {
-        
         if (instanceIds == null) {
               instanceIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               instanceIds.setAutoConstruct(true);
@@ -120,7 +119,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
 
         return this;
     }
-    
+
     /**
      * A list of filters used to match properties for Instances. For a
      * complete reference to the available filter keys for this operation,
@@ -135,7 +134,6 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
-        
         if (filters == null) {
               filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
               filters.setAutoConstruct(true);
@@ -221,7 +219,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
 
         return this;
     }
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

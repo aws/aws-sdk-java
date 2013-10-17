@@ -93,8 +93,7 @@ public class DescribeEventSubscriptionsRequest extends AmazonWebServiceRequest i
         this.subscriptionName = subscriptionName;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
@@ -151,8 +150,7 @@ public class DescribeEventSubscriptionsRequest extends AmazonWebServiceRequest i
         this.maxRecords = maxRecords;
         return this;
     }
-    
-    
+
     /**
      * An optional pagination token provided by a previous
      * DescribeOrderableDBInstanceOptions request. If this parameter is
@@ -203,8 +201,7 @@ public class DescribeEventSubscriptionsRequest extends AmazonWebServiceRequest i
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

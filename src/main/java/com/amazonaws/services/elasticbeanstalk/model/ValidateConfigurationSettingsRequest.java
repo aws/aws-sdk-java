@@ -71,8 +71,6 @@ public class ValidateConfigurationSettingsRequest extends AmazonWebServiceReques
      */
     public ValidateConfigurationSettingsRequest() {}
     
-
-
     /**
      * Constructs a new ValidateConfigurationSettingsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -88,8 +86,6 @@ public class ValidateConfigurationSettingsRequest extends AmazonWebServiceReques
         setOptionSettings(optionSettings);
     }
 
-    
-    
     /**
      * The name of the application that the configuration template or
      * environment belongs to.
@@ -137,8 +133,7 @@ public class ValidateConfigurationSettingsRequest extends AmazonWebServiceReques
         this.applicationName = applicationName;
         return this;
     }
-    
-    
+
     /**
      * The name of the configuration template to validate the settings
      * against. <p> Condition: You cannot specify both this and an
@@ -192,8 +187,7 @@ public class ValidateConfigurationSettingsRequest extends AmazonWebServiceReques
         this.templateName = templateName;
         return this;
     }
-    
-    
+
     /**
      * The name of the environment to validate the settings against. <p>
      * Condition: You cannot specify both this and a configuration template
@@ -247,15 +241,13 @@ public class ValidateConfigurationSettingsRequest extends AmazonWebServiceReques
         this.environmentName = environmentName;
         return this;
     }
-    
-    
+
     /**
      * A list of the options and desired values to evaluate.
      *
      * @return A list of the options and desired values to evaluate.
      */
     public java.util.List<ConfigurationOptionSetting> getOptionSettings() {
-        
         if (optionSettings == null) {
               optionSettings = new com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting>();
               optionSettings.setAutoConstruct(true);
@@ -317,7 +309,7 @@ public class ValidateConfigurationSettingsRequest extends AmazonWebServiceReques
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

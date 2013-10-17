@@ -102,8 +102,7 @@ public class ElasticLoadBalancer implements Serializable {
         this.elasticLoadBalancerName = elasticLoadBalancerName;
         return this;
     }
-    
-    
+
     /**
      * The instance's AWS region.
      *
@@ -136,8 +135,7 @@ public class ElasticLoadBalancer implements Serializable {
         this.region = region;
         return this;
     }
-    
-    
+
     /**
      * The instance's public DNS name.
      *
@@ -170,8 +168,7 @@ public class ElasticLoadBalancer implements Serializable {
         this.dnsName = dnsName;
         return this;
     }
-    
-    
+
     /**
      * The ID of the stack that the instance is associated with.
      *
@@ -204,8 +201,7 @@ public class ElasticLoadBalancer implements Serializable {
         this.stackId = stackId;
         return this;
     }
-    
-    
+
     /**
      * The ID of the layer that the instance is attached to.
      *
@@ -238,8 +234,7 @@ public class ElasticLoadBalancer implements Serializable {
         this.layerId = layerId;
         return this;
     }
-    
-    
+
     /**
      * The VPC ID.
      *
@@ -272,15 +267,13 @@ public class ElasticLoadBalancer implements Serializable {
         this.vpcId = vpcId;
         return this;
     }
-    
-    
+
     /**
      * A list of Availability Zones.
      *
      * @return A list of Availability Zones.
      */
     public java.util.List<String> getAvailabilityZones() {
-        
         if (availabilityZones == null) {
               availabilityZones = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               availabilityZones.setAutoConstruct(true);
@@ -342,14 +335,13 @@ public class ElasticLoadBalancer implements Serializable {
 
         return this;
     }
-    
+
     /**
      * A list of subnet IDs, if the stack is running in a VPC.
      *
      * @return A list of subnet IDs, if the stack is running in a VPC.
      */
     public java.util.List<String> getSubnetIds() {
-        
         if (subnetIds == null) {
               subnetIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               subnetIds.setAutoConstruct(true);
@@ -411,7 +403,7 @@ public class ElasticLoadBalancer implements Serializable {
 
         return this;
     }
-    
+
     /**
      * A list of the EC2 instances that the Elastic Load Balancing instance
      * is managing traffic for.
@@ -420,7 +412,6 @@ public class ElasticLoadBalancer implements Serializable {
      *         is managing traffic for.
      */
     public java.util.List<String> getEc2InstanceIds() {
-        
         if (ec2InstanceIds == null) {
               ec2InstanceIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               ec2InstanceIds.setAutoConstruct(true);
@@ -488,7 +479,7 @@ public class ElasticLoadBalancer implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -44,8 +44,6 @@ public class BootstrapActionConfig implements Serializable {
      */
     public BootstrapActionConfig() {}
     
-
-
     /**
      * Constructs a new BootstrapActionConfig object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -59,8 +57,6 @@ public class BootstrapActionConfig implements Serializable {
         setScriptBootstrapAction(scriptBootstrapAction);
     }
 
-    
-    
     /**
      * The name of the bootstrap action.
      * <p>
@@ -105,8 +101,7 @@ public class BootstrapActionConfig implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * The script run by the bootstrap action.
      *
@@ -139,8 +134,7 @@ public class BootstrapActionConfig implements Serializable {
         this.scriptBootstrapAction = scriptBootstrapAction;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

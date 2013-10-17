@@ -41,7 +41,6 @@ public class DescribeTrustedAdvisorChecksResult implements Serializable {
      *         title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>
      */
     public java.util.List<TrustedAdvisorCheckDescription> getChecks() {
-        
         if (checks == null) {
               checks = new com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorCheckDescription>();
               checks.setAutoConstruct(true);
@@ -115,7 +114,7 @@ public class DescribeTrustedAdvisorChecksResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -79,8 +79,7 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest implem
         this.networkAclId = networkAclId;
         return this;
     }
-    
-    
+
     /**
      * Rule number for the entry to delete.
      *
@@ -113,8 +112,7 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest implem
         this.ruleNumber = ruleNumber;
         return this;
     }
-    
-    
+
     /**
      * Whether the rule to delete is an egress rule (<code>true</code>) or
      * ingress rule (<code>false</code>).
@@ -153,8 +151,7 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest implem
         this.egress = egress;
         return this;
     }
-    
-    
+
     /**
      * Whether the rule to delete is an egress rule (<code>true</code>) or
      * ingress rule (<code>false</code>).
@@ -165,7 +162,7 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest implem
     public Boolean getEgress() {
         return egress;
     }
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

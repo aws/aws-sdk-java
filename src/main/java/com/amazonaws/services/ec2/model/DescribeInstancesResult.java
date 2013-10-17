@@ -35,7 +35,6 @@ public class DescribeInstancesResult implements Serializable {
      * @return The list of reservations containing the describes instances.
      */
     public java.util.List<Reservation> getReservations() {
-        
         if (reservations == null) {
               reservations = new com.amazonaws.internal.ListWithAutoConstructFlag<Reservation>();
               reservations.setAutoConstruct(true);
@@ -97,7 +96,7 @@ public class DescribeInstancesResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

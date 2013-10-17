@@ -61,7 +61,6 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest implements 
      * @return List in JSON format of service codes available for AWS services.
      */
     public java.util.List<String> getServiceCodeList() {
-        
         if (serviceCodeList == null) {
               serviceCodeList = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               serviceCodeList.setAutoConstruct(true);
@@ -132,7 +131,7 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest implements 
 
         return this;
     }
-    
+
     /**
      * Specifies the ISO 639-1 code for the language in which AWS provides
      * support. AWS Support currently supports English and Japanese, for
@@ -183,8 +182,7 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest implements 
         this.language = language;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

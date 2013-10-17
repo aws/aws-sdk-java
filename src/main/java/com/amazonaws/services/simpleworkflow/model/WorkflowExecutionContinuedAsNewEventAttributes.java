@@ -149,8 +149,7 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
         this.input = input;
         return this;
     }
-    
-    
+
     /**
      * The id of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the
@@ -207,8 +206,7 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
         this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;
         return this;
     }
-    
-    
+
     /**
      * The <code>runId</code> of the new workflow execution.
      * <p>
@@ -250,8 +248,7 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
         this.newExecutionRunId = newExecutionRunId;
         return this;
     }
-    
-    
+
     /**
      * The total duration allowed for the new workflow execution. <p>The
      * valid values are integers greater than or equal to <code>0</code>. An
@@ -311,8 +308,7 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
         this.executionStartToCloseTimeout = executionStartToCloseTimeout;
         return this;
     }
-    
-    
+
     /**
      * Represents a task list.
      *
@@ -345,8 +341,7 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
         this.taskList = taskList;
         return this;
     }
-    
-    
+
     /**
      * The maximum duration of decision tasks for the new workflow execution.
      * <p>The valid values are integers greater than or equal to
@@ -412,8 +407,7 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
         this.taskStartToCloseTimeout = taskStartToCloseTimeout;
         return this;
     }
-    
-    
+
     /**
      * The policy to use for the child workflow executions of the new
      * execution if it is terminated by calling the
@@ -521,8 +515,7 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
         this.childPolicy = childPolicy;
         return this;
     }
-    
-    
+
     /**
      * The policy to use for the child workflow executions of the new
      * execution if it is terminated by calling the
@@ -596,7 +589,7 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
         this.childPolicy = childPolicy.toString();
         return this;
     }
-    
+
     /**
      * The list of tags associated with the new workflow execution.
      * <p>
@@ -606,7 +599,6 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      * @return The list of tags associated with the new workflow execution.
      */
     public java.util.List<String> getTagList() {
-        
         if (tagList == null) {
               tagList = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               tagList.setAutoConstruct(true);
@@ -677,7 +669,7 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
 
         return this;
     }
-    
+
     /**
      * Represents a workflow type.
      *
@@ -710,8 +702,7 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
         this.workflowType = workflowType;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

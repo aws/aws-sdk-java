@@ -74,8 +74,7 @@ public class UpdateJobResult implements Serializable {
         this.success = success;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether (true) or not (false) AWS Import/Export updated your
      * job.
@@ -86,7 +85,7 @@ public class UpdateJobResult implements Serializable {
     public Boolean getSuccess() {
         return success;
     }
-    
+
     /**
      * An optional message notifying you of non-fatal issues with the job,
      * such as use of an incompatible Amazon S3 bucket name.
@@ -125,8 +124,7 @@ public class UpdateJobResult implements Serializable {
         this.warningMessage = warningMessage;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -109,8 +109,6 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements Serializ
      */
     public ListJobsRequest() {}
     
-
-
     /**
      * Constructs a new ListJobsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -121,10 +119,6 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements Serializ
     public ListJobsRequest(String vaultName) {
         setVaultName(vaultName);
     }
-
-    
-    
-
 
     /**
      * Constructs a new ListJobsRequest object.
@@ -143,8 +137,6 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements Serializ
         setVaultName(vaultName);
     }
 
-    
-    
     /**
      * The <code>AccountId</code> is the AWS Account ID. You can specify
      * either the AWS Account ID or optionally a '-', in which case Amazon
@@ -201,8 +193,7 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements Serializ
         this.accountId = accountId;
         return this;
     }
-    
-    
+
     /**
      * The name of the vault.
      *
@@ -235,8 +226,7 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements Serializ
         this.vaultName = vaultName;
         return this;
     }
-    
-    
+
     /**
      * Specifies that the response be limited to the specified number of
      * items or fewer. If not specified, the List Jobs operation returns up
@@ -281,8 +271,7 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements Serializ
         this.limit = limit;
         return this;
     }
-    
-    
+
     /**
      * An opaque string used for pagination. This value specifies the job at
      * which the listing of jobs should begin. Get the marker value from a
@@ -339,8 +328,7 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements Serializ
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Specifies the type of job status to return. You can specify the
      * following values: "InProgress", "Succeeded", or "Failed".
@@ -379,8 +367,7 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements Serializ
         this.statuscode = statuscode;
         return this;
     }
-    
-    
+
     /**
      * Specifies the state of the jobs to return. You can specify
      * <code>true</code> or <code>false</code>.
@@ -419,8 +406,7 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements Serializ
         this.completed = completed;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

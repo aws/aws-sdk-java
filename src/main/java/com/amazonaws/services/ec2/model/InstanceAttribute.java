@@ -112,8 +112,7 @@ public class InstanceAttribute implements Serializable {
         this.instanceId = instanceId;
         return this;
     }
-    
-    
+
     /**
      * The instance type (e.g., <code>m1.small</code>,
      * <code>c1.medium</code>, <code>m2.2xlarge</code>, and so on).
@@ -152,8 +151,7 @@ public class InstanceAttribute implements Serializable {
         this.instanceType = instanceType;
         return this;
     }
-    
-    
+
     /**
      * The kernel ID of the associated instance.
      *
@@ -186,8 +184,7 @@ public class InstanceAttribute implements Serializable {
         this.kernelId = kernelId;
         return this;
     }
-    
-    
+
     /**
      * The ramdisk ID of the associated instance.
      *
@@ -220,8 +217,7 @@ public class InstanceAttribute implements Serializable {
         this.ramdiskId = ramdiskId;
         return this;
     }
-    
-    
+
     /**
      * MIME, Base64-encoded user data.
      *
@@ -254,8 +250,7 @@ public class InstanceAttribute implements Serializable {
         this.userData = userData;
         return this;
     }
-    
-    
+
     /**
      * Whether this instance can be terminated. You must modify this
      * attribute before you can terminate any "locked" instances.
@@ -294,8 +289,7 @@ public class InstanceAttribute implements Serializable {
         this.disableApiTermination = disableApiTermination;
         return this;
     }
-    
-    
+
     /**
      * Whether this instance can be terminated. You must modify this
      * attribute before you can terminate any "locked" instances.
@@ -306,7 +300,7 @@ public class InstanceAttribute implements Serializable {
     public Boolean getDisableApiTermination() {
         return disableApiTermination;
     }
-    
+
     /**
      * Whether this instance's Amazon EBS volumes are deleted when the
      * instance is shut down.
@@ -345,8 +339,7 @@ public class InstanceAttribute implements Serializable {
         this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior;
         return this;
     }
-    
-    
+
     /**
      * The root device name (e.g., <code>/dev/sda1</code>).
      *
@@ -379,8 +372,7 @@ public class InstanceAttribute implements Serializable {
         this.rootDeviceName = rootDeviceName;
         return this;
     }
-    
-    
+
     /**
      * How block devices are exposed to this instance. Each mapping is made
      * up of a virtualName and a deviceName.
@@ -389,7 +381,6 @@ public class InstanceAttribute implements Serializable {
      *         up of a virtualName and a deviceName.
      */
     public java.util.List<InstanceBlockDeviceMapping> getBlockDeviceMappings() {
-        
         if (blockDeviceMappings == null) {
               blockDeviceMappings = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceBlockDeviceMapping>();
               blockDeviceMappings.setAutoConstruct(true);
@@ -457,14 +448,13 @@ public class InstanceAttribute implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns the value of the ProductCodes property for this object.
      *
      * @return The value of the ProductCodes property for this object.
      */
     public java.util.List<ProductCode> getProductCodes() {
-        
         if (productCodes == null) {
               productCodes = new com.amazonaws.internal.ListWithAutoConstructFlag<ProductCode>();
               productCodes.setAutoConstruct(true);
@@ -526,7 +516,7 @@ public class InstanceAttribute implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Boolean value
      *
@@ -559,8 +549,7 @@ public class InstanceAttribute implements Serializable {
         this.ebsOptimized = ebsOptimized;
         return this;
     }
-    
-    
+
     /**
      * Boolean value
      *
@@ -569,7 +558,7 @@ public class InstanceAttribute implements Serializable {
     public Boolean getEbsOptimized() {
         return ebsOptimized;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

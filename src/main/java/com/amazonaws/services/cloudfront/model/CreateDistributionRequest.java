@@ -39,8 +39,6 @@ public class CreateDistributionRequest extends AmazonWebServiceRequest implement
      */
     public CreateDistributionRequest() {}
     
-
-
     /**
      * Constructs a new CreateDistributionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -53,8 +51,6 @@ public class CreateDistributionRequest extends AmazonWebServiceRequest implement
         setDistributionConfig(distributionConfig);
     }
 
-    
-    
     /**
      * The distribution's configuration information.
      *
@@ -87,8 +83,7 @@ public class CreateDistributionRequest extends AmazonWebServiceRequest implement
         this.distributionConfig = distributionConfig;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

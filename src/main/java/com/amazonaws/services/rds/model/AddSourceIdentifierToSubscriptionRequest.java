@@ -85,8 +85,7 @@ public class AddSourceIdentifierToSubscriptionRequest extends AmazonWebServiceRe
         this.subscriptionName = subscriptionName;
         return this;
     }
-    
-    
+
     /**
      * The identifier of the event source to be added. An identifier must
      * begin with a letter and must contain only ASCII letters, digits, and
@@ -167,8 +166,7 @@ public class AddSourceIdentifierToSubscriptionRequest extends AmazonWebServiceRe
         this.sourceIdentifier = sourceIdentifier;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

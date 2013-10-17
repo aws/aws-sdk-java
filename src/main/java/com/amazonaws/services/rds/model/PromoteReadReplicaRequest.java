@@ -126,8 +126,7 @@ public class PromoteReadReplicaRequest extends AmazonWebServiceRequest implement
         this.dBInstanceIdentifier = dBInstanceIdentifier;
         return this;
     }
-    
-    
+
     /**
      * The number of days to retain automated backups. Setting this parameter
      * to a positive number enables backups. Setting this parameter to 0
@@ -178,8 +177,7 @@ public class PromoteReadReplicaRequest extends AmazonWebServiceRequest implement
         this.backupRetentionPeriod = backupRetentionPeriod;
         return this;
     }
-    
-    
+
     /**
      * The daily time range during which automated backups are created if
      * automated backups are enabled, using the
@@ -290,8 +288,7 @@ public class PromoteReadReplicaRequest extends AmazonWebServiceRequest implement
         this.preferredBackupWindow = preferredBackupWindow;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

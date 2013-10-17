@@ -62,15 +62,13 @@ public class UnassignPrivateIpAddressesRequest extends AmazonWebServiceRequest i
         this.networkInterfaceId = networkInterfaceId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the PrivateIpAddresses property for this object.
      *
      * @return The value of the PrivateIpAddresses property for this object.
      */
     public java.util.List<String> getPrivateIpAddresses() {
-        
         if (privateIpAddresses == null) {
               privateIpAddresses = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               privateIpAddresses.setAutoConstruct(true);
@@ -132,7 +130,7 @@ public class UnassignPrivateIpAddressesRequest extends AmazonWebServiceRequest i
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

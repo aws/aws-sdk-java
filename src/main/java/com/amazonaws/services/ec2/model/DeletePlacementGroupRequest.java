@@ -41,8 +41,6 @@ public class DeletePlacementGroupRequest extends AmazonWebServiceRequest impleme
      */
     public DeletePlacementGroupRequest() {}
     
-
-
     /**
      * Constructs a new DeletePlacementGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -55,8 +53,6 @@ public class DeletePlacementGroupRequest extends AmazonWebServiceRequest impleme
         setGroupName(groupName);
     }
 
-    
-    
     /**
      * The name of the <code>PlacementGroup</code> to delete.
      *
@@ -89,8 +85,7 @@ public class DeletePlacementGroupRequest extends AmazonWebServiceRequest impleme
         this.groupName = groupName;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

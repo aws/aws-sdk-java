@@ -80,8 +80,6 @@ public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequ
      */
     public AuthorizeDBSecurityGroupIngressRequest() {}
     
-
-
     /**
      * Constructs a new AuthorizeDBSecurityGroupIngressRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -94,8 +92,6 @@ public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequ
         setDBSecurityGroupName(dBSecurityGroupName);
     }
 
-    
-    
     /**
      * The name of the DB Security Group to add authorization to.
      *
@@ -128,8 +124,7 @@ public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequ
         this.dBSecurityGroupName = dBSecurityGroupName;
         return this;
     }
-    
-    
+
     /**
      * The IP range to authorize.
      *
@@ -162,8 +157,7 @@ public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequ
         this.cIDRIP = cIDRIP;
         return this;
     }
-    
-    
+
     /**
      * Name of the EC2 Security Group to authorize. For VPC DB Security
      * Groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
@@ -214,8 +208,7 @@ public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequ
         this.eC2SecurityGroupName = eC2SecurityGroupName;
         return this;
     }
-    
-    
+
     /**
      * Id of the EC2 Security Group to authorize. For VPC DB Security Groups,
      * <code>EC2SecurityGroupId</code> must be provided. Otherwise,
@@ -266,8 +259,7 @@ public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequ
         this.eC2SecurityGroupId = eC2SecurityGroupId;
         return this;
     }
-    
-    
+
     /**
      * AWS Account Number of the owner of the EC2 Security Group specified in
      * the EC2SecurityGroupName parameter. The AWS Access Key ID is not an
@@ -330,8 +322,7 @@ public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequ
         this.eC2SecurityGroupOwnerId = eC2SecurityGroupOwnerId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

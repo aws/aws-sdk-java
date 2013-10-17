@@ -100,8 +100,7 @@ public class EnvironmentInfoDescription implements Serializable {
         this.infoType = infoType;
         return this;
     }
-    
-    
+
     /**
      * The type of information retrieved.
      * <p>
@@ -135,7 +134,7 @@ public class EnvironmentInfoDescription implements Serializable {
         this.infoType = infoType.toString();
         return this;
     }
-    
+
     /**
      * The Amazon EC2 Instance ID for this information.
      *
@@ -168,8 +167,7 @@ public class EnvironmentInfoDescription implements Serializable {
         this.ec2InstanceId = ec2InstanceId;
         return this;
     }
-    
-    
+
     /**
      * The time stamp when this information was retrieved.
      *
@@ -202,8 +200,7 @@ public class EnvironmentInfoDescription implements Serializable {
         this.sampleTimestamp = sampleTimestamp;
         return this;
     }
-    
-    
+
     /**
      * The retrieved information.
      *
@@ -236,8 +233,7 @@ public class EnvironmentInfoDescription implements Serializable {
         this.message = message;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

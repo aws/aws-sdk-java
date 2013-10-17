@@ -123,8 +123,7 @@ public class PollForActivityTaskRequest extends AmazonWebServiceRequest implemen
         this.domain = domain;
         return this;
     }
-    
-    
+
     /**
      * Specifies the task list to poll for activity tasks. <p>The specified
      * string must not start or end with whitespace. It must not contain a
@@ -181,8 +180,7 @@ public class PollForActivityTaskRequest extends AmazonWebServiceRequest implemen
         this.taskList = taskList;
         return this;
     }
-    
-    
+
     /**
      * Identity of the worker making the request, which is recorded in the
      * <code>ActivityTaskStarted</code> event in the workflow history. This
@@ -242,8 +240,7 @@ public class PollForActivityTaskRequest extends AmazonWebServiceRequest implemen
         this.identity = identity;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -79,8 +79,7 @@ public class ExternalWorkflowExecutionCancelRequestedEventAttributes implements 
         this.workflowExecution = workflowExecution;
         return this;
     }
-    
-    
+
     /**
      * The id of the
      * <code>RequestCancelExternalWorkflowExecutionInitiated</code> event
@@ -149,8 +148,7 @@ public class ExternalWorkflowExecutionCancelRequestedEventAttributes implements 
         this.initiatedEventId = initiatedEventId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

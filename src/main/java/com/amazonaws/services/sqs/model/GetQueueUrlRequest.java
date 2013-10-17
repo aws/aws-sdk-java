@@ -44,8 +44,6 @@ public class GetQueueUrlRequest extends AmazonWebServiceRequest implements Seria
      */
     public GetQueueUrlRequest() {}
     
-
-
     /**
      * Constructs a new GetQueueUrlRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -57,8 +55,6 @@ public class GetQueueUrlRequest extends AmazonWebServiceRequest implements Seria
         setQueueName(queueName);
     }
 
-    
-    
     /**
      * The name of the queue whose URL must be fetched.
      *
@@ -91,8 +87,7 @@ public class GetQueueUrlRequest extends AmazonWebServiceRequest implements Seria
         this.queueName = queueName;
         return this;
     }
-    
-    
+
     /**
      * The AWS account number of the queue's owner.
      *
@@ -125,8 +120,7 @@ public class GetQueueUrlRequest extends AmazonWebServiceRequest implements Seria
         this.queueOwnerAWSAccountId = queueOwnerAWSAccountId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -95,8 +95,7 @@ public class Datapoint implements Serializable {
         this.timestamp = timestamp;
         return this;
     }
-    
-    
+
     /**
      * The number of metric values that contributed to the aggregate value of
      * this datapoint.
@@ -135,8 +134,7 @@ public class Datapoint implements Serializable {
         this.sampleCount = sampleCount;
         return this;
     }
-    
-    
+
     /**
      * The average of metric values that correspond to the datapoint.
      *
@@ -169,8 +167,7 @@ public class Datapoint implements Serializable {
         this.average = average;
         return this;
     }
-    
-    
+
     /**
      * The sum of metric values used for the datapoint.
      *
@@ -203,8 +200,7 @@ public class Datapoint implements Serializable {
         this.sum = sum;
         return this;
     }
-    
-    
+
     /**
      * The minimum metric value used for the datapoint.
      *
@@ -237,8 +233,7 @@ public class Datapoint implements Serializable {
         this.minimum = minimum;
         return this;
     }
-    
-    
+
     /**
      * The maximum of the metric value used for the datapoint.
      *
@@ -271,8 +266,7 @@ public class Datapoint implements Serializable {
         this.maximum = maximum;
         return this;
     }
-    
-    
+
     /**
      * The standard unit used for the datapoint.
      * <p>
@@ -320,8 +314,7 @@ public class Datapoint implements Serializable {
         this.unit = unit;
         return this;
     }
-    
-    
+
     /**
      * The standard unit used for the datapoint.
      * <p>
@@ -355,7 +348,7 @@ public class Datapoint implements Serializable {
         this.unit = unit.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

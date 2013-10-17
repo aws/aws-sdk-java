@@ -83,8 +83,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
         this.minimumPasswordLength = minimumPasswordLength;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the RequireSymbols property for this object.
      *
@@ -117,8 +116,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
         this.requireSymbols = requireSymbols;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the RequireSymbols property for this object.
      *
@@ -127,7 +125,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
     public Boolean getRequireSymbols() {
         return requireSymbols;
     }
-    
+
     /**
      * Returns the value of the RequireNumbers property for this object.
      *
@@ -160,8 +158,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
         this.requireNumbers = requireNumbers;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the RequireNumbers property for this object.
      *
@@ -170,7 +167,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
     public Boolean getRequireNumbers() {
         return requireNumbers;
     }
-    
+
     /**
      * Returns the value of the RequireUppercaseCharacters property for this
      * object.
@@ -208,8 +205,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
         this.requireUppercaseCharacters = requireUppercaseCharacters;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the RequireUppercaseCharacters property for this
      * object.
@@ -219,7 +215,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
     public Boolean getRequireUppercaseCharacters() {
         return requireUppercaseCharacters;
     }
-    
+
     /**
      * Returns the value of the RequireLowercaseCharacters property for this
      * object.
@@ -257,8 +253,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
         this.requireLowercaseCharacters = requireLowercaseCharacters;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the RequireLowercaseCharacters property for this
      * object.
@@ -268,7 +263,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
     public Boolean getRequireLowercaseCharacters() {
         return requireLowercaseCharacters;
     }
-    
+
     /**
      * Returns the value of the AllowUsersToChangePassword property for this
      * object.
@@ -306,8 +301,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
         this.allowUsersToChangePassword = allowUsersToChangePassword;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the AllowUsersToChangePassword property for this
      * object.
@@ -317,7 +311,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
     public Boolean getAllowUsersToChangePassword() {
         return allowUsersToChangePassword;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

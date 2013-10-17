@@ -77,8 +77,6 @@ public class Listener implements Serializable {
      */
     public Listener() {}
     
-
-
     /**
      * Constructs a new Listener object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -100,8 +98,6 @@ public class Listener implements Serializable {
         setInstancePort(instancePort);
     }
 
-    
-    
     /**
      * Specifies the LoadBalancer transport protocol to use for routing -
      * HTTP, HTTPS, TCP or SSL. This property cannot be modified for the life
@@ -146,8 +142,7 @@ public class Listener implements Serializable {
         this.protocol = protocol;
         return this;
     }
-    
-    
+
     /**
      * Specifies the external LoadBalancer port number. This property cannot
      * be modified for the life of the LoadBalancer.
@@ -186,8 +181,7 @@ public class Listener implements Serializable {
         this.loadBalancerPort = loadBalancerPort;
         return this;
     }
-    
-    
+
     /**
      * Specifies the protocol to use for routing traffic to back-end
      * instances - HTTP, HTTPS, TCP, or SSL. This property cannot be modified
@@ -292,8 +286,7 @@ public class Listener implements Serializable {
         this.instanceProtocol = instanceProtocol;
         return this;
     }
-    
-    
+
     /**
      * Specifies the TCP port on which the instance server is listening. This
      * property cannot be modified for the life of the LoadBalancer.
@@ -341,8 +334,7 @@ public class Listener implements Serializable {
         this.instancePort = instancePort;
         return this;
     }
-    
-    
+
     /**
      * The ARN string of the server certificate. To get the ARN of the server
      * certificate, call the AWS Identity and Access Management <a
@@ -393,8 +385,7 @@ public class Listener implements Serializable {
         this.sSLCertificateId = sSLCertificateId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -150,8 +150,7 @@ public class ListWorkflowTypesRequest extends AmazonWebServiceRequest implements
         this.domain = domain;
         return this;
     }
-    
-    
+
     /**
      * If specified, lists the workflow type with this name.
      * <p>
@@ -193,8 +192,7 @@ public class ListWorkflowTypesRequest extends AmazonWebServiceRequest implements
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * Specifies the registration status of the workflow types to list.
      * <p>
@@ -242,8 +240,7 @@ public class ListWorkflowTypesRequest extends AmazonWebServiceRequest implements
         this.registrationStatus = registrationStatus;
         return this;
     }
-    
-    
+
     /**
      * Specifies the registration status of the workflow types to list.
      * <p>
@@ -277,7 +274,7 @@ public class ListWorkflowTypesRequest extends AmazonWebServiceRequest implements
         this.registrationStatus = registrationStatus.toString();
         return this;
     }
-    
+
     /**
      * If on a previous call to this method a <code>NextPageToken</code> was
      * returned, the results are being paginated. To get the next page of
@@ -337,8 +334,7 @@ public class ListWorkflowTypesRequest extends AmazonWebServiceRequest implements
         this.nextPageToken = nextPageToken;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of results returned in each page. The default is
      * 100, but the caller can override this value to a page size
@@ -410,8 +406,7 @@ public class ListWorkflowTypesRequest extends AmazonWebServiceRequest implements
         this.maximumPageSize = maximumPageSize;
         return this;
     }
-    
-    
+
     /**
      * When set to <code>true</code>, returns the results in reverse order.
      * By default the results are returned in ascending alphabetical order of
@@ -456,8 +451,7 @@ public class ListWorkflowTypesRequest extends AmazonWebServiceRequest implements
         this.reverseOrder = reverseOrder;
         return this;
     }
-    
-    
+
     /**
      * When set to <code>true</code>, returns the results in reverse order.
      * By default the results are returned in ascending alphabetical order of
@@ -470,7 +464,7 @@ public class ListWorkflowTypesRequest extends AmazonWebServiceRequest implements
     public Boolean getReverseOrder() {
         return reverseOrder;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

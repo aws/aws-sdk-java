@@ -98,8 +98,7 @@ public class SourceDataMap implements Serializable {
         this.sourceName = sourceName;
         return this;
     }
-    
-    
+
     /**
      * The default value to use if the source attribute is not specified in a
      * document. Optional.
@@ -147,8 +146,7 @@ public class SourceDataMap implements Serializable {
         this.defaultValue = defaultValue;
         return this;
     }
-    
-    
+
     /**
      * A map that translates source field values to custom values.
      *
@@ -185,8 +183,7 @@ public class SourceDataMap implements Serializable {
         setCases(cases);
         return this;
     }
-    
-   	
+
     /**
      * A map that translates source field values to custom values.
      * <p>
@@ -206,7 +203,7 @@ public class SourceDataMap implements Serializable {
 		this.cases.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into Cases.
 	 * <p>

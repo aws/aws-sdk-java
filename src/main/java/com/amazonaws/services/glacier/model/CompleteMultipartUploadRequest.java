@@ -102,8 +102,6 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest impl
      */
     public CompleteMultipartUploadRequest() {}
     
-
-
     /**
      * Constructs a new CompleteMultipartUploadRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -126,10 +124,6 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest impl
         setArchiveSize(archiveSize);
         setChecksum(checksum);
     }
-
-    
-    
-
 
     /**
      * Constructs a new CompleteMultipartUploadRequest object.
@@ -160,8 +154,6 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest impl
         setChecksum(checksum);
     }
 
-    
-    
     /**
      * The <code>AccountId</code> is the AWS Account ID. You can specify
      * either the AWS Account ID or optionally a '-', in which case Amazon
@@ -218,8 +210,7 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest impl
         this.accountId = accountId;
         return this;
     }
-    
-    
+
     /**
      * The name of the vault.
      *
@@ -252,8 +243,7 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest impl
         this.vaultName = vaultName;
         return this;
     }
-    
-    
+
     /**
      * The upload ID of the multipart upload.
      *
@@ -286,8 +276,7 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest impl
         this.uploadId = uploadId;
         return this;
     }
-    
-    
+
     /**
      * The total size, in bytes, of the entire archive. This value should be
      * the sum of all the sizes of the individual parts that you uploaded.
@@ -326,8 +315,7 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest impl
         this.archiveSize = archiveSize;
         return this;
     }
-    
-    
+
     /**
      * The SHA256 tree hash of the entire archive. It is the tree hash of
      * SHA256 tree hash of the individual parts. If the value you specify in
@@ -384,8 +372,7 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest impl
         this.checksum = checksum;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

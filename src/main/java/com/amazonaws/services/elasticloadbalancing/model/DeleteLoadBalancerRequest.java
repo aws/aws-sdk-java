@@ -52,8 +52,6 @@ public class DeleteLoadBalancerRequest extends AmazonWebServiceRequest implement
      */
     public DeleteLoadBalancerRequest() {}
     
-
-
     /**
      * Constructs a new DeleteLoadBalancerRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -66,8 +64,6 @@ public class DeleteLoadBalancerRequest extends AmazonWebServiceRequest implement
         setLoadBalancerName(loadBalancerName);
     }
 
-    
-    
     /**
      * The name associated with the LoadBalancer. The name must be unique
      * within the client AWS account.
@@ -106,8 +102,7 @@ public class DeleteLoadBalancerRequest extends AmazonWebServiceRequest implement
         this.loadBalancerName = loadBalancerName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

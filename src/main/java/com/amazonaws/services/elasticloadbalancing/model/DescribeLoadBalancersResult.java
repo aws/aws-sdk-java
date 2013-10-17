@@ -40,7 +40,6 @@ public class DescribeLoadBalancersResult implements Serializable {
      * @return A list of LoadBalancer description structures.
      */
     public java.util.List<LoadBalancerDescription> getLoadBalancerDescriptions() {
-        
         if (loadBalancerDescriptions == null) {
               loadBalancerDescriptions = new com.amazonaws.internal.ListWithAutoConstructFlag<LoadBalancerDescription>();
               loadBalancerDescriptions.setAutoConstruct(true);
@@ -102,7 +101,7 @@ public class DescribeLoadBalancersResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * An optional parameter reserved for future use.
      *
@@ -135,8 +134,7 @@ public class DescribeLoadBalancersResult implements Serializable {
         this.nextMarker = nextMarker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

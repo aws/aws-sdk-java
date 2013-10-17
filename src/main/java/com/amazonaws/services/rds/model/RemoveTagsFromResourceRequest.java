@@ -95,15 +95,13 @@ public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest imple
         this.resourceName = resourceName;
         return this;
     }
-    
-    
+
     /**
      * The tag key (name) of the tag to be removed.
      *
      * @return The tag key (name) of the tag to be removed.
      */
     public java.util.List<String> getTagKeys() {
-        
         if (tagKeys == null) {
               tagKeys = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               tagKeys.setAutoConstruct(true);
@@ -165,7 +163,7 @@ public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest imple
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

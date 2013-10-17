@@ -41,8 +41,6 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      */
     public DescribeTagsRequest() {}
     
-
-
     /**
      * Constructs a new DescribeTagsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -54,15 +52,12 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
         setFilters(filters);
     }
 
-    
-    
     /**
      * A list of filters used to match properties for tags.
      *
      * @return A list of filters used to match properties for tags.
      */
     public java.util.List<Filter> getFilters() {
-        
         if (filters == null) {
               filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
               filters.setAutoConstruct(true);
@@ -124,7 +119,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
 
         return this;
     }
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

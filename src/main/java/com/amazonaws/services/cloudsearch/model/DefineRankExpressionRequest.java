@@ -116,8 +116,7 @@ public class DefineRankExpressionRequest extends AmazonWebServiceRequest impleme
         this.domainName = domainName;
         return this;
     }
-    
-    
+
     /**
      * A named expression that can be evaluated at search time and used for
      * ranking or thresholding in a search query.
@@ -156,8 +155,7 @@ public class DefineRankExpressionRequest extends AmazonWebServiceRequest impleme
         this.rankExpression = rankExpression;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

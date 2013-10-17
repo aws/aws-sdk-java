@@ -80,8 +80,7 @@ public class ReplaceNetworkAclAssociationRequest extends AmazonWebServiceRequest
         this.associationId = associationId;
         return this;
     }
-    
-    
+
     /**
      * The ID of the new ACL to associate with the subnet.
      *
@@ -114,8 +113,7 @@ public class ReplaceNetworkAclAssociationRequest extends AmazonWebServiceRequest
         this.networkAclId = networkAclId;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

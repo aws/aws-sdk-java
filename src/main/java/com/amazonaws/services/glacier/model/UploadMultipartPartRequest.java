@@ -115,8 +115,6 @@ public class UploadMultipartPartRequest extends AmazonWebServiceRequest implemen
      */
     public UploadMultipartPartRequest() {}
     
-
-
     /**
      * Constructs a new UploadMultipartPartRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -139,10 +137,6 @@ public class UploadMultipartPartRequest extends AmazonWebServiceRequest implemen
         setRange(range);
         setBody(body);
     }
-
-    
-    
-
 
     /**
      * Constructs a new UploadMultipartPartRequest object.
@@ -173,8 +167,6 @@ public class UploadMultipartPartRequest extends AmazonWebServiceRequest implemen
         setBody(body);
     }
 
-    
-    
     /**
      * The <code>AccountId</code> is the AWS Account ID. You can specify
      * either the AWS Account ID or optionally a '-', in which case Amazon
@@ -231,8 +223,7 @@ public class UploadMultipartPartRequest extends AmazonWebServiceRequest implemen
         this.accountId = accountId;
         return this;
     }
-    
-    
+
     /**
      * The name of the vault.
      *
@@ -265,8 +256,7 @@ public class UploadMultipartPartRequest extends AmazonWebServiceRequest implemen
         this.vaultName = vaultName;
         return this;
     }
-    
-    
+
     /**
      * The upload ID of the multipart upload.
      *
@@ -299,8 +289,7 @@ public class UploadMultipartPartRequest extends AmazonWebServiceRequest implemen
         this.uploadId = uploadId;
         return this;
     }
-    
-    
+
     /**
      * The SHA256 tree hash of the data being uploaded.
      *
@@ -333,8 +322,7 @@ public class UploadMultipartPartRequest extends AmazonWebServiceRequest implemen
         this.checksum = checksum;
         return this;
     }
-    
-    
+
     /**
      * Identifies the range of bytes in the assembled archive that will be
      * uploaded in this part. Amazon Glacier uses this information to
@@ -391,8 +379,7 @@ public class UploadMultipartPartRequest extends AmazonWebServiceRequest implemen
         this.range = range;
         return this;
     }
-    
-    
+
     /**
      * The data to upload.
      *
@@ -425,8 +412,7 @@ public class UploadMultipartPartRequest extends AmazonWebServiceRequest implemen
         this.body = body;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -80,8 +80,7 @@ public class ApplySecurityGroupsToLoadBalancerRequest extends AmazonWebServiceRe
         this.loadBalancerName = loadBalancerName;
         return this;
     }
-    
-    
+
     /**
      * A list of security group IDs to associate with your LoadBalancer in
      * VPC. The security group IDs must be provided as the ID and not the
@@ -92,7 +91,6 @@ public class ApplySecurityGroupsToLoadBalancerRequest extends AmazonWebServiceRe
      *         security group name (For example, sg-1234).
      */
     public java.util.List<String> getSecurityGroups() {
-        
         if (securityGroups == null) {
               securityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               securityGroups.setAutoConstruct(true);
@@ -166,7 +164,7 @@ public class ApplySecurityGroupsToLoadBalancerRequest extends AmazonWebServiceRe
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

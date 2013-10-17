@@ -51,7 +51,6 @@ public class ListVirtualMFADevicesResult implements Serializable {
      * @return The value of the VirtualMFADevices property for this object.
      */
     public java.util.List<VirtualMFADevice> getVirtualMFADevices() {
-        
         if (virtualMFADevices == null) {
               virtualMFADevices = new com.amazonaws.internal.ListWithAutoConstructFlag<VirtualMFADevice>();
               virtualMFADevices.setAutoConstruct(true);
@@ -113,7 +112,7 @@ public class ListVirtualMFADevicesResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * A flag that indicates whether there are more items to list. If your
      * results were truncated, you can make a subsequent pagination request
@@ -164,8 +163,7 @@ public class ListVirtualMFADevicesResult implements Serializable {
         this.isTruncated = isTruncated;
         return this;
     }
-    
-    
+
     /**
      * A flag that indicates whether there are more items to list. If your
      * results were truncated, you can make a subsequent pagination request
@@ -180,7 +178,7 @@ public class ListVirtualMFADevicesResult implements Serializable {
     public Boolean getIsTruncated() {
         return isTruncated;
     }
-    
+
     /**
      * If <code>IsTruncated</code> is <code>true</code>, this element is
      * present and contains the value to use for the <code>Marker</code>
@@ -237,8 +235,7 @@ public class ListVirtualMFADevicesResult implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

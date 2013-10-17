@@ -81,8 +81,7 @@ public class DeletePipelineRequest extends AmazonWebServiceRequest implements Se
         this.id = id;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

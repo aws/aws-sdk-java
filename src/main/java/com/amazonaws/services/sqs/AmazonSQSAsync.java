@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sqs;
-            
+
 import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
@@ -38,8 +38,8 @@ import com.amazonaws.services.sqs.model.*;
  * </p>
  * <p>
  * Visit <a href="http://aws.amazon.com/sqs/"> http://aws.amazon.com/sqs/ </a> for more information.
- * </p> 
- */       
+ * </p>
+ */
 public interface AmazonSQSAsync extends AmazonSQS {
     /**
      * <p>

@@ -98,8 +98,7 @@ public class VolumeRecoveryPointInfo implements Serializable {
         this.volumeARN = volumeARN;
         return this;
     }
-    
-    
+
     /**
      * The size, in bytes, of the volume to which the recovery point is
      * associated.
@@ -138,8 +137,7 @@ public class VolumeRecoveryPointInfo implements Serializable {
         this.volumeSizeInBytes = volumeSizeInBytes;
         return this;
     }
-    
-    
+
     /**
      * The size, in bytes, of the volume in use at the time of the recovery
      * point.
@@ -178,8 +176,7 @@ public class VolumeRecoveryPointInfo implements Serializable {
         this.volumeUsageInBytes = volumeUsageInBytes;
         return this;
     }
-    
-    
+
     /**
      * The time of the recovery point. The format of the time is in the
      * ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
@@ -218,8 +215,7 @@ public class VolumeRecoveryPointInfo implements Serializable {
         this.volumeRecoveryPointTime = volumeRecoveryPointTime;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

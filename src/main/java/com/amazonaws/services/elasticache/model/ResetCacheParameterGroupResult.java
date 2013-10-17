@@ -67,8 +67,7 @@ public class ResetCacheParameterGroupResult implements Serializable {
         this.cacheParameterGroupName = cacheParameterGroupName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -92,8 +92,7 @@ public class SendMessageResult implements Serializable {
         this.mD5OfMessageBody = mD5OfMessageBody;
         return this;
     }
-    
-    
+
     /**
      * The message ID of the message added to the queue.
      *
@@ -126,8 +125,7 @@ public class SendMessageResult implements Serializable {
         this.messageId = messageId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

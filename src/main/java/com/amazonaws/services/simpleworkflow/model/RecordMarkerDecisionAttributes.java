@@ -99,8 +99,7 @@ public class RecordMarkerDecisionAttributes implements Serializable {
         this.markerName = markerName;
         return this;
     }
-    
-    
+
     /**
      * Optional details of the marker.
      * <p>
@@ -142,8 +141,7 @@ public class RecordMarkerDecisionAttributes implements Serializable {
         this.details = details;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

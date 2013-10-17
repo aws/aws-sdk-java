@@ -126,8 +126,6 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      */
     public CreateTableRequest() {}
     
-
-
     /**
      * Constructs a new CreateTableRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -158,8 +156,6 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
         setKeySchema(keySchema);
     }
 
-    
-    
     /**
      * An array of attributes that describe the key schema for the table and
      * indexes.
@@ -168,7 +164,6 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         indexes.
      */
     public java.util.List<AttributeDefinition> getAttributeDefinitions() {
-        
         return attributeDefinitions;
     }
     
@@ -232,7 +227,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
 
         return this;
     }
-    
+
     /**
      * The name of the table to create.
      * <p>
@@ -277,8 +272,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
         this.tableName = tableName;
         return this;
     }
-    
-    
+
     /**
      * Specifies the attributes that make up the primary key for the table.
      * The attributes in <i>KeySchema</i> must also be defined in the
@@ -322,7 +316,6 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         the Primary Key</a> in the Amazon DynamoDB Developer Guide.
      */
     public java.util.List<KeySchemaElement> getKeySchema() {
-        
         return keySchema;
     }
     
@@ -491,7 +484,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
 
         return this;
     }
-    
+
     /**
      * One or more secondary indexes (the maximum is five) to be created on
      * the table. Each index is scoped to a given hash key value. There is a
@@ -546,7 +539,6 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
      *         determining the total. </li> </ul> </li> </ul>
      */
     public java.util.List<LocalSecondaryIndex> getLocalSecondaryIndexes() {
-        
         return localSecondaryIndexes;
     }
     
@@ -748,7 +740,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
 
         return this;
     }
-    
+
     /**
      * The provisioned throughput settings for the specified table. The
      * settings can be modified using the <i>UpdateTable</i> operation.
@@ -811,8 +803,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements Seria
         this.provisionedThroughput = provisionedThroughput;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

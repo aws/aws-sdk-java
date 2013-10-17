@@ -35,7 +35,6 @@ public class DescribeVpcsResult implements Serializable {
      * @return 
      */
     public java.util.List<Vpc> getVpcs() {
-        
         if (vpcs == null) {
               vpcs = new com.amazonaws.internal.ListWithAutoConstructFlag<Vpc>();
               vpcs.setAutoConstruct(true);
@@ -97,7 +96,7 @@ public class DescribeVpcsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

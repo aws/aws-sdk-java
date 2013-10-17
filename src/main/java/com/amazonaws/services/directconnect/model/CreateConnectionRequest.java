@@ -84,8 +84,7 @@ public class CreateConnectionRequest extends AmazonWebServiceRequest implements 
         this.offeringId = offeringId;
         return this;
     }
-    
-    
+
     /**
      * The name of the connection. <p>Example: "<i>1G Connection to AWS</i>"
      * <p>Default: None
@@ -124,8 +123,7 @@ public class CreateConnectionRequest extends AmazonWebServiceRequest implements 
         this.connectionName = connectionName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

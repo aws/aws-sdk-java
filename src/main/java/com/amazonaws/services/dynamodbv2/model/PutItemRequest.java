@@ -152,8 +152,6 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
      */
     public PutItemRequest() {}
     
-
-
     /**
      * Constructs a new PutItemRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -176,8 +174,6 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
         setItem(item);
     }
 
-    
-    
     /**
      * The name of the table to contain the item.
      * <p>
@@ -222,8 +218,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
         this.tableName = tableName;
         return this;
     }
-    
-    
+
     /**
      * A map of attribute name/value pairs, one for each attribute. Only the
      * primary key attributes are required; you can optionally provide other
@@ -311,8 +306,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
         setItem(item);
         return this;
     }
-    
-   	
+
     /**
      * A map of attribute name/value pairs, one for each attribute. Only the
      * primary key attributes are required; you can optionally provide other
@@ -341,7 +335,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
 		this.item.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into Item.
 	 * <p>
@@ -577,8 +571,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
         setExpected(expected);
         return this;
     }
-    
-   	
+
     /**
      * A map of attribute/condition pairs. This is the conditional block for
      * the <i>PutItem</i> operation. All the conditions must be met for the
@@ -630,7 +623,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
 		this.expected.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into Expected.
 	 * <p>
@@ -730,8 +723,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
         this.returnValues = returnValues;
         return this;
     }
-    
-    
+
     /**
      * Use <i>ReturnValues</i> if you want to get the item attributes as they
      * appeared before they were updated with the <i>PutItem</i> request. For
@@ -793,7 +785,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
         this.returnValues = returnValues.toString();
         return this;
     }
-    
+
     /**
      * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
      * the response; if set to <code>NONE</code> (the default),
@@ -853,8 +845,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
         this.returnConsumedCapacity = returnConsumedCapacity;
         return this;
     }
-    
-    
+
     /**
      * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
      * the response; if set to <code>NONE</code> (the default),
@@ -896,7 +887,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
         this.returnConsumedCapacity = returnConsumedCapacity.toString();
         return this;
     }
-    
+
     /**
      * If set to <code>SIZE</code>, statistics about item collections, if
      * any, that were modified during the operation are returned in the
@@ -962,8 +953,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
         this.returnItemCollectionMetrics = returnItemCollectionMetrics;
         return this;
     }
-    
-    
+
     /**
      * If set to <code>SIZE</code>, statistics about item collections, if
      * any, that were modified during the operation are returned in the
@@ -1009,7 +999,7 @@ public class PutItemRequest extends AmazonWebServiceRequest implements Serializa
         this.returnItemCollectionMetrics = returnItemCollectionMetrics.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

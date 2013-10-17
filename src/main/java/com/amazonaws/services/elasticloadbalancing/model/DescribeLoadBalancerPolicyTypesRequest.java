@@ -47,7 +47,6 @@ public class DescribeLoadBalancerPolicyTypesRequest extends AmazonWebServiceRequ
      *         Load Balancing service.
      */
     public java.util.List<String> getPolicyTypeNames() {
-        
         if (policyTypeNames == null) {
               policyTypeNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               policyTypeNames.setAutoConstruct(true);
@@ -121,7 +120,7 @@ public class DescribeLoadBalancerPolicyTypesRequest extends AmazonWebServiceRequ
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

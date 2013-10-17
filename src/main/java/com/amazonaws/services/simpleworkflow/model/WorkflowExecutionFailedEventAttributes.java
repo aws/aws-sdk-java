@@ -90,8 +90,7 @@ public class WorkflowExecutionFailedEventAttributes implements Serializable {
         this.reason = reason;
         return this;
     }
-    
-    
+
     /**
      * The details of the failure (if any).
      * <p>
@@ -133,8 +132,7 @@ public class WorkflowExecutionFailedEventAttributes implements Serializable {
         this.details = details;
         return this;
     }
-    
-    
+
     /**
      * The id of the <code>DecisionTaskCompleted</code> event corresponding
      * to the decision task that resulted in the
@@ -191,8 +189,7 @@ public class WorkflowExecutionFailedEventAttributes implements Serializable {
         this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

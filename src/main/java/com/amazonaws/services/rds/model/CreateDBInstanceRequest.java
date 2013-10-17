@@ -272,8 +272,6 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      */
     public CreateDBInstanceRequest() {}
     
-
-
     /**
      * Constructs a new CreateDBInstanceRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -329,8 +327,6 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         setMasterUserPassword(masterUserPassword);
     }
 
-    
-    
     /**
      * The meaning of this parameter differs according to the database engine
      * you use. <p><b>MySQL</b> <p>The name of the database to create when
@@ -417,8 +413,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.dBName = dBName;
         return this;
     }
-    
-    
+
     /**
      * The DB Instance identifier. This parameter is stored as a lowercase
      * string. <p>Constraints: <ul> <li>Must contain from 1 to 63
@@ -481,8 +476,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.dBInstanceIdentifier = dBInstanceIdentifier;
         return this;
     }
-    
-    
+
     /**
      * The amount of storage (in gigabytes) to be initially allocated for the
      * database instance. <p><b>MySQL</b> <p> Constraints: Must be an integer
@@ -551,8 +545,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.allocatedStorage = allocatedStorage;
         return this;
     }
-    
-    
+
     /**
      * The compute and memory capacity of the DB Instance. <p> Valid Values:
      * <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
@@ -597,8 +590,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.dBInstanceClass = dBInstanceClass;
         return this;
     }
-    
-    
+
     /**
      * The name of the database engine to be used for this instance. <p>
      * Valid Values: <code>MySQL</code> | <code>oracle-se1</code> |
@@ -655,8 +647,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.engine = engine;
         return this;
     }
-    
-    
+
     /**
      * The name of master user for the client DB Instance. <p><b>MySQL</b>
      * <p>Constraints: <ul> <li>Must be 1 to 16 alphanumeric characters.</li>
@@ -749,8 +740,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.masterUsername = masterUsername;
         return this;
     }
-    
-    
+
     /**
      * The password for the master database user. Can be any printable ASCII
      * character except "/", "\", or "@". <p>Type: String <p><b>MySQL</b> <p>
@@ -813,8 +803,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.masterUserPassword = masterUserPassword;
         return this;
     }
-    
-    
+
     /**
      * A list of DB Security Groups to associate with this DB Instance. <p>
      * Default: The default DB Security Group for the database engine.
@@ -823,7 +812,6 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         Default: The default DB Security Group for the database engine.
      */
     public java.util.List<String> getDBSecurityGroups() {
-        
         if (dBSecurityGroups == null) {
               dBSecurityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               dBSecurityGroups.setAutoConstruct(true);
@@ -891,7 +879,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
 
         return this;
     }
-    
+
     /**
      * A list of EC2 VPC Security Groups to associate with this DB Instance.
      * <p> Default: The default EC2 VPC Security Group for the DB Subnet
@@ -902,7 +890,6 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
      *         group's VPC.
      */
     public java.util.List<String> getVpcSecurityGroupIds() {
-        
         if (vpcSecurityGroupIds == null) {
               vpcSecurityGroupIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               vpcSecurityGroupIds.setAutoConstruct(true);
@@ -976,7 +963,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
 
         return this;
     }
-    
+
     /**
      * The EC2 Availability Zone that the database instance will be created
      * in. <p> Default: A random, system-chosen Availability Zone in the
@@ -1039,8 +1026,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.availabilityZone = availabilityZone;
         return this;
     }
-    
-    
+
     /**
      * A DB Subnet Group to associate with this DB Instance. <p> If there is
      * no DB Subnet Group, then it is a non-VPC DB instance.
@@ -1079,8 +1065,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.dBSubnetGroupName = dBSubnetGroupName;
         return this;
     }
-    
-    
+
     /**
      * The weekly time range (in UTC) during which system maintenance can
      * occur. <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A
@@ -1161,8 +1146,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.preferredMaintenanceWindow = preferredMaintenanceWindow;
         return this;
     }
-    
-    
+
     /**
      * The name of the DB Parameter Group to associate with this DB instance.
      * If this argument is omitted, the default DBParameterGroup for the
@@ -1225,8 +1209,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.dBParameterGroupName = dBParameterGroupName;
         return this;
     }
-    
-    
+
     /**
      * The number of days for which automated backups are retained. Setting
      * this parameter to a positive number enables backups. Setting this
@@ -1289,8 +1272,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.backupRetentionPeriod = backupRetentionPeriod;
         return this;
     }
-    
-    
+
     /**
      * The daily time range during which automated backups are created if
      * automated backups are enabled, using the
@@ -1401,8 +1383,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.preferredBackupWindow = preferredBackupWindow;
         return this;
     }
-    
-    
+
     /**
      * The port number on which the database accepts connections.
      * <p><b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
@@ -1471,8 +1452,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.port = port;
         return this;
     }
-    
-    
+
     /**
      * Specifies if the DB Instance is a Multi-AZ deployment. You cannot set
      * the AvailabilityZone parameter if the MultiAZ parameter is set to
@@ -1517,8 +1497,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.multiAZ = multiAZ;
         return this;
     }
-    
-    
+
     /**
      * Specifies if the DB Instance is a Multi-AZ deployment. You cannot set
      * the AvailabilityZone parameter if the MultiAZ parameter is set to
@@ -1531,7 +1510,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     public Boolean getMultiAZ() {
         return multiAZ;
     }
-    
+
     /**
      * The version number of the database engine to use. <p><b>MySQL</b>
      * <p>Example: <code>5.1.42</code> <p>Type: String <p><b>Oracle</b>
@@ -1582,8 +1561,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.engineVersion = engineVersion;
         return this;
     }
-    
-    
+
     /**
      * Indicates that minor engine upgrades will be applied automatically to
      * the DB Instance during the maintenance window. <p>Default:
@@ -1628,8 +1606,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
         return this;
     }
-    
-    
+
     /**
      * Indicates that minor engine upgrades will be applied automatically to
      * the DB Instance during the maintenance window. <p>Default:
@@ -1642,7 +1619,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     public Boolean getAutoMinorVersionUpgrade() {
         return autoMinorVersionUpgrade;
     }
-    
+
     /**
      * License model information for this DB Instance. <p> Valid values:
      * <code>license-included</code> | <code>bring-your-own-license</code> |
@@ -1687,8 +1664,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.licenseModel = licenseModel;
         return this;
     }
-    
-    
+
     /**
      * The amount of Provisioned IOPS (input/output operations per second) to
      * be initially allocated for the DB Instance. <p> Constraints: Must be
@@ -1733,8 +1709,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.iops = iops;
         return this;
     }
-    
-    
+
     /**
      * Indicates that the DB Instance should be associated with the specified
      * option group. <p> <!-- Note that persistent options, such as the
@@ -1809,8 +1784,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.optionGroupName = optionGroupName;
         return this;
     }
-    
-    
+
     /**
      * For supported engines, indicates that the DB Instance should be
      * associated with the specified CharacterSet.
@@ -1849,8 +1823,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.characterSetName = characterSetName;
         return this;
     }
-    
-    
+
     /**
      * Specifies the accessibility options for the DB Instance. A value of
      * true specifies an Internet-facing instance with a publicly resolvable
@@ -1955,8 +1928,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
         this.publiclyAccessible = publiclyAccessible;
         return this;
     }
-    
-    
+
     /**
      * Specifies the accessibility options for the DB Instance. A value of
      * true specifies an Internet-facing instance with a publicly resolvable
@@ -1989,7 +1961,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements 
     public Boolean getPubliclyAccessible() {
         return publiclyAccessible;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

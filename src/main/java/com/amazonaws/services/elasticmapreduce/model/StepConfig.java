@@ -52,8 +52,6 @@ public class StepConfig implements Serializable {
      */
     public StepConfig() {}
     
-
-
     /**
      * Constructs a new StepConfig object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -68,8 +66,6 @@ public class StepConfig implements Serializable {
         setHadoopJarStep(hadoopJarStep);
     }
 
-    
-    
     /**
      * The name of the job flow step.
      * <p>
@@ -114,8 +110,7 @@ public class StepConfig implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * Specifies the action to take if the job flow step fails.
      * <p>
@@ -163,8 +158,7 @@ public class StepConfig implements Serializable {
         this.actionOnFailure = actionOnFailure;
         return this;
     }
-    
-    
+
     /**
      * Specifies the action to take if the job flow step fails.
      * <p>
@@ -198,7 +192,7 @@ public class StepConfig implements Serializable {
         this.actionOnFailure = actionOnFailure.toString();
         return this;
     }
-    
+
     /**
      * Specifies the JAR file used for the job flow step.
      *
@@ -231,8 +225,7 @@ public class StepConfig implements Serializable {
         this.hadoopJarStep = hadoopJarStep;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

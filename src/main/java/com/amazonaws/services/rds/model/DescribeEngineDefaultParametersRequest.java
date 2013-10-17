@@ -56,8 +56,6 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
      */
     public DescribeEngineDefaultParametersRequest() {}
     
-
-
     /**
      * Constructs a new DescribeEngineDefaultParametersRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -70,8 +68,6 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
         setDBParameterGroupFamily(dBParameterGroupFamily);
     }
 
-    
-    
     /**
      * The name of the DB Parameter Group Family.
      *
@@ -104,8 +100,7 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
         this.dBParameterGroupFamily = dBParameterGroupFamily;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
@@ -162,8 +157,7 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
         this.maxRecords = maxRecords;
         return this;
     }
-    
-    
+
     /**
      * An optional pagination token provided by a previous
      * DescribeEngineDefaultParameters request. If this parameter is
@@ -214,8 +208,7 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

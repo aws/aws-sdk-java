@@ -87,8 +87,7 @@ public class PurchaseReservedNodeOfferingRequest extends AmazonWebServiceRequest
         this.reservedNodeOfferingId = reservedNodeOfferingId;
         return this;
     }
-    
-    
+
     /**
      * The number of reserved nodes you want to purchase. <p>Default:
      * <code>1</code>
@@ -127,8 +126,7 @@ public class PurchaseReservedNodeOfferingRequest extends AmazonWebServiceRequest
         this.nodeCount = nodeCount;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

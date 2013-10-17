@@ -219,8 +219,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
         this.autoScalingGroupName = autoScalingGroupName;
         return this;
     }
-    
-    
+
     /**
      * The name of an existing launch configuration to use to launch new
      * instances.
@@ -271,8 +270,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
         this.launchConfigurationName = launchConfigurationName;
         return this;
     }
-    
-    
+
     /**
      * The minimum size of the Auto Scaling group.
      *
@@ -305,8 +303,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
         this.minSize = minSize;
         return this;
     }
-    
-    
+
     /**
      * The maximum size of the Auto Scaling group.
      *
@@ -339,8 +336,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
         this.maxSize = maxSize;
         return this;
     }
-    
-    
+
     /**
      * The number of Amazon EC2 instances that should be running in the
      * group. The desired capacity must be greater than or equal to the
@@ -391,8 +387,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
         this.desiredCapacity = desiredCapacity;
         return this;
     }
-    
-    
+
     /**
      * The amount of time, in seconds, between a successful scaling activity
      * and the succeeding scaling activity. <p>If a
@@ -461,8 +456,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
         this.defaultCooldown = defaultCooldown;
         return this;
     }
-    
-    
+
     /**
      * A list of Availability Zones for the Auto Scaling group. This is
      * required unless you have specified subnets.
@@ -474,7 +468,6 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         required unless you have specified subnets.
      */
     public java.util.List<String> getAvailabilityZones() {
-        
         if (availabilityZones == null) {
               availabilityZones = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               availabilityZones.setAutoConstruct(true);
@@ -551,7 +544,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
 
         return this;
     }
-    
+
     /**
      * A list of existing Elastic Load Balancing load balancers to use. The
      * load balancers must be associated with the AWS account. <p>For
@@ -566,7 +559,6 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         Load Balancer to Load Balance Your Auto Scaling Group</a>.
      */
     public java.util.List<String> getLoadBalancerNames() {
-        
         if (loadBalancerNames == null) {
               loadBalancerNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               loadBalancerNames.setAutoConstruct(true);
@@ -652,7 +644,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
 
         return this;
     }
-    
+
     /**
      * The service you want the health checks from, Amazon EC2 or Elastic
      * Load Balancer. Valid values are <code>EC2</code> or <code>ELB</code>.
@@ -733,8 +725,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
         this.healthCheckType = healthCheckType;
         return this;
     }
-    
-    
+
     /**
      * Length of time in seconds after a new Amazon EC2 instance comes into
      * service that Auto Scaling starts checking its health. During this time
@@ -809,8 +800,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
         this.healthCheckGracePeriod = healthCheckGracePeriod;
         return this;
     }
-    
-    
+
     /**
      * Physical location of an existing cluster placement group into which
      * you want to launch your instances. For information about cluster
@@ -879,8 +869,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
         this.placementGroup = placementGroup;
         return this;
     }
-    
-    
+
     /**
      * A comma-separated list of subnet identifiers of Amazon Virtual Private
      * Clouds (Amazon VPCs). <p>If you specify subnets and Availability Zones
@@ -961,8 +950,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
         this.vPCZoneIdentifier = vPCZoneIdentifier;
         return this;
     }
-    
-    
+
     /**
      * A standalone termination policy or a list of termination policies used
      * to select the instance to terminate. The policies are executed in the
@@ -981,7 +969,6 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         Scaling Developer Guide</i>.
      */
     public java.util.List<String> getTerminationPolicies() {
-        
         if (terminationPolicies == null) {
               terminationPolicies = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               terminationPolicies.setAutoConstruct(true);
@@ -1079,7 +1066,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
 
         return this;
     }
-    
+
     /**
      * The tag to be created or updated. Each tag should be defined by its
      * resource type, resource ID, key, value, and a propagate flag. Valid
@@ -1098,7 +1085,6 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
      *         Your Auto Scaling Groups and Amazon EC2 Instances</a>.
      */
     public java.util.List<Tag> getTags() {
-        
         if (tags == null) {
               tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
               tags.setAutoConstruct(true);
@@ -1196,7 +1182,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest imple
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

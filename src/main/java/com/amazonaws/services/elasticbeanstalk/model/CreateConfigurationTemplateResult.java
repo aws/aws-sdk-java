@@ -149,8 +149,7 @@ public class CreateConfigurationTemplateResult implements Serializable {
         this.solutionStackName = solutionStackName;
         return this;
     }
-    
-    
+
     /**
      * The name of the application associated with this configuration set.
      * <p>
@@ -192,8 +191,7 @@ public class CreateConfigurationTemplateResult implements Serializable {
         this.applicationName = applicationName;
         return this;
     }
-    
-    
+
     /**
      * If not <code>null</code>, the name of the configuration template for
      * this configuration set.
@@ -241,8 +239,7 @@ public class CreateConfigurationTemplateResult implements Serializable {
         this.templateName = templateName;
         return this;
     }
-    
-    
+
     /**
      * Describes this configuration set.
      * <p>
@@ -284,8 +281,7 @@ public class CreateConfigurationTemplateResult implements Serializable {
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * If not <code>null</code>, the name of the environment for this
      * configuration set.
@@ -333,8 +329,7 @@ public class CreateConfigurationTemplateResult implements Serializable {
         this.environmentName = environmentName;
         return this;
     }
-    
-    
+
     /**
      * If this configuration set is associated with an environment, the
      * <code>DeploymentStatus</code> parameter indicates the deployment
@@ -490,8 +485,7 @@ public class CreateConfigurationTemplateResult implements Serializable {
         this.deploymentStatus = deploymentStatus;
         return this;
     }
-    
-    
+
     /**
      * If this configuration set is associated with an environment, the
      * <code>DeploymentStatus</code> parameter indicates the deployment
@@ -597,7 +591,7 @@ public class CreateConfigurationTemplateResult implements Serializable {
         this.deploymentStatus = deploymentStatus.toString();
         return this;
     }
-    
+
     /**
      * The date (in UTC time) when this configuration set was created.
      *
@@ -630,8 +624,7 @@ public class CreateConfigurationTemplateResult implements Serializable {
         this.dateCreated = dateCreated;
         return this;
     }
-    
-    
+
     /**
      * The date (in UTC time) when this configuration set was last modified.
      *
@@ -664,8 +657,7 @@ public class CreateConfigurationTemplateResult implements Serializable {
         this.dateUpdated = dateUpdated;
         return this;
     }
-    
-    
+
     /**
      * A list of the configuration options and their values in this
      * configuration set.
@@ -674,7 +666,6 @@ public class CreateConfigurationTemplateResult implements Serializable {
      *         configuration set.
      */
     public java.util.List<ConfigurationOptionSetting> getOptionSettings() {
-        
         if (optionSettings == null) {
               optionSettings = new com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting>();
               optionSettings.setAutoConstruct(true);
@@ -742,7 +733,7 @@ public class CreateConfigurationTemplateResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

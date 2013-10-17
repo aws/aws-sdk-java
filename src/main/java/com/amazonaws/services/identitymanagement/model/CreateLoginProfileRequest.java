@@ -54,8 +54,6 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest implement
      */
     public CreateLoginProfileRequest() {}
     
-
-
     /**
      * Constructs a new CreateLoginProfileRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -69,8 +67,6 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest implement
         setPassword(password);
     }
 
-    
-    
     /**
      * Name of the user to create a password for.
      * <p>
@@ -115,8 +111,7 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest implement
         this.userName = userName;
         return this;
     }
-    
-    
+
     /**
      * The new password for the user name.
      * <p>
@@ -161,8 +156,7 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest implement
         this.password = password;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

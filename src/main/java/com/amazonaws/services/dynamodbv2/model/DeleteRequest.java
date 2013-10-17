@@ -38,8 +38,6 @@ public class DeleteRequest implements Serializable {
      */
     public DeleteRequest() {}
     
-
-
     /**
      * Constructs a new DeleteRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -54,8 +52,6 @@ public class DeleteRequest implements Serializable {
         setKey(key);
     }
 
-    
-    
     /**
      * A map of attribute name to attribute values, representing the primary
      * key of the item to delete. All of the table's primary key attributes
@@ -107,8 +103,7 @@ public class DeleteRequest implements Serializable {
         setKey(key);
         return this;
     }
-    
-   	
+
     /**
      * A map of attribute name to attribute values, representing the primary
      * key of the item to delete. All of the table's primary key attributes
@@ -147,12 +142,12 @@ public class DeleteRequest implements Serializable {
      *
      * @param hashKey Primary hash key.
      * @param rangeKey Primary range key. (null if it a hash-only table)
-     */    
+     */
     public DeleteRequest withKey(java.util.Map.Entry<String, AttributeValue> hashKey, java.util.Map.Entry<String, AttributeValue> rangeKey) throws IllegalArgumentException {
     	setKey(hashKey, rangeKey);
     	return this;
     }
-	
+
     /**
      * A map of attribute name to attribute values, representing the primary
      * key of the item to delete. All of the table's primary key attributes
@@ -174,7 +169,7 @@ public class DeleteRequest implements Serializable {
 		this.key.put(key, value);
 		return this;
 	}
-	
+
 	/**
 	 * Removes all the entries added into Key.
 	 * <p>

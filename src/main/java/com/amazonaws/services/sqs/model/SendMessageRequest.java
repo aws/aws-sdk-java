@@ -49,8 +49,6 @@ public class SendMessageRequest extends AmazonWebServiceRequest implements Seria
      */
     public SendMessageRequest() {}
     
-
-
     /**
      * Constructs a new SendMessageRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -64,8 +62,6 @@ public class SendMessageRequest extends AmazonWebServiceRequest implements Seria
         setMessageBody(messageBody);
     }
 
-    
-    
     /**
      * The URL of the SQS queue to take action on.
      *
@@ -98,8 +94,7 @@ public class SendMessageRequest extends AmazonWebServiceRequest implements Seria
         this.queueUrl = queueUrl;
         return this;
     }
-    
-    
+
     /**
      * The message to send.
      *
@@ -132,8 +127,7 @@ public class SendMessageRequest extends AmazonWebServiceRequest implements Seria
         this.messageBody = messageBody;
         return this;
     }
-    
-    
+
     /**
      * The number of seconds the message has to be delayed.
      *
@@ -166,8 +160,7 @@ public class SendMessageRequest extends AmazonWebServiceRequest implements Seria
         this.delaySeconds = delaySeconds;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

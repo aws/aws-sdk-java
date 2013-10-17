@@ -86,8 +86,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements Seriali
         this.jobId = jobId;
         return this;
     }
-    
-    
+
     /**
      * The UTF-8 encoded text of the manifest file.
      *
@@ -120,8 +119,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements Seriali
         this.manifest = manifest;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether the job to initiate is an import or export job.
      * <p>
@@ -169,8 +167,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements Seriali
         this.jobType = jobType;
         return this;
     }
-    
-    
+
     /**
      * Specifies whether the job to initiate is an import or export job.
      * <p>
@@ -204,7 +201,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements Seriali
         this.jobType = jobType.toString();
         return this;
     }
-    
+
     /**
      * Validate the manifest and parameter values in the request but do not
      * actually create a job.
@@ -243,8 +240,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements Seriali
         this.validateOnly = validateOnly;
         return this;
     }
-    
-    
+
     /**
      * Validate the manifest and parameter values in the request but do not
      * actually create a job.
@@ -255,7 +251,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements Seriali
     public Boolean getValidateOnly() {
         return validateOnly;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

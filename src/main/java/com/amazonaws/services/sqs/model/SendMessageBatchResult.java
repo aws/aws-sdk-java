@@ -39,7 +39,6 @@ public class SendMessageBatchResult implements Serializable {
      * @return A list of <a>SendMessageBatchResultEntry</a>s.
      */
     public java.util.List<SendMessageBatchResultEntry> getSuccessful() {
-        
         if (successful == null) {
               successful = new com.amazonaws.internal.ListWithAutoConstructFlag<SendMessageBatchResultEntry>();
               successful.setAutoConstruct(true);
@@ -101,7 +100,7 @@ public class SendMessageBatchResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * A list of <a>BatchResultErrorEntry</a>s with the error detail about
      * each message that could not be enqueued.
@@ -110,7 +109,6 @@ public class SendMessageBatchResult implements Serializable {
      *         each message that could not be enqueued.
      */
     public java.util.List<BatchResultErrorEntry> getFailed() {
-        
         if (failed == null) {
               failed = new com.amazonaws.internal.ListWithAutoConstructFlag<BatchResultErrorEntry>();
               failed.setAutoConstruct(true);
@@ -178,7 +176,7 @@ public class SendMessageBatchResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

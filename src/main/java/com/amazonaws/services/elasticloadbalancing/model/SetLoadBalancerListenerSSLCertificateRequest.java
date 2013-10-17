@@ -54,8 +54,6 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends AmazonWebServi
      */
     public SetLoadBalancerListenerSSLCertificateRequest() {}
     
-
-
     /**
      * Constructs a new SetLoadBalancerListenerSSLCertificateRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -76,8 +74,6 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends AmazonWebServi
         setSSLCertificateId(sSLCertificateId);
     }
 
-    
-    
     /**
      * The name of the the LoadBalancer.
      *
@@ -110,8 +106,7 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends AmazonWebServi
         this.loadBalancerName = loadBalancerName;
         return this;
     }
-    
-    
+
     /**
      * The port that uses the specified SSL certificate.
      *
@@ -144,8 +139,7 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends AmazonWebServi
         this.loadBalancerPort = loadBalancerPort;
         return this;
     }
-    
-    
+
     /**
      * The ID of the SSL certificate chain to use. For more information on
      * SSL certificates, see <a
@@ -202,8 +196,7 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends AmazonWebServi
         this.sSLCertificateId = sSLCertificateId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

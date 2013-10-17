@@ -73,8 +73,7 @@ public class InstanceStatusSummary implements Serializable {
         this.status = status;
         return this;
     }
-    
-    
+
     /**
      * Sets the value of the Status property for this object.
      * <p>
@@ -108,14 +107,13 @@ public class InstanceStatusSummary implements Serializable {
         this.status = status.toString();
         return this;
     }
-    
+
     /**
      * Returns the value of the Details property for this object.
      *
      * @return The value of the Details property for this object.
      */
     public java.util.List<InstanceStatusDetails> getDetails() {
-        
         if (details == null) {
               details = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceStatusDetails>();
               details.setAutoConstruct(true);
@@ -177,7 +175,7 @@ public class InstanceStatusSummary implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

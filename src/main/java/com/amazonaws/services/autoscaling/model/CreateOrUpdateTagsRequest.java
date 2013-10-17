@@ -92,7 +92,6 @@ public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest implement
      *         previous tag definition, but you will not get an error message.
      */
     public java.util.List<Tag> getTags() {
-        
         if (tags == null) {
               tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
               tags.setAutoConstruct(true);
@@ -244,7 +243,7 @@ public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest implement
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -98,8 +98,7 @@ public class AddCacheRequest extends AmazonWebServiceRequest implements Serializ
         this.gatewayARN = gatewayARN;
         return this;
     }
-    
-    
+
     /**
      * An array of strings that identify disks that are to be configured as
      * cache. Each string in the array must be minimum length of 1 and
@@ -112,7 +111,6 @@ public class AddCacheRequest extends AmazonWebServiceRequest implements Serializ
      *         ListLocalDisks API.
      */
     public java.util.List<String> getDiskIds() {
-        
         if (diskIds == null) {
               diskIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               diskIds.setAutoConstruct(true);
@@ -192,7 +190,7 @@ public class AddCacheRequest extends AmazonWebServiceRequest implements Serializ
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

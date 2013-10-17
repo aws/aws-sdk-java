@@ -66,8 +66,6 @@ public class GetAttributesRequest extends AmazonWebServiceRequest implements Ser
      */
     public GetAttributesRequest() {}
     
-
-
     /**
      * Constructs a new GetAttributesRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -82,8 +80,6 @@ public class GetAttributesRequest extends AmazonWebServiceRequest implements Ser
         setItemName(itemName);
     }
 
-    
-    
     /**
      * The name of the domain in which to perform the operation.
      *
@@ -116,8 +112,7 @@ public class GetAttributesRequest extends AmazonWebServiceRequest implements Ser
         this.domainName = domainName;
         return this;
     }
-    
-    
+
     /**
      * The name of the item.
      *
@@ -150,15 +145,13 @@ public class GetAttributesRequest extends AmazonWebServiceRequest implements Ser
         this.itemName = itemName;
         return this;
     }
-    
-    
+
     /**
      * The names of the attributes.
      *
      * @return The names of the attributes.
      */
     public java.util.List<String> getAttributeNames() {
-        
         if (attributeNames == null) {
               attributeNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               attributeNames.setAutoConstruct(true);
@@ -220,7 +213,7 @@ public class GetAttributesRequest extends AmazonWebServiceRequest implements Ser
 
         return this;
     }
-    
+
     /**
      * Determines whether or not strong consistency should be enforced when
      * data is read from SimpleDB. If <code>true</code>, any data previously
@@ -277,8 +270,7 @@ public class GetAttributesRequest extends AmazonWebServiceRequest implements Ser
         this.consistentRead = consistentRead;
         return this;
     }
-    
-    
+
     /**
      * Determines whether or not strong consistency should be enforced when
      * data is read from SimpleDB. If <code>true</code>, any data previously
@@ -295,7 +287,7 @@ public class GetAttributesRequest extends AmazonWebServiceRequest implements Ser
     public Boolean getConsistentRead() {
         return consistentRead;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

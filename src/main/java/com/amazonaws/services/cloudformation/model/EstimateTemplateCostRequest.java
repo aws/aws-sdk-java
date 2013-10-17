@@ -133,8 +133,7 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest impleme
         this.templateBody = templateBody;
         return this;
     }
-    
-    
+
     /**
      * Location of file containing the template body. The URL must point to a
      * template located in an S3 bucket in the same region as the stack. For
@@ -212,8 +211,7 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest impleme
         this.templateURL = templateURL;
         return this;
     }
-    
-    
+
     /**
      * A list of <code>Parameter</code> structures that specify input
      * parameters.
@@ -222,7 +220,6 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest impleme
      *         parameters.
      */
     public java.util.List<Parameter> getParameters() {
-        
         if (parameters == null) {
               parameters = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>();
               parameters.setAutoConstruct(true);
@@ -290,7 +287,7 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest impleme
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

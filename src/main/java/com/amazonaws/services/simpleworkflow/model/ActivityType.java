@@ -89,8 +89,7 @@ public class ActivityType implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * The version of this activity. <note>The combination of activity type
      * name and version must be unique with in a domain.</note>
@@ -138,8 +137,7 @@ public class ActivityType implements Serializable {
         this.version = version;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -108,8 +108,7 @@ public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest 
         this.roleName = roleName;
         return this;
     }
-    
-    
+
     /**
      * Use this parameter only when paginating results, and only in a
      * subsequent request after you've received a response where the results
@@ -172,8 +171,7 @@ public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest 
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Use this parameter only when paginating results to indicate the
      * maximum number of user names you want in the response. If there are
@@ -233,8 +231,7 @@ public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest 
         this.maxItems = maxItems;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

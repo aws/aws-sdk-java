@@ -205,8 +205,7 @@ public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest impleme
         this.domain = domain;
         return this;
     }
-    
-    
+
     /**
      * The name of the workflow type. <p>The specified string must not start
      * or end with whitespace. It must not contain a <code>:</code> (colon),
@@ -272,8 +271,7 @@ public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest impleme
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * The version of the workflow type. <note> The workflow type consists of
      * the name and version, the combination of which must be unique within
@@ -357,8 +355,7 @@ public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest impleme
         this.version = version;
         return this;
     }
-    
-    
+
     /**
      * Textual description of the workflow type.
      * <p>
@@ -400,8 +397,7 @@ public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest impleme
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * If set, specifies the default maximum duration of decision tasks for
      * this workflow type. This default can be overridden when starting a
@@ -479,8 +475,7 @@ public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest impleme
         this.defaultTaskStartToCloseTimeout = defaultTaskStartToCloseTimeout;
         return this;
     }
-    
-    
+
     /**
      * If set, specifies the default maximum duration for executions of this
      * workflow type. You can override this default when starting an
@@ -576,8 +571,7 @@ public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest impleme
         this.defaultExecutionStartToCloseTimeout = defaultExecutionStartToCloseTimeout;
         return this;
     }
-    
-    
+
     /**
      * If set, specifies the default task list to use for scheduling decision
      * tasks for executions of this workflow type. This default is used only
@@ -634,8 +628,7 @@ public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest impleme
         this.defaultTaskList = defaultTaskList;
         return this;
     }
-    
-    
+
     /**
      * If set, specifies the default policy to use for the child workflow
      * executions when a workflow execution of this type is terminated, by
@@ -761,8 +754,7 @@ public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest impleme
         this.defaultChildPolicy = defaultChildPolicy;
         return this;
     }
-    
-    
+
     /**
      * If set, specifies the default policy to use for the child workflow
      * executions when a workflow execution of this type is terminated, by
@@ -848,7 +840,7 @@ public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest impleme
         this.defaultChildPolicy = defaultChildPolicy.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

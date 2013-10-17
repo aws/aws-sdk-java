@@ -70,8 +70,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
         this.sourceRegion = sourceRegion;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the SourceImageId property for this object.
      *
@@ -104,8 +103,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
         this.sourceImageId = sourceImageId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Name property for this object.
      *
@@ -138,8 +136,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Description property for this object.
      *
@@ -172,8 +169,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
         this.description = description;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the ClientToken property for this object.
      *
@@ -206,8 +202,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
         this.clientToken = clientToken;
         return this;
     }
-    
-    
+
     /**
      * This method is intended for internal use only.
      * Returns the marshaled request configured with additional parameters to

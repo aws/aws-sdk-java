@@ -123,8 +123,6 @@ public class DistributionConfig implements Serializable {
      */
     public DistributionConfig() {}
     
-
-
     /**
      * Constructs a new DistributionConfig object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -149,8 +147,6 @@ public class DistributionConfig implements Serializable {
         setEnabled(enabled);
     }
 
-    
-    
     /**
      * A unique number that ensures the request can't be replayed. If the
      * CallerReference is new (no matter the content of the
@@ -243,8 +239,7 @@ public class DistributionConfig implements Serializable {
         this.callerReference = callerReference;
         return this;
     }
-    
-    
+
     /**
      * A complex type that contains information about CNAMEs (alternate
      * domain names), if any, for this distribution.
@@ -283,8 +278,7 @@ public class DistributionConfig implements Serializable {
         this.aliases = aliases;
         return this;
     }
-    
-    
+
     /**
      * The object that you want CloudFront to return (for example,
      * index.html) when an end user requests the root URL for your
@@ -377,8 +371,7 @@ public class DistributionConfig implements Serializable {
         this.defaultRootObject = defaultRootObject;
         return this;
     }
-    
-    
+
     /**
      * A complex type that contains information about origins for this
      * distribution.
@@ -417,8 +410,7 @@ public class DistributionConfig implements Serializable {
         this.origins = origins;
         return this;
     }
-    
-    
+
     /**
      * A complex type that describes the default cache behavior if you do not
      * specify a CacheBehavior element or if files don't match any of the
@@ -469,8 +461,7 @@ public class DistributionConfig implements Serializable {
         this.defaultCacheBehavior = defaultCacheBehavior;
         return this;
     }
-    
-    
+
     /**
      * A complex type that contains zero or more CacheBehavior elements.
      *
@@ -503,8 +494,7 @@ public class DistributionConfig implements Serializable {
         this.cacheBehaviors = cacheBehaviors;
         return this;
     }
-    
-    
+
     /**
      * A complex type that contains zero or more CustomErrorResponse
      * elements.
@@ -543,8 +533,7 @@ public class DistributionConfig implements Serializable {
         this.customErrorResponses = customErrorResponses;
         return this;
     }
-    
-    
+
     /**
      * Any comments you want to include about the distribution.
      *
@@ -577,8 +566,7 @@ public class DistributionConfig implements Serializable {
         this.comment = comment;
         return this;
     }
-    
-    
+
     /**
      * A complex type that controls whether access logs are written for the
      * distribution.
@@ -617,8 +605,7 @@ public class DistributionConfig implements Serializable {
         this.logging = logging;
         return this;
     }
-    
-    
+
     /**
      * A complex type that contains information about price class for this
      * distribution.
@@ -672,8 +659,7 @@ public class DistributionConfig implements Serializable {
         this.priceClass = priceClass;
         return this;
     }
-    
-    
+
     /**
      * A complex type that contains information about price class for this
      * distribution.
@@ -711,7 +697,7 @@ public class DistributionConfig implements Serializable {
         this.priceClass = priceClass.toString();
         return this;
     }
-    
+
     /**
      * Whether the distribution is enabled to accept end user requests for
      * content.
@@ -750,8 +736,7 @@ public class DistributionConfig implements Serializable {
         this.enabled = enabled;
         return this;
     }
-    
-    
+
     /**
      * Whether the distribution is enabled to accept end user requests for
      * content.
@@ -762,7 +747,7 @@ public class DistributionConfig implements Serializable {
     public Boolean getEnabled() {
         return enabled;
     }
-    
+
     /**
      * A complex type that contains information about viewer certificates for
      * this distribution.
@@ -801,8 +786,7 @@ public class DistributionConfig implements Serializable {
         this.viewerCertificate = viewerCertificate;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -85,15 +85,13 @@ public class GetGroupResult implements Serializable {
         this.group = group;
         return this;
     }
-    
-    
+
     /**
      * A list of users in the group.
      *
      * @return A list of users in the group.
      */
     public java.util.List<User> getUsers() {
-        
         if (users == null) {
               users = new com.amazonaws.internal.ListWithAutoConstructFlag<User>();
               users.setAutoConstruct(true);
@@ -155,7 +153,7 @@ public class GetGroupResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * A flag that indicates whether there are more user names to list. If
      * your results were truncated, you can make a subsequent pagination
@@ -206,8 +204,7 @@ public class GetGroupResult implements Serializable {
         this.isTruncated = isTruncated;
         return this;
     }
-    
-    
+
     /**
      * A flag that indicates whether there are more user names to list. If
      * your results were truncated, you can make a subsequent pagination
@@ -222,7 +219,7 @@ public class GetGroupResult implements Serializable {
     public Boolean getIsTruncated() {
         return isTruncated;
     }
-    
+
     /**
      * If IsTruncated is <code>true</code>, then this element is present and
      * contains the value to use for the <code>Marker</code> parameter in a
@@ -279,8 +276,7 @@ public class GetGroupResult implements Serializable {
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

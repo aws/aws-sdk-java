@@ -69,8 +69,6 @@ public class ListUserPoliciesRequest extends AmazonWebServiceRequest implements 
      */
     public ListUserPoliciesRequest() {}
     
-
-
     /**
      * Constructs a new ListUserPoliciesRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -82,8 +80,6 @@ public class ListUserPoliciesRequest extends AmazonWebServiceRequest implements 
         setUserName(userName);
     }
 
-    
-    
     /**
      * The name of the user to list policies for.
      * <p>
@@ -128,8 +124,7 @@ public class ListUserPoliciesRequest extends AmazonWebServiceRequest implements 
         this.userName = userName;
         return this;
     }
-    
-    
+
     /**
      * Use this only when paginating results, and only in a subsequent
      * request after you've received a response where the results are
@@ -192,8 +187,7 @@ public class ListUserPoliciesRequest extends AmazonWebServiceRequest implements 
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Use this only when paginating results to indicate the maximum number
      * of policy names you want in the response. If there are additional
@@ -253,8 +247,7 @@ public class ListUserPoliciesRequest extends AmazonWebServiceRequest implements 
         this.maxItems = maxItems;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

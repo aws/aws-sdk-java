@@ -80,8 +80,7 @@ public class ReservedInstancesConfiguration implements Serializable {
         this.availabilityZone = availabilityZone;
         return this;
     }
-    
-    
+
     /**
      * The network platform of the modified Reserved Instances, which is
      * either EC2-Classic or EC2-VPC.
@@ -120,8 +119,7 @@ public class ReservedInstancesConfiguration implements Serializable {
         this.platform = platform;
         return this;
     }
-    
-    
+
     /**
      * The number of modified Reserved Instances.
      *
@@ -154,8 +152,7 @@ public class ReservedInstancesConfiguration implements Serializable {
         this.instanceCount = instanceCount;
         return this;
     }
-    
-    
+
     /**
      * The instance type for the modified Reserved Instances.
      * <p>
@@ -203,8 +200,7 @@ public class ReservedInstancesConfiguration implements Serializable {
         this.instanceType = instanceType;
         return this;
     }
-    
-    
+
     /**
      * The instance type for the modified Reserved Instances.
      * <p>
@@ -238,7 +234,7 @@ public class ReservedInstancesConfiguration implements Serializable {
         this.instanceType = instanceType.toString();
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

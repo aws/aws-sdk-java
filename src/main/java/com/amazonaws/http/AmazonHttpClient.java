@@ -35,6 +35,7 @@ import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpEntityEnclosingRequest;
 import org.apache.http.HttpStatus;
+import org.apache.http.annotation.ThreadSafe;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpEntityEnclosingRequestBase;
 import org.apache.http.client.methods.HttpRequestBase;
@@ -49,11 +50,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.Request;
+import com.amazonaws.RequestClientOptions;
+import com.amazonaws.RequestClientOptions.Marker;
 import com.amazonaws.ResponseMetadata;
 import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.handlers.RequestHandler;
 import com.amazonaws.internal.CRC32MismatchException;
 import com.amazonaws.internal.CustomBackoffStrategy;
+import com.amazonaws.metrics.AwsSdkMetrics;
+import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.CountingInputStream;
@@ -61,7 +66,10 @@ import com.amazonaws.util.DateUtils;
 import com.amazonaws.util.ResponseMetadataCache;
 import com.amazonaws.util.TimingInfo;
 
+@ThreadSafe
 public class AmazonHttpClient {
+
+    private static final String HEADER_USER_AGENT = "User-Agent";
 
     /**
      * Logger providing detailed information on requests/responses. Users can
@@ -88,12 +96,26 @@ public class AmazonHttpClient {
     /** Cache of metadata for recently executed requests for diagnostic purposes */
     private final ResponseMetadataCache responseMetadataCache = new ResponseMetadataCache(50);
 
+    /**
+     * A request metric collector used specifically for this http client; or
+     * null if there is none. This collector, if specified, always takes
+     * precedence over the one specified at the AWS SDK level.
+     * 
+     * @see AwsSdkMetrics
+     */
+    private final RequestMetricCollector requestMetricCollector;
+
     private static final Random random = new Random();
 
-    private static HttpRequestFactory httpRequestFactory = new HttpRequestFactory();
-    private static HttpClientFactory httpClientFactory = new HttpClientFactory();
+    private static final HttpRequestFactory httpRequestFactory = new HttpRequestFactory();
+    private static final HttpClientFactory httpClientFactory = new HttpClientFactory();
 
-    /** Internal system property to enable advanced timing info collection. */
+    /** 
+     * @deprecated by {@link AwsSdkMetrics#DEFAULT_METRICS_SYSTEM_PROPERTY}.
+     * 
+     * Internal system property to enable timing info collection. 
+     */
+    @Deprecated
     public static final String PROFILING_SYSTEM_PROPERTY = "com.amazonaws.sdk.enableRuntimeProfiling";
 
     static {
@@ -113,15 +135,32 @@ public class AmazonHttpClient {
      * Constructs a new AWS client using the specified client configuration
      * options (ex: max retry attempts, proxy settings, etc).
      *
-     * @param clientConfiguration
+     * @param config
      *            Configuration options specifying how this client will
      *            communicate with AWS (ex: proxy settings, retry count, etc.).
      */
-    public AmazonHttpClient(ClientConfiguration clientConfiguration) {
-        this.config = clientConfiguration;
-        this.httpClient = httpClientFactory.createHttpClient(config);
+    public AmazonHttpClient(ClientConfiguration config) {
+        this(config, null);
     }
-
+    
+    /**
+     * Constructs a new AWS client using the specified client configuration
+     * options (ex: max retry attempts, proxy settings, etc), and request metric
+     * collector.
+     * 
+     * @param config
+     *            Configuration options specifying how this client will
+     *            communicate with AWS (ex: proxy settings, retry count, etc.).
+     * @param requestMetricCollector
+     *            client specific request metric collector, which takes
+     *            precedence over the one at the AWS SDK level; or null if there
+     *            is none.
+     */
+    public AmazonHttpClient(ClientConfiguration config, RequestMetricCollector requestMetricCollector) {
+        this.config = config;
+        this.httpClient = httpClientFactory.createHttpClient(config);
+        this.requestMetricCollector = requestMetricCollector;
+    }
     /**
      * Returns additional response metadata for an executed request. Response
      * metadata isn't considered part of the standard results returned by an
@@ -187,9 +226,14 @@ public class AmazonHttpClient {
     public <T> T execute(Request<?> request,
             HttpResponseHandler<AmazonWebServiceResponse<T>> responseHandler,
             HttpResponseHandler<AmazonServiceException> errorResponseHandler,
-            ExecutionContext executionContext) throws AmazonClientException, AmazonServiceException {
-
-        if (executionContext == null) throw new AmazonClientException("Internal SDK Error: No execution context parameter specified.");
+            ExecutionContext executionContext) throws AmazonClientException, AmazonServiceException 
+    {
+        if (executionContext == null)
+            throw new AmazonClientException("Internal SDK Error: No execution context parameter specified.");
+        // Binds the request metrics to the current request.
+        // Note metrics can be captured before the request is created;
+        // Hence the delayed binding.
+        request.setAWSRequestMetrics(executionContext.getAwsRequestMetrics());
         List<RequestHandler> requestHandlers = executionContext.getRequestHandlers();
         if (requestHandlers == null) requestHandlers = new ArrayList<RequestHandler>();
 
@@ -198,15 +242,15 @@ public class AmazonHttpClient {
             requestHandler.beforeRequest(request);
         }
 
+        final AWSRequestMetrics metrics = executionContext.getAwsRequestMetrics();
+        final RequestMetricCollector mc = requestMetricCollector(request);
+        T t = null;
         try {
-            T t = executeHelper(request, responseHandler, errorResponseHandler, executionContext);
-            AWSRequestMetrics metrics = executionContext.getAwsRequestMetrics();
+            t = executeHelper(request, responseHandler, errorResponseHandler, executionContext);
             TimingInfo timingInfo = metrics.getTimingInfo().endTiming();
 
             for (RequestHandler handler : requestHandlers) {
-                try {
-                    handler.afterResponse(request, t, timingInfo);
-                } catch (ClassCastException cce) {}
+                handler.afterResponse(request, t, timingInfo);
             }
             return t;
         } catch (AmazonClientException e) {
@@ -214,6 +258,8 @@ public class AmazonHttpClient {
                 handler.afterError(request, e);
             }
             throw e;
+        } finally {
+            mc.collectMetrics(request, t);
         }
     }
 
@@ -223,12 +269,12 @@ public class AmazonHttpClient {
      * @see AmazonHttpClient#execute(Request, HttpResponseHandler, HttpResponseHandler)
      * @see AmazonHttpClient#execute(Request, HttpResponseHandler, HttpResponseHandler, ExecutionContext)
      */
-    private <T extends Object> T executeHelper(Request<?> request,
+    private <T> T executeHelper(Request<?> request,
             HttpResponseHandler<AmazonWebServiceResponse<T>> responseHandler,
             HttpResponseHandler<AmazonServiceException> errorResponseHandler,
             ExecutionContext executionContext)
-            throws AmazonClientException, AmazonServiceException {
-
+            throws AmazonClientException, AmazonServiceException
+    {
         /*
          * Depending on which response handler we end up choosing to handle the
          * HTTP response, it might require us to leave the underlying HTTP
@@ -237,16 +283,12 @@ public class AmazonHttpClient {
          * any of the content until after a response is returned to the caller.
          */
         boolean leaveHttpConnectionOpen = false;
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         /* add the service endpoint to the logs. You can infer service name from service endpoint */
-        awsRequestMetrics.addProperty(Field.ServiceName.name(), request.getServiceName());
-        awsRequestMetrics.addProperty(Field.ServiceEndpoint.name(), request.getEndpoint());
-
-
+        awsRequestMetrics.addProperty(Field.ServiceName, request.getServiceName());
+        awsRequestMetrics.addProperty(Field.ServiceEndpoint, request.getEndpoint());
         // Apply whatever request options we know how to handle, such as user-agent.
         setUserAgent(request);
-
         int retryCount = 0;
         URI redirectedURI = null;
         HttpEntity entity = null;
@@ -260,7 +302,7 @@ public class AmazonHttpClient {
         originalHeaders.putAll(request.getHeaders());
 
         while (true) {
-            awsRequestMetrics.setCounter(Field.AttemptCount.name(), retryCount+1);
+            awsRequestMetrics.setCounter(Field.AttemptCount, retryCount+1);
             if ( retryCount > 0 ) {
                 request.setParameters(originalParameters);
                 request.setHeaders(originalHeaders);
@@ -273,9 +315,9 @@ public class AmazonHttpClient {
             try {
                 // Sign the request if a signer was provided
                 if (executionContext.getSigner() != null && executionContext.getCredentials() != null) {
-                    awsRequestMetrics.startEvent(Field.RequestSigningTime.name());
+                    awsRequestMetrics.startEvent(Field.RequestSigningTime);
                     executionContext.getSigner().sign(request, executionContext.getCredentials());
-                    awsRequestMetrics.endEvent(Field.RequestSigningTime.name());
+                    awsRequestMetrics.endEvent(Field.RequestSigningTime);
                 }
 
                  if (requestLog.isDebugEnabled()) {
@@ -293,9 +335,9 @@ public class AmazonHttpClient {
                 }
 
                 if ( retryCount > 0 ) {
-                    awsRequestMetrics.startEvent(Field.RetryPauseTime.name());
+                    awsRequestMetrics.startEvent(Field.RetryPauseTime);
                     pauseExponentially(retryCount, exception, executionContext.getCustomBackoffStrategy());
-                    awsRequestMetrics.endEvent(Field.RetryPauseTime.name());
+                    awsRequestMetrics.endEvent(Field.RetryPauseTime);
                 }
 
                 if ( entity != null ) {
@@ -311,18 +353,14 @@ public class AmazonHttpClient {
                         }
                     }
                 }
-
+                
                 exception = null;
-
-                awsRequestMetrics.startEvent(Field.HttpRequestTime.name());
+                awsRequestMetrics.startEvent(Field.HttpRequestTime);
                 response = httpClient.execute(httpRequest);
-                awsRequestMetrics.endEvent(Field.HttpRequestTime.name());
-
+                awsRequestMetrics.endEvent(Field.HttpRequestTime);
 
                 if (isRequestSuccessful(response)) {
-
-                    awsRequestMetrics.addProperty(Field.StatusCode.name(), response.getStatusLine().getStatusCode());
-
+                    awsRequestMetrics.addProperty(Field.StatusCode, response.getStatusLine().getStatusCode());
                     /*
                      * If we get back any 2xx status code, then we know we should
                      * treat the service call as successful.
@@ -341,36 +379,35 @@ public class AmazonHttpClient {
                     log.debug("Redirecting to: " + redirectedLocation);
                     redirectedURI = URI.create(redirectedLocation);
                     httpRequest.setURI(redirectedURI);
-                    awsRequestMetrics.addProperty(Field.StatusCode.name(), response.getStatusLine().getStatusCode());
-                    awsRequestMetrics.addProperty(Field.RedirectLocation.name(), redirectedLocation);
-                    awsRequestMetrics.addProperty(Field.AWSRequestID.name(), null);
+                    awsRequestMetrics.addProperty(Field.StatusCode, response.getStatusLine().getStatusCode());
+                    awsRequestMetrics.addProperty(Field.RedirectLocation, redirectedLocation);
+                    awsRequestMetrics.addProperty(Field.AWSRequestID, null);
 
                 } else {
                     leaveHttpConnectionOpen = errorResponseHandler.needsConnectionLeftOpen();
                     exception = handleErrorResponse(request, errorResponseHandler, httpRequest, response);
-                    awsRequestMetrics.addProperty(Field.AWSRequestID.name(), exception.getRequestId());
-                    awsRequestMetrics.addProperty(Field.AWSErrorCode.name(), exception.getErrorCode());
-                    awsRequestMetrics.addProperty(Field.StatusCode.name(), exception.getStatusCode());
+                    awsRequestMetrics.addProperty(Field.AWSRequestID, exception.getRequestId());
+                    awsRequestMetrics.addProperty(Field.AWSErrorCode, exception.getErrorCode());
+                    awsRequestMetrics.addProperty(Field.StatusCode, exception.getStatusCode());
                     
                     if (!shouldRetry(httpRequest, exception, retryCount)) {
                         throw exception;
                     }
-                    
+
                     /*
                      * Checking for clock skew error again because we don't want to set the
                      * global time offset for every service exception.
                      */
                     if(isClockSkewError(exception)) {
-                    	int timeOffset = parseClockSkewOffset(response, exception);
-                    	SDKGlobalConfiguration.setGlobalTimeOffset(timeOffset);                     
+                        int timeOffset = parseClockSkewOffset(response, exception);
+                        SDKGlobalConfiguration.setGlobalTimeOffset(timeOffset);
                     }
-                    
                     resetRequestAfterError(request, exception);
                 }
             } catch (IOException ioe) {
                 log.info("Unable to execute HTTP request: " + ioe.getMessage(), ioe);
-                awsRequestMetrics.addProperty(Field.Exception.name(), ioe.toString());
-                awsRequestMetrics.addProperty(Field.AWSRequestID.name(), null);
+                awsRequestMetrics.addProperty(Field.Exception, ioe.toString());
+                awsRequestMetrics.addProperty(Field.AWSRequestID, null);
 
                 if (!shouldRetry(httpRequest, ioe, retryCount)) {
                     throw new AmazonClientException("Unable to execute HTTP request: " + ioe.getMessage(), ioe);
@@ -437,20 +474,22 @@ public class AmazonHttpClient {
      */
     private void setUserAgent(Request<?> request) {
         String userAgent = config.getUserAgent();
-        if (!(userAgent.equals(ClientConfiguration.DEFAULT_USER_AGENT))) {
+        if ( !userAgent.equals(ClientConfiguration.DEFAULT_USER_AGENT) ) {
             userAgent += ", " + ClientConfiguration.DEFAULT_USER_AGENT;
         }
-
         if ( userAgent != null ) {
-            request.addHeader("User-Agent", userAgent);
+            request.addHeader(HEADER_USER_AGENT, userAgent);
         }
-
-        if ( request.getOriginalRequest() != null && request.getOriginalRequest().getRequestClientOptions() != null
-                && request.getOriginalRequest().getRequestClientOptions().getClientMarker() != null ) {
-            request.addHeader(
-                    "User-Agent",
-                    createUserAgentString(userAgent, request.getOriginalRequest().getRequestClientOptions()
-                            .getClientMarker()));
+        AmazonWebServiceRequest awsreq = request.getOriginalRequest();
+        if (awsreq != null) {
+            RequestClientOptions opts = awsreq.getRequestClientOptions();
+            if (opts != null) {
+                String userAgentMarker = opts.getClientMarker(Marker.USER_AGENT);
+                if (userAgentMarker != null) {
+                    request.addHeader(HEADER_USER_AGENT,
+                        createUserAgentString(userAgent, userAgentMarker));
+                }
+            }
         }
     }
 
@@ -600,11 +639,11 @@ public class AmazonHttpClient {
             }
 
             AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-            awsRequestMetrics.startEvent(Field.ResponseProcessingTime.name());
+            awsRequestMetrics.startEvent(Field.ResponseProcessingTime);
             AmazonWebServiceResponse<? extends T> awsResponse = responseHandler.handle(httpResponse);
-            awsRequestMetrics.endEvent(Field.ResponseProcessingTime.name());
+            awsRequestMetrics.endEvent(Field.ResponseProcessingTime);
             if (countingInputStream != null) {
-                awsRequestMetrics.setCounter(Field.BytesProcessed.name(), countingInputStream.getByteCount());
+                awsRequestMetrics.setCounter(Field.BytesProcessed, countingInputStream.getByteCount());
             }
 
 
@@ -617,7 +656,7 @@ public class AmazonHttpClient {
                 requestLog.debug("Received successful response: " + apacheHttpResponse.getStatusLine().getStatusCode()
                         + ", AWS Request ID: " + awsResponse.getRequestId());
             }
-            awsRequestMetrics.addProperty(Field.AWSRequestID.name(), awsResponse.getRequestId());
+            awsRequestMetrics.addProperty(Field.AWSRequestID, awsResponse.getRequestId());
 
             return awsResponse.getResult();
         } catch (CRC32MismatchException e) {
@@ -868,4 +907,25 @@ public class AmazonHttpClient {
         super.finalize();
     }
 
+    /**
+     * Returns the most specific request metric collector, starting from the
+     * request level, then client level, then finally the AWS SDK level.
+     */
+    private RequestMetricCollector requestMetricCollector(Request<?> req) {
+        AmazonWebServiceRequest origReq = req.getOriginalRequest();
+        RequestMetricCollector mc = origReq.getRequestMetricCollector();
+        if (mc != null) {
+            return mc;
+        }
+        mc = requestMetricCollector;
+        return mc == null ? AwsSdkMetrics.getRequestMetricCollector() : mc;
+    }
+
+    /**
+     * Returns the http client specific request metric collector; or null if
+     * there is none.
+     */
+    public RequestMetricCollector getRequestMetricCollector() {
+        return requestMetricCollector;
+    }
 }

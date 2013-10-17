@@ -154,8 +154,7 @@ public class RecordActivityTaskHeartbeatRequest extends AmazonWebServiceRequest 
         this.taskToken = taskToken;
         return this;
     }
-    
-    
+
     /**
      * If specified, contains details about the progress of the task.
      * <p>
@@ -197,8 +196,7 @@ public class RecordActivityTaskHeartbeatRequest extends AmazonWebServiceRequest 
         this.details = details;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

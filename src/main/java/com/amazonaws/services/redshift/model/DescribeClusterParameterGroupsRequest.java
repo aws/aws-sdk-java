@@ -103,8 +103,7 @@ public class DescribeClusterParameterGroupsRequest extends AmazonWebServiceReque
         this.parameterGroupName = parameterGroupName;
         return this;
     }
-    
-    
+
     /**
      * The maximum number of parameter group records to include in the
      * response. If more records exist than the specified
@@ -167,8 +166,7 @@ public class DescribeClusterParameterGroupsRequest extends AmazonWebServiceReque
         this.maxRecords = maxRecords;
         return this;
     }
-    
-    
+
     /**
      * An optional marker returned by a previous
      * <a>DescribeClusterParameterGroups</a> request to indicate the first
@@ -213,8 +211,7 @@ public class DescribeClusterParameterGroupsRequest extends AmazonWebServiceReque
         this.marker = marker;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

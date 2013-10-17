@@ -77,8 +77,7 @@ public class ChangePasswordRequest extends AmazonWebServiceRequest implements Se
         this.oldPassword = oldPassword;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the NewPassword property for this object.
      * <p>
@@ -123,8 +122,7 @@ public class ChangePasswordRequest extends AmazonWebServiceRequest implements Se
         this.newPassword = newPassword;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

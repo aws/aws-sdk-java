@@ -39,8 +39,6 @@ public class GetStreamingDistributionRequest extends AmazonWebServiceRequest imp
      */
     public GetStreamingDistributionRequest() {}
     
-
-
     /**
      * Constructs a new GetStreamingDistributionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -52,8 +50,6 @@ public class GetStreamingDistributionRequest extends AmazonWebServiceRequest imp
         setId(id);
     }
 
-    
-    
     /**
      * The streaming distribution's id.
      *
@@ -86,8 +82,7 @@ public class GetStreamingDistributionRequest extends AmazonWebServiceRequest imp
         this.id = id;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

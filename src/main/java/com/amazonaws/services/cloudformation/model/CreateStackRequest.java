@@ -188,8 +188,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
         this.stackName = stackName;
         return this;
     }
-    
-    
+
     /**
      * Structure containing the template body. (For more information, go to
      * the <a
@@ -261,8 +260,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
         this.templateBody = templateBody;
         return this;
     }
-    
-    
+
     /**
      * Location of file containing the template body. The URL must point to a
      * template (max size: 307,200 bytes) located in an S3 bucket in the same
@@ -340,8 +338,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
         this.templateURL = templateURL;
         return this;
     }
-    
-    
+
     /**
      * A list of <code>Parameter</code> structures that specify input
      * parameters for the stack.
@@ -350,7 +347,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         parameters for the stack.
      */
     public java.util.List<Parameter> getParameters() {
-        
         if (parameters == null) {
               parameters = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>();
               parameters.setAutoConstruct(true);
@@ -418,7 +414,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
 
         return this;
     }
-    
+
     /**
      * Set to <code>true</code> to disable rollback of the stack if stack
      * creation failed. You can specify either <code>DisableRollback</code>
@@ -469,8 +465,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
         this.disableRollback = disableRollback;
         return this;
     }
-    
-    
+
     /**
      * Set to <code>true</code> to disable rollback of the stack if stack
      * creation failed. You can specify either <code>DisableRollback</code>
@@ -485,7 +480,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
     public Boolean getDisableRollback() {
         return disableRollback;
     }
-    
+
     /**
      * The amount of time that can pass before the stack status becomes
      * CREATE_FAILED; if <code>DisableRollback</code> is not set or is set to
@@ -539,8 +534,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
         this.timeoutInMinutes = timeoutInMinutes;
         return this;
     }
-    
-    
+
     /**
      * The Simple Notification Service (SNS) topic ARNs to publish stack
      * related events. You can find your SNS topic ARNs using the <a
@@ -556,7 +550,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         Command Line Interface (CLI).
      */
     public java.util.List<String> getNotificationARNs() {
-        
         if (notificationARNs == null) {
               notificationARNs = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               notificationARNs.setAutoConstruct(true);
@@ -645,7 +638,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
 
         return this;
     }
-    
+
     /**
      * The list of capabilities that you want to allow in the stack. If your
      * template contains IAM resources, you must specify the CAPABILITY_IAM
@@ -676,7 +669,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      */
     public java.util.List<String> getCapabilities() {
-        
         if (capabilities == null) {
               capabilities = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               capabilities.setAutoConstruct(true);
@@ -810,7 +802,54 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
 
         return this;
     }
-    
+
+    /**
+     * The list of capabilities that you want to allow in the stack. If your
+     * template contains IAM resources, you must specify the CAPABILITY_IAM
+     * value for this parameter; otherwise, this action returns an
+     * InsufficientCapabilities error. IAM resources are the following: <a
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     * <a
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     * <a
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * <a
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     * and <a
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param capabilities The list of capabilities that you want to allow in the stack. If your
+     *         template contains IAM resources, you must specify the CAPABILITY_IAM
+     *         value for this parameter; otherwise, this action returns an
+     *         InsufficientCapabilities error. IAM resources are the following: <a
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     *         <a
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     *         <a
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     *         <a
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     *         and <a
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CreateStackRequest withCapabilities(Capability... capabilities) {
+        java.util.ArrayList<String> capabilitiesCopy = new java.util.ArrayList<String>(capabilities.length);
+        for (Capability member : capabilities) {
+            capabilitiesCopy.add(member.toString());
+        }
+        if (getCapabilities() == null) {
+            setCapabilities(capabilitiesCopy);
+        } else {
+            getCapabilities().addAll(capabilitiesCopy);
+        }
+        return this;
+    }
+
     /**
      * Determines what action will be taken if stack creation fails. This
      * must be one of: DO_NOTHING, ROLLBACK, or DELETE. You can specify
@@ -876,8 +915,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
         this.onFailure = onFailure;
         return this;
     }
-    
-    
+
     /**
      * Determines what action will be taken if stack creation fails. This
      * must be one of: DO_NOTHING, ROLLBACK, or DELETE. You can specify
@@ -923,7 +961,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
         this.onFailure = onFailure.toString();
         return this;
     }
-    
+
     /**
      * A set of user-defined <code>Tags</code> to associate with this stack,
      * represented by key/value pairs. Tags defined for the stack are
@@ -936,7 +974,6 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
      *         maximum number of 10 tags can be specified.
      */
     public java.util.List<Tag> getTags() {
-        
         if (tags == null) {
               tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
               tags.setAutoConstruct(true);
@@ -1016,7 +1053,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements Seria
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

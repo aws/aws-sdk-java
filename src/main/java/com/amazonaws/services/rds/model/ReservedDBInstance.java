@@ -126,8 +126,7 @@ public class ReservedDBInstance implements Serializable {
         this.reservedDBInstanceId = reservedDBInstanceId;
         return this;
     }
-    
-    
+
     /**
      * The offering identifier.
      *
@@ -160,8 +159,7 @@ public class ReservedDBInstance implements Serializable {
         this.reservedDBInstancesOfferingId = reservedDBInstancesOfferingId;
         return this;
     }
-    
-    
+
     /**
      * The DB instance class for the reserved DB Instance.
      *
@@ -194,8 +192,7 @@ public class ReservedDBInstance implements Serializable {
         this.dBInstanceClass = dBInstanceClass;
         return this;
     }
-    
-    
+
     /**
      * The time the reservation started.
      *
@@ -228,8 +225,7 @@ public class ReservedDBInstance implements Serializable {
         this.startTime = startTime;
         return this;
     }
-    
-    
+
     /**
      * The duration of the reservation in seconds.
      *
@@ -262,8 +258,7 @@ public class ReservedDBInstance implements Serializable {
         this.duration = duration;
         return this;
     }
-    
-    
+
     /**
      * The fixed price charged for this reserved DB Instance.
      *
@@ -296,8 +291,7 @@ public class ReservedDBInstance implements Serializable {
         this.fixedPrice = fixedPrice;
         return this;
     }
-    
-    
+
     /**
      * The hourly price charged for this reserved DB Instance.
      *
@@ -330,8 +324,7 @@ public class ReservedDBInstance implements Serializable {
         this.usagePrice = usagePrice;
         return this;
     }
-    
-    
+
     /**
      * The currency code for the reserved DB Instance.
      *
@@ -364,8 +357,7 @@ public class ReservedDBInstance implements Serializable {
         this.currencyCode = currencyCode;
         return this;
     }
-    
-    
+
     /**
      * The number of reserved DB Instances.
      *
@@ -398,8 +390,7 @@ public class ReservedDBInstance implements Serializable {
         this.dBInstanceCount = dBInstanceCount;
         return this;
     }
-    
-    
+
     /**
      * The description of the reserved DB Instance.
      *
@@ -432,8 +423,7 @@ public class ReservedDBInstance implements Serializable {
         this.productDescription = productDescription;
         return this;
     }
-    
-    
+
     /**
      * The offering type of this reserved DB Instance.
      *
@@ -466,8 +456,7 @@ public class ReservedDBInstance implements Serializable {
         this.offeringType = offeringType;
         return this;
     }
-    
-    
+
     /**
      * Indicates if the reservation applies to Multi-AZ deployments.
      *
@@ -500,8 +489,7 @@ public class ReservedDBInstance implements Serializable {
         this.multiAZ = multiAZ;
         return this;
     }
-    
-    
+
     /**
      * Indicates if the reservation applies to Multi-AZ deployments.
      *
@@ -510,7 +498,7 @@ public class ReservedDBInstance implements Serializable {
     public Boolean getMultiAZ() {
         return multiAZ;
     }
-    
+
     /**
      * The state of the reserved DB Instance.
      *
@@ -543,15 +531,13 @@ public class ReservedDBInstance implements Serializable {
         this.state = state;
         return this;
     }
-    
-    
+
     /**
      * The recurring price charged to run this reserved DB Instance.
      *
      * @return The recurring price charged to run this reserved DB Instance.
      */
     public java.util.List<RecurringCharge> getRecurringCharges() {
-        
         if (recurringCharges == null) {
               recurringCharges = new com.amazonaws.internal.ListWithAutoConstructFlag<RecurringCharge>();
               recurringCharges.setAutoConstruct(true);
@@ -613,7 +599,7 @@ public class ReservedDBInstance implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

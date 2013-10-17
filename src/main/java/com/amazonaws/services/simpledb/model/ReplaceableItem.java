@@ -39,8 +39,6 @@ public class ReplaceableItem implements Serializable {
      */
     public ReplaceableItem() {}
     
-
-
     /**
      * Constructs a new ReplaceableItem object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -51,10 +49,6 @@ public class ReplaceableItem implements Serializable {
     public ReplaceableItem(String name) {
         setName(name);
     }
-
-    
-    
-
 
     /**
      * Constructs a new ReplaceableItem object.
@@ -69,8 +63,6 @@ public class ReplaceableItem implements Serializable {
         setAttributes(attributes);
     }
 
-    
-    
     /**
      * The name of the replaceable item.
      *
@@ -103,15 +95,13 @@ public class ReplaceableItem implements Serializable {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * The list of attributes for a replaceable item.
      *
      * @return The list of attributes for a replaceable item.
      */
     public java.util.List<ReplaceableAttribute> getAttributes() {
-        
         if (attributes == null) {
               attributes = new com.amazonaws.internal.ListWithAutoConstructFlag<ReplaceableAttribute>();
               attributes.setAutoConstruct(true);
@@ -173,7 +163,7 @@ public class ReplaceableItem implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

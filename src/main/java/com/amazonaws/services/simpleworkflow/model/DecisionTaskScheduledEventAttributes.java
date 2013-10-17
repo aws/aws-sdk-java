@@ -73,8 +73,7 @@ public class DecisionTaskScheduledEventAttributes implements Serializable {
         this.taskList = taskList;
         return this;
     }
-    
-    
+
     /**
      * The maximum duration for this decision task. The task is considered
      * timed out if it does not completed within this duration. <p>The valid
@@ -140,8 +139,7 @@ public class DecisionTaskScheduledEventAttributes implements Serializable {
         this.startToCloseTimeout = startToCloseTimeout;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

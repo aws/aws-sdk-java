@@ -93,8 +93,7 @@ public class ListVolumeRecoveryPointsResult implements Serializable {
         this.gatewayARN = gatewayARN;
         return this;
     }
-    
-    
+
     /**
      * An array of <a>VolumeRecoveryPointInfo</a> objects, where each object
      * describes a recovery point. If no recovery points are defined for the
@@ -105,7 +104,6 @@ public class ListVolumeRecoveryPointsResult implements Serializable {
      *         volume, then <i>VolumeRecoveryPointInfos</i> is an empty array "[]"
      */
     public java.util.List<VolumeRecoveryPointInfo> getVolumeRecoveryPointInfos() {
-        
         if (volumeRecoveryPointInfos == null) {
               volumeRecoveryPointInfos = new com.amazonaws.internal.ListWithAutoConstructFlag<VolumeRecoveryPointInfo>();
               volumeRecoveryPointInfos.setAutoConstruct(true);
@@ -179,7 +177,7 @@ public class ListVolumeRecoveryPointsResult implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

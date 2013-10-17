@@ -73,8 +73,7 @@ public class UserIdGroupPair implements Serializable {
         this.userId = userId;
         return this;
     }
-    
-    
+
     /**
      * Name of the security group in the specified AWS account. Cannot be
      * used when specifying a CIDR IP address range.
@@ -113,8 +112,7 @@ public class UserIdGroupPair implements Serializable {
         this.groupName = groupName;
         return this;
     }
-    
-    
+
     /**
      * ID of the security group in the specified AWS account. Cannot be used
      * when specifying a CIDR IP address range.
@@ -153,8 +151,7 @@ public class UserIdGroupPair implements Serializable {
         this.groupId = groupId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -56,8 +56,7 @@ public class CreateNetworkAclResult implements Serializable {
         this.networkAcl = networkAcl;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

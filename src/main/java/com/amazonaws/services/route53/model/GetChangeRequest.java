@@ -51,8 +51,6 @@ public class GetChangeRequest extends AmazonWebServiceRequest implements Seriali
      */
     public GetChangeRequest() {}
     
-
-
     /**
      * Constructs a new GetChangeRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -66,8 +64,6 @@ public class GetChangeRequest extends AmazonWebServiceRequest implements Seriali
         setId(id);
     }
 
-    
-    
     /**
      * The ID of the change batch request. The value that you specify here is
      * the value that <code>ChangeResourceRecordSets</code> returned in the
@@ -121,8 +117,7 @@ public class GetChangeRequest extends AmazonWebServiceRequest implements Seriali
         this.id = id;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

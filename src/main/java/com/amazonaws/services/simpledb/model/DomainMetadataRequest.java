@@ -40,8 +40,6 @@ public class DomainMetadataRequest extends AmazonWebServiceRequest implements Se
      */
     public DomainMetadataRequest() {}
     
-
-
     /**
      * Constructs a new DomainMetadataRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -54,8 +52,6 @@ public class DomainMetadataRequest extends AmazonWebServiceRequest implements Se
         setDomainName(domainName);
     }
 
-    
-    
     /**
      * The name of the domain for which to display the metadata of.
      *
@@ -88,8 +84,7 @@ public class DomainMetadataRequest extends AmazonWebServiceRequest implements Se
         this.domainName = domainName;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

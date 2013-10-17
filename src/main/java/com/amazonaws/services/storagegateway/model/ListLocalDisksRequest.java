@@ -95,8 +95,7 @@ public class ListLocalDisksRequest extends AmazonWebServiceRequest implements Se
         this.gatewayARN = gatewayARN;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

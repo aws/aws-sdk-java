@@ -95,8 +95,7 @@ public class Connection implements Serializable {
         this.connectionId = connectionId;
         return this;
     }
-    
-    
+
     /**
      * The name of the connection. <p>Example: "<i>1G Connection to AWS</i>"
      * <p>Default: None
@@ -135,8 +134,7 @@ public class Connection implements Serializable {
         this.connectionName = connectionName;
         return this;
     }
-    
-    
+
     /**
      * State of the connection. <ul> <li><b>Requested</b>: The initial state
      * of connection immediately after creation. The connection stays in the
@@ -232,8 +230,7 @@ public class Connection implements Serializable {
         this.connectionState = connectionState;
         return this;
     }
-    
-    
+
     /**
      * State of the connection. <ul> <li><b>Requested</b>: The initial state
      * of connection immediately after creation. The connection stays in the
@@ -299,7 +296,7 @@ public class Connection implements Serializable {
         this.connectionState = connectionState.toString();
         return this;
     }
-    
+
     /**
      * The AWS region where the offering is located. <p>Example: us-east-1
      * <p>Default: None
@@ -338,8 +335,7 @@ public class Connection implements Serializable {
         this.region = region;
         return this;
     }
-    
-    
+
     /**
      * Where the AWS Direct Connect offering is located. <p>Example: EqSV5
      * <p>Default: None
@@ -378,8 +374,7 @@ public class Connection implements Serializable {
         this.location = location;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

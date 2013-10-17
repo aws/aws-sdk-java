@@ -66,15 +66,13 @@ public class EventCategoriesMap implements Serializable {
         this.sourceType = sourceType;
         return this;
     }
-    
-    
+
     /**
      * The event categories for the specified source type
      *
      * @return The event categories for the specified source type
      */
     public java.util.List<String> getEventCategories() {
-        
         if (eventCategories == null) {
               eventCategories = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               eventCategories.setAutoConstruct(true);
@@ -136,7 +134,7 @@ public class EventCategoriesMap implements Serializable {
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

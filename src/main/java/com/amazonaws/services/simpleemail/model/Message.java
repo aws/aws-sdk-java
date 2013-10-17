@@ -41,8 +41,6 @@ public class Message implements Serializable {
      */
     public Message() {}
     
-
-
     /**
      * Constructs a new Message object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -57,8 +55,6 @@ public class Message implements Serializable {
         setBody(body);
     }
 
-    
-    
     /**
      * The subject of the message: A short summary of the content, which will
      * appear in the recipient's inbox.
@@ -97,8 +93,7 @@ public class Message implements Serializable {
         this.subject = subject;
         return this;
     }
-    
-    
+
     /**
      * The message body.
      *
@@ -131,8 +126,7 @@ public class Message implements Serializable {
         this.body = body;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

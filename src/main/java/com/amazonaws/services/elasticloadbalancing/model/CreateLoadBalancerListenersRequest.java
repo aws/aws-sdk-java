@@ -47,8 +47,6 @@ public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest 
      */
     public CreateLoadBalancerListenersRequest() {}
     
-
-
     /**
      * Constructs a new CreateLoadBalancerListenersRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -65,8 +63,6 @@ public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest 
         setListeners(listeners);
     }
 
-    
-    
     /**
      * The name of the new LoadBalancer. The name must be unique within your
      * AWS account.
@@ -105,8 +101,7 @@ public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest 
         this.loadBalancerName = loadBalancerName;
         return this;
     }
-    
-    
+
     /**
      * A list of <code>LoadBalancerPort</code>, <code>InstancePort</code>,
      * <code>Protocol</code>, and <code>SSLCertificateId</code> items.
@@ -115,7 +110,6 @@ public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest 
      *         <code>Protocol</code>, and <code>SSLCertificateId</code> items.
      */
     public java.util.List<Listener> getListeners() {
-        
         if (listeners == null) {
               listeners = new com.amazonaws.internal.ListWithAutoConstructFlag<Listener>();
               listeners.setAutoConstruct(true);
@@ -183,7 +177,7 @@ public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest 
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

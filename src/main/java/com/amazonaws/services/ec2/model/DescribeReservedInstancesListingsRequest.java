@@ -64,8 +64,7 @@ public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRe
         this.reservedInstancesId = reservedInstancesId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the ReservedInstancesListingId property for this
      * object.
@@ -103,15 +102,13 @@ public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRe
         this.reservedInstancesListingId = reservedInstancesListingId;
         return this;
     }
-    
-    
+
     /**
      * Returns the value of the Filters property for this object.
      *
      * @return The value of the Filters property for this object.
      */
     public java.util.List<Filter> getFilters() {
-        
         if (filters == null) {
               filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
               filters.setAutoConstruct(true);
@@ -173,7 +170,7 @@ public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRe
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

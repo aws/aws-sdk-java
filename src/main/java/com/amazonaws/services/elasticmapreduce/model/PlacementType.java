@@ -39,8 +39,6 @@ public class PlacementType implements Serializable {
      */
     public PlacementType() {}
     
-
-
     /**
      * Constructs a new PlacementType object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -53,8 +51,6 @@ public class PlacementType implements Serializable {
         setAvailabilityZone(availabilityZone);
     }
 
-    
-    
     /**
      * The Amazon EC2 Availability Zone for the job flow.
      * <p>
@@ -99,8 +95,7 @@ public class PlacementType implements Serializable {
         this.availabilityZone = availabilityZone;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
