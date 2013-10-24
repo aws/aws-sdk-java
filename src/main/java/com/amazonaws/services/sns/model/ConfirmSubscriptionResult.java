@@ -13,14 +13,16 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
+
 import java.io.Serializable;
+
 
 /**
  * <p>
  * Response for ConfirmSubscriptions action.
  * </p>
  */
-public class ConfirmSubscriptionResult  implements Serializable  {
+public class ConfirmSubscriptionResult implements Serializable {
 
     /**
      * The ARN of the created subscription.
@@ -53,14 +55,13 @@ public class ConfirmSubscriptionResult  implements Serializable  {
      * @param subscriptionArn The ARN of the created subscription.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ConfirmSubscriptionResult withSubscriptionArn(String subscriptionArn) {
         this.subscriptionArn = subscriptionArn;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

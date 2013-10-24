@@ -35,23 +35,21 @@ import com.amazonaws.services.directconnect.model.*;
  * Direct Connect actions.</li>
  * <li> <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/API_Types.html"> Data Types </a> : An alphabetical list of all AWS Direct
  * Connect data types.</li>
- * <li> <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/CommonParameters.html"> Common Parameters </a> : Parameters that all Query
- * actions can use.</li>
+ * <li> <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/CommonParameters.html"> Common Query Parameters </a> : Parameters that all
+ * Query actions can use.</li>
  * <li> <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/CommonErrors.html"> Common Errors </a> : Client and server errors that all
  * actions can return.</li>
- * <li> <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html"> Regions and Endpoints </a> : Itemized regions and endpoints for
- * all AWS products.</li>
  * 
  * </ul>
  */
 public interface AmazonDirectConnect {
 
     /**
-     * Overrides the default endpoint for this client ("http://directConnect.us-east-1.amazonaws.com/").
+     * Overrides the default endpoint for this client ("https://directconnect.us-east-1.amazonaws.com/").
      * Callers can use this method to control which AWS region they want to work with.
      * <p>
-     * Callers can pass in just the endpoint (ex: "directConnect.us-east-1.amazonaws.com/") or a full
-     * URL, including the protocol (ex: "http://directConnect.us-east-1.amazonaws.com/"). If the
+     * Callers can pass in just the endpoint (ex: "directconnect.us-east-1.amazonaws.com/") or a full
+     * URL, including the protocol (ex: "https://directconnect.us-east-1.amazonaws.com/"). If the
      * protocol is not specified here, the default protocol from this client's
      * {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
@@ -66,8 +64,8 @@ public interface AmazonDirectConnect {
      * transit or retrying.</b>
      *
      * @param endpoint
-     *            The endpoint (ex: "directConnect.us-east-1.amazonaws.com/") or a full URL,
-     *            including the protocol (ex: "http://directConnect.us-east-1.amazonaws.com/") of
+     *            The endpoint (ex: "directconnect.us-east-1.amazonaws.com/") or a full URL,
+     *            including the protocol (ex: "https://directconnect.us-east-1.amazonaws.com/") of
      *            the region specific AWS endpoint this client will communicate
      *            with.
      *
@@ -105,21 +103,48 @@ public interface AmazonDirectConnect {
     
     /**
      * <p>
-     * Displays all virtual interfaces for an AWS account. Virtual interfaces
-     * deleted fewer than 15 minutes before DescribeVirtualInterfaces is
-     * called are also returned. If a virtual interface ID is included then
-     * only a single virtual interface will be returned.
-     * </p>
-     * <p>
-     * A virtual interface (VLAN) transmits the traffic between the Direct
-     * Connect location and the customer.
+     * Returns the list of AWS Direct Connect locations in the current AWS
+     * region. These are the locations that may be selected when calling
+     * CreateConnection or CreateInterconnect.
      * </p>
      *
-     * @param describeVirtualInterfacesRequest Container for the necessary
-     *           parameters to execute the DescribeVirtualInterfaces service method on
+     * @param describeLocationsRequest Container for the necessary parameters
+     *           to execute the DescribeLocations service method on
      *           AmazonDirectConnect.
      * 
-     * @return The response from the DescribeVirtualInterfaces service
+     * @return The response from the DescribeLocations service method, as
+     *         returned by AmazonDirectConnect.
+     * 
+     * @throws DirectConnectServerException
+     * @throws DirectConnectClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeLocationsResult describeLocations(DescribeLocationsRequest describeLocationsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Accept ownership of a public virtual interface created by another
+     * customer.
+     * </p>
+     * <p>
+     * After the virtual interface owner calls this function, the specified
+     * virtual interface will be created and made available for handling
+     * traffic.
+     * </p>
+     *
+     * @param confirmPublicVirtualInterfaceRequest Container for the
+     *           necessary parameters to execute the ConfirmPublicVirtualInterface
+     *           service method on AmazonDirectConnect.
+     * 
+     * @return The response from the ConfirmPublicVirtualInterface service
      *         method, as returned by AmazonDirectConnect.
      * 
      * @throws DirectConnectServerException
@@ -133,229 +158,14 @@ public interface AmazonDirectConnect {
      *             If an error response is returned by AmazonDirectConnect indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeVirtualInterfacesResult describeVirtualInterfaces(DescribeVirtualInterfacesRequest describeVirtualInterfacesRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns a list of virtual private gateways owned by the AWS account.
-     * </p>
-     * <p>
-     * You can create one or more AWS Direct Connect private virtual
-     * interfaces linking to a virtual private gateway. A virtual private
-     * gateway can be managed via Amazon Virtual Private Cloud (VPC) console
-     * or the <a
-     * /AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">
-     * EC2 CreateVpnGateway </a> action.
-     * </p>
-     *
-     * @param describeVirtualGatewaysRequest Container for the necessary
-     *           parameters to execute the DescribeVirtualGateways service method on
-     *           AmazonDirectConnect.
-     * 
-     * @return The response from the DescribeVirtualGateways service method,
-     *         as returned by AmazonDirectConnect.
-     * 
-     * @throws DirectConnectServerException
-     * @throws DirectConnectClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonDirectConnect indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeVirtualGatewaysResult describeVirtualGateways(DescribeVirtualGatewaysRequest describeVirtualGatewaysRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Displays details about a specific connection including the order steps
-     * for the connection and the current state of the connection order.
-     * </p>
-     *
-     * @param describeConnectionDetailRequest Container for the necessary
-     *           parameters to execute the DescribeConnectionDetail service method on
-     *           AmazonDirectConnect.
-     * 
-     * @return The response from the DescribeConnectionDetail service method,
-     *         as returned by AmazonDirectConnect.
-     * 
-     * @throws DirectConnectServerException
-     * @throws DirectConnectClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonDirectConnect indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeConnectionDetailResult describeConnectionDetail(DescribeConnectionDetailRequest describeConnectionDetailRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Describes one or more of the offerings that are currently available
-     * for creating new connections. The results include offerings for all
-     * regions.
-     * </p>
-     * <p>
-     * To order a new connection you need to select a specific offering ID.
-     * </p>
-     *
-     * @param describeOfferingsRequest Container for the necessary parameters
-     *           to execute the DescribeOfferings service method on
-     *           AmazonDirectConnect.
-     * 
-     * @return The response from the DescribeOfferings service method, as
-     *         returned by AmazonDirectConnect.
-     * 
-     * @throws DirectConnectServerException
-     * @throws DirectConnectClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonDirectConnect indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeOfferingsResult describeOfferings(DescribeOfferingsRequest describeOfferingsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Displays all connections in this region.
-     * </p>
-     * <p>
-     * If a connection ID is provided, it will only return this particular
-     * connection.
-     * </p>
-     *
-     * @param describeConnectionsRequest Container for the necessary
-     *           parameters to execute the DescribeConnections service method on
-     *           AmazonDirectConnect.
-     * 
-     * @return The response from the DescribeConnections service method, as
-     *         returned by AmazonDirectConnect.
-     * 
-     * @throws DirectConnectServerException
-     * @throws DirectConnectClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonDirectConnect indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeConnectionsResult describeConnections(DescribeConnectionsRequest describeConnectionsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Displays additional ordering step details for a specified offering.
-     * </p>
-     *
-     * @param describeOfferingDetailRequest Container for the necessary
-     *           parameters to execute the DescribeOfferingDetail service method on
-     *           AmazonDirectConnect.
-     * 
-     * @return The response from the DescribeOfferingDetail service method,
-     *         as returned by AmazonDirectConnect.
-     * 
-     * @throws DirectConnectServerException
-     * @throws DirectConnectClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonDirectConnect indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeOfferingDetailResult describeOfferingDetail(DescribeOfferingDetailRequest describeOfferingDetailRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes the connection.
-     * </p>
-     * <p>
-     * Deleting a connection only stops the AWS Direct Connect port and data
-     * transfer charges. You separately need to cancel any services or
-     * charges for cross-connects or network circuits that connect you to the
-     * AWS Direct Connect location with the providers of those services.
-     * </p>
-     *
-     * @param deleteConnectionRequest Container for the necessary parameters
-     *           to execute the DeleteConnection service method on AmazonDirectConnect.
-     * 
-     * @return The response from the DeleteConnection service method, as
-     *         returned by AmazonDirectConnect.
-     * 
-     * @throws DirectConnectServerException
-     * @throws DirectConnectClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonDirectConnect indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DeleteConnectionResult deleteConnection(DeleteConnectionRequest deleteConnectionRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Creates a new network connection between the customer network and a
-     * specific AWS Direct Connect location.
-     * </p>
-     * <p>
-     * A connection links your internal network to an AWS Direct Connect
-     * location over a standard 1 gigabit or 10 gigabit Ethernet fiber-optic
-     * cable. One end of the cable is connected to your router, the other to
-     * an AWS Direct Connect router. A Direct Connect location provides
-     * access to Amazon Web Services in the region it is associated with. You
-     * can establish connections with AWS Direct Connect locations in
-     * multiple regions, but a connection in one region does not provide
-     * connectivity to other regions.
-     * </p>
-     *
-     * @param createConnectionRequest Container for the necessary parameters
-     *           to execute the CreateConnection service method on AmazonDirectConnect.
-     * 
-     * @return The response from the CreateConnection service method, as
-     *         returned by AmazonDirectConnect.
-     * 
-     * @throws DirectConnectServerException
-     * @throws DirectConnectClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonDirectConnect indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateConnectionResult createConnection(CreateConnectionRequest createConnectionRequest) 
+    public ConfirmPublicVirtualInterfaceResult confirmPublicVirtualInterface(ConfirmPublicVirtualInterfaceRequest confirmPublicVirtualInterfaceRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
      * <p>
      * Creates a new private virtual interface. A virtual interface is the
      * VLAN that transports AWS Direct Connect traffic. A private virtual
-     * interface supports sending traffic to a single Virtual Private Cloud
+     * interface supports sending traffic to a single virtual private cloud
      * (VPC).
      * </p>
      *
@@ -437,14 +247,509 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Displays all virtual interfaces for an AWS account. Virtual interfaces
-     * deleted fewer than 15 minutes before DescribeVirtualInterfaces is
-     * called are also returned. If a virtual interface ID is included then
-     * only a single virtual interface will be returned.
+     * Creates a new interconnect between a AWS Direct Connect partner's
+     * network and a specific AWS Direct Connect location.
      * </p>
      * <p>
-     * A virtual interface (VLAN) transmits the traffic between the Direct
-     * Connect location and the customer.
+     * An interconnect is a connection which is capable of hosting other
+     * connections. The AWS Direct Connect partner can use an interconnect
+     * to provide sub-1Gbps AWS Direct Connect service to tier 2 customers
+     * who do not have their own connections. Like a standard connection, an
+     * interconnect links the AWS Direct Connect partner's network to an AWS
+     * Direct Connect location over a standard 1 Gbps or 10 Gbps Ethernet
+     * fiber-optic cable. One end is connected to the partner's router, the
+     * other to an AWS Direct Connect router.
+     * </p>
+     * <p>
+     * For each end customer, the AWS Direct Connect partner provisions a
+     * connection on their interconnect by calling
+     * AllocateConnectionOnInterconnect. The end customer can then connect
+     * to AWS resources by creating a virtual interface on their connection,
+     * using the VLAN assigned to them by the AWS Direct Connect partner.
+     * </p>
+     *
+     * @param createInterconnectRequest Container for the necessary
+     *           parameters to execute the CreateInterconnect service method on
+     *           AmazonDirectConnect.
+     * 
+     * @return The response from the CreateInterconnect service method, as
+     *         returned by AmazonDirectConnect.
+     * 
+     * @throws DirectConnectServerException
+     * @throws DirectConnectClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateInterconnectResult createInterconnect(CreateInterconnectRequest createInterconnectRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Displays all virtual interfaces for an AWS account. Virtual interfaces
+     * deleted fewer than 15 minutes before DescribeVirtualInterfaces is
+     * called are also returned. If a connection ID is included then only
+     * virtual interfaces associated with this connection will be returned.
+     * If a virtual interface ID is included then only a single virtual
+     * interface will be returned.
+     * </p>
+     * <p>
+     * A virtual interface (VLAN) transmits the traffic between the AWS
+     * Direct Connect location and the customer.
+     * </p>
+     * <p>
+     * If a connection ID is provided, only virtual interfaces provisioned on
+     * the specified connection will be returned. If a virtual interface ID
+     * is provided, only this particular virtual interface will be returned.
+     * </p>
+     *
+     * @param describeVirtualInterfacesRequest Container for the necessary
+     *           parameters to execute the DescribeVirtualInterfaces service method on
+     *           AmazonDirectConnect.
+     * 
+     * @return The response from the DescribeVirtualInterfaces service
+     *         method, as returned by AmazonDirectConnect.
+     * 
+     * @throws DirectConnectServerException
+     * @throws DirectConnectClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeVirtualInterfacesResult describeVirtualInterfaces(DescribeVirtualInterfacesRequest describeVirtualInterfacesRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Confirm the creation of a hosted connection on an interconnect.
+     * </p>
+     * <p>
+     * Upon creation, the hosted connection is initially in the 'Ordering'
+     * state, and will remain in this state until the owner calls
+     * ConfirmConnection to confirm creation of the hosted connection.
+     * </p>
+     *
+     * @param confirmConnectionRequest Container for the necessary parameters
+     *           to execute the ConfirmConnection service method on
+     *           AmazonDirectConnect.
+     * 
+     * @return The response from the ConfirmConnection service method, as
+     *         returned by AmazonDirectConnect.
+     * 
+     * @throws DirectConnectServerException
+     * @throws DirectConnectClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ConfirmConnectionResult confirmConnection(ConfirmConnectionRequest confirmConnectionRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Returns a list of interconnects owned by the AWS account.
+     * </p>
+     * <p>
+     * If an interconnect ID is provided, it will only return this particular
+     * interconnect.
+     * </p>
+     *
+     * @param describeInterconnectsRequest Container for the necessary
+     *           parameters to execute the DescribeInterconnects service method on
+     *           AmazonDirectConnect.
+     * 
+     * @return The response from the DescribeInterconnects service method, as
+     *         returned by AmazonDirectConnect.
+     * 
+     * @throws DirectConnectServerException
+     * @throws DirectConnectClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeInterconnectsResult describeInterconnects(DescribeInterconnectsRequest describeInterconnectsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Returns a list of virtual private gateways owned by the AWS account.
+     * </p>
+     * <p>
+     * You can create one or more AWS Direct Connect private virtual
+     * interfaces linking to a virtual private gateway. A virtual private
+     * gateway can be managed via Amazon Virtual Private Cloud (VPC) console
+     * or the <a
+     * /AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">
+     * EC2 CreateVpnGateway </a> action.
+     * </p>
+     *
+     * @param describeVirtualGatewaysRequest Container for the necessary
+     *           parameters to execute the DescribeVirtualGateways service method on
+     *           AmazonDirectConnect.
+     * 
+     * @return The response from the DescribeVirtualGateways service method,
+     *         as returned by AmazonDirectConnect.
+     * 
+     * @throws DirectConnectServerException
+     * @throws DirectConnectClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeVirtualGatewaysResult describeVirtualGateways(DescribeVirtualGatewaysRequest describeVirtualGatewaysRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Accept ownership of a private virtual interface created by another
+     * customer.
+     * </p>
+     * <p>
+     * After the virtual interface owner calls this function, the virtual
+     * interface will be created and attached to the given virtual private
+     * gateway, and will be available for handling traffic.
+     * </p>
+     *
+     * @param confirmPrivateVirtualInterfaceRequest Container for the
+     *           necessary parameters to execute the ConfirmPrivateVirtualInterface
+     *           service method on AmazonDirectConnect.
+     * 
+     * @return The response from the ConfirmPrivateVirtualInterface service
+     *         method, as returned by AmazonDirectConnect.
+     * 
+     * @throws DirectConnectServerException
+     * @throws DirectConnectClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ConfirmPrivateVirtualInterfaceResult confirmPrivateVirtualInterface(ConfirmPrivateVirtualInterfaceRequest confirmPrivateVirtualInterfaceRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Displays all connections in this region.
+     * </p>
+     * <p>
+     * If a connection ID is provided, the call returns only that particular
+     * connection.
+     * </p>
+     *
+     * @param describeConnectionsRequest Container for the necessary
+     *           parameters to execute the DescribeConnections service method on
+     *           AmazonDirectConnect.
+     * 
+     * @return The response from the DescribeConnections service method, as
+     *         returned by AmazonDirectConnect.
+     * 
+     * @throws DirectConnectServerException
+     * @throws DirectConnectClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeConnectionsResult describeConnections(DescribeConnectionsRequest describeConnectionsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Provisions a public virtual interface to be owned by a different
+     * customer.
+     * </p>
+     * <p>
+     * The owner of a connection calls this function to provision a public
+     * virtual interface which will be owned by another AWS customer.
+     * </p>
+     * <p>
+     * Virtual interfaces created using this function must be confirmed by
+     * the virtual interface owner by calling ConfirmPublicVirtualInterface.
+     * Until this step has been completed, the virtual interface will be in
+     * 'Confirming' state, and will not be available for handling traffic.
+     * </p>
+     *
+     * @param allocatePublicVirtualInterfaceRequest Container for the
+     *           necessary parameters to execute the AllocatePublicVirtualInterface
+     *           service method on AmazonDirectConnect.
+     * 
+     * @return The response from the AllocatePublicVirtualInterface service
+     *         method, as returned by AmazonDirectConnect.
+     * 
+     * @throws DirectConnectServerException
+     * @throws DirectConnectClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public AllocatePublicVirtualInterfaceResult allocatePublicVirtualInterface(AllocatePublicVirtualInterfaceRequest allocatePublicVirtualInterfaceRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Provisions a private virtual interface to be owned by a different
+     * customer.
+     * </p>
+     * <p>
+     * The owner of a connection calls this function to provision a private
+     * virtual interface which will be owned by another AWS customer.
+     * </p>
+     * <p>
+     * Virtual interfaces created using this function must be confirmed by
+     * the virtual interface owner by calling ConfirmPrivateVirtualInterface.
+     * Until this step has been completed, the virtual interface will be in
+     * 'Confirming' state, and will not be available for handling traffic.
+     * </p>
+     *
+     * @param allocatePrivateVirtualInterfaceRequest Container for the
+     *           necessary parameters to execute the AllocatePrivateVirtualInterface
+     *           service method on AmazonDirectConnect.
+     * 
+     * @return The response from the AllocatePrivateVirtualInterface service
+     *         method, as returned by AmazonDirectConnect.
+     * 
+     * @throws DirectConnectServerException
+     * @throws DirectConnectClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public AllocatePrivateVirtualInterfaceResult allocatePrivateVirtualInterface(AllocatePrivateVirtualInterfaceRequest allocatePrivateVirtualInterfaceRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Deletes the connection.
+     * </p>
+     * <p>
+     * Deleting a connection only stops the AWS Direct Connect port hour and
+     * data transfer charges. You need to cancel separately with the
+     * providers any services or charges for cross-connects or network
+     * circuits that connect you to the AWS Direct Connect location.
+     * </p>
+     *
+     * @param deleteConnectionRequest Container for the necessary parameters
+     *           to execute the DeleteConnection service method on AmazonDirectConnect.
+     * 
+     * @return The response from the DeleteConnection service method, as
+     *         returned by AmazonDirectConnect.
+     * 
+     * @throws DirectConnectServerException
+     * @throws DirectConnectClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DeleteConnectionResult deleteConnection(DeleteConnectionRequest deleteConnectionRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Return a list of connections that have been provisioned on the given
+     * interconnect.
+     * </p>
+     *
+     * @param describeConnectionsOnInterconnectRequest Container for the
+     *           necessary parameters to execute the DescribeConnectionsOnInterconnect
+     *           service method on AmazonDirectConnect.
+     * 
+     * @return The response from the DescribeConnectionsOnInterconnect
+     *         service method, as returned by AmazonDirectConnect.
+     * 
+     * @throws DirectConnectServerException
+     * @throws DirectConnectClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeConnectionsOnInterconnectResult describeConnectionsOnInterconnect(DescribeConnectionsOnInterconnectRequest describeConnectionsOnInterconnectRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Creates a hosted connection on an interconnect.
+     * </p>
+     * <p>
+     * Allocates a VLAN number and a specified amount of bandwidth for use by
+     * a hosted connection on the given interconnect.
+     * </p>
+     *
+     * @param allocateConnectionOnInterconnectRequest Container for the
+     *           necessary parameters to execute the AllocateConnectionOnInterconnect
+     *           service method on AmazonDirectConnect.
+     * 
+     * @return The response from the AllocateConnectionOnInterconnect service
+     *         method, as returned by AmazonDirectConnect.
+     * 
+     * @throws DirectConnectServerException
+     * @throws DirectConnectClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public AllocateConnectionOnInterconnectResult allocateConnectionOnInterconnect(AllocateConnectionOnInterconnectRequest allocateConnectionOnInterconnectRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Creates a new connection between the customer network and a specific
+     * AWS Direct Connect location.
+     * </p>
+     * <p>
+     * A connection links your internal network to an AWS Direct Connect
+     * location over a standard 1 gigabit or 10 gigabit Ethernet fiber-optic
+     * cable. One end of the cable is connected to your router, the other to
+     * an AWS Direct Connect router. An AWS Direct Connect location provides
+     * access to Amazon Web Services in the region it is associated with. You
+     * can establish connections with AWS Direct Connect locations in
+     * multiple regions, but a connection in one region does not provide
+     * connectivity to other regions.
+     * </p>
+     *
+     * @param createConnectionRequest Container for the necessary parameters
+     *           to execute the CreateConnection service method on AmazonDirectConnect.
+     * 
+     * @return The response from the CreateConnection service method, as
+     *         returned by AmazonDirectConnect.
+     * 
+     * @throws DirectConnectServerException
+     * @throws DirectConnectClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateConnectionResult createConnection(CreateConnectionRequest createConnectionRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Deletes the specified interconnect.
+     * </p>
+     *
+     * @param deleteInterconnectRequest Container for the necessary
+     *           parameters to execute the DeleteInterconnect service method on
+     *           AmazonDirectConnect.
+     * 
+     * @return The response from the DeleteInterconnect service method, as
+     *         returned by AmazonDirectConnect.
+     * 
+     * @throws DirectConnectServerException
+     * @throws DirectConnectClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DeleteInterconnectResult deleteInterconnect(DeleteInterconnectRequest deleteInterconnectRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Returns the list of AWS Direct Connect locations in the current AWS
+     * region. These are the locations that may be selected when calling
+     * CreateConnection or CreateInterconnect.
+     * </p>
+     * 
+     * @return The response from the DescribeLocations service method, as
+     *         returned by AmazonDirectConnect.
+     * 
+     * @throws DirectConnectServerException
+     * @throws DirectConnectClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeLocationsResult describeLocations() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * Displays all virtual interfaces for an AWS account. Virtual interfaces
+     * deleted fewer than 15 minutes before DescribeVirtualInterfaces is
+     * called are also returned. If a connection ID is included then only
+     * virtual interfaces associated with this connection will be returned.
+     * If a virtual interface ID is included then only a single virtual
+     * interface will be returned.
+     * </p>
+     * <p>
+     * A virtual interface (VLAN) transmits the traffic between the AWS
+     * Direct Connect location and the customer.
+     * </p>
+     * <p>
+     * If a connection ID is provided, only virtual interfaces provisioned on
+     * the specified connection will be returned. If a virtual interface ID
+     * is provided, only this particular virtual interface will be returned.
      * </p>
      * 
      * @return The response from the DescribeVirtualInterfaces service
@@ -462,6 +767,31 @@ public interface AmazonDirectConnect {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeVirtualInterfacesResult describeVirtualInterfaces() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * Returns a list of interconnects owned by the AWS account.
+     * </p>
+     * <p>
+     * If an interconnect ID is provided, it will only return this particular
+     * interconnect.
+     * </p>
+     * 
+     * @return The response from the DescribeInterconnects service method, as
+     *         returned by AmazonDirectConnect.
+     * 
+     * @throws DirectConnectServerException
+     * @throws DirectConnectClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeInterconnectsResult describeInterconnects() throws AmazonServiceException, AmazonClientException;
     
     /**
      * <p>
@@ -494,36 +824,10 @@ public interface AmazonDirectConnect {
     
     /**
      * <p>
-     * Describes one or more of the offerings that are currently available
-     * for creating new connections. The results include offerings for all
-     * regions.
-     * </p>
-     * <p>
-     * To order a new connection you need to select a specific offering ID.
-     * </p>
-     * 
-     * @return The response from the DescribeOfferings service method, as
-     *         returned by AmazonDirectConnect.
-     * 
-     * @throws DirectConnectServerException
-     * @throws DirectConnectClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonDirectConnect indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeOfferingsResult describeOfferings() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
      * Displays all connections in this region.
      * </p>
      * <p>
-     * If a connection ID is provided, it will only return this particular
+     * If a connection ID is provided, the call returns only that particular
      * connection.
      * </p>
      * 
@@ -542,75 +846,6 @@ public interface AmazonDirectConnect {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeConnectionsResult describeConnections() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
-     * Creates a new private virtual interface. A virtual interface is the
-     * VLAN that transports AWS Direct Connect traffic. A private virtual
-     * interface supports sending traffic to a single Virtual Private Cloud
-     * (VPC).
-     * </p>
-     * 
-     * @return The response from the CreatePrivateVirtualInterface service
-     *         method, as returned by AmazonDirectConnect.
-     * 
-     * @throws DirectConnectServerException
-     * @throws DirectConnectClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonDirectConnect indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreatePrivateVirtualInterfaceResult createPrivateVirtualInterface() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
-     * Deletes a virtual interface.
-     * </p>
-     * 
-     * @return The response from the DeleteVirtualInterface service method,
-     *         as returned by AmazonDirectConnect.
-     * 
-     * @throws DirectConnectServerException
-     * @throws DirectConnectClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonDirectConnect indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DeleteVirtualInterfaceResult deleteVirtualInterface() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
-     * Creates a new public virtual interface. A virtual interface is the
-     * VLAN that transports AWS Direct Connect traffic. A public virtual
-     * interface supports sending traffic to public services of AWS such as
-     * Amazon Simple Storage Service (Amazon S3).
-     * </p>
-     * 
-     * @return The response from the CreatePublicVirtualInterface service
-     *         method, as returned by AmazonDirectConnect.
-     * 
-     * @throws DirectConnectServerException
-     * @throws DirectConnectClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonDirectConnect indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreatePublicVirtualInterfaceResult createPublicVirtualInterface() throws AmazonServiceException, AmazonClientException;
     
     /**
      * Shuts down this client object, releasing any resources that might be held

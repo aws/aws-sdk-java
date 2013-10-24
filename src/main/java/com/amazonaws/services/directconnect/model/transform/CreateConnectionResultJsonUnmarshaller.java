@@ -51,6 +51,10 @@ public class CreateConnectionResultJsonUnmarshaller implements Unmarshaller<Crea
 
             
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("ownerAccount", targetDepth)) {
+                    context.nextToken();
+                    createConnectionResult.setOwnerAccount(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("connectionId", targetDepth)) {
                     context.nextToken();
                     createConnectionResult.setConnectionId(StringJsonUnmarshaller.getInstance().unmarshall(context));
@@ -70,6 +74,18 @@ public class CreateConnectionResultJsonUnmarshaller implements Unmarshaller<Crea
                 if (context.testExpression("location", targetDepth)) {
                     context.nextToken();
                     createConnectionResult.setLocation(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("bandwidth", targetDepth)) {
+                    context.nextToken();
+                    createConnectionResult.setBandwidth(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("vlan", targetDepth)) {
+                    context.nextToken();
+                    createConnectionResult.setVlan(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("partnerName", targetDepth)) {
+                    context.nextToken();
+                    createConnectionResult.setPartnerName(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

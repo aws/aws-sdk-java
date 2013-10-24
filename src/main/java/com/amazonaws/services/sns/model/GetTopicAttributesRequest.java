@@ -13,8 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
-import com.amazonaws.AmazonWebServiceRequest;
+
 import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#getTopicAttributes(GetTopicAttributesRequest) GetTopicAttributes operation}.
@@ -25,7 +27,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#getTopicAttributes(GetTopicAttributesRequest)
  */
-public class GetTopicAttributesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class GetTopicAttributesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The ARN of the topic whose properties you want to get.
@@ -38,8 +40,6 @@ public class GetTopicAttributesRequest extends AmazonWebServiceRequest  implemen
      */
     public GetTopicAttributesRequest() {}
     
-
-
     /**
      * Constructs a new GetTopicAttributesRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -51,8 +51,6 @@ public class GetTopicAttributesRequest extends AmazonWebServiceRequest  implemen
         setTopicArn(topicArn);
     }
 
-    
-    
     /**
      * The ARN of the topic whose properties you want to get.
      *
@@ -79,14 +77,13 @@ public class GetTopicAttributesRequest extends AmazonWebServiceRequest  implemen
      * @param topicArn The ARN of the topic whose properties you want to get.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public GetTopicAttributesRequest withTopicArn(String topicArn) {
         this.topicArn = topicArn;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -13,8 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
-import com.amazonaws.AmazonWebServiceRequest;
+
 import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#listTopics(ListTopicsRequest) ListTopics operation}.
@@ -26,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#listTopics(ListTopicsRequest)
  */
-public class ListTopicsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ListTopicsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Token returned by the previous <code>ListTopics</code> request.
@@ -39,8 +41,6 @@ public class ListTopicsRequest extends AmazonWebServiceRequest  implements Seria
      */
     public ListTopicsRequest() {}
     
-
-
     /**
      * Constructs a new ListTopicsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -53,8 +53,6 @@ public class ListTopicsRequest extends AmazonWebServiceRequest  implements Seria
         setNextToken(nextToken);
     }
 
-    
-    
     /**
      * Token returned by the previous <code>ListTopics</code> request.
      *
@@ -81,14 +79,13 @@ public class ListTopicsRequest extends AmazonWebServiceRequest  implements Seria
      * @param nextToken Token returned by the previous <code>ListTopics</code> request.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListTopicsRequest withNextToken(String nextToken) {
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

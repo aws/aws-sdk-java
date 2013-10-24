@@ -51,6 +51,10 @@ public class CreatePublicVirtualInterfaceResultJsonUnmarshaller implements Unmar
 
             
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("ownerAccount", targetDepth)) {
+                    context.nextToken();
+                    createPublicVirtualInterfaceResult.setOwnerAccount(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("virtualInterfaceId", targetDepth)) {
                     context.nextToken();
                     createPublicVirtualInterfaceResult.setVirtualInterfaceId(StringJsonUnmarshaller.getInstance().unmarshall(context));

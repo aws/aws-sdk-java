@@ -51,6 +51,10 @@ public class CreatePrivateVirtualInterfaceResultJsonUnmarshaller implements Unma
 
             
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("ownerAccount", targetDepth)) {
+                    context.nextToken();
+                    createPrivateVirtualInterfaceResult.setOwnerAccount(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("virtualInterfaceId", targetDepth)) {
                     context.nextToken();
                     createPrivateVirtualInterfaceResult.setVirtualInterfaceId(StringJsonUnmarshaller.getInstance().unmarshall(context));

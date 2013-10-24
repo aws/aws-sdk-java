@@ -51,6 +51,10 @@ public class DeleteConnectionResultJsonUnmarshaller implements Unmarshaller<Dele
 
             
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("ownerAccount", targetDepth)) {
+                    context.nextToken();
+                    deleteConnectionResult.setOwnerAccount(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("connectionId", targetDepth)) {
                     context.nextToken();
                     deleteConnectionResult.setConnectionId(StringJsonUnmarshaller.getInstance().unmarshall(context));
@@ -70,6 +74,18 @@ public class DeleteConnectionResultJsonUnmarshaller implements Unmarshaller<Dele
                 if (context.testExpression("location", targetDepth)) {
                     context.nextToken();
                     deleteConnectionResult.setLocation(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("bandwidth", targetDepth)) {
+                    context.nextToken();
+                    deleteConnectionResult.setBandwidth(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("vlan", targetDepth)) {
+                    context.nextToken();
+                    deleteConnectionResult.setVlan(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("partnerName", targetDepth)) {
+                    context.nextToken();
+                    deleteConnectionResult.setPartnerName(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

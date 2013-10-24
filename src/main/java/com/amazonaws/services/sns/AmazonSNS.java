@@ -90,7 +90,7 @@ public interface AmazonSNS {
      * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      */
     public void setRegion(Region region) throws java.lang.IllegalArgumentException;
-	
+    
     /**
      * <p>
      * The <code>ConfirmSubscription</code> action verifies an endpoint

@@ -13,12 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
+
 import java.io.Serializable;
+
 
 /**
  * 
  */
-public class ListSubscriptionsResult  implements Serializable  {
+public class ListSubscriptionsResult implements Serializable {
 
     /**
      * A list of subscriptions.
@@ -38,7 +40,6 @@ public class ListSubscriptionsResult  implements Serializable  {
      * @return A list of subscriptions.
      */
     public java.util.List<Subscription> getSubscriptions() {
-        
         if (subscriptions == null) {
               subscriptions = new com.amazonaws.internal.ListWithAutoConstructFlag<Subscription>();
               subscriptions.setAutoConstruct(true);
@@ -69,7 +70,7 @@ public class ListSubscriptionsResult  implements Serializable  {
      * @param subscriptions A list of subscriptions.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListSubscriptionsResult withSubscriptions(Subscription... subscriptions) {
         if (getSubscriptions() == null) setSubscriptions(new java.util.ArrayList<Subscription>(subscriptions.length));
@@ -87,7 +88,7 @@ public class ListSubscriptionsResult  implements Serializable  {
      * @param subscriptions A list of subscriptions.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListSubscriptionsResult withSubscriptions(java.util.Collection<Subscription> subscriptions) {
         if (subscriptions == null) {
@@ -100,7 +101,7 @@ public class ListSubscriptionsResult  implements Serializable  {
 
         return this;
     }
-    
+
     /**
      * Token to pass along to the next <code>ListSubscriptions</code>
      * request. This element is returned if there are more subscriptions to
@@ -139,14 +140,13 @@ public class ListSubscriptionsResult  implements Serializable  {
      *         retrieve.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListSubscriptionsResult withNextToken(String nextToken) {
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -13,14 +13,16 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
+
 import java.io.Serializable;
+
 
 /**
  * <p>
  * Endpoint for mobile app and device.
  * </p>
  */
-public class Endpoint  implements Serializable  {
+public class Endpoint implements Serializable {
 
     /**
      * EndpointArn for mobile app and device.
@@ -58,14 +60,13 @@ public class Endpoint  implements Serializable  {
      * @param endpointArn EndpointArn for mobile app and device.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public Endpoint withEndpointArn(String endpointArn) {
         this.endpointArn = endpointArn;
         return this;
     }
-    
-    
+
     /**
      * Attributes for endpoint.
      *
@@ -77,7 +78,6 @@ public class Endpoint  implements Serializable  {
             attributes = new java.util.HashMap<String,String>();
         }
         return attributes;
-
     }
     
     /**
@@ -97,13 +97,43 @@ public class Endpoint  implements Serializable  {
      * @param attributes Attributes for endpoint.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public Endpoint withAttributes(java.util.Map<String,String> attributes) {
         setAttributes(attributes);
         return this;
     }
-    
+
+    /**
+     * Attributes for endpoint.
+     * <p>
+     * The method adds a new key-value pair into Attributes parameter, and
+     * returns a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param key The key of the entry to be added into Attributes.
+     * @param value The corresponding value of the entry to be added into Attributes.
+     */
+	public Endpoint addAttributesEntry(String key, String value) {
+		if (null == this.attributes) {
+			this.attributes = new java.util.HashMap<String,String>();
+		}
+		if (this.attributes.containsKey(key))
+			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+		this.attributes.put(key, value);
+		return this;
+	}
+
+	/**
+	 * Removes all the entries added into Attributes.
+	 * <p>
+	 * Returns a reference to this object so that method calls can be chained together.
+	 */
+	public Endpoint clearAttributesEntries() {
+		this.attributes = null;
+		return this;
+	}
+	
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

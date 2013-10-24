@@ -13,8 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
-import com.amazonaws.AmazonWebServiceRequest;
+
 import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#confirmSubscription(ConfirmSubscriptionRequest) ConfirmSubscription operation}.
@@ -26,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#confirmSubscription(ConfirmSubscriptionRequest)
  */
-public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The ARN of the topic for which you wish to confirm a subscription.
@@ -54,8 +56,6 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest  impleme
      */
     public ConfirmSubscriptionRequest() {}
     
-
-
     /**
      * Constructs a new ConfirmSubscriptionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -70,10 +70,6 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest  impleme
         setTopicArn(topicArn);
         setToken(token);
     }
-
-    
-    
-
 
     /**
      * Constructs a new ConfirmSubscriptionRequest object.
@@ -96,8 +92,6 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest  impleme
         setAuthenticateOnUnsubscribe(authenticateOnUnsubscribe);
     }
 
-    
-    
     /**
      * The ARN of the topic for which you wish to confirm a subscription.
      *
@@ -124,14 +118,13 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest  impleme
      * @param topicArn The ARN of the topic for which you wish to confirm a subscription.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ConfirmSubscriptionRequest withTopicArn(String topicArn) {
         this.topicArn = topicArn;
         return this;
     }
-    
-    
+
     /**
      * Short-lived token sent to an endpoint during the
      * <code>Subscribe</code> action.
@@ -164,14 +157,13 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest  impleme
      *         <code>Subscribe</code> action.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ConfirmSubscriptionRequest withToken(String token) {
         this.token = token;
         return this;
     }
-    
-    
+
     /**
      * Disallows unauthenticated unsubscribes of the subscription. If the
      * value of this parameter is <code>true</code> and the request has an
@@ -222,14 +214,13 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest  impleme
      *         authentication.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ConfirmSubscriptionRequest withAuthenticateOnUnsubscribe(String authenticateOnUnsubscribe) {
         this.authenticateOnUnsubscribe = authenticateOnUnsubscribe;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

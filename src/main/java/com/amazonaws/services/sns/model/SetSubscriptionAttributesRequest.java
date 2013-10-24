@@ -13,8 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
-import com.amazonaws.AmazonWebServiceRequest;
+
 import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#setSubscriptionAttributes(SetSubscriptionAttributesRequest) SetSubscriptionAttributes operation}.
@@ -24,7 +26,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#setSubscriptionAttributes(SetSubscriptionAttributesRequest)
  */
-public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The ARN of the subscription to modify.
@@ -49,8 +51,6 @@ public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest  i
      */
     public SetSubscriptionAttributesRequest() {}
     
-
-
     /**
      * Constructs a new SetSubscriptionAttributesRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -68,8 +68,6 @@ public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest  i
         setAttributeValue(attributeValue);
     }
 
-    
-    
     /**
      * The ARN of the subscription to modify.
      *
@@ -96,14 +94,13 @@ public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest  i
      * @param subscriptionArn The ARN of the subscription to modify.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public SetSubscriptionAttributesRequest withSubscriptionArn(String subscriptionArn) {
         this.subscriptionArn = subscriptionArn;
         return this;
     }
-    
-    
+
     /**
      * The name of the attribute you want to set. Only a subset of the
      * subscriptions attributes are mutable. <p>Valid values:
@@ -142,14 +139,13 @@ public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest  i
      *         <code>DeliveryPolicy</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public SetSubscriptionAttributesRequest withAttributeName(String attributeName) {
         this.attributeName = attributeName;
         return this;
     }
-    
-    
+
     /**
      * The new value for the attribute in JSON format.
      *
@@ -176,14 +172,13 @@ public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest  i
      * @param attributeValue The new value for the attribute in JSON format.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public SetSubscriptionAttributesRequest withAttributeValue(String attributeValue) {
         this.attributeValue = attributeValue;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

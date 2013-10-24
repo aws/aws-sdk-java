@@ -85,6 +85,24 @@ public class DownloadImpl extends AbstractTransfer implements Download {
     }
     
     /**
+     * Cancels this download, but skip notifying the state change listeners.
+     * 
+     * @throws IOException
+     */
+    public synchronized void abortWithoutNotifyingStateChangeListener() throws IOException {
+        
+        this.monitor.getFuture().cancel(true);
+        
+        if ( s3Object != null ) {
+              s3Object.getObjectContent().abort();
+        }
+        
+        synchronized (this) {
+            this.state = TransferState.Canceled;
+        }
+    }
+    
+    /**
      *  Set the S3 object to download.
      */
     public synchronized void setS3Object(S3Object s3Object) {

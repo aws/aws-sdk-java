@@ -61,8 +61,23 @@ public abstract class AmazonWebServiceClient {
      *            The client configuration for this client.
      */
     public AmazonWebServiceClient(ClientConfiguration clientConfiguration) {
+        this(clientConfiguration, null);
+    }
+
+    /**
+     * Constructs a new AmazonWebServiceClient object using the specified
+     * configuration and request metric collector.
+     * 
+     * @param clientConfiguration
+     *            The client configuration for this client.
+     * @param requestMetricCollector
+     *            optional request metric collector to be used at the http
+     *            client level; can be null.
+     */
+    public AmazonWebServiceClient(ClientConfiguration clientConfiguration,
+            RequestMetricCollector requestMetricCollector) {
         this.clientConfiguration = clientConfiguration;
-        client = new AmazonHttpClient(clientConfiguration);
+        client = new AmazonHttpClient(clientConfiguration, requestMetricCollector);
         requestHandlers = new CopyOnWriteArrayList<RequestHandler>();
     }
 

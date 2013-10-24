@@ -19,11 +19,13 @@ package com.amazonaws.services.directconnect.model;
  */
 public enum VirtualInterfaceState {
     
+    Confirming("confirming"),
     Verifying("verifying"),
     Pending("pending"),
     Available("available"),
     Deleting("deleting"),
-    Deleted("deleted");
+    Deleted("deleted"),
+    Rejected("rejected");
 
     private String value;
 
@@ -47,6 +49,8 @@ public enum VirtualInterfaceState {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         
+        } else if ("confirming".equals(value)) {
+            return VirtualInterfaceState.Confirming;
         } else if ("verifying".equals(value)) {
             return VirtualInterfaceState.Verifying;
         } else if ("pending".equals(value)) {
@@ -57,6 +61,8 @@ public enum VirtualInterfaceState {
             return VirtualInterfaceState.Deleting;
         } else if ("deleted".equals(value)) {
             return VirtualInterfaceState.Deleted;
+        } else if ("rejected".equals(value)) {
+            return VirtualInterfaceState.Rejected;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

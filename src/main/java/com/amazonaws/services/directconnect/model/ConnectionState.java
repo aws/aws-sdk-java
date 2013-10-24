@@ -19,10 +19,14 @@ package com.amazonaws.services.directconnect.model;
  */
 public enum ConnectionState {
     
+    Ordering("ordering"),
     Requested("requested"),
     Pending("pending"),
     Available("available"),
-    Deleted("deleted");
+    Down("down"),
+    Deleting("deleting"),
+    Deleted("deleted"),
+    Rejected("rejected");
 
     private String value;
 
@@ -46,14 +50,22 @@ public enum ConnectionState {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         
+        } else if ("ordering".equals(value)) {
+            return ConnectionState.Ordering;
         } else if ("requested".equals(value)) {
             return ConnectionState.Requested;
         } else if ("pending".equals(value)) {
             return ConnectionState.Pending;
         } else if ("available".equals(value)) {
             return ConnectionState.Available;
+        } else if ("down".equals(value)) {
+            return ConnectionState.Down;
+        } else if ("deleting".equals(value)) {
+            return ConnectionState.Deleting;
         } else if ("deleted".equals(value)) {
             return ConnectionState.Deleted;
+        } else if ("rejected".equals(value)) {
+            return ConnectionState.Rejected;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

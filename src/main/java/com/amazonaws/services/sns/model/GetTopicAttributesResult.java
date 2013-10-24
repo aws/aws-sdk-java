@@ -13,14 +13,16 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
+
 import java.io.Serializable;
+
 
 /**
  * <p>
  * Response for GetTopicAttributes action.
  * </p>
  */
-public class GetTopicAttributesResult  implements Serializable  {
+public class GetTopicAttributesResult implements Serializable {
 
     /**
      * A map of the topic's attributes. Attributes in this map include the
@@ -83,7 +85,6 @@ public class GetTopicAttributesResult  implements Serializable  {
             attributes = new java.util.HashMap<String,String>();
         }
         return attributes;
-
     }
     
     /**
@@ -163,13 +164,58 @@ public class GetTopicAttributesResult  implements Serializable  {
      *         into account system defaults</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public GetTopicAttributesResult withAttributes(java.util.Map<String,String> attributes) {
         setAttributes(attributes);
         return this;
     }
-    
+
+    /**
+     * A map of the topic's attributes. Attributes in this map include the
+     * following: <ul> <li><code>TopicArn</code> -- the topic's ARN</li>
+     * <li><code>Owner</code> -- the AWS account ID of the topic's owner</li>
+     * <li><code>Policy</code> -- the JSON serialization of the topic's
+     * access control policy</li> <li><code>DisplayName</code> -- the
+     * human-readable name used in the "From" field for notifications to
+     * email and email-json endpoints</li>
+     * <li><code>SubscriptionsPending</code> -- the number of subscriptions
+     * pending confirmation on this topic</li>
+     * <li><code>SubscriptionsConfirmed</code> -- the number of confirmed
+     * subscriptions on this topic</li> <li><code>SubscriptionsDeleted</code>
+     * -- the number of deleted subscriptions on this topic</li>
+     * <li><code>DeliveryPolicy</code> -- the JSON serialization of the
+     * topic's delivery policy</li> <li><code>EffectiveDeliveryPolicy</code>
+     * -- the JSON serialization of the effective delivery policy that takes
+     * into account system defaults</li> </ul>
+     * <p>
+     * The method adds a new key-value pair into Attributes parameter, and
+     * returns a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param key The key of the entry to be added into Attributes.
+     * @param value The corresponding value of the entry to be added into Attributes.
+     */
+	public GetTopicAttributesResult addAttributesEntry(String key, String value) {
+		if (null == this.attributes) {
+			this.attributes = new java.util.HashMap<String,String>();
+		}
+		if (this.attributes.containsKey(key))
+			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+		this.attributes.put(key, value);
+		return this;
+	}
+
+	/**
+	 * Removes all the entries added into Attributes.
+	 * <p>
+	 * Returns a reference to this object so that method calls can be chained together.
+	 */
+	public GetTopicAttributesResult clearAttributesEntries() {
+		this.attributes = null;
+		return this;
+	}
+	
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

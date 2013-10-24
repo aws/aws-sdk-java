@@ -13,8 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
-import com.amazonaws.AmazonWebServiceRequest;
+
 import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#createPlatformApplication(CreatePlatformApplicationRequest) CreatePlatformApplication operation}.
@@ -31,7 +33,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#createPlatformApplication(CreatePlatformApplicationRequest)
  */
-public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * Application names must be made up of only uppercase and lowercase
@@ -91,14 +93,13 @@ public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest  i
      *         between 1 and 256 characters long.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public CreatePlatformApplicationRequest withName(String name) {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * The following platforms are supported: ADM (Amazon Device Messaging),
      * APNS (Apple Push Notification Service), APNS_SANDBOX, and GCM (Google
@@ -137,14 +138,13 @@ public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest  i
      *         Cloud Messaging).
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public CreatePlatformApplicationRequest withPlatform(String platform) {
         this.platform = platform;
         return this;
     }
-    
-    
+
     /**
      * For a list of attributes, see <a
      * href="http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">SetPlatformApplicationAttributes</a>
@@ -158,7 +158,6 @@ public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest  i
             attributes = new java.util.HashMap<String,String>();
         }
         return attributes;
-
     }
     
     /**
@@ -182,13 +181,44 @@ public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest  i
      *         href="http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">SetPlatformApplicationAttributes</a>
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public CreatePlatformApplicationRequest withAttributes(java.util.Map<String,String> attributes) {
         setAttributes(attributes);
         return this;
     }
-    
+
+    /**
+     * For a list of attributes, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">SetPlatformApplicationAttributes</a>
+     * <p>
+     * The method adds a new key-value pair into Attributes parameter, and
+     * returns a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param key The key of the entry to be added into Attributes.
+     * @param value The corresponding value of the entry to be added into Attributes.
+     */
+	public CreatePlatformApplicationRequest addAttributesEntry(String key, String value) {
+		if (null == this.attributes) {
+			this.attributes = new java.util.HashMap<String,String>();
+		}
+		if (this.attributes.containsKey(key))
+			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+		this.attributes.put(key, value);
+		return this;
+	}
+
+	/**
+	 * Removes all the entries added into Attributes.
+	 * <p>
+	 * Returns a reference to this object so that method calls can be chained together.
+	 */
+	public CreatePlatformApplicationRequest clearAttributesEntries() {
+		this.attributes = null;
+		return this;
+	}
+	
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

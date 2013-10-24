@@ -78,6 +78,69 @@ public class TimingInfo {
     }
 
     /**
+     * Captures the current wall clock time (since epoch in millisecond)
+     * and the current time (in nanosecond) used for timing measurement.
+     * For more info, see:
+     * https://blogs.oracle.com/dholmes/entry/inside_the_hotspot_vm_clocks
+     */
+    public static TimingInfo startTimingFullSupport() {
+        return new TimingInfoFullSupport(Long.valueOf(System.currentTimeMillis()), System.nanoTime(), null);
+    }
+
+    /**
+     * Captures the given start time in nanosecond, ignoring the wall clock time.
+     *
+     * @param startTimeNano start time in nanosecond
+     */
+    public static TimingInfo startTimingFullSupport(long startTimeNano) {
+        return new TimingInfoFullSupport(null, startTimeNano, null);
+    }
+
+    /**
+     * Returns a {@link TimingInfoFullSupport} based on the given
+     * start and end time in nanosecond, ignoring the wall clock time.
+     *
+     * @param startTimeNano start time in nanosecond
+     * @param endTimeNano end time in nanosecond
+     */
+    public static TimingInfo newTimingInfoFullSupport(long startTimeNano, long endTimeNano) {
+        return new TimingInfoFullSupport(null, startTimeNano, Long.valueOf(endTimeNano));
+    }
+
+    /**
+     * Returns a {@link TimingInfoFullSupport} based on the given
+     * start time since epoch in millisecond,
+     * and the given start and end time in nanosecond.
+     *
+     * @param startEpochTimeMilli start time since epoch in millisecond
+     * @param startTimeNano start time in nanosecond
+     * @param endTimeNano end time in nanosecond
+     */
+    public static TimingInfo newTimingInfoFullSupport(
+        long startEpochTimeMilli, long startTimeNano, long endTimeNano) {
+        return new TimingInfoFullSupport(Long.valueOf(startEpochTimeMilli), startTimeNano, Long.valueOf(endTimeNano));
+    }
+
+    /**
+     * Returns an instance of {@link TimingInfo} that is not modifiable, given
+     * the start and end nano times.
+     */
+    public static TimingInfo unmodifiableTimingInfo(long startTimeNano, Long endTimeNano) {
+        return new TimingInfoUnmodifiable(null, startTimeNano, endTimeNano);
+    }
+
+    /**
+     * Returns an instance of {@link TimingInfo} that is not modifiable.
+     *
+     * @param startEpochTimeMilli start time since epoch in millisecond
+     * @param startTimeNano start time in nanosecond
+     * @param endTimeNano end time in nanosecond; or null if not known
+     */
+    public static TimingInfo unmodifiableTimingInfo(long startEpochTimeMilli, long startTimeNano, Long endTimeNano) {
+        return new TimingInfoUnmodifiable(startEpochTimeMilli, startTimeNano, endTimeNano);
+    }
+
+    /**
      * A private ctor to facilitate the deprecation of using millisecond and
      * migration to using nanosecond for timing measurement.
      * 
@@ -174,15 +237,15 @@ public class TimingInfo {
     }
 
     @Deprecated
-    public final void setEndTime(long endTimeMilli) {
+    public void setEndTime(long endTimeMilli) {
         this.endTimeNano = Long.valueOf(TimeUnit.MILLISECONDS.toNanos(endTimeMilli));
     }
 
-    public final void setEndTimeNano(long endTimeNano) {
+    public void setEndTimeNano(long endTimeNano) {
         this.endTimeNano = endTimeNano;
     }
 
-    public final TimingInfo endTiming() {
+    public TimingInfo endTiming() {
         this.endTimeNano = Long.valueOf(System.nanoTime());
         return this;
     }
@@ -192,7 +255,7 @@ public class TimingInfo {
     public TimingInfo getSubMeasurement(String subMesurementName, int index) { return null; }
     public TimingInfo getLastSubMeasurement(String subMeasurementName) { return null; }
     public List<TimingInfo> getAllSubMeasurements(String subMeasurementName) { return null; }
-    public Map<String, List<TimingInfo>> getSubMeasurementsByName() { return null; }
+    public Map<String, List<TimingInfo>> getSubMeasurementsByName() { return Collections.emptyMap(); }
     public Number getCounter(String key) { return null; }
     public Map<String, Number> getAllCounters() { return Collections.emptyMap(); }
     public void setCounter(String key, long count) {}

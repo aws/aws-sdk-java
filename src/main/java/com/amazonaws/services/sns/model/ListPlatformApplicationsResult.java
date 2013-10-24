@@ -13,14 +13,16 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
+
 import java.io.Serializable;
+
 
 /**
  * <p>
  * Response for ListPlatformApplications action.
  * </p>
  */
-public class ListPlatformApplicationsResult  implements Serializable  {
+public class ListPlatformApplicationsResult implements Serializable {
 
     /**
      * Platform applications returned when calling ListPlatformApplications
@@ -43,7 +45,6 @@ public class ListPlatformApplicationsResult  implements Serializable  {
      *         action.
      */
     public java.util.List<PlatformApplication> getPlatformApplications() {
-        
         if (platformApplications == null) {
               platformApplications = new com.amazonaws.internal.ListWithAutoConstructFlag<PlatformApplication>();
               platformApplications.setAutoConstruct(true);
@@ -78,7 +79,7 @@ public class ListPlatformApplicationsResult  implements Serializable  {
      *         action.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListPlatformApplicationsResult withPlatformApplications(PlatformApplication... platformApplications) {
         if (getPlatformApplications() == null) setPlatformApplications(new java.util.ArrayList<PlatformApplication>(platformApplications.length));
@@ -98,7 +99,7 @@ public class ListPlatformApplicationsResult  implements Serializable  {
      *         action.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListPlatformApplicationsResult withPlatformApplications(java.util.Collection<PlatformApplication> platformApplications) {
         if (platformApplications == null) {
@@ -111,7 +112,7 @@ public class ListPlatformApplicationsResult  implements Serializable  {
 
         return this;
     }
-    
+
     /**
      * NextToken string is returned when calling ListPlatformApplications
      * action if additional records are available after the first page
@@ -150,14 +151,13 @@ public class ListPlatformApplicationsResult  implements Serializable  {
      *         results.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListPlatformApplicationsResult withNextToken(String nextToken) {
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

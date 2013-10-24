@@ -13,14 +13,16 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
+
 import java.io.Serializable;
+
 
 /**
  * <p>
  * Response from CreateEndpoint action.
  * </p>
  */
-public class CreatePlatformEndpointResult  implements Serializable  {
+public class CreatePlatformEndpointResult implements Serializable {
 
     /**
      * EndpointArn returned from CreateEndpoint action.
@@ -53,14 +55,13 @@ public class CreatePlatformEndpointResult  implements Serializable  {
      * @param endpointArn EndpointArn returned from CreateEndpoint action.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public CreatePlatformEndpointResult withEndpointArn(String endpointArn) {
         this.endpointArn = endpointArn;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

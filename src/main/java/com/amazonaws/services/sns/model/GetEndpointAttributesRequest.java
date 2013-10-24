@@ -13,8 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
-import com.amazonaws.AmazonWebServiceRequest;
+
 import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#getEndpointAttributes(GetEndpointAttributesRequest) GetEndpointAttributes operation}.
@@ -26,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#getEndpointAttributes(GetEndpointAttributesRequest)
  */
-public class GetEndpointAttributesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class GetEndpointAttributesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * EndpointArn for GetEndpointAttributes input.
@@ -59,14 +61,13 @@ public class GetEndpointAttributesRequest extends AmazonWebServiceRequest  imple
      * @param endpointArn EndpointArn for GetEndpointAttributes input.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public GetEndpointAttributesRequest withEndpointArn(String endpointArn) {
         this.endpointArn = endpointArn;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

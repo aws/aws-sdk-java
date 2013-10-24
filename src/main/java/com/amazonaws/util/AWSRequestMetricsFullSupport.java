@@ -26,6 +26,7 @@ import org.apache.commons.logging.LogFactory;
 import org.apache.http.annotation.NotThreadSafe;
 
 import com.amazonaws.metrics.AwsSdkMetrics;
+import com.amazonaws.metrics.MetricType;
 import com.amazonaws.metrics.RequestMetricCollector;
 
 /**
@@ -56,7 +57,7 @@ public class AWSRequestMetricsFullSupport extends AWSRequestMetrics {
      * @see AWSRequestMetricsFullSupport
      */
     public AWSRequestMetricsFullSupport() {
-        super(TimingInfoFullSupport.startTiming());
+        super(TimingInfo.startTimingFullSupport());
     }
     
     /**
@@ -82,11 +83,11 @@ public class AWSRequestMetricsFullSupport extends AWSRequestMetrics {
     public void startEvent(String eventName) {
         /* This will overwrite past events */
         eventsBeingProfiled.put // ignoring the wall clock time
-            (eventName, TimingInfoFullSupport.startTiming(System.nanoTime()));
+            (eventName, TimingInfo.startTimingFullSupport(System.nanoTime()));
     }
 
     @Override
-    public void startEvent(Field f) {
+    public void startEvent(MetricType f) {
         startEvent(f.name());
     }
 
@@ -100,21 +101,26 @@ public class AWSRequestMetricsFullSupport extends AWSRequestMetrics {
      */
     @Override
     public void endEvent(String eventName) {
-        TimingInfo timingInfo = eventsBeingProfiled.get(eventName);
+        TimingInfo event = eventsBeingProfiled.get(eventName);
         /* Somebody tried to end an event that was not started. */
-        if (timingInfo == null) {
+        if (event == null) {
             LogFactory.getLog(getClass()).warn
                 ("Trying to end an event which was never started: " + eventName);
             return;
         }
-        this.timingInfo.addSubMeasurement(eventName, timingInfo.endTiming());
+        event.endTiming();
+        this.timingInfo.addSubMeasurement(
+            eventName,
+            TimingInfo.unmodifiableTimingInfo(
+                event.getStartTimeNano(),
+                event.getEndTimeNano()));
     }
 
     @Override
-    public void endEvent(Field f) {
+    public void endEvent(MetricType f) {
         endEvent(f.name());
     }
-    
+
     /**
      * Add 1 to an existing count for a given event. If the count for that event
      * does not exist, then it creates one and initializes it to 1.
@@ -133,7 +139,7 @@ public class AWSRequestMetricsFullSupport extends AWSRequestMetrics {
     }
 
     @Override
-    public void incrementCounter(Field f) {
+    public void incrementCounter(MetricType f) {
         incrementCounter(f.name());
     }
     
@@ -143,7 +149,7 @@ public class AWSRequestMetricsFullSupport extends AWSRequestMetrics {
     }
 
     @Override
-    public void setCounter(Field f, long count) {
+    public void setCounter(MetricType f, long count) {
         setCounter(f.name(), count);
     }
     
@@ -173,7 +179,7 @@ public class AWSRequestMetricsFullSupport extends AWSRequestMetrics {
     }
 
     @Override
-    public void addProperty(Field f, Object value) {
+    public void addProperty(MetricType f, Object value) {
         addProperty(f.name(), value);
     }
 
@@ -206,7 +212,7 @@ public class AWSRequestMetricsFullSupport extends AWSRequestMetrics {
     }
 
     @Override
-    public List<Object> getProperty(Field f){
+    public List<Object> getProperty(MetricType f){
         return getProperty(f.name());
     }
 

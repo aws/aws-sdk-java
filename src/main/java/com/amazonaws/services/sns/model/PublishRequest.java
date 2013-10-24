@@ -13,8 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
-import com.amazonaws.AmazonWebServiceRequest;
+
 import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#publish(PublishRequest) Publish operation}.
@@ -31,7 +33,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#publish(PublishRequest)
  */
-public class PublishRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class PublishRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The topic you want to publish to.
@@ -106,8 +108,6 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      */
     public PublishRequest() {}
     
-
-
     /**
      * Constructs a new PublishRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -142,10 +142,6 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
         setTopicArn(topicArn);
         setMessage(message);
     }
-
-    
-    
-
 
     /**
      * Constructs a new PublishRequest object.
@@ -190,8 +186,6 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
         setSubject(subject);
     }
 
-    
-    
     /**
      * The topic you want to publish to.
      *
@@ -218,14 +212,13 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      * @param topicArn The topic you want to publish to.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public PublishRequest withTopicArn(String topicArn) {
         this.topicArn = topicArn;
         return this;
     }
-    
-    
+
     /**
      * Either TopicArn or EndpointArn, but not both.
      *
@@ -252,14 +245,13 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      * @param targetArn Either TopicArn or EndpointArn, but not both.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public PublishRequest withTargetArn(String targetArn) {
         this.targetArn = targetArn;
         return this;
     }
-    
-    
+
     /**
      * The message you want to send to the topic. <p>If you want to send the
      * same message to all transport protocols, include the text of the
@@ -418,14 +410,13 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      *         delivery).</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public PublishRequest withMessage(String message) {
         this.message = message;
         return this;
     }
-    
-    
+
     /**
      * Optional parameter to be used as the "Subject" line when the message
      * is delivered to email endpoints. This field will also be included, if
@@ -482,14 +473,13 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      *         characters; and must be less than 100 characters long.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public PublishRequest withSubject(String subject) {
         this.subject = subject;
         return this;
     }
-    
-    
+
     /**
      * Set <code>MessageStructure</code> to <code>json</code> if you want to
      * send a different message for each protocol. For example, using one
@@ -606,14 +596,13 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
      *         <code>json</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public PublishRequest withMessageStructure(String messageStructure) {
         this.messageStructure = messageStructure;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

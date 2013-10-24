@@ -51,6 +51,10 @@ public class ConnectionJsonUnmarshaller implements Unmarshaller<Connection, Json
 
             
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("ownerAccount", targetDepth)) {
+                    context.nextToken();
+                    connection.setOwnerAccount(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("connectionId", targetDepth)) {
                     context.nextToken();
                     connection.setConnectionId(StringJsonUnmarshaller.getInstance().unmarshall(context));
@@ -70,6 +74,18 @@ public class ConnectionJsonUnmarshaller implements Unmarshaller<Connection, Json
                 if (context.testExpression("location", targetDepth)) {
                     context.nextToken();
                     connection.setLocation(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("bandwidth", targetDepth)) {
+                    context.nextToken();
+                    connection.setBandwidth(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("vlan", targetDepth)) {
+                    context.nextToken();
+                    connection.setVlan(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("partnerName", targetDepth)) {
+                    context.nextToken();
+                    connection.setPartnerName(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

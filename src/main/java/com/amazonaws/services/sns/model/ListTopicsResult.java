@@ -13,14 +13,16 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
+
 import java.io.Serializable;
+
 
 /**
  * <p>
  * Response for ListTopics action.
  * </p>
  */
-public class ListTopicsResult  implements Serializable  {
+public class ListTopicsResult implements Serializable {
 
     /**
      * A list of topic ARNs.
@@ -39,7 +41,6 @@ public class ListTopicsResult  implements Serializable  {
      * @return A list of topic ARNs.
      */
     public java.util.List<Topic> getTopics() {
-        
         if (topics == null) {
               topics = new com.amazonaws.internal.ListWithAutoConstructFlag<Topic>();
               topics.setAutoConstruct(true);
@@ -70,7 +71,7 @@ public class ListTopicsResult  implements Serializable  {
      * @param topics A list of topic ARNs.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListTopicsResult withTopics(Topic... topics) {
         if (getTopics() == null) setTopics(new java.util.ArrayList<Topic>(topics.length));
@@ -88,7 +89,7 @@ public class ListTopicsResult  implements Serializable  {
      * @param topics A list of topic ARNs.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListTopicsResult withTopics(java.util.Collection<Topic> topics) {
         if (topics == null) {
@@ -101,7 +102,7 @@ public class ListTopicsResult  implements Serializable  {
 
         return this;
     }
-    
+
     /**
      * Token to pass along to the next <code>ListTopics</code> request. This
      * element is returned if there are additional topics to retrieve.
@@ -134,14 +135,13 @@ public class ListTopicsResult  implements Serializable  {
      *         element is returned if there are additional topics to retrieve.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListTopicsResult withNextToken(String nextToken) {
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

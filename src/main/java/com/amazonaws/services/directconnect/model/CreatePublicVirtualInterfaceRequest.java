@@ -35,7 +35,7 @@ public class CreatePublicVirtualInterfaceRequest extends AmazonWebServiceRequest
     private String connectionId;
 
     /**
-     * Detailed information of the public virtual interface to be created.
+     * Detailed information for the public virtual interface to be created.
      * <p>Default: None
      */
     private NewPublicVirtualInterface newPublicVirtualInterface;
@@ -74,10 +74,10 @@ public class CreatePublicVirtualInterfaceRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * Detailed information of the public virtual interface to be created.
+     * Detailed information for the public virtual interface to be created.
      * <p>Default: None
      *
-     * @return Detailed information of the public virtual interface to be created.
+     * @return Detailed information for the public virtual interface to be created.
      *         <p>Default: None
      */
     public NewPublicVirtualInterface getNewPublicVirtualInterface() {
@@ -85,10 +85,10 @@ public class CreatePublicVirtualInterfaceRequest extends AmazonWebServiceRequest
     }
     
     /**
-     * Detailed information of the public virtual interface to be created.
+     * Detailed information for the public virtual interface to be created.
      * <p>Default: None
      *
-     * @param newPublicVirtualInterface Detailed information of the public virtual interface to be created.
+     * @param newPublicVirtualInterface Detailed information for the public virtual interface to be created.
      *         <p>Default: None
      */
     public void setNewPublicVirtualInterface(NewPublicVirtualInterface newPublicVirtualInterface) {
@@ -96,12 +96,12 @@ public class CreatePublicVirtualInterfaceRequest extends AmazonWebServiceRequest
     }
     
     /**
-     * Detailed information of the public virtual interface to be created.
+     * Detailed information for the public virtual interface to be created.
      * <p>Default: None
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param newPublicVirtualInterface Detailed information of the public virtual interface to be created.
+     * @param newPublicVirtualInterface Detailed information for the public virtual interface to be created.
      *         <p>Default: None
      *
      * @return A reference to this updated object so that method calls can be chained 

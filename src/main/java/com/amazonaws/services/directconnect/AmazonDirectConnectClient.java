@@ -63,12 +63,10 @@ import com.amazonaws.services.directconnect.model.transform.*;
  * Direct Connect actions.</li>
  * <li> <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/API_Types.html"> Data Types </a> : An alphabetical list of all AWS Direct
  * Connect data types.</li>
- * <li> <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/CommonParameters.html"> Common Parameters </a> : Parameters that all Query
- * actions can use.</li>
+ * <li> <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/CommonParameters.html"> Common Query Parameters </a> : Parameters that all
+ * Query actions can use.</li>
  * <li> <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/CommonErrors.html"> Common Errors </a> : Client and server errors that all
  * actions can return.</li>
- * <li> <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html"> Regions and Endpoints </a> : Itemized regions and endpoints for
- * all AWS products.</li>
  * 
  * </ul>
  */
@@ -218,7 +216,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         exceptionUnmarshallers.add(new DirectConnectClientExceptionUnmarshaller());
         
         exceptionUnmarshallers.add(new JsonErrorUnmarshaller());
-        setEndpoint("directConnect.us-east-1.amazonaws.com/");
+        setEndpoint("directconnect.us-east-1.amazonaws.com/");
 
         signer = new AWS4Signer();
         
@@ -235,14 +233,335 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
     
     /**
      * <p>
-     * Displays all virtual interfaces for an AWS account. Virtual interfaces
-     * deleted fewer than 15 minutes before DescribeVirtualInterfaces is
-     * called are also returned. If a virtual interface ID is included then
-     * only a single virtual interface will be returned.
+     * Returns the list of AWS Direct Connect locations in the current AWS
+     * region. These are the locations that may be selected when calling
+     * CreateConnection or CreateInterconnect.
+     * </p>
+     *
+     * @param describeLocationsRequest Container for the necessary parameters
+     *           to execute the DescribeLocations service method on
+     *           AmazonDirectConnect.
+     * 
+     * @return The response from the DescribeLocations service method, as
+     *         returned by AmazonDirectConnect.
+     * 
+     * @throws DirectConnectServerException
+     * @throws DirectConnectClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeLocationsResult describeLocations(DescribeLocationsRequest describeLocationsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext(describeLocationsRequest);
+
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeLocationsRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new DescribeLocationsRequestMarshaller().marshall(describeLocationsRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
+
+        Unmarshaller<DescribeLocationsResult, JsonUnmarshallerContext> unmarshaller = new DescribeLocationsResultJsonUnmarshaller();
+
+        JsonResponseHandler<DescribeLocationsResult> responseHandler = new JsonResponseHandler<DescribeLocationsResult>(unmarshaller);
+
+        
+
+        return invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Accept ownership of a public virtual interface created by another
+     * customer.
      * </p>
      * <p>
-     * A virtual interface (VLAN) transmits the traffic between the Direct
-     * Connect location and the customer.
+     * After the virtual interface owner calls this function, the specified
+     * virtual interface will be created and made available for handling
+     * traffic.
+     * </p>
+     *
+     * @param confirmPublicVirtualInterfaceRequest Container for the
+     *           necessary parameters to execute the ConfirmPublicVirtualInterface
+     *           service method on AmazonDirectConnect.
+     * 
+     * @return The response from the ConfirmPublicVirtualInterface service
+     *         method, as returned by AmazonDirectConnect.
+     * 
+     * @throws DirectConnectServerException
+     * @throws DirectConnectClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ConfirmPublicVirtualInterfaceResult confirmPublicVirtualInterface(ConfirmPublicVirtualInterfaceRequest confirmPublicVirtualInterfaceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext(confirmPublicVirtualInterfaceRequest);
+
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ConfirmPublicVirtualInterfaceRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new ConfirmPublicVirtualInterfaceRequestMarshaller().marshall(confirmPublicVirtualInterfaceRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
+
+        Unmarshaller<ConfirmPublicVirtualInterfaceResult, JsonUnmarshallerContext> unmarshaller = new ConfirmPublicVirtualInterfaceResultJsonUnmarshaller();
+
+        JsonResponseHandler<ConfirmPublicVirtualInterfaceResult> responseHandler = new JsonResponseHandler<ConfirmPublicVirtualInterfaceResult>(unmarshaller);
+
+        
+
+        return invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Creates a new private virtual interface. A virtual interface is the
+     * VLAN that transports AWS Direct Connect traffic. A private virtual
+     * interface supports sending traffic to a single virtual private cloud
+     * (VPC).
+     * </p>
+     *
+     * @param createPrivateVirtualInterfaceRequest Container for the
+     *           necessary parameters to execute the CreatePrivateVirtualInterface
+     *           service method on AmazonDirectConnect.
+     * 
+     * @return The response from the CreatePrivateVirtualInterface service
+     *         method, as returned by AmazonDirectConnect.
+     * 
+     * @throws DirectConnectServerException
+     * @throws DirectConnectClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreatePrivateVirtualInterfaceResult createPrivateVirtualInterface(CreatePrivateVirtualInterfaceRequest createPrivateVirtualInterfaceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext(createPrivateVirtualInterfaceRequest);
+
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreatePrivateVirtualInterfaceRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new CreatePrivateVirtualInterfaceRequestMarshaller().marshall(createPrivateVirtualInterfaceRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
+
+        Unmarshaller<CreatePrivateVirtualInterfaceResult, JsonUnmarshallerContext> unmarshaller = new CreatePrivateVirtualInterfaceResultJsonUnmarshaller();
+
+        JsonResponseHandler<CreatePrivateVirtualInterfaceResult> responseHandler = new JsonResponseHandler<CreatePrivateVirtualInterfaceResult>(unmarshaller);
+
+        
+
+        return invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Deletes a virtual interface.
+     * </p>
+     *
+     * @param deleteVirtualInterfaceRequest Container for the necessary
+     *           parameters to execute the DeleteVirtualInterface service method on
+     *           AmazonDirectConnect.
+     * 
+     * @return The response from the DeleteVirtualInterface service method,
+     *         as returned by AmazonDirectConnect.
+     * 
+     * @throws DirectConnectServerException
+     * @throws DirectConnectClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DeleteVirtualInterfaceResult deleteVirtualInterface(DeleteVirtualInterfaceRequest deleteVirtualInterfaceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext(deleteVirtualInterfaceRequest);
+
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteVirtualInterfaceRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new DeleteVirtualInterfaceRequestMarshaller().marshall(deleteVirtualInterfaceRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
+
+        Unmarshaller<DeleteVirtualInterfaceResult, JsonUnmarshallerContext> unmarshaller = new DeleteVirtualInterfaceResultJsonUnmarshaller();
+
+        JsonResponseHandler<DeleteVirtualInterfaceResult> responseHandler = new JsonResponseHandler<DeleteVirtualInterfaceResult>(unmarshaller);
+
+        
+
+        return invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Creates a new public virtual interface. A virtual interface is the
+     * VLAN that transports AWS Direct Connect traffic. A public virtual
+     * interface supports sending traffic to public services of AWS such as
+     * Amazon Simple Storage Service (Amazon S3).
+     * </p>
+     *
+     * @param createPublicVirtualInterfaceRequest Container for the necessary
+     *           parameters to execute the CreatePublicVirtualInterface service method
+     *           on AmazonDirectConnect.
+     * 
+     * @return The response from the CreatePublicVirtualInterface service
+     *         method, as returned by AmazonDirectConnect.
+     * 
+     * @throws DirectConnectServerException
+     * @throws DirectConnectClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreatePublicVirtualInterfaceResult createPublicVirtualInterface(CreatePublicVirtualInterfaceRequest createPublicVirtualInterfaceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext(createPublicVirtualInterfaceRequest);
+
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreatePublicVirtualInterfaceRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new CreatePublicVirtualInterfaceRequestMarshaller().marshall(createPublicVirtualInterfaceRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
+
+        Unmarshaller<CreatePublicVirtualInterfaceResult, JsonUnmarshallerContext> unmarshaller = new CreatePublicVirtualInterfaceResultJsonUnmarshaller();
+
+        JsonResponseHandler<CreatePublicVirtualInterfaceResult> responseHandler = new JsonResponseHandler<CreatePublicVirtualInterfaceResult>(unmarshaller);
+
+        
+
+        return invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Creates a new interconnect between a AWS Direct Connect partner's
+     * network and a specific AWS Direct Connect location.
+     * </p>
+     * <p>
+     * An interconnect is a connection which is capable of hosting other
+     * connections. The AWS Direct Connect partner can use an interconnect
+     * to provide sub-1Gbps AWS Direct Connect service to tier 2 customers
+     * who do not have their own connections. Like a standard connection, an
+     * interconnect links the AWS Direct Connect partner's network to an AWS
+     * Direct Connect location over a standard 1 Gbps or 10 Gbps Ethernet
+     * fiber-optic cable. One end is connected to the partner's router, the
+     * other to an AWS Direct Connect router.
+     * </p>
+     * <p>
+     * For each end customer, the AWS Direct Connect partner provisions a
+     * connection on their interconnect by calling
+     * AllocateConnectionOnInterconnect. The end customer can then connect
+     * to AWS resources by creating a virtual interface on their connection,
+     * using the VLAN assigned to them by the AWS Direct Connect partner.
+     * </p>
+     *
+     * @param createInterconnectRequest Container for the necessary
+     *           parameters to execute the CreateInterconnect service method on
+     *           AmazonDirectConnect.
+     * 
+     * @return The response from the CreateInterconnect service method, as
+     *         returned by AmazonDirectConnect.
+     * 
+     * @throws DirectConnectServerException
+     * @throws DirectConnectClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateInterconnectResult createInterconnect(CreateInterconnectRequest createInterconnectRequest) 
+            throws AmazonServiceException, AmazonClientException {
+
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext(createInterconnectRequest);
+
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateInterconnectRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new CreateInterconnectRequestMarshaller().marshall(createInterconnectRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
+
+        Unmarshaller<CreateInterconnectResult, JsonUnmarshallerContext> unmarshaller = new CreateInterconnectResultJsonUnmarshaller();
+
+        JsonResponseHandler<CreateInterconnectResult> responseHandler = new JsonResponseHandler<CreateInterconnectResult>(unmarshaller);
+
+        
+
+        return invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Displays all virtual interfaces for an AWS account. Virtual interfaces
+     * deleted fewer than 15 minutes before DescribeVirtualInterfaces is
+     * called are also returned. If a connection ID is included then only
+     * virtual interfaces associated with this connection will be returned.
+     * If a virtual interface ID is included then only a single virtual
+     * interface will be returned.
+     * </p>
+     * <p>
+     * A virtual interface (VLAN) transmits the traffic between the AWS
+     * Direct Connect location and the customer.
+     * </p>
+     * <p>
+     * If a connection ID is provided, only virtual interfaces provisioned on
+     * the specified connection will be returned. If a virtual interface ID
+     * is provided, only this particular virtual interface will be returned.
      * </p>
      *
      * @param describeVirtualInterfacesRequest Container for the necessary
@@ -270,13 +589,120 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         ExecutionContext executionContext = createExecutionContext(describeVirtualInterfacesRequest);
 
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<DescribeVirtualInterfacesRequest> request = new DescribeVirtualInterfacesRequestMarshaller().marshall(describeVirtualInterfacesRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+        Request<DescribeVirtualInterfacesRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new DescribeVirtualInterfacesRequestMarshaller().marshall(describeVirtualInterfacesRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
 
         Unmarshaller<DescribeVirtualInterfacesResult, JsonUnmarshallerContext> unmarshaller = new DescribeVirtualInterfacesResultJsonUnmarshaller();
 
         JsonResponseHandler<DescribeVirtualInterfacesResult> responseHandler = new JsonResponseHandler<DescribeVirtualInterfacesResult>(unmarshaller);
+
+        
+
+        return invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Confirm the creation of a hosted connection on an interconnect.
+     * </p>
+     * <p>
+     * Upon creation, the hosted connection is initially in the 'Ordering'
+     * state, and will remain in this state until the owner calls
+     * ConfirmConnection to confirm creation of the hosted connection.
+     * </p>
+     *
+     * @param confirmConnectionRequest Container for the necessary parameters
+     *           to execute the ConfirmConnection service method on
+     *           AmazonDirectConnect.
+     * 
+     * @return The response from the ConfirmConnection service method, as
+     *         returned by AmazonDirectConnect.
+     * 
+     * @throws DirectConnectServerException
+     * @throws DirectConnectClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ConfirmConnectionResult confirmConnection(ConfirmConnectionRequest confirmConnectionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext(confirmConnectionRequest);
+
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ConfirmConnectionRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new ConfirmConnectionRequestMarshaller().marshall(confirmConnectionRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
+
+        Unmarshaller<ConfirmConnectionResult, JsonUnmarshallerContext> unmarshaller = new ConfirmConnectionResultJsonUnmarshaller();
+
+        JsonResponseHandler<ConfirmConnectionResult> responseHandler = new JsonResponseHandler<ConfirmConnectionResult>(unmarshaller);
+
+        
+
+        return invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Returns a list of interconnects owned by the AWS account.
+     * </p>
+     * <p>
+     * If an interconnect ID is provided, it will only return this particular
+     * interconnect.
+     * </p>
+     *
+     * @param describeInterconnectsRequest Container for the necessary
+     *           parameters to execute the DescribeInterconnects service method on
+     *           AmazonDirectConnect.
+     * 
+     * @return The response from the DescribeInterconnects service method, as
+     *         returned by AmazonDirectConnect.
+     * 
+     * @throws DirectConnectServerException
+     * @throws DirectConnectClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeInterconnectsResult describeInterconnects(DescribeInterconnectsRequest describeInterconnectsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext(describeInterconnectsRequest);
+
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeInterconnectsRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new DescribeInterconnectsRequestMarshaller().marshall(describeInterconnectsRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
+
+        Unmarshaller<DescribeInterconnectsResult, JsonUnmarshallerContext> unmarshaller = new DescribeInterconnectsResultJsonUnmarshaller();
+
+        JsonResponseHandler<DescribeInterconnectsResult> responseHandler = new JsonResponseHandler<DescribeInterconnectsResult>(unmarshaller);
 
         
 
@@ -321,9 +747,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         ExecutionContext executionContext = createExecutionContext(describeVirtualGatewaysRequest);
 
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<DescribeVirtualGatewaysRequest> request = new DescribeVirtualGatewaysRequestMarshaller().marshall(describeVirtualGatewaysRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+        Request<DescribeVirtualGatewaysRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new DescribeVirtualGatewaysRequestMarshaller().marshall(describeVirtualGatewaysRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
 
         Unmarshaller<DescribeVirtualGatewaysResult, JsonUnmarshallerContext> unmarshaller = new DescribeVirtualGatewaysResultJsonUnmarshaller();
 
@@ -336,16 +766,21 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
     
     /**
      * <p>
-     * Displays details about a specific connection including the order steps
-     * for the connection and the current state of the connection order.
+     * Accept ownership of a private virtual interface created by another
+     * customer.
+     * </p>
+     * <p>
+     * After the virtual interface owner calls this function, the virtual
+     * interface will be created and attached to the given virtual private
+     * gateway, and will be available for handling traffic.
      * </p>
      *
-     * @param describeConnectionDetailRequest Container for the necessary
-     *           parameters to execute the DescribeConnectionDetail service method on
-     *           AmazonDirectConnect.
+     * @param confirmPrivateVirtualInterfaceRequest Container for the
+     *           necessary parameters to execute the ConfirmPrivateVirtualInterface
+     *           service method on AmazonDirectConnect.
      * 
-     * @return The response from the DescribeConnectionDetail service method,
-     *         as returned by AmazonDirectConnect.
+     * @return The response from the ConfirmPrivateVirtualInterface service
+     *         method, as returned by AmazonDirectConnect.
      * 
      * @throws DirectConnectServerException
      * @throws DirectConnectClientException
@@ -358,68 +793,24 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *             If an error response is returned by AmazonDirectConnect indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeConnectionDetailResult describeConnectionDetail(DescribeConnectionDetailRequest describeConnectionDetailRequest) 
+    public ConfirmPrivateVirtualInterfaceResult confirmPrivateVirtualInterface(ConfirmPrivateVirtualInterfaceRequest confirmPrivateVirtualInterfaceRequest) 
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext(describeConnectionDetailRequest);
+        ExecutionContext executionContext = createExecutionContext(confirmPrivateVirtualInterfaceRequest);
 
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<DescribeConnectionDetailRequest> request = new DescribeConnectionDetailRequestMarshaller().marshall(describeConnectionDetailRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+        Request<ConfirmPrivateVirtualInterfaceRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new ConfirmPrivateVirtualInterfaceRequestMarshaller().marshall(confirmPrivateVirtualInterfaceRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
 
-        Unmarshaller<DescribeConnectionDetailResult, JsonUnmarshallerContext> unmarshaller = new DescribeConnectionDetailResultJsonUnmarshaller();
+        Unmarshaller<ConfirmPrivateVirtualInterfaceResult, JsonUnmarshallerContext> unmarshaller = new ConfirmPrivateVirtualInterfaceResultJsonUnmarshaller();
 
-        JsonResponseHandler<DescribeConnectionDetailResult> responseHandler = new JsonResponseHandler<DescribeConnectionDetailResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
-    }
-    
-    /**
-     * <p>
-     * Describes one or more of the offerings that are currently available
-     * for creating new connections. The results include offerings for all
-     * regions.
-     * </p>
-     * <p>
-     * To order a new connection you need to select a specific offering ID.
-     * </p>
-     *
-     * @param describeOfferingsRequest Container for the necessary parameters
-     *           to execute the DescribeOfferings service method on
-     *           AmazonDirectConnect.
-     * 
-     * @return The response from the DescribeOfferings service method, as
-     *         returned by AmazonDirectConnect.
-     * 
-     * @throws DirectConnectServerException
-     * @throws DirectConnectClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonDirectConnect indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeOfferingsResult describeOfferings(DescribeOfferingsRequest describeOfferingsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext(describeOfferingsRequest);
-
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<DescribeOfferingsRequest> request = new DescribeOfferingsRequestMarshaller().marshall(describeOfferingsRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
-
-        Unmarshaller<DescribeOfferingsResult, JsonUnmarshallerContext> unmarshaller = new DescribeOfferingsResultJsonUnmarshaller();
-
-        JsonResponseHandler<DescribeOfferingsResult> responseHandler = new JsonResponseHandler<DescribeOfferingsResult>(unmarshaller);
+        JsonResponseHandler<ConfirmPrivateVirtualInterfaceResult> responseHandler = new JsonResponseHandler<ConfirmPrivateVirtualInterfaceResult>(unmarshaller);
 
         
 
@@ -431,7 +822,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * Displays all connections in this region.
      * </p>
      * <p>
-     * If a connection ID is provided, it will only return this particular
+     * If a connection ID is provided, the call returns only that particular
      * connection.
      * </p>
      *
@@ -460,9 +851,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         ExecutionContext executionContext = createExecutionContext(describeConnectionsRequest);
 
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<DescribeConnectionsRequest> request = new DescribeConnectionsRequestMarshaller().marshall(describeConnectionsRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+        Request<DescribeConnectionsRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new DescribeConnectionsRequestMarshaller().marshall(describeConnectionsRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
 
         Unmarshaller<DescribeConnectionsResult, JsonUnmarshallerContext> unmarshaller = new DescribeConnectionsResultJsonUnmarshaller();
 
@@ -475,15 +870,26 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
     
     /**
      * <p>
-     * Displays additional ordering step details for a specified offering.
+     * Provisions a public virtual interface to be owned by a different
+     * customer.
+     * </p>
+     * <p>
+     * The owner of a connection calls this function to provision a public
+     * virtual interface which will be owned by another AWS customer.
+     * </p>
+     * <p>
+     * Virtual interfaces created using this function must be confirmed by
+     * the virtual interface owner by calling ConfirmPublicVirtualInterface.
+     * Until this step has been completed, the virtual interface will be in
+     * 'Confirming' state, and will not be available for handling traffic.
      * </p>
      *
-     * @param describeOfferingDetailRequest Container for the necessary
-     *           parameters to execute the DescribeOfferingDetail service method on
-     *           AmazonDirectConnect.
+     * @param allocatePublicVirtualInterfaceRequest Container for the
+     *           necessary parameters to execute the AllocatePublicVirtualInterface
+     *           service method on AmazonDirectConnect.
      * 
-     * @return The response from the DescribeOfferingDetail service method,
-     *         as returned by AmazonDirectConnect.
+     * @return The response from the AllocatePublicVirtualInterface service
+     *         method, as returned by AmazonDirectConnect.
      * 
      * @throws DirectConnectServerException
      * @throws DirectConnectClientException
@@ -496,20 +902,82 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *             If an error response is returned by AmazonDirectConnect indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeOfferingDetailResult describeOfferingDetail(DescribeOfferingDetailRequest describeOfferingDetailRequest) 
+    public AllocatePublicVirtualInterfaceResult allocatePublicVirtualInterface(AllocatePublicVirtualInterfaceRequest allocatePublicVirtualInterfaceRequest) 
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext(describeOfferingDetailRequest);
+        ExecutionContext executionContext = createExecutionContext(allocatePublicVirtualInterfaceRequest);
 
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<DescribeOfferingDetailRequest> request = new DescribeOfferingDetailRequestMarshaller().marshall(describeOfferingDetailRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+        Request<AllocatePublicVirtualInterfaceRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new AllocatePublicVirtualInterfaceRequestMarshaller().marshall(allocatePublicVirtualInterfaceRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
 
-        Unmarshaller<DescribeOfferingDetailResult, JsonUnmarshallerContext> unmarshaller = new DescribeOfferingDetailResultJsonUnmarshaller();
+        Unmarshaller<AllocatePublicVirtualInterfaceResult, JsonUnmarshallerContext> unmarshaller = new AllocatePublicVirtualInterfaceResultJsonUnmarshaller();
 
-        JsonResponseHandler<DescribeOfferingDetailResult> responseHandler = new JsonResponseHandler<DescribeOfferingDetailResult>(unmarshaller);
+        JsonResponseHandler<AllocatePublicVirtualInterfaceResult> responseHandler = new JsonResponseHandler<AllocatePublicVirtualInterfaceResult>(unmarshaller);
+
+        
+
+        return invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Provisions a private virtual interface to be owned by a different
+     * customer.
+     * </p>
+     * <p>
+     * The owner of a connection calls this function to provision a private
+     * virtual interface which will be owned by another AWS customer.
+     * </p>
+     * <p>
+     * Virtual interfaces created using this function must be confirmed by
+     * the virtual interface owner by calling ConfirmPrivateVirtualInterface.
+     * Until this step has been completed, the virtual interface will be in
+     * 'Confirming' state, and will not be available for handling traffic.
+     * </p>
+     *
+     * @param allocatePrivateVirtualInterfaceRequest Container for the
+     *           necessary parameters to execute the AllocatePrivateVirtualInterface
+     *           service method on AmazonDirectConnect.
+     * 
+     * @return The response from the AllocatePrivateVirtualInterface service
+     *         method, as returned by AmazonDirectConnect.
+     * 
+     * @throws DirectConnectServerException
+     * @throws DirectConnectClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public AllocatePrivateVirtualInterfaceResult allocatePrivateVirtualInterface(AllocatePrivateVirtualInterfaceRequest allocatePrivateVirtualInterfaceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext(allocatePrivateVirtualInterfaceRequest);
+
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<AllocatePrivateVirtualInterfaceRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new AllocatePrivateVirtualInterfaceRequestMarshaller().marshall(allocatePrivateVirtualInterfaceRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
+
+        Unmarshaller<AllocatePrivateVirtualInterfaceResult, JsonUnmarshallerContext> unmarshaller = new AllocatePrivateVirtualInterfaceResultJsonUnmarshaller();
+
+        JsonResponseHandler<AllocatePrivateVirtualInterfaceResult> responseHandler = new JsonResponseHandler<AllocatePrivateVirtualInterfaceResult>(unmarshaller);
 
         
 
@@ -521,10 +989,10 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * Deletes the connection.
      * </p>
      * <p>
-     * Deleting a connection only stops the AWS Direct Connect port and data
-     * transfer charges. You separately need to cancel any services or
-     * charges for cross-connects or network circuits that connect you to the
-     * AWS Direct Connect location with the providers of those services.
+     * Deleting a connection only stops the AWS Direct Connect port hour and
+     * data transfer charges. You need to cancel separately with the
+     * providers any services or charges for cross-connects or network
+     * circuits that connect you to the AWS Direct Connect location.
      * </p>
      *
      * @param deleteConnectionRequest Container for the necessary parameters
@@ -551,9 +1019,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         ExecutionContext executionContext = createExecutionContext(deleteConnectionRequest);
 
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<DeleteConnectionRequest> request = new DeleteConnectionRequestMarshaller().marshall(deleteConnectionRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+        Request<DeleteConnectionRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new DeleteConnectionRequestMarshaller().marshall(deleteConnectionRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
 
         Unmarshaller<DeleteConnectionResult, JsonUnmarshallerContext> unmarshaller = new DeleteConnectionResultJsonUnmarshaller();
 
@@ -566,14 +1038,113 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
     
     /**
      * <p>
-     * Creates a new network connection between the customer network and a
-     * specific AWS Direct Connect location.
+     * Return a list of connections that have been provisioned on the given
+     * interconnect.
+     * </p>
+     *
+     * @param describeConnectionsOnInterconnectRequest Container for the
+     *           necessary parameters to execute the DescribeConnectionsOnInterconnect
+     *           service method on AmazonDirectConnect.
+     * 
+     * @return The response from the DescribeConnectionsOnInterconnect
+     *         service method, as returned by AmazonDirectConnect.
+     * 
+     * @throws DirectConnectServerException
+     * @throws DirectConnectClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeConnectionsOnInterconnectResult describeConnectionsOnInterconnect(DescribeConnectionsOnInterconnectRequest describeConnectionsOnInterconnectRequest) 
+            throws AmazonServiceException, AmazonClientException {
+
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext(describeConnectionsOnInterconnectRequest);
+
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeConnectionsOnInterconnectRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new DescribeConnectionsOnInterconnectRequestMarshaller().marshall(describeConnectionsOnInterconnectRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
+
+        Unmarshaller<DescribeConnectionsOnInterconnectResult, JsonUnmarshallerContext> unmarshaller = new DescribeConnectionsOnInterconnectResultJsonUnmarshaller();
+
+        JsonResponseHandler<DescribeConnectionsOnInterconnectResult> responseHandler = new JsonResponseHandler<DescribeConnectionsOnInterconnectResult>(unmarshaller);
+
+        
+
+        return invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Creates a hosted connection on an interconnect.
+     * </p>
+     * <p>
+     * Allocates a VLAN number and a specified amount of bandwidth for use by
+     * a hosted connection on the given interconnect.
+     * </p>
+     *
+     * @param allocateConnectionOnInterconnectRequest Container for the
+     *           necessary parameters to execute the AllocateConnectionOnInterconnect
+     *           service method on AmazonDirectConnect.
+     * 
+     * @return The response from the AllocateConnectionOnInterconnect service
+     *         method, as returned by AmazonDirectConnect.
+     * 
+     * @throws DirectConnectServerException
+     * @throws DirectConnectClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public AllocateConnectionOnInterconnectResult allocateConnectionOnInterconnect(AllocateConnectionOnInterconnectRequest allocateConnectionOnInterconnectRequest) 
+            throws AmazonServiceException, AmazonClientException {
+
+        /* Create execution context */
+        ExecutionContext executionContext = createExecutionContext(allocateConnectionOnInterconnectRequest);
+
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<AllocateConnectionOnInterconnectRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new AllocateConnectionOnInterconnectRequestMarshaller().marshall(allocateConnectionOnInterconnectRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
+
+        Unmarshaller<AllocateConnectionOnInterconnectResult, JsonUnmarshallerContext> unmarshaller = new AllocateConnectionOnInterconnectResultJsonUnmarshaller();
+
+        JsonResponseHandler<AllocateConnectionOnInterconnectResult> responseHandler = new JsonResponseHandler<AllocateConnectionOnInterconnectResult>(unmarshaller);
+
+        
+
+        return invoke(request, responseHandler, executionContext);
+    }
+    
+    /**
+     * <p>
+     * Creates a new connection between the customer network and a specific
+     * AWS Direct Connect location.
      * </p>
      * <p>
      * A connection links your internal network to an AWS Direct Connect
      * location over a standard 1 gigabit or 10 gigabit Ethernet fiber-optic
      * cable. One end of the cable is connected to your router, the other to
-     * an AWS Direct Connect router. A Direct Connect location provides
+     * an AWS Direct Connect router. An AWS Direct Connect location provides
      * access to Amazon Web Services in the region it is associated with. You
      * can establish connections with AWS Direct Connect locations in
      * multiple regions, but a connection in one region does not provide
@@ -604,9 +1175,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         ExecutionContext executionContext = createExecutionContext(createConnectionRequest);
 
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<CreateConnectionRequest> request = new CreateConnectionRequestMarshaller().marshall(createConnectionRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+        Request<CreateConnectionRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new CreateConnectionRequestMarshaller().marshall(createConnectionRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
 
         Unmarshaller<CreateConnectionResult, JsonUnmarshallerContext> unmarshaller = new CreateConnectionResultJsonUnmarshaller();
 
@@ -619,61 +1194,15 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
     
     /**
      * <p>
-     * Creates a new private virtual interface. A virtual interface is the
-     * VLAN that transports AWS Direct Connect traffic. A private virtual
-     * interface supports sending traffic to a single Virtual Private Cloud
-     * (VPC).
+     * Deletes the specified interconnect.
      * </p>
      *
-     * @param createPrivateVirtualInterfaceRequest Container for the
-     *           necessary parameters to execute the CreatePrivateVirtualInterface
-     *           service method on AmazonDirectConnect.
-     * 
-     * @return The response from the CreatePrivateVirtualInterface service
-     *         method, as returned by AmazonDirectConnect.
-     * 
-     * @throws DirectConnectServerException
-     * @throws DirectConnectClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonDirectConnect indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreatePrivateVirtualInterfaceResult createPrivateVirtualInterface(CreatePrivateVirtualInterfaceRequest createPrivateVirtualInterfaceRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext(createPrivateVirtualInterfaceRequest);
-
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<CreatePrivateVirtualInterfaceRequest> request = new CreatePrivateVirtualInterfaceRequestMarshaller().marshall(createPrivateVirtualInterfaceRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
-
-        Unmarshaller<CreatePrivateVirtualInterfaceResult, JsonUnmarshallerContext> unmarshaller = new CreatePrivateVirtualInterfaceResultJsonUnmarshaller();
-
-        JsonResponseHandler<CreatePrivateVirtualInterfaceResult> responseHandler = new JsonResponseHandler<CreatePrivateVirtualInterfaceResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
-    }
-    
-    /**
-     * <p>
-     * Deletes a virtual interface.
-     * </p>
-     *
-     * @param deleteVirtualInterfaceRequest Container for the necessary
-     *           parameters to execute the DeleteVirtualInterface service method on
+     * @param deleteInterconnectRequest Container for the necessary
+     *           parameters to execute the DeleteInterconnect service method on
      *           AmazonDirectConnect.
      * 
-     * @return The response from the DeleteVirtualInterface service method,
-     *         as returned by AmazonDirectConnect.
+     * @return The response from the DeleteInterconnect service method, as
+     *         returned by AmazonDirectConnect.
      * 
      * @throws DirectConnectServerException
      * @throws DirectConnectClientException
@@ -686,20 +1215,24 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *             If an error response is returned by AmazonDirectConnect indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DeleteVirtualInterfaceResult deleteVirtualInterface(DeleteVirtualInterfaceRequest deleteVirtualInterfaceRequest) 
+    public DeleteInterconnectResult deleteInterconnect(DeleteInterconnectRequest deleteInterconnectRequest) 
             throws AmazonServiceException, AmazonClientException {
 
         /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext(deleteVirtualInterfaceRequest);
+        ExecutionContext executionContext = createExecutionContext(deleteInterconnectRequest);
 
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<DeleteVirtualInterfaceRequest> request = new DeleteVirtualInterfaceRequestMarshaller().marshall(deleteVirtualInterfaceRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+        Request<DeleteInterconnectRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new DeleteInterconnectRequestMarshaller().marshall(deleteInterconnectRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
 
-        Unmarshaller<DeleteVirtualInterfaceResult, JsonUnmarshallerContext> unmarshaller = new DeleteVirtualInterfaceResultJsonUnmarshaller();
+        Unmarshaller<DeleteInterconnectResult, JsonUnmarshallerContext> unmarshaller = new DeleteInterconnectResultJsonUnmarshaller();
 
-        JsonResponseHandler<DeleteVirtualInterfaceResult> responseHandler = new JsonResponseHandler<DeleteVirtualInterfaceResult>(unmarshaller);
+        JsonResponseHandler<DeleteInterconnectResult> responseHandler = new JsonResponseHandler<DeleteInterconnectResult>(unmarshaller);
 
         
 
@@ -708,18 +1241,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
     
     /**
      * <p>
-     * Creates a new public virtual interface. A virtual interface is the
-     * VLAN that transports AWS Direct Connect traffic. A public virtual
-     * interface supports sending traffic to public services of AWS such as
-     * Amazon Simple Storage Service (Amazon S3).
+     * Returns the list of AWS Direct Connect locations in the current AWS
+     * region. These are the locations that may be selected when calling
+     * CreateConnection or CreateInterconnect.
      * </p>
-     *
-     * @param createPublicVirtualInterfaceRequest Container for the necessary
-     *           parameters to execute the CreatePublicVirtualInterface service method
-     *           on AmazonDirectConnect.
      * 
-     * @return The response from the CreatePublicVirtualInterface service
-     *         method, as returned by AmazonDirectConnect.
+     * @return The response from the DescribeLocations service method, as
+     *         returned by AmazonDirectConnect.
      * 
      * @throws DirectConnectServerException
      * @throws DirectConnectClientException
@@ -732,36 +1260,27 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      *             If an error response is returned by AmazonDirectConnect indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreatePublicVirtualInterfaceResult createPublicVirtualInterface(CreatePublicVirtualInterfaceRequest createPublicVirtualInterfaceRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
-        ExecutionContext executionContext = createExecutionContext(createPublicVirtualInterfaceRequest);
-
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<CreatePublicVirtualInterfaceRequest> request = new CreatePublicVirtualInterfaceRequestMarshaller().marshall(createPublicVirtualInterfaceRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
-
-        Unmarshaller<CreatePublicVirtualInterfaceResult, JsonUnmarshallerContext> unmarshaller = new CreatePublicVirtualInterfaceResultJsonUnmarshaller();
-
-        JsonResponseHandler<CreatePublicVirtualInterfaceResult> responseHandler = new JsonResponseHandler<CreatePublicVirtualInterfaceResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
+    public DescribeLocationsResult describeLocations() throws AmazonServiceException, AmazonClientException {
+        return describeLocations(new DescribeLocationsRequest());
     }
     
     /**
      * <p>
      * Displays all virtual interfaces for an AWS account. Virtual interfaces
      * deleted fewer than 15 minutes before DescribeVirtualInterfaces is
-     * called are also returned. If a virtual interface ID is included then
-     * only a single virtual interface will be returned.
+     * called are also returned. If a connection ID is included then only
+     * virtual interfaces associated with this connection will be returned.
+     * If a virtual interface ID is included then only a single virtual
+     * interface will be returned.
      * </p>
      * <p>
-     * A virtual interface (VLAN) transmits the traffic between the Direct
-     * Connect location and the customer.
+     * A virtual interface (VLAN) transmits the traffic between the AWS
+     * Direct Connect location and the customer.
+     * </p>
+     * <p>
+     * If a connection ID is provided, only virtual interfaces provisioned on
+     * the specified connection will be returned. If a virtual interface ID
+     * is provided, only this particular virtual interface will be returned.
      * </p>
      * 
      * @return The response from the DescribeVirtualInterfaces service
@@ -780,6 +1299,33 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      */
     public DescribeVirtualInterfacesResult describeVirtualInterfaces() throws AmazonServiceException, AmazonClientException {
         return describeVirtualInterfaces(new DescribeVirtualInterfacesRequest());
+    }
+    
+    /**
+     * <p>
+     * Returns a list of interconnects owned by the AWS account.
+     * </p>
+     * <p>
+     * If an interconnect ID is provided, it will only return this particular
+     * interconnect.
+     * </p>
+     * 
+     * @return The response from the DescribeInterconnects service method, as
+     *         returned by AmazonDirectConnect.
+     * 
+     * @throws DirectConnectServerException
+     * @throws DirectConnectClientException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDirectConnect indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeInterconnectsResult describeInterconnects() throws AmazonServiceException, AmazonClientException {
+        return describeInterconnects(new DescribeInterconnectsRequest());
     }
     
     /**
@@ -815,38 +1361,10 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
     
     /**
      * <p>
-     * Describes one or more of the offerings that are currently available
-     * for creating new connections. The results include offerings for all
-     * regions.
-     * </p>
-     * <p>
-     * To order a new connection you need to select a specific offering ID.
-     * </p>
-     * 
-     * @return The response from the DescribeOfferings service method, as
-     *         returned by AmazonDirectConnect.
-     * 
-     * @throws DirectConnectServerException
-     * @throws DirectConnectClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonDirectConnect indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeOfferingsResult describeOfferings() throws AmazonServiceException, AmazonClientException {
-        return describeOfferings(new DescribeOfferingsRequest());
-    }
-    
-    /**
-     * <p>
      * Displays all connections in this region.
      * </p>
      * <p>
-     * If a connection ID is provided, it will only return this particular
+     * If a connection ID is provided, the call returns only that particular
      * connection.
      * </p>
      * 
@@ -869,82 +1387,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
     }
     
     /**
-     * <p>
-     * Creates a new private virtual interface. A virtual interface is the
-     * VLAN that transports AWS Direct Connect traffic. A private virtual
-     * interface supports sending traffic to a single Virtual Private Cloud
-     * (VPC).
-     * </p>
-     * 
-     * @return The response from the CreatePrivateVirtualInterface service
-     *         method, as returned by AmazonDirectConnect.
-     * 
-     * @throws DirectConnectServerException
-     * @throws DirectConnectClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonDirectConnect indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreatePrivateVirtualInterfaceResult createPrivateVirtualInterface() throws AmazonServiceException, AmazonClientException {
-        return createPrivateVirtualInterface(new CreatePrivateVirtualInterfaceRequest());
-    }
-    
-    /**
-     * <p>
-     * Deletes a virtual interface.
-     * </p>
-     * 
-     * @return The response from the DeleteVirtualInterface service method,
-     *         as returned by AmazonDirectConnect.
-     * 
-     * @throws DirectConnectServerException
-     * @throws DirectConnectClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonDirectConnect indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DeleteVirtualInterfaceResult deleteVirtualInterface() throws AmazonServiceException, AmazonClientException {
-        return deleteVirtualInterface(new DeleteVirtualInterfaceRequest());
-    }
-    
-    /**
-     * <p>
-     * Creates a new public virtual interface. A virtual interface is the
-     * VLAN that transports AWS Direct Connect traffic. A public virtual
-     * interface supports sending traffic to public services of AWS such as
-     * Amazon Simple Storage Service (Amazon S3).
-     * </p>
-     * 
-     * @return The response from the CreatePublicVirtualInterface service
-     *         method, as returned by AmazonDirectConnect.
-     * 
-     * @throws DirectConnectServerException
-     * @throws DirectConnectClientException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonDirectConnect indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreatePublicVirtualInterfaceResult createPublicVirtualInterface() throws AmazonServiceException, AmazonClientException {
-        return createPublicVirtualInterface(new CreatePublicVirtualInterfaceRequest());
-    }
-    
-    /**
-     * Overrides the default endpoint for this client ("http://directConnect.us-east-1.amazonaws.com/") and explicitly provides
+     * Overrides the default endpoint for this client ("https://directconnect.us-east-1.amazonaws.com/") and explicitly provides
      * an AWS region ID and AWS service name to use when the client calculates a signature
      * for requests.  In almost all cases, this region ID and service name
      * are automatically determined from the endpoint, and callers should use the simpler
@@ -955,8 +1398,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * afterwards creates inevitable race conditions for any service requests in
      * transit.</b>
      * <p>
-     * Callers can pass in just the endpoint (ex: "directConnect.us-east-1.amazonaws.com/") or a full
-     * URL, including the protocol (ex: "http://directConnect.us-east-1.amazonaws.com/"). If the
+     * Callers can pass in just the endpoint (ex: "directconnect.us-east-1.amazonaws.com/") or a full
+     * URL, including the protocol (ex: "https://directconnect.us-east-1.amazonaws.com/"). If the
      * protocol is not specified here, the default protocol from this client's
      * {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
@@ -966,8 +1409,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
      *
      * @param endpoint
-     *            The endpoint (ex: "directConnect.us-east-1.amazonaws.com/") or a full URL,
-     *            including the protocol (ex: "http://directConnect.us-east-1.amazonaws.com/") of
+     *            The endpoint (ex: "directconnect.us-east-1.amazonaws.com/") or a full URL,
+     *            including the protocol (ex: "https://directconnect.us-east-1.amazonaws.com/") of
      *            the region specific AWS endpoint this client will communicate
      *            with.
      * @param serviceName
@@ -1019,10 +1462,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         request.setTimeOffset(timeOffset);
 
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-
-        awsRequestMetrics.startEvent(Field.CredentialsRequestTime.name());
-        AWSCredentials credentials = awsCredentialsProvider.getCredentials();
-        awsRequestMetrics.endEvent(Field.CredentialsRequestTime.name());
+        AWSCredentials credentials;
+        awsRequestMetrics.startEvent(Field.CredentialsRequestTime);
+        try {
+            credentials = awsCredentialsProvider.getCredentials();
+        } finally {
+            awsRequestMetrics.endEvent(Field.CredentialsRequestTime);
+        }
 
         AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
         if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
@@ -1034,13 +1480,9 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
         
         JsonErrorResponseHandler errorResponseHandler = new JsonErrorResponseHandler(exceptionUnmarshallers);
-
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime.name());
-        X result = (X) client.execute(request, responseHandler, errorResponseHandler, executionContext);
-        awsRequestMetrics.endEvent(Field.ClientExecuteTime.name());
-
+        X result = (X) client.execute(request, responseHandler,
+                errorResponseHandler, executionContext);
         awsRequestMetrics.log();
-
         return result;
     }
 }

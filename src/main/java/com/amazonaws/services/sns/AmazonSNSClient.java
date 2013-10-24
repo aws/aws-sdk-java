@@ -1248,7 +1248,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
         	credentials = originalRequest.getRequestCredentials();
         }
 
-        ExecutionContext executionContext = createExecutionContext();
+        ExecutionContext executionContext = createExecutionContext(originalRequest);
         executionContext.setSigner(signer);
         executionContext.setCredentials(credentials);
         

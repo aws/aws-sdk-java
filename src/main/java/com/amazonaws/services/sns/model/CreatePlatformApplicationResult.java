@@ -13,14 +13,16 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
+
 import java.io.Serializable;
+
 
 /**
  * <p>
  * Response from CreatePlatformApplication action.
  * </p>
  */
-public class CreatePlatformApplicationResult  implements Serializable  {
+public class CreatePlatformApplicationResult implements Serializable {
 
     /**
      * PlatformApplicationArn is returned.
@@ -53,14 +55,13 @@ public class CreatePlatformApplicationResult  implements Serializable  {
      * @param platformApplicationArn PlatformApplicationArn is returned.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public CreatePlatformApplicationResult withPlatformApplicationArn(String platformApplicationArn) {
         this.platformApplicationArn = platformApplicationArn;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -13,14 +13,16 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
+
 import java.io.Serializable;
+
 
 /**
  * <p>
  * A wrapper type for the attributes of an SNS subscription.
  * </p>
  */
-public class Subscription  implements Serializable  {
+public class Subscription implements Serializable {
 
     /**
      * The subscription's ARN.
@@ -79,14 +81,13 @@ public class Subscription  implements Serializable  {
      * @param subscriptionArn The subscription's ARN.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public Subscription withSubscriptionArn(String subscriptionArn) {
         this.subscriptionArn = subscriptionArn;
         return this;
     }
-    
-    
+
     /**
      * The subscription's owner.
      *
@@ -113,14 +114,13 @@ public class Subscription  implements Serializable  {
      * @param owner The subscription's owner.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public Subscription withOwner(String owner) {
         this.owner = owner;
         return this;
     }
-    
-    
+
     /**
      * The subscription's protocol.
      *
@@ -147,14 +147,13 @@ public class Subscription  implements Serializable  {
      * @param protocol The subscription's protocol.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public Subscription withProtocol(String protocol) {
         this.protocol = protocol;
         return this;
     }
-    
-    
+
     /**
      * The subscription's endpoint (format depends on the protocol).
      *
@@ -181,14 +180,13 @@ public class Subscription  implements Serializable  {
      * @param endpoint The subscription's endpoint (format depends on the protocol).
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public Subscription withEndpoint(String endpoint) {
         this.endpoint = endpoint;
         return this;
     }
-    
-    
+
     /**
      * The ARN of the subscription's topic.
      *
@@ -215,14 +213,13 @@ public class Subscription  implements Serializable  {
      * @param topicArn The ARN of the subscription's topic.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public Subscription withTopicArn(String topicArn) {
         this.topicArn = topicArn;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

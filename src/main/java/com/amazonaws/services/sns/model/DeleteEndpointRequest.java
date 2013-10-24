@@ -13,8 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
-import com.amazonaws.AmazonWebServiceRequest;
+
 import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#deleteEndpoint(DeleteEndpointRequest) DeleteEndpoint operation}.
@@ -25,7 +27,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#deleteEndpoint(DeleteEndpointRequest)
  */
-public class DeleteEndpointRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteEndpointRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * EndpointArn of endpoint to delete.
@@ -58,14 +60,13 @@ public class DeleteEndpointRequest extends AmazonWebServiceRequest  implements S
      * @param endpointArn EndpointArn of endpoint to delete.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public DeleteEndpointRequest withEndpointArn(String endpointArn) {
         this.endpointArn = endpointArn;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

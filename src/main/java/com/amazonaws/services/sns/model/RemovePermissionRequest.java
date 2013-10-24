@@ -13,8 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
-import com.amazonaws.AmazonWebServiceRequest;
+
 import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#removePermission(RemovePermissionRequest) RemovePermission operation}.
@@ -24,7 +26,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#removePermission(RemovePermissionRequest)
  */
-public class RemovePermissionRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class RemovePermissionRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The ARN of the topic whose access control policy you wish to modify.
@@ -42,8 +44,6 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest  implements
      */
     public RemovePermissionRequest() {}
     
-
-
     /**
      * Constructs a new RemovePermissionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -58,8 +58,6 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest  implements
         setLabel(label);
     }
 
-    
-    
     /**
      * The ARN of the topic whose access control policy you wish to modify.
      *
@@ -86,14 +84,13 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest  implements
      * @param topicArn The ARN of the topic whose access control policy you wish to modify.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public RemovePermissionRequest withTopicArn(String topicArn) {
         this.topicArn = topicArn;
         return this;
     }
-    
-    
+
     /**
      * The unique label of the statement you want to remove.
      *
@@ -120,14 +117,13 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest  implements
      * @param label The unique label of the statement you want to remove.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public RemovePermissionRequest withLabel(String label) {
         this.label = label;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

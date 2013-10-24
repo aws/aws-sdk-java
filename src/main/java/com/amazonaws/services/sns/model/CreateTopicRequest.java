@@ -13,8 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
-import com.amazonaws.AmazonWebServiceRequest;
+
 import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#createTopic(CreateTopicRequest) CreateTopic operation}.
@@ -26,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#createTopic(CreateTopicRequest)
  */
-public class CreateTopicRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class CreateTopicRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The name of the topic you want to create. <p>Constraints: Topic names
@@ -42,8 +44,6 @@ public class CreateTopicRequest extends AmazonWebServiceRequest  implements Seri
      */
     public CreateTopicRequest() {}
     
-
-
     /**
      * Constructs a new CreateTopicRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -58,8 +58,6 @@ public class CreateTopicRequest extends AmazonWebServiceRequest  implements Seri
         setName(name);
     }
 
-    
-    
     /**
      * The name of the topic you want to create. <p>Constraints: Topic names
      * must be made up of only uppercase and lowercase ASCII letters,
@@ -104,14 +102,13 @@ public class CreateTopicRequest extends AmazonWebServiceRequest  implements Seri
      *         characters long.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public CreateTopicRequest withName(String name) {
         this.name = name;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

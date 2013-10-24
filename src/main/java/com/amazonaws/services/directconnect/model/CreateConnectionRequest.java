@@ -21,13 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.directconnect.AmazonDirectConnect#createConnection(CreateConnectionRequest) CreateConnection operation}.
  * <p>
- * Creates a new network connection between the customer network and a specific AWS Direct Connect location.
+ * Creates a new connection between the customer network and a specific AWS Direct Connect location.
  * </p>
  * <p>
  * A connection links your internal network to an AWS Direct Connect location over a standard 1 gigabit or 10 gigabit Ethernet fiber-optic cable. One end
- * of the cable is connected to your router, the other to an AWS Direct Connect router. A Direct Connect location provides access to Amazon Web Services
- * in the region it is associated with. You can establish connections with AWS Direct Connect locations in multiple regions, but a connection in one
- * region does not provide connectivity to other regions.
+ * of the cable is connected to your router, the other to an AWS Direct Connect router. An AWS Direct Connect location provides access to Amazon Web
+ * Services in the region it is associated with. You can establish connections with AWS Direct Connect locations in multiple regions, but a connection in
+ * one region does not provide connectivity to other regions.
  * </p>
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#createConnection(CreateConnectionRequest)
@@ -35,10 +35,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreateConnectionRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The ID of the offering. <p>Example: us-west-1_EqSV5_1G <p>Default:
-     * None
+     * Where the connection is located. <p>Example: EqSV5 <p>Default: None
      */
-    private String offeringId;
+    private String location;
+
+    /**
+     * Bandwidth of the connection. <p>Example: 1Gbps <p>Default: None
+     */
+    private String bandwidth;
 
     /**
      * The name of the connection. <p>Example: "<i>1G Connection to AWS</i>"
@@ -47,41 +51,68 @@ public class CreateConnectionRequest extends AmazonWebServiceRequest implements 
     private String connectionName;
 
     /**
-     * The ID of the offering. <p>Example: us-west-1_EqSV5_1G <p>Default:
-     * None
+     * Where the connection is located. <p>Example: EqSV5 <p>Default: None
      *
-     * @return The ID of the offering. <p>Example: us-west-1_EqSV5_1G <p>Default:
-     *         None
+     * @return Where the connection is located. <p>Example: EqSV5 <p>Default: None
      */
-    public String getOfferingId() {
-        return offeringId;
+    public String getLocation() {
+        return location;
     }
     
     /**
-     * The ID of the offering. <p>Example: us-west-1_EqSV5_1G <p>Default:
-     * None
+     * Where the connection is located. <p>Example: EqSV5 <p>Default: None
      *
-     * @param offeringId The ID of the offering. <p>Example: us-west-1_EqSV5_1G <p>Default:
-     *         None
+     * @param location Where the connection is located. <p>Example: EqSV5 <p>Default: None
      */
-    public void setOfferingId(String offeringId) {
-        this.offeringId = offeringId;
+    public void setLocation(String location) {
+        this.location = location;
     }
     
     /**
-     * The ID of the offering. <p>Example: us-west-1_EqSV5_1G <p>Default:
-     * None
+     * Where the connection is located. <p>Example: EqSV5 <p>Default: None
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param offeringId The ID of the offering. <p>Example: us-west-1_EqSV5_1G <p>Default:
-     *         None
+     * @param location Where the connection is located. <p>Example: EqSV5 <p>Default: None
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
      */
-    public CreateConnectionRequest withOfferingId(String offeringId) {
-        this.offeringId = offeringId;
+    public CreateConnectionRequest withLocation(String location) {
+        this.location = location;
+        return this;
+    }
+
+    /**
+     * Bandwidth of the connection. <p>Example: 1Gbps <p>Default: None
+     *
+     * @return Bandwidth of the connection. <p>Example: 1Gbps <p>Default: None
+     */
+    public String getBandwidth() {
+        return bandwidth;
+    }
+    
+    /**
+     * Bandwidth of the connection. <p>Example: 1Gbps <p>Default: None
+     *
+     * @param bandwidth Bandwidth of the connection. <p>Example: 1Gbps <p>Default: None
+     */
+    public void setBandwidth(String bandwidth) {
+        this.bandwidth = bandwidth;
+    }
+    
+    /**
+     * Bandwidth of the connection. <p>Example: 1Gbps <p>Default: None
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param bandwidth Bandwidth of the connection. <p>Example: 1Gbps <p>Default: None
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CreateConnectionRequest withBandwidth(String bandwidth) {
+        this.bandwidth = bandwidth;
         return this;
     }
 
@@ -136,7 +167,8 @@ public class CreateConnectionRequest extends AmazonWebServiceRequest implements 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getOfferingId() != null) sb.append("OfferingId: " + getOfferingId() + ",");
+        if (getLocation() != null) sb.append("Location: " + getLocation() + ",");
+        if (getBandwidth() != null) sb.append("Bandwidth: " + getBandwidth() + ",");
         if (getConnectionName() != null) sb.append("ConnectionName: " + getConnectionName() );
         sb.append("}");
         return sb.toString();
@@ -147,7 +179,8 @@ public class CreateConnectionRequest extends AmazonWebServiceRequest implements 
         final int prime = 31;
         int hashCode = 1;
         
-        hashCode = prime * hashCode + ((getOfferingId() == null) ? 0 : getOfferingId().hashCode()); 
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode()); 
+        hashCode = prime * hashCode + ((getBandwidth() == null) ? 0 : getBandwidth().hashCode()); 
         hashCode = prime * hashCode + ((getConnectionName() == null) ? 0 : getConnectionName().hashCode()); 
         return hashCode;
     }
@@ -160,8 +193,10 @@ public class CreateConnectionRequest extends AmazonWebServiceRequest implements 
         if (obj instanceof CreateConnectionRequest == false) return false;
         CreateConnectionRequest other = (CreateConnectionRequest)obj;
         
-        if (other.getOfferingId() == null ^ this.getOfferingId() == null) return false;
-        if (other.getOfferingId() != null && other.getOfferingId().equals(this.getOfferingId()) == false) return false; 
+        if (other.getLocation() == null ^ this.getLocation() == null) return false;
+        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false) return false; 
+        if (other.getBandwidth() == null ^ this.getBandwidth() == null) return false;
+        if (other.getBandwidth() != null && other.getBandwidth().equals(this.getBandwidth()) == false) return false; 
         if (other.getConnectionName() == null ^ this.getConnectionName() == null) return false;
         if (other.getConnectionName() != null && other.getConnectionName().equals(this.getConnectionName()) == false) return false; 
         return true;

@@ -13,8 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
-import com.amazonaws.AmazonWebServiceRequest;
+
 import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#getPlatformApplicationAttributes(GetPlatformApplicationAttributesRequest) GetPlatformApplicationAttributes operation}.
@@ -26,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#getPlatformApplicationAttributes(GetPlatformApplicationAttributesRequest)
  */
-public class GetPlatformApplicationAttributesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class GetPlatformApplicationAttributesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * PlatformApplicationArn for GetPlatformApplicationAttributesInput.
@@ -59,14 +61,13 @@ public class GetPlatformApplicationAttributesRequest extends AmazonWebServiceReq
      * @param platformApplicationArn PlatformApplicationArn for GetPlatformApplicationAttributesInput.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public GetPlatformApplicationAttributesRequest withPlatformApplicationArn(String platformApplicationArn) {
         this.platformApplicationArn = platformApplicationArn;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

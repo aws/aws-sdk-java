@@ -216,7 +216,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
         exceptionUnmarshallers.add(new InvalidParameterValueExceptionUnmarshaller());
         
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
-        setEndpoint("monitoring.amazonaws.com");
+        setEndpoint("monitoring.us-east-1.amazonaws.com");
 
         signer = new AWS4Signer();
         
@@ -699,7 +699,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
     }
     
     /**
-     * Overrides the default endpoint for this client ("https://monitoring.amazonaws.com") and explicitly provides
+     * Overrides the default endpoint for this client ("https://monitoring.us-east-1.amazonaws.com") and explicitly provides
      * an AWS region ID and AWS service name to use when the client calculates a signature
      * for requests.  In almost all cases, this region ID and service name
      * are automatically determined from the endpoint, and callers should use the simpler
@@ -710,8 +710,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * afterwards creates inevitable race conditions for any service requests in
      * transit.</b>
      * <p>
-     * Callers can pass in just the endpoint (ex: "monitoring.amazonaws.com") or a full
-     * URL, including the protocol (ex: "https://monitoring.amazonaws.com"). If the
+     * Callers can pass in just the endpoint (ex: "monitoring.us-east-1.amazonaws.com") or a full
+     * URL, including the protocol (ex: "https://monitoring.us-east-1.amazonaws.com"). If the
      * protocol is not specified here, the default protocol from this client's
      * {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
@@ -721,8 +721,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
      *
      * @param endpoint
-     *            The endpoint (ex: "monitoring.amazonaws.com") or a full URL,
-     *            including the protocol (ex: "https://monitoring.amazonaws.com") of
+     *            The endpoint (ex: "monitoring.us-east-1.amazonaws.com") or a full URL,
+     *            including the protocol (ex: "https://monitoring.us-east-1.amazonaws.com") of
      *            the region specific AWS endpoint this client will communicate
      *            with.
      * @param serviceName

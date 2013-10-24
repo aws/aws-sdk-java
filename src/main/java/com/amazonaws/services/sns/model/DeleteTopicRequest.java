@@ -13,8 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
-import com.amazonaws.AmazonWebServiceRequest;
+
 import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#deleteTopic(DeleteTopicRequest) DeleteTopic operation}.
@@ -25,7 +27,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#deleteTopic(DeleteTopicRequest)
  */
-public class DeleteTopicRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeleteTopicRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The ARN of the topic you want to delete. <examples> <queryrequest>
@@ -49,8 +51,6 @@ public class DeleteTopicRequest extends AmazonWebServiceRequest  implements Seri
      */
     public DeleteTopicRequest() {}
     
-
-
     /**
      * Constructs a new DeleteTopicRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -73,8 +73,6 @@ public class DeleteTopicRequest extends AmazonWebServiceRequest  implements Seri
         setTopicArn(topicArn);
     }
 
-    
-    
     /**
      * The ARN of the topic you want to delete. <examples> <queryrequest>
      * http://sns.us-east-1.amazonaws.com/
@@ -167,14 +165,13 @@ public class DeleteTopicRequest extends AmazonWebServiceRequest  implements Seri
      *         </examples>
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public DeleteTopicRequest withTopicArn(String topicArn) {
         this.topicArn = topicArn;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

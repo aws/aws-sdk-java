@@ -227,14 +227,14 @@ public class DefaultRequest<T> implements Request<T> {
     }
     
     /**
-     * @see com.amazonaws.Request#setTimeOffset(int);
+     * @see Request#setTimeOffset(int)
      */
     public void setTimeOffset(int timeOffset) {
         this.timeOffset = timeOffset;
     }
-    
+
     /**
-     * @see com.amazonaws.Request#withTimeOffset(int);
+     * @see Request#setTimeOffset(int)
      */
     public Request<T> withTimeOffset(int timeOffset) {
         setTimeOffset(timeOffset);

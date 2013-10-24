@@ -13,8 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
-import com.amazonaws.AmazonWebServiceRequest;
+
 import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#setTopicAttributes(SetTopicAttributesRequest) SetTopicAttributes operation}.
@@ -24,7 +26,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#setTopicAttributes(SetTopicAttributesRequest)
  */
-public class SetTopicAttributesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class SetTopicAttributesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The ARN of the topic to modify.
@@ -49,8 +51,6 @@ public class SetTopicAttributesRequest extends AmazonWebServiceRequest  implemen
      */
     public SetTopicAttributesRequest() {}
     
-
-
     /**
      * Constructs a new SetTopicAttributesRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -69,8 +69,6 @@ public class SetTopicAttributesRequest extends AmazonWebServiceRequest  implemen
         setAttributeValue(attributeValue);
     }
 
-    
-    
     /**
      * The ARN of the topic to modify.
      *
@@ -97,14 +95,13 @@ public class SetTopicAttributesRequest extends AmazonWebServiceRequest  implemen
      * @param topicArn The ARN of the topic to modify.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public SetTopicAttributesRequest withTopicArn(String topicArn) {
         this.topicArn = topicArn;
         return this;
     }
-    
-    
+
     /**
      * The name of the attribute you want to set. Only a subset of the
      * topic's attributes are mutable. <p>Valid values: <code>Policy</code> |
@@ -143,14 +140,13 @@ public class SetTopicAttributesRequest extends AmazonWebServiceRequest  implemen
      *         <code>DisplayName</code> | <code>DeliveryPolicy</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public SetTopicAttributesRequest withAttributeName(String attributeName) {
         this.attributeName = attributeName;
         return this;
     }
-    
-    
+
     /**
      * The new value for the attribute.
      *
@@ -177,14 +173,13 @@ public class SetTopicAttributesRequest extends AmazonWebServiceRequest  implemen
      * @param attributeValue The new value for the attribute.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public SetTopicAttributesRequest withAttributeValue(String attributeValue) {
         this.attributeValue = attributeValue;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

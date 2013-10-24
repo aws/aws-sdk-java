@@ -85,8 +85,11 @@ public class CreateConnectionRequestMarshaller implements Marshaller<Request<Cre
             
           jsonWriter.object();
           
-            if (createConnectionRequest.getOfferingId() != null) {
-                jsonWriter.key("offeringId").value(createConnectionRequest.getOfferingId());
+            if (createConnectionRequest.getLocation() != null) {
+                jsonWriter.key("location").value(createConnectionRequest.getLocation());
+            }
+            if (createConnectionRequest.getBandwidth() != null) {
+                jsonWriter.key("bandwidth").value(createConnectionRequest.getBandwidth());
             }
             if (createConnectionRequest.getConnectionName() != null) {
                 jsonWriter.key("connectionName").value(createConnectionRequest.getConnectionName());

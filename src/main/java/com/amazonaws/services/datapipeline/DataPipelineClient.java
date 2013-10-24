@@ -278,9 +278,13 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         ExecutionContext executionContext = createExecutionContext(activatePipelineRequest);
 
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<ActivatePipelineRequest> request = new ActivatePipelineRequestMarshaller().marshall(activatePipelineRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+        Request<ActivatePipelineRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new ActivatePipelineRequestMarshaller().marshall(activatePipelineRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
 
         Unmarshaller<ActivatePipelineResult, JsonUnmarshallerContext> unmarshaller = new ActivatePipelineResultJsonUnmarshaller();
 
@@ -322,9 +326,13 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         ExecutionContext executionContext = createExecutionContext(listPipelinesRequest);
 
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<ListPipelinesRequest> request = new ListPipelinesRequestMarshaller().marshall(listPipelinesRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+        Request<ListPipelinesRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new ListPipelinesRequestMarshaller().marshall(listPipelinesRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
 
         Unmarshaller<ListPipelinesResult, JsonUnmarshallerContext> unmarshaller = new ListPipelinesResultJsonUnmarshaller();
 
@@ -381,9 +389,13 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         ExecutionContext executionContext = createExecutionContext(reportTaskProgressRequest);
 
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<ReportTaskProgressRequest> request = new ReportTaskProgressRequestMarshaller().marshall(reportTaskProgressRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+        Request<ReportTaskProgressRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new ReportTaskProgressRequestMarshaller().marshall(reportTaskProgressRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
 
         Unmarshaller<ReportTaskProgressResult, JsonUnmarshallerContext> unmarshaller = new ReportTaskProgressResultJsonUnmarshaller();
 
@@ -427,9 +439,13 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         ExecutionContext executionContext = createExecutionContext(validatePipelineDefinitionRequest);
 
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<ValidatePipelineDefinitionRequest> request = new ValidatePipelineDefinitionRequestMarshaller().marshall(validatePipelineDefinitionRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+        Request<ValidatePipelineDefinitionRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new ValidatePipelineDefinitionRequestMarshaller().marshall(validatePipelineDefinitionRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
 
         Unmarshaller<ValidatePipelineDefinitionResult, JsonUnmarshallerContext> unmarshaller = new ValidatePipelineDefinitionResultJsonUnmarshaller();
 
@@ -486,9 +502,13 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         ExecutionContext executionContext = createExecutionContext(pollForTaskRequest);
 
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<PollForTaskRequest> request = new PollForTaskRequestMarshaller().marshall(pollForTaskRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+        Request<PollForTaskRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new PollForTaskRequestMarshaller().marshall(pollForTaskRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
 
         Unmarshaller<PollForTaskResult, JsonUnmarshallerContext> unmarshaller = new PollForTaskResultJsonUnmarshaller();
 
@@ -539,9 +559,13 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         ExecutionContext executionContext = createExecutionContext(queryObjectsRequest);
 
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<QueryObjectsRequest> request = new QueryObjectsRequestMarshaller().marshall(queryObjectsRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+        Request<QueryObjectsRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new QueryObjectsRequestMarshaller().marshall(queryObjectsRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
 
         Unmarshaller<QueryObjectsResult, JsonUnmarshallerContext> unmarshaller = new QueryObjectsResultJsonUnmarshaller();
 
@@ -583,9 +607,13 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         ExecutionContext executionContext = createExecutionContext(setStatusRequest);
 
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<SetStatusRequest> request = new SetStatusRequestMarshaller().marshall(setStatusRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+        Request<SetStatusRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new SetStatusRequestMarshaller().marshall(setStatusRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
 
         JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
         invoke(request, responseHandler, executionContext);
@@ -627,9 +655,13 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         ExecutionContext executionContext = createExecutionContext(deletePipelineRequest);
 
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<DeletePipelineRequest> request = new DeletePipelineRequestMarshaller().marshall(deletePipelineRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+        Request<DeletePipelineRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new DeletePipelineRequestMarshaller().marshall(deletePipelineRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
 
         JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
         invoke(request, responseHandler, executionContext);
@@ -669,9 +701,13 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         ExecutionContext executionContext = createExecutionContext(getPipelineDefinitionRequest);
 
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<GetPipelineDefinitionRequest> request = new GetPipelineDefinitionRequestMarshaller().marshall(getPipelineDefinitionRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+        Request<GetPipelineDefinitionRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new GetPipelineDefinitionRequestMarshaller().marshall(getPipelineDefinitionRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
 
         Unmarshaller<GetPipelineDefinitionResult, JsonUnmarshallerContext> unmarshaller = new GetPipelineDefinitionResultJsonUnmarshaller();
 
@@ -718,9 +754,13 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         ExecutionContext executionContext = createExecutionContext(setTaskStatusRequest);
 
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<SetTaskStatusRequest> request = new SetTaskStatusRequestMarshaller().marshall(setTaskStatusRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+        Request<SetTaskStatusRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new SetTaskStatusRequestMarshaller().marshall(setTaskStatusRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
 
         Unmarshaller<SetTaskStatusResult, JsonUnmarshallerContext> unmarshaller = new SetTaskStatusResultJsonUnmarshaller();
 
@@ -765,9 +805,13 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         ExecutionContext executionContext = createExecutionContext(evaluateExpressionRequest);
 
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<EvaluateExpressionRequest> request = new EvaluateExpressionRequestMarshaller().marshall(evaluateExpressionRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+        Request<EvaluateExpressionRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new EvaluateExpressionRequestMarshaller().marshall(evaluateExpressionRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
 
         Unmarshaller<EvaluateExpressionResult, JsonUnmarshallerContext> unmarshaller = new EvaluateExpressionResultJsonUnmarshaller();
 
@@ -819,9 +863,13 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         ExecutionContext executionContext = createExecutionContext(describePipelinesRequest);
 
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<DescribePipelinesRequest> request = new DescribePipelinesRequestMarshaller().marshall(describePipelinesRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+        Request<DescribePipelinesRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new DescribePipelinesRequestMarshaller().marshall(describePipelinesRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
 
         Unmarshaller<DescribePipelinesResult, JsonUnmarshallerContext> unmarshaller = new DescribePipelinesResultJsonUnmarshaller();
 
@@ -862,9 +910,13 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         ExecutionContext executionContext = createExecutionContext(createPipelineRequest);
 
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<CreatePipelineRequest> request = new CreatePipelineRequestMarshaller().marshall(createPipelineRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+        Request<CreatePipelineRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new CreatePipelineRequestMarshaller().marshall(createPipelineRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
 
         Unmarshaller<CreatePipelineResult, JsonUnmarshallerContext> unmarshaller = new CreatePipelineResultJsonUnmarshaller();
 
@@ -908,9 +960,13 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         ExecutionContext executionContext = createExecutionContext(describeObjectsRequest);
 
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<DescribeObjectsRequest> request = new DescribeObjectsRequestMarshaller().marshall(describeObjectsRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+        Request<DescribeObjectsRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new DescribeObjectsRequestMarshaller().marshall(describeObjectsRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
 
         Unmarshaller<DescribeObjectsResult, JsonUnmarshallerContext> unmarshaller = new DescribeObjectsResultJsonUnmarshaller();
 
@@ -955,9 +1011,13 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         ExecutionContext executionContext = createExecutionContext(reportTaskRunnerHeartbeatRequest);
 
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<ReportTaskRunnerHeartbeatRequest> request = new ReportTaskRunnerHeartbeatRequestMarshaller().marshall(reportTaskRunnerHeartbeatRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+        Request<ReportTaskRunnerHeartbeatRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new ReportTaskRunnerHeartbeatRequestMarshaller().marshall(reportTaskRunnerHeartbeatRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
 
         Unmarshaller<ReportTaskRunnerHeartbeatResult, JsonUnmarshallerContext> unmarshaller = new ReportTaskRunnerHeartbeatResultJsonUnmarshaller();
 
@@ -1017,9 +1077,13 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         ExecutionContext executionContext = createExecutionContext(putPipelineDefinitionRequest);
 
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime.name());
-        Request<PutPipelineDefinitionRequest> request = new PutPipelineDefinitionRequestMarshaller().marshall(putPipelineDefinitionRequest);
-        awsRequestMetrics.endEvent(Field.RequestMarshallTime.name());
+        Request<PutPipelineDefinitionRequest> request;
+        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        try {
+            request = new PutPipelineDefinitionRequestMarshaller().marshall(putPipelineDefinitionRequest);
+        } finally {
+            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+        }
 
         Unmarshaller<PutPipelineDefinitionResult, JsonUnmarshallerContext> unmarshaller = new PutPipelineDefinitionResultJsonUnmarshaller();
 
@@ -1131,10 +1195,13 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         request.setTimeOffset(timeOffset);
 
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-
-        awsRequestMetrics.startEvent(Field.CredentialsRequestTime.name());
-        AWSCredentials credentials = awsCredentialsProvider.getCredentials();
-        awsRequestMetrics.endEvent(Field.CredentialsRequestTime.name());
+        AWSCredentials credentials;
+        awsRequestMetrics.startEvent(Field.CredentialsRequestTime);
+        try {
+            credentials = awsCredentialsProvider.getCredentials();
+        } finally {
+            awsRequestMetrics.endEvent(Field.CredentialsRequestTime);
+        }
 
         AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
         if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
@@ -1146,13 +1213,9 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
 
         
         JsonErrorResponseHandler errorResponseHandler = new JsonErrorResponseHandler(exceptionUnmarshallers);
-
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime.name());
-        X result = (X) client.execute(request, responseHandler, errorResponseHandler, executionContext);
-        awsRequestMetrics.endEvent(Field.ClientExecuteTime.name());
-
+        X result = (X) client.execute(request, responseHandler,
+                errorResponseHandler, executionContext);
         awsRequestMetrics.log();
-
         return result;
     }
 }

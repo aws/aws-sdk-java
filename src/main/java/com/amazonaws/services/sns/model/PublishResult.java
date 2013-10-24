@@ -13,14 +13,16 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
+
 import java.io.Serializable;
+
 
 /**
  * <p>
  * Response for Publish action.
  * </p>
  */
-public class PublishResult  implements Serializable  {
+public class PublishResult implements Serializable {
 
     /**
      * Unique identifier assigned to the published message. <p>Length
@@ -60,14 +62,13 @@ public class PublishResult  implements Serializable  {
      *         Constraint: Maximum 100 characters
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public PublishResult withMessageId(String messageId) {
         this.messageId = messageId;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

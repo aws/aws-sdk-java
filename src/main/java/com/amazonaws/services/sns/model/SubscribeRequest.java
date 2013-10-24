@@ -13,8 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
-import com.amazonaws.AmazonWebServiceRequest;
+
 import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#subscribe(SubscribeRequest) Subscribe operation}.
@@ -26,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#subscribe(SubscribeRequest)
  */
-public class SubscribeRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class SubscribeRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The ARN of the topic you want to subscribe to.
@@ -68,8 +70,6 @@ public class SubscribeRequest extends AmazonWebServiceRequest  implements Serial
      */
     public SubscribeRequest() {}
     
-
-
     /**
      * Constructs a new SubscribeRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -104,8 +104,6 @@ public class SubscribeRequest extends AmazonWebServiceRequest  implements Serial
         setEndpoint(endpoint);
     }
 
-    
-    
     /**
      * The ARN of the topic you want to subscribe to.
      *
@@ -132,14 +130,13 @@ public class SubscribeRequest extends AmazonWebServiceRequest  implements Serial
      * @param topicArn The ARN of the topic you want to subscribe to.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public SubscribeRequest withTopicArn(String topicArn) {
         this.topicArn = topicArn;
         return this;
     }
-    
-    
+
     /**
      * The protocol you want to use. Supported protocols include: <ul>
      * <li><code>http</code> -- delivery of JSON-encoded message via HTTP
@@ -220,14 +217,13 @@ public class SubscribeRequest extends AmazonWebServiceRequest  implements Serial
      *         device.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public SubscribeRequest withProtocol(String protocol) {
         this.protocol = protocol;
         return this;
     }
-    
-    
+
     /**
      * The endpoint that you want to receive notifications. Endpoints vary by
      * protocol: <ul> <li>For the <code>http</code> protocol, the endpoint is
@@ -314,14 +310,13 @@ public class SubscribeRequest extends AmazonWebServiceRequest  implements Serial
      *         is the EndpointArn of a mobile app and device.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public SubscribeRequest withEndpoint(String endpoint) {
         this.endpoint = endpoint;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -13,8 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
-import com.amazonaws.AmazonWebServiceRequest;
+
 import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#listSubscriptionsByTopic(ListSubscriptionsByTopicRequest) ListSubscriptionsByTopic operation}.
@@ -26,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#listSubscriptionsByTopic(ListSubscriptionsByTopicRequest)
  */
-public class ListSubscriptionsByTopicRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ListSubscriptionsByTopicRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The ARN of the topic for which you wish to find subscriptions.
@@ -45,8 +47,6 @@ public class ListSubscriptionsByTopicRequest extends AmazonWebServiceRequest  im
      */
     public ListSubscriptionsByTopicRequest() {}
     
-
-
     /**
      * Constructs a new ListSubscriptionsByTopicRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -58,10 +58,6 @@ public class ListSubscriptionsByTopicRequest extends AmazonWebServiceRequest  im
     public ListSubscriptionsByTopicRequest(String topicArn) {
         setTopicArn(topicArn);
     }
-
-    
-    
-
 
     /**
      * Constructs a new ListSubscriptionsByTopicRequest object.
@@ -78,8 +74,6 @@ public class ListSubscriptionsByTopicRequest extends AmazonWebServiceRequest  im
         setNextToken(nextToken);
     }
 
-    
-    
     /**
      * The ARN of the topic for which you wish to find subscriptions.
      *
@@ -106,14 +100,13 @@ public class ListSubscriptionsByTopicRequest extends AmazonWebServiceRequest  im
      * @param topicArn The ARN of the topic for which you wish to find subscriptions.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListSubscriptionsByTopicRequest withTopicArn(String topicArn) {
         this.topicArn = topicArn;
         return this;
     }
-    
-    
+
     /**
      * Token returned by the previous <code>ListSubscriptionsByTopic</code>
      * request.
@@ -146,14 +139,13 @@ public class ListSubscriptionsByTopicRequest extends AmazonWebServiceRequest  im
      *         request.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListSubscriptionsByTopicRequest withNextToken(String nextToken) {
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

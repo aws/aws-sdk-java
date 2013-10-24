@@ -13,8 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
-import com.amazonaws.AmazonWebServiceRequest;
+
 import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#setEndpointAttributes(SetEndpointAttributesRequest) SetEndpointAttributes operation}.
@@ -26,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#setEndpointAttributes(SetEndpointAttributesRequest)
  */
-public class SetEndpointAttributesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class SetEndpointAttributesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * EndpointArn used for SetEndpointAttributes action.
@@ -77,14 +79,13 @@ public class SetEndpointAttributesRequest extends AmazonWebServiceRequest  imple
      * @param endpointArn EndpointArn used for SetEndpointAttributes action.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public SetEndpointAttributesRequest withEndpointArn(String endpointArn) {
         this.endpointArn = endpointArn;
         return this;
     }
-    
-    
+
     /**
      * A map of the endpoint attributes. Attributes in this map include the
      * following: <ul> <!-- Policy is not yet supported. Will remove comments
@@ -122,7 +123,6 @@ public class SetEndpointAttributesRequest extends AmazonWebServiceRequest  imple
             attributes = new java.util.HashMap<String,String>();
         }
         return attributes;
-
     }
     
     /**
@@ -194,13 +194,56 @@ public class SetEndpointAttributesRequest extends AmazonWebServiceRequest  imple
      *         mobile device are registered with the notification service.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public SetEndpointAttributesRequest withAttributes(java.util.Map<String,String> attributes) {
         setAttributes(attributes);
         return this;
     }
-    
+
+    /**
+     * A map of the endpoint attributes. Attributes in this map include the
+     * following: <ul> <!-- Policy is not yet supported. Will remove comments
+     * once it is available --> <li><code>CustomUserData</code> -- arbitrary
+     * user data to associate with the endpoint. SNS does not use this data.
+     * The data must be in UTF-8 format and less than 2KB.</li>
+     * <li><code>Enabled</code> -- flag that enables/disables delivery to the
+     * endpoint. Message Processor will set this to false when a notification
+     * service indicates to SNS that the endpoint is invalid. Users can set
+     * it back to true, typically after updating Token.</li> <!--
+     * <li><code>Policy</code> access policy controlling who can send
+     * messages to this endpoint .</li> --> <li><code>Token</code> -- device
+     * token, also referred to as a registration id, for an app and mobile
+     * device. This is returned from the notification service when an app and
+     * mobile device are registered with the notification service.</li> </ul>
+     * <p>
+     * The method adds a new key-value pair into Attributes parameter, and
+     * returns a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param key The key of the entry to be added into Attributes.
+     * @param value The corresponding value of the entry to be added into Attributes.
+     */
+	public SetEndpointAttributesRequest addAttributesEntry(String key, String value) {
+		if (null == this.attributes) {
+			this.attributes = new java.util.HashMap<String,String>();
+		}
+		if (this.attributes.containsKey(key))
+			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+		this.attributes.put(key, value);
+		return this;
+	}
+
+	/**
+	 * Removes all the entries added into Attributes.
+	 * <p>
+	 * Returns a reference to this object so that method calls can be chained together.
+	 */
+	public SetEndpointAttributesRequest clearAttributesEntries() {
+		this.attributes = null;
+		return this;
+	}
+	
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

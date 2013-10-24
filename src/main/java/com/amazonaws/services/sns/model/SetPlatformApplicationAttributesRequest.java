@@ -13,8 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
-import com.amazonaws.AmazonWebServiceRequest;
+
 import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#setPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest) SetPlatformApplicationAttributes operation}.
@@ -26,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#setPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest)
  */
-public class SetPlatformApplicationAttributesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class SetPlatformApplicationAttributesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * PlatformApplicationArn for SetPlatformApplicationAttributes action.
@@ -94,14 +96,13 @@ public class SetPlatformApplicationAttributesRequest extends AmazonWebServiceReq
      * @param platformApplicationArn PlatformApplicationArn for SetPlatformApplicationAttributes action.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public SetPlatformApplicationAttributesRequest withPlatformApplicationArn(String platformApplicationArn) {
         this.platformApplicationArn = platformApplicationArn;
         return this;
     }
-    
-    
+
     /**
      * A map of the platform application attributes. Attributes in this map
      * include the following: <ul> <!-- AllowEndpointPolicies,
@@ -173,7 +174,6 @@ public class SetPlatformApplicationAttributesRequest extends AmazonWebServiceReq
             attributes = new java.util.HashMap<String,String>();
         }
         return attributes;
-
     }
     
     /**
@@ -313,13 +313,73 @@ public class SetPlatformApplicationAttributesRequest extends AmazonWebServiceReq
      *         mobile app.</li> --> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public SetPlatformApplicationAttributesRequest withAttributes(java.util.Map<String,String> attributes) {
         setAttributes(attributes);
         return this;
     }
-    
+
+    /**
+     * A map of the platform application attributes. Attributes in this map
+     * include the following: <ul> <!-- AllowEndpointPolicies,
+     * EventDeliveryAttemptFailure, and Policy are not yet supported. Will
+     * remove comments once it is available -->
+     * <li><code>PlatformCredential</code> -- The credential received from
+     * the notification service. For APNS/APNS_SANDBOX, PlatformCredential is
+     * "private key". For GCM, PlatformCredential is "API key". For ADM,<!--
+     * , WNS and MPNS--> PlatformCredential is "client secret".</li>
+     * <li><code>PlatformPrincipal</code> -- The principal received from the
+     * notification service. For APNS/APNS_SANDBOX, PlatformPrincipal is "SSL
+     * certificate". For GCM, PlatformPrincipal is not applicable. For
+     * ADM,<!-- , WNS and MPNS--> PlatformPrincipal is "client id".</li> <!--
+     * <li><code>AllowEndpointPolicies</code> true or false (default false) -
+     * If true, then policies on endpoints will be evaluated to determine if
+     * the topic or user has the rights to send messages to it. If false, the
+     * endpoint policy will be ignored and only the mobile app policy will be
+     * considered.</li> --> <li><code>EventEndpointCreated</code> -- Topic
+     * ARN to which EndpointCreated event notifications should be sent.</li>
+     * <li><code>EventEndpointDeleted</code> -- Topic ARN to which
+     * EndpointDeleted event notifications should be sent.</li>
+     * <li><code>EventEndpointUpdated</code> -- Topic ARN to which
+     * EndpointUpdate event notifications should be sent.</li> <!--
+     * <li><code>EventDeliveryAttemptFailure</code> Topic ARN to which
+     * DeliveryAttemptFailure event notifications should be sent upon Direct
+     * Publish delivery attempt failures to one of the application's
+     * endpoints.</li> --> <li><code>EventDeliveryFailure</code> -- Topic ARN
+     * to which DeliveryFailure event notifications should be sent upon
+     * Direct Publish delivery failure (permanent) to one of the
+     * application's endpoints.</li> <!-- <li><code>Policy</code> Access
+     * policy controlling who can send messages to endpoints under this
+     * mobile app.</li> --> </ul>
+     * <p>
+     * The method adds a new key-value pair into Attributes parameter, and
+     * returns a reference to this object so that method calls can be chained
+     * together.
+     *
+     * @param key The key of the entry to be added into Attributes.
+     * @param value The corresponding value of the entry to be added into Attributes.
+     */
+	public SetPlatformApplicationAttributesRequest addAttributesEntry(String key, String value) {
+		if (null == this.attributes) {
+			this.attributes = new java.util.HashMap<String,String>();
+		}
+		if (this.attributes.containsKey(key))
+			throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+		this.attributes.put(key, value);
+		return this;
+	}
+
+	/**
+	 * Removes all the entries added into Attributes.
+	 * <p>
+	 * Returns a reference to this object so that method calls can be chained together.
+	 */
+	public SetPlatformApplicationAttributesRequest clearAttributesEntries() {
+		this.attributes = null;
+		return this;
+	}
+	
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

@@ -13,8 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
-import com.amazonaws.AmazonWebServiceRequest;
+
 import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#listPlatformApplications(ListPlatformApplicationsRequest) ListPlatformApplications operation}.
@@ -29,7 +31,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#listPlatformApplications(ListPlatformApplicationsRequest)
  */
-public class ListPlatformApplicationsRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ListPlatformApplicationsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * NextToken string is used when calling ListPlatformApplications action
@@ -76,14 +78,13 @@ public class ListPlatformApplicationsRequest extends AmazonWebServiceRequest  im
      *         results.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListPlatformApplicationsRequest withNextToken(String nextToken) {
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

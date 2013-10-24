@@ -13,8 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
-import com.amazonaws.AmazonWebServiceRequest;
+
 import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#addPermission(AddPermissionRequest) AddPermission operation}.
@@ -25,7 +27,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#addPermission(AddPermissionRequest)
  */
-public class AddPermissionRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class AddPermissionRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The ARN of the topic whose access control policy you wish to modify.
@@ -59,8 +61,6 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
      */
     public AddPermissionRequest() {}
     
-
-
     /**
      * Constructs a new AddPermissionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -85,8 +85,6 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
         setActionNames(actionNames);
     }
 
-    
-    
     /**
      * The ARN of the topic whose access control policy you wish to modify.
      *
@@ -113,14 +111,13 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
      * @param topicArn The ARN of the topic whose access control policy you wish to modify.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public AddPermissionRequest withTopicArn(String topicArn) {
         this.topicArn = topicArn;
         return this;
     }
-    
-    
+
     /**
      * A unique identifier for the new policy statement.
      *
@@ -147,14 +144,13 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
      * @param label A unique identifier for the new policy statement.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public AddPermissionRequest withLabel(String label) {
         this.label = label;
         return this;
     }
-    
-    
+
     /**
      * The AWS account IDs of the users (principals) who will be given access
      * to the specified actions. The users must have AWS accounts, but do not
@@ -171,7 +167,6 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
      *         AWS Identifiers</aulink> in the &service; Developer Guide.-->
      */
     public java.util.List<String> getAWSAccountIds() {
-        
         if (aWSAccountIds == null) {
               aWSAccountIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               aWSAccountIds.setAutoConstruct(true);
@@ -222,7 +217,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
      *         AWS Identifiers</aulink> in the &service; Developer Guide.-->
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public AddPermissionRequest withAWSAccountIds(String... aWSAccountIds) {
         if (getAWSAccountIds() == null) setAWSAccountIds(new java.util.ArrayList<String>(aWSAccountIds.length));
@@ -250,7 +245,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
      *         AWS Identifiers</aulink> in the &service; Developer Guide.-->
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public AddPermissionRequest withAWSAccountIds(java.util.Collection<String> aWSAccountIds) {
         if (aWSAccountIds == null) {
@@ -263,7 +258,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
 
         return this;
     }
-    
+
     /**
      * The action you want to allow for the specified principal(s). <p>Valid
      * values: any Amazon SNS action name.
@@ -272,7 +267,6 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
      *         values: any Amazon SNS action name.
      */
     public java.util.List<String> getActionNames() {
-        
         if (actionNames == null) {
               actionNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
               actionNames.setAutoConstruct(true);
@@ -307,7 +301,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
      *         values: any Amazon SNS action name.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public AddPermissionRequest withActionNames(String... actionNames) {
         if (getActionNames() == null) setActionNames(new java.util.ArrayList<String>(actionNames.length));
@@ -327,7 +321,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
      *         values: any Amazon SNS action name.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public AddPermissionRequest withActionNames(java.util.Collection<String> actionNames) {
         if (actionNames == null) {
@@ -340,7 +334,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
 
         return this;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

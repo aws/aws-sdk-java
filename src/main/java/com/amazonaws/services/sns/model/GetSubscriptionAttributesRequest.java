@@ -13,8 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
-import com.amazonaws.AmazonWebServiceRequest;
+
 import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#getSubscriptionAttributes(GetSubscriptionAttributesRequest) GetSubscriptionAttributes operation}.
@@ -24,7 +26,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#getSubscriptionAttributes(GetSubscriptionAttributesRequest)
  */
-public class GetSubscriptionAttributesRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class GetSubscriptionAttributesRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The ARN of the subscription whose properties you want to get.
@@ -37,8 +39,6 @@ public class GetSubscriptionAttributesRequest extends AmazonWebServiceRequest  i
      */
     public GetSubscriptionAttributesRequest() {}
     
-
-
     /**
      * Constructs a new GetSubscriptionAttributesRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -51,8 +51,6 @@ public class GetSubscriptionAttributesRequest extends AmazonWebServiceRequest  i
         setSubscriptionArn(subscriptionArn);
     }
 
-    
-    
     /**
      * The ARN of the subscription whose properties you want to get.
      *
@@ -79,14 +77,13 @@ public class GetSubscriptionAttributesRequest extends AmazonWebServiceRequest  i
      * @param subscriptionArn The ARN of the subscription whose properties you want to get.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public GetSubscriptionAttributesRequest withSubscriptionArn(String subscriptionArn) {
         this.subscriptionArn = subscriptionArn;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

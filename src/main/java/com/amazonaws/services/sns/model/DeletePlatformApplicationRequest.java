@@ -13,8 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
-import com.amazonaws.AmazonWebServiceRequest;
+
 import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#deletePlatformApplication(DeletePlatformApplicationRequest) DeletePlatformApplication operation}.
@@ -26,7 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#deletePlatformApplication(DeletePlatformApplicationRequest)
  */
-public class DeletePlatformApplicationRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class DeletePlatformApplicationRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * PlatformApplicationArn of platform application object to delete.
@@ -59,14 +61,13 @@ public class DeletePlatformApplicationRequest extends AmazonWebServiceRequest  i
      * @param platformApplicationArn PlatformApplicationArn of platform application object to delete.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public DeletePlatformApplicationRequest withPlatformApplicationArn(String platformApplicationArn) {
         this.platformApplicationArn = platformApplicationArn;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

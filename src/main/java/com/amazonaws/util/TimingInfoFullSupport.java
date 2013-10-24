@@ -19,6 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.logging.LogFactory;
 import org.apache.http.annotation.NotThreadSafe;
 
 /**
@@ -36,70 +37,36 @@ class TimingInfoFullSupport extends TimingInfo {
     private final Map<String, Number> countersByName = new HashMap<String, Number>();
 
     /**
-     * Captures the current wall clock time (since epoch in millisecond)
-     * and the current time (in nanosecond) used for timing measurement.
-     * For more info, see:
-     * https://blogs.oracle.com/dholmes/entry/inside_the_hotspot_vm_clocks
-     */
-    public static TimingInfo startTiming() {
-        return new TimingInfoFullSupport(Long.valueOf(System.currentTimeMillis()), System.nanoTime(), null);
-    }
-
-    /**
-     * Captures the given start time in nanosecond, ignoring the wall clock time.
-     *
-     * @param startTimeNano start time in nanosecond
-     */
-    public static TimingInfo startTiming(long startTimeNano) {
-        return new TimingInfoFullSupport(null, startTimeNano, null);
-    }
-
-    /**
-     * Returns a {@link TimingInfoFullSupport} based on the given
-     * start and end time in nanosecond, ignoring the wall clock time.
-     *
-     * @param startTimeNano start time in nanosecond
-     * @param endTimeNano end time in nanosecond
-     */
-    public static TimingInfo newTimingInfo(long startTimeNano, long endTimeNano) {
-        return new TimingInfoFullSupport(null, startTimeNano, Long.valueOf(endTimeNano));
-    }
-
-    /**
-     * Returns a {@link TimingInfoFullSupport} based on the given
-     * start time since epoch in millisecond,
-     * and the given start and end time in nanosecond.
-     *
-     * @param startEpochTimeMilli start time since epoch in millisecond
-     * @param startTimeNano start time in nanosecond
-     * @param endTimeNano end time in nanosecond
-     */
-    public static TimingInfo newTimingInfo(
-        long startEpochTimeMilli, long startTimeNano, long endTimeNano) {
-        return new TimingInfoFullSupport(Long.valueOf(startEpochTimeMilli), startTimeNano, Long.valueOf(endTimeNano));
-    }
-
-    /**
      * A private ctor to facilitate the deprecation of using millisecond and
      * migration to using nanosecond for timing measurement.
      * 
      * @param startEpochTimeMilli start time since epoch in millisecond
      * @param startTimeNano start time in nanosecond
      * @param endTimeNano end time in nanosecond; or null if not known
+     * 
+     * @see TimingInfo#startTimingFullSupport()
+     * @see TimingInfo#startTimingFullSupport(long)
+     * @see TimingInfo#newTimingInfoFullSupport(long, long)
+     * @see TimingInfo#newTimingInfoFullSupport(long, long, long)
      */
-    private TimingInfoFullSupport(Long startEpochTimeMilli, long startTimeNano, Long endTimeNano) {
+    TimingInfoFullSupport(Long startEpochTimeMilli, long startTimeNano, Long endTimeNano) {
         super(startEpochTimeMilli, startTimeNano, endTimeNano);
     }
 
     @Override
-    public void addSubMeasurement(String subMeasurementName, TimingInfo timingInfo) {
+    public void addSubMeasurement(String subMeasurementName, TimingInfo ti) {
         List<TimingInfo> timings = subMeasurementsByName.get(subMeasurementName);
         if (timings == null) {
             timings = new ArrayList<TimingInfo>();
             subMeasurementsByName.put(subMeasurementName, timings);
         }
-
-        timings.add(timingInfo);
+        if (ti.isEndTimeKnown()) {
+            timings.add(ti);
+        } else {
+            LogFactory.getLog(getClass()).debug(
+                "Skip submeasurement timing info with no end time for "
+                + subMeasurementName);
+        }
     }
 
     @Override

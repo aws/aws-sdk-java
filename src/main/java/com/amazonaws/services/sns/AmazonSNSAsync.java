@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns;
-            
+
 import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
@@ -35,8 +35,8 @@ import com.amazonaws.services.sns.model.*;
  * We also provide SDKs that enable you to access Amazon SNS from your preferred programming language. The SDKs contain functionality that automatically
  * takes care of tasks such as: cryptographically signing your service requests, retrying requests, and handling error responses. For a list of available
  * SDKs, go to <a href="http://aws.amazon.com/tools/"> Tools for Amazon Web Services </a> .
- * </p> 
- */       
+ * </p>
+ */
 public interface AmazonSNSAsync extends AmazonSNS {
     /**
      * <p>

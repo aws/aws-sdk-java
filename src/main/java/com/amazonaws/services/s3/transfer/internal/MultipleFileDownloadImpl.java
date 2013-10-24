@@ -90,8 +90,31 @@ public class MultipleFileDownloadImpl extends MultipleFileTransfer implements Mu
      * Aborts all outstanding downloads.
      */
     public void abort() throws IOException {
+        /*
+         * The abort() method of DownloadImpl would attempt to notify its
+         * TransferStateChangeListener BEFORE it releases its intrinsic lock.
+         * And according to the implementation of
+         * MultipleFileTransferStateChangeListener which is actually shared by
+         * all sub-transfers, it will call the synchronized method isDone() on
+         * ALL sub-transfer objects. This would result in serious
+         * contention with the worker threads who try to acquire the same set of
+         * locks to call setState().
+         * In order to prevent this. we should first cancel all download jobs and
+         * then notify the listener.
+         */
+        
+        /* First abort all the download jobs without notifying the state change listener.*/
         for (Transfer fileDownload : subTransfers) {
-            ((Download)fileDownload).abort();
+            ((DownloadImpl)fileDownload).abortWithoutNotifyingStateChangeListener();
+        }
+        
+        /*
+         * All sub-transfers are already in CANCELED state. Now the main thread
+         * is able to check isDone() on each sub-transfer object without
+         * contention with worker threads.
+         */
+        for (Transfer fileDownload : subTransfers) {
+            ((DownloadImpl)fileDownload).notifyStateChangeListeners(TransferState.Canceled);
         }
     }
 }

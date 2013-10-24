@@ -13,8 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
-import com.amazonaws.AmazonWebServiceRequest;
+
 import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#listEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest) ListEndpointsByPlatformApplication operation}.
@@ -29,7 +31,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#listEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest)
  */
-public class ListEndpointsByPlatformApplicationRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class ListEndpointsByPlatformApplicationRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * PlatformApplicationArn for ListEndpointsByPlatformApplicationInput
@@ -76,14 +78,13 @@ public class ListEndpointsByPlatformApplicationRequest extends AmazonWebServiceR
      *         action.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListEndpointsByPlatformApplicationRequest withPlatformApplicationArn(String platformApplicationArn) {
         this.platformApplicationArn = platformApplicationArn;
         return this;
     }
-    
-    
+
     /**
      * NextToken string is used when calling
      * ListEndpointsByPlatformApplication action to retrieve additional
@@ -122,14 +123,13 @@ public class ListEndpointsByPlatformApplicationRequest extends AmazonWebServiceR
      *         records that are available after the first page results.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public ListEndpointsByPlatformApplicationRequest withNextToken(String nextToken) {
         this.nextToken = nextToken;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

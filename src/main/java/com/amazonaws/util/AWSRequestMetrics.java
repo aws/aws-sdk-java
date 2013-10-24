@@ -20,6 +20,8 @@ import java.util.List;
 
 import org.apache.http.annotation.NotThreadSafe;
 
+import com.amazonaws.metrics.MetricType;
+
 /**
  * Used as both a base class and a minimal support of AWS SDK request metrics.
  * The base class of supporting AWS SDK request metrics.
@@ -38,30 +40,50 @@ import org.apache.http.annotation.NotThreadSafe;
 @NotThreadSafe
 public class AWSRequestMetrics {
     /**
-     * Predefined Metrics.
+     * Predefined AWS SDK metric types general across all AWS clients. Client
+     * specific predefined metrics like S3 or DynamoDB are defined in the client
+     * specific packages.
      */
-    public static enum Field {
-        StatusCode, // The http status code
+    public static enum Field implements MetricType {
         AWSErrorCode,
         AWSRequestID,
         BytesProcessed,
-        AttemptCount,
-        ResponseProcessingTime,
+        /**
+         * Total number of milliseconds taken for a request/response including
+         * the time taken to execute the request handlers, round trip to AWS,
+         * and the time taken to execute the response handlers.
+         */
         ClientExecuteTime,
-        RequestSigningTime,
-        HttpRequestTime,
-        RequestMarshallTime,
-        RetryPauseTime,
-        RedirectLocation,
-        Exception,
         CredentialsRequestTime,
+        Exception,
+        /**
+         * Number of milliseconds taken for a request/response round trip to AWS.
+         */
+        HttpRequestTime,
+        RedirectLocation,
+        RequestMarshallTime,
+        /**
+         * Number of milliseconds taken to sign a request.
+         */
+        RequestSigningTime,
+        /**
+         * Number of milliseconds taken to execute the response handler for a response from AWS.
+         */
+        ResponseProcessingTime,
+        /**
+         * Number of requests to AWS.
+         */
+        RequestCount,
+        /**
+         * Number of retries of sending a request to AWS.
+         */
+        RetryCount, // captured via the RequestCount since (RetryCount = RequestCount - 1)
+        RetryPauseTime,
+//      S3DownloadThroughput, // migrated to S3RequestMetric in the S3 clint library
+//      S3UploadThroughput,   // migrated to S3RequestMetric in the S3 clint library
         ServiceEndpoint,
         ServiceName,
-
-        ThrottleExceptions,
-        S3UploadThroughput,
-        S3DownloadThroughput,
-        ThrottleCount,
+        StatusCode, // The http status code
         ;
     }
 
@@ -94,16 +116,16 @@ public class AWSRequestMetrics {
     }
 
     public void startEvent(String eventName) {}
-    public void startEvent(Field f) {}
+    public void startEvent(MetricType f) {}
     public void endEvent(String eventName) {}
-    public void endEvent(Field f) {}
+    public void endEvent(MetricType f) {}
     public void incrementCounter(String event) {}
-    public void incrementCounter(Field f) {}
+    public void incrementCounter(MetricType f) {}
     public void setCounter(String counterName, long count) {}
-    public void setCounter(Field f, long count) {}
+    public void setCounter(MetricType f, long count) {}
     public void addProperty(String propertyName, Object value) {}
-    public void addProperty(Field f, Object value) {}
+    public void addProperty(MetricType f, Object value) {}
     public void log() {}
     public List<Object> getProperty(String propertyName){ return Collections.emptyList(); }
-    public List<Object> getProperty(Field f) { return Collections.emptyList(); }
+    public List<Object> getProperty(MetricType f) { return Collections.emptyList(); }
 }

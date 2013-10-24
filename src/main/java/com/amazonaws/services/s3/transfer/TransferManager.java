@@ -37,7 +37,9 @@ import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.event.ProgressEvent;
 import com.amazonaws.event.ProgressListener;
+import com.amazonaws.event.ProgressListenerCallbackExecutor;
 import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
@@ -551,7 +553,6 @@ public class TransferManager {
                         return download;
                     }
 
-
                     download.setState(TransferState.Completed);
                     return true;
                 } catch (Exception e) {
@@ -629,19 +630,28 @@ public class TransferManager {
             } while ( listObjectsResponse.isTruncated() );
         } while ( !commonPrefixes.isEmpty() );
 
+        /* This is the hook for adding additional progress listeners */
+        ProgressListenerChain additionalProgressListenerChain = new ProgressListenerChain();
+
         TransferProgressImpl transferProgress = new TransferProgressImpl();
         transferProgress.setTotalBytesToTransfer(totalSize);
-        ProgressListener listener = new TransferProgressUpdatingListener(transferProgress);
+        /*
+         * Bind additional progress listeners to this
+         * MultipleFileTransferProgressUpdatingListener to receive
+         * ByteTransferred events from each single-file download implementation.
+         */
+        ProgressListener multipleFileTransferProgressListener = new MultipleFileTransferProgressUpdatingListener(
+                transferProgress, additionalProgressListenerChain);
 
         List<DownloadImpl> downloads = new ArrayList<DownloadImpl>();
 
         String description = "Downloading from " + bucketName + "/" + keyPrefix;
         final MultipleFileDownloadImpl multipleFileDownload = new MultipleFileDownloadImpl(description, transferProgress,
-                new ProgressListenerChain(listener), keyPrefix, bucketName, downloads);
+                additionalProgressListenerChain, keyPrefix, bucketName, downloads);
         multipleFileDownload.setMonitor(new MultipleFileTransferMonitor(multipleFileDownload, downloads));
 
         final AllDownloadsQueuedLock allTransfersQueuedLock = new AllDownloadsQueuedLock();
-        MultipleFileTransferStateChangeListener stateChangeListener = new MultipleFileTransferStateChangeListener(
+        MultipleFileTransferStateChangeListener multipleFileTransferStateChangeListener = new MultipleFileTransferStateChangeListener(
                 allTransfersQueuedLock, multipleFileDownload);
 
         for ( S3ObjectSummary summary : objectSummaries ) {
@@ -652,9 +662,16 @@ public class TransferManager {
                 throw new RuntimeException("Couldn't create parent directories for " + f.getAbsolutePath());
             }
 
+            // All the single-file downloads share the same
+            // MultipleFileTransferProgressUpdatingListener and
+            // MultipleFileTransferStateChangeListener
             downloads.add((DownloadImpl) download(
-                    new GetObjectRequest(summary.getBucketName(), summary.getKey()).withGeneralProgressListener(listener), f,
-                    stateChangeListener));
+                            new GetObjectRequest(summary.getBucketName(),
+                                    summary.getKey())
+                                    .withGeneralProgressListener(
+                                            multipleFileTransferProgressListener),
+                            f,
+                            multipleFileTransferStateChangeListener));
         }
 
         if ( downloads.isEmpty() ) {
@@ -726,6 +743,30 @@ public class TransferManager {
             }
         }
     };
+
+    /**
+     * TransferProgressUpdatingListener for multiple-file transfer. In addition
+     * to updating the TransferProgress, it also sends out ByteTrasnferred
+     * events to a ProgressListenerChain.
+     */
+    private static final class MultipleFileTransferProgressUpdatingListener extends TransferProgressUpdatingListener {
+        
+        private final ProgressListenerCallbackExecutor progressListenerCallbackExecutor;
+        
+        public MultipleFileTransferProgressUpdatingListener(TransferProgressImpl transferProgress, ProgressListenerChain progressListenerChain) {
+            super(transferProgress);
+            this.progressListenerCallbackExecutor = ProgressListenerCallbackExecutor.wrapListener(progressListenerChain);
+        }
+        
+        @Override
+        public void progressChanged(ProgressEvent progressEvent) {
+            super.progressChanged(progressEvent);
+            
+            /* Only propagate the BytesTransferred to progress listener chain */
+            progressListenerCallbackExecutor.progressChanged(new ProgressEvent(
+                    progressEvent.getBytesTransferred()));
+        }
+    }
 
     /**
      * Uploads all files in the directory given to the bucket named, optionally
@@ -848,15 +889,24 @@ public class TransferManager {
             virtualDirectoryKeyPrefix = virtualDirectoryKeyPrefix + "/";
         }
 
+        /* This is the hook for adding additional progress listeners */
+        ProgressListenerChain additionalProgressListenerChain = new ProgressListenerChain();
+        
         TransferProgressImpl transferProgress = new TransferProgressImpl();
-        ProgressListener listener = new TransferProgressUpdatingListener(transferProgress);
+        /*
+         * Bind additional progress listeners to this
+         * MultipleFileTransferProgressUpdatingListener to receive
+         * ByteTransferred events from each single-file upload implementation.
+         */
+        ProgressListener multipleFileTransferProgressListener = new MultipleFileTransferProgressUpdatingListener(
+                transferProgress, additionalProgressListenerChain);
 
         List<UploadImpl> uploads = new LinkedList<UploadImpl>();
-        MultipleFileUploadImpl multipleFileUpload = new MultipleFileUploadImpl("Uploading etc", transferProgress, (ProgressListenerChain)null, virtualDirectoryKeyPrefix, bucketName, uploads);
+        MultipleFileUploadImpl multipleFileUpload = new MultipleFileUploadImpl("Uploading etc", transferProgress, additionalProgressListenerChain, virtualDirectoryKeyPrefix, bucketName, uploads);
         multipleFileUpload.setMonitor(new MultipleFileTransferMonitor(multipleFileUpload, uploads));
 
         final AllDownloadsQueuedLock allTransfersQueuedLock = new AllDownloadsQueuedLock();
-        MultipleFileTransferStateChangeListener stateChangeListener = new MultipleFileTransferStateChangeListener(
+        MultipleFileTransferStateChangeListener multipleFileTransferStateChangeListener = new MultipleFileTransferStateChangeListener(
                 allTransfersQueuedLock, multipleFileUpload);
 
         if ( files == null || files.isEmpty()) {
@@ -879,9 +929,16 @@ public class TransferManager {
                 	  metadataProvider.provideObjectMetadata(f,metadata);
                 }
                 
+                // All the single-file uploads share the same
+                // MultipleFileTransferProgressUpdatingListener and
+                // MultipleFileTransferStateChangeListener
                 uploads.add((UploadImpl) upload(
-                        new PutObjectRequest(bucketName, virtualDirectoryKeyPrefix + key, f).withMetadata(metadata).withGeneralProgressListener(listener),
-                        stateChangeListener));
+                        new PutObjectRequest(bucketName,
+                                virtualDirectoryKeyPrefix + key, f)
+                                .withMetadata(metadata)
+                                .withGeneralProgressListener(
+                                        multipleFileTransferProgressListener),
+                        multipleFileTransferStateChangeListener));
             }
         }
 

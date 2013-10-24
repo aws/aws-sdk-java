@@ -26,16 +26,16 @@ public class RouteFilterPrefix implements Serializable {
 
     /**
      * CIDR notation for the advertised route. Multiple routes are separated
-     * by commas <p>Example: 10.10.10.0/24,10.10.11.0/24
+     * by commas. <p>Example: 10.10.10.0/24,10.10.11.0/24
      */
     private String cidr;
 
     /**
      * CIDR notation for the advertised route. Multiple routes are separated
-     * by commas <p>Example: 10.10.10.0/24,10.10.11.0/24
+     * by commas. <p>Example: 10.10.10.0/24,10.10.11.0/24
      *
      * @return CIDR notation for the advertised route. Multiple routes are separated
-     *         by commas <p>Example: 10.10.10.0/24,10.10.11.0/24
+     *         by commas. <p>Example: 10.10.10.0/24,10.10.11.0/24
      */
     public String getCidr() {
         return cidr;
@@ -43,10 +43,10 @@ public class RouteFilterPrefix implements Serializable {
     
     /**
      * CIDR notation for the advertised route. Multiple routes are separated
-     * by commas <p>Example: 10.10.10.0/24,10.10.11.0/24
+     * by commas. <p>Example: 10.10.10.0/24,10.10.11.0/24
      *
      * @param cidr CIDR notation for the advertised route. Multiple routes are separated
-     *         by commas <p>Example: 10.10.10.0/24,10.10.11.0/24
+     *         by commas. <p>Example: 10.10.10.0/24,10.10.11.0/24
      */
     public void setCidr(String cidr) {
         this.cidr = cidr;
@@ -54,12 +54,12 @@ public class RouteFilterPrefix implements Serializable {
     
     /**
      * CIDR notation for the advertised route. Multiple routes are separated
-     * by commas <p>Example: 10.10.10.0/24,10.10.11.0/24
+     * by commas. <p>Example: 10.10.10.0/24,10.10.11.0/24
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cidr CIDR notation for the advertised route. Multiple routes are separated
-     *         by commas <p>Example: 10.10.10.0/24,10.10.11.0/24
+     *         by commas. <p>Example: 10.10.10.0/24,10.10.11.0/24
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

@@ -13,8 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
-import com.amazonaws.AmazonWebServiceRequest;
+
 import java.io.Serializable;
+
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#unsubscribe(UnsubscribeRequest) Unsubscribe operation}.
@@ -27,7 +29,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#unsubscribe(UnsubscribeRequest)
  */
-public class UnsubscribeRequest extends AmazonWebServiceRequest  implements Serializable  {
+public class UnsubscribeRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
      * The ARN of the subscription to be deleted.
@@ -40,8 +42,6 @@ public class UnsubscribeRequest extends AmazonWebServiceRequest  implements Seri
      */
     public UnsubscribeRequest() {}
     
-
-
     /**
      * Constructs a new UnsubscribeRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -53,8 +53,6 @@ public class UnsubscribeRequest extends AmazonWebServiceRequest  implements Seri
         setSubscriptionArn(subscriptionArn);
     }
 
-    
-    
     /**
      * The ARN of the subscription to be deleted.
      *
@@ -81,14 +79,13 @@ public class UnsubscribeRequest extends AmazonWebServiceRequest  implements Seri
      * @param subscriptionArn The ARN of the subscription to be deleted.
      *
      * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
+     *         together.
      */
     public UnsubscribeRequest withSubscriptionArn(String subscriptionArn) {
         this.subscriptionArn = subscriptionArn;
         return this;
     }
-    
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.

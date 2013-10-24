@@ -25,69 +25,75 @@ import java.io.Serializable;
 public class NewPrivateVirtualInterface implements Serializable {
 
     /**
-     * The name of the virtual interface assigned by the customer <p>Example:
-     * "Dev VPC"
+     * The name of the virtual interface assigned by the customer.
+     * <p>Example: "My VPC"
      */
     private String virtualInterfaceName;
 
     /**
-     * VLAN ID <p>Example: 101
+     * The VLAN ID. <p>Example: 101
      */
     private Integer vlan;
 
     /**
      * Autonomous system (AS) number for Border Gateway Protocol (BGP)
-     * configuration <p>Example: 65000
+     * configuration. <p>Example: 65000
      */
     private Integer asn;
 
     /**
-     * Authentication key for BGP configuration <p>Example: asdf34example
+     * Authentication key for BGP configuration. <p>Example: asdf34example
      */
     private String authKey;
 
     /**
-     * IP address assigned to the Amazon interface. <p>Example: 192.168.1.1
+     * IP address assigned to the Amazon interface. <p>Example:
+     * 192.168.1.1/30
      */
     private String amazonAddress;
 
+    /**
+     * IP address assigned to the customer interface. <p>Example:
+     * 192.168.1.2/30
+     */
     private String customerAddress;
 
     /**
-     * Virtual private gateway to a VPC. <p>Example: vgw-123er56
+     * The ID of the virtual private gateway to a VPC. This only applies to
+     * private virtual interfaces. <p>Example: vgw-123er56
      */
     private String virtualGatewayId;
 
     /**
-     * The name of the virtual interface assigned by the customer <p>Example:
-     * "Dev VPC"
+     * The name of the virtual interface assigned by the customer.
+     * <p>Example: "My VPC"
      *
-     * @return The name of the virtual interface assigned by the customer <p>Example:
-     *         "Dev VPC"
+     * @return The name of the virtual interface assigned by the customer.
+     *         <p>Example: "My VPC"
      */
     public String getVirtualInterfaceName() {
         return virtualInterfaceName;
     }
     
     /**
-     * The name of the virtual interface assigned by the customer <p>Example:
-     * "Dev VPC"
+     * The name of the virtual interface assigned by the customer.
+     * <p>Example: "My VPC"
      *
-     * @param virtualInterfaceName The name of the virtual interface assigned by the customer <p>Example:
-     *         "Dev VPC"
+     * @param virtualInterfaceName The name of the virtual interface assigned by the customer.
+     *         <p>Example: "My VPC"
      */
     public void setVirtualInterfaceName(String virtualInterfaceName) {
         this.virtualInterfaceName = virtualInterfaceName;
     }
     
     /**
-     * The name of the virtual interface assigned by the customer <p>Example:
-     * "Dev VPC"
+     * The name of the virtual interface assigned by the customer.
+     * <p>Example: "My VPC"
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param virtualInterfaceName The name of the virtual interface assigned by the customer <p>Example:
-     *         "Dev VPC"
+     * @param virtualInterfaceName The name of the virtual interface assigned by the customer.
+     *         <p>Example: "My VPC"
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -98,29 +104,29 @@ public class NewPrivateVirtualInterface implements Serializable {
     }
 
     /**
-     * VLAN ID <p>Example: 101
+     * The VLAN ID. <p>Example: 101
      *
-     * @return VLAN ID <p>Example: 101
+     * @return The VLAN ID. <p>Example: 101
      */
     public Integer getVlan() {
         return vlan;
     }
     
     /**
-     * VLAN ID <p>Example: 101
+     * The VLAN ID. <p>Example: 101
      *
-     * @param vlan VLAN ID <p>Example: 101
+     * @param vlan The VLAN ID. <p>Example: 101
      */
     public void setVlan(Integer vlan) {
         this.vlan = vlan;
     }
     
     /**
-     * VLAN ID <p>Example: 101
+     * The VLAN ID. <p>Example: 101
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vlan VLAN ID <p>Example: 101
+     * @param vlan The VLAN ID. <p>Example: 101
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -132,10 +138,10 @@ public class NewPrivateVirtualInterface implements Serializable {
 
     /**
      * Autonomous system (AS) number for Border Gateway Protocol (BGP)
-     * configuration <p>Example: 65000
+     * configuration. <p>Example: 65000
      *
      * @return Autonomous system (AS) number for Border Gateway Protocol (BGP)
-     *         configuration <p>Example: 65000
+     *         configuration. <p>Example: 65000
      */
     public Integer getAsn() {
         return asn;
@@ -143,10 +149,10 @@ public class NewPrivateVirtualInterface implements Serializable {
     
     /**
      * Autonomous system (AS) number for Border Gateway Protocol (BGP)
-     * configuration <p>Example: 65000
+     * configuration. <p>Example: 65000
      *
      * @param asn Autonomous system (AS) number for Border Gateway Protocol (BGP)
-     *         configuration <p>Example: 65000
+     *         configuration. <p>Example: 65000
      */
     public void setAsn(Integer asn) {
         this.asn = asn;
@@ -154,12 +160,12 @@ public class NewPrivateVirtualInterface implements Serializable {
     
     /**
      * Autonomous system (AS) number for Border Gateway Protocol (BGP)
-     * configuration <p>Example: 65000
+     * configuration. <p>Example: 65000
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param asn Autonomous system (AS) number for Border Gateway Protocol (BGP)
-     *         configuration <p>Example: 65000
+     *         configuration. <p>Example: 65000
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -170,29 +176,29 @@ public class NewPrivateVirtualInterface implements Serializable {
     }
 
     /**
-     * Authentication key for BGP configuration <p>Example: asdf34example
+     * Authentication key for BGP configuration. <p>Example: asdf34example
      *
-     * @return Authentication key for BGP configuration <p>Example: asdf34example
+     * @return Authentication key for BGP configuration. <p>Example: asdf34example
      */
     public String getAuthKey() {
         return authKey;
     }
     
     /**
-     * Authentication key for BGP configuration <p>Example: asdf34example
+     * Authentication key for BGP configuration. <p>Example: asdf34example
      *
-     * @param authKey Authentication key for BGP configuration <p>Example: asdf34example
+     * @param authKey Authentication key for BGP configuration. <p>Example: asdf34example
      */
     public void setAuthKey(String authKey) {
         this.authKey = authKey;
     }
     
     /**
-     * Authentication key for BGP configuration <p>Example: asdf34example
+     * Authentication key for BGP configuration. <p>Example: asdf34example
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param authKey Authentication key for BGP configuration <p>Example: asdf34example
+     * @param authKey Authentication key for BGP configuration. <p>Example: asdf34example
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -203,29 +209,35 @@ public class NewPrivateVirtualInterface implements Serializable {
     }
 
     /**
-     * IP address assigned to the Amazon interface. <p>Example: 192.168.1.1
+     * IP address assigned to the Amazon interface. <p>Example:
+     * 192.168.1.1/30
      *
-     * @return IP address assigned to the Amazon interface. <p>Example: 192.168.1.1
+     * @return IP address assigned to the Amazon interface. <p>Example:
+     *         192.168.1.1/30
      */
     public String getAmazonAddress() {
         return amazonAddress;
     }
     
     /**
-     * IP address assigned to the Amazon interface. <p>Example: 192.168.1.1
+     * IP address assigned to the Amazon interface. <p>Example:
+     * 192.168.1.1/30
      *
-     * @param amazonAddress IP address assigned to the Amazon interface. <p>Example: 192.168.1.1
+     * @param amazonAddress IP address assigned to the Amazon interface. <p>Example:
+     *         192.168.1.1/30
      */
     public void setAmazonAddress(String amazonAddress) {
         this.amazonAddress = amazonAddress;
     }
     
     /**
-     * IP address assigned to the Amazon interface. <p>Example: 192.168.1.1
+     * IP address assigned to the Amazon interface. <p>Example:
+     * 192.168.1.1/30
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param amazonAddress IP address assigned to the Amazon interface. <p>Example: 192.168.1.1
+     * @param amazonAddress IP address assigned to the Amazon interface. <p>Example:
+     *         192.168.1.1/30
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -236,29 +248,35 @@ public class NewPrivateVirtualInterface implements Serializable {
     }
 
     /**
-     * Returns the value of the CustomerAddress property for this object.
+     * IP address assigned to the customer interface. <p>Example:
+     * 192.168.1.2/30
      *
-     * @return The value of the CustomerAddress property for this object.
+     * @return IP address assigned to the customer interface. <p>Example:
+     *         192.168.1.2/30
      */
     public String getCustomerAddress() {
         return customerAddress;
     }
     
     /**
-     * Sets the value of the CustomerAddress property for this object.
+     * IP address assigned to the customer interface. <p>Example:
+     * 192.168.1.2/30
      *
-     * @param customerAddress The new value for the CustomerAddress property for this object.
+     * @param customerAddress IP address assigned to the customer interface. <p>Example:
+     *         192.168.1.2/30
      */
     public void setCustomerAddress(String customerAddress) {
         this.customerAddress = customerAddress;
     }
     
     /**
-     * Sets the value of the CustomerAddress property for this object.
+     * IP address assigned to the customer interface. <p>Example:
+     * 192.168.1.2/30
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param customerAddress The new value for the CustomerAddress property for this object.
+     * @param customerAddress IP address assigned to the customer interface. <p>Example:
+     *         192.168.1.2/30
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -269,29 +287,35 @@ public class NewPrivateVirtualInterface implements Serializable {
     }
 
     /**
-     * Virtual private gateway to a VPC. <p>Example: vgw-123er56
+     * The ID of the virtual private gateway to a VPC. This only applies to
+     * private virtual interfaces. <p>Example: vgw-123er56
      *
-     * @return Virtual private gateway to a VPC. <p>Example: vgw-123er56
+     * @return The ID of the virtual private gateway to a VPC. This only applies to
+     *         private virtual interfaces. <p>Example: vgw-123er56
      */
     public String getVirtualGatewayId() {
         return virtualGatewayId;
     }
     
     /**
-     * Virtual private gateway to a VPC. <p>Example: vgw-123er56
+     * The ID of the virtual private gateway to a VPC. This only applies to
+     * private virtual interfaces. <p>Example: vgw-123er56
      *
-     * @param virtualGatewayId Virtual private gateway to a VPC. <p>Example: vgw-123er56
+     * @param virtualGatewayId The ID of the virtual private gateway to a VPC. This only applies to
+     *         private virtual interfaces. <p>Example: vgw-123er56
      */
     public void setVirtualGatewayId(String virtualGatewayId) {
         this.virtualGatewayId = virtualGatewayId;
     }
     
     /**
-     * Virtual private gateway to a VPC. <p>Example: vgw-123er56
+     * The ID of the virtual private gateway to a VPC. This only applies to
+     * private virtual interfaces. <p>Example: vgw-123er56
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param virtualGatewayId Virtual private gateway to a VPC. <p>Example: vgw-123er56
+     * @param virtualGatewayId The ID of the virtual private gateway to a VPC. This only applies to
+     *         private virtual interfaces. <p>Example: vgw-123er56
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
