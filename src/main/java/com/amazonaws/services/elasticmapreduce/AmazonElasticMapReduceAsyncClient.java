@@ -39,9 +39,9 @@ import com.amazonaws.services.elasticmapreduce.model.*;
  * This is the <i>Amazon Elastic MapReduce API Reference</i> . This guide provides descriptions and samples of the Amazon Elastic MapReduce APIs.
  * </p>
  * <p>
- * Amazon Elastic MapReduce is a web service that makes it easy to process large amounts of data efficiently. Elastic MapReduce uses Hadoop processing
- * combined with several AWS products to do tasks such as web indexing, data mining, log file analysis, machine learning, scientific simulation, and data
- * warehousing.
+ * Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to process large amounts of data efficiently. Amazon EMR uses Hadoop
+ * processing combined with several AWS products to do tasks such as web indexing, data mining, log file analysis, machine learning, scientific
+ * simulation, and data warehousing.
  * </p>
  */
 public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceClient
@@ -277,8 +277,85 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
             
     /**
      * <p>
+     * Provides information about the bootstrap actions associated with a
+     * cluster.
+     * </p>
+     *
+     * @param listBootstrapActionsRequest Container for the necessary
+     *           parameters to execute the ListBootstrapActions operation on
+     *           AmazonElasticMapReduce.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListBootstrapActions service method, as returned by
+     *         AmazonElasticMapReduce.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListBootstrapActionsResult> listBootstrapActionsAsync(final ListBootstrapActionsRequest listBootstrapActionsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListBootstrapActionsResult>() {
+            public ListBootstrapActionsResult call() throws Exception {
+                return listBootstrapActions(listBootstrapActionsRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Provides information about the bootstrap actions associated with a
+     * cluster.
+     * </p>
+     *
+     * @param listBootstrapActionsRequest Container for the necessary
+     *           parameters to execute the ListBootstrapActions operation on
+     *           AmazonElasticMapReduce.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListBootstrapActions service method, as returned by
+     *         AmazonElasticMapReduce.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListBootstrapActionsResult> listBootstrapActionsAsync(
+            final ListBootstrapActionsRequest listBootstrapActionsRequest,
+            final AsyncHandler<ListBootstrapActionsRequest, ListBootstrapActionsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListBootstrapActionsResult>() {
+            public ListBootstrapActionsResult call() throws Exception {
+            	ListBootstrapActionsResult result;
+                try {
+            		result = listBootstrapActions(listBootstrapActionsRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(listBootstrapActionsRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
      * Sets whether all AWS Identity and Access Management (IAM) users under
-     * your account can access the specifed job flows. This action works on
+     * your account can access the specified job flows. This action works on
      * running job flows. You can also set the visibility of a job flow when
      * you launch it using the <code>VisibleToAllUsers</code> parameter of
      * RunJobFlow. The SetVisibleToAllUsers action can be called only by an
@@ -316,7 +393,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     /**
      * <p>
      * Sets whether all AWS Identity and Access Management (IAM) users under
-     * your account can access the specifed job flows. This action works on
+     * your account can access the specified job flows. This action works on
      * running job flows. You can also set the visibility of a job flow when
      * you launch it using the <code>VisibleToAllUsers</code> parameter of
      * RunJobFlow. The SetVisibleToAllUsers action can be called only by an
@@ -358,6 +435,593 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
             	}
             	asyncHandler.onSuccess(setVisibleToAllUsersRequest, null);
                	return null;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Provides a list of steps for the cluster.
+     * </p>
+     *
+     * @param listStepsRequest Container for the necessary parameters to
+     *           execute the ListSteps operation on AmazonElasticMapReduce.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListSteps service method, as returned by AmazonElasticMapReduce.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListStepsResult> listStepsAsync(final ListStepsRequest listStepsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListStepsResult>() {
+            public ListStepsResult call() throws Exception {
+                return listSteps(listStepsRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Provides a list of steps for the cluster.
+     * </p>
+     *
+     * @param listStepsRequest Container for the necessary parameters to
+     *           execute the ListSteps operation on AmazonElasticMapReduce.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListSteps service method, as returned by AmazonElasticMapReduce.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListStepsResult> listStepsAsync(
+            final ListStepsRequest listStepsRequest,
+            final AsyncHandler<ListStepsRequest, ListStepsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListStepsResult>() {
+            public ListStepsResult call() throws Exception {
+            	ListStepsResult result;
+                try {
+            		result = listSteps(listStepsRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(listStepsRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * AddJobFlowSteps adds new steps to a running job flow. A maximum of
+     * 256 steps are allowed in each job flow.
+     * </p>
+     * <p>
+     * If your job flow is long-running (such as a Hive data warehouse) or
+     * complex, you may require more than 256 steps to process your data. You
+     * can bypass the 256-step limitation in various ways, including using
+     * the SSH shell to connect to the master node and submitting queries
+     * directly to the software running on the master node, such as Hive and
+     * Hadoop. For more information on how to do this, go to <a
+     * .com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">
+     * Add More than 256 Steps to a Job Flow </a> in the <i>Amazon Elastic
+     * MapReduce Developer's Guide</i> .
+     * </p>
+     * <p>
+     * A step specifies the location of a JAR file stored either on the
+     * master node of the job flow or in Amazon S3. Each step is performed by
+     * the main function of the main class of the JAR file. The main class
+     * can be specified either in the manifest of the JAR or by using the
+     * MainFunction parameter of the step.
+     * </p>
+     * <p>
+     * Elastic MapReduce executes each step in the order listed. For a step
+     * to be considered complete, the main function must exit with a zero
+     * exit code and all Hadoop jobs started while the step was running must
+     * have completed and run successfully.
+     * </p>
+     * <p>
+     * You can only add steps to a job flow that is in one of the following
+     * states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.
+     * </p>
+     *
+     * @param addJobFlowStepsRequest Container for the necessary parameters
+     *           to execute the AddJobFlowSteps operation on AmazonElasticMapReduce.
+     * 
+     * @return A Java Future object containing the response from the
+     *         AddJobFlowSteps service method, as returned by AmazonElasticMapReduce.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<AddJobFlowStepsResult> addJobFlowStepsAsync(final AddJobFlowStepsRequest addJobFlowStepsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<AddJobFlowStepsResult>() {
+            public AddJobFlowStepsResult call() throws Exception {
+                return addJobFlowSteps(addJobFlowStepsRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * AddJobFlowSteps adds new steps to a running job flow. A maximum of
+     * 256 steps are allowed in each job flow.
+     * </p>
+     * <p>
+     * If your job flow is long-running (such as a Hive data warehouse) or
+     * complex, you may require more than 256 steps to process your data. You
+     * can bypass the 256-step limitation in various ways, including using
+     * the SSH shell to connect to the master node and submitting queries
+     * directly to the software running on the master node, such as Hive and
+     * Hadoop. For more information on how to do this, go to <a
+     * .com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">
+     * Add More than 256 Steps to a Job Flow </a> in the <i>Amazon Elastic
+     * MapReduce Developer's Guide</i> .
+     * </p>
+     * <p>
+     * A step specifies the location of a JAR file stored either on the
+     * master node of the job flow or in Amazon S3. Each step is performed by
+     * the main function of the main class of the JAR file. The main class
+     * can be specified either in the manifest of the JAR or by using the
+     * MainFunction parameter of the step.
+     * </p>
+     * <p>
+     * Elastic MapReduce executes each step in the order listed. For a step
+     * to be considered complete, the main function must exit with a zero
+     * exit code and all Hadoop jobs started while the step was running must
+     * have completed and run successfully.
+     * </p>
+     * <p>
+     * You can only add steps to a job flow that is in one of the following
+     * states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.
+     * </p>
+     *
+     * @param addJobFlowStepsRequest Container for the necessary parameters
+     *           to execute the AddJobFlowSteps operation on AmazonElasticMapReduce.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         AddJobFlowSteps service method, as returned by AmazonElasticMapReduce.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<AddJobFlowStepsResult> addJobFlowStepsAsync(
+            final AddJobFlowStepsRequest addJobFlowStepsRequest,
+            final AsyncHandler<AddJobFlowStepsRequest, AddJobFlowStepsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<AddJobFlowStepsResult>() {
+            public AddJobFlowStepsResult call() throws Exception {
+            	AddJobFlowStepsResult result;
+                try {
+            		result = addJobFlowSteps(addJobFlowStepsRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(addJobFlowStepsRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Provides more detail about the cluster step.
+     * </p>
+     *
+     * @param describeStepRequest Container for the necessary parameters to
+     *           execute the DescribeStep operation on AmazonElasticMapReduce.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeStep service method, as returned by AmazonElasticMapReduce.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeStepResult> describeStepAsync(final DescribeStepRequest describeStepRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeStepResult>() {
+            public DescribeStepResult call() throws Exception {
+                return describeStep(describeStepRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Provides more detail about the cluster step.
+     * </p>
+     *
+     * @param describeStepRequest Container for the necessary parameters to
+     *           execute the DescribeStep operation on AmazonElasticMapReduce.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeStep service method, as returned by AmazonElasticMapReduce.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeStepResult> describeStepAsync(
+            final DescribeStepRequest describeStepRequest,
+            final AsyncHandler<DescribeStepRequest, DescribeStepResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeStepResult>() {
+            public DescribeStepResult call() throws Exception {
+            	DescribeStepResult result;
+                try {
+            		result = describeStep(describeStepRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(describeStepRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Provides the status of all clusters visible to this AWS account.
+     * Allows you to filter the list of clusters based on certain criteria;
+     * for example, filtering by cluster creation date and time or by status.
+     * This call returns a maximum of 50 clusters per call, but returns a
+     * marker to track the paging of the cluster list across multiple
+     * ListClusters calls.
+     * </p>
+     *
+     * @param listClustersRequest Container for the necessary parameters to
+     *           execute the ListClusters operation on AmazonElasticMapReduce.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListClusters service method, as returned by AmazonElasticMapReduce.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListClustersResult> listClustersAsync(final ListClustersRequest listClustersRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListClustersResult>() {
+            public ListClustersResult call() throws Exception {
+                return listClusters(listClustersRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Provides the status of all clusters visible to this AWS account.
+     * Allows you to filter the list of clusters based on certain criteria;
+     * for example, filtering by cluster creation date and time or by status.
+     * This call returns a maximum of 50 clusters per call, but returns a
+     * marker to track the paging of the cluster list across multiple
+     * ListClusters calls.
+     * </p>
+     *
+     * @param listClustersRequest Container for the necessary parameters to
+     *           execute the ListClusters operation on AmazonElasticMapReduce.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListClusters service method, as returned by AmazonElasticMapReduce.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListClustersResult> listClustersAsync(
+            final ListClustersRequest listClustersRequest,
+            final AsyncHandler<ListClustersRequest, ListClustersResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListClustersResult>() {
+            public ListClustersResult call() throws Exception {
+            	ListClustersResult result;
+                try {
+            		result = listClusters(listClustersRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(listClustersRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Provides all available details about the instance groups in a cluster.
+     * </p>
+     *
+     * @param listInstanceGroupsRequest Container for the necessary
+     *           parameters to execute the ListInstanceGroups operation on
+     *           AmazonElasticMapReduce.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListInstanceGroups service method, as returned by
+     *         AmazonElasticMapReduce.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListInstanceGroupsResult> listInstanceGroupsAsync(final ListInstanceGroupsRequest listInstanceGroupsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListInstanceGroupsResult>() {
+            public ListInstanceGroupsResult call() throws Exception {
+                return listInstanceGroups(listInstanceGroupsRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Provides all available details about the instance groups in a cluster.
+     * </p>
+     *
+     * @param listInstanceGroupsRequest Container for the necessary
+     *           parameters to execute the ListInstanceGroups operation on
+     *           AmazonElasticMapReduce.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListInstanceGroups service method, as returned by
+     *         AmazonElasticMapReduce.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListInstanceGroupsResult> listInstanceGroupsAsync(
+            final ListInstanceGroupsRequest listInstanceGroupsRequest,
+            final AsyncHandler<ListInstanceGroupsRequest, ListInstanceGroupsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListInstanceGroupsResult>() {
+            public ListInstanceGroupsResult call() throws Exception {
+            	ListInstanceGroupsResult result;
+                try {
+            		result = listInstanceGroups(listInstanceGroupsRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(listInstanceGroupsRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * ModifyInstanceGroups modifies the number of nodes and configuration
+     * settings of an instance group. The input parameters include the new
+     * target instance count for the group and the instance group ID. The
+     * call will either succeed or fail atomically.
+     * </p>
+     *
+     * @param modifyInstanceGroupsRequest Container for the necessary
+     *           parameters to execute the ModifyInstanceGroups operation on
+     *           AmazonElasticMapReduce.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ModifyInstanceGroups service method, as returned by
+     *         AmazonElasticMapReduce.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> modifyInstanceGroupsAsync(final ModifyInstanceGroupsRequest modifyInstanceGroupsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                modifyInstanceGroups(modifyInstanceGroupsRequest);
+                return null;
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * ModifyInstanceGroups modifies the number of nodes and configuration
+     * settings of an instance group. The input parameters include the new
+     * target instance count for the group and the instance group ID. The
+     * call will either succeed or fail atomically.
+     * </p>
+     *
+     * @param modifyInstanceGroupsRequest Container for the necessary
+     *           parameters to execute the ModifyInstanceGroups operation on
+     *           AmazonElasticMapReduce.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ModifyInstanceGroups service method, as returned by
+     *         AmazonElasticMapReduce.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> modifyInstanceGroupsAsync(
+            final ModifyInstanceGroupsRequest modifyInstanceGroupsRequest,
+            final AsyncHandler<ModifyInstanceGroupsRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+            	try {
+            		modifyInstanceGroups(modifyInstanceGroupsRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(modifyInstanceGroupsRequest, null);
+               	return null;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Provides information about the cluster instances that Amazon EMR
+     * provisions on behalf of a user when it creates the cluster. For
+     * example, this operation indicates when the EC2 instances reach the
+     * Ready state, when instances become available to Amazon EMR to use for
+     * jobs, and the IP addresses for cluster instances, etc.
+     * </p>
+     *
+     * @param listInstancesRequest Container for the necessary parameters to
+     *           execute the ListInstances operation on AmazonElasticMapReduce.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListInstances service method, as returned by AmazonElasticMapReduce.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListInstancesResult> listInstancesAsync(final ListInstancesRequest listInstancesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListInstancesResult>() {
+            public ListInstancesResult call() throws Exception {
+                return listInstances(listInstancesRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Provides information about the cluster instances that Amazon EMR
+     * provisions on behalf of a user when it creates the cluster. For
+     * example, this operation indicates when the EC2 instances reach the
+     * Ready state, when instances become available to Amazon EMR to use for
+     * jobs, and the IP addresses for cluster instances, etc.
+     * </p>
+     *
+     * @param listInstancesRequest Container for the necessary parameters to
+     *           execute the ListInstances operation on AmazonElasticMapReduce.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListInstances service method, as returned by AmazonElasticMapReduce.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListInstancesResult> listInstancesAsync(
+            final ListInstancesRequest listInstancesRequest,
+            final AsyncHandler<ListInstancesRequest, ListInstancesResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListInstancesResult>() {
+            public ListInstancesResult call() throws Exception {
+            	ListInstancesResult result;
+                try {
+            		result = listInstances(listInstancesRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(listInstancesRequest, result);
+               	return result;
 		    }
 		});
     }
@@ -431,135 +1095,6 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
             	}
             	asyncHandler.onSuccess(addInstanceGroupsRequest, result);
                	return result;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * AddJobFlowSteps adds new steps to a running job flow. A maximum of
-     * 256 steps are allowed in each job flow.
-     * </p>
-     * <p>
-     * If your job flow is long-running (such as a Hive data warehouse) or
-     * complex, you may require more than 256 steps to process your data. You
-     * can bypass the 256-step limitation in various ways, including using
-     * the SSH shell to connect to the master node and submitting queries
-     * directly to the software running on the master node, such as Hive and
-     * Hadoop. For more information on how to do this, go to <a
-     * .com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">
-     * Add More than 256 Steps to a Job Flow </a> in the <i>Amazon Elastic
-     * MapReduce Developer's Guide</i> .
-     * </p>
-     * <p>
-     * A step specifies the location of a JAR file stored either on the
-     * master node of the job flow or in Amazon S3. Each step is performed by
-     * the main function of the main class of the JAR file. The main class
-     * can be specified either in the manifest of the JAR or by using the
-     * MainFunction parameter of the step.
-     * </p>
-     * <p>
-     * Elastic MapReduce executes each step in the order listed. For a step
-     * to be considered complete, the main function must exit with a zero
-     * exit code and all Hadoop jobs started while the step was running must
-     * have completed and run successfully.
-     * </p>
-     * <p>
-     * You can only add steps to a job flow that is in one of the following
-     * states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.
-     * </p>
-     *
-     * @param addJobFlowStepsRequest Container for the necessary parameters
-     *           to execute the AddJobFlowSteps operation on AmazonElasticMapReduce.
-     * 
-     * @return A Java Future object containing the response from the
-     *         AddJobFlowSteps service method, as returned by AmazonElasticMapReduce.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticMapReduce indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> addJobFlowStepsAsync(final AddJobFlowStepsRequest addJobFlowStepsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                addJobFlowSteps(addJobFlowStepsRequest);
-                return null;
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * AddJobFlowSteps adds new steps to a running job flow. A maximum of
-     * 256 steps are allowed in each job flow.
-     * </p>
-     * <p>
-     * If your job flow is long-running (such as a Hive data warehouse) or
-     * complex, you may require more than 256 steps to process your data. You
-     * can bypass the 256-step limitation in various ways, including using
-     * the SSH shell to connect to the master node and submitting queries
-     * directly to the software running on the master node, such as Hive and
-     * Hadoop. For more information on how to do this, go to <a
-     * .com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">
-     * Add More than 256 Steps to a Job Flow </a> in the <i>Amazon Elastic
-     * MapReduce Developer's Guide</i> .
-     * </p>
-     * <p>
-     * A step specifies the location of a JAR file stored either on the
-     * master node of the job flow or in Amazon S3. Each step is performed by
-     * the main function of the main class of the JAR file. The main class
-     * can be specified either in the manifest of the JAR or by using the
-     * MainFunction parameter of the step.
-     * </p>
-     * <p>
-     * Elastic MapReduce executes each step in the order listed. For a step
-     * to be considered complete, the main function must exit with a zero
-     * exit code and all Hadoop jobs started while the step was running must
-     * have completed and run successfully.
-     * </p>
-     * <p>
-     * You can only add steps to a job flow that is in one of the following
-     * states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.
-     * </p>
-     *
-     * @param addJobFlowStepsRequest Container for the necessary parameters
-     *           to execute the AddJobFlowSteps operation on AmazonElasticMapReduce.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         AddJobFlowSteps service method, as returned by AmazonElasticMapReduce.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticMapReduce indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> addJobFlowStepsAsync(
-            final AddJobFlowStepsRequest addJobFlowStepsRequest,
-            final AsyncHandler<AddJobFlowStepsRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-            	try {
-            		addJobFlowSteps(addJobFlowStepsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(addJobFlowStepsRequest, null);
-               	return null;
 		    }
 		});
     }
@@ -703,6 +1238,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      *             If an error response is returned by AmazonElasticMapReduce indicating
      *             either a problem with the data in the request, or a server side issue.
      */
+    @Deprecated
     public Future<DescribeJobFlowsResult> describeJobFlowsAsync(final DescribeJobFlowsRequest describeJobFlowsRequest) 
             throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DescribeJobFlowsResult>() {
@@ -1042,19 +1578,16 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     
     /**
      * <p>
-     * ModifyInstanceGroups modifies the number of nodes and configuration
-     * settings of an instance group. The input parameters include the new
-     * target instance count for the group and the instance group ID. The
-     * call will either succeed or fail atomically.
+     * Provides cluster-level details including status, hardware and software
+     * configuration, VPC settings, and so on. For information about the
+     * cluster steps, see ListSteps.
      * </p>
      *
-     * @param modifyInstanceGroupsRequest Container for the necessary
-     *           parameters to execute the ModifyInstanceGroups operation on
-     *           AmazonElasticMapReduce.
+     * @param describeClusterRequest Container for the necessary parameters
+     *           to execute the DescribeCluster operation on AmazonElasticMapReduce.
      * 
      * @return A Java Future object containing the response from the
-     *         ModifyInstanceGroups service method, as returned by
-     *         AmazonElasticMapReduce.
+     *         DescribeCluster service method, as returned by AmazonElasticMapReduce.
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1064,12 +1597,11 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      *             If an error response is returned by AmazonElasticMapReduce indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<Void> modifyInstanceGroupsAsync(final ModifyInstanceGroupsRequest modifyInstanceGroupsRequest) 
+    public Future<DescribeClusterResult> describeClusterAsync(final DescribeClusterRequest describeClusterRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                modifyInstanceGroups(modifyInstanceGroupsRequest);
-                return null;
+        return executorService.submit(new Callable<DescribeClusterResult>() {
+            public DescribeClusterResult call() throws Exception {
+                return describeCluster(describeClusterRequest);
 		    }
 		});
     }
@@ -1077,23 +1609,20 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     
     /**
      * <p>
-     * ModifyInstanceGroups modifies the number of nodes and configuration
-     * settings of an instance group. The input parameters include the new
-     * target instance count for the group and the instance group ID. The
-     * call will either succeed or fail atomically.
+     * Provides cluster-level details including status, hardware and software
+     * configuration, VPC settings, and so on. For information about the
+     * cluster steps, see ListSteps.
      * </p>
      *
-     * @param modifyInstanceGroupsRequest Container for the necessary
-     *           parameters to execute the ModifyInstanceGroups operation on
-     *           AmazonElasticMapReduce.
+     * @param describeClusterRequest Container for the necessary parameters
+     *           to execute the DescribeCluster operation on AmazonElasticMapReduce.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
      *           the four callback methods in this interface to process the operation
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         ModifyInstanceGroups service method, as returned by
-     *         AmazonElasticMapReduce.
+     *         DescribeCluster service method, as returned by AmazonElasticMapReduce.
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1103,20 +1632,21 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      *             If an error response is returned by AmazonElasticMapReduce indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<Void> modifyInstanceGroupsAsync(
-            final ModifyInstanceGroupsRequest modifyInstanceGroupsRequest,
-            final AsyncHandler<ModifyInstanceGroupsRequest, Void> asyncHandler)
+    public Future<DescribeClusterResult> describeClusterAsync(
+            final DescribeClusterRequest describeClusterRequest,
+            final AsyncHandler<DescribeClusterRequest, DescribeClusterResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-            	try {
-            		modifyInstanceGroups(modifyInstanceGroupsRequest);
+        return executorService.submit(new Callable<DescribeClusterResult>() {
+            public DescribeClusterResult call() throws Exception {
+            	DescribeClusterResult result;
+                try {
+            		result = describeCluster(describeClusterRequest);
             	} catch (Exception ex) {
             	    asyncHandler.onError(ex);
     				throw ex;
             	}
-            	asyncHandler.onSuccess(modifyInstanceGroupsRequest, null);
-               	return null;
+            	asyncHandler.onSuccess(describeClusterRequest, result);
+               	return result;
 		    }
 		});
     }

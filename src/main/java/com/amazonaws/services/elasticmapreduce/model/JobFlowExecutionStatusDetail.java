@@ -28,7 +28,7 @@ public class JobFlowExecutionStatusDetail implements Serializable {
      * The state of the job flow.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>COMPLETED, FAILED, TERMINATED, RUNNING, SHUTTING_DOWN, STARTING, WAITING, BOOTSTRAPPING
+     * <b>Allowed Values: </b>STARTING, BOOTSTRAPPING, RUNNING, WAITING, SHUTTING_DOWN, TERMINATED, COMPLETED, FAILED
      */
     private String state;
 
@@ -98,7 +98,7 @@ public class JobFlowExecutionStatusDetail implements Serializable {
      * The state of the job flow.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>COMPLETED, FAILED, TERMINATED, RUNNING, SHUTTING_DOWN, STARTING, WAITING, BOOTSTRAPPING
+     * <b>Allowed Values: </b>STARTING, BOOTSTRAPPING, RUNNING, WAITING, SHUTTING_DOWN, TERMINATED, COMPLETED, FAILED
      *
      * @return The state of the job flow.
      *
@@ -112,7 +112,7 @@ public class JobFlowExecutionStatusDetail implements Serializable {
      * The state of the job flow.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>COMPLETED, FAILED, TERMINATED, RUNNING, SHUTTING_DOWN, STARTING, WAITING, BOOTSTRAPPING
+     * <b>Allowed Values: </b>STARTING, BOOTSTRAPPING, RUNNING, WAITING, SHUTTING_DOWN, TERMINATED, COMPLETED, FAILED
      *
      * @param state The state of the job flow.
      *
@@ -128,7 +128,7 @@ public class JobFlowExecutionStatusDetail implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>COMPLETED, FAILED, TERMINATED, RUNNING, SHUTTING_DOWN, STARTING, WAITING, BOOTSTRAPPING
+     * <b>Allowed Values: </b>STARTING, BOOTSTRAPPING, RUNNING, WAITING, SHUTTING_DOWN, TERMINATED, COMPLETED, FAILED
      *
      * @param state The state of the job flow.
      *
@@ -146,7 +146,7 @@ public class JobFlowExecutionStatusDetail implements Serializable {
      * The state of the job flow.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>COMPLETED, FAILED, TERMINATED, RUNNING, SHUTTING_DOWN, STARTING, WAITING, BOOTSTRAPPING
+     * <b>Allowed Values: </b>STARTING, BOOTSTRAPPING, RUNNING, WAITING, SHUTTING_DOWN, TERMINATED, COMPLETED, FAILED
      *
      * @param state The state of the job flow.
      *
@@ -162,7 +162,7 @@ public class JobFlowExecutionStatusDetail implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>COMPLETED, FAILED, TERMINATED, RUNNING, SHUTTING_DOWN, STARTING, WAITING, BOOTSTRAPPING
+     * <b>Allowed Values: </b>STARTING, BOOTSTRAPPING, RUNNING, WAITING, SHUTTING_DOWN, TERMINATED, COMPLETED, FAILED
      *
      * @param state The state of the job flow.
      *

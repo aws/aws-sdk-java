@@ -19,7 +19,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Specifies the Amazon EC2 location for the job flow.
+ * The Amazon EC2 location for the job flow.
  * </p>
  */
 public class PlacementType implements Serializable {

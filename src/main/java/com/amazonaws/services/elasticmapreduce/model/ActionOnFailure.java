@@ -20,6 +20,7 @@ package com.amazonaws.services.elasticmapreduce.model;
 public enum ActionOnFailure {
     
     TERMINATE_JOB_FLOW("TERMINATE_JOB_FLOW"),
+    TERMINATE_CLUSTER("TERMINATE_CLUSTER"),
     CANCEL_AND_WAIT("CANCEL_AND_WAIT"),
     CONTINUE("CONTINUE");
 
@@ -47,6 +48,8 @@ public enum ActionOnFailure {
         
         } else if ("TERMINATE_JOB_FLOW".equals(value)) {
             return ActionOnFailure.TERMINATE_JOB_FLOW;
+        } else if ("TERMINATE_CLUSTER".equals(value)) {
+            return ActionOnFailure.TERMINATE_CLUSTER;
         } else if ("CANCEL_AND_WAIT".equals(value)) {
             return ActionOnFailure.CANCEL_AND_WAIT;
         } else if ("CONTINUE".equals(value)) {

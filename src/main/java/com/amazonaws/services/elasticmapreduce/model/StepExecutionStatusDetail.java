@@ -19,7 +19,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Specifies the execution state of a step.
+ * The execution state of a step.
  * </p>
  */
 public class StepExecutionStatusDetail implements Serializable {

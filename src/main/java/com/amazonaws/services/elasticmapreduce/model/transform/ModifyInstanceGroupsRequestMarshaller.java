@@ -101,6 +101,20 @@ public class ModifyInstanceGroupsRequestMarshaller implements Marshaller<Request
                         if (instanceGroupsListValue.getInstanceCount() != null) {
                             jsonWriter.key("InstanceCount").value(instanceGroupsListValue.getInstanceCount());
                         }
+
+                        com.amazonaws.internal.ListWithAutoConstructFlag<String> eC2InstanceIdsToTerminateList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(instanceGroupsListValue.getEC2InstanceIdsToTerminate());
+                        if (eC2InstanceIdsToTerminateList != null && !(eC2InstanceIdsToTerminateList.isAutoConstruct() && eC2InstanceIdsToTerminateList.isEmpty())) {
+
+                            jsonWriter.key("EC2InstanceIdsToTerminate");
+                            jsonWriter.array();
+
+                            for (String eC2InstanceIdsToTerminateListValue : eC2InstanceIdsToTerminateList) {
+                                if (eC2InstanceIdsToTerminateListValue != null) {
+                                    jsonWriter.value(eC2InstanceIdsToTerminateListValue);
+                                }
+                            }
+                            jsonWriter.endArray();
+                        }
                         jsonWriter.endObject();
                     }
                 }

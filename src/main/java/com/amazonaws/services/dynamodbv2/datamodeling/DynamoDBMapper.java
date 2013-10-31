@@ -525,10 +525,19 @@ public class DynamoDBMapper {
     /**
      * Saves the object given into DynamoDB, using the default configuration.
      *
-     * @see DynamoDBMapper#save(Object, DynamoDBMapperConfig)
+     * @see DynamoDBMapper#save(Object, DynamoDBSaveExpression, DynamoDBMapperConfig)
      */
     public <T extends Object> void save(T object) {
-        save(object, config);
+        save(object, null, config);
+    }
+    
+    /**
+     * Saves the object given into DynamoDB, using the default configuration and the specified saveExpression.
+     *
+     * @see DynamoDBMapper#save(Object, DynamoDBSaveExpression, DynamoDBMapperConfig)
+     */
+    public <T extends Object> void save(T object, DynamoDBSaveExpression saveExpression) {
+        save(object, saveExpression, config);
     }
     
     private boolean needAutoGenerateAssignableKey(Class<?> clazz, Object object) {
@@ -555,6 +564,15 @@ public class DynamoDBMapper {
     }
 
     /**
+     * Saves the object given into DynamoDB, using the specified configuration.
+     *
+     * @see DynamoDBMapper#save(Object, DynamoDBSaveExpression, DynamoDBMapperConfig)
+     */
+    public <T extends Object> void save(T object, DynamoDBMapperConfig config) {
+        save(object, null, config);
+    }
+    
+    /**
      * Saves an item in DynamoDB. The service method used is determined by the
      * {@link DynamoDBMapperConfig#getSaveBehavior()} value, to use either
      * {@link AmazonDynamoDB#putItem(PutItemRequest)} or
@@ -575,21 +593,29 @@ public class DynamoDBMapper {
      * constraints will also be disregarded.</li>
      * </ul>
      * 
+     * 
+     * Any options specified in the saveExpression parameter will be overlaid on
+     * any constraints due to versioned attributes.
+     * 
      * @param object
      *            The object to save into DynamoDB
+     * @param saveExpression
+     *            The options to apply to this save request
      * @param config
      *            The configuration to use, which overrides the default provided
      *            at object construction.
      * 
      * @see DynamoDBMapperConfig.SaveBehavior
      */
-    public <T extends Object> void save(T object, DynamoDBMapperConfig config) {
+    public <T extends Object> void save(T object, DynamoDBSaveExpression saveExpression, DynamoDBMapperConfig config) {
         config = mergeConfig(config);
 
         @SuppressWarnings("unchecked")
         Class<? extends T> clazz = (Class<? extends T>) object.getClass();
         String tableName = getTableName(clazz, config);
-
+        
+        final Map<String, ExpectedAttributeValue> userProvidedExpectedValues = (saveExpression == null) ? null : saveExpression.getExpected();
+                
         /*
          * We force a putItem request instead of updateItem request either when
          * CLOBBER is configured, or part of the primary key of the object needs
@@ -602,7 +628,7 @@ public class DynamoDBMapper {
         
         if (forcePut) {
             saveObjectHandler = this.new SaveObjectHandler(clazz, object,
-                    tableName, config.getSaveBehavior()) {
+                    tableName, config.getSaveBehavior(), userProvidedExpectedValues) {
 
                 @Override
                 protected void onKeyAttributeValue(String attributeName,
@@ -631,7 +657,7 @@ public class DynamoDBMapper {
             };
         } else {
             saveObjectHandler = this.new SaveObjectHandler(clazz, object,
-                    tableName, config.getSaveBehavior()) {
+                    tableName, config.getSaveBehavior(), userProvidedExpectedValues) {
 
                 @Override
                 protected void onKeyAttributeValue(String attributeName,
@@ -699,7 +725,8 @@ public class DynamoDBMapper {
                         try {
                             keyOnlyPut(this.clazz, this.object, getTableName(),
                                     reflector.getHashKeyGetter(this.clazz),
-                                    reflector.getRangeKeyGetter(this.clazz));
+                                    reflector.getRangeKeyGetter(this.clazz),
+                                    userProvidedExpectedValues);
                         } catch (AmazonServiceException ase) {
                             if (ase.getErrorCode().equals(
                                     "ConditionalCheckFailedException")) {
@@ -757,15 +784,21 @@ public class DynamoDBMapper {
          * @param object            The model object to be saved.
          * @param clazz             The domain class of the object.
          * @param tableName         The table name.
+         * @param userProvidedExpectedValues Any expected values that should be applied to the save
          */
-        public SaveObjectHandler(Class<?> clazz, Object object, String tableName, SaveBehavior saveBehavior) {
+        public SaveObjectHandler(Class<?> clazz, Object object, String tableName, SaveBehavior saveBehavior, Map<String, ExpectedAttributeValue> userProvidedExpectedValues) {
             this.clazz = clazz;
             this.object = object;
             this.tableName = tableName;
             this.saveBehavior = saveBehavior;
-
+                    
             updateValues = new HashMap<String, AttributeValueUpdate>();
             expectedValues = new HashMap<String, ExpectedAttributeValue>();
+            
+            if(userProvidedExpectedValues != null){
+                expectedValues.putAll(userProvidedExpectedValues);
+            }
+            
             inMemoryUpdates = new LinkedList<ValueUpdate>();
             key = new HashMap<String, AttributeValue>();
 
@@ -839,11 +872,11 @@ public class DynamoDBMapper {
             executeLowLevelRequest(! nonKeyAttributePresent);
             
             /*
-			 * Finally, after the service call has succeeded, update the
-			 * in-memory object with new field values as appropriate. This
-			 * currently takes into account of auto-generated keys and versioned
-			 * attributes.
-			 */
+             * Finally, after the service call has succeeded, update the
+             * in-memory object with new field values as appropriate. This
+             * currently takes into account of auto-generated keys and versioned
+             * attributes.
+             */
             for ( ValueUpdate update : inMemoryUpdates ) {
                 update.apply();
             }
@@ -932,7 +965,7 @@ public class DynamoDBMapper {
                     new AttributeValueUpdate().withAction("PUT").withValue(newVersionValue));
             inMemoryUpdates.add(new ValueUpdate(method, newVersionValue, object));
             
-            if ( getLocalSaveBehavior() != SaveBehavior.CLOBBER ) {
+            if ( getLocalSaveBehavior() != SaveBehavior.CLOBBER && !expectedValues.containsKey(attributeName)) {
                 // Add an expect clause to make sure that the item
                 // doesn't already exist, since it's supposed to be new
                 ExpectedAttributeValue expected = new ExpectedAttributeValue();
@@ -943,7 +976,7 @@ public class DynamoDBMapper {
         
         private void onVersionAttribute(Method method, Object getterResult,
                 String attributeName) {
-            if ( getLocalSaveBehavior() != SaveBehavior.CLOBBER ) {
+            if ( getLocalSaveBehavior() != SaveBehavior.CLOBBER && !expectedValues.containsKey(attributeName)) {
                 // First establish the expected (current) value for the
                 // update call
                 ExpectedAttributeValue expected = new ExpectedAttributeValue();
@@ -979,14 +1012,15 @@ public class DynamoDBMapper {
      * So we have to do a putItem when a key-only object is being saved with
      * UPDATE configuration. In order to make sure this putItem request won't
      * replace any existing item in the table, we also insist that an item with
-     * the key(s) given doesn't already exist. This isn't perfect, but we should
+     * the key(s) given doesn't already exist. This isn't perfect, but we shouldn't
      * be doing a putItem at all in this case, so it's the best we can do.
      */
     private void keyOnlyPut(Class<?> clazz, Object object, String tableName,
-                            Method hashKeyGetter, Method rangeKeyGetter) {
+                            Method hashKeyGetter, Method rangeKeyGetter,
+                            Map<String,ExpectedAttributeValue> userProvidedExpectedValues) {
         Map<String, AttributeValue> attributes = new HashMap<String, AttributeValue>();
         Map<String, ExpectedAttributeValue> expectedValues = new HashMap<String, ExpectedAttributeValue>();
-
+        
         String hashKeyAttributeName = reflector.getAttributeName(hashKeyGetter);
         Object hashGetterResult = safeInvoke(hashKeyGetter, object);
         attributes.put(hashKeyAttributeName, getSimpleAttributeValue(hashKeyGetter, hashGetterResult));
@@ -999,26 +1033,49 @@ public class DynamoDBMapper {
             expectedValues.put(rangeKeyAttributeName, new ExpectedAttributeValue().withExists(false));
         }
         attributes = transformAttributes(clazz, attributes);
+        
+        //overlay any user provided expected values.
+        if(userProvidedExpectedValues != null){
+            expectedValues.putAll(userProvidedExpectedValues);
+        }
+
         db.putItem(applyUserAgent(new PutItemRequest().withTableName(tableName).withItem(attributes)
                 .withExpected(expectedValues)));
     }
     
     /**
-     * Deletes the given object from its DynamoDB table.
+     * Deletes the given object from its DynamoDB table using the default configuration.
      */
     public void delete(Object object) {
-        delete(object, this.config);
+        delete(object, null, this.config);
+    }
+    
+    /**
+     * Deletes the given object from its DynamoDB table using the specified deleteExpression and default configuration.
+     */
+    public void delete(Object object, DynamoDBDeleteExpression deleteExpression) {
+        delete(object, deleteExpression, this.config);
+    }
+    
+    /**
+     * Deletes the given object from its DynamoDB table using the specified configuration.
+     */
+    public void delete(Object object, DynamoDBMapperConfig config) {
+        delete(object, null, this.config);
     }
 
     /**
-     * Deletes the given object from its DynamoDB table.
-     *
+     * Deletes the given object from its DynamoDB table using the provided deleteExpression and provided configuration.
+     * Any options specified in the deleteExpression parameter will be overlaid on any constraints due to 
+     * versioned attributes.
+     * @param deleteExpression
+     *            The options to apply to this delete request
      * @param config
      *            Config override object. If {@link SaveBehavior#CLOBBER} is
      *            supplied, version fields will not be considered when deleting
      *            the object.
      */
-    public <T> void delete(T object, DynamoDBMapperConfig config) {
+    public <T> void delete(T object, DynamoDBDeleteExpression deleteExpression, DynamoDBMapperConfig config) {
         config = mergeConfig(config);
 
         @SuppressWarnings("unchecked")
@@ -1050,6 +1107,11 @@ public class DynamoDBMapper {
                     break;
                 }
             }
+        }
+        
+        //Overlay any user provided expected values onto the generated ones
+        if(deleteExpression != null && deleteExpression.getExpected() != null){
+            expectedValues.putAll(deleteExpression.getExpected());
         }
 
         db.deleteItem(applyUserAgent(new DeleteItemRequest().withKey(key).withTableName(tableName).withExpected(expectedValues)));
@@ -1937,12 +1999,12 @@ public class DynamoDBMapper {
     }
 
     private List<ScanRequest> createParallelScanRequestsFromExpression(Class<?> clazz, DynamoDBScanExpression scanExpression, int totalSegments, DynamoDBMapperConfig config) {
-    	if (totalSegments < 1)
-			throw new IllegalArgumentException("Parallel scan should have at least one scan segment.");
-    	List<ScanRequest> parallelScanRequests= new LinkedList<ScanRequest>();
+        if (totalSegments < 1)
+            throw new IllegalArgumentException("Parallel scan should have at least one scan segment.");
+        List<ScanRequest> parallelScanRequests= new LinkedList<ScanRequest>();
         for (int segment = 0; segment < totalSegments; segment++) {
-        	ScanRequest scanRequest = createScanRequestFromExpression(clazz, scanExpression, config);
-        	parallelScanRequests.add(scanRequest.withSegment(segment).withTotalSegments(totalSegments));
+            ScanRequest scanRequest = createScanRequestFromExpression(clazz, scanExpression, config);
+            parallelScanRequests.add(scanRequest.withSegment(segment).withTotalSegments(totalSegments));
         }
         return parallelScanRequests;
     }
@@ -1957,8 +2019,8 @@ public class DynamoDBMapper {
 
         Map<String, Condition> rangeKeyConditions = queryExpression.getRangeKeyConditions();
         if (null != rangeKeyConditions) {
-        	processRangeKeyConditions(clazz, queryRequest, rangeKeyConditions);
-        	keyConditions.putAll(rangeKeyConditions);
+            processRangeKeyConditions(clazz, queryRequest, rangeKeyConditions);
+            keyConditions.putAll(rangeKeyConditions);
         }
 
         queryRequest.setKeyConditions(keyConditions);
@@ -1973,60 +2035,60 @@ public class DynamoDBMapper {
      * Utility method for checking the validity of the range key condition, and also it will try to infer the index name if the query is using any index range key.
      */
     private void processRangeKeyConditions(Class<?> clazz, QueryRequest queryRequest, Map<String, Condition> rangeKeyConditions) {
-    	/**
+        /**
          * Exception if conditions on multiple range keys are found.
          */
         if (rangeKeyConditions.size() > 1) {
-        	// The current DynamoDB service only supports queries using hash key equal condition
-        	// plus ONE range key condition.
-        	// This range key could be either the primary key or any index key.
-        	throw new AmazonClientException("Conditions on multiple range keys ("
-        			+ rangeKeyConditions.keySet().toString()
-        			+ ") are found in the query. DynamoDB service only accepts up to ONE range key condition.");
+            // The current DynamoDB service only supports queries using hash key equal condition
+            // plus ONE range key condition.
+            // This range key could be either the primary key or any index key.
+            throw new AmazonClientException("Conditions on multiple range keys ("
+                    + rangeKeyConditions.keySet().toString()
+                    + ") are found in the query. DynamoDB service only accepts up to ONE range key condition.");
         }
         String assignedIndexName = queryRequest.getIndexName();
         for (String rangeKey : rangeKeyConditions.keySet()) {
-        	/**
-        	 * If it is a primary range key, checks whether the user has specified
-        	 * an unnecessary index name.
-        	 */
-        	if (rangeKey.equals(reflector.getPrimaryRangeKeyName(clazz))) {
-        		if ( null != assignedIndexName )
-        			throw new AmazonClientException("The range key ("
-        					+ rangeKey + ") in the query is the primary key of the table, not the range key of index ("
-        					+ assignedIndexName + ").");
-        	}
-        	else {
+            /**
+             * If it is a primary range key, checks whether the user has specified
+             * an unnecessary index name.
+             */
+            if (rangeKey.equals(reflector.getPrimaryRangeKeyName(clazz))) {
+                if ( null != assignedIndexName )
+                    throw new AmazonClientException("The range key ("
+                            + rangeKey + ") in the query is the primary key of the table, not the range key of index ("
+                            + assignedIndexName + ").");
+            }
+            else {
                 List<String> annotatedIndexNames = reflector.getIndexNameByIndexRangeKeyName(clazz, rangeKey);
-            	/**
-            	 * If it is an index range key,
-            	 * 		check whether the provided index name matches the @DynamoDBIndexRangeKey annotation,
-            	 * 		or try to infer the index name according to @DynamoDBIndexRangeKey annotation
-            	 * 			if it is not provided in the query.
-            	 */
+                /**
+                 * If it is an index range key,
+                 *         check whether the provided index name matches the @DynamoDBIndexRangeKey annotation,
+                 *         or try to infer the index name according to @DynamoDBIndexRangeKey annotation
+                 *             if it is not provided in the query.
+                 */
                 if ( null != annotatedIndexNames) {
-            		if (null == assignedIndexName) {
-            			// infer the index name if the range key is used only in one index
-            			if ( 1 == annotatedIndexNames.size()) {
-            				queryRequest.setIndexName(annotatedIndexNames.get(0));
-            			} else {
-            				throw new AmazonClientException("Please specify which index to be used for this query. "
-            						+ "(Choose from " + annotatedIndexNames.toString() + ").");
-            			}
-            		} else {
-            			// check whether the provided index name in the query matches the @DyanmoDBIndexRangeKey annotation
-            			if ( !annotatedIndexNames.contains(assignedIndexName)) {
-            				throw new AmazonClientException(assignedIndexName
-            						+ " is not annotated as an index in the @DynamoDBIndexRangeKey annotation on "
-            						+ rangeKey + "(Choose from " + annotatedIndexNames.toString() + ").");
-            			}
-            		}
+                    if (null == assignedIndexName) {
+                        // infer the index name if the range key is used only in one index
+                        if ( 1 == annotatedIndexNames.size()) {
+                            queryRequest.setIndexName(annotatedIndexNames.get(0));
+                        } else {
+                            throw new AmazonClientException("Please specify which index to be used for this query. "
+                                    + "(Choose from " + annotatedIndexNames.toString() + ").");
+                        }
+                    } else {
+                        // check whether the provided index name in the query matches the @DyanmoDBIndexRangeKey annotation
+                        if ( !annotatedIndexNames.contains(assignedIndexName)) {
+                            throw new AmazonClientException(assignedIndexName
+                                    + " is not annotated as an index in the @DynamoDBIndexRangeKey annotation on "
+                                    + rangeKey + "(Choose from " + annotatedIndexNames.toString() + ").");
+                        }
+                    }
                 }
                 else {
-            		throw new AmazonClientException("The range key used in the query (" + rangeKey + ") is not annotated with " +
-            				"either @DynamoDBRangeKey or @DynamoDBIndexRangeKey in class (" + clazz.getName() + ").");
-            	}
-        	}
+                    throw new AmazonClientException("The range key used in the query (" + rangeKey + ") is not annotated with " +
+                            "either @DynamoDBRangeKey or @DynamoDBIndexRangeKey in class (" + clazz.getName() + ").");
+                }
+            }
         }
     }
     /**
@@ -2144,7 +2206,7 @@ public class DynamoDBMapper {
     }
 
     static <X extends AmazonWebServiceRequest> X applyUserAgent(X request) {
-        request.getRequestClientOptions().addClientMarker(USER_AGENT);
+        request.getRequestClientOptions().appendUserAgent(USER_AGENT);
         return request;
     }
 

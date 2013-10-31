@@ -26,9 +26,8 @@ class ConnectionManagerFactory {
         PoolingClientConnectionManager connectionManager = new PoolingClientConnectionManager();
         connectionManager.setDefaultMaxPerRoute(config.getMaxConnections());
         connectionManager.setMaxTotal(config.getMaxConnections());
-        if (config.useReaper()) {
-            IdleConnectionReaper.registerConnectionManager(connectionManager);
-        }
+
+        IdleConnectionReaper.registerConnectionManager(connectionManager);
         return connectionManager;
     }
 }

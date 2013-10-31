@@ -58,8 +58,8 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
     private String name;
 
     /**
-     * Specifies the location in Amazon S3 to write the log files of the job
-     * flow. If a value is not provided, logs are not created.
+     * The location in Amazon S3 to write the log files of the job flow. If a
+     * value is not provided, logs are not created.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10280<br/>
@@ -80,14 +80,12 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      * The version of the Amazon Machine Image (AMI) to use when launching
      * Amazon EC2 instances in the job flow. The following values are valid:
      * <ul> <li>"latest" (uses the latest AMI)</li> <li>The version number of
-     * the AMI to use, for example, "2.0"</li> </ul> <p>If this value is not
-     * specified, the job flow uses the default of (AMI 1.0, Hadoop 0.18).
-     * <p>If the AMI supports multiple versions of Hadoop (for example, AMI
-     * 1.0 supports both Hadoop 0.18 and 0.20) you can use the
-     * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
-     * modify the version of Hadoop from the defaults shown above. <p>For
-     * details about the AMI versions currently supported by Amazon
-     * ElasticMapReduce, go to <a
+     * the AMI to use, for example, "2.0"</li> </ul> <p>If the AMI supports
+     * multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop
+     * 0.18 and 0.20) you can use the <a>JobFlowInstancesConfig</a>
+     * <code>HadoopVersion</code> parameter to modify the version of Hadoop
+     * from the defaults shown above. <p>For details about the AMI versions
+     * currently supported by Amazon Elastic MapReduce, go to <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      * MapReduce Developer's Guide.</i>
@@ -234,38 +232,38 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
     }
 
     /**
-     * Specifies the location in Amazon S3 to write the log files of the job
-     * flow. If a value is not provided, logs are not created.
+     * The location in Amazon S3 to write the log files of the job flow. If a
+     * value is not provided, logs are not created.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10280<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return Specifies the location in Amazon S3 to write the log files of the job
-     *         flow. If a value is not provided, logs are not created.
+     * @return The location in Amazon S3 to write the log files of the job flow. If a
+     *         value is not provided, logs are not created.
      */
     public String getLogUri() {
         return logUri;
     }
     
     /**
-     * Specifies the location in Amazon S3 to write the log files of the job
-     * flow. If a value is not provided, logs are not created.
+     * The location in Amazon S3 to write the log files of the job flow. If a
+     * value is not provided, logs are not created.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10280<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param logUri Specifies the location in Amazon S3 to write the log files of the job
-     *         flow. If a value is not provided, logs are not created.
+     * @param logUri The location in Amazon S3 to write the log files of the job flow. If a
+     *         value is not provided, logs are not created.
      */
     public void setLogUri(String logUri) {
         this.logUri = logUri;
     }
     
     /**
-     * Specifies the location in Amazon S3 to write the log files of the job
-     * flow. If a value is not provided, logs are not created.
+     * The location in Amazon S3 to write the log files of the job flow. If a
+     * value is not provided, logs are not created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -273,8 +271,8 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      * <b>Length: </b>0 - 10280<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param logUri Specifies the location in Amazon S3 to write the log files of the job
-     *         flow. If a value is not provided, logs are not created.
+     * @param logUri The location in Amazon S3 to write the log files of the job flow. If a
+     *         value is not provided, logs are not created.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -333,14 +331,12 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      * The version of the Amazon Machine Image (AMI) to use when launching
      * Amazon EC2 instances in the job flow. The following values are valid:
      * <ul> <li>"latest" (uses the latest AMI)</li> <li>The version number of
-     * the AMI to use, for example, "2.0"</li> </ul> <p>If this value is not
-     * specified, the job flow uses the default of (AMI 1.0, Hadoop 0.18).
-     * <p>If the AMI supports multiple versions of Hadoop (for example, AMI
-     * 1.0 supports both Hadoop 0.18 and 0.20) you can use the
-     * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
-     * modify the version of Hadoop from the defaults shown above. <p>For
-     * details about the AMI versions currently supported by Amazon
-     * ElasticMapReduce, go to <a
+     * the AMI to use, for example, "2.0"</li> </ul> <p>If the AMI supports
+     * multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop
+     * 0.18 and 0.20) you can use the <a>JobFlowInstancesConfig</a>
+     * <code>HadoopVersion</code> parameter to modify the version of Hadoop
+     * from the defaults shown above. <p>For details about the AMI versions
+     * currently supported by Amazon Elastic MapReduce, go to <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      * MapReduce Developer's Guide.</i>
@@ -352,14 +348,12 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      * @return The version of the Amazon Machine Image (AMI) to use when launching
      *         Amazon EC2 instances in the job flow. The following values are valid:
      *         <ul> <li>"latest" (uses the latest AMI)</li> <li>The version number of
-     *         the AMI to use, for example, "2.0"</li> </ul> <p>If this value is not
-     *         specified, the job flow uses the default of (AMI 1.0, Hadoop 0.18).
-     *         <p>If the AMI supports multiple versions of Hadoop (for example, AMI
-     *         1.0 supports both Hadoop 0.18 and 0.20) you can use the
-     *         <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
-     *         modify the version of Hadoop from the defaults shown above. <p>For
-     *         details about the AMI versions currently supported by Amazon
-     *         ElasticMapReduce, go to <a
+     *         the AMI to use, for example, "2.0"</li> </ul> <p>If the AMI supports
+     *         multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop
+     *         0.18 and 0.20) you can use the <a>JobFlowInstancesConfig</a>
+     *         <code>HadoopVersion</code> parameter to modify the version of Hadoop
+     *         from the defaults shown above. <p>For details about the AMI versions
+     *         currently supported by Amazon Elastic MapReduce, go to <a
      *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      *         Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      *         MapReduce Developer's Guide.</i>
@@ -372,14 +366,12 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      * The version of the Amazon Machine Image (AMI) to use when launching
      * Amazon EC2 instances in the job flow. The following values are valid:
      * <ul> <li>"latest" (uses the latest AMI)</li> <li>The version number of
-     * the AMI to use, for example, "2.0"</li> </ul> <p>If this value is not
-     * specified, the job flow uses the default of (AMI 1.0, Hadoop 0.18).
-     * <p>If the AMI supports multiple versions of Hadoop (for example, AMI
-     * 1.0 supports both Hadoop 0.18 and 0.20) you can use the
-     * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
-     * modify the version of Hadoop from the defaults shown above. <p>For
-     * details about the AMI versions currently supported by Amazon
-     * ElasticMapReduce, go to <a
+     * the AMI to use, for example, "2.0"</li> </ul> <p>If the AMI supports
+     * multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop
+     * 0.18 and 0.20) you can use the <a>JobFlowInstancesConfig</a>
+     * <code>HadoopVersion</code> parameter to modify the version of Hadoop
+     * from the defaults shown above. <p>For details about the AMI versions
+     * currently supported by Amazon Elastic MapReduce, go to <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      * MapReduce Developer's Guide.</i>
@@ -391,14 +383,12 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      * @param amiVersion The version of the Amazon Machine Image (AMI) to use when launching
      *         Amazon EC2 instances in the job flow. The following values are valid:
      *         <ul> <li>"latest" (uses the latest AMI)</li> <li>The version number of
-     *         the AMI to use, for example, "2.0"</li> </ul> <p>If this value is not
-     *         specified, the job flow uses the default of (AMI 1.0, Hadoop 0.18).
-     *         <p>If the AMI supports multiple versions of Hadoop (for example, AMI
-     *         1.0 supports both Hadoop 0.18 and 0.20) you can use the
-     *         <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
-     *         modify the version of Hadoop from the defaults shown above. <p>For
-     *         details about the AMI versions currently supported by Amazon
-     *         ElasticMapReduce, go to <a
+     *         the AMI to use, for example, "2.0"</li> </ul> <p>If the AMI supports
+     *         multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop
+     *         0.18 and 0.20) you can use the <a>JobFlowInstancesConfig</a>
+     *         <code>HadoopVersion</code> parameter to modify the version of Hadoop
+     *         from the defaults shown above. <p>For details about the AMI versions
+     *         currently supported by Amazon Elastic MapReduce, go to <a
      *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      *         Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      *         MapReduce Developer's Guide.</i>
@@ -411,14 +401,12 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      * The version of the Amazon Machine Image (AMI) to use when launching
      * Amazon EC2 instances in the job flow. The following values are valid:
      * <ul> <li>"latest" (uses the latest AMI)</li> <li>The version number of
-     * the AMI to use, for example, "2.0"</li> </ul> <p>If this value is not
-     * specified, the job flow uses the default of (AMI 1.0, Hadoop 0.18).
-     * <p>If the AMI supports multiple versions of Hadoop (for example, AMI
-     * 1.0 supports both Hadoop 0.18 and 0.20) you can use the
-     * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
-     * modify the version of Hadoop from the defaults shown above. <p>For
-     * details about the AMI versions currently supported by Amazon
-     * ElasticMapReduce, go to <a
+     * the AMI to use, for example, "2.0"</li> </ul> <p>If the AMI supports
+     * multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop
+     * 0.18 and 0.20) you can use the <a>JobFlowInstancesConfig</a>
+     * <code>HadoopVersion</code> parameter to modify the version of Hadoop
+     * from the defaults shown above. <p>For details about the AMI versions
+     * currently supported by Amazon Elastic MapReduce, go to <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      * MapReduce Developer's Guide.</i>
@@ -432,14 +420,12 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements Serial
      * @param amiVersion The version of the Amazon Machine Image (AMI) to use when launching
      *         Amazon EC2 instances in the job flow. The following values are valid:
      *         <ul> <li>"latest" (uses the latest AMI)</li> <li>The version number of
-     *         the AMI to use, for example, "2.0"</li> </ul> <p>If this value is not
-     *         specified, the job flow uses the default of (AMI 1.0, Hadoop 0.18).
-     *         <p>If the AMI supports multiple versions of Hadoop (for example, AMI
-     *         1.0 supports both Hadoop 0.18 and 0.20) you can use the
-     *         <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
-     *         modify the version of Hadoop from the defaults shown above. <p>For
-     *         details about the AMI versions currently supported by Amazon
-     *         ElasticMapReduce, go to <a
+     *         the AMI to use, for example, "2.0"</li> </ul> <p>If the AMI supports
+     *         multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop
+     *         0.18 and 0.20) you can use the <a>JobFlowInstancesConfig</a>
+     *         <code>HadoopVersion</code> parameter to modify the version of Hadoop
+     *         from the defaults shown above. <p>For details about the AMI versions
+     *         currently supported by Amazon Elastic MapReduce, go to <a
      *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      *         Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      *         MapReduce Developer's Guide.</i>

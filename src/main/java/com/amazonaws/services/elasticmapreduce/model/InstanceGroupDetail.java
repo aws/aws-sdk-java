@@ -92,7 +92,7 @@ public class InstanceGroupDetail implements Serializable {
      * STARTING, TERMINATED, and FAILED.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>PROVISIONING, STARTING, BOOTSTRAPPING, RUNNING, RESIZING, ARRESTED, SHUTTING_DOWN, TERMINATED, FAILED, ENDED
+     * <b>Allowed Values: </b>PROVISIONING, BOOTSTRAPPING, RUNNING, RESIZING, SUSPENDED, TERMINATING, TERMINATED, ARRESTED, SHUTTING_DOWN, ENDED
      */
     private String state;
 
@@ -598,7 +598,7 @@ public class InstanceGroupDetail implements Serializable {
      * STARTING, TERMINATED, and FAILED.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>PROVISIONING, STARTING, BOOTSTRAPPING, RUNNING, RESIZING, ARRESTED, SHUTTING_DOWN, TERMINATED, FAILED, ENDED
+     * <b>Allowed Values: </b>PROVISIONING, BOOTSTRAPPING, RUNNING, RESIZING, SUSPENDED, TERMINATING, TERMINATED, ARRESTED, SHUTTING_DOWN, ENDED
      *
      * @return State of instance group. The following values are deprecated:
      *         STARTING, TERMINATED, and FAILED.
@@ -614,7 +614,7 @@ public class InstanceGroupDetail implements Serializable {
      * STARTING, TERMINATED, and FAILED.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>PROVISIONING, STARTING, BOOTSTRAPPING, RUNNING, RESIZING, ARRESTED, SHUTTING_DOWN, TERMINATED, FAILED, ENDED
+     * <b>Allowed Values: </b>PROVISIONING, BOOTSTRAPPING, RUNNING, RESIZING, SUSPENDED, TERMINATING, TERMINATED, ARRESTED, SHUTTING_DOWN, ENDED
      *
      * @param state State of instance group. The following values are deprecated:
      *         STARTING, TERMINATED, and FAILED.
@@ -632,7 +632,7 @@ public class InstanceGroupDetail implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>PROVISIONING, STARTING, BOOTSTRAPPING, RUNNING, RESIZING, ARRESTED, SHUTTING_DOWN, TERMINATED, FAILED, ENDED
+     * <b>Allowed Values: </b>PROVISIONING, BOOTSTRAPPING, RUNNING, RESIZING, SUSPENDED, TERMINATING, TERMINATED, ARRESTED, SHUTTING_DOWN, ENDED
      *
      * @param state State of instance group. The following values are deprecated:
      *         STARTING, TERMINATED, and FAILED.
@@ -652,7 +652,7 @@ public class InstanceGroupDetail implements Serializable {
      * STARTING, TERMINATED, and FAILED.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>PROVISIONING, STARTING, BOOTSTRAPPING, RUNNING, RESIZING, ARRESTED, SHUTTING_DOWN, TERMINATED, FAILED, ENDED
+     * <b>Allowed Values: </b>PROVISIONING, BOOTSTRAPPING, RUNNING, RESIZING, SUSPENDED, TERMINATING, TERMINATED, ARRESTED, SHUTTING_DOWN, ENDED
      *
      * @param state State of instance group. The following values are deprecated:
      *         STARTING, TERMINATED, and FAILED.
@@ -670,7 +670,7 @@ public class InstanceGroupDetail implements Serializable {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>PROVISIONING, STARTING, BOOTSTRAPPING, RUNNING, RESIZING, ARRESTED, SHUTTING_DOWN, TERMINATED, FAILED, ENDED
+     * <b>Allowed Values: </b>PROVISIONING, BOOTSTRAPPING, RUNNING, RESIZING, SUSPENDED, TERMINATING, TERMINATED, ARRESTED, SHUTTING_DOWN, ENDED
      *
      * @param state State of instance group. The following values are deprecated:
      *         STARTING, TERMINATED, and FAILED.

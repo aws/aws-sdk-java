@@ -53,8 +53,8 @@ public class JobFlowInstancesConfig implements Serializable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceGroupConfig> instanceGroups;
 
     /**
-     * Specifies the name of the Amazon EC2 key pair that can be used to ssh
-     * to the master node as the user called "hadoop."
+     * The name of the Amazon EC2 key pair that can be used to ssh to the
+     * master node as the user called "hadoop."
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
@@ -63,7 +63,7 @@ public class JobFlowInstancesConfig implements Serializable {
     private String ec2KeyName;
 
     /**
-     * Specifies the Availability Zone the job flow will run in.
+     * The Availability Zone the job flow will run in.
      */
     private PlacementType placement;
 
@@ -81,11 +81,11 @@ public class JobFlowInstancesConfig implements Serializable {
     private Boolean terminationProtected;
 
     /**
-     * Specifies the Hadoop version for the job flow. Valid inputs are
-     * "0.18", "0.20", or "0.20.205". If you do not set this value, the
-     * default of 0.18 is used, unless the AmiVersion parameter is set in the
-     * RunJobFlow call, in which case the default version of Hadoop for that
-     * AMI version is used.
+     * The Hadoop version for the job flow. Valid inputs are "0.18", "0.20",
+     * or "0.20.205". If you do not set this value, the default of 0.18 is
+     * used, unless the AmiVersion parameter is set in the RunJobFlow call,
+     * in which case the default version of Hadoop for that AMI version is
+     * used.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
@@ -307,38 +307,38 @@ public class JobFlowInstancesConfig implements Serializable {
     }
 
     /**
-     * Specifies the name of the Amazon EC2 key pair that can be used to ssh
-     * to the master node as the user called "hadoop."
+     * The name of the Amazon EC2 key pair that can be used to ssh to the
+     * master node as the user called "hadoop."
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return Specifies the name of the Amazon EC2 key pair that can be used to ssh
-     *         to the master node as the user called "hadoop."
+     * @return The name of the Amazon EC2 key pair that can be used to ssh to the
+     *         master node as the user called "hadoop."
      */
     public String getEc2KeyName() {
         return ec2KeyName;
     }
     
     /**
-     * Specifies the name of the Amazon EC2 key pair that can be used to ssh
-     * to the master node as the user called "hadoop."
+     * The name of the Amazon EC2 key pair that can be used to ssh to the
+     * master node as the user called "hadoop."
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param ec2KeyName Specifies the name of the Amazon EC2 key pair that can be used to ssh
-     *         to the master node as the user called "hadoop."
+     * @param ec2KeyName The name of the Amazon EC2 key pair that can be used to ssh to the
+     *         master node as the user called "hadoop."
      */
     public void setEc2KeyName(String ec2KeyName) {
         this.ec2KeyName = ec2KeyName;
     }
     
     /**
-     * Specifies the name of the Amazon EC2 key pair that can be used to ssh
-     * to the master node as the user called "hadoop."
+     * The name of the Amazon EC2 key pair that can be used to ssh to the
+     * master node as the user called "hadoop."
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -346,8 +346,8 @@ public class JobFlowInstancesConfig implements Serializable {
      * <b>Length: </b>0 - 256<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param ec2KeyName Specifies the name of the Amazon EC2 key pair that can be used to ssh
-     *         to the master node as the user called "hadoop."
+     * @param ec2KeyName The name of the Amazon EC2 key pair that can be used to ssh to the
+     *         master node as the user called "hadoop."
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -358,29 +358,29 @@ public class JobFlowInstancesConfig implements Serializable {
     }
 
     /**
-     * Specifies the Availability Zone the job flow will run in.
+     * The Availability Zone the job flow will run in.
      *
-     * @return Specifies the Availability Zone the job flow will run in.
+     * @return The Availability Zone the job flow will run in.
      */
     public PlacementType getPlacement() {
         return placement;
     }
     
     /**
-     * Specifies the Availability Zone the job flow will run in.
+     * The Availability Zone the job flow will run in.
      *
-     * @param placement Specifies the Availability Zone the job flow will run in.
+     * @param placement The Availability Zone the job flow will run in.
      */
     public void setPlacement(PlacementType placement) {
         this.placement = placement;
     }
     
     /**
-     * Specifies the Availability Zone the job flow will run in.
+     * The Availability Zone the job flow will run in.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param placement Specifies the Availability Zone the job flow will run in.
+     * @param placement The Availability Zone the job flow will run in.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -499,53 +499,53 @@ public class JobFlowInstancesConfig implements Serializable {
     }
 
     /**
-     * Specifies the Hadoop version for the job flow. Valid inputs are
-     * "0.18", "0.20", or "0.20.205". If you do not set this value, the
-     * default of 0.18 is used, unless the AmiVersion parameter is set in the
-     * RunJobFlow call, in which case the default version of Hadoop for that
-     * AMI version is used.
+     * The Hadoop version for the job flow. Valid inputs are "0.18", "0.20",
+     * or "0.20.205". If you do not set this value, the default of 0.18 is
+     * used, unless the AmiVersion parameter is set in the RunJobFlow call,
+     * in which case the default version of Hadoop for that AMI version is
+     * used.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return Specifies the Hadoop version for the job flow. Valid inputs are
-     *         "0.18", "0.20", or "0.20.205". If you do not set this value, the
-     *         default of 0.18 is used, unless the AmiVersion parameter is set in the
-     *         RunJobFlow call, in which case the default version of Hadoop for that
-     *         AMI version is used.
+     * @return The Hadoop version for the job flow. Valid inputs are "0.18", "0.20",
+     *         or "0.20.205". If you do not set this value, the default of 0.18 is
+     *         used, unless the AmiVersion parameter is set in the RunJobFlow call,
+     *         in which case the default version of Hadoop for that AMI version is
+     *         used.
      */
     public String getHadoopVersion() {
         return hadoopVersion;
     }
     
     /**
-     * Specifies the Hadoop version for the job flow. Valid inputs are
-     * "0.18", "0.20", or "0.20.205". If you do not set this value, the
-     * default of 0.18 is used, unless the AmiVersion parameter is set in the
-     * RunJobFlow call, in which case the default version of Hadoop for that
-     * AMI version is used.
+     * The Hadoop version for the job flow. Valid inputs are "0.18", "0.20",
+     * or "0.20.205". If you do not set this value, the default of 0.18 is
+     * used, unless the AmiVersion parameter is set in the RunJobFlow call,
+     * in which case the default version of Hadoop for that AMI version is
+     * used.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param hadoopVersion Specifies the Hadoop version for the job flow. Valid inputs are
-     *         "0.18", "0.20", or "0.20.205". If you do not set this value, the
-     *         default of 0.18 is used, unless the AmiVersion parameter is set in the
-     *         RunJobFlow call, in which case the default version of Hadoop for that
-     *         AMI version is used.
+     * @param hadoopVersion The Hadoop version for the job flow. Valid inputs are "0.18", "0.20",
+     *         or "0.20.205". If you do not set this value, the default of 0.18 is
+     *         used, unless the AmiVersion parameter is set in the RunJobFlow call,
+     *         in which case the default version of Hadoop for that AMI version is
+     *         used.
      */
     public void setHadoopVersion(String hadoopVersion) {
         this.hadoopVersion = hadoopVersion;
     }
     
     /**
-     * Specifies the Hadoop version for the job flow. Valid inputs are
-     * "0.18", "0.20", or "0.20.205". If you do not set this value, the
-     * default of 0.18 is used, unless the AmiVersion parameter is set in the
-     * RunJobFlow call, in which case the default version of Hadoop for that
-     * AMI version is used.
+     * The Hadoop version for the job flow. Valid inputs are "0.18", "0.20",
+     * or "0.20.205". If you do not set this value, the default of 0.18 is
+     * used, unless the AmiVersion parameter is set in the RunJobFlow call,
+     * in which case the default version of Hadoop for that AMI version is
+     * used.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -553,11 +553,11 @@ public class JobFlowInstancesConfig implements Serializable {
      * <b>Length: </b>0 - 256<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param hadoopVersion Specifies the Hadoop version for the job flow. Valid inputs are
-     *         "0.18", "0.20", or "0.20.205". If you do not set this value, the
-     *         default of 0.18 is used, unless the AmiVersion parameter is set in the
-     *         RunJobFlow call, in which case the default version of Hadoop for that
-     *         AMI version is used.
+     * @param hadoopVersion The Hadoop version for the job flow. Valid inputs are "0.18", "0.20",
+     *         or "0.20.205". If you do not set this value, the default of 0.18 is
+     *         used, unless the AmiVersion parameter is set in the RunJobFlow call,
+     *         in which case the default version of Hadoop for that AMI version is
+     *         used.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

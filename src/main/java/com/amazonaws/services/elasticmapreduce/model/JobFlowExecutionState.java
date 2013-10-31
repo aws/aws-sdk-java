@@ -19,14 +19,14 @@ package com.amazonaws.services.elasticmapreduce.model;
  */
 public enum JobFlowExecutionState {
     
-    COMPLETED("COMPLETED"),
-    FAILED("FAILED"),
-    TERMINATED("TERMINATED"),
-    RUNNING("RUNNING"),
-    SHUTTING_DOWN("SHUTTING_DOWN"),
     STARTING("STARTING"),
+    BOOTSTRAPPING("BOOTSTRAPPING"),
+    RUNNING("RUNNING"),
     WAITING("WAITING"),
-    BOOTSTRAPPING("BOOTSTRAPPING");
+    SHUTTING_DOWN("SHUTTING_DOWN"),
+    TERMINATED("TERMINATED"),
+    COMPLETED("COMPLETED"),
+    FAILED("FAILED");
 
     private String value;
 
@@ -50,22 +50,22 @@ public enum JobFlowExecutionState {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         
+        } else if ("STARTING".equals(value)) {
+            return JobFlowExecutionState.STARTING;
+        } else if ("BOOTSTRAPPING".equals(value)) {
+            return JobFlowExecutionState.BOOTSTRAPPING;
+        } else if ("RUNNING".equals(value)) {
+            return JobFlowExecutionState.RUNNING;
+        } else if ("WAITING".equals(value)) {
+            return JobFlowExecutionState.WAITING;
+        } else if ("SHUTTING_DOWN".equals(value)) {
+            return JobFlowExecutionState.SHUTTING_DOWN;
+        } else if ("TERMINATED".equals(value)) {
+            return JobFlowExecutionState.TERMINATED;
         } else if ("COMPLETED".equals(value)) {
             return JobFlowExecutionState.COMPLETED;
         } else if ("FAILED".equals(value)) {
             return JobFlowExecutionState.FAILED;
-        } else if ("TERMINATED".equals(value)) {
-            return JobFlowExecutionState.TERMINATED;
-        } else if ("RUNNING".equals(value)) {
-            return JobFlowExecutionState.RUNNING;
-        } else if ("SHUTTING_DOWN".equals(value)) {
-            return JobFlowExecutionState.SHUTTING_DOWN;
-        } else if ("STARTING".equals(value)) {
-            return JobFlowExecutionState.STARTING;
-        } else if ("WAITING".equals(value)) {
-            return JobFlowExecutionState.WAITING;
-        } else if ("BOOTSTRAPPING".equals(value)) {
-            return JobFlowExecutionState.BOOTSTRAPPING;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }
