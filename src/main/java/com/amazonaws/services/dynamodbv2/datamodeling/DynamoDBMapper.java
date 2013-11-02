@@ -1061,7 +1061,7 @@ public class DynamoDBMapper {
      * Deletes the given object from its DynamoDB table using the specified configuration.
      */
     public void delete(Object object, DynamoDBMapperConfig config) {
-        delete(object, null, this.config);
+        delete(object, null, config);
     }
 
     /**
