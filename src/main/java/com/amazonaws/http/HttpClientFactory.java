@@ -209,7 +209,7 @@ class HttpClientFactory {
 
         public Socket createLayeredSocket(Socket arg0, String arg1, int arg2, HttpParams arg3)
                 throws IOException, UnknownHostException {
-            return getSSLContext().getSocketFactory().createSocket();
+            return getSSLContext().getSocketFactory().createSocket(arg0, arg1, arg2, true);
         }
     }
 
