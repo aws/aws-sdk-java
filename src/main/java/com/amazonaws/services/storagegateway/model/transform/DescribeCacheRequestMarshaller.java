@@ -47,7 +47,7 @@ public class DescribeCacheRequestMarshaller implements Marshaller<Request<Descri
     }
 
         Request<DescribeCacheRequest> request = new DefaultRequest<DescribeCacheRequest>(describeCacheRequest, "AWSStorageGateway");
-        String target = "StorageGateway_20120630.DescribeCache";
+        String target = "StorageGateway_20130630.DescribeCache";
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 

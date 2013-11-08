@@ -230,7 +230,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-		requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+    requestHandlers.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/cloudfront/request.handlers"));
     }
 
@@ -1001,7 +1001,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         AWSCredentials credentials = awsCredentialsProvider.getCredentials();
         AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
         if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
-        	credentials = originalRequest.getRequestCredentials();
+          credentials = originalRequest.getRequestCredentials();
         }
 
         ExecutionContext executionContext = createExecutionContext(originalRequest);

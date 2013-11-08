@@ -69,12 +69,11 @@ public class VideoParameters implements Serializable {
      * reducing the maximum bit rate, but this also reduces the quality of
      * the video. <p> <b>BufferSize</b> <p>The maximum number of bits in any
      * x seconds of the output video. This window is commonly 10 seconds, the
-     * standard segment duration when you���re using MPEG-TS for the
-     * container type of the output video. Specify an integer greater than 0.
-     * If you specify <code>MaxBitRate</code> and omit
-     * <code>BufferSize</code>, Elastic Transcoder sets
-     * <code>BufferSize</code> to 10 times the value of
-     * <code>MaxBitRate</code>.
+     * standard segment duration when you're using MPEG-TS for the container
+     * type of the output video. Specify an integer greater than 0. If you
+     * specify <code>MaxBitRate</code> and omit <code>BufferSize</code>,
+     * Elastic Transcoder sets <code>BufferSize</code> to 10 times the value
+     * of <code>MaxBitRate</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 30<br/>
@@ -413,12 +412,11 @@ public class VideoParameters implements Serializable {
      * reducing the maximum bit rate, but this also reduces the quality of
      * the video. <p> <b>BufferSize</b> <p>The maximum number of bits in any
      * x seconds of the output video. This window is commonly 10 seconds, the
-     * standard segment duration when you���re using MPEG-TS for the
-     * container type of the output video. Specify an integer greater than 0.
-     * If you specify <code>MaxBitRate</code> and omit
-     * <code>BufferSize</code>, Elastic Transcoder sets
-     * <code>BufferSize</code> to 10 times the value of
-     * <code>MaxBitRate</code>.
+     * standard segment duration when you're using MPEG-TS for the container
+     * type of the output video. Specify an integer greater than 0. If you
+     * specify <code>MaxBitRate</code> and omit <code>BufferSize</code>,
+     * Elastic Transcoder sets <code>BufferSize</code> to 10 times the value
+     * of <code>MaxBitRate</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 30<br/>
@@ -457,12 +455,11 @@ public class VideoParameters implements Serializable {
      *         reducing the maximum bit rate, but this also reduces the quality of
      *         the video. <p> <b>BufferSize</b> <p>The maximum number of bits in any
      *         x seconds of the output video. This window is commonly 10 seconds, the
-     *         standard segment duration when you���re using MPEG-TS for the
-     *         container type of the output video. Specify an integer greater than 0.
-     *         If you specify <code>MaxBitRate</code> and omit
-     *         <code>BufferSize</code>, Elastic Transcoder sets
-     *         <code>BufferSize</code> to 10 times the value of
-     *         <code>MaxBitRate</code>.
+     *         standard segment duration when you're using MPEG-TS for the container
+     *         type of the output video. Specify an integer greater than 0. If you
+     *         specify <code>MaxBitRate</code> and omit <code>BufferSize</code>,
+     *         Elastic Transcoder sets <code>BufferSize</code> to 10 times the value
+     *         of <code>MaxBitRate</code>.
      */
     public java.util.Map<String,String> getCodecOptions() {
         
@@ -507,12 +504,11 @@ public class VideoParameters implements Serializable {
      * reducing the maximum bit rate, but this also reduces the quality of
      * the video. <p> <b>BufferSize</b> <p>The maximum number of bits in any
      * x seconds of the output video. This window is commonly 10 seconds, the
-     * standard segment duration when you���re using MPEG-TS for the
-     * container type of the output video. Specify an integer greater than 0.
-     * If you specify <code>MaxBitRate</code> and omit
-     * <code>BufferSize</code>, Elastic Transcoder sets
-     * <code>BufferSize</code> to 10 times the value of
-     * <code>MaxBitRate</code>.
+     * standard segment duration when you're using MPEG-TS for the container
+     * type of the output video. Specify an integer greater than 0. If you
+     * specify <code>MaxBitRate</code> and omit <code>BufferSize</code>,
+     * Elastic Transcoder sets <code>BufferSize</code> to 10 times the value
+     * of <code>MaxBitRate</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 30<br/>
@@ -551,12 +547,11 @@ public class VideoParameters implements Serializable {
      *         reducing the maximum bit rate, but this also reduces the quality of
      *         the video. <p> <b>BufferSize</b> <p>The maximum number of bits in any
      *         x seconds of the output video. This window is commonly 10 seconds, the
-     *         standard segment duration when you���re using MPEG-TS for the
-     *         container type of the output video. Specify an integer greater than 0.
-     *         If you specify <code>MaxBitRate</code> and omit
-     *         <code>BufferSize</code>, Elastic Transcoder sets
-     *         <code>BufferSize</code> to 10 times the value of
-     *         <code>MaxBitRate</code>.
+     *         standard segment duration when you're using MPEG-TS for the container
+     *         type of the output video. Specify an integer greater than 0. If you
+     *         specify <code>MaxBitRate</code> and omit <code>BufferSize</code>,
+     *         Elastic Transcoder sets <code>BufferSize</code> to 10 times the value
+     *         of <code>MaxBitRate</code>.
      */
     public void setCodecOptions(java.util.Map<String,String> codecOptions) {
         this.codecOptions = codecOptions;
@@ -597,12 +592,11 @@ public class VideoParameters implements Serializable {
      * reducing the maximum bit rate, but this also reduces the quality of
      * the video. <p> <b>BufferSize</b> <p>The maximum number of bits in any
      * x seconds of the output video. This window is commonly 10 seconds, the
-     * standard segment duration when you���re using MPEG-TS for the
-     * container type of the output video. Specify an integer greater than 0.
-     * If you specify <code>MaxBitRate</code> and omit
-     * <code>BufferSize</code>, Elastic Transcoder sets
-     * <code>BufferSize</code> to 10 times the value of
-     * <code>MaxBitRate</code>.
+     * standard segment duration when you're using MPEG-TS for the container
+     * type of the output video. Specify an integer greater than 0. If you
+     * specify <code>MaxBitRate</code> and omit <code>BufferSize</code>,
+     * Elastic Transcoder sets <code>BufferSize</code> to 10 times the value
+     * of <code>MaxBitRate</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -643,12 +637,11 @@ public class VideoParameters implements Serializable {
      *         reducing the maximum bit rate, but this also reduces the quality of
      *         the video. <p> <b>BufferSize</b> <p>The maximum number of bits in any
      *         x seconds of the output video. This window is commonly 10 seconds, the
-     *         standard segment duration when you���re using MPEG-TS for the
-     *         container type of the output video. Specify an integer greater than 0.
-     *         If you specify <code>MaxBitRate</code> and omit
-     *         <code>BufferSize</code>, Elastic Transcoder sets
-     *         <code>BufferSize</code> to 10 times the value of
-     *         <code>MaxBitRate</code>.
+     *         standard segment duration when you're using MPEG-TS for the container
+     *         type of the output video. Specify an integer greater than 0. If you
+     *         specify <code>MaxBitRate</code> and omit <code>BufferSize</code>,
+     *         Elastic Transcoder sets <code>BufferSize</code> to 10 times the value
+     *         of <code>MaxBitRate</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -693,12 +686,11 @@ public class VideoParameters implements Serializable {
      * reducing the maximum bit rate, but this also reduces the quality of
      * the video. <p> <b>BufferSize</b> <p>The maximum number of bits in any
      * x seconds of the output video. This window is commonly 10 seconds, the
-     * standard segment duration when you���re using MPEG-TS for the
-     * container type of the output video. Specify an integer greater than 0.
-     * If you specify <code>MaxBitRate</code> and omit
-     * <code>BufferSize</code>, Elastic Transcoder sets
-     * <code>BufferSize</code> to 10 times the value of
-     * <code>MaxBitRate</code>.
+     * standard segment duration when you're using MPEG-TS for the container
+     * type of the output video. Specify an integer greater than 0. If you
+     * specify <code>MaxBitRate</code> and omit <code>BufferSize</code>,
+     * Elastic Transcoder sets <code>BufferSize</code> to 10 times the value
+     * of <code>MaxBitRate</code>.
      * <p>
      * The method adds a new key-value pair into CodecOptions parameter, and
      * returns a reference to this object so that method calls can be chained

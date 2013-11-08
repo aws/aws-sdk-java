@@ -198,7 +198,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-		requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+    requestHandlers.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/simpleemail/request.handlers"));
     }
 
@@ -975,7 +975,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         AWSCredentials credentials = awsCredentialsProvider.getCredentials();
         AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
         if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
-        	credentials = originalRequest.getRequestCredentials();
+          credentials = originalRequest.getRequestCredentials();
         }
 
         ExecutionContext executionContext = createExecutionContext(originalRequest);

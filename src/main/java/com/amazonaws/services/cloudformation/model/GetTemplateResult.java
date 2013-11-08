@@ -27,26 +27,26 @@ public class GetTemplateResult implements Serializable {
     /**
      * Structure containing the template body. (For more information, go to
      * the <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/">AWS
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS
      * CloudFormation User Guide</a>.)
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 51200<br/>
+     * <b>Length: </b>1 - <br/>
      */
     private String templateBody;
 
     /**
      * Structure containing the template body. (For more information, go to
      * the <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/">AWS
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS
      * CloudFormation User Guide</a>.)
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 51200<br/>
+     * <b>Length: </b>1 - <br/>
      *
      * @return Structure containing the template body. (For more information, go to
      *         the <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/">AWS
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS
      *         CloudFormation User Guide</a>.)
      */
     public String getTemplateBody() {
@@ -56,15 +56,15 @@ public class GetTemplateResult implements Serializable {
     /**
      * Structure containing the template body. (For more information, go to
      * the <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/">AWS
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS
      * CloudFormation User Guide</a>.)
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 51200<br/>
+     * <b>Length: </b>1 - <br/>
      *
      * @param templateBody Structure containing the template body. (For more information, go to
      *         the <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/">AWS
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS
      *         CloudFormation User Guide</a>.)
      */
     public void setTemplateBody(String templateBody) {
@@ -74,17 +74,17 @@ public class GetTemplateResult implements Serializable {
     /**
      * Structure containing the template body. (For more information, go to
      * the <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/">AWS
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS
      * CloudFormation User Guide</a>.)
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 51200<br/>
+     * <b>Length: </b>1 - <br/>
      *
      * @param templateBody Structure containing the template body. (For more information, go to
      *         the <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/">AWS
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS
      *         CloudFormation User Guide</a>.)
      *
      * @return A reference to this updated object so that method calls can be chained 

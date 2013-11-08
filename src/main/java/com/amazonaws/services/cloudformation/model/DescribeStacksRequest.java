@@ -34,6 +34,13 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest implements Se
      */
     private String stackName;
 
+    /**
+     * String that identifies the start of the next list of stacks, if there
+     * is one.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1024<br/>
+     */
     private String nextToken;
 
     /**
@@ -76,38 +83,44 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * Returns the value of the NextToken property for this object.
+     * String that identifies the start of the next list of stacks, if there
+     * is one.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      *
-     * @return The value of the NextToken property for this object.
+     * @return String that identifies the start of the next list of stacks, if there
+     *         is one.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * Sets the value of the NextToken property for this object.
+     * String that identifies the start of the next list of stacks, if there
+     * is one.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      *
-     * @param nextToken The new value for the NextToken property for this object.
+     * @param nextToken String that identifies the start of the next list of stacks, if there
+     *         is one.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * Sets the value of the NextToken property for this object.
+     * String that identifies the start of the next list of stacks, if there
+     * is one.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      *
-     * @param nextToken The new value for the NextToken property for this object.
+     * @param nextToken String that identifies the start of the next list of stacks, if there
+     *         is one.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

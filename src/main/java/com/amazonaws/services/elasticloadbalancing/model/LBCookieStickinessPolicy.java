@@ -26,7 +26,7 @@ public class LBCookieStickinessPolicy implements Serializable {
 
     /**
      * The name for the policy being created. The name must be unique within
-     * the set of policies for this LoadBalancer.
+     * the set of policies for this load balancer.
      */
     private String policyName;
 
@@ -49,7 +49,7 @@ public class LBCookieStickinessPolicy implements Serializable {
      * initialize any additional object members.
      * 
      * @param policyName The name for the policy being created. The name must
-     * be unique within the set of policies for this LoadBalancer.
+     * be unique within the set of policies for this load balancer.
      * @param cookieExpirationPeriod The time period in seconds after which
      * the cookie should be considered stale. Not specifying this parameter
      * indicates that the stickiness session will last for the duration of
@@ -62,10 +62,10 @@ public class LBCookieStickinessPolicy implements Serializable {
 
     /**
      * The name for the policy being created. The name must be unique within
-     * the set of policies for this LoadBalancer.
+     * the set of policies for this load balancer.
      *
      * @return The name for the policy being created. The name must be unique within
-     *         the set of policies for this LoadBalancer.
+     *         the set of policies for this load balancer.
      */
     public String getPolicyName() {
         return policyName;
@@ -73,10 +73,10 @@ public class LBCookieStickinessPolicy implements Serializable {
     
     /**
      * The name for the policy being created. The name must be unique within
-     * the set of policies for this LoadBalancer.
+     * the set of policies for this load balancer.
      *
      * @param policyName The name for the policy being created. The name must be unique within
-     *         the set of policies for this LoadBalancer.
+     *         the set of policies for this load balancer.
      */
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
@@ -84,12 +84,12 @@ public class LBCookieStickinessPolicy implements Serializable {
     
     /**
      * The name for the policy being created. The name must be unique within
-     * the set of policies for this LoadBalancer.
+     * the set of policies for this load balancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param policyName The name for the policy being created. The name must be unique within
-     *         the set of policies for this LoadBalancer.
+     *         the set of policies for this load balancer.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

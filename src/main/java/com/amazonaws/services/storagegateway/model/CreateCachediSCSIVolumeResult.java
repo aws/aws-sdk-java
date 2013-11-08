@@ -18,68 +18,47 @@ import java.io.Serializable;
 
 
 /**
- * <p>
- * A JSON object containing the following fields:
- * </p>
- * 
- * <ul>
- * <li> CreateCachediSCSIVolume$TargetARN </li>
- * <li> CreateCachediSCSIVolume$VolumeARN </li>
- * 
- * </ul>
+ * Create Cachedi S C S I Volume Result
  */
 public class CreateCachediSCSIVolumeResult implements Serializable {
 
-    /**
-     * The ARN of the configured volume.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>50 - 500<br/>
-     */
     private String volumeARN;
 
-    /**
-     * The ARN of the volume target that includes the iSCSI name that
-     * initiators can use to connect to the target.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>50 - 800<br/>
-     */
     private String targetARN;
 
     /**
-     * The ARN of the configured volume.
+     * Returns the value of the VolumeARN property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @return The ARN of the configured volume.
+     * @return The value of the VolumeARN property for this object.
      */
     public String getVolumeARN() {
         return volumeARN;
     }
     
     /**
-     * The ARN of the configured volume.
+     * Sets the value of the VolumeARN property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @param volumeARN The ARN of the configured volume.
+     * @param volumeARN The new value for the VolumeARN property for this object.
      */
     public void setVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
     }
     
     /**
-     * The ARN of the configured volume.
+     * Sets the value of the VolumeARN property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @param volumeARN The ARN of the configured volume.
+     * @param volumeARN The new value for the VolumeARN property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -90,44 +69,38 @@ public class CreateCachediSCSIVolumeResult implements Serializable {
     }
 
     /**
-     * The ARN of the volume target that includes the iSCSI name that
-     * initiators can use to connect to the target.
+     * Returns the value of the TargetARN property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 800<br/>
      *
-     * @return The ARN of the volume target that includes the iSCSI name that
-     *         initiators can use to connect to the target.
+     * @return The value of the TargetARN property for this object.
      */
     public String getTargetARN() {
         return targetARN;
     }
     
     /**
-     * The ARN of the volume target that includes the iSCSI name that
-     * initiators can use to connect to the target.
+     * Sets the value of the TargetARN property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 800<br/>
      *
-     * @param targetARN The ARN of the volume target that includes the iSCSI name that
-     *         initiators can use to connect to the target.
+     * @param targetARN The new value for the TargetARN property for this object.
      */
     public void setTargetARN(String targetARN) {
         this.targetARN = targetARN;
     }
     
     /**
-     * The ARN of the volume target that includes the iSCSI name that
-     * initiators can use to connect to the target.
+     * Sets the value of the TargetARN property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 800<br/>
      *
-     * @param targetARN The ARN of the volume target that includes the iSCSI name that
-     *         initiators can use to connect to the target.
+     * @param targetARN The new value for the TargetARN property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

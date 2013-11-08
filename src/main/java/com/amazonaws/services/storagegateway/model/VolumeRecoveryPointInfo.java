@@ -18,78 +18,51 @@ import java.io.Serializable;
 
 
 /**
- * <p>
- * Lists information about the recovery points of a cached volume.
- * </p>
+ * Volume Recovery Point Info
  */
 public class VolumeRecoveryPointInfo implements Serializable {
 
-    /**
-     * The Amazon Resource Name (ARN) of the volume associated with the
-     * recovery point.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>50 - 500<br/>
-     */
     private String volumeARN;
 
-    /**
-     * The size, in bytes, of the volume to which the recovery point is
-     * associated.
-     */
     private Long volumeSizeInBytes;
 
-    /**
-     * The size, in bytes, of the volume in use at the time of the recovery
-     * point.
-     */
     private Long volumeUsageInBytes;
 
-    /**
-     * The time of the recovery point. The format of the time is in the
-     * ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
-     */
     private String volumeRecoveryPointTime;
 
     /**
-     * The Amazon Resource Name (ARN) of the volume associated with the
-     * recovery point.
+     * Returns the value of the VolumeARN property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @return The Amazon Resource Name (ARN) of the volume associated with the
-     *         recovery point.
+     * @return The value of the VolumeARN property for this object.
      */
     public String getVolumeARN() {
         return volumeARN;
     }
     
     /**
-     * The Amazon Resource Name (ARN) of the volume associated with the
-     * recovery point.
+     * Sets the value of the VolumeARN property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @param volumeARN The Amazon Resource Name (ARN) of the volume associated with the
-     *         recovery point.
+     * @param volumeARN The new value for the VolumeARN property for this object.
      */
     public void setVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
     }
     
     /**
-     * The Amazon Resource Name (ARN) of the volume associated with the
-     * recovery point.
+     * Sets the value of the VolumeARN property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @param volumeARN The Amazon Resource Name (ARN) of the volume associated with the
-     *         recovery point.
+     * @param volumeARN The new value for the VolumeARN property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -100,35 +73,29 @@ public class VolumeRecoveryPointInfo implements Serializable {
     }
 
     /**
-     * The size, in bytes, of the volume to which the recovery point is
-     * associated.
+     * Returns the value of the VolumeSizeInBytes property for this object.
      *
-     * @return The size, in bytes, of the volume to which the recovery point is
-     *         associated.
+     * @return The value of the VolumeSizeInBytes property for this object.
      */
     public Long getVolumeSizeInBytes() {
         return volumeSizeInBytes;
     }
     
     /**
-     * The size, in bytes, of the volume to which the recovery point is
-     * associated.
+     * Sets the value of the VolumeSizeInBytes property for this object.
      *
-     * @param volumeSizeInBytes The size, in bytes, of the volume to which the recovery point is
-     *         associated.
+     * @param volumeSizeInBytes The new value for the VolumeSizeInBytes property for this object.
      */
     public void setVolumeSizeInBytes(Long volumeSizeInBytes) {
         this.volumeSizeInBytes = volumeSizeInBytes;
     }
     
     /**
-     * The size, in bytes, of the volume to which the recovery point is
-     * associated.
+     * Sets the value of the VolumeSizeInBytes property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeSizeInBytes The size, in bytes, of the volume to which the recovery point is
-     *         associated.
+     * @param volumeSizeInBytes The new value for the VolumeSizeInBytes property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -139,35 +106,29 @@ public class VolumeRecoveryPointInfo implements Serializable {
     }
 
     /**
-     * The size, in bytes, of the volume in use at the time of the recovery
-     * point.
+     * Returns the value of the VolumeUsageInBytes property for this object.
      *
-     * @return The size, in bytes, of the volume in use at the time of the recovery
-     *         point.
+     * @return The value of the VolumeUsageInBytes property for this object.
      */
     public Long getVolumeUsageInBytes() {
         return volumeUsageInBytes;
     }
     
     /**
-     * The size, in bytes, of the volume in use at the time of the recovery
-     * point.
+     * Sets the value of the VolumeUsageInBytes property for this object.
      *
-     * @param volumeUsageInBytes The size, in bytes, of the volume in use at the time of the recovery
-     *         point.
+     * @param volumeUsageInBytes The new value for the VolumeUsageInBytes property for this object.
      */
     public void setVolumeUsageInBytes(Long volumeUsageInBytes) {
         this.volumeUsageInBytes = volumeUsageInBytes;
     }
     
     /**
-     * The size, in bytes, of the volume in use at the time of the recovery
-     * point.
+     * Sets the value of the VolumeUsageInBytes property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeUsageInBytes The size, in bytes, of the volume in use at the time of the recovery
-     *         point.
+     * @param volumeUsageInBytes The new value for the VolumeUsageInBytes property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -178,35 +139,34 @@ public class VolumeRecoveryPointInfo implements Serializable {
     }
 
     /**
-     * The time of the recovery point. The format of the time is in the
-     * ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     * Returns the value of the VolumeRecoveryPointTime property for this
+     * object.
      *
-     * @return The time of the recovery point. The format of the time is in the
-     *         ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     * @return The value of the VolumeRecoveryPointTime property for this object.
      */
     public String getVolumeRecoveryPointTime() {
         return volumeRecoveryPointTime;
     }
     
     /**
-     * The time of the recovery point. The format of the time is in the
-     * ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     * Sets the value of the VolumeRecoveryPointTime property for this
+     * object.
      *
-     * @param volumeRecoveryPointTime The time of the recovery point. The format of the time is in the
-     *         ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     * @param volumeRecoveryPointTime The new value for the VolumeRecoveryPointTime property for this
+     *         object.
      */
     public void setVolumeRecoveryPointTime(String volumeRecoveryPointTime) {
         this.volumeRecoveryPointTime = volumeRecoveryPointTime;
     }
     
     /**
-     * The time of the recovery point. The format of the time is in the
-     * ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     * Sets the value of the VolumeRecoveryPointTime property for this
+     * object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeRecoveryPointTime The time of the recovery point. The format of the time is in the
-     *         ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     * @param volumeRecoveryPointTime The new value for the VolumeRecoveryPointTime property for this
+     *         object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

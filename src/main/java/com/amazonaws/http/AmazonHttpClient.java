@@ -431,7 +431,10 @@ public class AmazonHttpClient {
                     resetRequestAfterError(request, exception);
                 }
             } catch (IOException ioe) {
-                log.info("Unable to execute HTTP request: " + ioe.getMessage(), ioe);
+                if (log.isInfoEnabled()) {
+                    log.info("Unable to execute HTTP request: " + ioe.getMessage(), ioe);
+                }
+                awsRequestMetrics.incrementCounter(Field.Exception);
                 awsRequestMetrics.addProperty(Field.Exception, ioe.toString());
                 awsRequestMetrics.addProperty(Field.AWSRequestID, null);
 
@@ -439,6 +442,10 @@ public class AmazonHttpClient {
                     throw new AmazonClientException("Unable to execute HTTP request: " + ioe.getMessage(), ioe);
                 }
                 resetRequestAfterError(request, ioe);
+            } catch(RuntimeException e) {
+                throw handleUnexpectedFailure(e, awsRequestMetrics);
+            } catch(Error e) {
+                throw handleUnexpectedFailure(e, awsRequestMetrics);
             } finally {
                 /*
                  * Some response handlers need to manually manage the HTTP
@@ -459,6 +466,15 @@ public class AmazonHttpClient {
                 }
             }
         } /* end while (true) */
+    }
+
+    /**
+     * Handles an unexpected failure, returning the Throwable instance as given.
+     */
+    private <T extends Throwable> T handleUnexpectedFailure(T t, AWSRequestMetrics awsRequestMetrics) {
+        log.warn("Unexpected failure", t);
+        awsRequestMetrics.incrementCounter(Field.Exception);
+        return t;
     }
 
     /**

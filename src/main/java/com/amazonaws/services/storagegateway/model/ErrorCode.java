@@ -51,6 +51,7 @@ public enum ErrorCode {
     LunAlreadyAllocated("LunAlreadyAllocated "),
     LunInvalid("LunInvalid"),
     MaximumContentLengthExceeded("MaximumContentLengthExceeded"),
+    MaximumTapeCartridgeCountExceeded("MaximumTapeCartridgeCountExceeded"),
     MaximumVolumeCountExceeded("MaximumVolumeCountExceeded"),
     NetworkConfigurationChanged("NetworkConfigurationChanged"),
     NoDisksAvailable("NoDisksAvailable"),
@@ -69,6 +70,7 @@ public enum ErrorCode {
     SnapshotScheduleNotFound("SnapshotScheduleNotFound"),
     StagingAreaFull("StagingAreaFull"),
     StorageFailure("StorageFailure"),
+    TapeCartridgeNotFound("TapeCartridgeNotFound"),
     TargetAlreadyExists("TargetAlreadyExists"),
     TargetInvalid("TargetInvalid"),
     TargetNotFound("TargetNotFound"),
@@ -165,6 +167,8 @@ public enum ErrorCode {
             return ErrorCode.LunInvalid;
         } else if ("MaximumContentLengthExceeded".equals(value)) {
             return ErrorCode.MaximumContentLengthExceeded;
+        } else if ("MaximumTapeCartridgeCountExceeded".equals(value)) {
+            return ErrorCode.MaximumTapeCartridgeCountExceeded;
         } else if ("MaximumVolumeCountExceeded".equals(value)) {
             return ErrorCode.MaximumVolumeCountExceeded;
         } else if ("NetworkConfigurationChanged".equals(value)) {
@@ -201,6 +205,8 @@ public enum ErrorCode {
             return ErrorCode.StagingAreaFull;
         } else if ("StorageFailure".equals(value)) {
             return ErrorCode.StorageFailure;
+        } else if ("TapeCartridgeNotFound".equals(value)) {
+            return ErrorCode.TapeCartridgeNotFound;
         } else if ("TargetAlreadyExists".equals(value)) {
             return ErrorCode.TargetAlreadyExists;
         } else if ("TargetInvalid".equals(value)) {

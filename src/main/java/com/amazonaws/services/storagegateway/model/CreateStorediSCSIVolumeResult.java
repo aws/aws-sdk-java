@@ -21,13 +21,6 @@ import java.io.Serializable;
  * <p>
  * A JSON object containing the following fields:
  * </p>
- * 
- * <ul>
- * <li> CreateStorediSCSIVolumeOutput$TargetARN </li>
- * <li> CreateStorediSCSIVolumeOutput$VolumeARN </li>
- * <li> CreateStorediSCSIVolumeOutput$VolumeSizeInBytes </li>
- * 
- * </ul>
  */
 public class CreateStorediSCSIVolumeResult implements Serializable {
 

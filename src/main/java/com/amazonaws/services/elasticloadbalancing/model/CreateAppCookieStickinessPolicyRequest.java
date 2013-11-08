@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * This policy is similar to the policy created by CreateLBCookieStickinessPolicy, except that the lifetime of the special Elastic Load Balancing cookie
- * follows the lifetime of the application-generated cookie specified in the policy configuration. The LoadBalancer only inserts a new stickiness cookie
+ * follows the lifetime of the application-generated cookie specified in the policy configuration. The load balancer only inserts a new stickiness cookie
  * when the application response includes a new application cookie.
  * </p>
  * <p>
@@ -36,20 +36,24 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <b>NOTE:</b> An application client must receive and send two cookies: the application-generated cookie and the special Elastic Load Balancing cookie
  * named AWSELB. This is the default behavior for many common web browsers.
  * </p>
+ * <p>
+ * For more information, see <a
+ * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsAppCookies"> Enabling
+ * Application-Controlled Session Stickiness </a> in the <i>Elastic Load Balancing Developer Guide</i> .
+ * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#createAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest)
  */
 public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name associated with the LoadBalancer. The name must be unique
-     * within the client AWS account.
+     * The name of the load balancer.
      */
     private String loadBalancerName;
 
     /**
      * The name of the policy being created. The name must be unique within
-     * the set of policies for this LoadBalancer.
+     * the set of policies for this load balancer.
      */
     private String policyName;
 
@@ -69,10 +73,9 @@ public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequ
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param loadBalancerName The name associated with the LoadBalancer. The
-     * name must be unique within the client AWS account.
+     * @param loadBalancerName The name of the load balancer.
      * @param policyName The name of the policy being created. The name must
-     * be unique within the set of policies for this LoadBalancer.
+     * be unique within the set of policies for this load balancer.
      * @param cookieName Name of the application cookie used for stickiness.
      */
     public CreateAppCookieStickinessPolicyRequest(String loadBalancerName, String policyName, String cookieName) {
@@ -82,35 +85,29 @@ public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequ
     }
 
     /**
-     * The name associated with the LoadBalancer. The name must be unique
-     * within the client AWS account.
+     * The name of the load balancer.
      *
-     * @return The name associated with the LoadBalancer. The name must be unique
-     *         within the client AWS account.
+     * @return The name of the load balancer.
      */
     public String getLoadBalancerName() {
         return loadBalancerName;
     }
     
     /**
-     * The name associated with the LoadBalancer. The name must be unique
-     * within the client AWS account.
+     * The name of the load balancer.
      *
-     * @param loadBalancerName The name associated with the LoadBalancer. The name must be unique
-     *         within the client AWS account.
+     * @param loadBalancerName The name of the load balancer.
      */
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
     
     /**
-     * The name associated with the LoadBalancer. The name must be unique
-     * within the client AWS account.
+     * The name of the load balancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerName The name associated with the LoadBalancer. The name must be unique
-     *         within the client AWS account.
+     * @param loadBalancerName The name of the load balancer.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -122,10 +119,10 @@ public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequ
 
     /**
      * The name of the policy being created. The name must be unique within
-     * the set of policies for this LoadBalancer.
+     * the set of policies for this load balancer.
      *
      * @return The name of the policy being created. The name must be unique within
-     *         the set of policies for this LoadBalancer.
+     *         the set of policies for this load balancer.
      */
     public String getPolicyName() {
         return policyName;
@@ -133,10 +130,10 @@ public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequ
     
     /**
      * The name of the policy being created. The name must be unique within
-     * the set of policies for this LoadBalancer.
+     * the set of policies for this load balancer.
      *
      * @param policyName The name of the policy being created. The name must be unique within
-     *         the set of policies for this LoadBalancer.
+     *         the set of policies for this load balancer.
      */
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
@@ -144,12 +141,12 @@ public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequ
     
     /**
      * The name of the policy being created. The name must be unique within
-     * the set of policies for this LoadBalancer.
+     * the set of policies for this load balancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param policyName The name of the policy being created. The name must be unique within
-     *         the set of policies for this LoadBalancer.
+     *         the set of policies for this load balancer.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

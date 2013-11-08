@@ -21,6 +21,7 @@ import java.util.List;
 import org.apache.http.annotation.NotThreadSafe;
 
 import com.amazonaws.metrics.MetricType;
+import com.amazonaws.metrics.RequestMetricType;
 
 /**
  * Used as both a base class and a minimal support of AWS SDK request metrics.
@@ -44,7 +45,7 @@ public class AWSRequestMetrics {
      * specific predefined metrics like S3 or DynamoDB are defined in the client
      * specific packages.
      */
-    public static enum Field implements MetricType {
+    public static enum Field implements RequestMetricType {
         AWSErrorCode,
         AWSRequestID,
         BytesProcessed,

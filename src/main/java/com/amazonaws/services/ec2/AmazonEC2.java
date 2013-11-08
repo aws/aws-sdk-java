@@ -5564,11 +5564,11 @@ public interface AmazonEC2 {
      * DryRunResult object contains the information of whether the dry-run was
      * successful. This method will throw exception when the service response
      * does not clearly indicate whether you have the permission.
-     * 
+     *
      * @param request
      *            The request object for any AmazonEC2 operation suppored with
      *            dry-run.
-     * 
+     *
      * @return A DryRunResult object that contains the information of whether
      *         the dry-run was successful.
      *

@@ -21,11 +21,6 @@ import java.io.Serializable;
  * <p>
  * A JSON object containing the following fields:
  * </p>
- * 
- * <ul>
- * <li> UpdateChapCredentialsOutput$InitiatorName </li>
- * UpdateChapCredentialsOutput$TargetARN
- * </ul>
  */
 public class UpdateChapCredentialsResult implements Serializable {
 

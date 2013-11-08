@@ -21,30 +21,53 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#createLoadBalancer(CreateLoadBalancerRequest) CreateLoadBalancer operation}.
  * <p>
- * Creates a new LoadBalancer.
+ * Creates a new load balancer.
  * </p>
  * <p>
- * After the call has completed successfully, a new LoadBalancer is created; however, it will not be usable until at least one instance has been
- * registered. When the LoadBalancer creation is completed, the client can check whether or not it is usable by using the DescribeInstanceHealth API. The
- * LoadBalancer is usable as soon as any registered instance is <i>InService</i> .
+ * After the call has completed successfully, a new load balancer is created with a unique Domain Name Service (DNS) name. The DNS name includes the
+ * name of the AWS region in which the load balance was created. For example, if your load balancer was created in the United States, the DNS name might
+ * end with either of the following:
+ * </p>
  * 
+ * <ul>
+ * <li> <i>us-east-1.elb.amazonaws.com</i> (for the Northern Virginia Region) </li>
+ * <li> <i>us-west-1.elb.amazonaws.com</i> (for the Northern California Region) </li>
+ * 
+ * </ul>
+ * <p>
+ * For information about the AWS regions supported by Elastic Load Balancing, see <a
+ * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region"> Regions and Endpoints </a> .
  * </p>
  * <p>
- * <b>NOTE:</b> Currently, the client's quota of LoadBalancers is limited to ten per Region.
+ * You can create up to 10 load balancers per region per account.
  * </p>
  * <p>
- * <b>NOTE:</b> LoadBalancer DNS names vary depending on the Region they're created in. For LoadBalancers created in the United States, the DNS name ends
- * with: us-east-1.elb.amazonaws.com (for the US Standard Region) us-west-1.elb.amazonaws.com (for the Northern California Region) For LoadBalancers
- * created in the EU (Ireland) Region, the DNS name ends with: eu-west-1.elb.amazonaws.com
+ * Elastic Load Balancing supports load balancing your Amazon EC2 instances launched within any one of the following platforms:
  * </p>
+ * 
+ * <ul>
+ * <li> <i>EC2-Classic</i> <p>
+ * For information on creating and managing your load balancers in EC2-Classic, see <a
+ * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForEC2.html"> Deploy Elastic Load Balancing in Amazon
+ * EC2-Classic </a> .
+ * </p>
+ * </li>
+ * <li> <i>EC2-VPC</i> <p>
+ * For information on creating and managing your load balancers in EC2-VPC, see <a
+ * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html"> Deploy Elastic Load Balancing in Amazon VPC
+ * </a> .
+ * </p>
+ * </li>
+ * 
+ * </ul>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#createLoadBalancer(CreateLoadBalancerRequest)
  */
 public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name associated with the LoadBalancer. The name must be unique
-     * within your set of LoadBalancers.
+     * The name associated with the load balancer. The name must be unique
+     * within your set of load balancers.
      */
     private String loadBalancerName;
 
@@ -57,29 +80,35 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     /**
      * A list of Availability Zones. <p> At least one Availability Zone must
      * be specified. Specified Availability Zones must be in the same EC2
-     * Region as the LoadBalancer. Traffic will be equally distributed across
-     * all zones. <p> This list can be modified after the creation of the
-     * LoadBalancer.
+     * Region as the load balancer. Traffic will be equally distributed
+     * across all zones. <p> You can later add more Availability Zones after
+     * the creation of the load balancer by calling
+     * <a>EnableAvailabilityZonesForLoadBalancer</a> action.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> availabilityZones;
 
     /**
-     * A list of subnet IDs in your VPC to attach to your LoadBalancer.
+     * A list of subnet IDs in your VPC to attach to your load balancer.
+     * Specify one subnet per Availability Zone.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> subnets;
 
     /**
-     * The security groups assigned to your LoadBalancer within your VPC.
+     * The security groups to assign to your load balancer within your VPC.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroups;
 
     /**
-     * The type of a LoadBalancer. This option is only available for
-     * LoadBalancers attached to a Amazon VPC. By default, Elastic Load
-     * Balancer creates an internet-facing load balancer with publicly
-     * resolvable DNS name that resolves to public IP addresses. Specify the
-     * value <i>internal</i> for this option to create an internal load
-     * balancer with a DNS name that resolves to private IP addresses.
+     * The type of a load balancer. <p>By default, Elastic Load Balancing
+     * creates an Internet-facing load balancer with a publicly resolvable
+     * DNS name, which resolves to public IP addresses. For more
+     * informationabout Internet-facing and Internal load balancers, see <a
+     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/vpc-loadbalancer-types.html">Internet-facing
+     * and Internal Load Balancers</a>. <p>Specify the value
+     * <code>internal</code> for this option to create an internal load
+     * balancer with a DNS name that resolves to private IP addresses. <note>
+     * <p>This option is only available for load balancers created within
+     * EC2-VPC. </note>
      */
     private String scheme;
 
@@ -94,8 +123,8 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param loadBalancerName The name associated with the LoadBalancer. The
-     * name must be unique within your set of LoadBalancers.
+     * @param loadBalancerName The name associated with the load balancer.
+     * The name must be unique within your set of load balancers.
      */
     public CreateLoadBalancerRequest(String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
@@ -106,15 +135,16 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param loadBalancerName The name associated with the LoadBalancer. The
-     * name must be unique within your set of LoadBalancers.
+     * @param loadBalancerName The name associated with the load balancer.
+     * The name must be unique within your set of load balancers.
      * @param listeners A list of the following tuples: LoadBalancerPort,
      * InstancePort, and Protocol.
      * @param availabilityZones A list of Availability Zones. <p> At least
      * one Availability Zone must be specified. Specified Availability Zones
-     * must be in the same EC2 Region as the LoadBalancer. Traffic will be
-     * equally distributed across all zones. <p> This list can be modified
-     * after the creation of the LoadBalancer.
+     * must be in the same EC2 Region as the load balancer. Traffic will be
+     * equally distributed across all zones. <p> You can later add more
+     * Availability Zones after the creation of the load balancer by calling
+     * <a>EnableAvailabilityZonesForLoadBalancer</a> action.
      */
     public CreateLoadBalancerRequest(String loadBalancerName, java.util.List<Listener> listeners, java.util.List<String> availabilityZones) {
         setLoadBalancerName(loadBalancerName);
@@ -123,35 +153,35 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * The name associated with the LoadBalancer. The name must be unique
-     * within your set of LoadBalancers.
+     * The name associated with the load balancer. The name must be unique
+     * within your set of load balancers.
      *
-     * @return The name associated with the LoadBalancer. The name must be unique
-     *         within your set of LoadBalancers.
+     * @return The name associated with the load balancer. The name must be unique
+     *         within your set of load balancers.
      */
     public String getLoadBalancerName() {
         return loadBalancerName;
     }
     
     /**
-     * The name associated with the LoadBalancer. The name must be unique
-     * within your set of LoadBalancers.
+     * The name associated with the load balancer. The name must be unique
+     * within your set of load balancers.
      *
-     * @param loadBalancerName The name associated with the LoadBalancer. The name must be unique
-     *         within your set of LoadBalancers.
+     * @param loadBalancerName The name associated with the load balancer. The name must be unique
+     *         within your set of load balancers.
      */
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
     
     /**
-     * The name associated with the LoadBalancer. The name must be unique
-     * within your set of LoadBalancers.
+     * The name associated with the load balancer. The name must be unique
+     * within your set of load balancers.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerName The name associated with the LoadBalancer. The name must be unique
-     *         within your set of LoadBalancers.
+     * @param loadBalancerName The name associated with the load balancer. The name must be unique
+     *         within your set of load balancers.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -240,15 +270,17 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     /**
      * A list of Availability Zones. <p> At least one Availability Zone must
      * be specified. Specified Availability Zones must be in the same EC2
-     * Region as the LoadBalancer. Traffic will be equally distributed across
-     * all zones. <p> This list can be modified after the creation of the
-     * LoadBalancer.
+     * Region as the load balancer. Traffic will be equally distributed
+     * across all zones. <p> You can later add more Availability Zones after
+     * the creation of the load balancer by calling
+     * <a>EnableAvailabilityZonesForLoadBalancer</a> action.
      *
      * @return A list of Availability Zones. <p> At least one Availability Zone must
      *         be specified. Specified Availability Zones must be in the same EC2
-     *         Region as the LoadBalancer. Traffic will be equally distributed across
-     *         all zones. <p> This list can be modified after the creation of the
-     *         LoadBalancer.
+     *         Region as the load balancer. Traffic will be equally distributed
+     *         across all zones. <p> You can later add more Availability Zones after
+     *         the creation of the load balancer by calling
+     *         <a>EnableAvailabilityZonesForLoadBalancer</a> action.
      */
     public java.util.List<String> getAvailabilityZones() {
         if (availabilityZones == null) {
@@ -261,15 +293,17 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     /**
      * A list of Availability Zones. <p> At least one Availability Zone must
      * be specified. Specified Availability Zones must be in the same EC2
-     * Region as the LoadBalancer. Traffic will be equally distributed across
-     * all zones. <p> This list can be modified after the creation of the
-     * LoadBalancer.
+     * Region as the load balancer. Traffic will be equally distributed
+     * across all zones. <p> You can later add more Availability Zones after
+     * the creation of the load balancer by calling
+     * <a>EnableAvailabilityZonesForLoadBalancer</a> action.
      *
      * @param availabilityZones A list of Availability Zones. <p> At least one Availability Zone must
      *         be specified. Specified Availability Zones must be in the same EC2
-     *         Region as the LoadBalancer. Traffic will be equally distributed across
-     *         all zones. <p> This list can be modified after the creation of the
-     *         LoadBalancer.
+     *         Region as the load balancer. Traffic will be equally distributed
+     *         across all zones. <p> You can later add more Availability Zones after
+     *         the creation of the load balancer by calling
+     *         <a>EnableAvailabilityZonesForLoadBalancer</a> action.
      */
     public void setAvailabilityZones(java.util.Collection<String> availabilityZones) {
         if (availabilityZones == null) {
@@ -284,17 +318,19 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     /**
      * A list of Availability Zones. <p> At least one Availability Zone must
      * be specified. Specified Availability Zones must be in the same EC2
-     * Region as the LoadBalancer. Traffic will be equally distributed across
-     * all zones. <p> This list can be modified after the creation of the
-     * LoadBalancer.
+     * Region as the load balancer. Traffic will be equally distributed
+     * across all zones. <p> You can later add more Availability Zones after
+     * the creation of the load balancer by calling
+     * <a>EnableAvailabilityZonesForLoadBalancer</a> action.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZones A list of Availability Zones. <p> At least one Availability Zone must
      *         be specified. Specified Availability Zones must be in the same EC2
-     *         Region as the LoadBalancer. Traffic will be equally distributed across
-     *         all zones. <p> This list can be modified after the creation of the
-     *         LoadBalancer.
+     *         Region as the load balancer. Traffic will be equally distributed
+     *         across all zones. <p> You can later add more Availability Zones after
+     *         the creation of the load balancer by calling
+     *         <a>EnableAvailabilityZonesForLoadBalancer</a> action.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -310,17 +346,19 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     /**
      * A list of Availability Zones. <p> At least one Availability Zone must
      * be specified. Specified Availability Zones must be in the same EC2
-     * Region as the LoadBalancer. Traffic will be equally distributed across
-     * all zones. <p> This list can be modified after the creation of the
-     * LoadBalancer.
+     * Region as the load balancer. Traffic will be equally distributed
+     * across all zones. <p> You can later add more Availability Zones after
+     * the creation of the load balancer by calling
+     * <a>EnableAvailabilityZonesForLoadBalancer</a> action.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZones A list of Availability Zones. <p> At least one Availability Zone must
      *         be specified. Specified Availability Zones must be in the same EC2
-     *         Region as the LoadBalancer. Traffic will be equally distributed across
-     *         all zones. <p> This list can be modified after the creation of the
-     *         LoadBalancer.
+     *         Region as the load balancer. Traffic will be equally distributed
+     *         across all zones. <p> You can later add more Availability Zones after
+     *         the creation of the load balancer by calling
+     *         <a>EnableAvailabilityZonesForLoadBalancer</a> action.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -338,9 +376,11 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * A list of subnet IDs in your VPC to attach to your LoadBalancer.
+     * A list of subnet IDs in your VPC to attach to your load balancer.
+     * Specify one subnet per Availability Zone.
      *
-     * @return A list of subnet IDs in your VPC to attach to your LoadBalancer.
+     * @return A list of subnet IDs in your VPC to attach to your load balancer.
+     *         Specify one subnet per Availability Zone.
      */
     public java.util.List<String> getSubnets() {
         if (subnets == null) {
@@ -351,9 +391,11 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * A list of subnet IDs in your VPC to attach to your LoadBalancer.
+     * A list of subnet IDs in your VPC to attach to your load balancer.
+     * Specify one subnet per Availability Zone.
      *
-     * @param subnets A list of subnet IDs in your VPC to attach to your LoadBalancer.
+     * @param subnets A list of subnet IDs in your VPC to attach to your load balancer.
+     *         Specify one subnet per Availability Zone.
      */
     public void setSubnets(java.util.Collection<String> subnets) {
         if (subnets == null) {
@@ -366,11 +408,13 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * A list of subnet IDs in your VPC to attach to your LoadBalancer.
+     * A list of subnet IDs in your VPC to attach to your load balancer.
+     * Specify one subnet per Availability Zone.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnets A list of subnet IDs in your VPC to attach to your LoadBalancer.
+     * @param subnets A list of subnet IDs in your VPC to attach to your load balancer.
+     *         Specify one subnet per Availability Zone.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -384,11 +428,13 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * A list of subnet IDs in your VPC to attach to your LoadBalancer.
+     * A list of subnet IDs in your VPC to attach to your load balancer.
+     * Specify one subnet per Availability Zone.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnets A list of subnet IDs in your VPC to attach to your LoadBalancer.
+     * @param subnets A list of subnet IDs in your VPC to attach to your load balancer.
+     *         Specify one subnet per Availability Zone.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -406,9 +452,9 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * The security groups assigned to your LoadBalancer within your VPC.
+     * The security groups to assign to your load balancer within your VPC.
      *
-     * @return The security groups assigned to your LoadBalancer within your VPC.
+     * @return The security groups to assign to your load balancer within your VPC.
      */
     public java.util.List<String> getSecurityGroups() {
         if (securityGroups == null) {
@@ -419,9 +465,9 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * The security groups assigned to your LoadBalancer within your VPC.
+     * The security groups to assign to your load balancer within your VPC.
      *
-     * @param securityGroups The security groups assigned to your LoadBalancer within your VPC.
+     * @param securityGroups The security groups to assign to your load balancer within your VPC.
      */
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
         if (securityGroups == null) {
@@ -434,11 +480,11 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * The security groups assigned to your LoadBalancer within your VPC.
+     * The security groups to assign to your load balancer within your VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param securityGroups The security groups assigned to your LoadBalancer within your VPC.
+     * @param securityGroups The security groups to assign to your load balancer within your VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -452,11 +498,11 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     }
     
     /**
-     * The security groups assigned to your LoadBalancer within your VPC.
+     * The security groups to assign to your load balancer within your VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param securityGroups The security groups assigned to your LoadBalancer within your VPC.
+     * @param securityGroups The security groups to assign to your load balancer within your VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -474,59 +520,83 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * The type of a LoadBalancer. This option is only available for
-     * LoadBalancers attached to a Amazon VPC. By default, Elastic Load
-     * Balancer creates an internet-facing load balancer with publicly
-     * resolvable DNS name that resolves to public IP addresses. Specify the
-     * value <i>internal</i> for this option to create an internal load
-     * balancer with a DNS name that resolves to private IP addresses.
+     * The type of a load balancer. <p>By default, Elastic Load Balancing
+     * creates an Internet-facing load balancer with a publicly resolvable
+     * DNS name, which resolves to public IP addresses. For more
+     * informationabout Internet-facing and Internal load balancers, see <a
+     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/vpc-loadbalancer-types.html">Internet-facing
+     * and Internal Load Balancers</a>. <p>Specify the value
+     * <code>internal</code> for this option to create an internal load
+     * balancer with a DNS name that resolves to private IP addresses. <note>
+     * <p>This option is only available for load balancers created within
+     * EC2-VPC. </note>
      *
-     * @return The type of a LoadBalancer. This option is only available for
-     *         LoadBalancers attached to a Amazon VPC. By default, Elastic Load
-     *         Balancer creates an internet-facing load balancer with publicly
-     *         resolvable DNS name that resolves to public IP addresses. Specify the
-     *         value <i>internal</i> for this option to create an internal load
-     *         balancer with a DNS name that resolves to private IP addresses.
+     * @return The type of a load balancer. <p>By default, Elastic Load Balancing
+     *         creates an Internet-facing load balancer with a publicly resolvable
+     *         DNS name, which resolves to public IP addresses. For more
+     *         informationabout Internet-facing and Internal load balancers, see <a
+     *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/vpc-loadbalancer-types.html">Internet-facing
+     *         and Internal Load Balancers</a>. <p>Specify the value
+     *         <code>internal</code> for this option to create an internal load
+     *         balancer with a DNS name that resolves to private IP addresses. <note>
+     *         <p>This option is only available for load balancers created within
+     *         EC2-VPC. </note>
      */
     public String getScheme() {
         return scheme;
     }
     
     /**
-     * The type of a LoadBalancer. This option is only available for
-     * LoadBalancers attached to a Amazon VPC. By default, Elastic Load
-     * Balancer creates an internet-facing load balancer with publicly
-     * resolvable DNS name that resolves to public IP addresses. Specify the
-     * value <i>internal</i> for this option to create an internal load
-     * balancer with a DNS name that resolves to private IP addresses.
+     * The type of a load balancer. <p>By default, Elastic Load Balancing
+     * creates an Internet-facing load balancer with a publicly resolvable
+     * DNS name, which resolves to public IP addresses. For more
+     * informationabout Internet-facing and Internal load balancers, see <a
+     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/vpc-loadbalancer-types.html">Internet-facing
+     * and Internal Load Balancers</a>. <p>Specify the value
+     * <code>internal</code> for this option to create an internal load
+     * balancer with a DNS name that resolves to private IP addresses. <note>
+     * <p>This option is only available for load balancers created within
+     * EC2-VPC. </note>
      *
-     * @param scheme The type of a LoadBalancer. This option is only available for
-     *         LoadBalancers attached to a Amazon VPC. By default, Elastic Load
-     *         Balancer creates an internet-facing load balancer with publicly
-     *         resolvable DNS name that resolves to public IP addresses. Specify the
-     *         value <i>internal</i> for this option to create an internal load
-     *         balancer with a DNS name that resolves to private IP addresses.
+     * @param scheme The type of a load balancer. <p>By default, Elastic Load Balancing
+     *         creates an Internet-facing load balancer with a publicly resolvable
+     *         DNS name, which resolves to public IP addresses. For more
+     *         informationabout Internet-facing and Internal load balancers, see <a
+     *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/vpc-loadbalancer-types.html">Internet-facing
+     *         and Internal Load Balancers</a>. <p>Specify the value
+     *         <code>internal</code> for this option to create an internal load
+     *         balancer with a DNS name that resolves to private IP addresses. <note>
+     *         <p>This option is only available for load balancers created within
+     *         EC2-VPC. </note>
      */
     public void setScheme(String scheme) {
         this.scheme = scheme;
     }
     
     /**
-     * The type of a LoadBalancer. This option is only available for
-     * LoadBalancers attached to a Amazon VPC. By default, Elastic Load
-     * Balancer creates an internet-facing load balancer with publicly
-     * resolvable DNS name that resolves to public IP addresses. Specify the
-     * value <i>internal</i> for this option to create an internal load
-     * balancer with a DNS name that resolves to private IP addresses.
+     * The type of a load balancer. <p>By default, Elastic Load Balancing
+     * creates an Internet-facing load balancer with a publicly resolvable
+     * DNS name, which resolves to public IP addresses. For more
+     * informationabout Internet-facing and Internal load balancers, see <a
+     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/vpc-loadbalancer-types.html">Internet-facing
+     * and Internal Load Balancers</a>. <p>Specify the value
+     * <code>internal</code> for this option to create an internal load
+     * balancer with a DNS name that resolves to private IP addresses. <note>
+     * <p>This option is only available for load balancers created within
+     * EC2-VPC. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param scheme The type of a LoadBalancer. This option is only available for
-     *         LoadBalancers attached to a Amazon VPC. By default, Elastic Load
-     *         Balancer creates an internet-facing load balancer with publicly
-     *         resolvable DNS name that resolves to public IP addresses. Specify the
-     *         value <i>internal</i> for this option to create an internal load
-     *         balancer with a DNS name that resolves to private IP addresses.
+     * @param scheme The type of a load balancer. <p>By default, Elastic Load Balancing
+     *         creates an Internet-facing load balancer with a publicly resolvable
+     *         DNS name, which resolves to public IP addresses. For more
+     *         informationabout Internet-facing and Internal load balancers, see <a
+     *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/vpc-loadbalancer-types.html">Internet-facing
+     *         and Internal Load Balancers</a>. <p>Specify the value
+     *         <code>internal</code> for this option to create an internal load
+     *         balancer with a DNS name that resolves to private IP addresses. <note>
+     *         <p>This option is only available for load balancers created within
+     *         EC2-VPC. </note>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

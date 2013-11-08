@@ -200,7 +200,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-		requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+    requestHandlers.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/ec2/request.handlers"));
     }
 
@@ -6220,11 +6220,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * DryRunResult object contains the information of whether the dry-run was
      * successful. This method will throw exception when the service response
      * does not clearly indicate whether you have the permission.
-     * 
+     *
      * @param request
      *            The request object for any AmazonEC2 operation supported with
      *            dry-run.
-     * 
+     *
      * @return A DryRunResult object that contains the information of whether
      *         the dry-run was successful.
      *
@@ -6289,7 +6289,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         AWSCredentials credentials = awsCredentialsProvider.getCredentials();
         AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
         if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
-        	credentials = originalRequest.getRequestCredentials();
+          credentials = originalRequest.getRequestCredentials();
         }
 
         ExecutionContext executionContext = createExecutionContext(originalRequest);

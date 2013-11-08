@@ -47,7 +47,7 @@ public class UpdateMaintenanceStartTimeRequestMarshaller implements Marshaller<R
     }
 
         Request<UpdateMaintenanceStartTimeRequest> request = new DefaultRequest<UpdateMaintenanceStartTimeRequest>(updateMaintenanceStartTimeRequest, "AWSStorageGateway");
-        String target = "StorageGateway_20120630.UpdateMaintenanceStartTime";
+        String target = "StorageGateway_20130630.UpdateMaintenanceStartTime";
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 

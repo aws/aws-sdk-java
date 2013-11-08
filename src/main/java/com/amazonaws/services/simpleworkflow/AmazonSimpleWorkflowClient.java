@@ -837,7 +837,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Starts an execution of the workflow type in the specified domain
@@ -938,7 +939,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Records a <code>WorkflowExecutionSignaled</code> event in the
@@ -1095,7 +1097,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Records a <code>WorkflowExecutionCancelRequested</code> event in the
@@ -1259,7 +1262,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Deprecates the specified <i>activity type</i> .
@@ -1428,7 +1432,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Returns the estimated number of activity tasks in the specified task
@@ -1505,7 +1510,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Used by workers to tell the service that the ActivityTask identified
@@ -1825,7 +1831,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Returns the number of open workflow executions within the given
@@ -1913,7 +1920,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Returns information about the specified activity type. This includes
@@ -1996,7 +2004,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Returns a list of open workflow executions in the specified domain
@@ -2086,7 +2095,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Returns the history of the specified workflow execution. The results
@@ -2166,7 +2176,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Registers a new domain.
@@ -2408,7 +2419,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Used by activity workers to report to the service that the
@@ -2519,7 +2531,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Used by deciders to get a DecisionTask from the specified decision
@@ -2621,7 +2634,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Returns information about all activities registered in the specified
@@ -2699,7 +2713,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Returns information about the specified domain including description
@@ -2772,7 +2787,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Used by workers to tell the service that the ActivityTask identified
@@ -2927,7 +2943,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Records a <code>WorkflowExecutionTerminated</code> event and forces
@@ -3088,7 +3105,8 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * Overrides the default endpoint for this client ("https://swf.us-east-1.amazonaws.com") and explicitly provides
      * an AWS region ID and AWS service name to use when the client calculates a signature

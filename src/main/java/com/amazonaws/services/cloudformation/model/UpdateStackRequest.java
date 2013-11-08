@@ -25,6 +25,14 @@ import com.amazonaws.AmazonWebServiceRequest;
  * via the DescribeStacks action.
  * </p>
  * <p>
+ * </p>
+ * <p>
+ * <b>Note: </b> You cannot update <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html">
+ * AWS::S3::Bucket </a> resources, for example, to add or modify tags.
+ * </p>
+ * <p>
+ * </p>
+ * <p>
  * To get a copy of the template for an existing stack, you can use the GetTemplate action.
  * </p>
  * <p>
@@ -32,7 +40,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * For more information about creating an update template, updating a stack, and monitoring the progress of the update, see <a
- * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html"> Updating a Stack </a> .
+ * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html"> Updating a Stack </a> .
  * </p>
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#updateStack(UpdateStackRequest)
@@ -49,13 +57,13 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
     /**
      * Structure containing the template body. (For more information, go to
      * the <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>.) <p>Conditional: You must pass
      * <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 51200<br/>
+     * <b>Length: </b>1 - <br/>
      */
     private String templateBody;
 
@@ -63,7 +71,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * Location of file containing the template body. The URL must point to a
      * template located in an S3 bucket in the same region as the stack. For
      * more information, go to the <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>. <p>Conditional: You must pass
      * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
@@ -72,6 +80,36 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * <b>Length: </b>1 - 1024<br/>
      */
     private String templateURL;
+
+    /**
+     * Structure containing the temporary overriding stack policy body. If
+     * you pass <code>StackPolicyDuringUpdateBody</code> and
+     * <code>StackPolicyDuringUpdateURL</code>, only
+     * <code>StackPolicyDuringUpdateBody</code> is used. <p>If you want to
+     * update protected resources, specify a temporary overriding stack
+     * policy during this update. If you do not specify a stack policy, the
+     * current policy that associated with the stack will be used.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 16384<br/>
+     */
+    private String stackPolicyDuringUpdateBody;
+
+    /**
+     * Location of a file containing the temporary overriding stack policy.
+     * The URL must point to a policy (max size: 16KB) located in an S3
+     * bucket in the same region as the stack. If you pass
+     * <code>StackPolicyDuringUpdateBody</code> and
+     * <code>StackPolicyDuringUpdateURL</code>, only
+     * <code>StackPolicyDuringUpdateBody</code> is used. <p>If you want to
+     * update protected resources, specify a temporary overriding stack
+     * policy during this update. If you do not specify a stack policy, the
+     * current policy that is associated with the stack will be used.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1350<br/>
+     */
+    private String stackPolicyDuringUpdateURL;
 
     /**
      * A list of <code>Parameter</code> structures that specify input
@@ -84,17 +122,48 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * stack contains IAM resources, you must specify the CAPABILITY_IAM
      * value for this parameter; otherwise, this action returns an
      * InsufficientCapabilities error. IAM resources are the following: <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
      * <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
      * <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
      * <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      * and <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> capabilities;
+
+    /**
+     * Structure containing the updated stack policy body. If you pass
+     * <code>StackPolicyBody</code> and <code>StackPolicyURL</code>, only
+     * <code>StackPolicyBody</code> is used. <p>If you want to update a stack
+     * policy during a stack update, specify an updated stack policy. For
+     * example, you can include an updated stack policy to protect a new
+     * resource created in the stack update. If you do not specify a stack
+     * policy, the current policy that is associated with the stack is
+     * unchanged.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 16384<br/>
+     */
+    private String stackPolicyBody;
+
+    /**
+     * Location of a file containing the updated stack policy. The URL must
+     * point to a policy (max size: 16KB) located in an S3 bucket in the same
+     * region as the stack. If you pass <code>StackPolicyBody</code> and
+     * <code>StackPolicyURL</code>, only <code>StackPolicyBody</code> is
+     * used. <p>If you want to update a stack policy during a stack update,
+     * specify an updated stack policy. For example, you can include an
+     * updated stack policy to protect a new resource created in the stack
+     * update. If you do not specify a stack policy, the current policy that
+     * is associated with the stack is unchanged.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1350<br/>
+     */
+    private String stackPolicyURL;
 
     /**
      * The name or stack ID of the stack to update. <note> Must contain only
@@ -144,17 +213,17 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
     /**
      * Structure containing the template body. (For more information, go to
      * the <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>.) <p>Conditional: You must pass
      * <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 51200<br/>
+     * <b>Length: </b>1 - <br/>
      *
      * @return Structure containing the template body. (For more information, go to
      *         the <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>.) <p>Conditional: You must pass
      *         <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
@@ -166,17 +235,17 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
     /**
      * Structure containing the template body. (For more information, go to
      * the <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>.) <p>Conditional: You must pass
      * <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 51200<br/>
+     * <b>Length: </b>1 - <br/>
      *
      * @param templateBody Structure containing the template body. (For more information, go to
      *         the <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>.) <p>Conditional: You must pass
      *         <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
@@ -188,7 +257,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
     /**
      * Structure containing the template body. (For more information, go to
      * the <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>.) <p>Conditional: You must pass
      * <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
@@ -196,11 +265,11 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 51200<br/>
+     * <b>Length: </b>1 - <br/>
      *
      * @param templateBody Structure containing the template body. (For more information, go to
      *         the <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>.) <p>Conditional: You must pass
      *         <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
@@ -217,7 +286,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * Location of file containing the template body. The URL must point to a
      * template located in an S3 bucket in the same region as the stack. For
      * more information, go to the <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>. <p>Conditional: You must pass
      * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
@@ -228,7 +297,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * @return Location of file containing the template body. The URL must point to a
      *         template located in an S3 bucket in the same region as the stack. For
      *         more information, go to the <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>. <p>Conditional: You must pass
      *         <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
@@ -241,7 +310,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * Location of file containing the template body. The URL must point to a
      * template located in an S3 bucket in the same region as the stack. For
      * more information, go to the <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>. <p>Conditional: You must pass
      * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
@@ -252,7 +321,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * @param templateURL Location of file containing the template body. The URL must point to a
      *         template located in an S3 bucket in the same region as the stack. For
      *         more information, go to the <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>. <p>Conditional: You must pass
      *         <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
@@ -265,7 +334,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * Location of file containing the template body. The URL must point to a
      * template located in an S3 bucket in the same region as the stack. For
      * more information, go to the <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>. <p>Conditional: You must pass
      * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
@@ -278,7 +347,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * @param templateURL Location of file containing the template body. The URL must point to a
      *         template located in an S3 bucket in the same region as the stack. For
      *         more information, go to the <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>. <p>Conditional: You must pass
      *         <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
@@ -288,6 +357,174 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      */
     public UpdateStackRequest withTemplateURL(String templateURL) {
         this.templateURL = templateURL;
+        return this;
+    }
+
+    /**
+     * Structure containing the temporary overriding stack policy body. If
+     * you pass <code>StackPolicyDuringUpdateBody</code> and
+     * <code>StackPolicyDuringUpdateURL</code>, only
+     * <code>StackPolicyDuringUpdateBody</code> is used. <p>If you want to
+     * update protected resources, specify a temporary overriding stack
+     * policy during this update. If you do not specify a stack policy, the
+     * current policy that associated with the stack will be used.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 16384<br/>
+     *
+     * @return Structure containing the temporary overriding stack policy body. If
+     *         you pass <code>StackPolicyDuringUpdateBody</code> and
+     *         <code>StackPolicyDuringUpdateURL</code>, only
+     *         <code>StackPolicyDuringUpdateBody</code> is used. <p>If you want to
+     *         update protected resources, specify a temporary overriding stack
+     *         policy during this update. If you do not specify a stack policy, the
+     *         current policy that associated with the stack will be used.
+     */
+    public String getStackPolicyDuringUpdateBody() {
+        return stackPolicyDuringUpdateBody;
+    }
+    
+    /**
+     * Structure containing the temporary overriding stack policy body. If
+     * you pass <code>StackPolicyDuringUpdateBody</code> and
+     * <code>StackPolicyDuringUpdateURL</code>, only
+     * <code>StackPolicyDuringUpdateBody</code> is used. <p>If you want to
+     * update protected resources, specify a temporary overriding stack
+     * policy during this update. If you do not specify a stack policy, the
+     * current policy that associated with the stack will be used.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 16384<br/>
+     *
+     * @param stackPolicyDuringUpdateBody Structure containing the temporary overriding stack policy body. If
+     *         you pass <code>StackPolicyDuringUpdateBody</code> and
+     *         <code>StackPolicyDuringUpdateURL</code>, only
+     *         <code>StackPolicyDuringUpdateBody</code> is used. <p>If you want to
+     *         update protected resources, specify a temporary overriding stack
+     *         policy during this update. If you do not specify a stack policy, the
+     *         current policy that associated with the stack will be used.
+     */
+    public void setStackPolicyDuringUpdateBody(String stackPolicyDuringUpdateBody) {
+        this.stackPolicyDuringUpdateBody = stackPolicyDuringUpdateBody;
+    }
+    
+    /**
+     * Structure containing the temporary overriding stack policy body. If
+     * you pass <code>StackPolicyDuringUpdateBody</code> and
+     * <code>StackPolicyDuringUpdateURL</code>, only
+     * <code>StackPolicyDuringUpdateBody</code> is used. <p>If you want to
+     * update protected resources, specify a temporary overriding stack
+     * policy during this update. If you do not specify a stack policy, the
+     * current policy that associated with the stack will be used.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 16384<br/>
+     *
+     * @param stackPolicyDuringUpdateBody Structure containing the temporary overriding stack policy body. If
+     *         you pass <code>StackPolicyDuringUpdateBody</code> and
+     *         <code>StackPolicyDuringUpdateURL</code>, only
+     *         <code>StackPolicyDuringUpdateBody</code> is used. <p>If you want to
+     *         update protected resources, specify a temporary overriding stack
+     *         policy during this update. If you do not specify a stack policy, the
+     *         current policy that associated with the stack will be used.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public UpdateStackRequest withStackPolicyDuringUpdateBody(String stackPolicyDuringUpdateBody) {
+        this.stackPolicyDuringUpdateBody = stackPolicyDuringUpdateBody;
+        return this;
+    }
+
+    /**
+     * Location of a file containing the temporary overriding stack policy.
+     * The URL must point to a policy (max size: 16KB) located in an S3
+     * bucket in the same region as the stack. If you pass
+     * <code>StackPolicyDuringUpdateBody</code> and
+     * <code>StackPolicyDuringUpdateURL</code>, only
+     * <code>StackPolicyDuringUpdateBody</code> is used. <p>If you want to
+     * update protected resources, specify a temporary overriding stack
+     * policy during this update. If you do not specify a stack policy, the
+     * current policy that is associated with the stack will be used.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1350<br/>
+     *
+     * @return Location of a file containing the temporary overriding stack policy.
+     *         The URL must point to a policy (max size: 16KB) located in an S3
+     *         bucket in the same region as the stack. If you pass
+     *         <code>StackPolicyDuringUpdateBody</code> and
+     *         <code>StackPolicyDuringUpdateURL</code>, only
+     *         <code>StackPolicyDuringUpdateBody</code> is used. <p>If you want to
+     *         update protected resources, specify a temporary overriding stack
+     *         policy during this update. If you do not specify a stack policy, the
+     *         current policy that is associated with the stack will be used.
+     */
+    public String getStackPolicyDuringUpdateURL() {
+        return stackPolicyDuringUpdateURL;
+    }
+    
+    /**
+     * Location of a file containing the temporary overriding stack policy.
+     * The URL must point to a policy (max size: 16KB) located in an S3
+     * bucket in the same region as the stack. If you pass
+     * <code>StackPolicyDuringUpdateBody</code> and
+     * <code>StackPolicyDuringUpdateURL</code>, only
+     * <code>StackPolicyDuringUpdateBody</code> is used. <p>If you want to
+     * update protected resources, specify a temporary overriding stack
+     * policy during this update. If you do not specify a stack policy, the
+     * current policy that is associated with the stack will be used.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1350<br/>
+     *
+     * @param stackPolicyDuringUpdateURL Location of a file containing the temporary overriding stack policy.
+     *         The URL must point to a policy (max size: 16KB) located in an S3
+     *         bucket in the same region as the stack. If you pass
+     *         <code>StackPolicyDuringUpdateBody</code> and
+     *         <code>StackPolicyDuringUpdateURL</code>, only
+     *         <code>StackPolicyDuringUpdateBody</code> is used. <p>If you want to
+     *         update protected resources, specify a temporary overriding stack
+     *         policy during this update. If you do not specify a stack policy, the
+     *         current policy that is associated with the stack will be used.
+     */
+    public void setStackPolicyDuringUpdateURL(String stackPolicyDuringUpdateURL) {
+        this.stackPolicyDuringUpdateURL = stackPolicyDuringUpdateURL;
+    }
+    
+    /**
+     * Location of a file containing the temporary overriding stack policy.
+     * The URL must point to a policy (max size: 16KB) located in an S3
+     * bucket in the same region as the stack. If you pass
+     * <code>StackPolicyDuringUpdateBody</code> and
+     * <code>StackPolicyDuringUpdateURL</code>, only
+     * <code>StackPolicyDuringUpdateBody</code> is used. <p>If you want to
+     * update protected resources, specify a temporary overriding stack
+     * policy during this update. If you do not specify a stack policy, the
+     * current policy that is associated with the stack will be used.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1350<br/>
+     *
+     * @param stackPolicyDuringUpdateURL Location of a file containing the temporary overriding stack policy.
+     *         The URL must point to a policy (max size: 16KB) located in an S3
+     *         bucket in the same region as the stack. If you pass
+     *         <code>StackPolicyDuringUpdateBody</code> and
+     *         <code>StackPolicyDuringUpdateURL</code>, only
+     *         <code>StackPolicyDuringUpdateBody</code> is used. <p>If you want to
+     *         update protected resources, specify a temporary overriding stack
+     *         policy during this update. If you do not specify a stack policy, the
+     *         current policy that is associated with the stack will be used.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public UpdateStackRequest withStackPolicyDuringUpdateURL(String stackPolicyDuringUpdateURL) {
+        this.stackPolicyDuringUpdateURL = stackPolicyDuringUpdateURL;
         return this;
     }
 
@@ -372,29 +609,29 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * stack contains IAM resources, you must specify the CAPABILITY_IAM
      * value for this parameter; otherwise, this action returns an
      * InsufficientCapabilities error. IAM resources are the following: <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
      * <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
      * <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
      * <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      * and <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      *
      * @return The list of capabilities that you want to allow in the stack. If your
      *         stack contains IAM resources, you must specify the CAPABILITY_IAM
      *         value for this parameter; otherwise, this action returns an
      *         InsufficientCapabilities error. IAM resources are the following: <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
      *         <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
      *         <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
      *         <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      *         and <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      */
     public java.util.List<String> getCapabilities() {
         if (capabilities == null) {
@@ -409,29 +646,29 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * stack contains IAM resources, you must specify the CAPABILITY_IAM
      * value for this parameter; otherwise, this action returns an
      * InsufficientCapabilities error. IAM resources are the following: <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
      * <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
      * <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
      * <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      * and <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      *
      * @param capabilities The list of capabilities that you want to allow in the stack. If your
      *         stack contains IAM resources, you must specify the CAPABILITY_IAM
      *         value for this parameter; otherwise, this action returns an
      *         InsufficientCapabilities error. IAM resources are the following: <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
      *         <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
      *         <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
      *         <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      *         and <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      */
     public void setCapabilities(java.util.Collection<String> capabilities) {
         if (capabilities == null) {
@@ -448,15 +685,15 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * stack contains IAM resources, you must specify the CAPABILITY_IAM
      * value for this parameter; otherwise, this action returns an
      * InsufficientCapabilities error. IAM resources are the following: <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
      * <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
      * <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
      * <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      * and <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -464,15 +701,15 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      *         stack contains IAM resources, you must specify the CAPABILITY_IAM
      *         value for this parameter; otherwise, this action returns an
      *         InsufficientCapabilities error. IAM resources are the following: <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
      *         <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
      *         <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
      *         <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      *         and <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -490,15 +727,15 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * stack contains IAM resources, you must specify the CAPABILITY_IAM
      * value for this parameter; otherwise, this action returns an
      * InsufficientCapabilities error. IAM resources are the following: <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
      * <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
      * <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
      * <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      * and <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -506,15 +743,15 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      *         stack contains IAM resources, you must specify the CAPABILITY_IAM
      *         value for this parameter; otherwise, this action returns an
      *         InsufficientCapabilities error. IAM resources are the following: <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
      *         <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
      *         <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
      *         <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      *         and <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -536,15 +773,15 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      * stack contains IAM resources, you must specify the CAPABILITY_IAM
      * value for this parameter; otherwise, this action returns an
      * InsufficientCapabilities error. IAM resources are the following: <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
      * <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
      * <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
      * <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      * and <a
-     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -552,15 +789,15 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
      *         stack contains IAM resources, you must specify the CAPABILITY_IAM
      *         value for this parameter; otherwise, this action returns an
      *         InsufficientCapabilities error. IAM resources are the following: <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
      *         <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
      *         <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
      *         <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      *         and <a
-     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -579,6 +816,180 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
+     * Structure containing the updated stack policy body. If you pass
+     * <code>StackPolicyBody</code> and <code>StackPolicyURL</code>, only
+     * <code>StackPolicyBody</code> is used. <p>If you want to update a stack
+     * policy during a stack update, specify an updated stack policy. For
+     * example, you can include an updated stack policy to protect a new
+     * resource created in the stack update. If you do not specify a stack
+     * policy, the current policy that is associated with the stack is
+     * unchanged.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 16384<br/>
+     *
+     * @return Structure containing the updated stack policy body. If you pass
+     *         <code>StackPolicyBody</code> and <code>StackPolicyURL</code>, only
+     *         <code>StackPolicyBody</code> is used. <p>If you want to update a stack
+     *         policy during a stack update, specify an updated stack policy. For
+     *         example, you can include an updated stack policy to protect a new
+     *         resource created in the stack update. If you do not specify a stack
+     *         policy, the current policy that is associated with the stack is
+     *         unchanged.
+     */
+    public String getStackPolicyBody() {
+        return stackPolicyBody;
+    }
+    
+    /**
+     * Structure containing the updated stack policy body. If you pass
+     * <code>StackPolicyBody</code> and <code>StackPolicyURL</code>, only
+     * <code>StackPolicyBody</code> is used. <p>If you want to update a stack
+     * policy during a stack update, specify an updated stack policy. For
+     * example, you can include an updated stack policy to protect a new
+     * resource created in the stack update. If you do not specify a stack
+     * policy, the current policy that is associated with the stack is
+     * unchanged.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 16384<br/>
+     *
+     * @param stackPolicyBody Structure containing the updated stack policy body. If you pass
+     *         <code>StackPolicyBody</code> and <code>StackPolicyURL</code>, only
+     *         <code>StackPolicyBody</code> is used. <p>If you want to update a stack
+     *         policy during a stack update, specify an updated stack policy. For
+     *         example, you can include an updated stack policy to protect a new
+     *         resource created in the stack update. If you do not specify a stack
+     *         policy, the current policy that is associated with the stack is
+     *         unchanged.
+     */
+    public void setStackPolicyBody(String stackPolicyBody) {
+        this.stackPolicyBody = stackPolicyBody;
+    }
+    
+    /**
+     * Structure containing the updated stack policy body. If you pass
+     * <code>StackPolicyBody</code> and <code>StackPolicyURL</code>, only
+     * <code>StackPolicyBody</code> is used. <p>If you want to update a stack
+     * policy during a stack update, specify an updated stack policy. For
+     * example, you can include an updated stack policy to protect a new
+     * resource created in the stack update. If you do not specify a stack
+     * policy, the current policy that is associated with the stack is
+     * unchanged.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 16384<br/>
+     *
+     * @param stackPolicyBody Structure containing the updated stack policy body. If you pass
+     *         <code>StackPolicyBody</code> and <code>StackPolicyURL</code>, only
+     *         <code>StackPolicyBody</code> is used. <p>If you want to update a stack
+     *         policy during a stack update, specify an updated stack policy. For
+     *         example, you can include an updated stack policy to protect a new
+     *         resource created in the stack update. If you do not specify a stack
+     *         policy, the current policy that is associated with the stack is
+     *         unchanged.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public UpdateStackRequest withStackPolicyBody(String stackPolicyBody) {
+        this.stackPolicyBody = stackPolicyBody;
+        return this;
+    }
+
+    /**
+     * Location of a file containing the updated stack policy. The URL must
+     * point to a policy (max size: 16KB) located in an S3 bucket in the same
+     * region as the stack. If you pass <code>StackPolicyBody</code> and
+     * <code>StackPolicyURL</code>, only <code>StackPolicyBody</code> is
+     * used. <p>If you want to update a stack policy during a stack update,
+     * specify an updated stack policy. For example, you can include an
+     * updated stack policy to protect a new resource created in the stack
+     * update. If you do not specify a stack policy, the current policy that
+     * is associated with the stack is unchanged.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1350<br/>
+     *
+     * @return Location of a file containing the updated stack policy. The URL must
+     *         point to a policy (max size: 16KB) located in an S3 bucket in the same
+     *         region as the stack. If you pass <code>StackPolicyBody</code> and
+     *         <code>StackPolicyURL</code>, only <code>StackPolicyBody</code> is
+     *         used. <p>If you want to update a stack policy during a stack update,
+     *         specify an updated stack policy. For example, you can include an
+     *         updated stack policy to protect a new resource created in the stack
+     *         update. If you do not specify a stack policy, the current policy that
+     *         is associated with the stack is unchanged.
+     */
+    public String getStackPolicyURL() {
+        return stackPolicyURL;
+    }
+    
+    /**
+     * Location of a file containing the updated stack policy. The URL must
+     * point to a policy (max size: 16KB) located in an S3 bucket in the same
+     * region as the stack. If you pass <code>StackPolicyBody</code> and
+     * <code>StackPolicyURL</code>, only <code>StackPolicyBody</code> is
+     * used. <p>If you want to update a stack policy during a stack update,
+     * specify an updated stack policy. For example, you can include an
+     * updated stack policy to protect a new resource created in the stack
+     * update. If you do not specify a stack policy, the current policy that
+     * is associated with the stack is unchanged.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1350<br/>
+     *
+     * @param stackPolicyURL Location of a file containing the updated stack policy. The URL must
+     *         point to a policy (max size: 16KB) located in an S3 bucket in the same
+     *         region as the stack. If you pass <code>StackPolicyBody</code> and
+     *         <code>StackPolicyURL</code>, only <code>StackPolicyBody</code> is
+     *         used. <p>If you want to update a stack policy during a stack update,
+     *         specify an updated stack policy. For example, you can include an
+     *         updated stack policy to protect a new resource created in the stack
+     *         update. If you do not specify a stack policy, the current policy that
+     *         is associated with the stack is unchanged.
+     */
+    public void setStackPolicyURL(String stackPolicyURL) {
+        this.stackPolicyURL = stackPolicyURL;
+    }
+    
+    /**
+     * Location of a file containing the updated stack policy. The URL must
+     * point to a policy (max size: 16KB) located in an S3 bucket in the same
+     * region as the stack. If you pass <code>StackPolicyBody</code> and
+     * <code>StackPolicyURL</code>, only <code>StackPolicyBody</code> is
+     * used. <p>If you want to update a stack policy during a stack update,
+     * specify an updated stack policy. For example, you can include an
+     * updated stack policy to protect a new resource created in the stack
+     * update. If you do not specify a stack policy, the current policy that
+     * is associated with the stack is unchanged.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1350<br/>
+     *
+     * @param stackPolicyURL Location of a file containing the updated stack policy. The URL must
+     *         point to a policy (max size: 16KB) located in an S3 bucket in the same
+     *         region as the stack. If you pass <code>StackPolicyBody</code> and
+     *         <code>StackPolicyURL</code>, only <code>StackPolicyBody</code> is
+     *         used. <p>If you want to update a stack policy during a stack update,
+     *         specify an updated stack policy. For example, you can include an
+     *         updated stack policy to protect a new resource created in the stack
+     *         update. If you do not specify a stack policy, the current policy that
+     *         is associated with the stack is unchanged.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public UpdateStackRequest withStackPolicyURL(String stackPolicyURL) {
+        this.stackPolicyURL = stackPolicyURL;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -593,8 +1004,12 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         if (getStackName() != null) sb.append("StackName: " + getStackName() + ",");
         if (getTemplateBody() != null) sb.append("TemplateBody: " + getTemplateBody() + ",");
         if (getTemplateURL() != null) sb.append("TemplateURL: " + getTemplateURL() + ",");
+        if (getStackPolicyDuringUpdateBody() != null) sb.append("StackPolicyDuringUpdateBody: " + getStackPolicyDuringUpdateBody() + ",");
+        if (getStackPolicyDuringUpdateURL() != null) sb.append("StackPolicyDuringUpdateURL: " + getStackPolicyDuringUpdateURL() + ",");
         if (getParameters() != null) sb.append("Parameters: " + getParameters() + ",");
-        if (getCapabilities() != null) sb.append("Capabilities: " + getCapabilities() );
+        if (getCapabilities() != null) sb.append("Capabilities: " + getCapabilities() + ",");
+        if (getStackPolicyBody() != null) sb.append("StackPolicyBody: " + getStackPolicyBody() + ",");
+        if (getStackPolicyURL() != null) sb.append("StackPolicyURL: " + getStackPolicyURL() );
         sb.append("}");
         return sb.toString();
     }
@@ -607,8 +1022,12 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         hashCode = prime * hashCode + ((getStackName() == null) ? 0 : getStackName().hashCode()); 
         hashCode = prime * hashCode + ((getTemplateBody() == null) ? 0 : getTemplateBody().hashCode()); 
         hashCode = prime * hashCode + ((getTemplateURL() == null) ? 0 : getTemplateURL().hashCode()); 
+        hashCode = prime * hashCode + ((getStackPolicyDuringUpdateBody() == null) ? 0 : getStackPolicyDuringUpdateBody().hashCode()); 
+        hashCode = prime * hashCode + ((getStackPolicyDuringUpdateURL() == null) ? 0 : getStackPolicyDuringUpdateURL().hashCode()); 
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode()); 
         hashCode = prime * hashCode + ((getCapabilities() == null) ? 0 : getCapabilities().hashCode()); 
+        hashCode = prime * hashCode + ((getStackPolicyBody() == null) ? 0 : getStackPolicyBody().hashCode()); 
+        hashCode = prime * hashCode + ((getStackPolicyURL() == null) ? 0 : getStackPolicyURL().hashCode()); 
         return hashCode;
     }
     
@@ -626,10 +1045,18 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements Seria
         if (other.getTemplateBody() != null && other.getTemplateBody().equals(this.getTemplateBody()) == false) return false; 
         if (other.getTemplateURL() == null ^ this.getTemplateURL() == null) return false;
         if (other.getTemplateURL() != null && other.getTemplateURL().equals(this.getTemplateURL()) == false) return false; 
+        if (other.getStackPolicyDuringUpdateBody() == null ^ this.getStackPolicyDuringUpdateBody() == null) return false;
+        if (other.getStackPolicyDuringUpdateBody() != null && other.getStackPolicyDuringUpdateBody().equals(this.getStackPolicyDuringUpdateBody()) == false) return false; 
+        if (other.getStackPolicyDuringUpdateURL() == null ^ this.getStackPolicyDuringUpdateURL() == null) return false;
+        if (other.getStackPolicyDuringUpdateURL() != null && other.getStackPolicyDuringUpdateURL().equals(this.getStackPolicyDuringUpdateURL()) == false) return false; 
         if (other.getParameters() == null ^ this.getParameters() == null) return false;
         if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false) return false; 
         if (other.getCapabilities() == null ^ this.getCapabilities() == null) return false;
         if (other.getCapabilities() != null && other.getCapabilities().equals(this.getCapabilities()) == false) return false; 
+        if (other.getStackPolicyBody() == null ^ this.getStackPolicyBody() == null) return false;
+        if (other.getStackPolicyBody() != null && other.getStackPolicyBody().equals(this.getStackPolicyBody()) == false) return false; 
+        if (other.getStackPolicyURL() == null ^ this.getStackPolicyURL() == null) return false;
+        if (other.getStackPolicyURL() != null && other.getStackPolicyURL().equals(this.getStackPolicyURL()) == false) return false; 
         return true;
     }
     

@@ -102,6 +102,9 @@ public class JobOutputJsonUnmarshaller implements Unmarshaller<JobOutput, JsonUn
                     context.nextToken();
                     jobOutput.setAlbumArt(JobAlbumArtJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Composition", targetDepth)) {
+                    jobOutput.setComposition(new ListUnmarshaller<Clip>(ClipJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

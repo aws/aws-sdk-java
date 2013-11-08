@@ -18,9 +18,7 @@ import java.io.Serializable;
 
 
 /**
- * <p>
- * The Amazon Resource Name (ARN) of the gateway for which upload buffer was configured.
- * </p>
+ * Add Upload Buffer Result
  */
 public class AddUploadBufferResult implements Serializable {
 

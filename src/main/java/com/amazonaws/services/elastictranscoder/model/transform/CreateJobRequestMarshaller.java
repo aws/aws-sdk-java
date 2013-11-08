@@ -200,6 +200,35 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                     }
                     jsonWriter.endObject();
                 }
+
+                com.amazonaws.internal.ListWithAutoConstructFlag<Clip> compositionList = (com.amazonaws.internal.ListWithAutoConstructFlag<Clip>)(output.getComposition());
+                if (compositionList != null && !(compositionList.isAutoConstruct() && compositionList.isEmpty())) {
+
+                    jsonWriter.key("Composition");
+                    jsonWriter.array();
+
+                    for (Clip compositionListValue : compositionList) {
+                        if (compositionListValue != null) {
+                            jsonWriter.object();
+                            TimeSpan timeSpan = compositionListValue.getTimeSpan();
+                            if (timeSpan != null) {
+
+                                jsonWriter.key("TimeSpan");
+                                jsonWriter.object();
+
+                                if (timeSpan.getStartTime() != null) {
+                                    jsonWriter.key("StartTime").value(timeSpan.getStartTime());
+                                }
+                                if (timeSpan.getDuration() != null) {
+                                    jsonWriter.key("Duration").value(timeSpan.getDuration());
+                                }
+                                jsonWriter.endObject();
+                            }
+                            jsonWriter.endObject();
+                        }
+                    }
+                    jsonWriter.endArray();
+                }
                 jsonWriter.endObject();
             }
 
@@ -291,6 +320,35 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                                 jsonWriter.endArray();
                             }
                             jsonWriter.endObject();
+                        }
+
+                        com.amazonaws.internal.ListWithAutoConstructFlag<Clip> compositionList = (com.amazonaws.internal.ListWithAutoConstructFlag<Clip>)(outputsListValue.getComposition());
+                        if (compositionList != null && !(compositionList.isAutoConstruct() && compositionList.isEmpty())) {
+
+                            jsonWriter.key("Composition");
+                            jsonWriter.array();
+
+                            for (Clip compositionListValue : compositionList) {
+                                if (compositionListValue != null) {
+                                    jsonWriter.object();
+                                    TimeSpan timeSpan = compositionListValue.getTimeSpan();
+                                    if (timeSpan != null) {
+
+                                        jsonWriter.key("TimeSpan");
+                                        jsonWriter.object();
+
+                                        if (timeSpan.getStartTime() != null) {
+                                            jsonWriter.key("StartTime").value(timeSpan.getStartTime());
+                                        }
+                                        if (timeSpan.getDuration() != null) {
+                                            jsonWriter.key("Duration").value(timeSpan.getDuration());
+                                        }
+                                        jsonWriter.endObject();
+                                    }
+                                    jsonWriter.endObject();
+                                }
+                            }
+                            jsonWriter.endArray();
                         }
                         jsonWriter.endObject();
                     }

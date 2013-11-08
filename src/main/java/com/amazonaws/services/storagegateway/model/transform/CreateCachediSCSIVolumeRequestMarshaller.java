@@ -47,7 +47,7 @@ public class CreateCachediSCSIVolumeRequestMarshaller implements Marshaller<Requ
     }
 
         Request<CreateCachediSCSIVolumeRequest> request = new DefaultRequest<CreateCachediSCSIVolumeRequest>(createCachediSCSIVolumeRequest, "AWSStorageGateway");
-        String target = "StorageGateway_20120630.CreateCachediSCSIVolume";
+        String target = "StorageGateway_20130630.CreateCachediSCSIVolume";
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 

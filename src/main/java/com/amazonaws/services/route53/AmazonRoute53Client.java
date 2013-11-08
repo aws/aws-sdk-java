@@ -201,7 +201,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
         
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-		requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+    requestHandlers.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/route53/request.handlers"));
     }
 
@@ -818,7 +818,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
         AWSCredentials credentials = awsCredentialsProvider.getCredentials();
         AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
         if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
-        	credentials = originalRequest.getRequestCredentials();
+          credentials = originalRequest.getRequestCredentials();
         }
 
         ExecutionContext executionContext = createExecutionContext(originalRequest);

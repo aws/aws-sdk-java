@@ -19,7 +19,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A JSON object containing the GatewayARN of the gateway whose throttle information was updated.
+ * A JSON object containing the of the gateway whose throttle information was updated.
  * </p>
  */
 public class UpdateBandwidthRateLimitResult implements Serializable {

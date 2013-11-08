@@ -19,7 +19,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A JSON object containing the DeleteVolumeOutput$VolumeARN of the storage volume that was deleted
+ * A JSON object containing the of the storage volume that was deleted
  * </p>
  */
 public class DeleteVolumeResult implements Serializable {

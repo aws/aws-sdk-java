@@ -19,7 +19,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A JSON object containing a DescribeChapCredentialsOutput$ChapCredentials.
+ * A JSON object containing a .
  * </p>
  */
 public class DescribeChapCredentialsResult implements Serializable {

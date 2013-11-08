@@ -217,7 +217,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
         
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-		requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+    requestHandlers.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/simpledb/request.handlers"));
     }
 
@@ -800,7 +800,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
         AWSCredentials credentials = awsCredentialsProvider.getCredentials();
         AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
         if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
-        	credentials = originalRequest.getRequestCredentials();
+          credentials = originalRequest.getRequestCredentials();
         }
 
         ExecutionContext executionContext = createExecutionContext(originalRequest);

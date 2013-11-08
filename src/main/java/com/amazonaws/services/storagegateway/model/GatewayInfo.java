@@ -18,9 +18,7 @@ import java.io.Serializable;
 
 
 /**
- * <p>
- * Describes a gateway; contains one data member, the GatewayARN of this gateway.
- * </p>
+ * Gateway Info
  */
 public class GatewayInfo implements Serializable {
 
@@ -33,6 +31,10 @@ public class GatewayInfo implements Serializable {
      * <b>Length: </b>50 - 500<br/>
      */
     private String gatewayARN;
+
+    private String gatewayType;
+
+    private String gatewayOperationalState;
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -89,6 +91,95 @@ public class GatewayInfo implements Serializable {
     }
 
     /**
+     * Returns the value of the GatewayType property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>2 - 20<br/>
+     *
+     * @return The value of the GatewayType property for this object.
+     */
+    public String getGatewayType() {
+        return gatewayType;
+    }
+    
+    /**
+     * Sets the value of the GatewayType property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>2 - 20<br/>
+     *
+     * @param gatewayType The new value for the GatewayType property for this object.
+     */
+    public void setGatewayType(String gatewayType) {
+        this.gatewayType = gatewayType;
+    }
+    
+    /**
+     * Sets the value of the GatewayType property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>2 - 20<br/>
+     *
+     * @param gatewayType The new value for the GatewayType property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public GatewayInfo withGatewayType(String gatewayType) {
+        this.gatewayType = gatewayType;
+        return this;
+    }
+
+    /**
+     * Returns the value of the GatewayOperationalState property for this
+     * object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>2 - 25<br/>
+     *
+     * @return The value of the GatewayOperationalState property for this object.
+     */
+    public String getGatewayOperationalState() {
+        return gatewayOperationalState;
+    }
+    
+    /**
+     * Sets the value of the GatewayOperationalState property for this
+     * object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>2 - 25<br/>
+     *
+     * @param gatewayOperationalState The new value for the GatewayOperationalState property for this
+     *         object.
+     */
+    public void setGatewayOperationalState(String gatewayOperationalState) {
+        this.gatewayOperationalState = gatewayOperationalState;
+    }
+    
+    /**
+     * Sets the value of the GatewayOperationalState property for this
+     * object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>2 - 25<br/>
+     *
+     * @param gatewayOperationalState The new value for the GatewayOperationalState property for this
+     *         object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public GatewayInfo withGatewayOperationalState(String gatewayOperationalState) {
+        this.gatewayOperationalState = gatewayOperationalState;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -100,7 +191,9 @@ public class GatewayInfo implements Serializable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() );
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");
+        if (getGatewayType() != null) sb.append("GatewayType: " + getGatewayType() + ",");
+        if (getGatewayOperationalState() != null) sb.append("GatewayOperationalState: " + getGatewayOperationalState() );
         sb.append("}");
         return sb.toString();
     }
@@ -111,6 +204,8 @@ public class GatewayInfo implements Serializable {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode()); 
+        hashCode = prime * hashCode + ((getGatewayType() == null) ? 0 : getGatewayType().hashCode()); 
+        hashCode = prime * hashCode + ((getGatewayOperationalState() == null) ? 0 : getGatewayOperationalState().hashCode()); 
         return hashCode;
     }
     
@@ -124,6 +219,10 @@ public class GatewayInfo implements Serializable {
         
         if (other.getGatewayARN() == null ^ this.getGatewayARN() == null) return false;
         if (other.getGatewayARN() != null && other.getGatewayARN().equals(this.getGatewayARN()) == false) return false; 
+        if (other.getGatewayType() == null ^ this.getGatewayType() == null) return false;
+        if (other.getGatewayType() != null && other.getGatewayType().equals(this.getGatewayType()) == false) return false; 
+        if (other.getGatewayOperationalState() == null ^ this.getGatewayOperationalState() == null) return false;
+        if (other.getGatewayOperationalState() != null && other.getGatewayOperationalState().equals(this.getGatewayOperationalState()) == false) return false; 
         return true;
     }
     

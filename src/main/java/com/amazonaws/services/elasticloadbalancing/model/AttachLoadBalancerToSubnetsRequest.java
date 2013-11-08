@@ -21,10 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#attachLoadBalancerToSubnets(AttachLoadBalancerToSubnetsRequest) AttachLoadBalancerToSubnets operation}.
  * <p>
- * Adds one or more subnets to the set of configured subnets in the VPC for the LoadBalancer.
+ * Adds one or more subnets to the set of configured subnets in the Amazon Virtual Private Cloud (Amazon VPC) for the load balancer.
  * </p>
  * <p>
- * The Loadbalancers evenly distribute requests across all of the registered subnets.
+ * The load balancers evenly distribute requests across all of the registered subnets. For more information, see <a
+ * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html"> Deploy Elastic Load Balancing in Amazon VPC
+ * </a> in the <i>Elastic Load Balancing Developer Guide</i> .
+ * 
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#attachLoadBalancerToSubnets(AttachLoadBalancerToSubnetsRequest)
@@ -32,46 +35,47 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class AttachLoadBalancerToSubnetsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name associated with the LoadBalancer. The name must be unique
-     * within the client AWS account.
+     * The name associated with the load balancer. The name must be unique
+     * within the set of load balancers associated with your AWS account.
      */
     private String loadBalancerName;
 
     /**
-     * A list of subnet IDs to add for the LoadBalancer.
+     * A list of subnet IDs to add for the load balancer. You can add only
+     * one subnet per Availability Zone.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> subnets;
 
     /**
-     * The name associated with the LoadBalancer. The name must be unique
-     * within the client AWS account.
+     * The name associated with the load balancer. The name must be unique
+     * within the set of load balancers associated with your AWS account.
      *
-     * @return The name associated with the LoadBalancer. The name must be unique
-     *         within the client AWS account.
+     * @return The name associated with the load balancer. The name must be unique
+     *         within the set of load balancers associated with your AWS account.
      */
     public String getLoadBalancerName() {
         return loadBalancerName;
     }
     
     /**
-     * The name associated with the LoadBalancer. The name must be unique
-     * within the client AWS account.
+     * The name associated with the load balancer. The name must be unique
+     * within the set of load balancers associated with your AWS account.
      *
-     * @param loadBalancerName The name associated with the LoadBalancer. The name must be unique
-     *         within the client AWS account.
+     * @param loadBalancerName The name associated with the load balancer. The name must be unique
+     *         within the set of load balancers associated with your AWS account.
      */
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
     
     /**
-     * The name associated with the LoadBalancer. The name must be unique
-     * within the client AWS account.
+     * The name associated with the load balancer. The name must be unique
+     * within the set of load balancers associated with your AWS account.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerName The name associated with the LoadBalancer. The name must be unique
-     *         within the client AWS account.
+     * @param loadBalancerName The name associated with the load balancer. The name must be unique
+     *         within the set of load balancers associated with your AWS account.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -82,9 +86,11 @@ public class AttachLoadBalancerToSubnetsRequest extends AmazonWebServiceRequest 
     }
 
     /**
-     * A list of subnet IDs to add for the LoadBalancer.
+     * A list of subnet IDs to add for the load balancer. You can add only
+     * one subnet per Availability Zone.
      *
-     * @return A list of subnet IDs to add for the LoadBalancer.
+     * @return A list of subnet IDs to add for the load balancer. You can add only
+     *         one subnet per Availability Zone.
      */
     public java.util.List<String> getSubnets() {
         if (subnets == null) {
@@ -95,9 +101,11 @@ public class AttachLoadBalancerToSubnetsRequest extends AmazonWebServiceRequest 
     }
     
     /**
-     * A list of subnet IDs to add for the LoadBalancer.
+     * A list of subnet IDs to add for the load balancer. You can add only
+     * one subnet per Availability Zone.
      *
-     * @param subnets A list of subnet IDs to add for the LoadBalancer.
+     * @param subnets A list of subnet IDs to add for the load balancer. You can add only
+     *         one subnet per Availability Zone.
      */
     public void setSubnets(java.util.Collection<String> subnets) {
         if (subnets == null) {
@@ -110,11 +118,13 @@ public class AttachLoadBalancerToSubnetsRequest extends AmazonWebServiceRequest 
     }
     
     /**
-     * A list of subnet IDs to add for the LoadBalancer.
+     * A list of subnet IDs to add for the load balancer. You can add only
+     * one subnet per Availability Zone.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnets A list of subnet IDs to add for the LoadBalancer.
+     * @param subnets A list of subnet IDs to add for the load balancer. You can add only
+     *         one subnet per Availability Zone.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -128,11 +138,13 @@ public class AttachLoadBalancerToSubnetsRequest extends AmazonWebServiceRequest 
     }
     
     /**
-     * A list of subnet IDs to add for the LoadBalancer.
+     * A list of subnet IDs to add for the load balancer. You can add only
+     * one subnet per Availability Zone.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnets A list of subnet IDs to add for the LoadBalancer.
+     * @param subnets A list of subnet IDs to add for the load balancer. You can add only
+     *         one subnet per Availability Zone.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

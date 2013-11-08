@@ -152,7 +152,7 @@ public class ServiceUtils {
             }
 
             String value = request.getParameters().get(param);
-            urlString += param + "=" + HttpUtils.urlEncode(value, true);
+            urlString += param + "=" + HttpUtils.urlEncode(value, false);
         }
 
         try {

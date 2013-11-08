@@ -19,7 +19,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A JSON object containing the GatewayARN of the gateway that was updated.
+ * A JSON object containing the of the gateway that was updated.
  * </p>
  */
 public class UpdateGatewaySoftwareNowResult implements Serializable {

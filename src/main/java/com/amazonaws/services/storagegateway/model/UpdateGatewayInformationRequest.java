@@ -50,14 +50,6 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest imp
      */
     private String gatewayName;
 
-    /**
-     * One of the <a>GatewayTimezone</a> values that represents the time zone
-     * for your gateway. The time zone is used, for example, when a time
-     * stamp is given to a snapshot.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>GMT-12:00, GMT-11:00, GMT-10:00, GMT-9:00, GMT-8:00, GMT-7:00, GMT-6:00, GMT-5:00, GMT-4:00, GMT-3:30, GMT-3:00, GMT-2:00, GMT-1:00, GMT, GMT+1:00, GMT+2:00, GMT+3:00, GMT+3:30, GMT+4:00, GMT+4:30, GMT+5:00, GMT+5:30, GMT+5:45, GMT+6:00, GMT+7:00, GMT+8:00, GMT+9:00, GMT+9:30, GMT+10:00, GMT+11:00, GMT+12:00
-     */
     private String gatewayTimezone;
 
     /**
@@ -172,104 +164,44 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * One of the <a>GatewayTimezone</a> values that represents the time zone
-     * for your gateway. The time zone is used, for example, when a time
-     * stamp is given to a snapshot.
+     * Returns the value of the GatewayTimezone property for this object.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>GMT-12:00, GMT-11:00, GMT-10:00, GMT-9:00, GMT-8:00, GMT-7:00, GMT-6:00, GMT-5:00, GMT-4:00, GMT-3:30, GMT-3:00, GMT-2:00, GMT-1:00, GMT, GMT+1:00, GMT+2:00, GMT+3:00, GMT+3:30, GMT+4:00, GMT+4:30, GMT+5:00, GMT+5:30, GMT+5:45, GMT+6:00, GMT+7:00, GMT+8:00, GMT+9:00, GMT+9:30, GMT+10:00, GMT+11:00, GMT+12:00
+     * <b>Length: </b>3 - 10<br/>
      *
-     * @return One of the <a>GatewayTimezone</a> values that represents the time zone
-     *         for your gateway. The time zone is used, for example, when a time
-     *         stamp is given to a snapshot.
-     *
-     * @see GatewayTimezone
+     * @return The value of the GatewayTimezone property for this object.
      */
     public String getGatewayTimezone() {
         return gatewayTimezone;
     }
     
     /**
-     * One of the <a>GatewayTimezone</a> values that represents the time zone
-     * for your gateway. The time zone is used, for example, when a time
-     * stamp is given to a snapshot.
+     * Sets the value of the GatewayTimezone property for this object.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>GMT-12:00, GMT-11:00, GMT-10:00, GMT-9:00, GMT-8:00, GMT-7:00, GMT-6:00, GMT-5:00, GMT-4:00, GMT-3:30, GMT-3:00, GMT-2:00, GMT-1:00, GMT, GMT+1:00, GMT+2:00, GMT+3:00, GMT+3:30, GMT+4:00, GMT+4:30, GMT+5:00, GMT+5:30, GMT+5:45, GMT+6:00, GMT+7:00, GMT+8:00, GMT+9:00, GMT+9:30, GMT+10:00, GMT+11:00, GMT+12:00
+     * <b>Length: </b>3 - 10<br/>
      *
-     * @param gatewayTimezone One of the <a>GatewayTimezone</a> values that represents the time zone
-     *         for your gateway. The time zone is used, for example, when a time
-     *         stamp is given to a snapshot.
-     *
-     * @see GatewayTimezone
+     * @param gatewayTimezone The new value for the GatewayTimezone property for this object.
      */
     public void setGatewayTimezone(String gatewayTimezone) {
         this.gatewayTimezone = gatewayTimezone;
     }
     
     /**
-     * One of the <a>GatewayTimezone</a> values that represents the time zone
-     * for your gateway. The time zone is used, for example, when a time
-     * stamp is given to a snapshot.
+     * Sets the value of the GatewayTimezone property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>GMT-12:00, GMT-11:00, GMT-10:00, GMT-9:00, GMT-8:00, GMT-7:00, GMT-6:00, GMT-5:00, GMT-4:00, GMT-3:30, GMT-3:00, GMT-2:00, GMT-1:00, GMT, GMT+1:00, GMT+2:00, GMT+3:00, GMT+3:30, GMT+4:00, GMT+4:30, GMT+5:00, GMT+5:30, GMT+5:45, GMT+6:00, GMT+7:00, GMT+8:00, GMT+9:00, GMT+9:30, GMT+10:00, GMT+11:00, GMT+12:00
+     * <b>Length: </b>3 - 10<br/>
      *
-     * @param gatewayTimezone One of the <a>GatewayTimezone</a> values that represents the time zone
-     *         for your gateway. The time zone is used, for example, when a time
-     *         stamp is given to a snapshot.
+     * @param gatewayTimezone The new value for the GatewayTimezone property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
-     *
-     * @see GatewayTimezone
      */
     public UpdateGatewayInformationRequest withGatewayTimezone(String gatewayTimezone) {
         this.gatewayTimezone = gatewayTimezone;
-        return this;
-    }
-
-    /**
-     * One of the <a>GatewayTimezone</a> values that represents the time zone
-     * for your gateway. The time zone is used, for example, when a time
-     * stamp is given to a snapshot.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>GMT-12:00, GMT-11:00, GMT-10:00, GMT-9:00, GMT-8:00, GMT-7:00, GMT-6:00, GMT-5:00, GMT-4:00, GMT-3:30, GMT-3:00, GMT-2:00, GMT-1:00, GMT, GMT+1:00, GMT+2:00, GMT+3:00, GMT+3:30, GMT+4:00, GMT+4:30, GMT+5:00, GMT+5:30, GMT+5:45, GMT+6:00, GMT+7:00, GMT+8:00, GMT+9:00, GMT+9:30, GMT+10:00, GMT+11:00, GMT+12:00
-     *
-     * @param gatewayTimezone One of the <a>GatewayTimezone</a> values that represents the time zone
-     *         for your gateway. The time zone is used, for example, when a time
-     *         stamp is given to a snapshot.
-     *
-     * @see GatewayTimezone
-     */
-    public void setGatewayTimezone(GatewayTimezone gatewayTimezone) {
-        this.gatewayTimezone = gatewayTimezone.toString();
-    }
-    
-    /**
-     * One of the <a>GatewayTimezone</a> values that represents the time zone
-     * for your gateway. The time zone is used, for example, when a time
-     * stamp is given to a snapshot.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>GMT-12:00, GMT-11:00, GMT-10:00, GMT-9:00, GMT-8:00, GMT-7:00, GMT-6:00, GMT-5:00, GMT-4:00, GMT-3:30, GMT-3:00, GMT-2:00, GMT-1:00, GMT, GMT+1:00, GMT+2:00, GMT+3:00, GMT+3:30, GMT+4:00, GMT+4:30, GMT+5:00, GMT+5:30, GMT+5:45, GMT+6:00, GMT+7:00, GMT+8:00, GMT+9:00, GMT+9:30, GMT+10:00, GMT+11:00, GMT+12:00
-     *
-     * @param gatewayTimezone One of the <a>GatewayTimezone</a> values that represents the time zone
-     *         for your gateway. The time zone is used, for example, when a time
-     *         stamp is given to a snapshot.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together.
-     *
-     * @see GatewayTimezone
-     */
-    public UpdateGatewayInformationRequest withGatewayTimezone(GatewayTimezone gatewayTimezone) {
-        this.gatewayTimezone = gatewayTimezone.toString();
         return this;
     }
 

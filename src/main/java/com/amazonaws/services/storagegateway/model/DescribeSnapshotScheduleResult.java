@@ -18,104 +18,53 @@ import java.io.Serializable;
 
 
 /**
- * <p>
- * A JSON object containing the following fields:
- * </p>
- * 
- * <ul>
- * <li> DescribeSnapshotScheduleOutput$Description </li>
- * <li> DescribeSnapshotScheduleOutput$RecurrenceInHours </li>
- * <li> DescribeSnapshotScheduleOutput$StartAt </li>
- * <li> DescribeSnapshotScheduleOutput$Timezone </li>
- * <li> DescribeSnapshotScheduleOutput$VolumeARN </li>
- * 
- * </ul>
+ * Describe Snapshot Schedule Result
  */
 public class DescribeSnapshotScheduleResult implements Serializable {
 
-    /**
-     * The Amazon Resource Name (ARN) of the volume that was specified in the
-     * request.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>50 - 500<br/>
-     */
     private String volumeARN;
 
-    /**
-     * The hour of the day at which the snapshot schedule begins represented
-     * as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the
-     * day is in the time zone of the gateway.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - 23<br/>
-     */
     private Integer startAt;
 
-    /**
-     * The number of hours between snapshots.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - 24<br/>
-     */
     private Integer recurrenceInHours;
 
-    /**
-     * The snapshot description.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     */
     private String description;
 
-    /**
-     * One of the <a>GatewayTimezone</a> values that indicates the time zone
-     * of the gateway.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>GMT-12:00, GMT-11:00, GMT-10:00, GMT-9:00, GMT-8:00, GMT-7:00, GMT-6:00, GMT-5:00, GMT-4:00, GMT-3:30, GMT-3:00, GMT-2:00, GMT-1:00, GMT, GMT+1:00, GMT+2:00, GMT+3:00, GMT+3:30, GMT+4:00, GMT+4:30, GMT+5:00, GMT+5:30, GMT+5:45, GMT+6:00, GMT+7:00, GMT+8:00, GMT+9:00, GMT+9:30, GMT+10:00, GMT+11:00, GMT+12:00
-     */
     private String timezone;
 
     /**
-     * The Amazon Resource Name (ARN) of the volume that was specified in the
-     * request.
+     * Returns the value of the VolumeARN property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @return The Amazon Resource Name (ARN) of the volume that was specified in the
-     *         request.
+     * @return The value of the VolumeARN property for this object.
      */
     public String getVolumeARN() {
         return volumeARN;
     }
     
     /**
-     * The Amazon Resource Name (ARN) of the volume that was specified in the
-     * request.
+     * Sets the value of the VolumeARN property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @param volumeARN The Amazon Resource Name (ARN) of the volume that was specified in the
-     *         request.
+     * @param volumeARN The new value for the VolumeARN property for this object.
      */
     public void setVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
     }
     
     /**
-     * The Amazon Resource Name (ARN) of the volume that was specified in the
-     * request.
+     * Sets the value of the VolumeARN property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @param volumeARN The Amazon Resource Name (ARN) of the volume that was specified in the
-     *         request.
+     * @param volumeARN The new value for the VolumeARN property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -126,50 +75,38 @@ public class DescribeSnapshotScheduleResult implements Serializable {
     }
 
     /**
-     * The hour of the day at which the snapshot schedule begins represented
-     * as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the
-     * day is in the time zone of the gateway.
+     * Returns the value of the StartAt property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 23<br/>
      *
-     * @return The hour of the day at which the snapshot schedule begins represented
-     *         as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the
-     *         day is in the time zone of the gateway.
+     * @return The value of the StartAt property for this object.
      */
     public Integer getStartAt() {
         return startAt;
     }
     
     /**
-     * The hour of the day at which the snapshot schedule begins represented
-     * as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the
-     * day is in the time zone of the gateway.
+     * Sets the value of the StartAt property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 23<br/>
      *
-     * @param startAt The hour of the day at which the snapshot schedule begins represented
-     *         as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the
-     *         day is in the time zone of the gateway.
+     * @param startAt The new value for the StartAt property for this object.
      */
     public void setStartAt(Integer startAt) {
         this.startAt = startAt;
     }
     
     /**
-     * The hour of the day at which the snapshot schedule begins represented
-     * as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the
-     * day is in the time zone of the gateway.
+     * Sets the value of the StartAt property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 23<br/>
      *
-     * @param startAt The hour of the day at which the snapshot schedule begins represented
-     *         as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the
-     *         day is in the time zone of the gateway.
+     * @param startAt The new value for the StartAt property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -180,38 +117,38 @@ public class DescribeSnapshotScheduleResult implements Serializable {
     }
 
     /**
-     * The number of hours between snapshots.
+     * Returns the value of the RecurrenceInHours property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 24<br/>
      *
-     * @return The number of hours between snapshots.
+     * @return The value of the RecurrenceInHours property for this object.
      */
     public Integer getRecurrenceInHours() {
         return recurrenceInHours;
     }
     
     /**
-     * The number of hours between snapshots.
+     * Sets the value of the RecurrenceInHours property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 24<br/>
      *
-     * @param recurrenceInHours The number of hours between snapshots.
+     * @param recurrenceInHours The new value for the RecurrenceInHours property for this object.
      */
     public void setRecurrenceInHours(Integer recurrenceInHours) {
         this.recurrenceInHours = recurrenceInHours;
     }
     
     /**
-     * The number of hours between snapshots.
+     * Sets the value of the RecurrenceInHours property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 24<br/>
      *
-     * @param recurrenceInHours The number of hours between snapshots.
+     * @param recurrenceInHours The new value for the RecurrenceInHours property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -222,38 +159,38 @@ public class DescribeSnapshotScheduleResult implements Serializable {
     }
 
     /**
-     * The snapshot description.
+     * Returns the value of the Description property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      *
-     * @return The snapshot description.
+     * @return The value of the Description property for this object.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * The snapshot description.
+     * Sets the value of the Description property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      *
-     * @param description The snapshot description.
+     * @param description The new value for the Description property for this object.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * The snapshot description.
+     * Sets the value of the Description property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      *
-     * @param description The snapshot description.
+     * @param description The new value for the Description property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -264,94 +201,44 @@ public class DescribeSnapshotScheduleResult implements Serializable {
     }
 
     /**
-     * One of the <a>GatewayTimezone</a> values that indicates the time zone
-     * of the gateway.
+     * Returns the value of the Timezone property for this object.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>GMT-12:00, GMT-11:00, GMT-10:00, GMT-9:00, GMT-8:00, GMT-7:00, GMT-6:00, GMT-5:00, GMT-4:00, GMT-3:30, GMT-3:00, GMT-2:00, GMT-1:00, GMT, GMT+1:00, GMT+2:00, GMT+3:00, GMT+3:30, GMT+4:00, GMT+4:30, GMT+5:00, GMT+5:30, GMT+5:45, GMT+6:00, GMT+7:00, GMT+8:00, GMT+9:00, GMT+9:30, GMT+10:00, GMT+11:00, GMT+12:00
+     * <b>Length: </b>3 - 10<br/>
      *
-     * @return One of the <a>GatewayTimezone</a> values that indicates the time zone
-     *         of the gateway.
-     *
-     * @see GatewayTimezone
+     * @return The value of the Timezone property for this object.
      */
     public String getTimezone() {
         return timezone;
     }
     
     /**
-     * One of the <a>GatewayTimezone</a> values that indicates the time zone
-     * of the gateway.
+     * Sets the value of the Timezone property for this object.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>GMT-12:00, GMT-11:00, GMT-10:00, GMT-9:00, GMT-8:00, GMT-7:00, GMT-6:00, GMT-5:00, GMT-4:00, GMT-3:30, GMT-3:00, GMT-2:00, GMT-1:00, GMT, GMT+1:00, GMT+2:00, GMT+3:00, GMT+3:30, GMT+4:00, GMT+4:30, GMT+5:00, GMT+5:30, GMT+5:45, GMT+6:00, GMT+7:00, GMT+8:00, GMT+9:00, GMT+9:30, GMT+10:00, GMT+11:00, GMT+12:00
+     * <b>Length: </b>3 - 10<br/>
      *
-     * @param timezone One of the <a>GatewayTimezone</a> values that indicates the time zone
-     *         of the gateway.
-     *
-     * @see GatewayTimezone
+     * @param timezone The new value for the Timezone property for this object.
      */
     public void setTimezone(String timezone) {
         this.timezone = timezone;
     }
     
     /**
-     * One of the <a>GatewayTimezone</a> values that indicates the time zone
-     * of the gateway.
+     * Sets the value of the Timezone property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>GMT-12:00, GMT-11:00, GMT-10:00, GMT-9:00, GMT-8:00, GMT-7:00, GMT-6:00, GMT-5:00, GMT-4:00, GMT-3:30, GMT-3:00, GMT-2:00, GMT-1:00, GMT, GMT+1:00, GMT+2:00, GMT+3:00, GMT+3:30, GMT+4:00, GMT+4:30, GMT+5:00, GMT+5:30, GMT+5:45, GMT+6:00, GMT+7:00, GMT+8:00, GMT+9:00, GMT+9:30, GMT+10:00, GMT+11:00, GMT+12:00
+     * <b>Length: </b>3 - 10<br/>
      *
-     * @param timezone One of the <a>GatewayTimezone</a> values that indicates the time zone
-     *         of the gateway.
+     * @param timezone The new value for the Timezone property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
-     *
-     * @see GatewayTimezone
      */
     public DescribeSnapshotScheduleResult withTimezone(String timezone) {
         this.timezone = timezone;
-        return this;
-    }
-
-    /**
-     * One of the <a>GatewayTimezone</a> values that indicates the time zone
-     * of the gateway.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>GMT-12:00, GMT-11:00, GMT-10:00, GMT-9:00, GMT-8:00, GMT-7:00, GMT-6:00, GMT-5:00, GMT-4:00, GMT-3:30, GMT-3:00, GMT-2:00, GMT-1:00, GMT, GMT+1:00, GMT+2:00, GMT+3:00, GMT+3:30, GMT+4:00, GMT+4:30, GMT+5:00, GMT+5:30, GMT+5:45, GMT+6:00, GMT+7:00, GMT+8:00, GMT+9:00, GMT+9:30, GMT+10:00, GMT+11:00, GMT+12:00
-     *
-     * @param timezone One of the <a>GatewayTimezone</a> values that indicates the time zone
-     *         of the gateway.
-     *
-     * @see GatewayTimezone
-     */
-    public void setTimezone(GatewayTimezone timezone) {
-        this.timezone = timezone.toString();
-    }
-    
-    /**
-     * One of the <a>GatewayTimezone</a> values that indicates the time zone
-     * of the gateway.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>GMT-12:00, GMT-11:00, GMT-10:00, GMT-9:00, GMT-8:00, GMT-7:00, GMT-6:00, GMT-5:00, GMT-4:00, GMT-3:30, GMT-3:00, GMT-2:00, GMT-1:00, GMT, GMT+1:00, GMT+2:00, GMT+3:00, GMT+3:30, GMT+4:00, GMT+4:30, GMT+5:00, GMT+5:30, GMT+5:45, GMT+6:00, GMT+7:00, GMT+8:00, GMT+9:00, GMT+9:30, GMT+10:00, GMT+11:00, GMT+12:00
-     *
-     * @param timezone One of the <a>GatewayTimezone</a> values that indicates the time zone
-     *         of the gateway.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together.
-     *
-     * @see GatewayTimezone
-     */
-    public DescribeSnapshotScheduleResult withTimezone(GatewayTimezone timezone) {
-        this.timezone = timezone.toString();
         return this;
     }
 

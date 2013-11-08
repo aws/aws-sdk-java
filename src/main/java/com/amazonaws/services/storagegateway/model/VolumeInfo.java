@@ -18,90 +18,47 @@ import java.io.Serializable;
 
 
 /**
- * <p>
- * Describes a storage volume.
- * </p>
+ * Volume Info
  */
 public class VolumeInfo implements Serializable {
 
-    /**
-     * The Amazon Resource Name (ARN) for the storage volume. For example,
-     * the following is a valid ARN: <p>
-     * <code>arn:aws:storagegateway:us-east-1:111122223333:gateway/mygateway/volume/vol-1122AABB</code>
-     * <p><i>Valid Values</i>: 50 to 500 lowercase letters, numbers, periods
-     * (.), and hyphens (-).
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>50 - 500<br/>
-     */
     private String volumeARN;
 
-    /**
-     * One of the VolumeType values that indicates the configuration of the
-     * storage volume, for example as a storage volume.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>STORED iSCSI, CACHED iSCSI
-     */
     private String volumeType;
 
     /**
-     * The Amazon Resource Name (ARN) for the storage volume. For example,
-     * the following is a valid ARN: <p>
-     * <code>arn:aws:storagegateway:us-east-1:111122223333:gateway/mygateway/volume/vol-1122AABB</code>
-     * <p><i>Valid Values</i>: 50 to 500 lowercase letters, numbers, periods
-     * (.), and hyphens (-).
+     * Returns the value of the VolumeARN property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @return The Amazon Resource Name (ARN) for the storage volume. For example,
-     *         the following is a valid ARN: <p>
-     *         <code>arn:aws:storagegateway:us-east-1:111122223333:gateway/mygateway/volume/vol-1122AABB</code>
-     *         <p><i>Valid Values</i>: 50 to 500 lowercase letters, numbers, periods
-     *         (.), and hyphens (-).
+     * @return The value of the VolumeARN property for this object.
      */
     public String getVolumeARN() {
         return volumeARN;
     }
     
     /**
-     * The Amazon Resource Name (ARN) for the storage volume. For example,
-     * the following is a valid ARN: <p>
-     * <code>arn:aws:storagegateway:us-east-1:111122223333:gateway/mygateway/volume/vol-1122AABB</code>
-     * <p><i>Valid Values</i>: 50 to 500 lowercase letters, numbers, periods
-     * (.), and hyphens (-).
+     * Sets the value of the VolumeARN property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @param volumeARN The Amazon Resource Name (ARN) for the storage volume. For example,
-     *         the following is a valid ARN: <p>
-     *         <code>arn:aws:storagegateway:us-east-1:111122223333:gateway/mygateway/volume/vol-1122AABB</code>
-     *         <p><i>Valid Values</i>: 50 to 500 lowercase letters, numbers, periods
-     *         (.), and hyphens (-).
+     * @param volumeARN The new value for the VolumeARN property for this object.
      */
     public void setVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
     }
     
     /**
-     * The Amazon Resource Name (ARN) for the storage volume. For example,
-     * the following is a valid ARN: <p>
-     * <code>arn:aws:storagegateway:us-east-1:111122223333:gateway/mygateway/volume/vol-1122AABB</code>
-     * <p><i>Valid Values</i>: 50 to 500 lowercase letters, numbers, periods
-     * (.), and hyphens (-).
+     * Sets the value of the VolumeARN property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @param volumeARN The Amazon Resource Name (ARN) for the storage volume. For example,
-     *         the following is a valid ARN: <p>
-     *         <code>arn:aws:storagegateway:us-east-1:111122223333:gateway/mygateway/volume/vol-1122AABB</code>
-     *         <p><i>Valid Values</i>: 50 to 500 lowercase letters, numbers, periods
-     *         (.), and hyphens (-).
+     * @param volumeARN The new value for the VolumeARN property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -112,94 +69,44 @@ public class VolumeInfo implements Serializable {
     }
 
     /**
-     * One of the VolumeType values that indicates the configuration of the
-     * storage volume, for example as a storage volume.
+     * Returns the value of the VolumeType property for this object.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>STORED iSCSI, CACHED iSCSI
+     * <b>Length: </b>3 - 100<br/>
      *
-     * @return One of the VolumeType values that indicates the configuration of the
-     *         storage volume, for example as a storage volume.
-     *
-     * @see VolumeType
+     * @return The value of the VolumeType property for this object.
      */
     public String getVolumeType() {
         return volumeType;
     }
     
     /**
-     * One of the VolumeType values that indicates the configuration of the
-     * storage volume, for example as a storage volume.
+     * Sets the value of the VolumeType property for this object.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>STORED iSCSI, CACHED iSCSI
+     * <b>Length: </b>3 - 100<br/>
      *
-     * @param volumeType One of the VolumeType values that indicates the configuration of the
-     *         storage volume, for example as a storage volume.
-     *
-     * @see VolumeType
+     * @param volumeType The new value for the VolumeType property for this object.
      */
     public void setVolumeType(String volumeType) {
         this.volumeType = volumeType;
     }
     
     /**
-     * One of the VolumeType values that indicates the configuration of the
-     * storage volume, for example as a storage volume.
+     * Sets the value of the VolumeType property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>STORED iSCSI, CACHED iSCSI
+     * <b>Length: </b>3 - 100<br/>
      *
-     * @param volumeType One of the VolumeType values that indicates the configuration of the
-     *         storage volume, for example as a storage volume.
+     * @param volumeType The new value for the VolumeType property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
-     *
-     * @see VolumeType
      */
     public VolumeInfo withVolumeType(String volumeType) {
         this.volumeType = volumeType;
-        return this;
-    }
-
-    /**
-     * One of the VolumeType values that indicates the configuration of the
-     * storage volume, for example as a storage volume.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>STORED iSCSI, CACHED iSCSI
-     *
-     * @param volumeType One of the VolumeType values that indicates the configuration of the
-     *         storage volume, for example as a storage volume.
-     *
-     * @see VolumeType
-     */
-    public void setVolumeType(VolumeType volumeType) {
-        this.volumeType = volumeType.toString();
-    }
-    
-    /**
-     * One of the VolumeType values that indicates the configuration of the
-     * storage volume, for example as a storage volume.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>STORED iSCSI, CACHED iSCSI
-     *
-     * @param volumeType One of the VolumeType values that indicates the configuration of the
-     *         storage volume, for example as a storage volume.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together.
-     *
-     * @see VolumeType
-     */
-    public VolumeInfo withVolumeType(VolumeType volumeType) {
-        this.volumeType = volumeType.toString();
         return this;
     }
 

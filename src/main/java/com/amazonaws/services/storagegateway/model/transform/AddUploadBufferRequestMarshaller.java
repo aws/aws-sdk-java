@@ -47,7 +47,7 @@ public class AddUploadBufferRequestMarshaller implements Marshaller<Request<AddU
     }
 
         Request<AddUploadBufferRequest> request = new DefaultRequest<AddUploadBufferRequest>(addUploadBufferRequest, "AWSStorageGateway");
-        String target = "StorageGateway_20120630.AddUploadBuffer";
+        String target = "StorageGateway_20130630.AddUploadBuffer";
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 

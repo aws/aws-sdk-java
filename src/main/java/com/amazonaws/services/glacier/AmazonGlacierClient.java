@@ -323,7 +323,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * This operation returns information about a job you previously
@@ -400,7 +401,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * This operation lists the parts of an archive that have been uploaded
@@ -480,7 +482,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * This operation retrieves the <code>notification-configuration</code>
@@ -555,7 +558,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * This operation lists jobs for a vault, including jobs that are
@@ -658,7 +662,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * This operation creates a new vault with the specified name. The name
@@ -747,7 +752,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * This operation initiates a multipart upload. Amazon Glacier creates a
@@ -841,7 +847,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * This operation aborts a multipart upload identified by the upload ID.
@@ -1094,7 +1101,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * This operation initiates a job of the specified type. In this release,
@@ -1241,7 +1249,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * This operation adds an archive to a vault. This is a synchronous
@@ -1339,7 +1348,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * This operation configures notifications that will be sent when
@@ -1530,7 +1540,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * This operation uploads a part of an archive. You can upload archive
@@ -1641,7 +1652,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * This operation returns information about a vault, including the
@@ -1716,7 +1728,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * This operation deletes the notification configuration set for a vault.
@@ -1865,7 +1878,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * This operation deletes a vault. Amazon Glacier will delete a vault

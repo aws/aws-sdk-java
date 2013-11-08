@@ -21,12 +21,6 @@ import java.io.Serializable;
  * <p>
  * A JSON object containing the following fields:
  * </p>
- * 
- * <ul>
- * <li> DeleteChapCredentialsOutput$InitiatorName </li>
- * <li> DeleteChapCredentialsOutput$TargetARN </li>
- * 
- * </ul>
  */
 public class DeleteChapCredentialsResult implements Serializable {
 

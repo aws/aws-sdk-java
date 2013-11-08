@@ -30,19 +30,21 @@ public class InstanceState implements Serializable {
     private String instanceId;
 
     /**
-     * Specifies the current status of the instance.
+     * Specifies the current state of the instance. <p>Valid value:
+     * <code>InService</code>|<code>OutOfService</code>
      */
     private String state;
 
     /**
      * Provides information about the cause of <i>OutOfService</i> instances.
      * Specifically, it indicates whether the cause is Elastic Load Balancing
-     * or the instance behind the LoadBalancer.
+     * or the instance behind the load balancer. <p>Valid value:
+     * <code>ELB</code>|<code>Instance</code>|<code>N/A</code>
      */
     private String reasonCode;
 
     /**
-     * Provides a description of the instance.
+     * Provides a description of the instance state.
      */
     private String description;
 
@@ -86,29 +88,35 @@ public class InstanceState implements Serializable {
     }
 
     /**
-     * Specifies the current status of the instance.
+     * Specifies the current state of the instance. <p>Valid value:
+     * <code>InService</code>|<code>OutOfService</code>
      *
-     * @return Specifies the current status of the instance.
+     * @return Specifies the current state of the instance. <p>Valid value:
+     *         <code>InService</code>|<code>OutOfService</code>
      */
     public String getState() {
         return state;
     }
     
     /**
-     * Specifies the current status of the instance.
+     * Specifies the current state of the instance. <p>Valid value:
+     * <code>InService</code>|<code>OutOfService</code>
      *
-     * @param state Specifies the current status of the instance.
+     * @param state Specifies the current state of the instance. <p>Valid value:
+     *         <code>InService</code>|<code>OutOfService</code>
      */
     public void setState(String state) {
         this.state = state;
     }
     
     /**
-     * Specifies the current status of the instance.
+     * Specifies the current state of the instance. <p>Valid value:
+     * <code>InService</code>|<code>OutOfService</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param state Specifies the current status of the instance.
+     * @param state Specifies the current state of the instance. <p>Valid value:
+     *         <code>InService</code>|<code>OutOfService</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -121,11 +129,13 @@ public class InstanceState implements Serializable {
     /**
      * Provides information about the cause of <i>OutOfService</i> instances.
      * Specifically, it indicates whether the cause is Elastic Load Balancing
-     * or the instance behind the LoadBalancer.
+     * or the instance behind the load balancer. <p>Valid value:
+     * <code>ELB</code>|<code>Instance</code>|<code>N/A</code>
      *
      * @return Provides information about the cause of <i>OutOfService</i> instances.
      *         Specifically, it indicates whether the cause is Elastic Load Balancing
-     *         or the instance behind the LoadBalancer.
+     *         or the instance behind the load balancer. <p>Valid value:
+     *         <code>ELB</code>|<code>Instance</code>|<code>N/A</code>
      */
     public String getReasonCode() {
         return reasonCode;
@@ -134,11 +144,13 @@ public class InstanceState implements Serializable {
     /**
      * Provides information about the cause of <i>OutOfService</i> instances.
      * Specifically, it indicates whether the cause is Elastic Load Balancing
-     * or the instance behind the LoadBalancer.
+     * or the instance behind the load balancer. <p>Valid value:
+     * <code>ELB</code>|<code>Instance</code>|<code>N/A</code>
      *
      * @param reasonCode Provides information about the cause of <i>OutOfService</i> instances.
      *         Specifically, it indicates whether the cause is Elastic Load Balancing
-     *         or the instance behind the LoadBalancer.
+     *         or the instance behind the load balancer. <p>Valid value:
+     *         <code>ELB</code>|<code>Instance</code>|<code>N/A</code>
      */
     public void setReasonCode(String reasonCode) {
         this.reasonCode = reasonCode;
@@ -147,13 +159,15 @@ public class InstanceState implements Serializable {
     /**
      * Provides information about the cause of <i>OutOfService</i> instances.
      * Specifically, it indicates whether the cause is Elastic Load Balancing
-     * or the instance behind the LoadBalancer.
+     * or the instance behind the load balancer. <p>Valid value:
+     * <code>ELB</code>|<code>Instance</code>|<code>N/A</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reasonCode Provides information about the cause of <i>OutOfService</i> instances.
      *         Specifically, it indicates whether the cause is Elastic Load Balancing
-     *         or the instance behind the LoadBalancer.
+     *         or the instance behind the load balancer. <p>Valid value:
+     *         <code>ELB</code>|<code>Instance</code>|<code>N/A</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -164,29 +178,29 @@ public class InstanceState implements Serializable {
     }
 
     /**
-     * Provides a description of the instance.
+     * Provides a description of the instance state.
      *
-     * @return Provides a description of the instance.
+     * @return Provides a description of the instance state.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * Provides a description of the instance.
+     * Provides a description of the instance state.
      *
-     * @param description Provides a description of the instance.
+     * @param description Provides a description of the instance state.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * Provides a description of the instance.
+     * Provides a description of the instance state.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description Provides a description of the instance.
+     * @param description Provides a description of the instance state.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

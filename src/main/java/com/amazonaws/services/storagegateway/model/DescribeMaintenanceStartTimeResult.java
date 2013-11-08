@@ -18,18 +18,7 @@ import java.io.Serializable;
 
 
 /**
- * <p>
- * A JSON object containing the following fields:
- * </p>
- * 
- * <ul>
- * <li> GatewayARN </li>
- * <li> DescribeMaintenanceStartTimeOutput$DayOfWeek </li>
- * <li> DescribeMaintenanceStartTimeOutput$HourOfDay </li>
- * <li> DescribeMaintenanceStartTimeOutput$MinuteOfHour </li>
- * <li> DescribeMaintenanceStartTimeOutput$Timezone </li>
- * 
- * </ul>
+ * Describe Maintenance Start Time Result
  */
 public class DescribeMaintenanceStartTimeResult implements Serializable {
 
@@ -43,44 +32,12 @@ public class DescribeMaintenanceStartTimeResult implements Serializable {
      */
     private String gatewayARN;
 
-    /**
-     * The hour component of the maintenance start time represented as
-     * <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day
-     * is in the time zone of the gateway.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - 23<br/>
-     */
     private Integer hourOfDay;
 
-    /**
-     * The minute component of the maintenance start time represented as
-     * <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the
-     * hour is in the time zone of the gateway.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - 59<br/>
-     */
     private Integer minuteOfHour;
 
-    /**
-     * An ordinal number between 0 and 6 that represents the day of the week,
-     * where 0 represents Sunday and 6 represents Saturday. The day of week
-     * is in the time zone of the gateway.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>0 - 6<br/>
-     */
     private Integer dayOfWeek;
 
-    /**
-     * One of the <a>GatewayTimezone</a> values that indicates the time zone
-     * that is set for the gateway. The start time and day of week specified
-     * should be in the time zone of the gateway.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>GMT-12:00, GMT-11:00, GMT-10:00, GMT-9:00, GMT-8:00, GMT-7:00, GMT-6:00, GMT-5:00, GMT-4:00, GMT-3:30, GMT-3:00, GMT-2:00, GMT-1:00, GMT, GMT+1:00, GMT+2:00, GMT+3:00, GMT+3:30, GMT+4:00, GMT+4:30, GMT+5:00, GMT+5:30, GMT+5:45, GMT+6:00, GMT+7:00, GMT+8:00, GMT+9:00, GMT+9:30, GMT+10:00, GMT+11:00, GMT+12:00
-     */
     private String timezone;
 
     /**
@@ -138,50 +95,38 @@ public class DescribeMaintenanceStartTimeResult implements Serializable {
     }
 
     /**
-     * The hour component of the maintenance start time represented as
-     * <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day
-     * is in the time zone of the gateway.
+     * Returns the value of the HourOfDay property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 23<br/>
      *
-     * @return The hour component of the maintenance start time represented as
-     *         <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day
-     *         is in the time zone of the gateway.
+     * @return The value of the HourOfDay property for this object.
      */
     public Integer getHourOfDay() {
         return hourOfDay;
     }
     
     /**
-     * The hour component of the maintenance start time represented as
-     * <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day
-     * is in the time zone of the gateway.
+     * Sets the value of the HourOfDay property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 23<br/>
      *
-     * @param hourOfDay The hour component of the maintenance start time represented as
-     *         <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day
-     *         is in the time zone of the gateway.
+     * @param hourOfDay The new value for the HourOfDay property for this object.
      */
     public void setHourOfDay(Integer hourOfDay) {
         this.hourOfDay = hourOfDay;
     }
     
     /**
-     * The hour component of the maintenance start time represented as
-     * <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day
-     * is in the time zone of the gateway.
+     * Sets the value of the HourOfDay property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 23<br/>
      *
-     * @param hourOfDay The hour component of the maintenance start time represented as
-     *         <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day
-     *         is in the time zone of the gateway.
+     * @param hourOfDay The new value for the HourOfDay property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -192,50 +137,38 @@ public class DescribeMaintenanceStartTimeResult implements Serializable {
     }
 
     /**
-     * The minute component of the maintenance start time represented as
-     * <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the
-     * hour is in the time zone of the gateway.
+     * Returns the value of the MinuteOfHour property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 59<br/>
      *
-     * @return The minute component of the maintenance start time represented as
-     *         <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the
-     *         hour is in the time zone of the gateway.
+     * @return The value of the MinuteOfHour property for this object.
      */
     public Integer getMinuteOfHour() {
         return minuteOfHour;
     }
     
     /**
-     * The minute component of the maintenance start time represented as
-     * <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the
-     * hour is in the time zone of the gateway.
+     * Sets the value of the MinuteOfHour property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 59<br/>
      *
-     * @param minuteOfHour The minute component of the maintenance start time represented as
-     *         <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the
-     *         hour is in the time zone of the gateway.
+     * @param minuteOfHour The new value for the MinuteOfHour property for this object.
      */
     public void setMinuteOfHour(Integer minuteOfHour) {
         this.minuteOfHour = minuteOfHour;
     }
     
     /**
-     * The minute component of the maintenance start time represented as
-     * <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the
-     * hour is in the time zone of the gateway.
+     * Sets the value of the MinuteOfHour property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 59<br/>
      *
-     * @param minuteOfHour The minute component of the maintenance start time represented as
-     *         <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the
-     *         hour is in the time zone of the gateway.
+     * @param minuteOfHour The new value for the MinuteOfHour property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -246,50 +179,38 @@ public class DescribeMaintenanceStartTimeResult implements Serializable {
     }
 
     /**
-     * An ordinal number between 0 and 6 that represents the day of the week,
-     * where 0 represents Sunday and 6 represents Saturday. The day of week
-     * is in the time zone of the gateway.
+     * Returns the value of the DayOfWeek property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 6<br/>
      *
-     * @return An ordinal number between 0 and 6 that represents the day of the week,
-     *         where 0 represents Sunday and 6 represents Saturday. The day of week
-     *         is in the time zone of the gateway.
+     * @return The value of the DayOfWeek property for this object.
      */
     public Integer getDayOfWeek() {
         return dayOfWeek;
     }
     
     /**
-     * An ordinal number between 0 and 6 that represents the day of the week,
-     * where 0 represents Sunday and 6 represents Saturday. The day of week
-     * is in the time zone of the gateway.
+     * Sets the value of the DayOfWeek property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 6<br/>
      *
-     * @param dayOfWeek An ordinal number between 0 and 6 that represents the day of the week,
-     *         where 0 represents Sunday and 6 represents Saturday. The day of week
-     *         is in the time zone of the gateway.
+     * @param dayOfWeek The new value for the DayOfWeek property for this object.
      */
     public void setDayOfWeek(Integer dayOfWeek) {
         this.dayOfWeek = dayOfWeek;
     }
     
     /**
-     * An ordinal number between 0 and 6 that represents the day of the week,
-     * where 0 represents Sunday and 6 represents Saturday. The day of week
-     * is in the time zone of the gateway.
+     * Sets the value of the DayOfWeek property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 6<br/>
      *
-     * @param dayOfWeek An ordinal number between 0 and 6 that represents the day of the week,
-     *         where 0 represents Sunday and 6 represents Saturday. The day of week
-     *         is in the time zone of the gateway.
+     * @param dayOfWeek The new value for the DayOfWeek property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -300,104 +221,44 @@ public class DescribeMaintenanceStartTimeResult implements Serializable {
     }
 
     /**
-     * One of the <a>GatewayTimezone</a> values that indicates the time zone
-     * that is set for the gateway. The start time and day of week specified
-     * should be in the time zone of the gateway.
+     * Returns the value of the Timezone property for this object.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>GMT-12:00, GMT-11:00, GMT-10:00, GMT-9:00, GMT-8:00, GMT-7:00, GMT-6:00, GMT-5:00, GMT-4:00, GMT-3:30, GMT-3:00, GMT-2:00, GMT-1:00, GMT, GMT+1:00, GMT+2:00, GMT+3:00, GMT+3:30, GMT+4:00, GMT+4:30, GMT+5:00, GMT+5:30, GMT+5:45, GMT+6:00, GMT+7:00, GMT+8:00, GMT+9:00, GMT+9:30, GMT+10:00, GMT+11:00, GMT+12:00
+     * <b>Length: </b>3 - 10<br/>
      *
-     * @return One of the <a>GatewayTimezone</a> values that indicates the time zone
-     *         that is set for the gateway. The start time and day of week specified
-     *         should be in the time zone of the gateway.
-     *
-     * @see GatewayTimezone
+     * @return The value of the Timezone property for this object.
      */
     public String getTimezone() {
         return timezone;
     }
     
     /**
-     * One of the <a>GatewayTimezone</a> values that indicates the time zone
-     * that is set for the gateway. The start time and day of week specified
-     * should be in the time zone of the gateway.
+     * Sets the value of the Timezone property for this object.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>GMT-12:00, GMT-11:00, GMT-10:00, GMT-9:00, GMT-8:00, GMT-7:00, GMT-6:00, GMT-5:00, GMT-4:00, GMT-3:30, GMT-3:00, GMT-2:00, GMT-1:00, GMT, GMT+1:00, GMT+2:00, GMT+3:00, GMT+3:30, GMT+4:00, GMT+4:30, GMT+5:00, GMT+5:30, GMT+5:45, GMT+6:00, GMT+7:00, GMT+8:00, GMT+9:00, GMT+9:30, GMT+10:00, GMT+11:00, GMT+12:00
+     * <b>Length: </b>3 - 10<br/>
      *
-     * @param timezone One of the <a>GatewayTimezone</a> values that indicates the time zone
-     *         that is set for the gateway. The start time and day of week specified
-     *         should be in the time zone of the gateway.
-     *
-     * @see GatewayTimezone
+     * @param timezone The new value for the Timezone property for this object.
      */
     public void setTimezone(String timezone) {
         this.timezone = timezone;
     }
     
     /**
-     * One of the <a>GatewayTimezone</a> values that indicates the time zone
-     * that is set for the gateway. The start time and day of week specified
-     * should be in the time zone of the gateway.
+     * Sets the value of the Timezone property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>GMT-12:00, GMT-11:00, GMT-10:00, GMT-9:00, GMT-8:00, GMT-7:00, GMT-6:00, GMT-5:00, GMT-4:00, GMT-3:30, GMT-3:00, GMT-2:00, GMT-1:00, GMT, GMT+1:00, GMT+2:00, GMT+3:00, GMT+3:30, GMT+4:00, GMT+4:30, GMT+5:00, GMT+5:30, GMT+5:45, GMT+6:00, GMT+7:00, GMT+8:00, GMT+9:00, GMT+9:30, GMT+10:00, GMT+11:00, GMT+12:00
+     * <b>Length: </b>3 - 10<br/>
      *
-     * @param timezone One of the <a>GatewayTimezone</a> values that indicates the time zone
-     *         that is set for the gateway. The start time and day of week specified
-     *         should be in the time zone of the gateway.
+     * @param timezone The new value for the Timezone property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
-     *
-     * @see GatewayTimezone
      */
     public DescribeMaintenanceStartTimeResult withTimezone(String timezone) {
         this.timezone = timezone;
-        return this;
-    }
-
-    /**
-     * One of the <a>GatewayTimezone</a> values that indicates the time zone
-     * that is set for the gateway. The start time and day of week specified
-     * should be in the time zone of the gateway.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>GMT-12:00, GMT-11:00, GMT-10:00, GMT-9:00, GMT-8:00, GMT-7:00, GMT-6:00, GMT-5:00, GMT-4:00, GMT-3:30, GMT-3:00, GMT-2:00, GMT-1:00, GMT, GMT+1:00, GMT+2:00, GMT+3:00, GMT+3:30, GMT+4:00, GMT+4:30, GMT+5:00, GMT+5:30, GMT+5:45, GMT+6:00, GMT+7:00, GMT+8:00, GMT+9:00, GMT+9:30, GMT+10:00, GMT+11:00, GMT+12:00
-     *
-     * @param timezone One of the <a>GatewayTimezone</a> values that indicates the time zone
-     *         that is set for the gateway. The start time and day of week specified
-     *         should be in the time zone of the gateway.
-     *
-     * @see GatewayTimezone
-     */
-    public void setTimezone(GatewayTimezone timezone) {
-        this.timezone = timezone.toString();
-    }
-    
-    /**
-     * One of the <a>GatewayTimezone</a> values that indicates the time zone
-     * that is set for the gateway. The start time and day of week specified
-     * should be in the time zone of the gateway.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>GMT-12:00, GMT-11:00, GMT-10:00, GMT-9:00, GMT-8:00, GMT-7:00, GMT-6:00, GMT-5:00, GMT-4:00, GMT-3:30, GMT-3:00, GMT-2:00, GMT-1:00, GMT, GMT+1:00, GMT+2:00, GMT+3:00, GMT+3:30, GMT+4:00, GMT+4:30, GMT+5:00, GMT+5:30, GMT+5:45, GMT+6:00, GMT+7:00, GMT+8:00, GMT+9:00, GMT+9:30, GMT+10:00, GMT+11:00, GMT+12:00
-     *
-     * @param timezone One of the <a>GatewayTimezone</a> values that indicates the time zone
-     *         that is set for the gateway. The start time and day of week specified
-     *         should be in the time zone of the gateway.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together.
-     *
-     * @see GatewayTimezone
-     */
-    public DescribeMaintenanceStartTimeResult withTimezone(GatewayTimezone timezone) {
-        this.timezone = timezone.toString();
         return this;
     }
 

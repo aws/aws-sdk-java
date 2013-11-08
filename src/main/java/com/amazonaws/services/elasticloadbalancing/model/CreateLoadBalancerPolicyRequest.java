@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#createLoadBalancerPolicy(CreateLoadBalancerPolicyRequest) CreateLoadBalancerPolicy operation}.
  * <p>
- * Creates a new policy that contains the necessary attributes depending on the policy type. Policies are settings that are saved for your Elastic
- * LoadBalancer and that can be applied to the front-end listener, or the back-end application server, depending on your policy type.
+ * Creates a new policy that contains the necessary attributes depending on the policy type. Policies are settings that are saved for your load balancer
+ * and that can be applied to the front-end listener, or the back-end application server, depending on your policy type.
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#createLoadBalancerPolicy(CreateLoadBalancerPolicyRequest)
@@ -31,13 +31,13 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest imp
 
     /**
      * The name associated with the LoadBalancer for which the policy is
-     * being created. This name must be unique within the client AWS account.
+     * being created.
      */
     private String loadBalancerName;
 
     /**
-     * The name of the LoadBalancer policy being created. The name must be
-     * unique within the set of policies for this LoadBalancer.
+     * The name of the load balancer policy being created. The name must be
+     * unique within the set of policies for this load balancer.
      */
     private String policyName;
 
@@ -55,10 +55,10 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest imp
 
     /**
      * The name associated with the LoadBalancer for which the policy is
-     * being created. This name must be unique within the client AWS account.
+     * being created.
      *
      * @return The name associated with the LoadBalancer for which the policy is
-     *         being created. This name must be unique within the client AWS account.
+     *         being created.
      */
     public String getLoadBalancerName() {
         return loadBalancerName;
@@ -66,10 +66,10 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest imp
     
     /**
      * The name associated with the LoadBalancer for which the policy is
-     * being created. This name must be unique within the client AWS account.
+     * being created.
      *
      * @param loadBalancerName The name associated with the LoadBalancer for which the policy is
-     *         being created. This name must be unique within the client AWS account.
+     *         being created.
      */
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
@@ -77,12 +77,12 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest imp
     
     /**
      * The name associated with the LoadBalancer for which the policy is
-     * being created. This name must be unique within the client AWS account.
+     * being created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param loadBalancerName The name associated with the LoadBalancer for which the policy is
-     *         being created. This name must be unique within the client AWS account.
+     *         being created.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -93,35 +93,35 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * The name of the LoadBalancer policy being created. The name must be
-     * unique within the set of policies for this LoadBalancer.
+     * The name of the load balancer policy being created. The name must be
+     * unique within the set of policies for this load balancer.
      *
-     * @return The name of the LoadBalancer policy being created. The name must be
-     *         unique within the set of policies for this LoadBalancer.
+     * @return The name of the load balancer policy being created. The name must be
+     *         unique within the set of policies for this load balancer.
      */
     public String getPolicyName() {
         return policyName;
     }
     
     /**
-     * The name of the LoadBalancer policy being created. The name must be
-     * unique within the set of policies for this LoadBalancer.
+     * The name of the load balancer policy being created. The name must be
+     * unique within the set of policies for this load balancer.
      *
-     * @param policyName The name of the LoadBalancer policy being created. The name must be
-     *         unique within the set of policies for this LoadBalancer.
+     * @param policyName The name of the load balancer policy being created. The name must be
+     *         unique within the set of policies for this load balancer.
      */
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
     
     /**
-     * The name of the LoadBalancer policy being created. The name must be
-     * unique within the set of policies for this LoadBalancer.
+     * The name of the load balancer policy being created. The name must be
+     * unique within the set of policies for this load balancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param policyName The name of the LoadBalancer policy being created. The name must be
-     *         unique within the set of policies for this LoadBalancer.
+     * @param policyName The name of the load balancer policy being created. The name must be
+     *         unique within the set of policies for this load balancer.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

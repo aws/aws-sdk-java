@@ -47,7 +47,7 @@ public class DescribeBandwidthRateLimitRequestMarshaller implements Marshaller<R
     }
 
         Request<DescribeBandwidthRateLimitRequest> request = new DefaultRequest<DescribeBandwidthRateLimitRequest>(describeBandwidthRateLimitRequest, "AWSStorageGateway");
-        String target = "StorageGateway_20120630.DescribeBandwidthRateLimit";
+        String target = "StorageGateway_20130630.DescribeBandwidthRateLimit";
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 

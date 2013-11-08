@@ -47,7 +47,7 @@ public class DeleteBandwidthRateLimitRequestMarshaller implements Marshaller<Req
     }
 
         Request<DeleteBandwidthRateLimitRequest> request = new DefaultRequest<DeleteBandwidthRateLimitRequest>(deleteBandwidthRateLimitRequest, "AWSStorageGateway");
-        String target = "StorageGateway_20120630.DeleteBandwidthRateLimit";
+        String target = "StorageGateway_20130630.DeleteBandwidthRateLimit";
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 

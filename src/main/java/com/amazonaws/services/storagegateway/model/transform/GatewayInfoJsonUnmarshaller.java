@@ -55,6 +55,14 @@ public class GatewayInfoJsonUnmarshaller implements Unmarshaller<GatewayInfo, Js
                     context.nextToken();
                     gatewayInfo.setGatewayARN(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("GatewayType", targetDepth)) {
+                    context.nextToken();
+                    gatewayInfo.setGatewayType(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("GatewayOperationalState", targetDepth)) {
+                    context.nextToken();
+                    gatewayInfo.setGatewayOperationalState(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

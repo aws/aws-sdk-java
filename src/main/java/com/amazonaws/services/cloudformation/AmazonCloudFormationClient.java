@@ -59,6 +59,9 @@ import com.amazonaws.services.cloudformation.model.transform.*;
  * Amazon CloudFormation makes use of other AWS products. If you need additional technical information about a specific AWS product, you can find the
  * product's technical documentation at <a href="http://aws.amazon.com/documentation/"> http://aws.amazon.com/documentation/ </a> .
  * </p>
+ * <p>
+ * <b>NOTE:</b>You must call the AWS CloudFormation API as a regular IAM user. AWS CloudFormation does not support calling the API with an IAM role
+ * </p>
  */
 public class AmazonCloudFormationClient extends AmazonWebServiceClient implements AmazonCloudFormation {
 
@@ -208,7 +211,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
         
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-		requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+    requestHandlers.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/cloudformation/request.handlers"));
     }
 
@@ -269,7 +272,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
     
     /**
      * <p>
-     * Returns the template body for a specified stack name. You can get the
+     * Returns the template body for a specified stack. You can get the
      * template for running or deleted stacks.
      * </p>
      * <p>
@@ -300,6 +303,33 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             throws AmazonServiceException, AmazonClientException {
         Request<GetTemplateRequest> request = new GetTemplateRequestMarshaller().marshall(getTemplateRequest);
         return invoke(request, new GetTemplateResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * Returns the stack policy for a specified stack. If a stack doesn't
+     * have a policy, a null value is returned.
+     * </p>
+     *
+     * @param getStackPolicyRequest Container for the necessary parameters to
+     *           execute the GetStackPolicy service method on AmazonCloudFormation.
+     * 
+     * @return The response from the GetStackPolicy service method, as
+     *         returned by AmazonCloudFormation.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetStackPolicyResult getStackPolicy(GetStackPolicyRequest getStackPolicyRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<GetStackPolicyRequest> request = new GetStackPolicyRequestMarshaller().marshall(getStackPolicyRequest);
+        return invoke(request, new GetStackPolicyResultStaxUnmarshaller());
     }
     
     /**
@@ -370,6 +400,29 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
     
     /**
      * <p>
+     * Sets a stack policy for a specified stack.
+     * </p>
+     *
+     * @param setStackPolicyRequest Container for the necessary parameters to
+     *           execute the SetStackPolicy service method on AmazonCloudFormation.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void setStackPolicy(SetStackPolicyRequest setStackPolicyRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<SetStackPolicyRequest> request = new SetStackPolicyRequestMarshaller().marshall(setStackPolicyRequest);
+        invoke(request, null);
+    }
+    
+    /**
+     * <p>
      * Returns the estimated monthly cost of a template. The return value is
      * an AWS Simple Monthly Calculator URL with a query string that
      * describes the resources required to run the template.
@@ -399,12 +452,9 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
     
     /**
      * <p>
-     * Returns all the stack related events for the AWS account. If
-     * <code>StackName</code> is specified, returns events related to all the
-     * stacks with the given name. If <code>StackName</code> is not
-     * specified, returns all the events for the account. For more
+     * Returns all stack related events for a specified stack. For more
      * information about a stack's event history, go to the <a
-     * http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">
      * AWS CloudFormation User Guide </a> .
      * </p>
      * <p>
@@ -498,14 +548,42 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
     
     /**
      * <p>
-     * Deletes a specified stack. Once the call completes successfully, stack
-     * deletion starts. Deleted stacks do not show up in the DescribeStacks
-     * API if the deletion has been completed successfully.
+     * Updates a stack as specified in the template. After the call completes
+     * successfully, the stack update starts. You can check the status of the
+     * stack via the DescribeStacks action.
+     * </p>
+     * <p>
+     * </p>
+     * <p>
+     * <b>Note: </b> You cannot update <a
+     * com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html">
+     * AWS::S3::Bucket </a> resources, for example, to add or modify tags.
+     * </p>
+     * <p>
+     * </p>
+     * <p>
+     * To get a copy of the template for an existing stack, you can use the
+     * GetTemplate action.
+     * </p>
+     * <p>
+     * Tags that were associated with this stack during creation time will
+     * still be associated with the stack after an <code>UpdateStack</code>
+     * operation.
+     * </p>
+     * <p>
+     * For more information about creating an update template, updating a
+     * stack, and monitoring the progress of the update, see <a
+     * om/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html">
+     * Updating a Stack </a> .
      * </p>
      *
-     * @param deleteStackRequest Container for the necessary parameters to
-     *           execute the DeleteStack service method on AmazonCloudFormation.
+     * @param updateStackRequest Container for the necessary parameters to
+     *           execute the UpdateStack service method on AmazonCloudFormation.
      * 
+     * @return The response from the UpdateStack service method, as returned
+     *         by AmazonCloudFormation.
+     * 
+     * @throws InsufficientCapabilitiesException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -515,41 +593,10 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *             If an error response is returned by AmazonCloudFormation indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void deleteStack(DeleteStackRequest deleteStackRequest) 
+    public UpdateStackResult updateStack(UpdateStackRequest updateStackRequest) 
             throws AmazonServiceException, AmazonClientException {
-        Request<DeleteStackRequest> request = new DeleteStackRequestMarshaller().marshall(deleteStackRequest);
-        invoke(request, null);
-    }
-    
-    /**
-     * <p>
-     * Returns descriptions of all resources of the specified stack.
-     * </p>
-     * <p>
-     * For deleted stacks, ListStackResources returns resource information
-     * for up to 90 days after the stack has been deleted.
-     * </p>
-     *
-     * @param listStackResourcesRequest Container for the necessary
-     *           parameters to execute the ListStackResources service method on
-     *           AmazonCloudFormation.
-     * 
-     * @return The response from the ListStackResources service method, as
-     *         returned by AmazonCloudFormation.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFormation indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListStackResourcesResult listStackResources(ListStackResourcesRequest listStackResourcesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ListStackResourcesRequest> request = new ListStackResourcesRequestMarshaller().marshall(listStackResourcesRequest);
-        return invoke(request, new ListStackResourcesResultStaxUnmarshaller());
+        Request<UpdateStackRequest> request = new UpdateStackRequestMarshaller().marshall(updateStackRequest);
+        return invoke(request, new UpdateStackResultStaxUnmarshaller());
     }
     
     /**
@@ -609,33 +656,14 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
     
     /**
      * <p>
-     * Updates a stack as specified in the template. After the call completes
-     * successfully, the stack update starts. You can check the status of the
-     * stack via the DescribeStacks action.
-     * </p>
-     * <p>
-     * To get a copy of the template for an existing stack, you can use the
-     * GetTemplate action.
-     * </p>
-     * <p>
-     * Tags that were associated with this stack during creation time will
-     * still be associated with the stack after an <code>UpdateStack</code>
-     * operation.
-     * </p>
-     * <p>
-     * For more information about creating an update template, updating a
-     * stack, and monitoring the progress of the update, see <a
-     * om/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html">
-     * Updating a Stack </a> .
+     * Deletes a specified stack. Once the call completes successfully, stack
+     * deletion starts. Deleted stacks do not show up in the DescribeStacks
+     * API if the deletion has been completed successfully.
      * </p>
      *
-     * @param updateStackRequest Container for the necessary parameters to
-     *           execute the UpdateStack service method on AmazonCloudFormation.
+     * @param deleteStackRequest Container for the necessary parameters to
+     *           execute the DeleteStack service method on AmazonCloudFormation.
      * 
-     * @return The response from the UpdateStack service method, as returned
-     *         by AmazonCloudFormation.
-     * 
-     * @throws InsufficientCapabilitiesException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -645,10 +673,41 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *             If an error response is returned by AmazonCloudFormation indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public UpdateStackResult updateStack(UpdateStackRequest updateStackRequest) 
+    public void deleteStack(DeleteStackRequest deleteStackRequest) 
             throws AmazonServiceException, AmazonClientException {
-        Request<UpdateStackRequest> request = new UpdateStackRequestMarshaller().marshall(updateStackRequest);
-        return invoke(request, new UpdateStackResultStaxUnmarshaller());
+        Request<DeleteStackRequest> request = new DeleteStackRequestMarshaller().marshall(deleteStackRequest);
+        invoke(request, null);
+    }
+    
+    /**
+     * <p>
+     * Returns descriptions of all resources of the specified stack.
+     * </p>
+     * <p>
+     * For deleted stacks, ListStackResources returns resource information
+     * for up to 90 days after the stack has been deleted.
+     * </p>
+     *
+     * @param listStackResourcesRequest Container for the necessary
+     *           parameters to execute the ListStackResources service method on
+     *           AmazonCloudFormation.
+     * 
+     * @return The response from the ListStackResources service method, as
+     *         returned by AmazonCloudFormation.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListStackResourcesResult listStackResources(ListStackResourcesRequest listStackResourcesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<ListStackResourcesRequest> request = new ListStackResourcesRequestMarshaller().marshall(listStackResourcesRequest);
+        return invoke(request, new ListStackResourcesResultStaxUnmarshaller());
     }
     
     /**
@@ -724,12 +783,9 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
     
     /**
      * <p>
-     * Returns all the stack related events for the AWS account. If
-     * <code>StackName</code> is specified, returns events related to all the
-     * stacks with the given name. If <code>StackName</code> is not
-     * specified, returns all the events for the account. For more
+     * Returns all stack related events for a specified stack. For more
      * information about a stack's event history, go to the <a
-     * http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">
      * AWS CloudFormation User Guide </a> .
      * </p>
      * <p>
@@ -879,7 +935,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
         AWSCredentials credentials = awsCredentialsProvider.getCredentials();
         AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
         if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
-        	credentials = originalRequest.getRequestCredentials();
+          credentials = originalRequest.getRequestCredentials();
         }
 
         ExecutionContext executionContext = createExecutionContext(originalRequest);

@@ -25,14 +25,14 @@ import java.io.Serializable;
 public class DisableAvailabilityZonesForLoadBalancerResult implements Serializable {
 
     /**
-     * A list of updated Availability Zones for the LoadBalancer.
+     * A list of updated Availability Zones for the load balancer.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> availabilityZones;
 
     /**
-     * A list of updated Availability Zones for the LoadBalancer.
+     * A list of updated Availability Zones for the load balancer.
      *
-     * @return A list of updated Availability Zones for the LoadBalancer.
+     * @return A list of updated Availability Zones for the load balancer.
      */
     public java.util.List<String> getAvailabilityZones() {
         if (availabilityZones == null) {
@@ -43,9 +43,9 @@ public class DisableAvailabilityZonesForLoadBalancerResult implements Serializab
     }
     
     /**
-     * A list of updated Availability Zones for the LoadBalancer.
+     * A list of updated Availability Zones for the load balancer.
      *
-     * @param availabilityZones A list of updated Availability Zones for the LoadBalancer.
+     * @param availabilityZones A list of updated Availability Zones for the load balancer.
      */
     public void setAvailabilityZones(java.util.Collection<String> availabilityZones) {
         if (availabilityZones == null) {
@@ -58,11 +58,11 @@ public class DisableAvailabilityZonesForLoadBalancerResult implements Serializab
     }
     
     /**
-     * A list of updated Availability Zones for the LoadBalancer.
+     * A list of updated Availability Zones for the load balancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZones A list of updated Availability Zones for the LoadBalancer.
+     * @param availabilityZones A list of updated Availability Zones for the load balancer.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -76,11 +76,11 @@ public class DisableAvailabilityZonesForLoadBalancerResult implements Serializab
     }
     
     /**
-     * A list of updated Availability Zones for the LoadBalancer.
+     * A list of updated Availability Zones for the load balancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZones A list of updated Availability Zones for the LoadBalancer.
+     * @param availabilityZones A list of updated Availability Zones for the load balancer.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

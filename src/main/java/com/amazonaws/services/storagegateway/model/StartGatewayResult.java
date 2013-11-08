@@ -19,7 +19,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A JSON object containing the GatewayARN of the gateway that was restarted.
+ * A JSON object containing the of the gateway that was restarted.
  * </p>
  */
 public class StartGatewayResult implements Serializable {

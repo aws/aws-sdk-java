@@ -21,13 +21,6 @@ import java.io.Serializable;
  * <p>
  * A JSON object containing the following fields:
  * </p>
- * 
- * <ul>
- * <li> GatewayARN </li>
- * <li> DescribeBandwidthRateLimitOutput$AverageDownloadRateLimitInBitsPerSec </li>
- * <li> DescribeBandwidthRateLimitOutput$AverageDownloadRateLimitInBitsPerSec </li>
- * 
- * </ul>
  */
 public class DescribeBandwidthRateLimitResult implements Serializable {
 

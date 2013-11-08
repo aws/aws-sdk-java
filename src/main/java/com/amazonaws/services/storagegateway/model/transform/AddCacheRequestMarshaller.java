@@ -47,7 +47,7 @@ public class AddCacheRequestMarshaller implements Marshaller<Request<AddCacheReq
     }
 
         Request<AddCacheRequest> request = new DefaultRequest<AddCacheRequest>(addCacheRequest, "AWSStorageGateway");
-        String target = "StorageGateway_20120630.AddCache";
+        String target = "StorageGateway_20130630.AddCache";
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 

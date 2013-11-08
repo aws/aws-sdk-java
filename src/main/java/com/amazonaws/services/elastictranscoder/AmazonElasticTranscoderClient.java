@@ -276,7 +276,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * With the UpdatePipelineNotifications operation, you can update Amazon
@@ -332,7 +333,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * The ReadJob operation returns detailed information about a job.
@@ -381,7 +383,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * The ListJobsByStatus operation gets a list of jobs that have a
@@ -433,7 +436,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * The ReadPreset operation gets detailed information about a preset.
@@ -482,7 +486,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * The CreatePipeline operation creates a pipeline with settings that you
@@ -533,7 +538,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * The CancelJob operation cancels an unfinished job.
@@ -589,7 +595,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Use the <code>UpdatePipeline</code> operation to update settings for
@@ -646,7 +653,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * The ListPresets operation gets a list of the default presets included
@@ -696,7 +704,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * The DeletePipeline operation removes a pipeline.
@@ -752,7 +761,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * The TestRole operation tests the IAM role used to create the pipeline.
@@ -809,7 +819,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * The ListPipelines operation gets a list of the pipelines associated
@@ -858,7 +869,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * The ReadPipeline operation gets detailed information about a pipeline.
@@ -907,7 +919,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * The CreatePreset operation creates a preset with settings that you
@@ -976,7 +989,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * The DeletePreset operation removes a preset that you've added in an
@@ -1030,7 +1044,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * When you create a job, Elastic Transcoder returns JSON data that
@@ -1088,7 +1103,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * The ListJobsByPipeline operation gets a list of the jobs currently in
@@ -1144,7 +1160,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * The ListPresets operation gets a list of the default presets included

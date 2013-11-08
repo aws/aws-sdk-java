@@ -47,7 +47,7 @@ public class ShutdownGatewayRequestMarshaller implements Marshaller<Request<Shut
     }
 
         Request<ShutdownGatewayRequest> request = new DefaultRequest<ShutdownGatewayRequest>(shutdownGatewayRequest, "AWSStorageGateway");
-        String target = "StorageGateway_20120630.ShutdownGateway";
+        String target = "StorageGateway_20130630.ShutdownGateway";
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 

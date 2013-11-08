@@ -47,7 +47,7 @@ public class ListVolumesRequestMarshaller implements Marshaller<Request<ListVolu
     }
 
         Request<ListVolumesRequest> request = new DefaultRequest<ListVolumesRequest>(listVolumesRequest, "AWSStorageGateway");
-        String target = "StorageGateway_20120630.ListVolumes";
+        String target = "StorageGateway_20130630.ListVolumes";
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 

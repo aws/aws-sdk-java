@@ -47,7 +47,7 @@ public class AddWorkingStorageRequestMarshaller implements Marshaller<Request<Ad
     }
 
         Request<AddWorkingStorageRequest> request = new DefaultRequest<AddWorkingStorageRequest>(addWorkingStorageRequest, "AWSStorageGateway");
-        String target = "StorageGateway_20120630.AddWorkingStorage";
+        String target = "StorageGateway_20130630.AddWorkingStorage";
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 

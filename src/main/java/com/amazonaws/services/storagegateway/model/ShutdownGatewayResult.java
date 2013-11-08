@@ -19,7 +19,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A JSON object containing the GatewayARN of the gateway that was shut down.
+ * A JSON object containing the of the gateway that was shut down.
  * </p>
  */
 public class ShutdownGatewayResult implements Serializable {

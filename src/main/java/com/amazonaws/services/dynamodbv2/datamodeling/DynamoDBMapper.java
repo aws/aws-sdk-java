@@ -158,7 +158,7 @@ public class DynamoDBMapper {
     private final AmazonDynamoDB db;
     private final DynamoDBMapperConfig config;
     private final DynamoDBReflector reflector = new DynamoDBReflector();
-    
+
     /** The max back off time for batch write */
     private static final long MAX_BACKOFF_IN_MILLISECONDS = 1000 * 3;
 
@@ -197,7 +197,7 @@ public class DynamoDBMapper {
     /**
      * Constructs a new mapper with the service object, configuration, and S3
      * client cache given.
-     * 
+     *
      * @param dynamoDB
      *            The service object to use for all service calls.
      * @param config
@@ -219,7 +219,7 @@ public class DynamoDBMapper {
     /**
      * Constructs a new mapper with the service object and S3 client cache
      * given, using the default configuration.
-     * 
+     *
      * @param ddb
      *            The service object to use for all service calls.
      * @param s3CredentialProvider
@@ -307,10 +307,10 @@ public class DynamoDBMapper {
         }
 
         T object = marshallIntoObject(clazz, itemAttributes);
-        return object;    
+        return object;
     }
 
-    
+
     /**
      * Returns a key map for the key object given.
      *
@@ -424,7 +424,8 @@ public class DynamoDBMapper {
     /**
      * Returns the table name for the class given.
      */
-    private <T> String getTableName(Class<T> clazz, DynamoDBMapperConfig config) {
+    protected final String getTableName(final Class<?> clazz, final DynamoDBMapperConfig config) {
+
         DynamoDBTable table = reflector.getTable(clazz);
         String tableName = table.tableName();
         if ( config.getTableNameOverride() != null ) {
@@ -530,7 +531,7 @@ public class DynamoDBMapper {
     public <T extends Object> void save(T object) {
         save(object, null, config);
     }
-    
+
     /**
      * Saves the object given into DynamoDB, using the default configuration and the specified saveExpression.
      *
@@ -539,7 +540,7 @@ public class DynamoDBMapper {
     public <T extends Object> void save(T object, DynamoDBSaveExpression saveExpression) {
         save(object, saveExpression, config);
     }
-    
+
     private boolean needAutoGenerateAssignableKey(Class<?> clazz, Object object) {
         Collection<Method> keyGetters = reflector.getKeyGetters(clazz);
         boolean forcePut = false;
@@ -571,7 +572,7 @@ public class DynamoDBMapper {
     public <T extends Object> void save(T object, DynamoDBMapperConfig config) {
         save(object, null, config);
     }
-    
+
     /**
      * Saves an item in DynamoDB. The service method used is determined by the
      * {@link DynamoDBMapperConfig#getSaveBehavior()} value, to use either
@@ -592,11 +593,11 @@ public class DynamoDBMapper {
      * included unmodeled ones, (delete and recreate) on save. Versioned field
      * constraints will also be disregarded.</li>
      * </ul>
-     * 
-     * 
+     *
+     *
      * Any options specified in the saveExpression parameter will be overlaid on
      * any constraints due to versioned attributes.
-     * 
+     *
      * @param object
      *            The object to save into DynamoDB
      * @param saveExpression
@@ -604,7 +605,7 @@ public class DynamoDBMapper {
      * @param config
      *            The configuration to use, which overrides the default provided
      *            at object construction.
-     * 
+     *
      * @see DynamoDBMapperConfig.SaveBehavior
      */
     public <T extends Object> void save(T object, DynamoDBSaveExpression saveExpression, DynamoDBMapperConfig config) {
@@ -613,9 +614,9 @@ public class DynamoDBMapper {
         @SuppressWarnings("unchecked")
         Class<? extends T> clazz = (Class<? extends T>) object.getClass();
         String tableName = getTableName(clazz, config);
-        
+
         final Map<String, ExpectedAttributeValue> userProvidedExpectedValues = (saveExpression == null) ? null : saveExpression.getExpected();
-                
+
         /*
          * We force a putItem request instead of updateItem request either when
          * CLOBBER is configured, or part of the primary key of the object needs
@@ -625,7 +626,7 @@ public class DynamoDBMapper {
                 || needAutoGenerateAssignableKey(clazz, object);
 
         SaveObjectHandler saveObjectHandler;
-        
+
         if (forcePut) {
             saveObjectHandler = this.new SaveObjectHandler(clazz, object,
                     tableName, config.getSaveBehavior(), userProvidedExpectedValues) {
@@ -640,7 +641,7 @@ public class DynamoDBMapper {
                 }
 
                 /* Use default implementation of onNonKeyAttribute(...) */
-                
+
                 @Override
                 protected void onNullNonKeyAttribute(String attributeName) {
                     /* When doing a force put, we can safely ignore the null-valued attributes. */
@@ -665,7 +666,7 @@ public class DynamoDBMapper {
                     /* Put it in the key collection which is later used in the updateItem request. */
                     getKeyAttributeValues().put(attributeName, keyAttributeValue);
                 }
-                
+
 
                 @Override
                 protected void onNonKeyAttribute(String attributeName,
@@ -698,7 +699,7 @@ public class DynamoDBMapper {
                             || getLocalSaveBehavior() == SaveBehavior.APPEND_SET) {
                         return;
                     }
-                    
+
                     else {
                         /* Delete attributes that are set as null in the object. */
                         getAttributeValueUpdates()
@@ -712,7 +713,7 @@ public class DynamoDBMapper {
                 protected void executeLowLevelRequest(boolean onlyKeyAttributeSpecified) {
                     /*
                      * Do a putItem when a key-only object is being saved with
-                     * UPDATE configuration. 
+                     * UPDATE configuration.
                      * Here we only need to consider UPDATE configuration, since
                      * only UPDATE could cause the problematic situation of
                      * updating an existing primary key with "DELETE" action on
@@ -754,7 +755,7 @@ public class DynamoDBMapper {
                 }
             };
         }
-        
+
         saveObjectHandler.execute();
     }
 
@@ -765,22 +766,22 @@ public class DynamoDBMapper {
      * and common operations.
      */
     protected abstract class SaveObjectHandler {
-        
+
         protected final Object object;
         protected final Class<?> clazz;
         private String tableName;
         private SaveBehavior saveBehavior;
-        
+
         private Map<String, AttributeValue> key;
         private Map<String, AttributeValueUpdate> updateValues;
         private Map<String, ExpectedAttributeValue> expectedValues;
         private List<ValueUpdate> inMemoryUpdates;
 
         private boolean nonKeyAttributePresent;
-        
+
         /**
          * Constructs a handler for saving the specified model object.
-         * 
+         *
          * @param object            The model object to be saved.
          * @param clazz             The domain class of the object.
          * @param tableName         The table name.
@@ -791,20 +792,20 @@ public class DynamoDBMapper {
             this.object = object;
             this.tableName = tableName;
             this.saveBehavior = saveBehavior;
-                    
+
             updateValues = new HashMap<String, AttributeValueUpdate>();
             expectedValues = new HashMap<String, ExpectedAttributeValue>();
-            
+
             if(userProvidedExpectedValues != null){
                 expectedValues.putAll(userProvidedExpectedValues);
             }
-            
+
             inMemoryUpdates = new LinkedList<ValueUpdate>();
             key = new HashMap<String, AttributeValue>();
 
             nonKeyAttributePresent = false;
         }
-        
+
         /**
          * The general workflow of a save operation.
          */
@@ -821,7 +822,7 @@ public class DynamoDBMapper {
                 if ( getterResult == null && reflector.isAssignableKey(method) ) {
                     onAutoGenerateAssignableKey(method, attributeName);
                 }
-                
+
                 else {
                     AttributeValue newAttributeValue = getSimpleAttributeValue(method, getterResult);
                     if ( newAttributeValue == null ) {
@@ -870,7 +871,7 @@ public class DynamoDBMapper {
              * Execute the implementation of the low level request.
              */
             executeLowLevelRequest(! nonKeyAttributePresent);
-            
+
             /*
              * Finally, after the service call has succeeded, update the
              * in-memory object with new field values as appropriate. This
@@ -881,11 +882,11 @@ public class DynamoDBMapper {
                 update.apply();
             }
         }
-        
+
         /**
          * Implement this method to do the necessary operations when a key
          * attribute is set with some value.
-         * 
+         *
          * @param attributeName
          *            The name of the key attribute.
          * @param keyAttributeValue
@@ -893,12 +894,12 @@ public class DynamoDBMapper {
          *            the object.
          */
         protected abstract void onKeyAttributeValue(String attributeName, AttributeValue keyAttributeValue);
-        
+
         /**
          * Implement this method for necessary operations when a non-key
          * attribute is set a non-null value in the object.
          * The default implementation simply adds a "PUT" update for the given attribute.
-         * 
+         *
          * @param attributeName
          *            The name of the non-key attribute.
          * @param currentValue
@@ -908,63 +909,63 @@ public class DynamoDBMapper {
             updateValues.put(attributeName, new AttributeValueUpdate()
                     .withValue(currentValue).withAction("PUT"));
         }
-        
+
         /**
          * Implement this method for necessary operations when a non-key
          * attribute is set null in the object.
-         * 
+         *
          * @param attributeName
          *            The name of the non-key attribute.
          */
         protected abstract void onNullNonKeyAttribute(String attributeName);
-        
+
         /**
          * Implement this method to send the low-level request that is necessary
          * to complete the save operation.
-         * 
+         *
          * @param onlyKeyAttributeSpecified
          *            Whether the object to be saved is only specified with key
          *            attributes.
          */
         protected abstract void executeLowLevelRequest(boolean onlyKeyAttributeSpecified);
-        
+
         /** Get the SaveBehavior used locally for this save operation. **/
         protected SaveBehavior getLocalSaveBehavior() {
             return saveBehavior;
         }
-        
+
         /** Get the table name **/
         protected String getTableName() {
             return tableName;
         }
-        
+
         /** Get the map of all the specified key of the saved object. **/
         protected Map<String, AttributeValue> getKeyAttributeValues() {
             return key;
         }
-        
+
         /** Get the map of AttributeValueUpdate on each modeled attribute. **/
         protected Map<String, AttributeValueUpdate> getAttributeValueUpdates() {
             return updateValues;
         }
-        
+
         /** Get the map of ExpectedAttributeValue on each modeled attribute. **/
         protected Map<String, ExpectedAttributeValue> getExpectedAttributeValues() {
             return expectedValues;
         }
-        
+
         /** Get the list of all the necessary in-memory update on the object. **/
         protected List<ValueUpdate> getInMemoryUpdates() {
             return inMemoryUpdates;
         }
-        
+
         private void onAutoGenerateAssignableKey(Method method, String attributeName) {
             AttributeValue newVersionValue = getAutoGeneratedKeyAttributeValue(method, null);
-            
+
             updateValues.put(attributeName,
                     new AttributeValueUpdate().withAction("PUT").withValue(newVersionValue));
             inMemoryUpdates.add(new ValueUpdate(method, newVersionValue, object));
-            
+
             if ( getLocalSaveBehavior() != SaveBehavior.CLOBBER && !expectedValues.containsKey(attributeName)) {
                 // Add an expect clause to make sure that the item
                 // doesn't already exist, since it's supposed to be new
@@ -973,7 +974,7 @@ public class DynamoDBMapper {
                 expectedValues.put(attributeName, expected);
             }
         }
-        
+
         private void onVersionAttribute(Method method, Object getterResult,
                 String attributeName) {
             if ( getLocalSaveBehavior() != SaveBehavior.CLOBBER && !expectedValues.containsKey(attributeName)) {
@@ -997,7 +998,7 @@ public class DynamoDBMapper {
             inMemoryUpdates.add(new ValueUpdate(method, newVersionValue, object));
         }
     }
-    
+
     /**
      * Edge case to deal with the problem reported here:
      * https://forums.aws.amazon.com/thread.jspa?threadID=86798&tstart=25
@@ -1020,7 +1021,7 @@ public class DynamoDBMapper {
                             Map<String,ExpectedAttributeValue> userProvidedExpectedValues) {
         Map<String, AttributeValue> attributes = new HashMap<String, AttributeValue>();
         Map<String, ExpectedAttributeValue> expectedValues = new HashMap<String, ExpectedAttributeValue>();
-        
+
         String hashKeyAttributeName = reflector.getAttributeName(hashKeyGetter);
         Object hashGetterResult = safeInvoke(hashKeyGetter, object);
         attributes.put(hashKeyAttributeName, getSimpleAttributeValue(hashKeyGetter, hashGetterResult));
@@ -1033,7 +1034,7 @@ public class DynamoDBMapper {
             expectedValues.put(rangeKeyAttributeName, new ExpectedAttributeValue().withExists(false));
         }
         attributes = transformAttributes(clazz, attributes);
-        
+
         //overlay any user provided expected values.
         if(userProvidedExpectedValues != null){
             expectedValues.putAll(userProvidedExpectedValues);
@@ -1042,21 +1043,21 @@ public class DynamoDBMapper {
         db.putItem(applyUserAgent(new PutItemRequest().withTableName(tableName).withItem(attributes)
                 .withExpected(expectedValues)));
     }
-    
+
     /**
      * Deletes the given object from its DynamoDB table using the default configuration.
      */
     public void delete(Object object) {
         delete(object, null, this.config);
     }
-    
+
     /**
      * Deletes the given object from its DynamoDB table using the specified deleteExpression and default configuration.
      */
     public void delete(Object object, DynamoDBDeleteExpression deleteExpression) {
         delete(object, deleteExpression, this.config);
     }
-    
+
     /**
      * Deletes the given object from its DynamoDB table using the specified configuration.
      */
@@ -1066,7 +1067,7 @@ public class DynamoDBMapper {
 
     /**
      * Deletes the given object from its DynamoDB table using the provided deleteExpression and provided configuration.
-     * Any options specified in the deleteExpression parameter will be overlaid on any constraints due to 
+     * Any options specified in the deleteExpression parameter will be overlaid on any constraints due to
      * versioned attributes.
      * @param deleteExpression
      *            The options to apply to this delete request
@@ -1108,7 +1109,7 @@ public class DynamoDBMapper {
                 }
             }
         }
-        
+
         //Overlay any user provided expected values onto the generated ones
         if(deleteExpression != null && deleteExpression.getExpected() != null){
             expectedValues.putAll(deleteExpression.getExpected());

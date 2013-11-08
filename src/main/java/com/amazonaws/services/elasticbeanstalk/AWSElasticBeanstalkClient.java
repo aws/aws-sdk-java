@@ -217,7 +217,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
         
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-		requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+    requestHandlers.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/elasticbeanstalk/request.handlers"));
     }
 
@@ -1370,7 +1370,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
         AWSCredentials credentials = awsCredentialsProvider.getCredentials();
         AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
         if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
-        	credentials = originalRequest.getRequestCredentials();
+          credentials = originalRequest.getRequestCredentials();
         }
 
         ExecutionContext executionContext = createExecutionContext(originalRequest);

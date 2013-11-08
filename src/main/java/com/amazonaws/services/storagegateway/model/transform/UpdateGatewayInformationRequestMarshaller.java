@@ -47,7 +47,7 @@ public class UpdateGatewayInformationRequestMarshaller implements Marshaller<Req
     }
 
         Request<UpdateGatewayInformationRequest> request = new DefaultRequest<UpdateGatewayInformationRequest>(updateGatewayInformationRequest, "AWSStorageGateway");
-        String target = "StorageGateway_20120630.UpdateGatewayInformation";
+        String target = "StorageGateway_20130630.UpdateGatewayInformation";
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 

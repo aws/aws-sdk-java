@@ -25,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * The default snapshot schedule for volume is once every 24 hours, starting at the creation time of the volume. You can use this API to change the
- * shapshot schedule configured for the volume.
+ * snapshot schedule configured for the volume.
  * </p>
  * <p>
  * In the request you must identify the gateway volume whose snapshot schedule you want to update, and the schedule information, including when you want

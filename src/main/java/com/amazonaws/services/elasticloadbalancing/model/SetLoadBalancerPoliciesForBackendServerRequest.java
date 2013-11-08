@@ -25,14 +25,21 @@ import com.amazonaws.AmazonWebServiceRequest;
  * have been created using CreateLoadBalancerPolicy, they can be applied here as a list. At this time, only the back-end server authentication policy
  * type can be applied to the back-end ports; this policy type is composed of multiple public key policies.
  * </p>
+ * <p>
+ * <b>NOTE:</b> The SetLoadBalancerPoliciesForBackendServer replaces the current set of policies associated with the specified instance port. Every time
+ * you use this action to enable the policies, use the PolicyNames parameter to list all the policies you want to enable.
+ * </p>
+ * <p>
+ * You can use DescribeLoadBalancers or DescribeLoadBalancerPolicies action to verify that the policy has been associated with the back-end server.
+ * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#setLoadBalancerPoliciesForBackendServer(SetLoadBalancerPoliciesForBackendServerRequest)
  */
 public class SetLoadBalancerPoliciesForBackendServerRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The mnemonic name associated with the LoadBalancer. This name must be
-     * unique within the client AWS account.
+     * The mnemonic name associated with the load balancer. This name must be
+     * unique within the set of your load balancers.
      */
     private String loadBalancerName;
 
@@ -48,35 +55,35 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends AmazonWebSer
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> policyNames;
 
     /**
-     * The mnemonic name associated with the LoadBalancer. This name must be
-     * unique within the client AWS account.
+     * The mnemonic name associated with the load balancer. This name must be
+     * unique within the set of your load balancers.
      *
-     * @return The mnemonic name associated with the LoadBalancer. This name must be
-     *         unique within the client AWS account.
+     * @return The mnemonic name associated with the load balancer. This name must be
+     *         unique within the set of your load balancers.
      */
     public String getLoadBalancerName() {
         return loadBalancerName;
     }
     
     /**
-     * The mnemonic name associated with the LoadBalancer. This name must be
-     * unique within the client AWS account.
+     * The mnemonic name associated with the load balancer. This name must be
+     * unique within the set of your load balancers.
      *
-     * @param loadBalancerName The mnemonic name associated with the LoadBalancer. This name must be
-     *         unique within the client AWS account.
+     * @param loadBalancerName The mnemonic name associated with the load balancer. This name must be
+     *         unique within the set of your load balancers.
      */
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
     
     /**
-     * The mnemonic name associated with the LoadBalancer. This name must be
-     * unique within the client AWS account.
+     * The mnemonic name associated with the load balancer. This name must be
+     * unique within the set of your load balancers.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerName The mnemonic name associated with the LoadBalancer. This name must be
-     *         unique within the client AWS account.
+     * @param loadBalancerName The mnemonic name associated with the load balancer. This name must be
+     *         unique within the set of your load balancers.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

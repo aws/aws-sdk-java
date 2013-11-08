@@ -18,97 +18,49 @@ import java.io.Serializable;
 
 
 /**
- * <p>
- * A JSON object containing the following fields:
- * </p>
- * 
- * <ul>
- * <li> CreateSnapshotFromVolumeRecoveryPointOutput$SnapshotId </li>
- * <li> CreateSnapshotFromVolumeRecoveryPointOutput$VolumeARN </li>
- * <li> CreateSnapshotFromVolumeRecoveryPointOutput$VolumeRecoveryPointTime </li>
- * 
- * </ul>
+ * Create Snapshot From Volume Recovery Point Result
  */
 public class CreateSnapshotFromVolumeRecoveryPointResult implements Serializable {
 
-    /**
-     * The snapshot ID that is used to refer to the snapshot in future
-     * operations such as describing snapshots (Amazon Elastic Compute Cloud
-     * API DescribeSnapshots) or creating a volume from a snapshot
-     * (<a>CreateStorediSCSIVolume</a>).
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\Asnap-[0-9a-fA-F]{8}\z<br/>
-     */
     private String snapshotId;
 
-    /**
-     * The ARN of the volume of which the snapshot was taken. Obtain volume
-     * ARNs from the <a>ListVolumes</a> operation.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>50 - 500<br/>
-     */
     private String volumeARN;
 
-    /**
-     * The time of the recovery point. Data up to this recovery point are
-     * included in the snapshot. <p><emphasis>Type</emphasis>: String format
-     * of a date in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
-     */
     private String volumeRecoveryPointTime;
 
     /**
-     * The snapshot ID that is used to refer to the snapshot in future
-     * operations such as describing snapshots (Amazon Elastic Compute Cloud
-     * API DescribeSnapshots) or creating a volume from a snapshot
-     * (<a>CreateStorediSCSIVolume</a>).
+     * Returns the value of the SnapshotId property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>\Asnap-[0-9a-fA-F]{8}\z<br/>
      *
-     * @return The snapshot ID that is used to refer to the snapshot in future
-     *         operations such as describing snapshots (Amazon Elastic Compute Cloud
-     *         API DescribeSnapshots) or creating a volume from a snapshot
-     *         (<a>CreateStorediSCSIVolume</a>).
+     * @return The value of the SnapshotId property for this object.
      */
     public String getSnapshotId() {
         return snapshotId;
     }
     
     /**
-     * The snapshot ID that is used to refer to the snapshot in future
-     * operations such as describing snapshots (Amazon Elastic Compute Cloud
-     * API DescribeSnapshots) or creating a volume from a snapshot
-     * (<a>CreateStorediSCSIVolume</a>).
+     * Sets the value of the SnapshotId property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>\Asnap-[0-9a-fA-F]{8}\z<br/>
      *
-     * @param snapshotId The snapshot ID that is used to refer to the snapshot in future
-     *         operations such as describing snapshots (Amazon Elastic Compute Cloud
-     *         API DescribeSnapshots) or creating a volume from a snapshot
-     *         (<a>CreateStorediSCSIVolume</a>).
+     * @param snapshotId The new value for the SnapshotId property for this object.
      */
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
     
     /**
-     * The snapshot ID that is used to refer to the snapshot in future
-     * operations such as describing snapshots (Amazon Elastic Compute Cloud
-     * API DescribeSnapshots) or creating a volume from a snapshot
-     * (<a>CreateStorediSCSIVolume</a>).
+     * Sets the value of the SnapshotId property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>\Asnap-[0-9a-fA-F]{8}\z<br/>
      *
-     * @param snapshotId The snapshot ID that is used to refer to the snapshot in future
-     *         operations such as describing snapshots (Amazon Elastic Compute Cloud
-     *         API DescribeSnapshots) or creating a volume from a snapshot
-     *         (<a>CreateStorediSCSIVolume</a>).
+     * @param snapshotId The new value for the SnapshotId property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -119,44 +71,38 @@ public class CreateSnapshotFromVolumeRecoveryPointResult implements Serializable
     }
 
     /**
-     * The ARN of the volume of which the snapshot was taken. Obtain volume
-     * ARNs from the <a>ListVolumes</a> operation.
+     * Returns the value of the VolumeARN property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @return The ARN of the volume of which the snapshot was taken. Obtain volume
-     *         ARNs from the <a>ListVolumes</a> operation.
+     * @return The value of the VolumeARN property for this object.
      */
     public String getVolumeARN() {
         return volumeARN;
     }
     
     /**
-     * The ARN of the volume of which the snapshot was taken. Obtain volume
-     * ARNs from the <a>ListVolumes</a> operation.
+     * Sets the value of the VolumeARN property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @param volumeARN The ARN of the volume of which the snapshot was taken. Obtain volume
-     *         ARNs from the <a>ListVolumes</a> operation.
+     * @param volumeARN The new value for the VolumeARN property for this object.
      */
     public void setVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
     }
     
     /**
-     * The ARN of the volume of which the snapshot was taken. Obtain volume
-     * ARNs from the <a>ListVolumes</a> operation.
+     * Sets the value of the VolumeARN property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @param volumeARN The ARN of the volume of which the snapshot was taken. Obtain volume
-     *         ARNs from the <a>ListVolumes</a> operation.
+     * @param volumeARN The new value for the VolumeARN property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -167,41 +113,34 @@ public class CreateSnapshotFromVolumeRecoveryPointResult implements Serializable
     }
 
     /**
-     * The time of the recovery point. Data up to this recovery point are
-     * included in the snapshot. <p><emphasis>Type</emphasis>: String format
-     * of a date in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     * Returns the value of the VolumeRecoveryPointTime property for this
+     * object.
      *
-     * @return The time of the recovery point. Data up to this recovery point are
-     *         included in the snapshot. <p><emphasis>Type</emphasis>: String format
-     *         of a date in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     * @return The value of the VolumeRecoveryPointTime property for this object.
      */
     public String getVolumeRecoveryPointTime() {
         return volumeRecoveryPointTime;
     }
     
     /**
-     * The time of the recovery point. Data up to this recovery point are
-     * included in the snapshot. <p><emphasis>Type</emphasis>: String format
-     * of a date in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     * Sets the value of the VolumeRecoveryPointTime property for this
+     * object.
      *
-     * @param volumeRecoveryPointTime The time of the recovery point. Data up to this recovery point are
-     *         included in the snapshot. <p><emphasis>Type</emphasis>: String format
-     *         of a date in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     * @param volumeRecoveryPointTime The new value for the VolumeRecoveryPointTime property for this
+     *         object.
      */
     public void setVolumeRecoveryPointTime(String volumeRecoveryPointTime) {
         this.volumeRecoveryPointTime = volumeRecoveryPointTime;
     }
     
     /**
-     * The time of the recovery point. Data up to this recovery point are
-     * included in the snapshot. <p><emphasis>Type</emphasis>: String format
-     * of a date in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     * Sets the value of the VolumeRecoveryPointTime property for this
+     * object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeRecoveryPointTime The time of the recovery point. Data up to this recovery point are
-     *         included in the snapshot. <p><emphasis>Type</emphasis>: String format
-     *         of a date in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     * @param volumeRecoveryPointTime The new value for the VolumeRecoveryPointTime property for this
+     *         object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

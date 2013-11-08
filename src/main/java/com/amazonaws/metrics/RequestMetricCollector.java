@@ -23,7 +23,7 @@ import com.amazonaws.Request;
  * 
  * @see AwsSdkMetrics
  */
-public interface RequestMetricCollector {
+public abstract class RequestMetricCollector {
     /**
      * Can be used to serve as a factory for the request metric collector.
      */
@@ -32,39 +32,19 @@ public interface RequestMetricCollector {
          * Returns an instance of the collector; or null if if failed to create
          * one.
          */
-        public RequestMetricCollector getInstance();
+        public RequestMetricCollector getRequestMetricCollector();
     }
     /** 
      * Used to collect the metric at the end of a request/response cycle.
      *
      * @see Request#getAWSRequestMetrics()
      */
-    public void collectMetrics(Request<?> request, Object response);
-
-    /**
-     * Starts the request metric collector.
-     * 
-     * @return true if the collector is successfully started; false otherwise.
-     */
-    public boolean start();
-
-    /** 
-     * Stops the request metric collector.
-     *
-     * @return true if the collector is successfully stopped; false if the
-     *         collector is not running and therefore the call has no effect.
-     */
-    public boolean stop();
-
-    /** Returns true if this collector is enabled; false otherwise. */
-    public boolean isEnabled();
+    public abstract void collectMetrics(Request<?> request, Object response);
+    public boolean isEnabled() { return true; }
 
     /** A convenient instance of a no-op request metric collector. */
     public static final RequestMetricCollector NONE = new RequestMetricCollector() {
         @Override public void collectMetrics(Request<?> request, Object response) {}
-        @Override public boolean start() { return true; }
-        @Override public boolean stop() { return true; }
-        /** Always returns false. */
         @Override public boolean isEnabled() { return false; }
     };
 }

@@ -21,12 +21,6 @@ import java.io.Serializable;
  * <p>
  * A JSON object containing the following fields:
  * </p>
- * 
- * <ul>
- * <li> CreateSnapshotOutput$SnapshotId </li>
- * <li> CreateSnapshotOutput$VolumeARN </li>
- * 
- * </ul>
  */
 public class CreateSnapshotResult implements Serializable {
 

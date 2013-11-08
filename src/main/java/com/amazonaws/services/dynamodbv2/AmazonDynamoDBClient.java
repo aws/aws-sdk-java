@@ -290,7 +290,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Updates the provisioned throughput for the given table. Setting the
@@ -361,7 +362,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * The <i>DeleteTable</i> operation deletes a table and all of its items.
@@ -430,7 +432,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * The <i>BatchWriteItem</i> operation puts or deletes multiple items in
@@ -562,7 +565,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Returns information about the table, including the current status of
@@ -610,7 +614,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * The <i>GetItem</i> operation returns a set of attributes for the item
@@ -666,7 +671,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Deletes a single item in a table by primary key. You can perform a
@@ -732,7 +738,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * The <i>CreateTable</i> operation adds a new table to your account. In
@@ -799,7 +806,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * A <i>Query</i> operation directly accesses items from a table using
@@ -869,7 +877,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Creates a new item, or replaces an old item with a new item. If an
@@ -950,7 +959,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Returns an array of all the tables associated with the current account
@@ -996,7 +1006,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Edits an existing item's attributes, or inserts a new item if it does
@@ -1054,7 +1065,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * The <i>BatchGetItem</i> operation returns the attributes of one or
@@ -1149,7 +1161,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Returns an array of all the tables associated with the current account

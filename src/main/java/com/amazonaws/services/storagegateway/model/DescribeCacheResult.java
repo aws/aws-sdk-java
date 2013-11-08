@@ -18,126 +18,77 @@ import java.io.Serializable;
 
 
 /**
- * <p>
- * A JSON object containing the following fields:
- * </p>
- * 
- * <ul>
- * <li> DescribeCacheOutput$CacheAllocatedInBytes </li>
- * <li> DescribeCacheOutput$CacheDirtyPercentage </li>
- * <li> DescribeCacheOutput$CacheHitPercentage </li>
- * <li> DescribeCacheOutput$CacheMissPercentage </li>
- * <li> DescribeCacheOutput$CacheUsedPercentage </li>
- * <li> DescribeCacheOutput$DiskIds </li>
- * <li> DescribeCacheOutput$GatewayARN </li>
- * 
- * </ul>
+ * Describe Cache Result
  */
 public class DescribeCacheResult implements Serializable {
 
     /**
-     * In response, AWS Storage Gateway returns the ARN of the activated
-     * gateway. If you don't remember the ARN of a gateway, you can use the
-     * List Gateways operations to return a list of gateways for your account
-     * and region.
+     * The Amazon Resource Name (ARN) of the gateway. Use the
+     * <a>ListGateways</a> operation to return a list of gateways for your
+     * account and region.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      */
     private String gatewayARN;
 
-    /**
-     * An array of the gateway's local disk IDs that are configured as cache.
-     * Each local disk ID is specified as a string (minimum length of 1 and
-     * maximum length of 300). If no local disks are configured as cache,
-     * then the <code>DiskIds</code> array is empty.
-     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<String> diskIds;
 
-    /**
-     * The size allocated, in bytes, for the cache. If no cache is defined
-     * for the gateway, this field returns 0.
-     */
     private Long cacheAllocatedInBytes;
 
-    /**
-     * The percentage (0 to 100) of the cache storage in use. If no cached is
-     * defined for the gateway, this field returns 0.
-     */
     private Double cacheUsedPercentage;
 
-    /**
-     * The percentage of the cache that contains data that has not yet been
-     * persisted to Amazon S3. If no cached is defined for the gateway, this
-     * field returns 0.
-     */
     private Double cacheDirtyPercentage;
 
-    /**
-     * The percentage (0 to 100) of data read from the storage volume that
-     * was read from cache. If no cached is defined for the gateway, this
-     * field returns 0.
-     */
     private Double cacheHitPercentage;
 
-    /**
-     * TThe percentage (0 to 100) of data read from the storage volume that
-     * was not read from the cache, but was read from Amazon S3. If no cached
-     * is defined for the gateway, this field returns 0.
-     */
     private Double cacheMissPercentage;
 
     /**
-     * In response, AWS Storage Gateway returns the ARN of the activated
-     * gateway. If you don't remember the ARN of a gateway, you can use the
-     * List Gateways operations to return a list of gateways for your account
-     * and region.
+     * The Amazon Resource Name (ARN) of the gateway. Use the
+     * <a>ListGateways</a> operation to return a list of gateways for your
+     * account and region.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @return In response, AWS Storage Gateway returns the ARN of the activated
-     *         gateway. If you don't remember the ARN of a gateway, you can use the
-     *         List Gateways operations to return a list of gateways for your account
-     *         and region.
+     * @return The Amazon Resource Name (ARN) of the gateway. Use the
+     *         <a>ListGateways</a> operation to return a list of gateways for your
+     *         account and region.
      */
     public String getGatewayARN() {
         return gatewayARN;
     }
     
     /**
-     * In response, AWS Storage Gateway returns the ARN of the activated
-     * gateway. If you don't remember the ARN of a gateway, you can use the
-     * List Gateways operations to return a list of gateways for your account
-     * and region.
+     * The Amazon Resource Name (ARN) of the gateway. Use the
+     * <a>ListGateways</a> operation to return a list of gateways for your
+     * account and region.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @param gatewayARN In response, AWS Storage Gateway returns the ARN of the activated
-     *         gateway. If you don't remember the ARN of a gateway, you can use the
-     *         List Gateways operations to return a list of gateways for your account
-     *         and region.
+     * @param gatewayARN The Amazon Resource Name (ARN) of the gateway. Use the
+     *         <a>ListGateways</a> operation to return a list of gateways for your
+     *         account and region.
      */
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
     
     /**
-     * In response, AWS Storage Gateway returns the ARN of the activated
-     * gateway. If you don't remember the ARN of a gateway, you can use the
-     * List Gateways operations to return a list of gateways for your account
-     * and region.
+     * The Amazon Resource Name (ARN) of the gateway. Use the
+     * <a>ListGateways</a> operation to return a list of gateways for your
+     * account and region.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @param gatewayARN In response, AWS Storage Gateway returns the ARN of the activated
-     *         gateway. If you don't remember the ARN of a gateway, you can use the
-     *         List Gateways operations to return a list of gateways for your account
-     *         and region.
+     * @param gatewayARN The Amazon Resource Name (ARN) of the gateway. Use the
+     *         <a>ListGateways</a> operation to return a list of gateways for your
+     *         account and region.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -148,15 +99,9 @@ public class DescribeCacheResult implements Serializable {
     }
 
     /**
-     * An array of the gateway's local disk IDs that are configured as cache.
-     * Each local disk ID is specified as a string (minimum length of 1 and
-     * maximum length of 300). If no local disks are configured as cache,
-     * then the <code>DiskIds</code> array is empty.
+     * Returns the value of the DiskIds property for this object.
      *
-     * @return An array of the gateway's local disk IDs that are configured as cache.
-     *         Each local disk ID is specified as a string (minimum length of 1 and
-     *         maximum length of 300). If no local disks are configured as cache,
-     *         then the <code>DiskIds</code> array is empty.
+     * @return The value of the DiskIds property for this object.
      */
     public java.util.List<String> getDiskIds() {
         if (diskIds == null) {
@@ -167,15 +112,9 @@ public class DescribeCacheResult implements Serializable {
     }
     
     /**
-     * An array of the gateway's local disk IDs that are configured as cache.
-     * Each local disk ID is specified as a string (minimum length of 1 and
-     * maximum length of 300). If no local disks are configured as cache,
-     * then the <code>DiskIds</code> array is empty.
+     * Sets the value of the DiskIds property for this object.
      *
-     * @param diskIds An array of the gateway's local disk IDs that are configured as cache.
-     *         Each local disk ID is specified as a string (minimum length of 1 and
-     *         maximum length of 300). If no local disks are configured as cache,
-     *         then the <code>DiskIds</code> array is empty.
+     * @param diskIds The new value for the DiskIds property for this object.
      */
     public void setDiskIds(java.util.Collection<String> diskIds) {
         if (diskIds == null) {
@@ -188,17 +127,11 @@ public class DescribeCacheResult implements Serializable {
     }
     
     /**
-     * An array of the gateway's local disk IDs that are configured as cache.
-     * Each local disk ID is specified as a string (minimum length of 1 and
-     * maximum length of 300). If no local disks are configured as cache,
-     * then the <code>DiskIds</code> array is empty.
+     * Sets the value of the DiskIds property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param diskIds An array of the gateway's local disk IDs that are configured as cache.
-     *         Each local disk ID is specified as a string (minimum length of 1 and
-     *         maximum length of 300). If no local disks are configured as cache,
-     *         then the <code>DiskIds</code> array is empty.
+     * @param diskIds The new value for the DiskIds property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -212,17 +145,11 @@ public class DescribeCacheResult implements Serializable {
     }
     
     /**
-     * An array of the gateway's local disk IDs that are configured as cache.
-     * Each local disk ID is specified as a string (minimum length of 1 and
-     * maximum length of 300). If no local disks are configured as cache,
-     * then the <code>DiskIds</code> array is empty.
+     * Sets the value of the DiskIds property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param diskIds An array of the gateway's local disk IDs that are configured as cache.
-     *         Each local disk ID is specified as a string (minimum length of 1 and
-     *         maximum length of 300). If no local disks are configured as cache,
-     *         then the <code>DiskIds</code> array is empty.
+     * @param diskIds The new value for the DiskIds property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -240,35 +167,30 @@ public class DescribeCacheResult implements Serializable {
     }
 
     /**
-     * The size allocated, in bytes, for the cache. If no cache is defined
-     * for the gateway, this field returns 0.
+     * Returns the value of the CacheAllocatedInBytes property for this
+     * object.
      *
-     * @return The size allocated, in bytes, for the cache. If no cache is defined
-     *         for the gateway, this field returns 0.
+     * @return The value of the CacheAllocatedInBytes property for this object.
      */
     public Long getCacheAllocatedInBytes() {
         return cacheAllocatedInBytes;
     }
     
     /**
-     * The size allocated, in bytes, for the cache. If no cache is defined
-     * for the gateway, this field returns 0.
+     * Sets the value of the CacheAllocatedInBytes property for this object.
      *
-     * @param cacheAllocatedInBytes The size allocated, in bytes, for the cache. If no cache is defined
-     *         for the gateway, this field returns 0.
+     * @param cacheAllocatedInBytes The new value for the CacheAllocatedInBytes property for this object.
      */
     public void setCacheAllocatedInBytes(Long cacheAllocatedInBytes) {
         this.cacheAllocatedInBytes = cacheAllocatedInBytes;
     }
     
     /**
-     * The size allocated, in bytes, for the cache. If no cache is defined
-     * for the gateway, this field returns 0.
+     * Sets the value of the CacheAllocatedInBytes property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheAllocatedInBytes The size allocated, in bytes, for the cache. If no cache is defined
-     *         for the gateway, this field returns 0.
+     * @param cacheAllocatedInBytes The new value for the CacheAllocatedInBytes property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -279,35 +201,29 @@ public class DescribeCacheResult implements Serializable {
     }
 
     /**
-     * The percentage (0 to 100) of the cache storage in use. If no cached is
-     * defined for the gateway, this field returns 0.
+     * Returns the value of the CacheUsedPercentage property for this object.
      *
-     * @return The percentage (0 to 100) of the cache storage in use. If no cached is
-     *         defined for the gateway, this field returns 0.
+     * @return The value of the CacheUsedPercentage property for this object.
      */
     public Double getCacheUsedPercentage() {
         return cacheUsedPercentage;
     }
     
     /**
-     * The percentage (0 to 100) of the cache storage in use. If no cached is
-     * defined for the gateway, this field returns 0.
+     * Sets the value of the CacheUsedPercentage property for this object.
      *
-     * @param cacheUsedPercentage The percentage (0 to 100) of the cache storage in use. If no cached is
-     *         defined for the gateway, this field returns 0.
+     * @param cacheUsedPercentage The new value for the CacheUsedPercentage property for this object.
      */
     public void setCacheUsedPercentage(Double cacheUsedPercentage) {
         this.cacheUsedPercentage = cacheUsedPercentage;
     }
     
     /**
-     * The percentage (0 to 100) of the cache storage in use. If no cached is
-     * defined for the gateway, this field returns 0.
+     * Sets the value of the CacheUsedPercentage property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheUsedPercentage The percentage (0 to 100) of the cache storage in use. If no cached is
-     *         defined for the gateway, this field returns 0.
+     * @param cacheUsedPercentage The new value for the CacheUsedPercentage property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -318,41 +234,30 @@ public class DescribeCacheResult implements Serializable {
     }
 
     /**
-     * The percentage of the cache that contains data that has not yet been
-     * persisted to Amazon S3. If no cached is defined for the gateway, this
-     * field returns 0.
+     * Returns the value of the CacheDirtyPercentage property for this
+     * object.
      *
-     * @return The percentage of the cache that contains data that has not yet been
-     *         persisted to Amazon S3. If no cached is defined for the gateway, this
-     *         field returns 0.
+     * @return The value of the CacheDirtyPercentage property for this object.
      */
     public Double getCacheDirtyPercentage() {
         return cacheDirtyPercentage;
     }
     
     /**
-     * The percentage of the cache that contains data that has not yet been
-     * persisted to Amazon S3. If no cached is defined for the gateway, this
-     * field returns 0.
+     * Sets the value of the CacheDirtyPercentage property for this object.
      *
-     * @param cacheDirtyPercentage The percentage of the cache that contains data that has not yet been
-     *         persisted to Amazon S3. If no cached is defined for the gateway, this
-     *         field returns 0.
+     * @param cacheDirtyPercentage The new value for the CacheDirtyPercentage property for this object.
      */
     public void setCacheDirtyPercentage(Double cacheDirtyPercentage) {
         this.cacheDirtyPercentage = cacheDirtyPercentage;
     }
     
     /**
-     * The percentage of the cache that contains data that has not yet been
-     * persisted to Amazon S3. If no cached is defined for the gateway, this
-     * field returns 0.
+     * Sets the value of the CacheDirtyPercentage property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheDirtyPercentage The percentage of the cache that contains data that has not yet been
-     *         persisted to Amazon S3. If no cached is defined for the gateway, this
-     *         field returns 0.
+     * @param cacheDirtyPercentage The new value for the CacheDirtyPercentage property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -363,41 +268,29 @@ public class DescribeCacheResult implements Serializable {
     }
 
     /**
-     * The percentage (0 to 100) of data read from the storage volume that
-     * was read from cache. If no cached is defined for the gateway, this
-     * field returns 0.
+     * Returns the value of the CacheHitPercentage property for this object.
      *
-     * @return The percentage (0 to 100) of data read from the storage volume that
-     *         was read from cache. If no cached is defined for the gateway, this
-     *         field returns 0.
+     * @return The value of the CacheHitPercentage property for this object.
      */
     public Double getCacheHitPercentage() {
         return cacheHitPercentage;
     }
     
     /**
-     * The percentage (0 to 100) of data read from the storage volume that
-     * was read from cache. If no cached is defined for the gateway, this
-     * field returns 0.
+     * Sets the value of the CacheHitPercentage property for this object.
      *
-     * @param cacheHitPercentage The percentage (0 to 100) of data read from the storage volume that
-     *         was read from cache. If no cached is defined for the gateway, this
-     *         field returns 0.
+     * @param cacheHitPercentage The new value for the CacheHitPercentage property for this object.
      */
     public void setCacheHitPercentage(Double cacheHitPercentage) {
         this.cacheHitPercentage = cacheHitPercentage;
     }
     
     /**
-     * The percentage (0 to 100) of data read from the storage volume that
-     * was read from cache. If no cached is defined for the gateway, this
-     * field returns 0.
+     * Sets the value of the CacheHitPercentage property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheHitPercentage The percentage (0 to 100) of data read from the storage volume that
-     *         was read from cache. If no cached is defined for the gateway, this
-     *         field returns 0.
+     * @param cacheHitPercentage The new value for the CacheHitPercentage property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -408,41 +301,29 @@ public class DescribeCacheResult implements Serializable {
     }
 
     /**
-     * TThe percentage (0 to 100) of data read from the storage volume that
-     * was not read from the cache, but was read from Amazon S3. If no cached
-     * is defined for the gateway, this field returns 0.
+     * Returns the value of the CacheMissPercentage property for this object.
      *
-     * @return TThe percentage (0 to 100) of data read from the storage volume that
-     *         was not read from the cache, but was read from Amazon S3. If no cached
-     *         is defined for the gateway, this field returns 0.
+     * @return The value of the CacheMissPercentage property for this object.
      */
     public Double getCacheMissPercentage() {
         return cacheMissPercentage;
     }
     
     /**
-     * TThe percentage (0 to 100) of data read from the storage volume that
-     * was not read from the cache, but was read from Amazon S3. If no cached
-     * is defined for the gateway, this field returns 0.
+     * Sets the value of the CacheMissPercentage property for this object.
      *
-     * @param cacheMissPercentage TThe percentage (0 to 100) of data read from the storage volume that
-     *         was not read from the cache, but was read from Amazon S3. If no cached
-     *         is defined for the gateway, this field returns 0.
+     * @param cacheMissPercentage The new value for the CacheMissPercentage property for this object.
      */
     public void setCacheMissPercentage(Double cacheMissPercentage) {
         this.cacheMissPercentage = cacheMissPercentage;
     }
     
     /**
-     * TThe percentage (0 to 100) of data read from the storage volume that
-     * was not read from the cache, but was read from Amazon S3. If no cached
-     * is defined for the gateway, this field returns 0.
+     * Sets the value of the CacheMissPercentage property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cacheMissPercentage TThe percentage (0 to 100) of data read from the storage volume that
-     *         was not read from the cache, but was read from Amazon S3. If no cached
-     *         is defined for the gateway, this field returns 0.
+     * @param cacheMissPercentage The new value for the CacheMissPercentage property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

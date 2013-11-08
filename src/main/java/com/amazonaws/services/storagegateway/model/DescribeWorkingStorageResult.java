@@ -21,14 +21,6 @@ import java.io.Serializable;
  * <p>
  * A JSON object containing the following fields:
  * </p>
- * 
- * <ul>
- * <li> DescribeWorkingStorageOutput$DiskIds </li>
- * <li> GatewayARN </li>
- * <li> DescribeWorkingStorageOutput$WorkingStorageAllocatedInBytes </li>
- * <li> DescribeWorkingStorageOutput$WorkingStorageUsedInBytes </li>
- * 
- * </ul>
  */
 public class DescribeWorkingStorageResult implements Serializable {
 

@@ -21,7 +21,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#configureHealthCheck(ConfigureHealthCheckRequest) ConfigureHealthCheck operation}.
  * <p>
- * Enables the client to define an application healthcheck for the instances.
+ * Specifies the health check settings to use for evaluating the health state of your back-end instances.
+ * </p>
+ * <p>
+ * For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#healthcheck">
+ * Health Check </a> in the <i>Elastic Load Balancing Developer Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#configureHealthCheck(ConfigureHealthCheckRequest)
@@ -29,8 +33,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The mnemonic name associated with the LoadBalancer. This name must be
-     * unique within the client AWS account.
+     * The mnemonic name associated with the load balancer. The name must be
+     * unique within the set of load balancers associated with your AWS
+     * account.
      */
     private String loadBalancerName;
 
@@ -51,8 +56,9 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest impleme
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param loadBalancerName The mnemonic name associated with the
-     * LoadBalancer. This name must be unique within the client AWS account.
+     * @param loadBalancerName The mnemonic name associated with the load
+     * balancer. The name must be unique within the set of load balancers
+     * associated with your AWS account.
      * @param healthCheck A structure containing the configuration
      * information for the new healthcheck.
      */
@@ -62,35 +68,41 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * The mnemonic name associated with the LoadBalancer. This name must be
-     * unique within the client AWS account.
+     * The mnemonic name associated with the load balancer. The name must be
+     * unique within the set of load balancers associated with your AWS
+     * account.
      *
-     * @return The mnemonic name associated with the LoadBalancer. This name must be
-     *         unique within the client AWS account.
+     * @return The mnemonic name associated with the load balancer. The name must be
+     *         unique within the set of load balancers associated with your AWS
+     *         account.
      */
     public String getLoadBalancerName() {
         return loadBalancerName;
     }
     
     /**
-     * The mnemonic name associated with the LoadBalancer. This name must be
-     * unique within the client AWS account.
+     * The mnemonic name associated with the load balancer. The name must be
+     * unique within the set of load balancers associated with your AWS
+     * account.
      *
-     * @param loadBalancerName The mnemonic name associated with the LoadBalancer. This name must be
-     *         unique within the client AWS account.
+     * @param loadBalancerName The mnemonic name associated with the load balancer. The name must be
+     *         unique within the set of load balancers associated with your AWS
+     *         account.
      */
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
     
     /**
-     * The mnemonic name associated with the LoadBalancer. This name must be
-     * unique within the client AWS account.
+     * The mnemonic name associated with the load balancer. The name must be
+     * unique within the set of load balancers associated with your AWS
+     * account.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerName The mnemonic name associated with the LoadBalancer. This name must be
-     *         unique within the client AWS account.
+     * @param loadBalancerName The mnemonic name associated with the load balancer. The name must be
+     *         unique within the set of load balancers associated with your AWS
+     *         account.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

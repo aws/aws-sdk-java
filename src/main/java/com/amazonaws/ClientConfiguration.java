@@ -16,6 +16,7 @@ package com.amazonaws;
 
 import org.apache.http.annotation.NotThreadSafe;
 
+import com.amazonaws.http.IdleConnectionReaper;
 import com.amazonaws.util.VersionInfoUtils;
 /**
  * Client configuration options such as proxy settings, user agent string, max
@@ -35,6 +36,13 @@ public class ClientConfiguration {
 
     /** The default maximum number of retries for error responses. */
     public static final int DEFAULT_MAX_RETRIES = 3;
+
+    /**
+     * The default on whether to use the {@link IdleConnectionReaper} to manage stale connections
+     *
+     * @see IdleConnectionReaper
+     */
+    public static final boolean DEFAULT_USE_REAPER = true;
 
     /** The HTTP user agent header passed with all HTTP requests. */
     private String userAgent = DEFAULT_USER_AGENT;
@@ -71,7 +79,7 @@ public class ClientConfiguration {
     /** Optional Windows workstation name for configuring NTLM proxy support. */
     private String proxyWorkstation = null;
 
-	/** The maximum number of open HTTP connections. */
+    /** The maximum number of open HTTP connections. */
     private int maxConnections = DEFAULT_MAX_CONNECTIONS;
 
     /**
@@ -102,6 +110,13 @@ public class ClientConfiguration {
      */
     private int socketReceiveBufferSizeHint = 0;
 
+    /**
+     * Optional whether to use the {@link IdleConnectionReaper} to manage stale connections. A reason for not running
+     * the {@link IdleConnectionReaper} can be if running in an environment where the modifyThread and modifyThreadGroup
+     * permissions are not allowed.
+     */
+    private boolean useReaper = DEFAULT_USE_REAPER;
+
 
     public ClientConfiguration() {}
 
@@ -118,6 +133,7 @@ public class ClientConfiguration {
         this.proxyWorkstation  = other.proxyWorkstation;
         this.socketTimeout     = other.socketTimeout;
         this.userAgent         = other.userAgent;
+        this.useReaper         = other.useReaper;
 
         this.socketReceiveBufferSizeHint = other.socketReceiveBufferSizeHint;
         this.socketSendBufferSizeHint    = other.socketSendBufferSizeHint;
@@ -589,6 +605,38 @@ public class ClientConfiguration {
      */
     public ClientConfiguration withConnectionTimeout(int connectionTimeout) {
         setConnectionTimeout(connectionTimeout);
+        return this;
+    }
+
+    /**
+     * Checks if the {@link IdleConnectionReaper} is to be started
+     *
+     * @return if the {@link IdleConnectionReaper} is to be started
+     */
+    public boolean useReaper() {
+        return useReaper;
+    }
+
+    /**
+     * Sets whether the {@link IdleConnectionReaper} is to be started as a daemon thread
+     *
+     * @param use whether the {@link IdleConnectionReaper} is to be started as a daemon thread
+     *
+     * @see IdleConnectionReaper
+     */
+    public void setUseReaper(boolean use) {
+        this.useReaper = use;
+    }
+
+    /**
+     * Sets whether the {@link IdleConnectionReaper} is to be started as a daemon thread
+     *
+     * @param use the {@link IdleConnectionReaper} is to be started as a daemon thread
+     *
+     * @return The updated ClientConfiguration object.
+     */
+    public ClientConfiguration withReaper(boolean use) {
+        setUseReaper(use);
         return this;
     }
 

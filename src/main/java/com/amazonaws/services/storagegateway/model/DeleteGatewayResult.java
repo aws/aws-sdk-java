@@ -19,7 +19,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A JSON object containing the GatewayARN of the deleted gateway.
+ * A JSON object containing the of the deleted gateway.
  * </p>
  */
 public class DeleteGatewayResult implements Serializable {

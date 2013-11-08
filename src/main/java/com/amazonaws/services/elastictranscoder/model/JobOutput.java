@@ -198,6 +198,16 @@ public class JobOutput implements Serializable {
     private JobAlbumArt albumArt;
 
     /**
+     * You can create an output file that contains an excerpt from the input
+     * file. This excerpt, called a clip, can come from the beginning,
+     * middle, or end of the file. The Composition object contains settings
+     * for the clips that make up an output file. For the current release,
+     * you can only specify settings for a single clip per output file. The
+     * Composition object cannot be null.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Clip> composition;
+
+    /**
      * A sequential counter, starting with 1, that identifies an output among
      * the outputs from the current job. In the Output syntax, this value is
      * always 1.
@@ -1245,6 +1255,114 @@ public class JobOutput implements Serializable {
     }
 
     /**
+     * You can create an output file that contains an excerpt from the input
+     * file. This excerpt, called a clip, can come from the beginning,
+     * middle, or end of the file. The Composition object contains settings
+     * for the clips that make up an output file. For the current release,
+     * you can only specify settings for a single clip per output file. The
+     * Composition object cannot be null.
+     *
+     * @return You can create an output file that contains an excerpt from the input
+     *         file. This excerpt, called a clip, can come from the beginning,
+     *         middle, or end of the file. The Composition object contains settings
+     *         for the clips that make up an output file. For the current release,
+     *         you can only specify settings for a single clip per output file. The
+     *         Composition object cannot be null.
+     */
+    public java.util.List<Clip> getComposition() {
+        if (composition == null) {
+              composition = new com.amazonaws.internal.ListWithAutoConstructFlag<Clip>();
+              composition.setAutoConstruct(true);
+        }
+        return composition;
+    }
+    
+    /**
+     * You can create an output file that contains an excerpt from the input
+     * file. This excerpt, called a clip, can come from the beginning,
+     * middle, or end of the file. The Composition object contains settings
+     * for the clips that make up an output file. For the current release,
+     * you can only specify settings for a single clip per output file. The
+     * Composition object cannot be null.
+     *
+     * @param composition You can create an output file that contains an excerpt from the input
+     *         file. This excerpt, called a clip, can come from the beginning,
+     *         middle, or end of the file. The Composition object contains settings
+     *         for the clips that make up an output file. For the current release,
+     *         you can only specify settings for a single clip per output file. The
+     *         Composition object cannot be null.
+     */
+    public void setComposition(java.util.Collection<Clip> composition) {
+        if (composition == null) {
+            this.composition = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<Clip> compositionCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Clip>(composition.size());
+        compositionCopy.addAll(composition);
+        this.composition = compositionCopy;
+    }
+    
+    /**
+     * You can create an output file that contains an excerpt from the input
+     * file. This excerpt, called a clip, can come from the beginning,
+     * middle, or end of the file. The Composition object contains settings
+     * for the clips that make up an output file. For the current release,
+     * you can only specify settings for a single clip per output file. The
+     * Composition object cannot be null.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param composition You can create an output file that contains an excerpt from the input
+     *         file. This excerpt, called a clip, can come from the beginning,
+     *         middle, or end of the file. The Composition object contains settings
+     *         for the clips that make up an output file. For the current release,
+     *         you can only specify settings for a single clip per output file. The
+     *         Composition object cannot be null.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public JobOutput withComposition(Clip... composition) {
+        if (getComposition() == null) setComposition(new java.util.ArrayList<Clip>(composition.length));
+        for (Clip value : composition) {
+            getComposition().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * You can create an output file that contains an excerpt from the input
+     * file. This excerpt, called a clip, can come from the beginning,
+     * middle, or end of the file. The Composition object contains settings
+     * for the clips that make up an output file. For the current release,
+     * you can only specify settings for a single clip per output file. The
+     * Composition object cannot be null.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param composition You can create an output file that contains an excerpt from the input
+     *         file. This excerpt, called a clip, can come from the beginning,
+     *         middle, or end of the file. The Composition object contains settings
+     *         for the clips that make up an output file. For the current release,
+     *         you can only specify settings for a single clip per output file. The
+     *         Composition object cannot be null.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public JobOutput withComposition(java.util.Collection<Clip> composition) {
+        if (composition == null) {
+            this.composition = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<Clip> compositionCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Clip>(composition.size());
+            compositionCopy.addAll(composition);
+            this.composition = compositionCopy;
+        }
+
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1268,7 +1386,8 @@ public class JobOutput implements Serializable {
         if (getWidth() != null) sb.append("Width: " + getWidth() + ",");
         if (getHeight() != null) sb.append("Height: " + getHeight() + ",");
         if (getWatermarks() != null) sb.append("Watermarks: " + getWatermarks() + ",");
-        if (getAlbumArt() != null) sb.append("AlbumArt: " + getAlbumArt() );
+        if (getAlbumArt() != null) sb.append("AlbumArt: " + getAlbumArt() + ",");
+        if (getComposition() != null) sb.append("Composition: " + getComposition() );
         sb.append("}");
         return sb.toString();
     }
@@ -1291,6 +1410,7 @@ public class JobOutput implements Serializable {
         hashCode = prime * hashCode + ((getHeight() == null) ? 0 : getHeight().hashCode()); 
         hashCode = prime * hashCode + ((getWatermarks() == null) ? 0 : getWatermarks().hashCode()); 
         hashCode = prime * hashCode + ((getAlbumArt() == null) ? 0 : getAlbumArt().hashCode()); 
+        hashCode = prime * hashCode + ((getComposition() == null) ? 0 : getComposition().hashCode()); 
         return hashCode;
     }
     
@@ -1328,6 +1448,8 @@ public class JobOutput implements Serializable {
         if (other.getWatermarks() != null && other.getWatermarks().equals(this.getWatermarks()) == false) return false; 
         if (other.getAlbumArt() == null ^ this.getAlbumArt() == null) return false;
         if (other.getAlbumArt() != null && other.getAlbumArt().equals(this.getAlbumArt()) == false) return false; 
+        if (other.getComposition() == null ^ this.getComposition() == null) return false;
+        if (other.getComposition() != null && other.getComposition().equals(this.getComposition()) == false) return false; 
         return true;
     }
     

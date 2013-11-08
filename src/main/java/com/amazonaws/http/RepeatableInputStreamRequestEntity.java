@@ -24,6 +24,10 @@ import org.apache.http.entity.BasicHttpEntity;
 import org.apache.http.entity.InputStreamEntity;
 
 import com.amazonaws.Request;
+import com.amazonaws.metrics.MetricInputStreamEntity;
+import com.amazonaws.metrics.ServiceMetricType;
+import com.amazonaws.metrics.ThroughputMetricType;
+import com.amazonaws.metrics.internal.ServiceMetricTypeGuesser;
 
 /**
  * Custom implementation of {@link RequestEntity} that delegates to an
@@ -37,7 +41,7 @@ class RepeatableInputStreamRequestEntity extends BasicHttpEntity {
     /** True if the request entity hasn't been written out yet */
     private boolean firstAttempt = true;
 
-    /** The underlying InputStreamRequestEntity being delegated to */
+    /** The underlying InputStreamEntity being delegated to */
     private InputStreamEntity inputStreamRequestEntity;
 
     /** The InputStream containing the content to write out */
@@ -65,7 +69,7 @@ class RepeatableInputStreamRequestEntity extends BasicHttpEntity {
      *            The details of the request being written out (content type,
      *            content length, and content).
      */
-    RepeatableInputStreamRequestEntity(Request<?> request) {
+    RepeatableInputStreamRequestEntity(final Request<?> request) {
     	setChunked(false);
 
         /*
@@ -90,8 +94,17 @@ class RepeatableInputStreamRequestEntity extends BasicHttpEntity {
         }
 
         String contentType = request.getHeaders().get("Content-Type");
-
-        inputStreamRequestEntity = new InputStreamEntity(request.getContent(), contentLength);
+        ThroughputMetricType type = ServiceMetricTypeGuesser
+                .guessThroughputMetricType(request,
+                        ServiceMetricType.UPLOAD_THROUGHPUT_NAME_SUFFIX,
+                        ServiceMetricType.UPLOAD_BYTE_COUNT_NAME_SUFFIX);
+        if (type == null) {
+            inputStreamRequestEntity = 
+                new InputStreamEntity(request.getContent(), contentLength);
+        } else {
+            inputStreamRequestEntity = 
+                new MetricInputStreamEntity(type, request.getContent(), contentLength);
+        }
         inputStreamRequestEntity.setContentType(contentType);
         content = request.getContent();
 

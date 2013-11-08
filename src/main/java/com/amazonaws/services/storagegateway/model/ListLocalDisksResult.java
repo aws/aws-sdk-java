@@ -18,15 +18,7 @@ import java.io.Serializable;
 
 
 /**
- * <p>
- * A JSON object containing the following fields:
- * </p>
- * 
- * <ul>
- * <li> ListLocalDisksOutput$Disks </li>
- * <li> GatewayARN </li>
- * 
- * </ul>
+ * List Local Disks Result
  */
 public class ListLocalDisksResult implements Serializable {
 
@@ -40,9 +32,6 @@ public class ListLocalDisksResult implements Serializable {
      */
     private String gatewayARN;
 
-    /**
-     * An array of <a>Disk</a> objects.
-     */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Disk> disks;
 
     /**
@@ -100,9 +89,9 @@ public class ListLocalDisksResult implements Serializable {
     }
 
     /**
-     * An array of <a>Disk</a> objects.
+     * Returns the value of the Disks property for this object.
      *
-     * @return An array of <a>Disk</a> objects.
+     * @return The value of the Disks property for this object.
      */
     public java.util.List<Disk> getDisks() {
         if (disks == null) {
@@ -113,9 +102,9 @@ public class ListLocalDisksResult implements Serializable {
     }
     
     /**
-     * An array of <a>Disk</a> objects.
+     * Sets the value of the Disks property for this object.
      *
-     * @param disks An array of <a>Disk</a> objects.
+     * @param disks The new value for the Disks property for this object.
      */
     public void setDisks(java.util.Collection<Disk> disks) {
         if (disks == null) {
@@ -128,11 +117,11 @@ public class ListLocalDisksResult implements Serializable {
     }
     
     /**
-     * An array of <a>Disk</a> objects.
+     * Sets the value of the Disks property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param disks An array of <a>Disk</a> objects.
+     * @param disks The new value for the Disks property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -146,11 +135,11 @@ public class ListLocalDisksResult implements Serializable {
     }
     
     /**
-     * An array of <a>Disk</a> objects.
+     * Sets the value of the Disks property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param disks An array of <a>Disk</a> objects.
+     * @param disks The new value for the Disks property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

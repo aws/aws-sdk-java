@@ -19,7 +19,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A JSON object containing the GatewayARN of the gateway whose bandwidth rate information was deleted.
+ * A JSON object containing the of the gateway whose bandwidth rate information was deleted.
  * </p>
  */
 public class DeleteBandwidthRateLimitResult implements Serializable {

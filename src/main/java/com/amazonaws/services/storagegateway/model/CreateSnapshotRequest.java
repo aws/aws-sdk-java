@@ -36,8 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * volume from a snapshot.
  * </p>
  * <p>
- * <b>NOTE:</b>To list or delete a snapshot, you must use the Amazon EC2 API. For more information, go to DeleteSnapshot and DescribeSnapshots in the
- * Amazon Elastic Compute Cloud API Reference.
+ * <b>NOTE:</b>To list or delete a snapshot, you must use the Amazon EC2 API. For more information, .
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#createSnapshot(CreateSnapshotRequest)

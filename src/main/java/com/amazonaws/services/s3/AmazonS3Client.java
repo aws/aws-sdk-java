@@ -56,16 +56,17 @@ import com.amazonaws.auth.EnvironmentVariableCredentialsProvider;
 import com.amazonaws.auth.InstanceProfileCredentialsProvider;
 import com.amazonaws.auth.Signer;
 import com.amazonaws.auth.SystemPropertiesCredentialsProvider;
+import com.amazonaws.event.ProgressEvent;
+import com.amazonaws.event.ProgressListener;
 import com.amazonaws.event.ProgressListenerCallbackExecutor;
 import com.amazonaws.event.ProgressReportingInputStream;
-import com.amazonaws.event.ProgressListener;
-import com.amazonaws.event.ProgressEvent;
 import com.amazonaws.handlers.HandlerChainFactory;
 import com.amazonaws.handlers.RequestHandler;
 import com.amazonaws.http.ExecutionContext;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.HttpResponseHandler;
 import com.amazonaws.internal.StaticCredentialsProvider;
+import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.regions.RegionUtils;
 import com.amazonaws.services.s3.internal.BucketNameUtils;
 import com.amazonaws.services.s3.internal.Constants;
@@ -89,6 +90,7 @@ import com.amazonaws.services.s3.internal.S3XmlResponseHandler;
 import com.amazonaws.services.s3.internal.ServerSideEncryptionHeaderHandler;
 import com.amazonaws.services.s3.internal.ServiceUtils;
 import com.amazonaws.services.s3.internal.XmlWriter;
+import com.amazonaws.services.s3.metrics.S3RequestMetric;
 import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
 import com.amazonaws.services.s3.model.AccessControlList;
 import com.amazonaws.services.s3.model.AmazonS3Exception;
@@ -200,6 +202,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
     /** Shared logger for client events */
     private static Log log = LogFactory.getLog(AmazonS3Client.class);
+
+    static { // enable S3 specific predefined request metrics
+        AwsSdkMetrics.addAll(Arrays.asList(S3RequestMetric.values()));
+    }
 
     /** Responsible for handling error responses from all S3 service calls. */
     private S3ErrorResponseHandler errorResponseHandler = new S3ErrorResponseHandler();
@@ -3097,7 +3103,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             credentials = originalRequest.getRequestCredentials();
         }
 
-        ExecutionContext executionContext = createExecutionContext();
+        ExecutionContext executionContext = createExecutionContext(originalRequest);
         executionContext.setSigner(createSigner(request, bucket, key));
         executionContext.setCredentials(credentials);
 

@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * An internal server error has occured during the request. See the error and message fields for more information.
+ * An internal server error has occurred during the request. See the error and message fields for more information.
  * </p>
  */        
 public class InternalServerErrorException extends AmazonServiceException {

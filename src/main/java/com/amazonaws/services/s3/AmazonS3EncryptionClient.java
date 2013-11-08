@@ -810,7 +810,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
     }
 
     public <X extends AmazonWebServiceRequest> X appendUserAgent(X request, String userAgent) {
-        request.getRequestClientOptions().addClientMarker(USER_AGENT);
+        request.getRequestClientOptions().appendUserAgent(userAgent);
         return request;
     }
 

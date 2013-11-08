@@ -279,7 +279,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Accept ownership of a public virtual interface created by another
@@ -332,7 +333,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Creates a new private virtual interface. A virtual interface is the
@@ -382,7 +384,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Deletes a virtual interface.
@@ -429,7 +432,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Creates a new public virtual interface. A virtual interface is the
@@ -479,7 +483,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Creates a new interconnect between a AWS Direct Connect partner's
@@ -544,7 +549,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Displays all virtual interfaces for an AWS account. Virtual interfaces
@@ -605,7 +611,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Confirm the creation of a hosted connection on an interconnect.
@@ -657,7 +664,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Returns a list of interconnects owned by the AWS account.
@@ -708,7 +716,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Returns a list of virtual private gateways owned by the AWS account.
@@ -763,7 +772,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Accept ownership of a private virtual interface created by another
@@ -816,7 +826,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Displays all connections in this region.
@@ -867,7 +878,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Provisions a public virtual interface to be owned by a different
@@ -925,7 +937,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Provisions a private virtual interface to be owned by a different
@@ -983,7 +996,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Deletes the connection.
@@ -1035,7 +1049,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Return a list of connections that have been provisioned on the given
@@ -1083,7 +1098,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Creates a hosted connection on an interconnect.
@@ -1134,7 +1150,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Creates a new connection between the customer network and a specific
@@ -1191,7 +1208,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Deletes the specified interconnect.
@@ -1238,7 +1256,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Returns the list of AWS Direct Connect locations in the current AWS

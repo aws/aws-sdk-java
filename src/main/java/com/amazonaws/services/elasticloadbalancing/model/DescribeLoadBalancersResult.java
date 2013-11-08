@@ -25,7 +25,7 @@ import java.io.Serializable;
 public class DescribeLoadBalancersResult implements Serializable {
 
     /**
-     * A list of LoadBalancer description structures.
+     * A list of load balancer description structures.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<LoadBalancerDescription> loadBalancerDescriptions;
 
@@ -35,9 +35,9 @@ public class DescribeLoadBalancersResult implements Serializable {
     private String nextMarker;
 
     /**
-     * A list of LoadBalancer description structures.
+     * A list of load balancer description structures.
      *
-     * @return A list of LoadBalancer description structures.
+     * @return A list of load balancer description structures.
      */
     public java.util.List<LoadBalancerDescription> getLoadBalancerDescriptions() {
         if (loadBalancerDescriptions == null) {
@@ -48,9 +48,9 @@ public class DescribeLoadBalancersResult implements Serializable {
     }
     
     /**
-     * A list of LoadBalancer description structures.
+     * A list of load balancer description structures.
      *
-     * @param loadBalancerDescriptions A list of LoadBalancer description structures.
+     * @param loadBalancerDescriptions A list of load balancer description structures.
      */
     public void setLoadBalancerDescriptions(java.util.Collection<LoadBalancerDescription> loadBalancerDescriptions) {
         if (loadBalancerDescriptions == null) {
@@ -63,11 +63,11 @@ public class DescribeLoadBalancersResult implements Serializable {
     }
     
     /**
-     * A list of LoadBalancer description structures.
+     * A list of load balancer description structures.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerDescriptions A list of LoadBalancer description structures.
+     * @param loadBalancerDescriptions A list of load balancer description structures.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -81,11 +81,11 @@ public class DescribeLoadBalancersResult implements Serializable {
     }
     
     /**
-     * A list of LoadBalancer description structures.
+     * A list of load balancer description structures.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerDescriptions A list of LoadBalancer description structures.
+     * @param loadBalancerDescriptions A list of load balancer description structures.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

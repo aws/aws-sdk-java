@@ -40,14 +40,6 @@ public class DeleteBandwidthRateLimitRequest extends AmazonWebServiceRequest imp
      */
     private String gatewayARN;
 
-    /**
-     * One of the <a>BandwidthType</a> values that indicates the gateway
-     * bandwidth rate limit to delete. <p><i>Valid Values</i>:
-     * <code>Upload</code>, <code>Download</code>, <code>All</code>
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>UPLOAD, DOWNLOAD, ALL
-     */
     private String bandwidthType;
 
     /**
@@ -105,104 +97,44 @@ public class DeleteBandwidthRateLimitRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * One of the <a>BandwidthType</a> values that indicates the gateway
-     * bandwidth rate limit to delete. <p><i>Valid Values</i>:
-     * <code>Upload</code>, <code>Download</code>, <code>All</code>
+     * Returns the value of the BandwidthType property for this object.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>UPLOAD, DOWNLOAD, ALL
+     * <b>Length: </b>3 - 25<br/>
      *
-     * @return One of the <a>BandwidthType</a> values that indicates the gateway
-     *         bandwidth rate limit to delete. <p><i>Valid Values</i>:
-     *         <code>Upload</code>, <code>Download</code>, <code>All</code>
-     *
-     * @see BandwidthType
+     * @return The value of the BandwidthType property for this object.
      */
     public String getBandwidthType() {
         return bandwidthType;
     }
     
     /**
-     * One of the <a>BandwidthType</a> values that indicates the gateway
-     * bandwidth rate limit to delete. <p><i>Valid Values</i>:
-     * <code>Upload</code>, <code>Download</code>, <code>All</code>
+     * Sets the value of the BandwidthType property for this object.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>UPLOAD, DOWNLOAD, ALL
+     * <b>Length: </b>3 - 25<br/>
      *
-     * @param bandwidthType One of the <a>BandwidthType</a> values that indicates the gateway
-     *         bandwidth rate limit to delete. <p><i>Valid Values</i>:
-     *         <code>Upload</code>, <code>Download</code>, <code>All</code>
-     *
-     * @see BandwidthType
+     * @param bandwidthType The new value for the BandwidthType property for this object.
      */
     public void setBandwidthType(String bandwidthType) {
         this.bandwidthType = bandwidthType;
     }
     
     /**
-     * One of the <a>BandwidthType</a> values that indicates the gateway
-     * bandwidth rate limit to delete. <p><i>Valid Values</i>:
-     * <code>Upload</code>, <code>Download</code>, <code>All</code>
+     * Sets the value of the BandwidthType property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>UPLOAD, DOWNLOAD, ALL
+     * <b>Length: </b>3 - 25<br/>
      *
-     * @param bandwidthType One of the <a>BandwidthType</a> values that indicates the gateway
-     *         bandwidth rate limit to delete. <p><i>Valid Values</i>:
-     *         <code>Upload</code>, <code>Download</code>, <code>All</code>
+     * @param bandwidthType The new value for the BandwidthType property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
-     *
-     * @see BandwidthType
      */
     public DeleteBandwidthRateLimitRequest withBandwidthType(String bandwidthType) {
         this.bandwidthType = bandwidthType;
-        return this;
-    }
-
-    /**
-     * One of the <a>BandwidthType</a> values that indicates the gateway
-     * bandwidth rate limit to delete. <p><i>Valid Values</i>:
-     * <code>Upload</code>, <code>Download</code>, <code>All</code>
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>UPLOAD, DOWNLOAD, ALL
-     *
-     * @param bandwidthType One of the <a>BandwidthType</a> values that indicates the gateway
-     *         bandwidth rate limit to delete. <p><i>Valid Values</i>:
-     *         <code>Upload</code>, <code>Download</code>, <code>All</code>
-     *
-     * @see BandwidthType
-     */
-    public void setBandwidthType(BandwidthType bandwidthType) {
-        this.bandwidthType = bandwidthType.toString();
-    }
-    
-    /**
-     * One of the <a>BandwidthType</a> values that indicates the gateway
-     * bandwidth rate limit to delete. <p><i>Valid Values</i>:
-     * <code>Upload</code>, <code>Download</code>, <code>All</code>
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>UPLOAD, DOWNLOAD, ALL
-     *
-     * @param bandwidthType One of the <a>BandwidthType</a> values that indicates the gateway
-     *         bandwidth rate limit to delete. <p><i>Valid Values</i>:
-     *         <code>Upload</code>, <code>Download</code>, <code>All</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together.
-     *
-     * @see BandwidthType
-     */
-    public DeleteBandwidthRateLimitRequest withBandwidthType(BandwidthType bandwidthType) {
-        this.bandwidthType = bandwidthType.toString();
         return this;
     }
 

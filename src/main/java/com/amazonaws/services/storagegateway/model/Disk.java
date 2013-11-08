@@ -18,93 +18,55 @@ import java.io.Serializable;
 
 
 /**
- * <p>
- * Describes a gateway local disk.
- * </p>
+ * Disk
  */
 public class Disk implements Serializable {
 
-    /**
-     * The unique device ID or other distinguishing data that identify the
-     * local disk.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 300<br/>
-     */
     private String diskId;
 
-    /**
-     * The path of the local disk in the gateway virtual machine (VM).
-     */
     private String diskPath;
 
-    /**
-     * The device node of the local disk as assigned by the virtualization
-     * environment.
-     */
     private String diskNode;
 
-    /**
-     * The local disk size in bytes.
-     */
     private Long diskSizeInBytes;
 
-    /**
-     * One of the <a>DiskAllocationType</a> enumeration values that
-     * identifies how the local disk is used.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>AVAILABLE, CACHE STORAGE, STORED iSCSI VOLUME, UPLOAD BUFFER, WORKING STORAGE
-     */
     private String diskAllocationType;
 
-    /**
-     * The iSCSI Qualified Name (IQN) that is defined for the disk. This
-     * field is not included in the response if the local disk is not defined
-     * as an iSCSI target. The format of this field is
-     * <i>targetIqn::LUNNumber::region-volumeId</i>.
-     */
     private String diskAllocationResource;
 
     /**
-     * The unique device ID or other distinguishing data that identify the
-     * local disk.
+     * Returns the value of the DiskId property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 300<br/>
      *
-     * @return The unique device ID or other distinguishing data that identify the
-     *         local disk.
+     * @return The value of the DiskId property for this object.
      */
     public String getDiskId() {
         return diskId;
     }
     
     /**
-     * The unique device ID or other distinguishing data that identify the
-     * local disk.
+     * Sets the value of the DiskId property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 300<br/>
      *
-     * @param diskId The unique device ID or other distinguishing data that identify the
-     *         local disk.
+     * @param diskId The new value for the DiskId property for this object.
      */
     public void setDiskId(String diskId) {
         this.diskId = diskId;
     }
     
     /**
-     * The unique device ID or other distinguishing data that identify the
-     * local disk.
+     * Sets the value of the DiskId property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 300<br/>
      *
-     * @param diskId The unique device ID or other distinguishing data that identify the
-     *         local disk.
+     * @param diskId The new value for the DiskId property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -115,29 +77,29 @@ public class Disk implements Serializable {
     }
 
     /**
-     * The path of the local disk in the gateway virtual machine (VM).
+     * Returns the value of the DiskPath property for this object.
      *
-     * @return The path of the local disk in the gateway virtual machine (VM).
+     * @return The value of the DiskPath property for this object.
      */
     public String getDiskPath() {
         return diskPath;
     }
     
     /**
-     * The path of the local disk in the gateway virtual machine (VM).
+     * Sets the value of the DiskPath property for this object.
      *
-     * @param diskPath The path of the local disk in the gateway virtual machine (VM).
+     * @param diskPath The new value for the DiskPath property for this object.
      */
     public void setDiskPath(String diskPath) {
         this.diskPath = diskPath;
     }
     
     /**
-     * The path of the local disk in the gateway virtual machine (VM).
+     * Sets the value of the DiskPath property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param diskPath The path of the local disk in the gateway virtual machine (VM).
+     * @param diskPath The new value for the DiskPath property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -148,35 +110,29 @@ public class Disk implements Serializable {
     }
 
     /**
-     * The device node of the local disk as assigned by the virtualization
-     * environment.
+     * Returns the value of the DiskNode property for this object.
      *
-     * @return The device node of the local disk as assigned by the virtualization
-     *         environment.
+     * @return The value of the DiskNode property for this object.
      */
     public String getDiskNode() {
         return diskNode;
     }
     
     /**
-     * The device node of the local disk as assigned by the virtualization
-     * environment.
+     * Sets the value of the DiskNode property for this object.
      *
-     * @param diskNode The device node of the local disk as assigned by the virtualization
-     *         environment.
+     * @param diskNode The new value for the DiskNode property for this object.
      */
     public void setDiskNode(String diskNode) {
         this.diskNode = diskNode;
     }
     
     /**
-     * The device node of the local disk as assigned by the virtualization
-     * environment.
+     * Sets the value of the DiskNode property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param diskNode The device node of the local disk as assigned by the virtualization
-     *         environment.
+     * @param diskNode The new value for the DiskNode property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -187,29 +143,29 @@ public class Disk implements Serializable {
     }
 
     /**
-     * The local disk size in bytes.
+     * Returns the value of the DiskSizeInBytes property for this object.
      *
-     * @return The local disk size in bytes.
+     * @return The value of the DiskSizeInBytes property for this object.
      */
     public Long getDiskSizeInBytes() {
         return diskSizeInBytes;
     }
     
     /**
-     * The local disk size in bytes.
+     * Sets the value of the DiskSizeInBytes property for this object.
      *
-     * @param diskSizeInBytes The local disk size in bytes.
+     * @param diskSizeInBytes The new value for the DiskSizeInBytes property for this object.
      */
     public void setDiskSizeInBytes(Long diskSizeInBytes) {
         this.diskSizeInBytes = diskSizeInBytes;
     }
     
     /**
-     * The local disk size in bytes.
+     * Sets the value of the DiskSizeInBytes property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param diskSizeInBytes The local disk size in bytes.
+     * @param diskSizeInBytes The new value for the DiskSizeInBytes property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -220,53 +176,41 @@ public class Disk implements Serializable {
     }
 
     /**
-     * One of the <a>DiskAllocationType</a> enumeration values that
-     * identifies how the local disk is used.
+     * Returns the value of the DiskAllocationType property for this object.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>AVAILABLE, CACHE STORAGE, STORED iSCSI VOLUME, UPLOAD BUFFER, WORKING STORAGE
+     * <b>Length: </b>3 - 100<br/>
      *
-     * @return One of the <a>DiskAllocationType</a> enumeration values that
-     *         identifies how the local disk is used.
-     *
-     * @see DiskAllocationType
+     * @return The value of the DiskAllocationType property for this object.
      */
     public String getDiskAllocationType() {
         return diskAllocationType;
     }
     
     /**
-     * One of the <a>DiskAllocationType</a> enumeration values that
-     * identifies how the local disk is used.
+     * Sets the value of the DiskAllocationType property for this object.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>AVAILABLE, CACHE STORAGE, STORED iSCSI VOLUME, UPLOAD BUFFER, WORKING STORAGE
+     * <b>Length: </b>3 - 100<br/>
      *
-     * @param diskAllocationType One of the <a>DiskAllocationType</a> enumeration values that
-     *         identifies how the local disk is used.
-     *
-     * @see DiskAllocationType
+     * @param diskAllocationType The new value for the DiskAllocationType property for this object.
      */
     public void setDiskAllocationType(String diskAllocationType) {
         this.diskAllocationType = diskAllocationType;
     }
     
     /**
-     * One of the <a>DiskAllocationType</a> enumeration values that
-     * identifies how the local disk is used.
+     * Sets the value of the DiskAllocationType property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>AVAILABLE, CACHE STORAGE, STORED iSCSI VOLUME, UPLOAD BUFFER, WORKING STORAGE
+     * <b>Length: </b>3 - 100<br/>
      *
-     * @param diskAllocationType One of the <a>DiskAllocationType</a> enumeration values that
-     *         identifies how the local disk is used.
+     * @param diskAllocationType The new value for the DiskAllocationType property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
-     *
-     * @see DiskAllocationType
      */
     public Disk withDiskAllocationType(String diskAllocationType) {
         this.diskAllocationType = diskAllocationType;
@@ -274,85 +218,30 @@ public class Disk implements Serializable {
     }
 
     /**
-     * One of the <a>DiskAllocationType</a> enumeration values that
-     * identifies how the local disk is used.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>AVAILABLE, CACHE STORAGE, STORED iSCSI VOLUME, UPLOAD BUFFER, WORKING STORAGE
+     * Returns the value of the DiskAllocationResource property for this
+     * object.
      *
-     * @param diskAllocationType One of the <a>DiskAllocationType</a> enumeration values that
-     *         identifies how the local disk is used.
-     *
-     * @see DiskAllocationType
-     */
-    public void setDiskAllocationType(DiskAllocationType diskAllocationType) {
-        this.diskAllocationType = diskAllocationType.toString();
-    }
-    
-    /**
-     * One of the <a>DiskAllocationType</a> enumeration values that
-     * identifies how the local disk is used.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>AVAILABLE, CACHE STORAGE, STORED iSCSI VOLUME, UPLOAD BUFFER, WORKING STORAGE
-     *
-     * @param diskAllocationType One of the <a>DiskAllocationType</a> enumeration values that
-     *         identifies how the local disk is used.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together.
-     *
-     * @see DiskAllocationType
-     */
-    public Disk withDiskAllocationType(DiskAllocationType diskAllocationType) {
-        this.diskAllocationType = diskAllocationType.toString();
-        return this;
-    }
-
-    /**
-     * The iSCSI Qualified Name (IQN) that is defined for the disk. This
-     * field is not included in the response if the local disk is not defined
-     * as an iSCSI target. The format of this field is
-     * <i>targetIqn::LUNNumber::region-volumeId</i>.
-     *
-     * @return The iSCSI Qualified Name (IQN) that is defined for the disk. This
-     *         field is not included in the response if the local disk is not defined
-     *         as an iSCSI target. The format of this field is
-     *         <i>targetIqn::LUNNumber::region-volumeId</i>.
+     * @return The value of the DiskAllocationResource property for this object.
      */
     public String getDiskAllocationResource() {
         return diskAllocationResource;
     }
     
     /**
-     * The iSCSI Qualified Name (IQN) that is defined for the disk. This
-     * field is not included in the response if the local disk is not defined
-     * as an iSCSI target. The format of this field is
-     * <i>targetIqn::LUNNumber::region-volumeId</i>.
+     * Sets the value of the DiskAllocationResource property for this object.
      *
-     * @param diskAllocationResource The iSCSI Qualified Name (IQN) that is defined for the disk. This
-     *         field is not included in the response if the local disk is not defined
-     *         as an iSCSI target. The format of this field is
-     *         <i>targetIqn::LUNNumber::region-volumeId</i>.
+     * @param diskAllocationResource The new value for the DiskAllocationResource property for this object.
      */
     public void setDiskAllocationResource(String diskAllocationResource) {
         this.diskAllocationResource = diskAllocationResource;
     }
     
     /**
-     * The iSCSI Qualified Name (IQN) that is defined for the disk. This
-     * field is not included in the response if the local disk is not defined
-     * as an iSCSI target. The format of this field is
-     * <i>targetIqn::LUNNumber::region-volumeId</i>.
+     * Sets the value of the DiskAllocationResource property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param diskAllocationResource The iSCSI Qualified Name (IQN) that is defined for the disk. This
-     *         field is not included in the response if the local disk is not defined
-     *         as an iSCSI target. The format of this field is
-     *         <i>targetIqn::LUNNumber::region-volumeId</i>.
+     * @param diskAllocationResource The new value for the DiskAllocationResource property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

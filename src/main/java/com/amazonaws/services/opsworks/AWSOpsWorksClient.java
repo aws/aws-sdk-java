@@ -361,7 +361,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Describes the permissions for a specified stack.
@@ -408,7 +409,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Deletes a specified instance. You must stop an instance before you can
@@ -497,7 +499,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Detaches a specified Elastic Load Balancing instance from its layer.
@@ -665,7 +668,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Associates one of the stack's registered Elastic IP addresses with a
@@ -799,7 +803,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Gets a generated host name for the specified layer, based on the
@@ -846,7 +851,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Specify the load-based auto scaling configuration for a specified
@@ -943,7 +949,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Assigns one of the stack's registered Amazon EBS volumes to a
@@ -1032,7 +1039,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Updates a specified layer.
@@ -1207,7 +1215,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Disassociates an Elastic IP address from its instance. The address
@@ -1379,7 +1388,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Updates a specified user profile.
@@ -1464,7 +1474,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Reboots a specified instance. For more information, see <a
@@ -1552,7 +1563,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Deletes a specified app.
@@ -1759,7 +1771,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Requests a description of one or more layers in a specified stack.
@@ -1808,7 +1821,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Describes load-based auto scaling configurations for specified layers.
@@ -1858,7 +1872,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Describes a stack's Elastic Load Balancing instances.
@@ -1908,7 +1923,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Deletes a specified layer. You must first stop and then delete all
@@ -2039,7 +2055,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Deletes a user profile.
@@ -2128,7 +2145,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Updates an Amazon EBS volume's name or mount point. For more
@@ -2216,7 +2234,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Updates a specified instance.
@@ -2304,7 +2323,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Registers an Elastic IP address with a specified stack. An address can
@@ -2355,7 +2375,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Describes <a
@@ -2407,7 +2428,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Requests a description of one or more stacks.
@@ -2453,7 +2475,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Requests a description of a specified set of apps.
@@ -2502,7 +2525,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Stops a specified stack.
@@ -2602,7 +2626,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * Overrides the default endpoint for this client ("https://opsworks.us-east-1.amazonaws.com") and explicitly provides
      * an AWS region ID and AWS service name to use when the client calculates a signature

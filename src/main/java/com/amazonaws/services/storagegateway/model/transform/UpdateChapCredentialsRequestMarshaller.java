@@ -47,7 +47,7 @@ public class UpdateChapCredentialsRequestMarshaller implements Marshaller<Reques
     }
 
         Request<UpdateChapCredentialsRequest> request = new DefaultRequest<UpdateChapCredentialsRequest>(updateChapCredentialsRequest, "AWSStorageGateway");
-        String target = "StorageGateway_20120630.UpdateChapCredentials";
+        String target = "StorageGateway_20130630.UpdateChapCredentials";
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 

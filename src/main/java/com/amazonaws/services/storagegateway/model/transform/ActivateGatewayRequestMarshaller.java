@@ -47,7 +47,7 @@ public class ActivateGatewayRequestMarshaller implements Marshaller<Request<Acti
     }
 
         Request<ActivateGatewayRequest> request = new DefaultRequest<ActivateGatewayRequest>(activateGatewayRequest, "AWSStorageGateway");
-        String target = "StorageGateway_20120630.ActivateGateway";
+        String target = "StorageGateway_20130630.ActivateGateway";
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 
@@ -99,6 +99,12 @@ public class ActivateGatewayRequestMarshaller implements Marshaller<Request<Acti
             }
             if (activateGatewayRequest.getGatewayType() != null) {
                 jsonWriter.key("GatewayType").value(activateGatewayRequest.getGatewayType());
+            }
+            if (activateGatewayRequest.getTapeDriveType() != null) {
+                jsonWriter.key("TapeDriveType").value(activateGatewayRequest.getTapeDriveType());
+            }
+            if (activateGatewayRequest.getMediumChangerType() != null) {
+                jsonWriter.key("MediumChangerType").value(activateGatewayRequest.getMediumChangerType());
             }
 
           jsonWriter.endObject();

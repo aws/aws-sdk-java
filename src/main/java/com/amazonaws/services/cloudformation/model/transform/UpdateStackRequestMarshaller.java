@@ -49,6 +49,12 @@ public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateSt
         if (updateStackRequest.getTemplateURL() != null) {
             request.addParameter("TemplateURL", StringUtils.fromString(updateStackRequest.getTemplateURL()));
         }
+        if (updateStackRequest.getStackPolicyDuringUpdateBody() != null) {
+            request.addParameter("StackPolicyDuringUpdateBody", StringUtils.fromString(updateStackRequest.getStackPolicyDuringUpdateBody()));
+        }
+        if (updateStackRequest.getStackPolicyDuringUpdateURL() != null) {
+            request.addParameter("StackPolicyDuringUpdateURL", StringUtils.fromString(updateStackRequest.getStackPolicyDuringUpdateURL()));
+        }
 
         java.util.List<Parameter> parametersList = updateStackRequest.getParameters();
         int parametersListIndex = 1;
@@ -76,6 +82,12 @@ public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateSt
             }
 
             capabilitiesListIndex++;
+        }
+        if (updateStackRequest.getStackPolicyBody() != null) {
+            request.addParameter("StackPolicyBody", StringUtils.fromString(updateStackRequest.getStackPolicyBody()));
+        }
+        if (updateStackRequest.getStackPolicyURL() != null) {
+            request.addParameter("StackPolicyURL", StringUtils.fromString(updateStackRequest.getStackPolicyURL()));
         }
 
 

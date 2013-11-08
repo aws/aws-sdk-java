@@ -21,19 +21,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#deleteLoadBalancer(DeleteLoadBalancerRequest) DeleteLoadBalancer operation}.
  * <p>
- * Deletes the specified LoadBalancer.
+ * Deletes the specified load balancer.
  * </p>
  * <p>
- * If attempting to recreate the LoadBalancer, the client must reconfigure all the settings. The DNS name associated with a deleted LoadBalancer will no
- * longer be usable. Once deleted, the name and associated DNS record of the LoadBalancer no longer exist and traffic sent to any of its IP addresses
- * will no longer be delivered to client instances. The client will not receive the same DNS name even if a new LoadBalancer with same LoadBalancerName
- * is created.
+ * If attempting to recreate the load balancer, you must reconfigure all the settings. The DNS name associated with a deleted load balancer will no
+ * longer be usable. Once deleted, the name and associated DNS record of the load balancer no longer exist and traffic sent to any of its IP addresses
+ * will no longer be delivered to back-end instances.
  * </p>
  * <p>
- * To successfully call this API, the client must provide the same account credentials as were used to create the LoadBalancer.
+ * To successfully call this API, you must provide the same account credentials as were used to create the load balancer.
  * </p>
  * <p>
- * <b>NOTE:</b> By design, if the LoadBalancer does not exist or has already been deleted, DeleteLoadBalancer still succeeds.
+ * <b>NOTE:</b> By design, if the load balancer does not exist or has already been deleted, a call to DeleteLoadBalancer action still succeeds.
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#deleteLoadBalancer(DeleteLoadBalancerRequest)
@@ -41,8 +40,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteLoadBalancerRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name associated with the LoadBalancer. The name must be unique
-     * within the client AWS account.
+     * The name associated with the load balancer.
      */
     private String loadBalancerName;
 
@@ -57,43 +55,36 @@ public class DeleteLoadBalancerRequest extends AmazonWebServiceRequest implement
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param loadBalancerName The name associated with the LoadBalancer. The
-     * name must be unique within the client AWS account.
+     * @param loadBalancerName The name associated with the load balancer.
      */
     public DeleteLoadBalancerRequest(String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
     }
 
     /**
-     * The name associated with the LoadBalancer. The name must be unique
-     * within the client AWS account.
+     * The name associated with the load balancer.
      *
-     * @return The name associated with the LoadBalancer. The name must be unique
-     *         within the client AWS account.
+     * @return The name associated with the load balancer.
      */
     public String getLoadBalancerName() {
         return loadBalancerName;
     }
     
     /**
-     * The name associated with the LoadBalancer. The name must be unique
-     * within the client AWS account.
+     * The name associated with the load balancer.
      *
-     * @param loadBalancerName The name associated with the LoadBalancer. The name must be unique
-     *         within the client AWS account.
+     * @param loadBalancerName The name associated with the load balancer.
      */
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
     
     /**
-     * The name associated with the LoadBalancer. The name must be unique
-     * within the client AWS account.
+     * The name associated with the load balancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerName The name associated with the LoadBalancer. The name must be unique
-     *         within the client AWS account.
+     * @param loadBalancerName The name associated with the load balancer.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

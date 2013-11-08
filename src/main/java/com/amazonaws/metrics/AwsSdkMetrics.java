@@ -15,6 +15,7 @@
 
 package com.amazonaws.metrics;
 
+import java.io.File;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -22,8 +23,11 @@ import java.util.Set;
 
 import org.apache.commons.logging.LogFactory;
 
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
-import com.amazonaws.metrics.RequestMetricCollector.Factory;
+import com.amazonaws.auth.PropertiesCredentials;
+import com.amazonaws.regions.Regions;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.jmx.MBeans;
 
@@ -46,7 +50,7 @@ import com.amazonaws.util.jmx.MBeans;
  * Clients who needs to fully customize the metric collection can implement the
  * SPI {@link RequestMetricCollector}, and then replace the default AWS SDK
  * implementation of the collector via
- * {@link #setRequestMetricCollector(RequestMetricCollector)}.
+ * {@link #setMetricCollector(MetricCollector)}.
  * <p>
  * Alternatively, for limited customization of the internal collector
  * implementation provided by the AWS SDK, one can extend the internal Amazon
@@ -60,14 +64,98 @@ public enum AwsSdkMetrics {
     private static final String MBEAN_OBJECT_NAME =
         "com.amazonaws.management:type=" + AwsSdkMetrics.class.getSimpleName();
     /**
-     * System property used to enable the default metrics collected by the AWS
-     * SDK, which uploads the derived statistics to Amazon CloudWatch.
+     * System property used when starting up the JVM to enable the default
+     * metrics collected by the AWS SDK, which uploads the derived statistics to
+     * Amazon CloudWatch.
+     * 
+     * <pre>
+     * Example:
+     *  -Dcom.amazonaws.sdk.enableDefaultMetrics
+     * </pre>
      */
     public static final String DEFAULT_METRICS_SYSTEM_PROPERTY = "com.amazonaws.sdk.enableDefaultMetrics";
-    private static final String DEFAULT_REQUEST_METRIC_COLLECTOR_FACTORY = "com.amazonaws.metrics.internal.cloudwatch.DefaultRequestMetricCollectorFactory";
-    private static final boolean defaultMetricsEnabled = System.getProperty(DEFAULT_METRICS_SYSTEM_PROPERTY) != null;
+    /**
+     * Used to exclude the generation of JVM metrics when the AWS SDK default
+     * metrics is enabled when starting up the JVM.
+     * 
+     * <pre>
+     * Example:
+     *  -Dcom.amazonaws.sdk.enableDefaultMetrics=excludeJvmMetrics
+     * </pre>
+     */
+    public static final String EXCLUDE_MACHINE_METRICS = "excludeMachineMetrics";
+
+    public static final String AWS_CREDENTAIL_PROPERTIES_FILE= "credentialFile";
+    public static final String CLOUDWATCH_REGION = "cloudwatchRegion";
+    public static final String METRIC_QUEUE_SIZE = "metricQueueSize"; 
+    public static final String QUEUE_POLL_TIMEOUT_MILLI = "getQueuePollTimeoutMilli"; 
+    
+    private static final String DEFAULT_METRIC_COLLECTOR_FACTORY =
+        "com.amazonaws.metrics.internal.cloudwatch.DefaultMetricCollectorFactory";
+    /**
+     * True iff the system property {@link #DEFAULT_METRICS_SYSTEM_PROPERTY} has
+     * been set; false otherwise.
+     */
+    private static final boolean defaultMetricsEnabled;
+    /**
+     * True if machine metrics is to be excluded; false otherwise.
+     */
+    private static volatile boolean machineMetricsExcluded;
+    private static volatile AWSCredentialsProvider credentialProvider;
+    private static volatile Regions region;
+    private static volatile Integer metricQueueSize;
+    private static volatile Long queuePollTimeoutMilli;
+
+    static {
+        String defaultMetrics = System.getProperty(DEFAULT_METRICS_SYSTEM_PROPERTY);
+        defaultMetricsEnabled = defaultMetrics != null;
+        if (defaultMetricsEnabled) {
+            String[] values = defaultMetrics.split(",");
+            boolean excludeMachineMetrics = false;
+            for (String s: values) {
+                String part = s.trim();
+                if (!excludeMachineMetrics && EXCLUDE_MACHINE_METRICS.equals(part)) {
+                    excludeMachineMetrics = true;
+                } else {
+                    String[] pair = part.split("=");
+                    if (pair.length == 2) {
+                        String key = pair[0].trim();
+                        String value  = pair[1].trim();
+                        try {
+                            if (AWS_CREDENTAIL_PROPERTIES_FILE.equals(key)) {
+                                final PropertiesCredentials cred;
+                                    cred = new PropertiesCredentials(new File(value));
+                                    credentialProvider = new AWSCredentialsProvider() {
+                                        @Override public void refresh() {}
+                                        @Override public AWSCredentials getCredentials() { return cred; }
+                                    };
+                            } else if (CLOUDWATCH_REGION.equals(key)) {
+                                region = Regions.fromName(value);
+                            } else if (METRIC_QUEUE_SIZE.equals(key)) {
+                                Integer i = new Integer(value);
+                                if (i.intValue() < 1)
+                                    throw new IllegalArgumentException(METRIC_QUEUE_SIZE + " must be at least 1");
+                                metricQueueSize = i;
+                            } else if (QUEUE_POLL_TIMEOUT_MILLI.equals(key)) {
+                                Long i = new Long(value);
+                                if (i.intValue() < 1000)
+                                    throw new IllegalArgumentException(QUEUE_POLL_TIMEOUT_MILLI + " must be at least 1000");
+                                queuePollTimeoutMilli = i;
+                            } else {
+                                LogFactory.getLog(AwsSdkMetrics.class).debug("Ignoring unrecognized parameter: " + part);
+                            }
+                        } catch (Exception e) {
+                            LogFactory.getLog(AwsSdkMetrics.class).debug("Ignoring failure", e);
+                        }
+                    }
+                }
+            }
+            machineMetricsExcluded = excludeMachineMetrics;
+        }
+    }
+
     private static final MetricRegistry registry = new MetricRegistry();
-    private static volatile RequestMetricCollector mc;
+    private static volatile MetricCollector mc;
     /**
      * Used to disallow re-entrancy in enabling the default metric collection system. 
      */
@@ -84,7 +172,7 @@ public enum AwsSdkMetrics {
     /**
      * Returns a non-null request metric collector for the SDK. If no custom
      * request metric collector has previously been specified via
-     * {@link #setRequestMetricCollector(RequestMetricCollector)} and the
+     * {@link #setMetricCollector(MetricCollector)} and the
      * {@link #DEFAULT_METRICS_SYSTEM_PROPERTY} has been set, then this method
      * will initialize and return the default metric collector provided by the
      * AWS SDK on a best-attempt basis.
@@ -95,7 +183,27 @@ public enum AwsSdkMetrics {
                 enableDefaultMetrics();
         }
         @SuppressWarnings("unchecked")
-        T t = (T)(mc == null ? RequestMetricCollector.NONE : mc); 
+        T t = (T)(mc == null ? RequestMetricCollector.NONE : mc.getRequestMetricCollector()); 
+        return t; 
+    }
+
+    public static <T extends ServiceMetricCollector> T getServiceMetricCollector() {
+        if (mc == null) {
+            if (isDefaultMetricsEnabled())
+                enableDefaultMetrics();
+        }
+        @SuppressWarnings("unchecked")
+        T t = (T)(mc == null ? ServiceMetricCollector.NONE : mc.getServiceMetricCollector());
+        return t; 
+    }
+
+    public static <T extends MetricCollector> T getMetricCollector() {
+        if (mc == null) {
+            if (isDefaultMetricsEnabled())
+                enableDefaultMetrics();
+        }
+        @SuppressWarnings("unchecked")
+        T t = (T)(mc == null ? MetricCollector.NONE : mc);
         return t; 
     }
 
@@ -117,12 +225,22 @@ public enum AwsSdkMetrics {
      * @see RequestMetricCollector
      * @see RequestMetricCollector#NONE
      */
-    public static synchronized void setRequestMetricCollector(RequestMetricCollector mc) {
-        RequestMetricCollector old = AwsSdkMetrics.mc;
+    public static synchronized void setMetricCollector(MetricCollector mc) {
+        MetricCollector old = AwsSdkMetrics.mc;
         AwsSdkMetrics.mc = mc;
         if (old != null) {
             old.stop();
         }
+    }
+
+    /**
+     * Used to set whether the machine metrics is to be excluded.
+     * 
+     * @param excludeMachineMetrics true if machine metrics is to be excluded;
+     * false otherwise.
+     */
+    public static void setMachineMetricsExcluded(boolean excludeMachineMetrics) {
+        AwsSdkMetrics.machineMetricsExcluded = excludeMachineMetrics;
     }
 
     /**
@@ -132,6 +250,13 @@ public enum AwsSdkMetrics {
      */
     public static boolean isDefaultMetricsEnabled() {
         return defaultMetricsEnabled;
+    }
+
+    /**
+     * Returns true if machine metrics is to be excluded.
+     */
+    public static boolean isMachineMetricExcluded() {
+        return machineMetricsExcluded;
     }
 
     /**
@@ -149,11 +274,11 @@ public enum AwsSdkMetrics {
             }
             dirtyEnabling = true;
             try {
-                Class<?> c = Class.forName(DEFAULT_REQUEST_METRIC_COLLECTOR_FACTORY);
-                RequestMetricCollector.Factory f = (Factory)c.newInstance();
-                RequestMetricCollector instance = f.getInstance();
+                Class<?> c = Class.forName(DEFAULT_METRIC_COLLECTOR_FACTORY);
+                MetricCollector.Factory f = (MetricCollector.Factory)c.newInstance();
+                MetricCollector instance = f.getInstance();
                 if (instance != null) {
-                    setRequestMetricCollector(instance);
+                    setMetricCollector(instance);
                     return true;
                 }
             } catch (Exception e) {
@@ -171,30 +296,47 @@ public enum AwsSdkMetrics {
      * level.
      */
     public static void disableMetrics() {
-        setRequestMetricCollector(RequestMetricCollector.NONE);
+        setMetricCollector(MetricCollector.NONE);
     }
 
     /**
      * Adds the given metric type to the registry of predefined metrics to be
      * captured at the AWS SDK level.
+     * 
+     * @return true if the set of predefined metric types gets changed as a
+     *        result of the call
      */
     public static boolean add(MetricType type) {
-        return registry.addMetricType(type);
+        return type == null ? false : registry.addMetricType(type);
     }
     /**
      * Adds the given metric types to the registry of predefined metrics to be
      * captured at the AWS SDK level.
+     * 
+     * @return true if the set of predefined metric types gets changed as a
+     *        result of the call
      */
     public static <T extends MetricType> boolean addAll(Collection<T> types) {
-        return registry.addMetricTypes(types);
+        return types == null || types.size() == 0
+             ? false
+             : registry.addMetricTypes(types);
     }
-
+    /**
+     * Sets the given metric types to replace the registry of predefined metrics
+     * to be captured at the AWS SDK level.
+     */
+    public static <T extends MetricType> void set(Collection<T> types) {
+        registry.setMetricTypes(types);
+    }
     /**
      * Removes the given metric type from the registry of predefined metrics to
      * be captured at the AWS SDK level.
+     * 
+     * @return true if the set of predefined metric types gets changed as a
+     *        result of the call
      */
     public static boolean remove(MetricType type) {
-        return registry.removeMetricType(type);
+        return type == null ? false : registry.removeMetricType(type);
     }
     /**
      * Returns an unmodifiable set of the current predefined metrics.
@@ -202,6 +344,82 @@ public enum AwsSdkMetrics {
     public static Set<MetricType> getPredefinedMetrics() {
         return registry.predefinedMetrics();
     }
+
+    /**
+     * Returns the credential provider for the default AWS SDK metric implementation.
+     * This method is restricted to calls from the default AWS SDK metric implementation.
+     * 
+     * @throws SecurityException if called outside the default AWS SDK metric implementation.
+     */
+    public static AWSCredentialsProvider getCredentialProvider() {
+        StackTraceElement[] e = Thread.currentThread().getStackTrace();
+        for (int i=0; i < e.length; i++) {
+            if (e[i].getClassName().equals(DEFAULT_METRIC_COLLECTOR_FACTORY)) {
+                return credentialProvider;
+            }
+        }
+        SecurityException ex = new SecurityException();
+        LogFactory.getLog(AwsSdkMetrics.class).warn("Illegal attempt to access the credential provider", ex);
+        throw ex;
+    }
+
+    /**
+     * Sets the credential provider for the default AWS SDK metric implementation;
+     * or null if the default is to be used.
+     */
+    public static void setCredentialProvider(AWSCredentialsProvider provider) {
+        credentialProvider = provider;
+    }
+
+    /**
+     * Returns the region configured for the default AWS SDK metric collector;
+     * or null if the default is to be used.
+     */
+    public static Regions getRegion() {
+        return region;
+    }
+
+    /**
+     * Sets the region to be used for the default AWS SDK metric collector;
+     * or null if the default is to be used.
+     */
+    public static void setRegion(Regions region) {
+        AwsSdkMetrics.region = region;
+    }
+
+    /**
+     * Returns the internal metric queue size to be used for the default AWS SDK
+     * metric collector; or null if the default is to be used.
+     */
+    public static Integer getMetricQueueSize() {
+        return metricQueueSize;
+    }
+    
+    /**
+     * Sets the metric queue size to be used for the default AWS SDK metric collector;
+     * or null if the default is to be used.
+     */
+    public static void setMetricQueueSize(Integer size) {
+        metricQueueSize = size;
+    }
+
+    /**
+     * Returns the internal metric queue timeout in millisecond to be used for
+     * the default AWS SDK metric collector; or null if the default is to be
+     * used.
+     */
+    public static Long getQueuePollTimeoutMilli() {
+        return queuePollTimeoutMilli;
+    }
+
+    /**
+     * Sets the queue poll time in millisecond to be used for the default AWS
+     * SDK metric collector; or null if the default is to be used.
+     */
+    public static void setQueuePollTimeoutMilli(Long timeoutMilli) {
+        queuePollTimeoutMilli = timeoutMilli;
+    }
+
     /**
      * MBean interface for AwsSdkMetrics administration.
      */
@@ -216,7 +434,11 @@ public enum AwsSdkMetrics {
          * level, or NONE if there is none.
          */
         public String getRequestMetricCollector();
-        
+        /**
+         * Returns the name of the service metric collector set at the AWS SDK
+         * level, or NONE if there is none.
+         */
+        public String getServiceMetricCollector();
         /**
          * Starts the default AWS SDK request metric collector, but only if no
          * request metric collector is currently in use at the AWS SDK level.
@@ -229,6 +451,55 @@ public enum AwsSdkMetrics {
          * Disables the request metric collector at the AWS SDK level.
          */
         public void disableMetrics();
+        /**
+         * Returns true if machine metrics is to be excluded; false otherwise.
+         */
+        public boolean isMachineMetricsExcluded();
+        /**
+         * Used to set whether the JVM metrics is to be excluded.
+         * 
+         * @param excludeMachineMetrics true if JVM metrics is to be excluded;
+         * false otherwise.
+         */
+        public void setMachineMetricsExcluded(boolean excludeMachineMetrics);
+        
+        /**
+         * Returns the region configured for the default AWS SDK metric collector;
+         * or null if the default is to be used.
+         */
+        public String getRegion();
+        
+        /**
+         * Sets the region to be used for the default AWS SDK metric collector;
+         * or null if the default is to be used.
+         */
+        public void setRegion(String region);
+        /**
+         * Returns the internal metric queue size to be used for the default AWS SDK
+         * metric collector; or null if the default is to be used.
+         */
+        public Integer getMetricQueueSize();
+        /**
+         * Sets the metric queue size to be used for the default AWS SDK metric collector;
+         * or null if the default is to be used.
+         */
+        public void setMetricQueueSize(Integer metricQueueSize);
+        
+        /**
+         * Returns the internal metric queue timeout in millisecond to be used
+         * for the default AWS SDK metric collector; or null if the default is
+         * to be used. Use Integer instead of Long as it seems jconsole does not
+         * handle Long properly.
+         */
+        public Integer getQueuePollTimeoutMilli();
+
+        /**
+         * Sets the queue poll time in millisecond to be used for the default
+         * AWS SDK metric collector; or null if the default is to be used. Use
+         * Integer instead of Long as it seems jconsole does not handle Long
+         * properly.
+         */
+        public void setQueuePollTimeoutMilli(Integer timeoutMilli);
     }
 
     /**
@@ -245,16 +516,64 @@ public enum AwsSdkMetrics {
         }
         @Override
         public String getRequestMetricCollector() {
-            RequestMetricCollector mc = AwsSdkMetrics.mc;
-            return mc == null || mc == RequestMetricCollector.NONE
+            MetricCollector mc = AwsSdkMetrics.mc;
+            RequestMetricCollector rmc = mc == null ? null : mc.getRequestMetricCollector();
+            return mc == null || rmc == RequestMetricCollector.NONE
                  ? "NONE"
-                 : mc.getClass().getName()
+                 : rmc.getClass().getName()
+                 ;
+        }
+        @Override
+        public String getServiceMetricCollector() {
+            MetricCollector mc = AwsSdkMetrics.mc;
+            ServiceMetricCollector smc = mc == null ? null : mc.getServiceMetricCollector();
+            return mc == null || smc == ServiceMetricCollector.NONE
+                 ? "NONE"
+                 : smc.getClass().getName()
                  ;
         }
         @Override
         public boolean isMetricsEnabled() {
-            RequestMetricCollector mc = AwsSdkMetrics.mc;
+            MetricCollector mc = AwsSdkMetrics.mc;
             return mc != null && mc.isEnabled();
+        }
+
+        @Override
+        public boolean isMachineMetricsExcluded() {
+            return machineMetricsExcluded;
+        }
+        @Override
+        public void setMachineMetricsExcluded(boolean excludeJvmMetrics) {
+            AwsSdkMetrics.setMachineMetricsExcluded(excludeJvmMetrics);
+        }
+        @Override
+        public String getRegion() {
+            return region == null ? null : region.getName();
+        }
+        @Override
+        public void setRegion(String region) {
+            if (region == null || region.isEmpty())
+                AwsSdkMetrics.setRegion(null);
+            else {
+                AwsSdkMetrics.setRegion(Regions.fromName(region));
+            }
+        }
+        @Override
+        public Integer getMetricQueueSize() {
+            return metricQueueSize;
+        }
+        @Override
+        public void setMetricQueueSize(Integer metricQueueSize) {
+            AwsSdkMetrics.setMetricQueueSize(metricQueueSize);
+            
+        }
+        @Override
+        public Integer getQueuePollTimeoutMilli() {
+            return queuePollTimeoutMilli == null ? null : queuePollTimeoutMilli.intValue();
+        }
+        @Override
+        public void setQueuePollTimeoutMilli(Integer timeoutMilli) {
+            AwsSdkMetrics.setQueuePollTimeoutMilli(timeoutMilli == null ? null : timeoutMilli.longValue());
         }
     }
 
@@ -268,10 +587,11 @@ public enum AwsSdkMetrics {
 
         MetricRegistry() {
             metricTypes.add(Field.ClientExecuteTime);
+            metricTypes.add(Field.Exception);
             metricTypes.add(Field.HttpRequestTime);
             metricTypes.add(Field.RequestCount);
-            metricTypes.add(Field.RequestSigningTime);
-            metricTypes.add(Field.ResponseProcessingTime);
+//            metricTypes.add(Field.RequestSigningTime);
+//            metricTypes.add(Field.ResponseProcessingTime);
             metricTypes.add(Field.RetryCount);
             syncReadOnly();
         }
@@ -294,6 +614,20 @@ public enum AwsSdkMetrics {
                 if (added)
                     syncReadOnly();
                 return added;
+            }
+        }
+        public <T extends MetricType> void setMetricTypes(Collection<T> types) {
+            synchronized(metricTypes) {
+                if (types == null || types.size() == 0) {
+                    if (metricTypes.size() == 0)
+                        return;
+                    if (types == null)
+                        types = Collections.emptyList();
+                }
+                metricTypes.clear();
+                if (!addMetricTypes(types)) {
+                    syncReadOnly(); // avoid missing sync
+                }
             }
         }
         public boolean removeMetricType(MetricType type) {

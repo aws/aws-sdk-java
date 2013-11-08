@@ -14,9 +14,10 @@
  */
 package com.amazonaws.event;
 
-import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+
+import com.amazonaws.internal.SdkFilterInputStream;
 
 /**
  * Simple InputStream wrapper that occasionally notifies a progress listener
@@ -28,7 +29,7 @@ import java.io.InputStream;
  * deprecated in favor of this new class.
  * </p>
  */
-public class ProgressReportingInputStream extends FilterInputStream {
+public class ProgressReportingInputStream extends SdkFilterInputStream {
 
     /** The threshold of bytes between notifications. */
     private static final int NOTIFICATION_THRESHOLD = 8 * 1024;

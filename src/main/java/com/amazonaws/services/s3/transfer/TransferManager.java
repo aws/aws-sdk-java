@@ -1035,7 +1035,7 @@ public class TransferManager {
     }
 
     public <X extends AmazonWebServiceRequest> X appendUserAgent(X request, String userAgent) {
-        request.getRequestClientOptions().addClientMarker(USER_AGENT);
+        request.getRequestClientOptions().appendUserAgent(userAgent);
         return request;
     }
 

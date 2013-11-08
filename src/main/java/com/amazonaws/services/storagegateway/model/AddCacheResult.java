@@ -18,9 +18,7 @@ import java.io.Serializable;
 
 
 /**
- * <p>
- * The Amazon Resource Name (ARN) of the gateway for which cache storage was configured.
- * </p>
+ * Add Cache Result
  */
 public class AddCacheResult implements Serializable {
 

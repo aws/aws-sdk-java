@@ -323,7 +323,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Returns the status of all refresh requests Trusted Advisor checks
@@ -374,7 +375,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * This action returns the list of severity levels that you can assign to
@@ -426,7 +428,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * This action returns communications regarding the support case. You can
@@ -482,7 +485,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * This action adds additional customer communication to an AWS Support
@@ -543,7 +547,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Creates a new case in the AWS Support Center. This action is modeled
@@ -644,7 +649,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * This action enables you to get a list of the available Trusted Advisor
@@ -694,7 +700,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * This action responds with the results of a Trusted Advisor check. Once
@@ -773,7 +780,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Takes a <i>CaseId</i> and returns the initial state of the case along
@@ -822,7 +830,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * This action enables you to query the service to request a refresh for
@@ -874,7 +883,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * Returns the current list of AWS services and a list of service
@@ -935,7 +945,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * This action enables you to get the latest summaries for Trusted
@@ -991,7 +1002,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
 
         return invoke(request, responseHandler, executionContext);
     }
-    
+
+   
     /**
      * <p>
      * This action returns a list of cases that you specify by passing one or

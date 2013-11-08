@@ -47,7 +47,7 @@ public class DescribeChapCredentialsRequestMarshaller implements Marshaller<Requ
     }
 
         Request<DescribeChapCredentialsRequest> request = new DefaultRequest<DescribeChapCredentialsRequest>(describeChapCredentialsRequest, "AWSStorageGateway");
-        String target = "StorageGateway_20120630.DescribeChapCredentials";
+        String target = "StorageGateway_20130630.DescribeChapCredentials";
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 

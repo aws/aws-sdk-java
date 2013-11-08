@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#createSnapshotFromVolumeRecoveryPoint(CreateSnapshotFromVolumeRecoveryPointRequest) CreateSnapshotFromVolumeRecoveryPoint operation}.
  * <p>
  * This operation initiates a snapshot of a gateway from a volume recovery point. This operation is supported only for the gateway-cached volume
- * architecture (see StorageGatewayConcepts).
+ * architecture (see ).
  * </p>
  * <p>
  * A volume recovery point is a point in time at which all data of the volume is consistent and from which you can create a snapshot. To get a list of
@@ -35,74 +35,50 @@ import com.amazonaws.AmazonWebServiceRequest;
  * progress or later use it when you want to create a volume from a snapshot.
  * </p>
  * <p>
- * <b>NOTE:</b> To list or delete a snapshot, you must use the Amazon EC2 API. For more information, go to DeleteSnapshot and DescribeSnapshots in Amazon
- * Elastic Compute Cloud API Reference.
+ * <b>NOTE:</b> To list or delete a snapshot, you must use the Amazon EC2 API. For more information, in Amazon Elastic Compute Cloud API Reference.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#createSnapshotFromVolumeRecoveryPoint(CreateSnapshotFromVolumeRecoveryPointRequest)
  */
 public class CreateSnapshotFromVolumeRecoveryPointRequest extends AmazonWebServiceRequest implements Serializable {
 
-    /**
-     * The Amazon Resource Name (ARN) of the volume. Use the
-     * <a>ListVolumes</a> operation to return a list of gateway volumes.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>50 - 500<br/>
-     */
     private String volumeARN;
 
-    /**
-     * A textual description of the snapshot that appears in the Amazon EC2
-     * console, Elastic Block Store snapshots panel in the <b>Description</b>
-     * field, and in the AWS Storage Gateway snapshot <b>Details</b> pane,
-     * <b>Description</b> field. <p><i>Length</i>: Minimum length of 1.
-     * Maximum length of 255.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
-     */
     private String snapshotDescription;
 
     /**
-     * The Amazon Resource Name (ARN) of the volume. Use the
-     * <a>ListVolumes</a> operation to return a list of gateway volumes.
+     * Returns the value of the VolumeARN property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @return The Amazon Resource Name (ARN) of the volume. Use the
-     *         <a>ListVolumes</a> operation to return a list of gateway volumes.
+     * @return The value of the VolumeARN property for this object.
      */
     public String getVolumeARN() {
         return volumeARN;
     }
     
     /**
-     * The Amazon Resource Name (ARN) of the volume. Use the
-     * <a>ListVolumes</a> operation to return a list of gateway volumes.
+     * Sets the value of the VolumeARN property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @param volumeARN The Amazon Resource Name (ARN) of the volume. Use the
-     *         <a>ListVolumes</a> operation to return a list of gateway volumes.
+     * @param volumeARN The new value for the VolumeARN property for this object.
      */
     public void setVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
     }
     
     /**
-     * The Amazon Resource Name (ARN) of the volume. Use the
-     * <a>ListVolumes</a> operation to return a list of gateway volumes.
+     * Sets the value of the VolumeARN property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @param volumeARN The Amazon Resource Name (ARN) of the volume. Use the
-     *         <a>ListVolumes</a> operation to return a list of gateway volumes.
+     * @param volumeARN The new value for the VolumeARN property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -113,62 +89,38 @@ public class CreateSnapshotFromVolumeRecoveryPointRequest extends AmazonWebServi
     }
 
     /**
-     * A textual description of the snapshot that appears in the Amazon EC2
-     * console, Elastic Block Store snapshots panel in the <b>Description</b>
-     * field, and in the AWS Storage Gateway snapshot <b>Details</b> pane,
-     * <b>Description</b> field. <p><i>Length</i>: Minimum length of 1.
-     * Maximum length of 255.
+     * Returns the value of the SnapshotDescription property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      *
-     * @return A textual description of the snapshot that appears in the Amazon EC2
-     *         console, Elastic Block Store snapshots panel in the <b>Description</b>
-     *         field, and in the AWS Storage Gateway snapshot <b>Details</b> pane,
-     *         <b>Description</b> field. <p><i>Length</i>: Minimum length of 1.
-     *         Maximum length of 255.
+     * @return The value of the SnapshotDescription property for this object.
      */
     public String getSnapshotDescription() {
         return snapshotDescription;
     }
     
     /**
-     * A textual description of the snapshot that appears in the Amazon EC2
-     * console, Elastic Block Store snapshots panel in the <b>Description</b>
-     * field, and in the AWS Storage Gateway snapshot <b>Details</b> pane,
-     * <b>Description</b> field. <p><i>Length</i>: Minimum length of 1.
-     * Maximum length of 255.
+     * Sets the value of the SnapshotDescription property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      *
-     * @param snapshotDescription A textual description of the snapshot that appears in the Amazon EC2
-     *         console, Elastic Block Store snapshots panel in the <b>Description</b>
-     *         field, and in the AWS Storage Gateway snapshot <b>Details</b> pane,
-     *         <b>Description</b> field. <p><i>Length</i>: Minimum length of 1.
-     *         Maximum length of 255.
+     * @param snapshotDescription The new value for the SnapshotDescription property for this object.
      */
     public void setSnapshotDescription(String snapshotDescription) {
         this.snapshotDescription = snapshotDescription;
     }
     
     /**
-     * A textual description of the snapshot that appears in the Amazon EC2
-     * console, Elastic Block Store snapshots panel in the <b>Description</b>
-     * field, and in the AWS Storage Gateway snapshot <b>Details</b> pane,
-     * <b>Description</b> field. <p><i>Length</i>: Minimum length of 1.
-     * Maximum length of 255.
+     * Sets the value of the SnapshotDescription property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      *
-     * @param snapshotDescription A textual description of the snapshot that appears in the Amazon EC2
-     *         console, Elastic Block Store snapshots panel in the <b>Description</b>
-     *         field, and in the AWS Storage Gateway snapshot <b>Details</b> pane,
-     *         <b>Description</b> field. <p><i>Length</i>: Minimum length of 1.
-     *         Maximum length of 255.
+     * @param snapshotDescription The new value for the SnapshotDescription property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

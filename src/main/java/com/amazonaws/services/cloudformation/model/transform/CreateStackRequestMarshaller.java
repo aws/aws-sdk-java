@@ -97,6 +97,12 @@ public class CreateStackRequestMarshaller implements Marshaller<Request<CreateSt
         if (createStackRequest.getOnFailure() != null) {
             request.addParameter("OnFailure", StringUtils.fromString(createStackRequest.getOnFailure()));
         }
+        if (createStackRequest.getStackPolicyBody() != null) {
+            request.addParameter("StackPolicyBody", StringUtils.fromString(createStackRequest.getStackPolicyBody()));
+        }
+        if (createStackRequest.getStackPolicyURL() != null) {
+            request.addParameter("StackPolicyURL", StringUtils.fromString(createStackRequest.getStackPolicyURL()));
+        }
 
         java.util.List<Tag> tagsList = createStackRequest.getTags();
         int tagsListIndex = 1;

@@ -18,124 +18,66 @@ import java.io.Serializable;
 
 
 /**
- * <p>
- * Describes an iSCSI stored volume.
- * </p>
+ * Storedi S C S I Volume
  */
 public class StorediSCSIVolume implements Serializable {
 
-    /**
-     * The Amazon Resource Name (ARN) of the storage volume.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>50 - 500<br/>
-     */
     private String volumeARN;
 
-    /**
-     * The unique identifier of the volume, e.g. vol-AE4B946D.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>12 - 30<br/>
-     */
     private String volumeId;
 
-    /**
-     * One of the <a>VolumeType</a> enumeration values describing the type of
-     * the volume.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>STORED iSCSI, CACHED iSCSI
-     */
     private String volumeType;
 
-    /**
-     * One of the <a>VolumeStatus</a> values that indicates the state of the
-     * storage volume.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATING, AVAILABLE, RESTORING, BOOTSTRAPPING, IRRECOVERABLE, PASS THROUGH, RESTORE AND PASS THROUGH, DELETED, WORKING STORAGE NOT CONFIGURED, UPLOAD BUFFER NOT CONFIGURED
-     */
     private String volumeStatus;
 
-    /**
-     * The size of the volume in bytes.
-     */
     private Long volumeSizeInBytes;
 
-    /**
-     * Represents the percentage complete if the volume is restoring or
-     * bootstrapping that represents the percent of data transferred. This
-     * field does not appear in the response if the stored volume is not
-     * restoring or bootstrapping.
-     */
     private Double volumeProgress;
 
-    /**
-     * The disk ID of the local disk that was specified in the
-     * <a>CreateStorediSCSIVolume</a> operation.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 300<br/>
-     */
     private String volumeDiskId;
 
-    /**
-     * If the stored volume was created from a snapshot, this field contains
-     * the snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not
-     * included.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\Asnap-[0-9a-fA-F]{8}\z<br/>
-     */
     private String sourceSnapshotId;
 
-    /**
-     * Indicates if when the stored volume was created, existing data on the
-     * underlying local disk was preserved. <p><i>Valid Values</i>: true,
-     * false
-     */
     private Boolean preservedExistingData;
 
     /**
-     * An <a>VolumeiSCSIAttributes</a> object that represents a collection of
-     * iSCSI attributes for one stored volume.
+     * Lists iSCSI information about a volume.
      */
     private VolumeiSCSIAttributes volumeiSCSIAttributes;
 
     /**
-     * The Amazon Resource Name (ARN) of the storage volume.
+     * Returns the value of the VolumeARN property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @return The Amazon Resource Name (ARN) of the storage volume.
+     * @return The value of the VolumeARN property for this object.
      */
     public String getVolumeARN() {
         return volumeARN;
     }
     
     /**
-     * The Amazon Resource Name (ARN) of the storage volume.
+     * Sets the value of the VolumeARN property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @param volumeARN The Amazon Resource Name (ARN) of the storage volume.
+     * @param volumeARN The new value for the VolumeARN property for this object.
      */
     public void setVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
     }
     
     /**
-     * The Amazon Resource Name (ARN) of the storage volume.
+     * Sets the value of the VolumeARN property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @param volumeARN The Amazon Resource Name (ARN) of the storage volume.
+     * @param volumeARN The new value for the VolumeARN property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -146,38 +88,38 @@ public class StorediSCSIVolume implements Serializable {
     }
 
     /**
-     * The unique identifier of the volume, e.g. vol-AE4B946D.
+     * Returns the value of the VolumeId property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>12 - 30<br/>
      *
-     * @return The unique identifier of the volume, e.g. vol-AE4B946D.
+     * @return The value of the VolumeId property for this object.
      */
     public String getVolumeId() {
         return volumeId;
     }
     
     /**
-     * The unique identifier of the volume, e.g. vol-AE4B946D.
+     * Sets the value of the VolumeId property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>12 - 30<br/>
      *
-     * @param volumeId The unique identifier of the volume, e.g. vol-AE4B946D.
+     * @param volumeId The new value for the VolumeId property for this object.
      */
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
     
     /**
-     * The unique identifier of the volume, e.g. vol-AE4B946D.
+     * Sets the value of the VolumeId property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>12 - 30<br/>
      *
-     * @param volumeId The unique identifier of the volume, e.g. vol-AE4B946D.
+     * @param volumeId The new value for the VolumeId property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -188,53 +130,41 @@ public class StorediSCSIVolume implements Serializable {
     }
 
     /**
-     * One of the <a>VolumeType</a> enumeration values describing the type of
-     * the volume.
+     * Returns the value of the VolumeType property for this object.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>STORED iSCSI, CACHED iSCSI
+     * <b>Length: </b>3 - 100<br/>
      *
-     * @return One of the <a>VolumeType</a> enumeration values describing the type of
-     *         the volume.
-     *
-     * @see VolumeType
+     * @return The value of the VolumeType property for this object.
      */
     public String getVolumeType() {
         return volumeType;
     }
     
     /**
-     * One of the <a>VolumeType</a> enumeration values describing the type of
-     * the volume.
+     * Sets the value of the VolumeType property for this object.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>STORED iSCSI, CACHED iSCSI
+     * <b>Length: </b>3 - 100<br/>
      *
-     * @param volumeType One of the <a>VolumeType</a> enumeration values describing the type of
-     *         the volume.
-     *
-     * @see VolumeType
+     * @param volumeType The new value for the VolumeType property for this object.
      */
     public void setVolumeType(String volumeType) {
         this.volumeType = volumeType;
     }
     
     /**
-     * One of the <a>VolumeType</a> enumeration values describing the type of
-     * the volume.
+     * Sets the value of the VolumeType property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>STORED iSCSI, CACHED iSCSI
+     * <b>Length: </b>3 - 100<br/>
      *
-     * @param volumeType One of the <a>VolumeType</a> enumeration values describing the type of
-     *         the volume.
+     * @param volumeType The new value for the VolumeType property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
-     *
-     * @see VolumeType
      */
     public StorediSCSIVolume withVolumeType(String volumeType) {
         this.volumeType = volumeType;
@@ -242,91 +172,41 @@ public class StorediSCSIVolume implements Serializable {
     }
 
     /**
-     * One of the <a>VolumeType</a> enumeration values describing the type of
-     * the volume.
+     * Returns the value of the VolumeStatus property for this object.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>STORED iSCSI, CACHED iSCSI
+     * <b>Length: </b>3 - 50<br/>
      *
-     * @param volumeType One of the <a>VolumeType</a> enumeration values describing the type of
-     *         the volume.
-     *
-     * @see VolumeType
-     */
-    public void setVolumeType(VolumeType volumeType) {
-        this.volumeType = volumeType.toString();
-    }
-    
-    /**
-     * One of the <a>VolumeType</a> enumeration values describing the type of
-     * the volume.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>STORED iSCSI, CACHED iSCSI
-     *
-     * @param volumeType One of the <a>VolumeType</a> enumeration values describing the type of
-     *         the volume.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together.
-     *
-     * @see VolumeType
-     */
-    public StorediSCSIVolume withVolumeType(VolumeType volumeType) {
-        this.volumeType = volumeType.toString();
-        return this;
-    }
-
-    /**
-     * One of the <a>VolumeStatus</a> values that indicates the state of the
-     * storage volume.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATING, AVAILABLE, RESTORING, BOOTSTRAPPING, IRRECOVERABLE, PASS THROUGH, RESTORE AND PASS THROUGH, DELETED, WORKING STORAGE NOT CONFIGURED, UPLOAD BUFFER NOT CONFIGURED
-     *
-     * @return One of the <a>VolumeStatus</a> values that indicates the state of the
-     *         storage volume.
-     *
-     * @see VolumeStatus
+     * @return The value of the VolumeStatus property for this object.
      */
     public String getVolumeStatus() {
         return volumeStatus;
     }
     
     /**
-     * One of the <a>VolumeStatus</a> values that indicates the state of the
-     * storage volume.
+     * Sets the value of the VolumeStatus property for this object.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATING, AVAILABLE, RESTORING, BOOTSTRAPPING, IRRECOVERABLE, PASS THROUGH, RESTORE AND PASS THROUGH, DELETED, WORKING STORAGE NOT CONFIGURED, UPLOAD BUFFER NOT CONFIGURED
+     * <b>Length: </b>3 - 50<br/>
      *
-     * @param volumeStatus One of the <a>VolumeStatus</a> values that indicates the state of the
-     *         storage volume.
-     *
-     * @see VolumeStatus
+     * @param volumeStatus The new value for the VolumeStatus property for this object.
      */
     public void setVolumeStatus(String volumeStatus) {
         this.volumeStatus = volumeStatus;
     }
     
     /**
-     * One of the <a>VolumeStatus</a> values that indicates the state of the
-     * storage volume.
+     * Sets the value of the VolumeStatus property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATING, AVAILABLE, RESTORING, BOOTSTRAPPING, IRRECOVERABLE, PASS THROUGH, RESTORE AND PASS THROUGH, DELETED, WORKING STORAGE NOT CONFIGURED, UPLOAD BUFFER NOT CONFIGURED
+     * <b>Length: </b>3 - 50<br/>
      *
-     * @param volumeStatus One of the <a>VolumeStatus</a> values that indicates the state of the
-     *         storage volume.
+     * @param volumeStatus The new value for the VolumeStatus property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
-     *
-     * @see VolumeStatus
      */
     public StorediSCSIVolume withVolumeStatus(String volumeStatus) {
         this.volumeStatus = volumeStatus;
@@ -334,67 +214,29 @@ public class StorediSCSIVolume implements Serializable {
     }
 
     /**
-     * One of the <a>VolumeStatus</a> values that indicates the state of the
-     * storage volume.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATING, AVAILABLE, RESTORING, BOOTSTRAPPING, IRRECOVERABLE, PASS THROUGH, RESTORE AND PASS THROUGH, DELETED, WORKING STORAGE NOT CONFIGURED, UPLOAD BUFFER NOT CONFIGURED
+     * Returns the value of the VolumeSizeInBytes property for this object.
      *
-     * @param volumeStatus One of the <a>VolumeStatus</a> values that indicates the state of the
-     *         storage volume.
-     *
-     * @see VolumeStatus
-     */
-    public void setVolumeStatus(VolumeStatus volumeStatus) {
-        this.volumeStatus = volumeStatus.toString();
-    }
-    
-    /**
-     * One of the <a>VolumeStatus</a> values that indicates the state of the
-     * storage volume.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATING, AVAILABLE, RESTORING, BOOTSTRAPPING, IRRECOVERABLE, PASS THROUGH, RESTORE AND PASS THROUGH, DELETED, WORKING STORAGE NOT CONFIGURED, UPLOAD BUFFER NOT CONFIGURED
-     *
-     * @param volumeStatus One of the <a>VolumeStatus</a> values that indicates the state of the
-     *         storage volume.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together.
-     *
-     * @see VolumeStatus
-     */
-    public StorediSCSIVolume withVolumeStatus(VolumeStatus volumeStatus) {
-        this.volumeStatus = volumeStatus.toString();
-        return this;
-    }
-
-    /**
-     * The size of the volume in bytes.
-     *
-     * @return The size of the volume in bytes.
+     * @return The value of the VolumeSizeInBytes property for this object.
      */
     public Long getVolumeSizeInBytes() {
         return volumeSizeInBytes;
     }
     
     /**
-     * The size of the volume in bytes.
+     * Sets the value of the VolumeSizeInBytes property for this object.
      *
-     * @param volumeSizeInBytes The size of the volume in bytes.
+     * @param volumeSizeInBytes The new value for the VolumeSizeInBytes property for this object.
      */
     public void setVolumeSizeInBytes(Long volumeSizeInBytes) {
         this.volumeSizeInBytes = volumeSizeInBytes;
     }
     
     /**
-     * The size of the volume in bytes.
+     * Sets the value of the VolumeSizeInBytes property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeSizeInBytes The size of the volume in bytes.
+     * @param volumeSizeInBytes The new value for the VolumeSizeInBytes property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -405,47 +247,29 @@ public class StorediSCSIVolume implements Serializable {
     }
 
     /**
-     * Represents the percentage complete if the volume is restoring or
-     * bootstrapping that represents the percent of data transferred. This
-     * field does not appear in the response if the stored volume is not
-     * restoring or bootstrapping.
+     * Returns the value of the VolumeProgress property for this object.
      *
-     * @return Represents the percentage complete if the volume is restoring or
-     *         bootstrapping that represents the percent of data transferred. This
-     *         field does not appear in the response if the stored volume is not
-     *         restoring or bootstrapping.
+     * @return The value of the VolumeProgress property for this object.
      */
     public Double getVolumeProgress() {
         return volumeProgress;
     }
     
     /**
-     * Represents the percentage complete if the volume is restoring or
-     * bootstrapping that represents the percent of data transferred. This
-     * field does not appear in the response if the stored volume is not
-     * restoring or bootstrapping.
+     * Sets the value of the VolumeProgress property for this object.
      *
-     * @param volumeProgress Represents the percentage complete if the volume is restoring or
-     *         bootstrapping that represents the percent of data transferred. This
-     *         field does not appear in the response if the stored volume is not
-     *         restoring or bootstrapping.
+     * @param volumeProgress The new value for the VolumeProgress property for this object.
      */
     public void setVolumeProgress(Double volumeProgress) {
         this.volumeProgress = volumeProgress;
     }
     
     /**
-     * Represents the percentage complete if the volume is restoring or
-     * bootstrapping that represents the percent of data transferred. This
-     * field does not appear in the response if the stored volume is not
-     * restoring or bootstrapping.
+     * Sets the value of the VolumeProgress property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeProgress Represents the percentage complete if the volume is restoring or
-     *         bootstrapping that represents the percent of data transferred. This
-     *         field does not appear in the response if the stored volume is not
-     *         restoring or bootstrapping.
+     * @param volumeProgress The new value for the VolumeProgress property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -456,44 +280,38 @@ public class StorediSCSIVolume implements Serializable {
     }
 
     /**
-     * The disk ID of the local disk that was specified in the
-     * <a>CreateStorediSCSIVolume</a> operation.
+     * Returns the value of the VolumeDiskId property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 300<br/>
      *
-     * @return The disk ID of the local disk that was specified in the
-     *         <a>CreateStorediSCSIVolume</a> operation.
+     * @return The value of the VolumeDiskId property for this object.
      */
     public String getVolumeDiskId() {
         return volumeDiskId;
     }
     
     /**
-     * The disk ID of the local disk that was specified in the
-     * <a>CreateStorediSCSIVolume</a> operation.
+     * Sets the value of the VolumeDiskId property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 300<br/>
      *
-     * @param volumeDiskId The disk ID of the local disk that was specified in the
-     *         <a>CreateStorediSCSIVolume</a> operation.
+     * @param volumeDiskId The new value for the VolumeDiskId property for this object.
      */
     public void setVolumeDiskId(String volumeDiskId) {
         this.volumeDiskId = volumeDiskId;
     }
     
     /**
-     * The disk ID of the local disk that was specified in the
-     * <a>CreateStorediSCSIVolume</a> operation.
+     * Sets the value of the VolumeDiskId property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 300<br/>
      *
-     * @param volumeDiskId The disk ID of the local disk that was specified in the
-     *         <a>CreateStorediSCSIVolume</a> operation.
+     * @param volumeDiskId The new value for the VolumeDiskId property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -504,50 +322,38 @@ public class StorediSCSIVolume implements Serializable {
     }
 
     /**
-     * If the stored volume was created from a snapshot, this field contains
-     * the snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not
-     * included.
+     * Returns the value of the SourceSnapshotId property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>\Asnap-[0-9a-fA-F]{8}\z<br/>
      *
-     * @return If the stored volume was created from a snapshot, this field contains
-     *         the snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not
-     *         included.
+     * @return The value of the SourceSnapshotId property for this object.
      */
     public String getSourceSnapshotId() {
         return sourceSnapshotId;
     }
     
     /**
-     * If the stored volume was created from a snapshot, this field contains
-     * the snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not
-     * included.
+     * Sets the value of the SourceSnapshotId property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>\Asnap-[0-9a-fA-F]{8}\z<br/>
      *
-     * @param sourceSnapshotId If the stored volume was created from a snapshot, this field contains
-     *         the snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not
-     *         included.
+     * @param sourceSnapshotId The new value for the SourceSnapshotId property for this object.
      */
     public void setSourceSnapshotId(String sourceSnapshotId) {
         this.sourceSnapshotId = sourceSnapshotId;
     }
     
     /**
-     * If the stored volume was created from a snapshot, this field contains
-     * the snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not
-     * included.
+     * Sets the value of the SourceSnapshotId property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>\Asnap-[0-9a-fA-F]{8}\z<br/>
      *
-     * @param sourceSnapshotId If the stored volume was created from a snapshot, this field contains
-     *         the snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not
-     *         included.
+     * @param sourceSnapshotId The new value for the SourceSnapshotId property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -558,41 +364,30 @@ public class StorediSCSIVolume implements Serializable {
     }
 
     /**
-     * Indicates if when the stored volume was created, existing data on the
-     * underlying local disk was preserved. <p><i>Valid Values</i>: true,
-     * false
+     * Returns the value of the PreservedExistingData property for this
+     * object.
      *
-     * @return Indicates if when the stored volume was created, existing data on the
-     *         underlying local disk was preserved. <p><i>Valid Values</i>: true,
-     *         false
+     * @return The value of the PreservedExistingData property for this object.
      */
     public Boolean isPreservedExistingData() {
         return preservedExistingData;
     }
     
     /**
-     * Indicates if when the stored volume was created, existing data on the
-     * underlying local disk was preserved. <p><i>Valid Values</i>: true,
-     * false
+     * Sets the value of the PreservedExistingData property for this object.
      *
-     * @param preservedExistingData Indicates if when the stored volume was created, existing data on the
-     *         underlying local disk was preserved. <p><i>Valid Values</i>: true,
-     *         false
+     * @param preservedExistingData The new value for the PreservedExistingData property for this object.
      */
     public void setPreservedExistingData(Boolean preservedExistingData) {
         this.preservedExistingData = preservedExistingData;
     }
     
     /**
-     * Indicates if when the stored volume was created, existing data on the
-     * underlying local disk was preserved. <p><i>Valid Values</i>: true,
-     * false
+     * Sets the value of the PreservedExistingData property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param preservedExistingData Indicates if when the stored volume was created, existing data on the
-     *         underlying local disk was preserved. <p><i>Valid Values</i>: true,
-     *         false
+     * @param preservedExistingData The new value for the PreservedExistingData property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -603,48 +398,39 @@ public class StorediSCSIVolume implements Serializable {
     }
 
     /**
-     * Indicates if when the stored volume was created, existing data on the
-     * underlying local disk was preserved. <p><i>Valid Values</i>: true,
-     * false
+     * Returns the value of the PreservedExistingData property for this
+     * object.
      *
-     * @return Indicates if when the stored volume was created, existing data on the
-     *         underlying local disk was preserved. <p><i>Valid Values</i>: true,
-     *         false
+     * @return The value of the PreservedExistingData property for this object.
      */
     public Boolean getPreservedExistingData() {
         return preservedExistingData;
     }
 
     /**
-     * An <a>VolumeiSCSIAttributes</a> object that represents a collection of
-     * iSCSI attributes for one stored volume.
+     * Lists iSCSI information about a volume.
      *
-     * @return An <a>VolumeiSCSIAttributes</a> object that represents a collection of
-     *         iSCSI attributes for one stored volume.
+     * @return Lists iSCSI information about a volume.
      */
     public VolumeiSCSIAttributes getVolumeiSCSIAttributes() {
         return volumeiSCSIAttributes;
     }
     
     /**
-     * An <a>VolumeiSCSIAttributes</a> object that represents a collection of
-     * iSCSI attributes for one stored volume.
+     * Lists iSCSI information about a volume.
      *
-     * @param volumeiSCSIAttributes An <a>VolumeiSCSIAttributes</a> object that represents a collection of
-     *         iSCSI attributes for one stored volume.
+     * @param volumeiSCSIAttributes Lists iSCSI information about a volume.
      */
     public void setVolumeiSCSIAttributes(VolumeiSCSIAttributes volumeiSCSIAttributes) {
         this.volumeiSCSIAttributes = volumeiSCSIAttributes;
     }
     
     /**
-     * An <a>VolumeiSCSIAttributes</a> object that represents a collection of
-     * iSCSI attributes for one stored volume.
+     * Lists iSCSI information about a volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeiSCSIAttributes An <a>VolumeiSCSIAttributes</a> object that represents a collection of
-     *         iSCSI attributes for one stored volume.
+     * @param volumeiSCSIAttributes Lists iSCSI information about a volume.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

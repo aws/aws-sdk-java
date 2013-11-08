@@ -35,7 +35,7 @@ public class ValidateTemplateResult implements Serializable {
     private String description;
 
     /**
-     * The capabitilites found within the template. Currently, CAPABILITY_IAM
+     * The capabilities found within the template. Currently, CAPABILITY_IAM
      * is the only capability detected. If your template contains IAM
      * resources, you must specify the CAPABILITY_IAM value for this
      * parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
@@ -151,14 +151,14 @@ public class ValidateTemplateResult implements Serializable {
     }
 
     /**
-     * The capabitilites found within the template. Currently, CAPABILITY_IAM
+     * The capabilities found within the template. Currently, CAPABILITY_IAM
      * is the only capability detected. If your template contains IAM
      * resources, you must specify the CAPABILITY_IAM value for this
      * parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
      * actions with your template; otherwise, those actions return an
      * InsufficientCapabilities error.
      *
-     * @return The capabitilites found within the template. Currently, CAPABILITY_IAM
+     * @return The capabilities found within the template. Currently, CAPABILITY_IAM
      *         is the only capability detected. If your template contains IAM
      *         resources, you must specify the CAPABILITY_IAM value for this
      *         parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
@@ -174,14 +174,14 @@ public class ValidateTemplateResult implements Serializable {
     }
     
     /**
-     * The capabitilites found within the template. Currently, CAPABILITY_IAM
+     * The capabilities found within the template. Currently, CAPABILITY_IAM
      * is the only capability detected. If your template contains IAM
      * resources, you must specify the CAPABILITY_IAM value for this
      * parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
      * actions with your template; otherwise, those actions return an
      * InsufficientCapabilities error.
      *
-     * @param capabilities The capabitilites found within the template. Currently, CAPABILITY_IAM
+     * @param capabilities The capabilities found within the template. Currently, CAPABILITY_IAM
      *         is the only capability detected. If your template contains IAM
      *         resources, you must specify the CAPABILITY_IAM value for this
      *         parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
@@ -199,7 +199,7 @@ public class ValidateTemplateResult implements Serializable {
     }
     
     /**
-     * The capabitilites found within the template. Currently, CAPABILITY_IAM
+     * The capabilities found within the template. Currently, CAPABILITY_IAM
      * is the only capability detected. If your template contains IAM
      * resources, you must specify the CAPABILITY_IAM value for this
      * parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
@@ -208,7 +208,7 @@ public class ValidateTemplateResult implements Serializable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param capabilities The capabitilites found within the template. Currently, CAPABILITY_IAM
+     * @param capabilities The capabilities found within the template. Currently, CAPABILITY_IAM
      *         is the only capability detected. If your template contains IAM
      *         resources, you must specify the CAPABILITY_IAM value for this
      *         parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
@@ -227,7 +227,7 @@ public class ValidateTemplateResult implements Serializable {
     }
     
     /**
-     * The capabitilites found within the template. Currently, CAPABILITY_IAM
+     * The capabilities found within the template. Currently, CAPABILITY_IAM
      * is the only capability detected. If your template contains IAM
      * resources, you must specify the CAPABILITY_IAM value for this
      * parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
@@ -236,7 +236,7 @@ public class ValidateTemplateResult implements Serializable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param capabilities The capabitilites found within the template. Currently, CAPABILITY_IAM
+     * @param capabilities The capabilities found within the template. Currently, CAPABILITY_IAM
      *         is the only capability detected. If your template contains IAM
      *         resources, you must specify the CAPABILITY_IAM value for this
      *         parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
@@ -259,7 +259,7 @@ public class ValidateTemplateResult implements Serializable {
     }
 
     /**
-     * The capabitilites found within the template. Currently, CAPABILITY_IAM
+     * The capabilities found within the template. Currently, CAPABILITY_IAM
      * is the only capability detected. If your template contains IAM
      * resources, you must specify the CAPABILITY_IAM value for this
      * parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
@@ -268,7 +268,7 @@ public class ValidateTemplateResult implements Serializable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param capabilities The capabitilites found within the template. Currently, CAPABILITY_IAM
+     * @param capabilities The capabilities found within the template. Currently, CAPABILITY_IAM
      *         is the only capability detected. If your template contains IAM
      *         resources, you must specify the CAPABILITY_IAM value for this
      *         parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>

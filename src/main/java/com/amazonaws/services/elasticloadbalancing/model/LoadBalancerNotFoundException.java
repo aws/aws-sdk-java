@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The specified LoadBalancer could not be found.
+ * The specified load balancer could not be found.
  * </p>
  */        
 public class LoadBalancerNotFoundException extends AmazonServiceException {

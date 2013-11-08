@@ -28,8 +28,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Before you delete a gateway volume, make sure there are no iSCSI connections to the volume you are deleting. You should also make sure there is no
  * snapshot in progress. You can use the Amazon Elastic Compute Cloud (Amazon EC2) API to query snapshots on the volume you are deleting and check the
  * snapshot status. For more information, go to <a
- * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"> DescribeSnapshots </a> in the
- * <i>Amazon Elastic Compute Cloud API Reference</i> .
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"> DescribeSnapshots </a> in the <i>Amazon
+ * Elastic Compute Cloud API Reference</i> .
  * </p>
  * <p>
  * In the request, you must provide the Amazon Resource Name (ARN) of the storage volume you want to delete.

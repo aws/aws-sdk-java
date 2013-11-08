@@ -47,7 +47,7 @@ public class ListVolumeRecoveryPointsRequestMarshaller implements Marshaller<Req
     }
 
         Request<ListVolumeRecoveryPointsRequest> request = new DefaultRequest<ListVolumeRecoveryPointsRequest>(listVolumeRecoveryPointsRequest, "AWSStorageGateway");
-        String target = "StorageGateway_20120630.ListVolumeRecoveryPoints";
+        String target = "StorageGateway_20130630.ListVolumeRecoveryPoints";
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 

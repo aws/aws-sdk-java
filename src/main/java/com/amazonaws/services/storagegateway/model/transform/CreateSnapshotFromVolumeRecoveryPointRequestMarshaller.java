@@ -47,7 +47,7 @@ public class CreateSnapshotFromVolumeRecoveryPointRequestMarshaller implements M
     }
 
         Request<CreateSnapshotFromVolumeRecoveryPointRequest> request = new DefaultRequest<CreateSnapshotFromVolumeRecoveryPointRequest>(createSnapshotFromVolumeRecoveryPointRequest, "AWSStorageGateway");
-        String target = "StorageGateway_20120630.CreateSnapshotFromVolumeRecoveryPoint";
+        String target = "StorageGateway_20130630.CreateSnapshotFromVolumeRecoveryPoint";
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 

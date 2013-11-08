@@ -47,7 +47,7 @@ public class CreateStorediSCSIVolumeRequestMarshaller implements Marshaller<Requ
     }
 
         Request<CreateStorediSCSIVolumeRequest> request = new DefaultRequest<CreateStorediSCSIVolumeRequest>(createStorediSCSIVolumeRequest, "AWSStorageGateway");
-        String target = "StorageGateway_20120630.CreateStorediSCSIVolume";
+        String target = "StorageGateway_20130630.CreateStorediSCSIVolume";
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 
