@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * instance profile that is associated with a running instance will break any applications running on the instance.
  * </p>
  * <p>
- * For more information about instance profiles, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"> About
+ * For more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"> About
  * Instance Profiles </a> .
  * </p>
  *

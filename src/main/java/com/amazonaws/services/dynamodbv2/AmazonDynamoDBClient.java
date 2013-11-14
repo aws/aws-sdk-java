@@ -14,30 +14,20 @@
  */
 package com.amazonaws.services.dynamodbv2;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map.Entry;
+import java.util.*;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.auth.*;
-import com.amazonaws.handlers.HandlerChainFactory;
-import com.amazonaws.handlers.RequestHandler;
-import com.amazonaws.http.HttpResponseHandler;
-import com.amazonaws.http.JsonResponseHandler;
-import com.amazonaws.http.JsonErrorResponseHandler;
-import com.amazonaws.http.ExecutionContext;
-import com.amazonaws.util.AWSRequestMetrics;
+import com.amazonaws.handlers.*;
+import com.amazonaws.http.*;
+import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
-import com.amazonaws.internal.StaticCredentialsProvider;
-import com.amazonaws.transform.Unmarshaller;
-import com.amazonaws.transform.JsonUnmarshallerContext;
-import com.amazonaws.transform.JsonErrorUnmarshaller;
-import com.amazonaws.util.json.JSONObject;
+import com.amazonaws.internal.*;
+import com.amazonaws.transform.*;
+import com.amazonaws.util.json.*;
 
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.services.dynamodbv2.model.transform.*;
@@ -216,9 +206,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
         
         clientConfiguration = new ClientConfiguration(clientConfiguration);
-        if (clientConfiguration.getMaxErrorRetry() == ClientConfiguration.DEFAULT_MAX_RETRIES) {
-            log.debug("Overriding default max error retry value to: " + 10);
-            clientConfiguration.setMaxErrorRetry(10);
+        if (clientConfiguration.getRetryPolicy() == com.amazonaws.retry.PredefinedRetryPolicies.DEFAULT) {
+            clientConfiguration.setRetryPolicy(com.amazonaws.retry.PredefinedRetryPolicies.DYNAMODB_DEFAULT);
         }
         setConfiguration(clientConfiguration);
     }
@@ -267,28 +256,28 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *             If an error response is returned by AmazonDynamoDBv2 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ScanResult scan(ScanRequest scanRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public ScanResult scan(ScanRequest scanRequest) {
         ExecutionContext executionContext = createExecutionContext(scanRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<ScanRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ScanRequest> request = null;
+        ScanResult response = null;
         try {
-            request = new ScanRequestMarshaller().marshall(scanRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ScanRequestMarshaller().marshall(scanRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<ScanResult, JsonUnmarshallerContext> unmarshaller = new ScanResultJsonUnmarshaller();
+            JsonResponseHandler<ScanResult> responseHandler = new JsonResponseHandler<ScanResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<ScanResult, JsonUnmarshallerContext> unmarshaller = new ScanResultJsonUnmarshaller();
-
-        JsonResponseHandler<ScanResult> responseHandler = new JsonResponseHandler<ScanResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -339,28 +328,28 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *             If an error response is returned by AmazonDynamoDBv2 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public UpdateTableResult updateTable(UpdateTableRequest updateTableRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public UpdateTableResult updateTable(UpdateTableRequest updateTableRequest) {
         ExecutionContext executionContext = createExecutionContext(updateTableRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<UpdateTableRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateTableRequest> request = null;
+        UpdateTableResult response = null;
         try {
-            request = new UpdateTableRequestMarshaller().marshall(updateTableRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateTableRequestMarshaller().marshall(updateTableRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<UpdateTableResult, JsonUnmarshallerContext> unmarshaller = new UpdateTableResultJsonUnmarshaller();
+            JsonResponseHandler<UpdateTableResult> responseHandler = new JsonResponseHandler<UpdateTableResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<UpdateTableResult, JsonUnmarshallerContext> unmarshaller = new UpdateTableResultJsonUnmarshaller();
-
-        JsonResponseHandler<UpdateTableResult> responseHandler = new JsonResponseHandler<UpdateTableResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -409,28 +398,28 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *             If an error response is returned by AmazonDynamoDBv2 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DeleteTableResult deleteTable(DeleteTableRequest deleteTableRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public DeleteTableResult deleteTable(DeleteTableRequest deleteTableRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteTableRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DeleteTableRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteTableRequest> request = null;
+        DeleteTableResult response = null;
         try {
-            request = new DeleteTableRequestMarshaller().marshall(deleteTableRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteTableRequestMarshaller().marshall(deleteTableRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<DeleteTableResult, JsonUnmarshallerContext> unmarshaller = new DeleteTableResultJsonUnmarshaller();
+            JsonResponseHandler<DeleteTableResult> responseHandler = new JsonResponseHandler<DeleteTableResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<DeleteTableResult, JsonUnmarshallerContext> unmarshaller = new DeleteTableResultJsonUnmarshaller();
-
-        JsonResponseHandler<DeleteTableResult> responseHandler = new JsonResponseHandler<DeleteTableResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -542,28 +531,28 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *             If an error response is returned by AmazonDynamoDBv2 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public BatchWriteItemResult batchWriteItem(BatchWriteItemRequest batchWriteItemRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public BatchWriteItemResult batchWriteItem(BatchWriteItemRequest batchWriteItemRequest) {
         ExecutionContext executionContext = createExecutionContext(batchWriteItemRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<BatchWriteItemRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchWriteItemRequest> request = null;
+        BatchWriteItemResult response = null;
         try {
-            request = new BatchWriteItemRequestMarshaller().marshall(batchWriteItemRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchWriteItemRequestMarshaller().marshall(batchWriteItemRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<BatchWriteItemResult, JsonUnmarshallerContext> unmarshaller = new BatchWriteItemResultJsonUnmarshaller();
+            JsonResponseHandler<BatchWriteItemResult> responseHandler = new JsonResponseHandler<BatchWriteItemResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<BatchWriteItemResult, JsonUnmarshallerContext> unmarshaller = new BatchWriteItemResultJsonUnmarshaller();
-
-        JsonResponseHandler<BatchWriteItemResult> responseHandler = new JsonResponseHandler<BatchWriteItemResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -591,28 +580,28 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *             If an error response is returned by AmazonDynamoDBv2 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeTableResult describeTable(DescribeTableRequest describeTableRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public DescribeTableResult describeTable(DescribeTableRequest describeTableRequest) {
         ExecutionContext executionContext = createExecutionContext(describeTableRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DescribeTableRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeTableRequest> request = null;
+        DescribeTableResult response = null;
         try {
-            request = new DescribeTableRequestMarshaller().marshall(describeTableRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeTableRequestMarshaller().marshall(describeTableRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<DescribeTableResult, JsonUnmarshallerContext> unmarshaller = new DescribeTableResultJsonUnmarshaller();
+            JsonResponseHandler<DescribeTableResult> responseHandler = new JsonResponseHandler<DescribeTableResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<DescribeTableResult, JsonUnmarshallerContext> unmarshaller = new DescribeTableResultJsonUnmarshaller();
-
-        JsonResponseHandler<DescribeTableResult> responseHandler = new JsonResponseHandler<DescribeTableResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -648,28 +637,28 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *             If an error response is returned by AmazonDynamoDBv2 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public GetItemResult getItem(GetItemRequest getItemRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public GetItemResult getItem(GetItemRequest getItemRequest) {
         ExecutionContext executionContext = createExecutionContext(getItemRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<GetItemRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetItemRequest> request = null;
+        GetItemResult response = null;
         try {
-            request = new GetItemRequestMarshaller().marshall(getItemRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetItemRequestMarshaller().marshall(getItemRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<GetItemResult, JsonUnmarshallerContext> unmarshaller = new GetItemResultJsonUnmarshaller();
+            JsonResponseHandler<GetItemResult> responseHandler = new JsonResponseHandler<GetItemResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<GetItemResult, JsonUnmarshallerContext> unmarshaller = new GetItemResultJsonUnmarshaller();
-
-        JsonResponseHandler<GetItemResult> responseHandler = new JsonResponseHandler<GetItemResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -715,28 +704,28 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *             If an error response is returned by AmazonDynamoDBv2 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DeleteItemResult deleteItem(DeleteItemRequest deleteItemRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public DeleteItemResult deleteItem(DeleteItemRequest deleteItemRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteItemRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DeleteItemRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteItemRequest> request = null;
+        DeleteItemResult response = null;
         try {
-            request = new DeleteItemRequestMarshaller().marshall(deleteItemRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteItemRequestMarshaller().marshall(deleteItemRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<DeleteItemResult, JsonUnmarshallerContext> unmarshaller = new DeleteItemResultJsonUnmarshaller();
+            JsonResponseHandler<DeleteItemResult> responseHandler = new JsonResponseHandler<DeleteItemResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<DeleteItemResult, JsonUnmarshallerContext> unmarshaller = new DeleteItemResultJsonUnmarshaller();
-
-        JsonResponseHandler<DeleteItemResult> responseHandler = new JsonResponseHandler<DeleteItemResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -783,28 +772,28 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *             If an error response is returned by AmazonDynamoDBv2 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreateTableResult createTable(CreateTableRequest createTableRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public CreateTableResult createTable(CreateTableRequest createTableRequest) {
         ExecutionContext executionContext = createExecutionContext(createTableRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<CreateTableRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateTableRequest> request = null;
+        CreateTableResult response = null;
         try {
-            request = new CreateTableRequestMarshaller().marshall(createTableRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateTableRequestMarshaller().marshall(createTableRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<CreateTableResult, JsonUnmarshallerContext> unmarshaller = new CreateTableResultJsonUnmarshaller();
+            JsonResponseHandler<CreateTableResult> responseHandler = new JsonResponseHandler<CreateTableResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<CreateTableResult, JsonUnmarshallerContext> unmarshaller = new CreateTableResultJsonUnmarshaller();
-
-        JsonResponseHandler<CreateTableResult> responseHandler = new JsonResponseHandler<CreateTableResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -854,28 +843,28 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *             If an error response is returned by AmazonDynamoDBv2 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public QueryResult query(QueryRequest queryRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public QueryResult query(QueryRequest queryRequest) {
         ExecutionContext executionContext = createExecutionContext(queryRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<QueryRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<QueryRequest> request = null;
+        QueryResult response = null;
         try {
-            request = new QueryRequestMarshaller().marshall(queryRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new QueryRequestMarshaller().marshall(queryRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<QueryResult, JsonUnmarshallerContext> unmarshaller = new QueryResultJsonUnmarshaller();
+            JsonResponseHandler<QueryResult> responseHandler = new JsonResponseHandler<QueryResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<QueryResult, JsonUnmarshallerContext> unmarshaller = new QueryResultJsonUnmarshaller();
-
-        JsonResponseHandler<QueryResult> responseHandler = new JsonResponseHandler<QueryResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -936,28 +925,28 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *             If an error response is returned by AmazonDynamoDBv2 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public PutItemResult putItem(PutItemRequest putItemRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public PutItemResult putItem(PutItemRequest putItemRequest) {
         ExecutionContext executionContext = createExecutionContext(putItemRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<PutItemRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutItemRequest> request = null;
+        PutItemResult response = null;
         try {
-            request = new PutItemRequestMarshaller().marshall(putItemRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutItemRequestMarshaller().marshall(putItemRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<PutItemResult, JsonUnmarshallerContext> unmarshaller = new PutItemResultJsonUnmarshaller();
+            JsonResponseHandler<PutItemResult> responseHandler = new JsonResponseHandler<PutItemResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<PutItemResult, JsonUnmarshallerContext> unmarshaller = new PutItemResultJsonUnmarshaller();
-
-        JsonResponseHandler<PutItemResult> responseHandler = new JsonResponseHandler<PutItemResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -983,28 +972,28 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *             If an error response is returned by AmazonDynamoDBv2 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListTablesResult listTables(ListTablesRequest listTablesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public ListTablesResult listTables(ListTablesRequest listTablesRequest) {
         ExecutionContext executionContext = createExecutionContext(listTablesRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<ListTablesRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTablesRequest> request = null;
+        ListTablesResult response = null;
         try {
-            request = new ListTablesRequestMarshaller().marshall(listTablesRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTablesRequestMarshaller().marshall(listTablesRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<ListTablesResult, JsonUnmarshallerContext> unmarshaller = new ListTablesResultJsonUnmarshaller();
+            JsonResponseHandler<ListTablesResult> responseHandler = new JsonResponseHandler<ListTablesResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<ListTablesResult, JsonUnmarshallerContext> unmarshaller = new ListTablesResultJsonUnmarshaller();
-
-        JsonResponseHandler<ListTablesResult> responseHandler = new JsonResponseHandler<ListTablesResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -1042,28 +1031,28 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *             If an error response is returned by AmazonDynamoDBv2 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public UpdateItemResult updateItem(UpdateItemRequest updateItemRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public UpdateItemResult updateItem(UpdateItemRequest updateItemRequest) {
         ExecutionContext executionContext = createExecutionContext(updateItemRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<UpdateItemRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateItemRequest> request = null;
+        UpdateItemResult response = null;
         try {
-            request = new UpdateItemRequestMarshaller().marshall(updateItemRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateItemRequestMarshaller().marshall(updateItemRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<UpdateItemResult, JsonUnmarshallerContext> unmarshaller = new UpdateItemResultJsonUnmarshaller();
+            JsonResponseHandler<UpdateItemResult> responseHandler = new JsonResponseHandler<UpdateItemResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<UpdateItemResult, JsonUnmarshallerContext> unmarshaller = new UpdateItemResultJsonUnmarshaller();
-
-        JsonResponseHandler<UpdateItemResult> responseHandler = new JsonResponseHandler<UpdateItemResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -1138,28 +1127,28 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *             If an error response is returned by AmazonDynamoDBv2 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public BatchGetItemResult batchGetItem(BatchGetItemRequest batchGetItemRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public BatchGetItemResult batchGetItem(BatchGetItemRequest batchGetItemRequest) {
         ExecutionContext executionContext = createExecutionContext(batchGetItemRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<BatchGetItemRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchGetItemRequest> request = null;
+        BatchGetItemResult response = null;
         try {
-            request = new BatchGetItemRequestMarshaller().marshall(batchGetItemRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchGetItemRequestMarshaller().marshall(batchGetItemRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<BatchGetItemResult, JsonUnmarshallerContext> unmarshaller = new BatchGetItemResultJsonUnmarshaller();
+            JsonResponseHandler<BatchGetItemResult> responseHandler = new JsonResponseHandler<BatchGetItemResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<BatchGetItemResult, JsonUnmarshallerContext> unmarshaller = new BatchGetItemResultJsonUnmarshaller();
-
-        JsonResponseHandler<BatchGetItemResult> responseHandler = new JsonResponseHandler<BatchGetItemResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -1255,9 +1244,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     }
 
     private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
-                                                                HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-                                                                ExecutionContext executionContext) throws AmazonClientException {
-
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
@@ -1278,7 +1266,6 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         executionContext.setSigner(signer);
         executionContext.setCredentials(credentials);
 
-        executionContext.setCustomBackoffStrategy(com.amazonaws.internal.DynamoDBBackoffStrategy.DEFAULT);
         JsonErrorResponseHandler errorResponseHandler = new JsonErrorResponseHandler(exceptionUnmarshallers);
         X result = (X) client.execute(request, responseHandler,
                 errorResponseHandler, executionContext);

@@ -14,30 +14,20 @@
  */
 package com.amazonaws.services.datapipeline;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map.Entry;
+import java.util.*;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.auth.*;
-import com.amazonaws.handlers.HandlerChainFactory;
-import com.amazonaws.handlers.RequestHandler;
-import com.amazonaws.http.HttpResponseHandler;
-import com.amazonaws.http.JsonResponseHandler;
-import com.amazonaws.http.JsonErrorResponseHandler;
-import com.amazonaws.http.ExecutionContext;
-import com.amazonaws.util.AWSRequestMetrics;
+import com.amazonaws.handlers.*;
+import com.amazonaws.http.*;
+import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
-import com.amazonaws.internal.StaticCredentialsProvider;
-import com.amazonaws.transform.Unmarshaller;
-import com.amazonaws.transform.JsonUnmarshallerContext;
-import com.amazonaws.transform.JsonErrorUnmarshaller;
-import com.amazonaws.util.json.JSONObject;
+import com.amazonaws.internal.*;
+import com.amazonaws.transform.*;
+import com.amazonaws.util.json.*;
 
 import com.amazonaws.services.datapipeline.model.*;
 import com.amazonaws.services.datapipeline.model.transform.*;
@@ -271,28 +261,28 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      *             If an error response is returned by DataPipeline indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ActivatePipelineResult activatePipeline(ActivatePipelineRequest activatePipelineRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public ActivatePipelineResult activatePipeline(ActivatePipelineRequest activatePipelineRequest) {
         ExecutionContext executionContext = createExecutionContext(activatePipelineRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<ActivatePipelineRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ActivatePipelineRequest> request = null;
+        ActivatePipelineResult response = null;
         try {
-            request = new ActivatePipelineRequestMarshaller().marshall(activatePipelineRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ActivatePipelineRequestMarshaller().marshall(activatePipelineRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<ActivatePipelineResult, JsonUnmarshallerContext> unmarshaller = new ActivatePipelineResultJsonUnmarshaller();
+            JsonResponseHandler<ActivatePipelineResult> responseHandler = new JsonResponseHandler<ActivatePipelineResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<ActivatePipelineResult, JsonUnmarshallerContext> unmarshaller = new ActivatePipelineResultJsonUnmarshaller();
-
-        JsonResponseHandler<ActivatePipelineResult> responseHandler = new JsonResponseHandler<ActivatePipelineResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -320,28 +310,28 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      *             If an error response is returned by DataPipeline indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListPipelinesResult listPipelines(ListPipelinesRequest listPipelinesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public ListPipelinesResult listPipelines(ListPipelinesRequest listPipelinesRequest) {
         ExecutionContext executionContext = createExecutionContext(listPipelinesRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<ListPipelinesRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPipelinesRequest> request = null;
+        ListPipelinesResult response = null;
         try {
-            request = new ListPipelinesRequestMarshaller().marshall(listPipelinesRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPipelinesRequestMarshaller().marshall(listPipelinesRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<ListPipelinesResult, JsonUnmarshallerContext> unmarshaller = new ListPipelinesResultJsonUnmarshaller();
+            JsonResponseHandler<ListPipelinesResult> responseHandler = new JsonResponseHandler<ListPipelinesResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<ListPipelinesResult, JsonUnmarshallerContext> unmarshaller = new ListPipelinesResultJsonUnmarshaller();
-
-        JsonResponseHandler<ListPipelinesResult> responseHandler = new JsonResponseHandler<ListPipelinesResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -384,28 +374,28 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      *             If an error response is returned by DataPipeline indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ReportTaskProgressResult reportTaskProgress(ReportTaskProgressRequest reportTaskProgressRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public ReportTaskProgressResult reportTaskProgress(ReportTaskProgressRequest reportTaskProgressRequest) {
         ExecutionContext executionContext = createExecutionContext(reportTaskProgressRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<ReportTaskProgressRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ReportTaskProgressRequest> request = null;
+        ReportTaskProgressResult response = null;
         try {
-            request = new ReportTaskProgressRequestMarshaller().marshall(reportTaskProgressRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ReportTaskProgressRequestMarshaller().marshall(reportTaskProgressRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<ReportTaskProgressResult, JsonUnmarshallerContext> unmarshaller = new ReportTaskProgressResultJsonUnmarshaller();
+            JsonResponseHandler<ReportTaskProgressResult> responseHandler = new JsonResponseHandler<ReportTaskProgressResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<ReportTaskProgressResult, JsonUnmarshallerContext> unmarshaller = new ReportTaskProgressResultJsonUnmarshaller();
-
-        JsonResponseHandler<ReportTaskProgressResult> responseHandler = new JsonResponseHandler<ReportTaskProgressResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -435,28 +425,28 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      *             If an error response is returned by DataPipeline indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ValidatePipelineDefinitionResult validatePipelineDefinition(ValidatePipelineDefinitionRequest validatePipelineDefinitionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public ValidatePipelineDefinitionResult validatePipelineDefinition(ValidatePipelineDefinitionRequest validatePipelineDefinitionRequest) {
         ExecutionContext executionContext = createExecutionContext(validatePipelineDefinitionRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<ValidatePipelineDefinitionRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ValidatePipelineDefinitionRequest> request = null;
+        ValidatePipelineDefinitionResult response = null;
         try {
-            request = new ValidatePipelineDefinitionRequestMarshaller().marshall(validatePipelineDefinitionRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ValidatePipelineDefinitionRequestMarshaller().marshall(validatePipelineDefinitionRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<ValidatePipelineDefinitionResult, JsonUnmarshallerContext> unmarshaller = new ValidatePipelineDefinitionResultJsonUnmarshaller();
+            JsonResponseHandler<ValidatePipelineDefinitionResult> responseHandler = new JsonResponseHandler<ValidatePipelineDefinitionResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<ValidatePipelineDefinitionResult, JsonUnmarshallerContext> unmarshaller = new ValidatePipelineDefinitionResultJsonUnmarshaller();
-
-        JsonResponseHandler<ValidatePipelineDefinitionResult> responseHandler = new JsonResponseHandler<ValidatePipelineDefinitionResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -499,28 +489,28 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      *             If an error response is returned by DataPipeline indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public PollForTaskResult pollForTask(PollForTaskRequest pollForTaskRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public PollForTaskResult pollForTask(PollForTaskRequest pollForTaskRequest) {
         ExecutionContext executionContext = createExecutionContext(pollForTaskRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<PollForTaskRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PollForTaskRequest> request = null;
+        PollForTaskResult response = null;
         try {
-            request = new PollForTaskRequestMarshaller().marshall(pollForTaskRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PollForTaskRequestMarshaller().marshall(pollForTaskRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<PollForTaskResult, JsonUnmarshallerContext> unmarshaller = new PollForTaskResultJsonUnmarshaller();
+            JsonResponseHandler<PollForTaskResult> responseHandler = new JsonResponseHandler<PollForTaskResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<PollForTaskResult, JsonUnmarshallerContext> unmarshaller = new PollForTaskResultJsonUnmarshaller();
-
-        JsonResponseHandler<PollForTaskResult> responseHandler = new JsonResponseHandler<PollForTaskResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -557,28 +547,28 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      *             If an error response is returned by DataPipeline indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public QueryObjectsResult queryObjects(QueryObjectsRequest queryObjectsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public QueryObjectsResult queryObjects(QueryObjectsRequest queryObjectsRequest) {
         ExecutionContext executionContext = createExecutionContext(queryObjectsRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<QueryObjectsRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<QueryObjectsRequest> request = null;
+        QueryObjectsResult response = null;
         try {
-            request = new QueryObjectsRequestMarshaller().marshall(queryObjectsRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new QueryObjectsRequestMarshaller().marshall(queryObjectsRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<QueryObjectsResult, JsonUnmarshallerContext> unmarshaller = new QueryObjectsResultJsonUnmarshaller();
+            JsonResponseHandler<QueryObjectsResult> responseHandler = new JsonResponseHandler<QueryObjectsResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<QueryObjectsResult, JsonUnmarshallerContext> unmarshaller = new QueryObjectsResultJsonUnmarshaller();
-
-        JsonResponseHandler<QueryObjectsResult> responseHandler = new JsonResponseHandler<QueryObjectsResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -606,21 +596,18 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      *             If an error response is returned by DataPipeline indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void setStatus(SetStatusRequest setStatusRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public void setStatus(SetStatusRequest setStatusRequest) {
         ExecutionContext executionContext = createExecutionContext(setStatusRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<SetStatusRequest> request;
         awsRequestMetrics.startEvent(Field.RequestMarshallTime);
         try {
             request = new SetStatusRequestMarshaller().marshall(setStatusRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
         } finally {
             awsRequestMetrics.endEvent(Field.RequestMarshallTime);
         }
-
         JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
         invoke(request, responseHandler, executionContext);
     }
@@ -654,21 +641,18 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      *             If an error response is returned by DataPipeline indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void deletePipeline(DeletePipelineRequest deletePipelineRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public void deletePipeline(DeletePipelineRequest deletePipelineRequest) {
         ExecutionContext executionContext = createExecutionContext(deletePipelineRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         Request<DeletePipelineRequest> request;
         awsRequestMetrics.startEvent(Field.RequestMarshallTime);
         try {
             request = new DeletePipelineRequestMarshaller().marshall(deletePipelineRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
         } finally {
             awsRequestMetrics.endEvent(Field.RequestMarshallTime);
         }
-
         JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
         invoke(request, responseHandler, executionContext);
     }
@@ -700,28 +684,28 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      *             If an error response is returned by DataPipeline indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public GetPipelineDefinitionResult getPipelineDefinition(GetPipelineDefinitionRequest getPipelineDefinitionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public GetPipelineDefinitionResult getPipelineDefinition(GetPipelineDefinitionRequest getPipelineDefinitionRequest) {
         ExecutionContext executionContext = createExecutionContext(getPipelineDefinitionRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<GetPipelineDefinitionRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetPipelineDefinitionRequest> request = null;
+        GetPipelineDefinitionResult response = null;
         try {
-            request = new GetPipelineDefinitionRequestMarshaller().marshall(getPipelineDefinitionRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetPipelineDefinitionRequestMarshaller().marshall(getPipelineDefinitionRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<GetPipelineDefinitionResult, JsonUnmarshallerContext> unmarshaller = new GetPipelineDefinitionResultJsonUnmarshaller();
+            JsonResponseHandler<GetPipelineDefinitionResult> responseHandler = new JsonResponseHandler<GetPipelineDefinitionResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<GetPipelineDefinitionResult, JsonUnmarshallerContext> unmarshaller = new GetPipelineDefinitionResultJsonUnmarshaller();
-
-        JsonResponseHandler<GetPipelineDefinitionResult> responseHandler = new JsonResponseHandler<GetPipelineDefinitionResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -754,28 +738,28 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      *             If an error response is returned by DataPipeline indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public SetTaskStatusResult setTaskStatus(SetTaskStatusRequest setTaskStatusRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public SetTaskStatusResult setTaskStatus(SetTaskStatusRequest setTaskStatusRequest) {
         ExecutionContext executionContext = createExecutionContext(setTaskStatusRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<SetTaskStatusRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SetTaskStatusRequest> request = null;
+        SetTaskStatusResult response = null;
         try {
-            request = new SetTaskStatusRequestMarshaller().marshall(setTaskStatusRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SetTaskStatusRequestMarshaller().marshall(setTaskStatusRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<SetTaskStatusResult, JsonUnmarshallerContext> unmarshaller = new SetTaskStatusResultJsonUnmarshaller();
+            JsonResponseHandler<SetTaskStatusResult> responseHandler = new JsonResponseHandler<SetTaskStatusResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<SetTaskStatusResult, JsonUnmarshallerContext> unmarshaller = new SetTaskStatusResultJsonUnmarshaller();
-
-        JsonResponseHandler<SetTaskStatusResult> responseHandler = new JsonResponseHandler<SetTaskStatusResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -806,28 +790,28 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      *             If an error response is returned by DataPipeline indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public EvaluateExpressionResult evaluateExpression(EvaluateExpressionRequest evaluateExpressionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public EvaluateExpressionResult evaluateExpression(EvaluateExpressionRequest evaluateExpressionRequest) {
         ExecutionContext executionContext = createExecutionContext(evaluateExpressionRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<EvaluateExpressionRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<EvaluateExpressionRequest> request = null;
+        EvaluateExpressionResult response = null;
         try {
-            request = new EvaluateExpressionRequestMarshaller().marshall(evaluateExpressionRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new EvaluateExpressionRequestMarshaller().marshall(evaluateExpressionRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<EvaluateExpressionResult, JsonUnmarshallerContext> unmarshaller = new EvaluateExpressionResultJsonUnmarshaller();
+            JsonResponseHandler<EvaluateExpressionResult> responseHandler = new JsonResponseHandler<EvaluateExpressionResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<EvaluateExpressionResult, JsonUnmarshallerContext> unmarshaller = new EvaluateExpressionResultJsonUnmarshaller();
-
-        JsonResponseHandler<EvaluateExpressionResult> responseHandler = new JsonResponseHandler<EvaluateExpressionResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -865,28 +849,28 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      *             If an error response is returned by DataPipeline indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribePipelinesResult describePipelines(DescribePipelinesRequest describePipelinesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public DescribePipelinesResult describePipelines(DescribePipelinesRequest describePipelinesRequest) {
         ExecutionContext executionContext = createExecutionContext(describePipelinesRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DescribePipelinesRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribePipelinesRequest> request = null;
+        DescribePipelinesResult response = null;
         try {
-            request = new DescribePipelinesRequestMarshaller().marshall(describePipelinesRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribePipelinesRequestMarshaller().marshall(describePipelinesRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<DescribePipelinesResult, JsonUnmarshallerContext> unmarshaller = new DescribePipelinesResultJsonUnmarshaller();
+            JsonResponseHandler<DescribePipelinesResult> responseHandler = new JsonResponseHandler<DescribePipelinesResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<DescribePipelinesResult, JsonUnmarshallerContext> unmarshaller = new DescribePipelinesResultJsonUnmarshaller();
-
-        JsonResponseHandler<DescribePipelinesResult> responseHandler = new JsonResponseHandler<DescribePipelinesResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -913,28 +897,28 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      *             If an error response is returned by DataPipeline indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreatePipelineResult createPipeline(CreatePipelineRequest createPipelineRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public CreatePipelineResult createPipeline(CreatePipelineRequest createPipelineRequest) {
         ExecutionContext executionContext = createExecutionContext(createPipelineRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<CreatePipelineRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreatePipelineRequest> request = null;
+        CreatePipelineResult response = null;
         try {
-            request = new CreatePipelineRequestMarshaller().marshall(createPipelineRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreatePipelineRequestMarshaller().marshall(createPipelineRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<CreatePipelineResult, JsonUnmarshallerContext> unmarshaller = new CreatePipelineResultJsonUnmarshaller();
+            JsonResponseHandler<CreatePipelineResult> responseHandler = new JsonResponseHandler<CreatePipelineResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<CreatePipelineResult, JsonUnmarshallerContext> unmarshaller = new CreatePipelineResultJsonUnmarshaller();
-
-        JsonResponseHandler<CreatePipelineResult> responseHandler = new JsonResponseHandler<CreatePipelineResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -964,28 +948,28 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      *             If an error response is returned by DataPipeline indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeObjectsResult describeObjects(DescribeObjectsRequest describeObjectsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public DescribeObjectsResult describeObjects(DescribeObjectsRequest describeObjectsRequest) {
         ExecutionContext executionContext = createExecutionContext(describeObjectsRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DescribeObjectsRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeObjectsRequest> request = null;
+        DescribeObjectsResult response = null;
         try {
-            request = new DescribeObjectsRequestMarshaller().marshall(describeObjectsRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeObjectsRequestMarshaller().marshall(describeObjectsRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<DescribeObjectsResult, JsonUnmarshallerContext> unmarshaller = new DescribeObjectsResultJsonUnmarshaller();
+            JsonResponseHandler<DescribeObjectsResult> responseHandler = new JsonResponseHandler<DescribeObjectsResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<DescribeObjectsResult, JsonUnmarshallerContext> unmarshaller = new DescribeObjectsResultJsonUnmarshaller();
-
-        JsonResponseHandler<DescribeObjectsResult> responseHandler = new JsonResponseHandler<DescribeObjectsResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -1016,28 +1000,28 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      *             If an error response is returned by DataPipeline indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ReportTaskRunnerHeartbeatResult reportTaskRunnerHeartbeat(ReportTaskRunnerHeartbeatRequest reportTaskRunnerHeartbeatRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public ReportTaskRunnerHeartbeatResult reportTaskRunnerHeartbeat(ReportTaskRunnerHeartbeatRequest reportTaskRunnerHeartbeatRequest) {
         ExecutionContext executionContext = createExecutionContext(reportTaskRunnerHeartbeatRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<ReportTaskRunnerHeartbeatRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ReportTaskRunnerHeartbeatRequest> request = null;
+        ReportTaskRunnerHeartbeatResult response = null;
         try {
-            request = new ReportTaskRunnerHeartbeatRequestMarshaller().marshall(reportTaskRunnerHeartbeatRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ReportTaskRunnerHeartbeatRequestMarshaller().marshall(reportTaskRunnerHeartbeatRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<ReportTaskRunnerHeartbeatResult, JsonUnmarshallerContext> unmarshaller = new ReportTaskRunnerHeartbeatResultJsonUnmarshaller();
+            JsonResponseHandler<ReportTaskRunnerHeartbeatResult> responseHandler = new JsonResponseHandler<ReportTaskRunnerHeartbeatResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<ReportTaskRunnerHeartbeatResult, JsonUnmarshallerContext> unmarshaller = new ReportTaskRunnerHeartbeatResultJsonUnmarshaller();
-
-        JsonResponseHandler<ReportTaskRunnerHeartbeatResult> responseHandler = new JsonResponseHandler<ReportTaskRunnerHeartbeatResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -1083,28 +1067,28 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
      *             If an error response is returned by DataPipeline indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public PutPipelineDefinitionResult putPipelineDefinition(PutPipelineDefinitionRequest putPipelineDefinitionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public PutPipelineDefinitionResult putPipelineDefinition(PutPipelineDefinitionRequest putPipelineDefinitionRequest) {
         ExecutionContext executionContext = createExecutionContext(putPipelineDefinitionRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<PutPipelineDefinitionRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutPipelineDefinitionRequest> request = null;
+        PutPipelineDefinitionResult response = null;
         try {
-            request = new PutPipelineDefinitionRequestMarshaller().marshall(putPipelineDefinitionRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutPipelineDefinitionRequestMarshaller().marshall(putPipelineDefinitionRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<PutPipelineDefinitionResult, JsonUnmarshallerContext> unmarshaller = new PutPipelineDefinitionResultJsonUnmarshaller();
+            JsonResponseHandler<PutPipelineDefinitionResult> responseHandler = new JsonResponseHandler<PutPipelineDefinitionResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<PutPipelineDefinitionResult, JsonUnmarshallerContext> unmarshaller = new PutPipelineDefinitionResultJsonUnmarshaller();
-
-        JsonResponseHandler<PutPipelineDefinitionResult> responseHandler = new JsonResponseHandler<PutPipelineDefinitionResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -1202,9 +1186,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
     }
 
     private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
-                                                                HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-                                                                ExecutionContext executionContext) throws AmazonClientException {
-
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
@@ -1225,7 +1208,6 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
         executionContext.setSigner(signer);
         executionContext.setCredentials(credentials);
 
-        
         JsonErrorResponseHandler errorResponseHandler = new JsonErrorResponseHandler(exceptionUnmarshallers);
         X result = (X) client.execute(request, responseHandler,
                 errorResponseHandler, executionContext);

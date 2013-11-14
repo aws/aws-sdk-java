@@ -23,7 +23,7 @@ package com.amazonaws.auth.policy;
 import com.amazonaws.auth.policy.Action;
 import com.amazonaws.services.securitytoken.AWSSecurityTokenService;
 
-
+@Deprecated
 public enum STSActions implements Action {
 
     /**

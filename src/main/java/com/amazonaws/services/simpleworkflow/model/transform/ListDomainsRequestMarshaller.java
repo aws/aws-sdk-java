@@ -112,9 +112,4 @@ public class ListDomainsRequestMarshaller implements Marshaller<Request<ListDoma
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

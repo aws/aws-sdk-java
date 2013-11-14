@@ -56,7 +56,7 @@ public class DeletePresetRequestMarshaller implements Marshaller<Request<DeleteP
 
 
         String uriResourcePath = "2012-09-25/presets/{Id}"; 
-        uriResourcePath = uriResourcePath.replace("{Id}", getString(deletePresetRequest.getId())); 
+        uriResourcePath = uriResourcePath.replace("{Id}", (deletePresetRequest.getId() == null) ? "" : StringUtils.fromString(deletePresetRequest.getId())); 
 
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
@@ -82,10 +82,5 @@ public class DeletePresetRequestMarshaller implements Marshaller<Request<DeleteP
         
 
         return request;
-    }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
     }
 }

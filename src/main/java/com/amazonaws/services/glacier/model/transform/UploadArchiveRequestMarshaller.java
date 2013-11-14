@@ -65,8 +65,8 @@ public class UploadArchiveRequestMarshaller implements Marshaller<Request<Upload
 
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/archives"; 
-        uriResourcePath = uriResourcePath.replace("{vaultName}", getString(uploadArchiveRequest.getVaultName())); 
-        uriResourcePath = uriResourcePath.replace("{accountId}", getString(uploadArchiveRequest.getAccountId())); 
+        uriResourcePath = uriResourcePath.replace("{vaultName}", (uploadArchiveRequest.getVaultName() == null) ? "" : StringUtils.fromString(uploadArchiveRequest.getVaultName())); 
+        uriResourcePath = uriResourcePath.replace("{accountId}", (uploadArchiveRequest.getAccountId() == null) ? "" : StringUtils.fromString(uploadArchiveRequest.getAccountId())); 
 
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
@@ -93,10 +93,5 @@ public class UploadArchiveRequestMarshaller implements Marshaller<Request<Upload
         
 
         return request;
-    }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
     }
 }

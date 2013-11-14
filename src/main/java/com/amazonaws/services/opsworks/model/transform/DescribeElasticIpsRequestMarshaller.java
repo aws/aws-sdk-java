@@ -120,9 +120,4 @@ public class DescribeElasticIpsRequestMarshaller implements Marshaller<Request<D
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

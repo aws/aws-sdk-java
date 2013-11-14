@@ -14,24 +14,19 @@
  */
 package com.amazonaws.services.elasticache;
 
-import org.w3c.dom.Node;
+import org.w3c.dom.*;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.Map.Entry;
 
 import com.amazonaws.*;
 import com.amazonaws.auth.*;
-import com.amazonaws.handlers.HandlerChainFactory;
-import com.amazonaws.handlers.RequestHandler;
-import com.amazonaws.http.StaxResponseHandler;
-import com.amazonaws.http.DefaultErrorResponseHandler;
-import com.amazonaws.http.ExecutionContext;
-import com.amazonaws.internal.StaticCredentialsProvider;
-import com.amazonaws.transform.Unmarshaller;
-import com.amazonaws.transform.StaxUnmarshallerContext;
-import com.amazonaws.transform.StandardErrorUnmarshaller;
+import com.amazonaws.handlers.*;
+import com.amazonaws.http.*;
+import com.amazonaws.internal.*;
+import com.amazonaws.transform.*;
+import com.amazonaws.util.*;
+import com.amazonaws.util.AWSRequestMetrics.Field;
 
 import com.amazonaws.services.elasticache.model.*;
 import com.amazonaws.services.elasticache.model.transform.*;
@@ -68,7 +63,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
 
     
     /** AWS signer for authenticating requests. */
-    private QueryStringSigner signer;
+    private AWS4Signer signer;
 
 
     /**
@@ -85,7 +80,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonElastiCacheClient() {
         this(new DefaultAWSCredentialsProviderChain(), new ClientConfiguration());
@@ -109,7 +104,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *                       client connects to AmazonElastiCache
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonElastiCacheClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
@@ -228,11 +223,11 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
         setEndpoint("elasticache.us-east-1.amazonaws.com/");
 
-        signer = new QueryStringSigner();
+        signer = new AWS4Signer();
         
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-    requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+        requestHandlers.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/elasticache/request.handlers"));
     }
 
@@ -263,10 +258,20 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeReservedCacheNodesOfferingsResult describeReservedCacheNodesOfferings(DescribeReservedCacheNodesOfferingsRequest describeReservedCacheNodesOfferingsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeReservedCacheNodesOfferingsRequest> request = new DescribeReservedCacheNodesOfferingsRequestMarshaller().marshall(describeReservedCacheNodesOfferingsRequest);
-        return invoke(request, new DescribeReservedCacheNodesOfferingsResultStaxUnmarshaller());
+    public DescribeReservedCacheNodesOfferingsResult describeReservedCacheNodesOfferings(DescribeReservedCacheNodesOfferingsRequest describeReservedCacheNodesOfferingsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeReservedCacheNodesOfferingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeReservedCacheNodesOfferingsRequest> request = null;
+        DescribeReservedCacheNodesOfferingsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeReservedCacheNodesOfferingsRequestMarshaller().marshall(describeReservedCacheNodesOfferingsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeReservedCacheNodesOfferingsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -299,10 +304,20 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ReplicationGroup deleteReplicationGroup(DeleteReplicationGroupRequest deleteReplicationGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteReplicationGroupRequest> request = new DeleteReplicationGroupRequestMarshaller().marshall(deleteReplicationGroupRequest);
-        return invoke(request, new ReplicationGroupStaxUnmarshaller());
+    public ReplicationGroup deleteReplicationGroup(DeleteReplicationGroupRequest deleteReplicationGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteReplicationGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteReplicationGroupRequest> request = null;
+        ReplicationGroup response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteReplicationGroupRequestMarshaller().marshall(deleteReplicationGroupRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new ReplicationGroupStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -339,10 +354,20 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CacheCluster modifyCacheCluster(ModifyCacheClusterRequest modifyCacheClusterRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ModifyCacheClusterRequest> request = new ModifyCacheClusterRequestMarshaller().marshall(modifyCacheClusterRequest);
-        return invoke(request, new CacheClusterStaxUnmarshaller());
+    public CacheCluster modifyCacheCluster(ModifyCacheClusterRequest modifyCacheClusterRequest) {
+        ExecutionContext executionContext = createExecutionContext(modifyCacheClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ModifyCacheClusterRequest> request = null;
+        CacheCluster response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ModifyCacheClusterRequestMarshaller().marshall(modifyCacheClusterRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new CacheClusterStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -373,10 +398,20 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CacheSecurityGroup revokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest revokeCacheSecurityGroupIngressRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<RevokeCacheSecurityGroupIngressRequest> request = new RevokeCacheSecurityGroupIngressRequestMarshaller().marshall(revokeCacheSecurityGroupIngressRequest);
-        return invoke(request, new CacheSecurityGroupStaxUnmarshaller());
+    public CacheSecurityGroup revokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest revokeCacheSecurityGroupIngressRequest) {
+        ExecutionContext executionContext = createExecutionContext(revokeCacheSecurityGroupIngressRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<RevokeCacheSecurityGroupIngressRequest> request = null;
+        CacheSecurityGroup response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new RevokeCacheSecurityGroupIngressRequestMarshaller().marshall(revokeCacheSecurityGroupIngressRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new CacheSecurityGroupStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -406,10 +441,20 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeReplicationGroupsResult describeReplicationGroups(DescribeReplicationGroupsRequest describeReplicationGroupsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeReplicationGroupsRequest> request = new DescribeReplicationGroupsRequestMarshaller().marshall(describeReplicationGroupsRequest);
-        return invoke(request, new DescribeReplicationGroupsResultStaxUnmarshaller());
+    public DescribeReplicationGroupsResult describeReplicationGroups(DescribeReplicationGroupsRequest describeReplicationGroupsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeReplicationGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeReplicationGroupsRequest> request = null;
+        DescribeReplicationGroupsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeReplicationGroupsRequestMarshaller().marshall(describeReplicationGroupsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeReplicationGroupsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -448,10 +493,20 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CacheCluster createCacheCluster(CreateCacheClusterRequest createCacheClusterRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateCacheClusterRequest> request = new CreateCacheClusterRequestMarshaller().marshall(createCacheClusterRequest);
-        return invoke(request, new CacheClusterStaxUnmarshaller());
+    public CacheCluster createCacheCluster(CreateCacheClusterRequest createCacheClusterRequest) {
+        ExecutionContext executionContext = createExecutionContext(createCacheClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateCacheClusterRequest> request = null;
+        CacheCluster response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreateCacheClusterRequestMarshaller().marshall(createCacheClusterRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new CacheClusterStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -490,10 +545,20 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ReplicationGroup createReplicationGroup(CreateReplicationGroupRequest createReplicationGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateReplicationGroupRequest> request = new CreateReplicationGroupRequestMarshaller().marshall(createReplicationGroupRequest);
-        return invoke(request, new ReplicationGroupStaxUnmarshaller());
+    public ReplicationGroup createReplicationGroup(CreateReplicationGroupRequest createReplicationGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(createReplicationGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateReplicationGroupRequest> request = null;
+        ReplicationGroup response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreateReplicationGroupRequestMarshaller().marshall(createReplicationGroupRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new ReplicationGroupStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -526,10 +591,20 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CacheCluster deleteCacheCluster(DeleteCacheClusterRequest deleteCacheClusterRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteCacheClusterRequest> request = new DeleteCacheClusterRequestMarshaller().marshall(deleteCacheClusterRequest);
-        return invoke(request, new CacheClusterStaxUnmarshaller());
+    public CacheCluster deleteCacheCluster(DeleteCacheClusterRequest deleteCacheClusterRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteCacheClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteCacheClusterRequest> request = null;
+        CacheCluster response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteCacheClusterRequestMarshaller().marshall(deleteCacheClusterRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new CacheClusterStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -558,10 +633,20 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeCacheSecurityGroupsResult describeCacheSecurityGroups(DescribeCacheSecurityGroupsRequest describeCacheSecurityGroupsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeCacheSecurityGroupsRequest> request = new DescribeCacheSecurityGroupsRequestMarshaller().marshall(describeCacheSecurityGroupsRequest);
-        return invoke(request, new DescribeCacheSecurityGroupsResultStaxUnmarshaller());
+    public DescribeCacheSecurityGroupsResult describeCacheSecurityGroups(DescribeCacheSecurityGroupsRequest describeCacheSecurityGroupsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeCacheSecurityGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeCacheSecurityGroupsRequest> request = null;
+        DescribeCacheSecurityGroupsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeCacheSecurityGroupsRequestMarshaller().marshall(describeCacheSecurityGroupsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeCacheSecurityGroupsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -596,10 +681,20 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ReplicationGroup modifyReplicationGroup(ModifyReplicationGroupRequest modifyReplicationGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ModifyReplicationGroupRequest> request = new ModifyReplicationGroupRequestMarshaller().marshall(modifyReplicationGroupRequest);
-        return invoke(request, new ReplicationGroupStaxUnmarshaller());
+    public ReplicationGroup modifyReplicationGroup(ModifyReplicationGroupRequest modifyReplicationGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(modifyReplicationGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ModifyReplicationGroupRequest> request = null;
+        ReplicationGroup response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ModifyReplicationGroupRequestMarshaller().marshall(modifyReplicationGroupRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new ReplicationGroupStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -655,10 +750,20 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeCacheClustersResult describeCacheClusters(DescribeCacheClustersRequest describeCacheClustersRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeCacheClustersRequest> request = new DescribeCacheClustersRequestMarshaller().marshall(describeCacheClustersRequest);
-        return invoke(request, new DescribeCacheClustersResultStaxUnmarshaller());
+    public DescribeCacheClustersResult describeCacheClusters(DescribeCacheClustersRequest describeCacheClustersRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeCacheClustersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeCacheClustersRequest> request = null;
+        DescribeCacheClustersResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeCacheClustersRequestMarshaller().marshall(describeCacheClustersRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeCacheClustersResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -689,10 +794,20 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CacheParameterGroup createCacheParameterGroup(CreateCacheParameterGroupRequest createCacheParameterGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateCacheParameterGroupRequest> request = new CreateCacheParameterGroupRequestMarshaller().marshall(createCacheParameterGroupRequest);
-        return invoke(request, new CacheParameterGroupStaxUnmarshaller());
+    public CacheParameterGroup createCacheParameterGroup(CreateCacheParameterGroupRequest createCacheParameterGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(createCacheParameterGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateCacheParameterGroupRequest> request = null;
+        CacheParameterGroup response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreateCacheParameterGroupRequestMarshaller().marshall(createCacheParameterGroupRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new CacheParameterGroupStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -721,10 +836,20 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeCacheParameterGroupsResult describeCacheParameterGroups(DescribeCacheParameterGroupsRequest describeCacheParameterGroupsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeCacheParameterGroupsRequest> request = new DescribeCacheParameterGroupsRequestMarshaller().marshall(describeCacheParameterGroupsRequest);
-        return invoke(request, new DescribeCacheParameterGroupsResultStaxUnmarshaller());
+    public DescribeCacheParameterGroupsResult describeCacheParameterGroups(DescribeCacheParameterGroupsRequest describeCacheParameterGroupsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeCacheParameterGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeCacheParameterGroupsRequest> request = null;
+        DescribeCacheParameterGroupsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeCacheParameterGroupsRequestMarshaller().marshall(describeCacheParameterGroupsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeCacheParameterGroupsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -751,10 +876,20 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeCacheSubnetGroupsResult describeCacheSubnetGroups(DescribeCacheSubnetGroupsRequest describeCacheSubnetGroupsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeCacheSubnetGroupsRequest> request = new DescribeCacheSubnetGroupsRequestMarshaller().marshall(describeCacheSubnetGroupsRequest);
-        return invoke(request, new DescribeCacheSubnetGroupsResultStaxUnmarshaller());
+    public DescribeCacheSubnetGroupsResult describeCacheSubnetGroups(DescribeCacheSubnetGroupsRequest describeCacheSubnetGroupsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeCacheSubnetGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeCacheSubnetGroupsRequest> request = null;
+        DescribeCacheSubnetGroupsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeCacheSubnetGroupsRequestMarshaller().marshall(describeCacheSubnetGroupsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeCacheSubnetGroupsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -783,10 +918,20 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CacheSubnetGroup modifyCacheSubnetGroup(ModifyCacheSubnetGroupRequest modifyCacheSubnetGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ModifyCacheSubnetGroupRequest> request = new ModifyCacheSubnetGroupRequestMarshaller().marshall(modifyCacheSubnetGroupRequest);
-        return invoke(request, new CacheSubnetGroupStaxUnmarshaller());
+    public CacheSubnetGroup modifyCacheSubnetGroup(ModifyCacheSubnetGroupRequest modifyCacheSubnetGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(modifyCacheSubnetGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ModifyCacheSubnetGroupRequest> request = null;
+        CacheSubnetGroup response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ModifyCacheSubnetGroupRequestMarshaller().marshall(modifyCacheSubnetGroupRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new CacheSubnetGroupStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -813,10 +958,19 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void deleteCacheParameterGroup(DeleteCacheParameterGroupRequest deleteCacheParameterGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteCacheParameterGroupRequest> request = new DeleteCacheParameterGroupRequestMarshaller().marshall(deleteCacheParameterGroupRequest);
-        invoke(request, null);
+    public void deleteCacheParameterGroup(DeleteCacheParameterGroupRequest deleteCacheParameterGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteCacheParameterGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteCacheParameterGroupRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteCacheParameterGroupRequestMarshaller().marshall(deleteCacheParameterGroupRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
     }
     
     /**
@@ -844,10 +998,20 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeCacheParametersResult describeCacheParameters(DescribeCacheParametersRequest describeCacheParametersRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeCacheParametersRequest> request = new DescribeCacheParametersRequestMarshaller().marshall(describeCacheParametersRequest);
-        return invoke(request, new DescribeCacheParametersResultStaxUnmarshaller());
+    public DescribeCacheParametersResult describeCacheParameters(DescribeCacheParametersRequest describeCacheParametersRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeCacheParametersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeCacheParametersRequest> request = null;
+        DescribeCacheParametersResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeCacheParametersRequestMarshaller().marshall(describeCacheParametersRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeCacheParametersResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -876,10 +1040,20 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeReservedCacheNodesResult describeReservedCacheNodes(DescribeReservedCacheNodesRequest describeReservedCacheNodesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeReservedCacheNodesRequest> request = new DescribeReservedCacheNodesRequestMarshaller().marshall(describeReservedCacheNodesRequest);
-        return invoke(request, new DescribeReservedCacheNodesResultStaxUnmarshaller());
+    public DescribeReservedCacheNodesResult describeReservedCacheNodes(DescribeReservedCacheNodesRequest describeReservedCacheNodesRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeReservedCacheNodesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeReservedCacheNodesRequest> request = null;
+        DescribeReservedCacheNodesResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeReservedCacheNodesRequestMarshaller().marshall(describeReservedCacheNodesRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeReservedCacheNodesResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -907,10 +1081,19 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void deleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest deleteCacheSubnetGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteCacheSubnetGroupRequest> request = new DeleteCacheSubnetGroupRequestMarshaller().marshall(deleteCacheSubnetGroupRequest);
-        invoke(request, null);
+    public void deleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest deleteCacheSubnetGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteCacheSubnetGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteCacheSubnetGroupRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteCacheSubnetGroupRequestMarshaller().marshall(deleteCacheSubnetGroupRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
     }
     
     /**
@@ -943,10 +1126,20 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeEventsRequest> request = new DescribeEventsRequestMarshaller().marshall(describeEventsRequest);
-        return invoke(request, new DescribeEventsResultStaxUnmarshaller());
+    public DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeEventsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeEventsRequest> request = null;
+        DescribeEventsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeEventsRequestMarshaller().marshall(describeEventsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeEventsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -976,10 +1169,19 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void deleteCacheSecurityGroup(DeleteCacheSecurityGroupRequest deleteCacheSecurityGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteCacheSecurityGroupRequest> request = new DeleteCacheSecurityGroupRequestMarshaller().marshall(deleteCacheSecurityGroupRequest);
-        invoke(request, null);
+    public void deleteCacheSecurityGroup(DeleteCacheSecurityGroupRequest deleteCacheSecurityGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteCacheSecurityGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteCacheSecurityGroupRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteCacheSecurityGroupRequestMarshaller().marshall(deleteCacheSecurityGroupRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
     }
     
     /**
@@ -1007,10 +1209,20 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public EngineDefaults describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeEngineDefaultParametersRequest> request = new DescribeEngineDefaultParametersRequestMarshaller().marshall(describeEngineDefaultParametersRequest);
-        return invoke(request, new EngineDefaultsStaxUnmarshaller());
+    public EngineDefaults describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeEngineDefaultParametersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeEngineDefaultParametersRequest> request = null;
+        EngineDefaults response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeEngineDefaultParametersRequestMarshaller().marshall(describeEngineDefaultParametersRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new EngineDefaultsStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1046,10 +1258,20 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CacheSecurityGroup authorizeCacheSecurityGroupIngress(AuthorizeCacheSecurityGroupIngressRequest authorizeCacheSecurityGroupIngressRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<AuthorizeCacheSecurityGroupIngressRequest> request = new AuthorizeCacheSecurityGroupIngressRequestMarshaller().marshall(authorizeCacheSecurityGroupIngressRequest);
-        return invoke(request, new CacheSecurityGroupStaxUnmarshaller());
+    public CacheSecurityGroup authorizeCacheSecurityGroupIngress(AuthorizeCacheSecurityGroupIngressRequest authorizeCacheSecurityGroupIngressRequest) {
+        ExecutionContext executionContext = createExecutionContext(authorizeCacheSecurityGroupIngressRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<AuthorizeCacheSecurityGroupIngressRequest> request = null;
+        CacheSecurityGroup response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new AuthorizeCacheSecurityGroupIngressRequestMarshaller().marshall(authorizeCacheSecurityGroupIngressRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new CacheSecurityGroupStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1082,10 +1304,20 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CacheSubnetGroup createCacheSubnetGroup(CreateCacheSubnetGroupRequest createCacheSubnetGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateCacheSubnetGroupRequest> request = new CreateCacheSubnetGroupRequestMarshaller().marshall(createCacheSubnetGroupRequest);
-        return invoke(request, new CacheSubnetGroupStaxUnmarshaller());
+    public CacheSubnetGroup createCacheSubnetGroup(CreateCacheSubnetGroupRequest createCacheSubnetGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(createCacheSubnetGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateCacheSubnetGroupRequest> request = null;
+        CacheSubnetGroup response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreateCacheSubnetGroupRequestMarshaller().marshall(createCacheSubnetGroupRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new CacheSubnetGroupStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1110,10 +1342,20 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeCacheEngineVersionsResult describeCacheEngineVersions(DescribeCacheEngineVersionsRequest describeCacheEngineVersionsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeCacheEngineVersionsRequest> request = new DescribeCacheEngineVersionsRequestMarshaller().marshall(describeCacheEngineVersionsRequest);
-        return invoke(request, new DescribeCacheEngineVersionsResultStaxUnmarshaller());
+    public DescribeCacheEngineVersionsResult describeCacheEngineVersions(DescribeCacheEngineVersionsRequest describeCacheEngineVersionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeCacheEngineVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeCacheEngineVersionsRequest> request = null;
+        DescribeCacheEngineVersionsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeCacheEngineVersionsRequestMarshaller().marshall(describeCacheEngineVersionsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeCacheEngineVersionsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1149,10 +1391,20 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CacheSecurityGroup createCacheSecurityGroup(CreateCacheSecurityGroupRequest createCacheSecurityGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateCacheSecurityGroupRequest> request = new CreateCacheSecurityGroupRequestMarshaller().marshall(createCacheSecurityGroupRequest);
-        return invoke(request, new CacheSecurityGroupStaxUnmarshaller());
+    public CacheSecurityGroup createCacheSecurityGroup(CreateCacheSecurityGroupRequest createCacheSecurityGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(createCacheSecurityGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateCacheSecurityGroupRequest> request = null;
+        CacheSecurityGroup response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreateCacheSecurityGroupRequestMarshaller().marshall(createCacheSecurityGroupRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new CacheSecurityGroupStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1182,10 +1434,20 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ReservedCacheNode purchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest purchaseReservedCacheNodesOfferingRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<PurchaseReservedCacheNodesOfferingRequest> request = new PurchaseReservedCacheNodesOfferingRequestMarshaller().marshall(purchaseReservedCacheNodesOfferingRequest);
-        return invoke(request, new ReservedCacheNodeStaxUnmarshaller());
+    public ReservedCacheNode purchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest purchaseReservedCacheNodesOfferingRequest) {
+        ExecutionContext executionContext = createExecutionContext(purchaseReservedCacheNodesOfferingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<PurchaseReservedCacheNodesOfferingRequest> request = null;
+        ReservedCacheNode response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new PurchaseReservedCacheNodesOfferingRequestMarshaller().marshall(purchaseReservedCacheNodesOfferingRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new ReservedCacheNodeStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1218,10 +1480,20 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ResetCacheParameterGroupResult resetCacheParameterGroup(ResetCacheParameterGroupRequest resetCacheParameterGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ResetCacheParameterGroupRequest> request = new ResetCacheParameterGroupRequestMarshaller().marshall(resetCacheParameterGroupRequest);
-        return invoke(request, new ResetCacheParameterGroupResultStaxUnmarshaller());
+    public ResetCacheParameterGroupResult resetCacheParameterGroup(ResetCacheParameterGroupRequest resetCacheParameterGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(resetCacheParameterGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ResetCacheParameterGroupRequest> request = null;
+        ResetCacheParameterGroupResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ResetCacheParameterGroupRequestMarshaller().marshall(resetCacheParameterGroupRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new ResetCacheParameterGroupResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1251,10 +1523,20 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ModifyCacheParameterGroupResult modifyCacheParameterGroup(ModifyCacheParameterGroupRequest modifyCacheParameterGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ModifyCacheParameterGroupRequest> request = new ModifyCacheParameterGroupRequestMarshaller().marshall(modifyCacheParameterGroupRequest);
-        return invoke(request, new ModifyCacheParameterGroupResultStaxUnmarshaller());
+    public ModifyCacheParameterGroupResult modifyCacheParameterGroup(ModifyCacheParameterGroupRequest modifyCacheParameterGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(modifyCacheParameterGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ModifyCacheParameterGroupRequest> request = null;
+        ModifyCacheParameterGroupResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ModifyCacheParameterGroupRequestMarshaller().marshall(modifyCacheParameterGroupRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new ModifyCacheParameterGroupResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1292,10 +1574,20 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CacheCluster rebootCacheCluster(RebootCacheClusterRequest rebootCacheClusterRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<RebootCacheClusterRequest> request = new RebootCacheClusterRequestMarshaller().marshall(rebootCacheClusterRequest);
-        return invoke(request, new CacheClusterStaxUnmarshaller());
+    public CacheCluster rebootCacheCluster(RebootCacheClusterRequest rebootCacheClusterRequest) {
+        ExecutionContext executionContext = createExecutionContext(rebootCacheClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<RebootCacheClusterRequest> request = null;
+        CacheCluster response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new RebootCacheClusterRequestMarshaller().marshall(rebootCacheClusterRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new CacheClusterStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1558,6 +1850,47 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
         return describeCacheEngineVersions(new DescribeCacheEngineVersionsRequest());
     }
     
+    /**
+     * Overrides the default endpoint for this client ("https://elasticache.us-east-1.amazonaws.com/") and explicitly provides
+     * an AWS region ID and AWS service name to use when the client calculates a signature
+     * for requests.  In almost all cases, this region ID and service name
+     * are automatically determined from the endpoint, and callers should use the simpler
+     * one-argument form of setEndpoint instead of this method.
+     * <p>
+     * <b>This method is not threadsafe. Endpoints should be configured when the
+     * client is created and before any service requests are made. Changing it
+     * afterwards creates inevitable race conditions for any service requests in
+     * transit.</b>
+     * <p>
+     * Callers can pass in just the endpoint (ex: "elasticache.us-east-1.amazonaws.com/") or a full
+     * URL, including the protocol (ex: "https://elasticache.us-east-1.amazonaws.com/"). If the
+     * protocol is not specified here, the default protocol from this client's
+     * {@link ClientConfiguration} will be used, which by default is HTTPS.
+     * <p>
+     * For more information on using AWS regions with the AWS SDK for Java, and
+     * a complete list of all available endpoints for all AWS services, see:
+     * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
+     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     *
+     * @param endpoint
+     *            The endpoint (ex: "elasticache.us-east-1.amazonaws.com/") or a full URL,
+     *            including the protocol (ex: "https://elasticache.us-east-1.amazonaws.com/") of
+     *            the region specific AWS endpoint this client will communicate
+     *            with.
+     * @param serviceName
+     *            The name of the AWS service to use when signing requests.
+     * @param regionId
+     *            The ID of the region in which this service resides.
+     *
+     * @throws IllegalArgumentException
+     *             If any problems are detected with the specified endpoint.
+     */
+    public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
+        setEndpoint(endpoint);
+        signer.setServiceName(serviceName);
+        signer.setRegionName(regionId);
+    }
+    
     @Override
     protected String getServiceAbbreviation() {
         return "elasticache";
@@ -1584,26 +1917,27 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
         return client.getResponseMetadataForRequest(request);
     }
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, Unmarshaller<X, StaxUnmarshallerContext> unmarshaller) {
+    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
+            Unmarshaller<X, StaxUnmarshallerContext> unmarshaller,
+            ExecutionContext executionContext)
+    {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
-        for (Entry<String, String> entry : request.getOriginalRequest().copyPrivateRequestParameters().entrySet()) {
+        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
+        for (Entry<String, String> entry : originalRequest.copyPrivateRequestParameters().entrySet()) {
             request.addParameter(entry.getKey(), entry.getValue());
         }
 
         AWSCredentials credentials = awsCredentialsProvider.getCredentials();
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
-          credentials = originalRequest.getRequestCredentials();
+        if (originalRequest.getRequestCredentials() != null) {
+            credentials = originalRequest.getRequestCredentials();
         }
 
-        ExecutionContext executionContext = createExecutionContext(originalRequest);
         executionContext.setSigner(signer);
         executionContext.setCredentials(credentials);
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
-
         return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 }

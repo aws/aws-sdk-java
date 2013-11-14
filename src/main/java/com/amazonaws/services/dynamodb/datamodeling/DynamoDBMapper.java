@@ -1450,7 +1450,7 @@ public class DynamoDBMapper {
     }
 
     static <X extends AmazonWebServiceRequest> X applyUserAgent(X request) {
-        request.getRequestClientOptions().addClientMarker(USER_AGENT);
+        request.getRequestClientOptions().appendUserAgent(USER_AGENT);
         return request;
     }
 }

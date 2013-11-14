@@ -30,7 +30,6 @@ public class ExecutionContext {
     private final AWSRequestMetrics awsRequestMetrics;
     private List<RequestHandler> requestHandlers;
     private String contextUserAgent;
-    private CustomBackoffStrategy backoffStrategy;
 
     /** Optional signer to enable the runtime layer to handle signing requests (and resigning on retries). */
     private Signer signer;
@@ -113,29 +112,5 @@ public class ExecutionContext {
      */
     public void setCredentials(AWSCredentials credentials) {
         this.credentials = credentials;
-    }
-
-    /**
-     * Returns the optional custom backoff strategy for controlling how long
-     * between retries on error responses. If no custom backoff strategy is
-     * specified, a default exponential backoff strategy is used.
-     *
-     * @return the optional custom backoff strategy for the associated request.
-     */
-    public CustomBackoffStrategy getCustomBackoffStrategy() {
-        return backoffStrategy;
-    }
-
-    /**
-     * Sets the optional custom backoff strategy for controlling how long
-     * between retries on error responses. If no custom backoff strategy is
-     * specified, a default exponential backoff strategy is used.
-     *
-     * @param backoffStrategy
-     *            The optional custom backoff strategy for the associated
-     *            request.
-     */
-    public void setCustomBackoffStrategy(CustomBackoffStrategy backoffStrategy) {
-        this.backoffStrategy = backoffStrategy;
     }
 }

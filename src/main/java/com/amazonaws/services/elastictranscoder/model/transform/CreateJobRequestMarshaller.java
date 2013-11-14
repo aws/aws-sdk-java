@@ -408,9 +408,4 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

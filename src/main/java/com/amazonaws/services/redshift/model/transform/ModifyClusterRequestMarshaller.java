@@ -92,6 +92,12 @@ public class ModifyClusterRequestMarshaller implements Marshaller<Request<Modify
         if (modifyClusterRequest.isAllowVersionUpgrade() != null) {
             request.addParameter("AllowVersionUpgrade", StringUtils.fromBoolean(modifyClusterRequest.isAllowVersionUpgrade()));
         }
+        if (modifyClusterRequest.getHsmClientCertificateIdentifier() != null) {
+            request.addParameter("HsmClientCertificateIdentifier", StringUtils.fromString(modifyClusterRequest.getHsmClientCertificateIdentifier()));
+        }
+        if (modifyClusterRequest.getHsmConfigurationIdentifier() != null) {
+            request.addParameter("HsmConfigurationIdentifier", StringUtils.fromString(modifyClusterRequest.getHsmConfigurationIdentifier()));
+        }
 
 
         return request;

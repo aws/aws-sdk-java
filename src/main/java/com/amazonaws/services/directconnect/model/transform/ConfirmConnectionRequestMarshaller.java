@@ -103,9 +103,4 @@ public class ConfirmConnectionRequestMarshaller implements Marshaller<Request<Co
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

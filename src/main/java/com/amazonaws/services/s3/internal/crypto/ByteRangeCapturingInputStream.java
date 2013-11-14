@@ -14,14 +14,15 @@
  */
 package com.amazonaws.services.s3.internal.crypto;
 
-import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+
+import com.amazonaws.internal.SdkFilterInputStream;
 
 /**
  * FilterInputStream that captures a range of bytes from a wrapped input stream.
  */
-public class ByteRangeCapturingInputStream extends FilterInputStream {
+public class ByteRangeCapturingInputStream extends SdkFilterInputStream {
 	private final long startingPosition;
 	private final long endingPosition;
 

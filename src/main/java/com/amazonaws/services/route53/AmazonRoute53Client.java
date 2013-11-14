@@ -14,24 +14,19 @@
  */
 package com.amazonaws.services.route53;
 
-import org.w3c.dom.Node;
+import org.w3c.dom.*;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.Map.Entry;
 
 import com.amazonaws.*;
 import com.amazonaws.auth.*;
-import com.amazonaws.handlers.HandlerChainFactory;
-import com.amazonaws.handlers.RequestHandler;
-import com.amazonaws.http.StaxResponseHandler;
-import com.amazonaws.http.DefaultErrorResponseHandler;
-import com.amazonaws.http.ExecutionContext;
-import com.amazonaws.internal.StaticCredentialsProvider;
-import com.amazonaws.transform.Unmarshaller;
-import com.amazonaws.transform.StaxUnmarshallerContext;
-import com.amazonaws.transform.StandardErrorUnmarshaller;
+import com.amazonaws.handlers.*;
+import com.amazonaws.http.*;
+import com.amazonaws.internal.*;
+import com.amazonaws.transform.*;
+import com.amazonaws.util.*;
+import com.amazonaws.util.AWSRequestMetrics.Field;
 
 import com.amazonaws.services.route53.model.*;
 import com.amazonaws.services.route53.model.transform.*;
@@ -74,7 +69,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonRoute53Client() {
         this(new DefaultAWSCredentialsProviderChain(), new ClientConfiguration());
@@ -98,7 +93,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *                       client connects to AmazonRoute53
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonRoute53Client(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
@@ -201,7 +196,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
         
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-    requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+        requestHandlers.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/route53/request.handlers"));
     }
 
@@ -279,10 +274,20 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *             If an error response is returned by AmazonRoute53 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListResourceRecordSetsResult listResourceRecordSets(ListResourceRecordSetsRequest listResourceRecordSetsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ListResourceRecordSetsRequest> request = new ListResourceRecordSetsRequestMarshaller().marshall(listResourceRecordSetsRequest);
-        return invoke(request, new ListResourceRecordSetsResultStaxUnmarshaller());
+    public ListResourceRecordSetsResult listResourceRecordSets(ListResourceRecordSetsRequest listResourceRecordSetsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listResourceRecordSetsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ListResourceRecordSetsRequest> request = null;
+        ListResourceRecordSetsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ListResourceRecordSetsRequestMarshaller().marshall(listResourceRecordSetsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new ListResourceRecordSetsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -352,10 +357,20 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *             If an error response is returned by AmazonRoute53 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ChangeResourceRecordSetsResult changeResourceRecordSets(ChangeResourceRecordSetsRequest changeResourceRecordSetsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ChangeResourceRecordSetsRequest> request = new ChangeResourceRecordSetsRequestMarshaller().marshall(changeResourceRecordSetsRequest);
-        return invoke(request, new ChangeResourceRecordSetsResultStaxUnmarshaller());
+    public ChangeResourceRecordSetsResult changeResourceRecordSets(ChangeResourceRecordSetsRequest changeResourceRecordSetsRequest) {
+        ExecutionContext executionContext = createExecutionContext(changeResourceRecordSetsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ChangeResourceRecordSetsRequest> request = null;
+        ChangeResourceRecordSetsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ChangeResourceRecordSetsRequestMarshaller().marshall(changeResourceRecordSetsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new ChangeResourceRecordSetsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -406,10 +421,20 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *             If an error response is returned by AmazonRoute53 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreateHostedZoneResult createHostedZone(CreateHostedZoneRequest createHostedZoneRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateHostedZoneRequest> request = new CreateHostedZoneRequestMarshaller().marshall(createHostedZoneRequest);
-        return invoke(request, new CreateHostedZoneResultStaxUnmarshaller());
+    public CreateHostedZoneResult createHostedZone(CreateHostedZoneRequest createHostedZoneRequest) {
+        ExecutionContext executionContext = createExecutionContext(createHostedZoneRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateHostedZoneRequest> request = null;
+        CreateHostedZoneResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreateHostedZoneRequestMarshaller().marshall(createHostedZoneRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new CreateHostedZoneResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -435,10 +460,20 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *             If an error response is returned by AmazonRoute53 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public GetHealthCheckResult getHealthCheck(GetHealthCheckRequest getHealthCheckRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<GetHealthCheckRequest> request = new GetHealthCheckRequestMarshaller().marshall(getHealthCheckRequest);
-        return invoke(request, new GetHealthCheckResultStaxUnmarshaller());
+    public GetHealthCheckResult getHealthCheck(GetHealthCheckRequest getHealthCheckRequest) {
+        ExecutionContext executionContext = createExecutionContext(getHealthCheckRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<GetHealthCheckRequest> request = null;
+        GetHealthCheckResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new GetHealthCheckRequestMarshaller().marshall(getHealthCheckRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new GetHealthCheckResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -472,10 +507,20 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *             If an error response is returned by AmazonRoute53 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreateHealthCheckResult createHealthCheck(CreateHealthCheckRequest createHealthCheckRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateHealthCheckRequest> request = new CreateHealthCheckRequestMarshaller().marshall(createHealthCheckRequest);
-        return invoke(request, new CreateHealthCheckResultStaxUnmarshaller());
+    public CreateHealthCheckResult createHealthCheck(CreateHealthCheckRequest createHealthCheckRequest) {
+        ExecutionContext executionContext = createExecutionContext(createHealthCheckRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateHealthCheckRequest> request = null;
+        CreateHealthCheckResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreateHealthCheckRequestMarshaller().marshall(createHealthCheckRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new CreateHealthCheckResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -510,10 +555,20 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *             If an error response is returned by AmazonRoute53 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public GetChangeResult getChange(GetChangeRequest getChangeRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<GetChangeRequest> request = new GetChangeRequestMarshaller().marshall(getChangeRequest);
-        return invoke(request, new GetChangeResultStaxUnmarshaller());
+    public GetChangeResult getChange(GetChangeRequest getChangeRequest) {
+        ExecutionContext executionContext = createExecutionContext(getChangeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<GetChangeRequest> request = null;
+        GetChangeResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new GetChangeRequestMarshaller().marshall(getChangeRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new GetChangeResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -551,10 +606,20 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *             If an error response is returned by AmazonRoute53 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DeleteHealthCheckResult deleteHealthCheck(DeleteHealthCheckRequest deleteHealthCheckRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteHealthCheckRequest> request = new DeleteHealthCheckRequestMarshaller().marshall(deleteHealthCheckRequest);
-        return invoke(request, new DeleteHealthCheckResultStaxUnmarshaller());
+    public DeleteHealthCheckResult deleteHealthCheck(DeleteHealthCheckRequest deleteHealthCheckRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteHealthCheckRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteHealthCheckRequest> request = null;
+        DeleteHealthCheckResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteHealthCheckRequestMarshaller().marshall(deleteHealthCheckRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DeleteHealthCheckResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -582,10 +647,20 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *             If an error response is returned by AmazonRoute53 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public GetHostedZoneResult getHostedZone(GetHostedZoneRequest getHostedZoneRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<GetHostedZoneRequest> request = new GetHostedZoneRequestMarshaller().marshall(getHostedZoneRequest);
-        return invoke(request, new GetHostedZoneResultStaxUnmarshaller());
+    public GetHostedZoneResult getHostedZone(GetHostedZoneRequest getHostedZoneRequest) {
+        ExecutionContext executionContext = createExecutionContext(getHostedZoneRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<GetHostedZoneRequest> request = null;
+        GetHostedZoneResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new GetHostedZoneRequestMarshaller().marshall(getHostedZoneRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new GetHostedZoneResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -621,10 +696,20 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *             If an error response is returned by AmazonRoute53 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListHostedZonesResult listHostedZones(ListHostedZonesRequest listHostedZonesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ListHostedZonesRequest> request = new ListHostedZonesRequestMarshaller().marshall(listHostedZonesRequest);
-        return invoke(request, new ListHostedZonesResultStaxUnmarshaller());
+    public ListHostedZonesResult listHostedZones(ListHostedZonesRequest listHostedZonesRequest) {
+        ExecutionContext executionContext = createExecutionContext(listHostedZonesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ListHostedZonesRequest> request = null;
+        ListHostedZonesResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ListHostedZonesRequestMarshaller().marshall(listHostedZonesRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new ListHostedZonesResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -669,10 +754,20 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *             If an error response is returned by AmazonRoute53 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DeleteHostedZoneResult deleteHostedZone(DeleteHostedZoneRequest deleteHostedZoneRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteHostedZoneRequest> request = new DeleteHostedZoneRequestMarshaller().marshall(deleteHostedZoneRequest);
-        return invoke(request, new DeleteHostedZoneResultStaxUnmarshaller());
+    public DeleteHostedZoneResult deleteHostedZone(DeleteHostedZoneRequest deleteHostedZoneRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteHostedZoneRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteHostedZoneRequest> request = null;
+        DeleteHostedZoneResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteHostedZoneRequestMarshaller().marshall(deleteHostedZoneRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DeleteHostedZoneResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -708,10 +803,20 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *             If an error response is returned by AmazonRoute53 indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListHealthChecksResult listHealthChecks(ListHealthChecksRequest listHealthChecksRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ListHealthChecksRequest> request = new ListHealthChecksRequestMarshaller().marshall(listHealthChecksRequest);
-        return invoke(request, new ListHealthChecksResultStaxUnmarshaller());
+    public ListHealthChecksResult listHealthChecks(ListHealthChecksRequest listHealthChecksRequest) {
+        ExecutionContext executionContext = createExecutionContext(listHealthChecksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ListHealthChecksRequest> request = null;
+        ListHealthChecksResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ListHealthChecksRequestMarshaller().marshall(listHealthChecksRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new ListHealthChecksResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -808,26 +913,27 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
         return client.getResponseMetadataForRequest(request);
     }
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, Unmarshaller<X, StaxUnmarshallerContext> unmarshaller) {
+    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
+            Unmarshaller<X, StaxUnmarshallerContext> unmarshaller,
+            ExecutionContext executionContext)
+    {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
-        for (Entry<String, String> entry : request.getOriginalRequest().copyPrivateRequestParameters().entrySet()) {
+        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
+        for (Entry<String, String> entry : originalRequest.copyPrivateRequestParameters().entrySet()) {
             request.addParameter(entry.getKey(), entry.getValue());
         }
 
         AWSCredentials credentials = awsCredentialsProvider.getCredentials();
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
-          credentials = originalRequest.getRequestCredentials();
+        if (originalRequest.getRequestCredentials() != null) {
+            credentials = originalRequest.getRequestCredentials();
         }
 
-        ExecutionContext executionContext = createExecutionContext(originalRequest);
         executionContext.setSigner(signer);
         executionContext.setCredentials(credentials);
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
-
         return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 }

@@ -106,9 +106,4 @@ public class ListTablesRequestMarshaller implements Marshaller<Request<ListTable
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

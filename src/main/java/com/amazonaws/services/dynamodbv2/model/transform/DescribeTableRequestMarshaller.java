@@ -103,9 +103,4 @@ public class DescribeTableRequestMarshaller implements Marshaller<Request<Descri
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

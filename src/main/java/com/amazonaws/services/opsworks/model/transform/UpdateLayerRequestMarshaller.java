@@ -269,9 +269,4 @@ public class UpdateLayerRequestMarshaller implements Marshaller<Request<UpdateLa
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

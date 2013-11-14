@@ -153,7 +153,6 @@ public class StringUtils {
      * Joins the strings in parts with joiner between each string
      * @param joiner the string to insert between the strings in parts
      * @param parts the parts to join
-     * @return
      */
     public static String join(String joiner, String... parts) {
         StringBuilder builder = new StringBuilder();

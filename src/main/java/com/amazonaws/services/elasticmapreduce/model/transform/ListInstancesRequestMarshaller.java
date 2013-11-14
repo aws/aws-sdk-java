@@ -123,9 +123,4 @@ public class ListInstancesRequestMarshaller implements Marshaller<Request<ListIn
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

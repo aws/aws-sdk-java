@@ -56,9 +56,9 @@ public class ListJobsByPipelineRequestMarshaller implements Marshaller<Request<L
 
 
         String uriResourcePath = "2012-09-25/jobsByPipeline/{PipelineId}?Ascending={Ascending};PageToken={PageToken}"; 
-        uriResourcePath = uriResourcePath.replace("{PipelineId}", getString(listJobsByPipelineRequest.getPipelineId())); 
-        uriResourcePath = uriResourcePath.replace("{Ascending}", getString(listJobsByPipelineRequest.getAscending())); 
-        uriResourcePath = uriResourcePath.replace("{PageToken}", getString(listJobsByPipelineRequest.getPageToken())); 
+        uriResourcePath = uriResourcePath.replace("{PipelineId}", (listJobsByPipelineRequest.getPipelineId() == null) ? "" : StringUtils.fromString(listJobsByPipelineRequest.getPipelineId())); 
+        uriResourcePath = uriResourcePath.replace("{Ascending}", (listJobsByPipelineRequest.getAscending() == null) ? "" : StringUtils.fromString(listJobsByPipelineRequest.getAscending())); 
+        uriResourcePath = uriResourcePath.replace("{PageToken}", (listJobsByPipelineRequest.getPageToken() == null) ? "" : StringUtils.fromString(listJobsByPipelineRequest.getPageToken())); 
 
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
@@ -84,10 +84,5 @@ public class ListJobsByPipelineRequestMarshaller implements Marshaller<Request<L
         
 
         return request;
-    }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
     }
 }

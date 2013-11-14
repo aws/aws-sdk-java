@@ -115,9 +115,4 @@ public class CreateTapesRequestMarshaller implements Marshaller<Request<CreateTa
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

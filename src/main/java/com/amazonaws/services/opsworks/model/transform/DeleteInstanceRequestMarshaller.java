@@ -109,9 +109,4 @@ public class DeleteInstanceRequestMarshaller implements Marshaller<Request<Delet
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

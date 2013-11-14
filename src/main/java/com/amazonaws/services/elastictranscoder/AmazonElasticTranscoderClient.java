@@ -14,30 +14,20 @@
  */
 package com.amazonaws.services.elastictranscoder;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map.Entry;
+import java.util.*;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.auth.*;
-import com.amazonaws.handlers.HandlerChainFactory;
-import com.amazonaws.handlers.RequestHandler;
-import com.amazonaws.http.HttpResponseHandler;
-import com.amazonaws.http.JsonResponseHandler;
-import com.amazonaws.http.JsonErrorResponseHandler;
-import com.amazonaws.http.ExecutionContext;
-import com.amazonaws.util.AWSRequestMetrics;
+import com.amazonaws.handlers.*;
+import com.amazonaws.http.*;
+import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
-import com.amazonaws.internal.StaticCredentialsProvider;
-import com.amazonaws.transform.Unmarshaller;
-import com.amazonaws.transform.JsonUnmarshallerContext;
-import com.amazonaws.transform.JsonErrorUnmarshaller;
-import com.amazonaws.util.json.JSONObject;
+import com.amazonaws.internal.*;
+import com.amazonaws.transform.*;
+import com.amazonaws.util.json.*;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.services.elastictranscoder.model.transform.*;
@@ -253,28 +243,28 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      *             If an error response is returned by AmazonElasticTranscoder indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public UpdatePipelineStatusResult updatePipelineStatus(UpdatePipelineStatusRequest updatePipelineStatusRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public UpdatePipelineStatusResult updatePipelineStatus(UpdatePipelineStatusRequest updatePipelineStatusRequest) {
         ExecutionContext executionContext = createExecutionContext(updatePipelineStatusRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<UpdatePipelineStatusRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdatePipelineStatusRequest> request = null;
+        UpdatePipelineStatusResult response = null;
         try {
-            request = new UpdatePipelineStatusRequestMarshaller().marshall(updatePipelineStatusRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdatePipelineStatusRequestMarshaller().marshall(updatePipelineStatusRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<UpdatePipelineStatusResult, JsonUnmarshallerContext> unmarshaller = new UpdatePipelineStatusResultJsonUnmarshaller();
+            JsonResponseHandler<UpdatePipelineStatusResult> responseHandler = new JsonResponseHandler<UpdatePipelineStatusResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<UpdatePipelineStatusResult, JsonUnmarshallerContext> unmarshaller = new UpdatePipelineStatusResultJsonUnmarshaller();
-
-        JsonResponseHandler<UpdatePipelineStatusResult> responseHandler = new JsonResponseHandler<UpdatePipelineStatusResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -310,28 +300,28 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      *             If an error response is returned by AmazonElasticTranscoder indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public UpdatePipelineNotificationsResult updatePipelineNotifications(UpdatePipelineNotificationsRequest updatePipelineNotificationsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public UpdatePipelineNotificationsResult updatePipelineNotifications(UpdatePipelineNotificationsRequest updatePipelineNotificationsRequest) {
         ExecutionContext executionContext = createExecutionContext(updatePipelineNotificationsRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<UpdatePipelineNotificationsRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdatePipelineNotificationsRequest> request = null;
+        UpdatePipelineNotificationsResult response = null;
         try {
-            request = new UpdatePipelineNotificationsRequestMarshaller().marshall(updatePipelineNotificationsRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdatePipelineNotificationsRequestMarshaller().marshall(updatePipelineNotificationsRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<UpdatePipelineNotificationsResult, JsonUnmarshallerContext> unmarshaller = new UpdatePipelineNotificationsResultJsonUnmarshaller();
+            JsonResponseHandler<UpdatePipelineNotificationsResult> responseHandler = new JsonResponseHandler<UpdatePipelineNotificationsResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<UpdatePipelineNotificationsResult, JsonUnmarshallerContext> unmarshaller = new UpdatePipelineNotificationsResultJsonUnmarshaller();
-
-        JsonResponseHandler<UpdatePipelineNotificationsResult> responseHandler = new JsonResponseHandler<UpdatePipelineNotificationsResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -360,28 +350,28 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      *             If an error response is returned by AmazonElasticTranscoder indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ReadJobResult readJob(ReadJobRequest readJobRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public ReadJobResult readJob(ReadJobRequest readJobRequest) {
         ExecutionContext executionContext = createExecutionContext(readJobRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<ReadJobRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ReadJobRequest> request = null;
+        ReadJobResult response = null;
         try {
-            request = new ReadJobRequestMarshaller().marshall(readJobRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ReadJobRequestMarshaller().marshall(readJobRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<ReadJobResult, JsonUnmarshallerContext> unmarshaller = new ReadJobResultJsonUnmarshaller();
+            JsonResponseHandler<ReadJobResult> responseHandler = new JsonResponseHandler<ReadJobResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<ReadJobResult, JsonUnmarshallerContext> unmarshaller = new ReadJobResultJsonUnmarshaller();
-
-        JsonResponseHandler<ReadJobResult> responseHandler = new JsonResponseHandler<ReadJobResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -413,28 +403,28 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      *             If an error response is returned by AmazonElasticTranscoder indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListJobsByStatusResult listJobsByStatus(ListJobsByStatusRequest listJobsByStatusRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public ListJobsByStatusResult listJobsByStatus(ListJobsByStatusRequest listJobsByStatusRequest) {
         ExecutionContext executionContext = createExecutionContext(listJobsByStatusRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<ListJobsByStatusRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListJobsByStatusRequest> request = null;
+        ListJobsByStatusResult response = null;
         try {
-            request = new ListJobsByStatusRequestMarshaller().marshall(listJobsByStatusRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListJobsByStatusRequestMarshaller().marshall(listJobsByStatusRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<ListJobsByStatusResult, JsonUnmarshallerContext> unmarshaller = new ListJobsByStatusResultJsonUnmarshaller();
+            JsonResponseHandler<ListJobsByStatusResult> responseHandler = new JsonResponseHandler<ListJobsByStatusResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<ListJobsByStatusResult, JsonUnmarshallerContext> unmarshaller = new ListJobsByStatusResultJsonUnmarshaller();
-
-        JsonResponseHandler<ListJobsByStatusResult> responseHandler = new JsonResponseHandler<ListJobsByStatusResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -463,28 +453,28 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      *             If an error response is returned by AmazonElasticTranscoder indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ReadPresetResult readPreset(ReadPresetRequest readPresetRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public ReadPresetResult readPreset(ReadPresetRequest readPresetRequest) {
         ExecutionContext executionContext = createExecutionContext(readPresetRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<ReadPresetRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ReadPresetRequest> request = null;
+        ReadPresetResult response = null;
         try {
-            request = new ReadPresetRequestMarshaller().marshall(readPresetRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ReadPresetRequestMarshaller().marshall(readPresetRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<ReadPresetResult, JsonUnmarshallerContext> unmarshaller = new ReadPresetResultJsonUnmarshaller();
+            JsonResponseHandler<ReadPresetResult> responseHandler = new JsonResponseHandler<ReadPresetResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<ReadPresetResult, JsonUnmarshallerContext> unmarshaller = new ReadPresetResultJsonUnmarshaller();
-
-        JsonResponseHandler<ReadPresetResult> responseHandler = new JsonResponseHandler<ReadPresetResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -515,28 +505,28 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      *             If an error response is returned by AmazonElasticTranscoder indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreatePipelineResult createPipeline(CreatePipelineRequest createPipelineRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public CreatePipelineResult createPipeline(CreatePipelineRequest createPipelineRequest) {
         ExecutionContext executionContext = createExecutionContext(createPipelineRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<CreatePipelineRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreatePipelineRequest> request = null;
+        CreatePipelineResult response = null;
         try {
-            request = new CreatePipelineRequestMarshaller().marshall(createPipelineRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreatePipelineRequestMarshaller().marshall(createPipelineRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<CreatePipelineResult, JsonUnmarshallerContext> unmarshaller = new CreatePipelineResultJsonUnmarshaller();
+            JsonResponseHandler<CreatePipelineResult> responseHandler = new JsonResponseHandler<CreatePipelineResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<CreatePipelineResult, JsonUnmarshallerContext> unmarshaller = new CreatePipelineResultJsonUnmarshaller();
-
-        JsonResponseHandler<CreatePipelineResult> responseHandler = new JsonResponseHandler<CreatePipelineResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -572,28 +562,28 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      *             If an error response is returned by AmazonElasticTranscoder indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CancelJobResult cancelJob(CancelJobRequest cancelJobRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public CancelJobResult cancelJob(CancelJobRequest cancelJobRequest) {
         ExecutionContext executionContext = createExecutionContext(cancelJobRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<CancelJobRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelJobRequest> request = null;
+        CancelJobResult response = null;
         try {
-            request = new CancelJobRequestMarshaller().marshall(cancelJobRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelJobRequestMarshaller().marshall(cancelJobRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<CancelJobResult, JsonUnmarshallerContext> unmarshaller = new CancelJobResultJsonUnmarshaller();
+            JsonResponseHandler<CancelJobResult> responseHandler = new JsonResponseHandler<CancelJobResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<CancelJobResult, JsonUnmarshallerContext> unmarshaller = new CancelJobResultJsonUnmarshaller();
-
-        JsonResponseHandler<CancelJobResult> responseHandler = new JsonResponseHandler<CancelJobResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -630,28 +620,28 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      *             If an error response is returned by AmazonElasticTranscoder indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public UpdatePipelineResult updatePipeline(UpdatePipelineRequest updatePipelineRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public UpdatePipelineResult updatePipeline(UpdatePipelineRequest updatePipelineRequest) {
         ExecutionContext executionContext = createExecutionContext(updatePipelineRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<UpdatePipelineRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdatePipelineRequest> request = null;
+        UpdatePipelineResult response = null;
         try {
-            request = new UpdatePipelineRequestMarshaller().marshall(updatePipelineRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdatePipelineRequestMarshaller().marshall(updatePipelineRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<UpdatePipelineResult, JsonUnmarshallerContext> unmarshaller = new UpdatePipelineResultJsonUnmarshaller();
+            JsonResponseHandler<UpdatePipelineResult> responseHandler = new JsonResponseHandler<UpdatePipelineResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<UpdatePipelineResult, JsonUnmarshallerContext> unmarshaller = new UpdatePipelineResultJsonUnmarshaller();
-
-        JsonResponseHandler<UpdatePipelineResult> responseHandler = new JsonResponseHandler<UpdatePipelineResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -681,28 +671,28 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      *             If an error response is returned by AmazonElasticTranscoder indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListPresetsResult listPresets(ListPresetsRequest listPresetsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public ListPresetsResult listPresets(ListPresetsRequest listPresetsRequest) {
         ExecutionContext executionContext = createExecutionContext(listPresetsRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<ListPresetsRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPresetsRequest> request = null;
+        ListPresetsResult response = null;
         try {
-            request = new ListPresetsRequestMarshaller().marshall(listPresetsRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPresetsRequestMarshaller().marshall(listPresetsRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<ListPresetsResult, JsonUnmarshallerContext> unmarshaller = new ListPresetsResultJsonUnmarshaller();
+            JsonResponseHandler<ListPresetsResult> responseHandler = new JsonResponseHandler<ListPresetsResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<ListPresetsResult, JsonUnmarshallerContext> unmarshaller = new ListPresetsResultJsonUnmarshaller();
-
-        JsonResponseHandler<ListPresetsResult> responseHandler = new JsonResponseHandler<ListPresetsResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -738,28 +728,28 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      *             If an error response is returned by AmazonElasticTranscoder indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DeletePipelineResult deletePipeline(DeletePipelineRequest deletePipelineRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public DeletePipelineResult deletePipeline(DeletePipelineRequest deletePipelineRequest) {
         ExecutionContext executionContext = createExecutionContext(deletePipelineRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DeletePipelineRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeletePipelineRequest> request = null;
+        DeletePipelineResult response = null;
         try {
-            request = new DeletePipelineRequestMarshaller().marshall(deletePipelineRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeletePipelineRequestMarshaller().marshall(deletePipelineRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<DeletePipelineResult, JsonUnmarshallerContext> unmarshaller = new DeletePipelineResultJsonUnmarshaller();
+            JsonResponseHandler<DeletePipelineResult> responseHandler = new JsonResponseHandler<DeletePipelineResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<DeletePipelineResult, JsonUnmarshallerContext> unmarshaller = new DeletePipelineResultJsonUnmarshaller();
-
-        JsonResponseHandler<DeletePipelineResult> responseHandler = new JsonResponseHandler<DeletePipelineResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -796,28 +786,28 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      *             If an error response is returned by AmazonElasticTranscoder indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public TestRoleResult testRole(TestRoleRequest testRoleRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public TestRoleResult testRole(TestRoleRequest testRoleRequest) {
         ExecutionContext executionContext = createExecutionContext(testRoleRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<TestRoleRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TestRoleRequest> request = null;
+        TestRoleResult response = null;
         try {
-            request = new TestRoleRequestMarshaller().marshall(testRoleRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TestRoleRequestMarshaller().marshall(testRoleRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<TestRoleResult, JsonUnmarshallerContext> unmarshaller = new TestRoleResultJsonUnmarshaller();
+            JsonResponseHandler<TestRoleResult> responseHandler = new JsonResponseHandler<TestRoleResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<TestRoleResult, JsonUnmarshallerContext> unmarshaller = new TestRoleResultJsonUnmarshaller();
-
-        JsonResponseHandler<TestRoleResult> responseHandler = new JsonResponseHandler<TestRoleResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -846,28 +836,28 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      *             If an error response is returned by AmazonElasticTranscoder indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListPipelinesResult listPipelines(ListPipelinesRequest listPipelinesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public ListPipelinesResult listPipelines(ListPipelinesRequest listPipelinesRequest) {
         ExecutionContext executionContext = createExecutionContext(listPipelinesRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<ListPipelinesRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPipelinesRequest> request = null;
+        ListPipelinesResult response = null;
         try {
-            request = new ListPipelinesRequestMarshaller().marshall(listPipelinesRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPipelinesRequestMarshaller().marshall(listPipelinesRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<ListPipelinesResult, JsonUnmarshallerContext> unmarshaller = new ListPipelinesResultJsonUnmarshaller();
+            JsonResponseHandler<ListPipelinesResult> responseHandler = new JsonResponseHandler<ListPipelinesResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<ListPipelinesResult, JsonUnmarshallerContext> unmarshaller = new ListPipelinesResultJsonUnmarshaller();
-
-        JsonResponseHandler<ListPipelinesResult> responseHandler = new JsonResponseHandler<ListPipelinesResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -896,28 +886,28 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      *             If an error response is returned by AmazonElasticTranscoder indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ReadPipelineResult readPipeline(ReadPipelineRequest readPipelineRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public ReadPipelineResult readPipeline(ReadPipelineRequest readPipelineRequest) {
         ExecutionContext executionContext = createExecutionContext(readPipelineRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<ReadPipelineRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ReadPipelineRequest> request = null;
+        ReadPipelineResult response = null;
         try {
-            request = new ReadPipelineRequestMarshaller().marshall(readPipelineRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ReadPipelineRequestMarshaller().marshall(readPipelineRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<ReadPipelineResult, JsonUnmarshallerContext> unmarshaller = new ReadPipelineResultJsonUnmarshaller();
+            JsonResponseHandler<ReadPipelineResult> responseHandler = new JsonResponseHandler<ReadPipelineResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<ReadPipelineResult, JsonUnmarshallerContext> unmarshaller = new ReadPipelineResultJsonUnmarshaller();
-
-        JsonResponseHandler<ReadPipelineResult> responseHandler = new JsonResponseHandler<ReadPipelineResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -966,28 +956,28 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      *             If an error response is returned by AmazonElasticTranscoder indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreatePresetResult createPreset(CreatePresetRequest createPresetRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public CreatePresetResult createPreset(CreatePresetRequest createPresetRequest) {
         ExecutionContext executionContext = createExecutionContext(createPresetRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<CreatePresetRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreatePresetRequest> request = null;
+        CreatePresetResult response = null;
         try {
-            request = new CreatePresetRequestMarshaller().marshall(createPresetRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreatePresetRequestMarshaller().marshall(createPresetRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<CreatePresetResult, JsonUnmarshallerContext> unmarshaller = new CreatePresetResultJsonUnmarshaller();
+            JsonResponseHandler<CreatePresetResult> responseHandler = new JsonResponseHandler<CreatePresetResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<CreatePresetResult, JsonUnmarshallerContext> unmarshaller = new CreatePresetResultJsonUnmarshaller();
-
-        JsonResponseHandler<CreatePresetResult> responseHandler = new JsonResponseHandler<CreatePresetResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -1021,28 +1011,28 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      *             If an error response is returned by AmazonElasticTranscoder indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DeletePresetResult deletePreset(DeletePresetRequest deletePresetRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public DeletePresetResult deletePreset(DeletePresetRequest deletePresetRequest) {
         ExecutionContext executionContext = createExecutionContext(deletePresetRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<DeletePresetRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeletePresetRequest> request = null;
+        DeletePresetResult response = null;
         try {
-            request = new DeletePresetRequestMarshaller().marshall(deletePresetRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeletePresetRequestMarshaller().marshall(deletePresetRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<DeletePresetResult, JsonUnmarshallerContext> unmarshaller = new DeletePresetResultJsonUnmarshaller();
+            JsonResponseHandler<DeletePresetResult> responseHandler = new JsonResponseHandler<DeletePresetResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<DeletePresetResult, JsonUnmarshallerContext> unmarshaller = new DeletePresetResultJsonUnmarshaller();
-
-        JsonResponseHandler<DeletePresetResult> responseHandler = new JsonResponseHandler<DeletePresetResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -1080,28 +1070,28 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      *             If an error response is returned by AmazonElasticTranscoder indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreateJobResult createJob(CreateJobRequest createJobRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public CreateJobResult createJob(CreateJobRequest createJobRequest) {
         ExecutionContext executionContext = createExecutionContext(createJobRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<CreateJobRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateJobRequest> request = null;
+        CreateJobResult response = null;
         try {
-            request = new CreateJobRequestMarshaller().marshall(createJobRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateJobRequestMarshaller().marshall(createJobRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<CreateJobResult, JsonUnmarshallerContext> unmarshaller = new CreateJobResultJsonUnmarshaller();
+            JsonResponseHandler<CreateJobResult> responseHandler = new JsonResponseHandler<CreateJobResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<CreateJobResult, JsonUnmarshallerContext> unmarshaller = new CreateJobResultJsonUnmarshaller();
-
-        JsonResponseHandler<CreateJobResult> responseHandler = new JsonResponseHandler<CreateJobResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -1137,28 +1127,28 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      *             If an error response is returned by AmazonElasticTranscoder indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListJobsByPipelineResult listJobsByPipeline(ListJobsByPipelineRequest listJobsByPipelineRequest) 
-            throws AmazonServiceException, AmazonClientException {
-
-        /* Create execution context */
+    public ListJobsByPipelineResult listJobsByPipeline(ListJobsByPipelineRequest listJobsByPipelineRequest) {
         ExecutionContext executionContext = createExecutionContext(listJobsByPipelineRequest);
-
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        Request<ListJobsByPipelineRequest> request;
-        awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListJobsByPipelineRequest> request = null;
+        ListJobsByPipelineResult response = null;
         try {
-            request = new ListJobsByPipelineRequestMarshaller().marshall(listJobsByPipelineRequest);
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListJobsByPipelineRequestMarshaller().marshall(listJobsByPipelineRequest);
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+            Unmarshaller<ListJobsByPipelineResult, JsonUnmarshallerContext> unmarshaller = new ListJobsByPipelineResultJsonUnmarshaller();
+            JsonResponseHandler<ListJobsByPipelineResult> responseHandler = new JsonResponseHandler<ListJobsByPipelineResult>(unmarshaller);
+            
+            return response = invoke(request, responseHandler, executionContext);
         } finally {
-            awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            endClientExecution(awsRequestMetrics, request, response);
         }
-
-        Unmarshaller<ListJobsByPipelineResult, JsonUnmarshallerContext> unmarshaller = new ListJobsByPipelineResultJsonUnmarshaller();
-
-        JsonResponseHandler<ListJobsByPipelineResult> responseHandler = new JsonResponseHandler<ListJobsByPipelineResult>(unmarshaller);
-
-        
-
-        return invoke(request, responseHandler, executionContext);
     }
 
    
@@ -1187,40 +1177,6 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      */
     public ListPresetsResult listPresets() throws AmazonServiceException, AmazonClientException {
         return listPresets(new ListPresetsRequest());
-    }
-    
-    /**
-     * <p>
-     * The TestRole operation tests the IAM role used to create the pipeline.
-     * </p>
-     * <p>
-     * The <code>TestRole</code> action lets you determine whether the IAM
-     * role you are using has sufficient permissions to let Elastic
-     * Transcoder perform tasks associated with the transcoding process. The
-     * action attempts to assume the specified IAM role, checks read access
-     * to the input and output buckets, and tries to send a test notification
-     * to Amazon SNS topics that you specify.
-     * </p>
-     * 
-     * @return The response from the TestRole service method, as returned by
-     *         AmazonElasticTranscoder.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws AccessDeniedException
-     * @throws InternalServiceException
-     * @throws ValidationException
-     * @throws IncompatibleVersionException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticTranscoder indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public TestRoleResult testRole() throws AmazonServiceException, AmazonClientException {
-        return testRole(new TestRoleRequest());
     }
     
     /**
@@ -1318,9 +1274,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
     }
 
     private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
-                                                                HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-                                                                ExecutionContext executionContext) throws AmazonClientException {
-
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
@@ -1341,7 +1296,6 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         executionContext.setSigner(signer);
         executionContext.setCredentials(credentials);
 
-        
         JsonErrorResponseHandler errorResponseHandler = new JsonErrorResponseHandler(exceptionUnmarshallers);
         X result = (X) client.execute(request, responseHandler,
                 errorResponseHandler, executionContext);

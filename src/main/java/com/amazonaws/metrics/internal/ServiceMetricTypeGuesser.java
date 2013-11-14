@@ -40,7 +40,7 @@ public enum ServiceMetricTypeGuesser {
             final String metricNameSuffix,
             final String byteCountMetricNameSuffix)
     {
-        if (!AwsSdkMetrics.isDefaultMetricsEnabled())
+        if (!AwsSdkMetrics.isMetricsEnabled())
             return null;    // metric disabled
         AmazonWebServiceRequest orig = req.getOriginalRequest();
         if (orig.getClass().getName().startsWith("com.amazonaws.services.s3")) {

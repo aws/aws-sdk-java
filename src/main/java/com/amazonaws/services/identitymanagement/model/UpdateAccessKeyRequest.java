@@ -25,13 +25,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  * key rotation work flow.
  * </p>
  * <p>
- * If the <code>UserName</code> field is not specified, the UserName is determined implicitly based on the AWS Access Key ID used to sign the request.
+ * If the <code>UserName</code> field is not specified, the UserName is determined implicitly based on the AWS access key ID used to sign the request.
  * Because this action works for access keys under the AWS account, this API can be used to manage root credentials even if the AWS account has no
  * associated users.
  * </p>
  * <p>
- * For information about rotating keys, see <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?ManagingCredentials.html">
- * Managing Keys and Certificates </a> in <i>Using AWS Identity and Access Management</i> .
+ * For information about rotating keys, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?ManagingCredentials.html"> Managing Keys
+ * and Certificates </a> in <i>Using AWS Identity and Access Management</i> .
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateAccessKey(UpdateAccessKeyRequest)
@@ -48,7 +48,7 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements S
     private String userName;
 
     /**
-     * The Access Key ID of the Secret Access Key you want to update.
+     * The access key ID of the secret access key you want to update.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>16 - 32<br/>
@@ -57,7 +57,7 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements S
     private String accessKeyId;
 
     /**
-     * The status you want to assign to the Secret Access Key.
+     * The status you want to assign to the secret access key.
      * <code>Active</code> means the key can be used for API calls to AWS,
      * while <code>Inactive</code> means the key cannot be used.
      * <p>
@@ -77,9 +77,9 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements S
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param accessKeyId The Access Key ID of the Secret Access Key you want
+     * @param accessKeyId The access key ID of the secret access key you want
      * to update.
-     * @param status The status you want to assign to the Secret Access Key.
+     * @param status The status you want to assign to the secret access key.
      * <code>Active</code> means the key can be used for API calls to AWS,
      * while <code>Inactive</code> means the key cannot be used.
      */
@@ -93,9 +93,9 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements S
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param accessKeyId The Access Key ID of the Secret Access Key you want
+     * @param accessKeyId The access key ID of the secret access key you want
      * to update.
-     * @param status The status you want to assign to the Secret Access Key.
+     * @param status The status you want to assign to the secret access key.
      * <code>Active</code> means the key can be used for API calls to AWS,
      * while <code>Inactive</code> means the key cannot be used.
      */
@@ -150,33 +150,33 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * The Access Key ID of the Secret Access Key you want to update.
+     * The access key ID of the secret access key you want to update.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>16 - 32<br/>
      * <b>Pattern: </b>[\w]*<br/>
      *
-     * @return The Access Key ID of the Secret Access Key you want to update.
+     * @return The access key ID of the secret access key you want to update.
      */
     public String getAccessKeyId() {
         return accessKeyId;
     }
     
     /**
-     * The Access Key ID of the Secret Access Key you want to update.
+     * The access key ID of the secret access key you want to update.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>16 - 32<br/>
      * <b>Pattern: </b>[\w]*<br/>
      *
-     * @param accessKeyId The Access Key ID of the Secret Access Key you want to update.
+     * @param accessKeyId The access key ID of the secret access key you want to update.
      */
     public void setAccessKeyId(String accessKeyId) {
         this.accessKeyId = accessKeyId;
     }
     
     /**
-     * The Access Key ID of the Secret Access Key you want to update.
+     * The access key ID of the secret access key you want to update.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -184,7 +184,7 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements S
      * <b>Length: </b>16 - 32<br/>
      * <b>Pattern: </b>[\w]*<br/>
      *
-     * @param accessKeyId The Access Key ID of the Secret Access Key you want to update.
+     * @param accessKeyId The access key ID of the secret access key you want to update.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -195,14 +195,14 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * The status you want to assign to the Secret Access Key.
+     * The status you want to assign to the secret access key.
      * <code>Active</code> means the key can be used for API calls to AWS,
      * while <code>Inactive</code> means the key cannot be used.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Active, Inactive
      *
-     * @return The status you want to assign to the Secret Access Key.
+     * @return The status you want to assign to the secret access key.
      *         <code>Active</code> means the key can be used for API calls to AWS,
      *         while <code>Inactive</code> means the key cannot be used.
      *
@@ -213,14 +213,14 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * The status you want to assign to the Secret Access Key.
+     * The status you want to assign to the secret access key.
      * <code>Active</code> means the key can be used for API calls to AWS,
      * while <code>Inactive</code> means the key cannot be used.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Active, Inactive
      *
-     * @param status The status you want to assign to the Secret Access Key.
+     * @param status The status you want to assign to the secret access key.
      *         <code>Active</code> means the key can be used for API calls to AWS,
      *         while <code>Inactive</code> means the key cannot be used.
      *
@@ -231,7 +231,7 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * The status you want to assign to the Secret Access Key.
+     * The status you want to assign to the secret access key.
      * <code>Active</code> means the key can be used for API calls to AWS,
      * while <code>Inactive</code> means the key cannot be used.
      * <p>
@@ -240,7 +240,7 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements S
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Active, Inactive
      *
-     * @param status The status you want to assign to the Secret Access Key.
+     * @param status The status you want to assign to the secret access key.
      *         <code>Active</code> means the key can be used for API calls to AWS,
      *         while <code>Inactive</code> means the key cannot be used.
      *
@@ -255,14 +255,14 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * The status you want to assign to the Secret Access Key.
+     * The status you want to assign to the secret access key.
      * <code>Active</code> means the key can be used for API calls to AWS,
      * while <code>Inactive</code> means the key cannot be used.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Active, Inactive
      *
-     * @param status The status you want to assign to the Secret Access Key.
+     * @param status The status you want to assign to the secret access key.
      *         <code>Active</code> means the key can be used for API calls to AWS,
      *         while <code>Inactive</code> means the key cannot be used.
      *
@@ -273,7 +273,7 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * The status you want to assign to the Secret Access Key.
+     * The status you want to assign to the secret access key.
      * <code>Active</code> means the key can be used for API calls to AWS,
      * while <code>Inactive</code> means the key cannot be used.
      * <p>
@@ -282,7 +282,7 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements S
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>Active, Inactive
      *
-     * @param status The status you want to assign to the Secret Access Key.
+     * @param status The status you want to assign to the secret access key.
      *         <code>Active</code> means the key can be used for API calls to AWS,
      *         while <code>Inactive</code> means the key cannot be used.
      *

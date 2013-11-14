@@ -56,7 +56,7 @@ public class CancelJobRequestMarshaller implements Marshaller<Request<CancelJobR
 
 
         String uriResourcePath = "2012-09-25/jobs/{Id}"; 
-        uriResourcePath = uriResourcePath.replace("{Id}", getString(cancelJobRequest.getId())); 
+        uriResourcePath = uriResourcePath.replace("{Id}", (cancelJobRequest.getId() == null) ? "" : StringUtils.fromString(cancelJobRequest.getId())); 
 
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
@@ -82,10 +82,5 @@ public class CancelJobRequestMarshaller implements Marshaller<Request<CancelJobR
         
 
         return request;
-    }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
     }
 }

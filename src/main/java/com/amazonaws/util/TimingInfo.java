@@ -211,11 +211,19 @@ public class TimingInfo {
     }
 
     public final Double getTimeTakenMillisIfKnown() {
-        if (isEndTimeKnown()) {
-            double micros = (double)TimeUnit.NANOSECONDS.toMicros(endTimeNano - startTimeNano);
-            return micros / 1000.0; // convert microseconds to milliseconds in double rather than long, preserving the precision
-        }
-        return null;
+        return isEndTimeKnown() 
+             ? durationMilliOf(startTimeNano, endTimeNano)
+             : null
+             ;
+    }
+
+    /**
+     * Returns the duration in milliseconds as double, preserving the decimal
+     * precision as necessary, for the given start and end time in nanoseconds.
+     */
+    public static double durationMilliOf(long startTimeNano, long endTimeNano) {
+        double micros = (double)TimeUnit.NANOSECONDS.toMicros(endTimeNano - startTimeNano);
+        return micros / 1000.0; // convert microseconds to milliseconds in double rather than long, preserving the precision
     }
 
     @Deprecated

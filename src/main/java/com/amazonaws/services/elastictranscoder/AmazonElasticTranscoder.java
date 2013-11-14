@@ -680,38 +680,6 @@ public interface AmazonElasticTranscoder {
     
     /**
      * <p>
-     * The TestRole operation tests the IAM role used to create the pipeline.
-     * </p>
-     * <p>
-     * The <code>TestRole</code> action lets you determine whether the IAM
-     * role you are using has sufficient permissions to let Elastic
-     * Transcoder perform tasks associated with the transcoding process. The
-     * action attempts to assume the specified IAM role, checks read access
-     * to the input and output buckets, and tries to send a test notification
-     * to Amazon SNS topics that you specify.
-     * </p>
-     * 
-     * @return The response from the TestRole service method, as returned by
-     *         AmazonElasticTranscoder.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws AccessDeniedException
-     * @throws InternalServiceException
-     * @throws ValidationException
-     * @throws IncompatibleVersionException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticTranscoder indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public TestRoleResult testRole() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
      * The ListPipelines operation gets a list of the pipelines associated
      * with the current AWS account.
      * </p>

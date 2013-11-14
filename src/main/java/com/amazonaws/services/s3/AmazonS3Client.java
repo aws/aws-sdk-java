@@ -90,7 +90,7 @@ import com.amazonaws.services.s3.internal.S3XmlResponseHandler;
 import com.amazonaws.services.s3.internal.ServerSideEncryptionHeaderHandler;
 import com.amazonaws.services.s3.internal.ServiceUtils;
 import com.amazonaws.services.s3.internal.XmlWriter;
-import com.amazonaws.services.s3.metrics.S3RequestMetric;
+import com.amazonaws.services.s3.metrics.S3ServiceMetric;
 import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
 import com.amazonaws.services.s3.model.AccessControlList;
 import com.amazonaws.services.s3.model.AmazonS3Exception;
@@ -169,6 +169,8 @@ import com.amazonaws.services.s3.model.transform.Unmarshallers;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CompleteMultipartUploadHandler;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CopyObjectResultHandler;
 import com.amazonaws.transform.Unmarshaller;
+import com.amazonaws.util.AWSRequestMetrics;
+import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.ContentLengthValidationInputStream;
 import com.amazonaws.util.DateUtils;
@@ -200,11 +202,13 @@ import com.amazonaws.util.Md5Utils;
  */
 public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
+    public static final String S3_SERVICE_NAME = "s3";
+
     /** Shared logger for client events */
     private static Log log = LogFactory.getLog(AmazonS3Client.class);
 
     static { // enable S3 specific predefined request metrics
-        AwsSdkMetrics.addAll(Arrays.asList(S3RequestMetric.values()));
+        AwsSdkMetrics.addAll(Arrays.asList(S3ServiceMetric.values()));
     }
 
     /** Responsible for handling error responses from all S3 service calls. */
@@ -405,7 +409,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      */
     @Override
     protected String getServiceAbbreviation() {
-        return "s3";
+        return S3_SERVICE_NAME;
     }
 
     /**
@@ -3081,32 +3085,49 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         return invoke(request, new S3XmlResponseHandler<X>(unmarshaller), bucketName, key);
     }
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, String bucket, String key) {
-        for (Entry<String, String> entry : request.getOriginalRequest().copyPrivateRequestParameters().entrySet()) {
-            request.addParameter(entry.getKey(), entry.getValue());
-        }
-        request.setTimeOffset(timeOffset);
-
-        /*
-         * The string we sign needs to include the exact headers that we
-         * send with the request, but the client runtime layer adds the
-         * Content-Type header before the request is sent if one isn't set, so
-         * we have to set something here otherwise the request will fail.
-         */
-        if (request.getHeaders().get("Content-Type") == null) {
-            request.addHeader("Content-Type", "application/x-www-form-urlencoded; charset=utf-8");
-        }
-
-        AWSCredentials credentials = awsCredentialsProvider.getCredentials();
+    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            String bucket, String key) {
         AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
-            credentials = originalRequest.getRequestCredentials();
-        }
-
         ExecutionContext executionContext = createExecutionContext(originalRequest);
-        executionContext.setSigner(createSigner(request, bucket, key));
-        executionContext.setCredentials(credentials);
-
-        return client.execute(request, responseHandler, errorResponseHandler, executionContext);
-    }
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        // Binds the request metrics to the current request.
+        request.setAWSRequestMetrics(awsRequestMetrics);
+        // Having the ClientExecuteTime defined here is not ideal (for the
+        // timing measurement should start as close to the top of the call
+        // stack of the service client method as possible)
+        // but definitely a safe compromise for S3 at least for now.
+        // We can incrementally make it more elaborate should the need arise
+        // for individual method.
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        X response = null;
+        try {
+            for (Entry<String, String> entry : request.getOriginalRequest()
+                    .copyPrivateRequestParameters().entrySet()) {
+                request.addParameter(entry.getKey(), entry.getValue());
+            }
+            request.setTimeOffset(timeOffset);
+            /*
+             * The string we sign needs to include the exact headers that we
+             * send with the request, but the client runtime layer adds the
+             * Content-Type header before the request is sent if one isn't set,
+             * so we have to set something here otherwise the request will fail.
+             */
+            if (request.getHeaders().get("Content-Type") == null) {
+                request.addHeader("Content-Type",
+                        "application/x-www-form-urlencoded; charset=utf-8");
+            }
+            AWSCredentials credentials = awsCredentialsProvider
+                    .getCredentials();
+            if (originalRequest.getRequestCredentials() != null) {
+                credentials = originalRequest.getRequestCredentials();
+            }
+            executionContext.setSigner(createSigner(request, bucket, key));
+            executionContext.setCredentials(credentials);
+            return response = client.execute(request, responseHandler,
+                    errorResponseHandler, executionContext);
+         } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+   }
 }

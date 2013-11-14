@@ -56,8 +56,8 @@ public class GetVaultNotificationsRequestMarshaller implements Marshaller<Reques
 
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/notification-configuration"; 
-        uriResourcePath = uriResourcePath.replace("{accountId}", getString(getVaultNotificationsRequest.getAccountId())); 
-        uriResourcePath = uriResourcePath.replace("{vaultName}", getString(getVaultNotificationsRequest.getVaultName())); 
+        uriResourcePath = uriResourcePath.replace("{accountId}", (getVaultNotificationsRequest.getAccountId() == null) ? "" : StringUtils.fromString(getVaultNotificationsRequest.getAccountId())); 
+        uriResourcePath = uriResourcePath.replace("{vaultName}", (getVaultNotificationsRequest.getVaultName() == null) ? "" : StringUtils.fromString(getVaultNotificationsRequest.getVaultName())); 
 
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
@@ -83,10 +83,5 @@ public class GetVaultNotificationsRequestMarshaller implements Marshaller<Reques
         
 
         return request;
-    }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
     }
 }

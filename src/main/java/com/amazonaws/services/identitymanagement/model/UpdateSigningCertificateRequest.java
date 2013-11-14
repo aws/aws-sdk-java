@@ -25,12 +25,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * certificate as part of a certificate rotation work flow.
  * </p>
  * <p>
- * If the <code>UserName</code> field is not specified, the UserName is determined implicitly based on the AWS Access Key ID used to sign the request.
+ * If the <code>UserName</code> field is not specified, the UserName is determined implicitly based on the AWS access key ID used to sign the request.
  * Because this action works for access keys under the AWS account, this API can be used to manage root credentials even if the AWS account has no
  * associated users.
  * </p>
  * <p>
- * For information about rotating certificates, see <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?ManagingCredentials.html">
+ * For information about rotating certificates, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?ManagingCredentials.html">
  * Managing Keys and Certificates </a> in <i>Using AWS Identity and Access Management</i> .
  * </p>
  *

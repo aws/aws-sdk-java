@@ -106,9 +106,4 @@ public class UpdateElasticIpRequestMarshaller implements Marshaller<Request<Upda
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

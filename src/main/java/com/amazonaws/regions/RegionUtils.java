@@ -14,6 +14,8 @@
  */
 package com.amazonaws.regions;
 
+import static com.amazonaws.SDKGlobalConfiguration.REGIONS_FILE_OVERRIDE_SYSTEM_PROPERTY;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -46,14 +48,16 @@ public class RegionUtils {
 
     // The CNAME "https://aws-sdk-configurations.amazonwebservices.com/" does not have a valid security cert,
     // so we instead use the "*.cloudfront.net" endpoint to enable HTTPS access to the regions file.
-    private static final String CLOUDFRONT_DISTRO = "https://d3s62xsdspbbg2.cloudfront.net/";
+    private static final String CLOUDFRONT_DISTRO = "https://d3s62xsdspbbg2.cloudfront.net/endpoints.xml";
     
     // If we cannot get the regions file from the cloudfront distribution, we first
     // switch to the S3 bucket origin before fall back to using the local file.
-    private static final String S3_BUCKET_ORIGIN_ENDPOINT = "https://aws-sdk-configurations.s3.amazonaws.com/";
+    private static final String S3_BUCKET_ORIGIN_ENDPOINT = "https://aws-sdk-configurations.s3.amazonaws.com/endpoints.xml";
+    
+    // If all things failed, this is the fall back config file. 
+    private static final String FALLBACK = "/etc/regions.xml";
     
     private static List<Region> regions;
-    private static final String REGIONS_FILE_OVERRIDE = RegionUtils.class.getName() + ".fileOverride";
 
     // Use the same logger as the http client
     private static final Log log = LogFactory.getLog("com.amazonaws.request");
@@ -134,7 +138,7 @@ public class RegionUtils {
      * initializes the static list of regions with it.
      */
     public static synchronized void init() {
-        if ( System.getProperty(REGIONS_FILE_OVERRIDE) != null ) {
+        if ( System.getProperty(REGIONS_FILE_OVERRIDE_SYSTEM_PROPERTY) != null ) {
             try {
                 loadRegionsFromOverrideFile();
             } catch ( FileNotFoundException e ) {
@@ -173,7 +177,7 @@ public class RegionUtils {
 
     private static void loadRegionsFromOverrideFile() throws FileNotFoundException {
         System.setProperty("com.amazonaws.sdk.disableCertChecking", "true");
-        String overrideFilePath = System.getProperty(REGIONS_FILE_OVERRIDE);
+        String overrideFilePath = System.getProperty(REGIONS_FILE_OVERRIDE_SYSTEM_PROPERTY);
         if ( log.isDebugEnabled() ) {
             log.debug("Using local override of the regions file (" 
                         + overrideFilePath
@@ -213,7 +217,7 @@ public class RegionUtils {
         if ( log.isDebugEnabled() ) {
             log.debug("Initializing the regions from the region file bundled with the SDK...");
         }
-        InputStream inputStream = RegionUtils.class.getResourceAsStream("/etc/regions.xml");
+        InputStream inputStream = RegionUtils.class.getResourceAsStream(FALLBACK);
         initRegions(inputStream, true);
     }
 
@@ -221,7 +225,7 @@ public class RegionUtils {
      * Fetches the regions file from the cloudfront distribution and returns an input stream to it.
      */
     private static InputStream getRegionsFileFromCloudfront() throws IOException {
-        String endpointsUrl = CLOUDFRONT_DISTRO + "endpoints.xml";
+        String endpointsUrl = CLOUDFRONT_DISTRO;
         if ( log.isDebugEnabled() ) {
             log.debug("Retreiving regions file from the cloudfront distribution: " + endpointsUrl);
         }
@@ -232,7 +236,7 @@ public class RegionUtils {
      * Fetches the regions file from the S3 bucket and returns an input stream to it.
      */
     private static InputStream getRegionsFileFromS3Bucket() throws IOException {
-        String endpointsUrl = S3_BUCKET_ORIGIN_ENDPOINT + "endpoints.xml";
+        String endpointsUrl = S3_BUCKET_ORIGIN_ENDPOINT;
         if ( log.isDebugEnabled() ) {
             log.debug("Retreiving regions file from the S3 bucket: " + endpointsUrl);
         }

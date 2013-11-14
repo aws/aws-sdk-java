@@ -109,6 +109,10 @@ public class SnapshotStaxUnmarshaller implements Unmarshaller<Snapshot, StaxUnma
                     snapshot.setEncrypted(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("EncryptedWithHSM", targetDepth)) {
+                    snapshot.setEncryptedWithHSM(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("AccountsWithRestoreAccess/AccountWithRestoreAccess", targetDepth)) {
                     snapshot.getAccountsWithRestoreAccess().add(AccountWithRestoreAccessStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -139,6 +143,10 @@ public class SnapshotStaxUnmarshaller implements Unmarshaller<Snapshot, StaxUnma
                 }
                 if (context.testExpression("ElapsedTimeInSeconds", targetDepth)) {
                     snapshot.setElapsedTimeInSeconds(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("SourceRegion", targetDepth)) {
+                    snapshot.setSourceRegion(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

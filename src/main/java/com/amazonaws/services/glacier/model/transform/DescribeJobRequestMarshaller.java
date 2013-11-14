@@ -56,9 +56,9 @@ public class DescribeJobRequestMarshaller implements Marshaller<Request<Describe
 
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/jobs/{jobId}"; 
-        uriResourcePath = uriResourcePath.replace("{accountId}", getString(describeJobRequest.getAccountId())); 
-        uriResourcePath = uriResourcePath.replace("{vaultName}", getString(describeJobRequest.getVaultName())); 
-        uriResourcePath = uriResourcePath.replace("{jobId}", getString(describeJobRequest.getJobId())); 
+        uriResourcePath = uriResourcePath.replace("{accountId}", (describeJobRequest.getAccountId() == null) ? "" : StringUtils.fromString(describeJobRequest.getAccountId())); 
+        uriResourcePath = uriResourcePath.replace("{vaultName}", (describeJobRequest.getVaultName() == null) ? "" : StringUtils.fromString(describeJobRequest.getVaultName())); 
+        uriResourcePath = uriResourcePath.replace("{jobId}", (describeJobRequest.getJobId() == null) ? "" : StringUtils.fromString(describeJobRequest.getJobId())); 
 
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
@@ -84,10 +84,5 @@ public class DescribeJobRequestMarshaller implements Marshaller<Request<Describe
         
 
         return request;
-    }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
     }
 }

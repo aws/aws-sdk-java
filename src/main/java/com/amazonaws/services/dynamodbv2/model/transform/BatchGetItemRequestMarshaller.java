@@ -207,9 +207,4 @@ public class BatchGetItemRequestMarshaller implements Marshaller<Request<BatchGe
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

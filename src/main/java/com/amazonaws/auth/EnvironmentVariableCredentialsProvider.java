@@ -13,6 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.auth;
+import static com.amazonaws.SDKGlobalConfiguration.ACCESS_KEY_ENV_VAR;
+import static com.amazonaws.SDKGlobalConfiguration.ALTERNATE_ACCESS_KEY_ENV_VAR;
+import static com.amazonaws.SDKGlobalConfiguration.ALTERNATE_SECRET_KEY_ENV_VAR;
+import static com.amazonaws.SDKGlobalConfiguration.SECRET_KEY_ENV_VAR;
 
 import com.amazonaws.AmazonClientException;
 
@@ -22,18 +26,6 @@ import com.amazonaws.AmazonClientException;
  * <code>AWS_SECRET_KEY</code> (or <code>AWS_SECRET_ACCESS_KEY</code>) environment variables.
  */
 public class EnvironmentVariableCredentialsProvider implements AWSCredentialsProvider {
-
-    /** Environment variable name for the AWS access key ID */
-    private static final String ACCESS_KEY_ENV_VAR = "AWS_ACCESS_KEY_ID";
-
-    /** Alternate environment variable name for the AWS access key ID */
-    private static final String ALTERNATE_ACCESS_KEY_ENV_VAR = "AWS_ACCESS_KEY";
-
-    /** Environment variable name for the AWS secret key */
-    private static final String SECRET_KEY_ENV_VAR = "AWS_SECRET_KEY";
-
-    /** Alternate environment variable name for the AWS secret key */
-    private static final String ALTERNATE_SECRET_KEY_ENV_VAR = "AWS_SECRET_ACCESS_KEY";
 
     public AWSCredentials getCredentials() {
         String accessKey = System.getenv(ACCESS_KEY_ENV_VAR);

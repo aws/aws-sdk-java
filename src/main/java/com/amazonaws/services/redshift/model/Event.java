@@ -43,9 +43,24 @@ public class Event implements Serializable {
     private String message;
 
     /**
+     * A list of the event categories.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> eventCategories;
+
+    /**
+     * The severity of the event. <p>Values: ERROR, INFO
+     */
+    private String severity;
+
+    /**
      * The date and time of the event.
      */
     private java.util.Date date;
+
+    /**
+     * The identifier of the event.
+     */
+    private String eventId;
 
     /**
      * The identifier for the source of the event.
@@ -196,6 +211,107 @@ public class Event implements Serializable {
     }
 
     /**
+     * A list of the event categories.
+     *
+     * @return A list of the event categories.
+     */
+    public java.util.List<String> getEventCategories() {
+        if (eventCategories == null) {
+              eventCategories = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              eventCategories.setAutoConstruct(true);
+        }
+        return eventCategories;
+    }
+    
+    /**
+     * A list of the event categories.
+     *
+     * @param eventCategories A list of the event categories.
+     */
+    public void setEventCategories(java.util.Collection<String> eventCategories) {
+        if (eventCategories == null) {
+            this.eventCategories = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> eventCategoriesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(eventCategories.size());
+        eventCategoriesCopy.addAll(eventCategories);
+        this.eventCategories = eventCategoriesCopy;
+    }
+    
+    /**
+     * A list of the event categories.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param eventCategories A list of the event categories.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public Event withEventCategories(String... eventCategories) {
+        if (getEventCategories() == null) setEventCategories(new java.util.ArrayList<String>(eventCategories.length));
+        for (String value : eventCategories) {
+            getEventCategories().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of the event categories.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param eventCategories A list of the event categories.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public Event withEventCategories(java.util.Collection<String> eventCategories) {
+        if (eventCategories == null) {
+            this.eventCategories = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> eventCategoriesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(eventCategories.size());
+            eventCategoriesCopy.addAll(eventCategories);
+            this.eventCategories = eventCategoriesCopy;
+        }
+
+        return this;
+    }
+
+    /**
+     * The severity of the event. <p>Values: ERROR, INFO
+     *
+     * @return The severity of the event. <p>Values: ERROR, INFO
+     */
+    public String getSeverity() {
+        return severity;
+    }
+    
+    /**
+     * The severity of the event. <p>Values: ERROR, INFO
+     *
+     * @param severity The severity of the event. <p>Values: ERROR, INFO
+     */
+    public void setSeverity(String severity) {
+        this.severity = severity;
+    }
+    
+    /**
+     * The severity of the event. <p>Values: ERROR, INFO
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param severity The severity of the event. <p>Values: ERROR, INFO
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public Event withSeverity(String severity) {
+        this.severity = severity;
+        return this;
+    }
+
+    /**
      * The date and time of the event.
      *
      * @return The date and time of the event.
@@ -229,6 +345,39 @@ public class Event implements Serializable {
     }
 
     /**
+     * The identifier of the event.
+     *
+     * @return The identifier of the event.
+     */
+    public String getEventId() {
+        return eventId;
+    }
+    
+    /**
+     * The identifier of the event.
+     *
+     * @param eventId The identifier of the event.
+     */
+    public void setEventId(String eventId) {
+        this.eventId = eventId;
+    }
+    
+    /**
+     * The identifier of the event.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param eventId The identifier of the event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public Event withEventId(String eventId) {
+        this.eventId = eventId;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -243,7 +392,10 @@ public class Event implements Serializable {
         if (getSourceIdentifier() != null) sb.append("SourceIdentifier: " + getSourceIdentifier() + ",");
         if (getSourceType() != null) sb.append("SourceType: " + getSourceType() + ",");
         if (getMessage() != null) sb.append("Message: " + getMessage() + ",");
-        if (getDate() != null) sb.append("Date: " + getDate() );
+        if (getEventCategories() != null) sb.append("EventCategories: " + getEventCategories() + ",");
+        if (getSeverity() != null) sb.append("Severity: " + getSeverity() + ",");
+        if (getDate() != null) sb.append("Date: " + getDate() + ",");
+        if (getEventId() != null) sb.append("EventId: " + getEventId() );
         sb.append("}");
         return sb.toString();
     }
@@ -256,7 +408,10 @@ public class Event implements Serializable {
         hashCode = prime * hashCode + ((getSourceIdentifier() == null) ? 0 : getSourceIdentifier().hashCode()); 
         hashCode = prime * hashCode + ((getSourceType() == null) ? 0 : getSourceType().hashCode()); 
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode()); 
+        hashCode = prime * hashCode + ((getEventCategories() == null) ? 0 : getEventCategories().hashCode()); 
+        hashCode = prime * hashCode + ((getSeverity() == null) ? 0 : getSeverity().hashCode()); 
         hashCode = prime * hashCode + ((getDate() == null) ? 0 : getDate().hashCode()); 
+        hashCode = prime * hashCode + ((getEventId() == null) ? 0 : getEventId().hashCode()); 
         return hashCode;
     }
     
@@ -274,8 +429,14 @@ public class Event implements Serializable {
         if (other.getSourceType() != null && other.getSourceType().equals(this.getSourceType()) == false) return false; 
         if (other.getMessage() == null ^ this.getMessage() == null) return false;
         if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false) return false; 
+        if (other.getEventCategories() == null ^ this.getEventCategories() == null) return false;
+        if (other.getEventCategories() != null && other.getEventCategories().equals(this.getEventCategories()) == false) return false; 
+        if (other.getSeverity() == null ^ this.getSeverity() == null) return false;
+        if (other.getSeverity() != null && other.getSeverity().equals(this.getSeverity()) == false) return false; 
         if (other.getDate() == null ^ this.getDate() == null) return false;
         if (other.getDate() != null && other.getDate().equals(this.getDate()) == false) return false; 
+        if (other.getEventId() == null ^ this.getEventId() == null) return false;
+        if (other.getEventId() != null && other.getEventId().equals(this.getEventId()) == false) return false; 
         return true;
     }
     

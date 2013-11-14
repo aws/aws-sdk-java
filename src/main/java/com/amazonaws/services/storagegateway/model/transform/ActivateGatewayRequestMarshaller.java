@@ -121,9 +121,4 @@ public class ActivateGatewayRequestMarshaller implements Marshaller<Request<Acti
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

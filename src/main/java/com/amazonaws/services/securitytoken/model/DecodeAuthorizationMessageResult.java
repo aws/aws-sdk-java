@@ -18,39 +18,49 @@ import java.io.Serializable;
 
 
 /**
- * 
+ * <p>
+ * A document that contains additional information about the authorization status of a request from an encoded message that is returned in response to an
+ * AWS request.
+ * </p>
  */
 public class DecodeAuthorizationMessageResult implements Serializable {
 
     /**
-     * An XML document that contains the decoded message.
+     * An XML document that contains the decoded message. For more
+     * information, see <code>DecodeAuthorizationMessage</code>.
      */
     private String decodedMessage;
 
     /**
-     * An XML document that contains the decoded message.
+     * An XML document that contains the decoded message. For more
+     * information, see <code>DecodeAuthorizationMessage</code>.
      *
-     * @return An XML document that contains the decoded message.
+     * @return An XML document that contains the decoded message. For more
+     *         information, see <code>DecodeAuthorizationMessage</code>.
      */
     public String getDecodedMessage() {
         return decodedMessage;
     }
     
     /**
-     * An XML document that contains the decoded message.
+     * An XML document that contains the decoded message. For more
+     * information, see <code>DecodeAuthorizationMessage</code>.
      *
-     * @param decodedMessage An XML document that contains the decoded message.
+     * @param decodedMessage An XML document that contains the decoded message. For more
+     *         information, see <code>DecodeAuthorizationMessage</code>.
      */
     public void setDecodedMessage(String decodedMessage) {
         this.decodedMessage = decodedMessage;
     }
     
     /**
-     * An XML document that contains the decoded message.
+     * An XML document that contains the decoded message. For more
+     * information, see <code>DecodeAuthorizationMessage</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param decodedMessage An XML document that contains the decoded message.
+     * @param decodedMessage An XML document that contains the decoded message. For more
+     *         information, see <code>DecodeAuthorizationMessage</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

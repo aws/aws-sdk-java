@@ -19,8 +19,8 @@ package com.amazonaws.event;
  * <p>
  * This class could be used for both Amazon S3 and Amazon Glacier clients. The
  * legacy Amazon S3 progress listener
- * {@link com.amazonaws.services.s3.model.ProgressListener} is deprecated in
- * favor of this new class.
+ * com.amazonaws.services.s3.model.ProgressListener has been deprecated in favor
+ * of this new class.
  * </p>
  * 
  * @see ProgressEvent

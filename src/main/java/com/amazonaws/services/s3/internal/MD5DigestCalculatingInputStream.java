@@ -14,17 +14,18 @@
  */
 package com.amazonaws.services.s3.internal;
 
-import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+import com.amazonaws.internal.SdkFilterInputStream;
+
 /**
  * Simple InputStream wrapper that examines the wrapped stream's contents as
  * they are read and calculates and MD5 digest.
  */
-public class MD5DigestCalculatingInputStream extends FilterInputStream {
+public class MD5DigestCalculatingInputStream extends SdkFilterInputStream {
     
     /** The MD5 message digest being calculated by this input stream */
     private MessageDigest digest;

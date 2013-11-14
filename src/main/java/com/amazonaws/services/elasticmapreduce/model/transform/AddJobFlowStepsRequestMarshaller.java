@@ -173,9 +173,4 @@ public class AddJobFlowStepsRequestMarshaller implements Marshaller<Request<AddJ
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

@@ -35,6 +35,7 @@ import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.http.AmazonHttpClient;
+import com.amazonaws.retry.RetryUtils;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.ConsistentReads;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.PaginationLoadingStrategy;
@@ -1331,7 +1332,7 @@ public class DynamoDBMapper {
             // into smaller parts.
 
             if (failedBatch.getException() instanceof AmazonServiceException
-            && AmazonHttpClient.isRequestEntityTooLargeException((AmazonServiceException) failedBatch.getException())) {
+            && RetryUtils.isRequestEntityTooLargeException((AmazonServiceException) failedBatch.getException())) {
 
                 // If only one item left, the item size must beyond 64k, which
                 // exceedes the limit.
@@ -1359,7 +1360,7 @@ public class DynamoDBMapper {
         for (FailedBatch failedBatch : failedBatches) {
            Exception e = failedBatch.getException();
             if (e instanceof AmazonServiceException
-                    && AmazonHttpClient.isThrottlingException((AmazonServiceException) e)) {
+                    && RetryUtils.isThrottlingException((AmazonServiceException) e)) {
                 return true;
             }
         }

@@ -58,8 +58,20 @@ public class EventStaxUnmarshaller implements Unmarshaller<Event, StaxUnmarshall
                     event.setMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("EventCategories/EventCategory", targetDepth)) {
+                    event.getEventCategories().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("Severity", targetDepth)) {
+                    event.setSeverity(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("Date", targetDepth)) {
                     event.setDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("EventId", targetDepth)) {
+                    event.setEventId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

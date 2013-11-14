@@ -61,7 +61,8 @@ public class ListUsersRequest extends AmazonWebServiceRequest implements Seriali
      * Use this parameter only when paginating results to indicate the
      * maximum number of user names you want in the response. If there are
      * additional user names beyond the maximum you specify, the
-     * <code>IsTruncated</code> response element is <code>true</code>.
+     * <code>IsTruncated</code> response element is <code>true</code>. This
+     * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -216,7 +217,8 @@ public class ListUsersRequest extends AmazonWebServiceRequest implements Seriali
      * Use this parameter only when paginating results to indicate the
      * maximum number of user names you want in the response. If there are
      * additional user names beyond the maximum you specify, the
-     * <code>IsTruncated</code> response element is <code>true</code>.
+     * <code>IsTruncated</code> response element is <code>true</code>. This
+     * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -224,7 +226,8 @@ public class ListUsersRequest extends AmazonWebServiceRequest implements Seriali
      * @return Use this parameter only when paginating results to indicate the
      *         maximum number of user names you want in the response. If there are
      *         additional user names beyond the maximum you specify, the
-     *         <code>IsTruncated</code> response element is <code>true</code>.
+     *         <code>IsTruncated</code> response element is <code>true</code>. This
+     *         parameter is optional. If you do not include it, it defaults to 100.
      */
     public Integer getMaxItems() {
         return maxItems;
@@ -234,7 +237,8 @@ public class ListUsersRequest extends AmazonWebServiceRequest implements Seriali
      * Use this parameter only when paginating results to indicate the
      * maximum number of user names you want in the response. If there are
      * additional user names beyond the maximum you specify, the
-     * <code>IsTruncated</code> response element is <code>true</code>.
+     * <code>IsTruncated</code> response element is <code>true</code>. This
+     * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -242,7 +246,8 @@ public class ListUsersRequest extends AmazonWebServiceRequest implements Seriali
      * @param maxItems Use this parameter only when paginating results to indicate the
      *         maximum number of user names you want in the response. If there are
      *         additional user names beyond the maximum you specify, the
-     *         <code>IsTruncated</code> response element is <code>true</code>.
+     *         <code>IsTruncated</code> response element is <code>true</code>. This
+     *         parameter is optional. If you do not include it, it defaults to 100.
      */
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
@@ -252,7 +257,8 @@ public class ListUsersRequest extends AmazonWebServiceRequest implements Seriali
      * Use this parameter only when paginating results to indicate the
      * maximum number of user names you want in the response. If there are
      * additional user names beyond the maximum you specify, the
-     * <code>IsTruncated</code> response element is <code>true</code>.
+     * <code>IsTruncated</code> response element is <code>true</code>. This
+     * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -262,7 +268,8 @@ public class ListUsersRequest extends AmazonWebServiceRequest implements Seriali
      * @param maxItems Use this parameter only when paginating results to indicate the
      *         maximum number of user names you want in the response. If there are
      *         additional user names beyond the maximum you specify, the
-     *         <code>IsTruncated</code> response element is <code>true</code>.
+     *         <code>IsTruncated</code> response element is <code>true</code>. This
+     *         parameter is optional. If you do not include it, it defaults to 100.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

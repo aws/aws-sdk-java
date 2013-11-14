@@ -16,6 +16,8 @@ package com.amazonaws;
 
 import org.apache.http.annotation.NotThreadSafe;
 
+import com.amazonaws.retry.PredefinedRetryPolicies;
+import com.amazonaws.retry.RetryPolicy;
 import com.amazonaws.http.IdleConnectionReaper;
 import com.amazonaws.util.VersionInfoUtils;
 /**
@@ -34,9 +36,21 @@ public class ClientConfiguration {
     /** The default HTTP user agent header for AWS Java SDK clients. */
     public static final String DEFAULT_USER_AGENT = VersionInfoUtils.getUserAgent();
 
-    /** The default maximum number of retries for error responses. */
-    public static final int DEFAULT_MAX_RETRIES = 3;
-
+    /**
+     * Default request retry policy, including the maximum retry count of 3, the
+     * default retry condition and the default back-off strategy.
+     * <p>
+     * Note this default policy might be overridden by a service-specific
+     * default policy, if the user doesn't provide a custom RetryPolicy
+     * implementation by {@link #setRetryPolicy(RetryPolicy)}. For example,
+     * AmazonDynamoDBClient by default uses a different retry policy
+     * {@link PredefinedRetryPolicies#DYNAMODB_DEFAULT}.
+     * 
+     * @see PredefinedRetryPolicies#DEFAULT
+     * @see PredefinedRetryPolicies#DYNAMODB_DEFAULT
+     */
+    public static final RetryPolicy DEFAULT_RETRY_POLICY = PredefinedRetryPolicies.DEFAULT;
+    
     /**
      * The default on whether to use the {@link IdleConnectionReaper} to manage stale connections
      *
@@ -49,9 +63,14 @@ public class ClientConfiguration {
 
     /**
      * The maximum number of times that a retryable failed request (ex: a 5xx
-     * response from a service) will be retried.
+     * response from a service) will be retried. Or -1 if the user has not
+     * explicitly set this value, in which case the configured RetryPolicy will
+     * be used to control the retry count.
      */
-    private int maxErrorRetry = DEFAULT_MAX_RETRIES;
+    private int maxErrorRetry = -1;
+    
+    /** The retry policy upon failed requests. **/
+    private RetryPolicy retryPolicy = DEFAULT_RETRY_POLICY;
 
     /**
      * The protocol to use when connecting to Amazon Web Services.
@@ -124,6 +143,7 @@ public class ClientConfiguration {
         this.connectionTimeout = other.connectionTimeout;
         this.maxConnections    = other.maxConnections;
         this.maxErrorRetry     = other.maxErrorRetry;
+        this.retryPolicy       = other.retryPolicy;
         this.protocol          = other.protocol;
         this.proxyDomain       = other.proxyDomain;
         this.proxyHost         = other.proxyHost;
@@ -482,11 +502,49 @@ public class ClientConfiguration {
 	}
 
     /**
+     * Returns the retry policy upon failed requests.
+     * 
+     * @return The retry policy upon failed requests.
+     */
+    public RetryPolicy getRetryPolicy() {
+        return retryPolicy;
+    }
+
+    /**
+     * Sets the retry policy upon failed requests. User could specify whether
+     * the RetryPolicy should honor maxErrorRetry set by
+     * {@link #setMaxErrorRetry(int)}.
+     * 
+     * @param retryPolicy
+     *            The retry policy upon failed requests.
+     */
+    public void setRetryPolicy(RetryPolicy retryPolicy) {
+        this.retryPolicy = retryPolicy;
+    }
+    
+    /**
+     * Sets the retry policy upon failed requests, and returns the updated
+     * ClientConfiguration object. User could specify whether the RetryPolicy
+     * should honor maxErrorRetry set by {@link #setMaxErrorRetry(int)}
+     * 
+     * @param retryPolicy
+     *            The retry policy upon failed requests.
+     */
+    public ClientConfiguration withRetryPolicy(RetryPolicy retryPolicy) {
+        setRetryPolicy(retryPolicy);
+        return this;
+    }
+    
+    /**
      * Returns the maximum number of retry attempts for failed retryable
-     * requests (ex: 5xx error responses from a service).
-     *
+     * requests (ex: 5xx error responses from a service). This method returns -1
+     * before a maxErrorRetry value is explicitly set by
+     * {@link #setMaxErrorRetry(int)}, in which case the configured RetryPolicy
+     * will be used to control the retry count.
+     * 
      * @return The maximum number of retry attempts for failed retryable
-     *         requests.
+     *         requests, or -1 if maxErrorRetry has not been set by
+     *         {@link #setMaxErrorRetry(int)}.
      */
     public int getMaxErrorRetry() {
         return maxErrorRetry;
@@ -498,9 +556,12 @@ public class ClientConfiguration {
      *
      * @param maxErrorRetry
      *            The maximum number of retry attempts for failed retryable
-     *            requests.
+     *            requests. This value should not be negative.
      */
     public void setMaxErrorRetry(int maxErrorRetry) {
+        if (maxErrorRetry < 0) {
+            throw new IllegalArgumentException("maxErrorRetry shoud be non-negative");
+        }
         this.maxErrorRetry = maxErrorRetry;
     }
 
@@ -511,7 +572,7 @@ public class ClientConfiguration {
      *
      * @param maxErrorRetry
      *            The maximum number of retry attempts for failed retryable
-     *            requests.
+     *            requests. This value should not be negative.
      *
      * @return The updated ClientConfiguration object.
      */

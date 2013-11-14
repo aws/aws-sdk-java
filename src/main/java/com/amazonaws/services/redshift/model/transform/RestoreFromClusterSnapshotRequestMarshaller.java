@@ -67,6 +67,15 @@ public class RestoreFromClusterSnapshotRequestMarshaller implements Marshaller<R
         if (restoreFromClusterSnapshotRequest.getOwnerAccount() != null) {
             request.addParameter("OwnerAccount", StringUtils.fromString(restoreFromClusterSnapshotRequest.getOwnerAccount()));
         }
+        if (restoreFromClusterSnapshotRequest.getHsmClientCertificateIdentifier() != null) {
+            request.addParameter("HsmClientCertificateIdentifier", StringUtils.fromString(restoreFromClusterSnapshotRequest.getHsmClientCertificateIdentifier()));
+        }
+        if (restoreFromClusterSnapshotRequest.getHsmConfigurationIdentifier() != null) {
+            request.addParameter("HsmConfigurationIdentifier", StringUtils.fromString(restoreFromClusterSnapshotRequest.getHsmConfigurationIdentifier()));
+        }
+        if (restoreFromClusterSnapshotRequest.getElasticIp() != null) {
+            request.addParameter("ElasticIp", StringUtils.fromString(restoreFromClusterSnapshotRequest.getElasticIp()));
+        }
 
 
         return request;

@@ -272,9 +272,4 @@ public class CreateLayerRequestMarshaller implements Marshaller<Request<CreateLa
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

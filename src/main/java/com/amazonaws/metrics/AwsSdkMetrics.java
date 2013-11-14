@@ -14,6 +14,7 @@
  */
 
 package com.amazonaws.metrics;
+import static com.amazonaws.SDKGlobalConfiguration.DEFAULT_METRICS_SYSTEM_PROPERTY;
 
 import java.io.File;
 import java.util.Collection;
@@ -23,12 +24,14 @@ import java.util.Set;
 
 import org.apache.commons.logging.LogFactory;
 
+import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 import com.amazonaws.auth.PropertiesCredentials;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.util.AWSServiceMetrics;
 import com.amazonaws.util.jmx.MBeans;
 
 /**
@@ -48,14 +51,14 @@ import com.amazonaws.util.jmx.MBeans;
  * {@link #disableMetrics()}.
  * <p>
  * Clients who needs to fully customize the metric collection can implement the
- * SPI {@link RequestMetricCollector}, and then replace the default AWS SDK
+ * SPI {@link MetricCollector}, and then replace the default AWS SDK
  * implementation of the collector via
  * {@link #setMetricCollector(MetricCollector)}.
  * <p>
  * Alternatively, for limited customization of the internal collector
  * implementation provided by the AWS SDK, one can extend the internal Amazon
  * CloudWatch request metric collector. See the javadoc at
- * {@link com.amazonaws.metrics.internal.cloudwatch.CloudWatchMetricConfig} for
+ * com.amazonaws.metrics.internal.cloudwatch.CloudWatchMetricConfig for
  * more details.
  */
 public enum AwsSdkMetrics {
@@ -63,17 +66,6 @@ public enum AwsSdkMetrics {
     public static final String METRICS_NAMESPACE = "AWSSDK/Java";
     private static final String MBEAN_OBJECT_NAME =
         "com.amazonaws.management:type=" + AwsSdkMetrics.class.getSimpleName();
-    /**
-     * System property used when starting up the JVM to enable the default
-     * metrics collected by the AWS SDK, which uploads the derived statistics to
-     * Amazon CloudWatch.
-     * 
-     * <pre>
-     * Example:
-     *  -Dcom.amazonaws.sdk.enableDefaultMetrics
-     * </pre>
-     */
-    public static final String DEFAULT_METRICS_SYSTEM_PROPERTY = "com.amazonaws.sdk.enableDefaultMetrics";
     /**
      * Used to exclude the generation of JVM metrics when the AWS SDK default
      * metrics is enabled when starting up the JVM.
@@ -173,7 +165,7 @@ public enum AwsSdkMetrics {
      * Returns a non-null request metric collector for the SDK. If no custom
      * request metric collector has previously been specified via
      * {@link #setMetricCollector(MetricCollector)} and the
-     * {@link #DEFAULT_METRICS_SYSTEM_PROPERTY} has been set, then this method
+     * {@link SDKGlobalConfiguration#DEFAULT_METRICS_SYSTEM_PROPERTY} has been set, then this method
      * will initialize and return the default metric collector provided by the
      * AWS SDK on a best-attempt basis.
      */
@@ -245,11 +237,20 @@ public enum AwsSdkMetrics {
 
     /**
      * Returns true if the system property
-     * {@link AwsSdkMetrics#DEFAULT_METRICS_SYSTEM_PROPERTY} has been
+     * {@link SDKGlobalConfiguration#DEFAULT_METRICS_SYSTEM_PROPERTY} has been
      * set; false otherwise.
      */
     public static boolean isDefaultMetricsEnabled() {
         return defaultMetricsEnabled;
+    }
+
+    /**
+     * Returns true if metrics at the AWS SDK level is enabled; false
+     * if disabled.
+     */
+    public static boolean isMetricsEnabled() {
+        MetricCollector mc = AwsSdkMetrics.mc;
+        return mc != null && mc.isEnabled();
     }
 
     /**
@@ -534,8 +535,7 @@ public enum AwsSdkMetrics {
         }
         @Override
         public boolean isMetricsEnabled() {
-            MetricCollector mc = AwsSdkMetrics.mc;
-            return mc != null && mc.isEnabled();
+            return AwsSdkMetrics.isMetricsEnabled();
         }
 
         @Override
@@ -588,11 +588,15 @@ public enum AwsSdkMetrics {
         MetricRegistry() {
             metricTypes.add(Field.ClientExecuteTime);
             metricTypes.add(Field.Exception);
+            metricTypes.add(Field.HttpClientRetryCount);
             metricTypes.add(Field.HttpRequestTime);
             metricTypes.add(Field.RequestCount);
 //            metricTypes.add(Field.RequestSigningTime);
 //            metricTypes.add(Field.ResponseProcessingTime);
             metricTypes.add(Field.RetryCount);
+            metricTypes.add(Field.HttpClientSendRequestTime);
+            metricTypes.add(Field.HttpClientReceiveResponseTime);
+            metricTypes.add(AWSServiceMetrics.HttpClientGetConnectionTime);
             syncReadOnly();
         }
 

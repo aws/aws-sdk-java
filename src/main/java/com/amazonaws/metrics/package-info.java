@@ -18,24 +18,48 @@
  * 
  * When the default request metric collection system is enabled, 
  * the default AWS SDK implementation
- * captures a set of predefined core metrics that are grouped under two major 
- * categories:  AWS Request Metrics and JVM/OS Metrics.
+ * captures a set of predefined core metrics that are grouped under three major 
+ * categories:  AWS Request Metrics, AWS Service Metrics, and Machine Metrics.
+ * <h3>Nomenclature</h3>
+ * <ul>
+ * <li>Physical Http Request - an http request initiated by the http client library used by AWS Java SDK . No retry is involved, or at least not initiated from the JVM.</li>
+ * <li>Logical Http Request - an http request initiated from the AWS Java SDK by executing the underlying http client library. A logical request may involve multiple physical requests due to retries.</li>
+ * <li>Service Client type - the specific subtype of AmazonWebServiceClient, such as AmazonS3Client, AmazonDynamoDBClient, etc.</li>
+ * <li>Request type - the specific subtype of AmazonWebServiceRequest, such as PutItemRequest, PutObjectRequest, etc.</li>
+ * <li>Http Client Library - the <a href="http://hc.apache.org/httpcomponents-client-4.2.x/index.html">Apache HttpComponents client</a> library</li>
+ * </ul>
+ * 
  * <h3>AWS Request Metrics</h3>
  * <ol>
  * <li>ClientExecuteTime - Total number of milliseconds taken for a 
  * request/response including the time taken to execute the request handlers,
  * round trip to AWS, and the time taken to execute the response handlers.
  * Captured on a per request type level.</li>
- * <li>Exception - Number of request failure. Captured both on a per service 
+ * <li>Exception - Number of logical request failure. Captured both on a per service 
  * client type level and a per request type level.</li>
- * <li>HttpRequestTime - Number of milliseconds taken for a request/response 
+ * <li>HttpRequestTime - Number of milliseconds taken for a logical request/response 
  * round trip to AWS. Captured on a per request type level.< /li>
- * <li>RequestCount - Number of requests. Captured on a per service 
+ * <li>HttpClientSendRequestTime - Number of milliseconds taken for a physical request
+ * to get sent to AWS. Captured on a per request type level.< /li>
+ * <li>HttpClientReceiveResponseTime - Number of milliseconds taken for a physical response
+ * to get received from AWS. Captured on a per request type level.< /li>
+ * <li>HttpClientRetryCount - Number of retries per physical request. Captured on a per service 
  * client type level. </li>
- * <li>RetryCount - Number of retries per request. Captured on a per service 
+ * <li>RequestCount - Number of logical requests. Captured on a per service 
+ * client type level. </li>
+ * <li>RetryCount - Number of retries per logical request. Captured on a per service 
  * client type level. </li>
  * </ol>
- * <h3>JVM/OS Metrics</h3>
+ * <h3>AWS Service Metrics</h3>
+ * <ol>
+ * <li>HttpClientGetConnectionTime - Total number of milliseconds taken for the
+ * underlying http client library to get a connection.
+ * <li>S3DownloadThroughput - Number of bytes downloaded from S3 per second.</li>
+ * <li>S3DownloadByteCount - Number of bytes downloaded from S3.</li>
+ * <li>S3UploadThroughput - Number of bytes uploaded to S3 per second.</li>
+ * <li>S3UploadByteCount - Number of bytes uploaded to S3.</li>
+ * </ol>
+ * <h3>Machine Metrics</h3>
  * <h4>Memory</h4>
  * <ol>
  * <li>TotalMemory - Total amount of memory currently available to the JVM for

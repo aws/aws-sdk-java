@@ -14,24 +14,19 @@
  */
 package com.amazonaws.services.rds;
 
-import org.w3c.dom.Node;
+import org.w3c.dom.*;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.Map.Entry;
 
 import com.amazonaws.*;
 import com.amazonaws.auth.*;
-import com.amazonaws.handlers.HandlerChainFactory;
-import com.amazonaws.handlers.RequestHandler;
-import com.amazonaws.http.StaxResponseHandler;
-import com.amazonaws.http.DefaultErrorResponseHandler;
-import com.amazonaws.http.ExecutionContext;
-import com.amazonaws.internal.StaticCredentialsProvider;
-import com.amazonaws.transform.Unmarshaller;
-import com.amazonaws.transform.StaxUnmarshallerContext;
-import com.amazonaws.transform.StandardErrorUnmarshaller;
+import com.amazonaws.handlers.*;
+import com.amazonaws.http.*;
+import com.amazonaws.internal.*;
+import com.amazonaws.transform.*;
+import com.amazonaws.util.*;
+import com.amazonaws.util.AWSRequestMetrics.Field;
 
 import com.amazonaws.services.rds.model.*;
 import com.amazonaws.services.rds.model.transform.*;
@@ -91,7 +86,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonRDSClient() {
         this(new DefaultAWSCredentialsProviderChain(), new ClientConfiguration());
@@ -115,7 +110,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *                       client connects to AmazonRDS
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonRDSClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
@@ -259,7 +254,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-    requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+        requestHandlers.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/rds/request.handlers"));
     }
 
@@ -287,10 +282,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeReservedDBInstancesResult describeReservedDBInstances(DescribeReservedDBInstancesRequest describeReservedDBInstancesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeReservedDBInstancesRequest> request = new DescribeReservedDBInstancesRequestMarshaller().marshall(describeReservedDBInstancesRequest);
-        return invoke(request, new DescribeReservedDBInstancesResultStaxUnmarshaller());
+    public DescribeReservedDBInstancesResult describeReservedDBInstances(DescribeReservedDBInstancesRequest describeReservedDBInstancesRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeReservedDBInstancesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeReservedDBInstancesRequest> request = null;
+        DescribeReservedDBInstancesResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeReservedDBInstancesRequestMarshaller().marshall(describeReservedDBInstancesRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeReservedDBInstancesResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -317,10 +322,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public EventSubscription removeSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest removeSourceIdentifierFromSubscriptionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<RemoveSourceIdentifierFromSubscriptionRequest> request = new RemoveSourceIdentifierFromSubscriptionRequestMarshaller().marshall(removeSourceIdentifierFromSubscriptionRequest);
-        return invoke(request, new EventSubscriptionStaxUnmarshaller());
+    public EventSubscription removeSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest removeSourceIdentifierFromSubscriptionRequest) {
+        ExecutionContext executionContext = createExecutionContext(removeSourceIdentifierFromSubscriptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<RemoveSourceIdentifierFromSubscriptionRequest> request = null;
+        EventSubscription response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new RemoveSourceIdentifierFromSubscriptionRequestMarshaller().marshall(removeSourceIdentifierFromSubscriptionRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new EventSubscriptionStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -349,10 +364,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DBSnapshot deleteDBSnapshot(DeleteDBSnapshotRequest deleteDBSnapshotRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteDBSnapshotRequest> request = new DeleteDBSnapshotRequestMarshaller().marshall(deleteDBSnapshotRequest);
-        return invoke(request, new DBSnapshotStaxUnmarshaller());
+    public DBSnapshot deleteDBSnapshot(DeleteDBSnapshotRequest deleteDBSnapshotRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteDBSnapshotRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteDBSnapshotRequest> request = null;
+        DBSnapshot response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteDBSnapshotRequestMarshaller().marshall(deleteDBSnapshotRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DBSnapshotStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -392,10 +417,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DBInstance restoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest restoreDBInstanceFromDBSnapshotRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<RestoreDBInstanceFromDBSnapshotRequest> request = new RestoreDBInstanceFromDBSnapshotRequestMarshaller().marshall(restoreDBInstanceFromDBSnapshotRequest);
-        return invoke(request, new DBInstanceStaxUnmarshaller());
+    public DBInstance restoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest restoreDBInstanceFromDBSnapshotRequest) {
+        ExecutionContext executionContext = createExecutionContext(restoreDBInstanceFromDBSnapshotRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<RestoreDBInstanceFromDBSnapshotRequest> request = null;
+        DBInstance response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new RestoreDBInstanceFromDBSnapshotRequestMarshaller().marshall(restoreDBInstanceFromDBSnapshotRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DBInstanceStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -423,10 +458,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeEventCategoriesResult describeEventCategories(DescribeEventCategoriesRequest describeEventCategoriesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeEventCategoriesRequest> request = new DescribeEventCategoriesRequestMarshaller().marshall(describeEventCategoriesRequest);
-        return invoke(request, new DescribeEventCategoriesResultStaxUnmarshaller());
+    public DescribeEventCategoriesResult describeEventCategories(DescribeEventCategoriesRequest describeEventCategoriesRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeEventCategoriesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeEventCategoriesRequest> request = null;
+        DescribeEventCategoriesResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeEventCategoriesRequestMarshaller().marshall(describeEventCategoriesRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeEventCategoriesResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -472,10 +517,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DBSecurityGroup authorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest authorizeDBSecurityGroupIngressRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<AuthorizeDBSecurityGroupIngressRequest> request = new AuthorizeDBSecurityGroupIngressRequestMarshaller().marshall(authorizeDBSecurityGroupIngressRequest);
-        return invoke(request, new DBSecurityGroupStaxUnmarshaller());
+    public DBSecurityGroup authorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest authorizeDBSecurityGroupIngressRequest) {
+        ExecutionContext executionContext = createExecutionContext(authorizeDBSecurityGroupIngressRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<AuthorizeDBSecurityGroupIngressRequest> request = null;
+        DBSecurityGroup response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new AuthorizeDBSecurityGroupIngressRequestMarshaller().marshall(authorizeDBSecurityGroupIngressRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DBSecurityGroupStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -528,10 +583,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public EventSubscription createEventSubscription(CreateEventSubscriptionRequest createEventSubscriptionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateEventSubscriptionRequest> request = new CreateEventSubscriptionRequestMarshaller().marshall(createEventSubscriptionRequest);
-        return invoke(request, new EventSubscriptionStaxUnmarshaller());
+    public EventSubscription createEventSubscription(CreateEventSubscriptionRequest createEventSubscriptionRequest) {
+        ExecutionContext executionContext = createExecutionContext(createEventSubscriptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateEventSubscriptionRequest> request = null;
+        EventSubscription response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreateEventSubscriptionRequestMarshaller().marshall(createEventSubscriptionRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new EventSubscriptionStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -556,10 +621,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public OptionGroup modifyOptionGroup(ModifyOptionGroupRequest modifyOptionGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ModifyOptionGroupRequest> request = new ModifyOptionGroupRequestMarshaller().marshall(modifyOptionGroupRequest);
-        return invoke(request, new OptionGroupStaxUnmarshaller());
+    public OptionGroup modifyOptionGroup(ModifyOptionGroupRequest modifyOptionGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(modifyOptionGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ModifyOptionGroupRequest> request = null;
+        OptionGroup response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ModifyOptionGroupRequestMarshaller().marshall(modifyOptionGroupRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new OptionGroupStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -592,10 +667,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ResetDBParameterGroupResult resetDBParameterGroup(ResetDBParameterGroupRequest resetDBParameterGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ResetDBParameterGroupRequest> request = new ResetDBParameterGroupRequestMarshaller().marshall(resetDBParameterGroupRequest);
-        return invoke(request, new ResetDBParameterGroupResultStaxUnmarshaller());
+    public ResetDBParameterGroupResult resetDBParameterGroup(ResetDBParameterGroupRequest resetDBParameterGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(resetDBParameterGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ResetDBParameterGroupRequest> request = null;
+        ResetDBParameterGroupResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ResetDBParameterGroupRequestMarshaller().marshall(resetDBParameterGroupRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new ResetDBParameterGroupResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -620,10 +705,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public EngineDefaults describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeEngineDefaultParametersRequest> request = new DescribeEngineDefaultParametersRequestMarshaller().marshall(describeEngineDefaultParametersRequest);
-        return invoke(request, new EngineDefaultsStaxUnmarshaller());
+    public EngineDefaults describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeEngineDefaultParametersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeEngineDefaultParametersRequest> request = null;
+        EngineDefaults response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeEngineDefaultParametersRequestMarshaller().marshall(describeEngineDefaultParametersRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new EngineDefaultsStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -648,10 +743,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeReservedDBInstancesOfferingsResult describeReservedDBInstancesOfferings(DescribeReservedDBInstancesOfferingsRequest describeReservedDBInstancesOfferingsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeReservedDBInstancesOfferingsRequest> request = new DescribeReservedDBInstancesOfferingsRequestMarshaller().marshall(describeReservedDBInstancesOfferingsRequest);
-        return invoke(request, new DescribeReservedDBInstancesOfferingsResultStaxUnmarshaller());
+    public DescribeReservedDBInstancesOfferingsResult describeReservedDBInstancesOfferings(DescribeReservedDBInstancesOfferingsRequest describeReservedDBInstancesOfferingsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeReservedDBInstancesOfferingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeReservedDBInstancesOfferingsRequest> request = null;
+        DescribeReservedDBInstancesOfferingsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeReservedDBInstancesOfferingsRequestMarshaller().marshall(describeReservedDBInstancesOfferingsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeReservedDBInstancesOfferingsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -679,10 +784,19 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void deleteDBSubnetGroup(DeleteDBSubnetGroupRequest deleteDBSubnetGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteDBSubnetGroupRequest> request = new DeleteDBSubnetGroupRequestMarshaller().marshall(deleteDBSubnetGroupRequest);
-        invoke(request, null);
+    public void deleteDBSubnetGroup(DeleteDBSubnetGroupRequest deleteDBSubnetGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteDBSubnetGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteDBSubnetGroupRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteDBSubnetGroupRequestMarshaller().marshall(deleteDBSubnetGroupRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
     }
     
     /**
@@ -708,10 +822,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeDBInstancesResult describeDBInstances(DescribeDBInstancesRequest describeDBInstancesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeDBInstancesRequest> request = new DescribeDBInstancesRequestMarshaller().marshall(describeDBInstancesRequest);
-        return invoke(request, new DescribeDBInstancesResultStaxUnmarshaller());
+    public DescribeDBInstancesResult describeDBInstances(DescribeDBInstancesRequest describeDBInstancesRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeDBInstancesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeDBInstancesRequest> request = null;
+        DescribeDBInstancesResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeDBInstancesRequestMarshaller().marshall(describeDBInstancesRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeDBInstancesResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -735,10 +859,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeDBEngineVersionsResult describeDBEngineVersions(DescribeDBEngineVersionsRequest describeDBEngineVersionsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeDBEngineVersionsRequest> request = new DescribeDBEngineVersionsRequestMarshaller().marshall(describeDBEngineVersionsRequest);
-        return invoke(request, new DescribeDBEngineVersionsResultStaxUnmarshaller());
+    public DescribeDBEngineVersionsResult describeDBEngineVersions(DescribeDBEngineVersionsRequest describeDBEngineVersionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeDBEngineVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeDBEngineVersionsRequest> request = null;
+        DescribeDBEngineVersionsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeDBEngineVersionsRequestMarshaller().marshall(describeDBEngineVersionsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeDBEngineVersionsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -764,10 +898,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DBInstance promoteReadReplica(PromoteReadReplicaRequest promoteReadReplicaRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<PromoteReadReplicaRequest> request = new PromoteReadReplicaRequestMarshaller().marshall(promoteReadReplicaRequest);
-        return invoke(request, new DBInstanceStaxUnmarshaller());
+    public DBInstance promoteReadReplica(PromoteReadReplicaRequest promoteReadReplicaRequest) {
+        ExecutionContext executionContext = createExecutionContext(promoteReadReplicaRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<PromoteReadReplicaRequest> request = null;
+        DBInstance response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new PromoteReadReplicaRequestMarshaller().marshall(promoteReadReplicaRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DBInstanceStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -795,10 +939,19 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void deleteDBParameterGroup(DeleteDBParameterGroupRequest deleteDBParameterGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteDBParameterGroupRequest> request = new DeleteDBParameterGroupRequestMarshaller().marshall(deleteDBParameterGroupRequest);
-        invoke(request, null);
+    public void deleteDBParameterGroup(DeleteDBParameterGroupRequest deleteDBParameterGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteDBParameterGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteDBParameterGroupRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteDBParameterGroupRequestMarshaller().marshall(deleteDBParameterGroupRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
     }
     
     /**
@@ -823,10 +976,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeDBSnapshotsResult describeDBSnapshots(DescribeDBSnapshotsRequest describeDBSnapshotsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeDBSnapshotsRequest> request = new DescribeDBSnapshotsRequestMarshaller().marshall(describeDBSnapshotsRequest);
-        return invoke(request, new DescribeDBSnapshotsResultStaxUnmarshaller());
+    public DescribeDBSnapshotsResult describeDBSnapshots(DescribeDBSnapshotsRequest describeDBSnapshotsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeDBSnapshotsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeDBSnapshotsRequest> request = null;
+        DescribeDBSnapshotsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeDBSnapshotsRequestMarshaller().marshall(describeDBSnapshotsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeDBSnapshotsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -858,10 +1021,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeDBSubnetGroupsResult describeDBSubnetGroups(DescribeDBSubnetGroupsRequest describeDBSubnetGroupsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeDBSubnetGroupsRequest> request = new DescribeDBSubnetGroupsRequestMarshaller().marshall(describeDBSubnetGroupsRequest);
-        return invoke(request, new DescribeDBSubnetGroupsResultStaxUnmarshaller());
+    public DescribeDBSubnetGroupsResult describeDBSubnetGroups(DescribeDBSubnetGroupsRequest describeDBSubnetGroupsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeDBSubnetGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeDBSubnetGroupsRequest> request = null;
+        DescribeDBSubnetGroupsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeDBSubnetGroupsRequestMarshaller().marshall(describeDBSubnetGroupsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeDBSubnetGroupsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -904,10 +1077,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DBInstance restoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest restoreDBInstanceToPointInTimeRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<RestoreDBInstanceToPointInTimeRequest> request = new RestoreDBInstanceToPointInTimeRequestMarshaller().marshall(restoreDBInstanceToPointInTimeRequest);
-        return invoke(request, new DBInstanceStaxUnmarshaller());
+    public DBInstance restoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest restoreDBInstanceToPointInTimeRequest) {
+        ExecutionContext executionContext = createExecutionContext(restoreDBInstanceToPointInTimeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<RestoreDBInstanceToPointInTimeRequest> request = null;
+        DBInstance response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new RestoreDBInstanceToPointInTimeRequestMarshaller().marshall(restoreDBInstanceToPointInTimeRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DBInstanceStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -932,10 +1115,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeOrderableDBInstanceOptionsResult describeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest describeOrderableDBInstanceOptionsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeOrderableDBInstanceOptionsRequest> request = new DescribeOrderableDBInstanceOptionsRequestMarshaller().marshall(describeOrderableDBInstanceOptionsRequest);
-        return invoke(request, new DescribeOrderableDBInstanceOptionsResultStaxUnmarshaller());
+    public DescribeOrderableDBInstanceOptionsResult describeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest describeOrderableDBInstanceOptionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeOrderableDBInstanceOptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeOrderableDBInstanceOptionsRequest> request = null;
+        DescribeOrderableDBInstanceOptionsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeOrderableDBInstanceOptionsRequestMarshaller().marshall(describeOrderableDBInstanceOptionsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeOrderableDBInstanceOptionsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -963,10 +1156,19 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void addTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<AddTagsToResourceRequest> request = new AddTagsToResourceRequestMarshaller().marshall(addTagsToResourceRequest);
-        invoke(request, null);
+    public void addTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest) {
+        ExecutionContext executionContext = createExecutionContext(addTagsToResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<AddTagsToResourceRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new AddTagsToResourceRequestMarshaller().marshall(addTagsToResourceRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
     }
     
     /**
@@ -994,10 +1196,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DBSnapshot createDBSnapshot(CreateDBSnapshotRequest createDBSnapshotRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateDBSnapshotRequest> request = new CreateDBSnapshotRequestMarshaller().marshall(createDBSnapshotRequest);
-        return invoke(request, new DBSnapshotStaxUnmarshaller());
+    public DBSnapshot createDBSnapshot(CreateDBSnapshotRequest createDBSnapshotRequest) {
+        ExecutionContext executionContext = createExecutionContext(createDBSnapshotRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateDBSnapshotRequest> request = null;
+        DBSnapshot response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreateDBSnapshotRequestMarshaller().marshall(createDBSnapshotRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DBSnapshotStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1046,10 +1258,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DBInstance createDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest createDBInstanceReadReplicaRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateDBInstanceReadReplicaRequest> request = new CreateDBInstanceReadReplicaRequestMarshaller().marshall(createDBInstanceReadReplicaRequest);
-        return invoke(request, new DBInstanceStaxUnmarshaller());
+    public DBInstance createDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest createDBInstanceReadReplicaRequest) {
+        ExecutionContext executionContext = createExecutionContext(createDBInstanceReadReplicaRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateDBInstanceReadReplicaRequest> request = null;
+        DBInstance response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreateDBInstanceReadReplicaRequestMarshaller().marshall(createDBInstanceReadReplicaRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DBInstanceStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1073,10 +1295,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeOptionGroupOptionsResult describeOptionGroupOptions(DescribeOptionGroupOptionsRequest describeOptionGroupOptionsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeOptionGroupOptionsRequest> request = new DescribeOptionGroupOptionsRequestMarshaller().marshall(describeOptionGroupOptionsRequest);
-        return invoke(request, new DescribeOptionGroupOptionsResultStaxUnmarshaller());
+    public DescribeOptionGroupOptionsResult describeOptionGroupOptions(DescribeOptionGroupOptionsRequest describeOptionGroupOptionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeOptionGroupOptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeOptionGroupOptionsRequest> request = null;
+        DescribeOptionGroupOptionsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeOptionGroupOptionsRequestMarshaller().marshall(describeOptionGroupOptionsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeOptionGroupOptionsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1107,10 +1339,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeEventSubscriptionsResult describeEventSubscriptions(DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeEventSubscriptionsRequest> request = new DescribeEventSubscriptionsRequestMarshaller().marshall(describeEventSubscriptionsRequest);
-        return invoke(request, new DescribeEventSubscriptionsResultStaxUnmarshaller());
+    public DescribeEventSubscriptionsResult describeEventSubscriptions(DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeEventSubscriptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeEventSubscriptionsRequest> request = null;
+        DescribeEventSubscriptionsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeEventSubscriptionsRequestMarshaller().marshall(describeEventSubscriptionsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeEventSubscriptionsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1140,10 +1382,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DBSubnetGroup modifyDBSubnetGroup(ModifyDBSubnetGroupRequest modifyDBSubnetGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ModifyDBSubnetGroupRequest> request = new ModifyDBSubnetGroupRequestMarshaller().marshall(modifyDBSubnetGroupRequest);
-        return invoke(request, new DBSubnetGroupStaxUnmarshaller());
+    public DBSubnetGroup modifyDBSubnetGroup(ModifyDBSubnetGroupRequest modifyDBSubnetGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(modifyDBSubnetGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ModifyDBSubnetGroupRequest> request = null;
+        DBSubnetGroup response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ModifyDBSubnetGroupRequestMarshaller().marshall(modifyDBSubnetGroupRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DBSubnetGroupStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1178,10 +1430,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DBInstance createDBInstance(CreateDBInstanceRequest createDBInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateDBInstanceRequest> request = new CreateDBInstanceRequestMarshaller().marshall(createDBInstanceRequest);
-        return invoke(request, new DBInstanceStaxUnmarshaller());
+    public DBInstance createDBInstance(CreateDBInstanceRequest createDBInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(createDBInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateDBInstanceRequest> request = null;
+        DBInstance response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreateDBInstanceRequestMarshaller().marshall(createDBInstanceRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DBInstanceStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1207,10 +1469,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeDBParametersResult describeDBParameters(DescribeDBParametersRequest describeDBParametersRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeDBParametersRequest> request = new DescribeDBParametersRequestMarshaller().marshall(describeDBParametersRequest);
-        return invoke(request, new DescribeDBParametersResultStaxUnmarshaller());
+    public DescribeDBParametersResult describeDBParameters(DescribeDBParametersRequest describeDBParametersRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeDBParametersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeDBParametersRequest> request = null;
+        DescribeDBParametersResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeDBParametersRequestMarshaller().marshall(describeDBParametersRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeDBParametersResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1238,10 +1510,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DBSnapshot copyDBSnapshot(CopyDBSnapshotRequest copyDBSnapshotRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CopyDBSnapshotRequest> request = new CopyDBSnapshotRequestMarshaller().marshall(copyDBSnapshotRequest);
-        return invoke(request, new DBSnapshotStaxUnmarshaller());
+    public DBSnapshot copyDBSnapshot(CopyDBSnapshotRequest copyDBSnapshotRequest) {
+        ExecutionContext executionContext = createExecutionContext(copyDBSnapshotRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CopyDBSnapshotRequest> request = null;
+        DBSnapshot response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CopyDBSnapshotRequestMarshaller().marshall(copyDBSnapshotRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DBSnapshotStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1269,10 +1551,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DBSecurityGroup createDBSecurityGroup(CreateDBSecurityGroupRequest createDBSecurityGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateDBSecurityGroupRequest> request = new CreateDBSecurityGroupRequestMarshaller().marshall(createDBSecurityGroupRequest);
-        return invoke(request, new DBSecurityGroupStaxUnmarshaller());
+    public DBSecurityGroup createDBSecurityGroup(CreateDBSecurityGroupRequest createDBSecurityGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(createDBSecurityGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateDBSecurityGroupRequest> request = null;
+        DBSecurityGroup response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreateDBSecurityGroupRequestMarshaller().marshall(createDBSecurityGroupRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DBSecurityGroupStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1303,10 +1595,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ListTagsForResourceRequest> request = new ListTagsForResourceRequestMarshaller().marshall(listTagsForResourceRequest);
-        return invoke(request, new ListTagsForResourceResultStaxUnmarshaller());
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ListTagsForResourceRequest> request = null;
+        ListTagsForResourceResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ListTagsForResourceRequestMarshaller().marshall(listTagsForResourceRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new ListTagsForResourceResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1333,10 +1635,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeEventsRequest> request = new DescribeEventsRequestMarshaller().marshall(describeEventsRequest);
-        return invoke(request, new DescribeEventsResultStaxUnmarshaller());
+    public DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeEventsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeEventsRequest> request = null;
+        DescribeEventsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeEventsRequestMarshaller().marshall(describeEventsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeEventsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1361,10 +1673,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public OptionGroup createOptionGroup(CreateOptionGroupRequest createOptionGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateOptionGroupRequest> request = new CreateOptionGroupRequestMarshaller().marshall(createOptionGroupRequest);
-        return invoke(request, new OptionGroupStaxUnmarshaller());
+    public OptionGroup createOptionGroup(CreateOptionGroupRequest createOptionGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(createOptionGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateOptionGroupRequest> request = null;
+        OptionGroup response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreateOptionGroupRequestMarshaller().marshall(createOptionGroupRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new OptionGroupStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1394,10 +1716,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DBSubnetGroup createDBSubnetGroup(CreateDBSubnetGroupRequest createDBSubnetGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateDBSubnetGroupRequest> request = new CreateDBSubnetGroupRequestMarshaller().marshall(createDBSubnetGroupRequest);
-        return invoke(request, new DBSubnetGroupStaxUnmarshaller());
+    public DBSubnetGroup createDBSubnetGroup(CreateDBSubnetGroupRequest createDBSubnetGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(createDBSubnetGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateDBSubnetGroupRequest> request = null;
+        DBSubnetGroup response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreateDBSubnetGroupRequestMarshaller().marshall(createDBSubnetGroupRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DBSubnetGroupStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1422,10 +1754,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeDBLogFilesResult describeDBLogFiles(DescribeDBLogFilesRequest describeDBLogFilesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeDBLogFilesRequest> request = new DescribeDBLogFilesRequestMarshaller().marshall(describeDBLogFilesRequest);
-        return invoke(request, new DescribeDBLogFilesResultStaxUnmarshaller());
+    public DescribeDBLogFilesResult describeDBLogFiles(DescribeDBLogFilesRequest describeDBLogFilesRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeDBLogFilesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeDBLogFilesRequest> request = null;
+        DescribeDBLogFilesResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeDBLogFilesRequestMarshaller().marshall(describeDBLogFilesRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeDBLogFilesResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1456,10 +1798,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DBSecurityGroup revokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest revokeDBSecurityGroupIngressRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<RevokeDBSecurityGroupIngressRequest> request = new RevokeDBSecurityGroupIngressRequestMarshaller().marshall(revokeDBSecurityGroupIngressRequest);
-        return invoke(request, new DBSecurityGroupStaxUnmarshaller());
+    public DBSecurityGroup revokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest revokeDBSecurityGroupIngressRequest) {
+        ExecutionContext executionContext = createExecutionContext(revokeDBSecurityGroupIngressRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<RevokeDBSecurityGroupIngressRequest> request = null;
+        DBSecurityGroup response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new RevokeDBSecurityGroupIngressRequestMarshaller().marshall(revokeDBSecurityGroupIngressRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DBSecurityGroupStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1500,10 +1852,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public EventSubscription modifyEventSubscription(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ModifyEventSubscriptionRequest> request = new ModifyEventSubscriptionRequestMarshaller().marshall(modifyEventSubscriptionRequest);
-        return invoke(request, new EventSubscriptionStaxUnmarshaller());
+    public EventSubscription modifyEventSubscription(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest) {
+        ExecutionContext executionContext = createExecutionContext(modifyEventSubscriptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ModifyEventSubscriptionRequest> request = null;
+        EventSubscription response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ModifyEventSubscriptionRequestMarshaller().marshall(modifyEventSubscriptionRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new EventSubscriptionStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1530,10 +1892,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeDBParameterGroupsResult describeDBParameterGroups(DescribeDBParameterGroupsRequest describeDBParameterGroupsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeDBParameterGroupsRequest> request = new DescribeDBParameterGroupsRequestMarshaller().marshall(describeDBParameterGroupsRequest);
-        return invoke(request, new DescribeDBParameterGroupsResultStaxUnmarshaller());
+    public DescribeDBParameterGroupsResult describeDBParameterGroups(DescribeDBParameterGroupsRequest describeDBParameterGroupsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeDBParameterGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeDBParameterGroupsRequest> request = null;
+        DescribeDBParameterGroupsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeDBParameterGroupsRequestMarshaller().marshall(describeDBParameterGroupsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeDBParameterGroupsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1559,10 +1931,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public EventSubscription deleteEventSubscription(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteEventSubscriptionRequest> request = new DeleteEventSubscriptionRequestMarshaller().marshall(deleteEventSubscriptionRequest);
-        return invoke(request, new EventSubscriptionStaxUnmarshaller());
+    public EventSubscription deleteEventSubscription(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteEventSubscriptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteEventSubscriptionRequest> request = null;
+        EventSubscription response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteEventSubscriptionRequestMarshaller().marshall(deleteEventSubscriptionRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new EventSubscriptionStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1589,10 +1971,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ReservedDBInstance purchaseReservedDBInstancesOffering(PurchaseReservedDBInstancesOfferingRequest purchaseReservedDBInstancesOfferingRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<PurchaseReservedDBInstancesOfferingRequest> request = new PurchaseReservedDBInstancesOfferingRequestMarshaller().marshall(purchaseReservedDBInstancesOfferingRequest);
-        return invoke(request, new ReservedDBInstanceStaxUnmarshaller());
+    public ReservedDBInstance purchaseReservedDBInstancesOffering(PurchaseReservedDBInstancesOfferingRequest purchaseReservedDBInstancesOfferingRequest) {
+        ExecutionContext executionContext = createExecutionContext(purchaseReservedDBInstancesOfferingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<PurchaseReservedDBInstancesOfferingRequest> request = null;
+        ReservedDBInstance response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new PurchaseReservedDBInstancesOfferingRequestMarshaller().marshall(purchaseReservedDBInstancesOfferingRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new ReservedDBInstanceStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1628,10 +2020,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DBParameterGroup createDBParameterGroup(CreateDBParameterGroupRequest createDBParameterGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateDBParameterGroupRequest> request = new CreateDBParameterGroupRequestMarshaller().marshall(createDBParameterGroupRequest);
-        return invoke(request, new DBParameterGroupStaxUnmarshaller());
+    public DBParameterGroup createDBParameterGroup(CreateDBParameterGroupRequest createDBParameterGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(createDBParameterGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateDBParameterGroupRequest> request = null;
+        DBParameterGroup response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreateDBParameterGroupRequestMarshaller().marshall(createDBParameterGroupRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DBParameterGroupStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1653,10 +2055,19 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void deleteOptionGroup(DeleteOptionGroupRequest deleteOptionGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteOptionGroupRequest> request = new DeleteOptionGroupRequestMarshaller().marshall(deleteOptionGroupRequest);
-        invoke(request, null);
+    public void deleteOptionGroup(DeleteOptionGroupRequest deleteOptionGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteOptionGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteOptionGroupRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteOptionGroupRequestMarshaller().marshall(deleteOptionGroupRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
     }
     
     /**
@@ -1681,10 +2092,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DownloadDBLogFilePortionResult downloadDBLogFilePortion(DownloadDBLogFilePortionRequest downloadDBLogFilePortionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DownloadDBLogFilePortionRequest> request = new DownloadDBLogFilePortionRequestMarshaller().marshall(downloadDBLogFilePortionRequest);
-        return invoke(request, new DownloadDBLogFilePortionResultStaxUnmarshaller());
+    public DownloadDBLogFilePortionResult downloadDBLogFilePortion(DownloadDBLogFilePortionRequest downloadDBLogFilePortionRequest) {
+        ExecutionContext executionContext = createExecutionContext(downloadDBLogFilePortionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DownloadDBLogFilePortionRequest> request = null;
+        DownloadDBLogFilePortionResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DownloadDBLogFilePortionRequestMarshaller().marshall(downloadDBLogFilePortionRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DownloadDBLogFilePortionResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1711,10 +2132,19 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void deleteDBSecurityGroup(DeleteDBSecurityGroupRequest deleteDBSecurityGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteDBSecurityGroupRequest> request = new DeleteDBSecurityGroupRequestMarshaller().marshall(deleteDBSecurityGroupRequest);
-        invoke(request, null);
+    public void deleteDBSecurityGroup(DeleteDBSecurityGroupRequest deleteDBSecurityGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteDBSecurityGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteDBSecurityGroupRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteDBSecurityGroupRequestMarshaller().marshall(deleteDBSecurityGroupRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
     }
     
     /**
@@ -1751,10 +2181,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DBInstance modifyDBInstance(ModifyDBInstanceRequest modifyDBInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ModifyDBInstanceRequest> request = new ModifyDBInstanceRequestMarshaller().marshall(modifyDBInstanceRequest);
-        return invoke(request, new DBInstanceStaxUnmarshaller());
+    public DBInstance modifyDBInstance(ModifyDBInstanceRequest modifyDBInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(modifyDBInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ModifyDBInstanceRequest> request = null;
+        DBInstance response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ModifyDBInstanceRequestMarshaller().marshall(modifyDBInstanceRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DBInstanceStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1781,10 +2221,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public EventSubscription addSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest addSourceIdentifierToSubscriptionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<AddSourceIdentifierToSubscriptionRequest> request = new AddSourceIdentifierToSubscriptionRequestMarshaller().marshall(addSourceIdentifierToSubscriptionRequest);
-        return invoke(request, new EventSubscriptionStaxUnmarshaller());
+    public EventSubscription addSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest addSourceIdentifierToSubscriptionRequest) {
+        ExecutionContext executionContext = createExecutionContext(addSourceIdentifierToSubscriptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<AddSourceIdentifierToSubscriptionRequest> request = null;
+        EventSubscription response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new AddSourceIdentifierToSubscriptionRequestMarshaller().marshall(addSourceIdentifierToSubscriptionRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new EventSubscriptionStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1809,10 +2259,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeOptionGroupsResult describeOptionGroups(DescribeOptionGroupsRequest describeOptionGroupsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeOptionGroupsRequest> request = new DescribeOptionGroupsRequestMarshaller().marshall(describeOptionGroupsRequest);
-        return invoke(request, new DescribeOptionGroupsResultStaxUnmarshaller());
+    public DescribeOptionGroupsResult describeOptionGroups(DescribeOptionGroupsRequest describeOptionGroupsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeOptionGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeOptionGroupsRequest> request = null;
+        DescribeOptionGroupsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeOptionGroupsRequestMarshaller().marshall(describeOptionGroupsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeOptionGroupsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1844,10 +2304,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeDBSecurityGroupsResult describeDBSecurityGroups(DescribeDBSecurityGroupsRequest describeDBSecurityGroupsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeDBSecurityGroupsRequest> request = new DescribeDBSecurityGroupsRequestMarshaller().marshall(describeDBSecurityGroupsRequest);
-        return invoke(request, new DescribeDBSecurityGroupsResultStaxUnmarshaller());
+    public DescribeDBSecurityGroupsResult describeDBSecurityGroups(DescribeDBSecurityGroupsRequest describeDBSecurityGroupsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeDBSecurityGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeDBSecurityGroupsRequest> request = null;
+        DescribeDBSecurityGroupsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeDBSecurityGroupsRequestMarshaller().marshall(describeDBSecurityGroupsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeDBSecurityGroupsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1885,10 +2355,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DBInstance deleteDBInstance(DeleteDBInstanceRequest deleteDBInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteDBInstanceRequest> request = new DeleteDBInstanceRequestMarshaller().marshall(deleteDBInstanceRequest);
-        return invoke(request, new DBInstanceStaxUnmarshaller());
+    public DBInstance deleteDBInstance(DeleteDBInstanceRequest deleteDBInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteDBInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteDBInstanceRequest> request = null;
+        DBInstance response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteDBInstanceRequestMarshaller().marshall(deleteDBInstanceRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DBInstanceStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1916,10 +2396,19 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void removeTagsFromResource(RemoveTagsFromResourceRequest removeTagsFromResourceRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<RemoveTagsFromResourceRequest> request = new RemoveTagsFromResourceRequestMarshaller().marshall(removeTagsFromResourceRequest);
-        invoke(request, null);
+    public void removeTagsFromResource(RemoveTagsFromResourceRequest removeTagsFromResourceRequest) {
+        ExecutionContext executionContext = createExecutionContext(removeTagsFromResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<RemoveTagsFromResourceRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new RemoveTagsFromResourceRequestMarshaller().marshall(removeTagsFromResourceRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
     }
     
     /**
@@ -1955,10 +2444,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ModifyDBParameterGroupResult modifyDBParameterGroup(ModifyDBParameterGroupRequest modifyDBParameterGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ModifyDBParameterGroupRequest> request = new ModifyDBParameterGroupRequestMarshaller().marshall(modifyDBParameterGroupRequest);
-        return invoke(request, new ModifyDBParameterGroupResultStaxUnmarshaller());
+    public ModifyDBParameterGroupResult modifyDBParameterGroup(ModifyDBParameterGroupRequest modifyDBParameterGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(modifyDBParameterGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ModifyDBParameterGroupRequest> request = null;
+        ModifyDBParameterGroupResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ModifyDBParameterGroupRequestMarshaller().marshall(modifyDBParameterGroupRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new ModifyDBParameterGroupResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1990,10 +2489,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DBInstance rebootDBInstance(RebootDBInstanceRequest rebootDBInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<RebootDBInstanceRequest> request = new RebootDBInstanceRequestMarshaller().marshall(rebootDBInstanceRequest);
-        return invoke(request, new DBInstanceStaxUnmarshaller());
+    public DBInstance rebootDBInstance(RebootDBInstanceRequest rebootDBInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(rebootDBInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<RebootDBInstanceRequest> request = null;
+        DBInstance response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new RebootDBInstanceRequestMarshaller().marshall(rebootDBInstanceRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DBInstanceStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -2400,26 +2909,27 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         return client.getResponseMetadataForRequest(request);
     }
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, Unmarshaller<X, StaxUnmarshallerContext> unmarshaller) {
+    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
+            Unmarshaller<X, StaxUnmarshallerContext> unmarshaller,
+            ExecutionContext executionContext)
+    {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
-        for (Entry<String, String> entry : request.getOriginalRequest().copyPrivateRequestParameters().entrySet()) {
+        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
+        for (Entry<String, String> entry : originalRequest.copyPrivateRequestParameters().entrySet()) {
             request.addParameter(entry.getKey(), entry.getValue());
         }
 
         AWSCredentials credentials = awsCredentialsProvider.getCredentials();
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
-          credentials = originalRequest.getRequestCredentials();
+        if (originalRequest.getRequestCredentials() != null) {
+            credentials = originalRequest.getRequestCredentials();
         }
 
-        ExecutionContext executionContext = createExecutionContext(originalRequest);
         executionContext.setSigner(signer);
         executionContext.setCredentials(credentials);
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
-
         return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 }

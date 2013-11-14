@@ -103,9 +103,4 @@ public class UnassignVolumeRequestMarshaller implements Marshaller<Request<Unass
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

@@ -39,13 +39,13 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * created, connect to the cluster with a SQL client and use SQL commands
      * to create a database. For more information, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create
-     * a Database</a> in the Amazon Redshift Developer Guide. <p>Default:
-     * <code>dev</code> <p>Constraints: <ul> <li>Must contain 1 to 64
-     * alphanumeric characters.</li> <li>Must contain only lowercase
+     * a Database</a> in the Amazon Redshift Database Developer Guide.
+     * <p>Default: <code>dev</code> <p>Constraints: <ul> <li>Must contain 1
+     * to 64 alphanumeric characters.</li> <li>Must contain only lowercase
      * letters.</li> <li>Cannot be a word that is reserved by the service. A
      * list of reserved words can be found in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
-     * Words</a> in the Amazon Redshift Developer Guide. </li> </ul>
+     * Words</a> in the Amazon Redshift Database Developer Guide. </li> </ul>
      */
     private String dBName;
 
@@ -89,7 +89,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * letter.</li> <li>Cannot be a reserved word. A list of reserved words
      * can be found in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
-     * Words</a> in the Amazon Redshift Developer Guide. </li> </ul>
+     * Words</a> in the Amazon Redshift Database Developer Guide. </li> </ul>
      */
     private String masterUsername;
 
@@ -226,31 +226,55 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
     private Boolean encrypted;
 
     /**
+     * Specifies the name of the HSM client certificate the Amazon Redshift
+     * cluster uses to retrieve the data encryption keys stored in an HSM.
+     */
+    private String hsmClientCertificateIdentifier;
+
+    /**
+     * Specifies the name of the HSM configuration that contains the
+     * information the Amazon Redshift cluster can use to retrieve and store
+     * keys in an HSM.
+     */
+    private String hsmConfigurationIdentifier;
+
+    /**
+     * The Elastic IP (EIP) address for the cluster. <p>Constraints: The
+     * cluster must be provisioned in EC2-VPC and publicly-accessible through
+     * an Internet gateway. For more information about provisioning clusters
+     * in EC2-VPC, go to <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+     * Platforms to Launch Your Cluster</a> in the Amazon Redshift Management
+     * Guide.
+     */
+    private String elasticIp;
+
+    /**
      * The name of the first database to be created when the cluster is
      * created. <p>To create additional databases after the cluster is
      * created, connect to the cluster with a SQL client and use SQL commands
      * to create a database. For more information, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create
-     * a Database</a> in the Amazon Redshift Developer Guide. <p>Default:
-     * <code>dev</code> <p>Constraints: <ul> <li>Must contain 1 to 64
-     * alphanumeric characters.</li> <li>Must contain only lowercase
+     * a Database</a> in the Amazon Redshift Database Developer Guide.
+     * <p>Default: <code>dev</code> <p>Constraints: <ul> <li>Must contain 1
+     * to 64 alphanumeric characters.</li> <li>Must contain only lowercase
      * letters.</li> <li>Cannot be a word that is reserved by the service. A
      * list of reserved words can be found in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
-     * Words</a> in the Amazon Redshift Developer Guide. </li> </ul>
+     * Words</a> in the Amazon Redshift Database Developer Guide. </li> </ul>
      *
      * @return The name of the first database to be created when the cluster is
      *         created. <p>To create additional databases after the cluster is
      *         created, connect to the cluster with a SQL client and use SQL commands
      *         to create a database. For more information, go to <a
      *         href="http://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create
-     *         a Database</a> in the Amazon Redshift Developer Guide. <p>Default:
-     *         <code>dev</code> <p>Constraints: <ul> <li>Must contain 1 to 64
-     *         alphanumeric characters.</li> <li>Must contain only lowercase
+     *         a Database</a> in the Amazon Redshift Database Developer Guide.
+     *         <p>Default: <code>dev</code> <p>Constraints: <ul> <li>Must contain 1
+     *         to 64 alphanumeric characters.</li> <li>Must contain only lowercase
      *         letters.</li> <li>Cannot be a word that is reserved by the service. A
      *         list of reserved words can be found in <a
      *         href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
-     *         Words</a> in the Amazon Redshift Developer Guide. </li> </ul>
+     *         Words</a> in the Amazon Redshift Database Developer Guide. </li> </ul>
      */
     public String getDBName() {
         return dBName;
@@ -262,26 +286,26 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * created, connect to the cluster with a SQL client and use SQL commands
      * to create a database. For more information, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create
-     * a Database</a> in the Amazon Redshift Developer Guide. <p>Default:
-     * <code>dev</code> <p>Constraints: <ul> <li>Must contain 1 to 64
-     * alphanumeric characters.</li> <li>Must contain only lowercase
+     * a Database</a> in the Amazon Redshift Database Developer Guide.
+     * <p>Default: <code>dev</code> <p>Constraints: <ul> <li>Must contain 1
+     * to 64 alphanumeric characters.</li> <li>Must contain only lowercase
      * letters.</li> <li>Cannot be a word that is reserved by the service. A
      * list of reserved words can be found in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
-     * Words</a> in the Amazon Redshift Developer Guide. </li> </ul>
+     * Words</a> in the Amazon Redshift Database Developer Guide. </li> </ul>
      *
      * @param dBName The name of the first database to be created when the cluster is
      *         created. <p>To create additional databases after the cluster is
      *         created, connect to the cluster with a SQL client and use SQL commands
      *         to create a database. For more information, go to <a
      *         href="http://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create
-     *         a Database</a> in the Amazon Redshift Developer Guide. <p>Default:
-     *         <code>dev</code> <p>Constraints: <ul> <li>Must contain 1 to 64
-     *         alphanumeric characters.</li> <li>Must contain only lowercase
+     *         a Database</a> in the Amazon Redshift Database Developer Guide.
+     *         <p>Default: <code>dev</code> <p>Constraints: <ul> <li>Must contain 1
+     *         to 64 alphanumeric characters.</li> <li>Must contain only lowercase
      *         letters.</li> <li>Cannot be a word that is reserved by the service. A
      *         list of reserved words can be found in <a
      *         href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
-     *         Words</a> in the Amazon Redshift Developer Guide. </li> </ul>
+     *         Words</a> in the Amazon Redshift Database Developer Guide. </li> </ul>
      */
     public void setDBName(String dBName) {
         this.dBName = dBName;
@@ -293,13 +317,13 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * created, connect to the cluster with a SQL client and use SQL commands
      * to create a database. For more information, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create
-     * a Database</a> in the Amazon Redshift Developer Guide. <p>Default:
-     * <code>dev</code> <p>Constraints: <ul> <li>Must contain 1 to 64
-     * alphanumeric characters.</li> <li>Must contain only lowercase
+     * a Database</a> in the Amazon Redshift Database Developer Guide.
+     * <p>Default: <code>dev</code> <p>Constraints: <ul> <li>Must contain 1
+     * to 64 alphanumeric characters.</li> <li>Must contain only lowercase
      * letters.</li> <li>Cannot be a word that is reserved by the service. A
      * list of reserved words can be found in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
-     * Words</a> in the Amazon Redshift Developer Guide. </li> </ul>
+     * Words</a> in the Amazon Redshift Database Developer Guide. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -308,13 +332,13 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      *         created, connect to the cluster with a SQL client and use SQL commands
      *         to create a database. For more information, go to <a
      *         href="http://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create
-     *         a Database</a> in the Amazon Redshift Developer Guide. <p>Default:
-     *         <code>dev</code> <p>Constraints: <ul> <li>Must contain 1 to 64
-     *         alphanumeric characters.</li> <li>Must contain only lowercase
+     *         a Database</a> in the Amazon Redshift Database Developer Guide.
+     *         <p>Default: <code>dev</code> <p>Constraints: <ul> <li>Must contain 1
+     *         to 64 alphanumeric characters.</li> <li>Must contain only lowercase
      *         letters.</li> <li>Cannot be a word that is reserved by the service. A
      *         list of reserved words can be found in <a
      *         href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
-     *         Words</a> in the Amazon Redshift Developer Guide. </li> </ul>
+     *         Words</a> in the Amazon Redshift Database Developer Guide. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -538,7 +562,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * letter.</li> <li>Cannot be a reserved word. A list of reserved words
      * can be found in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
-     * Words</a> in the Amazon Redshift Developer Guide. </li> </ul>
+     * Words</a> in the Amazon Redshift Database Developer Guide. </li> </ul>
      *
      * @return The user name associated with the master user account for the cluster
      *         that is being created. <p>Constraints: <ul> <li>Must be 1 - 128
@@ -546,7 +570,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      *         letter.</li> <li>Cannot be a reserved word. A list of reserved words
      *         can be found in <a
      *         href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
-     *         Words</a> in the Amazon Redshift Developer Guide. </li> </ul>
+     *         Words</a> in the Amazon Redshift Database Developer Guide. </li> </ul>
      */
     public String getMasterUsername() {
         return masterUsername;
@@ -559,7 +583,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * letter.</li> <li>Cannot be a reserved word. A list of reserved words
      * can be found in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
-     * Words</a> in the Amazon Redshift Developer Guide. </li> </ul>
+     * Words</a> in the Amazon Redshift Database Developer Guide. </li> </ul>
      *
      * @param masterUsername The user name associated with the master user account for the cluster
      *         that is being created. <p>Constraints: <ul> <li>Must be 1 - 128
@@ -567,7 +591,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      *         letter.</li> <li>Cannot be a reserved word. A list of reserved words
      *         can be found in <a
      *         href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
-     *         Words</a> in the Amazon Redshift Developer Guide. </li> </ul>
+     *         Words</a> in the Amazon Redshift Database Developer Guide. </li> </ul>
      */
     public void setMasterUsername(String masterUsername) {
         this.masterUsername = masterUsername;
@@ -580,7 +604,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      * letter.</li> <li>Cannot be a reserved word. A list of reserved words
      * can be found in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
-     * Words</a> in the Amazon Redshift Developer Guide. </li> </ul>
+     * Words</a> in the Amazon Redshift Database Developer Guide. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -590,7 +614,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
      *         letter.</li> <li>Cannot be a reserved word. A list of reserved words
      *         can be found in <a
      *         href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
-     *         Words</a> in the Amazon Redshift Developer Guide. </li> </ul>
+     *         Words</a> in the Amazon Redshift Database Developer Guide. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.
@@ -1552,6 +1576,159 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
+     * Specifies the name of the HSM client certificate the Amazon Redshift
+     * cluster uses to retrieve the data encryption keys stored in an HSM.
+     *
+     * @return Specifies the name of the HSM client certificate the Amazon Redshift
+     *         cluster uses to retrieve the data encryption keys stored in an HSM.
+     */
+    public String getHsmClientCertificateIdentifier() {
+        return hsmClientCertificateIdentifier;
+    }
+    
+    /**
+     * Specifies the name of the HSM client certificate the Amazon Redshift
+     * cluster uses to retrieve the data encryption keys stored in an HSM.
+     *
+     * @param hsmClientCertificateIdentifier Specifies the name of the HSM client certificate the Amazon Redshift
+     *         cluster uses to retrieve the data encryption keys stored in an HSM.
+     */
+    public void setHsmClientCertificateIdentifier(String hsmClientCertificateIdentifier) {
+        this.hsmClientCertificateIdentifier = hsmClientCertificateIdentifier;
+    }
+    
+    /**
+     * Specifies the name of the HSM client certificate the Amazon Redshift
+     * cluster uses to retrieve the data encryption keys stored in an HSM.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param hsmClientCertificateIdentifier Specifies the name of the HSM client certificate the Amazon Redshift
+     *         cluster uses to retrieve the data encryption keys stored in an HSM.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CreateClusterRequest withHsmClientCertificateIdentifier(String hsmClientCertificateIdentifier) {
+        this.hsmClientCertificateIdentifier = hsmClientCertificateIdentifier;
+        return this;
+    }
+
+    /**
+     * Specifies the name of the HSM configuration that contains the
+     * information the Amazon Redshift cluster can use to retrieve and store
+     * keys in an HSM.
+     *
+     * @return Specifies the name of the HSM configuration that contains the
+     *         information the Amazon Redshift cluster can use to retrieve and store
+     *         keys in an HSM.
+     */
+    public String getHsmConfigurationIdentifier() {
+        return hsmConfigurationIdentifier;
+    }
+    
+    /**
+     * Specifies the name of the HSM configuration that contains the
+     * information the Amazon Redshift cluster can use to retrieve and store
+     * keys in an HSM.
+     *
+     * @param hsmConfigurationIdentifier Specifies the name of the HSM configuration that contains the
+     *         information the Amazon Redshift cluster can use to retrieve and store
+     *         keys in an HSM.
+     */
+    public void setHsmConfigurationIdentifier(String hsmConfigurationIdentifier) {
+        this.hsmConfigurationIdentifier = hsmConfigurationIdentifier;
+    }
+    
+    /**
+     * Specifies the name of the HSM configuration that contains the
+     * information the Amazon Redshift cluster can use to retrieve and store
+     * keys in an HSM.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param hsmConfigurationIdentifier Specifies the name of the HSM configuration that contains the
+     *         information the Amazon Redshift cluster can use to retrieve and store
+     *         keys in an HSM.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CreateClusterRequest withHsmConfigurationIdentifier(String hsmConfigurationIdentifier) {
+        this.hsmConfigurationIdentifier = hsmConfigurationIdentifier;
+        return this;
+    }
+
+    /**
+     * The Elastic IP (EIP) address for the cluster. <p>Constraints: The
+     * cluster must be provisioned in EC2-VPC and publicly-accessible through
+     * an Internet gateway. For more information about provisioning clusters
+     * in EC2-VPC, go to <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+     * Platforms to Launch Your Cluster</a> in the Amazon Redshift Management
+     * Guide.
+     *
+     * @return The Elastic IP (EIP) address for the cluster. <p>Constraints: The
+     *         cluster must be provisioned in EC2-VPC and publicly-accessible through
+     *         an Internet gateway. For more information about provisioning clusters
+     *         in EC2-VPC, go to <a
+     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+     *         Platforms to Launch Your Cluster</a> in the Amazon Redshift Management
+     *         Guide.
+     */
+    public String getElasticIp() {
+        return elasticIp;
+    }
+    
+    /**
+     * The Elastic IP (EIP) address for the cluster. <p>Constraints: The
+     * cluster must be provisioned in EC2-VPC and publicly-accessible through
+     * an Internet gateway. For more information about provisioning clusters
+     * in EC2-VPC, go to <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+     * Platforms to Launch Your Cluster</a> in the Amazon Redshift Management
+     * Guide.
+     *
+     * @param elasticIp The Elastic IP (EIP) address for the cluster. <p>Constraints: The
+     *         cluster must be provisioned in EC2-VPC and publicly-accessible through
+     *         an Internet gateway. For more information about provisioning clusters
+     *         in EC2-VPC, go to <a
+     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+     *         Platforms to Launch Your Cluster</a> in the Amazon Redshift Management
+     *         Guide.
+     */
+    public void setElasticIp(String elasticIp) {
+        this.elasticIp = elasticIp;
+    }
+    
+    /**
+     * The Elastic IP (EIP) address for the cluster. <p>Constraints: The
+     * cluster must be provisioned in EC2-VPC and publicly-accessible through
+     * an Internet gateway. For more information about provisioning clusters
+     * in EC2-VPC, go to <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+     * Platforms to Launch Your Cluster</a> in the Amazon Redshift Management
+     * Guide.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param elasticIp The Elastic IP (EIP) address for the cluster. <p>Constraints: The
+     *         cluster must be provisioned in EC2-VPC and publicly-accessible through
+     *         an Internet gateway. For more information about provisioning clusters
+     *         in EC2-VPC, go to <a
+     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+     *         Platforms to Launch Your Cluster</a> in the Amazon Redshift Management
+     *         Guide.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public CreateClusterRequest withElasticIp(String elasticIp) {
+        this.elasticIp = elasticIp;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1581,7 +1758,10 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
         if (isAllowVersionUpgrade() != null) sb.append("AllowVersionUpgrade: " + isAllowVersionUpgrade() + ",");
         if (getNumberOfNodes() != null) sb.append("NumberOfNodes: " + getNumberOfNodes() + ",");
         if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() + ",");
-        if (isEncrypted() != null) sb.append("Encrypted: " + isEncrypted() );
+        if (isEncrypted() != null) sb.append("Encrypted: " + isEncrypted() + ",");
+        if (getHsmClientCertificateIdentifier() != null) sb.append("HsmClientCertificateIdentifier: " + getHsmClientCertificateIdentifier() + ",");
+        if (getHsmConfigurationIdentifier() != null) sb.append("HsmConfigurationIdentifier: " + getHsmConfigurationIdentifier() + ",");
+        if (getElasticIp() != null) sb.append("ElasticIp: " + getElasticIp() );
         sb.append("}");
         return sb.toString();
     }
@@ -1610,6 +1790,9 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
         hashCode = prime * hashCode + ((getNumberOfNodes() == null) ? 0 : getNumberOfNodes().hashCode()); 
         hashCode = prime * hashCode + ((isPubliclyAccessible() == null) ? 0 : isPubliclyAccessible().hashCode()); 
         hashCode = prime * hashCode + ((isEncrypted() == null) ? 0 : isEncrypted().hashCode()); 
+        hashCode = prime * hashCode + ((getHsmClientCertificateIdentifier() == null) ? 0 : getHsmClientCertificateIdentifier().hashCode()); 
+        hashCode = prime * hashCode + ((getHsmConfigurationIdentifier() == null) ? 0 : getHsmConfigurationIdentifier().hashCode()); 
+        hashCode = prime * hashCode + ((getElasticIp() == null) ? 0 : getElasticIp().hashCode()); 
         return hashCode;
     }
     
@@ -1659,6 +1842,12 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
         if (other.isPubliclyAccessible() != null && other.isPubliclyAccessible().equals(this.isPubliclyAccessible()) == false) return false; 
         if (other.isEncrypted() == null ^ this.isEncrypted() == null) return false;
         if (other.isEncrypted() != null && other.isEncrypted().equals(this.isEncrypted()) == false) return false; 
+        if (other.getHsmClientCertificateIdentifier() == null ^ this.getHsmClientCertificateIdentifier() == null) return false;
+        if (other.getHsmClientCertificateIdentifier() != null && other.getHsmClientCertificateIdentifier().equals(this.getHsmClientCertificateIdentifier()) == false) return false; 
+        if (other.getHsmConfigurationIdentifier() == null ^ this.getHsmConfigurationIdentifier() == null) return false;
+        if (other.getHsmConfigurationIdentifier() != null && other.getHsmConfigurationIdentifier().equals(this.getHsmConfigurationIdentifier()) == false) return false; 
+        if (other.getElasticIp() == null ^ this.getElasticIp() == null) return false;
+        if (other.getElasticIp() != null && other.getElasticIp().equals(this.getElasticIp()) == false) return false; 
         return true;
     }
     

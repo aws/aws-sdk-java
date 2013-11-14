@@ -14,24 +14,19 @@
  */
 package com.amazonaws.services.cloudfront;
 
-import org.w3c.dom.Node;
+import org.w3c.dom.*;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.Map.Entry;
 
 import com.amazonaws.*;
 import com.amazonaws.auth.*;
-import com.amazonaws.handlers.HandlerChainFactory;
-import com.amazonaws.handlers.RequestHandler;
-import com.amazonaws.http.StaxResponseHandler;
-import com.amazonaws.http.DefaultErrorResponseHandler;
-import com.amazonaws.http.ExecutionContext;
-import com.amazonaws.internal.StaticCredentialsProvider;
-import com.amazonaws.transform.Unmarshaller;
-import com.amazonaws.transform.StaxUnmarshallerContext;
-import com.amazonaws.transform.StandardErrorUnmarshaller;
+import com.amazonaws.handlers.*;
+import com.amazonaws.http.*;
+import com.amazonaws.internal.*;
+import com.amazonaws.transform.*;
+import com.amazonaws.util.*;
+import com.amazonaws.util.AWSRequestMetrics.Field;
 
 import com.amazonaws.services.cloudfront.model.*;
 import com.amazonaws.services.cloudfront.model.transform.*;
@@ -74,7 +69,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonCloudFrontClient() {
         this(new DefaultAWSCredentialsProviderChain(), new ClientConfiguration());
@@ -98,7 +93,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *                       client connects to AmazonCloudFront
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonCloudFrontClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
@@ -230,7 +225,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-    requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+        requestHandlers.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/cloudfront/request.handlers"));
     }
 
@@ -257,10 +252,20 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListStreamingDistributionsResult listStreamingDistributions(ListStreamingDistributionsRequest listStreamingDistributionsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ListStreamingDistributionsRequest> request = new ListStreamingDistributionsRequestMarshaller().marshall(listStreamingDistributionsRequest);
-        return invoke(request, new ListStreamingDistributionsResultStaxUnmarshaller());
+    public ListStreamingDistributionsResult listStreamingDistributions(ListStreamingDistributionsRequest listStreamingDistributionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listStreamingDistributionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ListStreamingDistributionsRequest> request = null;
+        ListStreamingDistributionsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ListStreamingDistributionsRequestMarshaller().marshall(listStreamingDistributionsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new ListStreamingDistributionsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -293,10 +298,20 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public UpdateCloudFrontOriginAccessIdentityResult updateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest updateCloudFrontOriginAccessIdentityRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<UpdateCloudFrontOriginAccessIdentityRequest> request = new UpdateCloudFrontOriginAccessIdentityRequestMarshaller().marshall(updateCloudFrontOriginAccessIdentityRequest);
-        return invoke(request, new UpdateCloudFrontOriginAccessIdentityResultStaxUnmarshaller());
+    public UpdateCloudFrontOriginAccessIdentityResult updateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest updateCloudFrontOriginAccessIdentityRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateCloudFrontOriginAccessIdentityRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<UpdateCloudFrontOriginAccessIdentityRequest> request = null;
+        UpdateCloudFrontOriginAccessIdentityResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new UpdateCloudFrontOriginAccessIdentityRequestMarshaller().marshall(updateCloudFrontOriginAccessIdentityRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new UpdateCloudFrontOriginAccessIdentityResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -327,10 +342,20 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreateInvalidationResult createInvalidation(CreateInvalidationRequest createInvalidationRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateInvalidationRequest> request = new CreateInvalidationRequestMarshaller().marshall(createInvalidationRequest);
-        return invoke(request, new CreateInvalidationResultStaxUnmarshaller());
+    public CreateInvalidationResult createInvalidation(CreateInvalidationRequest createInvalidationRequest) {
+        ExecutionContext executionContext = createExecutionContext(createInvalidationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateInvalidationRequest> request = null;
+        CreateInvalidationResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreateInvalidationRequestMarshaller().marshall(createInvalidationRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new CreateInvalidationResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -356,10 +381,19 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void deleteStreamingDistribution(DeleteStreamingDistributionRequest deleteStreamingDistributionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteStreamingDistributionRequest> request = new DeleteStreamingDistributionRequestMarshaller().marshall(deleteStreamingDistributionRequest);
-        invoke(request, null);
+    public void deleteStreamingDistribution(DeleteStreamingDistributionRequest deleteStreamingDistributionRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteStreamingDistributionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteStreamingDistributionRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteStreamingDistributionRequestMarshaller().marshall(deleteStreamingDistributionRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
     }
     
     /**
@@ -385,10 +419,20 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public GetDistributionConfigResult getDistributionConfig(GetDistributionConfigRequest getDistributionConfigRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<GetDistributionConfigRequest> request = new GetDistributionConfigRequestMarshaller().marshall(getDistributionConfigRequest);
-        return invoke(request, new GetDistributionConfigResultStaxUnmarshaller());
+    public GetDistributionConfigResult getDistributionConfig(GetDistributionConfigRequest getDistributionConfigRequest) {
+        ExecutionContext executionContext = createExecutionContext(getDistributionConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<GetDistributionConfigRequest> request = null;
+        GetDistributionConfigResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new GetDistributionConfigRequestMarshaller().marshall(getDistributionConfigRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new GetDistributionConfigResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -425,10 +469,20 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public UpdateStreamingDistributionResult updateStreamingDistribution(UpdateStreamingDistributionRequest updateStreamingDistributionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<UpdateStreamingDistributionRequest> request = new UpdateStreamingDistributionRequestMarshaller().marshall(updateStreamingDistributionRequest);
-        return invoke(request, new UpdateStreamingDistributionResultStaxUnmarshaller());
+    public UpdateStreamingDistributionResult updateStreamingDistribution(UpdateStreamingDistributionRequest updateStreamingDistributionRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateStreamingDistributionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<UpdateStreamingDistributionRequest> request = null;
+        UpdateStreamingDistributionResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new UpdateStreamingDistributionRequestMarshaller().marshall(updateStreamingDistributionRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new UpdateStreamingDistributionResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -453,10 +507,20 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public GetDistributionResult getDistribution(GetDistributionRequest getDistributionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<GetDistributionRequest> request = new GetDistributionRequestMarshaller().marshall(getDistributionRequest);
-        return invoke(request, new GetDistributionResultStaxUnmarshaller());
+    public GetDistributionResult getDistribution(GetDistributionRequest getDistributionRequest) {
+        ExecutionContext executionContext = createExecutionContext(getDistributionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<GetDistributionRequest> request = null;
+        GetDistributionResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new GetDistributionRequestMarshaller().marshall(getDistributionRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new GetDistributionResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -482,10 +546,20 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListInvalidationsResult listInvalidations(ListInvalidationsRequest listInvalidationsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ListInvalidationsRequest> request = new ListInvalidationsRequestMarshaller().marshall(listInvalidationsRequest);
-        return invoke(request, new ListInvalidationsResultStaxUnmarshaller());
+    public ListInvalidationsResult listInvalidations(ListInvalidationsRequest listInvalidationsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listInvalidationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ListInvalidationsRequest> request = null;
+        ListInvalidationsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ListInvalidationsRequestMarshaller().marshall(listInvalidationsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new ListInvalidationsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -534,10 +608,20 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public UpdateDistributionResult updateDistribution(UpdateDistributionRequest updateDistributionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<UpdateDistributionRequest> request = new UpdateDistributionRequestMarshaller().marshall(updateDistributionRequest);
-        return invoke(request, new UpdateDistributionResultStaxUnmarshaller());
+    public UpdateDistributionResult updateDistribution(UpdateDistributionRequest updateDistributionRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateDistributionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<UpdateDistributionRequest> request = null;
+        UpdateDistributionResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new UpdateDistributionRequestMarshaller().marshall(updateDistributionRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new UpdateDistributionResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -563,10 +647,19 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void deleteDistribution(DeleteDistributionRequest deleteDistributionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteDistributionRequest> request = new DeleteDistributionRequestMarshaller().marshall(deleteDistributionRequest);
-        invoke(request, null);
+    public void deleteDistribution(DeleteDistributionRequest deleteDistributionRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteDistributionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteDistributionRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteDistributionRequestMarshaller().marshall(deleteDistributionRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
     }
     
     /**
@@ -596,10 +689,20 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreateCloudFrontOriginAccessIdentityResult createCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest createCloudFrontOriginAccessIdentityRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateCloudFrontOriginAccessIdentityRequest> request = new CreateCloudFrontOriginAccessIdentityRequestMarshaller().marshall(createCloudFrontOriginAccessIdentityRequest);
-        return invoke(request, new CreateCloudFrontOriginAccessIdentityResultStaxUnmarshaller());
+    public CreateCloudFrontOriginAccessIdentityResult createCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest createCloudFrontOriginAccessIdentityRequest) {
+        ExecutionContext executionContext = createExecutionContext(createCloudFrontOriginAccessIdentityRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateCloudFrontOriginAccessIdentityRequest> request = null;
+        CreateCloudFrontOriginAccessIdentityResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreateCloudFrontOriginAccessIdentityRequestMarshaller().marshall(createCloudFrontOriginAccessIdentityRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new CreateCloudFrontOriginAccessIdentityResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -625,10 +728,20 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public GetStreamingDistributionResult getStreamingDistribution(GetStreamingDistributionRequest getStreamingDistributionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<GetStreamingDistributionRequest> request = new GetStreamingDistributionRequestMarshaller().marshall(getStreamingDistributionRequest);
-        return invoke(request, new GetStreamingDistributionResultStaxUnmarshaller());
+    public GetStreamingDistributionResult getStreamingDistribution(GetStreamingDistributionRequest getStreamingDistributionRequest) {
+        ExecutionContext executionContext = createExecutionContext(getStreamingDistributionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<GetStreamingDistributionRequest> request = null;
+        GetStreamingDistributionResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new GetStreamingDistributionRequestMarshaller().marshall(getStreamingDistributionRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new GetStreamingDistributionResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -652,10 +765,20 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListDistributionsResult listDistributions(ListDistributionsRequest listDistributionsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ListDistributionsRequest> request = new ListDistributionsRequestMarshaller().marshall(listDistributionsRequest);
-        return invoke(request, new ListDistributionsResultStaxUnmarshaller());
+    public ListDistributionsResult listDistributions(ListDistributionsRequest listDistributionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listDistributionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ListDistributionsRequest> request = null;
+        ListDistributionsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ListDistributionsRequestMarshaller().marshall(listDistributionsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new ListDistributionsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -691,10 +814,20 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreateStreamingDistributionResult createStreamingDistribution(CreateStreamingDistributionRequest createStreamingDistributionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateStreamingDistributionRequest> request = new CreateStreamingDistributionRequestMarshaller().marshall(createStreamingDistributionRequest);
-        return invoke(request, new CreateStreamingDistributionResultStaxUnmarshaller());
+    public CreateStreamingDistributionResult createStreamingDistribution(CreateStreamingDistributionRequest createStreamingDistributionRequest) {
+        ExecutionContext executionContext = createExecutionContext(createStreamingDistributionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateStreamingDistributionRequest> request = null;
+        CreateStreamingDistributionResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreateStreamingDistributionRequestMarshaller().marshall(createStreamingDistributionRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new CreateStreamingDistributionResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -720,10 +853,20 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListCloudFrontOriginAccessIdentitiesResult listCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest listCloudFrontOriginAccessIdentitiesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ListCloudFrontOriginAccessIdentitiesRequest> request = new ListCloudFrontOriginAccessIdentitiesRequestMarshaller().marshall(listCloudFrontOriginAccessIdentitiesRequest);
-        return invoke(request, new ListCloudFrontOriginAccessIdentitiesResultStaxUnmarshaller());
+    public ListCloudFrontOriginAccessIdentitiesResult listCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest listCloudFrontOriginAccessIdentitiesRequest) {
+        ExecutionContext executionContext = createExecutionContext(listCloudFrontOriginAccessIdentitiesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ListCloudFrontOriginAccessIdentitiesRequest> request = null;
+        ListCloudFrontOriginAccessIdentitiesResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ListCloudFrontOriginAccessIdentitiesRequestMarshaller().marshall(listCloudFrontOriginAccessIdentitiesRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new ListCloudFrontOriginAccessIdentitiesResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -750,10 +893,19 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void deleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest deleteCloudFrontOriginAccessIdentityRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteCloudFrontOriginAccessIdentityRequest> request = new DeleteCloudFrontOriginAccessIdentityRequestMarshaller().marshall(deleteCloudFrontOriginAccessIdentityRequest);
-        invoke(request, null);
+    public void deleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest deleteCloudFrontOriginAccessIdentityRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteCloudFrontOriginAccessIdentityRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteCloudFrontOriginAccessIdentityRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteCloudFrontOriginAccessIdentityRequestMarshaller().marshall(deleteCloudFrontOriginAccessIdentityRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
     }
     
     /**
@@ -801,10 +953,20 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreateDistributionResult createDistribution(CreateDistributionRequest createDistributionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateDistributionRequest> request = new CreateDistributionRequestMarshaller().marshall(createDistributionRequest);
-        return invoke(request, new CreateDistributionResultStaxUnmarshaller());
+    public CreateDistributionResult createDistribution(CreateDistributionRequest createDistributionRequest) {
+        ExecutionContext executionContext = createExecutionContext(createDistributionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateDistributionRequest> request = null;
+        CreateDistributionResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreateDistributionRequestMarshaller().marshall(createDistributionRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new CreateDistributionResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -830,10 +992,20 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public GetInvalidationResult getInvalidation(GetInvalidationRequest getInvalidationRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<GetInvalidationRequest> request = new GetInvalidationRequestMarshaller().marshall(getInvalidationRequest);
-        return invoke(request, new GetInvalidationResultStaxUnmarshaller());
+    public GetInvalidationResult getInvalidation(GetInvalidationRequest getInvalidationRequest) {
+        ExecutionContext executionContext = createExecutionContext(getInvalidationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<GetInvalidationRequest> request = null;
+        GetInvalidationResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new GetInvalidationRequestMarshaller().marshall(getInvalidationRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new GetInvalidationResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -860,10 +1032,20 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public GetCloudFrontOriginAccessIdentityConfigResult getCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest getCloudFrontOriginAccessIdentityConfigRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<GetCloudFrontOriginAccessIdentityConfigRequest> request = new GetCloudFrontOriginAccessIdentityConfigRequestMarshaller().marshall(getCloudFrontOriginAccessIdentityConfigRequest);
-        return invoke(request, new GetCloudFrontOriginAccessIdentityConfigResultStaxUnmarshaller());
+    public GetCloudFrontOriginAccessIdentityConfigResult getCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest getCloudFrontOriginAccessIdentityConfigRequest) {
+        ExecutionContext executionContext = createExecutionContext(getCloudFrontOriginAccessIdentityConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<GetCloudFrontOriginAccessIdentityConfigRequest> request = null;
+        GetCloudFrontOriginAccessIdentityConfigResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new GetCloudFrontOriginAccessIdentityConfigRequestMarshaller().marshall(getCloudFrontOriginAccessIdentityConfigRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new GetCloudFrontOriginAccessIdentityConfigResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -889,10 +1071,20 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public GetCloudFrontOriginAccessIdentityResult getCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest getCloudFrontOriginAccessIdentityRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<GetCloudFrontOriginAccessIdentityRequest> request = new GetCloudFrontOriginAccessIdentityRequestMarshaller().marshall(getCloudFrontOriginAccessIdentityRequest);
-        return invoke(request, new GetCloudFrontOriginAccessIdentityResultStaxUnmarshaller());
+    public GetCloudFrontOriginAccessIdentityResult getCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest getCloudFrontOriginAccessIdentityRequest) {
+        ExecutionContext executionContext = createExecutionContext(getCloudFrontOriginAccessIdentityRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<GetCloudFrontOriginAccessIdentityRequest> request = null;
+        GetCloudFrontOriginAccessIdentityResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new GetCloudFrontOriginAccessIdentityRequestMarshaller().marshall(getCloudFrontOriginAccessIdentityRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new GetCloudFrontOriginAccessIdentityResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -918,10 +1110,20 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public GetStreamingDistributionConfigResult getStreamingDistributionConfig(GetStreamingDistributionConfigRequest getStreamingDistributionConfigRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<GetStreamingDistributionConfigRequest> request = new GetStreamingDistributionConfigRequestMarshaller().marshall(getStreamingDistributionConfigRequest);
-        return invoke(request, new GetStreamingDistributionConfigResultStaxUnmarshaller());
+    public GetStreamingDistributionConfigResult getStreamingDistributionConfig(GetStreamingDistributionConfigRequest getStreamingDistributionConfigRequest) {
+        ExecutionContext executionContext = createExecutionContext(getStreamingDistributionConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<GetStreamingDistributionConfigRequest> request = null;
+        GetStreamingDistributionConfigResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new GetStreamingDistributionConfigRequestMarshaller().marshall(getStreamingDistributionConfigRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new GetStreamingDistributionConfigResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -991,26 +1193,27 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         return client.getResponseMetadataForRequest(request);
     }
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, Unmarshaller<X, StaxUnmarshallerContext> unmarshaller) {
+    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
+            Unmarshaller<X, StaxUnmarshallerContext> unmarshaller,
+            ExecutionContext executionContext)
+    {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
-        for (Entry<String, String> entry : request.getOriginalRequest().copyPrivateRequestParameters().entrySet()) {
+        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
+        for (Entry<String, String> entry : originalRequest.copyPrivateRequestParameters().entrySet()) {
             request.addParameter(entry.getKey(), entry.getValue());
         }
 
         AWSCredentials credentials = awsCredentialsProvider.getCredentials();
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
-          credentials = originalRequest.getRequestCredentials();
+        if (originalRequest.getRequestCredentials() != null) {
+            credentials = originalRequest.getRequestCredentials();
         }
 
-        ExecutionContext executionContext = createExecutionContext(originalRequest);
         executionContext.setSigner(signer);
         executionContext.setCredentials(credentials);
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
-
         return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 }

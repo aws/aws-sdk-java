@@ -14,6 +14,8 @@
  */
 package com.amazonaws;
 
+import static com.amazonaws.SDKGlobalConfiguration.PROFILING_SYSTEM_PROPERTY;
+
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -29,6 +31,8 @@ import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.ServiceAbbreviations;
+import com.amazonaws.util.AWSRequestMetrics;
+import com.amazonaws.util.AWSRequestMetrics.Field;
 
 /**
  * Abstract base class for Amazon Web Service Java clients.
@@ -252,6 +256,10 @@ public abstract class AmazonWebServiceClient {
         return new ExecutionContext(requestHandlers, isMetricsEnabled);
     }
 
+    protected final ExecutionContext createExecutionContext(Request<?> req) {
+        return createExecutionContext(req.getOriginalRequest());
+    }
+
     /**
      * @deprecated by {@link #createExecutionContext(AmazonWebServiceRequest)}.
      * 
@@ -271,7 +279,7 @@ public abstract class AmazonWebServiceClient {
 
     /* Check the profiling system property and return true if set */
     private static boolean isProfilingEnabled() {
-        return System.getProperty(AmazonHttpClient.PROFILING_SYSTEM_PROPERTY) != null;
+        return System.getProperty(PROFILING_SYSTEM_PROPERTY) != null;
     }
     
     /**
@@ -351,5 +359,35 @@ public abstract class AmazonWebServiceClient {
     protected RequestMetricCollector requestMetricCollector() {
         RequestMetricCollector mc = client.getRequestMetricCollector();
         return mc == null ? AwsSdkMetrics.getRequestMetricCollector() : mc;
+    }
+
+    /**
+     * Returns the most specific request metric collector, starting from the
+     * request level, then client level, then finally the AWS SDK level.
+     */
+    protected final RequestMetricCollector findRequestMetricCollector(Request<?> req) {
+        AmazonWebServiceRequest origReq = req.getOriginalRequest();
+        RequestMetricCollector mc = origReq.getRequestMetricCollector();
+        if (mc != null) {
+            return mc;
+        }
+        mc = getRequestMetricsCollector();
+        return mc == null ? AwsSdkMetrics.getRequestMetricCollector() : mc;
+    }
+
+    /**
+     * Common routine to end a client AWS request/response execution and collect
+     * the request metrics.  Caller of this routine is responsible for starting
+     * the event for {@link Field#ClientExecuteTime} and call this method
+     * in a try-finally block. 
+     */
+    protected final void endClientExecution(AWSRequestMetrics awsRequestMetrics,
+            Request<?> request, Object response) {
+        if (request != null) {
+            awsRequestMetrics.endEvent(Field.ClientExecuteTime);
+            awsRequestMetrics.getTimingInfo().endTiming();
+            RequestMetricCollector c = findRequestMetricCollector(request);
+            c.collectMetrics(request, response);
+        }
     }
 }

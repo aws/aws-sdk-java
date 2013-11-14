@@ -17,12 +17,13 @@
  */
 package com.amazonaws.services.s3.internal;
 
-import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
+import com.amazonaws.internal.SdkFilterInputStream;
 
 /**
  * Abstract base class for input stream wrappers that add support for
@@ -30,7 +31,7 @@ import org.apache.commons.logging.LogFactory;
  * provide their own support for reopening streams and rereading to the last
  * marked position.
  */
-public abstract class AbstractRepeatableInputStream extends FilterInputStream {
+public abstract class AbstractRepeatableInputStream extends SdkFilterInputStream {
 
     private static final Log log = LogFactory.getLog(AbstractRepeatableInputStream.class);
 

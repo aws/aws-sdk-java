@@ -56,9 +56,9 @@ public class ListJobsByStatusRequestMarshaller implements Marshaller<Request<Lis
 
 
         String uriResourcePath = "2012-09-25/jobsByStatus/{Status}?Ascending={Ascending};PageToken={PageToken}"; 
-        uriResourcePath = uriResourcePath.replace("{Status}", getString(listJobsByStatusRequest.getStatus())); 
-        uriResourcePath = uriResourcePath.replace("{Ascending}", getString(listJobsByStatusRequest.getAscending())); 
-        uriResourcePath = uriResourcePath.replace("{PageToken}", getString(listJobsByStatusRequest.getPageToken())); 
+        uriResourcePath = uriResourcePath.replace("{Status}", (listJobsByStatusRequest.getStatus() == null) ? "" : StringUtils.fromString(listJobsByStatusRequest.getStatus())); 
+        uriResourcePath = uriResourcePath.replace("{Ascending}", (listJobsByStatusRequest.getAscending() == null) ? "" : StringUtils.fromString(listJobsByStatusRequest.getAscending())); 
+        uriResourcePath = uriResourcePath.replace("{PageToken}", (listJobsByStatusRequest.getPageToken() == null) ? "" : StringUtils.fromString(listJobsByStatusRequest.getPageToken())); 
 
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
@@ -84,10 +84,5 @@ public class ListJobsByStatusRequestMarshaller implements Marshaller<Request<Lis
         
 
         return request;
-    }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
     }
 }

@@ -14,10 +14,10 @@
  */
 package com.amazonaws.services.s3.internal;
 
-import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+import com.amazonaws.internal.SdkFilterInputStream;
 import com.amazonaws.services.s3.model.ProgressEvent;
 import com.amazonaws.services.s3.model.ProgressListener;
 
@@ -28,7 +28,7 @@ import com.amazonaws.services.s3.model.ProgressListener;
  * @deprecated Replaced by {@link com.amazonaws.event.ProgressReportingInputStream}
  */
 @Deprecated
-public class ProgressReportingInputStream extends FilterInputStream {
+public class ProgressReportingInputStream extends SdkFilterInputStream {
 
     /** The threshold of bytes between notifications. */
     private static final int NOTIFICATION_THRESHOLD = 8 * Constants.KB;

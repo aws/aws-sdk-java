@@ -37,7 +37,7 @@ import com.amazonaws.util.HttpUtils;
  * Signer implementation that signs requests with the AWS3 signing protocol.
  */
 public class AWS3Signer extends AbstractAWSSigner {
-
+    public static final AWS3Signer Instance = new AWS3Signer(); 
     private static final String AUTHORIZATION_HEADER = "X-Amzn-Authorization";
     private static final String NONCE_HEADER = "x-amz-nonce";
     private static final String HTTP_SCHEME = "AWS3";

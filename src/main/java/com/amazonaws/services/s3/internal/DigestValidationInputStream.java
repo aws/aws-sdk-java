@@ -16,18 +16,18 @@ package com.amazonaws.services.s3.internal;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.security.DigestInputStream;
 import java.security.MessageDigest;
 import java.util.Arrays;
 
 import com.amazonaws.AmazonClientException;
+import com.amazonaws.internal.SdkDigestInputStream;
 
 /**
  * Input stream extends MD5DigestValidationInputStream, when you finish reading the stream, it
  * will validate whether the computed digest equals the one from the server
  * side.
  */
-public class DigestValidationInputStream extends DigestInputStream {
+public class DigestValidationInputStream extends SdkDigestInputStream {
 
     private byte[] expectedHash;
 

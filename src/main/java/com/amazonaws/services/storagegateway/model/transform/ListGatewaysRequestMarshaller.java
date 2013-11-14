@@ -106,9 +106,4 @@ public class ListGatewaysRequestMarshaller implements Marshaller<Request<ListGat
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

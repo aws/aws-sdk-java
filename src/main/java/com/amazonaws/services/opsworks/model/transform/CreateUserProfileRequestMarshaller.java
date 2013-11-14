@@ -109,9 +109,4 @@ public class CreateUserProfileRequestMarshaller implements Marshaller<Request<Cr
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

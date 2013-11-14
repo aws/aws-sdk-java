@@ -14,24 +14,19 @@
  */
 package com.amazonaws.services.sns;
 
-import org.w3c.dom.Node;
+import org.w3c.dom.*;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.Map.Entry;
 
 import com.amazonaws.*;
 import com.amazonaws.auth.*;
-import com.amazonaws.handlers.HandlerChainFactory;
-import com.amazonaws.handlers.RequestHandler;
-import com.amazonaws.http.StaxResponseHandler;
-import com.amazonaws.http.DefaultErrorResponseHandler;
-import com.amazonaws.http.ExecutionContext;
-import com.amazonaws.internal.StaticCredentialsProvider;
-import com.amazonaws.transform.Unmarshaller;
-import com.amazonaws.transform.StaxUnmarshallerContext;
-import com.amazonaws.transform.StandardErrorUnmarshaller;
+import com.amazonaws.handlers.*;
+import com.amazonaws.http.*;
+import com.amazonaws.internal.*;
+import com.amazonaws.transform.*;
+import com.amazonaws.util.*;
+import com.amazonaws.util.AWSRequestMetrics.Field;
 
 import com.amazonaws.services.sns.model.*;
 import com.amazonaws.services.sns.model.transform.*;
@@ -84,7 +79,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonSNSClient() {
         this(new DefaultAWSCredentialsProviderChain(), new ClientConfiguration());
@@ -108,7 +103,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *                       client connects to AmazonSNS
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonSNSClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
@@ -207,7 +202,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
         
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-    requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+        requestHandlers.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/sns/request.handlers"));
     }
 
@@ -243,10 +238,20 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *             If an error response is returned by AmazonSNS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ConfirmSubscriptionResult confirmSubscription(ConfirmSubscriptionRequest confirmSubscriptionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ConfirmSubscriptionRequest> request = new ConfirmSubscriptionRequestMarshaller().marshall(confirmSubscriptionRequest);
-        return invoke(request, new ConfirmSubscriptionResultStaxUnmarshaller());
+    public ConfirmSubscriptionResult confirmSubscription(ConfirmSubscriptionRequest confirmSubscriptionRequest) {
+        ExecutionContext executionContext = createExecutionContext(confirmSubscriptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ConfirmSubscriptionRequest> request = null;
+        ConfirmSubscriptionResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ConfirmSubscriptionRequestMarshaller().marshall(confirmSubscriptionRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new ConfirmSubscriptionResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -290,10 +295,20 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *             If an error response is returned by AmazonSNS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreatePlatformApplicationResult createPlatformApplication(CreatePlatformApplicationRequest createPlatformApplicationRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreatePlatformApplicationRequest> request = new CreatePlatformApplicationRequestMarshaller().marshall(createPlatformApplicationRequest);
-        return invoke(request, new CreatePlatformApplicationResultStaxUnmarshaller());
+    public CreatePlatformApplicationResult createPlatformApplication(CreatePlatformApplicationRequest createPlatformApplicationRequest) {
+        ExecutionContext executionContext = createExecutionContext(createPlatformApplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreatePlatformApplicationRequest> request = null;
+        CreatePlatformApplicationResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreatePlatformApplicationRequestMarshaller().marshall(createPlatformApplicationRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new CreatePlatformApplicationResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -323,10 +338,20 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *             If an error response is returned by AmazonSNS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public GetTopicAttributesResult getTopicAttributes(GetTopicAttributesRequest getTopicAttributesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<GetTopicAttributesRequest> request = new GetTopicAttributesRequestMarshaller().marshall(getTopicAttributesRequest);
-        return invoke(request, new GetTopicAttributesResultStaxUnmarshaller());
+    public GetTopicAttributesResult getTopicAttributes(GetTopicAttributesRequest getTopicAttributesRequest) {
+        ExecutionContext executionContext = createExecutionContext(getTopicAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<GetTopicAttributesRequest> request = null;
+        GetTopicAttributesResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new GetTopicAttributesRequestMarshaller().marshall(getTopicAttributesRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new GetTopicAttributesResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -358,10 +383,20 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *             If an error response is returned by AmazonSNS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public SubscribeResult subscribe(SubscribeRequest subscribeRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<SubscribeRequest> request = new SubscribeRequestMarshaller().marshall(subscribeRequest);
-        return invoke(request, new SubscribeResultStaxUnmarshaller());
+    public SubscribeResult subscribe(SubscribeRequest subscribeRequest) {
+        ExecutionContext executionContext = createExecutionContext(subscribeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<SubscribeRequest> request = null;
+        SubscribeResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new SubscribeRequestMarshaller().marshall(subscribeRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new SubscribeResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -387,10 +422,19 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *             If an error response is returned by AmazonSNS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void deleteEndpoint(DeleteEndpointRequest deleteEndpointRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteEndpointRequest> request = new DeleteEndpointRequestMarshaller().marshall(deleteEndpointRequest);
-        invoke(request, null);
+    public void deleteEndpoint(DeleteEndpointRequest deleteEndpointRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteEndpointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteEndpointRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteEndpointRequestMarshaller().marshall(deleteEndpointRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
     }
     
     /**
@@ -416,10 +460,19 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *             If an error response is returned by AmazonSNS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void setTopicAttributes(SetTopicAttributesRequest setTopicAttributesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<SetTopicAttributesRequest> request = new SetTopicAttributesRequestMarshaller().marshall(setTopicAttributesRequest);
-        invoke(request, null);
+    public void setTopicAttributes(SetTopicAttributesRequest setTopicAttributesRequest) {
+        ExecutionContext executionContext = createExecutionContext(setTopicAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<SetTopicAttributesRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new SetTopicAttributesRequestMarshaller().marshall(setTopicAttributesRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
     }
     
     /**
@@ -444,10 +497,19 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *             If an error response is returned by AmazonSNS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void removePermission(RemovePermissionRequest removePermissionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<RemovePermissionRequest> request = new RemovePermissionRequestMarshaller().marshall(removePermissionRequest);
-        invoke(request, null);
+    public void removePermission(RemovePermissionRequest removePermissionRequest) {
+        ExecutionContext executionContext = createExecutionContext(removePermissionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<RemovePermissionRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new RemovePermissionRequestMarshaller().marshall(removePermissionRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
     }
     
     /**
@@ -479,10 +541,20 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *             If an error response is returned by AmazonSNS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public GetEndpointAttributesResult getEndpointAttributes(GetEndpointAttributesRequest getEndpointAttributesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<GetEndpointAttributesRequest> request = new GetEndpointAttributesRequestMarshaller().marshall(getEndpointAttributesRequest);
-        return invoke(request, new GetEndpointAttributesResultStaxUnmarshaller());
+    public GetEndpointAttributesResult getEndpointAttributes(GetEndpointAttributesRequest getEndpointAttributesRequest) {
+        ExecutionContext executionContext = createExecutionContext(getEndpointAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<GetEndpointAttributesRequest> request = null;
+        GetEndpointAttributesResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new GetEndpointAttributesRequestMarshaller().marshall(getEndpointAttributesRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new GetEndpointAttributesResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -513,10 +585,20 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *             If an error response is returned by AmazonSNS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListSubscriptionsResult listSubscriptions(ListSubscriptionsRequest listSubscriptionsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ListSubscriptionsRequest> request = new ListSubscriptionsRequestMarshaller().marshall(listSubscriptionsRequest);
-        return invoke(request, new ListSubscriptionsResultStaxUnmarshaller());
+    public ListSubscriptionsResult listSubscriptions(ListSubscriptionsRequest listSubscriptionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listSubscriptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ListSubscriptionsRequest> request = null;
+        ListSubscriptionsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ListSubscriptionsRequestMarshaller().marshall(listSubscriptionsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new ListSubscriptionsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -554,10 +636,20 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *             If an error response is returned by AmazonSNS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreatePlatformEndpointResult createPlatformEndpoint(CreatePlatformEndpointRequest createPlatformEndpointRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreatePlatformEndpointRequest> request = new CreatePlatformEndpointRequestMarshaller().marshall(createPlatformEndpointRequest);
-        return invoke(request, new CreatePlatformEndpointResultStaxUnmarshaller());
+    public CreatePlatformEndpointResult createPlatformEndpoint(CreatePlatformEndpointRequest createPlatformEndpointRequest) {
+        ExecutionContext executionContext = createExecutionContext(createPlatformEndpointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreatePlatformEndpointRequest> request = null;
+        CreatePlatformEndpointResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreatePlatformEndpointRequestMarshaller().marshall(createPlatformEndpointRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new CreatePlatformEndpointResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -583,10 +675,19 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *             If an error response is returned by AmazonSNS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void setSubscriptionAttributes(SetSubscriptionAttributesRequest setSubscriptionAttributesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<SetSubscriptionAttributesRequest> request = new SetSubscriptionAttributesRequestMarshaller().marshall(setSubscriptionAttributesRequest);
-        invoke(request, null);
+    public void setSubscriptionAttributes(SetSubscriptionAttributesRequest setSubscriptionAttributesRequest) {
+        ExecutionContext executionContext = createExecutionContext(setSubscriptionAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<SetSubscriptionAttributesRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new SetSubscriptionAttributesRequestMarshaller().marshall(setSubscriptionAttributesRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
     }
     
     /**
@@ -618,10 +719,20 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *             If an error response is returned by AmazonSNS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreateTopicResult createTopic(CreateTopicRequest createTopicRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateTopicRequest> request = new CreateTopicRequestMarshaller().marshall(createTopicRequest);
-        return invoke(request, new CreateTopicResultStaxUnmarshaller());
+    public CreateTopicResult createTopic(CreateTopicRequest createTopicRequest) {
+        ExecutionContext executionContext = createExecutionContext(createTopicRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateTopicRequest> request = null;
+        CreateTopicResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreateTopicRequestMarshaller().marshall(createTopicRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new CreateTopicResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -650,10 +761,20 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *             If an error response is returned by AmazonSNS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public GetSubscriptionAttributesResult getSubscriptionAttributes(GetSubscriptionAttributesRequest getSubscriptionAttributesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<GetSubscriptionAttributesRequest> request = new GetSubscriptionAttributesRequestMarshaller().marshall(getSubscriptionAttributesRequest);
-        return invoke(request, new GetSubscriptionAttributesResultStaxUnmarshaller());
+    public GetSubscriptionAttributesResult getSubscriptionAttributes(GetSubscriptionAttributesRequest getSubscriptionAttributesRequest) {
+        ExecutionContext executionContext = createExecutionContext(getSubscriptionAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<GetSubscriptionAttributesRequest> request = null;
+        GetSubscriptionAttributesResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new GetSubscriptionAttributesRequestMarshaller().marshall(getSubscriptionAttributesRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new GetSubscriptionAttributesResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -683,10 +804,20 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *             If an error response is returned by AmazonSNS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListTopicsResult listTopics(ListTopicsRequest listTopicsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ListTopicsRequest> request = new ListTopicsRequestMarshaller().marshall(listTopicsRequest);
-        return invoke(request, new ListTopicsResultStaxUnmarshaller());
+    public ListTopicsResult listTopics(ListTopicsRequest listTopicsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listTopicsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ListTopicsRequest> request = null;
+        ListTopicsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ListTopicsRequestMarshaller().marshall(listTopicsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new ListTopicsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -714,10 +845,19 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *             If an error response is returned by AmazonSNS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void deletePlatformApplication(DeletePlatformApplicationRequest deletePlatformApplicationRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeletePlatformApplicationRequest> request = new DeletePlatformApplicationRequestMarshaller().marshall(deletePlatformApplicationRequest);
-        invoke(request, null);
+    public void deletePlatformApplication(DeletePlatformApplicationRequest deletePlatformApplicationRequest) {
+        ExecutionContext executionContext = createExecutionContext(deletePlatformApplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeletePlatformApplicationRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeletePlatformApplicationRequestMarshaller().marshall(deletePlatformApplicationRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
     }
     
     /**
@@ -754,10 +894,20 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *             If an error response is returned by AmazonSNS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListPlatformApplicationsResult listPlatformApplications(ListPlatformApplicationsRequest listPlatformApplicationsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ListPlatformApplicationsRequest> request = new ListPlatformApplicationsRequestMarshaller().marshall(listPlatformApplicationsRequest);
-        return invoke(request, new ListPlatformApplicationsResultStaxUnmarshaller());
+    public ListPlatformApplicationsResult listPlatformApplications(ListPlatformApplicationsRequest listPlatformApplicationsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listPlatformApplicationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ListPlatformApplicationsRequest> request = null;
+        ListPlatformApplicationsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ListPlatformApplicationsRequestMarshaller().marshall(listPlatformApplicationsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new ListPlatformApplicationsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -786,10 +936,19 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *             If an error response is returned by AmazonSNS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void setEndpointAttributes(SetEndpointAttributesRequest setEndpointAttributesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<SetEndpointAttributesRequest> request = new SetEndpointAttributesRequestMarshaller().marshall(setEndpointAttributesRequest);
-        invoke(request, null);
+    public void setEndpointAttributes(SetEndpointAttributesRequest setEndpointAttributesRequest) {
+        ExecutionContext executionContext = createExecutionContext(setEndpointAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<SetEndpointAttributesRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new SetEndpointAttributesRequestMarshaller().marshall(setEndpointAttributesRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
     }
     
     /**
@@ -820,10 +979,19 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *             If an error response is returned by AmazonSNS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void unsubscribe(UnsubscribeRequest unsubscribeRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<UnsubscribeRequest> request = new UnsubscribeRequestMarshaller().marshall(unsubscribeRequest);
-        invoke(request, null);
+    public void unsubscribe(UnsubscribeRequest unsubscribeRequest) {
+        ExecutionContext executionContext = createExecutionContext(unsubscribeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<UnsubscribeRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new UnsubscribeRequestMarshaller().marshall(unsubscribeRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
     }
     
     /**
@@ -851,10 +1019,19 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *             If an error response is returned by AmazonSNS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void deleteTopic(DeleteTopicRequest deleteTopicRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteTopicRequest> request = new DeleteTopicRequestMarshaller().marshall(deleteTopicRequest);
-        invoke(request, null);
+    public void deleteTopic(DeleteTopicRequest deleteTopicRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteTopicRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteTopicRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteTopicRequestMarshaller().marshall(deleteTopicRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
     }
     
     /**
@@ -886,10 +1063,20 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *             If an error response is returned by AmazonSNS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public GetPlatformApplicationAttributesResult getPlatformApplicationAttributes(GetPlatformApplicationAttributesRequest getPlatformApplicationAttributesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<GetPlatformApplicationAttributesRequest> request = new GetPlatformApplicationAttributesRequestMarshaller().marshall(getPlatformApplicationAttributesRequest);
-        return invoke(request, new GetPlatformApplicationAttributesResultStaxUnmarshaller());
+    public GetPlatformApplicationAttributesResult getPlatformApplicationAttributes(GetPlatformApplicationAttributesRequest getPlatformApplicationAttributesRequest) {
+        ExecutionContext executionContext = createExecutionContext(getPlatformApplicationAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<GetPlatformApplicationAttributesRequest> request = null;
+        GetPlatformApplicationAttributesResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new GetPlatformApplicationAttributesRequestMarshaller().marshall(getPlatformApplicationAttributesRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new GetPlatformApplicationAttributesResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -918,10 +1105,19 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *             If an error response is returned by AmazonSNS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void setPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest setPlatformApplicationAttributesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<SetPlatformApplicationAttributesRequest> request = new SetPlatformApplicationAttributesRequestMarshaller().marshall(setPlatformApplicationAttributesRequest);
-        invoke(request, null);
+    public void setPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest setPlatformApplicationAttributesRequest) {
+        ExecutionContext executionContext = createExecutionContext(setPlatformApplicationAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<SetPlatformApplicationAttributesRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new SetPlatformApplicationAttributesRequestMarshaller().marshall(setPlatformApplicationAttributesRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
     }
     
     /**
@@ -947,10 +1143,19 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *             If an error response is returned by AmazonSNS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void addPermission(AddPermissionRequest addPermissionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<AddPermissionRequest> request = new AddPermissionRequestMarshaller().marshall(addPermissionRequest);
-        invoke(request, null);
+    public void addPermission(AddPermissionRequest addPermissionRequest) {
+        ExecutionContext executionContext = createExecutionContext(addPermissionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<AddPermissionRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new AddPermissionRequestMarshaller().marshall(addPermissionRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
     }
     
     /**
@@ -990,10 +1195,20 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *             If an error response is returned by AmazonSNS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListEndpointsByPlatformApplicationResult listEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest listEndpointsByPlatformApplicationRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ListEndpointsByPlatformApplicationRequest> request = new ListEndpointsByPlatformApplicationRequestMarshaller().marshall(listEndpointsByPlatformApplicationRequest);
-        return invoke(request, new ListEndpointsByPlatformApplicationResultStaxUnmarshaller());
+    public ListEndpointsByPlatformApplicationResult listEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest listEndpointsByPlatformApplicationRequest) {
+        ExecutionContext executionContext = createExecutionContext(listEndpointsByPlatformApplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ListEndpointsByPlatformApplicationRequest> request = null;
+        ListEndpointsByPlatformApplicationResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ListEndpointsByPlatformApplicationRequestMarshaller().marshall(listEndpointsByPlatformApplicationRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new ListEndpointsByPlatformApplicationResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1026,10 +1241,20 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *             If an error response is returned by AmazonSNS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListSubscriptionsByTopicResult listSubscriptionsByTopic(ListSubscriptionsByTopicRequest listSubscriptionsByTopicRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ListSubscriptionsByTopicRequest> request = new ListSubscriptionsByTopicRequestMarshaller().marshall(listSubscriptionsByTopicRequest);
-        return invoke(request, new ListSubscriptionsByTopicResultStaxUnmarshaller());
+    public ListSubscriptionsByTopicResult listSubscriptionsByTopic(ListSubscriptionsByTopicRequest listSubscriptionsByTopicRequest) {
+        ExecutionContext executionContext = createExecutionContext(listSubscriptionsByTopicRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ListSubscriptionsByTopicRequest> request = null;
+        ListSubscriptionsByTopicResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ListSubscriptionsByTopicRequestMarshaller().marshall(listSubscriptionsByTopicRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new ListSubscriptionsByTopicResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1071,10 +1296,20 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      *             If an error response is returned by AmazonSNS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public PublishResult publish(PublishRequest publishRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<PublishRequest> request = new PublishRequestMarshaller().marshall(publishRequest);
-        return invoke(request, new PublishResultStaxUnmarshaller());
+    public PublishResult publish(PublishRequest publishRequest) {
+        ExecutionContext executionContext = createExecutionContext(publishRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<PublishRequest> request = null;
+        PublishResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new PublishRequestMarshaller().marshall(publishRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new PublishResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1235,26 +1470,27 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
         return client.getResponseMetadataForRequest(request);
     }
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, Unmarshaller<X, StaxUnmarshallerContext> unmarshaller) {
+    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
+            Unmarshaller<X, StaxUnmarshallerContext> unmarshaller,
+            ExecutionContext executionContext)
+    {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
-        for (Entry<String, String> entry : request.getOriginalRequest().copyPrivateRequestParameters().entrySet()) {
+        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
+        for (Entry<String, String> entry : originalRequest.copyPrivateRequestParameters().entrySet()) {
             request.addParameter(entry.getKey(), entry.getValue());
         }
 
         AWSCredentials credentials = awsCredentialsProvider.getCredentials();
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
-          credentials = originalRequest.getRequestCredentials();
+        if (originalRequest.getRequestCredentials() != null) {
+            credentials = originalRequest.getRequestCredentials();
         }
 
-        ExecutionContext executionContext = createExecutionContext(originalRequest);
         executionContext.setSigner(signer);
         executionContext.setCredentials(credentials);
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
-
         return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 }

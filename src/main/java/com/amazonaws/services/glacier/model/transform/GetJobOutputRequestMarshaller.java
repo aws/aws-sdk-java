@@ -59,9 +59,9 @@ public class GetJobOutputRequestMarshaller implements Marshaller<Request<GetJobO
 
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/jobs/{jobId}/output"; 
-        uriResourcePath = uriResourcePath.replace("{accountId}", getString(getJobOutputRequest.getAccountId())); 
-        uriResourcePath = uriResourcePath.replace("{vaultName}", getString(getJobOutputRequest.getVaultName())); 
-        uriResourcePath = uriResourcePath.replace("{jobId}", getString(getJobOutputRequest.getJobId())); 
+        uriResourcePath = uriResourcePath.replace("{accountId}", (getJobOutputRequest.getAccountId() == null) ? "" : StringUtils.fromString(getJobOutputRequest.getAccountId())); 
+        uriResourcePath = uriResourcePath.replace("{vaultName}", (getJobOutputRequest.getVaultName() == null) ? "" : StringUtils.fromString(getJobOutputRequest.getVaultName())); 
+        uriResourcePath = uriResourcePath.replace("{jobId}", (getJobOutputRequest.getJobId() == null) ? "" : StringUtils.fromString(getJobOutputRequest.getJobId())); 
 
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
@@ -87,10 +87,5 @@ public class GetJobOutputRequestMarshaller implements Marshaller<Request<GetJobO
         
 
         return request;
-    }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
     }
 }

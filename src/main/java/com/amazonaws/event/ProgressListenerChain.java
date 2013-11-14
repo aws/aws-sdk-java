@@ -26,7 +26,7 @@ import org.apache.commons.logging.LogFactory;
  * <p>
  * This class could be used for both Amazon S3 and Amazon Glacier clients. The
  * legacy Amazon S3 progress listener chain
- * {@link com.amazonaws.services.s3.transfer.internal.ProgressListenerChain} is
+ * com.amazonaws.services.s3.transfer.internal.ProgressListenerChain has been
  * deprecated in favor of this new class.
  * </p>
  */

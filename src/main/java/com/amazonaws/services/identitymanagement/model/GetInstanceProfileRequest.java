@@ -22,9 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getInstanceProfile(GetInstanceProfileRequest) GetInstanceProfile operation}.
  * <p>
  * Retrieves information about the specified instance profile, including the instance profile's path, GUID, ARN, and role. For more information about
- * instance profiles, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"> About Instance Profiles </a> .
- * For more information about ARNs, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs"> ARNs
- * </a> .
+ * instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"> About Instance Profiles </a> . For more
+ * information about ARNs, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs"> ARNs </a> .
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getInstanceProfile(GetInstanceProfileRequest)

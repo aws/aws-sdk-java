@@ -103,9 +103,4 @@ public class StopInstanceRequestMarshaller implements Marshaller<Request<StopIns
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

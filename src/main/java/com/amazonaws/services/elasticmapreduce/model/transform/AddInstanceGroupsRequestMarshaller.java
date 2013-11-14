@@ -136,9 +136,4 @@ public class AddInstanceGroupsRequestMarshaller implements Marshaller<Request<Ad
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

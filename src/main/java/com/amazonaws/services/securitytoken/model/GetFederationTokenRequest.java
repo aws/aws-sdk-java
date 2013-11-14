@@ -29,7 +29,6 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * <b>Note:</b> Do not use this call in mobile applications or client-based web applications that directly get temporary security credentials. For those
  * types of applications, use <code>AssumeRoleWithWebIdentity</code> .
- * 
  * </p>
  * <p>
  * The <code>GetFederationToken</code> action must be called by using the long-term AWS security credentials of the AWS account or an IAM user.
@@ -37,15 +36,17 @@ import com.amazonaws.AmazonWebServiceRequest;
  * credentials that are created by using account credentials have a maximum duration of 3600 seconds (1 hour).
  * </p>
  * <p>
- * The permissions that are granted to the federated user are the intersection of the policy that is passed with the <code>GetFederationToken</code>
- * request and policies that are associated with of the entity making the <code>GetFederationToken</code> call.
+ * Optionally, you can pass an AWS IAM access policy to this operation. The temporary security credentials that are returned by the operation have the
+ * permissions that are associated with the entity that is making the <code>GetFederationToken</code> call, except for any permissions explicitly denied
+ * by the policy you pass. This gives you a way to further restrict the permissions for the federated user. These policies and any applicable
+ * resource-based policies are evaluated when calls to AWS are made using the temporary security credentials.
  * </p>
  * <p>
  * For more information about how permissions work, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/TokenPermissions.html"> Controlling
- * Permissions in Temporary Credentials </a> in <i>Using Temporary Security Credentials</i> . For information about using <code>GetFederationToken</code>
- * to create temporary security credentials, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/CreatingFedTokens.html"> Creating Temporary
- * Credentials to Enable Access for Federated Users </a> in <i>Using Temporary Security Credentials</i> .
- * 
+ * Permissions in Temporary Credentials </a> in <i>Using Temporary Security Credentials</i> . For information about using
+ * <code>GetFederationToken</code> to create temporary security credentials, see <a
+ * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/CreatingFedTokens.html"> Creating Temporary Credentials to Enable Access for Federated Users
+ * </a> in <i>Using Temporary Security Credentials</i> .
  * </p>
  *
  * @see com.amazonaws.services.securitytoken.AWSSecurityTokenService#getFederationToken(GetFederationTokenRequest)
@@ -65,14 +66,13 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest implement
     private String name;
 
     /**
-     * A policy that specifies the permissions that are granted to the
-     * federated user. By default, federated users have no permissions; they
-     * do not inherit any from the IAM user. When you specify a policy, the
-     * federated user's permissions are intersection of the specified policy
-     * and the IAM user's policy. If you don't specify a policy, federated
-     * users can only access AWS resources that explicitly allow those
-     * federated users in a resource policy, such as in an Amazon S3 bucket
-     * policy.
+     * An AWS IAM policy in JSON format. <p>By default, federated users have
+     * no permissions; they do not inherit any from the IAM user. When you
+     * specify a policy, the federated user's permissions are based on the
+     * specified policy and the IAM user's policy. If you don't specify a
+     * policy, federated users can only access AWS resources that explicitly
+     * allow those federated users in a resource policy, such as in an Amazon
+     * S3 bucket policy.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2048<br/>
@@ -178,68 +178,63 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * A policy that specifies the permissions that are granted to the
-     * federated user. By default, federated users have no permissions; they
-     * do not inherit any from the IAM user. When you specify a policy, the
-     * federated user's permissions are intersection of the specified policy
-     * and the IAM user's policy. If you don't specify a policy, federated
-     * users can only access AWS resources that explicitly allow those
-     * federated users in a resource policy, such as in an Amazon S3 bucket
-     * policy.
+     * An AWS IAM policy in JSON format. <p>By default, federated users have
+     * no permissions; they do not inherit any from the IAM user. When you
+     * specify a policy, the federated user's permissions are based on the
+     * specified policy and the IAM user's policy. If you don't specify a
+     * policy, federated users can only access AWS resources that explicitly
+     * allow those federated users in a resource policy, such as in an Amazon
+     * S3 bucket policy.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2048<br/>
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      *
-     * @return A policy that specifies the permissions that are granted to the
-     *         federated user. By default, federated users have no permissions; they
-     *         do not inherit any from the IAM user. When you specify a policy, the
-     *         federated user's permissions are intersection of the specified policy
-     *         and the IAM user's policy. If you don't specify a policy, federated
-     *         users can only access AWS resources that explicitly allow those
-     *         federated users in a resource policy, such as in an Amazon S3 bucket
-     *         policy.
+     * @return An AWS IAM policy in JSON format. <p>By default, federated users have
+     *         no permissions; they do not inherit any from the IAM user. When you
+     *         specify a policy, the federated user's permissions are based on the
+     *         specified policy and the IAM user's policy. If you don't specify a
+     *         policy, federated users can only access AWS resources that explicitly
+     *         allow those federated users in a resource policy, such as in an Amazon
+     *         S3 bucket policy.
      */
     public String getPolicy() {
         return policy;
     }
     
     /**
-     * A policy that specifies the permissions that are granted to the
-     * federated user. By default, federated users have no permissions; they
-     * do not inherit any from the IAM user. When you specify a policy, the
-     * federated user's permissions are intersection of the specified policy
-     * and the IAM user's policy. If you don't specify a policy, federated
-     * users can only access AWS resources that explicitly allow those
-     * federated users in a resource policy, such as in an Amazon S3 bucket
-     * policy.
+     * An AWS IAM policy in JSON format. <p>By default, federated users have
+     * no permissions; they do not inherit any from the IAM user. When you
+     * specify a policy, the federated user's permissions are based on the
+     * specified policy and the IAM user's policy. If you don't specify a
+     * policy, federated users can only access AWS resources that explicitly
+     * allow those federated users in a resource policy, such as in an Amazon
+     * S3 bucket policy.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2048<br/>
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      *
-     * @param policy A policy that specifies the permissions that are granted to the
-     *         federated user. By default, federated users have no permissions; they
-     *         do not inherit any from the IAM user. When you specify a policy, the
-     *         federated user's permissions are intersection of the specified policy
-     *         and the IAM user's policy. If you don't specify a policy, federated
-     *         users can only access AWS resources that explicitly allow those
-     *         federated users in a resource policy, such as in an Amazon S3 bucket
-     *         policy.
+     * @param policy An AWS IAM policy in JSON format. <p>By default, federated users have
+     *         no permissions; they do not inherit any from the IAM user. When you
+     *         specify a policy, the federated user's permissions are based on the
+     *         specified policy and the IAM user's policy. If you don't specify a
+     *         policy, federated users can only access AWS resources that explicitly
+     *         allow those federated users in a resource policy, such as in an Amazon
+     *         S3 bucket policy.
      */
     public void setPolicy(String policy) {
         this.policy = policy;
     }
     
     /**
-     * A policy that specifies the permissions that are granted to the
-     * federated user. By default, federated users have no permissions; they
-     * do not inherit any from the IAM user. When you specify a policy, the
-     * federated user's permissions are intersection of the specified policy
-     * and the IAM user's policy. If you don't specify a policy, federated
-     * users can only access AWS resources that explicitly allow those
-     * federated users in a resource policy, such as in an Amazon S3 bucket
-     * policy.
+     * An AWS IAM policy in JSON format. <p>By default, federated users have
+     * no permissions; they do not inherit any from the IAM user. When you
+     * specify a policy, the federated user's permissions are based on the
+     * specified policy and the IAM user's policy. If you don't specify a
+     * policy, federated users can only access AWS resources that explicitly
+     * allow those federated users in a resource policy, such as in an Amazon
+     * S3 bucket policy.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -247,14 +242,13 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest implement
      * <b>Length: </b>1 - 2048<br/>
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      *
-     * @param policy A policy that specifies the permissions that are granted to the
-     *         federated user. By default, federated users have no permissions; they
-     *         do not inherit any from the IAM user. When you specify a policy, the
-     *         federated user's permissions are intersection of the specified policy
-     *         and the IAM user's policy. If you don't specify a policy, federated
-     *         users can only access AWS resources that explicitly allow those
-     *         federated users in a resource policy, such as in an Amazon S3 bucket
-     *         policy.
+     * @param policy An AWS IAM policy in JSON format. <p>By default, federated users have
+     *         no permissions; they do not inherit any from the IAM user. When you
+     *         specify a policy, the federated user's permissions are based on the
+     *         specified policy and the IAM user's policy. If you don't specify a
+     *         policy, federated users can only access AWS resources that explicitly
+     *         allow those federated users in a resource policy, such as in an Amazon
+     *         S3 bucket policy.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

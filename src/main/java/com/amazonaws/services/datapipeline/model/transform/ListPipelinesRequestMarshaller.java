@@ -103,9 +103,4 @@ public class ListPipelinesRequestMarshaller implements Marshaller<Request<ListPi
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

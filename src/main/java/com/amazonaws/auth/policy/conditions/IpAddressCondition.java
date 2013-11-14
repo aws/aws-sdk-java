@@ -44,7 +44,7 @@ public class IpAddressCondition extends Condition {
          */
         IpAddress,
 
-        /** Negated form of {@link IpAddressConditionType#IpAddress} */
+        /** Negated form of {@link #IpAddress} */
         NotIpAddress,
     }
 

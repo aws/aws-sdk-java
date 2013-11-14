@@ -47,4 +47,11 @@ public abstract class ByteThroughputProvider {
         this.byteCount = 0;
         this.duration = 0;
     }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "providerId=%s, throughputType=%s, byteCount=%d, duration=%d",
+                getProviderId(), throughputType, byteCount, duration);
+    }
 }

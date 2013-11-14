@@ -114,9 +114,4 @@ public class TerminateJobFlowsRequestMarshaller implements Marshaller<Request<Te
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

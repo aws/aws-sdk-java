@@ -120,9 +120,4 @@ public class DescribeCommandsRequestMarshaller implements Marshaller<Request<Des
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

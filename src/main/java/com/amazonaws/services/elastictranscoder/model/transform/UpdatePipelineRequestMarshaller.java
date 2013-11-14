@@ -56,7 +56,7 @@ public class UpdatePipelineRequestMarshaller implements Marshaller<Request<Updat
 
 
         String uriResourcePath = "2012-09-25/pipelines/{Id}"; 
-        uriResourcePath = uriResourcePath.replace("{Id}", getString(updatePipelineRequest.getId())); 
+        uriResourcePath = uriResourcePath.replace("{Id}", (updatePipelineRequest.getId() == null) ? "" : StringUtils.fromString(updatePipelineRequest.getId())); 
 
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
@@ -227,10 +227,5 @@ public class UpdatePipelineRequestMarshaller implements Marshaller<Request<Updat
         
 
         return request;
-    }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
     }
 }

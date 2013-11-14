@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listMFADevices(ListMFADevicesRequest) ListMFADevices operation}.
  * <p>
  * Lists the MFA devices. If the request includes the user name, then this action lists all the MFA devices associated with the specified user name. If
- * you do not specify a user name, IAM determines the user name implicitly based on the AWS Access Key ID signing the request.
+ * you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID signing the request.
  * </p>
  * <p>
  * You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
@@ -57,7 +57,8 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest implements Se
      * Use this only when paginating results to indicate the maximum number
      * of MFA devices you want in the response. If there are additional MFA
      * devices beyond the maximum you specify, the <code>IsTruncated</code>
-     * response element is <code>true</code>.
+     * response element is <code>true</code>. This parameter is optional. If
+     * you do not include it, it defaults to 100.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -193,7 +194,8 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest implements Se
      * Use this only when paginating results to indicate the maximum number
      * of MFA devices you want in the response. If there are additional MFA
      * devices beyond the maximum you specify, the <code>IsTruncated</code>
-     * response element is <code>true</code>.
+     * response element is <code>true</code>. This parameter is optional. If
+     * you do not include it, it defaults to 100.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -201,7 +203,8 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest implements Se
      * @return Use this only when paginating results to indicate the maximum number
      *         of MFA devices you want in the response. If there are additional MFA
      *         devices beyond the maximum you specify, the <code>IsTruncated</code>
-     *         response element is <code>true</code>.
+     *         response element is <code>true</code>. This parameter is optional. If
+     *         you do not include it, it defaults to 100.
      */
     public Integer getMaxItems() {
         return maxItems;
@@ -211,7 +214,8 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest implements Se
      * Use this only when paginating results to indicate the maximum number
      * of MFA devices you want in the response. If there are additional MFA
      * devices beyond the maximum you specify, the <code>IsTruncated</code>
-     * response element is <code>true</code>.
+     * response element is <code>true</code>. This parameter is optional. If
+     * you do not include it, it defaults to 100.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -219,7 +223,8 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest implements Se
      * @param maxItems Use this only when paginating results to indicate the maximum number
      *         of MFA devices you want in the response. If there are additional MFA
      *         devices beyond the maximum you specify, the <code>IsTruncated</code>
-     *         response element is <code>true</code>.
+     *         response element is <code>true</code>. This parameter is optional. If
+     *         you do not include it, it defaults to 100.
      */
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
@@ -229,7 +234,8 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest implements Se
      * Use this only when paginating results to indicate the maximum number
      * of MFA devices you want in the response. If there are additional MFA
      * devices beyond the maximum you specify, the <code>IsTruncated</code>
-     * response element is <code>true</code>.
+     * response element is <code>true</code>. This parameter is optional. If
+     * you do not include it, it defaults to 100.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -239,7 +245,8 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest implements Se
      * @param maxItems Use this only when paginating results to indicate the maximum number
      *         of MFA devices you want in the response. If there are additional MFA
      *         devices beyond the maximum you specify, the <code>IsTruncated</code>
-     *         response element is <code>true</code>.
+     *         response element is <code>true</code>. This parameter is optional. If
+     *         you do not include it, it defaults to 100.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

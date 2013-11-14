@@ -233,7 +233,6 @@ public class ImmutableMapParameter<K, V> implements Map<K, V> {
 		/**
 		 * Generates and returns a new ImmutableMapParameter instance which contains all the entries added into
 		 * the Builder by {@code put()} method.
-		 * @return
 		 */
 		public ImmutableMapParameter<K, V> build() {
 			HashMap<K, V> builtMap = new HashMap<K, V>();

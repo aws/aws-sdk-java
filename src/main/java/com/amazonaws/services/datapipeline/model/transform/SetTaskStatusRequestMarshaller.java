@@ -115,9 +115,4 @@ public class SetTaskStatusRequestMarshaller implements Marshaller<Request<SetTas
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

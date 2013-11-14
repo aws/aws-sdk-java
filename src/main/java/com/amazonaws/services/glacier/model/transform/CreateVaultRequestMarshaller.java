@@ -56,8 +56,8 @@ public class CreateVaultRequestMarshaller implements Marshaller<Request<CreateVa
 
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}"; 
-        uriResourcePath = uriResourcePath.replace("{accountId}", getString(createVaultRequest.getAccountId())); 
-        uriResourcePath = uriResourcePath.replace("{vaultName}", getString(createVaultRequest.getVaultName())); 
+        uriResourcePath = uriResourcePath.replace("{accountId}", (createVaultRequest.getAccountId() == null) ? "" : StringUtils.fromString(createVaultRequest.getAccountId())); 
+        uriResourcePath = uriResourcePath.replace("{vaultName}", (createVaultRequest.getVaultName() == null) ? "" : StringUtils.fromString(createVaultRequest.getVaultName())); 
 
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
@@ -83,10 +83,5 @@ public class CreateVaultRequestMarshaller implements Marshaller<Request<CreateVa
         
 
         return request;
-    }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
     }
 }

@@ -41,13 +41,13 @@ public class StringCondition extends Condition {
          */
         StringLike,
 
-        /** Negated form of {@link StringConditionType#StringEquals} */
+        /** Negated form of {@link #StringEquals} */
         StringNotEquals,
 
-        /** Negated form of {@link StringConditionType#StringEqualsIgnoreCase} */
+        /** Negated form of {@link #StringEqualsIgnoreCase} */
         StringNotEqualsIgnoreCase,
 
-        /** Negated form of {@link StringConditionType#StringLike} */
+        /** Negated form of {@link #StringLike} */
         StringNotLike;
     }
 

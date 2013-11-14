@@ -24,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Deletes the specified signing certificate associated with the specified user.
  * </p>
  * <p>
- * If you do not specify a user name, IAM determines the user name implicitly based on the AWS Access Key ID signing the request. Because this action
+ * If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID signing the request. Because this action
  * works for access keys under the AWS account, you can use this API to manage root credentials even if the AWS account has no associated users.
  * </p>
  *

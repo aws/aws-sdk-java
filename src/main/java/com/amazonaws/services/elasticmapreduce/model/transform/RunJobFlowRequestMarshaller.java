@@ -353,9 +353,4 @@ public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlo
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

@@ -106,9 +106,4 @@ public class DeleteTapeRequestMarshaller implements Marshaller<Request<DeleteTap
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

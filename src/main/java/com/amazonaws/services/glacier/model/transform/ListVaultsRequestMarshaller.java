@@ -56,9 +56,9 @@ public class ListVaultsRequestMarshaller implements Marshaller<Request<ListVault
 
 
         String uriResourcePath = "/{accountId}/vaults?marker={marker};limit={limit}"; 
-        uriResourcePath = uriResourcePath.replace("{accountId}", getString(listVaultsRequest.getAccountId())); 
-        uriResourcePath = uriResourcePath.replace("{marker}", getString(listVaultsRequest.getMarker())); 
-        uriResourcePath = uriResourcePath.replace("{limit}", getString(listVaultsRequest.getLimit())); 
+        uriResourcePath = uriResourcePath.replace("{accountId}", (listVaultsRequest.getAccountId() == null) ? "" : StringUtils.fromString(listVaultsRequest.getAccountId())); 
+        uriResourcePath = uriResourcePath.replace("{marker}", (listVaultsRequest.getMarker() == null) ? "" : StringUtils.fromString(listVaultsRequest.getMarker())); 
+        uriResourcePath = uriResourcePath.replace("{limit}", (listVaultsRequest.getLimit() == null) ? "" : StringUtils.fromString(listVaultsRequest.getLimit())); 
 
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
@@ -84,10 +84,5 @@ public class ListVaultsRequestMarshaller implements Marshaller<Request<ListVault
         
 
         return request;
-    }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
     }
 }

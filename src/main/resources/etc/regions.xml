@@ -21,6 +21,12 @@
         <Hostname>cloudsearch.us-east-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>cloudtrail</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>cloudtrail.us-east-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>monitoring</ServiceName>
         <Http>true</Http>
         <Https>true</Https>
@@ -355,6 +361,12 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>cloudsearch.us-west-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>cloudtrail</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>cloudtrail.us-west-2.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>monitoring</ServiceName>
@@ -948,6 +960,12 @@
         <Hostname>directconnect.ap-southeast-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>redshift</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>redshift.ap-southeast-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>elastictranscoder</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -1083,10 +1101,22 @@
         <Hostname>swf.ap-southeast-2.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>glacier</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>glacier.ap-southeast-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>directconnect</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>directconnect.ap-southeast-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>redshift</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>redshift.ap-southeast-2.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>elastictranscoder</ServiceName>
@@ -1239,12 +1269,6 @@
     <Region>
       <Name>us-gov-west-1</Name>
       <Endpoint>
-        <ServiceName>cloudformation</ServiceName>
-        <Http>false</Http>
-        <Https>true</Https>
-        <Hostname>cloudformation.us-gov-west-1.amazonaws.com</Hostname>
-      </Endpoint>
-      <Endpoint>
         <ServiceName>monitoring</ServiceName>
         <Http>false</Http>
         <Https>true</Https>
@@ -1336,7 +1360,6 @@
       <RegionName>ap-southeast-1</RegionName>
       <RegionName>ap-southeast-2</RegionName>
       <RegionName>sa-east-1</RegionName>
-      <RegionName>us-gov-west-1</RegionName>
     </Service>
     <Service>
       <Name>cloudfront</Name>
@@ -1358,6 +1381,12 @@
       <RegionName>us-west-2</RegionName>
       <RegionName>eu-west-1</RegionName>
       <RegionName>ap-southeast-1</RegionName>
+    </Service>
+    <Service>
+      <Name>cloudtrail</Name>
+      <FullName>AWS CloudTrail</FullName>
+      <RegionName>us-east-1</RegionName>
+      <RegionName>us-west-2</RegionName>
     </Service>
     <Service>
       <Name>monitoring</Name>
@@ -1618,6 +1647,7 @@
       <RegionName>us-west-2</RegionName>
       <RegionName>eu-west-1</RegionName>
       <RegionName>ap-northeast-1</RegionName>
+      <RegionName>ap-southeast-2</RegionName>
     </Service>
     <Service>
       <Name>directconnect</Name>
@@ -1643,6 +1673,8 @@
       <RegionName>us-west-2</RegionName>
       <RegionName>eu-west-1</RegionName>
       <RegionName>ap-northeast-1</RegionName>
+      <RegionName>ap-southeast-1</RegionName>
+      <RegionName>ap-southeast-2</RegionName>
     </Service>
     <Service>
       <Name>opsworks</Name>

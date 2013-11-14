@@ -105,6 +105,24 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
     private String ownerAccount;
 
     /**
+     * Specifies the name of the HSM client certificate the Amazon Redshift
+     * cluster uses to retrieve the data encryption keys stored in an HSM.
+     */
+    private String hsmClientCertificateIdentifier;
+
+    /**
+     * Specifies the name of the HSM configuration that contains the
+     * information the Amazon Redshift cluster can use to retrieve and store
+     * keys in an HSM.
+     */
+    private String hsmConfigurationIdentifier;
+
+    /**
+     * The elastic IP (EIP) address for the cluster.
+     */
+    private String elasticIp;
+
+    /**
      * The identifier of the cluster that will be created from restoring the
      * snapshot. <p> <p>Constraints: <ul> <li>Must contain from 1 to 63
      * alphanumeric characters or hyphens.</li> <li>Alphabetic characters
@@ -552,6 +570,123 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
     }
 
     /**
+     * Specifies the name of the HSM client certificate the Amazon Redshift
+     * cluster uses to retrieve the data encryption keys stored in an HSM.
+     *
+     * @return Specifies the name of the HSM client certificate the Amazon Redshift
+     *         cluster uses to retrieve the data encryption keys stored in an HSM.
+     */
+    public String getHsmClientCertificateIdentifier() {
+        return hsmClientCertificateIdentifier;
+    }
+    
+    /**
+     * Specifies the name of the HSM client certificate the Amazon Redshift
+     * cluster uses to retrieve the data encryption keys stored in an HSM.
+     *
+     * @param hsmClientCertificateIdentifier Specifies the name of the HSM client certificate the Amazon Redshift
+     *         cluster uses to retrieve the data encryption keys stored in an HSM.
+     */
+    public void setHsmClientCertificateIdentifier(String hsmClientCertificateIdentifier) {
+        this.hsmClientCertificateIdentifier = hsmClientCertificateIdentifier;
+    }
+    
+    /**
+     * Specifies the name of the HSM client certificate the Amazon Redshift
+     * cluster uses to retrieve the data encryption keys stored in an HSM.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param hsmClientCertificateIdentifier Specifies the name of the HSM client certificate the Amazon Redshift
+     *         cluster uses to retrieve the data encryption keys stored in an HSM.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public RestoreFromClusterSnapshotRequest withHsmClientCertificateIdentifier(String hsmClientCertificateIdentifier) {
+        this.hsmClientCertificateIdentifier = hsmClientCertificateIdentifier;
+        return this;
+    }
+
+    /**
+     * Specifies the name of the HSM configuration that contains the
+     * information the Amazon Redshift cluster can use to retrieve and store
+     * keys in an HSM.
+     *
+     * @return Specifies the name of the HSM configuration that contains the
+     *         information the Amazon Redshift cluster can use to retrieve and store
+     *         keys in an HSM.
+     */
+    public String getHsmConfigurationIdentifier() {
+        return hsmConfigurationIdentifier;
+    }
+    
+    /**
+     * Specifies the name of the HSM configuration that contains the
+     * information the Amazon Redshift cluster can use to retrieve and store
+     * keys in an HSM.
+     *
+     * @param hsmConfigurationIdentifier Specifies the name of the HSM configuration that contains the
+     *         information the Amazon Redshift cluster can use to retrieve and store
+     *         keys in an HSM.
+     */
+    public void setHsmConfigurationIdentifier(String hsmConfigurationIdentifier) {
+        this.hsmConfigurationIdentifier = hsmConfigurationIdentifier;
+    }
+    
+    /**
+     * Specifies the name of the HSM configuration that contains the
+     * information the Amazon Redshift cluster can use to retrieve and store
+     * keys in an HSM.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param hsmConfigurationIdentifier Specifies the name of the HSM configuration that contains the
+     *         information the Amazon Redshift cluster can use to retrieve and store
+     *         keys in an HSM.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public RestoreFromClusterSnapshotRequest withHsmConfigurationIdentifier(String hsmConfigurationIdentifier) {
+        this.hsmConfigurationIdentifier = hsmConfigurationIdentifier;
+        return this;
+    }
+
+    /**
+     * The elastic IP (EIP) address for the cluster.
+     *
+     * @return The elastic IP (EIP) address for the cluster.
+     */
+    public String getElasticIp() {
+        return elasticIp;
+    }
+    
+    /**
+     * The elastic IP (EIP) address for the cluster.
+     *
+     * @param elasticIp The elastic IP (EIP) address for the cluster.
+     */
+    public void setElasticIp(String elasticIp) {
+        this.elasticIp = elasticIp;
+    }
+    
+    /**
+     * The elastic IP (EIP) address for the cluster.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param elasticIp The elastic IP (EIP) address for the cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public RestoreFromClusterSnapshotRequest withElasticIp(String elasticIp) {
+        this.elasticIp = elasticIp;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -571,7 +706,10 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
         if (isAllowVersionUpgrade() != null) sb.append("AllowVersionUpgrade: " + isAllowVersionUpgrade() + ",");
         if (getClusterSubnetGroupName() != null) sb.append("ClusterSubnetGroupName: " + getClusterSubnetGroupName() + ",");
         if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() + ",");
-        if (getOwnerAccount() != null) sb.append("OwnerAccount: " + getOwnerAccount() );
+        if (getOwnerAccount() != null) sb.append("OwnerAccount: " + getOwnerAccount() + ",");
+        if (getHsmClientCertificateIdentifier() != null) sb.append("HsmClientCertificateIdentifier: " + getHsmClientCertificateIdentifier() + ",");
+        if (getHsmConfigurationIdentifier() != null) sb.append("HsmConfigurationIdentifier: " + getHsmConfigurationIdentifier() + ",");
+        if (getElasticIp() != null) sb.append("ElasticIp: " + getElasticIp() );
         sb.append("}");
         return sb.toString();
     }
@@ -590,6 +728,9 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getClusterSubnetGroupName() == null) ? 0 : getClusterSubnetGroupName().hashCode()); 
         hashCode = prime * hashCode + ((isPubliclyAccessible() == null) ? 0 : isPubliclyAccessible().hashCode()); 
         hashCode = prime * hashCode + ((getOwnerAccount() == null) ? 0 : getOwnerAccount().hashCode()); 
+        hashCode = prime * hashCode + ((getHsmClientCertificateIdentifier() == null) ? 0 : getHsmClientCertificateIdentifier().hashCode()); 
+        hashCode = prime * hashCode + ((getHsmConfigurationIdentifier() == null) ? 0 : getHsmConfigurationIdentifier().hashCode()); 
+        hashCode = prime * hashCode + ((getElasticIp() == null) ? 0 : getElasticIp().hashCode()); 
         return hashCode;
     }
     
@@ -619,6 +760,12 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
         if (other.isPubliclyAccessible() != null && other.isPubliclyAccessible().equals(this.isPubliclyAccessible()) == false) return false; 
         if (other.getOwnerAccount() == null ^ this.getOwnerAccount() == null) return false;
         if (other.getOwnerAccount() != null && other.getOwnerAccount().equals(this.getOwnerAccount()) == false) return false; 
+        if (other.getHsmClientCertificateIdentifier() == null ^ this.getHsmClientCertificateIdentifier() == null) return false;
+        if (other.getHsmClientCertificateIdentifier() != null && other.getHsmClientCertificateIdentifier().equals(this.getHsmClientCertificateIdentifier()) == false) return false; 
+        if (other.getHsmConfigurationIdentifier() == null ^ this.getHsmConfigurationIdentifier() == null) return false;
+        if (other.getHsmConfigurationIdentifier() != null && other.getHsmConfigurationIdentifier().equals(this.getHsmConfigurationIdentifier()) == false) return false; 
+        if (other.getElasticIp() == null ^ this.getElasticIp() == null) return false;
+        if (other.getElasticIp() != null && other.getElasticIp().equals(this.getElasticIp()) == false) return false; 
         return true;
     }
     

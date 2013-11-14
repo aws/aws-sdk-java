@@ -14,24 +14,19 @@
  */
 package com.amazonaws.services.cloudformation;
 
-import org.w3c.dom.Node;
+import org.w3c.dom.*;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.Map.Entry;
 
 import com.amazonaws.*;
 import com.amazonaws.auth.*;
-import com.amazonaws.handlers.HandlerChainFactory;
-import com.amazonaws.handlers.RequestHandler;
-import com.amazonaws.http.StaxResponseHandler;
-import com.amazonaws.http.DefaultErrorResponseHandler;
-import com.amazonaws.http.ExecutionContext;
-import com.amazonaws.internal.StaticCredentialsProvider;
-import com.amazonaws.transform.Unmarshaller;
-import com.amazonaws.transform.StaxUnmarshallerContext;
-import com.amazonaws.transform.StandardErrorUnmarshaller;
+import com.amazonaws.handlers.*;
+import com.amazonaws.http.*;
+import com.amazonaws.internal.*;
+import com.amazonaws.transform.*;
+import com.amazonaws.util.*;
+import com.amazonaws.util.AWSRequestMetrics.Field;
 
 import com.amazonaws.services.cloudformation.model.*;
 import com.amazonaws.services.cloudformation.model.transform.*;
@@ -93,7 +88,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonCloudFormationClient() {
         this(new DefaultAWSCredentialsProviderChain(), new ClientConfiguration());
@@ -117,7 +112,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *                       client connects to AmazonCloudFormation
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonCloudFormationClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
@@ -211,7 +206,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
         
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-    requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+        requestHandlers.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/cloudformation/request.handlers"));
     }
 
@@ -237,10 +232,20 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *             If an error response is returned by AmazonCloudFormation indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ValidateTemplateResult validateTemplate(ValidateTemplateRequest validateTemplateRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ValidateTemplateRequest> request = new ValidateTemplateRequestMarshaller().marshall(validateTemplateRequest);
-        return invoke(request, new ValidateTemplateResultStaxUnmarshaller());
+    public ValidateTemplateResult validateTemplate(ValidateTemplateRequest validateTemplateRequest) {
+        ExecutionContext executionContext = createExecutionContext(validateTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ValidateTemplateRequest> request = null;
+        ValidateTemplateResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ValidateTemplateRequestMarshaller().marshall(validateTemplateRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new ValidateTemplateResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -264,10 +269,20 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *             If an error response is returned by AmazonCloudFormation indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeStacksResult describeStacks(DescribeStacksRequest describeStacksRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeStacksRequest> request = new DescribeStacksRequestMarshaller().marshall(describeStacksRequest);
-        return invoke(request, new DescribeStacksResultStaxUnmarshaller());
+    public DescribeStacksResult describeStacks(DescribeStacksRequest describeStacksRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeStacksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeStacksRequest> request = null;
+        DescribeStacksResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeStacksRequestMarshaller().marshall(describeStacksRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeStacksResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -299,10 +314,20 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *             If an error response is returned by AmazonCloudFormation indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public GetTemplateResult getTemplate(GetTemplateRequest getTemplateRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<GetTemplateRequest> request = new GetTemplateRequestMarshaller().marshall(getTemplateRequest);
-        return invoke(request, new GetTemplateResultStaxUnmarshaller());
+    public GetTemplateResult getTemplate(GetTemplateRequest getTemplateRequest) {
+        ExecutionContext executionContext = createExecutionContext(getTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<GetTemplateRequest> request = null;
+        GetTemplateResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new GetTemplateRequestMarshaller().marshall(getTemplateRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new GetTemplateResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -326,10 +351,20 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *             If an error response is returned by AmazonCloudFormation indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public GetStackPolicyResult getStackPolicy(GetStackPolicyRequest getStackPolicyRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<GetStackPolicyRequest> request = new GetStackPolicyRequestMarshaller().marshall(getStackPolicyRequest);
-        return invoke(request, new GetStackPolicyResultStaxUnmarshaller());
+    public GetStackPolicyResult getStackPolicy(GetStackPolicyRequest getStackPolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(getStackPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<GetStackPolicyRequest> request = null;
+        GetStackPolicyResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new GetStackPolicyRequestMarshaller().marshall(getStackPolicyRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new GetStackPolicyResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -357,10 +392,20 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *             If an error response is returned by AmazonCloudFormation indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListStacksResult listStacks(ListStacksRequest listStacksRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ListStacksRequest> request = new ListStacksRequestMarshaller().marshall(listStacksRequest);
-        return invoke(request, new ListStacksResultStaxUnmarshaller());
+    public ListStacksResult listStacks(ListStacksRequest listStacksRequest) {
+        ExecutionContext executionContext = createExecutionContext(listStacksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ListStacksRequest> request = null;
+        ListStacksResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ListStacksRequestMarshaller().marshall(listStacksRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new ListStacksResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -392,10 +437,20 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *             If an error response is returned by AmazonCloudFormation indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreateStackResult createStack(CreateStackRequest createStackRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateStackRequest> request = new CreateStackRequestMarshaller().marshall(createStackRequest);
-        return invoke(request, new CreateStackResultStaxUnmarshaller());
+    public CreateStackResult createStack(CreateStackRequest createStackRequest) {
+        ExecutionContext executionContext = createExecutionContext(createStackRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateStackRequest> request = null;
+        CreateStackResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreateStackRequestMarshaller().marshall(createStackRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new CreateStackResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -415,10 +470,19 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *             If an error response is returned by AmazonCloudFormation indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void setStackPolicy(SetStackPolicyRequest setStackPolicyRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<SetStackPolicyRequest> request = new SetStackPolicyRequestMarshaller().marshall(setStackPolicyRequest);
-        invoke(request, null);
+    public void setStackPolicy(SetStackPolicyRequest setStackPolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(setStackPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<SetStackPolicyRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new SetStackPolicyRequestMarshaller().marshall(setStackPolicyRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
     }
     
     /**
@@ -444,10 +508,20 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *             If an error response is returned by AmazonCloudFormation indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public EstimateTemplateCostResult estimateTemplateCost(EstimateTemplateCostRequest estimateTemplateCostRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<EstimateTemplateCostRequest> request = new EstimateTemplateCostRequestMarshaller().marshall(estimateTemplateCostRequest);
-        return invoke(request, new EstimateTemplateCostResultStaxUnmarshaller());
+    public EstimateTemplateCostResult estimateTemplateCost(EstimateTemplateCostRequest estimateTemplateCostRequest) {
+        ExecutionContext executionContext = createExecutionContext(estimateTemplateCostRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<EstimateTemplateCostRequest> request = null;
+        EstimateTemplateCostResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new EstimateTemplateCostRequestMarshaller().marshall(estimateTemplateCostRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new EstimateTemplateCostResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -478,10 +552,20 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *             If an error response is returned by AmazonCloudFormation indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeStackEventsResult describeStackEvents(DescribeStackEventsRequest describeStackEventsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeStackEventsRequest> request = new DescribeStackEventsRequestMarshaller().marshall(describeStackEventsRequest);
-        return invoke(request, new DescribeStackEventsResultStaxUnmarshaller());
+    public DescribeStackEventsResult describeStackEvents(DescribeStackEventsRequest describeStackEventsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeStackEventsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeStackEventsRequest> request = null;
+        DescribeStackEventsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeStackEventsRequestMarshaller().marshall(describeStackEventsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeStackEventsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -510,10 +594,20 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *             If an error response is returned by AmazonCloudFormation indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeStackResourceResult describeStackResource(DescribeStackResourceRequest describeStackResourceRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeStackResourceRequest> request = new DescribeStackResourceRequestMarshaller().marshall(describeStackResourceRequest);
-        return invoke(request, new DescribeStackResourceResultStaxUnmarshaller());
+    public DescribeStackResourceResult describeStackResource(DescribeStackResourceRequest describeStackResourceRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeStackResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeStackResourceRequest> request = null;
+        DescribeStackResourceResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeStackResourceRequestMarshaller().marshall(describeStackResourceRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeStackResourceResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -540,10 +634,19 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *             If an error response is returned by AmazonCloudFormation indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void cancelUpdateStack(CancelUpdateStackRequest cancelUpdateStackRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CancelUpdateStackRequest> request = new CancelUpdateStackRequestMarshaller().marshall(cancelUpdateStackRequest);
-        invoke(request, null);
+    public void cancelUpdateStack(CancelUpdateStackRequest cancelUpdateStackRequest) {
+        ExecutionContext executionContext = createExecutionContext(cancelUpdateStackRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CancelUpdateStackRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CancelUpdateStackRequestMarshaller().marshall(cancelUpdateStackRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
     }
     
     /**
@@ -593,10 +696,20 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *             If an error response is returned by AmazonCloudFormation indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public UpdateStackResult updateStack(UpdateStackRequest updateStackRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<UpdateStackRequest> request = new UpdateStackRequestMarshaller().marshall(updateStackRequest);
-        return invoke(request, new UpdateStackResultStaxUnmarshaller());
+    public UpdateStackResult updateStack(UpdateStackRequest updateStackRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateStackRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<UpdateStackRequest> request = null;
+        UpdateStackResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new UpdateStackRequestMarshaller().marshall(updateStackRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new UpdateStackResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -648,10 +761,20 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *             If an error response is returned by AmazonCloudFormation indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeStackResourcesResult describeStackResources(DescribeStackResourcesRequest describeStackResourcesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeStackResourcesRequest> request = new DescribeStackResourcesRequestMarshaller().marshall(describeStackResourcesRequest);
-        return invoke(request, new DescribeStackResourcesResultStaxUnmarshaller());
+    public DescribeStackResourcesResult describeStackResources(DescribeStackResourcesRequest describeStackResourcesRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeStackResourcesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeStackResourcesRequest> request = null;
+        DescribeStackResourcesResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeStackResourcesRequestMarshaller().marshall(describeStackResourcesRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeStackResourcesResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -673,10 +796,19 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *             If an error response is returned by AmazonCloudFormation indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void deleteStack(DeleteStackRequest deleteStackRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteStackRequest> request = new DeleteStackRequestMarshaller().marshall(deleteStackRequest);
-        invoke(request, null);
+    public void deleteStack(DeleteStackRequest deleteStackRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteStackRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteStackRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteStackRequestMarshaller().marshall(deleteStackRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
     }
     
     /**
@@ -704,10 +836,20 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *             If an error response is returned by AmazonCloudFormation indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListStackResourcesResult listStackResources(ListStackResourcesRequest listStackResourcesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ListStackResourcesRequest> request = new ListStackResourcesRequestMarshaller().marshall(listStackResourcesRequest);
-        return invoke(request, new ListStackResourcesResultStaxUnmarshaller());
+    public ListStackResourcesResult listStackResources(ListStackResourcesRequest listStackResourcesRequest) {
+        ExecutionContext executionContext = createExecutionContext(listStackResourcesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ListStackResourcesRequest> request = null;
+        ListStackResourcesResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ListStackResourcesRequestMarshaller().marshall(listStackResourcesRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new ListStackResourcesResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -925,26 +1067,27 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
         return client.getResponseMetadataForRequest(request);
     }
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, Unmarshaller<X, StaxUnmarshallerContext> unmarshaller) {
+    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
+            Unmarshaller<X, StaxUnmarshallerContext> unmarshaller,
+            ExecutionContext executionContext)
+    {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
-        for (Entry<String, String> entry : request.getOriginalRequest().copyPrivateRequestParameters().entrySet()) {
+        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
+        for (Entry<String, String> entry : originalRequest.copyPrivateRequestParameters().entrySet()) {
             request.addParameter(entry.getKey(), entry.getValue());
         }
 
         AWSCredentials credentials = awsCredentialsProvider.getCredentials();
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
-          credentials = originalRequest.getRequestCredentials();
+        if (originalRequest.getRequestCredentials() != null) {
+            credentials = originalRequest.getRequestCredentials();
         }
 
-        ExecutionContext executionContext = createExecutionContext(originalRequest);
         executionContext.setSigner(signer);
         executionContext.setCredentials(credentials);
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
-
         return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 }

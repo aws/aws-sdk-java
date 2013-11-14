@@ -178,9 +178,4 @@ public class CountClosedWorkflowExecutionsRequestMarshaller implements Marshalle
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

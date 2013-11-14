@@ -56,7 +56,7 @@ public class ReadPipelineRequestMarshaller implements Marshaller<Request<ReadPip
 
 
         String uriResourcePath = "2012-09-25/pipelines/{Id}"; 
-        uriResourcePath = uriResourcePath.replace("{Id}", getString(readPipelineRequest.getId())); 
+        uriResourcePath = uriResourcePath.replace("{Id}", (readPipelineRequest.getId() == null) ? "" : StringUtils.fromString(readPipelineRequest.getId())); 
 
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
@@ -82,10 +82,5 @@ public class ReadPipelineRequestMarshaller implements Marshaller<Request<ReadPip
         
 
         return request;
-    }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
     }
 }

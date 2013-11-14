@@ -155,9 +155,4 @@ public class CreateDeploymentRequestMarshaller implements Marshaller<Request<Cre
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

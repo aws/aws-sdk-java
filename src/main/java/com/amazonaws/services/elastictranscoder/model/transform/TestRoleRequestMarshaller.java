@@ -123,9 +123,4 @@ public class TestRoleRequestMarshaller implements Marshaller<Request<TestRoleReq
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

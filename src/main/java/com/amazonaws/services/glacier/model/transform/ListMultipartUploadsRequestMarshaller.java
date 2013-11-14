@@ -56,10 +56,10 @@ public class ListMultipartUploadsRequestMarshaller implements Marshaller<Request
 
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads?marker={marker};limit={limit}"; 
-        uriResourcePath = uriResourcePath.replace("{accountId}", getString(listMultipartUploadsRequest.getAccountId())); 
-        uriResourcePath = uriResourcePath.replace("{vaultName}", getString(listMultipartUploadsRequest.getVaultName())); 
-        uriResourcePath = uriResourcePath.replace("{marker}", getString(listMultipartUploadsRequest.getUploadIdMarker())); 
-        uriResourcePath = uriResourcePath.replace("{limit}", getString(listMultipartUploadsRequest.getLimit())); 
+        uriResourcePath = uriResourcePath.replace("{accountId}", (listMultipartUploadsRequest.getAccountId() == null) ? "" : StringUtils.fromString(listMultipartUploadsRequest.getAccountId())); 
+        uriResourcePath = uriResourcePath.replace("{vaultName}", (listMultipartUploadsRequest.getVaultName() == null) ? "" : StringUtils.fromString(listMultipartUploadsRequest.getVaultName())); 
+        uriResourcePath = uriResourcePath.replace("{marker}", (listMultipartUploadsRequest.getUploadIdMarker() == null) ? "" : StringUtils.fromString(listMultipartUploadsRequest.getUploadIdMarker())); 
+        uriResourcePath = uriResourcePath.replace("{limit}", (listMultipartUploadsRequest.getLimit() == null) ? "" : StringUtils.fromString(listMultipartUploadsRequest.getLimit())); 
 
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
@@ -85,10 +85,5 @@ public class ListMultipartUploadsRequestMarshaller implements Marshaller<Request
         
 
         return request;
-    }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
     }
 }

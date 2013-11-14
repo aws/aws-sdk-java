@@ -56,7 +56,7 @@ public class DeletePipelineRequestMarshaller implements Marshaller<Request<Delet
 
 
         String uriResourcePath = "2012-09-25/pipelines/{Id}"; 
-        uriResourcePath = uriResourcePath.replace("{Id}", getString(deletePipelineRequest.getId())); 
+        uriResourcePath = uriResourcePath.replace("{Id}", (deletePipelineRequest.getId() == null) ? "" : StringUtils.fromString(deletePipelineRequest.getId())); 
 
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
@@ -82,10 +82,5 @@ public class DeletePipelineRequestMarshaller implements Marshaller<Request<Delet
         
 
         return request;
-    }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
     }
 }

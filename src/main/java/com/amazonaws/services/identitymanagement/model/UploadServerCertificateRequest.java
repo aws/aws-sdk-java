@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * For information about the number of server certificates you can upload, see <a
- * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on IAM Entities </a> in <i>Using AWS
+ * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on IAM Entities </a> in <i>Using AWS
  * Identity and Access Management</i> .
  * </p>
  * <p>
@@ -42,7 +42,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
     /**
      * The path for the server certificate. For more information about paths,
      * see <a
-     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
      * it is not included, it defaults to a slash (/).
@@ -118,7 +118,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
     /**
      * The path for the server certificate. For more information about paths,
      * see <a
-     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
      * it is not included, it defaults to a slash (/).
@@ -129,7 +129,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
      *
      * @return The path for the server certificate. For more information about paths,
      *         see <a
-     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>. <p>This parameter is optional. If
      *         it is not included, it defaults to a slash (/).
@@ -141,7 +141,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
     /**
      * The path for the server certificate. For more information about paths,
      * see <a
-     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
      * it is not included, it defaults to a slash (/).
@@ -152,7 +152,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
      *
      * @param path The path for the server certificate. For more information about paths,
      *         see <a
-     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>. <p>This parameter is optional. If
      *         it is not included, it defaults to a slash (/).
@@ -164,7 +164,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
     /**
      * The path for the server certificate. For more information about paths,
      * see <a
-     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
      * it is not included, it defaults to a slash (/).
@@ -177,7 +177,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest impl
      *
      * @param path The path for the server certificate. For more information about paths,
      *         see <a
-     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>. <p>This parameter is optional. If
      *         it is not included, it defaults to a slash (/).

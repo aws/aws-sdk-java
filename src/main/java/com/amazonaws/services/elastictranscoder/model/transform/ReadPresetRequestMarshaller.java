@@ -56,7 +56,7 @@ public class ReadPresetRequestMarshaller implements Marshaller<Request<ReadPrese
 
 
         String uriResourcePath = "2012-09-25/presets/{Id}"; 
-        uriResourcePath = uriResourcePath.replace("{Id}", getString(readPresetRequest.getId())); 
+        uriResourcePath = uriResourcePath.replace("{Id}", (readPresetRequest.getId() == null) ? "" : StringUtils.fromString(readPresetRequest.getId())); 
 
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
@@ -82,10 +82,5 @@ public class ReadPresetRequestMarshaller implements Marshaller<Request<ReadPrese
         
 
         return request;
-    }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
     }
 }

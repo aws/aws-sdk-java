@@ -24,8 +24,8 @@ import com.amazonaws.internal.SdkFilterInputStream;
  * about the number of bytes transferred.
  * <p>
  * This class could be used for both Amazon S3 and Amazon Glacier clients. The
- * legacy Amazon Amazon S3 ProgressReportingInputStream
- * {@link com.amazonaws.services.s3.internal.ProgressReportingInputStream} is
+ * legacy Amazon Amazon S3
+ * com.amazonaws.services.s3.internal.ProgressReportingInputStream has been
  * deprecated in favor of this new class.
  * </p>
  */

@@ -106,9 +106,4 @@ public class ConfirmPrivateVirtualInterfaceRequestMarshaller implements Marshall
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

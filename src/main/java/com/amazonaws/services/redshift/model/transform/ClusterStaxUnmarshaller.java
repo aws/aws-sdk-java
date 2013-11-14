@@ -141,6 +141,26 @@ public class ClusterStaxUnmarshaller implements Unmarshaller<Cluster, StaxUnmars
                     cluster.setRestoreStatus(RestoreStatusStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("HsmStatus", targetDepth)) {
+                    cluster.setHsmStatus(HsmStatusStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("ClusterSnapshotCopyStatus", targetDepth)) {
+                    cluster.setClusterSnapshotCopyStatus(ClusterSnapshotCopyStatusStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("ClusterPublicKey", targetDepth)) {
+                    cluster.setClusterPublicKey(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("ClusterNodes/member", targetDepth)) {
+                    cluster.getClusterNodes().add(ClusterNodeStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("ElasticIpStatus", targetDepth)) {
+                    cluster.setElasticIpStatus(ElasticIpStatusStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return cluster;

@@ -103,9 +103,4 @@ public class ListLocalDisksRequestMarshaller implements Marshaller<Request<ListL
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

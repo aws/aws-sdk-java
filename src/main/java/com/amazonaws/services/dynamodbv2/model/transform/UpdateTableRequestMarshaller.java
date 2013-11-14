@@ -117,9 +117,4 @@ public class UpdateTableRequestMarshaller implements Marshaller<Request<UpdateTa
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

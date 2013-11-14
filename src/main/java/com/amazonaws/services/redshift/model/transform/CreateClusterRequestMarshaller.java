@@ -113,6 +113,15 @@ public class CreateClusterRequestMarshaller implements Marshaller<Request<Create
         if (createClusterRequest.isEncrypted() != null) {
             request.addParameter("Encrypted", StringUtils.fromBoolean(createClusterRequest.isEncrypted()));
         }
+        if (createClusterRequest.getHsmClientCertificateIdentifier() != null) {
+            request.addParameter("HsmClientCertificateIdentifier", StringUtils.fromString(createClusterRequest.getHsmClientCertificateIdentifier()));
+        }
+        if (createClusterRequest.getHsmConfigurationIdentifier() != null) {
+            request.addParameter("HsmConfigurationIdentifier", StringUtils.fromString(createClusterRequest.getHsmConfigurationIdentifier()));
+        }
+        if (createClusterRequest.getElasticIp() != null) {
+            request.addParameter("ElasticIp", StringUtils.fromString(createClusterRequest.getElasticIp()));
+        }
 
 
         return request;

@@ -54,11 +54,10 @@ public class HttpMethodReleaseInputStream extends InputStream {
     /**
      * Constructs an input stream based on an {@link HttpMethod} object
      * representing an HTTP connection. If a connection input stream is
-     * available, this constructor wraps the underlying input stream in an
-     * {@link InterruptableInputStream} and makes that stream available. If no
-     * underlying connection is available, an empty {@link ByteArrayInputStream}
-     * is made available.
-     *
+     * available, this constructor wraps the underlying input stream and makes
+     * that stream available. If no underlying connection is available, an empty
+     * {@link ByteArrayInputStream} is made available.
+     * 
      * @param httpMethod
      *            The HTTP method being executed, whose response content is to
      *            be wrapped.

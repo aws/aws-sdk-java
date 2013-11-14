@@ -56,12 +56,12 @@ public class ListJobsRequestMarshaller implements Marshaller<Request<ListJobsReq
 
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/jobs?marker={marker};limit={limit};completed={completed};statuscode={statuscode}"; 
-        uriResourcePath = uriResourcePath.replace("{accountId}", getString(listJobsRequest.getAccountId())); 
-        uriResourcePath = uriResourcePath.replace("{vaultName}", getString(listJobsRequest.getVaultName())); 
-        uriResourcePath = uriResourcePath.replace("{limit}", getString(listJobsRequest.getLimit())); 
-        uriResourcePath = uriResourcePath.replace("{marker}", getString(listJobsRequest.getMarker())); 
-        uriResourcePath = uriResourcePath.replace("{statuscode}", getString(listJobsRequest.getStatuscode())); 
-        uriResourcePath = uriResourcePath.replace("{completed}", getString(listJobsRequest.getCompleted())); 
+        uriResourcePath = uriResourcePath.replace("{accountId}", (listJobsRequest.getAccountId() == null) ? "" : StringUtils.fromString(listJobsRequest.getAccountId())); 
+        uriResourcePath = uriResourcePath.replace("{vaultName}", (listJobsRequest.getVaultName() == null) ? "" : StringUtils.fromString(listJobsRequest.getVaultName())); 
+        uriResourcePath = uriResourcePath.replace("{limit}", (listJobsRequest.getLimit() == null) ? "" : StringUtils.fromString(listJobsRequest.getLimit())); 
+        uriResourcePath = uriResourcePath.replace("{marker}", (listJobsRequest.getMarker() == null) ? "" : StringUtils.fromString(listJobsRequest.getMarker())); 
+        uriResourcePath = uriResourcePath.replace("{statuscode}", (listJobsRequest.getStatuscode() == null) ? "" : StringUtils.fromString(listJobsRequest.getStatuscode())); 
+        uriResourcePath = uriResourcePath.replace("{completed}", (listJobsRequest.getCompleted() == null) ? "" : StringUtils.fromString(listJobsRequest.getCompleted())); 
 
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
@@ -87,10 +87,5 @@ public class ListJobsRequestMarshaller implements Marshaller<Request<ListJobsReq
         
 
         return request;
-    }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
     }
 }

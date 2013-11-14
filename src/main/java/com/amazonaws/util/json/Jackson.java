@@ -18,6 +18,7 @@ import java.io.File;
 import java.io.IOException;
 
 import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 
@@ -26,6 +27,7 @@ public enum Jackson {
     private static final ObjectMapper objectMapper = new ObjectMapper();
     static {
         objectMapper.configure(JsonParser.Feature.ALLOW_COMMENTS, true);
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     };
     private static final ObjectWriter writer = objectMapper.writer();
     private static final ObjectWriter prettyWriter = objectMapper.writerWithDefaultPrettyPrinter();

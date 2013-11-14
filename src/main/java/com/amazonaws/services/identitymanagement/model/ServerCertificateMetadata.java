@@ -30,7 +30,7 @@ public class ServerCertificateMetadata implements Serializable {
     /**
      * Path to the server certificate. For more information about paths, see
      * <a
-     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
      * <p>
@@ -52,7 +52,7 @@ public class ServerCertificateMetadata implements Serializable {
     /**
      * The stable and unique string identifying the server certificate. For
      * more information about IDs, see <a
-     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
      * <p>
@@ -65,7 +65,7 @@ public class ServerCertificateMetadata implements Serializable {
     /**
      * The Amazon Resource Name (ARN) specifying the server certificate. For
      * more information about ARNs and how to use them in policies, see <a
-     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
      * <p>
@@ -92,20 +92,20 @@ public class ServerCertificateMetadata implements Serializable {
      * 
      * @param path Path to the server certificate. For more information about
      * paths, see <a
-     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
      * @param serverCertificateName The name that identifies the server
      * certificate.
      * @param serverCertificateId The stable and unique string identifying
      * the server certificate. For more information about IDs, see <a
-     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
      * @param arn The Amazon Resource Name (ARN) specifying the server
      * certificate. For more information about ARNs and how to use them in
      * policies, see <a
-     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
      */
@@ -119,7 +119,7 @@ public class ServerCertificateMetadata implements Serializable {
     /**
      * Path to the server certificate. For more information about paths, see
      * <a
-     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
      * <p>
@@ -129,7 +129,7 @@ public class ServerCertificateMetadata implements Serializable {
      *
      * @return Path to the server certificate. For more information about paths, see
      *         <a
-     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      */
@@ -140,7 +140,7 @@ public class ServerCertificateMetadata implements Serializable {
     /**
      * Path to the server certificate. For more information about paths, see
      * <a
-     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
      * <p>
@@ -150,7 +150,7 @@ public class ServerCertificateMetadata implements Serializable {
      *
      * @param path Path to the server certificate. For more information about paths, see
      *         <a
-     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      */
@@ -161,7 +161,7 @@ public class ServerCertificateMetadata implements Serializable {
     /**
      * Path to the server certificate. For more information about paths, see
      * <a
-     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
      * <p>
@@ -173,7 +173,7 @@ public class ServerCertificateMetadata implements Serializable {
      *
      * @param path Path to the server certificate. For more information about paths, see
      *         <a
-     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      *
@@ -233,7 +233,7 @@ public class ServerCertificateMetadata implements Serializable {
     /**
      * The stable and unique string identifying the server certificate. For
      * more information about IDs, see <a
-     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
      * <p>
@@ -243,7 +243,7 @@ public class ServerCertificateMetadata implements Serializable {
      *
      * @return The stable and unique string identifying the server certificate. For
      *         more information about IDs, see <a
-     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      */
@@ -254,7 +254,7 @@ public class ServerCertificateMetadata implements Serializable {
     /**
      * The stable and unique string identifying the server certificate. For
      * more information about IDs, see <a
-     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
      * <p>
@@ -264,7 +264,7 @@ public class ServerCertificateMetadata implements Serializable {
      *
      * @param serverCertificateId The stable and unique string identifying the server certificate. For
      *         more information about IDs, see <a
-     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      */
@@ -275,7 +275,7 @@ public class ServerCertificateMetadata implements Serializable {
     /**
      * The stable and unique string identifying the server certificate. For
      * more information about IDs, see <a
-     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
      * <p>
@@ -287,7 +287,7 @@ public class ServerCertificateMetadata implements Serializable {
      *
      * @param serverCertificateId The stable and unique string identifying the server certificate. For
      *         more information about IDs, see <a
-     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      *
@@ -302,7 +302,7 @@ public class ServerCertificateMetadata implements Serializable {
     /**
      * The Amazon Resource Name (ARN) specifying the server certificate. For
      * more information about ARNs and how to use them in policies, see <a
-     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
      * <p>
@@ -311,7 +311,7 @@ public class ServerCertificateMetadata implements Serializable {
      *
      * @return The Amazon Resource Name (ARN) specifying the server certificate. For
      *         more information about ARNs and how to use them in policies, see <a
-     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      */
@@ -322,7 +322,7 @@ public class ServerCertificateMetadata implements Serializable {
     /**
      * The Amazon Resource Name (ARN) specifying the server certificate. For
      * more information about ARNs and how to use them in policies, see <a
-     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
      * <p>
@@ -331,7 +331,7 @@ public class ServerCertificateMetadata implements Serializable {
      *
      * @param arn The Amazon Resource Name (ARN) specifying the server certificate. For
      *         more information about ARNs and how to use them in policies, see <a
-     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      */
@@ -342,7 +342,7 @@ public class ServerCertificateMetadata implements Serializable {
     /**
      * The Amazon Resource Name (ARN) specifying the server certificate. For
      * more information about ARNs and how to use them in policies, see <a
-     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
      * <p>
@@ -353,7 +353,7 @@ public class ServerCertificateMetadata implements Serializable {
      *
      * @param arn The Amazon Resource Name (ARN) specifying the server certificate. For
      *         more information about ARNs and how to use them in policies, see <a
-     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
      *

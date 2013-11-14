@@ -103,9 +103,4 @@ public class StartInstanceRequestMarshaller implements Marshaller<Request<StartI
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

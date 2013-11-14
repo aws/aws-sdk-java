@@ -103,9 +103,4 @@ public class ShutdownGatewayRequestMarshaller implements Marshaller<Request<Shut
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

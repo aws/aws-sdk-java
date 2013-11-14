@@ -114,9 +114,4 @@ public class DescribeStacksRequestMarshaller implements Marshaller<Request<Descr
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

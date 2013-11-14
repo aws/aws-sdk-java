@@ -14,24 +14,19 @@
  */
 package com.amazonaws.services.cloudsearch;
 
-import org.w3c.dom.Node;
+import org.w3c.dom.*;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.Map.Entry;
 
 import com.amazonaws.*;
 import com.amazonaws.auth.*;
-import com.amazonaws.handlers.HandlerChainFactory;
-import com.amazonaws.handlers.RequestHandler;
-import com.amazonaws.http.StaxResponseHandler;
-import com.amazonaws.http.DefaultErrorResponseHandler;
-import com.amazonaws.http.ExecutionContext;
-import com.amazonaws.internal.StaticCredentialsProvider;
-import com.amazonaws.transform.Unmarshaller;
-import com.amazonaws.transform.StaxUnmarshallerContext;
-import com.amazonaws.transform.StandardErrorUnmarshaller;
+import com.amazonaws.handlers.*;
+import com.amazonaws.http.*;
+import com.amazonaws.internal.*;
+import com.amazonaws.transform.*;
+import com.amazonaws.util.*;
+import com.amazonaws.util.AWSRequestMetrics.Field;
 
 import com.amazonaws.services.cloudsearch.model.*;
 import com.amazonaws.services.cloudsearch.model.transform.*;
@@ -82,7 +77,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonCloudSearchClient() {
         this(new DefaultAWSCredentialsProviderChain(), new ClientConfiguration());
@@ -106,7 +101,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *                       client connects to AmazonCloudSearch
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonCloudSearchClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
@@ -200,7 +195,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-    requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+        requestHandlers.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/cloudsearch/request.handlers"));
     }
 
@@ -233,10 +228,20 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonCloudSearch indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public UpdateDefaultSearchFieldResult updateDefaultSearchField(UpdateDefaultSearchFieldRequest updateDefaultSearchFieldRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<UpdateDefaultSearchFieldRequest> request = new UpdateDefaultSearchFieldRequestMarshaller().marshall(updateDefaultSearchFieldRequest);
-        return invoke(request, new UpdateDefaultSearchFieldResultStaxUnmarshaller());
+    public UpdateDefaultSearchFieldResult updateDefaultSearchField(UpdateDefaultSearchFieldRequest updateDefaultSearchFieldRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateDefaultSearchFieldRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<UpdateDefaultSearchFieldRequest> request = null;
+        UpdateDefaultSearchFieldResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new UpdateDefaultSearchFieldRequestMarshaller().marshall(updateDefaultSearchFieldRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new UpdateDefaultSearchFieldResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -264,10 +269,20 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonCloudSearch indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DeleteRankExpressionResult deleteRankExpression(DeleteRankExpressionRequest deleteRankExpressionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteRankExpressionRequest> request = new DeleteRankExpressionRequestMarshaller().marshall(deleteRankExpressionRequest);
-        return invoke(request, new DeleteRankExpressionResultStaxUnmarshaller());
+    public DeleteRankExpressionResult deleteRankExpression(DeleteRankExpressionRequest deleteRankExpressionRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteRankExpressionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteRankExpressionRequest> request = null;
+        DeleteRankExpressionResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteRankExpressionRequestMarshaller().marshall(deleteRankExpressionRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DeleteRankExpressionResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -296,10 +311,20 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonCloudSearch indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeRankExpressionsResult describeRankExpressions(DescribeRankExpressionsRequest describeRankExpressionsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeRankExpressionsRequest> request = new DescribeRankExpressionsRequestMarshaller().marshall(describeRankExpressionsRequest);
-        return invoke(request, new DescribeRankExpressionsResultStaxUnmarshaller());
+    public DescribeRankExpressionsResult describeRankExpressions(DescribeRankExpressionsRequest describeRankExpressionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeRankExpressionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeRankExpressionsRequest> request = null;
+        DescribeRankExpressionsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeRankExpressionsRequestMarshaller().marshall(describeRankExpressionsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeRankExpressionsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -325,10 +350,20 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonCloudSearch indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreateDomainResult createDomain(CreateDomainRequest createDomainRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateDomainRequest> request = new CreateDomainRequestMarshaller().marshall(createDomainRequest);
-        return invoke(request, new CreateDomainResultStaxUnmarshaller());
+    public CreateDomainResult createDomain(CreateDomainRequest createDomainRequest) {
+        ExecutionContext executionContext = createExecutionContext(createDomainRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateDomainRequest> request = null;
+        CreateDomainResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreateDomainRequestMarshaller().marshall(createDomainRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new CreateDomainResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -359,10 +394,20 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonCloudSearch indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public UpdateServiceAccessPoliciesResult updateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest updateServiceAccessPoliciesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<UpdateServiceAccessPoliciesRequest> request = new UpdateServiceAccessPoliciesRequestMarshaller().marshall(updateServiceAccessPoliciesRequest);
-        return invoke(request, new UpdateServiceAccessPoliciesResultStaxUnmarshaller());
+    public UpdateServiceAccessPoliciesResult updateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest updateServiceAccessPoliciesRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateServiceAccessPoliciesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<UpdateServiceAccessPoliciesRequest> request = null;
+        UpdateServiceAccessPoliciesResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new UpdateServiceAccessPoliciesRequestMarshaller().marshall(updateServiceAccessPoliciesRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new UpdateServiceAccessPoliciesResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -393,10 +438,20 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonCloudSearch indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DefineIndexFieldResult defineIndexField(DefineIndexFieldRequest defineIndexFieldRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DefineIndexFieldRequest> request = new DefineIndexFieldRequestMarshaller().marshall(defineIndexFieldRequest);
-        return invoke(request, new DefineIndexFieldResultStaxUnmarshaller());
+    public DefineIndexFieldResult defineIndexField(DefineIndexFieldRequest defineIndexFieldRequest) {
+        ExecutionContext executionContext = createExecutionContext(defineIndexFieldRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DefineIndexFieldRequest> request = null;
+        DefineIndexFieldResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DefineIndexFieldRequestMarshaller().marshall(defineIndexFieldRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DefineIndexFieldResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -428,10 +483,20 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonCloudSearch indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DefineRankExpressionResult defineRankExpression(DefineRankExpressionRequest defineRankExpressionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DefineRankExpressionRequest> request = new DefineRankExpressionRequestMarshaller().marshall(defineRankExpressionRequest);
-        return invoke(request, new DefineRankExpressionResultStaxUnmarshaller());
+    public DefineRankExpressionResult defineRankExpression(DefineRankExpressionRequest defineRankExpressionRequest) {
+        ExecutionContext executionContext = createExecutionContext(defineRankExpressionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DefineRankExpressionRequest> request = null;
+        DefineRankExpressionResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DefineRankExpressionRequestMarshaller().marshall(defineRankExpressionRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DefineRankExpressionResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -458,10 +523,20 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonCloudSearch indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeSynonymOptionsResult describeSynonymOptions(DescribeSynonymOptionsRequest describeSynonymOptionsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeSynonymOptionsRequest> request = new DescribeSynonymOptionsRequestMarshaller().marshall(describeSynonymOptionsRequest);
-        return invoke(request, new DescribeSynonymOptionsResultStaxUnmarshaller());
+    public DescribeSynonymOptionsResult describeSynonymOptions(DescribeSynonymOptionsRequest describeSynonymOptionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeSynonymOptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeSynonymOptionsRequest> request = null;
+        DescribeSynonymOptionsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeSynonymOptionsRequestMarshaller().marshall(describeSynonymOptionsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeSynonymOptionsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -488,10 +563,20 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonCloudSearch indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeStopwordOptionsResult describeStopwordOptions(DescribeStopwordOptionsRequest describeStopwordOptionsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeStopwordOptionsRequest> request = new DescribeStopwordOptionsRequestMarshaller().marshall(describeStopwordOptionsRequest);
-        return invoke(request, new DescribeStopwordOptionsResultStaxUnmarshaller());
+    public DescribeStopwordOptionsResult describeStopwordOptions(DescribeStopwordOptionsRequest describeStopwordOptionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeStopwordOptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeStopwordOptionsRequest> request = null;
+        DescribeStopwordOptionsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeStopwordOptionsRequestMarshaller().marshall(describeStopwordOptionsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeStopwordOptionsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -516,10 +601,20 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonCloudSearch indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DeleteDomainResult deleteDomain(DeleteDomainRequest deleteDomainRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteDomainRequest> request = new DeleteDomainRequestMarshaller().marshall(deleteDomainRequest);
-        return invoke(request, new DeleteDomainResultStaxUnmarshaller());
+    public DeleteDomainResult deleteDomain(DeleteDomainRequest deleteDomainRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteDomainRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteDomainRequest> request = null;
+        DeleteDomainResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteDomainRequestMarshaller().marshall(deleteDomainRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DeleteDomainResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -547,10 +642,20 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonCloudSearch indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeServiceAccessPoliciesResult describeServiceAccessPolicies(DescribeServiceAccessPoliciesRequest describeServiceAccessPoliciesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeServiceAccessPoliciesRequest> request = new DescribeServiceAccessPoliciesRequestMarshaller().marshall(describeServiceAccessPoliciesRequest);
-        return invoke(request, new DescribeServiceAccessPoliciesResultStaxUnmarshaller());
+    public DescribeServiceAccessPoliciesResult describeServiceAccessPolicies(DescribeServiceAccessPoliciesRequest describeServiceAccessPoliciesRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeServiceAccessPoliciesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeServiceAccessPoliciesRequest> request = null;
+        DescribeServiceAccessPoliciesResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeServiceAccessPoliciesRequestMarshaller().marshall(describeServiceAccessPoliciesRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeServiceAccessPoliciesResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -577,10 +682,20 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonCloudSearch indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeDefaultSearchFieldResult describeDefaultSearchField(DescribeDefaultSearchFieldRequest describeDefaultSearchFieldRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeDefaultSearchFieldRequest> request = new DescribeDefaultSearchFieldRequestMarshaller().marshall(describeDefaultSearchFieldRequest);
-        return invoke(request, new DescribeDefaultSearchFieldResultStaxUnmarshaller());
+    public DescribeDefaultSearchFieldResult describeDefaultSearchField(DescribeDefaultSearchFieldRequest describeDefaultSearchFieldRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeDefaultSearchFieldRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeDefaultSearchFieldRequest> request = null;
+        DescribeDefaultSearchFieldResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeDefaultSearchFieldRequestMarshaller().marshall(describeDefaultSearchFieldRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeDefaultSearchFieldResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -611,10 +726,20 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonCloudSearch indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public UpdateStopwordOptionsResult updateStopwordOptions(UpdateStopwordOptionsRequest updateStopwordOptionsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<UpdateStopwordOptionsRequest> request = new UpdateStopwordOptionsRequestMarshaller().marshall(updateStopwordOptionsRequest);
-        return invoke(request, new UpdateStopwordOptionsResultStaxUnmarshaller());
+    public UpdateStopwordOptionsResult updateStopwordOptions(UpdateStopwordOptionsRequest updateStopwordOptionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateStopwordOptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<UpdateStopwordOptionsRequest> request = null;
+        UpdateStopwordOptionsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new UpdateStopwordOptionsRequestMarshaller().marshall(updateStopwordOptionsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new UpdateStopwordOptionsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -646,10 +771,20 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonCloudSearch indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public UpdateSynonymOptionsResult updateSynonymOptions(UpdateSynonymOptionsRequest updateSynonymOptionsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<UpdateSynonymOptionsRequest> request = new UpdateSynonymOptionsRequestMarshaller().marshall(updateSynonymOptionsRequest);
-        return invoke(request, new UpdateSynonymOptionsResultStaxUnmarshaller());
+    public UpdateSynonymOptionsResult updateSynonymOptions(UpdateSynonymOptionsRequest updateSynonymOptionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateSynonymOptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<UpdateSynonymOptionsRequest> request = null;
+        UpdateSynonymOptionsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new UpdateSynonymOptionsRequestMarshaller().marshall(updateSynonymOptionsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new UpdateSynonymOptionsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -680,10 +815,20 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonCloudSearch indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public UpdateStemmingOptionsResult updateStemmingOptions(UpdateStemmingOptionsRequest updateStemmingOptionsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<UpdateStemmingOptionsRequest> request = new UpdateStemmingOptionsRequestMarshaller().marshall(updateStemmingOptionsRequest);
-        return invoke(request, new UpdateStemmingOptionsResultStaxUnmarshaller());
+    public UpdateStemmingOptionsResult updateStemmingOptions(UpdateStemmingOptionsRequest updateStemmingOptionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateStemmingOptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<UpdateStemmingOptionsRequest> request = null;
+        UpdateStemmingOptionsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new UpdateStemmingOptionsRequestMarshaller().marshall(updateStemmingOptionsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new UpdateStemmingOptionsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -710,10 +855,20 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonCloudSearch indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeStemmingOptionsResult describeStemmingOptions(DescribeStemmingOptionsRequest describeStemmingOptionsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeStemmingOptionsRequest> request = new DescribeStemmingOptionsRequestMarshaller().marshall(describeStemmingOptionsRequest);
-        return invoke(request, new DescribeStemmingOptionsResultStaxUnmarshaller());
+    public DescribeStemmingOptionsResult describeStemmingOptions(DescribeStemmingOptionsRequest describeStemmingOptionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeStemmingOptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeStemmingOptionsRequest> request = null;
+        DescribeStemmingOptionsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeStemmingOptionsRequestMarshaller().marshall(describeStemmingOptionsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeStemmingOptionsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -739,10 +894,20 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonCloudSearch indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeDomainsResult describeDomains(DescribeDomainsRequest describeDomainsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeDomainsRequest> request = new DescribeDomainsRequestMarshaller().marshall(describeDomainsRequest);
-        return invoke(request, new DescribeDomainsResultStaxUnmarshaller());
+    public DescribeDomainsResult describeDomains(DescribeDomainsRequest describeDomainsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeDomainsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeDomainsRequest> request = null;
+        DescribeDomainsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeDomainsRequestMarshaller().marshall(describeDomainsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeDomainsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -772,10 +937,20 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonCloudSearch indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public IndexDocumentsResult indexDocuments(IndexDocumentsRequest indexDocumentsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<IndexDocumentsRequest> request = new IndexDocumentsRequestMarshaller().marshall(indexDocumentsRequest);
-        return invoke(request, new IndexDocumentsResultStaxUnmarshaller());
+    public IndexDocumentsResult indexDocuments(IndexDocumentsRequest indexDocumentsRequest) {
+        ExecutionContext executionContext = createExecutionContext(indexDocumentsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<IndexDocumentsRequest> request = null;
+        IndexDocumentsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new IndexDocumentsRequestMarshaller().marshall(indexDocumentsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new IndexDocumentsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -804,10 +979,20 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonCloudSearch indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeIndexFieldsResult describeIndexFields(DescribeIndexFieldsRequest describeIndexFieldsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeIndexFieldsRequest> request = new DescribeIndexFieldsRequestMarshaller().marshall(describeIndexFieldsRequest);
-        return invoke(request, new DescribeIndexFieldsResultStaxUnmarshaller());
+    public DescribeIndexFieldsResult describeIndexFields(DescribeIndexFieldsRequest describeIndexFieldsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeIndexFieldsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeIndexFieldsRequest> request = null;
+        DescribeIndexFieldsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeIndexFieldsRequestMarshaller().marshall(describeIndexFieldsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeIndexFieldsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -834,10 +1019,20 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *             If an error response is returned by AmazonCloudSearch indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DeleteIndexFieldResult deleteIndexField(DeleteIndexFieldRequest deleteIndexFieldRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteIndexFieldRequest> request = new DeleteIndexFieldRequestMarshaller().marshall(deleteIndexFieldRequest);
-        return invoke(request, new DeleteIndexFieldResultStaxUnmarshaller());
+    public DeleteIndexFieldResult deleteIndexField(DeleteIndexFieldRequest deleteIndexFieldRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteIndexFieldRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteIndexFieldRequest> request = null;
+        DeleteIndexFieldResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteIndexFieldRequestMarshaller().marshall(deleteIndexFieldRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DeleteIndexFieldResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -931,26 +1126,27 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         return client.getResponseMetadataForRequest(request);
     }
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, Unmarshaller<X, StaxUnmarshallerContext> unmarshaller) {
+    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
+            Unmarshaller<X, StaxUnmarshallerContext> unmarshaller,
+            ExecutionContext executionContext)
+    {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
-        for (Entry<String, String> entry : request.getOriginalRequest().copyPrivateRequestParameters().entrySet()) {
+        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
+        for (Entry<String, String> entry : originalRequest.copyPrivateRequestParameters().entrySet()) {
             request.addParameter(entry.getKey(), entry.getValue());
         }
 
         AWSCredentials credentials = awsCredentialsProvider.getCredentials();
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
-          credentials = originalRequest.getRequestCredentials();
+        if (originalRequest.getRequestCredentials() != null) {
+            credentials = originalRequest.getRequestCredentials();
         }
 
-        ExecutionContext executionContext = createExecutionContext(originalRequest);
         executionContext.setSigner(signer);
         executionContext.setCredentials(credentials);
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
-
         return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 }

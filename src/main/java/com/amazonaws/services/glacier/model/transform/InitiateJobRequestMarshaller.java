@@ -56,8 +56,8 @@ public class InitiateJobRequestMarshaller implements Marshaller<Request<Initiate
 
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/jobs"; 
-        uriResourcePath = uriResourcePath.replace("{accountId}", getString(initiateJobRequest.getAccountId())); 
-        uriResourcePath = uriResourcePath.replace("{vaultName}", getString(initiateJobRequest.getVaultName())); 
+        uriResourcePath = uriResourcePath.replace("{accountId}", (initiateJobRequest.getAccountId() == null) ? "" : StringUtils.fromString(initiateJobRequest.getAccountId())); 
+        uriResourcePath = uriResourcePath.replace("{vaultName}", (initiateJobRequest.getVaultName() == null) ? "" : StringUtils.fromString(initiateJobRequest.getVaultName())); 
 
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
@@ -122,10 +122,5 @@ public class InitiateJobRequestMarshaller implements Marshaller<Request<Initiate
         
 
         return request;
-    }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
     }
 }

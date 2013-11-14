@@ -56,7 +56,7 @@ public class ReadJobRequestMarshaller implements Marshaller<Request<ReadJobReque
 
 
         String uriResourcePath = "2012-09-25/jobs/{Id}"; 
-        uriResourcePath = uriResourcePath.replace("{Id}", getString(readJobRequest.getId())); 
+        uriResourcePath = uriResourcePath.replace("{Id}", (readJobRequest.getId() == null) ? "" : StringUtils.fromString(readJobRequest.getId())); 
 
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
@@ -82,10 +82,5 @@ public class ReadJobRequestMarshaller implements Marshaller<Request<ReadJobReque
         
 
         return request;
-    }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
     }
 }

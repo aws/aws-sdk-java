@@ -14,15 +14,16 @@
  */
 package com.amazonaws.services.s3.internal;
 
-import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+
+import com.amazonaws.internal.SdkFilterInputStream;
 
 /**
  * Filtered input stream implementation that exposes a range of an input stream
  * as a new input stream.
  */
-public final class InputSubstream extends FilterInputStream {
+public final class InputSubstream extends SdkFilterInputStream {
 	private long currentPosition;
 	private final long requestedOffset;
 	private final long requestedLength;

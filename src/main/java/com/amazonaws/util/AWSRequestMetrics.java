@@ -76,9 +76,24 @@ public class AWSRequestMetrics {
          */
         RequestCount,
         /**
-         * Number of retries of sending a request to AWS.
+         * Number of retries of AWS SDK sending a request to AWS.
          */
         RetryCount, // captured via the RequestCount since (RetryCount = RequestCount - 1)
+        /**
+         * Number of retries of the underlying http client library in sending a
+         * request to AWS.
+         */
+        HttpClientRetryCount,
+        /**
+         * Time taken to send a request to AWS by the http client library,
+         * excluding any retry. 
+         */
+        HttpClientSendRequestTime,
+        /**
+         * Time taken to receive a response from AWS by the http client library,
+         * excluding any retry. 
+         */
+        HttpClientReceiveResponseTime,
         RetryPauseTime,
 //      S3DownloadThroughput, // migrated to S3RequestMetric in the S3 clint library
 //      S3UploadThroughput,   // migrated to S3RequestMetric in the S3 clint library

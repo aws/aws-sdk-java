@@ -62,9 +62,9 @@ public class UploadMultipartPartRequestMarshaller implements Marshaller<Request<
 
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads/{uploadId}"; 
-        uriResourcePath = uriResourcePath.replace("{accountId}", getString(uploadMultipartPartRequest.getAccountId())); 
-        uriResourcePath = uriResourcePath.replace("{vaultName}", getString(uploadMultipartPartRequest.getVaultName())); 
-        uriResourcePath = uriResourcePath.replace("{uploadId}", getString(uploadMultipartPartRequest.getUploadId())); 
+        uriResourcePath = uriResourcePath.replace("{accountId}", (uploadMultipartPartRequest.getAccountId() == null) ? "" : StringUtils.fromString(uploadMultipartPartRequest.getAccountId())); 
+        uriResourcePath = uriResourcePath.replace("{vaultName}", (uploadMultipartPartRequest.getVaultName() == null) ? "" : StringUtils.fromString(uploadMultipartPartRequest.getVaultName())); 
+        uriResourcePath = uriResourcePath.replace("{uploadId}", (uploadMultipartPartRequest.getUploadId() == null) ? "" : StringUtils.fromString(uploadMultipartPartRequest.getUploadId())); 
 
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
@@ -91,10 +91,5 @@ public class UploadMultipartPartRequestMarshaller implements Marshaller<Request<
         
 
         return request;
-    }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
     }
 }

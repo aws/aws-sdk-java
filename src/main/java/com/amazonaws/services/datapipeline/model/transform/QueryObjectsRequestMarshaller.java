@@ -163,9 +163,4 @@ public class QueryObjectsRequestMarshaller implements Marshaller<Request<QueryOb
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

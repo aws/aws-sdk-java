@@ -61,10 +61,10 @@ public class ArnCondition extends Condition {
          */
         ArnLike,
 
-        /** Negated form of {@link ArnConditionType#ArnEquals} */
+        /** Negated form of {@link #ArnEquals} */
         ArnNotEquals,
 
-        /** Negated form of {@link ArnConditionType#ArnLike} */
+        /** Negated form of {@link #ArnLike} */
         ArnNotLike;
     };
 

@@ -14,6 +14,8 @@
  */
 package com.amazonaws.http;
 
+import static com.amazonaws.SDKGlobalConfiguration.DISABLE_CERT_CHECKING_SYSTEM_PROPERTY;
+
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
@@ -44,7 +46,6 @@ import org.apache.http.conn.scheme.SchemeLayeredSocketFactory;
 import org.apache.http.conn.scheme.SchemeRegistry;
 import org.apache.http.conn.scheme.SchemeSocketFactory;
 import org.apache.http.conn.ssl.SSLSocketFactory;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.DefaultRedirectStrategy;
 import org.apache.http.impl.conn.PoolingClientConnectionManager;
 import org.apache.http.params.BasicHttpParams;
@@ -54,9 +55,12 @@ import org.apache.http.protocol.HttpContext;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.ClientConfiguration;
+import com.amazonaws.http.impl.client.SdkHttpClient;
+import com.amazonaws.http.impl.client.SdkHttpRequestRetryHandler;
 
 /** Responsible for creating and configuring instances of Apache HttpClient4. */
 class HttpClientFactory {
+
 
     /**
      * Creates a new HttpClient object using the specified AWS
@@ -83,19 +87,18 @@ class HttpClientFactory {
                     Math.max(socketSendBufferSizeHint, socketReceiveBufferSizeHint));
         }
 
-        /* Set connection manager */
-        PoolingClientConnectionManager connectionManager = ConnectionManagerFactory.createPoolingClientConnManager(config, httpClientParams);
-        DefaultHttpClient httpClient = new DefaultHttpClient(connectionManager, httpClientParams);
+        PoolingClientConnectionManager connectionManager = ConnectionManagerFactory
+                .createPoolingClientConnManager(config, httpClientParams);
+        SdkHttpClient httpClient = new SdkHttpClient(connectionManager, httpClientParams);
+        httpClient.setHttpRequestRetryHandler(SdkHttpRequestRetryHandler.Singleton);
         httpClient.setRedirectStrategy(new LocationHeaderNotRequiredRedirectStrategy());
 
         try {
             Scheme http = new Scheme("http", 80, PlainSocketFactory.getSocketFactory());
-
             SSLSocketFactory sf = new SSLSocketFactory(
                     SSLContext.getDefault(),
                     SSLSocketFactory.STRICT_HOSTNAME_VERIFIER);
             Scheme https = new Scheme("https", 443, sf);
-
             SchemeRegistry sr = connectionManager.getSchemeRegistry();
             sr.register(http);
             sr.register(https);
@@ -108,7 +111,7 @@ class HttpClientFactory {
          * register a new scheme for HTTPS that won't cause self-signed certs to
          * error out.
          */
-        if (System.getProperty("com.amazonaws.sdk.disableCertChecking") != null) {
+        if (System.getProperty(DISABLE_CERT_CHECKING_SYSTEM_PROPERTY) != null) {
             Scheme sch = new Scheme("https", 443, new TrustingSocketFactory());
             httpClient.getConnectionManager().getSchemeRegistry().register(sch);
         }

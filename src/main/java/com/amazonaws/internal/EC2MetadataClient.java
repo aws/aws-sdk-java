@@ -14,6 +14,8 @@
  */
 package com.amazonaws.internal;
 
+import static com.amazonaws.SDKGlobalConfiguration.EC2_METADATA_SERVICE_OVERRIDE_SYSTEM_PROPERTY;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -29,8 +31,6 @@ import com.amazonaws.AmazonClientException;
  */
 public class EC2MetadataClient {
 
-    /** System property for overriding the Amazon EC2 Instance Metadata Service endpoint. */
-    public static final String EC2_METADATA_SERVICE_OVERRIDE = "com.amazonaws.sdk.ec2MetadataServiceEndpointOverride";
 
     /** Default endpoint for the Amazon EC2 Instance Metadata Service. */
     private static final String EC2_METADATA_SERVICE_URL = "http://169.254.169.254";
@@ -141,8 +141,8 @@ public class EC2MetadataClient {
      */
     private URL getEc2MetadataServiceUrlForResource(String resourcePath) throws IOException {
         String endpoint = EC2_METADATA_SERVICE_URL;
-        if (System.getProperty(EC2_METADATA_SERVICE_OVERRIDE) != null) {
-            endpoint = System.getProperty(EC2_METADATA_SERVICE_OVERRIDE);
+        if (System.getProperty(EC2_METADATA_SERVICE_OVERRIDE_SYSTEM_PROPERTY) != null) {
+            endpoint = System.getProperty(EC2_METADATA_SERVICE_OVERRIDE_SYSTEM_PROPERTY);
         }
 
         return new URL(endpoint + resourcePath);

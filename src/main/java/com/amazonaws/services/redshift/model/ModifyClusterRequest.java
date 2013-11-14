@@ -175,6 +175,19 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
     private Boolean allowVersionUpgrade;
 
     /**
+     * Specifies the name of the HSM client certificate the Amazon Redshift
+     * cluster uses to retrieve the data encryption keys stored in an HSM.
+     */
+    private String hsmClientCertificateIdentifier;
+
+    /**
+     * Specifies the name of the HSM configuration that contains the
+     * information the Amazon Redshift cluster can use to retrieve and store
+     * keys in an HSM.
+     */
+    private String hsmConfigurationIdentifier;
+
+    /**
      * The unique identifier of the cluster to be modified. <p>Example:
      * <code>examplecluster</code>
      *
@@ -1128,6 +1141,90 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
+     * Specifies the name of the HSM client certificate the Amazon Redshift
+     * cluster uses to retrieve the data encryption keys stored in an HSM.
+     *
+     * @return Specifies the name of the HSM client certificate the Amazon Redshift
+     *         cluster uses to retrieve the data encryption keys stored in an HSM.
+     */
+    public String getHsmClientCertificateIdentifier() {
+        return hsmClientCertificateIdentifier;
+    }
+    
+    /**
+     * Specifies the name of the HSM client certificate the Amazon Redshift
+     * cluster uses to retrieve the data encryption keys stored in an HSM.
+     *
+     * @param hsmClientCertificateIdentifier Specifies the name of the HSM client certificate the Amazon Redshift
+     *         cluster uses to retrieve the data encryption keys stored in an HSM.
+     */
+    public void setHsmClientCertificateIdentifier(String hsmClientCertificateIdentifier) {
+        this.hsmClientCertificateIdentifier = hsmClientCertificateIdentifier;
+    }
+    
+    /**
+     * Specifies the name of the HSM client certificate the Amazon Redshift
+     * cluster uses to retrieve the data encryption keys stored in an HSM.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param hsmClientCertificateIdentifier Specifies the name of the HSM client certificate the Amazon Redshift
+     *         cluster uses to retrieve the data encryption keys stored in an HSM.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public ModifyClusterRequest withHsmClientCertificateIdentifier(String hsmClientCertificateIdentifier) {
+        this.hsmClientCertificateIdentifier = hsmClientCertificateIdentifier;
+        return this;
+    }
+
+    /**
+     * Specifies the name of the HSM configuration that contains the
+     * information the Amazon Redshift cluster can use to retrieve and store
+     * keys in an HSM.
+     *
+     * @return Specifies the name of the HSM configuration that contains the
+     *         information the Amazon Redshift cluster can use to retrieve and store
+     *         keys in an HSM.
+     */
+    public String getHsmConfigurationIdentifier() {
+        return hsmConfigurationIdentifier;
+    }
+    
+    /**
+     * Specifies the name of the HSM configuration that contains the
+     * information the Amazon Redshift cluster can use to retrieve and store
+     * keys in an HSM.
+     *
+     * @param hsmConfigurationIdentifier Specifies the name of the HSM configuration that contains the
+     *         information the Amazon Redshift cluster can use to retrieve and store
+     *         keys in an HSM.
+     */
+    public void setHsmConfigurationIdentifier(String hsmConfigurationIdentifier) {
+        this.hsmConfigurationIdentifier = hsmConfigurationIdentifier;
+    }
+    
+    /**
+     * Specifies the name of the HSM configuration that contains the
+     * information the Amazon Redshift cluster can use to retrieve and store
+     * keys in an HSM.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param hsmConfigurationIdentifier Specifies the name of the HSM configuration that contains the
+     *         information the Amazon Redshift cluster can use to retrieve and store
+     *         keys in an HSM.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together.
+     */
+    public ModifyClusterRequest withHsmConfigurationIdentifier(String hsmConfigurationIdentifier) {
+        this.hsmConfigurationIdentifier = hsmConfigurationIdentifier;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1150,7 +1247,9 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
         if (getAutomatedSnapshotRetentionPeriod() != null) sb.append("AutomatedSnapshotRetentionPeriod: " + getAutomatedSnapshotRetentionPeriod() + ",");
         if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");
         if (getClusterVersion() != null) sb.append("ClusterVersion: " + getClusterVersion() + ",");
-        if (isAllowVersionUpgrade() != null) sb.append("AllowVersionUpgrade: " + isAllowVersionUpgrade() );
+        if (isAllowVersionUpgrade() != null) sb.append("AllowVersionUpgrade: " + isAllowVersionUpgrade() + ",");
+        if (getHsmClientCertificateIdentifier() != null) sb.append("HsmClientCertificateIdentifier: " + getHsmClientCertificateIdentifier() + ",");
+        if (getHsmConfigurationIdentifier() != null) sb.append("HsmConfigurationIdentifier: " + getHsmConfigurationIdentifier() );
         sb.append("}");
         return sb.toString();
     }
@@ -1172,6 +1271,8 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
         hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode()); 
         hashCode = prime * hashCode + ((getClusterVersion() == null) ? 0 : getClusterVersion().hashCode()); 
         hashCode = prime * hashCode + ((isAllowVersionUpgrade() == null) ? 0 : isAllowVersionUpgrade().hashCode()); 
+        hashCode = prime * hashCode + ((getHsmClientCertificateIdentifier() == null) ? 0 : getHsmClientCertificateIdentifier().hashCode()); 
+        hashCode = prime * hashCode + ((getHsmConfigurationIdentifier() == null) ? 0 : getHsmConfigurationIdentifier().hashCode()); 
         return hashCode;
     }
     
@@ -1207,6 +1308,10 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
         if (other.getClusterVersion() != null && other.getClusterVersion().equals(this.getClusterVersion()) == false) return false; 
         if (other.isAllowVersionUpgrade() == null ^ this.isAllowVersionUpgrade() == null) return false;
         if (other.isAllowVersionUpgrade() != null && other.isAllowVersionUpgrade().equals(this.isAllowVersionUpgrade()) == false) return false; 
+        if (other.getHsmClientCertificateIdentifier() == null ^ this.getHsmClientCertificateIdentifier() == null) return false;
+        if (other.getHsmClientCertificateIdentifier() != null && other.getHsmClientCertificateIdentifier().equals(this.getHsmClientCertificateIdentifier()) == false) return false; 
+        if (other.getHsmConfigurationIdentifier() == null ^ this.getHsmConfigurationIdentifier() == null) return false;
+        if (other.getHsmConfigurationIdentifier() != null && other.getHsmConfigurationIdentifier().equals(this.getHsmConfigurationIdentifier()) == false) return false; 
         return true;
     }
     

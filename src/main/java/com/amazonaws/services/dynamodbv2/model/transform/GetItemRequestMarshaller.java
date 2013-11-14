@@ -187,9 +187,4 @@ public class GetItemRequestMarshaller implements Marshaller<Request<GetItemReque
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

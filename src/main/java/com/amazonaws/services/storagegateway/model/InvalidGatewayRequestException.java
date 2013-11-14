@@ -24,8 +24,6 @@ import com.amazonaws.AmazonServiceException;
 public class InvalidGatewayRequestException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
     
-    private StorageGatewayError error;
-    
     /**
      * Constructs a new InvalidGatewayRequestException with the specified error
      * message.
@@ -36,22 +34,5 @@ public class InvalidGatewayRequestException extends AmazonServiceException {
         super(message);
     }
     
-    /**
-     * Returns the value of the Error property for this object.
-     *
-     * @return The value of the Error property for this object.         
-     */
-    public StorageGatewayError getError() {
-        return error;
-    }
-        
-    /**
-     * Sets the value of the Error property for this object.
-     *
-     * @param error The new value for this object's Error property. 
-     */
-    public void setError(StorageGatewayError error) {
-        this.error = error;
-    }
 }
     

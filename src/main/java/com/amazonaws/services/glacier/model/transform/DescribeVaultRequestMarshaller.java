@@ -56,8 +56,8 @@ public class DescribeVaultRequestMarshaller implements Marshaller<Request<Descri
 
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}"; 
-        uriResourcePath = uriResourcePath.replace("{accountId}", getString(describeVaultRequest.getAccountId())); 
-        uriResourcePath = uriResourcePath.replace("{vaultName}", getString(describeVaultRequest.getVaultName())); 
+        uriResourcePath = uriResourcePath.replace("{accountId}", (describeVaultRequest.getAccountId() == null) ? "" : StringUtils.fromString(describeVaultRequest.getAccountId())); 
+        uriResourcePath = uriResourcePath.replace("{vaultName}", (describeVaultRequest.getVaultName() == null) ? "" : StringUtils.fromString(describeVaultRequest.getVaultName())); 
 
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
@@ -83,10 +83,5 @@ public class DescribeVaultRequestMarshaller implements Marshaller<Request<Descri
         
 
         return request;
-    }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
     }
 }

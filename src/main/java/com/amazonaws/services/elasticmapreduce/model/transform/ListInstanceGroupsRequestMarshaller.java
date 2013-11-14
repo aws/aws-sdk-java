@@ -106,9 +106,4 @@ public class ListInstanceGroupsRequestMarshaller implements Marshaller<Request<L
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

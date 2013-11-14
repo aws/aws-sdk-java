@@ -106,9 +106,4 @@ public class CancelRetrievalRequestMarshaller implements Marshaller<Request<Canc
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

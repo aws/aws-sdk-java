@@ -109,9 +109,4 @@ public class ListVolumesRequestMarshaller implements Marshaller<Request<ListVolu
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

@@ -33,13 +33,15 @@ import com.amazonaws.AmazonWebServiceRequest;
  * that are created by using account credentials have a maximum duration of 3600 seconds (1 hour).
  * </p>
  * <p>
- * The permissions that are granted to the federated user are the intersection of the policy that is passed with the <code>GetSessionToken</code>
- * request and policies that are associated with of the entity making the <code>GetSessionToken</code> call.
+ * Optionally, you can pass an AWS IAM access policy to this operation. The temporary security credentials that are returned by the operation have the
+ * permissions that are associated with the entity that is making the <code>GetSessionToken</code> call, except for any permissions explicitly denied by
+ * the policy you pass. This gives you a way to further restrict the permissions for the federated user. These policies and any applicable resource-based
+ * policies are evaluated when calls to AWS are made using the temporary security credentials.
  * </p>
  * <p>
  * For more information about using <code>GetSessionToken</code> to create temporary credentials, go to <a
- * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/CreatingSessionTokens.html"> Creating Temporary Credentials to Enable Access for IAM Users </a>
- * in <i>Using IAM</i> .
+ * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/CreatingSessionTokens.html"> Creating Temporary Credentials to Enable Access for IAM Users
+ * </a> in <i>Using IAM</i> .
  * 
  * </p>
  *

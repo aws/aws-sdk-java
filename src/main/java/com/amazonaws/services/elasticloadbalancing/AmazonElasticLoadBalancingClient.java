@@ -14,24 +14,19 @@
  */
 package com.amazonaws.services.elasticloadbalancing;
 
-import org.w3c.dom.Node;
+import org.w3c.dom.*;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.Map.Entry;
 
 import com.amazonaws.*;
 import com.amazonaws.auth.*;
-import com.amazonaws.handlers.HandlerChainFactory;
-import com.amazonaws.handlers.RequestHandler;
-import com.amazonaws.http.StaxResponseHandler;
-import com.amazonaws.http.DefaultErrorResponseHandler;
-import com.amazonaws.http.ExecutionContext;
-import com.amazonaws.internal.StaticCredentialsProvider;
-import com.amazonaws.transform.Unmarshaller;
-import com.amazonaws.transform.StaxUnmarshallerContext;
-import com.amazonaws.transform.StandardErrorUnmarshaller;
+import com.amazonaws.handlers.*;
+import com.amazonaws.http.*;
+import com.amazonaws.internal.*;
+import com.amazonaws.transform.*;
+import com.amazonaws.util.*;
+import com.amazonaws.util.AWSRequestMetrics.Field;
 
 import com.amazonaws.services.elasticloadbalancing.model.*;
 import com.amazonaws.services.elasticloadbalancing.model.transform.*;
@@ -107,7 +102,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonElasticLoadBalancingClient() {
         this(new DefaultAWSCredentialsProviderChain(), new ClientConfiguration());
@@ -131,7 +126,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *                       client connects to AmazonElasticLoadBalancing
      *                       (ex: proxy settings, retry counts, etc.).
      *
-     * @see DefaultAWSCredentialsProvider
+     * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonElasticLoadBalancingClient(ClientConfiguration clientConfiguration) {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
@@ -237,7 +232,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
         
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-    requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+        requestHandlers.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/elasticloadbalancing/request.handlers"));
     }
 
@@ -268,10 +263,20 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *             If an error response is returned by AmazonElasticLoadBalancing indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeLoadBalancerPolicyTypesResult describeLoadBalancerPolicyTypes(DescribeLoadBalancerPolicyTypesRequest describeLoadBalancerPolicyTypesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeLoadBalancerPolicyTypesRequest> request = new DescribeLoadBalancerPolicyTypesRequestMarshaller().marshall(describeLoadBalancerPolicyTypesRequest);
-        return invoke(request, new DescribeLoadBalancerPolicyTypesResultStaxUnmarshaller());
+    public DescribeLoadBalancerPolicyTypesResult describeLoadBalancerPolicyTypes(DescribeLoadBalancerPolicyTypesRequest describeLoadBalancerPolicyTypesRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeLoadBalancerPolicyTypesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeLoadBalancerPolicyTypesRequest> request = null;
+        DescribeLoadBalancerPolicyTypesResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeLoadBalancerPolicyTypesRequestMarshaller().marshall(describeLoadBalancerPolicyTypesRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeLoadBalancerPolicyTypesResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -303,10 +308,20 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *             If an error response is returned by AmazonElasticLoadBalancing indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ConfigureHealthCheckResult configureHealthCheck(ConfigureHealthCheckRequest configureHealthCheckRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ConfigureHealthCheckRequest> request = new ConfigureHealthCheckRequestMarshaller().marshall(configureHealthCheckRequest);
-        return invoke(request, new ConfigureHealthCheckResultStaxUnmarshaller());
+    public ConfigureHealthCheckResult configureHealthCheck(ConfigureHealthCheckRequest configureHealthCheckRequest) {
+        ExecutionContext executionContext = createExecutionContext(configureHealthCheckRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ConfigureHealthCheckRequest> request = null;
+        ConfigureHealthCheckResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ConfigureHealthCheckRequestMarshaller().marshall(configureHealthCheckRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new ConfigureHealthCheckResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -340,10 +355,20 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *             If an error response is returned by AmazonElasticLoadBalancing indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DetachLoadBalancerFromSubnetsResult detachLoadBalancerFromSubnets(DetachLoadBalancerFromSubnetsRequest detachLoadBalancerFromSubnetsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DetachLoadBalancerFromSubnetsRequest> request = new DetachLoadBalancerFromSubnetsRequestMarshaller().marshall(detachLoadBalancerFromSubnetsRequest);
-        return invoke(request, new DetachLoadBalancerFromSubnetsResultStaxUnmarshaller());
+    public DetachLoadBalancerFromSubnetsResult detachLoadBalancerFromSubnets(DetachLoadBalancerFromSubnetsRequest detachLoadBalancerFromSubnetsRequest) {
+        ExecutionContext executionContext = createExecutionContext(detachLoadBalancerFromSubnetsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DetachLoadBalancerFromSubnetsRequest> request = null;
+        DetachLoadBalancerFromSubnetsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DetachLoadBalancerFromSubnetsRequestMarshaller().marshall(detachLoadBalancerFromSubnetsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DetachLoadBalancerFromSubnetsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -370,10 +395,20 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *             If an error response is returned by AmazonElasticLoadBalancing indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ModifyLoadBalancerAttributesResult modifyLoadBalancerAttributes(ModifyLoadBalancerAttributesRequest modifyLoadBalancerAttributesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ModifyLoadBalancerAttributesRequest> request = new ModifyLoadBalancerAttributesRequestMarshaller().marshall(modifyLoadBalancerAttributesRequest);
-        return invoke(request, new ModifyLoadBalancerAttributesResultStaxUnmarshaller());
+    public ModifyLoadBalancerAttributesResult modifyLoadBalancerAttributes(ModifyLoadBalancerAttributesRequest modifyLoadBalancerAttributesRequest) {
+        ExecutionContext executionContext = createExecutionContext(modifyLoadBalancerAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ModifyLoadBalancerAttributesRequest> request = null;
+        ModifyLoadBalancerAttributesResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ModifyLoadBalancerAttributesRequestMarshaller().marshall(modifyLoadBalancerAttributesRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new ModifyLoadBalancerAttributesResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -407,10 +442,19 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *             If an error response is returned by AmazonElasticLoadBalancing indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void createLoadBalancerListeners(CreateLoadBalancerListenersRequest createLoadBalancerListenersRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateLoadBalancerListenersRequest> request = new CreateLoadBalancerListenersRequestMarshaller().marshall(createLoadBalancerListenersRequest);
-        invoke(request, null);
+    public void createLoadBalancerListeners(CreateLoadBalancerListenersRequest createLoadBalancerListenersRequest) {
+        ExecutionContext executionContext = createExecutionContext(createLoadBalancerListenersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateLoadBalancerListenersRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreateLoadBalancerListenersRequestMarshaller().marshall(createLoadBalancerListenersRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
     }
     
     /**
@@ -432,10 +476,19 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *             If an error response is returned by AmazonElasticLoadBalancing indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void deleteLoadBalancerListeners(DeleteLoadBalancerListenersRequest deleteLoadBalancerListenersRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteLoadBalancerListenersRequest> request = new DeleteLoadBalancerListenersRequestMarshaller().marshall(deleteLoadBalancerListenersRequest);
-        invoke(request, null);
+    public void deleteLoadBalancerListeners(DeleteLoadBalancerListenersRequest deleteLoadBalancerListenersRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteLoadBalancerListenersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteLoadBalancerListenersRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteLoadBalancerListenersRequestMarshaller().marshall(deleteLoadBalancerListenersRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
     }
     
     /**
@@ -489,10 +542,20 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *             If an error response is returned by AmazonElasticLoadBalancing indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreateAppCookieStickinessPolicyResult createAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest createAppCookieStickinessPolicyRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateAppCookieStickinessPolicyRequest> request = new CreateAppCookieStickinessPolicyRequestMarshaller().marshall(createAppCookieStickinessPolicyRequest);
-        return invoke(request, new CreateAppCookieStickinessPolicyResultStaxUnmarshaller());
+    public CreateAppCookieStickinessPolicyResult createAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest createAppCookieStickinessPolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(createAppCookieStickinessPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateAppCookieStickinessPolicyRequest> request = null;
+        CreateAppCookieStickinessPolicyResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreateAppCookieStickinessPolicyRequestMarshaller().marshall(createAppCookieStickinessPolicyRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new CreateAppCookieStickinessPolicyResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -527,10 +590,20 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *             If an error response is returned by AmazonElasticLoadBalancing indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ApplySecurityGroupsToLoadBalancerResult applySecurityGroupsToLoadBalancer(ApplySecurityGroupsToLoadBalancerRequest applySecurityGroupsToLoadBalancerRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ApplySecurityGroupsToLoadBalancerRequest> request = new ApplySecurityGroupsToLoadBalancerRequestMarshaller().marshall(applySecurityGroupsToLoadBalancerRequest);
-        return invoke(request, new ApplySecurityGroupsToLoadBalancerResultStaxUnmarshaller());
+    public ApplySecurityGroupsToLoadBalancerResult applySecurityGroupsToLoadBalancer(ApplySecurityGroupsToLoadBalancerRequest applySecurityGroupsToLoadBalancerRequest) {
+        ExecutionContext executionContext = createExecutionContext(applySecurityGroupsToLoadBalancerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<ApplySecurityGroupsToLoadBalancerRequest> request = null;
+        ApplySecurityGroupsToLoadBalancerResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new ApplySecurityGroupsToLoadBalancerRequestMarshaller().marshall(applySecurityGroupsToLoadBalancerRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new ApplySecurityGroupsToLoadBalancerResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -563,10 +636,20 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *             If an error response is returned by AmazonElasticLoadBalancing indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeLoadBalancerPoliciesResult describeLoadBalancerPolicies(DescribeLoadBalancerPoliciesRequest describeLoadBalancerPoliciesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeLoadBalancerPoliciesRequest> request = new DescribeLoadBalancerPoliciesRequestMarshaller().marshall(describeLoadBalancerPoliciesRequest);
-        return invoke(request, new DescribeLoadBalancerPoliciesResultStaxUnmarshaller());
+    public DescribeLoadBalancerPoliciesResult describeLoadBalancerPolicies(DescribeLoadBalancerPoliciesRequest describeLoadBalancerPoliciesRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeLoadBalancerPoliciesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeLoadBalancerPoliciesRequest> request = null;
+        DescribeLoadBalancerPoliciesResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeLoadBalancerPoliciesRequestMarshaller().marshall(describeLoadBalancerPoliciesRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeLoadBalancerPoliciesResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -595,10 +678,20 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *             If an error response is returned by AmazonElasticLoadBalancing indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public SetLoadBalancerPoliciesOfListenerResult setLoadBalancerPoliciesOfListener(SetLoadBalancerPoliciesOfListenerRequest setLoadBalancerPoliciesOfListenerRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<SetLoadBalancerPoliciesOfListenerRequest> request = new SetLoadBalancerPoliciesOfListenerRequestMarshaller().marshall(setLoadBalancerPoliciesOfListenerRequest);
-        return invoke(request, new SetLoadBalancerPoliciesOfListenerResultStaxUnmarshaller());
+    public SetLoadBalancerPoliciesOfListenerResult setLoadBalancerPoliciesOfListener(SetLoadBalancerPoliciesOfListenerRequest setLoadBalancerPoliciesOfListenerRequest) {
+        ExecutionContext executionContext = createExecutionContext(setLoadBalancerPoliciesOfListenerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<SetLoadBalancerPoliciesOfListenerRequest> request = null;
+        SetLoadBalancerPoliciesOfListenerResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new SetLoadBalancerPoliciesOfListenerRequestMarshaller().marshall(setLoadBalancerPoliciesOfListenerRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new SetLoadBalancerPoliciesOfListenerResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -642,10 +735,20 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *             If an error response is returned by AmazonElasticLoadBalancing indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DisableAvailabilityZonesForLoadBalancerResult disableAvailabilityZonesForLoadBalancer(DisableAvailabilityZonesForLoadBalancerRequest disableAvailabilityZonesForLoadBalancerRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DisableAvailabilityZonesForLoadBalancerRequest> request = new DisableAvailabilityZonesForLoadBalancerRequestMarshaller().marshall(disableAvailabilityZonesForLoadBalancerRequest);
-        return invoke(request, new DisableAvailabilityZonesForLoadBalancerResultStaxUnmarshaller());
+    public DisableAvailabilityZonesForLoadBalancerResult disableAvailabilityZonesForLoadBalancer(DisableAvailabilityZonesForLoadBalancerRequest disableAvailabilityZonesForLoadBalancerRequest) {
+        ExecutionContext executionContext = createExecutionContext(disableAvailabilityZonesForLoadBalancerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DisableAvailabilityZonesForLoadBalancerRequest> request = null;
+        DisableAvailabilityZonesForLoadBalancerResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DisableAvailabilityZonesForLoadBalancerRequestMarshaller().marshall(disableAvailabilityZonesForLoadBalancerRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DisableAvailabilityZonesForLoadBalancerResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -677,10 +780,20 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *             If an error response is returned by AmazonElasticLoadBalancing indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeInstanceHealthResult describeInstanceHealth(DescribeInstanceHealthRequest describeInstanceHealthRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeInstanceHealthRequest> request = new DescribeInstanceHealthRequestMarshaller().marshall(describeInstanceHealthRequest);
-        return invoke(request, new DescribeInstanceHealthResultStaxUnmarshaller());
+    public DescribeInstanceHealthResult describeInstanceHealth(DescribeInstanceHealthRequest describeInstanceHealthRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeInstanceHealthRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeInstanceHealthRequest> request = null;
+        DescribeInstanceHealthResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeInstanceHealthRequestMarshaller().marshall(describeInstanceHealthRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeInstanceHealthResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -707,10 +820,20 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *             If an error response is returned by AmazonElasticLoadBalancing indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DeleteLoadBalancerPolicyResult deleteLoadBalancerPolicy(DeleteLoadBalancerPolicyRequest deleteLoadBalancerPolicyRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteLoadBalancerPolicyRequest> request = new DeleteLoadBalancerPolicyRequestMarshaller().marshall(deleteLoadBalancerPolicyRequest);
-        return invoke(request, new DeleteLoadBalancerPolicyResultStaxUnmarshaller());
+    public DeleteLoadBalancerPolicyResult deleteLoadBalancerPolicy(DeleteLoadBalancerPolicyRequest deleteLoadBalancerPolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteLoadBalancerPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteLoadBalancerPolicyRequest> request = null;
+        DeleteLoadBalancerPolicyResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteLoadBalancerPolicyRequestMarshaller().marshall(deleteLoadBalancerPolicyRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DeleteLoadBalancerPolicyResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -742,10 +865,20 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *             If an error response is returned by AmazonElasticLoadBalancing indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreateLoadBalancerPolicyResult createLoadBalancerPolicy(CreateLoadBalancerPolicyRequest createLoadBalancerPolicyRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateLoadBalancerPolicyRequest> request = new CreateLoadBalancerPolicyRequestMarshaller().marshall(createLoadBalancerPolicyRequest);
-        return invoke(request, new CreateLoadBalancerPolicyResultStaxUnmarshaller());
+    public CreateLoadBalancerPolicyResult createLoadBalancerPolicy(CreateLoadBalancerPolicyRequest createLoadBalancerPolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(createLoadBalancerPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateLoadBalancerPolicyRequest> request = null;
+        CreateLoadBalancerPolicyResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreateLoadBalancerPolicyRequestMarshaller().marshall(createLoadBalancerPolicyRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new CreateLoadBalancerPolicyResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -786,10 +919,20 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *             If an error response is returned by AmazonElasticLoadBalancing indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public EnableAvailabilityZonesForLoadBalancerResult enableAvailabilityZonesForLoadBalancer(EnableAvailabilityZonesForLoadBalancerRequest enableAvailabilityZonesForLoadBalancerRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<EnableAvailabilityZonesForLoadBalancerRequest> request = new EnableAvailabilityZonesForLoadBalancerRequestMarshaller().marshall(enableAvailabilityZonesForLoadBalancerRequest);
-        return invoke(request, new EnableAvailabilityZonesForLoadBalancerResultStaxUnmarshaller());
+    public EnableAvailabilityZonesForLoadBalancerResult enableAvailabilityZonesForLoadBalancer(EnableAvailabilityZonesForLoadBalancerRequest enableAvailabilityZonesForLoadBalancerRequest) {
+        ExecutionContext executionContext = createExecutionContext(enableAvailabilityZonesForLoadBalancerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<EnableAvailabilityZonesForLoadBalancerRequest> request = null;
+        EnableAvailabilityZonesForLoadBalancerResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new EnableAvailabilityZonesForLoadBalancerRequestMarshaller().marshall(enableAvailabilityZonesForLoadBalancerRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new EnableAvailabilityZonesForLoadBalancerResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -826,10 +969,19 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *             If an error response is returned by AmazonElasticLoadBalancing indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void deleteLoadBalancer(DeleteLoadBalancerRequest deleteLoadBalancerRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteLoadBalancerRequest> request = new DeleteLoadBalancerRequestMarshaller().marshall(deleteLoadBalancerRequest);
-        invoke(request, null);
+    public void deleteLoadBalancer(DeleteLoadBalancerRequest deleteLoadBalancerRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteLoadBalancerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeleteLoadBalancerRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeleteLoadBalancerRequestMarshaller().marshall(deleteLoadBalancerRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
     }
     
     /**
@@ -907,10 +1059,20 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *             If an error response is returned by AmazonElasticLoadBalancing indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreateLoadBalancerResult createLoadBalancer(CreateLoadBalancerRequest createLoadBalancerRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateLoadBalancerRequest> request = new CreateLoadBalancerRequestMarshaller().marshall(createLoadBalancerRequest);
-        return invoke(request, new CreateLoadBalancerResultStaxUnmarshaller());
+    public CreateLoadBalancerResult createLoadBalancer(CreateLoadBalancerRequest createLoadBalancerRequest) {
+        ExecutionContext executionContext = createExecutionContext(createLoadBalancerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateLoadBalancerRequest> request = null;
+        CreateLoadBalancerResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreateLoadBalancerRequestMarshaller().marshall(createLoadBalancerRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new CreateLoadBalancerResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -954,10 +1116,20 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *             If an error response is returned by AmazonElasticLoadBalancing indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public SetLoadBalancerPoliciesForBackendServerResult setLoadBalancerPoliciesForBackendServer(SetLoadBalancerPoliciesForBackendServerRequest setLoadBalancerPoliciesForBackendServerRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<SetLoadBalancerPoliciesForBackendServerRequest> request = new SetLoadBalancerPoliciesForBackendServerRequestMarshaller().marshall(setLoadBalancerPoliciesForBackendServerRequest);
-        return invoke(request, new SetLoadBalancerPoliciesForBackendServerResultStaxUnmarshaller());
+    public SetLoadBalancerPoliciesForBackendServerResult setLoadBalancerPoliciesForBackendServer(SetLoadBalancerPoliciesForBackendServerRequest setLoadBalancerPoliciesForBackendServerRequest) {
+        ExecutionContext executionContext = createExecutionContext(setLoadBalancerPoliciesForBackendServerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<SetLoadBalancerPoliciesForBackendServerRequest> request = null;
+        SetLoadBalancerPoliciesForBackendServerResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new SetLoadBalancerPoliciesForBackendServerRequestMarshaller().marshall(setLoadBalancerPoliciesForBackendServerRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new SetLoadBalancerPoliciesForBackendServerResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -999,10 +1171,20 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *             If an error response is returned by AmazonElasticLoadBalancing indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DeregisterInstancesFromLoadBalancerResult deregisterInstancesFromLoadBalancer(DeregisterInstancesFromLoadBalancerRequest deregisterInstancesFromLoadBalancerRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeregisterInstancesFromLoadBalancerRequest> request = new DeregisterInstancesFromLoadBalancerRequestMarshaller().marshall(deregisterInstancesFromLoadBalancerRequest);
-        return invoke(request, new DeregisterInstancesFromLoadBalancerResultStaxUnmarshaller());
+    public DeregisterInstancesFromLoadBalancerResult deregisterInstancesFromLoadBalancer(DeregisterInstancesFromLoadBalancerRequest deregisterInstancesFromLoadBalancerRequest) {
+        ExecutionContext executionContext = createExecutionContext(deregisterInstancesFromLoadBalancerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DeregisterInstancesFromLoadBalancerRequest> request = null;
+        DeregisterInstancesFromLoadBalancerResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DeregisterInstancesFromLoadBalancerRequestMarshaller().marshall(deregisterInstancesFromLoadBalancerRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DeregisterInstancesFromLoadBalancerResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1036,10 +1218,19 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *             If an error response is returned by AmazonElasticLoadBalancing indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void setLoadBalancerListenerSSLCertificate(SetLoadBalancerListenerSSLCertificateRequest setLoadBalancerListenerSSLCertificateRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<SetLoadBalancerListenerSSLCertificateRequest> request = new SetLoadBalancerListenerSSLCertificateRequestMarshaller().marshall(setLoadBalancerListenerSSLCertificateRequest);
-        invoke(request, null);
+    public void setLoadBalancerListenerSSLCertificate(SetLoadBalancerListenerSSLCertificateRequest setLoadBalancerListenerSSLCertificateRequest) {
+        ExecutionContext executionContext = createExecutionContext(setLoadBalancerListenerSSLCertificateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<SetLoadBalancerListenerSSLCertificateRequest> request = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new SetLoadBalancerListenerSSLCertificateRequestMarshaller().marshall(setLoadBalancerListenerSSLCertificateRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            invoke(request, null, executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, null);
+        }
     }
     
     /**
@@ -1066,10 +1257,20 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *             If an error response is returned by AmazonElasticLoadBalancing indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeLoadBalancerAttributesResult describeLoadBalancerAttributes(DescribeLoadBalancerAttributesRequest describeLoadBalancerAttributesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeLoadBalancerAttributesRequest> request = new DescribeLoadBalancerAttributesRequestMarshaller().marshall(describeLoadBalancerAttributesRequest);
-        return invoke(request, new DescribeLoadBalancerAttributesResultStaxUnmarshaller());
+    public DescribeLoadBalancerAttributesResult describeLoadBalancerAttributes(DescribeLoadBalancerAttributesRequest describeLoadBalancerAttributesRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeLoadBalancerAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeLoadBalancerAttributesRequest> request = null;
+        DescribeLoadBalancerAttributesResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeLoadBalancerAttributesRequestMarshaller().marshall(describeLoadBalancerAttributesRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeLoadBalancerAttributesResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1121,10 +1322,20 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *             If an error response is returned by AmazonElasticLoadBalancing indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreateLBCookieStickinessPolicyResult createLBCookieStickinessPolicy(CreateLBCookieStickinessPolicyRequest createLBCookieStickinessPolicyRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateLBCookieStickinessPolicyRequest> request = new CreateLBCookieStickinessPolicyRequestMarshaller().marshall(createLBCookieStickinessPolicyRequest);
-        return invoke(request, new CreateLBCookieStickinessPolicyResultStaxUnmarshaller());
+    public CreateLBCookieStickinessPolicyResult createLBCookieStickinessPolicy(CreateLBCookieStickinessPolicyRequest createLBCookieStickinessPolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(createLBCookieStickinessPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<CreateLBCookieStickinessPolicyRequest> request = null;
+        CreateLBCookieStickinessPolicyResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new CreateLBCookieStickinessPolicyRequestMarshaller().marshall(createLBCookieStickinessPolicyRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new CreateLBCookieStickinessPolicyResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1161,10 +1372,20 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *             If an error response is returned by AmazonElasticLoadBalancing indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public AttachLoadBalancerToSubnetsResult attachLoadBalancerToSubnets(AttachLoadBalancerToSubnetsRequest attachLoadBalancerToSubnetsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<AttachLoadBalancerToSubnetsRequest> request = new AttachLoadBalancerToSubnetsRequestMarshaller().marshall(attachLoadBalancerToSubnetsRequest);
-        return invoke(request, new AttachLoadBalancerToSubnetsResultStaxUnmarshaller());
+    public AttachLoadBalancerToSubnetsResult attachLoadBalancerToSubnets(AttachLoadBalancerToSubnetsRequest attachLoadBalancerToSubnetsRequest) {
+        ExecutionContext executionContext = createExecutionContext(attachLoadBalancerToSubnetsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<AttachLoadBalancerToSubnetsRequest> request = null;
+        AttachLoadBalancerToSubnetsResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new AttachLoadBalancerToSubnetsRequestMarshaller().marshall(attachLoadBalancerToSubnetsRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new AttachLoadBalancerToSubnetsResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1227,10 +1448,20 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *             If an error response is returned by AmazonElasticLoadBalancing indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public RegisterInstancesWithLoadBalancerResult registerInstancesWithLoadBalancer(RegisterInstancesWithLoadBalancerRequest registerInstancesWithLoadBalancerRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<RegisterInstancesWithLoadBalancerRequest> request = new RegisterInstancesWithLoadBalancerRequestMarshaller().marshall(registerInstancesWithLoadBalancerRequest);
-        return invoke(request, new RegisterInstancesWithLoadBalancerResultStaxUnmarshaller());
+    public RegisterInstancesWithLoadBalancerResult registerInstancesWithLoadBalancer(RegisterInstancesWithLoadBalancerRequest registerInstancesWithLoadBalancerRequest) {
+        ExecutionContext executionContext = createExecutionContext(registerInstancesWithLoadBalancerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<RegisterInstancesWithLoadBalancerRequest> request = null;
+        RegisterInstancesWithLoadBalancerResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new RegisterInstancesWithLoadBalancerRequestMarshaller().marshall(registerInstancesWithLoadBalancerRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new RegisterInstancesWithLoadBalancerResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1263,10 +1494,20 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *             If an error response is returned by AmazonElasticLoadBalancing indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeLoadBalancersResult describeLoadBalancers(DescribeLoadBalancersRequest describeLoadBalancersRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeLoadBalancersRequest> request = new DescribeLoadBalancersRequestMarshaller().marshall(describeLoadBalancersRequest);
-        return invoke(request, new DescribeLoadBalancersResultStaxUnmarshaller());
+    public DescribeLoadBalancersResult describeLoadBalancers(DescribeLoadBalancersRequest describeLoadBalancersRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeLoadBalancersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        Request<DescribeLoadBalancersRequest> request = null;
+        DescribeLoadBalancersResult response = null;
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        try {
+            request = new DescribeLoadBalancersRequestMarshaller().marshall(describeLoadBalancersRequest);
+            // Binds the request metrics to the current request.
+            request.setAWSRequestMetrics(awsRequestMetrics);
+            return response = invoke(request, new DescribeLoadBalancersResultStaxUnmarshaller(), executionContext);
+        } finally {
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
     
     /**
@@ -1422,26 +1663,27 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
         return client.getResponseMetadataForRequest(request);
     }
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, Unmarshaller<X, StaxUnmarshallerContext> unmarshaller) {
+    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
+            Unmarshaller<X, StaxUnmarshallerContext> unmarshaller,
+            ExecutionContext executionContext)
+    {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
-        for (Entry<String, String> entry : request.getOriginalRequest().copyPrivateRequestParameters().entrySet()) {
+        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
+        for (Entry<String, String> entry : originalRequest.copyPrivateRequestParameters().entrySet()) {
             request.addParameter(entry.getKey(), entry.getValue());
         }
 
         AWSCredentials credentials = awsCredentialsProvider.getCredentials();
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
-          credentials = originalRequest.getRequestCredentials();
+        if (originalRequest.getRequestCredentials() != null) {
+            credentials = originalRequest.getRequestCredentials();
         }
 
-        ExecutionContext executionContext = createExecutionContext(originalRequest);
         executionContext.setSigner(signer);
         executionContext.setCredentials(credentials);
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
-
         return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 }

@@ -109,9 +109,4 @@ public class EvaluateExpressionRequestMarshaller implements Marshaller<Request<E
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

@@ -150,9 +150,4 @@ public class CreateInstanceRequestMarshaller implements Marshaller<Request<Creat
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

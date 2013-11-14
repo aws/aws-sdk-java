@@ -56,9 +56,9 @@ public class DeleteArchiveRequestMarshaller implements Marshaller<Request<Delete
 
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/archives/{archiveId}"; 
-        uriResourcePath = uriResourcePath.replace("{accountId}", getString(deleteArchiveRequest.getAccountId())); 
-        uriResourcePath = uriResourcePath.replace("{vaultName}", getString(deleteArchiveRequest.getVaultName())); 
-        uriResourcePath = uriResourcePath.replace("{archiveId}", getString(deleteArchiveRequest.getArchiveId())); 
+        uriResourcePath = uriResourcePath.replace("{accountId}", (deleteArchiveRequest.getAccountId() == null) ? "" : StringUtils.fromString(deleteArchiveRequest.getAccountId())); 
+        uriResourcePath = uriResourcePath.replace("{vaultName}", (deleteArchiveRequest.getVaultName() == null) ? "" : StringUtils.fromString(deleteArchiveRequest.getVaultName())); 
+        uriResourcePath = uriResourcePath.replace("{archiveId}", (deleteArchiveRequest.getArchiveId() == null) ? "" : StringUtils.fromString(deleteArchiveRequest.getArchiveId())); 
 
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
@@ -84,10 +84,5 @@ public class DeleteArchiveRequestMarshaller implements Marshaller<Request<Delete
         
 
         return request;
-    }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
     }
 }

@@ -21,7 +21,7 @@ package com.amazonaws.event;
  * <p>
  * This class could be used for both Amazon S3 and Amazon Glacier clients. The
  * legacy Amazon S3 progress event
- * {@link com.amazonaws.services.s3.model.ProgressEvent} is deprecated in favor
+ * com.amazonaws.services.s3.model.ProgressEvent has been deprecated in favor
  * of this new class.
  * </p>
  */

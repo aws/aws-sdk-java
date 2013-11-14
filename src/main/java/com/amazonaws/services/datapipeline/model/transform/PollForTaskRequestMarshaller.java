@@ -120,9 +120,4 @@ public class PollForTaskRequestMarshaller implements Marshaller<Request<PollForT
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

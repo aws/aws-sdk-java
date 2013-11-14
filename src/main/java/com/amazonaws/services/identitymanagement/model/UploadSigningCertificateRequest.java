@@ -25,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * that are signed with a corresponding private key. When you upload the certificate, its default status is <code>Active</code> .
  * </p>
  * <p>
- * If the <code>UserName</code> field is not specified, the user name is determined implicitly based on the AWS Access Key ID used to sign the request.
+ * If the <code>UserName</code> field is not specified, the user name is determined implicitly based on the AWS access key ID used to sign the request.
  * Because this action works for access keys under the AWS account, this API can be used to manage root credentials even if the AWS account has no
  * associated users.
  * </p>

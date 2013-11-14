@@ -141,9 +141,4 @@ public class UpdateInstanceRequestMarshaller implements Marshaller<Request<Updat
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

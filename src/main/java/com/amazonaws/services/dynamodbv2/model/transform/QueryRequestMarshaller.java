@@ -281,9 +281,4 @@ public class QueryRequestMarshaller implements Marshaller<Request<QueryRequest>,
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

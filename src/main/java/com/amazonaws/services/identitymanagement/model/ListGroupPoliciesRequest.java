@@ -56,7 +56,8 @@ public class ListGroupPoliciesRequest extends AmazonWebServiceRequest implements
      * Use this only when paginating results to indicate the maximum number
      * of policy names you want in the response. If there are additional
      * policy names beyond the maximum you specify, the
-     * <code>IsTruncated</code> response element is <code>true</code>.
+     * <code>IsTruncated</code> response element is <code>true</code>. This
+     * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -192,7 +193,8 @@ public class ListGroupPoliciesRequest extends AmazonWebServiceRequest implements
      * Use this only when paginating results to indicate the maximum number
      * of policy names you want in the response. If there are additional
      * policy names beyond the maximum you specify, the
-     * <code>IsTruncated</code> response element is <code>true</code>.
+     * <code>IsTruncated</code> response element is <code>true</code>. This
+     * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -200,7 +202,8 @@ public class ListGroupPoliciesRequest extends AmazonWebServiceRequest implements
      * @return Use this only when paginating results to indicate the maximum number
      *         of policy names you want in the response. If there are additional
      *         policy names beyond the maximum you specify, the
-     *         <code>IsTruncated</code> response element is <code>true</code>.
+     *         <code>IsTruncated</code> response element is <code>true</code>. This
+     *         parameter is optional. If you do not include it, it defaults to 100.
      */
     public Integer getMaxItems() {
         return maxItems;
@@ -210,7 +213,8 @@ public class ListGroupPoliciesRequest extends AmazonWebServiceRequest implements
      * Use this only when paginating results to indicate the maximum number
      * of policy names you want in the response. If there are additional
      * policy names beyond the maximum you specify, the
-     * <code>IsTruncated</code> response element is <code>true</code>.
+     * <code>IsTruncated</code> response element is <code>true</code>. This
+     * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -218,7 +222,8 @@ public class ListGroupPoliciesRequest extends AmazonWebServiceRequest implements
      * @param maxItems Use this only when paginating results to indicate the maximum number
      *         of policy names you want in the response. If there are additional
      *         policy names beyond the maximum you specify, the
-     *         <code>IsTruncated</code> response element is <code>true</code>.
+     *         <code>IsTruncated</code> response element is <code>true</code>. This
+     *         parameter is optional. If you do not include it, it defaults to 100.
      */
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
@@ -228,7 +233,8 @@ public class ListGroupPoliciesRequest extends AmazonWebServiceRequest implements
      * Use this only when paginating results to indicate the maximum number
      * of policy names you want in the response. If there are additional
      * policy names beyond the maximum you specify, the
-     * <code>IsTruncated</code> response element is <code>true</code>.
+     * <code>IsTruncated</code> response element is <code>true</code>. This
+     * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -238,7 +244,8 @@ public class ListGroupPoliciesRequest extends AmazonWebServiceRequest implements
      * @param maxItems Use this only when paginating results to indicate the maximum number
      *         of policy names you want in the response. If there are additional
      *         policy names beyond the maximum you specify, the
-     *         <code>IsTruncated</code> response element is <code>true</code>.
+     *         <code>IsTruncated</code> response element is <code>true</code>. This
+     *         parameter is optional. If you do not include it, it defaults to 100.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

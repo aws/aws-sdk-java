@@ -24,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Deletes the access key associated with the specified user.
  * </p>
  * <p>
- * If you do not specify a user name, IAM determines the user name implicitly based on the AWS Access Key ID signing the request. Because this action
+ * If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID signing the request. Because this action
  * works for access keys under the AWS account, you can use this API to manage root credentials even if the AWS account has no associated users.
  * </p>
  *
@@ -42,7 +42,7 @@ public class DeleteAccessKeyRequest extends AmazonWebServiceRequest implements S
     private String userName;
 
     /**
-     * The Access Key ID for the Access Key ID and Secret Access Key you want
+     * The access key ID for the access key ID and secret access key you want
      * to delete.
      * <p>
      * <b>Constraints:</b><br/>
@@ -62,8 +62,8 @@ public class DeleteAccessKeyRequest extends AmazonWebServiceRequest implements S
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param accessKeyId The Access Key ID for the Access Key ID and Secret
-     * Access Key you want to delete.
+     * @param accessKeyId The access key ID for the access key ID and secret
+     * access key you want to delete.
      */
     public DeleteAccessKeyRequest(String accessKeyId) {
         setAccessKeyId(accessKeyId);
@@ -115,14 +115,14 @@ public class DeleteAccessKeyRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * The Access Key ID for the Access Key ID and Secret Access Key you want
+     * The access key ID for the access key ID and secret access key you want
      * to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>16 - 32<br/>
      * <b>Pattern: </b>[\w]*<br/>
      *
-     * @return The Access Key ID for the Access Key ID and Secret Access Key you want
+     * @return The access key ID for the access key ID and secret access key you want
      *         to delete.
      */
     public String getAccessKeyId() {
@@ -130,14 +130,14 @@ public class DeleteAccessKeyRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * The Access Key ID for the Access Key ID and Secret Access Key you want
+     * The access key ID for the access key ID and secret access key you want
      * to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>16 - 32<br/>
      * <b>Pattern: </b>[\w]*<br/>
      *
-     * @param accessKeyId The Access Key ID for the Access Key ID and Secret Access Key you want
+     * @param accessKeyId The access key ID for the access key ID and secret access key you want
      *         to delete.
      */
     public void setAccessKeyId(String accessKeyId) {
@@ -145,7 +145,7 @@ public class DeleteAccessKeyRequest extends AmazonWebServiceRequest implements S
     }
     
     /**
-     * The Access Key ID for the Access Key ID and Secret Access Key you want
+     * The access key ID for the access key ID and secret access key you want
      * to delete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -154,7 +154,7 @@ public class DeleteAccessKeyRequest extends AmazonWebServiceRequest implements S
      * <b>Length: </b>16 - 32<br/>
      * <b>Pattern: </b>[\w]*<br/>
      *
-     * @param accessKeyId The Access Key ID for the Access Key ID and Secret Access Key you want
+     * @param accessKeyId The access key ID for the access key ID and secret access key you want
      *         to delete.
      *
      * @return A reference to this updated object so that method calls can be chained 

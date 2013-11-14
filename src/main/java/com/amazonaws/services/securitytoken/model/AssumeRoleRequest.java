@@ -30,7 +30,6 @@ import com.amazonaws.AmazonWebServiceRequest;
  * consuming. Instead, you can create one set of long-term credentials in one account and then use temporary security credentials to access all the other
  * accounts by assuming roles in those accounts. For more information about roles, see <a
  * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html"> Roles </a> in <i>Using IAM</i> .
- * 
  * </p>
  * <p>
  * For federation, you can, for example, grant single sign-on access to the AWS Management Console. If you already have an identity and authentication
@@ -39,28 +38,24 @@ import com.amazonaws.AmazonWebServiceRequest;
  * security credentials for that user. With those temporary security credentials, you construct a sign-in URL that users can use to access the console.
  * For more information, see <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSUseCases.html"> Scenarios for Granting Temporary Access </a> in
  * <i>AWS Security Token Service</i> .
- * 
  * </p>
  * <p>
  * The temporary security credentials are valid for the duration that you specified when calling <code>AssumeRole</code> , which can be from 900 seconds
  * (15 minutes) to 3600 seconds (1 hour). The default is 1 hour.
  * </p>
  * <p>
- * The temporary security credentials that are returned from the <code>AssumeRoleWithWebIdentity</code> response have the permissions that are
- * associated with the access policy of the role being assumed and any policies that are associated with the AWS resource being accessed. You can further
- * restrict the permissions of the temporary security credentials by passing a policy in the request. The resulting permissions are an intersection of
- * the role's access policy and the policy that you passed. These policies and any applicable resource-based policies are evaluated when calls to AWS
- * service APIs are made using the temporary security credentials.
+ * Optionally, you can pass an AWS IAM access policy to this operation. The temporary security credentials that are returned by the operation have the
+ * permissions that are associated with the access policy of the role that is being assumed, except for any permissions explicitly denied by the policy
+ * you pass. This gives you a way to further restrict the permissions for the federated user. These policies and any applicable resource-based policies
+ * are evaluated when calls to AWS are made using the temporary security credentials.
  * </p>
  * <p>
  * To assume a role, your AWS account must be trusted by the role. The trust relationship is defined in the role's trust policy when the IAM role is
  * created. You must also have a policy that allows you to call <code>sts:AssumeRole</code> .
- * 
  * </p>
  * <p>
- * <b>Important:</b> You cannot call <code>Assumerole</code> by using AWS account credentials; access will be denied. You must use IAM user credentials
+ * <b>Important:</b> You cannot call <code>AssumeRole</code> by using AWS account credentials; access will be denied. You must use IAM user credentials
  * or temporary security credentials to call <code>AssumeRole</code> .
- * 
  * </p>
  * <p>
  * </p>
@@ -97,11 +92,13 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
     private String roleSessionName;
 
     /**
-     * A supplemental policy that is associated with the temporary security
-     * credentials from the <code>AssumeRole</code> call. The resulting
-     * permissions of the temporary security credentials are an intersection
-     * of this policy and the access policy that is associated with the role.
-     * Use this policy to further restrict the permissions of the temporary
+     * An AWS IAM policy in JSON format. <p>The temporary security
+     * credentials that are returned by the operation have the permissions
+     * that are associated with the access policy of the role being assumed,
+     * except for any permissions explicitly denied by the policy you pass.
+     * This gives you a way to further restrict the permissions for the
+     * federated user. These policies and any applicable resource-based
+     * policies are evaluated when calls to AWS are made using the temporary
      * security credentials.
      * <p>
      * <b>Constraints:</b><br/>
@@ -239,22 +236,26 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
     }
 
     /**
-     * A supplemental policy that is associated with the temporary security
-     * credentials from the <code>AssumeRole</code> call. The resulting
-     * permissions of the temporary security credentials are an intersection
-     * of this policy and the access policy that is associated with the role.
-     * Use this policy to further restrict the permissions of the temporary
+     * An AWS IAM policy in JSON format. <p>The temporary security
+     * credentials that are returned by the operation have the permissions
+     * that are associated with the access policy of the role being assumed,
+     * except for any permissions explicitly denied by the policy you pass.
+     * This gives you a way to further restrict the permissions for the
+     * federated user. These policies and any applicable resource-based
+     * policies are evaluated when calls to AWS are made using the temporary
      * security credentials.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2048<br/>
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      *
-     * @return A supplemental policy that is associated with the temporary security
-     *         credentials from the <code>AssumeRole</code> call. The resulting
-     *         permissions of the temporary security credentials are an intersection
-     *         of this policy and the access policy that is associated with the role.
-     *         Use this policy to further restrict the permissions of the temporary
+     * @return An AWS IAM policy in JSON format. <p>The temporary security
+     *         credentials that are returned by the operation have the permissions
+     *         that are associated with the access policy of the role being assumed,
+     *         except for any permissions explicitly denied by the policy you pass.
+     *         This gives you a way to further restrict the permissions for the
+     *         federated user. These policies and any applicable resource-based
+     *         policies are evaluated when calls to AWS are made using the temporary
      *         security credentials.
      */
     public String getPolicy() {
@@ -262,22 +263,26 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * A supplemental policy that is associated with the temporary security
-     * credentials from the <code>AssumeRole</code> call. The resulting
-     * permissions of the temporary security credentials are an intersection
-     * of this policy and the access policy that is associated with the role.
-     * Use this policy to further restrict the permissions of the temporary
+     * An AWS IAM policy in JSON format. <p>The temporary security
+     * credentials that are returned by the operation have the permissions
+     * that are associated with the access policy of the role being assumed,
+     * except for any permissions explicitly denied by the policy you pass.
+     * This gives you a way to further restrict the permissions for the
+     * federated user. These policies and any applicable resource-based
+     * policies are evaluated when calls to AWS are made using the temporary
      * security credentials.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2048<br/>
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      *
-     * @param policy A supplemental policy that is associated with the temporary security
-     *         credentials from the <code>AssumeRole</code> call. The resulting
-     *         permissions of the temporary security credentials are an intersection
-     *         of this policy and the access policy that is associated with the role.
-     *         Use this policy to further restrict the permissions of the temporary
+     * @param policy An AWS IAM policy in JSON format. <p>The temporary security
+     *         credentials that are returned by the operation have the permissions
+     *         that are associated with the access policy of the role being assumed,
+     *         except for any permissions explicitly denied by the policy you pass.
+     *         This gives you a way to further restrict the permissions for the
+     *         federated user. These policies and any applicable resource-based
+     *         policies are evaluated when calls to AWS are made using the temporary
      *         security credentials.
      */
     public void setPolicy(String policy) {
@@ -285,11 +290,13 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
     }
     
     /**
-     * A supplemental policy that is associated with the temporary security
-     * credentials from the <code>AssumeRole</code> call. The resulting
-     * permissions of the temporary security credentials are an intersection
-     * of this policy and the access policy that is associated with the role.
-     * Use this policy to further restrict the permissions of the temporary
+     * An AWS IAM policy in JSON format. <p>The temporary security
+     * credentials that are returned by the operation have the permissions
+     * that are associated with the access policy of the role being assumed,
+     * except for any permissions explicitly denied by the policy you pass.
+     * This gives you a way to further restrict the permissions for the
+     * federated user. These policies and any applicable resource-based
+     * policies are evaluated when calls to AWS are made using the temporary
      * security credentials.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -298,11 +305,13 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements Serial
      * <b>Length: </b>1 - 2048<br/>
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      *
-     * @param policy A supplemental policy that is associated with the temporary security
-     *         credentials from the <code>AssumeRole</code> call. The resulting
-     *         permissions of the temporary security credentials are an intersection
-     *         of this policy and the access policy that is associated with the role.
-     *         Use this policy to further restrict the permissions of the temporary
+     * @param policy An AWS IAM policy in JSON format. <p>The temporary security
+     *         credentials that are returned by the operation have the permissions
+     *         that are associated with the access policy of the role being assumed,
+     *         except for any permissions explicitly denied by the policy you pass.
+     *         This gives you a way to further restrict the permissions for the
+     *         federated user. These policies and any applicable resource-based
+     *         policies are evaluated when calls to AWS are made using the temporary
      *         security credentials.
      *
      * @return A reference to this updated object so that method calls can be chained 

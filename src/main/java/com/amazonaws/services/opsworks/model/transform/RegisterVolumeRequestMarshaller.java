@@ -106,9 +106,4 @@ public class RegisterVolumeRequestMarshaller implements Marshaller<Request<Regis
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

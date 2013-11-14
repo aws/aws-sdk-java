@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listInstanceProfilesForRole(ListInstanceProfilesForRoleRequest) ListInstanceProfilesForRole operation}.
  * <p>
  * Lists the instance profiles that have the specified associated role. If there are none, the action returns an empty list. For more information about
- * instance profiles, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"> About Instance Profiles </a> .
+ * instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"> About Instance Profiles </a> .
  * </p>
  * <p>
  * You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
@@ -57,7 +57,8 @@ public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest 
      * Use this parameter only when paginating results to indicate the
      * maximum number of user names you want in the response. If there are
      * additional user names beyond the maximum you specify, the
-     * <code>IsTruncated</code> response element is <code>true</code>.
+     * <code>IsTruncated</code> response element is <code>true</code>. This
+     * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -176,7 +177,8 @@ public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest 
      * Use this parameter only when paginating results to indicate the
      * maximum number of user names you want in the response. If there are
      * additional user names beyond the maximum you specify, the
-     * <code>IsTruncated</code> response element is <code>true</code>.
+     * <code>IsTruncated</code> response element is <code>true</code>. This
+     * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -184,7 +186,8 @@ public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest 
      * @return Use this parameter only when paginating results to indicate the
      *         maximum number of user names you want in the response. If there are
      *         additional user names beyond the maximum you specify, the
-     *         <code>IsTruncated</code> response element is <code>true</code>.
+     *         <code>IsTruncated</code> response element is <code>true</code>. This
+     *         parameter is optional. If you do not include it, it defaults to 100.
      */
     public Integer getMaxItems() {
         return maxItems;
@@ -194,7 +197,8 @@ public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest 
      * Use this parameter only when paginating results to indicate the
      * maximum number of user names you want in the response. If there are
      * additional user names beyond the maximum you specify, the
-     * <code>IsTruncated</code> response element is <code>true</code>.
+     * <code>IsTruncated</code> response element is <code>true</code>. This
+     * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -202,7 +206,8 @@ public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest 
      * @param maxItems Use this parameter only when paginating results to indicate the
      *         maximum number of user names you want in the response. If there are
      *         additional user names beyond the maximum you specify, the
-     *         <code>IsTruncated</code> response element is <code>true</code>.
+     *         <code>IsTruncated</code> response element is <code>true</code>. This
+     *         parameter is optional. If you do not include it, it defaults to 100.
      */
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
@@ -212,7 +217,8 @@ public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest 
      * Use this parameter only when paginating results to indicate the
      * maximum number of user names you want in the response. If there are
      * additional user names beyond the maximum you specify, the
-     * <code>IsTruncated</code> response element is <code>true</code>.
+     * <code>IsTruncated</code> response element is <code>true</code>. This
+     * parameter is optional. If you do not include it, it defaults to 100.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -222,7 +228,8 @@ public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest 
      * @param maxItems Use this parameter only when paginating results to indicate the
      *         maximum number of user names you want in the response. If there are
      *         additional user names beyond the maximum you specify, the
-     *         <code>IsTruncated</code> response element is <code>true</code>.
+     *         <code>IsTruncated</code> response element is <code>true</code>. This
+     *         parameter is optional. If you do not include it, it defaults to 100.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together.

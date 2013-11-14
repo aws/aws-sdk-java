@@ -103,9 +103,4 @@ public class RebootInstanceRequestMarshaller implements Marshaller<Request<Reboo
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

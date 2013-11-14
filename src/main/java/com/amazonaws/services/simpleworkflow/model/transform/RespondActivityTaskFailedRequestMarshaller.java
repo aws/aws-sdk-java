@@ -109,9 +109,4 @@ public class RespondActivityTaskFailedRequestMarshaller implements Marshaller<Re
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }

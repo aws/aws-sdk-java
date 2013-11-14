@@ -120,9 +120,4 @@ public class ListStepsRequestMarshaller implements Marshaller<Request<ListStepsR
 
         return request;
     }
-
-    private String getString(String s) {
-        if (s == null) return "";
-        return s;
-    }
 }
