@@ -210,13 +210,28 @@ public class DynamoDBReflector {
             }
     
             if ( isCustomMarshaller(getter) ) {
-                unmarshaller = new SUnmarshaller() {
-    
-                    @Override
-                    public Object unmarshall(AttributeValue value) {
-                        return getCustomMarshalledValue(toReturn, getter, value);
-                    }
-                };
+                if (Set.class.isAssignableFrom(paramType)) {
+                    unmarshaller = new SSUnmarshaller() {
+
+                        @Override
+                        public Object unmarshall(AttributeValue value) {
+                            return getCustomMarshalledValueSet(toReturn, getter, value);
+                        }
+                    };
+                }
+                else if ( Collection.class.isAssignableFrom(paramType) ) {
+                    throw new DynamoDBMappingException("Only java.util.Set collection types are permitted for "
+                            + DynamoDBAttribute.class);
+                }
+                else {
+                    unmarshaller = new SUnmarshaller() {
+
+                        @Override
+                        public Object unmarshall(AttributeValue value) {
+                            return getCustomMarshalledValue(toReturn, getter, value);
+                        }
+                    };
+                }
             } else {
                 unmarshaller = computeArgumentUnmarshaller(toReturn, getter, setter, paramType, s3cc);
             }
@@ -664,6 +679,54 @@ public class DynamoDBReflector {
         }
     }
 
+    private <T> Set<T> getCustomMarshalledValueSet(T toReturn, Method getter, AttributeValue value) {
+        DynamoDBMarshalling annotation = getter.getAnnotation(DynamoDBMarshalling.class);
+        Class<? extends DynamoDBMarshaller<? extends Object>> marshallerClass = annotation.marshallerClass();
+
+        DynamoDBMarshaller marshaller;
+        try {
+            marshaller = marshallerClass.newInstance();
+        } catch (InstantiationException e) {
+            throw new DynamoDBMappingException("Couldn't instantiate marshaller of class " + marshallerClass, e);
+        } catch (IllegalAccessException e) {
+            throw new DynamoDBMappingException("Couldn't instantiate marshaller of class " + marshallerClass, e);
+        }
+
+
+
+        boolean sortedSet = java.util.SortedSet.class.isAssignableFrom(getter.getReturnType());
+        Type actualType = ((ParameterizedType)getter.getGenericReturnType()).getActualTypeArguments()[0];
+        Set<T> set = sortedSet ? new java.util.TreeSet<T>() : new HashSet<T>();
+
+        for (String part : value.getSS()) {
+            set.add((T) marshaller.unmarshall((Class)actualType, part));
+        }
+
+        return set;
+    }
+
+    private AttributeValue getCustomMarshallerAttributeValueSet(Method getter, Object getterReturnResult) {
+        DynamoDBMarshalling annotation = getter.getAnnotation(DynamoDBMarshalling.class);
+        Class<? extends DynamoDBMarshaller<? extends Object>> marshallerClass = annotation.marshallerClass();
+
+        DynamoDBMarshaller marshaller;
+        try {
+            marshaller = marshallerClass.newInstance();
+        } catch (InstantiationException e) {
+            throw new DynamoDBMappingException("Failed to instantiate custom marshaller for class " + marshallerClass, e);
+        } catch (IllegalAccessException e) {
+            throw new DynamoDBMappingException("Failed to instantiate custom marshaller for class " + marshallerClass, e);
+        }
+
+        boolean sortedSet = java.util.SortedSet.class.isAssignableFrom(getter.getReturnType());
+
+        Set<String> marshalledValues = sortedSet ? new java.util.TreeSet<String>() : new HashSet<String>();
+        for(Object unmarshalled : (Set) getterReturnResult) {
+            marshalledValues.add(marshaller.marshall(unmarshalled));
+        }
+
+        return new AttributeValue().withSS(marshalledValues);
+    }
     /**
      * Returns a marshaller that knows how to provide an AttributeValue for the
      * result of the getter given.
@@ -675,11 +738,27 @@ public class DynamoDBReflector {
                 return marshaller;
             }
             if ( isCustomMarshaller(getter) ) {
-                marshaller = new ArgumentMarshaller() {
-                    @Override public AttributeValue marshall(Object obj) {
-                        return getCustomerMarshallerAttributeValue(getter, obj);
-                    }
-                };
+                Class<?> returnType = getter.getReturnType();
+                if (Set.class.isAssignableFrom(returnType)) {
+                    marshaller = new ArgumentMarshaller() {
+                        @Override
+                        public AttributeValue marshall(Object obj) {
+                            return getCustomMarshallerAttributeValueSet(getter, obj);
+                        }
+                    };
+                }
+                else if ( Collection.class.isAssignableFrom(returnType) ) {
+                    throw new DynamoDBMappingException("Only java.util.Set collection types are permitted for "
+                            + DynamoDBAttribute.class);
+                }
+                else
+                {
+                    marshaller = new ArgumentMarshaller() {
+                        @Override public AttributeValue marshall(Object obj) {
+                            return getCustomerMarshallerAttributeValue(getter, obj);
+                        }
+                    };
+                }
             } else {
                 marshaller = computeArgumentMarshaller(getter);
             }
