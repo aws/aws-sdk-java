@@ -16,7 +16,7 @@
 /**
  * Classes used to support the AWS SDK metrics API.
  * 
- * When the default request metric collection system is enabled, 
+ * When the default metric collection system is enabled, 
  * the default AWS SDK implementation
  * captures a set of predefined core metrics that are grouped under three major 
  * categories:  AWS Request Metrics, AWS Service Metrics, and Machine Metrics.

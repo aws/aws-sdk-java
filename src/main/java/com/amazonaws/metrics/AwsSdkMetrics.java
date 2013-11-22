@@ -37,7 +37,7 @@ import com.amazonaws.util.jmx.MBeans;
 /**
  * Used to control the default AWS SDK metric collection system.
  * <p>
- * The default request metric collection of the Java AWS SDK is disabled by
+ * The default metric collection of the Java AWS SDK is disabled by
  * default. To enable it, simply specify the system property
  * <b>"com.amazonaws.sdk.enableDefaultMetrics"</b> when starting up the JVM.
  * When the system property is specified, a default metric collector will be
@@ -57,7 +57,7 @@ import com.amazonaws.util.jmx.MBeans;
  * <p>
  * Alternatively, for limited customization of the internal collector
  * implementation provided by the AWS SDK, one can extend the internal Amazon
- * CloudWatch request metric collector. See the javadoc at
+ * CloudWatch metric collector. See the javadoc at
  * com.amazonaws.metrics.internal.cloudwatch.CloudWatchMetricConfig for
  * more details.
  */
@@ -200,18 +200,18 @@ public enum AwsSdkMetrics {
     }
 
     /**
-     * Sets the request metric collector to be used by the AWS SDK, and stop the
+     * Sets the metric collector to be used by the AWS SDK, and stop the
      * previously running collector used by the AWS SDK, if any. Note, however,
      * a request metric collector specified at the web service client level or
      * request level, if any, always takes precedence over the one specified at
      * the AWS SDK level.
      * <p>
-     * Caller of this method is responsible for starting the new request metric
+     * Caller of this method is responsible for starting the new metric
      * collector specified as the input parameter.
      * 
      * @param mc
-     *            the request metric collector to be used by the AWS SDK; or
-     *            null if no request metric collection is to be performed
+     *            the metric collector to be used by the AWS SDK; or
+     *            null if no metric collection is to be performed
      *            at the AWS SDK level.
      * 
      * @see RequestMetricCollector
@@ -261,11 +261,11 @@ public enum AwsSdkMetrics {
     }
 
     /**
-     * Starts the default AWS SDK request metric collector, but
-     * only if no request metric collector is currently in use at the AWS SDK
+     * Starts the default AWS SDK metric collector, but
+     * only if no metric collector is currently in use at the AWS SDK
      * level.
      * 
-     * @return true if the default AWS SDK request metric collector has been
+     * @return true if the default AWS SDK metric collector has been
      *         successfully started by this call; false otherwise.
      */
     public static synchronized boolean enableDefaultMetrics() {
@@ -293,7 +293,7 @@ public enum AwsSdkMetrics {
     }
 
     /**
-     * Convenient method to disable the request metric collector at the AWS SDK
+     * Convenient method to disable the metric collector at the AWS SDK
      * level.
      */
     public static void disableMetrics() {
@@ -441,15 +441,15 @@ public enum AwsSdkMetrics {
          */
         public String getServiceMetricCollector();
         /**
-         * Starts the default AWS SDK request metric collector, but only if no
-         * request metric collector is currently in use at the AWS SDK level.
+         * Starts the default AWS SDK metric collector, but only if no
+         * metric collector is currently in use at the AWS SDK level.
          * 
-         * @return true if the default AWS SDK request metric collector has been
+         * @return true if the default AWS SDK metric collector has been
          *         successfully started by this call; false otherwise.
          */
         public boolean enableDefaultMetrics();
         /**
-         * Disables the request metric collector at the AWS SDK level.
+         * Disables the metric collector at the AWS SDK level.
          */
         public void disableMetrics();
         /**
@@ -579,7 +579,7 @@ public enum AwsSdkMetrics {
 
     /**
      * Used as a registry for the predefined metrics to be captured by the
-     * request metric collector at the AWS SDK level.
+     * metric collector at the AWS SDK level.
      */
     private static class MetricRegistry {
         private final Set<MetricType> metricTypes = new HashSet<MetricType>();

@@ -2294,8 +2294,18 @@ public class DynamoDBMapper {
             final Class<T> modelClass,
             final DynamoDBMapperConfig mapperConfig) {
 
+        return toParameters(attributeValues, false, modelClass, mapperConfig);
+    }
+
+    private <T> AttributeTransformer.Parameters<T> toParameters(
+            final Map<String, AttributeValue> attributeValues,
+            final boolean partialUpdate,
+            final Class<T> modelClass,
+            final DynamoDBMapperConfig mapperConfig) {
+
         return new TransformerParameters(reflector,
                                          attributeValues,
+                                         partialUpdate,
                                          modelClass,
                                          mapperConfig);
     }
@@ -2324,22 +2334,25 @@ public class DynamoDBMapper {
 
         private final DynamoDBReflector reflector;
         private final Map<String, AttributeValue> attributeValues;
+        private final boolean partialUpdate;
         private final Class<T> modelClass;
         private final DynamoDBMapperConfig mapperConfig;
         
         private String tableName;
         private String hashKeyName;
         private String rangeKeyName;
-        
+
         public TransformerParameters(
                 final DynamoDBReflector reflector,
                 final Map<String, AttributeValue> attributeValues,
+                final boolean partialUpdate,
                 final Class<T> modelClass,
                 final DynamoDBMapperConfig mapperConfig) {
 
             this.reflector = reflector;
             this.attributeValues =
                 Collections.unmodifiableMap(attributeValues);
+            this.partialUpdate = partialUpdate;
             this.modelClass = modelClass;
             this.mapperConfig = mapperConfig;
         }
@@ -2347,6 +2360,11 @@ public class DynamoDBMapper {
         @Override
         public Map<String, AttributeValue> getAttributeValues() {
             return attributeValues;
+        }
+
+        @Override
+        public boolean isPartialUpdate() {
+            return partialUpdate;
         }
 
         @Override
@@ -2501,7 +2519,7 @@ public class DynamoDBMapper {
         }
         
         AttributeTransformer.Parameters<?> parameters =
-            toParameters(item, clazz, config);
+            toParameters(item, true, clazz, config);
         
         String hashKey = parameters.getHashKeyName();
         if (!item.containsKey(hashKey)) {

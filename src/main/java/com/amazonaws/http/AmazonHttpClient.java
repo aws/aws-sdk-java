@@ -486,7 +486,6 @@ public class AmazonHttpClient {
      * Handles an unexpected failure, returning the Throwable instance as given.
      */
     private <T extends Throwable> T handleUnexpectedFailure(T t, AWSRequestMetrics awsRequestMetrics) {
-        log.warn("Unexpected failure", t);
         awsRequestMetrics.incrementCounter(Field.Exception);
         return t;
     }

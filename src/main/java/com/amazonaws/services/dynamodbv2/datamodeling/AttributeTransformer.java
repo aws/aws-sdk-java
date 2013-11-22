@@ -44,7 +44,28 @@ public interface AttributeTransformer {
          * @return the raw attribute values to transform or untransform
          */
         Map<String, AttributeValue> getAttributeValues();
-        
+
+        /**
+         * Returns true if this transformation is being called as part of a
+         * partial update operation. If true, the attributes returned by
+         * {@link #getAttributeValues()} do not represent the entire new
+         * item, but only a snapshot of the attributes which are getting
+         * new values.
+         * <p>
+         * Implementations which do not support transforming a partial
+         * view of an item (for example, because they need to calculate a
+         * signature based on all of the item's attributes that won't be valid
+         * if only a subset of the attributes are taken into consideration)
+         * should check this flag and throw an exception rather than than
+         * corrupting the data in DynamoDB.
+         * <p>
+         * This method always returns {@code false} for instances passed to
+         * {@link AttributeTransformer#untransform(Parameters)}.
+         *
+         * @return true if this operation is a partial update, false otherwise
+         */
+        boolean isPartialUpdate();
+
         /**
          * @return the type of the model class we're transforming to or from
          */
